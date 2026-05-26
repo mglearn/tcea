@@ -234,87 +234,18 @@
   </style>
 </head>
 <body>
-<!-- MG-BACK-NAV v2 -->
-<style id="mg-back-nav-style">
-  .mg-back-bar {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    height: 32px;
-    z-index: 999999;
-    background: #FCB040;
-    border-bottom: 1px solid rgba(30, 57, 141, 0.25);
-    display: flex;
-    align-items: center;
-    padding: 0 16px;
-    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
-    font-size: 12.5px;
-    line-height: 1;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.08);
-  }
-  .mg-back-bar a {
-    color: #0A3476;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-weight: 700;
-    letter-spacing: 0.01em;
-    transition: color 0.15s;
-  }
-  .mg-back-bar a:hover { color: #071F4A; }
-  .mg-back-bar .mg-back-arrow { color: #0A3476; }
-  .mg-back-bar .mg-back-sep { color: rgba(30,57,141,0.4); margin: 0 4px; }
-  .mg-back-bar .mg-back-label { color: rgba(30,57,141,0.7); font-weight: 400; }
-  @media print { .mg-back-bar { display: none !important; } }
-</style>
-<div class="mg-back-bar" role="navigation" aria-label="Back to TCEA index">
-  <a href="../index.html"><span class="mg-back-arrow">←</span> TCEA</a>
-</div>
-<script id="mg-back-nav-script">
-(function() {
-  var BAR_H = 32;
-  var done = false;
-  function offsetFixedHeaders() {
-    if (done) return;
-    done = true;
-    var nodes = document.querySelectorAll(
-      'header, nav, .topnav, .top-nav, .topbar, .navbar, .site-nav, .site-header, ' +
-      '[class*="topnav"], [class*="topbar"], [class*="navbar"]'
-    );
-    nodes.forEach(function(el) {
-      if (el.classList.contains('mg-back-bar')) return;
-      var cs = window.getComputedStyle(el);
-      var pos = cs.position;
-      if (pos !== 'fixed' && pos !== 'sticky') return;
-      var topVal = parseFloat(cs.top);
-      if (isNaN(topVal) || topVal >= BAR_H) return;
-      // Only shift wide, top-pinned bars (avoid moving inline-fixed widgets)
-      var rect = el.getBoundingClientRect();
-      if (rect.width < window.innerWidth * 0.4) return;
-      el.style.setProperty('top', (topVal + BAR_H) + 'px', 'important');
-    });
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', offsetFixedHeaders);
-  } else {
-    offsetFixedHeaders();
-  }
-  // Re-run once on full load in case scripts inject nav after DOMContentLoaded
-  window.addEventListener('load', function() { done = false; offsetFixedHeaders(); });
-})();
-</script>
 <div class="top-bar" aria-hidden="true"></div>
   <div class="page">
     <header>
       <p class="eyebrow">TCEA Tools</p>
-      <h1>Tool Menu: 10 Tools</h1>
+      <h1>Tool Menu: 11 Tools</h1>
       <p class="intro">A central launch page for classroom-ready tools, activities, and resources.</p>
     </header>
 
     <main>
       <div class="menu-heading">
         <h2>Available Tools</h2>
-        <span class="tool-count">10 tools</span>
+        <span class="tool-count">11 tools</span>
       </div>
 
       <section class="tool-grid" aria-label="Tool menu">
@@ -342,6 +273,14 @@
           <span class="tool-action">Open Tool <span class="arrow" aria-hidden="true">&gt;</span></span>
         </a>
 
+        <a class="tool-card" href="dotsboxes/index.html">
+          <div>
+            <h3 class="tool-name">Dots and Boxes</h3>
+            <p class="tool-description">Two to four players draw lines and claim boxes. Pick colors and initials, play against the computer, and celebrate wins with confetti.</p>
+          </div>
+          <span class="tool-action">Open Tool <span class="arrow" aria-hidden="true">&gt;</span></span>
+        </a>
+
         <a class="tool-card" href="drawsketch/index.html">
           <div>
             <h3 class="tool-name">Draw and Sketch</h3>
@@ -353,7 +292,7 @@
         <a class="tool-card" href="fortune/index.html">
           <div>
             <h3 class="tool-name">Fortune Wheel</h3>
-            <p class="tool-description">Create a student link for spinning points, revealing letters, and solving K-12 education vocabulary puzzles.</p>
+            <p class="tool-description">TV-style team play: spin, call consonants, buy vowels, and type to solve. Add computer teams, hear the wheel click, and celebrate solves with confetti.</p>
           </div>
           <span class="tool-action">Open Tool <span class="arrow" aria-hidden="true">&gt;</span></span>
         </a>
