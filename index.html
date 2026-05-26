@@ -41,8 +41,8 @@
     display: flex;
     align-items: center;
     padding: 0 18px;
-    background: var(--tcea-blue-dark);
-    border-bottom: 2px solid var(--tcea-gold);
+    background: var(--tcea-gold);
+    border-bottom: 1px solid rgba(10,52,118,0.25);
     box-shadow: 0 1px 8px rgba(0,0,0,0.16);
     font-size: 12.5px;
   }
@@ -50,11 +50,12 @@
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    color: #fff;
+    color: var(--tcea-blue);
     text-decoration: none;
     font-weight: 700;
   }
-  .mg-back-arrow { color: var(--tcea-gold); }
+  .mg-back-bar a:hover { color: var(--tcea-blue-dark); }
+  .mg-back-arrow { color: var(--tcea-blue); }
   @media print { .mg-back-bar { display: none !important; } }
 
   .hero {
