@@ -808,79 +808,7 @@
     }
   </style>
 </head>
-<body>
-<!-- MG-BACK-NAV v2 -->
-<style id="mg-back-nav-style">
-  .mg-back-bar {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    height: 32px;
-    z-index: 999999;
-    background: #FCB040;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(10, 52, 118, 0.25);
-    display: flex;
-    align-items: center;
-    padding: 0 16px;
-    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
-    font-size: 12.5px;
-    line-height: 1;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.08);
-  }
-  .mg-back-bar a {
-    color: #0A3476;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-weight: 700;
-    letter-spacing: 0.01em;
-    transition: color 0.15s;
-  }
-  .mg-back-bar a:hover { color: #061f49; }
-  .mg-back-bar .mg-back-arrow { color: #0A3476; }
-  .mg-back-bar .mg-back-sep { color: rgba(10,52,118,0.4); margin: 0 4px; }
-  .mg-back-bar .mg-back-label { color: rgba(10,52,118,0.7); font-weight: 400; }
-  @media print { .mg-back-bar { display: none !important; } }
-</style>
-<div class="mg-back-bar" role="navigation" aria-label="Back to TCEA index">
-  <a href="../../index.html"><span class="mg-back-arrow">←</span> TCEA</a>
-</div>
-<script id="mg-back-nav-script">
-(function() {
-  var BAR_H = 32;
-  var done = false;
-  function offsetFixedHeaders() {
-    if (done) return;
-    done = true;
-    var nodes = document.querySelectorAll(
-      'header, nav, .topnav, .top-nav, .topbar, .navbar, .site-nav, .site-header, ' +
-      '[class*="topnav"], [class*="topbar"], [class*="navbar"]'
-    );
-    nodes.forEach(function(el) {
-      if (el.classList.contains('mg-back-bar')) return;
-      var cs = window.getComputedStyle(el);
-      var pos = cs.position;
-      if (pos !== 'fixed' && pos !== 'sticky') return;
-      var topVal = parseFloat(cs.top);
-      if (isNaN(topVal) || topVal >= BAR_H) return;
-      // Only shift wide, top-pinned bars (avoid moving inline-fixed widgets)
-      var rect = el.getBoundingClientRect();
-      if (rect.width < window.innerWidth * 0.4) return;
-      el.style.setProperty('top', (topVal + BAR_H) + 'px', 'important');
-    });
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', offsetFixedHeaders);
-  } else {
-    offsetFixedHeaders();
-  }
-  // Re-run once on full load in case scripts inject nav after DOMContentLoaded
-  window.addEventListener('load', function() { done = false; offsetFixedHeaders(); });
-})();
-</script>
-<div class="top-bar" aria-hidden="true"></div>
+<body><div class="top-bar" aria-hidden="true"></div>
   <div class="page">
     <header>
       <div class="title-block">
@@ -965,11 +893,9 @@
           <label for="coinPicturePreset">Coin Picture Preset</label>
           <select id="coinPicturePreset">
             <option value="">Use custom images or colors</option>
-            <option value="tcea-heads-tails">TCEA Heads / Tails</option>
-            <option value="canadian-loonie">Canadian Loonie</option>
-            <option value="uk-pound">UK Coin</option>
-            <option value="dutch-euro">Dutch Coin</option>
-            <option value="mexican-peso">Mexican Coin</option>
+            <option value="authors">Authors (Peggy / Miguel)</option>
+            <option value="liberty">Liberty</option>
+            <option value="skunk">Skunk</option>
           </select>
         </div>
 
@@ -1123,17 +1049,56 @@
     };
 
     const coinPicturePresets = {
-      "tcea-heads-tails": {
-        name: "TCEA Heads / Tails",
-        a: "Heads",
-        b: "Tails",
+      authors: {
+        name: "Authors",
+        a: "Peggy",
+        b: "Miguel",
         theme: "tcea",
         style: "classic",
         headsColor: "#FAA634",
         tailsColor: "#1E398D",
         images: {
-          a: "assets/coin-heads.png?v=orange-beret-heads-20260519",
-          b: "assets/coin-tails.png?v=bald-tails-blue-bg-20260519"
+          a: "assets/Peggy_Heads.png?v=authors-peggy-20260527b",
+          b: "assets/Miguel_Heads.png?v=authors-miguel-20260527b"
+        }
+      },
+      liberty: {
+        name: "Liberty",
+        a: "Heads",
+        b: "Tails",
+        theme: "gray",
+        style: "classic",
+        headsColor: "#D7D9DA",
+        tailsColor: "#B8A56C",
+        images: {
+          a: "assets/Liberty_Heads.png?v=liberty-heads-20260527b",
+          b: "assets/Liberty_Tails.png?v=liberty-tails-20260527b"
+        }
+      },
+      skunk: {
+        name: "Skunk",
+        a: "Heads",
+        b: "Tails",
+        theme: "contrast",
+        style: "classic",
+        headsColor: "#E6E7E8",
+        tailsColor: "#404041",
+        images: {
+          a: "assets/Skunk_Heads.png?v=skunk-heads-20260527b",
+          b: "assets/Skunk_Tails.png?v=skunk-tails-20260527b"
+        }
+      },
+      "tcea-heads-tails": {
+        name: "Authors",
+        a: "Peggy",
+        b: "Miguel",
+        theme: "tcea",
+        style: "classic",
+        headsColor: "#FAA634",
+        tailsColor: "#1E398D",
+        images: {
+          a: "assets/Peggy_Heads.png?v=authors-peggy-20260527b",
+          b: "assets/Miguel_Heads.png?v=authors-miguel-20260527b"
         }
       },
       "canadian-loonie": {
@@ -1316,13 +1281,21 @@
       return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg);
     }
 
+    function readableTextColor(hex) {
+      const clean = String(hex || "").replace("#", "");
+      const r = parseInt(clean.slice(0, 2), 16);
+      const g = parseInt(clean.slice(2, 4), 16);
+      const b = parseInt(clean.slice(4, 6), 16);
+      if ([r, g, b].some(Number.isNaN)) return "#000000";
+      return (r * 299 + g * 587 + b * 114) / 1000 > 150 ? "#000000" : "#FFFFFF";
+    }
+
     function applyVisuals() {
-      const theme = themes[els.themeSelect.value] || themes.tcea;
       document.documentElement.style.setProperty("--side-a", els.headsColor.value);
       document.documentElement.style.setProperty("--side-b", els.tailsColor.value);
       document.documentElement.style.setProperty("--bg", els.backgroundColor.value);
-      document.documentElement.style.setProperty("--coin-text-a", theme.textA);
-      document.documentElement.style.setProperty("--coin-text-b", theme.textB);
+      document.documentElement.style.setProperty("--coin-text-a", readableTextColor(els.headsColor.value));
+      document.documentElement.style.setProperty("--coin-text-b", readableTextColor(els.tailsColor.value));
       updateImagePreviews();
       renderCoins();
       updateStats();
@@ -1826,9 +1799,9 @@
     });
 
     if (!loadSetupFromUrl()) {
-      setTheme("tcea");
-      els.coinPicturePreset.value = "tcea-heads-tails";
-      applyCoinPicturePreset("tcea-heads-tails");
+      setTheme("gray");
+      els.coinPicturePreset.value = "liberty";
+      applyCoinPicturePreset("liberty");
       els.simpleModeToggle.checked = true;
       updateSimpleMode();
       renderCoins();
