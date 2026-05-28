@@ -50,8 +50,10 @@ async function initReview(){
   document.getElementById('saveBtn').onclick=()=>{collectReview(true); showStatus('Saved in this browser.');};
   document.getElementById('clearBtn').onclick=()=>{if(confirm('Clear this review from this browser?')){clearReview(); location.reload();}};
   document.getElementById('reportBtn').onclick=()=>{collectReview(true); location.href='report.html';};
-  document.getElementById('analyzeBtn').onclick=()=>{analyzeReviewText(r); collectReview(true); updateTotal(); showStatus('Scores updated from pasted text. Review and adjust any score before reporting.');};
-  if(allText.trim() && !Object.keys(review.categories||{}).length) document.getElementById('analyzeBtn').click();
+  const analyzeAndReport = ()=>{if(analyzeReviewText(r)===false) return; collectReview(true); updateTotal(); location.href='report.html';};
+  document.getElementById('analyzeBtn').onclick=analyzeAndReport;
+  document.getElementById('analyzePasteBtn').onclick=analyzeAndReport;
+  if(allText.trim() && !Object.keys(review.categories||{}).length){ analyzeReviewText(r); collectReview(true); updateTotal(); }
 }
 
 function collectReview(save=false){
@@ -90,7 +92,7 @@ function updateTotal(){
 
 function analyzeReviewText(rubric){
   const text = (document.getElementById('allText')?.value || '').toLowerCase();
-  if(!text.trim()){ showStatus('Paste vendor text before analyzing.', true); return; }
+  if(!text.trim()){ showStatus('Paste vendor text before analyzing.', true); return false; }
   const rules = {
     1: [
       {label:'parent/student access, correction, deletion, or export rights', terms:['access', 'correct', 'correction', 'delete', 'deletion', 'export', 'parent', 'eligible student']},
@@ -149,6 +151,7 @@ function analyzeReviewText(rubric){
         : `Estimated 0: did not find clear signals for ${groups.map(group=>group.label).join('; ')}.`;
     sec.querySelector('.auto-reason').textContent = reason;
   });
+  return true;
 }
 
 function showStatus(msg, err=false){
