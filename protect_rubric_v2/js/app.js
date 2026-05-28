@@ -22,20 +22,17 @@ async function initReview(){
   const r = await loadRubric();
   const review = getReview();
   ['vendor','productUrl','reviewer','organization','reviewDate'].forEach(k=>{const el=document.getElementById(k); if(el) el.value=review.meta[k]||'';});
-  ['privacyPolicy','terms','addendum','security','notes'].forEach(k=>{const el=document.getElementById(k); if(el) el.value=review.docs[k]||'';});
+  const allText = review.docs.allText || [review.docs.privacyPolicy, review.docs.terms, review.docs.addendum, review.docs.security].filter(Boolean).join('\n\n');
+  const allTextEl = document.getElementById('allText');
+  if(allTextEl) allTextEl.value = allText;
   const box = document.getElementById('reviewCategories');
   box.innerHTML = r.categories.map(c=>{
     const saved = review.categories[c.number] || {};
-    return `<section class="card review-card" data-cat="${c.number}">
+    return `<section class="card review-card simple-review-card" data-cat="${c.number}">
       <div>
         <h3><span class="score-badge">${c.code}</span> ${c.name}</h3>
-        <p class="small"><strong>Regulatory anchors:</strong> ${escapeHtml(c.regulatoryAnchors)}</p>
-        <details><summary><strong>What to look for</strong></summary><ul>${c.whatToLookFor.map(x=>`<li>${escapeHtml(x)}</li>`).join('')}</ul></details>
-        <details><summary><strong>Level descriptors</strong></summary>
-          <table><tr><th>Score</th><th>Descriptor</th></tr>${[0,1,2].map(n=>`<tr><td>${n}</td><td>${escapeHtml(c.levels[n])}</td></tr>`).join('')}</table>
-        </details>
-        <div class="field"><label>Evidence quotes / page / URL / section</label><textarea class="evidence">${escapeHtml(saved.evidence||'')}</textarea></div>
-        <div class="field"><label>Gaps / remediation notes</label><textarea class="gaps">${escapeHtml(saved.gaps||'')}</textarea></div>
+        <p class="small">${escapeHtml(c.lookForShort)}</p>
+        <p class="small auto-reason">${escapeHtml(saved.reason || 'Paste vendor text and run analysis.')}</p>
       </div>
       <div>
         <label>Score</label>
@@ -45,7 +42,6 @@ async function initReview(){
           <option value="1" ${saved.score==1?'selected':''}>1</option>
           <option value="2" ${saved.score==2?'selected':''}>2</option>
         </select>
-        <p class="small">${escapeHtml(c.lookForShort)}</p>
       </div>
     </section>`;
   }).join('');
@@ -54,23 +50,31 @@ async function initReview(){
   document.getElementById('saveBtn').onclick=()=>{collectReview(true); showStatus('Saved in this browser.');};
   document.getElementById('clearBtn').onclick=()=>{if(confirm('Clear this review from this browser?')){clearReview(); location.reload();}};
   document.getElementById('reportBtn').onclick=()=>{collectReview(true); location.href='report.html';};
-  document.getElementById('aiBtn').onclick=async()=>{collectReview(true); await runAIAssist();};
-  const settings = getSettings();
-  if(settings.mode==='manual') document.getElementById('aiHint').textContent='AI Assist is disabled. Manual review and exports are available.';
-  else document.getElementById('aiHint').textContent='AI Assist is configured. Draft scores require human verification.';
+  document.getElementById('analyzeBtn').onclick=()=>{analyzeReviewText(r); collectReview(true); updateTotal(); showStatus('Scores updated from pasted text. Review and adjust any score before reporting.');};
+  if(allText.trim() && !Object.keys(review.categories||{}).length) document.getElementById('analyzeBtn').click();
 }
 
 function collectReview(save=false){
   const review = getReview();
   ['vendor','productUrl','reviewer','organization','reviewDate'].forEach(k=>{const el=document.getElementById(k); if(el) review.meta[k]=el.value.trim();});
-  ['privacyPolicy','terms','addendum','security','notes'].forEach(k=>{const el=document.getElementById(k); if(el) review.docs[k]=el.value;});
+  const allTextEl = document.getElementById('allText');
+  if(allTextEl){
+    review.docs.allText = allTextEl.value;
+    review.docs.privacyPolicy = allTextEl.value;
+    review.docs.terms = '';
+    review.docs.addendum = '';
+    review.docs.security = '';
+    review.docs.notes = '';
+  }
   review.categories = review.categories || {};
   document.querySelectorAll('[data-cat]').forEach(sec=>{
     const n = sec.dataset.cat;
+    const existing = review.categories[n] || {};
     review.categories[n] = {
       score: sec.querySelector('.score-select').value,
-      evidence: sec.querySelector('.evidence').value,
-      gaps: sec.querySelector('.gaps').value
+      evidence: '',
+      gaps: '',
+      reason: sec.querySelector('.auto-reason')?.textContent || existing.reason || ''
     };
   });
   if(save) saveReview(review);
@@ -82,6 +86,67 @@ function updateTotal(){
   const total = totalScore(review); const rec = recommendation(total);
   const el = document.getElementById('liveTotal');
   if(el) el.innerHTML = `<strong>${total}/14</strong> — ${rec.label}`;
+}
+
+function analyzeReviewText(rubric){
+  const text = (document.getElementById('allText')?.value || '').toLowerCase();
+  if(!text.trim()){ showStatus('Paste vendor text before analyzing.', true); return; }
+  const rules = {
+    1: [
+      ['access', 'correct', 'correction', 'delete', 'deletion', 'export', 'parent', 'eligible student'],
+      ['request', 'days', 'school days', 'calendar days', 'portal', 'email', 'contact'],
+      ['coppa', 'ferpa', 'parental consent', 'verifiable parental consent']
+    ],
+    2: [
+      ['retain', 'retention', 'delete', 'deletion', 'destroy', 'destruction', 'return'],
+      ['termination', 'backup', 'de-identified', 'deidentified', 'aggregate'],
+      ['days', 'schedule', 'upon request', 'account closure']
+    ],
+    3: [
+      ['opt out', 'opt-out', 'do not sell', 'do not share', 'targeted advertising'],
+      ['profiling', 'behavioral', 'tracking', 'global privacy control', 'do not track'],
+      ['ai training', 'model training', 'machine learning', 'student data']
+    ],
+    4: [
+      ['collect', 'collected', 'personal information', 'student information', 'data categories'],
+      ['subprocessor', 'third party', 'third-party', 'service provider', 'affiliate'],
+      ['hosting', 'data residency', 'last updated', 'effective date', 'changes to this policy']
+    ],
+    5: [
+      ['encrypt', 'encryption', 'https', 'tls', 'ssl', 'at rest', 'in transit'],
+      ['breach', 'incident', 'notification', 'unauthorized access'],
+      ['access control', 'audit log', 'multi-factor', 'mfa', 'security measures']
+    ],
+    6: [
+      ['coppa', 'under 13', 'under thirteen', 'children', 'minor', 'age'],
+      ['consent', 'parental consent', 'school consent', 'ferpa', 'school official'],
+      ['age appropriate', 'dark patterns', 'default privacy', 'guardian']
+    ],
+    7: [
+      ['subprocessor', 'sub-processors', 'third party', 'third-party', 'service provider'],
+      ['30 days', 'thirty days', 'notice', 'objection', 'material change'],
+      ['same standards', 'flow down', 'data processing agreement', 'dpa', 'cross-border']
+    ]
+  };
+
+  rubric.categories.forEach(c=>{
+    const groups = rules[c.number] || [];
+    const matched = groups.map(group=>group.filter(term=>text.includes(term)));
+    const groupHits = matched.filter(group=>group.length).length;
+    const totalHits = matched.reduce((sum, group)=>sum+group.length, 0);
+    let score = 0;
+    if(groupHits >= 3 && totalHits >= 6) score = 2;
+    else if(groupHits >= 1 && totalHits >= 2) score = 1;
+    const sec = document.querySelector(`[data-cat="${c.number}"]`);
+    if(!sec) return;
+    sec.querySelector('.score-select').value = String(score);
+    const reason = score === 2
+      ? `Estimated 2: found multiple signals for ${c.name.toLowerCase()}.`
+      : score === 1
+        ? `Estimated 1: found partial signals, but the pasted text may not cover the category fully.`
+        : `Estimated 0: did not find enough signals for this category in the pasted text.`;
+    sec.querySelector('.auto-reason').textContent = reason;
+  });
 }
 
 function showStatus(msg, err=false){
