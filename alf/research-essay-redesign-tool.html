@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research Assignment Redesign Tool</title>
+<style>
+:root{--green-dark:#0A3476;--green:#12428f;--green-soft:#fff0d7;--green-pale:#f5f7fb;--gray-dark:#172033;--gray:#5c667a;--gray-light:#dce3ef;--white:#fff;--border:#dce3ef;--shadow:0 8px 24px rgba(10,52,118,.12)}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,var(--white),var(--gray-light));color:var(--gray-dark);line-height:1.55}
+a{color:var(--green-dark);font-weight:700;text-decoration:underline;text-underline-offset:3px}.page{max-width:1180px;margin:0 auto;padding:24px}
+.hero{background:var(--green-dark);color:var(--white);border-radius:24px;padding:34px;box-shadow:var(--shadow)}.hero a{color:#fff}
+.kicker{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);padding:8px 12px;border-radius:999px;font-size:.9rem;margin-bottom:16px}
+h1{margin:0 0 12px;font-size:clamp(2rem,4vw,3.4rem);line-height:1.05}h2{color:var(--green-dark);font-size:1.65rem;margin:32px 0 14px}h3{color:var(--green-dark);margin:0 0 8px}.subtitle{max-width:900px;margin:0;font-size:1.08rem;color:#fff0d7}.note{margin-top:16px;background:rgba(255,255,255,.12);border-left:5px solid #FCB040;padding:14px 16px;border-radius:12px}
+.card,.panel,.output{background:var(--white);border:1px solid var(--border);border-radius:20px;box-shadow:0 4px 18px rgba(0,0,0,.05);padding:20px;margin-top:18px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.full{grid-column:1/-1}
+label{display:block;font-weight:700;color:var(--green-dark);margin-bottom:6px}select,input,textarea{width:100%;border:1px solid var(--border);border-radius:12px;padding:12px;font:inherit;background:#fff;color:var(--gray-dark)}textarea{min-height:100px;resize:vertical}
+fieldset{border:1px solid var(--border);border-radius:16px;margin:0;padding:14px;background:#f5f7fb}legend{font-weight:700;color:var(--green-dark);padding:0 8px}.check{display:flex;align-items:flex-start;gap:8px;margin:8px 0;font-weight:400;color:var(--gray-dark)}.check input{width:auto;margin-top:4px}
+.btnrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.btn{border:0;border-radius:999px;padding:11px 16px;font-weight:700;cursor:pointer;background:var(--green-dark);color:#fff}.btn.secondary{background:var(--gray-dark)}.btn.light{background:var(--green-soft);color:var(--green-dark);border:1px solid var(--border)}
+.output{background:#fff}.print-title{border-bottom:3px solid var(--green);padding-bottom:8px}.section{border-left:5px solid var(--green);background:var(--green-pale);border-radius:14px;padding:14px;margin:12px 0}ul,ol{margin-top:8px}.tag{display:inline-block;background:var(--green-soft);color:var(--green-dark);border:1px solid var(--border);border-radius:999px;padding:5px 10px;font-size:.85rem;font-weight:700;margin:3px}.footer{color:var(--gray);font-size:.9rem;text-align:center;margin:24px 0 8px}.small{font-size:.92rem;color:var(--gray)}.nav{margin-top:18px}.nav a{display:inline-block;margin:4px 8px 4px 0}
+@media(max-width:860px){.grid,.grid3{grid-template-columns:1fr}.hero{padding:26px}.page{padding:16px}}
+@media print{body{background:#fff}.page{max-width:none;padding:.35in}.hero,.card,.panel{display:none}.output{box-shadow:none;border:0;padding:0}.btnrow,.nav,.footer{display:none}a{color:var(--gray-dark);text-decoration:none}.section{break-inside:avoid}}
+</style>
+</head>
+<body>
+<main class="page">
+<section class="hero">
+  <div class="kicker">Architect Scenario Tool</div>
+  <h1>Research Assignment Redesign Tool</h1>
+  <p class="subtitle">A product-oriented tool for Architects who need printable alternatives to plagiarism-prone, one-shot assignments.</p>
+  <div class="note">Choose canned issues, standards, and product options. Then generate a printable result that can be copied, printed, or saved as a PDF from the browser.</div>
+  <div class="nav"><a href="index.html">← Back to Main Framework</a></div>
+</section>
+
+<section class="card"><h2 style="margin-top:0">Redesign the Assignment</h2>
+<div class="grid">
+<div><label for="course">Course / Grade Band</label><input id="course" placeholder="Example: English III, Grade 11"></div>
+<div><label for="product">Final Product</label><select id="product"><option>Research essay</option><option>Argument presentation</option><option>Annotated bibliography</option><option>Multimedia synthesis</option><option>Oral defense + written brief</option></select></div>
+<div><label for="standard">Standards Focus</label><select id="standard"><option>TEKS ELA research and composition</option><option>TEKS Social Studies inquiry and evidence</option><option>Common Core Writing</option><option>Common Core Speaking and Listening</option><option>Local standards</option></select></div>
+<div><label for="level">Target Cognitive Move</label><select id="level"><option>SOLO: Multistructural to Relational</option><option>SOLO: Relational to Extended Abstract</option><option>ACE: Articulate, Connect, Extend</option><option>Evidence evaluation and synthesis</option></select></div>
+<fieldset class="full"><legend>Common Problems</legend>
+<label class="check"><input type="checkbox" name="issues" value="plagiarism" checked> AI-generated final essays are hard to authenticate</label>
+<label class="check"><input type="checkbox" name="issues" value="sources"> Weak or unverified sources</label>
+<label class="check"><input type="checkbox" name="issues" value="shallow"> Students summarize instead of synthesize</label>
+<label class="check"><input type="checkbox" name="issues" value="feedback"> Too little revision or feedback evidence</label>
+<label class="check"><input type="checkbox" name="issues" value="access"> Students need different access points and supports</label>
+</fieldset>
+<fieldset class="full"><legend>Printable Products</legend>
+<label class="check"><input type="checkbox" name="products" value="assignment" checked> Redesigned assignment brief</label>
+<label class="check"><input type="checkbox" name="products" value="checkpoints" checked> Process checkpoints</label>
+<label class="check"><input type="checkbox" name="products" value="rubric" checked> Process-focused rubric</label>
+<label class="check"><input type="checkbox" name="products" value="aiuse"> Student AI-use disclosure form</label>
+<label class="check"><input type="checkbox" name="products" value="conference"> Oral defense questions</label>
+</fieldset>
+<div class="full"><label for="topic">Topic / Prompt</label><textarea id="topic" placeholder="Paste or describe the assignment topic."></textarea></div>
+</div><div class="btnrow"><button class="btn" onclick="generate()">Generate Redesign Package</button><button class="btn secondary" onclick="copyOutput()">Copy Product</button><button class="btn light" onclick="printOutput()">Print / Save PDF</button></div></section>
+<section id="output" class="output"><h2 class="print-title">Research Assignment Redesign Tool</h2><p class="small">Complete the form and click Generate Redesign Package.</p></section>
+
+<script>
+const CANNED = {
+  "plagiarism": [
+    "Replace one-shot final essay grading with a process portfolio.",
+    "Require an in-class thesis defense or short oral explanation.",
+    "Assess what changed from draft to draft and why."
+  ],
+  "sources": [
+    "Require a source reliability table.",
+    "Add a claim-evidence-reasoning checkpoint.",
+    "Require students to mark what AI could not verify."
+  ],
+  "shallow": [
+    "Add a synthesis matrix comparing claims across sources.",
+    "Use SOLO progression to move from listing to connecting to transfer.",
+    "Require a paragraph explaining tension, contradiction, or nuance."
+  ],
+  "feedback": [
+    "Add peer feedback and teacher conference checkpoints.",
+    "Require a revision memo before final submission.",
+    "Grade the quality of revision decisions."
+  ],
+  "access": [
+    "Offer text, audio, graphic organizer, and conference options.",
+    "Provide sentence frames for evidence evaluation.",
+    "Use UDL choices while keeping the same learning target."
+  ]
+};
+
+function checkedValues(name){
+  return Array.from(document.querySelectorAll('input[name="'+name+'"]:checked')).map(x=>x.value);
+}
+function val(id){ return document.getElementById(id).value.trim(); }
+function list(items){ return "<ul>" + items.map(x=>"<li>"+x+"</li>").join("") + "</ul>"; }
+function tags(items){ return items.map(x=>"<span class='tag'>"+x+"</span>").join(" "); }
+function copyOutput(){
+  const text = document.getElementById('output').innerText;
+  navigator.clipboard.writeText(text).then(()=>alert('Printable product copied.'));
+}
+function printOutput(){ window.print(); }
+
+function generate(){
+ const course=val('course')||"Course / Grade Band", product=val('product'), standard=val('standard'), level=val('level'), topic=val('topic')||"Teacher-provided topic or research question";
+ const issues=checkedValues('issues'), products=checkedValues('products');
+ let out=`<h2 class="print-title">${course}: AI-Resistant, Process-Rich Assignment Redesign</h2>
+ <p>${tags([product,standard,level,"TEKS/CCSS aligned as selected"])}</p>
+ <div class="section"><h3>Original Learning Problem</h3><p>${topic}</p></div>`;
+ if(products.includes('assignment')){
+ out += `<div class="section"><h3>Redesigned Assignment Brief</h3><p>Students will produce a ${product.toLowerCase()} supported by a process portfolio. The grade emphasizes question development, source evaluation, AI critique, revision decisions, and final explanation of learning.</p>
+ ${list(["Submit an initial question and prior-knowledge note.","Build a source table with credibility notes.","Use AI only for allowed support such as counterargument generation or clarity checks.","Document accepted, rejected, and revised AI suggestions.","Complete a final reflection using ACE: Articulate, Connect, Extend."])}</div>`;
+ }
+ if(products.includes('checkpoints')){
+ out += `<div class="section"><h3>Process Checkpoints</h3><ol><li>Question and claim conference</li><li>Source reliability check</li><li>AI critique log</li><li>Peer feedback round</li><li>Revision memo</li><li>Oral defense or in-class synthesis</li></ol></div>`;
+ }
+ out += `<div class="section"><h3>Problem Alternatives / Solutions</h3>${issues.map(k=>`<p><strong>Problem:</strong> ${document.querySelector('input[value="'+k+'"]').parentElement.textContent.trim()}</p>${list(CANNED[k])}`).join("")}</div>`;
+ if(products.includes('rubric')){
+ out += `<div class="section"><h3>Process-Focused Rubric</h3>${list(["4: Transfers understanding, verifies sources, explains revisions, and defends choices with evidence.","3: Connects ideas across sources and shows clear revision decisions.","2: Lists evidence but has limited synthesis or weak explanation of AI use.","1: Submits product with little process evidence, verification, or reflection."])}</div>`;
+ }
+ if(products.includes('aiuse')){
+ out += `<div class="section"><h3>Student AI-Use Disclosure</h3>${list(["What did you ask AI to help with?","What did you verify independently?","What did you reject or revise?","Where is your own thinking most visible?"])}</div>`;
+ }
+ if(products.includes('conference')){
+ out += `<div class="section"><h3>Oral Defense Questions</h3>${list(["Which source most changed your thinking and why?","What did AI miss, oversimplify, or get wrong?","Where did your claim become more precise?","How would you extend this argument to a new context?"])}</div>`;
+ }
+ document.getElementById('output').innerHTML=out;
+}
+
+</script>
+
+<p class="footer">The Augmented K–16 AI Learning Framework | Product-Oriented Scenario Tools</p>
+</main>
+</body>
+</html>

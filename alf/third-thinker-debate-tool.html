@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Third Thinker Debate Tool</title>
+<style>
+:root{--green-dark:#0A3476;--green:#12428f;--green-soft:#fff0d7;--green-pale:#f5f7fb;--gray-dark:#172033;--gray:#5c667a;--gray-light:#dce3ef;--white:#fff;--border:#dce3ef;--shadow:0 8px 24px rgba(10,52,118,.12)}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,var(--white),var(--gray-light));color:var(--gray-dark);line-height:1.55}
+a{color:var(--green-dark);font-weight:700;text-decoration:underline;text-underline-offset:3px}.page{max-width:1180px;margin:0 auto;padding:24px}
+.hero{background:var(--green-dark);color:var(--white);border-radius:24px;padding:34px;box-shadow:var(--shadow)}.hero a{color:#fff}
+.kicker{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);padding:8px 12px;border-radius:999px;font-size:.9rem;margin-bottom:16px}
+h1{margin:0 0 12px;font-size:clamp(2rem,4vw,3.4rem);line-height:1.05}h2{color:var(--green-dark);font-size:1.65rem;margin:32px 0 14px}h3{color:var(--green-dark);margin:0 0 8px}.subtitle{max-width:900px;margin:0;font-size:1.08rem;color:#fff0d7}.note{margin-top:16px;background:rgba(255,255,255,.12);border-left:5px solid #FCB040;padding:14px 16px;border-radius:12px}
+.card,.panel,.output{background:var(--white);border:1px solid var(--border);border-radius:20px;box-shadow:0 4px 18px rgba(0,0,0,.05);padding:20px;margin-top:18px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.full{grid-column:1/-1}
+label{display:block;font-weight:700;color:var(--green-dark);margin-bottom:6px}select,input,textarea{width:100%;border:1px solid var(--border);border-radius:12px;padding:12px;font:inherit;background:#fff;color:var(--gray-dark)}textarea{min-height:100px;resize:vertical}
+fieldset{border:1px solid var(--border);border-radius:16px;margin:0;padding:14px;background:#f5f7fb}legend{font-weight:700;color:var(--green-dark);padding:0 8px}.check{display:flex;align-items:flex-start;gap:8px;margin:8px 0;font-weight:400;color:var(--gray-dark)}.check input{width:auto;margin-top:4px}
+.btnrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.btn{border:0;border-radius:999px;padding:11px 16px;font-weight:700;cursor:pointer;background:var(--green-dark);color:#fff}.btn.secondary{background:var(--gray-dark)}.btn.light{background:var(--green-soft);color:var(--green-dark);border:1px solid var(--border)}
+.output{background:#fff}.print-title{border-bottom:3px solid var(--green);padding-bottom:8px}.section{border-left:5px solid var(--green);background:var(--green-pale);border-radius:14px;padding:14px;margin:12px 0}ul,ol{margin-top:8px}.tag{display:inline-block;background:var(--green-soft);color:var(--green-dark);border:1px solid var(--border);border-radius:999px;padding:5px 10px;font-size:.85rem;font-weight:700;margin:3px}.footer{color:var(--gray);font-size:.9rem;text-align:center;margin:24px 0 8px}.small{font-size:.92rem;color:var(--gray)}.nav{margin-top:18px}.nav a{display:inline-block;margin:4px 8px 4px 0}
+@media(max-width:860px){.grid,.grid3{grid-template-columns:1fr}.hero{padding:26px}.page{padding:16px}}
+@media print{body{background:#fff}.page{max-width:none;padding:.35in}.hero,.card,.panel{display:none}.output{box-shadow:none;border:0;padding:0}.btnrow,.nav,.footer{display:none}a{color:var(--gray-dark);text-decoration:none}.section{break-inside:avoid}}
+</style>
+</head>
+<body>
+<main class="page">
+<section class="hero">
+  <div class="kicker">Orchestrator Scenario Tool</div>
+  <h1>Third Thinker Debate Tool</h1>
+  <p class="subtitle">A print-ready Orchestrator tool that turns AI output into a shared text for critique, evidence checks, and peer discussion.</p>
+  <div class="note">Choose canned issues, standards, and product options. Then generate a printable result that can be copied, printed, or saved as a PDF from the browser.</div>
+  <div class="nav"><a href="index.html">← Back to Main Framework</a></div>
+</section>
+
+<section class="card"><h2 style="margin-top:0">Plan the Third Thinker Activity</h2>
+<div class="grid">
+<div><label for="className">Course / Grade</label><input id="className" placeholder="Example: Government, Grade 12"></div>
+<div><label for="issue">Debate Issue</label><select id="issue"><option>Should a city ban cars from downtown?</option><option>Should schools limit phone use during the day?</option><option>Should communities restrict water use during drought?</option><option>Should AI tools be allowed for homework?</option><option>Custom issue</option></select></div>
+<div><label for="standards">Standards</label><select id="standards"><option>TEKS Social Studies + ELA</option><option>TEKS ELA argument and discussion</option><option>Common Core Speaking and Listening</option><option>Common Core Writing Argument</option></select></div>
+<div><label for="format">Activity Format</label><select id="format"><option>Pair critique</option><option>Four-corners debate</option><option>Socratic seminar</option><option>Structured academic controversy</option><option>Fishbowl discussion</option></select></div>
+<fieldset class="full"><legend>Common Discussion Problems</legend>
+<label class="check"><input type="checkbox" name="issues" value="silent" checked> Few students talk</label>
+<label class="check"><input type="checkbox" name="issues" value="evidence"> Students make claims without evidence</label>
+<label class="check"><input type="checkbox" name="issues" value="bias"> Students do not notice bias or missing stakeholders</label>
+<label class="check"><input type="checkbox" name="issues" value="screen"> Students stare at screens instead of talking</label>
+<label class="check"><input type="checkbox" name="issues" value="polarized"> Discussion becomes too polarized</label>
+</fieldset>
+<fieldset class="full"><legend>Printable Products</legend>
+<label class="check"><input type="checkbox" name="products" value="protocol" checked> Discussion protocol</label>
+<label class="check"><input type="checkbox" name="products" value="audit" checked> AI evidence audit sheet</label>
+<label class="check"><input type="checkbox" name="products" value="roles" checked> Student role cards</label>
+<label class="check"><input type="checkbox" name="products" value="exit" checked> Exit ticket</label>
+<label class="check"><input type="checkbox" name="products" value="script"> Optional teacher launch script</label>
+</fieldset>
+<div class="full"><label for="custom">Custom Issue / Local Context</label><textarea id="custom" placeholder="Add the local issue, scenario, or question students will debate."></textarea></div>
+</div><div class="btnrow"><button class="btn" onclick="generate()">Generate Debate Toolkit</button><button class="btn secondary" onclick="copyOutput()">Copy Product</button><button class="btn light" onclick="printOutput()">Print / Save PDF</button></div></section>
+<section id="output" class="output"><h2 class="print-title">Third Thinker Debate Tool</h2><p class="small">Complete the form and click Generate Debate Toolkit.</p></section>
+
+<script>
+const CANNED = {
+  "silent": [
+    "Assign roles before discussion begins.",
+    "Start with written private think time.",
+    "Use pair rehearsal before whole-class sharing."
+  ],
+  "evidence": [
+    "Require one piece of evidence before speaking.",
+    "Use an evidence quality checklist.",
+    "Ask peers to respond with 'What evidence supports that?'"
+  ],
+  "bias": [
+    "Add a missing stakeholder column.",
+    "Require students to identify who benefits, who is harmed, and who is absent.",
+    "Have students revise the AI response from another stakeholder perspective."
+  ],
+  "screen": [
+    "Print the AI output and audit sheet.",
+    "Close devices after the first AI-generated argument is produced.",
+    "Make the AI response a shared text, not an individual screen task."
+  ],
+  "polarized": [
+    "Use structured academic controversy before debate.",
+    "Require students to fairly summarize the other side before responding.",
+    "Shift from winning to improving the proposed solution."
+  ]
+};
+
+function checkedValues(name){
+  return Array.from(document.querySelectorAll('input[name="'+name+'"]:checked')).map(x=>x.value);
+}
+function val(id){ return document.getElementById(id).value.trim(); }
+function list(items){ return "<ul>" + items.map(x=>"<li>"+x+"</li>").join("") + "</ul>"; }
+function tags(items){ return items.map(x=>"<span class='tag'>"+x+"</span>").join(" "); }
+function copyOutput(){
+  const text = document.getElementById('output').innerText;
+  navigator.clipboard.writeText(text).then(()=>alert('Printable product copied.'));
+}
+function printOutput(){ window.print(); }
+
+function generate(){
+ const cls=val('className')||"Course / Grade", issueSel=val('issue'), custom=val('custom'), issue=custom || issueSel, standards=val('standards'), format=val('format');
+ const issues=checkedValues('issues'), products=checkedValues('products');
+ let out=`<h2 class="print-title">${cls}: AI as Third Thinker Discussion Toolkit</h2><p>${tags([format, standards, "TEKS/CCSS aligned as selected", "Human discussion first"])}</p>
+ <div class="section"><h3>Discussion Question</h3><p>${issue}</p><p><strong>AI role:</strong> Generate a short, imperfect argument that students must critique, verify, and improve.</p></div>`;
+ out += `<div class="section"><h3>Problem Alternatives / Solutions</h3>${issues.map(k=>`<p><strong>Problem:</strong> ${document.querySelector('input[value="'+k+'"]').parentElement.textContent.trim()}</p>${list(CANNED[k])}`).join("")}</div>`;
+ if(products.includes('protocol')){
+ out += `<div class="section"><h3>Discussion Protocol</h3><ol><li>Teacher displays or prints one AI-generated argument.</li><li>Students silently mark claims, evidence, assumptions, and missing perspectives.</li><li>Pairs compare annotations and choose the strongest critique.</li><li>Groups revise the argument to make it more accurate, fair, and evidence-based.</li><li>Class debriefs what human judgment improved.</li></ol></div>`;
+ }
+ if(products.includes('audit')){
+ out += `<div class="section"><h3>AI Evidence Audit Sheet</h3>${list(["What claim does the AI make?","What evidence is provided?","What evidence is missing?","What stakeholders are missing?","What language signals bias or overconfidence?","What should be verified before trusting this?"])}</div>`;
+ }
+ if(products.includes('roles')){
+ out += `<div class="section"><h3>Student Role Cards</h3>${list(["Evidence Checker: verifies facts and asks for sources.","Bias Spotter: identifies assumptions and missing voices.","Connector: links the issue to prior learning or local context.","Skeptic: challenges weak logic respectfully.","Synthesizer: prepares the group’s improved response."])}</div>`;
+ }
+ if(products.includes('exit')){
+ out += `<div class="section"><h3>Exit Ticket</h3>${list(["One claim I questioned was...","One missing perspective was...","One way our group improved the AI response was...","One thing I still need to verify is..."])}</div>`;
+ }
+ if(products.includes('script')){
+ out += `<div class="section"><h3>Optional Teacher Launch Script</h3><p>Today, the AI is not the answer key. It is our third thinker. Its job is to give us something to question, test, improve, and challenge with evidence.</p></div>`;
+ }
+ document.getElementById('output').innerHTML=out;
+}
+
+</script>
+
+<p class="footer">The Augmented K–16 AI Learning Framework | Product-Oriented Scenario Tools</p>
+</main>
+</body>
+</html>
