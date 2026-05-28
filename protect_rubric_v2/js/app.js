@@ -93,58 +93,60 @@ function analyzeReviewText(rubric){
   if(!text.trim()){ showStatus('Paste vendor text before analyzing.', true); return; }
   const rules = {
     1: [
-      ['access', 'correct', 'correction', 'delete', 'deletion', 'export', 'parent', 'eligible student'],
-      ['request', 'days', 'school days', 'calendar days', 'portal', 'email', 'contact'],
-      ['coppa', 'ferpa', 'parental consent', 'verifiable parental consent']
+      {label:'parent/student access, correction, deletion, or export rights', terms:['access', 'correct', 'correction', 'delete', 'deletion', 'export', 'parent', 'eligible student']},
+      {label:'request process or response timeline', terms:['request', 'days', 'school days', 'calendar days', 'portal', 'email', 'contact']},
+      {label:'COPPA, FERPA, or parental consent handling', terms:['coppa', 'ferpa', 'parental consent', 'verifiable parental consent']}
     ],
     2: [
-      ['retain', 'retention', 'delete', 'deletion', 'destroy', 'destruction', 'return'],
-      ['termination', 'backup', 'de-identified', 'deidentified', 'aggregate'],
-      ['days', 'schedule', 'upon request', 'account closure']
+      {label:'retention, deletion, destruction, or return language', terms:['retain', 'retention', 'delete', 'deletion', 'destroy', 'destruction', 'return']},
+      {label:'termination, backup, or de-identification handling', terms:['termination', 'backup', 'de-identified', 'deidentified', 'aggregate']},
+      {label:'specific timing, schedule, request, or account-closure process', terms:['days', 'schedule', 'upon request', 'account closure']}
     ],
     3: [
-      ['opt out', 'opt-out', 'do not sell', 'do not share', 'targeted advertising'],
-      ['profiling', 'behavioral', 'tracking', 'global privacy control', 'do not track'],
-      ['ai training', 'model training', 'machine learning', 'student data']
+      {label:'opt-out, do-not-sell/share, or targeted advertising limits', terms:['opt out', 'opt-out', 'do not sell', 'do not share', 'targeted advertising']},
+      {label:'profiling, behavioral tracking, or browser privacy signal limits', terms:['profiling', 'behavioral', 'tracking', 'global privacy control', 'do not track']},
+      {label:'AI, model training, or machine-learning use of student data', terms:['ai training', 'model training', 'machine learning', 'student data']}
     ],
     4: [
-      ['collect', 'collected', 'personal information', 'student information', 'data categories'],
-      ['subprocessor', 'third party', 'third-party', 'service provider', 'affiliate'],
-      ['hosting', 'data residency', 'last updated', 'effective date', 'changes to this policy']
+      {label:'data collection or student information categories', terms:['collect', 'collected', 'personal information', 'student information', 'data categories']},
+      {label:'third parties, subprocessors, service providers, or affiliates', terms:['subprocessor', 'third party', 'third-party', 'service provider', 'affiliate']},
+      {label:'hosting, data residency, update date, or policy-change notice', terms:['hosting', 'data residency', 'last updated', 'effective date', 'changes to this policy']}
     ],
     5: [
-      ['encrypt', 'encryption', 'https', 'tls', 'ssl', 'at rest', 'in transit'],
-      ['breach', 'incident', 'notification', 'unauthorized access'],
-      ['access control', 'audit log', 'multi-factor', 'mfa', 'security measures']
+      {label:'encryption, HTTPS, TLS, at-rest, or in-transit protection', terms:['encrypt', 'encryption', 'https', 'tls', 'ssl', 'at rest', 'in transit']},
+      {label:'breach, incident, notification, or unauthorized-access process', terms:['breach', 'incident', 'notification', 'unauthorized access']},
+      {label:'access controls, audit logs, MFA, or security measures', terms:['access control', 'audit log', 'multi-factor', 'mfa', 'security measures']}
     ],
     6: [
-      ['coppa', 'under 13', 'under thirteen', 'children', 'minor', 'age'],
-      ['consent', 'parental consent', 'school consent', 'ferpa', 'school official'],
-      ['age appropriate', 'dark patterns', 'default privacy', 'guardian']
+      {label:'COPPA, under-13, children, minors, or age-band language', terms:['coppa', 'under 13', 'under thirteen', 'children', 'minor', 'age']},
+      {label:'parental, school, FERPA, or school-official consent pathway', terms:['consent', 'parental consent', 'school consent', 'ferpa', 'school official']},
+      {label:'age-appropriate design, default privacy, guardians, or dark-pattern limits', terms:['age appropriate', 'dark patterns', 'default privacy', 'guardian']}
     ],
     7: [
-      ['subprocessor', 'sub-processors', 'third party', 'third-party', 'service provider'],
-      ['30 days', 'thirty days', 'notice', 'objection', 'material change'],
-      ['same standards', 'flow down', 'data processing agreement', 'dpa', 'cross-border']
+      {label:'subprocessors, third parties, or service providers', terms:['subprocessor', 'sub-processors', 'third party', 'third-party', 'service provider']},
+      {label:'30-day notice, objection path, or material-change notice', terms:['30 days', 'thirty days', 'notice', 'objection', 'material change']},
+      {label:'flow-down standards, DPA, or cross-border transfer handling', terms:['same standards', 'flow down', 'data processing agreement', 'dpa', 'cross-border']}
     ]
   };
 
   rubric.categories.forEach(c=>{
     const groups = rules[c.number] || [];
-    const matched = groups.map(group=>group.filter(term=>text.includes(term)));
-    const groupHits = matched.filter(group=>group.length).length;
-    const totalHits = matched.reduce((sum, group)=>sum+group.length, 0);
+    const matched = groups.map(group=>({label:group.label, terms:group.terms.filter(term=>text.includes(term))}));
+    const groupHits = matched.filter(group=>group.terms.length).length;
+    const totalHits = matched.reduce((sum, group)=>sum+group.terms.length, 0);
     let score = 0;
     if(groupHits >= 3 && totalHits >= 6) score = 2;
     else if(groupHits >= 1 && totalHits >= 2) score = 1;
     const sec = document.querySelector(`[data-cat="${c.number}"]`);
     if(!sec) return;
     sec.querySelector('.score-select').value = String(score);
+    const matchedLabels = matched.filter(group=>group.terms.length).map(group=>`${group.label} (${group.terms.slice(0,4).join(', ')})`);
+    const missingLabels = matched.filter(group=>!group.terms.length).map(group=>group.label);
     const reason = score === 2
-      ? `Estimated 2: found multiple signals for ${c.name.toLowerCase()}.`
+      ? `Estimated 2: found ${matchedLabels.join('; ')}.`
       : score === 1
-        ? `Estimated 1: found partial signals, but the pasted text may not cover the category fully.`
-        : `Estimated 0: did not find enough signals for this category in the pasted text.`;
+        ? `Estimated 1: found ${matchedLabels.join('; ')}. Missing or weak signals: ${missingLabels.join('; ') || 'none detected by this local scan'}.`
+        : `Estimated 0: did not find clear signals for ${groups.map(group=>group.label).join('; ')}.`;
     sec.querySelector('.auto-reason').textContent = reason;
   });
 }
