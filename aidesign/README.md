@@ -1,23 +1,10 @@
-# AI Design Partner Companion Website
+# AI Design Companion Site
 
-This folder contains the revised companion website and standalone activity pages.
+Simplified site contents:
 
-## Open first
+- `index.html` — ALDO Conversation Prompt builder and suggested workflow
+- `prompt-library.html` — TEKS-targeted prompt library with subject browsing
+- `resources.html` — source-use guide and RAG/support downloads
+- `rag-support/` — markdown and JSON source files
 
-- `index.html`
-
-## Standalone activity pages
-
-- `activity1.html`
-- `activity2.html`
-- `activity3.html`
-
-## Source/RAG materials
-
-- `resources.html`
-- `rag-support/`
-- `aidesign-rag-support-pack.zip`
-
-## Notes
-
-Responses are saved only in the browser's localStorage on the participant's device. No server is required.
+Open `index.html` to start.
