@@ -1,0 +1,37 @@
+{
+  "title": "AI as Your Instructional Design Partner Knowledge Pack",
+  "author": "Miguel Guhlin, TCEA",
+  "frameworks": [
+    "ALDO",
+    "SOLO Taxonomy",
+    "Visible Learning phases",
+    "ACE"
+  ],
+  "workflow": [
+    "Frame topic and learners",
+    "Prompt coach role + ALDO",
+    "Run and answer questions",
+    "Differentiate by audience",
+    "Audit using six questions"
+  ],
+  "audit_questions": [
+    "All three phases present?",
+    "What SOLO level do activities target?",
+    "All five ALDO components in order?",
+    "Are cited effect sizes real?",
+    "Is the audience visible in the moves?",
+    "Does post-assessment show movement?"
+  ],
+  "decision_rule": {
+    "0_fail": "Keep",
+    "1_2_fails": "Revise",
+    "3_plus_fails": "Scrap and re-prompt"
+  },
+  "chatbot_links": {
+    "ChatGPT": "https://chatgpt.com/",
+    "Claude": "https://claude.ai/new",
+    "Gemini": "https://gemini.google.com/app",
+    "Z.ai": "https://z.ai/",
+    "Mistral Le Chat": "https://chat.mistral.ai/chat"
+  }
+}
