@@ -11,8 +11,14 @@
 </style>
 </head>
 <body>
-<div class="topbar"><div><strong>AI Design Companion</strong> · Prompt Library</div><nav class="nav"><a href="index.html">Home</a><a href="aidesign-companion.html">Companion</a><a href="activity1.html">Activity 1</a><a href="activity2.html">Activity 2</a><a href="activity3.html">Activity 3</a><a class="active" href="prompt-library.html">Prompt Library</a><a href="resources.html">Resources</a></nav></div>
-<header class="hero"><div class="eyebrow">TEKS-Aligned Prompt Library</div><h1>Browse by subject, grade band, and role</h1><p>Use these ALDO prompts with current Texas Essential Knowledge and Skills. Each prompt tells the chatbot to use the exact TEKS you provide or attach and not invent standard numbers.</p></header>
+<div class="topbar"><div><strong>AI Design Companion</strong> · Prompt Library</div><nav class="nav"><a href="index.html">Home</a><a class="active" href="prompt-library.html">Prompt Library</a><a href="resources.html">Sources</a></nav></div>
+<header class="hero"><div class="eyebrow">TEKS-Aligned Prompt Library</div><h1>Browse by subject, grade band, and role</h1><p>Use these ALDO prompts with current Texas Essential Knowledge and Skills. Each prompt tells the chatbot to use the exact TEKS you provide or attach and not invent standard numbers.</p><div class="btn-row" aria-label="Open chatbot options">
+  <a class="btn btn-outline" href="https://chatgpt.com/" target="_blank" rel="noopener">Open ChatGPT ↗</a>
+  <a class="btn btn-outline" href="https://claude.ai/new" target="_blank" rel="noopener">Open Claude ↗</a>
+  <a class="btn btn-outline" href="https://gemini.google.com/" target="_blank" rel="noopener">Open Gemini ↗</a>
+  <a class="btn btn-outline" href="https://z.ai/" target="_blank" rel="noopener">Open Z.ai ↗</a>
+  <a class="btn btn-outline" href="https://chat.mistral.ai/chat" target="_blank" rel="noopener">Open Mistral ↗</a>
+</div></header>
 <main class="wrap">
 <section class="notice"><strong>Use current TEKS as source material.</strong> Before running a prompt, paste or attach the specific TEKS student expectation, TEKS Guide excerpt, district scope and sequence, or assessment item you want the AI to use.</section>
 <section aria-labelledby="browse-title"><h2 class="section-title" id="browse-title">Subject browser</h2><p class="muted">Select a subject card or use the filters below. Subject counts include all roles and grade bands.</p><div id="subjectCards" class="subject-grid"></div></section>
@@ -70,19 +76,8 @@ function render(){
 function byId(id){return PROMPTS.find(p=>p.id===id);}
 function copyById(id){const p=byId(id);navigator.clipboard.writeText(p.prompt).then(()=>toast('Prompt copied'));}
 function downloadFile(name,text,type='text/plain'){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000);}
-function oneMarkdown(p){return `# ${p.title}
-
-- Grade band: ${p.gradeBand}
-- Role: ${p.role}
-- Subject: ${p.subject}
-- Focus: ${p.focus}
-- TEKS-aligned target: ${p.teksTarget}
-
-\`\`\`text
-${p.prompt}
-\`\`\`
-`;}
-function asMarkdown(data){return '# TEKS-Aligned ALDO Prompt Library\n\nPrompts organized by grade band, role, and subject. Use official current TEKS as source attachments.\n\n'+data.map(oneMarkdown).join('\n');}
+function oneMarkdown(p){return '# '+p.title+'\\n\\n- Grade band: '+p.gradeBand+'\\n- Role: '+p.role+'\\n- Subject: '+p.subject+'\\n- Focus: '+p.focus+'\\n- TEKS-aligned target: '+p.teksTarget+'\\n\\n~~~text\\n'+p.prompt+'\\n~~~\\n';}
+function asMarkdown(data){return '# TEKS-Aligned ALDO Prompt Library\\n\\nPrompts organized by grade band, role, and subject. Use official current TEKS as source attachments.\\n\\n'+data.map(oneMarkdown).join('\\n');}
 function downloadById(id){downloadFile(id+'.md',oneMarkdown(byId(id)),'text/markdown');}
 function resetFilters(){$('band').value='';$('role').value='';$('subject').value='';$('search').value='';render();}
 ['band','role','subject','search'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',render));
