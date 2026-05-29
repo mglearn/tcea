@@ -1,10 +1,12 @@
 # AI Design Companion Site
 
-Simplified site contents:
+Updated companion website for **AI as Your Instructional Design Partner**.
 
-- `index.html` — ALDO Conversation Prompt builder and suggested workflow
-- `prompt-library.html` — TEKS-targeted prompt library with subject browsing
-- `resources.html` — source-use guide and RAG/support downloads
-- `rag-support/` — markdown and JSON source files
+## Main pages
+
+- `index.html` — ALDO Conversation Prompt and lightweight workflow suggestions
+- `prompt-library.html` — TEKS-aligned prompt library
+- `resources.html` — source/RAG support guide and downloads
+- `visible-learning.html` — integrated Visible Learning with Ed Tech strategy reference
 
 Open `index.html` to start.

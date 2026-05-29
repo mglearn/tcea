@@ -1,0 +1,43 @@
+{
+  "title": "Visible Learning with Ed Tech Strategy Reference",
+  "use": "RAG support for ALDO strategic instruction",
+  "core_phases": [
+    "Surface",
+    "Deep",
+    "Transfer"
+  ],
+  "solo_levels": [
+    "Prestructural",
+    "Unistructural",
+    "Multistructural",
+    "Relational",
+    "Extended Abstract"
+  ],
+  "strategy_highlights": [
+    {
+      "strategy": "Jigsaw Method",
+      "effect_size": 0.92,
+      "phase": "Surface/Deep"
+    },
+    {
+      "strategy": "Reciprocal Teaching",
+      "effect_size": 0.74,
+      "phase": "Deep"
+    },
+    {
+      "strategy": "Concept Mapping",
+      "effect_size": 0.66,
+      "phase": "Deep"
+    },
+    {
+      "strategy": "Transfer Strategies",
+      "effect_size": 0.75,
+      "phase": "Transfer"
+    },
+    {
+      "strategy": "Critical Thinking",
+      "effect_size": 0.79,
+      "phase": "Deep/Transfer"
+    }
+  ]
+}
