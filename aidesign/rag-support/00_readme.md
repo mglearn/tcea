@@ -2,7 +2,7 @@
 
 Author: Miguel Guhlin, TCEA  
 Companion site: go.mgpd.org/aidesign  
-Purpose: Provide lightweight source material participants can attach to a chatbot, Claude Project, NotebookLM notebook, Mistral, Z.ai, Gemini, or another RAG-enabled workspace.
+Purpose: Provide lightweight source material participants can attach to a chatbot, Claude Project, NotebookLM notebook, Mistral, xAI/Grok, Gemini, or another RAG-enabled workspace.
 
 ## Recommended use
 
