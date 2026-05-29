@@ -1,12 +1,13 @@
-# AI Design Companion Site
+# TEKS-Aligned Prompt Library Files
 
-Updated companion website for **AI as Your Instructional Design Partner**.
+These are the files relevant to the TEKS-Aligned Prompt Library.
 
-## Main pages
+## Files
 
-- `index.html` — ALDO Conversation Prompt and lightweight workflow suggestions
-- `prompt-library.html` — TEKS-aligned prompt library
-- `resources.html` — source/RAG support guide and downloads
-- `visible-learning.html` — integrated Visible Learning with Ed Tech strategy reference
+- `prompt-library.html` — fixed standalone prompt library page with working subject browser, filters, search, copy buttons, and downloads.
+- `teks-aligned-prompt-library.json` — full prompt dataset.
+- `teks-aligned-prompt-library.md` — markdown export of the full library.
 
-Open `index.html` to start.
+## Fix applied
+
+The previous page had broken JavaScript because generated Markdown strings contained raw line breaks inside quoted JavaScript strings. This version rebuilds those functions using template literals and safer download handling.
