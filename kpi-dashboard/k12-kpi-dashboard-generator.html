@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="no-referrer" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data: blob:; img-src 'self' data: blob:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'none'; form-action 'self'" />
+<title>K-12 KPI Dashboard Generator | TCEA</title>
+<meta name="description" content="Standalone K-12 education and technology KPI dashboard generator. Enter district metrics, generate dashboard cards and charts, export JSON, CSV, Markdown, HTML, or print to PDF." />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%230A3476'/%3E%3Cpath d='M14 44h36v6H14zM18 36h8V22h-8zm12 0h8V14h-8zm12 0h8V26h-8z' fill='%23FCB040'/%3E%3C/svg%3E" />
+<style>
+:root{
+  --tcea-blue:#0A3476; --tcea-blue-dark:#061f49; --tcea-blue-mid:#12428f;
+  --gold:#FCB040; --gold-soft:#fff0d7; --red:#B23A48; --green:#2D7A4F; --blue:#0070B9;
+  --ink:#172033; --soft:#5c667a; --line:#dce3ef; --paper:#ffffff; --bg:#f5f7fb;
+  --ok:#dcfce7; --ok-text:#14532d; --warn:#fef3c7; --warn-text:#713f12; --bad:#fee2e2; --bad-text:#7f1d1d;
+  --radius:8px; --shadow:0 12px 28px rgba(10,52,118,.10);
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg)}
+button,input,select,textarea{font:inherit} button{cursor:pointer} a{color:var(--tcea-blue)}
+.mg-back-bar{position:fixed;top:0;left:0;right:0;z-index:9999;height:32px;display:flex;align-items:center;padding:0 18px;background:var(--gold);border-bottom:1px solid rgba(10,52,118,.25);box-shadow:0 1px 8px rgba(0,0,0,.16);font-size:12.5px}.mg-back-bar a{display:inline-flex;align-items:center;gap:7px;color:var(--tcea-blue);text-decoration:none;font-weight:800}.mg-back-bar a:hover{color:var(--tcea-blue-dark)}
+.topbar{height:10px;margin-top:32px;background:linear-gradient(90deg,var(--tcea-blue) 0 72%,var(--gold) 72% 100%)}
+.page{width:min(1320px,calc(100% - 28px));margin:0 auto;padding:22px 0 44px}.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:stretch;border-bottom:4px solid var(--gold);padding-bottom:18px}@media(max-width:900px){.hero{grid-template-columns:1fr}}
+.eyebrow{margin:0;color:var(--gold);font-size:.78rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.hero h1{margin:.35rem 0;color:var(--tcea-blue-dark);font-size:clamp(2rem,5vw,3.65rem);line-height:.98;letter-spacing:0}.hero p{font-size:1rem;line-height:1.5;margin:.4rem 0;color:#1f2937}.hero-card{border:1px solid var(--line);border-top:5px solid var(--gold);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;background:#fff}
+.hero-visual{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.mini{border:1px solid var(--line);border-radius:8px;background:#fff;padding:12px}.mini strong{display:block;color:var(--tcea-blue-dark);font-size:1.6rem}.mini span{color:var(--soft);font-size:.82rem;font-weight:800}.actions,.row-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.actions{margin-top:14px}.btn{min-height:42px;border:2px solid var(--tcea-blue);border-radius:6px;background:#fff;color:var(--tcea-blue-dark);font-weight:900;padding:8px 13px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}.btn.primary{background:var(--tcea-blue);color:#fff}.btn.gold{background:var(--gold);border-color:var(--gold);color:var(--tcea-blue-dark)}.btn.red{border-color:var(--red);color:var(--red)}.btn.small{min-height:34px;padding:5px 9px;font-size:.82rem}.btn:disabled{opacity:.5;cursor:not-allowed}
+.grid{display:grid;grid-template-columns:320px 1fr;gap:18px;align-items:start;padding-top:18px}@media(max-width:980px){.grid{grid-template-columns:1fr}}.panel,.stage{border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);box-shadow:var(--shadow)}.panel{padding:16px;position:sticky;top:44px}@media(max-width:980px){.panel{position:static}}.stage{padding:18px;min-height:640px}.panel h2,.stage h2{margin:0 0 12px;color:var(--tcea-blue-dark);font-size:1.12rem}.panel h3{margin:18px 0 8px;font-size:.86rem;text-transform:uppercase;letter-spacing:.06em;color:var(--tcea-blue)}.field{display:grid;gap:7px;margin-bottom:12px}label{font-size:.86rem;font-weight:900;color:#1f2937}input,select,textarea{width:100%;border:1.5px solid #cbd5e1;border-radius:6px;background:#fff;color:#111827;padding:9px 10px}textarea{min-height:90px;resize:vertical}.help{font-size:.82rem;color:var(--soft);line-height:1.4;margin:.35rem 0}.pillbar{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.pill{border:1.5px solid #cbd5e1;background:#fff;color:#334155;border-radius:999px;padding:7px 10px;font-weight:900;font-size:.82rem}.pill.active{border-color:var(--tcea-blue);background:var(--gold-soft);color:var(--tcea-blue-dark)}
+.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}@media(max-width:900px){.summary{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.summary{grid-template-columns:1fr}}.stat{border:1px solid var(--line);border-top:5px solid var(--gold);border-radius:8px;padding:14px;background:#fff}.stat .num{font-size:2rem;line-height:1;color:var(--tcea-blue-dark);font-weight:900}.stat .lbl{color:var(--soft);font-weight:900;font-size:.82rem;margin-top:5px}.stat.ok .num{color:var(--green)}.stat.warn .num{color:#9a6400}.stat.bad .num{color:var(--red)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.tab{border:1.5px solid var(--line);background:#fff;border-radius:6px;padding:9px 12px;font-weight:900}.tab.active{background:var(--tcea-blue);border-color:var(--tcea-blue);color:#fff}.section{display:none}.section.active{display:block}.toolbar{display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:12px}.search{max-width:300px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:8px}table{width:100%;border-collapse:collapse;min-width:950px;background:#fff}th,td{padding:9px;border-bottom:1px solid #e5e7eb;text-align:left;vertical-align:top}th{background:#f5f7fb;font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;color:#374151}td input,td select,td textarea{min-width:110px;padding:7px;border-width:1px;border-radius:6px}td textarea{min-width:180px;min-height:46px}.status-chip{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:5px 9px;font-weight:900;font-size:.78rem;white-space:nowrap}.status-chip.ok{background:var(--ok);color:var(--ok-text)}.status-chip.warn{background:var(--warn);color:var(--warn-text)}.status-chip.bad{background:var(--bad);color:var(--bad-text)}
+.chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:900px){.chart-grid{grid-template-columns:1fr}}.chart-card{border:1px solid var(--line);border-radius:8px;background:#fff;padding:14px}.chart-card h3{margin:0 0 10px;color:var(--tcea-blue-dark)}.chart-card canvas{width:100%;height:280px;border:1px dashed #cbd5e1;border-radius:6px}.kpi-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}@media(max-width:1100px){.kpi-cards{grid-template-columns:repeat(2,1fr)}}@media(max-width:680px){.kpi-cards{grid-template-columns:1fr}}.kcard{border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;padding:14px;background:#fff}.kcard h3{margin:0;color:#111827;font-size:1rem}.kmeta{display:flex;justify-content:space-between;gap:10px;color:var(--soft);font-weight:900;font-size:.78rem;margin:8px 0}.bar{height:13px;background:#e5e7eb;border-radius:999px;overflow:hidden}.bar span{display:block;height:100%;background:linear-gradient(90deg,var(--tcea-blue),var(--tcea-blue-mid));width:0}.numbers{display:flex;justify-content:space-between;margin-top:7px;font-size:.82rem;color:#334155;font-weight:800}.insight{border-left:5px solid var(--gold);background:var(--gold-soft);padding:12px;border-radius:8px;margin:10px 0;line-height:1.45}.importbox{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:860px){.importbox{grid-template-columns:1fr}}.output{min-height:280px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.84rem;background:#f8fafc}.statusline{margin-top:12px;padding:10px 12px;border-radius:8px;font-weight:900}.statusline:empty{display:none}.statusline.info{background:#dbeafe;color:#1e3a8a}.statusline.good{background:#dcfce7;color:#14532d}.statusline.bad{background:#fee2e2;color:#7f1d1d}.footer-note{margin-top:18px;color:var(--soft);font-size:.85rem;line-height:1.5}.print-title{display:none}
+@media print{.mg-back-bar,.topbar,.panel,.tabs,.actions,.toolbar .btn,.row-actions,.no-print{display:none!important}.page{width:auto;padding:0}.hero{border:0;grid-template-columns:1fr}.stage{border:0;box-shadow:none;padding:0}.section{display:block!important;break-inside:avoid}.chart-card,.kcard,.stat{break-inside:avoid}.print-title{display:block}.grid{display:block}.table-wrap{border:0}table{min-width:0;font-size:10pt}th,td{padding:5px}.hero-card{box-shadow:none}}
+</style>
+</head>
+<body>
+<div class="mg-back-bar" role="navigation" aria-label="Back to TCEA index">
+  <a href="../index.html"><span aria-hidden="true">&larr;</span> TCEA</a>
+</div>
+<div class="topbar" aria-hidden="true"></div>
+<div class="page">
+  <header class="hero">
+    <div>
+      <p class="eyebrow">TCEA Tools · K-12 KPI Dashboard</p>
+      <h1>K-12 KPI Dashboard Generator</h1>
+      <p>Build a board-ready dashboard for district, campus, instructional, and technology indicators. Enter your own metrics or start with sample K-12 education technology KPIs. Everything runs locally in the browser.</p>
+      <div class="actions">
+        <button class="btn primary" id="loadSampleBtn" type="button">Load Sample KPIs</button>
+        <button class="btn" id="addKpiBtn" type="button">Add KPI</button>
+        <button class="btn gold" id="printBtn" type="button">Print / Save PDF</button>
+      </div>
+    </div>
+    <aside class="hero-card" aria-label="Dashboard snapshot">
+      <p class="eyebrow">Live Snapshot</p>
+      <div class="hero-visual">
+        <div class="mini"><strong id="heroTotal">0</strong><span>Total KPIs</span></div>
+        <div class="mini"><strong id="heroOnTrack">0%</strong><span>On Track</span></div>
+        <div class="mini"><strong id="heroWatch">0</strong><span>Watch Items</span></div>
+        <div class="mini"><strong id="heroCritical">0</strong><span>Critical</span></div>
+      </div>
+      <p class="help">Use this as a local dashboard starter, a data.md generator, or a printable board update.</p>
+    </aside>
+  </header>
+
+  <main class="grid">
+    <aside class="panel no-print" aria-label="Dashboard controls">
+      <h2>Dashboard Setup</h2>
+      <div class="field"><label for="districtName">District / campus / organization</label><input id="districtName" value="Example ISD" /></div>
+      <div class="field"><label for="schoolYear">School year</label><input id="schoolYear" value="2026–2027" /></div>
+      <div class="field"><label for="reportPeriod">Report period</label><input id="reportPeriod" value="Monthly board update" /></div>
+      <div class="field"><label for="audience">Audience</label><select id="audience"><option>Board of Trustees</option><option>Cabinet / Leadership Team</option><option>Campus Principals</option><option>Technology Department</option><option>Instructional Coaches</option><option>Community Update</option></select></div>
+      <h3>Focus area</h3>
+      <div class="pillbar" id="categoryFilters"></div>
+      <h3>Data tools</h3>
+      <div class="actions">
+        <button class="btn small" id="saveLocalBtn" type="button">Save Local</button>
+        <button class="btn small" id="clearLocalBtn" type="button">Clear Local</button>
+        <button class="btn small" id="resetBtn" type="button">Reset</button>
+      </div>
+      <p class="help">Local save uses this browser only. No data is uploaded.</p>
+      <h3>Export</h3>
+      <div class="actions">
+        <button class="btn small" id="downloadJsonBtn" type="button">JSON</button>
+        <button class="btn small" id="downloadCsvBtn" type="button">CSV</button>
+        <button class="btn small" id="downloadMdBtn" type="button">Markdown</button>
+        <button class="btn small" id="downloadHtmlBtn" type="button">HTML</button>
+      </div>
+      <p class="help">Use Markdown as a <code>data.md</code> source for a GenAI dashboard workflow.</p>
+      <div id="statusLine" class="statusline" role="status"></div>
+    </aside>
+
+    <section class="stage" aria-label="KPI dashboard workspace">
+      <h2 class="print-title">K-12 KPI Dashboard</h2>
+      <div class="summary" id="summaryCards"></div>
+      <nav class="tabs no-print" aria-label="Sections">
+        <button class="tab active" data-tab="dashboard" type="button">Dashboard</button>
+        <button class="tab" data-tab="editor" type="button">KPI Editor</button>
+        <button class="tab" data-tab="import" type="button">Import / Prompt</button>
+        <button class="tab" data-tab="guide" type="button">KPI Guide</button>
+      </nav>
+
+      <section id="dashboard" class="section active">
+        <div class="toolbar">
+          <div><h2 id="dashTitle">Example ISD · 2026–2027</h2><p class="help" id="dashSubtitle">Monthly board update · Board of Trustees</p></div>
+          <input class="search no-print" id="searchBox" placeholder="Search KPIs..." />
+        </div>
+        <div class="chart-grid">
+          <article class="chart-card"><h3>Status Overview</h3><canvas id="statusChart" width="640" height="320" aria-label="Status overview chart"></canvas></article>
+          <article class="chart-card"><h3>Category Performance</h3><canvas id="categoryChart" width="640" height="320" aria-label="Category performance chart"></canvas></article>
+        </div>
+        <h2 style="margin-top:18px">KPI Cards</h2>
+        <div class="kpi-cards" id="kpiCards"></div>
+      </section>
+
+      <section id="editor" class="section">
+        <div class="toolbar"><h2>KPI Editor</h2><div class="row-actions"><button class="btn small" id="addKpiBtn2" type="button">Add KPI</button><button class="btn small" id="sortBtn" type="button">Sort by Status</button></div></div>
+        <div class="table-wrap"><table aria-label="Editable KPI table"><thead><tr><th>KPI</th><th>Category</th><th>Current</th><th>Target</th><th>Unit</th><th>Goal</th><th>Owner</th><th>Notes</th><th>Status</th><th>Actions</th></tr></thead><tbody id="kpiTableBody"></tbody></table></div>
+      </section>
+
+      <section id="import" class="section">
+        <h2>Import / Prompt Builder</h2>
+        <div class="importbox">
+          <article><h3>Paste CSV, JSON, or Markdown table</h3><p class="help">CSV headers accepted: name, category, current, target, unit, direction, owner, notes. JSON can be either an array or this dashboard export format.</p><textarea id="importText" class="output" placeholder="Paste KPI data here..."></textarea><div class="actions"><button class="btn primary" id="importBtn" type="button">Import Data</button><button class="btn" id="clearImportBtn" type="button">Clear</button></div></article>
+          <article><h3>Generated data.md + AI prompt</h3><p class="help">Copy this into a chatbot or dashboard generator as your structured source.</p><textarea id="promptOutput" class="output" readonly></textarea><div class="actions"><button class="btn primary" id="copyPromptBtn" type="button">Copy Prompt</button><button class="btn" id="copyMdBtn" type="button">Copy data.md</button></div></article>
+        </div>
+      </section>
+
+      <section id="guide" class="section">
+        <h2>K-12 KPI Guide</h2>
+        <div class="insight"><strong>Recommended starting point:</strong> keep your first dashboard to 8–15 KPIs. Separate outcome indicators, such as student achievement or device uptime, from activity indicators, such as tickets closed or PD sessions offered.</div>
+        <div class="chart-grid">
+          <article class="chart-card"><h3>Education KPIs</h3><ul><li>Attendance rate</li><li>Chronic absenteeism</li><li>Course pass rate</li><li>Assessment growth</li><li>Graduation / promotion progress</li><li>Intervention completion</li><li>Student belonging / survey pulse</li></ul></article>
+          <article class="chart-card"><h3>Technology KPIs</h3><ul><li>Device readiness</li><li>Ticket response time</li><li>Network uptime</li><li>Cybersecurity training completion</li><li>Phishing simulation pass rate</li><li>LMS / platform adoption</li><li>Classroom display or audio readiness</li></ul></article>
+          <article class="chart-card"><h3>Leadership Prompts</h3><ul><li>Which two KPIs need action this month?</li><li>Which metric improved the most?</li><li>Which KPI lacks a clear owner?</li><li>Which target should be reset because the baseline changed?</li><li>What evidence explains the trend?</li></ul></article>
+          <article class="chart-card"><h3>Status Rules</h3><ul><li><strong>On Track:</strong> 95%+ of target progress.</li><li><strong>Watch:</strong> 80–94% of target progress.</li><li><strong>Critical:</strong> below 80% of target progress.</li><li>For “lower is better” metrics, such as ticket resolution time, status is reversed.</li></ul></article>
+        </div>
+      </section>
+    </section>
+  </main>
+  <p class="footer-note">Standalone classroom and district planning tool. This page stores data only in your browser when you choose Save Local. Review KPI definitions and legal/compliance claims with your local leadership team before publication.</p>
+</div>
+<script>
+(function(){
+'use strict';
+const $ = id => document.getElementById(id);
+const categories = ['All','Student Outcomes','Teaching & Learning','Technology Operations','Cybersecurity','Digital Access','Support Desk','Professional Learning','Family Engagement','AI Readiness'];
+const sample = [
+{name:'Average daily attendance',category:'Student Outcomes',current:94.2,target:95,unit:'%',direction:'higher',owner:'Student Services',notes:'Track by campus and grade band; watch chronic absenteeism.'},
+{name:'Chronic absenteeism',category:'Student Outcomes',current:13.8,target:10,unit:'%',direction:'lower',owner:'Student Services',notes:'Lower is better; use intervention notes for context.'},
+{name:'Course pass rate',category:'Student Outcomes',current:88,target:90,unit:'%',direction:'higher',owner:'Curriculum & Instruction',notes:'Use semester grades or rolling six-week snapshot.'},
+{name:'Teachers using LMS weekly',category:'Teaching & Learning',current:76,target:85,unit:'%',direction:'higher',owner:'Instructional Technology',notes:'Count active course updates, assignments, or feedback events.'},
+{name:'Digital citizenship lessons completed',category:'Teaching & Learning',current:68,target:90,unit:'%',direction:'higher',owner:'Campus Principals',notes:'Align lessons to grade bands and local policy.'},
+{name:'1:1 device readiness',category:'Digital Access',current:92,target:96,unit:'%',direction:'higher',owner:'Technology Department',notes:'Ready devices divided by assigned devices.'},
+{name:'Student internet access verified',category:'Digital Access',current:87,target:95,unit:'%',direction:'higher',owner:'Campus Tech Leads',notes:'Use beginning-of-year survey plus hotspot requests.'},
+{name:'Network uptime',category:'Technology Operations',current:99.4,target:99.5,unit:'%',direction:'higher',owner:'Infrastructure',notes:'Monthly uptime during instructional hours.'},
+{name:'Classroom display readiness',category:'Technology Operations',current:89,target:95,unit:'%',direction:'higher',owner:'Campus Technicians',notes:'Working display, audio, input switching, and teacher device connection.'},
+{name:'Median ticket first response',category:'Support Desk',current:6,target:8,unit:'hours',direction:'lower',owner:'Help Desk',notes:'Lower is better. Separate urgent instructional-impact tickets.'},
+{name:'Tickets closed within SLA',category:'Support Desk',current:82,target:90,unit:'%',direction:'higher',owner:'Help Desk',notes:'Use priority-based SLA buckets if available.'},
+{name:'Staff cybersecurity training completion',category:'Cybersecurity',current:91,target:98,unit:'%',direction:'higher',owner:'Cybersecurity Lead',notes:'Report completion and overdue staff counts.'},
+{name:'Phishing simulation pass rate',category:'Cybersecurity',current:86,target:92,unit:'%',direction:'higher',owner:'Cybersecurity Lead',notes:'Include follow-up coaching, not only failure rates.'},
+{name:'Educators completing AI guidance module',category:'AI Readiness',current:41,target:80,unit:'%',direction:'higher',owner:'Professional Learning',notes:'Use district-approved AI norms, privacy, prompt quality, and classroom use cases.'},
+{name:'Family portal active accounts',category:'Family Engagement',current:64,target:75,unit:'%',direction:'higher',owner:'Communications',notes:'Percent of households with active portal login in last 60 days.'},
+{name:'Instructional tech coaching cycles completed',category:'Professional Learning',current:28,target:35,unit:'cycles',direction:'higher',owner:'Instructional Coaches',notes:'Count complete cycle: goal, observation/use, feedback/reflection.'}
+];
+let state = {meta:{district:'Example ISD',year:'2026–2027',period:'Monthly board update',audience:'Board of Trustees'},filter:'All',search:'',kpis: JSON.parse(JSON.stringify(sample))};
+const colors = {ok:'#2D7A4F',warn:'#9a6400',bad:'#B23A48',blue:'#0A3476',gold:'#FCB040',ink:'#172033',soft:'#5c667a'};
+function cleanNum(v){const n=parseFloat(String(v).replace(/[^0-9.\-]/g,''));return Number.isFinite(n)?n:0}
+function ratio(k){const c=cleanNum(k.current), t=cleanNum(k.target); if(t===0) return 0; if(k.direction==='lower'){ if(c<=t) return 1; return Math.max(0, t/c); } return Math.max(0, c/t);}
+function status(k){const r=ratio(k); if(r>=.95) return 'ok'; if(r>=.80) return 'warn'; return 'bad'}
+function statusLabel(s){return s==='ok'?'On Track':s==='warn'?'Watch':'Critical'}
+function pct(n){return Math.round(n*100)}
+function filtered(){let arr=state.kpis.slice(); if(state.filter!=='All') arr=arr.filter(k=>k.category===state.filter); const q=state.search.toLowerCase().trim(); if(q) arr=arr.filter(k=>Object.values(k).join(' ').toLowerCase().includes(q)); return arr}
+function syncMetaFromInputs(){state.meta.district=$('districtName').value||'District';state.meta.year=$('schoolYear').value||'School Year';state.meta.period=$('reportPeriod').value||'Report Period';state.meta.audience=$('audience').value||'Audience'}
+function syncInputsFromMeta(){ $('districtName').value=state.meta.district; $('schoolYear').value=state.meta.year; $('reportPeriod').value=state.meta.period; $('audience').value=state.meta.audience; }
+function setStatus(msg,kind='info'){const el=$('statusLine');el.textContent=msg;el.className='statusline '+kind; if(msg) setTimeout(()=>{if(el.textContent===msg) el.textContent=''},3500)}
+function renderFilters(){const box=$('categoryFilters');box.innerHTML='';categories.forEach(c=>{const b=document.createElement('button');b.className='pill'+(state.filter===c?' active':'');b.textContent=c;b.type='button';b.onclick=()=>{state.filter=c;render()};box.appendChild(b)})}
+function renderSummary(){const total=state.kpis.length;const counts={ok:0,warn:0,bad:0};state.kpis.forEach(k=>counts[status(k)]++);const avg= total? Math.round(state.kpis.reduce((a,k)=>a+Math.min(1,ratio(k)),0)/total*100):0;$('heroTotal').textContent=total;$('heroOnTrack').textContent=total?Math.round(counts.ok/total*100)+'%':'0%';$('heroWatch').textContent=counts.warn;$('heroCritical').textContent=counts.bad;const cards=[['Total KPIs',total,''],['On Track',counts.ok,'ok'],['Watch Items',counts.warn,'warn'],['Critical',counts.bad,'bad'],['Average Progress',avg+'%','']];$('summaryCards').innerHTML=cards.slice(0,4).map(c=>`<article class="stat ${c[2]}"><div class="num">${c[1]}</div><div class="lbl">${c[0]}</div></article>`).join('')}
+function renderCards(){const arr=filtered();$('dashTitle').textContent=`${state.meta.district} · ${state.meta.year}`;$('dashSubtitle').textContent=`${state.meta.period} · ${state.meta.audience}`;$('kpiCards').innerHTML=arr.map((k,i)=>{const s=status(k), r=Math.min(100,pct(ratio(k)));return `<article class="kcard"><div class="kmeta"><span>${escapeHtml(k.category)}</span><span class="status-chip ${s}">${statusLabel(s)}</span></div><h3>${escapeHtml(k.name)}</h3><div class="bar" title="${r}% of target"><span style="width:${r}%"></span></div><div class="numbers"><span>Current: ${escapeHtml(k.current)}${escapeHtml(k.unit||'')}</span><span>Target: ${escapeHtml(k.target)}${escapeHtml(k.unit||'')}</span></div><p class="help"><strong>Owner:</strong> ${escapeHtml(k.owner||'Unassigned')}</p><p class="help">${escapeHtml(k.notes||'')}</p></article>`}).join('') || '<p class="insight">No KPIs match the current filter.</p>'}
+function renderTable(){const tbody=$('kpiTableBody');tbody.innerHTML='';state.kpis.forEach((k,i)=>{const tr=document.createElement('tr');tr.innerHTML=`<td><input data-i="${i}" data-f="name" value="${attr(k.name)}"></td><td><select data-i="${i}" data-f="category">${categories.filter(c=>c!=='All').map(c=>`<option ${k.category===c?'selected':''}>${c}</option>`).join('')}</select></td><td><input data-i="${i}" data-f="current" value="${attr(k.current)}"></td><td><input data-i="${i}" data-f="target" value="${attr(k.target)}"></td><td><input data-i="${i}" data-f="unit" value="${attr(k.unit||'')}"></td><td><select data-i="${i}" data-f="direction"><option value="higher" ${k.direction!=='lower'?'selected':''}>Higher is better</option><option value="lower" ${k.direction==='lower'?'selected':''}>Lower is better</option></select></td><td><input data-i="${i}" data-f="owner" value="${attr(k.owner||'')}"></td><td><textarea data-i="${i}" data-f="notes">${escapeHtml(k.notes||'')}</textarea></td><td><span class="status-chip ${status(k)}">${statusLabel(status(k))}</span></td><td><button class="btn small red" data-del="${i}" type="button">Delete</button></td>`;tbody.appendChild(tr)});tbody.querySelectorAll('input,select,textarea').forEach(el=>el.addEventListener('input',e=>{const i=+e.target.dataset.i,f=e.target.dataset.f;state.kpis[i][f]=e.target.value;renderSummary();renderCards();drawCharts();updateOutput();}));tbody.querySelectorAll('[data-del]').forEach(btn=>btn.onclick=()=>{state.kpis.splice(+btn.dataset.del,1);render()})}
+function drawCharts(){drawStatusChart();drawCategoryChart()}
+function setupCanvas(c){const ctx=c.getContext('2d');ctx.clearRect(0,0,c.width,c.height);ctx.font='16px Arial';ctx.fillStyle=colors.ink;ctx.lineWidth=1;return ctx}
+function drawStatusChart(){const c=$('statusChart'),ctx=setupCanvas(c),counts={ok:0,warn:0,bad:0};state.kpis.forEach(k=>counts[status(k)]++);const labels=[['On Track',counts.ok,colors.ok],['Watch',counts.warn,colors.warn],['Critical',counts.bad,colors.bad]];const max=Math.max(1,...labels.map(x=>x[1]));labels.forEach((d,idx)=>{const y=70+idx*70,w=(c.width-210)*(d[1]/max);ctx.fillStyle=d[2];roundRect(ctx,150,y,w,34,8,true);ctx.fillStyle=colors.ink;ctx.font='bold 17px Arial';ctx.fillText(d[0],24,y+23);ctx.fillText(String(d[1]),160+w,y+23)});ctx.fillStyle=colors.soft;ctx.font='14px Arial';ctx.fillText('Number of KPIs by status',24,30)}
+function drawCategoryChart(){const c=$('categoryChart'),ctx=setupCanvas(c);const map={};state.kpis.forEach(k=>{(map[k.category]||(map[k.category]=[])).push(Math.min(1,ratio(k)))});const entries=Object.entries(map).map(([k,v])=>[k,Math.round(v.reduce((a,b)=>a+b,0)/v.length*100)]).sort((a,b)=>b[1]-a[1]).slice(0,7);const max=100;entries.forEach((d,idx)=>{const y=48+idx*36,w=(c.width-250)*(d[1]/max);ctx.fillStyle=colors.blue;roundRect(ctx,210,y,w,22,7,true);ctx.fillStyle=colors.ink;ctx.font='bold 13px Arial';ctx.fillText(shorten(d[0],25),18,y+16);ctx.fillText(d[1]+'%',220+w,y+16)});ctx.fillStyle=colors.soft;ctx.font='14px Arial';ctx.fillText('Average progress toward target by category',18,26)}
+function roundRect(ctx,x,y,w,h,r,fill){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();if(fill)ctx.fill();}
+function shorten(s,n){return s.length>n?s.slice(0,n-1)+'…':s}
+function addKpi(){state.kpis.push({name:'New KPI',category:'Technology Operations',current:0,target:100,unit:'%',direction:'higher',owner:'Owner',notes:'Add definition, source, and action notes.'});render();setStatus('KPI added.','good')}
+function updateOutput(){const md=toMarkdown();const prompt=`Create a clean, board-ready K-12 education technology KPI dashboard from the data.md content below. Include summary cards, status colors, category charts, and a brief action list. Keep claims tied to the data.\n\n${md}`;$('promptOutput').value=prompt}
+function toMarkdown(){syncMetaFromInputs();let s=`# K-12 KPI Dashboard Data\n\n- District/Organization: ${state.meta.district}\n- School Year: ${state.meta.year}\n- Report Period: ${state.meta.period}\n- Audience: ${state.meta.audience}\n- Generated: ${new Date().toISOString()}\n\n## KPI Table\n\n| KPI | Category | Current | Target | Unit | Goal Direction | Owner | Status | Notes |\n|---|---|---:|---:|---|---|---|---|---|\n`;state.kpis.forEach(k=>{s+=`| ${pipe(k.name)} | ${pipe(k.category)} | ${pipe(k.current)} | ${pipe(k.target)} | ${pipe(k.unit||'')} | ${k.direction==='lower'?'Lower is better':'Higher is better'} | ${pipe(k.owner||'')} | ${statusLabel(status(k))} | ${pipe(k.notes||'')} |\n`});s+=`\n## Suggested Board Questions\n\n1. Which KPIs are critical and need an assigned action this month?\n2. Which watch items can be moved on track within 30 days?\n3. Which metrics need a clearer data source, owner, or target?\n4. What support is needed from leadership?\n`;return s}
+function toCsv(){const rows=[['name','category','current','target','unit','direction','owner','notes','status']].concat(state.kpis.map(k=>[k.name,k.category,k.current,k.target,k.unit,k.direction,k.owner,k.notes,statusLabel(status(k))]));return rows.map(r=>r.map(csvCell).join(',')).join('\n')}
+function toJson(){syncMetaFromInputs();return JSON.stringify({type:'k12-kpi-dashboard',version:1,saved:new Date().toISOString(),meta:state.meta,kpis:state.kpis},null,2)}
+function toHtmlReport(){syncMetaFromInputs();return `<!doctype html><html><head><meta charset="utf-8"><title>${escapeHtml(state.meta.district)} KPI Dashboard</title><style>body{font-family:Arial;margin:28px;color:#172033}h1{color:#061f49}.card{border:1px solid #dce3ef;border-radius:8px;padding:12px;margin:10px 0}.ok{background:#dcfce7}.warn{background:#fef3c7}.bad{background:#fee2e2}table{border-collapse:collapse;width:100%}th,td{border:1px solid #dce3ef;padding:8px}th{background:#fff0d7;color:#061f49}</style></head><body><h1>${escapeHtml(state.meta.district)} KPI Dashboard</h1><p>${escapeHtml(state.meta.year)} · ${escapeHtml(state.meta.period)} · ${escapeHtml(state.meta.audience)}</p><table><thead><tr><th>KPI</th><th>Category</th><th>Current</th><th>Target</th><th>Status</th><th>Owner</th><th>Notes</th></tr></thead><tbody>${state.kpis.map(k=>`<tr class="${status(k)}"><td>${escapeHtml(k.name)}</td><td>${escapeHtml(k.category)}</td><td>${escapeHtml(k.current)}${escapeHtml(k.unit||'')}</td><td>${escapeHtml(k.target)}${escapeHtml(k.unit||'')}</td><td>${statusLabel(status(k))}</td><td>${escapeHtml(k.owner||'')}</td><td>${escapeHtml(k.notes||'')}</td></tr>`).join('')}</tbody></table></body></html>`}
+function download(name,content,type='text/plain'){const blob=new Blob([content],{type});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},0)}
+function parseImport(txt){txt=txt.trim();if(!txt)return [];try{const parsed=JSON.parse(txt);const arr=Array.isArray(parsed)?parsed:parsed.kpis;if(Array.isArray(arr))return arr.map(normalize)}catch(e){}if(txt.includes('|---')) return parseMarkdownTable(txt).map(normalize);return parseCsv(txt).map(normalize)}
+function normalize(r){return {name:r.name||r.KPI||r.kpi||r['KPI']||'Untitled KPI',category:r.category||r.Category||'Technology Operations',current:r.current??r.Current??0,target:r.target??r.Target??100,unit:r.unit||r.Unit||'%',direction:String(r.direction||r['Goal Direction']||r.goal||'higher').toLowerCase().includes('lower')?'lower':'higher',owner:r.owner||r.Owner||'',notes:r.notes||r.Notes||''}}
+function parseCsv(txt){const lines=txt.split(/\r?\n/).filter(Boolean);if(!lines.length)return [];const headers=splitCsv(lines[0]).map(h=>h.trim());return lines.slice(1).map(line=>{const vals=splitCsv(line);const o={};headers.forEach((h,i)=>o[h]=vals[i]||'');return o})}
+function splitCsv(line){const out=[];let cur='',q=false;for(let i=0;i<line.length;i++){const ch=line[i];if(ch==='"'&&line[i+1]==='"'){cur+='"';i++;continue}if(ch==='"'){q=!q;continue}if(ch===','&&!q){out.push(cur);cur='';continue}cur+=ch}out.push(cur);return out}
+function parseMarkdownTable(txt){const lines=txt.split(/\r?\n/).filter(l=>/^\s*\|/.test(l) && !/^\s*\|?\s*-+/.test(l.replace(/\|/g,'|')));const real=lines.filter(l=>!/^\s*\|\s*-/.test(l));if(real.length<2)return [];const headers=real[0].split('|').slice(1,-1).map(x=>x.trim());return real.slice(1).map(l=>{const vals=l.split('|').slice(1,-1).map(x=>x.trim());const o={};headers.forEach((h,i)=>o[h]=vals[i]||'');return o})}
+function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function attr(s){return escapeHtml(s).replace(/`/g,'&#96;')}
+function pipe(s){return String(s??'').replace(/\|/g,'/').replace(/\n/g,' ')}
+function csvCell(s){s=String(s??'');return /[",\n]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s}
+function render(){syncMetaFromInputs();renderFilters();renderSummary();renderCards();renderTable();drawCharts();updateOutput()}
+['districtName','schoolYear','reportPeriod','audience'].forEach(id=>$(id).addEventListener('input',render));$('searchBox').addEventListener('input',e=>{state.search=e.target.value;renderCards()});
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));b.classList.add('active');$(b.dataset.tab).classList.add('active');drawCharts()});
+$('loadSampleBtn').onclick=()=>{state.kpis=JSON.parse(JSON.stringify(sample));render();setStatus('Sample KPIs loaded.','good')};$('addKpiBtn').onclick=addKpi;$('addKpiBtn2').onclick=addKpi;$('printBtn').onclick=()=>window.print();$('sortBtn').onclick=()=>{const order={bad:0,warn:1,ok:2};state.kpis.sort((a,b)=>order[status(a)]-order[status(b)]||a.category.localeCompare(b.category));render()};$('resetBtn').onclick=()=>{state={meta:{district:'Example ISD',year:'2026–2027',period:'Monthly board update',audience:'Board of Trustees'},filter:'All',search:'',kpis:[]};syncInputsFromMeta();render();setStatus('Dashboard reset.','info')};
+$('saveLocalBtn').onclick=()=>{syncMetaFromInputs();localStorage.setItem('k12KpiDashboard',toJson());setStatus('Saved in this browser.','good')};$('clearLocalBtn').onclick=()=>{localStorage.removeItem('k12KpiDashboard');setStatus('Local save cleared.','info')};$('downloadJsonBtn').onclick=()=>download('k12-kpi-dashboard.json',toJson(),'application/json');$('downloadCsvBtn').onclick=()=>download('k12-kpi-dashboard.csv',toCsv(),'text/csv');$('downloadMdBtn').onclick=()=>download('data.md',toMarkdown(),'text/markdown');$('downloadHtmlBtn').onclick=()=>download('k12-kpi-dashboard-report.html',toHtmlReport(),'text/html');
+$('importBtn').onclick=()=>{try{const arr=parseImport($('importText').value);if(!arr.length)throw new Error('No rows found.');state.kpis=arr;render();setStatus(`Imported ${arr.length} KPI rows.`,'good')}catch(e){setStatus('Import failed: '+e.message,'bad')}};$('clearImportBtn').onclick=()=>{$('importText').value=''};$('copyPromptBtn').onclick=()=>navigator.clipboard.writeText($('promptOutput').value).then(()=>setStatus('Prompt copied.','good')).catch(()=>setStatus('Copy failed. Select and copy manually.','bad'));$('copyMdBtn').onclick=()=>navigator.clipboard.writeText(toMarkdown()).then(()=>setStatus('data.md copied.','good')).catch(()=>setStatus('Copy failed. Select and copy manually.','bad'));
+try{const saved=localStorage.getItem('k12KpiDashboard');if(saved){const parsed=JSON.parse(saved);if(parsed.kpis){state.meta=parsed.meta||state.meta;state.kpis=parsed.kpis;syncInputsFromMeta();}}}catch(e){}
+render();
+})();
+</script>
+</body>
+</html>
