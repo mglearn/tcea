@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BINGO Game Maker</title>
+<title>iBINGO Game Maker</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -80,8 +80,9 @@ button{font-family:inherit;font-weight:600;border:none;border-radius:8px;padding
 <body>
 
 <div class="hero no-print">
-  <h1>BINGO <em>Game Maker</em></h1>
+  <h1>iBINGO <em>Game Maker</em></h1>
   <p>Paste your terms, generate a card, and share one link with your whole class.</p>
+  <p style="font-size:.78rem;margin-top:8px">Inspired by Patrick Hausammann — <a href="https://aiterms-tcea.phausedu.com" target="_blank" rel="noopener" style="color:var(--gold)">aiterms-tcea.phausedu.com</a></p>
 </div>
 
 <!-- ============ BUILDER (teacher) ============ -->
@@ -97,6 +98,11 @@ Prompt
 Hallucination
 ..."></textarea>
     <div class="count" id="termCount">0 terms</div>
+    <div class="btn-row" style="margin-top:10px">
+      <button class="btn-outline" onclick="document.getElementById('fileInput').click()">Import File (.csv, .txt, .md)</button>
+      <input type="file" id="fileInput" accept=".csv,.txt,.md,.markdown,.tsv" style="display:none">
+      <button class="btn-outline" onclick="document.getElementById('content').value='';document.getElementById('content').dispatchEvent(new Event('input'))">Clear</button>
+    </div>
     <div class="hint">Markdown bullets (<code>- term</code>, <code>* term</code>) and CSV are cleaned automatically. You need at least enough terms to fill the grid.</div>
   </div>
 
@@ -185,6 +191,18 @@ const contentEl=document.getElementById('content');
 contentEl.addEventListener('input',()=>{
   const n=parseContent(contentEl.value).length;
   document.getElementById('termCount').textContent=n+(n===1?' term':' terms');
+});
+
+document.getElementById('fileInput').addEventListener('change',function(e){
+  const file=e.target.files[0];
+  if(!file) return;
+  const reader=new FileReader();
+  reader.onload=function(ev){
+    contentEl.value=ev.target.result;
+    contentEl.dispatchEvent(new Event('input'));
+  };
+  reader.readAsText(file);
+  e.target.value=''; // allow re-importing the same file
 });
 
 function readForm(){
