@@ -113,6 +113,7 @@ button{font-family:inherit;font-weight:600;border:none;border-radius:8px;padding
     <div class="feature"><div class="dot" style="background:var(--ib-yellow);color:#fff">🏆</div><b>Play, Learn, Win!</b><span>Let the fun begin</span></div>
   </div>
   <p style="text-align:center;font-size:.78rem;color:var(--text-muted);margin:14px 20px 0">Inspired by Patrick Hausammann — <a href="https://aiterms-tcea.phausedu.com" target="_blank" rel="noopener" style="color:var(--ib-blue)">aiterms-tcea.phausedu.com</a></p>
+  <p style="text-align:center;font-size:.78rem;color:var(--text-muted);margin:4px 20px 0">Adapted by Miguel Guhlin (<a href="mailto:mguhlin@tcea.org" style="color:var(--ib-blue)">mguhlin@tcea.org</a>) — read the TCEA blog at <a href="https://blog.tcea.org" target="_blank" rel="noopener" style="color:var(--ib-blue)">blog.tcea.org</a></p>
 </div>
 
 <!-- ============ BUILDER (teacher) ============ -->
@@ -201,12 +202,23 @@ Hallucination
     <div class="err" id="builderErr"></div>
 
     <div class="share-box" id="shareBox">
-      <label>Share this link with students</label>
+      <label>1. Share this link with students</label>
       <div class="share-row">
         <input type="text" id="shareUrl" readonly>
-        <button class="btn-primary" onclick="copyLink()">Copy</button>
+        <button class="btn-primary" onclick="copyLink('shareUrl',this)">Copy</button>
       </div>
       <div class="hint">Every student who opens the link gets the <strong>same terms</strong> but a <strong>different randomized card</strong>. No accounts, no server — the game lives inside the link.</div>
+
+      <label style="margin-top:18px">2. Embed in Google Sites (Insert → Embed → Embed code)</label>
+      <div class="share-row">
+        <input type="text" id="hostUrl" placeholder="Where you uploaded this file, e.g. https://yoursite.github.io/bingo-maker.html">
+      </div>
+      <div class="hint" style="margin-bottom:8px">Paste the address where <strong>this HTML file is hosted</strong> (GitHub Pages, your school server, etc.), then copy the embed code below. Google Sites runs it in a sandboxed iframe, so JavaScript stays intact.</div>
+      <div class="share-row">
+        <textarea id="embedCode" readonly style="min-height:96px;font-size:.78rem"></textarea>
+        <button class="btn-primary" onclick="copyLink('embedCode',this)" style="align-self:flex-start">Copy</button>
+      </div>
+      <div class="hint">In Google Sites: <strong>Insert → Embed → Embed code</strong>, paste, then Insert. Students get the same game inside your page.</div>
     </div>
   </div>
 </div>
@@ -340,6 +352,8 @@ document.getElementById('fileInput').addEventListener('change',function(e){
   e.target.value=''; // allow re-importing the same file
 });
 
+document.getElementById('hostUrl').addEventListener('input',buildEmbed);
+
 function readForm(){
   const terms=parseContent(contentEl.value);
   const size=parseInt(document.getElementById('size').value,10);
@@ -357,15 +371,42 @@ function validate(g){
   return null;
 }
 
+let lastFragment='';
 function generate(){
   const err=document.getElementById('builderErr');
   const g=readForm();
   const problem=validate(g);
   if(problem){ err.textContent=problem; err.classList.add('show'); document.getElementById('shareBox').classList.remove('show'); return; }
   err.classList.remove('show');
-  const url=location.origin+location.pathname+'#'+encodeGame({t:g.terms,s:g.size,f:g.free,n:g.title,p:g.pattern});
+  lastFragment='#'+encodeGame({t:g.terms,s:g.size,f:g.free,n:g.title,p:g.pattern});
+  const url=location.origin+location.pathname+lastFragment;
   document.getElementById('shareUrl').value=url;
+  buildEmbed();
   document.getElementById('shareBox').classList.add('show');
+}
+
+function buildEmbed(){
+  let base=document.getElementById('hostUrl').value.trim();
+  if(!base){
+    // fall back to current location if it looks hosted (not a local file)
+    base=(location.protocol==='file:')?'':(location.origin+location.pathname);
+  }
+  const codeEl=document.getElementById('embedCode');
+  if(!base){
+    codeEl.value='Enter the hosted URL above first, then this embed code will appear.';
+    return;
+  }
+  base=base.split('#')[0]; // drop any existing fragment
+  const src=base+lastFragment;
+  codeEl.value=
+`<iframe
+  src="${src}"
+  width="100%"
+  height="780"
+  style="border:0;max-width:680px;display:block;margin:0 auto;"
+  loading="lazy"
+  title="iBINGO card">
+</iframe>`;
 }
 
 function previewCard(){
@@ -378,13 +419,13 @@ function previewCard(){
   showPlayer();
 }
 
-function copyLink(){
-  const inp=document.getElementById('shareUrl');
+function copyLink(id,btn){
+  const inp=document.getElementById(id);
   inp.select(); inp.setSelectionRange(0,99999);
-  navigator.clipboard.writeText(inp.value).then(()=>{
-    const b=event.target; const o=b.textContent; b.textContent='Copied!';
-    setTimeout(()=>b.textContent=o,1500);
-  }).catch(()=>{ document.execCommand('copy'); });
+  const done=()=>{ const o=btn.textContent; btn.textContent='Copied!'; setTimeout(()=>btn.textContent=o,1500); };
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(inp.value).then(done).catch(()=>{document.execCommand('copy');done();});
+  } else { document.execCommand('copy'); done(); }
 }
 
 // ---------- player ----------
