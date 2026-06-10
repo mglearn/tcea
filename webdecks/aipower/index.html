@@ -866,6 +866,29 @@ Data (number, label, trend):  [PASTE YOUR METRICS]</pre>
   deck.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});
   deck.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx; if(Math.abs(dx)>50){ dx<0?next():prev(); }},{passive:true});
 
+  // click left / right edge to navigate
+  deck.addEventListener('click', e=>{
+    // ignore clicks on anything interactive or on chrome layers
+    if(e.target.closest('a, button, input, textarea, select, label, .botbar, .notes, .help, .pv, [onclick], [role="button"]')) return;
+    // ignore if a panel/overlay is open or in presenter mode
+    if(notesOpen || $('help').classList.contains('open') || presenter) return;
+    // ignore text selections (user dragged)
+    if(window.getSelection && String(window.getSelection())) return;
+    const x = e.clientX;
+    const w = window.innerWidth;
+    if(x < w*0.35) prev();
+    else if(x > w*0.65) next();
+    // middle 30% is a neutral zone: does nothing, so clicking slide content is safe
+  });
+
+  // cursor hint: show nav cursor near the left/right edges
+  deck.addEventListener('mousemove', e=>{
+    if(notesOpen || $('help').classList.contains('open') || presenter){ deck.style.cursor=''; return; }
+    if(e.target.closest('a, button, input, textarea, select, label, .botbar, .notes, .help, .pv')){ deck.style.cursor=''; return; }
+    const x=e.clientX, w=window.innerWidth;
+    deck.style.cursor = (x < w*0.35) ? 'w-resize' : (x > w*0.65) ? 'e-resize' : 'default';
+  });
+
   // deep link via hash (initial + live changes)
   function fromHash(){
     const h = parseInt(location.hash.replace('#',''),10);
