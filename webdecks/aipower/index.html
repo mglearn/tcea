@@ -32,7 +32,7 @@
     position:absolute;inset:0;opacity:0;visibility:hidden;
     transition:opacity .45s ease;
     display:flex;flex-direction:column;justify-content:center;
-    padding:clamp(2.4rem,5vw,5rem) clamp(2.4rem,6vw,6rem) clamp(4.2rem,7vw,5.6rem);
+    padding:clamp(2.4rem,5vw,5rem) clamp(2.4rem,6vw,6rem) clamp(5rem,8vw,6.4rem);
     background:var(--off-white);
   }
   .slide.active{opacity:1;visibility:visible;}
@@ -65,9 +65,10 @@
   .g3{grid-template-columns:repeat(3,1fr);}
   .g4{grid-template-columns:repeat(4,1fr);}
   .g2{grid-template-columns:repeat(2,1fr);}
+  .g5{grid-template-columns:repeat(5,1fr);}
   .card{background:var(--white);border:1.5px solid var(--border);border-radius:14px;
     padding:clamp(1.1rem,1.8vw,1.7rem);box-shadow:0 8px 24px rgba(7,31,74,.07);}
-  .card.on-dark{background:var(--navy-mid);border:none;}
+  .card.on-dark{background:var(--navy-mid);border:none;color:var(--pale-navy);}
   .card .ico{width:3rem;height:3rem;border-radius:50%;background:var(--gold);
     display:flex;align-items:center;justify-content:center;font-family:var(--serif);
     font-size:1.7rem;color:var(--navy);margin-bottom:.9rem;}
@@ -117,7 +118,7 @@
   ul.clean{list-style:none;}
   ul.clean li{position:relative;padding-left:1.5rem;margin-bottom:.7rem;font-size:clamp(.95rem,1.3vw,1.12rem);line-height:1.45;}
   ul.clean li::before{content:"";position:absolute;left:0;top:.55em;width:.55rem;height:.55rem;border-radius:50%;background:var(--gold);}
-  .dark ul.clean li,.navy ul.clean li{color:var(--pale-navy);}
+  .dark ul.clean li,.navy ul.clean li,.card.on-dark ul.clean li{color:var(--pale-navy);}
 
   /* steps */
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.4rem;}
@@ -143,13 +144,16 @@
   .pill{display:inline-block;background:var(--gold-pale);border:1.5px solid var(--gold);color:var(--navy);
     font-weight:700;font-size:.82rem;padding:.4rem .9rem;border-radius:100px;}
 
-  /* ---------- Minimalist bottom bar ---------- */
-  .botbar{position:fixed;left:0;right:0;bottom:0;height:2.9rem;z-index:40;
+  /* ---------- Floating bottom bar ---------- */
+  .botbar{position:fixed;left:50%;transform:translateX(-50%);bottom:1rem;
+    width:min(96vw,1180px);height:3rem;z-index:60;
     display:flex;align-items:center;justify-content:space-between;
-    padding:0 clamp(1.2rem,3vw,2.4rem);
-    background:var(--navy-dark);border-top:2px solid var(--gold);
+    padding:0 clamp(1rem,2.2vw,1.6rem);
+    background:rgba(7,31,74,.94);border:1px solid rgba(252,176,64,.55);
+    border-radius:100px;backdrop-filter:blur(8px);
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
     font-family:var(--sans);}
-  .botbar.on-light{background:var(--navy-dark);}
+  .botbar.on-light{background:rgba(7,31,74,.94);}
   .bb-left{display:flex;align-items:center;gap:.7rem;color:var(--pale-navy);font-size:.78rem;letter-spacing:.04em;}
   .bb-left .mark{font-family:var(--serif);color:var(--gold);font-size:1rem;}
   .bb-center{display:flex;align-items:center;gap:.4rem;}
@@ -167,12 +171,13 @@
   .progress{position:fixed;left:0;top:0;height:3px;background:var(--gold);z-index:50;width:0;transition:width .4s ease;}
 
   /* ---------- Speaker notes panel ---------- */
-  .notes{position:fixed;inset:auto 0 2.9rem 0;z-index:45;
+  .notes{position:fixed;inset:auto 0 4.5rem 0;z-index:45;
     background:rgba(7,31,74,.985);border-top:2px solid var(--gold);
     padding:clamp(1.2rem,3vw,2rem) clamp(1.6rem,5vw,3.5rem);
-    transform:translateY(110%);transition:transform .35s cubic-bezier(.2,.7,.2,1);
-    max-height:42vh;overflow-y:auto;color:var(--white);}
-  .notes.open{transform:translateY(0);}
+    transform:translateY(130%);transition:transform .35s cubic-bezier(.2,.7,.2,1);
+    max-height:42vh;overflow-y:auto;color:var(--white);
+    pointer-events:none;}
+  .notes.open{transform:translateY(0);pointer-events:auto;}
   .notes .nhead{display:flex;align-items:center;gap:.7rem;margin-bottom:.6rem;}
   .notes .nhead .badge{background:var(--gold);color:var(--navy);font-weight:700;font-size:.7rem;
     letter-spacing:.08em;padding:.25rem .6rem;border-radius:6px;text-transform:uppercase;}
@@ -209,10 +214,84 @@
     padding:.5rem 1rem;border-radius:8px;font-weight:700;cursor:pointer;font-family:var(--sans);}
   body.presenter .pv .pv-controls button.ghost{background:transparent;border:1px solid var(--gold);color:var(--gold);}
 
-  @media(max-width:860px){
-    .g3,.g4,.steps,.two-col,.two-col.weighted,.free-paid,.kpi-row{grid-template-columns:1fr;}
-    .g2{grid-template-columns:1fr;}
+  /* ===================== RESPONSIVE ===================== */
+
+  /* Tablet and below: ease the type scale and tighten padding */
+  @media (max-width:1024px){
+    .slide{padding:clamp(1.8rem,4vw,3.2rem) clamp(1.6rem,4vw,3.4rem) clamp(4.6rem,9vw,5.6rem);
+      justify-content:flex-start;overflow-y:auto;}
+    h1{font-size:clamp(2.1rem,6vw,3.4rem);}
+    h2{font-size:clamp(1.7rem,4.6vw,2.5rem);}
+    .grid{grid-template-columns:repeat(2,1fr);}
+    .g5{grid-template-columns:repeat(5,1fr);} /* VIBES stays a strip on tablet */
+    .steps{grid-template-columns:repeat(2,1fr);}
+    .two-col.weighted{grid-template-columns:1fr 1fr;}
   }
+
+  /* Small tablet / large phone: single column for most things */
+  @media (max-width:768px){
+    .slide{justify-content:flex-start;padding-top:clamp(1.4rem,5vw,2.4rem);}
+    .g2,.g3,.g4,.g5,.steps,.two-col,.two-col.weighted,.free-paid,.kpi-row{grid-template-columns:1fr;}
+    h1{font-size:clamp(1.9rem,8vw,2.8rem);}
+    h2{font-size:clamp(1.5rem,6vw,2.1rem);}
+    .lead,p{font-size:1rem;}
+    /* the loop motif on the title can crowd text: shrink + push behind */
+    .title-wrap{max-width:100%;}
+    table{display:block;overflow-x:auto;white-space:nowrap;}
+    .prompt pre{font-size:.78rem;}
+    /* notes / presenter panels get taller on small screens */
+    .notes{max-height:55vh;}
+  }
+
+  /* Phone: collapse bar label, shrink dots, stack everything */
+  @media (max-width:560px){
+    .slide{padding:1.4rem 1.1rem 5rem;}
+    .kicker{font-size:.72rem;}
+    h1{font-size:clamp(1.7rem,9vw,2.3rem);}
+    h2{font-size:clamp(1.35rem,7vw,1.8rem);}
+    .botbar{width:calc(100vw - 1.2rem);bottom:.6rem;padding:0 .7rem;height:2.7rem;}
+    .bb-left{display:none;}            /* hide deck title text, keep controls + dots */
+    .bb-center{gap:.28rem;flex:1;justify-content:center;overflow:hidden;}
+    .bb-center .dot{width:.4rem;height:.4rem;}
+    .bb-center .dot.on{width:1rem;}
+    .bb-right{gap:.3rem;}
+    .bb-right button{width:1.7rem;height:1.7rem;font-size:.8rem;}
+    .bb-right .count{font-size:.72rem;min-width:2.6rem;}
+    .stat-num{font-size:clamp(3.2rem,16vw,4.5rem);}
+    .kpi b{font-size:clamp(2rem,12vw,2.8rem);}
+    .prompt pre{font-size:.72rem;}
+    .help .panel{padding:1.6rem 1.4rem;margin:1rem;}
+    /* hide the large decorative blobs that crowd small screens */
+    .blob{opacity:.25!important;}
+    .title-motif{display:none;}
+  }
+
+  /* Very narrow phones: dots become a compact subset is overkill; let them wrap-free shrink */
+  @media (max-width:380px){
+    .bb-center .dot{width:.32rem;height:.32rem;}
+    .bb-center .dot.on{width:.8rem;}
+    .bb-right .count{display:none;}
+  }
+
+  /* Short / landscape phones: keep slide readable, bar tight */
+  @media (max-height:480px) and (orientation:landscape){
+    .slide{justify-content:flex-start;padding:1rem 2rem 4rem;}
+    h1{font-size:clamp(1.6rem,5vw,2.4rem);}
+    .botbar{bottom:.4rem;height:2.5rem;}
+    .notes{max-height:60vh;}
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion:reduce){
+    .slide,.notes,.progress,.bb-center .dot{transition:none;}
+  }
+
+  /* Touch devices: larger hit targets for bar controls */
+  @media (hover:none){
+    .bb-right button{min-width:2.2rem;min-height:2.2rem;}
+    .bb-center .dot{min-height:1.1rem;padding:.3rem 0;background-clip:content-box;}
+  }
+
 </style>
 </head>
 <body>
@@ -309,8 +388,11 @@ const SLIDES = [
       <div class="title-rule"></div>
       <p class="lead">Become a Learning Loop Architect. Turn chaotic content curation into streamlined, professional digital publications, KPI dashboards, and self-contained tools.</p>
       <div class="title-meta">Miguel Guhlin &nbsp;·&nbsp; Director of Professional Development, TCEA &nbsp;·&nbsp; blog.tcea.org</div>
+      <div style="margin-top:1.5rem;display:inline-flex;align-items:center;gap:.6rem;background:var(--gold);color:var(--navy);padding:.6rem 1.2rem;border-radius:100px;font-weight:700;font-family:var(--sans);font-size:clamp(.9rem,1.3vw,1.1rem);">
+        <span style="font-family:var(--serif);">◆</span> Everything in one link: <a href="https://go.mgpd.org/tceaai26" target="_blank" rel="noopener" style="color:var(--navy);text-decoration:underline;">go.mgpd.org/tceaai26</a>
+      </div>
     </div>
-    <div style="position:absolute;right:clamp(2rem,6vw,7rem);top:50%;transform:translateY(-50%);width:clamp(8rem,16vw,15rem);height:clamp(8rem,16vw,15rem);opacity:.9;">${ART.loop}</div>`,
+    <div class="title-motif" style="position:absolute;right:clamp(2rem,6vw,7rem);top:50%;transform:translateY(-50%);width:clamp(8rem,16vw,15rem);height:clamp(8rem,16vw,15rem);opacity:.9;">${ART.loop}</div>`,
   notes:`Welcome, everyone. Today we are going to create AI-powered publications and dashboards. The goal is for you to leave here as a Learning Loop Architect. That means you can take the pile of content you wade through every week and turn it into something professional and useful, like a newsletter, a website, or a dashboard. I am going to show you how to do this with tools you already use, and a few you may not have tried yet. By the end you will have hands on the patterns and the resources to keep building after we close out.`
 },
 {
@@ -458,7 +540,7 @@ Add a daily time-driven trigger so it refreshes on its own. Explain where to pas
   html:`<div class="kicker">E &nbsp; Extend It</div>
     <h2>The VIBES framework</h2>
     <p class="lead">A repeatable way to extend any idea into a working tool, then host it where your audience already is.</p>
-    <div class="grid" style="grid-template-columns:repeat(5,1fr);margin-top:1.4rem;">
+    <div class="grid g5" style="margin-top:1.4rem;">
       ${[['V','Vision','Name what you want'],['I','Instruct','Tell the AI clearly'],['B','Build','Generate the tool'],['E','Evaluate','Test and refine'],['S','Ship','Host and share']].map(v=>`<div class="card on-dark" style="text-align:center;"><div class="ico" style="margin:0 auto .7rem;">${v[0]}</div><h3 style="font-size:1.25rem;">${v[1]}</h3><p style="font-size:.85rem;">${v[2]}</p></div>`).join('')}
     </div>
     <p class="muted" style="margin-top:1rem;font-style:italic;text-align:center;color:var(--pale-navy);">Page hosting and places to embed your work: WordPress, GitHub, Google Sites.</p>`,
@@ -665,7 +747,8 @@ Data (number, label, trend):  [PASTE YOUR METRICS]</pre>
       <a class="card accent-l" href="https://blog.tcea.org/kpi-dashboards-built-with-gen-ai/" target="_blank" rel="noopener" style="text-decoration:none;"><strong style="color:var(--navy);font-family:var(--serif);font-size:1.2rem;">About KPI dashboards</strong><br><span class="muted" style="font-size:.82rem;">blog.tcea.org/kpi-dashboards-built-with-gen-ai/</span></a>
       <a class="card accent-l" href="https://mguhlin.org/category/field-notes/" target="_blank" rel="noopener" style="text-decoration:none;"><strong style="color:var(--navy);font-family:var(--serif);font-size:1.2rem;">Field Notes newsletters</strong><br><span class="muted" style="font-size:.82rem;">mguhlin.org/category/field-notes/</span></a>
     </div>
-    <p class="title-meta" style="margin-top:1.6rem;">Miguel Guhlin &nbsp;·&nbsp; mguhlin@tcea.org &nbsp;·&nbsp; blog.tcea.org &nbsp;·&nbsp; mguhlin.org</p>`,
+    <p style="margin-top:1.4rem;font-family:var(--mono);color:var(--gold-light);font-weight:600;font-size:clamp(1rem,1.6vw,1.3rem);">Get all of this at <a href="https://go.mgpd.org/tceaai26" target="_blank" rel="noopener" style="color:var(--gold);">go.mgpd.org/tceaai26</a></p>
+    <p class="title-meta" style="margin-top:1rem;">Miguel Guhlin &nbsp;·&nbsp; mguhlin@tcea.org &nbsp;·&nbsp; blog.tcea.org &nbsp;·&nbsp; mguhlin.org</p>`,
   notes:`Everything we covered is here so you can take it back to your campus. The K-12 KPI Dashboard and the Data Display Patterns are both live, and you can open them and look at the code. The newsletter examples and the Learning Loop series show you the publishing side. About KPI Dashboards is the write-up if you want the thinking behind the build. My contact is at the bottom. Reach out anytime. The one thing I would ask is this. Pick one of these and build something small this week. Articulate it, connect it to your work, and extend it. That first one is the hardest, and after that it gets easy. Thank you.`
 }
 ];
@@ -783,9 +866,14 @@ Data (number, label, trend):  [PASTE YOUR METRICS]</pre>
   deck.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});
   deck.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx; if(Math.abs(dx)>50){ dx<0?next():prev(); }},{passive:true});
 
-  // deep link via hash
-  const h = parseInt(location.hash.replace('#',''),10);
-  if(!isNaN(h)) i = Math.max(0,Math.min(total-1,h-1));
+  // deep link via hash (initial + live changes)
+  function fromHash(){
+    const h = parseInt(location.hash.replace('#',''),10);
+    if(!isNaN(h)) go(h-1, false);
+  }
+  window.addEventListener('hashchange', fromHash);
+  const h0 = parseInt(location.hash.replace('#',''),10);
+  if(!isNaN(h0)) i = Math.max(0,Math.min(total-1,h0-1));
 
   render();
 })();
