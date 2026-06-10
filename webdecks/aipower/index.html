@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create AI-Powered Publications and Dashboards | TCEA WebDeck</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0A3476;
+    --navy-dark:#071F4A;
+    --navy-mid:#12428F;
+    --gold:#FCB040;
+    --gold-light:#FDD17A;
+    --gold-pale:#FEF0D0;
+    --pale-navy:#D0D8F0;
+    --white:#ffffff;
+    --off-white:#f7f8fc;
+    --text:#1a1a2e;
+    --text-muted:#5a6680;
+    --border:#e2e7f5;
+    --serif:'DM Serif Display',Georgia,serif;
+    --sans:'DM Sans',-apple-system,sans-serif;
+    --mono:'JetBrains Mono',Consolas,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{height:100%;width:100%;overflow:hidden;background:var(--navy-dark);font-family:var(--sans);}
+
+  /* ---------- Deck + slides ---------- */
+  .deck{position:fixed;inset:0;}
+  .slide{
+    position:absolute;inset:0;opacity:0;visibility:hidden;
+    transition:opacity .45s ease;
+    display:flex;flex-direction:column;justify-content:center;
+    padding:clamp(2.4rem,5vw,5rem) clamp(2.4rem,6vw,6rem) clamp(4.2rem,7vw,5.6rem);
+    background:var(--off-white);
+  }
+  .slide.active{opacity:1;visibility:visible;}
+  .slide.dark{background:var(--navy-dark);color:var(--white);}
+  .slide.navy{background:var(--navy);color:var(--white);}
+
+  /* ---------- Type ---------- */
+  .kicker{font-family:var(--sans);font-weight:700;font-size:clamp(.8rem,1.1vw,1rem);
+    letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem;}
+  h1{font-family:var(--serif);font-weight:400;line-height:1.04;color:var(--navy);
+    font-size:clamp(2.4rem,5.4vw,4.4rem);letter-spacing:-.01em;}
+  h2{font-family:var(--serif);font-weight:400;line-height:1.06;color:var(--navy);
+    font-size:clamp(1.9rem,3.8vw,3.1rem);margin-bottom:1.2rem;}
+  .dark h1,.navy h1,.dark h2,.navy h2{color:var(--white);}
+  .lead{font-size:clamp(1.02rem,1.5vw,1.3rem);line-height:1.5;color:var(--text);max-width:60ch;}
+  .dark .lead,.navy .lead{color:var(--pale-navy);}
+  p{font-size:clamp(.98rem,1.35vw,1.18rem);line-height:1.5;color:var(--text);}
+  .muted{color:var(--text-muted);}
+  .gold{color:var(--gold);}
+  strong{font-weight:700;}
+
+  /* ---------- Title slide ---------- */
+  .title-wrap{max-width:62rem;}
+  .title-rule{width:5.5rem;height:5px;background:var(--gold);margin:1.6rem 0;border-radius:3px;}
+  .title-meta{font-size:clamp(.85rem,1.15vw,1.02rem);color:var(--gold-light);margin-top:2.2rem;letter-spacing:.02em;}
+  .blob{position:absolute;border-radius:50%;pointer-events:none;}
+
+  /* ---------- Cards / grids ---------- */
+  .grid{display:grid;gap:clamp(1rem,1.8vw,1.6rem);margin-top:1.6rem;}
+  .g3{grid-template-columns:repeat(3,1fr);}
+  .g4{grid-template-columns:repeat(4,1fr);}
+  .g2{grid-template-columns:repeat(2,1fr);}
+  .card{background:var(--white);border:1.5px solid var(--border);border-radius:14px;
+    padding:clamp(1.1rem,1.8vw,1.7rem);box-shadow:0 8px 24px rgba(7,31,74,.07);}
+  .card.on-dark{background:var(--navy-mid);border:none;}
+  .card .ico{width:3rem;height:3rem;border-radius:50%;background:var(--gold);
+    display:flex;align-items:center;justify-content:center;font-family:var(--serif);
+    font-size:1.7rem;color:var(--navy);margin-bottom:.9rem;}
+  .card h3{font-family:var(--serif);font-weight:400;color:var(--navy);
+    font-size:clamp(1.2rem,1.9vw,1.65rem);margin-bottom:.2rem;}
+  .card.on-dark h3{color:var(--white);}
+  .card .phase{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;}
+  .card p{font-size:clamp(.85rem,1.15vw,1rem);color:var(--text);}
+  .card.on-dark p{color:var(--pale-navy);}
+  .accent-l{border-left:5px solid var(--gold);}
+
+  /* stat */
+  .stat-card{background:var(--navy);border-radius:18px;padding:2rem;text-align:center;
+    display:flex;flex-direction:column;justify-content:center;}
+  .stat-num{font-family:var(--serif);font-size:clamp(4rem,9vw,7rem);color:var(--gold);line-height:.9;}
+  .stat-lbl{color:var(--white);font-size:clamp(.95rem,1.3vw,1.15rem);margin-top:.8rem;}
+
+  .kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:1.4rem;}
+  .kpi{background:var(--white);border:1.5px solid var(--border);border-radius:14px;padding:1.4rem;text-align:center;box-shadow:0 8px 24px rgba(7,31,74,.07);}
+  .kpi.hot{background:var(--navy);border:none;}
+  .kpi b{display:block;font-family:var(--serif);font-size:clamp(2.4rem,4.6vw,3.6rem);color:var(--navy);line-height:1;}
+  .kpi.hot b{color:var(--gold);}
+  .kpi span{display:block;font-weight:600;margin-top:.4rem;color:var(--text);}
+  .kpi.hot span{color:var(--white);}
+  .kpi em{display:block;font-style:italic;color:var(--text-muted);font-size:.85rem;margin-top:.2rem;}
+  .kpi.hot em{color:var(--gold-light);}
+
+  /* prompt block */
+  .prompt{background:var(--navy-dark);border-radius:14px;padding:1.3rem 1.5rem;color:var(--pale-navy);
+    box-shadow:0 8px 24px rgba(7,31,74,.12);}
+  .prompt .ptop{display:flex;align-items:center;gap:.7rem;margin-bottom:.7rem;}
+  .prompt .badge{background:var(--gold);color:var(--navy);font-weight:700;font-size:.72rem;
+    letter-spacing:.08em;padding:.28rem .7rem;border-radius:6px;text-transform:uppercase;}
+  .prompt .plabel{font-style:italic;color:var(--gold-light);font-size:.88rem;}
+  .prompt pre{font-family:var(--mono);font-size:clamp(.72rem,.95vw,.92rem);line-height:1.5;
+    white-space:pre-wrap;color:var(--pale-navy);}
+
+  /* browser frame */
+  .frame{background:var(--white);border:1.5px solid var(--border);border-radius:12px;overflow:hidden;
+    box-shadow:0 12px 32px rgba(7,31,74,.1);}
+  .frame .bar{background:var(--off-white);padding:.55rem .9rem;display:flex;align-items:center;gap:.5rem;border-bottom:1px solid var(--border);}
+  .frame .bar i{width:.66rem;height:.66rem;border-radius:50%;display:block;}
+  .frame .url{font-family:var(--mono);font-size:.74rem;color:var(--text-muted);margin-left:.6rem;}
+  .frame .body{padding:1.3rem 1.5rem;}
+
+  /* list */
+  ul.clean{list-style:none;}
+  ul.clean li{position:relative;padding-left:1.5rem;margin-bottom:.7rem;font-size:clamp(.95rem,1.3vw,1.12rem);line-height:1.45;}
+  ul.clean li::before{content:"";position:absolute;left:0;top:.55em;width:.55rem;height:.55rem;border-radius:50%;background:var(--gold);}
+  .dark ul.clean li,.navy ul.clean li{color:var(--pale-navy);}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.4rem;}
+  .step{background:var(--white);border:1.5px solid var(--border);border-radius:14px;padding:1.2rem;box-shadow:0 8px 24px rgba(7,31,74,.07);}
+  .step .n{width:2.6rem;height:2.6rem;border-radius:50%;background:var(--gold);color:var(--navy);
+    font-family:var(--serif);font-size:1.4rem;display:flex;align-items:center;justify-content:center;margin-bottom:.7rem;}
+  .step h4{font-family:var(--serif);font-weight:400;color:var(--navy);font-size:1.18rem;margin-bottom:.3rem;}
+  .step p{font-size:.9rem;color:var(--text);}
+
+  /* table */
+  table{width:100%;border-collapse:collapse;margin-top:1.3rem;font-size:clamp(.82rem,1.1vw,1rem);
+    background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(7,31,74,.07);}
+  thead th{background:var(--navy);color:var(--white);text-align:left;padding:.75rem 1rem;font-weight:600;}
+  tbody td{padding:.7rem 1rem;border-bottom:1px solid var(--border);color:var(--text);}
+  tbody tr:last-child td{border-bottom:none;}
+  .callout{background:var(--gold-pale);border:1.5px solid var(--gold);border-radius:12px;
+    padding:1rem 1.3rem;margin-top:1.2rem;font-size:clamp(.9rem,1.2vw,1.08rem);color:var(--text);}
+  .callout b{color:var(--navy);}
+
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.2rem,2.5vw,2.4rem);align-items:start;}
+  .two-col.weighted{grid-template-columns:1.15fr .85fr;}
+  .free-paid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:1.4rem;}
+  .pill{display:inline-block;background:var(--gold-pale);border:1.5px solid var(--gold);color:var(--navy);
+    font-weight:700;font-size:.82rem;padding:.4rem .9rem;border-radius:100px;}
+
+  /* ---------- Minimalist bottom bar ---------- */
+  .botbar{position:fixed;left:0;right:0;bottom:0;height:2.9rem;z-index:40;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 clamp(1.2rem,3vw,2.4rem);
+    background:var(--navy-dark);border-top:2px solid var(--gold);
+    font-family:var(--sans);}
+  .botbar.on-light{background:var(--navy-dark);}
+  .bb-left{display:flex;align-items:center;gap:.7rem;color:var(--pale-navy);font-size:.78rem;letter-spacing:.04em;}
+  .bb-left .mark{font-family:var(--serif);color:var(--gold);font-size:1rem;}
+  .bb-center{display:flex;align-items:center;gap:.4rem;}
+  .bb-center .dot{width:.5rem;height:.5rem;border-radius:50%;background:rgba(208,216,240,.32);
+    cursor:pointer;transition:all .25s;}
+  .bb-center .dot.on{background:var(--gold);width:1.4rem;border-radius:100px;}
+  .bb-right{display:flex;align-items:center;gap:.5rem;}
+  .bb-right button{background:transparent;border:1px solid rgba(208,216,240,.28);color:var(--pale-navy);
+    width:2rem;height:2rem;border-radius:8px;cursor:pointer;font-size:.95rem;display:flex;
+    align-items:center;justify-content:center;transition:all .2s;}
+  .bb-right button:hover{border-color:var(--gold);color:var(--gold);}
+  .bb-right .count{color:var(--pale-navy);font-size:.8rem;font-variant-numeric:tabular-nums;min-width:3rem;text-align:center;}
+
+  /* progress hairline */
+  .progress{position:fixed;left:0;top:0;height:3px;background:var(--gold);z-index:50;width:0;transition:width .4s ease;}
+
+  /* ---------- Speaker notes panel ---------- */
+  .notes{position:fixed;inset:auto 0 2.9rem 0;z-index:45;
+    background:rgba(7,31,74,.985);border-top:2px solid var(--gold);
+    padding:clamp(1.2rem,3vw,2rem) clamp(1.6rem,5vw,3.5rem);
+    transform:translateY(110%);transition:transform .35s cubic-bezier(.2,.7,.2,1);
+    max-height:42vh;overflow-y:auto;color:var(--white);}
+  .notes.open{transform:translateY(0);}
+  .notes .nhead{display:flex;align-items:center;gap:.7rem;margin-bottom:.6rem;}
+  .notes .nhead .badge{background:var(--gold);color:var(--navy);font-weight:700;font-size:.7rem;
+    letter-spacing:.08em;padding:.25rem .6rem;border-radius:6px;text-transform:uppercase;}
+  .notes .nhead .ntitle{color:var(--gold-light);font-size:.9rem;}
+  .notes .nbody{font-size:clamp(.95rem,1.3vw,1.15rem);line-height:1.55;color:var(--pale-navy);max-width:90ch;}
+
+  /* ---------- Help overlay ---------- */
+  .help{position:fixed;inset:0;z-index:90;background:rgba(7,31,74,.92);
+    display:none;align-items:center;justify-content:center;backdrop-filter:blur(3px);}
+  .help.open{display:flex;}
+  .help .panel{background:var(--white);border-radius:18px;padding:2.4rem 2.8rem;max-width:34rem;}
+  .help h3{font-family:var(--serif);color:var(--navy);font-size:1.8rem;margin-bottom:1.2rem;}
+  .help .row{display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border);}
+  .help .row:last-child{border:none;}
+  .help kbd{font-family:var(--mono);background:var(--off-white);border:1px solid var(--border);
+    border-radius:6px;padding:.15rem .5rem;font-size:.85rem;color:var(--navy);}
+  .help .close{margin-top:1.4rem;background:var(--gold);color:var(--navy);border:none;
+    padding:.7rem 1.4rem;border-radius:10px;font-weight:700;cursor:pointer;font-family:var(--sans);}
+
+  /* presenter mode (second window) */
+  body.presenter .deck{position:static;}
+  body.presenter .slide{position:static;display:none;}
+  body.presenter .slide.active{display:flex;height:46vh;min-height:46vh;}
+  body.presenter .botbar,body.presenter .progress{display:none;}
+  .pv{display:none;}
+  body.presenter .pv{display:block;position:fixed;inset:auto 0 0 0;height:54vh;
+    background:var(--navy-dark);color:var(--white);padding:1.6rem 2.4rem;overflow-y:auto;border-top:3px solid var(--gold);}
+  body.presenter .pv .pv-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;}
+  body.presenter .pv .pv-clock{font-family:var(--mono);font-size:1.4rem;color:var(--gold);}
+  body.presenter .pv .pv-next{font-size:.8rem;color:var(--pale-navy);letter-spacing:.08em;text-transform:uppercase;}
+  body.presenter .pv .pv-notes{font-size:1.15rem;line-height:1.55;color:var(--pale-navy);max-width:90ch;}
+  body.presenter .pv .pv-controls{margin-top:1.2rem;display:flex;gap:.6rem;}
+  body.presenter .pv .pv-controls button{background:var(--gold);color:var(--navy);border:none;
+    padding:.5rem 1rem;border-radius:8px;font-weight:700;cursor:pointer;font-family:var(--sans);}
+  body.presenter .pv .pv-controls button.ghost{background:transparent;border:1px solid var(--gold);color:var(--gold);}
+
+  @media(max-width:860px){
+    .g3,.g4,.steps,.two-col,.two-col.weighted,.free-paid,.kpi-row{grid-template-columns:1fr;}
+    .g2{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="deck" id="deck"><!--SLIDES--></div>
+
+<!-- minimalist bottom bar -->
+<div class="botbar" id="botbar">
+  <div class="bb-left"><span class="mark">◆</span> Create AI-Powered Publications and Dashboards</div>
+  <div class="bb-center" id="dots"></div>
+  <div class="bb-right">
+    <button id="bNotes" title="Speaker notes (S)">▤</button>
+    <button id="bPresent" title="Presenter view (P)">⧉</button>
+    <button id="bFull" title="Fullscreen (F)">⛶</button>
+    <button id="bHelp" title="Help (?)">?</button>
+    <span class="count"><b id="cur">1</b> / <span id="total">1</span></span>
+  </div>
+</div>
+
+<!-- speaker notes (audience window stays clean; this is a quick peek) -->
+<div class="notes" id="notes">
+  <div class="nhead"><span class="badge">Speaker Notes</span><span class="ntitle" id="ntitle"></span></div>
+  <div class="nbody" id="nbody"></div>
+</div>
+
+<!-- presenter view (rendered only when body.presenter) -->
+<div class="pv" id="pv">
+  <div class="pv-head">
+    <span class="pv-next" id="pvNext"></span>
+    <span class="pv-clock" id="pvClock">00:00</span>
+  </div>
+  <div class="pv-notes" id="pvNotes"></div>
+  <div class="pv-controls">
+    <button id="pvPrev" class="ghost">‹ Prev</button>
+    <button id="pvNext2">Next ›</button>
+    <button id="pvReset" class="ghost">Reset timer</button>
+  </div>
+</div>
+
+<!-- help -->
+<div class="help" id="help">
+  <div class="panel">
+    <h3>Getting around</h3>
+    <div class="row"><span>Next slide</span><span><kbd>→</kbd> <kbd>Space</kbd> <kbd>↓</kbd></span></div>
+    <div class="row"><span>Previous slide</span><span><kbd>←</kbd> <kbd>↑</kbd></span></div>
+    <div class="row"><span>Speaker notes</span><span><kbd>S</kbd></span></div>
+    <div class="row"><span>Presenter view (dual screen)</span><span><kbd>P</kbd></span></div>
+    <div class="row"><span>Fullscreen</span><span><kbd>F</kbd></span></div>
+    <div class="row"><span>First / last slide</span><span><kbd>Home</kbd> <kbd>End</kbd></span></div>
+    <div class="row"><span>This help</span><span><kbd>?</kbd></span></div>
+    <button class="close" id="helpClose">Got it</button>
+  </div>
+</div>
+
+<script>// ===== SLIDE DATA =====
+// Each slide: { bg: ''|'dark'|'navy', html: '...', notes: '...', title: '...' }
+
+const ART = {
+  // title hero motif: stacked loop
+  loop: `<svg viewBox="0 0 200 200" width="100%" height="100%" aria-hidden="true">
+    <circle cx="100" cy="100" r="70" fill="none" stroke="#FCB040" stroke-width="6" stroke-dasharray="330 110" stroke-linecap="round" transform="rotate(-90 100 100)"/>
+    <circle cx="100" cy="100" r="48" fill="none" stroke="#FDD17A" stroke-width="4" stroke-dasharray="200 100" stroke-linecap="round" transform="rotate(40 100 100)"/>
+    <circle cx="100" cy="100" r="9" fill="#FCB040"/>
+  </svg>`,
+  // tiny bar chart for KPI slide
+  bars: `<svg viewBox="0 0 320 180" width="100%" height="180" style="max-width:100%" role="img" aria-label="Sample KPI bar chart">
+    <line x1="34" y1="150" x2="310" y2="150" stroke="#e2e7f5" stroke-width="1.5"/>
+    ${[['Attend',94,'#0A3476'],['Read',78,'#12428F'],['Math',71,'#FCB040'],['Engage',86,'#FDD17A'],['PD',62,'#0A3476']].map((b,k)=>{
+      const x=44+k*54, h=b[1]*1.15, y=150-h;
+      return `<rect x="${x}" y="${y}" width="34" height="${h}" rx="4" fill="${b[2]}"/>
+        <text x="${x+17}" y="${y-6}" font-family="DM Sans" font-size="11" fill="#0A3476" text-anchor="middle" font-weight="600">${b[1]}</text>
+        <text x="${x+17}" y="166" font-family="DM Sans" font-size="10" fill="#5a6680" text-anchor="middle">${b[0]}</text>`;
+    }).join('')}
+  </svg>`,
+  // ACE three-step ribbon
+  ace: `<svg viewBox="0 0 600 90" width="100%" height="90" style="max-width:100%" aria-hidden="true">
+    ${['A','C','E'].map((l,k)=>{const x=20+k*200;return `
+      <rect x="${x}" y="20" width="180" height="50" rx="10" fill="${k===0?'#FCB040':'#12428F'}"/>
+      <text x="${x+30}" y="53" font-family="DM Serif Display" font-size="30" fill="${k===0?'#0A3476':'#FCB040'}">${l}</text>
+      <text x="${x+62}" y="51" font-family="DM Sans" font-size="17" fill="#fff" font-weight="600">${['Articulate','Connect','Extend'][k]}</text>
+      ${k<2?`<path d="M${x+190} 45 l14 0 m-6 -6 l6 6 l-6 6" stroke="#FCB040" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`:''}`;
+    }).join('')}
+  </svg>`
+};
+
+const SLIDES = [
+{
+  bg:'dark', title:'Title',
+  html:`<div class="blob" style="width:30rem;height:30rem;background:var(--navy-mid);opacity:.5;top:-8rem;right:-6rem;"></div>
+    <div class="blob" style="width:18rem;height:18rem;background:var(--gold);opacity:.55;bottom:3rem;right:9rem;"></div>
+    <div class="title-wrap">
+      <div class="kicker">TCEA Professional Learning</div>
+      <h1>Create AI-Powered<br>Publications and Dashboards</h1>
+      <div class="title-rule"></div>
+      <p class="lead">Become a Learning Loop Architect. Turn chaotic content curation into streamlined, professional digital publications, KPI dashboards, and self-contained tools.</p>
+      <div class="title-meta">Miguel Guhlin &nbsp;·&nbsp; Director of Professional Development, TCEA &nbsp;·&nbsp; blog.tcea.org</div>
+    </div>
+    <div style="position:absolute;right:clamp(2rem,6vw,7rem);top:50%;transform:translateY(-50%);width:clamp(8rem,16vw,15rem);height:clamp(8rem,16vw,15rem);opacity:.9;">${ART.loop}</div>`,
+  notes:`Welcome, everyone. Today we are going to create AI-powered publications and dashboards. The goal is for you to leave here as a Learning Loop Architect. That means you can take the pile of content you wade through every week and turn it into something professional and useful, like a newsletter, a website, or a dashboard. I am going to show you how to do this with tools you already use, and a few you may not have tried yet. By the end you will have hands on the patterns and the resources to keep building after we close out.`
+},
+{
+  bg:'', title:'The Challenge',
+  html:`<div class="kicker">The Challenge</div>
+    <div class="two-col weighted">
+      <div>
+        <h2>The problem is not finding information</h2>
+        <p class="lead">It is transforming information into meaningful learning experiences. This workshop addresses teacher workload by teaching you AI-powered workflows that make information accessible and interactive for others, even when AI is not available or appropriate.</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">3&times;</div>
+        <div class="stat-lbl">more digital content consumed by educators than five years ago</div>
+      </div>
+    </div>`,
+  notes:`Let me set up the real problem first. We are not short on information. Educators are consuming about three times more digital content than we were five years ago. The challenge is what we do with all of it. Turning that flood into a meaningful learning experience for someone else is the hard part, and it is where most of our time goes. So this session is really about workload. I want to show you workflows that make your information accessible and interactive for other people, even in situations where AI is not available or is not the right tool to reach for.`
+},
+{
+  bg:'dark', title:'The Framework: ACE It',
+  html:`<div class="kicker">The Framework</div>
+    <h2>ACE It</h2>
+    <p class="lead">One anchor word for moving from surface to transfer. We use the same three moves to build, share, and extend AI-powered work.</p>
+    <div class="grid g3">
+      <div class="card on-dark"><div class="ico">A</div><h3>Articulate It</h3><div class="phase">Surface Learning</div><p>Say what you want to make in plain words. Vibe-coding lets non-coders shape ideas into anything learners need.</p></div>
+      <div class="card on-dark"><div class="ico">C</div><h3>Connect It</h3><div class="phase">Deep Learning</div><p>Show how it fits your everyday work. Newsletters, websites, and dashboards built with tools you use daily.</p></div>
+      <div class="card on-dark"><div class="ico">E</div><h3>Extend It</h3><div class="phase">Transfer Learning</div><p>Use it somewhere new. Data display patterns, hosting, and coding tools that scale your expertise.</p></div>
+    </div>`,
+  notes:`Here is the spine of the whole session. ACE comes out of my work with SOLO Taxonomy and Hattie's surface, deep, and transfer learning phases. The idea is one anchor word you can actually remember. Articulate, Connect, Extend. I use the same three moves here for building things. Articulate It is naming what you want in plain words. Connect It is fitting that into the work you already do. Extend It is taking it somewhere new. As we go, the bar at the bottom and these labels will show you which of the three we are in, so you always know where we are in the arc.`
+},
+{
+  bg:'', title:'Articulate It',
+  html:`<div class="kicker">A &nbsp; Articulate It</div>
+    <h2>Vibe-coding shapes ideas into anything</h2>
+    <div class="two-col" style="margin-top:.6rem;">
+      <div class="card accent-l" style="background:var(--gold-pale);border:1.5px solid var(--gold);"><div class="phase" style="color:var(--navy);">Problem</div><p>Making information accessible and interactive for others, even when AI is not available or appropriate.</p></div>
+      <div class="card on-dark" style="background:var(--navy);"><div class="phase">Solution</div><p style="color:#fff;">Vibe-coding makes it easy for non-coders to shape information and ideas into anything learners need it to be.</p></div>
+    </div>
+    <div class="grid g4" style="margin-top:1.4rem;">
+      <div class="card accent-l" style="padding:1rem 1.1rem;"><strong style="color:var(--navy);">Visual displays</strong></div>
+      <div class="card accent-l" style="padding:1rem 1.1rem;"><strong style="color:var(--navy);">Self-contained websites</strong></div>
+      <div class="card accent-l" style="padding:1rem 1.1rem;"><strong style="color:var(--navy);">Online tools</strong></div>
+      <div class="card accent-l" style="padding:1rem 1.1rem;"><strong style="color:var(--navy);">Information-rich KPIs</strong></div>
+    </div>
+    <p class="muted" style="margin-top:1rem;font-style:italic;">Example from real life: DrawSplat and the tools it needs to work. These reflect your expertise.</p>`,
+  notes:`So we start with Articulate It. The problem is making your information accessible and interactive for other people, even when AI is not in the room. The solution is vibe-coding. That word just means you describe what you want in plain language and let the AI shape it into working code. You do not need to be a coder. With that, you can create visual displays, self-contained websites, online tools, and information-rich KPIs. One example from my own life is a tool I built called DrawSplat, along with the smaller tools it needs to run. The point is that what you build reflects your expertise, not the AI's.`
+},
+{
+  bg:'', title:'Connect It',
+  html:`<div class="kicker">C &nbsp; Connect It</div>
+    <h2>Technology you use every day</h2>
+    <p class="lead">This connects to how you use technology you may not fully understand but rely on daily. Three publication types built with familiar tools.</p>
+    <div class="grid g3">
+      <div class="card"><div class="ico">1</div><h3>Newsletters</h3><p>AI-powered, interactive newsletters that turn curation into a publishing rhythm.</p></div>
+      <div class="card"><div class="ico">2</div><h3>Websites</h3><p>Self-contained microsites you can host anywhere with no external dependencies.</p></div>
+      <div class="card"><div class="ico">3</div><h3>KPI Dashboards</h3><p>Information-rich dashboards generated from your own data, ready to share.</p></div>
+    </div>
+    <p class="muted" style="margin-top:1rem;font-style:italic;">Plus: save web-based data into Google Sheets via AI-generated Apps Script.</p>`,
+  notes:`Now we Connect It. This is where it ties to how you already work. You use technology every day that you may not fully understand under the hood, and that is fine. Here are three things you can make with familiar tools. Newsletters that turn your curation into a publishing rhythm. Self-contained websites you can host anywhere. And KPI dashboards built from your own data. One more piece worth flagging here. You can save web-based data straight into a Google Sheet using Apps Script that the AI writes for you. We will look at each of these in the next few slides.`
+},
+{
+  bg:'', title:'Connect It: The Learning Loop',
+  html:`<div class="kicker">C &nbsp; Connect It &nbsp;·&nbsp; Example</div>
+    <h2>The Learning Loop newsletter series</h2>
+    <div class="two-col weighted">
+      <div>
+        <div class="card" style="margin-bottom:.8rem;display:flex;gap:1rem;align-items:center;"><span style="background:var(--gold);color:var(--navy);font-family:var(--serif);font-size:1.3rem;padding:.3rem .7rem;border-radius:8px;">#11</span><div><strong style="color:var(--navy);">AI Workflows Meet the AI Backlash</strong><br><a class="muted" style="font-size:.82rem;" href="https://mguhlin.org/2026/06/08/11-the-learning-loop-ai-workflows-meet-the-ai-backlash/" target="_blank" rel="noopener">mguhlin.org/2026/06/08</a></div></div>
+        <div class="card" style="margin-bottom:.8rem;display:flex;gap:1rem;align-items:center;"><span style="background:var(--gold);color:var(--navy);font-family:var(--serif);font-size:1.3rem;padding:.3rem .7rem;border-radius:8px;">#10</span><div><strong style="color:var(--navy);">AI in the Classroom, Context, Costs, Consequences</strong><br><a class="muted" style="font-size:.82rem;" href="https://mguhlin.org/2026/06/07/10-the-learning-loop-ai-in-the-classroom-context-costs-consequences/" target="_blank" rel="noopener">mguhlin.org/2026/06/07</a></div></div>
+        <div class="card" style="display:flex;gap:1rem;align-items:center;"><span style="background:var(--gold);color:var(--navy);font-family:var(--serif);font-size:1.3rem;padding:.3rem .7rem;border-radius:8px;">#8</span><div><strong style="color:var(--navy);">The Environmental Impact of Gen AI</strong><br><a class="muted" style="font-size:.82rem;" href="https://mguhlin.org/2026/01/15/the-learning-loop-8-the-environmental-impact-of-gen-ai/" target="_blank" rel="noopener">mguhlin.org/2026/01/15</a></div></div>
+      </div>
+      <div class="card on-dark" style="background:var(--navy);">
+        <h3 style="color:var(--gold);">Track your links</h3>
+        <p style="color:#fff;margin-bottom:.6rem;">Use a free tool like <a href="https://raindrop.io/" target="_blank" rel="noopener" style="color:var(--gold-light);">Raindrop.io</a> to collect and organize sources.</p>
+        <p style="color:#fff;font-weight:600;">Build a publishing rhythm:</p>
+        <ul class="clean" style="margin-top:.4rem;"><li>Curate</li><li>Draft with AI</li><li>Publish and share</li></ul>
+      </div>
+    </div>`,
+  notes:`Here is the newsletter side in practice. The Learning Loop is a series I run, and these three issues show the range. One on AI workflows meeting the AI backlash, one on context, costs, and consequences in the classroom, and one on the environmental impact of Gen AI. Notice these are not lightweight. They reflect real thinking. The trick to keeping a series going is on the right. Use a free tool like Raindrop to collect your sources as you find them. Then the rhythm is simple. Curate, draft with AI, publish and share. The collecting is the hard part, and Raindrop makes it almost automatic.`
+},
+{
+  bg:'', title:'Connect It: Newsletter Demo',
+  html:`<div class="kicker">C &nbsp; Connect It &nbsp;·&nbsp; Live Demo</div>
+    <h2>What an AI newsletter looks like</h2>
+    <div class="two-col weighted">
+      <div class="frame">
+        <div class="bar"><i style="background:#FCB040"></i><i style="background:#FDD17A"></i><i style="background:#D0D8F0"></i><span class="url">ai-newsletters-interactive.html</span></div>
+        <div class="body">
+          <div class="kicker" style="margin-bottom:.3rem;">The Learning Loop · Issue 11</div>
+          <h3 style="font-family:var(--serif);color:var(--navy);font-size:1.5rem;margin-bottom:.4rem;">AI Workflows Meet the AI Backlash</h3>
+          <p class="muted" style="font-style:italic;margin-bottom:.8rem;">Three sections readers can expand, a pull-quote, and a sources list, all in one file with no backend.</p>
+          ${['What changed this week','Why the backlash is growing','What to do in your district'].map(s=>`<div style="background:var(--off-white);border:1px solid var(--border);border-radius:8px;padding:.6rem .8rem;margin-bottom:.45rem;display:flex;gap:.6rem;align-items:center;"><span style="color:var(--gold);font-family:var(--serif);font-size:1.3rem;">+</span><strong style="color:var(--navy);font-size:.95rem;">${s}</strong></div>`).join('')}
+        </div>
+      </div>
+      <div class="card on-dark" style="background:var(--navy);">
+        <h3 style="color:var(--gold);">How it is built</h3>
+        <ul class="clean" style="margin-top:.6rem;">
+          <li>Collapsible sections so a busy reader scans what they need</li>
+          <li>Audio overview generated with NotebookLM for the drive home</li>
+          <li>Self-contained HTML, embeds in WordPress through an iframe</li>
+          <li>Drafted from sources you already saved in Raindrop</li>
+        </ul>
+        <p style="margin-top:.8rem;"><a href="https://mguhlin.github.io/creations/visuals/ai-newsletters-interactive.html" target="_blank" rel="noopener" style="color:var(--gold-light);font-size:.85rem;">Open the live example &rarr;</a></p>
+      </div>
+    </div>`,
+  notes:`Let me show you what one of these actually looks like when it is finished. This is the AI Interactive Newsletter. The reader sees a headline, a short intro, and then a set of collapsible sections. A busy principal can open only the part they care about. There is also an audio overview I generate with NotebookLM, so someone can listen on the drive home instead of reading. Three things make this work. It is collapsible so it respects the reader's time. It is self-contained, so it embeds in WordPress through an iframe. And I did not start from a blank page. I drafted it from the sources I had already saved in Raindrop. That is the whole loop in one artifact.`
+},
+{
+  bg:'', title:'Connect It: KPI Dashboard',
+  html:`<div class="kicker">C &nbsp; Connect It &nbsp;·&nbsp; Example</div>
+    <h2>K-12 KPI Dashboard Generator</h2>
+    <div class="two-col weighted">
+      <div>
+        <p class="lead" style="margin-bottom:1rem;">Build information-rich dashboards from your own data. Generated with Gen AI, hosted as a single self-contained page.</p>
+        <div class="card">${ART.bars}</div>
+      </div>
+      <div>
+        <div class="card accent-l" style="margin-bottom:.8rem;"><div class="phase" style="color:var(--text-muted);">Self-contained</div><strong style="color:var(--navy);font-size:1.2rem;font-family:var(--serif);">Single HTML file</strong></div>
+        <div class="card accent-l" style="margin-bottom:.8rem;"><div class="phase" style="color:var(--text-muted);">Data source</div><strong style="color:var(--navy);font-size:1.2rem;font-family:var(--serif);">Your Google Sheet</strong></div>
+        <div class="card accent-l"><div class="phase" style="color:var(--text-muted);">Hosting</div><strong style="color:var(--navy);font-size:1.2rem;font-family:var(--serif);">GitHub Pages</strong></div>
+        <p style="margin-top:.8rem;"><a href="https://mglearn.github.io/tcea/kpi-dashboard/k12-kpi-dashboard-generator.html" target="_blank" rel="noopener" class="gold" style="font-size:.85rem;font-weight:600;">Open the generator &rarr;</a></p>
+      </div>
+    </div>`,
+  notes:`This is the K-12 KPI Dashboard Generator. The chart you see is mock data, but the structure is real. You feed in your own numbers, attendance, reading, math, engagement, whatever you track, and you get a clean dashboard you can hand to a principal or a board. Three things make this practical. It is a single self-contained HTML file, so there is nothing to install. The data comes from a Google Sheet you control. And you can host it free on GitHub Pages. So the whole thing lives in places you already have access to, and you are not depending on a vendor to keep it alive.`
+},
+{
+  bg:'', title:'Connect It: Apps Script',
+  html:`<div class="kicker">C &nbsp; Connect It &nbsp;·&nbsp; Live Demo</div>
+    <h2>Web data into a Google Sheet</h2>
+    <p class="lead">Ask the AI to write the Apps Script for you. Paste it into your Sheet, run it, and your data updates itself. No code experience needed.</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h4>Describe</h4><p>Tell the AI what data and which sheet.</p></div>
+      <div class="step"><div class="n">2</div><h4>Generate</h4><p>It writes the Apps Script for you.</p></div>
+      <div class="step"><div class="n">3</div><h4>Paste &amp; run</h4><p>Drop it in, authorize, run once.</p></div>
+      <div class="step"><div class="n">4</div><h4>Auto-update</h4><p>Set a trigger, it refreshes on a schedule.</p></div>
+    </div>
+    <div class="prompt" style="margin-top:1.2rem;">
+      <div class="ptop"><span class="badge">Copy Prompt</span><span class="plabel">Paste this into your AI tool</span></div>
+      <pre>Write a Google Apps Script for a Sheet named "KPI Data". Pull the public table
+at [PASTE URL], map the columns to my headers, and append a timestamped row.
+Add a daily time-driven trigger so it refreshes on its own. Explain where to paste it.</pre>
+    </div>`,
+  notes:`Here is a step that surprises people. You do not have to copy and paste data by hand. You can ask the AI to write a Google Apps Script that pulls data from a web page straight into a Sheet. The flow is four steps. You describe what you want. The AI generates the script. You paste it into your Sheet, authorize it, and run it once. Then you set a trigger so it refreshes on its own. The prompt at the bottom is a starting point. Swap in your own URL and your own sheet name. The key idea is that the AI handles the code, and you handle the judgment about what data matters. That same Sheet then feeds the dashboard we just looked at.`
+},
+{
+  bg:'dark', title:'Extend It: VIBES',
+  html:`<div class="kicker">E &nbsp; Extend It</div>
+    <h2>The VIBES framework</h2>
+    <p class="lead">A repeatable way to extend any idea into a working tool, then host it where your audience already is.</p>
+    <div class="grid" style="grid-template-columns:repeat(5,1fr);margin-top:1.4rem;">
+      ${[['V','Vision','Name what you want'],['I','Instruct','Tell the AI clearly'],['B','Build','Generate the tool'],['E','Evaluate','Test and refine'],['S','Ship','Host and share']].map(v=>`<div class="card on-dark" style="text-align:center;"><div class="ico" style="margin:0 auto .7rem;">${v[0]}</div><h3 style="font-size:1.25rem;">${v[1]}</h3><p style="font-size:.85rem;">${v[2]}</p></div>`).join('')}
+    </div>
+    <p class="muted" style="margin-top:1rem;font-style:italic;text-align:center;color:var(--pale-navy);">Page hosting and places to embed your work: WordPress, GitHub, Google Sites.</p>`,
+  notes:`Now we move into Extend It, and this is the framework that makes it repeatable. VIBES. Vision is naming what you want. Instruct is telling the AI clearly what to build. Build is generating it. Evaluate is testing and refining, because the first draft is rarely the last. And Ship is hosting it where people can actually use it. That last step matters more than people expect. A tool that sits on your hard drive helps no one. Pick whichever host your audience already visits, WordPress, GitHub, or Google Sites.`
+},
+{
+  bg:'', title:'Extend It: Patterns',
+  html:`<div class="kicker">E &nbsp; Extend It</div>
+    <h2>Types of data representation</h2>
+    <div class="two-col">
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div style="background:var(--gold);padding:1rem 1.3rem;"><h3 style="color:var(--navy);">Easy</h3><span style="color:var(--navy-dark);font-size:.85rem;">Self-contained, no JavaScript</span></div>
+        <div style="padding:1.2rem 1.3rem;"><ul class="clean"><li>Card flip</li><li>Accordion / collapsible sections</li><li>Progress bars</li><li>Comparison table</li><li>Stat counters</li></ul></div>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div style="background:var(--navy);padding:1rem 1.3rem;"><h3 style="color:#fff;">Medium</h3><span style="color:var(--gold-light);font-size:.85rem;">JavaScript required</span></div>
+        <div style="padding:1.2rem 1.3rem;"><ul class="clean"><li>Searchable / filterable list</li><li>Tabs</li><li>Carousel</li><li>Flashcard deck</li><li>Timeline</li></ul></div>
+      </div>
+    </div>`,
+  notes:`When you go to extend your work, you have choices about how the data shows up. I split these into two buckets. On the left are the easy patterns. Card flips, accordions, progress bars, comparison tables, and stat counters. These need no JavaScript, so they are self-contained and almost impossible to break. On the right are the medium patterns. Searchable lists, tabs, carousels, flashcard decks, and timelines. These need a little JavaScript, but the AI writes it for you. My advice is to start on the left. Most of the time an accordion or a stat counter does exactly what you need, and you can always reach for the right column later.`
+},
+{
+  bg:'', title:'Extend It: Field Guide',
+  html:`<div class="kicker">E &nbsp; Extend It &nbsp;·&nbsp; Companion Site</div>
+    <h2>The Data Display Patterns field guide</h2>
+    <div class="two-col weighted">
+      <div class="frame">
+        <div class="bar"><i style="background:#FCB040"></i><i style="background:#FDD17A"></i><i style="background:#D0D8F0"></i><span class="url">mglearn.github.io/tcea/ddp/</span></div>
+        <div class="body">
+          <div class="kicker" style="margin-bottom:.2rem;">Data Display Patterns</div>
+          <h3 style="font-family:var(--serif);color:var(--navy);font-size:1.4rem;">A working catalog of patterns</h3>
+          <p class="muted" style="font-style:italic;margin:.4rem 0 .8rem;">Every pattern includes a live demo, a copy-ready prompt, suggested data sources, and where it hosts best.</p>
+          ${['Easy Patterns','Medium Patterns','Charts &amp; KPIs','Hosting Guide','VIBES Framework'].map((t,k)=>`<div style="background:${k===0?'var(--gold-pale)':'var(--off-white)'};border:1px solid var(--border);border-radius:6px;padding:.45rem .8rem;margin-bottom:.35rem;font-weight:600;color:var(--navy);font-size:.9rem;">${t}</div>`).join('')}
+        </div>
+      </div>
+      <div class="card on-dark" style="background:var(--navy);">
+        <h3 style="color:var(--gold);">How to use it</h3>
+        <ol style="margin:.6rem 0 0 1.1rem;color:#fff;line-height:1.7;">
+          <li>Find a pattern that fits your data</li>
+          <li>Copy its prompt into your AI tool</li>
+          <li>Paste your numbers, or a link to an article</li>
+          <li>Check the Hosting Guide before you embed</li>
+        </ol>
+        <p style="margin-top:.9rem;"><a href="https://mglearn.github.io/tcea/ddp/" target="_blank" rel="noopener" style="color:var(--gold-light);font-size:.85rem;">Open the field guide &rarr;</a></p>
+      </div>
+    </div>`,
+  notes:`Everything I am about to show you lives on this companion site, and it stays up after today. It is a field guide to data display patterns. The idea is structure over data. You pick the shape that matches the question your reader is asking, then you pour your own numbers in. Each pattern on the site gives you four things. A live demo so you can see it move, a copy-ready prompt, suggested data sources, and a note about where it hosts best. The workflow is simple. Find a pattern, copy its prompt, paste in your data or an article link, and check the hosting guide before you embed. Let me show you a couple of the actual prompts.`
+},
+{
+  bg:'', title:'Easy Prompts',
+  html:`<div class="kicker">E &nbsp; Extend It &nbsp;·&nbsp; Easy Prompts</div>
+    <h2>Copy-ready prompts, CSS only</h2>
+    <p class="muted" style="margin-bottom:1rem;">Easy patterns use no JavaScript, so nothing gets stripped. They work in every host, including WordPress Custom HTML blocks.</p>
+    <div class="two-col">
+      <div class="prompt"><div class="ptop"><span class="badge">Copy Prompt</span><span class="plabel">Card Flip</span></div><pre>Build a single self-contained HTML file with a row of
+flip cards. Each card shows a headline number on the
+front and a short explanation on the back, flipping on
+hover and on click. CSS transforms only, no libraries.
+TCEA navy #0A3476, gold #FCB040.
+
+Data (label, number, explanation):
+[PASTE YOUR DATA HERE]</pre></div>
+      <div class="prompt"><div class="ptop"><span class="badge">Copy Prompt</span><span class="plabel">Progress Bars</span></div><pre>Build a single self-contained HTML file with horizontal
+progress bars. Each row has a label, a track, and a
+filled portion sized by CSS width with the percentage
+shown inside the fill. Pure CSS, no JavaScript.
+TCEA navy #0A3476 fills, gold #FCB040 to highlight.
+
+Data (label, percentage):
+[PASTE LABEL AND PERCENTAGE PAIRS]</pre></div>
+    </div>`,
+  notes:`Here are two of the easy prompts, copied straight off the site. On the left is the Card Flip. You give it a label, a number, and an explanation, and you get cards that flip to reveal the detail. On the right is Progress Bars, which is the fastest way to show proportion or completion. Look at how the prompts are written. They name the pattern, they specify a single self-contained file, they lock in the TCEA colors, and they end with a clear placeholder for your data. That structure is doing the VIBES work for you. You are giving the AI a precise vision and clear instructions, so the build comes back clean the first time. Notice both say CSS only, which is why they survive anywhere.`
+},
+{
+  bg:'', title:'Medium Prompts',
+  html:`<div class="kicker">E &nbsp; Extend It &nbsp;·&nbsp; Medium Prompts</div>
+    <h2>A little JavaScript, more power</h2>
+    <p class="muted" style="margin-bottom:1rem;">Medium patterns add light vanilla JavaScript for filtering or animation. In WordPress, embed these through an iframe, not a Custom HTML block.</p>
+    <div class="two-col">
+      <div class="prompt"><div class="ptop"><span class="badge">Copy Prompt</span><span class="plabel">Searchable / Filterable List</span></div><pre>Build a single self-contained HTML file with a
+searchable, filterable list. A text input filters the
+items live as the user types, vanilla JavaScript only,
+no libraries. Render items as cards or chips.
+TCEA navy #0A3476 and gold #FCB040.
+Embed in WordPress via an iframe.
+
+Data (items, optional category):
+[PASTE YOUR LIST]</pre></div>
+      <div class="prompt"><div class="ptop"><span class="badge">Copy Prompt</span><span class="plabel">Timeline</span></div><pre>Build a single self-contained HTML file with a vertical
+timeline. Each entry has a date and a short description,
+connected by a vertical line with gold #FCB040 dots.
+CSS layout with optional light vanilla JavaScript for
+scroll-reveal. TCEA navy #0A3476 text.
+
+Data (date, event):
+[PASTE PAIRS, or: "Build a timeline from this
+article: PASTE URL"]</pre></div>
+    </div>`,
+  notes:`These two step it up a little. The Searchable List filters items live as someone types, which is great for a course catalog or a glossary. The Timeline turns a date-and-event list into a clean vertical sequence, and you can even point it at an article and let it build the timeline for you. The important detail is the line in each prompt about hosting. Both of these use JavaScript. That means if your destination is WordPress, you do not paste them into a Custom HTML block, because the script gets stripped on save. You host the file on GitHub Pages and pull it in with an iframe. The prompt tells the AI that up front, so the output is built to survive where you plan to put it.`
+},
+{
+  bg:'', title:'Hosting',
+  html:`<div class="kicker">E &nbsp; Extend It &nbsp;·&nbsp; Hosting</div>
+    <h2>Where your file survives</h2>
+    <p class="muted">The same file behaves differently depending on where you embed it. Match your pattern to your host before you build.</p>
+    <table>
+      <thead><tr><th>Host</th><th>CSS only</th><th>Vanilla JS</th><th>Library charts</th><th>Best method</th></tr></thead>
+      <tbody>
+        <tr><td><strong>GitHub Pages</strong></td><td>Yes</td><td>Yes</td><td>Yes</td><td>Upload directly. Nothing is stripped.</td></tr>
+        <tr><td><strong>Google Sites</strong></td><td>Yes</td><td>Yes</td><td>Usually</td><td>Insert, Embed, Code. Sandboxed iframe.</td></tr>
+        <tr><td><strong>WordPress Custom HTML</strong></td><td>Yes</td><td>Stripped</td><td>Stripped</td><td>Fine for CSS only. JS needs another route.</td></tr>
+        <tr><td><strong>WordPress iframe embed</strong></td><td>Yes</td><td>Yes</td><td>Yes</td><td>Host on GitHub Pages, embed with iframe.</td></tr>
+        <tr><td><strong>LMS (Canvas, Schoology)</strong></td><td>Yes</td><td>Often</td><td>Varies</td><td>Use the iframe or external-tool option.</td></tr>
+      </tbody>
+    </table>
+    <div class="callout"><b>The one rule:</b> if your pattern uses JavaScript and you are headed to WordPress, host it on GitHub Pages and pull it in with an iframe. The iframe keeps your script intact.</div>`,
+  notes:`This table is the part people skip and then regret. The same HTML file behaves differently depending on where you put it. GitHub Pages serves whatever you give it, so everything works. Google Sites runs your file in a sandboxed iframe, which is usually fine, but avoid local storage there. The trap is the WordPress Custom HTML block. It keeps your CSS but strips your JavaScript on save for most users. So a CSS-only pattern is fine there, but anything with script will quietly break. The gold rule at the bottom is what saves you. If your pattern uses JavaScript and you are going to WordPress, host the file on GitHub Pages and bring it in with an iframe. The iframe is a separate document, so your script stays intact.`
+},
+{
+  bg:'', title:'Charts and KPIs',
+  html:`<div class="kicker">E &nbsp; Extend It &nbsp;·&nbsp; Charts &amp; KPIs</div>
+    <h2>The easiest win is a big number</h2>
+    <p class="muted">KPIs belong on almost every dashboard. A headline metric with a trend lands in five seconds. CSS and SVG versions stay self-contained and survive everywhere.</p>
+    <div class="kpi-row">
+      <div class="kpi"><b>94%</b><span>Attendance</span><em>up 3 points</em></div>
+      <div class="kpi hot"><b>12</b><span>Campuses coaching</span><em>up from 7</em></div>
+      <div class="kpi"><b>73%</b><span>Staff AI-trained</span><em>Q2 target met</em></div>
+    </div>
+    <div class="prompt" style="margin-top:1.2rem;">
+      <div class="ptop"><span class="badge">Copy Prompt</span><span class="plabel">Stat counter / KPI row</span></div>
+      <pre>Build a single self-contained HTML file with a row of KPI cards. Each card shows a big
+headline number, a label underneath, and a small trend note. Optional count-up animation
+on load with vanilla JavaScript. TCEA navy #0A3476 cards, gold #FCB040 for the highlighted metric.
+
+Data (number, label, trend):  [PASTE YOUR METRICS]</pre>
+    </div>`,
+  notes:`If you only take one pattern home, take this one. A KPI is just a big number with a label and a trend, and it is the easiest win on any dashboard. A reader gets the message in about five seconds. Here you see three of them, with the middle one highlighted to draw the eye to what matters most. The nice thing is that the CSS and SVG versions are fully self-contained, so they survive in every host. Library charts like Chart.js look richer, but they pull in an outside script that strict hosts block, so I reach for those last. The prompt at the bottom builds the whole row for you, including an optional count-up animation. Swap in your own metrics and you have the top of a dashboard.`
+},
+{
+  bg:'', title:'Coding Tools',
+  html:`<div class="kicker">E &nbsp; Extend It</div>
+    <h2>Best way to code tools</h2>
+    <p class="lead">When you are ready to build for real, two coding agents do the heavy lifting from plain-language instructions.</p>
+    <div class="two-col">
+      <div class="card accent-l"><div class="ico" style="background:var(--gold);">A</div><h3>Claude Code</h3><p>Agentic coding from the terminal or desktop. Strong for multi-file, self-contained builds.</p></div>
+      <div class="card accent-l"><div class="ico" style="background:var(--gold);">B</div><h3>ChatGPT Codex</h3><p>Conversational coding agent for generating and iterating on tools quickly.</p></div>
+    </div>
+    <p class="muted" style="margin-top:1rem;font-style:italic;">The skill you are building is describing what you want clearly. That transfers to either tool.</p>`,
+  notes:`When you are ready to build for real, these are the two coding agents I reach for. Claude Code runs from the terminal or the desktop and is strong when you want a clean, self-contained build across several files. ChatGPT Codex is more conversational and fast for generating something and iterating on it right away. Both take plain-language instructions, which is the whole VIBES idea in action. You do not have to pick one forever. Try both on a small project and see which one fits how you think. The skill you are building is describing what you want clearly, and that transfers to either tool.`
+},
+{
+  bg:'', title:'Toolkit',
+  html:`<div class="kicker">Toolkit</div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;">
+      <h2 style="margin-bottom:.4rem;">Tools you can start with today</h2>
+      <span class="pill">No PII, FERPA, or confidential data</span>
+    </div>
+    <div class="free-paid">
+      <div class="card">
+        <h3 style="margin-bottom:.7rem;">Free</h3>
+        <ul class="clean">
+          <li><a href="https://chat.z.ai/" target="_blank" rel="noopener" style="color:var(--navy);font-weight:600;">Z.ai</a></li>
+          <li><a href="https://mistral.ai/" target="_blank" rel="noopener" style="color:var(--navy);font-weight:600;">Mistral.ai</a></li>
+          <li>Claude AI free tier</li>
+          <li><a href="https://raindrop.io/" target="_blank" rel="noopener" style="color:var(--navy);font-weight:600;">Raindrop.io</a> <span class="muted" style="font-style:italic;">for tracking links</span></li>
+        </ul>
+      </div>
+      <div class="card on-dark" style="background:var(--navy);">
+        <h3 style="color:var(--gold);margin-bottom:.7rem;">Paid</h3>
+        <ul class="clean">
+          <li><a href="https://boodle.cello.so/vFr0d8nfKmL" target="_blank" rel="noopener" style="color:#fff;font-weight:600;">BoodleBox Unlimited</a> <span style="color:var(--gold-light);font-style:italic;">code MGFREE123 for two months free</span></li>
+          <li><a href="https://chatgpt.com/explore/plus" target="_blank" rel="noopener" style="color:#fff;font-weight:600;">ChatGPT Plus</a></li>
+          <li><a href="https://claude.ai/" target="_blank" rel="noopener" style="color:#fff;font-weight:600;">Claude AI</a></li>
+          <li><a href="https://gemini.google.com/" target="_blank" rel="noopener" style="color:#fff;font-weight:600;">Google Gemini</a></li>
+        </ul>
+      </div>
+    </div>`,
+  notes:`Here is your starter kit. On the free side, Z.ai, Mistral, and the free tier of Claude will all get you going, and Raindrop handles your link tracking. On the paid side, BoodleBox Unlimited is my workhorse, and there is a code on the slide, MGFREE123, that gives you two months free, so you can try it without spending anything. ChatGPT Plus, Claude, and Gemini round it out. One firm rule before you touch any of these. Do not put in personally identifiable information, anything covered by FERPA, or confidential and sensitive data. Treat every one of these tools as a public space.`
+},
+{
+  bg:'navy', title:'Your Turn',
+  html:`<div class="blob" style="width:24rem;height:24rem;background:var(--navy-mid);opacity:.5;top:-6rem;right:-4rem;"></div>
+    <div class="kicker">Your Turn</div>
+    <h2>Build one in the next ten minutes</h2>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h4>Pick a pattern</h4><p>Open the field guide and choose one Easy pattern that fits data you already have.</p></div>
+      <div class="step"><div class="n">2</div><h4>Copy the prompt</h4><p>Grab the copy-ready prompt and paste it into Claude, ChatGPT, or BoodleBox.</p></div>
+      <div class="step"><div class="n">3</div><h4>Paste your data</h4><p>Drop in your numbers, or a link to an article you want visualized.</p></div>
+      <div class="step"><div class="n">4</div><h4>Ship it</h4><p>Save the file and embed it on GitHub Pages or your site through an iframe.</p></div>
+    </div>
+    <p style="margin-top:1.4rem;font-family:var(--mono);color:var(--gold-light);font-weight:500;">Field guide: <a href="https://mglearn.github.io/tcea/ddp/" target="_blank" rel="noopener" style="color:var(--gold-light);">mglearn.github.io/tcea/ddp/</a></p>`,
+  notes:`Now it is your turn, and I want you to actually build something before you leave. You have ten minutes. Step one, open the field guide and pick one Easy pattern that fits data you already have on hand. Step two, copy that pattern's prompt and paste it into Claude, ChatGPT, or BoodleBox. Step three, paste in your own numbers, or just give it a link to an article you want visualized. Step four, save the file and get it live, either on GitHub Pages or embedded on your own site through an iframe. Start with an Easy pattern so hosting is not a worry. The address for the field guide is right there. I will come around while you work.`
+},
+{
+  bg:'dark', title:'Resources',
+  html:`<div class="blob" style="width:22rem;height:22rem;background:var(--navy-mid);opacity:.45;bottom:-6rem;left:-5rem;"></div>
+    <div class="kicker">Session Resources</div>
+    <h2>Take it back to your campus</h2>
+    <div class="grid g2" style="margin-top:1rem;">
+      <a class="card accent-l" href="https://mglearn.github.io/tcea/kpi-dashboard/k12-kpi-dashboard-generator.html" target="_blank" rel="noopener" style="text-decoration:none;"><strong style="color:var(--navy);font-family:var(--serif);font-size:1.2rem;">K-12 KPI Dashboard</strong><br><span class="muted" style="font-size:.82rem;">mglearn.github.io/tcea/kpi-dashboard/</span></a>
+      <a class="card accent-l" href="https://mglearn.github.io/tcea/ddp/" target="_blank" rel="noopener" style="text-decoration:none;"><strong style="color:var(--navy);font-family:var(--serif);font-size:1.2rem;">Data Display Patterns</strong><br><span class="muted" style="font-size:.82rem;">mglearn.github.io/tcea/ddp/</span></a>
+      <a class="card accent-l" href="https://mguhlin.github.io/creations/visuals/ai-newsletters-interactive.html" target="_blank" rel="noopener" style="text-decoration:none;"><strong style="color:var(--navy);font-family:var(--serif);font-size:1.2rem;">AI Interactive Newsletter</strong><br><span class="muted" style="font-size:.82rem;">mguhlin.github.io/creations/visuals/</span></a>
+      <a class="card accent-l" href="https://raindrop.io/mguhlin/learning-loop-65204141" target="_blank" rel="noopener" style="text-decoration:none;"><strong style="color:var(--navy);font-family:var(--serif);font-size:1.2rem;">The Learning Loop series</strong><br><span class="muted" style="font-size:.82rem;">raindrop.io/mguhlin/learning-loop</span></a>
+      <a class="card accent-l" href="https://blog.tcea.org/kpi-dashboards-built-with-gen-ai/" target="_blank" rel="noopener" style="text-decoration:none;"><strong style="color:var(--navy);font-family:var(--serif);font-size:1.2rem;">About KPI dashboards</strong><br><span class="muted" style="font-size:.82rem;">blog.tcea.org/kpi-dashboards-built-with-gen-ai/</span></a>
+      <a class="card accent-l" href="https://mguhlin.org/category/field-notes/" target="_blank" rel="noopener" style="text-decoration:none;"><strong style="color:var(--navy);font-family:var(--serif);font-size:1.2rem;">Field Notes newsletters</strong><br><span class="muted" style="font-size:.82rem;">mguhlin.org/category/field-notes/</span></a>
+    </div>
+    <p class="title-meta" style="margin-top:1.6rem;">Miguel Guhlin &nbsp;·&nbsp; mguhlin@tcea.org &nbsp;·&nbsp; blog.tcea.org &nbsp;·&nbsp; mguhlin.org</p>`,
+  notes:`Everything we covered is here so you can take it back to your campus. The K-12 KPI Dashboard and the Data Display Patterns are both live, and you can open them and look at the code. The newsletter examples and the Learning Loop series show you the publishing side. About KPI Dashboards is the write-up if you want the thinking behind the build. My contact is at the bottom. Reach out anytime. The one thing I would ask is this. Pick one of these and build something small this week. Articulate it, connect it to your work, and extend it. That first one is the hardest, and after that it gets easy. Thank you.`
+}
+];
+</script>
+<script>// ===== ENGINE =====
+(function(){
+  const deck = document.getElementById('deck');
+  const $ = id => document.getElementById(id);
+
+  // render slides
+  deck.innerHTML = SLIDES.map((s,k)=>
+    `<section class="slide ${s.bg||''}" data-i="${k}">${s.html}</section>`
+  ).join('');
+  const slideEls = Array.from(deck.querySelectorAll('.slide'));
+  const total = slideEls.length;
+  $('total').textContent = total;
+
+  // dots
+  $('dots').innerHTML = SLIDES.map((s,k)=>`<span class="dot" data-i="${k}" title="${s.title||('Slide '+(k+1))}"></span>`).join('');
+  const dots = Array.from($('dots').querySelectorAll('.dot'));
+
+  let i = 0, notesOpen = false, presenter = false;
+  const isPresenterWindow = new URLSearchParams(location.search).get('presenter')==='1';
+
+  // cross-window sync
+  const chan = ('BroadcastChannel' in window) ? new BroadcastChannel('tcea-webdeck') : null;
+
+  function render(){
+    slideEls.forEach((el,k)=>el.classList.toggle('active', k===i));
+    dots.forEach((d,k)=>d.classList.toggle('on', k===i));
+    $('cur').textContent = i+1;
+    $('progress').style.width = ((i+1)/total*100)+'%';
+    // notes panel
+    $('ntitle').textContent = SLIDES[i].title || '';
+    $('nbody').textContent = SLIDES[i].notes || '';
+    // presenter view
+    if(presenter || document.body.classList.contains('presenter')){
+      $('pvNotes').textContent = SLIDES[i].notes || '';
+      const nxt = SLIDES[i+1];
+      $('pvNext').textContent = nxt ? ('Next  ·  '+(nxt.title||('Slide '+(i+2)))) : 'End of deck';
+    }
+  }
+
+  function go(n,broadcast=true){
+    i = Math.max(0, Math.min(total-1, n));
+    render();
+    if(broadcast && chan) chan.postMessage({type:'go', i});
+  }
+  const next = ()=>go(i+1);
+  const prev = ()=>go(i-1);
+
+  // receive sync
+  if(chan) chan.onmessage = e=>{
+    if(e.data.type==='go') go(e.data.i, false);
+  };
+
+  // ----- notes -----
+  function toggleNotes(){ notesOpen=!notesOpen; $('notes').classList.toggle('open',notesOpen); }
+
+  // ----- presenter (dual screen) -----
+  function togglePresenter(){
+    // open a second window that shows audience slides; this window becomes presenter console
+    const w = window.open(location.pathname+'?presenter=0','tcea_audience','width=1280,height=800');
+    if(!w){ alert('Allow pop-ups to open the audience window, then press P again.'); return; }
+    document.body.classList.add('presenter');
+    presenter = true;
+    render();
+  }
+
+  // presenter clock
+  let t0 = Date.now();
+  function fmt(ms){const s=Math.floor(ms/1000);const m=Math.floor(s/60);return String(m).padStart(2,'0')+':'+String(s%60).padStart(2,'0');}
+  setInterval(()=>{ if(presenter||isPresenterWindow){ $('pvClock').textContent = fmt(Date.now()-t0); } },1000);
+  $('pvReset').onclick = ()=>{ t0=Date.now(); };
+  $('pvPrev').onclick = prev;
+  $('pvNext2').onclick = next;
+
+  // if this window is the audience window opened by presenter, keep chrome minimal
+  if(isPresenterWindow){
+    document.getElementById('botbar').style.opacity='.6';
+  }
+
+  // ----- fullscreen -----
+  function toggleFull(){
+    if(!document.fullscreenElement){ document.documentElement.requestFullscreen?.(); }
+    else { document.exitFullscreen?.(); }
+  }
+
+  // ----- help -----
+  function toggleHelp(){ $('help').classList.toggle('open'); }
+
+  // buttons
+  $('bNotes').onclick = toggleNotes;
+  $('bPresent').onclick = togglePresenter;
+  $('bFull').onclick = toggleFull;
+  $('bHelp').onclick = toggleHelp;
+  $('helpClose').onclick = toggleHelp;
+  dots.forEach(d=>d.onclick=()=>go(+d.dataset.i));
+
+  // keyboard
+  document.addEventListener('keydown', e=>{
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='ArrowDown'||e.key==='PageDown'){ e.preventDefault(); next(); }
+    else if(e.key==='ArrowLeft'||e.key==='ArrowUp'||e.key==='PageUp'){ e.preventDefault(); prev(); }
+    else if(e.key==='Home'){ go(0); }
+    else if(e.key==='End'){ go(total-1); }
+    else if(e.key.toLowerCase()==='s'){ toggleNotes(); }
+    else if(e.key.toLowerCase()==='p'){ togglePresenter(); }
+    else if(e.key.toLowerCase()==='f'){ toggleFull(); }
+    else if(e.key==='?'){ toggleHelp(); }
+    else if(e.key==='Escape'){ $('help').classList.remove('open'); if(notesOpen) toggleNotes(); }
+  });
+
+  // touch swipe
+  let tx=0;
+  deck.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});
+  deck.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx; if(Math.abs(dx)>50){ dx<0?next():prev(); }},{passive:true});
+
+  // deep link via hash
+  const h = parseInt(location.hash.replace('#',''),10);
+  if(!isNaN(h)) i = Math.max(0,Math.min(total-1,h-1));
+
+  render();
+})();
+</script>
+</body>
+</html>
