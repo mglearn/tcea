@@ -201,9 +201,46 @@ ul.clean li::before{content:'';position:absolute;left:0;top:.55em;width:8px;heig
 @media (max-height:480px) and (orientation:landscape){
   .slide{justify-content:flex-start;padding-top:1.5rem}
 }
+/* password gate */
+#gate{position:fixed;inset:0;z-index:100;background:var(--navy-dark);
+  display:flex;align-items:center;justify-content:center;padding:1.5rem}
+#gate.hidden{display:none}
+.gate-card{width:min(92vw,400px);background:rgba(255,255,255,.05);
+  border:1px solid rgba(252,176,64,.4);border-radius:16px;
+  padding:2.4rem 2rem;text-align:center}
+.gate-motif{display:block;width:48px;height:48px;margin:0 auto 1.2rem;
+  background:
+    linear-gradient(var(--gold),var(--gold)) 0 100%/9px 16px no-repeat,
+    linear-gradient(var(--gold),var(--gold)) 19px 100%/9px 28px no-repeat,
+    linear-gradient(var(--gold),var(--gold)) 38px 100%/9px 40px no-repeat;
+  opacity:.9}
+.gate-sub{color:var(--pale-navy);font-size:.95rem;line-height:1.5;margin-bottom:1.4rem}
+#gatePw{width:100%;padding:.8rem 1rem;font-size:1rem;font-family:'DM Sans',sans-serif;
+  border:1px solid rgba(255,255,255,.25);border-radius:8px;
+  background:rgba(255,255,255,.08);color:#fff;outline:none;margin-bottom:.8rem}
+#gatePw:focus{border-color:var(--gold)}
+#gatePw::placeholder{color:rgba(255,255,255,.45)}
+#gateBtn{width:100%;padding:.8rem 1rem;font-size:1rem;font-weight:600;cursor:pointer;
+  font-family:'DM Sans',sans-serif;border:none;border-radius:8px;
+  background:var(--gold);color:var(--navy-dark);transition:filter .2s}
+#gateBtn:hover{filter:brightness(1.06)}
+#gateErr{display:none;color:var(--gold-light);font-size:.88rem;margin-top:.9rem}
+#gateErr.show{display:block}
 </style>
 </head>
 <body>
+<div id="gate">
+  <div class="gate-card">
+    <span class="gate-motif" aria-hidden="true"></span>
+    <div class="kicker" style="color:var(--gold)">NSF 26-508 &bull; TCEA</div>
+    <h2 style="color:#fff;margin:.2rem 0 .3rem">Protected briefing</h2>
+    <p class="gate-sub">Enter the password to view this presentation.</p>
+    <input type="password" id="gatePw" placeholder="Password" autocomplete="off"
+      aria-label="Password" autofocus>
+    <button id="gateBtn">Unlock</button>
+    <div id="gateErr" role="alert">Incorrect password. Try again.</div>
+  </div>
+</div>
 <div id="progress"></div>
 <div id="deck"></div>
 <div class="edge-l" id="edgeL"></div>
@@ -239,6 +276,33 @@ ul.clean li::before{content:'';position:absolute;left:0;top:.55em;width:8px;heig
 </div>
 
 <script>
+/* ============ PASSWORD GATE ============ */
+/* Note: client-side only. The password is recoverable from source.
+   This deters casual access; it is not real security. */
+(function(){
+  const PW = atob('UmVhZHkxIQ==');   // "Ready1!"
+  const gate = document.getElementById('gate');
+  const pw = document.getElementById('gatePw');
+  const btn = document.getElementById('gateBtn');
+  const err = document.getElementById('gateErr');
+  function attempt(){
+    if(pw.value === PW){
+      gate.classList.add('hidden');
+      // hand focus to the deck for keyboard nav
+      document.body.focus();
+    } else {
+      err.classList.add('show');
+      pw.value = '';
+      pw.focus();
+    }
+  }
+  btn.addEventListener('click', attempt);
+  pw.addEventListener('keydown', e=>{
+    err.classList.remove('show');
+    if(e.key === 'Enter'){ e.preventDefault(); attempt(); }
+  });
+})();
+
 /* ============ SLIDE DATA (content only) ============ */
 const SLIDES = [
   {
