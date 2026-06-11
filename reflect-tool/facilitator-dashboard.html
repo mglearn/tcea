@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Reflection Dashboard</title>
+<style>
+:root{
+  --tcea-blue:#0A3476;
+  --tcea-gold:#FCB040;
+  --navy:#061B3D;
+  --ink:#10233F;
+  --muted:#60708A;
+  --paper:#F7F9FC;
+  --white:#fff;
+  --line:#D9E2F2;
+  --shadow:0 18px 45px rgba(6,27,61,.16);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#eef3fb;min-height:100vh}
+header{background:linear-gradient(135deg,var(--tcea-blue),#031A42);color:white;padding:1.3rem clamp(1rem,4vw,2rem);border-bottom:6px solid var(--tcea-gold)}
+.header-row{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;width:min(1180px,96vw);margin:0 auto}
+h1{margin:.1rem 0;font-size:clamp(1.8rem,4vw,3.3rem);letter-spacing:-.03em}.sub{margin:.2rem 0;color:#DDE9FF}
+main{width:min(1180px,96vw);margin:1.25rem auto 3rem;display:grid;grid-template-columns:1.15fr .85fr;gap:1rem}
+.card{background:white;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:1rem}
+.card h2{margin:.2rem 0 1rem;color:var(--tcea-blue);font-size:1.25rem}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-bottom:1rem}.stat{background:#F9FBFF;border:1px solid var(--line);border-radius:18px;padding:.9rem}.stat b{display:block;color:var(--tcea-blue);font-size:clamp(1.7rem,4vw,2.8rem)}.stat span{color:var(--muted);font-weight:700}
+.chart{display:flex;flex-direction:column;gap:.75rem}.bar-row{display:grid;grid-template-columns:145px 1fr 46px;gap:.75rem;align-items:center}.label{font-weight:900;color:var(--tcea-blue)}.track{height:34px;background:#EDF2FA;border-radius:999px;overflow:hidden;border:1px solid #D6E0F0}.fill{height:100%;background:linear-gradient(90deg,var(--tcea-blue),var(--tcea-gold));border-radius:999px;min-width:0;transition:width .35s ease}.count{font-weight:900;text-align:right}.controls{display:flex;gap:.6rem;flex-wrap:wrap}.setup{display:grid;grid-template-columns:1fr auto;gap:.75rem;align-items:end;margin-bottom:1rem}.setup label{display:block;font-weight:900;color:var(--tcea-blue);margin-bottom:.35rem}.setup input{width:100%;border:1px solid #C7D3E8;border-radius:14px;padding:.8rem 1rem;font:inherit}.btn{border:0;border-radius:14px;background:var(--tcea-gold);color:#1D2330;font-weight:900;padding:.8rem 1rem;cursor:pointer}.btn.secondary{background:var(--tcea-blue);color:white}.btn.light{background:#EAF1FF;color:var(--tcea-blue)}
+.response-list{display:flex;flex-direction:column;gap:.7rem;max-height:54vh;overflow:auto;padding-right:.25rem}.response{border:1px solid var(--line);border-radius:16px;padding:.8rem;background:#FBFCFF}.response b{color:var(--tcea-blue)}.response small{color:var(--muted);display:block;margin-top:.2rem}.response p{margin:.45rem 0 0;line-height:1.4}.muted{color:var(--muted)}
+pre{white-space:pre-wrap;background:#061B3D;color:white;border-radius:18px;padding:1rem;max-height:42vh;overflow:auto}
+.status{font-weight:800;color:#DDE9FF}.error{color:#FFD4D4}
+@media(max-width:900px){main{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.bar-row{grid-template-columns:110px 1fr 38px}}
+@media(max-width:560px){.stats{grid-template-columns:1fr}.bar-row{grid-template-columns:1fr}.count{text-align:left}.track{height:28px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-row">
+    <div><h1>Reflection Dashboard</h1><p class="sub">Live facilitator view for technology reflection responses</p></div>
+    <div class="status" id="status">Waiting for setup</div>
+  </div>
+</header>
+<main>
+  <section class="card">
+    <h2>Session Setup</h2>
+    <div class="setup">
+      <div>
+        <label for="sessionName">Workshop session name or code</label>
+        <input id="sessionName" maxlength="80" placeholder="Example: ai-workshop-june-11" />
+      </div>
+      <button class="btn secondary" id="loadSessionBtn">Load Session</button>
+    </div>
+    <p class="muted">Use the same session name or code participants enter on the reflection page.</p>
+    <h2>Current Results</h2>
+    <div class="stats">
+      <div class="stat"><b id="total">0</b><span>Total responses</span></div>
+      <div class="stat"><b id="topChoice">—</b><span>Top response</span></div>
+      <div class="stat"><b id="updated">—</b><span>Last update</span></div>
+    </div>
+    <div id="chart" class="chart"></div>
+  </section>
+  <aside class="card">
+    <h2>Facilitator Tools</h2>
+    <div class="controls">
+      <button class="btn secondary" id="refreshBtn">Refresh Now</button>
+      <button class="btn" id="downloadBtn">Download Markdown</button>
+      <button class="btn light" id="copyBtn">Copy Markdown</button>
+    </div>
+    <h2>Recent Responses</h2>
+    <div id="responses" class="response-list"><p class="muted">No responses loaded yet.</p></div>
+  </aside>
+  <section class="card" style="grid-column:1/-1">
+    <h2>Markdown Preview</h2>
+    <pre id="markdown">No responses yet.</pre>
+  </section>
+</main>
+<script>
+/* SETUP: Paste your Apps Script Web App URL below. Facilitators enter the session name or code on the page. */
+const API_URL = "https://script.google.com/macros/s/AKfycbzo26E43Fhv1IbBYS5AmFLjA8B9hPjTPt_XWUxWMflScdYrUOt6qHmc1yKD58o7Nr2q/exec";
+const POLL_SECONDS = 5;
+const OPTIONS = ["Printer","Monitor","Thumbdrive","Headphones","Camera","Cloud Storage"];
+let latestRows=[];
+function esc(s){return String(s||'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));}
+function timeLabel(iso){try{return new Date(iso).toLocaleTimeString([], {hour:'numeric', minute:'2-digit'});}catch{return '—';}}
+function sessionSlug(value){
+  return String(value||'')
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g,'-')
+    .replace(/^-+|-+$/g,'')
+    .slice(0,80);
+}
+function currentSessionId(){return sessionSlug(document.getElementById('sessionName').value);}
+function buildMarkdown(rows){
+  const sessionId=currentSessionId() || 'session-not-set';
+  const lines=[];
+  lines.push(`# Reflection Time Responses`,'',`Session: ${sessionId}`,`Generated: ${new Date().toISOString()}`,'');
+  const counts=countRows(rows);
+  lines.push('## Summary','');
+  OPTIONS.forEach(label=>lines.push(`- ${label}: ${counts[label]||0}`));
+  lines.push('','## Responses','');
+  rows.forEach((r,i)=>{
+    lines.push(`### ${i+1}. ${r.choiceLabel || 'Unknown'}`);
+    lines.push(`- Time: ${r.timestamp || ''}`);
+    lines.push(`- Name/Table: ${r.displayName || 'Anonymous'}`);
+    lines.push(`- Note: ${r.note || 'None'}`,'');
+  });
+  return lines.join('\n');
+}
+function countRows(rows){return rows.reduce((acc,r)=>{const k=r.choiceLabel||'Unknown';acc[k]=(acc[k]||0)+1;return acc;},{});}
+function render(rows){
+  latestRows=rows||[];
+  const counts=countRows(latestRows); const total=latestRows.length;
+  document.getElementById('total').textContent=total;
+  const top=Object.entries(counts).sort((a,b)=>b[1]-a[1])[0];
+  document.getElementById('topChoice').textContent=top?top[0]:'—';
+  document.getElementById('updated').textContent=new Date().toLocaleTimeString([], {hour:'numeric', minute:'2-digit'});
+  document.getElementById('chart').innerHTML = OPTIONS.map(label=>{
+    const n=counts[label]||0; const pct=total?Math.round(n/total*100):0;
+    return `<div class="bar-row"><div class="label">${esc(label)}</div><div class="track" aria-label="${esc(label)} ${n} responses"><div class="fill" style="width:${pct}%"></div></div><div class="count">${n}</div></div>`;
+  }).join('');
+  document.getElementById('responses').innerHTML = latestRows.slice().reverse().slice(0,30).map(r=>`<article class="response"><b>${esc(r.choiceLabel)}</b><small>${esc(timeLabel(r.timestamp))} · ${esc(r.displayName||'Anonymous')}</small>${r.note?`<p>${esc(r.note)}</p>`:''}</article>`).join('') || '<p class="muted">No responses yet.</p>';
+  document.getElementById('markdown').textContent=buildMarkdown(latestRows);
+}
+async function load(){
+  const status=document.getElementById('status');
+  const sessionId=currentSessionId();
+  if(!API_URL){status.textContent='Add Apps Script URL';status.className='status error';render([]);return;}
+  if(!sessionId){status.textContent='Enter session code';status.className='status error';render([]);return;}
+  try{
+    const res=await fetch(`${API_URL}?sessionId=${encodeURIComponent(sessionId)}&t=${Date.now()}`);
+    const data=await res.json();
+    if(!data.ok) throw new Error(data.error||'Could not load data');
+    status.textContent=`Live · ${data.rows.length} responses`;status.className='status';
+    render(data.rows);
+  }catch(err){status.textContent='Dashboard error: '+err.message;status.className='status error';}
+}
+function download(filename, text){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type:'text/markdown'}));a.download=filename;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(a.href);}
+document.getElementById('loadSessionBtn').addEventListener('click',load);
+document.getElementById('sessionName').addEventListener('keydown',e=>{if(e.key==='Enter')load();});
+document.getElementById('refreshBtn').addEventListener('click',load);
+document.getElementById('downloadBtn').addEventListener('click',()=>download(`reflection-responses-${currentSessionId()||'session'}.md`,buildMarkdown(latestRows)));
+document.getElementById('copyBtn').addEventListener('click',async()=>{await navigator.clipboard.writeText(buildMarkdown(latestRows));document.getElementById('status').textContent='Markdown copied';});
+load();setInterval(load,POLL_SECONDS*1000);
+</script>
+</body>
+</html>
