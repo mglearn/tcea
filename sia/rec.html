@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ACE Framework Learning Recommendations</title>
+  <style>
+    :root {
+      --tcea-navy: #0A3476;
+      --tcea-gold: #FCB040;
+      --stripe-a: #ffffff;
+      --stripe-b: #f7f4ec;
+      --border: #d9d9d9;
+      --text: #1f2933;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 1rem;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: #ffffff;
+      line-height: 1.45;
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .table-card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(10, 52, 118, 0.12);
+      background: #ffffff;
+    }
+
+    .table-title {
+      margin: 0;
+      padding: 1rem 1.25rem;
+      background: #f8fafc;
+      border-bottom: 4px solid var(--tcea-gold);
+      color: var(--tcea-navy);
+      font-size: clamp(1.15rem, 2.2vw, 1.6rem);
+      font-weight: 800;
+    }
+
+    .scroll-table {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+      width: 100%;
+      min-width: 820px;
+      border-collapse: collapse;
+    }
+
+    thead th {
+      background: var(--tcea-navy);
+      color: #ffffff;
+      text-align: left;
+      padding: 0.9rem 1rem;
+      font-size: 0.98rem;
+      vertical-align: top;
+      border-right: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    thead th:last-child {
+      border-right: none;
+    }
+
+    tbody td {
+      padding: 1rem;
+      vertical-align: top;
+      border-top: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      font-size: 0.97rem;
+    }
+
+    tbody td:last-child {
+      border-right: none;
+    }
+
+    tbody tr:nth-child(odd) {
+      background: var(--stripe-a);
+    }
+
+    tbody tr:nth-child(even) {
+      background: var(--stripe-b);
+    }
+
+    tbody tr.recommended {
+      border-left: 8px solid var(--tcea-gold);
+    }
+
+    tbody tr.recommended td:first-child {
+      font-weight: 800;
+      color: var(--tcea-navy);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.22rem 0.5rem;
+      border-radius: 999px;
+      background: var(--tcea-gold);
+      color: #1f2933;
+      font-weight: 800;
+      font-size: 0.82rem;
+      white-space: nowrap;
+      margin-bottom: 0.35rem;
+    }
+
+    strong {
+      color: var(--tcea-navy);
+    }
+
+    .note {
+      padding: 0.85rem 1.25rem 1rem;
+      color: #4b5563;
+      background: #ffffff;
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 0.65rem;
+      }
+
+      .table-title {
+        padding: 0.85rem 1rem;
+      }
+
+      thead th,
+      tbody td {
+        padding: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="table-card" aria-labelledby="ace-title">
+      <h1 class="table-title" id="ace-title">Water Cycle Entry Ticket: ACE Framework Recommendations</h1>
+      <div class="scroll-table" role="region" aria-label="Responsive comparison table" tabindex="0">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Learning Phase</th>
+              <th scope="col">Number of Students</th>
+              <th scope="col">ACE-Aligned Combined Recommendations</th>
+              <th scope="col">Student Numbers</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="recommended">
+              <td>Surface Learning</td>
+              <td>9</td>
+              <td>
+                <span class="badge">Recommended Starting Point</span><br>
+                Begin with <strong>Articulate</strong> activities so students can name, label, sketch, and explain the basic parts of the water cycle. Then move into <strong>Connect</strong> activities that help students link evaporation, condensation, and precipitation into a simple sequence.
+              </td>
+              <td>1, 2, 5, 6, 8, 10, 12, 13, 15</td>
+            </tr>
+            <tr>
+              <td>Deep Learning</td>
+              <td>5</td>
+              <td>
+                Use <strong>Connect</strong> activities to help students explain relationships among water cycle processes. Then add <strong>Extend</strong> tasks, such as building and explaining water cycle models, comparing examples, and applying understanding to new weather or climate situations.
+              </td>
+              <td>3, 7, 9, 11, 14</td>
+            </tr>
+            <tr>
+              <td>Transfer Learning</td>
+              <td>1</td>
+              <td>
+                Focus on <strong>Extend</strong> activities that ask students to generalize, test, and transfer their understanding. Have students design investigations, explain how the water cycle changes across environments, and apply the concept to unfamiliar contexts such as drought, flooding, deserts, or rainforests.
+              </td>
+              <td>4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">
+        ACE Framework: <strong>Articulate</strong> what you know, <strong>Connect</strong> ideas and relationships, and <strong>Extend</strong> learning to new situations.
+      </div>
+    </section>
+  </main>
+</body>
+</html>
