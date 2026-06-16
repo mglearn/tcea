@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Entry / Exit Ticket Item Analysis Tool</title>
+<style>
+  :root{
+    --navy:#0A3476;
+    --gold:#FCB040;
+    --ink:#1f2937;
+    --muted:#667085;
+    --bg:#f6f8fb;
+    --card:#ffffff;
+    --stripe:#fffaf0;
+    --border:#d9e1ec;
+    --success:#176b3a;
+    --warning:#8a4b00;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45;}
+  header{background:var(--navy);color:white;padding:28px 18px;text-align:center;border-bottom:8px solid var(--gold);}
+  header h1{margin:0 0 8px;font-size:clamp(1.7rem,4vw,2.6rem);}
+  header p{margin:0 auto;max-width:920px;font-size:1rem;opacity:.95;}
+  main{max-width:1180px;margin:0 auto;padding:20px;}
+  section{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;margin:18px 0;box-shadow:0 8px 24px rgba(10,52,118,.08);}
+  h2{color:var(--navy);margin:0 0 12px;font-size:1.35rem;}
+  h3{color:var(--navy);margin:18px 0 8px;font-size:1.05rem;}
+  label{font-weight:700;display:block;margin:12px 0 6px;}
+  textarea,input,select{width:100%;border:1px solid var(--border);border-radius:12px;padding:10px;font:inherit;background:#fff;}
+  textarea{min-height:190px;font-family:Consolas,Monaco,monospace;font-size:.92rem;}
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+  .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;}
+  .btnbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:14px;}
+  button{background:var(--navy);color:white;border:0;border-radius:999px;padding:10px 16px;font-weight:700;cursor:pointer;}
+  button.secondary{background:#e9eef7;color:var(--navy);border:1px solid #c9d5e8;}
+  button.gold{background:var(--gold);color:#1b1b1b;}
+  button:hover{filter:brightness(.96);}
+  .note{background:#eef4ff;border-left:6px solid var(--navy);padding:12px;border-radius:12px;color:#26364d;}
+  .warn{background:#fff7e6;border-left:6px solid var(--gold);padding:12px;border-radius:12px;color:#5b3600;}
+  .small{font-size:.92rem;color:var(--muted);}
+  .tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:14px;margin-top:12px;}
+  table{width:100%;border-collapse:collapse;min-width:760px;background:white;}
+  th{background:var(--navy);color:white;text-align:left;padding:12px;border:1px solid #082a5f;vertical-align:top;}
+  td{padding:11px;border:1px solid var(--border);vertical-align:top;}
+  tbody tr:nth-child(even){background:var(--stripe);}
+  .accent{border-left:8px solid var(--gold);}
+  .pill{display:inline-block;padding:4px 9px;border-radius:999px;background:#eef4ff;color:var(--navy);font-weight:700;font-size:.85rem;margin:2px 4px 2px 0;}
+  .pill.gold{background:#fff2d8;color:#5a3500;}
+  .status{font-weight:700;color:var(--success);}
+  .hidden{display:none;}
+  .footer{font-size:.9rem;color:var(--muted);text-align:center;margin:22px 0;}
+  @media(max-width:800px){.grid,.grid3{grid-template-columns:1fr;}main{padding:12px;}section{padding:14px;}header{padding:22px 14px;}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Entry / Exit Ticket Item Analysis Tool</h1>
+  <p>Analyze CSV assessment data, group students by phase of learning, identify SOLO levels, and generate ACE Framework recommendations aligned to selected TEKS.</p>
+</header>
+<main>
+  <section>
+    <h2>1. Paste CSV Data</h2>
+    <p class="small">Required format: one row per student. Include a student column and question score columns such as Q1, Q2, Q3. Use 1 for correct and 0 for incorrect. The tool runs fully in the browser with vanilla JavaScript only.</p>
+    <textarea id="csvInput" aria-label="CSV input">Student,Q1,Q2,Q3,Q4,Q5
+Student 1,0,0,1,0,0
+Student 2,0,0,0,1,1
+Student 3,1,1,1,0,0
+Student 4,1,1,1,1,1
+Student 5,0,0,0,1,0
+Student 6,0,1,0,1,0
+Student 7,1,1,0,1,0
+Student 8,0,0,1,1,0
+Student 9,0,1,1,1,0
+Student 10,1,0,0,1,0
+Student 11,1,1,1,1,0
+Student 12,0,0,1,1,0
+Student 13,1,0,0,0,0
+Student 14,1,1,0,1,0
+Student 15,0,0,0,1,1</textarea>
+    <div class="grid3">
+      <div><label for="studentCol">Student column</label><input id="studentCol" value="Student" /></div>
+      <div><label for="questionPrefix">Question prefix</label><input id="questionPrefix" value="Q" /></div>
+      <div><label for="masteryCut">Mastery cut score (%)</label><input id="masteryCut" type="number" min="1" max="100" value="80" /></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. TEKS Alignment Settings</h2>
+    <div class="grid">
+      <div>
+        <label for="teksCode">Primary TEKS code</label>
+        <input id="teksCode" value="S.5.10.A" />
+      </div>
+      <div>
+        <label for="teksTopic">TEKS topic / concept</label>
+        <input id="teksTopic" value="Water cycle: Sun and ocean interactions; evaporation, condensation, precipitation" />
+      </div>
+    </div>
+    <label for="teksExpectation">Student expectation wording or local alignment note</label>
+    <textarea id="teksExpectation">Students explain how the Sun and ocean interact in the water cycle, including evaporation, condensation, and precipitation.</textarea>
+    <div class="warn">TEKS text should be verified against current district/TEA documentation before official use. This tool supports alignment planning; it does not replace curriculum review.</div>
+  </section>
+
+  <section>
+    <h2>3. Item Purpose Map</h2>
+    <p class="small">Edit these labels to match your entry or exit ticket. The tool uses them to create more specific recommendations.</p>
+    <div class="tablewrap">
+      <table id="purposeTable">
+        <thead><tr><th>Question</th><th>Purpose</th><th>SOLO Signal</th><th>ACE Signal</th></tr></thead>
+        <tbody>
+          <tr><td>Q1</td><td><input value="Draw and label the water cycle" /></td><td><input value="Unistructural / Multistructural" /></td><td><input value="Articulate" /></td></tr>
+          <tr><td>Q2</td><td><input value="Identify evaporation as part of the water cycle" /></td><td><input value="Unistructural" /></td><td><input value="Articulate" /></td></tr>
+          <tr><td>Q3</td><td><input value="Explain why rain falls from clouds" /></td><td><input value="Relational" /></td><td><input value="Connect" /></td></tr>
+          <tr><td>Q4</td><td><input value="Match evaporation, condensation, and precipitation" /></td><td><input value="Multistructural" /></td><td><input value="Connect" /></td></tr>
+          <tr><td>Q5</td><td><input value="Compare the water cycle in a desert and rainforest" /></td><td><input value="Extended Abstract" /></td><td><input value="Extend" /></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="btnbar">
+      <button class="gold" onclick="analyze()">Analyze CSV</button>
+      <button class="secondary" onclick="downloadReport()">Download HTML Report</button>
+      <button class="secondary" onclick="copySummary()">Copy Summary</button>
+    </div>
+    <p id="copyStatus" class="small"></p>
+  </section>
+
+  <section id="results" class="hidden">
+    <h2>Analysis Results</h2>
+    <div id="summaryCards"></div>
+    <h3>Combined Recommendations</h3>
+    <div id="combinedTable"></div>
+    <h3>Item Analysis</h3>
+    <div id="itemTable"></div>
+    <h3>Student-Level Placement</h3>
+    <div id="studentTable"></div>
+  </section>
+
+  <p class="footer">Self-contained HTML • No libraries • No localStorage • iframe-ready</p>
+</main>
+<script>
+function parseCSV(text){
+  const rows=[]; let row=[], field='', inQuotes=false;
+  for(let i=0;i<text.length;i++){
+    const c=text[i], n=text[i+1];
+    if(c==='"' && inQuotes && n==='"'){ field+='"'; i++; }
+    else if(c==='"'){ inQuotes=!inQuotes; }
+    else if(c===',' && !inQuotes){ row.push(field.trim()); field=''; }
+    else if((c==='\n'||c==='\r') && !inQuotes){
+      if(c==='\r' && n==='\n') i++;
+      row.push(field.trim()); field='';
+      if(row.some(v=>v!=='')) rows.push(row);
+      row=[];
+    } else field+=c;
+  }
+  row.push(field.trim()); if(row.some(v=>v!=='')) rows.push(row);
+  if(rows.length<2) return [];
+  const headers=rows[0].map(h=>h.trim());
+  return rows.slice(1).map(r=>{const o={}; headers.forEach((h,i)=>o[h]=r[i]||''); return o;});
+}
+function esc(s){return String(s??'').replace(/[&<>'"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[m]));}
+function getPurposeMap(){
+  const map={};
+  document.querySelectorAll('#purposeTable tbody tr').forEach(tr=>{
+    const q=tr.cells[0].textContent.trim();
+    const inputs=tr.querySelectorAll('input');
+    map[q]={purpose:inputs[0].value, solo:inputs[1].value, ace:inputs[2].value};
+  });
+  return map;
+}
+function classify(score,total,profile){
+  const pct=total?score/total:0;
+  const advanced = profile.Q5===1 || pct>=.9;
+  const deep = pct>=.6 || (profile.Q3===1 && profile.Q4===1);
+  if(advanced) return {phase:'Transfer Learning',solo:'Extended Abstract',ace:'Extend'};
+  if(deep) return {phase:'Deep Learning',solo:'Relational',ace:'Connect → Extend'};
+  if(score<=1) return {phase:'Surface Learning',solo:'Unistructural',ace:'Articulate'};
+  return {phase:'Surface Learning',solo:'Multistructural',ace:'Articulate → Connect'};
+}
+function recommendation(phase, solo, teksCode, teksTopic){
+  if(phase==='Transfer Learning'){
+    return `ACE: Extend. Ask students to transfer their understanding of ${teksTopic} to a new case, such as comparing climates, designing a model, or explaining how changes in sunlight or ocean conditions could affect the cycle. SOLO target: Extended Abstract. TEKS alignment: ${teksCode}.`;
+  }
+  if(phase==='Deep Learning'){
+    return `ACE: Connect → Extend. Have students connect evaporation, condensation, and precipitation in a complete cause-and-effect explanation, then apply the model to a different setting. SOLO target: Relational. TEKS alignment: ${teksCode}.`;
+  }
+  if(solo==='Unistructural'){
+    return `ACE: Articulate. Begin with vocabulary, labeled diagrams, and short oral explanations so students can name and describe one accurate part of the water cycle at a time. SOLO target: Unistructural. TEKS alignment: ${teksCode}.`;
+  }
+  return `ACE: Articulate → Connect. Have students explain each water cycle term, match examples, and connect two or more parts in sequence using sentence stems and diagrams. SOLO target: Multistructural. TEKS alignment: ${teksCode}.`;
+}
+function analyze(){
+  const data=parseCSV(document.getElementById('csvInput').value);
+  const studentCol=document.getElementById('studentCol').value.trim();
+  const prefix=document.getElementById('questionPrefix').value.trim();
+  const teksCode=document.getElementById('teksCode').value.trim();
+  const teksTopic=document.getElementById('teksTopic').value.trim();
+  const purposeMap=getPurposeMap();
+  if(!data.length){alert('Paste valid CSV data first.'); return;}
+  const headers=Object.keys(data[0]);
+  const qCols=headers.filter(h=>h.toLowerCase().startsWith(prefix.toLowerCase()));
+  if(!qCols.length){alert('No question columns found. Check the question prefix.'); return;}
+  const students=data.map(row=>{
+    const profile={}; let score=0;
+    qCols.forEach(q=>{const v=Number(row[q]); profile[q]=v===1?1:0; score+=profile[q];});
+    const c=classify(score,qCols.length,profile);
+    return {name:row[studentCol]||'Unnamed student',score,total:qCols.length,pct:Math.round(score/qCols.length*100),...c,rec:recommendation(c.phase,c.solo,teksCode,teksTopic),profile};
+  });
+  const groups={}; students.forEach(s=>{groups[s.phase]??=[]; groups[s.phase].push(s);});
+  const itemStats=qCols.map(q=>{
+    const correct=students.reduce((a,s)=>a+(s.profile[q]||0),0);
+    return {q,correct,total:students.length,pct:Math.round(correct/students.length*100),...(purposeMap[q]||{})};
+  });
+  render(students,groups,itemStats,qCols);
+}
+function render(students,groups,itemStats,qCols){
+  document.getElementById('results').classList.remove('hidden');
+  const total=students.length;
+  const avg=Math.round(students.reduce((a,s)=>a+s.pct,0)/total);
+  const phaseOrder=['Surface Learning','Deep Learning','Transfer Learning'];
+  document.getElementById('summaryCards').innerHTML=`<div class="grid3">
+    <div class="note"><strong>Total students:</strong><br>${total}</div>
+    <div class="note"><strong>Average score:</strong><br>${avg}%</div>
+    <div class="note"><strong>Primary need:</strong><br>${esc(phaseOrder.map(p=>[p,(groups[p]||[]).length]).sort((a,b)=>b[1]-a[1])[0][0])}</div>
+  </div>`;
+  let combined=`<div class="tablewrap"><table><thead><tr><th>Learning Phase</th><th>Number of Students</th><th>ACE + SOLO Recommendation</th><th>Student Numbers</th></tr></thead><tbody>`;
+  phaseOrder.forEach(p=>{
+    const arr=groups[p]||[]; if(!arr.length)return;
+    const sample=arr[0]; const nums=arr.map(s=>esc(s.name.replace(/[^0-9]/g,'')||s.name)).join(', ');
+    combined+=`<tr class="accent"><td><span class="pill gold">${esc(p)}</span><br><span class="small">${esc(sample.solo)}</span></td><td>${arr.length}</td><td>${esc(sample.rec)}</td><td>${nums}</td></tr>`;
+  });
+  combined+=`</tbody></table></div>`;
+  document.getElementById('combinedTable').innerHTML=combined;
+  let item=`<div class="tablewrap"><table><thead><tr><th>Item</th><th>Purpose</th><th>Correct</th><th>Success Rate</th><th>SOLO Signal</th><th>ACE Move</th><th>Suggested Response</th></tr></thead><tbody>`;
+  itemStats.forEach(it=>{
+    const response= it.pct<50 ? 'Reteach with Articulate supports: vocabulary, labeled examples, and quick checks.' : it.pct<80 ? 'Use Connect routines: explain relationships, compare examples, and justify matches.' : 'Move toward Extend: apply the idea to a new context or student-created model.';
+    item+=`<tr><td>${esc(it.q)}</td><td>${esc(it.purpose||'')}</td><td>${it.correct}/${it.total}</td><td>${it.pct}%</td><td>${esc(it.solo||'')}</td><td>${esc(it.ace||'')}</td><td>${esc(response)}</td></tr>`;
+  }); item+=`</tbody></table></div>`;
+  document.getElementById('itemTable').innerHTML=item;
+  let st=`<div class="tablewrap"><table><thead><tr><th>Student</th><th>Score</th><th>Learning Phase</th><th>SOLO Level</th><th>ACE Recommendation</th></tr></thead><tbody>`;
+  students.forEach(s=>{st+=`<tr><td>${esc(s.name)}</td><td>${s.score}/${s.total} (${s.pct}%)</td><td>${esc(s.phase)}</td><td>${esc(s.solo)}</td><td>${esc(s.rec)}</td></tr>`;});
+  st+=`</tbody></table></div>`;
+  document.getElementById('studentTable').innerHTML=st;
+}
+function copySummary(){
+  const el=document.getElementById('results');
+  if(el.classList.contains('hidden')){document.getElementById('copyStatus').textContent='Run the analysis first.';return;}
+  const text=el.innerText;
+  navigator.clipboard?.writeText(text).then(()=>document.getElementById('copyStatus').textContent='Summary copied.').catch(()=>document.getElementById('copyStatus').textContent='Copy not available in this browser. Select the results and copy manually.');
+}
+function downloadReport(){
+  const results=document.getElementById('results');
+  if(results.classList.contains('hidden')){alert('Run the analysis first.');return;}
+  const html=`<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Item Analysis Report</title><style>${document.querySelector('style').textContent}</style></head><body><header><h1>Entry / Exit Ticket Item Analysis Report</h1><p>${esc(document.getElementById('teksCode').value)} — ${esc(document.getElementById('teksTopic').value)}</p></header><main>${results.innerHTML}</main></body></html>`;
+  const blob=new Blob([html],{type:'text/html'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='item-analysis-report.html'; a.click(); URL.revokeObjectURL(a.href);
+}
+window.addEventListener('DOMContentLoaded', analyze);
+</script>
+</body>
+</html>
