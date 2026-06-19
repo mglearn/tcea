@@ -121,6 +121,7 @@
   .lv-body{margin:0 1.2rem;font-family:'DM Mono',monospace;font-size:.8rem;color:#2a3550;line-height:1.6;background:#f5f7fc;border:1px solid var(--border);border-radius:9px;padding:.9rem 1rem;white-space:pre-wrap;max-height:220px;overflow:auto}
   .lv-actions{margin:.85rem 1.2rem 1.2rem;display:flex}
   .lv-vibes{margin:.2rem 1.2rem .9rem}
+  .lv-prompt .lv-body{margin:.6rem 0 0}
   .lv-vibes summary{cursor:pointer;font-weight:700;color:var(--navy);font-size:.9rem;list-style:none;display:flex;align-items:center;gap:.5rem;padding:.6rem .8rem;background:var(--gold-pale);border-radius:8px}
   .lv-vibes summary::-webkit-details-marker{display:none}
   .lv-vibes summary::before{content:"▸";color:var(--gold);font-weight:900;transition:transform .2s}
@@ -617,14 +618,17 @@ grid.innerHTML=PROMPTS.map(p=>`
         ${p.vibes.map((v,i)=>`<li><b>${VLET[i]}</b>${esc(v)}</li>`).join("")}
       </ul>
     </details>
-    <pre class="lv-body" id="prompt-${p.n}">${esc(p.prompt)}</pre>
+    <details class="lv-vibes lv-prompt">
+      <summary>The starter prompt <span class="v-letters">copy &amp; paste</span></summary>
+      <pre class="lv-body" id="prompt-${p.n}">${esc(p.prompt)}</pre>
+    </details>
     <div class="lv-actions"><button class="copy-btn" data-target="prompt-${p.n}">Copy prompt</button></div>
   </article>`).join("");
 
 /* copy */
 document.querySelectorAll(".copy-btn").forEach(btn=>{
   btn.addEventListener("click",async()=>{
-    const text=document.getElementById(btn.dataset.target).innerText;
+    const text=document.getElementById(btn.dataset.target).textContent;
     try{ await navigator.clipboard.writeText(text); }
     catch(e){ const ta=document.createElement("textarea");ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand("copy");document.body.removeChild(ta); }
     const o=btn.innerText; btn.innerText="Copied!"; btn.classList.add("copied");
