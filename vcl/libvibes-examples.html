@@ -171,18 +171,29 @@
 <section class="hero" id="top" style="padding:2.6rem 1.4rem 2.8rem">
   <span class="eyebrow">Play With Them Now</span>
   <h1>Built <em>Examples</em></h1>
-  <p class="hero-lead"><strong id="exCount">0</strong> of the 18 LibVibes prompts are already built and playable. Try one right here, open it in its own tab, or download the code as a zip to host yourself.</p>
+  <p class="hero-lead"><strong id="exCount">0</strong> of the 18 LibVibes prompts are built and playable. Pick one to open the live tool on its own page, or download its code as a zip to host yourself.</p>
 </section>
 
-<section class="ex-section" style="max-width:none">
-  <div style="max-width:1080px;margin:0 auto">
-    <div class="section-eyebrow">Live Demos</div>
-    <h2 class="section-title">Try them right here</h2>
-    <div class="section-divider"></div>
-    <p class="section-lead">Each card runs the real tool in a frame. Want the rest? Every prompt in the <a href="libvibes.html#library" style="color:var(--gold-light)">prompt library</a> builds one of these from scratch.</p>
-    <a class="ex-bundle" href="libvibes-all-tools.zip" download>⬇ Download all 18 tools (libvibes-all-tools.zip)</a>
-    <div class="ex-grid" id="exGrid"></div>
-  </div>
+<style>
+  .sol-list{list-style:none;display:grid;gap:.6rem;margin:0;padding:0}
+  .sol{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:#fff;border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:10px;padding:.85rem 1.1rem;flex-wrap:wrap;transition:.15s}
+  .sol[data-level="intermediate"]{border-left-color:var(--int)} .sol[data-level="advanced"]{border-left-color:var(--adv)} .sol[data-level="beginner"]{border-left-color:var(--beg)}
+  .sol:hover{box-shadow:0 6px 18px rgba(10,52,118,.1);transform:translateY(-1px)}
+  .sol-main{display:flex;align-items:center;gap:.9rem;text-decoration:none;flex:1;min-width:220px}
+  .sol-n{flex:none;font-family:'DM Mono',monospace;font-weight:700;color:var(--navy);background:var(--gold-pale);border-radius:7px;padding:.35rem .55rem;font-size:.8rem}
+  .sol-title{display:block;font-family:'DM Serif Display',serif;color:var(--navy);font-size:1.08rem;line-height:1.2}
+  .sol-desc{display:block;color:var(--text-muted);font-size:.85rem;margin-top:.15rem}
+  .sol-meta{display:flex;align-items:center;gap:.45rem;flex:none;flex-wrap:wrap}
+  .sol-links a{font-size:.78rem;font-weight:700;text-decoration:none;color:var(--navy);background:#eef2fa;border:1px solid #dbe3f4;border-radius:7px;padding:.35rem .6rem;margin-left:.4rem}
+  .sol-links a:hover{background:#dde6f7}
+</style>
+<section>
+  <div class="section-eyebrow">Built &amp; Playable</div>
+  <h2 class="section-title">The built solutions</h2>
+  <div class="section-divider"></div>
+  <p class="section-lead">Every one of the 18 LibVibes prompts is built. Click a solution to open its page (live tool, the prompt, and its VIBES plan), or grab the code. Want them all at once?
+    <a class="ex-bundle" style="margin:.6rem 0 0;font-size:.85rem;padding:.45rem .9rem" href="libvibes-all-tools.zip" download>⬇ Download all 18 tools (.zip)</a></p>
+  <ul class="sol-list" id="solList"></ul>
 </section>
 
 <footer>
@@ -199,30 +210,25 @@
 
 <script src="libvibes-nav.js"></script>
 <script>
-  const {BUILT,byNum,LVL}=window.LIBVIBES;
-  const lvlClass={beginner:"badge-lvl-beginner",intermediate:"badge-lvl-intermediate",advanced:"badge-lvl-advanced"};
+  const {BUILT,byNum}=window.LIBVIBES;
   const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
   document.getElementById("exCount").textContent=BUILT.length;
-  document.getElementById("exGrid").innerHTML=BUILT.slice().sort((a,b)=>a-b).map(n=>{
+  document.getElementById("solList").innerHTML=BUILT.slice().sort((a,b)=>a-b).map(n=>{
     const s=byNum[n];
     return `
-    <div class="ex-card">
-      <div class="ex-head">
-        <div>
-          <h3>${esc(s.full)} <span style="color:var(--teal);font-size:.8rem">· Prompt #${s.n}</span></h3>
-          <div class="meta">${esc(s.blurb)}</div>
-          <div class="ex-badges" style="margin-top:.5rem">
-            <span class="badge ${lvlClass[s.level]}">${LVL[s.level]}</span>
-            <span class="badge badge-type">${esc(s.type)}</span>
-          </div>
-        </div>
-        <div class="ex-actions">
-          <a class="ex-open" href="libvibes/${s.slug}/app.html" target="_blank" rel="noopener">Open ↗</a>
-          <a class="ex-dl" href="libvibes/${s.slug}/${s.slug}.zip" download>⬇ .zip</a>
-        </div>
-      </div>
-      <iframe class="ex-frame" src="libvibes/${s.slug}/app.html" title="${esc(s.full)}" loading="lazy"></iframe>
-    </div>`;
+    <li class="sol" data-level="${s.level}">
+      <a class="sol-main" href="libvibes/${s.slug}/index.html">
+        <span class="sol-n">#${s.n}</span>
+        <span>
+          <span class="sol-title">${esc(s.full)}</span>
+          <span class="sol-desc">${esc(s.blurb)}</span>
+        </span>
+      </a>
+      <span class="sol-meta sol-links">
+        <a href="libvibes/${s.slug}/app.html" target="_blank" rel="noopener">Open ↗</a>
+        <a href="libvibes/${s.slug}/${s.slug}.zip" download>.zip</a>
+      </span>
+    </li>`;
   }).join("");
 </script>
 </body>

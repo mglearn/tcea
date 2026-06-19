@@ -194,5 +194,18 @@ Make the topic-to-class keyword list easy to edit. Give me the complete file.</p
     setTimeout(()=>{btn.innerText=o;btn.classList.remove('copied');},1700);
   });
 </script>
+
+<script>
+/* Auto-extend the embedded tool to its full height so there is no inner scrollbar (responsive: re-measures on resize). */
+(function(){
+  function fit(f){ try{ var d=f.contentWindow.document; var h=Math.max(d.documentElement.scrollHeight, d.body.scrollHeight); if(h) f.style.height=h+"px"; }catch(e){} }
+  function fitAll(){ document.querySelectorAll("iframe.built-frame").forEach(fit); }
+  document.querySelectorAll("iframe.built-frame").forEach(function(f){
+    f.addEventListener("load", function(){ fit(f); setTimeout(function(){fit(f);},300); });
+    try{ if(f.contentWindow.document.readyState==="complete") fit(f); }catch(e){}
+  });
+  var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(fitAll,200); });
+})();
+</script>
 </body>
 </html>
