@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Library Event Countdown</title>
+<style>
+  /* ===== PALETTE ===== */
+  :root{
+    --navy:#0A3476;
+    --navy-deep:#072554;
+    --gold:#FCB040;
+    --teal:#0E6B8A;
+    --teal-bright:#16a0c9;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+
+  html,body{height:100%;}
+
+  body{
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background: radial-gradient(circle at 50% 25%, var(--navy) 0%, var(--navy-deep) 100%);
+    color:#fff;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding: clamp(16px, 3vw, 48px);
+    overflow-x:hidden;
+  }
+
+  /* ===== TAGLINES ===== */
+  .tagline-wrap{
+    height: clamp(2.2em, 5vh, 3em);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    margin-bottom: clamp(12px, 2vh, 28px);
+  }
+  .tagline{
+    font-size: clamp(1rem, 2.6vw, 1.9rem);
+    font-weight:600;
+    color: var(--teal-bright);
+    letter-spacing:.5px;
+    opacity:0;
+    transition: opacity .8s ease;
+    text-shadow: 0 2px 12px rgba(0,0,0,.35);
+    max-width: 90vw;
+  }
+  .tagline.show{ opacity:1; }
+
+  /* ===== EVENT NAME ===== */
+  .event-name{
+    font-size: clamp(2rem, 7vw, 5.5rem);
+    font-weight:800;
+    line-height:1.05;
+    margin-bottom: clamp(8px, 1.5vh, 18px);
+    text-shadow: 0 4px 24px rgba(0,0,0,.45);
+    color:#fff;
+  }
+  .event-desc{
+    font-size: clamp(1rem, 2.6vw, 1.7rem);
+    color:#cfe0f5;
+    margin-bottom: clamp(20px, 4vh, 44px);
+    max-width: 900px;
+  }
+
+  /* ===== COUNTDOWN ===== */
+  .countdown{
+    display:flex;
+    flex-wrap:wrap;
+    gap: clamp(10px, 2.5vw, 36px);
+    align-items:flex-start;
+    justify-content:center;
+    margin-bottom: clamp(24px, 4vh, 48px);
+  }
+  .unit{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    min-width: clamp(70px, 16vw, 180px);
+  }
+  .num{
+    font-size: clamp(3rem, 13vw, 9rem);
+    font-weight:800;
+    line-height:1;
+    color: var(--gold);
+    font-variant-numeric: tabular-nums;
+    text-shadow: 0 4px 0 rgba(0,0,0,.25), 0 0 28px rgba(252,176,64,.35);
+    background: rgba(255,255,255,.04);
+    border: 2px solid rgba(252,176,64,.18);
+    border-radius: clamp(10px, 1.6vw, 20px);
+    padding: clamp(8px, 1.4vw, 22px) clamp(10px, 1.8vw, 26px);
+    min-width: clamp(70px, 15vw, 170px);
+  }
+  .label{
+    margin-top: clamp(6px, 1vh, 14px);
+    font-size: clamp(.7rem, 1.6vw, 1.2rem);
+    text-transform:uppercase;
+    letter-spacing: clamp(1px, .3vw, 4px);
+    color: var(--teal-bright);
+    font-weight:700;
+  }
+
+  /* subtle pulse/flip on the seconds */
+  #seconds.tick{
+    animation: pulseFlip .9s ease;
+  }
+  @keyframes pulseFlip{
+    0%{ transform: perspective(400px) rotateX(-70deg); opacity:.3; }
+    45%{ transform: perspective(400px) rotateX(0deg); opacity:1; }
+    60%{ transform: scale(1.08); }
+    100%{ transform: scale(1); }
+  }
+
+  /* ===== LEARN MORE BUTTON ===== */
+  .learn-more{
+    display:inline-block;
+    background: var(--teal);
+    color:#fff;
+    text-decoration:none;
+    font-size: clamp(1rem, 2.2vw, 1.4rem);
+    font-weight:700;
+    padding: clamp(12px, 1.6vw, 18px) clamp(28px, 4vw, 52px);
+    border-radius: 999px;
+    border: 2px solid var(--teal-bright);
+    box-shadow: 0 6px 20px rgba(0,0,0,.4);
+    transition: transform .15s ease, background .2s ease, box-shadow .2s ease;
+  }
+  .learn-more:hover{
+    background: var(--teal-bright);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0,0,0,.5);
+  }
+  .learn-more:active{ transform: translateY(0); }
+
+  /* ===== CELEBRATION (zero-state) ===== */
+  .celebrate{
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    gap: clamp(16px, 3vh, 32px);
+  }
+  .celebrate.show{ display:flex; }
+  .celebrate .big{
+    font-size: clamp(2.8rem, 11vw, 8rem);
+    font-weight:900;
+    color: var(--gold);
+    text-shadow: 0 0 40px rgba(252,176,64,.55);
+    animation: celebrate-pulse 1.4s ease-in-out infinite;
+  }
+  @keyframes celebrate-pulse{
+    0%,100%{ transform: scale(1); }
+    50%{ transform: scale(1.06); }
+  }
+
+  /* hide countdown view when celebrating */
+  body.is-over #countdownView{ display:none; }
+</style>
+</head>
+<body>
+
+  <!-- ============================================================= -->
+  <!--  EDIT YOUR EVENT HERE  — everything you need is in this block -->
+  <!-- ============================================================= -->
+  <script>
+    /* ====== 1. TARGET DATE & TIME ====================================
+       Set when your event begins. Format: YEAR, MONTH(0-11!), DAY, HOUR, MINUTE
+       NOTE: months are 0-based -> January = 0, December = 11.
+       The default below is set a few days out so the countdown is
+       visibly ticking. To watch the "It's here!" screen, set this to
+       about a minute from now.
+    ================================================================== */
+    const TARGET_DATE = new Date(2026, 5, 24, 9, 0, 0); // June 24, 2026, 9:00 AM
+
+    /* ====== 2. EVENT DETAILS ======================================== */
+    const EVENT_NAME = "Banned Books Week";
+    const EVENT_DESC = "Celebrate the freedom to read — stop by the library all week!";
+    const LEARN_MORE_URL  = "https://bannedbooksweek.org/";
+    const LEARN_MORE_LABEL = "Learn more";
+
+    /* ====== 3. CELEBRATION MESSAGE (shown at zero) =================== */
+    const CELEBRATE_TITLE = "It's here!";
+    const CELEBRATE_SUB   = "The event has begun — come on in!";
+
+    /* ====== 4. THREE ROTATING TAGLINES / FUN FACTS ================== */
+    const TAGLINES = [
+      "Read a banned book and find out why someone was afraid of it.",
+      "Over 1,200 unique titles were challenged in U.S. libraries last year.",
+      "Your library card is the best ticket to a forbidden adventure."
+    ];
+  </script>
+  <!-- ============================================================= -->
+  <!--  (No need to edit below this line)                            -->
+  <!-- ============================================================= -->
+
+  <!-- Rotating taglines -->
+  <div class="tagline-wrap">
+    <div class="tagline" id="tagline"></div>
+  </div>
+
+  <!-- Countdown view -->
+  <div id="countdownView">
+    <h1 class="event-name" id="eventName"></h1>
+    <p class="event-desc" id="eventDesc"></p>
+
+    <div class="countdown" id="countdown">
+      <div class="unit"><div class="num" id="days">00</div><div class="label">Days</div></div>
+      <div class="unit"><div class="num" id="hours">00</div><div class="label">Hours</div></div>
+      <div class="unit"><div class="num" id="minutes">00</div><div class="label">Minutes</div></div>
+      <div class="unit"><div class="num" id="seconds">00</div><div class="label">Seconds</div></div>
+    </div>
+
+    <a class="learn-more" id="learnMore" href="#" target="_blank" rel="noopener"></a>
+  </div>
+
+  <!-- Celebration view (zero-state) -->
+  <div class="celebrate" id="celebrate">
+    <div class="big" id="celebrateTitle"></div>
+    <div class="event-desc" id="celebrateSub"></div>
+    <a class="learn-more" id="celebrateLink" href="#" target="_blank" rel="noopener"></a>
+  </div>
+
+  <script>
+    /* ---- Populate static content ---- */
+    document.getElementById('eventName').textContent = EVENT_NAME;
+    document.getElementById('eventDesc').textContent = EVENT_DESC;
+
+    const learn = document.getElementById('learnMore');
+    learn.href = LEARN_MORE_URL;
+    learn.textContent = LEARN_MORE_LABEL;
+
+    document.getElementById('celebrateTitle').textContent = CELEBRATE_TITLE;
+    document.getElementById('celebrateSub').textContent = CELEBRATE_SUB;
+    const cLink = document.getElementById('celebrateLink');
+    cLink.href = LEARN_MORE_URL;
+    cLink.textContent = LEARN_MORE_LABEL;
+
+    /* ---- Element refs ---- */
+    const elDays = document.getElementById('days');
+    const elHours = document.getElementById('hours');
+    const elMins = document.getElementById('minutes');
+    const elSecs = document.getElementById('seconds');
+    const celebrate = document.getElementById('celebrate');
+
+    const pad = n => String(n).padStart(2, '0');
+    let lastSec = -1;
+    let isOver = false;
+
+    function tick(){
+      const now = new Date();
+      let diff = TARGET_DATE.getTime() - now.getTime();
+
+      if (diff <= 0){
+        if (!isOver){
+          isOver = true;
+          document.body.classList.add('is-over');
+          celebrate.classList.add('show');
+        }
+        return;
+      }
+
+      const sec = Math.floor(diff / 1000);
+      const days = Math.floor(sec / 86400);
+      const hours = Math.floor((sec % 86400) / 3600);
+      const mins = Math.floor((sec % 3600) / 60);
+      const secs = sec % 60;
+
+      elDays.textContent = pad(days);
+      elHours.textContent = pad(hours);
+      elMins.textContent = pad(mins);
+      elSecs.textContent = pad(secs);
+
+      /* flip/pulse the seconds digit each time it changes */
+      if (secs !== lastSec){
+        lastSec = secs;
+        elSecs.classList.remove('tick');
+        void elSecs.offsetWidth; // restart animation
+        elSecs.classList.add('tick');
+      }
+    }
+
+    tick();
+    setInterval(tick, 250); // frequent enough to stay accurate; flip only fires on change
+
+    /* ---- Rotating taglines (fade in / out) ---- */
+    const tagEl = document.getElementById('tagline');
+    let tagIndex = 0;
+
+    function showTagline(){
+      tagEl.textContent = TAGLINES[tagIndex];
+      tagEl.classList.add('show');
+    }
+    function cycleTagline(){
+      tagEl.classList.remove('show'); // fade out
+      setTimeout(() => {
+        tagIndex = (tagIndex + 1) % TAGLINES.length;
+        tagEl.textContent = TAGLINES[tagIndex];
+        tagEl.classList.add('show'); // fade in
+      }, 800); // matches CSS transition
+    }
+
+    showTagline();
+    setInterval(cycleTagline, 5000);
+  </script>
+</body>
+</html>

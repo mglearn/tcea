@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Citation Quick-Helper (MLA & APA)</title>
+<style>
+  :root{
+    --navy:#0A3476;
+    --teal:#0E6B8A;
+    --gold:#FCB040;
+    --bg:#F7F5EF;
+    --card:#FFFFFF;
+    --ink:#1A2330;
+    --muted:#5A6472;
+    --border:#D9DEE6;
+    --focus:#0E6B8A;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,
+      "Apple Color Emoji","Segoe UI Emoji",sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{
+    max-width:680px;
+    margin:0 auto;
+    padding:20px 16px 56px;
+  }
+  header h1{
+    font-size:1.45rem;
+    color:var(--navy);
+    margin:6px 0 4px;
+    letter-spacing:.2px;
+  }
+  header p.sub{
+    margin:0 0 18px;
+    color:var(--muted);
+    font-size:.95rem;
+  }
+
+  /* Toggle groups */
+  fieldset{
+    border:none;
+    margin:0 0 16px;
+    padding:0;
+  }
+  fieldset legend{
+    font-size:.78rem;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--muted);
+    font-weight:700;
+    margin-bottom:8px;
+    padding:0;
+  }
+  .toggle{
+    display:flex;
+    gap:0;
+    background:#EAE7DE;
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:4px;
+    width:100%;
+  }
+  .toggle input{
+    position:absolute;
+    opacity:0;
+    width:1px;height:1px;
+    overflow:hidden;
+  }
+  .toggle label{
+    flex:1 1 0;
+    text-align:center;
+    padding:10px 8px;
+    border-radius:9px;
+    font-weight:600;
+    font-size:.95rem;
+    color:var(--navy);
+    cursor:pointer;
+    transition:background .18s ease,color .18s ease,box-shadow .18s ease;
+    user-select:none;
+  }
+  .toggle input:checked + label{
+    background:var(--navy);
+    color:#fff;
+    box-shadow:0 1px 3px rgba(10,52,118,.35);
+  }
+  .toggle input:focus-visible + label{
+    outline:3px solid var(--gold);
+    outline-offset:2px;
+  }
+
+  /* Form */
+  form{margin-top:4px;}
+  .field{
+    overflow:hidden;
+    max-height:120px;
+    opacity:1;
+    transition:max-height .32s ease,opacity .28s ease,margin .32s ease;
+    margin-bottom:14px;
+  }
+  .field.hidden{
+    max-height:0;
+    opacity:0;
+    margin-bottom:0;
+    pointer-events:none;
+  }
+  .field label{
+    display:block;
+    font-size:.85rem;
+    font-weight:600;
+    color:var(--navy);
+    margin-bottom:5px;
+  }
+  .field .hint{
+    font-weight:400;
+    color:var(--muted);
+    font-size:.78rem;
+  }
+  input[type="text"]{
+    width:100%;
+    padding:11px 12px;
+    border:1px solid var(--border);
+    border-radius:10px;
+    font-size:1rem;
+    font-family:inherit;
+    color:var(--ink);
+    background:#fff;
+  }
+  input[type="text"]:focus{
+    outline:none;
+    border-color:var(--teal);
+    box-shadow:0 0 0 3px rgba(14,107,138,.25);
+  }
+
+  /* Output card */
+  .output-section{margin-top:22px;}
+  .output-section h2{
+    font-size:.9rem;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--teal);
+    margin:0 0 8px;
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-left:5px solid var(--gold);
+    border-radius:12px;
+    padding:18px 18px 18px 20px;
+    box-shadow:0 2px 10px rgba(10,52,118,.06);
+  }
+  .citation{
+    font-size:1.02rem;
+    line-height:1.6;
+    /* hanging indent */
+    padding-left:2em;
+    text-indent:-2em;
+    word-break:break-word;
+    min-height:1.6em;
+    color:var(--ink);
+  }
+  .citation .placeholder{color:var(--muted);font-style:italic;}
+  .citation i{font-style:italic;}
+
+  .actions{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-top:14px;
+    flex-wrap:wrap;
+  }
+  button.copy{
+    background:var(--teal);
+    color:#fff;
+    border:none;
+    padding:11px 18px;
+    border-radius:10px;
+    font-size:.95rem;
+    font-weight:700;
+    font-family:inherit;
+    cursor:pointer;
+    transition:background .18s ease,transform .08s ease;
+  }
+  button.copy:hover{background:#0b5870;}
+  button.copy:active{transform:translateY(1px);}
+  button.copy:focus-visible{
+    outline:3px solid var(--gold);
+    outline-offset:2px;
+  }
+  .copied{
+    color:var(--navy);
+    font-weight:700;
+    font-size:.9rem;
+    opacity:0;
+    transition:opacity .2s ease;
+  }
+  .copied.show{opacity:1;}
+
+  .disclaimer{
+    margin-top:18px;
+    font-size:.85rem;
+    color:var(--muted);
+    background:#EFEBDF;
+    border-radius:10px;
+    padding:10px 14px;
+    border:1px dashed #CBC4B0;
+  }
+  .disclaimer strong{color:var(--navy);}
+  footer{
+    margin-top:24px;
+    text-align:center;
+    font-size:.78rem;
+    color:var(--muted);
+  }
+  @media (min-width:560px){
+    .toggle-row{display:flex;gap:16px;}
+    .toggle-row fieldset{flex:1 1 0;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Citation Quick-Helper</h1>
+    <p class="sub">Fill in what you know &mdash; your citation builds itself as you type.</p>
+  </header>
+
+  <div class="toggle-row">
+    <fieldset>
+      <legend>Citation style</legend>
+      <div class="toggle" role="radiogroup" aria-label="Citation style">
+        <input type="radio" name="style" id="style-mla" value="mla" checked>
+        <label for="style-mla">MLA 9</label>
+        <input type="radio" name="style" id="style-apa" value="apa">
+        <label for="style-apa">APA 7</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Source type</legend>
+      <div class="toggle" role="radiogroup" aria-label="Source type">
+        <input type="radio" name="type" id="type-book" value="book" checked>
+        <label for="type-book">Book</label>
+        <input type="radio" name="type" id="type-website" value="website">
+        <label for="type-website">Website</label>
+      </div>
+    </fieldset>
+  </div>
+
+  <form id="cite-form" autocomplete="off">
+    <div class="field" data-field="author">
+      <label for="author">Author <span class="hint" id="author-hint">(First Last)</span></label>
+      <input type="text" id="author" placeholder="e.g. Jane Smith">
+    </div>
+
+    <div class="field" data-field="title">
+      <label for="title">Title <span class="hint" id="title-hint">(of the book)</span></label>
+      <input type="text" id="title" placeholder="e.g. The Giver">
+    </div>
+
+    <div class="field" data-field="publisher">
+      <label for="publisher">Publisher</label>
+      <input type="text" id="publisher" placeholder="e.g. Houghton Mifflin">
+    </div>
+
+    <div class="field" data-field="sitename">
+      <label for="sitename">Website / Site name</label>
+      <input type="text" id="sitename" placeholder="e.g. National Geographic">
+    </div>
+
+    <div class="field" data-field="year">
+      <label for="year">Year published <span class="hint" id="year-hint">(e.g. 1993)</span></label>
+      <input type="text" id="year" placeholder="e.g. 1993">
+    </div>
+
+    <div class="field" data-field="url">
+      <label for="url">URL</label>
+      <input type="text" id="url" placeholder="e.g. www.example.com/article">
+    </div>
+
+    <div class="field" data-field="accessed">
+      <label for="accessed">Date accessed <span class="hint">(for MLA websites)</span></label>
+      <input type="text" id="accessed" placeholder="e.g. 19 June 2026">
+    </div>
+  </form>
+
+  <section class="output-section" aria-live="polite">
+    <h2 id="out-label">MLA 9 &mdash; Works Cited entry</h2>
+    <div class="card">
+      <p class="citation" id="output" aria-labelledby="out-label">
+        <span class="placeholder">Your citation will appear here as you type&hellip;</span>
+      </p>
+    </div>
+    <div class="actions">
+      <button type="button" class="copy" id="copyBtn">Copy citation</button>
+      <span class="copied" id="copied" role="status">Copied!</span>
+    </div>
+
+    <p class="disclaimer">
+      <strong>Double-check with your teacher.</strong> This helper follows common MLA 9th
+      and APA 7th rules, but styles have many edge cases. Always confirm against your
+      assignment guidelines.
+    </p>
+  </section>
+
+  <footer>TCEA LibVibes &middot; Citation Quick-Helper</footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var els = {
+    author:    document.getElementById("author"),
+    title:     document.getElementById("title"),
+    publisher: document.getElementById("publisher"),
+    sitename:  document.getElementById("sitename"),
+    year:      document.getElementById("year"),
+    url:       document.getElementById("url"),
+    accessed:  document.getElementById("accessed")
+  };
+  var output    = document.getElementById("output");
+  var outLabel  = document.getElementById("out-label");
+  var copyBtn   = document.getElementById("copyBtn");
+  var copiedMsg = document.getElementById("copied");
+  var authorHint= document.getElementById("author-hint");
+  var titleHint = document.getElementById("title-hint");
+
+  // Which fields show for each source type
+  var FIELDS_FOR = {
+    book:    ["author","title","publisher","year"],
+    website: ["author","title","sitename","year","url","accessed"]
+  };
+
+  function getStyle(){ return document.querySelector('input[name="style"]:checked').value; }
+  function getType(){  return document.querySelector('input[name="type"]:checked').value; }
+
+  function val(k){ return (els[k].value || "").trim(); }
+
+  // ---------- helpers ----------
+
+  function esc(s){
+    return String(s)
+      .replace(/&/g,"&amp;")
+      .replace(/</g,"&lt;")
+      .replace(/>/g,"&gt;");
+  }
+  // italic wrapper that escapes its content
+  function ital(s){ return '<i>' + esc(s) + '</i>'; }
+
+  // Ensure a string ends with a period (avoid doubling if it already ends in . ! ?)
+  function endPeriod(s){
+    if(!s) return s;
+    return /[.!?]$/.test(s.trim()) ? s.trim() : s.trim() + ".";
+  }
+
+  // Split a name into first / middle / last parts.
+  // Accepts "First Last", "First Middle Last", or "Last, First".
+  function parseName(raw){
+    raw = raw.trim();
+    if(!raw) return null;
+    if(raw.indexOf(",") !== -1){
+      var c = raw.split(",");
+      var last = c[0].trim();
+      var rest = (c[1] || "").trim();
+      return { first: rest, last: last, parts: rest ? [last].concat(rest.split(/\s+/)) : [last] };
+    }
+    var parts = raw.split(/\s+/);
+    if(parts.length === 1){
+      return { first:"", last:parts[0], parts:parts };
+    }
+    var lastName = parts[parts.length-1];
+    var firstNames = parts.slice(0, parts.length-1).join(" ");
+    return { first:firstNames, last:lastName, parts:parts };
+  }
+
+  // MLA author: "Last, First Middle." (inverted, full first name)
+  function mlaAuthor(raw){
+    var n = parseName(raw);
+    if(!n) return "";
+    if(!n.first) return endPeriod(n.last);
+    return endPeriod(n.last + ", " + n.first);
+  }
+
+  // APA author: "Last, F. M." (inverted, initials)
+  function apaAuthor(raw){
+    var n = parseName(raw);
+    if(!n) return "";
+    if(!n.first) return endPeriod(n.last);
+    var initials = n.first
+      .split(/\s+/)
+      .filter(function(p){return p.length;})
+      .map(function(p){ return p.charAt(0).toUpperCase() + "."; })
+      .join(" ");
+    return endPeriod(n.last + ", " + initials);
+  }
+
+  // Add http:// stripping for display consistency is not needed; keep as typed.
+
+  // ---------- citation builders ----------
+  // Each returns HTML (already escaped/italicized).
+
+  function buildMLABook(){
+    var parts = [];
+    var a = mlaAuthor(val("author"));
+    if(a) parts.push(esc(a));
+    if(val("title")) parts.push(ital(val("title")) + ".");
+    // Publisher, Year.
+    var pubYear = [];
+    if(val("publisher")) pubYear.push(esc(val("publisher")));
+    if(val("year")) pubYear.push(esc(val("year")));
+    if(pubYear.length) parts.push(pubYear.join(", ") + ".");
+    return parts.join(" ");
+  }
+
+  function buildMLAWebsite(){
+    // Author. "Title of Page." Website Name, Day Month Year, URL. Accessed Day Month Year.
+    var parts = [];
+    var a = mlaAuthor(val("author"));
+    if(a) parts.push(esc(a));
+    if(val("title")) parts.push('&ldquo;' + esc(endPeriod(val("title"))) + '&rdquo;');
+    // container chunk: Site Name, Year, URL.
+    var chunk = [];
+    if(val("sitename")) chunk.push(ital(val("sitename")));
+    if(val("year")) chunk.push(esc(val("year")));
+    if(val("url")) chunk.push(esc(val("url")));
+    if(chunk.length) parts.push(chunk.join(", ") + ".");
+    if(val("accessed")) parts.push("Accessed " + esc(endPeriod(val("accessed"))));
+    return parts.join(" ");
+  }
+
+  function buildAPABook(){
+    // Author, A. A. (Year). Title of book. Publisher.
+    var parts = [];
+    var a = apaAuthor(val("author"));
+    if(a) parts.push(esc(a));
+    if(val("year")) parts.push("(" + esc(val("year")) + ").");
+    if(val("title")) parts.push(ital(val("title")) + ".");
+    if(val("publisher")) parts.push(esc(endPeriod(val("publisher"))));
+    return parts.join(" ");
+  }
+
+  function buildAPAWebsite(){
+    // Author, A. A. (Year). Title of page. Site Name. URL
+    var parts = [];
+    var a = apaAuthor(val("author"));
+    if(a) parts.push(esc(a));
+    if(val("year")) parts.push("(" + esc(val("year")) + ").");
+    if(val("title")) parts.push(ital(val("title")) + ".");
+    if(val("sitename")) parts.push(esc(endPeriod(val("sitename"))));
+    if(val("url")) parts.push(esc(val("url"))); // APA 7: no period after URL
+    return parts.join(" ");
+  }
+
+  function buildCitation(){
+    var s = getStyle(), t = getType();
+    if(s === "mla") return t === "book" ? buildMLABook()    : buildMLAWebsite();
+    return t === "book" ? buildAPABook() : buildAPAWebsite();
+  }
+
+  // ---------- UI updates ----------
+
+  function applyFieldVisibility(){
+    var show = FIELDS_FOR[getType()];
+    document.querySelectorAll(".field").forEach(function(f){
+      var key = f.getAttribute("data-field");
+      var visible = show.indexOf(key) !== -1;
+      // Accessed only meaningful for MLA websites; hide for APA websites too.
+      if(key === "accessed" && getStyle() === "apa") visible = false;
+      f.classList.toggle("hidden", !visible);
+      var input = f.querySelector("input");
+      if(input) input.disabled = !visible;
+    });
+
+    // Hints adapt to source type
+    if(getType() === "book"){
+      titleHint.textContent = "(of the book)";
+    } else {
+      titleHint.textContent = "(of the page or article)";
+    }
+    authorHint.textContent = "(First Last — or leave blank if none)";
+  }
+
+  function updateLabel(){
+    var s = getStyle() === "mla" ? "MLA 9" : "APA 7";
+    var listName = getStyle() === "mla" ? "Works Cited entry" : "References entry";
+    outLabel.innerHTML = s + " &mdash; " + listName;
+  }
+
+  function render(){
+    var html = buildCitation();
+    if(html && html.replace(/<[^>]+>/g,"").trim().length){
+      output.innerHTML = html;
+    } else {
+      output.innerHTML = '<span class="placeholder">Your citation will appear here as you type&hellip;</span>';
+    }
+  }
+
+  function refresh(){
+    applyFieldVisibility();
+    updateLabel();
+    render();
+  }
+
+  // ---------- copy ----------
+  function plainText(){
+    // Strip HTML tags but keep the text (incl. italic words, quotes).
+    var tmp = document.createElement("div");
+    tmp.innerHTML = output.innerHTML;
+    return (tmp.textContent || "").trim();
+  }
+
+  function showCopied(){
+    copiedMsg.classList.add("show");
+    setTimeout(function(){ copiedMsg.classList.remove("show"); }, 1800);
+  }
+
+  copyBtn.addEventListener("click", function(){
+    var text = plainText();
+    if(!text || text.indexOf("Your citation will appear") === 0) return;
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(showCopied, fallbackCopy);
+    } else {
+      fallbackCopy();
+    }
+    function fallbackCopy(){
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); showCopied(); } catch(e){}
+      document.body.removeChild(ta);
+    }
+  });
+
+  // ---------- wiring ----------
+  Object.keys(els).forEach(function(k){
+    els[k].addEventListener("input", render);
+  });
+  document.querySelectorAll('input[name="style"],input[name="type"]').forEach(function(r){
+    r.addEventListener("change", refresh);
+  });
+
+  refresh();
+})();
+</script>
+</body>
+</html>

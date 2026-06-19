@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Library Floor Map — LibVibes</title>
+<style>
+  /* ====== PALETTE ====== */
+  :root{
+    --navy:#0A3476;
+    --gold:#FCB040;
+    --teal:#0E6B8A;
+    --bg:#F7F4EC;          /* soft off-white */
+    --ink:#1A2330;
+    --panel:#FFFFFF;
+    --line:#D8D2C4;
+    --shadow:rgba(10,52,118,.18);
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,
+                "Apple Color Emoji","Segoe UI Emoji",sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.5;
+    -webkit-text-size-adjust:100%;
+  }
+
+  header{
+    background:var(--navy);
+    color:#fff;
+    padding:18px 16px;
+    text-align:center;
+  }
+  header h1{
+    margin:0;
+    font-size:1.35rem;
+    letter-spacing:.3px;
+  }
+  header p{
+    margin:6px 0 0;
+    font-size:.9rem;
+    color:#cfe0f2;
+  }
+
+  main{
+    max-width:760px;
+    margin:0 auto;
+    padding:16px 14px 40px;
+  }
+
+  /* ====== SEARCH ====== */
+  .search-wrap{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-bottom:14px;
+  }
+  .search-wrap input{
+    flex:1 1 200px;
+    min-width:0;
+    font-size:1rem;
+    padding:12px 14px;
+    border:2px solid var(--teal);
+    border-radius:12px;
+    background:#fff;
+  }
+  .search-wrap input:focus{
+    outline:3px solid var(--gold);
+    outline-offset:1px;
+  }
+  .search-wrap button{
+    flex:0 0 auto;
+    font-size:1rem;
+    font-weight:600;
+    padding:12px 18px;
+    border:none;
+    border-radius:12px;
+    background:var(--teal);
+    color:#fff;
+    cursor:pointer;
+  }
+  .search-wrap button.clear{
+    background:#fff;
+    color:var(--teal);
+    border:2px solid var(--teal);
+  }
+  .search-msg{
+    min-height:1.2em;
+    font-size:.9rem;
+    margin:-6px 0 14px;
+    color:var(--navy);
+    font-weight:600;
+  }
+
+  /* ====== FLOOR MAP GRID ====== */
+  .map-frame{
+    background:#EFE9DC;
+    border:3px solid var(--navy);
+    border-radius:16px;
+    padding:10px;
+    box-shadow:0 6px 18px var(--shadow);
+  }
+  .map{
+    display:grid;
+    /* 4 columns x 4 rows top-down floor plan */
+    grid-template-columns:repeat(4,1fr);
+    grid-template-rows:repeat(4,minmax(64px,1fr));
+    gap:8px;
+    width:100%;
+  }
+  .zone{
+    position:relative;
+    border:none;
+    border-radius:12px;
+    color:#fff;
+    font-weight:700;
+    font-size:.85rem;
+    text-align:center;
+    padding:6px;
+    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    line-height:1.15;
+    transition:transform .18s ease, box-shadow .18s ease, outline-color .18s ease;
+    outline:3px solid transparent;
+    outline-offset:2px;
+    -webkit-tap-highlight-color:transparent;
+    text-shadow:0 1px 2px rgba(0,0,0,.35);
+    min-height:60px;
+  }
+  .zone .ico{font-size:1.2rem;line-height:1;margin-bottom:2px;}
+  .zone:focus-visible{outline-color:#fff;}
+  .zone.selected{
+    transform:scale(1.06);
+    outline-color:var(--gold);
+    box-shadow:0 8px 22px rgba(0,0,0,.35);
+    z-index:3;
+  }
+  .zone.match{
+    outline-color:var(--gold);
+    box-shadow:0 0 0 4px rgba(252,176,64,.55);
+    animation:pulse 1s ease-in-out 2;
+  }
+  @keyframes pulse{
+    50%{box-shadow:0 0 0 9px rgba(252,176,64,0);}
+  }
+
+  /* ====== INFO PANEL ====== */
+  .panel{
+    margin-top:16px;
+    background:var(--panel);
+    border-radius:16px;
+    border-left:8px solid var(--navy);
+    padding:16px 18px;
+    box-shadow:0 6px 18px var(--shadow);
+  }
+  .panel.empty{
+    color:#5a6472;
+    border-left-color:var(--line);
+    font-style:italic;
+  }
+  .panel h2{
+    margin:0 0 4px;
+    font-size:1.2rem;
+    color:var(--navy);
+  }
+  .panel .meta{
+    display:inline-block;
+    font-size:.82rem;
+    font-weight:700;
+    background:var(--gold);
+    color:#3a2700;
+    padding:3px 10px;
+    border-radius:999px;
+    margin-bottom:10px;
+  }
+  .panel p{margin:8px 0;}
+  .panel .tip{
+    background:#EAF3F6;
+    border-radius:10px;
+    padding:10px 12px;
+    font-size:.92rem;
+  }
+  .panel .tip strong{color:var(--teal);}
+
+  /* ====== LEGEND ====== */
+  .legend{
+    margin-top:22px;
+  }
+  .legend h3{
+    margin:0 0 8px;
+    font-size:1rem;
+    color:var(--navy);
+  }
+  .legend ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+    gap:6px;
+  }
+  .legend li{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:.86rem;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:6px 8px;
+    cursor:pointer;
+  }
+  .legend .swatch{
+    width:18px;height:18px;
+    border-radius:5px;
+    flex:0 0 auto;
+    border:1px solid rgba(0,0,0,.15);
+  }
+
+  footer{
+    text-align:center;
+    font-size:.78rem;
+    color:#7a8290;
+    padding:10px 16px 30px;
+  }
+
+  /* Larger screens: a touch bigger text inside zones */
+  @media (min-width:520px){
+    .zone{font-size:.95rem;}
+    .zone .ico{font-size:1.5rem;}
+    .map{grid-template-rows:repeat(4,minmax(82px,1fr));}
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>📚 Interactive Library Floor Map</h1>
+  <p>Tap a zone to learn what's there — or search a topic.</p>
+</header>
+
+<main>
+  <!-- SEARCH -->
+  <div class="search-wrap">
+    <input id="search" type="text" placeholder="Search a topic… (e.g. space, manga, history)"
+           aria-label="Search a topic to find its zone" autocomplete="off">
+    <button id="searchBtn" type="button">Find</button>
+    <button id="clearBtn" type="button" class="clear">Clear</button>
+  </div>
+  <div id="searchMsg" class="search-msg" role="status" aria-live="polite"></div>
+
+  <!-- FLOOR MAP -->
+  <div class="map-frame">
+    <div id="map" class="map" role="group" aria-label="Library floor map"></div>
+  </div>
+
+  <!-- INFO PANEL -->
+  <div id="panel" class="panel empty" aria-live="polite">
+    Tap any zone on the map above to see its description, what it holds, and a quick tip.
+  </div>
+
+  <!-- LEGEND -->
+  <div class="legend">
+    <h3>Color legend</h3>
+    <ul id="legend"></ul>
+  </div>
+</main>
+
+<footer>LibVibes • Interactive Library Floor Map — edit zones in the JS below.</footer>
+
+<script>
+/* =========================================================================
+   ====  EDIT YOUR LIBRARY HERE  ===========================================
+   =========================================================================
+   Each zone has:
+     id       : unique short code
+     name     : label shown on the map
+     icon     : an emoji (purely decorative)
+     color    : the zone's distinct, accessible color
+     col / row: position on the 4x4 floor grid (1..4)
+     colSpan  : how many columns wide (optional, default 1)
+     rowSpan  : how many rows tall   (optional, default 1)
+     meta     : Dewey range OR genre shown as a pill
+     desc     : a short description
+     tip      : a helpful "Ask at the desk for…" style tip
+     keywords : topics that, when searched, highlight this zone
+   Rearrange the grid by changing col/row/colSpan/rowSpan.
+   ========================================================================= */
+const ZONES = [
+  {
+    id:"fiction", name:"Fiction", icon:"📖", color:"#0A3476",
+    col:1, row:1, colSpan:2, rowSpan:1,
+    meta:"Genre — Fiction A–Z",
+    desc:"Novels and stories shelved alphabetically by the author's last name.",
+    tip:"Ask at the desk for a read-alike if you loved a book.",
+    keywords:["fiction","novel","novels","story","stories","fantasy","mystery",
+              "romance","adventure","thriller","scifi","sci-fi","science fiction","horror","dystopia"]
+  },
+  {
+    id:"nonfiction", name:"Nonfiction", icon:"🌍", color:"#0E6B8A",
+    col:3, row:1, colSpan:2, rowSpan:1,
+    meta:"Dewey 000–999",
+    desc:"True books on every subject, shelved by Dewey Decimal number.",
+    tip:"Ask at the desk for the Dewey number of your topic.",
+    keywords:["nonfiction","non-fiction","history","science","animals","space","planets",
+              "sports","biography","geography","math","cooking","art","music","facts","true"]
+  },
+  {
+    id:"graphic", name:"Graphic Novels", icon:"💥", color:"#C2410C",
+    col:1, row:2, colSpan:1, rowSpan:1,
+    meta:"Genre — Graphic / Manga",
+    desc:"Comics, manga, and illustrated stories in graphic-novel format.",
+    tip:"Ask at the desk for the next volume in a series.",
+    keywords:["graphic","graphic novel","comic","comics","manga","superhero","superheroes",
+              "marvel","dc","anime","cartoon"]
+  },
+  {
+    id:"picture", name:"Picture Books", icon:"🧸", color:"#7C3AED",
+    col:2, row:2, colSpan:1, rowSpan:1,
+    meta:"Genre — Early Readers",
+    desc:"Picture books and early readers for our youngest readers.",
+    tip:"Ask at the desk for a story-time recommendation.",
+    keywords:["picture","picture book","early reader","kids","children","read aloud",
+              "easy","beginner","toddler"]
+  },
+  {
+    id:"quiet", name:"Quiet Reading", icon:"🤫", color:"#0F766E",
+    col:3, row:2, colSpan:2, rowSpan:1,
+    meta:"Quiet Zone",
+    desc:"Soft seating for focused, silent reading and study.",
+    tip:"Ask at the desk for a reserved study spot.",
+    keywords:["quiet","reading","study","silent","focus","relax","seating","read"]
+  },
+  {
+    id:"maker", name:"Makerspace", icon:"🛠️", color:"#FCB040",
+    col:1, row:3, colSpan:2, rowSpan:1,
+    meta:"Hands-on / STEM",
+    desc:"Build, create, and tinker — 3D printing, crafts, robotics, and more.",
+    tip:"Ask at the desk to sign up for the 3D printer or tools.",
+    keywords:["maker","makerspace","build","craft","3d","3d print","robot","robotics",
+              "stem","create","tinker","electronics","sewing","lego"]
+  },
+  {
+    id:"computers", name:"Computers", icon:"💻", color:"#B91C1C",
+    col:3, row:3, colSpan:2, rowSpan:1,
+    meta:"Tech / Catalog",
+    desc:"Workstations for research, the library catalog, and printing.",
+    tip:"Ask at the desk for the printing or login code.",
+    keywords:["computer","computers","pc","internet","catalog","print","printer",
+              "research","online","laptop","typing","tech"]
+  },
+  {
+    id:"desk", name:"Front Desk", icon:"🛎️", color:"#374151",
+    col:1, row:4, colSpan:4, rowSpan:1,
+    meta:"Checkout & Help",
+    desc:"Check out books, return items, and get help finding anything.",
+    tip:"Ask at the desk for help with holds, fines, or recommendations.",
+    keywords:["desk","front desk","checkout","check out","return","help","librarian",
+              "hold","holds","card","login","start"]
+  }
+];
+/* ===================  END EDITABLE SECTION  =============================== */
+
+
+/* ---------- Build the map ---------- */
+const mapEl    = document.getElementById('map');
+const panelEl  = document.getElementById('panel');
+const legendEl = document.getElementById('legend');
+const searchEl = document.getElementById('search');
+const msgEl    = document.getElementById('searchMsg');
+const zoneById = {};
+
+ZONES.forEach(z=>{
+  zoneById[z.id] = z;
+  const btn = document.createElement('button');
+  btn.className = 'zone';
+  btn.type = 'button';
+  btn.dataset.id = z.id;
+  btn.style.background = z.color;
+  btn.style.gridColumn = z.col + ' / span ' + (z.colSpan||1);
+  btn.style.gridRow    = z.row + ' / span ' + (z.rowSpan||1);
+  btn.setAttribute('aria-label', z.name + '. ' + z.desc);
+  btn.innerHTML = '<span class="ico" aria-hidden="true">'+z.icon+'</span>'+z.name;
+  btn.addEventListener('click', ()=> selectZone(z.id, true));
+  mapEl.appendChild(btn);
+});
+
+/* ---------- Build the legend ---------- */
+ZONES.forEach(z=>{
+  const li = document.createElement('li');
+  li.innerHTML = '<span class="swatch" style="background:'+z.color+'"></span>'+z.name;
+  li.addEventListener('click', ()=> selectZone(z.id, true));
+  legendEl.appendChild(li);
+});
+
+/* ---------- Select & show a zone ---------- */
+function selectZone(id, scroll){
+  const z = zoneById[id];
+  if(!z) return;
+  document.querySelectorAll('.zone').forEach(el=>{
+    el.classList.toggle('selected', el.dataset.id === id);
+  });
+  panelEl.className = 'panel';
+  panelEl.style.borderLeftColor = z.color;
+  panelEl.innerHTML =
+    '<h2>'+z.icon+' '+z.name+'</h2>'+
+    '<span class="meta">'+z.meta+'</span>'+
+    '<p>'+z.desc+'</p>'+
+    '<p class="tip"><strong>Tip:</strong> '+z.tip+'</p>';
+  if(scroll){ panelEl.scrollIntoView({behavior:'smooth', block:'nearest'}); }
+}
+
+/* ---------- Search ---------- */
+function runSearch(){
+  const raw = searchEl.value.trim().toLowerCase();
+  document.querySelectorAll('.zone').forEach(el=> el.classList.remove('match'));
+  if(!raw){ msgEl.textContent = ''; return; }
+
+  // score each zone by keyword/name match
+  let best = null, bestScore = 0;
+  ZONES.forEach(z=>{
+    let score = 0;
+    if(z.name.toLowerCase().includes(raw)) score += 3;
+    z.keywords.forEach(k=>{
+      if(k === raw) score += 3;
+      else if(k.includes(raw) || raw.includes(k)) score += 1;
+    });
+    if(score > bestScore){ bestScore = score; best = z; }
+  });
+
+  if(best){
+    const btn = document.querySelector('.zone[data-id="'+best.id+'"]');
+    btn.classList.add('match');
+    msgEl.textContent = '“'+searchEl.value.trim()+'” → '+best.name;
+    selectZone(best.id, false);
+    btn.scrollIntoView({behavior:'smooth', block:'nearest'});
+  }else{
+    msgEl.textContent = 'No match for “'+searchEl.value.trim()+'”. Try another topic.';
+  }
+}
+
+document.getElementById('searchBtn').addEventListener('click', runSearch);
+document.getElementById('clearBtn').addEventListener('click', ()=>{
+  searchEl.value = '';
+  msgEl.textContent = '';
+  document.querySelectorAll('.zone').forEach(el=> el.classList.remove('match'));
+  searchEl.focus();
+});
+searchEl.addEventListener('keydown', e=>{ if(e.key==='Enter') runSearch(); });
+</script>
+</body>
+</html>

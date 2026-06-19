@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Primary vs. Secondary Source Sorter — LibVibes</title>
+<style>
+  /* ============================== PALETTE ============================== */
+  :root{
+    --navy:#0A3476;
+    --gold:#FCB040;
+    --teal:#0E6B8A;
+    --offwhite:#F6F3EC;
+    --ink:#1d2733;
+    --good:#2e9e5b;
+    --bad:#d24a4a;
+    --card-bg:#ffffff;
+  }
+
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+
+  html,body{margin:0;padding:0;}
+
+  body{
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--offwhite);
+    color:var(--ink);
+    line-height:1.4;
+    padding:14px 12px 60px;
+    max-width:760px;
+    margin:0 auto;
+    -webkit-user-select:none;user-select:none;
+    touch-action:manipulation;
+  }
+
+  header{text-align:center;margin-bottom:14px;}
+  header h1{
+    color:var(--navy);
+    font-size:1.5rem;
+    margin:0 0 4px;
+    letter-spacing:.2px;
+  }
+  header p{margin:0;color:var(--teal);font-weight:600;font-size:.92rem;}
+
+  /* ============================== TOOLBAR ============================== */
+  .toolbar{
+    display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;
+    margin:12px 0;
+  }
+  .btn{
+    border:0;border-radius:10px;padding:11px 18px;font-size:1rem;font-weight:700;
+    cursor:pointer;color:#fff;font-family:inherit;
+    transition:transform .08s ease, filter .15s ease;
+  }
+  .btn:active{transform:translateY(1px) scale(.99);}
+  .btn-check{background:var(--navy);}
+  .btn-again{background:var(--gold);color:var(--navy);}
+  .btn-edit{background:var(--teal);}
+  .btn:disabled{filter:grayscale(.5) opacity(.55);cursor:default;}
+
+  .score{
+    background:#fff;border:2px solid var(--navy);border-radius:10px;
+    padding:8px 14px;font-weight:800;color:var(--navy);font-size:1rem;min-width:120px;
+    text-align:center;
+  }
+  .score .num{color:var(--teal);}
+
+  /* ============================== DECK (unsorted) ============================== */
+  .deck-wrap{margin:14px 0;}
+  .deck-label{
+    font-weight:800;color:var(--navy);text-transform:uppercase;font-size:.78rem;
+    letter-spacing:1px;margin-bottom:6px;text-align:center;
+  }
+  .deck{
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+    min-height:70px;padding:10px;border-radius:12px;
+    background:repeating-linear-gradient(45deg,#fff,#fff 10px,#faf7ef 10px,#faf7ef 20px);
+    border:2px dashed #c9c2b2;
+  }
+
+  /* ============================== ZONES ============================== */
+  .zones{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;}
+  .zone{
+    flex:1 1 45%;min-width:140px;min-height:170px;border-radius:14px;padding:10px;
+    border:3px solid transparent;transition:background .15s,border-color .15s,box-shadow .15s;
+  }
+  .zone-head{
+    font-weight:800;text-transform:uppercase;letter-spacing:1px;font-size:.9rem;
+    text-align:center;padding:6px;border-radius:8px;color:#fff;margin-bottom:8px;
+  }
+  .zone-primary{background:rgba(10,52,118,.07);border-color:var(--navy);}
+  .zone-primary .zone-head{background:var(--navy);}
+  .zone-secondary{background:rgba(14,107,138,.08);border-color:var(--teal);}
+  .zone-secondary .zone-head{background:var(--teal);}
+  .zone-cards{display:flex;flex-direction:column;gap:8px;min-height:90px;}
+
+  .zone.dragover{box-shadow:0 0 0 4px var(--gold) inset;background:rgba(252,176,64,.18);}
+
+  .zone-hint{color:#8a8676;font-size:.8rem;text-align:center;font-style:italic;padding:18px 4px;}
+  .zone-cards:not(:empty)+.zone-hint{display:none;}
+
+  /* ============================== CARDS ============================== */
+  .card{
+    background:var(--card-bg);border-radius:11px;padding:11px 12px;
+    box-shadow:0 2px 6px rgba(10,52,118,.14);
+    font-size:.95rem;font-weight:600;color:var(--ink);
+    cursor:grab;position:relative;
+    border-left:6px solid var(--gold);
+    transition:transform .18s cubic-bezier(.2,.9,.3,1.4),box-shadow .15s,opacity .2s;
+    will-change:transform;
+  }
+  .deck .card{max-width:220px;}
+  .card:active{cursor:grabbing;}
+  .card.dragging{opacity:.45;}
+  .card .icon{margin-right:5px;}
+
+  /* floating clone follows finger/mouse */
+  .drag-clone{
+    position:fixed;z-index:9999;pointer-events:none;
+    box-shadow:0 10px 24px rgba(10,52,118,.35);
+    transform:scale(1.04) rotate(-1.5deg);
+    border-left-color:var(--teal);
+  }
+
+  /* result states */
+  .card.correct{
+    border-left-color:var(--good);
+    animation:glow 1.4s ease-in-out infinite alternate;
+  }
+  @keyframes glow{
+    from{box-shadow:0 0 4px rgba(46,158,91,.5);}
+    to{box-shadow:0 0 16px 3px rgba(46,158,91,.85);}
+  }
+  .card.wrong{
+    border-left-color:var(--bad);
+    animation:shake .5s ease;
+  }
+  @keyframes shake{
+    0%,100%{transform:translateX(0);}
+    20%{transform:translateX(-6px);}
+    40%{transform:translateX(6px);}
+    60%{transform:translateX(-4px);}
+    80%{transform:translateX(4px);}
+  }
+
+  .card .explain{
+    display:none;margin-top:7px;padding-top:7px;border-top:1px dashed #e0c089;
+    font-weight:500;font-size:.82rem;color:var(--bad);font-style:italic;
+  }
+  .card.wrong .explain{display:block;}
+
+  .badge{
+    position:absolute;top:-8px;right:-6px;font-size:1rem;width:22px;height:22px;
+    border-radius:50%;display:none;align-items:center;justify-content:center;
+    color:#fff;font-weight:900;
+  }
+  .card.correct .badge{display:flex;background:var(--good);}
+  .card.wrong .badge{display:flex;background:var(--bad);}
+
+  /* checked = locked */
+  .card.checked{cursor:default;}
+
+  /* ============================== MESSAGE / EDITOR ============================== */
+  .message{
+    text-align:center;font-weight:800;margin:12px 0;min-height:1.4em;color:var(--navy);
+    font-size:1.05rem;
+  }
+
+  details.editor{
+    margin-top:24px;background:#fff;border:2px solid var(--teal);border-radius:12px;
+    padding:6px 12px;
+  }
+  details.editor summary{
+    cursor:pointer;font-weight:800;color:var(--teal);padding:6px 0;
+  }
+  .editor textarea{
+    width:100%;min-height:200px;font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-size:.8rem;border:1px solid #cdd5dd;border-radius:8px;padding:8px;margin-top:6px;
+    resize:vertical;
+  }
+  .editor .ed-actions{display:flex;gap:8px;margin:8px 0;}
+  .editor .ed-note{font-size:.78rem;color:#666;margin:4px 0 8px;}
+  .ed-error{color:var(--bad);font-weight:700;font-size:.82rem;min-height:1em;}
+
+  @media (min-width:560px){
+    .deck .card{max-width:240px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Primary vs. Secondary Source Sorter</h1>
+  <p>Drag each source into the right bin, then press Check.</p>
+</header>
+
+<!-- =======================================================================
+     EDIT YOUR CARD DECK HERE
+     Each card: { label, type, explanation }
+       label       = text shown on the card
+       type        = "primary"  OR  "secondary"  (the correct answer)
+       explanation = one short line shown only when a student gets it wrong
+     You can also edit this live with the "Edit deck" panel at the bottom.
+======================================================================== -->
+<script>
+const CARD_DECK = [
+  { label: "A soldier's wartime diary",
+    type: "primary",
+    explanation: "A firsthand account written by someone who lived the event." },
+
+  { label: "A textbook chapter on the war",
+    type: "secondary",
+    explanation: "Written later by an author analyzing and summarizing events." },
+
+  { label: "A photograph taken at the event",
+    type: "primary",
+    explanation: "A direct, original record captured at the moment it happened." },
+
+  { label: "An encyclopedia entry",
+    type: "secondary",
+    explanation: "A reference summary compiled from other sources after the fact." },
+
+  { label: "A recorded interview with a witness",
+    type: "primary",
+    explanation: "The witness gives a firsthand testimony of what they saw." },
+
+  { label: "A historian's biography of a president",
+    type: "secondary",
+    explanation: "An interpretation written by someone studying the subject later." },
+
+  { label: "An original handwritten letter",
+    type: "primary",
+    explanation: "A direct document created by a person at the time." },
+
+  { label: "A magazine article reviewing a study",
+    type: "secondary",
+    explanation: "A second-hand report describing and explaining someone else's work." },
+
+  { label: "A government census record",
+    type: "primary",
+    explanation: "Raw, original data collected directly at the time." },
+
+  { label: "A documentary made years later",
+    type: "secondary",
+    explanation: "A later production that interprets and retells past events." }
+];
+</script>
+
+<div class="toolbar">
+  <div class="score" id="score">Score: <span class="num">—</span></div>
+  <button class="btn btn-check" id="checkBtn">Check</button>
+  <button class="btn btn-again" id="againBtn">Play again</button>
+</div>
+
+<div class="message" id="message"></div>
+
+<div class="deck-wrap">
+  <div class="deck-label">Source Deck — drag from here</div>
+  <div class="deck" id="deck"></div>
+</div>
+
+<div class="zones">
+  <div class="zone zone-primary" data-type="primary">
+    <div class="zone-head">Primary</div>
+    <div class="zone-cards" data-zone="primary"></div>
+    <div class="zone-hint">Firsthand / original sources</div>
+  </div>
+  <div class="zone zone-secondary" data-type="secondary">
+    <div class="zone-head">Secondary</div>
+    <div class="zone-cards" data-zone="secondary"></div>
+    <div class="zone-hint">Sources that analyze others</div>
+  </div>
+</div>
+
+<details class="editor">
+  <summary>Edit deck (for the librarian)</summary>
+  <p class="ed-note">Edit the JSON below. Each item needs <code>label</code>, <code>type</code> ("primary" or "secondary"), and <code>explanation</code>. Then click Save &amp; reshuffle.</p>
+  <textarea id="edText" spellcheck="false"></textarea>
+  <div class="ed-actions">
+    <button class="btn btn-edit" id="edSave">Save &amp; reshuffle</button>
+    <button class="btn btn-again" id="edReset">Reset to default</button>
+  </div>
+  <div class="ed-error" id="edError"></div>
+</details>
+
+<script>
+(function(){
+  "use strict";
+
+  // ---- working copy of the deck (editor can replace this) ----
+  let deck = CARD_DECK.map(c => Object.assign({}, c));
+
+  const deckEl   = document.getElementById('deck');
+  const checkBtn = document.getElementById('checkBtn');
+  const againBtn = document.getElementById('againBtn');
+  const scoreEl  = document.getElementById('score');
+  const msgEl    = document.getElementById('message');
+  const zoneEls  = Array.from(document.querySelectorAll('.zone'));
+
+  let cardId = 0;
+
+  function shuffle(arr){
+    const a = arr.slice();
+    for(let i=a.length-1;i>0;i--){
+      const j = Math.floor(Math.random()*(i+1));
+      [a[i],a[j]] = [a[j],a[i]];
+    }
+    return a;
+  }
+
+  function makeCard(data){
+    const el = document.createElement('div');
+    el.className = 'card';
+    el.dataset.type = data.type;
+    el.dataset.id = 'c'+(cardId++);
+
+    const text = document.createElement('span');
+    text.textContent = data.label;
+    el.appendChild(text);
+
+    const expl = document.createElement('div');
+    expl.className = 'explain';
+    expl.textContent = data.explanation || '';
+    el.appendChild(expl);
+
+    const badge = document.createElement('span');
+    badge.className = 'badge';
+    el.appendChild(badge);
+
+    attachDrag(el);
+    return el;
+  }
+
+  function buildBoard(){
+    // clear
+    deckEl.innerHTML = '';
+    document.querySelectorAll('.zone-cards').forEach(z => z.innerHTML = '');
+    msgEl.textContent = '';
+    scoreEl.innerHTML = 'Score: <span class="num">—</span>';
+    checkBtn.disabled = false;
+
+    shuffle(deck).forEach(d => deckEl.appendChild(makeCard(d)));
+  }
+
+  // ===================== DRAG AND DROP (mouse + touch) =====================
+  let drag = null; // {el, clone, offsetX, offsetY}
+
+  function attachDrag(card){
+    card.addEventListener('mousedown', onPointerDown);
+    card.addEventListener('touchstart', onPointerDown, {passive:false});
+  }
+
+  function pointerXY(e){
+    if(e.touches && e.touches.length) return {x:e.touches[0].clientX, y:e.touches[0].clientY};
+    if(e.changedTouches && e.changedTouches.length) return {x:e.changedTouches[0].clientX, y:e.changedTouches[0].clientY};
+    return {x:e.clientX, y:e.clientY};
+  }
+
+  function onPointerDown(e){
+    const card = e.currentTarget;
+    if(card.classList.contains('checked')) return; // locked after check
+    e.preventDefault();
+
+    const p = pointerXY(e);
+    const rect = card.getBoundingClientRect();
+
+    const clone = card.cloneNode(true);
+    clone.classList.add('drag-clone');
+    clone.style.width  = rect.width + 'px';
+    clone.style.left   = rect.left + 'px';
+    clone.style.top    = rect.top + 'px';
+    document.body.appendChild(clone);
+
+    card.classList.add('dragging');
+
+    drag = {
+      el: card,
+      clone: clone,
+      dx: p.x - rect.left,
+      dy: p.y - rect.top
+    };
+
+    document.addEventListener('mousemove', onPointerMove, {passive:false});
+    document.addEventListener('touchmove', onPointerMove, {passive:false});
+    document.addEventListener('mouseup', onPointerUp);
+    document.addEventListener('touchend', onPointerUp);
+    document.addEventListener('touchcancel', onPointerUp);
+
+    moveClone(p);
+  }
+
+  function moveClone(p){
+    drag.clone.style.left = (p.x - drag.dx) + 'px';
+    drag.clone.style.top  = (p.y - drag.dy) + 'px';
+  }
+
+  function zoneUnder(p){
+    drag.clone.style.display = 'none';
+    const target = document.elementFromPoint(p.x, p.y);
+    drag.clone.style.display = '';
+    if(!target) return null;
+    return target.closest('.zone') || target.closest('.deck');
+  }
+
+  function onPointerMove(e){
+    if(!drag) return;
+    e.preventDefault();
+    const p = pointerXY(e);
+    moveClone(p);
+
+    const over = zoneUnder(p);
+    zoneEls.forEach(z => z.classList.toggle('dragover', z === over));
+  }
+
+  function onPointerUp(e){
+    if(!drag) return;
+    const p = pointerXY(e);
+    const over = zoneUnder(p);
+
+    document.removeEventListener('mousemove', onPointerMove);
+    document.removeEventListener('touchmove', onPointerMove);
+    document.removeEventListener('mouseup', onPointerUp);
+    document.removeEventListener('touchend', onPointerUp);
+    document.removeEventListener('touchcancel', onPointerUp);
+
+    zoneEls.forEach(z => z.classList.remove('dragover'));
+    drag.clone.remove();
+    drag.el.classList.remove('dragging');
+
+    if(over){
+      let dest;
+      if(over.classList.contains('zone')) dest = over.querySelector('.zone-cards');
+      else dest = deckEl; // dropped back on the deck
+      dest.appendChild(drag.el);
+    }
+    drag = null;
+  }
+
+  // ===================== CHECK / SCORE =====================
+  function check(){
+    const sorted = document.querySelectorAll('.zone-cards .card');
+    if(sorted.length === 0){
+      msgEl.textContent = 'Drag at least one card into a bin first!';
+      return;
+    }
+    let correct = 0;
+    const total = deck.length;
+
+    document.querySelectorAll('.card').forEach(card => {
+      card.classList.remove('correct','wrong');
+    });
+
+    document.querySelectorAll('.zone-cards').forEach(zoneCards => {
+      const zoneType = zoneCards.dataset.zone;
+      zoneCards.querySelectorAll('.card').forEach(card => {
+        card.classList.add('checked');
+        const badge = card.querySelector('.badge');
+        if(card.dataset.type === zoneType){
+          card.classList.add('correct');
+          badge.textContent = '✓';
+          correct++;
+        } else {
+          card.classList.add('wrong');
+          badge.textContent = '✗';
+        }
+      });
+    });
+
+    // cards still in the deck count as not-yet-sorted (not correct)
+    scoreEl.innerHTML = 'Score: <span class="num">'+correct+' / '+total+'</span>';
+    checkBtn.disabled = true;
+
+    const remaining = deckEl.querySelectorAll('.card').length;
+    if(correct === total){
+      msgEl.textContent = '⭐ Perfect! Every source sorted correctly.';
+    } else if(remaining > 0){
+      msgEl.textContent = correct+' correct. '+remaining+' card(s) left in the deck.';
+    } else {
+      msgEl.textContent = 'Got '+correct+' of '+total+'. Red cards show why.';
+    }
+  }
+
+  checkBtn.addEventListener('click', check);
+  againBtn.addEventListener('click', buildBoard);
+
+  // ===================== EDITOR =====================
+  const edText  = document.getElementById('edText');
+  const edError = document.getElementById('edError');
+
+  function loadEditorText(){
+    edText.value = JSON.stringify(deck, null, 2);
+    edError.textContent = '';
+  }
+
+  document.getElementById('edSave').addEventListener('click', function(){
+    edError.textContent = '';
+    let parsed;
+    try{
+      parsed = JSON.parse(edText.value);
+    }catch(err){
+      edError.textContent = 'Not valid JSON: ' + err.message;
+      return;
+    }
+    if(!Array.isArray(parsed) || parsed.length === 0){
+      edError.textContent = 'Deck must be a non-empty array of cards.';
+      return;
+    }
+    for(let i=0;i<parsed.length;i++){
+      const c = parsed[i];
+      if(!c || typeof c.label !== 'string' || !c.label.trim()){
+        edError.textContent = 'Card '+(i+1)+' needs a non-empty "label".';
+        return;
+      }
+      if(c.type !== 'primary' && c.type !== 'secondary'){
+        edError.textContent = 'Card '+(i+1)+' "type" must be "primary" or "secondary".';
+        return;
+      }
+      if(typeof c.explanation !== 'string'){
+        edError.textContent = 'Card '+(i+1)+' needs an "explanation" string.';
+        return;
+      }
+    }
+    deck = parsed.map(c => ({label:c.label, type:c.type, explanation:c.explanation}));
+    buildBoard();
+    edError.style.color = 'var(--good)';
+    edError.textContent = 'Saved! Deck reshuffled.';
+    setTimeout(()=>{ edError.style.color=''; edError.textContent=''; }, 2500);
+  });
+
+  document.getElementById('edReset').addEventListener('click', function(){
+    deck = CARD_DECK.map(c => Object.assign({}, c));
+    loadEditorText();
+    buildBoard();
+  });
+
+  document.querySelector('details.editor').addEventListener('toggle', function(){
+    if(this.open) loadEditorText();
+  });
+
+  // ===================== INIT =====================
+  buildBoard();
+})();
+</script>
+</body>
+</html>

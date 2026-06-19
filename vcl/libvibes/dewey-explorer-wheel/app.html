@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dewey Decimal Explorer Wheel — Our Library</title>
+<style>
+  /* ============================================================
+     PALETTE — navy #0A3476, gold #FCB040, teal #0E6B8A
+     Soft off-white background. 10 friendly per-class colors below.
+     ============================================================ */
+  :root {
+    --navy: #0A3476;
+    --gold: #FCB040;
+    --teal: #0E6B8A;
+    --bg: #FAF7F0;
+    --ink: #1c2433;
+    --card-radius: 16px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.5;
+  }
+
+  header {
+    background: var(--navy);
+    color: #fff;
+    padding: 22px 18px 26px;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0 0 6px;
+    font-size: clamp(1.5rem, 4.5vw, 2.4rem);
+  }
+  header h1 .gold { color: var(--gold); }
+  header p {
+    margin: 0 auto;
+    max-width: 640px;
+    font-size: clamp(0.95rem, 2.4vw, 1.1rem);
+    opacity: 0.95;
+  }
+
+  main {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 22px 16px 60px;
+  }
+
+  /* ---------- Search ---------- */
+  .search-wrap {
+    background: #fff;
+    border: 3px solid var(--teal);
+    border-radius: var(--card-radius);
+    padding: 16px 18px;
+    margin-bottom: 26px;
+    box-shadow: 0 4px 14px rgba(10,52,118,0.08);
+  }
+  .search-wrap label {
+    display: block;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+  }
+  .search-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .search-row input[type="text"] {
+    flex: 1 1 220px;
+    min-width: 0;
+    font-size: 1.05rem;
+    padding: 12px 14px;
+    border: 2px solid #c9d3e0;
+    border-radius: 10px;
+    font-family: inherit;
+  }
+  .search-row input[type="text"]:focus {
+    outline: 3px solid var(--gold);
+    outline-offset: 1px;
+    border-color: var(--teal);
+  }
+  .search-row button {
+    flex: 0 0 auto;
+    font-size: 1.05rem;
+    font-weight: 700;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 10px;
+    background: var(--gold);
+    color: #422a00;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .search-row button:hover { filter: brightness(1.05); }
+  .search-row button:focus-visible {
+    outline: 3px solid var(--navy);
+    outline-offset: 2px;
+  }
+  .search-result {
+    margin-top: 12px;
+    font-size: 1.02rem;
+    min-height: 1.4em;
+  }
+  .search-result strong { color: var(--navy); }
+  .search-result .badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+    color: #fff;
+    font-weight: 700;
+    margin: 0 2px;
+  }
+
+  /* ---------- Wheel / grid ---------- */
+  .wheel {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  /* The "wheel" feel on wide screens: center hub label */
+  .hub {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--teal);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    margin: 2px 0 -4px;
+  }
+
+  .class-card {
+    position: relative;
+    border: none;
+    border-radius: var(--card-radius);
+    padding: 16px 12px;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    font-family: inherit;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, outline 0.1s;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.16);
+    min-height: 96px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .class-card .num {
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+  .class-card .name {
+    font-size: 0.92rem;
+    font-weight: 600;
+    margin-top: 6px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+  }
+  .class-card:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 8px 18px rgba(0,0,0,0.25); }
+  .class-card:focus-visible {
+    outline: 4px solid var(--navy);
+    outline-offset: 2px;
+  }
+  /* selected / highlighted (search) state — smooth zoom */
+  .class-card.selected {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 4px #fff, 0 0 0 8px var(--navy), 0 10px 22px rgba(0,0,0,0.3);
+    z-index: 2;
+  }
+  .class-card.highlight {
+    animation: pulse 1.1s ease 2;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 4px #fff, 0 0 0 8px var(--gold), 0 8px 18px rgba(0,0,0,0.25); }
+    50% { box-shadow: 0 0 0 6px #fff, 0 0 0 12px var(--gold), 0 10px 22px rgba(0,0,0,0.3); }
+  }
+
+  /* ---------- Detail panel ---------- */
+  #detail {
+    background: #fff;
+    border-radius: var(--card-radius);
+    border-left: 12px solid var(--teal);
+    padding: 20px 22px;
+    box-shadow: 0 4px 16px rgba(10,52,118,0.1);
+    scroll-margin-top: 12px;
+  }
+  #detail.empty {
+    color: #5a6473;
+    border-left-color: #c9d3e0;
+    text-align: center;
+    font-style: italic;
+  }
+  #detail h2 {
+    margin: 0 0 4px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  #detail h2 .chip {
+    color: #fff;
+    border-radius: 10px;
+    padding: 4px 12px;
+    font-size: 1.2rem;
+  }
+  #detail .desc { font-size: 1.08rem; margin: 12px 0; }
+  #detail h3 {
+    margin: 16px 0 6px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--navy);
+  }
+  #detail ul { margin: 4px 0 0; padding-left: 22px; }
+  #detail li { margin-bottom: 3px; }
+  .shelf {
+    margin-top: 16px;
+    background: #FFF6E5;
+    border: 2px dashed var(--gold);
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 1rem;
+  }
+  .shelf .tag {
+    display: block;
+    font-weight: 700;
+    color: #8a5a00;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
+  }
+
+  .footnote {
+    text-align: center;
+    color: #5a6473;
+    font-size: 0.85rem;
+    margin-top: 30px;
+  }
+
+  /* ---------- Mobile-first: stacked grid on small screens ---------- */
+  @media (max-width: 760px) {
+    .wheel { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 420px) {
+    .wheel { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .class-card, .class-card.selected { transition: none; }
+    .class-card.highlight { animation: none; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Dewey Decimal <span class="gold">Explorer</span></h1>
+  <p>Pick a colored class to learn what lives there — or type a topic to find where it belongs on our shelves.</p>
+</header>
+
+<main>
+  <!-- ============ SEARCH ============ -->
+  <section class="search-wrap">
+    <label for="topicInput">Got a topic? Find its Dewey class:</label>
+    <div class="search-row">
+      <input type="text" id="topicInput" placeholder="Try: dinosaurs, soccer, dragons, space..."
+             autocomplete="off" aria-describedby="searchResult">
+      <button type="button" id="searchBtn">Find it</button>
+    </div>
+    <div class="search-result" id="searchResult" role="status" aria-live="polite"></div>
+  </section>
+
+  <!-- ============ WHEEL / CARD GRID ============ -->
+  <div class="hub" aria-hidden="true">The 10 Dewey Neighborhoods</div>
+  <div class="wheel" id="wheel" role="list" aria-label="Dewey Decimal classes"></div>
+
+  <!-- ============ DETAIL PANEL ============ -->
+  <section id="detail" class="empty" tabindex="-1" aria-live="polite">
+    Click any colored class above to see what it holds.
+  </section>
+
+  <p class="footnote">A LibVibes tool for our library &middot; edit the shelf notes &amp; keywords in the file to match your shelves.</p>
+</main>
+
+<script>
+/* ============================================================================
+   THE 10 DEWEY CLASSES
+   "shelf" is your local "where to find it in our library" line — EDIT FREELY.
+   "color" = the one friendly color per class.
+   ============================================================================ */
+const DEWEY = [
+  { num: "000", name: "Computers & Info",      color: "#0E6B8A",
+    desc: "The 'mystery & know-how' shelf — computers, the internet, world records, ghosts, UFOs, and books about books and libraries.",
+    examples: ["Coding & robots", "Guinness World Records", "Mysteries & the unexplained"],
+    shelf: "Front low shelves, right of the help desk." },
+
+  { num: "100", name: "Philosophy & Psychology", color: "#7A4FB0",
+    desc: "Big questions and big feelings — how we think, dreams, emotions, friendship, and what's real.",
+    examples: ["Feelings & emotions", "Optical illusions", "Dreams & the mind"],
+    shelf: "Aisle 1, top shelf." },
+
+  { num: "200", name: "Religion & Myths",      color: "#C9417B",
+    desc: "World religions, holidays, and the great myths and legends people tell.",
+    examples: ["World religions", "Greek & Norse mythology", "Holidays around the world"],
+    shelf: "Aisle 1, middle shelf." },
+
+  { num: "300", name: "Social Sciences",       color: "#FCB040",
+    desc: "People living together — communities, jobs, money, government, laws, customs, and fairy tales.",
+    examples: ["Communities & cultures", "Money & jobs", "Folk & fairy tales"],
+    shelf: "Aisle 2, eye-level shelves." },
+
+  { num: "400", name: "Language",              color: "#2E9E6B",
+    desc: "Words and how we use them — different languages, sign language, dictionaries, and grammar.",
+    examples: ["Spanish & other languages", "Sign language", "Dictionaries"],
+    shelf: "Aisle 2, bottom shelf." },
+
+  { num: "500", name: "Science & Nature",      color: "#2D7DD2",
+    desc: "How the natural world works — animals, dinosaurs, space, weather, rocks, plants, and math.",
+    examples: ["Dinosaurs & fossils", "Space & planets", "Animals & weather"],
+    shelf: "Aisle 3 — the big NATURE banner." },
+
+  { num: "600", name: "Technology & How-To",   color: "#E2622D",
+    desc: "Making and doing — the human body & health, inventions, machines, pets, farming, and cooking.",
+    examples: ["The human body", "Cars, planes & machines", "Cooking & pets"],
+    shelf: "Aisle 3, far end." },
+
+  { num: "700", name: "Arts & Recreation",     color: "#D63B5A",
+    desc: "Fun and creativity — art, music, drawing, crafts, jokes, games, and every sport.",
+    examples: ["Soccer & other sports", "Drawing & crafts", "Music & jokes"],
+    shelf: "Aisle 4 — near the maker corner." },
+
+  { num: "800", name: "Literature & Poetry",   color: "#0A3476",
+    desc: "Stories, plays, and poems — poetry collections, Shakespeare, and writing your own.",
+    examples: ["Poetry", "Plays & scripts", "Story collections"],
+    shelf: "Aisle 4, blue-labeled shelves." },
+
+  { num: "900", name: "History & Geography",   color: "#5B8A2B",
+    desc: "Where and when — countries, maps, explorers, ancient times, wars, and real people's life stories (biographies).",
+    examples: ["Ancient Egypt & Rome", "Maps & countries", "Biographies & explorers"],
+    shelf: "Back wall — the WORLD map shelves." }
+];
+
+/* ============================================================================
+   TOPIC -> DEWEY KEYWORD LIST  *** EASY TO EDIT ***
+   Add your own lines: "keyword": "500"  (use the 3-digit class number).
+   Matching is case-insensitive and matches whole words or partial words.
+   Examples requested: dinosaurs -> 500s, soccer -> 700s.
+   ============================================================================ */
+const KEYWORDS = {
+  // 000 — Computers & Info
+  "computer": "000", "coding": "000", "code": "000", "internet": "000",
+  "robot": "000", "robots": "000", "record": "000", "records": "000",
+  "ghost": "000", "ghosts": "000", "ufo": "000", "alien": "000", "aliens": "000",
+  "library": "000", "encyclopedia": "000",
+  // 100 — Philosophy & Psychology
+  "feelings": "100", "emotion": "100", "emotions": "100", "dream": "100",
+  "dreams": "100", "brain": "100", "mind": "100", "friendship": "100", "psychology": "100",
+  // 200 — Religion & Myths
+  "religion": "200", "bible": "200", "myth": "200", "myths": "200",
+  "mythology": "200", "greek gods": "200", "holiday": "200", "holidays": "200",
+  "christmas": "200", "easter": "200", "diwali": "200",
+  // 300 — Social Sciences
+  "community": "300", "communities": "300", "money": "300", "job": "300",
+  "jobs": "300", "government": "300", "law": "300", "laws": "300",
+  "fairy tale": "300", "fairy tales": "300", "folktale": "300", "customs": "300", "voting": "300",
+  // 400 — Language
+  "language": "400", "spanish": "400", "french": "400", "sign language": "400",
+  "dictionary": "400", "grammar": "400", "words": "400", "alphabet": "400",
+  // 500 — Science & Nature
+  "dinosaur": "500", "dinosaurs": "500", "fossil": "500", "fossils": "500",
+  "space": "500", "planet": "500", "planets": "500", "star": "500", "stars": "500",
+  "animal": "500", "animals": "500", "weather": "500", "rock": "500", "rocks": "500",
+  "plant": "500", "plants": "500", "math": "500", "science": "500", "ocean": "500",
+  "volcano": "500", "volcanoes": "500", "bug": "500", "bugs": "500", "insect": "500",
+  // 600 — Technology & How-To
+  "body": "600", "human body": "600", "health": "600", "medicine": "600",
+  "invention": "600", "inventions": "600", "machine": "600", "machines": "600",
+  "car": "600", "cars": "600", "plane": "600", "planes": "600", "pet": "600",
+  "pets": "600", "dog": "600", "dogs": "600", "cat": "600", "cats": "600",
+  "cooking": "600", "food": "600", "farm": "600", "farming": "600", "engineering": "600",
+  // 700 — Arts & Recreation
+  "soccer": "700", "football": "700", "basketball": "700", "baseball": "700",
+  "sport": "700", "sports": "700", "art": "700", "drawing": "700", "draw": "700",
+  "music": "700", "guitar": "700", "craft": "700", "crafts": "700",
+  "joke": "700", "jokes": "700", "game": "700", "games": "700", "dance": "700",
+  "painting": "700", "origami": "700",
+  // 800 — Literature & Poetry
+  "poetry": "800", "poem": "800", "poems": "800", "play": "800", "plays": "800",
+  "shakespeare": "800", "writing": "800", "essay": "800",
+  // 900 — History & Geography
+  "history": "900", "egypt": "900", "rome": "900", "roman": "900", "map": "900",
+  "maps": "900", "country": "900", "countries": "900", "explorer": "900",
+  "explorers": "900", "biography": "900", "war": "900", "wars": "900",
+  "ancient": "900", "pirate": "900", "pirates": "900", "knight": "900", "knights": "900",
+  "castle": "900", "geography": "900",
+  // Fun extras kids actually type:
+  "dragon": "300", "dragons": "300", "unicorn": "300", "unicorns": "300"
+};
+
+/* ============================================================================
+   APP LOGIC (no need to edit below this line)
+   ============================================================================ */
+const byNum = {};
+DEWEY.forEach(d => { byNum[d.num] = d; });
+
+const wheelEl = document.getElementById('wheel');
+const detailEl = document.getElementById('detail');
+const inputEl = document.getElementById('topicInput');
+const searchBtn = document.getElementById('searchBtn');
+const resultEl = document.getElementById('searchResult');
+
+/* pick readable text color (dark for light backgrounds like gold) */
+function textOn(hex) {
+  const r = parseInt(hex.substr(1,2),16),
+        g = parseInt(hex.substr(3,2),16),
+        b = parseInt(hex.substr(5,2),16);
+  const lum = (0.299*r + 0.587*g + 0.114*b);
+  return lum > 165 ? '#3a2a00' : '#ffffff';
+}
+
+/* Build the wheel / card grid */
+DEWEY.forEach(d => {
+  const btn = document.createElement('button');
+  btn.className = 'class-card';
+  btn.type = 'button';
+  btn.setAttribute('role', 'listitem');
+  btn.style.background = d.color;
+  btn.style.color = textOn(d.color);
+  btn.dataset.num = d.num;
+  btn.setAttribute('aria-label', d.num + ' ' + d.name);
+  btn.innerHTML = '<span class="num">' + d.num + '</span><span class="name">' + d.name + '</span>';
+  btn.addEventListener('click', () => selectClass(d.num, true));
+  wheelEl.appendChild(btn);
+});
+
+function clearStates() {
+  document.querySelectorAll('.class-card').forEach(c => {
+    c.classList.remove('selected', 'highlight');
+    c.removeAttribute('aria-current');
+  });
+}
+
+function selectClass(num, focusDetail) {
+  const d = byNum[num];
+  if (!d) return;
+  clearStates();
+  const card = document.querySelector('.class-card[data-num="' + num + '"]');
+  if (card) {
+    card.classList.add('selected');
+    card.setAttribute('aria-current', 'true');
+  }
+
+  const txt = textOn(d.color);
+  detailEl.classList.remove('empty');
+  detailEl.style.borderLeftColor = d.color;
+  detailEl.innerHTML =
+    '<h2><span class="chip" style="background:' + d.color + ';color:' + txt + '">' + d.num + '</span>' + d.name + '</h2>' +
+    '<p class="desc">' + d.desc + '</p>' +
+    '<h3>You might find books about</h3>' +
+    '<ul>' + d.examples.map(e => '<li>' + e + '</li>').join('') + '</ul>' +
+    '<div class="shelf"><span class="tag">Where to find it in our library</span>' + d.shelf + '</div>';
+
+  if (focusDetail) {
+    detailEl.focus({ preventScroll: false });
+    detailEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+}
+
+/* Search: find the most likely class for a typed topic */
+function runSearch() {
+  const raw = inputEl.value.trim().toLowerCase();
+  if (!raw) {
+    resultEl.textContent = 'Type a topic above, then press Find it.';
+    return;
+  }
+
+  let matchNum = null, matchedKey = null;
+
+  // 1) exact whole-string match
+  if (KEYWORDS[raw]) { matchNum = KEYWORDS[raw]; matchedKey = raw; }
+
+  // 2) any keyword appears as a word/substring inside what they typed (longest first)
+  if (!matchNum) {
+    const keys = Object.keys(KEYWORDS).sort((a,b) => b.length - a.length);
+    for (const k of keys) {
+      if (raw.includes(k)) { matchNum = KEYWORDS[k]; matchedKey = k; break; }
+    }
+  }
+
+  // 3) the typed word appears inside a keyword (e.g. "dino" -> "dinosaur")
+  if (!matchNum && raw.length >= 3) {
+    const keys = Object.keys(KEYWORDS).sort((a,b) => a.length - b.length);
+    for (const k of keys) {
+      if (k.includes(raw)) { matchNum = KEYWORDS[k]; matchedKey = k; break; }
+    }
+  }
+
+  if (matchNum) {
+    const d = byNum[matchNum];
+    const txt = textOn(d.color);
+    resultEl.innerHTML = 'Likely class: <span class="badge" style="background:' + d.color +
+      ';color:' + txt + '">' + d.num + ' ' + d.name + '</span> ' +
+      '<small>(matched "<strong>' + matchedKey + '</strong>")</small>';
+    selectClass(matchNum, false);
+    const card = document.querySelector('.class-card[data-num="' + matchNum + '"]');
+    if (card) {
+      card.classList.add('highlight');
+      card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  } else {
+    resultEl.innerHTML = 'Hmm, "<strong>' + escapeHtml(raw) +
+      '</strong>" isn\'t in our list yet. Try a simpler word, or browse the colored classes above. ' +
+      '<small>(Librarian: add it to the KEYWORDS list in this file.)</small>';
+    clearStates();
+  }
+}
+
+function escapeHtml(s) {
+  return s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+}
+
+searchBtn.addEventListener('click', runSearch);
+inputEl.addEventListener('keydown', e => { if (e.key === 'Enter') runSearch(); });
+</script>
+</body>
+</html>
