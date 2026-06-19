@@ -19,7 +19,7 @@
 *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg)}
 button,input,select,textarea{font:inherit} button{cursor:pointer} a{color:var(--tcea-blue)}
 .mg-back-bar{position:fixed;top:0;left:0;right:0;z-index:9999;height:32px;display:flex;align-items:center;padding:0 18px;background:var(--gold);border-bottom:1px solid rgba(10,52,118,.25);box-shadow:0 1px 8px rgba(0,0,0,.16);font-size:12.5px}.mg-back-bar a{display:inline-flex;align-items:center;gap:7px;color:var(--tcea-blue);text-decoration:none;font-weight:800}.mg-back-bar a:hover{color:var(--tcea-blue-dark)}
-.topbar{height:10px;margin-top:32px;background:linear-gradient(90deg,var(--tcea-blue) 0 72%,var(--gold) 72% 100%)}
+.topbar{height:10px;background:linear-gradient(90deg,var(--tcea-blue) 0 72%,var(--gold) 72% 100%)}
 .page{width:min(1320px,calc(100% - 28px));margin:0 auto;padding:22px 0 44px}.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:stretch;border-bottom:4px solid var(--gold);padding-bottom:18px}@media(max-width:900px){.hero{grid-template-columns:1fr}}
 .eyebrow{margin:0;color:var(--gold);font-size:.78rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.hero h1{margin:.35rem 0;color:var(--tcea-blue-dark);font-size:clamp(2rem,5vw,3.65rem);line-height:.98;letter-spacing:0}.hero p{font-size:1rem;line-height:1.5;margin:.4rem 0;color:#1f2937}.hero-card{border:1px solid var(--line);border-top:5px solid var(--gold);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;background:#fff}
 .hero-visual{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.mini{border:1px solid var(--line);border-radius:8px;background:#fff;padding:12px}.mini strong{display:block;color:var(--tcea-blue-dark);font-size:1.6rem}.mini span{color:var(--soft);font-size:.82rem;font-weight:800}.actions,.row-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.actions{margin-top:14px}.btn{min-height:42px;border:2px solid var(--tcea-blue);border-radius:6px;background:#fff;color:var(--tcea-blue-dark);font-weight:900;padding:8px 13px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}.btn.primary{background:var(--tcea-blue);color:#fff}.btn.gold{background:var(--gold);border-color:var(--gold);color:var(--tcea-blue-dark)}.btn.red{border-color:var(--red);color:var(--red)}.btn.small{min-height:34px;padding:5px 9px;font-size:.82rem}.btn:disabled{opacity:.5;cursor:not-allowed}
@@ -31,9 +31,6 @@ button,input,select,textarea{font:inherit} button{cursor:pointer} a{color:var(--
 </style>
 </head>
 <body>
-<div class="mg-back-bar" role="navigation" aria-label="Back to TCEA index">
-  <a href="../index.html"><span aria-hidden="true">&larr;</span> TCEA</a>
-</div>
 <div class="topbar" aria-hidden="true"></div>
 <div class="page">
   <header class="hero">
@@ -207,5 +204,8 @@ try{const saved=localStorage.getItem('k12KpiDashboard');if(saved){const parsed=J
 render();
 })();
 </script>
+<nav class="mg-bottom-nav" aria-label="Back navigation" style="text-align:center;padding:1.25rem 1.5rem;background:#071F4A;border-top:3px solid #FCB040;font-family:system-ui,-apple-system,sans-serif;">
+  <a href="../index.html" style="color:#FDD17A;text-decoration:none;font-weight:700;font-size:0.85rem;margin:0 0.7rem;">← TCEA</a>
+</nav>
 </body>
 </html>

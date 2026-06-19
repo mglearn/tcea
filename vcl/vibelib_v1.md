@@ -21,15 +21,31 @@ These are written for librarians who are **not developers**. Each prompt is numb
 
 ## The VIBES Framework
 
-A five-step mental model for vibe-coding any of these projects. Each prompt below includes a **VIBES block** tuned to that specific build.
+**"Vibe-coding"** means building a working tool by describing what you want in plain English and letting an AI write the code — no programming background required. It feels like a conversation, not an engineering project. But a conversation can wander, and the AI will happily build the *wrong* thing confidently. VIBES is the guardrail: a five-step loop that keeps you in charge of the outcome instead of just accepting whatever the AI hands back first.
 
-| Step | Letter | What you do |
-|------|--------|-------------|
-| **Vision** | **V** | Decide what you want to build *before* you open a chat window. Name the audience (which grades? staff?) and the one job it must do. |
-| **Instruct** | **I** | Write a prompt that gives the AI enough context to start: your color scheme, your data, your constraints, where it will be hosted. |
-| **Build** | **B** | Generate code in small chunks and iterate conversationally. Ask for one feature at a time once the skeleton works. |
-| **Evaluate** | **E** | Run it, read it, click every button on a phone *and* a laptop. Verify links, facts, and that it works without a login. |
-| **Ship** | **S** | Save, host, embed, or share the working result. Put it where students and staff actually are. |
+Think of it as the difference between *ordering takeout* (you accept whatever arrives) and *cooking with a recipe* (you taste, adjust, and plate it yourself). VIBES is the recipe.
+
+| Step | Letter | What you do | The question it answers |
+|------|--------|-------------|--------------------------|
+| **Vision** | **V** | Decide what you want *before* you open a chat window. Name the audience and the one job it must do. | "What am I actually making, and for whom?" |
+| **Instruct** | **I** | Write a prompt that gives the AI enough context to start: your data, colors, constraints, and where it will live. | "Does the AI know enough to get it right?" |
+| **Build** | **B** | Generate the code, then iterate conversationally — one feature at a time once the skeleton works. | "Is it coming together piece by piece?" |
+| **Evaluate** | **E** | Run it and test it like a skeptical student would — on a phone *and* a laptop. Check facts, links, and logins. | "Does it really work, or does it just look like it does?" |
+| **Ship** | **S** | Save, host, embed, or share the finished tool where students and staff already are. | "Can the people I built this for actually reach it?" |
+
+### What each step really means
+
+- **V — Vision.** This is the step people skip, and skipping it is why projects sprawl. Before you type a word to the AI, finish this sentence out loud: *"This is for ___ so they can ___."* One audience, one job. "A Dewey explorer for 4th graders so they can guess where a topic lives on the shelf" is a vision. "Something about the library" is not. A sharp vision is also your finish line — it tells you when you're *done* instead of endlessly adding features.
+
+- **I — Instruct.** The AI is brilliant but it cannot read your mind or see your library. Everything it doesn't know, it will invent — fake hours, generic colors, placeholder books. Your job is to feed it the *real* specifics: your actual hours, your campus colors, your genres, your column names, and one constraint that matters most ("no logins," "must embed in Google Sites," "one HTML file"). The prompts in this guide are written to be strong starting instructions — but they get dramatically better when you paste in your real details.
+
+- **B — Build.** Resist asking for everything at once. Get the **skeleton** working first (the layout, the basic flow), confirm it runs, *then* add one feature per turn: "now make the progress ring animate," "now add the confetti at 50%." Small steps mean that when something breaks, you know exactly which change caused it. If the AI gives you something broken, paste the error or describe what you see — "the button does nothing on my phone" — and let it fix that one thing.
+
+- **E — Evaluate.** This is the step that separates a tool you trust from a demo that embarrasses you in front of a class. **Looking right is not the same as working.** Click every button. Try it on an actual phone, not just your laptop. Feed it the weird input a kid will (an empty search, a tricky call number, a double-tap). And for anything with *facts* — citations, Dewey ranges, primary-vs-secondary answers — verify it against a real source, because a confident wrong answer is worse than none. If it fails, you're not back to square one; you loop back to **Build** with a specific fix in hand.
+
+- **S — Ship.** A tool nobody can find helps nobody. Shipping means putting the working result where your people already are: a GitHub Pages link, an embed in your Google Site, a QR code at the shelf, a loop on the lobby monitor. Match the home to the job — a countdown banner belongs on a hallway screen; a citation helper belongs next to your database links.
+
+> **VIBES is a loop, not a staircase.** You will almost always cycle **Build → Evaluate → Build** several times before you Ship — and that's the process working, not failing. The AI's first answer is a *starting point*, never the finish line. Each prompt below includes a short **VIBES block** that walks you through these five steps for that specific build, so you're never staring at a blank chat window wondering what to ask next.
 
 ### Design DNA shared by every prompt
 
