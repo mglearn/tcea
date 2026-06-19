@@ -33,7 +33,7 @@
   .nav-links a:hover{background:var(--navy-dark)}
   .nav-links a.home{background:var(--gold);color:var(--navy)}
   /* Nav dropdown */
-  .nav-dd{position:relative}
+  .nav-dd{position:relative}.nav-dd:hover::after,.nav-dd:focus-within::after{content:"";position:absolute;left:0;right:0;top:100%;height:.6rem}
   .nav-dd>.nav-dd-trigger{display:inline-flex;align-items:center;gap:.3rem;color:#fff;text-decoration:none;font-size:.85rem;font-weight:600;padding:.4rem .7rem;border-radius:6px;cursor:pointer}
   .nav-dd>.nav-dd-trigger:hover,.nav-dd:focus-within>.nav-dd-trigger{background:var(--navy-dark)}
   .nav-dd-menu{position:absolute;top:calc(100% + .35rem);left:0;min-width:248px;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 12px 30px rgba(10,52,118,.22);padding:.4rem;display:none;flex-direction:column;gap:.1rem;z-index:40;max-height:min(70vh,440px);overflow:auto}
@@ -94,6 +94,18 @@
   .filter{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.6rem}
   .filter-pill{background:#fff;border:1.5px solid var(--border);color:var(--navy);font-family:inherit;font-weight:600;padding:.45rem 1rem;border-radius:20px;cursor:pointer;font-size:.85rem}
   .filter-pill.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+  /* Quick actions (search + random) */
+  .qa-wrap{display:flex;flex-direction:column;align-items:center;gap:.8rem;text-align:center}
+  .qa-form{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;width:100%;max-width:560px}
+  .qa-input{flex:1;min-width:200px;padding:.7rem 1rem;border:1.5px solid var(--border);border-radius:10px;font-family:inherit;font-size:.95rem;color:var(--text)}
+  .qa-input:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px var(--teal-pale)}
+  .qa-btn{font-family:inherit;font-weight:700;font-size:.92rem;padding:.7rem 1.2rem;border-radius:10px;border:0;cursor:pointer;text-decoration:none;display:inline-block}
+  .qa-btn-navy{background:var(--navy);color:#fff}
+  .qa-btn-navy:hover{background:var(--teal)}
+  .qa-btn-gold{background:var(--gold);color:var(--navy)}
+  .qa-btn-gold:hover{background:var(--gold-light)}
+  .qa-count{font-size:.82rem;color:var(--text-muted)}
 
   /* Prompt cards */
   .lv-grid{display:grid;gap:1.2rem}
@@ -185,6 +197,18 @@
     <div><strong>18</strong><span>built &amp; playable</span></div>
     <div><strong>3</strong><span>skill levels</span></div>
     <div><strong>$0</strong><span>to host &amp; run</span></div>
+  </div>
+</section>
+
+<!-- ============ QUICK ACTIONS ============ -->
+<section id="quick" style="padding-bottom:0">
+  <div class="qa-wrap">
+    <form class="qa-form" id="lvSearchForm" role="search">
+      <input class="qa-input" id="lvSearch" type="search" placeholder="Search the 18 prompts by title, type, or keyword…" aria-label="Search the LibVibes prompts">
+      <button class="qa-btn qa-btn-navy" type="submit">🔎 Search</button>
+    </form>
+    <button class="qa-btn qa-btn-gold" id="lvRandom" type="button">🎲 View a Random LibVibe</button>
+    <div class="qa-count" id="lvSearchCount" aria-live="polite"></div>
   </div>
 </section>
 
@@ -636,16 +660,43 @@ document.querySelectorAll(".copy-btn").forEach(btn=>{
   });
 });
 
-/* filter */
+/* filter (level pills) */
+const lvSearchEl=document.getElementById("lvSearch");
+const lvCountEl=document.getElementById("lvSearchCount");
 document.querySelectorAll(".filter-pill").forEach(pill=>{
   pill.addEventListener("click",()=>{
     document.querySelectorAll(".filter-pill").forEach(p=>p.classList.remove("active"));
     pill.classList.add("active");
+    if(lvSearchEl){ lvSearchEl.value=""; lvCountEl.textContent=""; }   // level filter clears text search
     const f=pill.dataset.f;
     document.querySelectorAll(".lv-card").forEach(c=>{
       c.classList.toggle("hide",!(f==="all"||c.dataset.level===f));
     });
   });
+});
+
+/* text search */
+function runSearch(scroll){
+  const raw=lvSearchEl.value.trim(), q=raw.toLowerCase();
+  let shown=0;
+  document.querySelectorAll(".lv-card").forEach(c=>{
+    const hit=!q||c.textContent.toLowerCase().includes(q);
+    c.classList.toggle("hide",!hit);
+    if(hit) shown++;
+  });
+  if(q){ document.querySelectorAll(".filter-pill").forEach(p=>p.classList.toggle("active",p.dataset.f==="all")); }
+  lvCountEl.textContent=q?`${shown} prompt${shown===1?"":"s"} match “${raw}”`:"";
+  if(scroll) document.getElementById("library").scrollIntoView({behavior:"smooth"});
+}
+document.getElementById("lvSearchForm").addEventListener("submit",e=>{e.preventDefault();runSearch(true);});
+lvSearchEl.addEventListener("input",()=>runSearch(false));
+
+/* view a random LibVibe */
+document.getElementById("lvRandom").addEventListener("click",()=>{
+  const sols=(window.LIBVIBES&&window.LIBVIBES.SOLUTIONS)||[];
+  if(!sols.length) return;
+  const s=sols[Math.floor(Math.random()*sols.length)];
+  window.location.href="libvibes/"+s.slug+"/index.html";
 });
 </script>
 </body>
