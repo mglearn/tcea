@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Built Examples · LibVibes | TCEA</title>
-<meta name="description" content="Live, playable built examples from the LibVibes prompt library. Try each tool, open it in a tab, or download the code to host yourself. By Miguel Guhlin, TCEA.">
+<title>Share your LibVibe · LibVibes | TCEA</title>
+<meta name="description" content="Built a library tool with a vibe-coding prompt? Share your LibVibe prompt and solution with TCEA for review and hosting. By Miguel Guhlin, TCEA.">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -95,6 +95,18 @@
   .filter-pill{background:#fff;border:1.5px solid var(--border);color:var(--navy);font-family:inherit;font-weight:600;padding:.45rem 1rem;border-radius:20px;cursor:pointer;font-size:.85rem}
   .filter-pill.active{background:var(--navy);color:#fff;border-color:var(--navy)}
 
+  /* Quick actions (search + random) */
+  .qa-wrap{display:flex;flex-direction:column;align-items:center;gap:.8rem;text-align:center}
+  .qa-form{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;width:100%;max-width:560px}
+  .qa-input{flex:1;min-width:200px;padding:.7rem 1rem;border:1.5px solid var(--border);border-radius:10px;font-family:inherit;font-size:.95rem;color:var(--text)}
+  .qa-input:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px var(--teal-pale)}
+  .qa-btn{font-family:inherit;font-weight:700;font-size:.92rem;padding:.7rem 1.2rem;border-radius:10px;border:0;cursor:pointer;text-decoration:none;display:inline-block}
+  .qa-btn-navy{background:var(--navy);color:#fff}
+  .qa-btn-navy:hover{background:var(--teal)}
+  .qa-btn-gold{background:var(--gold);color:var(--navy)}
+  .qa-btn-gold:hover{background:var(--gold-light)}
+  .qa-count{font-size:.82rem;color:var(--text-muted)}
+
   /* Prompt cards */
   .lv-grid{display:grid;gap:1.2rem}
   .lv-card{background:#fff;border:1px solid var(--border);border-left:5px solid var(--gold);border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(10,52,118,.05)}
@@ -121,6 +133,7 @@
   .lv-body{margin:0 1.2rem;font-family:'DM Mono',monospace;font-size:.8rem;color:#2a3550;line-height:1.6;background:#f5f7fc;border:1px solid var(--border);border-radius:9px;padding:.9rem 1rem;white-space:pre-wrap;max-height:220px;overflow:auto}
   .lv-actions{margin:.85rem 1.2rem 1.2rem;display:flex}
   .lv-vibes{margin:.2rem 1.2rem .9rem}
+  .lv-prompt .lv-body{margin:.6rem 0 0}
   .lv-vibes summary{cursor:pointer;font-weight:700;color:var(--navy);font-size:.9rem;list-style:none;display:flex;align-items:center;gap:.5rem;padding:.6rem .8rem;background:var(--gold-pale);border-radius:8px}
   .lv-vibes summary::-webkit-details-marker{display:none}
   .lv-vibes summary::before{content:"▸";color:var(--gold);font-weight:900;transition:transform .2s}
@@ -170,31 +183,35 @@
 </nav>
 
 <section class="hero" id="top" style="padding:2.6rem 1.4rem 2.8rem">
-  <span class="eyebrow">Play With Them Now</span>
-  <h1>Built <em>Examples</em></h1>
-  <p class="hero-lead"><strong id="exCount">0</strong> of the 18 LibVibes prompts are built and playable. Pick one to open the live tool on its own page, or download its code as a zip to host yourself.</p>
+  <span class="eyebrow">Community</span>
+  <h1>Share your <em>LibVibe</em></h1>
+  <p class="hero-lead">Built a library tool with a vibe-coding prompt? Send us the prompt and the solution. A librarian reviews every entry &mdash; approved LibVibes get published here with your credit.</p>
 </section>
 
-<style>
-  .sol-list{list-style:none;display:grid;gap:.6rem;margin:0;padding:0}
-  .sol{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:#fff;border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:10px;padding:.85rem 1.1rem;flex-wrap:wrap;transition:.15s}
-  .sol[data-level="intermediate"]{border-left-color:var(--int)} .sol[data-level="advanced"]{border-left-color:var(--adv)} .sol[data-level="beginner"]{border-left-color:var(--beg)}
-  .sol:hover{box-shadow:0 6px 18px rgba(10,52,118,.1);transform:translateY(-1px)}
-  .sol-main{display:flex;align-items:center;gap:.9rem;text-decoration:none;flex:1;min-width:220px}
-  .sol-n{flex:none;font-family:'DM Mono',monospace;font-weight:700;color:var(--navy);background:var(--gold-pale);border-radius:7px;padding:.35rem .55rem;font-size:.8rem}
-  .sol-title{display:block;font-family:'DM Serif Display',serif;color:var(--navy);font-size:1.08rem;line-height:1.2}
-  .sol-desc{display:block;color:var(--text-muted);font-size:.85rem;margin-top:.15rem}
-  .sol-meta{display:flex;align-items:center;gap:.45rem;flex:none;flex-wrap:wrap}
-  .sol-links a{font-size:.78rem;font-weight:700;text-decoration:none;color:var(--navy);background:#eef2fa;border:1px solid #dbe3f4;border-radius:7px;padding:.35rem .6rem;margin-left:.4rem}
-  .sol-links a:hover{background:#dde6f7}
-</style>
-<section>
-  <div class="section-eyebrow">Built &amp; Playable</div>
-  <h2 class="section-title">The built solutions</h2>
+<section style="padding-top:2.4rem">
+  <div class="section-eyebrow">Submit</div>
+  <h2 class="section-title">Send us your prompt &amp; solution</h2>
   <div class="section-divider"></div>
-  <p class="section-lead">Every one of the 18 LibVibes prompts is built. Click a solution to open its page (live tool, the prompt, and its VIBES plan), or grab the code. Want them all at once?
-    <a class="ex-bundle" style="margin:.6rem 0 0;font-size:.85rem;padding:.45rem .9rem" href="libvibes-all-tools.zip" download>⬇ Download all 18 tools (.zip)</a></p>
-  <ul class="sol-list" id="solList"></ul>
+  <p class="section-lead">The form asks for a title, a one-line description, your starter prompt, and your solution &mdash; either pasted as a single self-contained HTML file or linked. No account needed.</p>
+  <div class="qa-wrap" style="align-items:flex-start">
+    <a class="qa-btn qa-btn-gold" id="submitBtn" href="__FORM_URL__" target="_blank" rel="noopener" style="font-size:1.05rem;padding:.9rem 1.6rem">Open the submission form ↗</a>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="section-eyebrow">Make it shine</div>
+  <h2 class="section-title">What makes a great submission</h2>
+  <div class="section-divider"></div>
+  <ul class="vibes-list" style="margin:0;display:grid;gap:.5rem;max-width:760px">
+    <li><b>1</b>One self-contained <code>index.html</code> &mdash; inline CSS/JS, no external libraries, works offline.</li>
+    <li><b>2</b>Solves a real library problem or teaches a real library skill.</li>
+    <li><b>3</b>Mobile-first and accessible: keyboard-friendly, good contrast, no login required.</li>
+    <li><b>4</b>Include the <strong>prompt</strong> you used &mdash; that's what other librarians remix.</li>
+    <li><b>5</b>No external trackers, ads, or data collection. Original work (or you have permission).</li>
+  </ul>
+  <div class="host-note" style="background:var(--gold-pale);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:1rem 1.2rem;margin-top:1.6rem;font-size:.9rem;color:#5a4413;max-width:760px">
+    <strong>Heads-up on review.</strong> Because submissions are other people's HTML and JavaScript, every one is checked for safety before it's published. Nothing goes live automatically.
+  </div>
 </section>
 
 <footer>
@@ -209,28 +226,16 @@
   <p style="margin-top:1rem;opacity:.6;font-size:.75rem">LibVibes · Companion resource for "Vibe Your Way to Free" · TCEA 2026</p>
 </footer>
 
+<!-- MAINTAINER: replace __FORM_URL__ above with your deployed Apps Script /exec URL (see libvibes-submit/SETUP.md). -->
 <script src="libvibes-nav.js"></script>
 <script>
-  const {BUILT,byNum}=window.LIBVIBES;
-  const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
-  document.getElementById("exCount").textContent=BUILT.length;
-  document.getElementById("solList").innerHTML=BUILT.slice().sort((a,b)=>a-b).map(n=>{
-    const s=byNum[n];
-    return `
-    <li class="sol" data-level="${s.level}">
-      <a class="sol-main" href="libvibes/${s.slug}/index.html">
-        <span class="sol-n">#${s.n}</span>
-        <span>
-          <span class="sol-title">${esc(s.full)}</span>
-          <span class="sol-desc">${esc(s.blurb)}</span>
-        </span>
-      </a>
-      <span class="sol-meta sol-links">
-        <a href="libvibes/${s.slug}/app.html" target="_blank" rel="noopener">Open ↗</a>
-        <a href="libvibes/${s.slug}/${s.slug}.zip" download>.zip</a>
-      </span>
-    </li>`;
-  }).join("");
+  (function(){
+    var b=document.getElementById('submitBtn');
+    if(b && (b.getAttribute('href')||'').indexOf('__FORM_URL__')!==-1){
+      b.removeAttribute('href'); b.style.opacity='.6'; b.style.cursor='not-allowed';
+      b.textContent='Submission form coming soon';
+    }
+  })();
 </script>
 </body>
 </html>
