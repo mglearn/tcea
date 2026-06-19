@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boolean Search Trainer · LibVibes</title>
+<meta name="description" content="Practice AND, OR, NOT, quotes, and parentheses on a pretend database. A LibVibes built example.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0A3476;--navy-dark:#071F4A;--gold:#FCB040;--gold-light:#FDD17A;
+    --teal:#0E6B8A;--teal-pale:#D9ECF2;--white:#fff;--text:#1A1A2E;--good:#1f9d63;--bad:#d9534f;--border:#e2e7f5;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'DM Sans',sans-serif;color:var(--text);background:#eef2fa;min-height:100vh;padding:1.2rem;display:flex;justify-content:center}
+  .wrap{width:100%;max-width:780px}
+  header{text-align:center;margin-bottom:1.2rem}
+  h1{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--navy)}
+  h1 em{color:var(--teal);font-style:normal}
+  .sub{color:var(--text);opacity:.7;font-size:.92rem;margin-top:.3rem}
+  .bar{background:var(--navy);border-radius:14px;padding:1rem;box-shadow:0 10px 28px rgba(10,52,118,.25)}
+  .querybox{display:flex;gap:.5rem;flex-wrap:wrap}
+  #query{flex:1;min-width:200px;font-family:'DM Mono',monospace;font-size:1rem;padding:.7rem .9rem;border-radius:9px;border:2px solid transparent}
+  #query:focus{outline:none;border-color:var(--gold)}
+  .ops{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.6rem}
+  .op{background:rgba(255,255,255,.12);color:var(--gold-light);border:0;font-family:'DM Mono',monospace;font-weight:600;
+    padding:.35rem .6rem;border-radius:6px;cursor:pointer;font-size:.8rem}
+  .op:hover{background:var(--gold);color:var(--navy)}
+  .countline{color:#fff;text-align:center;margin:1rem 0 .4rem;font-weight:600}
+  .countline b{color:var(--gold-light)}
+  .err{color:#ffb4ae;text-align:center;font-size:.82rem;min-height:1rem}
+  .challenge{background:linear-gradient(135deg,#fff6e3,#ffe9c2);border-radius:12px;padding:.9rem 1.1rem;margin:1rem 0;border-left:4px solid var(--gold)}
+  .challenge .tag{font-size:.7rem;font-weight:700;letter-spacing:.05em;color:#a9750f;text-transform:uppercase}
+  .challenge .task{font-weight:600;margin:.25rem 0 .5rem;color:#5a3d00}
+  .challenge .row{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
+  .mini{font-family:inherit;font-weight:700;border:0;border-radius:8px;padding:.45rem .8rem;cursor:pointer}
+  .mini-check{background:var(--teal);color:#fff}.mini-next{background:#fff;color:var(--navy);border:2px solid #e7d3a8}
+  .verdict{font-weight:700}.verdict.ok{color:var(--good)}.verdict.no{color:var(--bad)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.8rem;margin-top:1rem}
+  .card{background:#fff;border:1px solid var(--border);border-radius:11px;padding:.85rem .95rem;box-shadow:0 4px 12px rgba(10,52,118,.06)}
+  .card h3{font-family:'DM Serif Display',serif;font-size:1.02rem;color:var(--navy);line-height:1.2}
+  .card .meta{font-size:.75rem;color:var(--teal);margin:.2rem 0 .5rem}
+  .tags{display:flex;flex-wrap:wrap;gap:.3rem}
+  .tags span{font-size:.7rem;background:var(--teal-pale);color:var(--teal);padding:.15rem .5rem;border-radius:20px}
+  .tags span.hit{background:var(--gold);color:var(--navy);font-weight:700}
+  .empty{text-align:center;color:var(--text);opacity:.6;padding:2rem;font-style:italic}
+  .hints{background:#fff;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;margin-top:1.2rem}
+  .hints summary{font-weight:700;color:var(--navy);cursor:pointer}
+  .hints code{background:#eef2fa;color:var(--teal);padding:.1rem .4rem;border-radius:4px;font-family:'DM Mono',monospace}
+  .hints li{margin:.5rem 0;font-size:.9rem;line-height:1.5}
+  .score-pill{display:inline-block;background:var(--navy);color:var(--gold-light);font-weight:700;padding:.3rem .8rem;border-radius:20px;font-size:.85rem}
+  footer{text-align:center;color:var(--text);opacity:.65;font-size:.8rem;margin-top:1.4rem}
+  footer a{color:var(--teal)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Boolean <em>Search Trainer</em></h1>
+    <div class="sub">Type a search. Watch how <b>AND · OR · NOT · "quotes" · ( )</b> change the results.</div>
+  </header>
+
+  <div class="bar">
+    <div class="querybox">
+      <input id="query" placeholder='try:  sharks AND ocean' autocomplete="off" spellcheck="false">
+    </div>
+    <div class="ops">
+      <button class="op" data-ins=" AND ">AND</button>
+      <button class="op" data-ins=" OR ">OR</button>
+      <button class="op" data-ins=" NOT ">NOT</button>
+      <button class="op" data-ins='""'>" "</button>
+      <button class="op" data-ins="()">( )</button>
+      <button class="op" data-ins="">clear</button>
+    </div>
+    <div class="countline">Matches: <b id="count">0</b> of <span id="total">0</span> articles</div>
+    <div class="err" id="err"></div>
+  </div>
+
+  <div class="challenge">
+    <div class="tag">🎯 Challenge <span id="cnum"></span> · <span class="score-pill">Solved: <span id="solved">0</span></span></div>
+    <div class="task" id="task"></div>
+    <div class="row">
+      <button class="mini mini-check" id="checkC">Check my query</button>
+      <button class="mini mini-next" id="nextC">Skip / Next ▸</button>
+      <span class="verdict" id="verdict"></span>
+    </div>
+  </div>
+
+  <div class="grid" id="results"></div>
+
+  <details class="hints">
+    <summary>How the operators work (tap to open)</summary>
+    <ul>
+      <li><code>sharks AND ocean</code> — both words must appear. Narrows results.</li>
+      <li><code>sharks OR whales</code> — either word. Widens results.</li>
+      <li><code>sharks NOT attack</code> — has "sharks" but excludes "attack".</li>
+      <li><code>"climate change"</code> — the exact phrase, in that order.</li>
+      <li><code>(sharks OR whales) AND ocean</code> — parentheses group ideas together.</li>
+    </ul>
+  </details>
+
+  <footer>A <strong style="color:var(--navy)">LibVibes</strong> built example · #13 Boolean Search Trainer · <a href="libvibes.html">Back to LibVibes</a></footer>
+</div>
+
+<script>
+/* ===== EDIT ME: fake article database ===== */
+const ARTICLES = [
+  {id:1,title:"Great White Sharks of the Pacific",tags:["sharks","ocean","predator","pacific"]},
+  {id:2,title:"Preventing Shark Attacks at the Beach",tags:["sharks","attack","beach","safety"]},
+  {id:3,title:"Humpback Whale Migration",tags:["whales","ocean","migration","pacific"]},
+  {id:4,title:"Coral Reefs and Climate Change",tags:["coral","ocean","climate","change"]},
+  {id:5,title:"How Climate Change Affects Polar Bears",tags:["climate","change","arctic","bears"]},
+  {id:6,title:"Dolphins: The Ocean's Problem Solvers",tags:["dolphins","ocean","intelligence"]},
+  {id:7,title:"Volcanoes and the Ring of Fire",tags:["volcano","geology","pacific"]},
+  {id:8,title:"Tornado Formation Explained",tags:["tornado","weather","storm"]},
+  {id:9,title:"Hurricanes and Rising Sea Levels",tags:["hurricane","weather","climate","ocean"]},
+  {id:10,title:"Renewable Energy from Ocean Waves",tags:["energy","ocean","renewable","waves"]},
+  {id:11,title:"Solar Power Basics",tags:["energy","solar","renewable"]},
+  {id:12,title:"The Life Cycle of a Butterfly",tags:["insects","butterfly","biology"]},
+  {id:13,title:"Honeybees and Pollination",tags:["insects","bees","pollination","biology"]},
+  {id:14,title:"Ancient Egyptian Pyramids",tags:["egypt","history","pyramids"]},
+  {id:15,title:"The Roman Colosseum",tags:["rome","history","architecture"]},
+  {id:16,title:"Octopus Camouflage Secrets",tags:["octopus","ocean","camouflage","predator"]},
+  {id:17,title:"Shark Conservation Efforts",tags:["sharks","conservation","ocean"]},
+  {id:18,title:"Wildfires and Forest Recovery",tags:["wildfire","forest","climate"]},
+  {id:19,title:"Tsunami Warning Systems",tags:["tsunami","ocean","pacific","safety"]},
+  {id:20,title:"Penguins of Antarctica",tags:["penguins","antarctic","birds"]}
+];
+
+/* ===== EDIT ME: challenges (target = ids that should match) ===== */
+const CHALLENGES = [
+  {task:'Find articles about sharks — but NOT ones about attacks.',target:[1,17]},
+  {task:'Find articles about whales OR dolphins.',target:[3,6]},
+  {task:'Find ocean articles that are also about climate.',target:[4,9]},
+  {task:'Find the exact phrase "climate change".',target:[4,5]},
+  {task:'Find articles about (sharks OR whales) that mention the ocean.',target:[1,3,17]}
+];
+
+const text = a => (a.title+" "+a.tags.join(" ")).toLowerCase();
+
+/* ---- tiny Boolean parser: NOT > AND > OR, supports () and "phrases" ---- */
+function tokenize(q){
+  const toks=[]; const re=/\s*("(?:[^"]*)"|\(|\)|\bAND\b|\bOR\b|\bNOT\b|[^\s()]+)/gi; let m;
+  while((m=re.exec(q))!==null){
+    let t=m[1]; const up=t.toUpperCase();
+    if(["AND","OR","NOT","(",")"].includes(up)) toks.push({type:up});
+    else if(t.startsWith('"')) toks.push({type:"TERM",val:t.slice(1,-1).toLowerCase()});
+    else toks.push({type:"TERM",val:t.toLowerCase()});
+  }
+  return toks;
+}
+function parse(toks){
+  let i=0;
+  const peek=()=>toks[i], next=()=>toks[i++];
+  function parseOr(){ let l=parseAnd(); while(peek()&&peek().type==="OR"){next(); const r=parseAnd(); const a=l,b=r; l=x=>a(x)||b(x);} return l; }
+  function parseAnd(){ let l=parseNot();
+    while(peek()&&(peek().type==="AND"||peek().type==="TERM"||peek().type==="NOT"||peek().type==="(")){
+      if(peek().type==="AND") next();
+      const r=parseNot(); const a=l,b=r; l=x=>a(x)&&b(x);
+    } return l; }
+  function parseNot(){ if(peek()&&peek().type==="NOT"){next(); const r=parseNot(); return x=>!r(x);} return parseAtom(); }
+  function parseAtom(){
+    const t=peek();
+    if(!t) throw new Error("unexpected end");
+    if(t.type==="("){ next(); const e=parseOr(); if(!peek()||peek().type!==")") throw new Error("missing )"); next(); return e; }
+    if(t.type==="TERM"){ next(); const term=t.val; return x=>text(x).includes(term); }
+    throw new Error("unexpected "+t.type);
+  }
+  const fn=parseOr();
+  if(i<toks.length) throw new Error("extra input");
+  return fn;
+}
+
+const $=id=>document.getElementById(id);
+let solved=0, ci=0;
+$("total").textContent=ARTICLES.length;
+
+function highlightTags(a,q){
+  const terms=(q.match(/"([^"]*)"|[^\s()]+/g)||[]).map(t=>t.replace(/"/g,"").toLowerCase())
+    .filter(t=>!["and","or","not"].includes(t));
+  return a.tags.map(tag=>{
+    const hit=terms.some(t=>tag.toLowerCase().includes(t));
+    return `<span class="${hit?'hit':''}">${tag}</span>`;
+  }).join("");
+}
+
+function run(){
+  const q=$("query").value.trim();
+  const results=$("results"); $("err").textContent="";
+  if(!q){ results.innerHTML=`<div class="empty">Type a search above to see matching articles.</div>`; $("count").textContent=0; return []; }
+  let fn;
+  try{ fn=parse(tokenize(q)); }
+  catch(e){ $("err").textContent="Hmm, that query isn't complete yet — keep typing."; return null; }
+  const matches=ARTICLES.filter(fn);
+  $("count").textContent=matches.length;
+  results.innerHTML = matches.length ? matches.map(a=>`
+    <div class="card">
+      <h3>${a.title}</h3>
+      <div class="meta">Article #${a.id}</div>
+      <div class="tags">${highlightTags(a,q)}</div>
+    </div>`).join("")
+    : `<div class="empty">No articles match. Try OR to widen, or remove a NOT.</div>`;
+  return matches;
+}
+
+function loadChallenge(){
+  const c=CHALLENGES[ci%CHALLENGES.length];
+  $("cnum").textContent=(ci%CHALLENGES.length)+1+" / "+CHALLENGES.length;
+  $("task").textContent=c.task;
+  $("verdict").textContent="";
+}
+$("checkC").addEventListener("click",()=>{
+  const matches=run(); if(matches===null) return;
+  const got=matches.map(a=>a.id).sort((a,b)=>a-b);
+  const want=[...CHALLENGES[ci%CHALLENGES.length].target].sort((a,b)=>a-b);
+  const v=$("verdict");
+  if(got.length===want.length&&got.every((x,k)=>x===want[k])){
+    v.textContent="✅ Exactly right!"; v.className="verdict ok";
+    solved++; $("solved").textContent=solved;
+    setTimeout(()=>{ci++;loadChallenge();$("query").value="";run();},1100);
+  } else {
+    v.textContent="❌ Not the target set yet — adjust your operators."; v.className="verdict no";
+  }
+});
+$("nextC").addEventListener("click",()=>{ci++;loadChallenge();});
+
+document.querySelectorAll(".op").forEach(b=>b.addEventListener("click",()=>{
+  const ins=b.dataset.ins, el=$("query");
+  if(ins===""){ el.value=""; }
+  else {
+    const s=el.selectionStart||el.value.length;
+    el.value=el.value.slice(0,s)+ins+el.value.slice(s);
+    if(ins==='""'||ins==="()") el.selectionStart=el.selectionEnd=s+1;
+  }
+  el.focus(); run();
+}));
+$("query").addEventListener("input",run);
+
+loadChallenge(); run();
+</script>
+</body>
+</html>

@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LibVibes · Fresh Vibe-Coding Prompts for Librarians | TCEA</title>
+<meta name="description" content="LibVibes: 18 fresh-from-scratch, library-focused vibe-coding starter prompts with the VIBES framework, plus three colorful built examples. By Miguel Guhlin, TCEA.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0A3476;--navy-dark:#071F4A;--navy-mid:#12428F;--gold:#FCB040;--gold-light:#FDD17A;--gold-pale:#FEF0D0;
+    --pale-navy:#D0D8F0;--white:#fff;--off-white:#F7F8FC;--text:#1A1A2E;--text-muted:#5A6680;--border:#E2E7F5;
+    --teal:#0E6B8A;--teal-pale:#D9ECF2;
+    --beg:#1f9d63;--beg-pale:#dff4e8;--int:#d98b0a;--int-pale:#fdedcf;--adv:#c2493f;--adv-pale:#fbe3e1;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--off-white);line-height:1.55}
+  a{color:var(--teal)}
+
+  .mg-back-bar{background:var(--navy-dark);min-height:38px;display:flex;align-items:center;padding:.4rem 1.4rem;gap:1.2rem;flex-wrap:wrap}
+  .mg-back-bar a{color:var(--gold-light);text-decoration:none;font-size:.82rem;font-weight:600}
+  .mg-back-bar a:hover{color:#fff}
+
+  .nav{position:sticky;top:0;z-index:30;background:var(--navy);border-bottom:3px solid var(--gold)}
+  .nav-inner{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem 1.4rem;flex-wrap:wrap}
+  .nav-brand{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+  .nav-brand-mark{width:34px;height:34px;border-radius:8px;background:var(--gold);color:var(--navy);display:flex;align-items:center;justify-content:center;font-weight:800;font-family:'DM Serif Display',serif}
+  .nav-brand-text{color:#fff;font-weight:700;font-size:1.1rem;line-height:1}
+  .nav-brand-text small{display:block;font-size:.68rem;color:var(--gold-light);font-weight:400;letter-spacing:.05em;text-transform:uppercase;margin-top:2px}
+  .nav-links{display:flex;gap:.4rem;flex-wrap:wrap}
+  .nav-links a{color:#fff;text-decoration:none;font-size:.85rem;font-weight:600;padding:.4rem .7rem;border-radius:6px}
+  .nav-links a:hover{background:var(--navy-dark)}
+  .nav-links a.home{background:var(--gold);color:var(--navy)}
+
+  .hero{background:linear-gradient(160deg,var(--navy-mid),var(--navy-dark));color:#fff;padding:3.2rem 1.4rem 3.6rem;text-align:center}
+  .eyebrow{display:inline-block;background:rgba(252,176,64,.18);color:var(--gold-light);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.35rem .8rem;border-radius:20px}
+  .hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2.4rem,6vw,3.6rem);margin:1rem 0 .3rem;line-height:1.05}
+  .hero h1 em{color:var(--gold);font-style:normal}
+  .hero .play{font-family:'DM Mono',monospace;color:var(--gold-light);font-size:.95rem;margin-bottom:1rem}
+  .hero-lead{max-width:640px;margin:0 auto;color:var(--pale-navy);font-size:1.05rem}
+  .hero-meta{display:flex;gap:1.6rem;justify-content:center;flex-wrap:wrap;margin-top:1.8rem}
+  .hero-meta div{text-align:center}
+  .hero-meta strong{display:block;font-family:'DM Serif Display',serif;font-size:1.7rem;color:var(--gold)}
+  .hero-meta span{font-size:.78rem;color:var(--pale-navy)}
+
+  section{max-width:1080px;margin:0 auto;padding:3.4rem 1.4rem}
+  .section-eyebrow{color:var(--teal);font-weight:700;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase}
+  .section-title{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--navy);margin:.3rem 0}
+  .section-divider{width:54px;height:4px;background:var(--gold);border-radius:4px;margin:.6rem 0 1rem}
+  .section-lead{color:var(--text-muted);max-width:680px;margin-bottom:1.6rem}
+
+  /* VIBES strip */
+  .vibes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.9rem}
+  .vibes-card{background:#fff;border:1px solid var(--border);border-top:4px solid var(--gold);border-radius:10px;padding:1rem;position:relative}
+  .vibes-card:nth-child(2),.vibes-card:nth-child(4){border-top-color:var(--teal)}
+  .vibes-letter{font-family:'DM Serif Display',serif;font-size:2.2rem;color:var(--gold);line-height:1}
+  .vibes-card:nth-child(2) .vibes-letter,.vibes-card:nth-child(4) .vibes-letter{color:var(--teal)}
+  .vibes-word{font-weight:700;color:var(--navy);margin:.2rem 0}
+  .vibes-desc{font-size:.83rem;color:var(--text-muted)}
+
+  /* Built examples */
+  .ex-section{background:var(--navy-dark)}
+  .ex-section .section-title{color:#fff}.ex-section .section-lead{color:var(--pale-navy)}
+  .ex-section .section-eyebrow{color:var(--gold-light)}
+  .ex-grid{display:grid;gap:1.6rem}
+  .ex-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 14px 34px rgba(0,0,0,.3)}
+  .ex-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:1.1rem 1.3rem;flex-wrap:wrap}
+  .ex-head h3{font-family:'DM Serif Display',serif;font-size:1.35rem;color:var(--navy)}
+  .ex-head .meta{font-size:.85rem;color:var(--text-muted);margin-top:.2rem}
+  .ex-badges{display:flex;gap:.4rem;flex-wrap:wrap}
+  .ex-open{background:var(--gold);color:var(--navy);font-weight:700;text-decoration:none;padding:.5rem .9rem;border-radius:8px;font-size:.85rem;white-space:nowrap;text-align:center}
+  .ex-open:hover{background:var(--gold-light)}
+  .ex-actions{display:flex;flex-direction:column;gap:.4rem;flex:none}
+  .ex-dl{background:#eef2fa;color:var(--navy);font-weight:700;text-decoration:none;padding:.5rem .9rem;border-radius:8px;font-size:.85rem;white-space:nowrap;text-align:center;border:1px solid #dbe3f4}
+  .ex-dl:hover{background:#dde6f7}
+  .ex-bundle{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--navy);font-weight:700;text-decoration:none;padding:.6rem 1.1rem;border-radius:9px;font-size:.9rem;margin-bottom:1.4rem}
+  .ex-bundle:hover{background:var(--gold-light)}
+  .ex-frame{border:0;width:100%;height:560px;border-top:1px solid var(--border);background:#eef2fa}
+  .dl-link{display:inline-flex;align-items:center;gap:.4rem;background:#eef2fa;color:var(--navy);border:1px solid #dbe3f4;font-weight:700;text-decoration:none;padding:.4rem .8rem;border-radius:7px;font-size:.78rem}
+  .dl-link:hover{background:#dde6f7}
+
+  /* Filter */
+  .filter{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.6rem}
+  .filter-pill{background:#fff;border:1.5px solid var(--border);color:var(--navy);font-family:inherit;font-weight:600;padding:.45rem 1rem;border-radius:20px;cursor:pointer;font-size:.85rem}
+  .filter-pill.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+  /* Prompt cards */
+  .lv-grid{display:grid;gap:1.2rem}
+  .lv-card{background:#fff;border:1px solid var(--border);border-left:5px solid var(--gold);border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(10,52,118,.05)}
+  .lv-card[data-level="beginner"]{border-left-color:var(--beg)}
+  .lv-card[data-level="intermediate"]{border-left-color:var(--int)}
+  .lv-card[data-level="advanced"]{border-left-color:var(--adv)}
+  .lv-head{display:flex;align-items:flex-start;gap:.9rem;padding:1.1rem 1.2rem .8rem}
+  .lv-num{flex:none;width:42px;height:42px;border-radius:11px;background:var(--navy);color:#fff;font-family:'DM Serif Display',serif;font-size:1.3rem;display:flex;align-items:center;justify-content:center}
+  .lv-card[data-level="beginner"] .lv-num{background:var(--beg)}
+  .lv-card[data-level="intermediate"] .lv-num{background:var(--int)}
+  .lv-card[data-level="advanced"] .lv-num{background:var(--adv)}
+  .lv-titlewrap{flex:1;min-width:0}
+  .lv-title{font-family:'DM Serif Display',serif;font-size:1.25rem;color:var(--navy);line-height:1.15}
+  .lv-badges{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.45rem}
+  .badge{font-size:.68rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:.2rem .55rem;border-radius:5px}
+  .badge-type{background:var(--teal-pale);color:var(--teal)}
+  .badge-host{background:#eef2fa;color:var(--navy)}
+  .badge-lvl-beginner{background:var(--beg-pale);color:var(--beg)}
+  .badge-lvl-intermediate{background:var(--int-pale);color:var(--int)}
+  .badge-lvl-advanced{background:var(--adv-pale);color:var(--adv)}
+  .copy-btn{flex:none;background:var(--navy);border:0;color:#fff;padding:.45rem .9rem;border-radius:8px;font-size:.78rem;font-weight:700;cursor:pointer;font-family:inherit;transition:.15s}
+  .copy-btn:hover{background:var(--teal)}
+  .copy-btn.copied{background:var(--gold);color:var(--navy)}
+  .lv-body{margin:0 1.2rem;font-family:'DM Mono',monospace;font-size:.8rem;color:#2a3550;line-height:1.6;background:#f5f7fc;border:1px solid var(--border);border-radius:9px;padding:.9rem 1rem;white-space:pre-wrap;max-height:220px;overflow:auto}
+  .lv-vibes{margin:.9rem 1.2rem 1.2rem}
+  .lv-vibes summary{cursor:pointer;font-weight:700;color:var(--navy);font-size:.9rem;list-style:none;display:flex;align-items:center;gap:.5rem;padding:.6rem .8rem;background:var(--gold-pale);border-radius:8px}
+  .lv-vibes summary::-webkit-details-marker{display:none}
+  .lv-vibes summary::before{content:"▸";color:var(--gold);font-weight:900;transition:transform .2s}
+  .lv-vibes[open] summary::before{transform:rotate(90deg)}
+  .lv-vibes summary .v-letters{font-family:'DM Mono',monospace;color:var(--teal);letter-spacing:.15em;margin-left:auto;font-size:.8rem}
+  .vibes-list{list-style:none;margin:.7rem .2rem 0;display:grid;gap:.5rem}
+  .vibes-list li{font-size:.85rem;color:var(--text);padding-left:.2rem}
+  .vibes-list b{display:inline-block;width:1.4rem;height:1.4rem;background:var(--navy);color:#fff;border-radius:6px;text-align:center;line-height:1.4rem;font-family:'DM Serif Display',serif;margin-right:.5rem;font-size:.85rem}
+
+  footer{background:var(--navy-dark);color:var(--pale-navy);text-align:center;padding:2.4rem 1.4rem;border-top:4px solid var(--gold)}
+  footer a{color:var(--gold-light);text-decoration:none}
+  .hide{display:none!important}
+  @media(max-width:600px){.ex-frame{height:600px}}
+</style>
+</head>
+<body>
+
+<div class="mg-back-bar" role="navigation" aria-label="Site navigation">
+  <a href="../index.html">&larr; TCEA</a>
+  <a href="index.html">&larr; Vibe Coding for Librarians (main page)</a>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand">
+      <span class="nav-brand-mark">L</span>
+      <span class="nav-brand-text">LibVibes<small>TCEA · Prompt Library</small></span>
+    </a>
+    <div class="nav-links">
+      <a href="#examples">Built Examples</a>
+      <a href="#framework">VIBES</a>
+      <a href="#library">Prompt Library</a>
+      <a class="home" href="index.html">⌂ Main Page</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" id="top">
+  <span class="eyebrow">Fresh-from-scratch · Library-focused</span>
+  <h1><em>Lib</em>Vibes</h1>
+  <div class="play">// part library, part vibes — fill in the blanks, vibe-code the rest</div>
+  <p class="hero-lead">
+    Eighteen brand-new starter prompts built for the real problems and learning exercises of a K-12 library —
+    shelving skills, information literacy, research practice, reading events, and the operational tools the
+    standard kit doesn't cover. Each one is fresh-from-scratch, comes with a copy button, and carries its own
+    VIBES game plan. Three are already built so you can play with them right now.
+  </p>
+  <div class="hero-meta">
+    <div><strong>18</strong><span>starter prompts</span></div>
+    <div><strong>3</strong><span>built &amp; playable</span></div>
+    <div><strong>3</strong><span>skill levels</span></div>
+    <div><strong>$0</strong><span>to host &amp; run</span></div>
+  </div>
+</section>
+
+<!-- ============ BUILT EXAMPLES ============ -->
+<section class="ex-section" id="examples" style="max-width:none">
+  <div style="max-width:1080px;margin:0 auto">
+    <div class="section-eyebrow">Play With Them Now</div>
+    <h2 class="section-title">Three Built Examples</h2>
+    <div class="section-divider"></div>
+    <p class="section-lead">A starter set — one from each level and a different type apiece. These are the live results of prompts #6, #13, and #17. Try them right here, open each in its own tab, or download the code as a zip to host yourself.</p>
+
+    <a class="ex-bundle" href="libvibes-starter-set.zip" download>⬇ Download all three (libvibes-starter-set.zip)</a>
+
+    <div class="ex-grid">
+      <div class="ex-card">
+        <div class="ex-head">
+          <div>
+            <h3>Shelve It Right! <span style="color:var(--beg);font-size:.8rem">· Prompt #6</span></h3>
+            <div class="meta">Drag scrambled spines into correct Dewey or fiction order. Checks each spine and explains the rule.</div>
+            <div class="ex-badges" style="margin-top:.5rem">
+              <span class="badge badge-lvl-beginner">Beginner</span>
+              <span class="badge badge-type">Library skill</span>
+            </div>
+          </div>
+          <div class="ex-actions">
+            <a class="ex-open" href="callnumber-game.html" target="_blank" rel="noopener">Open ↗</a>
+            <a class="ex-dl" href="callnumber-game.zip" download>⬇ .zip</a>
+          </div>
+        </div>
+        <iframe class="ex-frame" src="callnumber-game.html" title="Call Number Shelving Game" loading="lazy"></iframe>
+      </div>
+
+      <div class="ex-card">
+        <div class="ex-head">
+          <div>
+            <h3>Boolean Search Trainer <span style="color:var(--int);font-size:.8rem">· Prompt #13</span></h3>
+            <div class="meta">A pretend database where AND, OR, NOT, quotes, and parentheses change the results live, with challenges to solve.</div>
+            <div class="ex-badges" style="margin-top:.5rem">
+              <span class="badge badge-lvl-intermediate">Intermediate</span>
+              <span class="badge badge-type">Research skills</span>
+            </div>
+          </div>
+          <div class="ex-actions">
+            <a class="ex-open" href="boolean-trainer.html" target="_blank" rel="noopener">Open ↗</a>
+            <a class="ex-dl" href="boolean-trainer.zip" download>⬇ .zip</a>
+          </div>
+        </div>
+        <iframe class="ex-frame" src="boolean-trainer.html" title="Boolean Search Trainer" loading="lazy"></iframe>
+      </div>
+
+      <div class="ex-card">
+        <div class="ex-head">
+          <div>
+            <h3>Mock Caldecott Award <span style="color:var(--adv);font-size:.8rem">· Prompt #17</span></h3>
+            <div class="meta">A nominee gallery, a ballot, and live animated results with a winner's crown. (Front-end demo; the prompt builds the Sheets-backed version.)</div>
+            <div class="ex-badges" style="margin-top:.5rem">
+              <span class="badge badge-lvl-advanced">Advanced</span>
+              <span class="badge badge-type">Library event</span>
+            </div>
+          </div>
+          <div class="ex-actions">
+            <a class="ex-open" href="mock-award.html" target="_blank" rel="noopener">Open ↗</a>
+            <a class="ex-dl" href="mock-award.zip" download>⬇ .zip</a>
+          </div>
+        </div>
+        <iframe class="ex-frame" src="mock-award.html" title="Mock Award Voting Station" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VIBES FRAMEWORK ============ -->
+<section id="framework">
+  <div class="section-eyebrow">The Method</div>
+  <h2 class="section-title">The VIBES Framework</h2>
+  <div class="section-divider"></div>
+  <p class="section-lead">Every prompt below includes a VIBES block tuned to that build. Five steps, one for each letter — expand any prompt's block to see it.</p>
+  <div class="vibes-grid">
+    <div class="vibes-card"><div class="vibes-letter">V</div><div class="vibes-word">Vision</div><p class="vibes-desc">Decide what you want and who it's for before you open a chat window.</p></div>
+    <div class="vibes-card"><div class="vibes-letter">I</div><div class="vibes-word">Instruct</div><p class="vibes-desc">Give the AI your colors, your data, your constraints, and where it will live.</p></div>
+    <div class="vibes-card"><div class="vibes-letter">B</div><div class="vibes-word">Build</div><p class="vibes-desc">Generate in small chunks and iterate conversationally, one feature at a time.</p></div>
+    <div class="vibes-card"><div class="vibes-letter">E</div><div class="vibes-word">Evaluate</div><p class="vibes-desc">Run it, read it, click everything on a phone and a laptop. Verify links and facts.</p></div>
+    <div class="vibes-card"><div class="vibes-letter">S</div><div class="vibes-word">Ship</div><p class="vibes-desc">Host on GitHub Pages, embed in Google Sites, or deploy as an Apps Script web app.</p></div>
+  </div>
+</section>
+
+<!-- ============ PROMPT LIBRARY ============ -->
+<section id="library">
+  <div class="section-eyebrow">Paste · Iterate · Ship</div>
+  <h2 class="section-title">The LibVibes Prompt Library</h2>
+  <div class="section-divider"></div>
+  <p class="section-lead">All 18 prompts. Hit <b>Copy prompt</b>, paste into ChatGPT, Claude, Gemini, or BoodleBox, then iterate with the expandable VIBES plan. The four originals on the main page (ShareSpace, WonderWall, StickyBoard, Book Recommendation Gallery) stay exactly as they are — these fill the gaps around them.</p>
+
+  <div class="filter" id="filter">
+    <button class="filter-pill active" data-f="all">All 18</button>
+    <button class="filter-pill" data-f="beginner">🟢 Beginner</button>
+    <button class="filter-pill" data-f="intermediate">🟡 Intermediate</button>
+    <button class="filter-pill" data-f="advanced">🔴 Advanced</button>
+  </div>
+
+  <div class="lv-grid" id="lvGrid"></div>
+</section>
+
+<footer>
+  <p><strong style="color:#fff;font-family:'DM Serif Display',serif;font-size:1.05rem">Miguel Guhlin</strong></p>
+  <p style="font-size:.85rem">Director of Professional Development, TCEA</p>
+  <p style="margin-top:.6rem;font-size:.85rem">
+    <a href="index.html">← Back to the main Vibe Coding page</a> &nbsp;·&nbsp;
+    <a href="https://blog.tcea.org">blog.tcea.org</a> &nbsp;·&nbsp;
+    <a href="https://mguhlin.org">mguhlin.org</a>
+  </p>
+  <p style="margin-top:1rem;opacity:.6;font-size:.75rem">LibVibes · Companion resource for "Vibe Your Way to Free" · TCEA 2026</p>
+</footer>
+
+<script>
+/* ============ PROMPT DATA ============ */
+const PROMPTS = [
+{n:1,level:"beginner",type:"Operations",host:"GitHub Pages / Sites",title:"Library Welcome & Hours Card",
+prompt:`I am a school librarian. I am not a developer. Build me a single self-contained index.html file (HTML, CSS, and JavaScript in one file, no external libraries) that is a beautiful, mobile-first "Library at a Glance" info card I can embed in Google Sites.
+
+It should show:
+- The library name and a one-line welcome message at the top
+- Today's hours, with the CURRENT day auto-highlighted using the visitor's clock
+- A simple weekly hours table
+- Three "quick info" tiles: checkout limits, how to renew, and Wi-Fi/printing notes
+- A friendly "Open now / Closed now" status pill that updates based on the time of day
+
+Design:
+- Responsive, thumb-first; the tiles stack on phones and sit in a row on wide screens
+- Color palette: navy #0A3476, gold #FCB040, soft off-white background
+- A gentle fade-in on load and a subtle hover lift on the tiles
+- Large, readable type and strong contrast
+
+Put placeholder text I can easily edit at the top of the file with clear comments. Give me the complete file in one response.`,
+vibes:["A no-login info card answering \"are you open and what can I do here?\" for students and parents.","Hand the AI your real hours and policies; name the navy/gold palette and the Google Sites embed.","Get the layout first, then the live \"open now\" clock logic, then the polish.","Change your clock (or the test time) to confirm the right day highlights and the pill flips.","Save as index.html, push to GitHub Pages, paste the URL into Google Sites → Embed."]},
+
+{n:2,level:"beginner",type:"Reader advisory",host:"GitHub Pages / Sites",title:"\"Find Your Next Read\" Genre Quiz",
+prompt:`I am a school librarian. I am not a developer. Build me a single self-contained index.html file (no external libraries) that is a fun "What Should I Read Next?" quiz for students in grades 4 through 8.
+
+How it works:
+- 5 light, friendly multiple-choice questions about mood, pace, and interests
+- At the end it reveals ONE recommended genre (Fantasy, Mystery, Realistic Fiction, Graphic Novel, Nonfiction, or Sci-Fi) with a short blurb and 3 sample titles
+- A "Try again" button resets the quiz
+
+Design:
+- Mobile-first, one question on screen at a time with a progress bar
+- Each genre result has its own accent color and a small emoji or icon
+- Smooth slide or fade transition between questions
+- Palette base: navy #0A3476 and gold #FCB040; let each result tint the card
+
+Make the questions and book titles easy to edit in clearly-labeled arrays at the top of the script. Give me the complete file in one response.`,
+vibes:["Turn \"I don't know what to read\" into a 60-second interactive recommendation.","Give it your actual collection's titles so recommendations point at books you own.","Build the question engine first; add the result-reveal animation and per-genre colors second.","Click through every answer path; confirm every genre result fires and the titles are real.","Embed in your catalog page or post a QR code at the shelf ends."]},
+
+{n:3,level:"beginner",type:"Engagement",host:"GitHub Pages / Sites",title:"Reading Challenge Tracker",
+prompt:`I am a school librarian. I am not a developer. Build me a single self-contained index.html file (no external libraries) that is a personal "Reading Challenge" tracker a student can use on their own Chromebook or phone.
+
+Features:
+- A goal of 20 books for the year (let me change the number in one place)
+- A "+ Add a book I finished" button that asks for the title and saves it
+- A big animated progress ring or bar showing books read vs. the goal
+- A list of finished books with the date added and a delete (x) on each
+- Milestone celebrations: a little confetti burst or badge at 25%, 50%, 75%, 100%
+- All data saved in the browser with localStorage so it survives a refresh
+
+Design:
+- Mobile-first, celebratory feel, palette navy #0A3476 + gold #FCB040 + teal #0E6B8A
+- The progress ring animates when a book is added
+
+Give me the complete file in one response.`,
+vibes:["A private, no-account habit tracker that makes progress feel rewarding.","Specify localStorage (no login, data stays on the device) and the celebration moments.","Get add/list/delete working first, then the animated ring, then the confetti milestones.","Add books, refresh, confirm the list persists; hit a milestone to see the celebration.","Link it from your library homepage; students bookmark it on their own devices."]},
+
+{n:4,level:"beginner",type:"Library skill",host:"Projector / Sites",title:"Dewey Decimal Explorer Wheel",
+prompt:`I am a school librarian. I am not a developer. Build me a single self-contained index.html file (no external libraries) that is an interactive "Dewey Decimal Explorer" for elementary and middle school students.
+
+It should:
+- Show the 10 main Dewey classes (000 Computers/Info, 100 Philosophy/Psychology, 200 Religion, 300 Social Sciences, 400 Language, 500 Science, 600 Technology, 700 Arts/Recreation, 800 Literature, 900 History/Geography) as 10 clickable segments of a colorful wheel or a grid of cards
+- When a student clicks one, reveal a plain-language description, 2 or 3 example topics, and a "where to find it in our library" placeholder line I can edit
+- A search box where a student types a topic (like "dinosaurs" or "soccer") and it highlights the most likely Dewey class
+
+Design:
+- Mobile-first; the wheel becomes a stacked grid on small screens
+- 10 distinct, friendly colors, one per class
+- A smooth highlight/zoom animation on the selected class
+
+Make the topic-to-class keyword list easy to edit. Give me the complete file.`,
+vibes:["Make the Dewey system feel like a game board instead of a wall chart.","Provide local shelf-location notes and a starter keyword list (dinosaurs → 500s, etc.).","Render the 10 segments first; wire up click-to-reveal; add the search-highlight last.","Test on a tablet at the shelf; try odd topics in the search box and fix misroutes.","Project it during orientation, or embed in your Google Site as a self-serve station."]},
+
+{n:5,level:"beginner",type:"Promotion",host:"Lobby screen / Sites",title:"Library Event Countdown Banner",
+prompt:`I am a school librarian. I am not a developer. Build me a single self-contained index.html file (no external libraries) that is a bold, animated countdown banner for a library event (for example Banned Books Week, a Book Fair, or an author visit).
+
+It should:
+- Count down in days, hours, minutes, seconds to a target date I set in one place
+- Show the event name, a one-line description, and a "Learn more" button with a link
+- When the countdown hits zero, switch to a celebratory "It's here!" message
+- Cycle through 3 short rotating tag lines or fun facts above the timer
+
+Design:
+- Full-width, projector-friendly AND phone-friendly
+- Big gold #FCB040 numerals on a navy #0A3476 background, high drama
+- The seconds digit ticks with a subtle flip or pulse animation
+- The rotating tag lines fade in and out
+
+Give me the complete file in one response, with the date, event name, and tag lines clearly marked for editing at the top.`,
+vibes:["Build hype for one upcoming event with a screen that earns a glance.","Give it the exact date/time, event name, and link; specify the high-drama navy/gold look.","Get the countdown math right first, then the zero-state switch, then the rotating taglines.","Set the target a minute out to watch the zero-state trigger; check it on the hallway display.","Loop it on a lobby monitor and embed a small version in your Google Site sidebar."]},
+
+{n:6,level:"beginner",type:"Library skill",host:"GitHub Pages / Sites",title:"Call Number Shelving Game",built:"callnumber-game.html",
+prompt:`I am a school librarian. I am not a developer. Build me a single self-contained index.html file (no external libraries) that is a "Shelve It Right!" game where students practice putting books in correct shelf order — a real library skill that nothing else teaches well.
+
+Two modes I can switch between:
+- DEWEY mode: students drag a row of scrambled nonfiction spine labels (e.g. 595.7, 595.789, 595.79, 599.2, 599.65) into correct ascending order
+- FICTION mode: students order scrambled author-last-name labels (e.g. ROW, ROWE, ROWLING, ROY) the way fiction is shelved alphabetically
+
+How it plays:
+- 5 spine "labels" appear scrambled; students drag to reorder them on a shelf
+- A "Check my shelf" button marks each spine correct (green) or out of place (red) and shows the number it should move to
+- A short "Why?" tooltip explains the rule when something is wrong
+- A "New round" button generates a fresh scrambled set
+- A simple score/streak counter
+
+Design:
+- Mobile-first and touch-draggable; spines reflow smoothly
+- Palette navy #0A3476, gold #FCB040, teal #0E6B8A; a wooden-shelf-tone backdrop
+- Satisfying snap animation when a spine drops into place
+
+Make the practice sets easy to edit. Give me the complete file in one response.`,
+vibes:["Drill the one hands-on skill (shelf order) that students and aides genuinely need.","Provide real call numbers and author names from your stacks so the practice is authentic.","Get drag-reorder working first, then the check/feedback logic, then the \"why\" rules.","Test the trickiest cases (e.g., 595.7 vs 595.789) on a touchscreen; confirm the ordering is correct.","Use it to train student library aides; embed in Google Sites for whole-class practice."]},
+
+{n:7,level:"beginner",type:"Creative literacy",host:"Projector / Sites",title:"Book Spine Poetry Maker",
+prompt:`I am a school librarian. I am not a developer. Build me a single self-contained index.html file (no external libraries) that is a digital "Book Spine Poetry" maker — a classic library creativity activity where stacked book titles become a poem.
+
+Features:
+- A palette of draggable "book spines," each a colored bar with an editable title
+- Students drag spines into a vertical stack to compose a poem from the titles
+- They can add their own spine, type any title on it, and pick its color
+- A "Shuffle the shelf" button reorders the unused spines for inspiration
+- A "Download my poem" button that saves the finished stack as an image (PNG)
+- A starter set of 12 evocative titles I can edit
+
+Design:
+- Mobile-first; touch-draggable spines that look like real book spines (varied heights, fonts, and colors)
+- Warm, bookish palette; gentle tilt and shadow on each spine
+- A clean "stage" area where the stacked poem reads top to bottom
+
+Give me the complete file in one response.`,
+vibes:["A low-floor, high-ceiling poetry activity that celebrates the collection itself.","Seed it with real titles from your shelves; ask for PNG export so poems can be displayed.","Get drag-into-stack working first; add custom spines + colors; add the image export last.","Compose a poem on a phone, download the PNG, and confirm it looks shareable.","Print the downloads for a hallway display; embed the maker in Google Sites for National Poetry Month."]},
+
+{n:8,level:"intermediate",type:"Engagement",host:"GitHub Pages / Sites",title:"Reading Bingo Board Generator",
+prompt:`I am a school librarian. I am not a developer. Build me a single self-contained index.html file (no external libraries) that generates a 5x5 "Reading Bingo" board for a summer or seasonal reading program.
+
+Features:
+- A pool of about 30 reading challenges I can edit (e.g. "Read a book set in space," "Read a graphic novel," "Read outside") shuffled into a 5x5 grid with a FREE center
+- A "Shuffle new board" button so each student gets a different board
+- Click/tap a square to mark it done; marked squares get a colored stamp
+- Auto-detects and celebrates a completed row, column, or diagonal (BINGO!)
+- A "Print my board" button that prints cleanly on one page
+- localStorage so a student's marked squares survive a refresh
+
+Design:
+- Mobile-first; the 5x5 grid stays square and tappable on phones
+- Palette navy #0A3476, gold #FCB040, teal #0E6B8A; stamped squares animate in
+- Clean black-and-white print layout when printed
+
+Give me the complete file in one response.`,
+vibes:["One board that works as a digital game and a printable handout.","Supply your real challenge list; specify shuffle, stamp, BINGO detection, and print.","Grid + shuffle first; tap-to-stamp + persistence next; BINGO detection and print styles last.","Force a row to fill and confirm the BINGO fires; print to PDF and check it fits one page.","Embed in Google Sites for at-home play; print copies for the front desk."]},
+
+{n:9,level:"intermediate",type:"Promotion",host:"Lobby screen / Sites",title:"Book of the Week Spotlight Carousel",
+prompt:`I am a school librarian. I am not a developer. Build me a single self-contained index.html file (no external libraries) that is a rotating "Staff Picks / Book of the Week" spotlight I can embed in Google Sites and on a lobby screen.
+
+Features:
+- A data array of books, each with: cover image URL, title, author, a one-sentence pitch, a genre tag, and an optional "Reserve / Find it" link
+- A carousel that auto-advances every several seconds with manual next/prev arrows and clickable dots
+- Each slide shows the cover, the pitch, the author, and a colored genre pill
+- Pause auto-advance when a viewer hovers or focuses the carousel
+- Keyboard arrow support and swipe support on touch screens
+
+Design:
+- Mobile-first; on wide screens show cover on the left, text on the right
+- Palette navy #0A3476 + gold #FCB040; each genre pill has its own color
+- Smooth cross-fade or slide transition between books
+
+Put the book list in a clearly-labeled array at the top. Give me the complete file.`,
+vibes:["A self-running display that keeps fresh recommendations in front of students.","Provide 5-10 real books with cover URLs and pitches; name the auto-advance timing.","Static slide first, then navigation (arrows/dots/swipe), then auto-advance + pause-on-hover.","Test swipe on a phone, arrows on a keyboard, and confirm hover pauses the timer.","Embed in Google Sites and loop it on the lobby monitor; update the array weekly."]},
+
+{n:10,level:"intermediate",type:"Info literacy",host:"Sites embed",title:"Citation Quick-Helper (MLA & APA)",
+prompt:`I am a school librarian. I am not a developer. Build me a single self-contained index.html file (no external libraries) that is a friendly "Citation Quick-Helper" for students citing a book or a website.
+
+Features:
+- A toggle between MLA and APA style
+- A toggle between "Book" and "Website" source type
+- A short form (author, title, publisher/site name, year, URL, date accessed) that shows only the fields relevant to the chosen source type
+- A live-updating formatted citation as the student types
+- A "Copy citation" button with a confirmation message
+- A small "Double-check with your teacher" disclaimer line
+
+Design:
+- Mobile-first, calm and clean, palette navy #0A3476 + teal #0E6B8A
+- Fields that don't apply hide with a smooth height/fade transition
+- The formatted output sits in a highlighted card with the right hanging-indent look
+
+Be accurate with MLA 9th and APA 7th formatting rules. Give me the complete file.`,
+vibes:["A guided helper that teaches the shape of a citation, not a black box.","Tell it which styles/source types you need and to show fields conditionally.","Build the form + live output first; add the MLA/APA logic; add copy + transitions.","Accuracy matters most — verify several examples against an official MLA/APA guide.","Embed in your research-help Google Site next to your database links."]},
+
+{n:11,level:"intermediate",type:"Operations",host:"QR / Sites embed",title:"Interactive Library Floor Map",
+prompt:`I am a school librarian. I am not a developer. Build me a single self-contained index.html file (no external libraries) that is an interactive floor map of the library so students can find sections fast.
+
+Features:
+- A simple top-down layout drawn with HTML/CSS boxes (no image needed) representing zones: Fiction, Nonfiction, Graphic Novels, Picture Books, Makerspace, Computers, Quiet Reading, and the Front Desk — I'll rename/rearrange them
+- Clicking a zone highlights it and opens a small panel with a description, the Dewey range or genre it holds, and a tip ("Ask at the desk for...")
+- A search box: type a topic and it highlights the matching zone
+- A legend with a color per zone
+
+Design:
+- Mobile-first; the map scales to fit the screen and zones stay tappable
+- Distinct, accessible colors per zone; selected zone gets an outline + gentle zoom
+- Palette anchored in navy #0A3476 and gold #FCB040
+
+Make the zone names, positions, and descriptions easy to edit. Give me the complete file.`,
+vibes:["Replace \"where is it?\" with a tap-and-find map students use solo.","Describe your actual room layout in rough rows/columns so the AI can place the boxes.","Lay out the zones first; add click-to-highlight + info panel; add the search last.","Hand a student a phone and watch them find Graphic Novels without help.","Post a QR code at the entrance that opens the embedded Google Sites version."]},
+
+{n:12,level:"intermediate",type:"Info literacy",host:"Sites embed",title:"Source Evaluation Lab (CRAAP Test)",
+prompt:`I am a school librarian. I am not a developer. Build me a single self-contained index.html file (no external libraries) that is an interactive "Is This Source Trustworthy?" lab teaching the CRAAP test (Currency, Relevance, Authority, Accuracy, Purpose) to middle and high school students.
+
+How it works:
+- A short intro card explaining the 5 CRAAP factors in student-friendly language
+- The student works through a sample source (I can provide a few example "sources" with title, author, date, publisher, and a snippet)
+- For each of the 5 factors, the student rates it 1-5 with a slider and reads a guiding question (e.g., Authority: "Who wrote this and are they qualified?")
+- At the end, a "Source Confidence" meter combines the ratings into a visual score with a plain-language verdict (Strong / Mixed / Be Careful)
+- A "Try another source" button loads the next example
+
+Design:
+- Mobile-first; one factor at a time with a progress indicator
+- Each factor has its own accent color; the final meter animates as it fills
+- Palette navy #0A3476, gold #FCB040, teal #0E6B8A
+
+Make the example sources and guiding questions easy to edit. Give me the complete file.`,
+vibes:["Turn an abstract checklist into a hands-on judgment students actually practice.","Provide 2-3 realistic example sources (one strong, one weak) so the lesson lands.","Build the factor-by-factor flow first; add the combined confidence meter; add multiple sources.","Run a weak source and confirm the verdict reads \"Be Careful\"; check the wording with a teacher.","Assign it during a research unit; embed in your info-literacy Google Site."]},
+
+{n:13,level:"intermediate",type:"Research skills",host:"Sites embed",title:"Boolean Search Trainer",built:"boolean-trainer.html",
+prompt:`I am a school librarian. I am not a developer. Build me a single self-contained index.html file (no external libraries) that is a "Boolean Search Trainer" game teaching AND, OR, NOT, quotes, and parentheses to students using databases.
+
+How it works:
+- A small built-in pretend "database" of ~20 fake article cards, each with a few keyword tags (I can edit these)
+- The student types a Boolean query (supports AND, OR, NOT, "quoted phrases", and parentheses) and the matching cards appear live
+- Challenge mode: a prompt like "Find articles about sharks but NOT shark attacks" with a target result set; the app checks whether their query returns the right cards
+- A hints panel explaining each operator with a quick example
+- A score for challenges solved
+
+Design:
+- Mobile-first; a clean query bar at the top, results as cards below
+- Matching keywords highlight inside the result cards
+- Palette navy #0A3476 + teal #0E6B8A; correct-challenge feedback animates in
+
+Make the fake article set and the challenges easy to edit. Build a small, correct Boolean parser. Give me the complete file in one response.`,
+vibes:["Let students feel how operators change results before they touch a real database.","Define your fake article tags and the specific challenges you want students to solve.","Get the parser + live filtering working first; add challenge-checking; add hints and scoring.","Test edge cases: NOT, nested parentheses, quoted phrases — confirm results are correct.","Pair it with a screencast of your real databases; embed in your research Google Site."]},
+
+{n:14,level:"intermediate",type:"Info literacy",host:"Sites embed",title:"Primary vs. Secondary Source Sorter",
+prompt:`I am a school librarian. I am not a developer. Build me a single self-contained index.html file (no external libraries) that is a drag-and-sort game for "Primary vs. Secondary Sources," a core social-studies and research concept.
+
+How it works:
+- A deck of source cards (e.g., "a soldier's wartime diary," "a textbook chapter," "a photograph from the event," "an encyclopedia entry," "a recorded interview") that I can fully edit
+- Two labeled drop zones: PRIMARY and SECONDARY
+- Students drag each card into a zone; a "Check" button marks each right or wrong
+- Wrong answers flip to show a one-line explanation of why
+- A score and a "Play again" button that reshuffles the deck
+
+Design:
+- Mobile-first and touch-draggable; cards animate into the drop zones
+- Clear color coding for the two zones; correct cards glow, wrong cards shake gently
+- Palette navy #0A3476, gold #FCB040, teal #0E6B8A
+
+Make the card deck and explanations easy to edit. Give me the complete file.`,
+vibes:["A quick, replayable check that a tricky distinction actually clicked.","Write source examples that match the units your teachers teach (history, science, ELA).","Get drag-to-zone working first; add the check + explanations; add scoring and reshuffle.","Sort a full deck on a touchscreen; confirm every explanation is accurate and fair.","Hand it to a teacher as a station; embed in your Google Site for review."]},
+
+{n:15,level:"advanced",type:"Operations",host:"Apps Script + Sites",title:"\"Is It On the Shelf?\" Catalog Lookup",
+prompt:`I am a school librarian. I am not a developer, but I can follow setup steps. Build me a Google Apps Script web app, backed by a Google Sheet, that lets students check whether a book is available without logging in.
+
+Setup:
+- My Google Sheet has columns: Title, Author, Genre, Call Number, Status (In / Checked Out / On Hold), and Location
+- The web app reads from this Sheet live
+
+Student-facing search page:
+- One search box that matches title OR author as the student types (live filtering)
+- Results as cards: title, author, call number, location, and a color-coded status pill (green In, amber On Hold, red Checked Out)
+- A genre filter and a "show only available" toggle
+- A friendly empty state when nothing matches, suggesting they ask at the desk
+
+Design:
+- Mobile-first; fast, no page reloads; palette navy #0A3476 + gold #FCB040
+- Status pills are color-coded AND labeled in text (don't rely on color alone)
+- Subtle skeleton/loading shimmer while results fetch
+
+Walk me through connecting the Sheet and deploying. Give me all the files.`,
+vibes:["Turn a spreadsheet you already keep into a self-serve availability checker.","Give it your exact column names and status values so the backend maps cleanly.","Sheet read + search first; add filters and status colors; add loading states.","Search real titles, flip a status in the Sheet, confirm the app reflects it.","Embed the search page in your catalog Google Site; share the link on signage."]},
+
+{n:16,level:"advanced",type:"Operations",host:"Apps Script + Sites",title:"Makerspace / Study Room Sign-Up Board",
+prompt:`I am a school librarian. I am not a developer, but I can follow setup steps. Build me a Google Apps Script web app, backed by a Google Sheet, for signing up to use the Makerspace stations (or study rooms) during set time slots.
+
+Setup:
+- A Google Sheet stores bookings: Date, Time Slot, Station/Room, Student Name, Grade
+- I can edit the list of stations and the list of time slots in one place
+
+Student-facing page:
+- Pick a date, then see a grid of time slots x stations
+- Open slots show a "Sign up" button; taken slots show the booked name (or just "Reserved" if I turn name-hiding on)
+- Submitting writes the booking to the Sheet and refreshes the grid
+- Prevents double-booking the same slot/station
+
+Admin page:
+- Password-protected; view all bookings for a date and cancel any with one click
+
+Design:
+- Mobile-first; the grid scrolls horizontally on phones with sticky time labels
+- Palette navy #0A3476, gold #FCB040, teal #0E6B8A; open vs. taken slots clearly distinct
+- A confirmation animation when a booking succeeds
+
+Walk me through the Sheet setup and deployment. Give me all the files.`,
+vibes:["Replace the paper clipboard with a live, double-booking-proof sign-up sheet.","Define your stations, slots, and Sheet columns; specify the double-booking guard.","Read + render-the-grid first; add booking writes + the conflict check; add admin cancel.","Have two people try the same slot at once; confirm only one wins and the grid updates.","Deploy and embed in Google Sites; bookmark it on the Makerspace tablet."]},
+
+{n:17,level:"advanced",type:"Library event",host:"Apps Script + Sites",title:"Mock Caldecott / Newbery Award Voting Station",built:"mock-award.html",
+prompt:`I am a school librarian. I am not a developer, but I can follow setup steps. Build me a Google Apps Script web app, backed by a Google Sheet, for running a "Mock Caldecott" (or Mock Newbery) student book-award vote.
+
+Setup:
+- I maintain a Google Sheet of nominee books: Title, Author, cover image URL, and a one-line description
+- A second sheet/tab stores votes: Timestamp, Class, and the book voted for
+- I can open and close voting with a setting
+
+Student-facing ballot page:
+- A gallery of nominee cards (cover, title, author, blurb)
+- A student picks ONE book and submits a short "because..." reason (optional)
+- One friendly confirmation; simple guard against rapid repeat votes from one device
+
+Results page:
+- A live, animated bar chart of votes per book
+- A toggle to show or hide results while voting is open (so it doesn't sway voters)
+- A scrolling wall of the "because..." reasons (no student names shown)
+
+Admin page:
+- Password-protected; open/close voting, clear the results, and export
+
+Design:
+- Mobile-first AND projector-friendly for the reveal assembly
+- Palette navy #0A3476, gold #FCB040, teal #0E6B8A; a gold winner's medal/glow on the leader
+- Bars grow with a smooth animation
+
+Walk me through the Sheet setup and deployment. Give me all the files.`,
+vibes:["Run a real democratic reading event: students read, deliberate, and vote on a winner.","Load your nominee list with covers; decide whether reasons are required and results hidden.","Build the ballot + vote storage first; add the results chart; add the open/close admin controls.","Cast votes across classes, confirm the tally and the \"hide results\" toggle behave.","Embed the ballot in Google Sites; project the animated results at the award-reveal assembly."]},
+
+{n:18,level:"advanced",type:"Operations",host:"Apps Script + Sites",title:"Collection Diversity Snapshot Dashboard",
+prompt:`I am a school librarian. I am not a developer, but I can follow setup steps. Build me a Google Apps Script web app, backed by a Google Sheet, that gives me a visual "Collection Snapshot" dashboard from a list of my titles — to support weeding, diversity audits, and collection-development conversations.
+
+Setup:
+- My Google Sheet has columns I'll define, such as: Title, Author, Genre, Format, Copyright Year, Last Checkout Date, and Representation Tags (free text I add)
+- The dashboard reads the Sheet live; treat missing cells gracefully
+
+Dashboard (for me, the librarian — password-protected):
+- Headline stats: total titles, average/median copyright year, % checked out in the last 12 months
+- A bar chart of titles by Genre and one by Format
+- A histogram of titles by copyright decade (spotlights an aging collection)
+- A "Weeding candidates" list: titles older than a year cutoff I set AND not checked out since a date I set (basic CREW/MUSTIE-style flag), with a reason shown
+- A simple breakdown of Representation Tags so I can see gaps at a glance
+
+Design:
+- Mobile-first but data-dense on desktop; clean charts drawn in plain HTML/CSS/Canvas (no chart libraries)
+- Palette navy #0A3476, gold #FCB040, teal #0E6B8A; charts animate on load
+- Every chart has a plain-language caption explaining what it suggests
+
+Walk me through the Sheet setup and deployment. Give me all the files.`,
+vibes:["Turn an export you already have into evidence for weeding and budget requests.","Map your real column names and set your weeding cutoffs (age + last-checkout date).","Get the headline stats + one chart working first; add the rest of the charts; add the weeding flag last.","Sanity-check the numbers against the raw Sheet; confirm weeding candidates match your judgment.","Keep it private (password-gated); screenshot charts for your collection-development report."]}
+];
+
+const VLET=["V","I","B","E","S"];
+const LVLNAME={beginner:"Beginner",intermediate:"Intermediate",advanced:"Advanced"};
+const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+
+const grid=document.getElementById("lvGrid");
+grid.innerHTML=PROMPTS.map(p=>`
+  <article class="lv-card" data-level="${p.level}">
+    <div class="lv-head">
+      <div class="lv-num">${p.n}</div>
+      <div class="lv-titlewrap">
+        <div class="lv-title">${esc(p.title)}</div>
+        <div class="lv-badges">
+          <span class="badge badge-lvl-${p.level}">${LVLNAME[p.level]}</span>
+          <span class="badge badge-type">${esc(p.type)}</span>
+          <span class="badge badge-host">${esc(p.host)}</span>
+          ${p.built?`<a class="badge badge-type" style="text-decoration:none" href="${p.built}" target="_blank" rel="noopener">▶ Built example</a><a class="dl-link" href="${p.built.replace('.html','.zip')}" download>⬇ .zip</a>`:""}
+        </div>
+      </div>
+      <button class="copy-btn" data-target="prompt-${p.n}">Copy prompt</button>
+    </div>
+    <pre class="lv-body" id="prompt-${p.n}">${esc(p.prompt)}</pre>
+    <details class="lv-vibes">
+      <summary>VIBES Framework for this build <span class="v-letters">V·I·B·E·S</span></summary>
+      <ul class="vibes-list">
+        ${p.vibes.map((v,i)=>`<li><b>${VLET[i]}</b>${esc(v)}</li>`).join("")}
+      </ul>
+    </details>
+  </article>`).join("");
+
+/* copy */
+document.querySelectorAll(".copy-btn").forEach(btn=>{
+  btn.addEventListener("click",async()=>{
+    const text=document.getElementById(btn.dataset.target).innerText;
+    try{ await navigator.clipboard.writeText(text); }
+    catch(e){ const ta=document.createElement("textarea");ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand("copy");document.body.removeChild(ta); }
+    const o=btn.innerText; btn.innerText="Copied!"; btn.classList.add("copied");
+    setTimeout(()=>{btn.innerText=o;btn.classList.remove("copied");},1700);
+  });
+});
+
+/* filter */
+document.querySelectorAll(".filter-pill").forEach(pill=>{
+  pill.addEventListener("click",()=>{
+    document.querySelectorAll(".filter-pill").forEach(p=>p.classList.remove("active"));
+    pill.classList.add("active");
+    const f=pill.dataset.f;
+    document.querySelectorAll(".lv-card").forEach(c=>{
+      c.classList.toggle("hide",!(f==="all"||c.dataset.level===f));
+    });
+  });
+});
+</script>
+</body>
+</html>
