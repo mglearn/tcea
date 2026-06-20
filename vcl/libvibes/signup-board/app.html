@@ -215,6 +215,23 @@
     background:none;border:none;color:var(--teal);font:inherit;font-size:.74rem;
     text-decoration:underline;cursor:pointer;padding:0;
   }
+
+  /* ===== Data buttons (save / load) ===== */
+  .data-btns{display:flex;gap:10px;align-items:flex-end}
+  button.iobtn{
+    font:inherit;font-weight:700;font-size:.82rem;cursor:pointer;
+    background:#fff;border:1.5px solid var(--line);border-radius:9px;
+    color:var(--navy);padding:9px 13px;min-height:42px;
+    display:flex;align-items:center;gap:7px;transition:background .15s,border-color .15s;
+  }
+  button.iobtn:hover{background:#eef7fa;border-color:var(--teal)}
+  button.iobtn:active{transform:scale(.98)}
+  .io-msg{
+    max-width:1100px;margin:0 auto;padding:0 16px;
+    font-size:.8rem;min-height:1.1em;
+  }
+  .io-msg.ok{color:var(--teal);font-weight:600}
+  .io-msg.bad{color:#b3261e;font-weight:600}
 </style>
 </head>
 <body>
@@ -240,7 +257,14 @@
     <span class="switch"></span>
     <span class="lbl">Hide names (show “Reserved”)</span>
   </label>
+  <div class="data-btns">
+    <button type="button" class="iobtn" id="saveFileBtn" title="Download all bookings as a JSON file">⬇ Save to file</button>
+    <button type="button" class="iobtn" id="loadFileBtn" title="Restore bookings from a JSON file">⬆ Load from file</button>
+    <input type="file" id="loadFileInput" accept=".json,application/json" hidden>
+  </div>
 </div>
+
+<div class="io-msg" id="ioMsg"></div>
 
 <div class="meta">
   <div class="legend"><span class="chip open"></span> Open</div>
@@ -483,6 +507,77 @@ document.getElementById("resetBtn").addEventListener("click", ()=>{
     render();
     showToast("Demo data reset");
   }
+});
+
+/* ---- save / load to file ---- */
+const ioMsg = document.getElementById("ioMsg");
+function showIoMsg(text, kind){
+  ioMsg.textContent = text;
+  ioMsg.className = "io-msg" + (kind ? " " + kind : "");
+}
+
+/* Validate a parsed object is a usable bookings map. */
+function isValidBookings(obj){
+  if(!obj || typeof obj !== "object" || Array.isArray(obj)) return false;
+  for(const k in obj){
+    if(!Object.prototype.hasOwnProperty.call(obj, k)) continue;
+    const v = obj[k];
+    if(!v || typeof v !== "object") return false;
+    if(typeof v.name !== "string") return false; // grade/ts optional
+  }
+  return true;
+}
+
+document.getElementById("saveFileBtn").addEventListener("click", ()=>{
+  try{
+    const all = loadAll();
+    const json = JSON.stringify(all, null, 2);
+    const blob = new Blob([json], {type:"application/json"});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "signup-bookings.json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    const n = Object.keys(all).length;
+    showIoMsg("Saved " + n + " booking" + (n===1?"":"s") + " to signup-bookings.json", "ok");
+    showToast("Bookings saved to file");
+  }catch(err){
+    showIoMsg("Could not save file. Please try again.", "bad");
+  }
+});
+
+const loadFileInput = document.getElementById("loadFileInput");
+document.getElementById("loadFileBtn").addEventListener("click", ()=>{
+  loadFileInput.value = ""; // allow re-loading the same file
+  loadFileInput.click();
+});
+loadFileInput.addEventListener("change", ()=>{
+  const file = loadFileInput.files && loadFileInput.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onerror = ()=> showIoMsg("Couldn't read that file. Please try another.", "bad");
+  reader.onload = ()=>{
+    let data;
+    try{
+      data = JSON.parse(reader.result);
+    }catch(e){
+      showIoMsg("That doesn't look like a valid JSON file.", "bad");
+      return;
+    }
+    if(!isValidBookings(data)){
+      showIoMsg("That file isn't a bookings file we recognize.", "bad");
+      return;
+    }
+    saveAll(data);
+    render();
+    const n = Object.keys(data).length;
+    showIoMsg("Loaded " + n + " booking" + (n===1?"":"s") + " from " + file.name, "ok");
+    showToast("Bookings loaded from file");
+  };
+  reader.readAsText(file);
 });
 
 /* ---- init ---- */

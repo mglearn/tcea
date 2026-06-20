@@ -176,6 +176,50 @@
   .add-btn:active { transform: translateY(0); }
   .add-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 
+  /* ===== Save / Load controls ===== */
+  .io-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .io-btn {
+    flex: 1 1 0;
+    padding: 12px 10px;
+    font-size: 0.95rem;
+    font-weight: 800;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.15s ease;
+  }
+  .io-btn.save {
+    color: var(--navy);
+    background: var(--gold);
+    border: 2px solid var(--navy);
+    box-shadow: 0 4px 12px rgba(252,176,64,0.40);
+  }
+  .io-btn.save:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(252,176,64,0.50); }
+  .io-btn.load {
+    color: #fff;
+    background: var(--teal);
+    border: 2px solid var(--teal);
+    box-shadow: 0 4px 12px rgba(14,107,138,0.30);
+  }
+  .io-btn.load:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(14,107,138,0.40); }
+  .io-btn:active { transform: translateY(0); }
+  .io-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+  .io-msg {
+    margin-top: 10px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.88rem;
+    display: none;
+  }
+  .io-msg.show { display: block; animation: slidein 0.3s ease; }
+  .io-msg.ok { background: #E3F1E8; color: #1B6B3A; border: 1px solid #BBE2C8; }
+  .io-msg.err { background: #F4E3E1; color: var(--danger); border: 1px solid #E9C9C5; }
+
   /* ===== Book list ===== */
   .list-head {
     display: flex;
@@ -322,6 +366,13 @@
     </div>
 
     <button class="add-btn" id="addBtn">+ Add a book I finished</button>
+
+    <div class="io-controls">
+      <button class="io-btn save" id="saveFileBtn">⬇ Save to file</button>
+      <button class="io-btn load" id="loadFileBtn">⬆ Load from file</button>
+      <input type="file" id="loadFileInput" accept=".json,application/json" hidden>
+    </div>
+    <div class="io-msg" id="ioMsg" role="status" aria-live="polite"></div>
   </section>
 
   <!-- Book list -->
@@ -349,6 +400,9 @@
 const GOAL = 20; // <-- number of books to read this year
 /* ========================================================= */
 
+// Effective goal: starts at GOAL, but a loaded file may override it.
+let goal = GOAL;
+
 const STORAGE_KEY = 'tcea_reading_challenge_v1';
 const RADIUS = 84;
 const CIRC = 2 * Math.PI * RADIUS;
@@ -366,6 +420,10 @@ const emptyMsg = document.getElementById('emptyMsg');
 const listCount = document.getElementById('listCount');
 const addBtn = document.getElementById('addBtn');
 const toast = document.getElementById('toast');
+const saveFileBtn = document.getElementById('saveFileBtn');
+const loadFileBtn = document.getElementById('loadFileBtn');
+const loadFileInput = document.getElementById('loadFileInput');
+const ioMsg = document.getElementById('ioMsg');
 
 // Set up ring dash geometry
 ringFill.style.strokeDasharray = CIRC;
@@ -380,6 +438,7 @@ function load() {
     if (raw) {
       const parsed = JSON.parse(raw);
       if (parsed && Array.isArray(parsed.books)) {
+        if (typeof parsed.goal === 'number' && parsed.goal > 0) goal = Math.round(parsed.goal);
         return { books: parsed.books, reached: Array.isArray(parsed.reached) ? parsed.reached : [] };
       }
     }
@@ -389,13 +448,13 @@ function load() {
 
 function save() {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ goal: goal, books: state.books, reached: state.reached }));
   } catch (e) { /* storage may be unavailable */ }
 }
 
 function pct() {
-  if (GOAL <= 0) return 0;
-  return Math.min(100, Math.round((state.books.length / GOAL) * 100));
+  if (goal <= 0) return 0;
+  return Math.min(100, Math.round((state.books.length / goal) * 100));
 }
 
 function formatDate(ts) {
@@ -408,7 +467,7 @@ function renderProgress(animate) {
   const count = state.books.length;
   const p = pct();
   readNum.textContent = count;
-  goalNum.textContent = GOAL;
+  goalNum.textContent = goal;
   ringPct.textContent = p + '%';
   const offset = CIRC * (1 - p / 100);
   ringFill.style.strokeDashoffset = offset;
@@ -583,12 +642,90 @@ function stepConfetti() {
   }
 }
 
+// ---- Save / Load to file (no libraries) ----
+let ioMsgTimer = null;
+function showIoMsg(text, kind) {
+  ioMsg.textContent = text;
+  ioMsg.className = 'io-msg show ' + (kind === 'err' ? 'err' : 'ok');
+  if (ioMsgTimer) clearTimeout(ioMsgTimer);
+  ioMsgTimer = setTimeout(() => { ioMsg.className = 'io-msg'; }, 5000);
+}
+
+function saveToFile() {
+  // Export everything the tool keeps: the goal and the finished-books list (plus reached milestones).
+  const data = {
+    goal: goal,
+    books: state.books,
+    reached: state.reached,
+    exportedAt: new Date().toISOString()
+  };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'reading-challenge.json';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  showIoMsg('Saved ' + state.books.length + ' book' + (state.books.length === 1 ? '' : 's') + ' to reading-challenge.json', 'ok');
+}
+
+function loadFromFile(file) {
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onerror = () => showIoMsg('Could not read that file. Please try again.', 'err');
+  reader.onload = () => {
+    let parsed;
+    try {
+      parsed = JSON.parse(reader.result);
+    } catch (e) {
+      showIoMsg('That file is not valid JSON. Please choose a reading-challenge file.', 'err');
+      return;
+    }
+    // Validate expected shape: an object with a books array.
+    if (!parsed || typeof parsed !== 'object' || !Array.isArray(parsed.books)) {
+      showIoMsg('This does not look like a reading challenge file (no book list found).', 'err');
+      return;
+    }
+    // Sanitize the books list defensively.
+    const books = [];
+    for (const b of parsed.books) {
+      if (b && typeof b === 'object' && typeof b.title === 'string') {
+        books.push({
+          id: (b.id != null ? String(b.id) : Date.now() + '-' + Math.random().toString(36).slice(2, 7)),
+          title: b.title,
+          added: (typeof b.added === 'number' ? b.added : Date.now())
+        });
+      }
+    }
+    // Apply goal if present and valid, else keep current.
+    if (typeof parsed.goal === 'number' && parsed.goal > 0) goal = Math.round(parsed.goal);
+    state = { books: books, reached: Array.isArray(parsed.reached) ? parsed.reached.filter(m => MILESTONES.includes(m)) : [] };
+    // Reconcile milestones to current progress (no false re-celebration on import).
+    state.reached = MILESTONES.filter(m => pct() >= m);
+    save();
+    goalNum.textContent = goal;
+    renderList();
+    renderProgress(true);
+    showIoMsg('Loaded ' + books.length + ' book' + (books.length === 1 ? '' : 's') + ' from file.', 'ok');
+  };
+  reader.readAsText(file);
+}
+
 // ---- Wire up ----
 addBtn.addEventListener('click', addBook);
+saveFileBtn.addEventListener('click', saveToFile);
+loadFileBtn.addEventListener('click', () => loadFileInput.click());
+loadFileInput.addEventListener('change', (e) => {
+  const file = e.target.files && e.target.files[0];
+  loadFromFile(file);
+  loadFileInput.value = ''; // allow re-selecting the same file
+});
 
 // Initial paint. Reconcile any already-reached milestones with no celebration.
 (function init() {
-  goalNum.textContent = GOAL;
+  goalNum.textContent = goal;
   renderList();
   // Make sure stored `reached` matches current progress (no false re-celebrations on load).
   const p = pct();

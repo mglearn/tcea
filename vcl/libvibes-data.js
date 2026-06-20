@@ -47,6 +47,7 @@ Features:
 - A list of finished books with the date added and a delete (x) on each
 - Milestone celebrations: a little confetti burst or badge at 25%, 50%, 75%, 100%
 - All data saved in the browser with localStorage so it survives a refresh
+- A "Save to file" and "Load from file" pair that exports and imports all the data as a JSON file (so it can move between devices or be backed up); if I ask, also offer a Google Apps Script + Google Sheet version that stores the data in my account
 
 Design:
 - Mobile-first, celebratory feel, palette navy #0A3476 + gold #FCB040 + teal #0E6B8A
@@ -140,6 +141,7 @@ Features:
 - Auto-detects and celebrates a completed row, column, or diagonal (BINGO!)
 - A "Print my board" button that prints cleanly on one page
 - localStorage so a student's marked squares survive a refresh
+- A "Save to file" and "Load from file" pair that exports and imports the board and marks as a JSON file (to move between devices or keep a backup); if I ask, also offer a Google Apps Script + Google Sheet version
 
 Design:
 - Mobile-first; the 5x5 grid stays square and tappable on phones
@@ -289,6 +291,7 @@ Student-facing page:
 - Pick a date, then see a grid of time slots x stations
 - Open slots show a "Sign up" button; taken slots show the booked name (or just "Reserved" if I turn name-hiding on)
 - Submitting writes the booking to the Sheet and refreshes the grid
+- Also a "Save to file" / "Load from file" option that exports and imports the bookings as a JSON file (handy for backups or moving the demo between devices)
 - Prevents double-booking the same slot/station
 
 Admin page:
@@ -308,6 +311,7 @@ prompt:`I am a school librarian. I am not a developer, but I can follow setup st
 Setup:
 - I maintain a Google Sheet of nominee books: Title, Author, cover image URL, and a one-line description
 - A second sheet/tab stores votes: Timestamp, Class, and the book voted for
+- Also a "Save to file" / "Load from file" option that exports and imports the votes as a JSON file (handy for backups or moving the demo between devices)
 - I can open and close voting with a setting
 
 Student-facing ballot page:

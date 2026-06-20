@@ -119,7 +119,11 @@
         <button id="toggleOpen" style="background:var(--navy);color:#fff">Open / Close voting</button>
         <button id="clearVotes" style="background:#fde2e0;color:#b3403a">Clear all votes</button>
         <button id="resetDevice" style="background:#eef2fa;color:var(--navy)">Let this device vote again</button>
+        <button id="saveFile" style="background:var(--teal);color:#fff">⬇ Save to file</button>
+        <button id="loadFile" style="background:var(--gold);color:var(--navy)">⬆ Load from file</button>
+        <input type="file" id="fileInput" accept=".json,application/json" style="display:none">
       </div>
+      <div id="ioMsg" style="display:none;margin-top:.7rem;padding:.5rem .8rem;border-radius:8px;font-size:.85rem;font-weight:600"></div>
       <p style="margin-top:1rem;font-size:.8rem;color:#888">(In the real Sheets-backed version, admin is password-protected and votes export to your spreadsheet.)</p>
     </div>
   </div>
@@ -224,6 +228,69 @@ function renderAdmin(){
 $("toggleOpen").addEventListener("click",()=>{state=load();state.open=!state.open;save(state);renderAdmin();});
 $("clearVotes").addEventListener("click",()=>{ if(confirm("Clear all votes?")){state=load();state.votes=[];save(state);renderAdmin();renderResults();}});
 $("resetDevice").addEventListener("click",()=>{localStorage.removeItem(VOTEDKEY);alert("This device can vote again.");location.reload();});
+
+/* ===== save / load all saved data to/from a .json file ===== */
+function ioMsg(text,ok){
+  const m=$("ioMsg"); m.textContent=text; m.style.display="block";
+  m.style.background=ok?"#dff4e8":"#fde2e0";
+  m.style.color=ok?"#1f7a4d":"#b3403a";
+}
+$("saveFile").addEventListener("click",()=>{
+  state=load();
+  const data={
+    app:"libvibes-mock-award-voting",
+    version:1,
+    exportedAt:new Date().toISOString(),
+    state:state,                                  // {open, votes:[{book,cls,reason}]}
+    votedThisDevice:!!localStorage.getItem(VOTEDKEY)
+  };
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+  a.href=url; a.download="mock-award-votes.json";
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  ioMsg("Saved "+state.votes.length+" vote(s) to mock-award-votes.json",true);
+});
+$("loadFile").addEventListener("click",()=>$("fileInput").click());
+$("fileInput").addEventListener("change",e=>{
+  const file=e.target.files&&e.target.files[0];
+  if(!file) return;
+  const reader=new FileReader();
+  reader.onerror=()=>ioMsg("Couldn't read that file. Please try again.",false);
+  reader.onload=()=>{
+    try{
+      const data=JSON.parse(reader.result);
+      // accept either the wrapped export {state:{...}} or a bare state {open,votes}
+      const s=(data&&data.state&&typeof data.state==="object")?data.state:data;
+      if(!s||typeof s!=="object"||!Array.isArray(s.votes))
+        throw new Error("missing votes");
+      const clean={
+        open: typeof s.open==="boolean" ? s.open : true,
+        votes: s.votes.filter(v=>v&&typeof v==="object").map(v=>({
+          book: String(v.book||""),
+          cls: String(v.cls||""),
+          reason: typeof v.reason==="string" ? v.reason : ""
+        }))
+      };
+      save(clean);
+      state=clean;
+      if(data&&typeof data.votedThisDevice==="boolean"){
+        if(data.votedThisDevice) localStorage.setItem(VOTEDKEY,"1");
+        else localStorage.removeItem(VOTEDKEY);
+      }
+      // restore visible state everywhere
+      if(localStorage.getItem(VOTEDKEY)){ $("voteArea").style.display="none"; $("confirm").style.display="block"; }
+      else { $("voteArea").style.display=""; $("confirm").style.display="none"; }
+      renderGallery(); renderAdmin(); renderResults();
+      ioMsg("Loaded "+clean.votes.length+" vote(s) from "+file.name,true);
+    }catch(err){
+      ioMsg("That file isn't a valid Mock Award export. Nothing was changed.",false);
+    }
+    $("fileInput").value="";   // allow re-loading the same file
+  };
+  reader.readAsText(file);
+});
 
 renderGallery();
 if(localStorage.getItem(VOTEDKEY)){ $("voteArea").style.display="none"; $("confirm").style.display="block"; }

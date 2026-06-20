@@ -68,7 +68,19 @@
   .btn-shuffle{background:var(--teal);}
   .btn-print{background:var(--gold);color:var(--navy);}
   .btn-reset{background:var(--navy);}
+  .btn-save{background:var(--teal);}
+  .btn-load{background:var(--navy);}
   button:hover{filter:brightness(1.06);}
+
+  .file-msg{
+    text-align:center;
+    font-size:.85rem;
+    font-weight:600;
+    margin:-6px 0 14px;
+    min-height:1.1em;
+  }
+  .file-msg.ok{color:var(--teal);}
+  .file-msg.err{color:#b0341d;}
 
   .board-title{
     text-align:center;
@@ -296,7 +308,12 @@
     <button class="btn-shuffle" id="shuffleBtn">Shuffle new board</button>
     <button class="btn-print" id="printBtn">Print my board</button>
     <button class="btn-reset" id="resetBtn">Clear stamps</button>
+    <button class="btn-save" id="saveFileBtn">⬇ Save to file</button>
+    <button class="btn-load" id="loadFileBtn">⬆ Load from file</button>
+    <input type="file" id="loadFileInput" accept=".json,application/json" hidden>
   </div>
+
+  <div class="file-msg" id="fileMsg" aria-live="polite"></div>
 
   <div class="board-title">Fill a row, column, or diagonal to get BINGO!</div>
 
@@ -555,6 +572,85 @@ document.getElementById("restorePoolBtn").addEventListener("click", ()=>{
   fillEditor();
   buildBoard();
   render();
+});
+
+/* ---------- save / load to file ---------- */
+const fileMsgEl = document.getElementById("fileMsg");
+let fileMsgTimer = null;
+function showFileMsg(text, isError){
+  fileMsgEl.textContent = text;
+  fileMsgEl.className = "file-msg " + (isError ? "err" : "ok");
+  clearTimeout(fileMsgTimer);
+  fileMsgTimer = setTimeout(()=>{ fileMsgEl.textContent = ""; fileMsgEl.className = "file-msg"; }, 5000);
+}
+
+document.getElementById("saveFileBtn").addEventListener("click", ()=>{
+  try{
+    const data = {
+      type: "tcea-reading-bingo",
+      version: 1,
+      board: board,
+      marks: marks,
+      pool: pool
+    };
+    const blob = new Blob([JSON.stringify(data, null, 2)], {type:"application/json"});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "reading-bingo.json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showFileMsg("Saved reading-bingo.json", false);
+  }catch(e){
+    showFileMsg("Sorry, could not save the file.", true);
+  }
+});
+
+document.getElementById("loadFileBtn").addEventListener("click", ()=>{
+  document.getElementById("loadFileInput").click();
+});
+
+document.getElementById("loadFileInput").addEventListener("change", (ev)=>{
+  const input = ev.target;
+  const file = input.files && input.files[0];
+  if(!file){ return; }
+  const reader = new FileReader();
+  reader.onerror = ()=>{ showFileMsg("Could not read that file.", true); input.value = ""; };
+  reader.onload = ()=>{
+    let data;
+    try{
+      data = JSON.parse(reader.result);
+    }catch(e){
+      showFileMsg("That file isn't valid JSON.", true);
+      input.value = "";
+      return;
+    }
+    if(!data || typeof data !== "object"
+       || !Array.isArray(data.board) || data.board.length !== 25
+       || !Array.isArray(data.marks) || data.marks.length !== 25){
+      showFileMsg("That file isn't a Reading Bingo save.", true);
+      input.value = "";
+      return;
+    }
+    // restore in-memory state
+    board = data.board.map(String);
+    marks = data.marks.map(Boolean);
+    marks[FREE_INDEX] = true;
+    if(Array.isArray(data.pool) && data.pool.length){
+      pool = data.pool.map(String);
+    }
+    // persist to localStorage
+    savePool();
+    saveState();
+    // refresh UI
+    fillEditor();
+    render();
+    showFileMsg("Loaded your saved board!", false);
+    input.value = "";
+  };
+  reader.readAsText(file);
 });
 
 /* ---------- init ---------- */
