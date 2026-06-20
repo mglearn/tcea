@@ -47,3 +47,15 @@ Files in this folder:
 ## Notes
 - Pasted files over ~900 KB are rejected with a message asking for a link instead.
 - Re-deploy (**Deploy → Manage deployments → ✎ → Version: New**) after editing the code.
+
+## 6. Review submissions in the admin page
+- Set your password: edit `ADMIN_PASSWORD` at the top of `Code.gs` (or, more privately,
+  add a Script Property named `ADMIN_PASSWORD` — it wins over the constant). Re-deploy.
+- Visit your web app URL with `?page=admin` appended, e.g. `https://…/exec?page=admin`.
+- Enter the password to see every submission (filter by Pending / Approved / Rejected),
+  open the saved HTML, read the prompt, and click **Approve / Reject** — it writes the
+  `Status` back to the Sheet instantly.
+
+## 7. Publish an approved one (one-liner)
+See `libvibes/community/PUBLISH.md`: drop the file at `libvibes/community/<slug>/index.html`,
+add one line to `libvibes-community.js`, and push — it appears on `libvibes-community.html`.

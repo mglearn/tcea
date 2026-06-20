@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The VIBES Framework · LibVibes | TCEA</title>
-<meta name="description" content="The VIBES Framework: a five-step loop (Vision, Instruct, Build, Evaluate, Ship) for vibe-coding library tools. By Miguel Guhlin, TCEA.">
+<title>Community LibVibes · TCEA</title>
+<meta name="description" content="Community-shared LibVibes: library tools built and submitted by other librarians, reviewed and published by TCEA.">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -107,6 +107,25 @@
   .qa-btn-gold:hover{background:var(--gold-light)}
   .qa-count{font-size:.82rem;color:var(--text-muted)}
 
+  /* Collection (compact cards) */
+  .lv-collection{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:1rem}
+  .col-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(10,52,118,.05);transition:.15s}
+  .col-card[data-level="intermediate"]{border-left-color:var(--int)}
+  .col-card[data-level="advanced"]{border-left-color:var(--adv)}
+  .col-card[data-level="beginner"]{border-left-color:var(--beg)}
+  .col-card:hover{box-shadow:0 12px 26px rgba(10,52,118,.12);transform:translateY(-2px)}
+  .col-main{display:block;text-decoration:none;padding:.9rem 1rem .5rem;flex:1}
+  .col-top{display:flex;align-items:center;gap:.5rem;margin-bottom:.45rem}
+  .col-n{font-family:'DM Mono',monospace;font-weight:700;color:var(--navy);background:var(--gold-pale);border-radius:6px;padding:.15rem .45rem;font-size:.72rem}
+  .col-card h3{font-family:'DM Serif Display',serif;color:var(--navy);font-size:1.05rem;line-height:1.18;margin:0 0 .25rem}
+  .col-card p{color:var(--text-muted);font-size:.85rem;margin:0}
+  .col-foot{display:flex;align-items:center;justify-content:space-between;gap:.5rem;padding:.55rem 1rem .75rem;border-top:1px solid var(--border);margin-top:.4rem}
+  .col-link{font-size:.8rem;font-weight:700;color:var(--teal);text-decoration:none}
+  .col-link:hover{text-decoration:underline}
+  .col-copy{font:inherit;font-size:.78rem;font-weight:700;background:var(--navy);color:#fff;border:0;border-radius:7px;padding:.35rem .7rem;cursor:pointer}
+  .col-copy:hover{background:var(--teal)}
+  .col-copy.copied{background:var(--gold);color:var(--navy)}
+
   /* Prompt cards */
   .lv-grid{display:grid;gap:1.2rem}
   .lv-card{background:#fff;border:1px solid var(--border);border-left:5px solid var(--gold);border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(10,52,118,.05)}
@@ -177,40 +196,28 @@
       <a href="libvibes-library.html">Prompt Library</a>
       <a href="libvibes-host.html">Host It Free</a>
       <a href="libvibes-submit.html">Share Yours</a>
-      <a href="libvibes-community.html">Community</a>
       <a class="home" href="index.html">⌂ Main Page</a>
     </div>
   </div>
 </nav>
 
 <section class="hero" id="top" style="padding:2.6rem 1.4rem 2.8rem">
-  <span class="eyebrow">The Method</span>
-  <h1>The <em>VIBES</em> Framework</h1>
-  <p class="hero-lead">A five-step loop for vibe-coding any of these tools — the shared mental model behind every prompt in the library.</p>
+  <span class="eyebrow">Community</span>
+  <h1>Community <em>LibVibes</em></h1>
+  <p class="hero-lead">Library tools built and shared by other librarians — reviewed by TCEA before they appear here. Got one? <a href="libvibes-submit.html" style="color:var(--gold-light)">Share yours</a>.</p>
 </section>
 
-<section id="framework" style="padding-top:2.4rem">
-  <div class="vibes-grid">
-    <div class="vibes-card"><div class="vibes-letter">V</div><div class="vibes-word">Vision</div><p class="vibes-desc">Decide what you want and who it's for before you open a chat window.</p></div>
-    <div class="vibes-card"><div class="vibes-letter">I</div><div class="vibes-word">Instruct</div><p class="vibes-desc">Give the AI your colors, your data, your constraints, and where it will live.</p></div>
-    <div class="vibes-card"><div class="vibes-letter">B</div><div class="vibes-word">Build</div><p class="vibes-desc">Generate in small chunks and iterate conversationally, one feature at a time.</p></div>
-    <div class="vibes-card"><div class="vibes-letter">E</div><div class="vibes-word">Evaluate</div><p class="vibes-desc">Run it, read it, click everything on a phone and a laptop. Verify links and facts.</p></div>
-    <div class="vibes-card"><div class="vibes-letter">S</div><div class="vibes-word">Ship</div><p class="vibes-desc">Host on GitHub Pages, embed in Google Sites, or deploy as an Apps Script web app.</p></div>
-  </div>
-
-  <h2 class="section-title" style="margin-top:2rem">What each step really means</h2>
+<section id="community" style="padding-top:2.4rem">
+  <div class="section-eyebrow">Shared by librarians</div>
+  <h2 class="section-title">The community collection</h2>
   <div class="section-divider"></div>
-  <ul class="vibes-list" style="display:grid;gap:.7rem;max-width:780px">
-    <li><b>V</b><span><strong>Vision.</strong> Finish this sentence before you type a word to the AI: “This is for ___ so they can ___.” One audience, one job. A sharp vision is also your finish line — it tells you when you're done.</span></li>
-    <li><b>I</b><span><strong>Instruct.</strong> Whatever the AI doesn't know, it invents — fake hours, generic colors, placeholder books. Feed it the real specifics: your data, your campus colors, and the one constraint that matters most (“no logins,” “one HTML file”).</span></li>
-    <li><b>B</b><span><strong>Build.</strong> Get the skeleton working first, confirm it runs, then add one feature per turn. Small steps mean that when something breaks, you know exactly which change caused it.</span></li>
-    <li><b>E</b><span><strong>Evaluate.</strong> Looking right is not the same as working. Click every button, test on a real phone, feed it weird input, and verify any facts (citations, Dewey ranges) against a real source.</span></li>
-    <li><b>S</b><span><strong>Ship.</strong> A tool nobody can find helps nobody. Put the working result where your people already are — a GitHub Pages link, a Google Sites embed, a QR code at the shelf, a loop on the lobby monitor.</span></li>
-  </ul>
-  <div class="host-note" style="background:var(--gold-pale);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:1rem 1.2rem;margin-top:1.6rem;font-size:.92rem;color:#5a4413;max-width:780px">
-    <strong>VIBES is a loop, not a staircase.</strong> You'll cycle Build → Evaluate → Build several times before you Ship — that's the process working. The AI's first answer is a starting point, never the finish line. Each prompt in the <a href="libvibes-library.html" style="color:var(--navy);font-weight:700">library</a> includes a VIBES block tuned to that specific build.
+  <div class="lv-collection" id="commGrid"></div>
+  <div id="commEmpty" style="display:none;text-align:center;color:var(--text-muted);padding:1.5rem 0">
+    <p style="font-size:1.05rem">No community LibVibes published yet — be the first!</p>
+    <p style="margin-top:.6rem"><a class="qa-btn qa-btn-gold" href="libvibes-submit.html" style="text-decoration:none">Share your LibVibe →</a></p>
   </div>
 </section>
+
 <footer>
   <p><strong style="color:#fff;font-family:'DM Serif Display',serif;font-size:1.05rem">Miguel Guhlin</strong></p>
   <p style="font-size:.85rem">Director of Professional Development, TCEA</p>
@@ -221,5 +228,28 @@
   </p>
   <p style="margin-top:1rem;opacity:.6;font-size:.75rem">LibVibes · Companion resource for "Vibe Your Way to Free" · TCEA 2026</p>
 </footer>
+
 <script src="libvibes-nav.js"></script>
-</body></html>
+<script src="libvibes-community.js"></script>
+<script>
+  const esc=s=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  const LVL={beginner:"Beginner",intermediate:"Intermediate",advanced:"Advanced"};
+  const lvlClass={beginner:"badge-lvl-beginner",intermediate:"badge-lvl-intermediate",advanced:"badge-lvl-advanced"};
+  const list=(window.LV_COMMUNITY||[]);
+  const grid=document.getElementById("commGrid");
+  if(!list.length){ document.getElementById("commEmpty").style.display="block"; }
+  grid.innerHTML=list.map(c=>`
+    <article class="col-card" data-level="${c.level||'beginner'}">
+      <a class="col-main" href="libvibes/community/${c.slug}/index.html">
+        <div class="col-top"><span class="col-n">★</span><span class="badge ${lvlClass[c.level]||'badge-lvl-beginner'}">${LVL[c.level]||"Community"}</span></div>
+        <h3>${esc(c.title)}</h3>
+        <p>${esc(c.blurb)}</p>
+      </a>
+      <div class="col-foot">
+        <span style="font-size:.8rem;color:var(--text-muted)">by ${esc(c.by||"a librarian")}</span>
+        <a class="col-link" href="libvibes/community/${c.slug}/index.html">View &amp; try ↗</a>
+      </div>
+    </article>`).join("");
+</script>
+</body>
+</html>

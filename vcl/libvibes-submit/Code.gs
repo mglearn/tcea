@@ -18,6 +18,7 @@ var SHEET_NAME = 'Submissions';
 var DRIVE_FOLDER_NAME = 'LibVibes Submissions'; // Drive folder for pasted solution HTML
 var NOTIFY_EMAIL = '';                          // optional: get an email per submission
 var MAX_HTML_BYTES = 900000;                    // reject pasted files larger than ~900 KB
+var ADMIN_PASSWORD = 'change-me';               // password for the review page  ?page=admin
 // =================================================
 
 /**
@@ -33,12 +34,41 @@ function setup() {
   return url;
 }
 
-function doGet() {
-  return HtmlService.createTemplateFromFile('Form')
+function doGet(e) {
+  var admin = e && e.parameter && e.parameter.page === 'admin';
+  return HtmlService.createTemplateFromFile(admin ? 'Admin' : 'Form')
     .evaluate()
-    .setTitle('Share your LibVibe · TCEA')
+    .setTitle(admin ? 'LibVibes — Review submissions' : 'Share your LibVibe · TCEA')
     .addMetaTag('viewport', 'width=device-width, initial-scale=1')
     .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+}
+
+// ===================== admin review =====================
+function checkPw_(pw) {
+  var set = PropertiesService.getScriptProperties().getProperty('ADMIN_PASSWORD') || ADMIN_PASSWORD;
+  if (!pw || String(pw) !== String(set)) throw new Error('Wrong password.');
+}
+
+/** Return all submissions (newest first) for the review page. */
+function adminList(pw) {
+  checkPw_(pw);
+  var rows = getSheet_().getDataRange().getValues();
+  var out = [];
+  for (var i = 1; i < rows.length; i++) {
+    var r = rows[i];
+    out.push({ row: i + 1, timestamp: String(r[0]), status: r[1], name: r[2], email: r[3],
+      school: r[4], title: r[5], grade: r[6], category: r[7], description: r[8],
+      prompt: r[9], link: r[10], file: r[11] });
+  }
+  return out.reverse();
+}
+
+/** Set a row's Status to Pending / Approved / Rejected. */
+function adminSetStatus(pw, row, status) {
+  checkPw_(pw);
+  if (['Pending', 'Approved', 'Rejected'].indexOf(status) < 0) throw new Error('Bad status.');
+  getSheet_().getRange(Number(row), 2).setValue(status);   // column B = Status
+  return { ok: true };
 }
 
 /** Called from Form.html via google.script.run. Returns {ok:true} or throws. */
