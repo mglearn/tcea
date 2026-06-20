@@ -99,21 +99,6 @@ if (fs.existsSync(dataPath)) {
               (others.length ? " (preserved: " + others.join(", ") + ")" : ""));
 }
 
-// 3b) Random-LibVibe button: send it to the framed tool page (index.html,
-//     which has nav back to the collection + embeds the live app) instead of
-//     the bare app.html, which has no way back.
-const lvMain = path.join(OUT, "libvibes.html");
-if (fs.existsSync(lvMain)) {
-  const h = fs.readFileSync(lvMain, "utf8");
-  const fixed = h.replace('+s.slug+"/app.html"', '+s.slug+"/index.html"');
-  if (fixed !== h) {
-    fs.writeFileSync(lvMain, fixed);
-    console.log("Pointed Random LibVibe button to index.html (has back-nav)");
-  } else {
-    console.log("NOTE: Random LibVibe button target string not found — check libvibes.html");
-  }
-}
-
 // 4) obfuscate every inline prompt (<div>/<pre> class="prompt-body") --
 //    Covers libvibes-prompts-bonus.html (7) and each tool's index.html (1 each).
 function encodePromptBodies(file) {
