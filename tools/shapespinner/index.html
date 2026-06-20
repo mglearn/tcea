@@ -347,6 +347,51 @@
       font-weight: 800;
     }
 
+    .pill.active {
+      color: var(--white);
+      background: var(--navy);
+      border-color: var(--navy);
+    }
+
+    .shape-choice-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .shape-choice {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 38px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 8px 10px;
+      background: var(--white);
+      color: var(--navy);
+      font-size: .88rem;
+      font-weight: 800;
+    }
+
+    .shape-choice input { width: auto; accent-color: var(--navy); }
+    .shape-choice:has(input:checked) { border-color: var(--navy); background: rgba(30, 57, 141, .08); }
+    .shape-choice:has(input:disabled) { opacity: .52; }
+
+    .advanced-option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 4px;
+      color: var(--gray-90);
+      font-size: .88rem;
+      font-weight: 800;
+    }
+
+    .advanced-option input { width: auto; accent-color: var(--navy); }
+    .hidden { display: none !important; }
+    .advanced-option.hidden { display: none; }
+    .advanced-settings.hidden { display: none; }
+
     .empty { color: var(--gray-50); font-size: .92rem; }
 
     @media (max-width: 1040px) {
@@ -359,6 +404,7 @@
       header { align-items: flex-start; flex-direction: column; }
       .stage-actions, .button-grid { grid-template-columns: 1fr; }
       .button-grid .wide { grid-column: auto; }
+      .shape-choice-grid { grid-template-columns: 1fr; }
       .pointer {
         right: -2px;
         border-top-width: 18px;
@@ -368,14 +414,13 @@
     }
   </style>
 </head>
-<body>
-<div class="top-bar" aria-hidden="true"></div>
+<body><div class="top-bar" aria-hidden="true"></div>
   <div class="page">
     <header>
       <div class="title-block">
         <p class="eyebrow">TCEA Tools</p>
         <h1>Shape Spinner</h1>
-        <p class="subtitle">Spin pictures, shapes, labels, and hidden prompts for identification, poetry, graph races, and trace-and-describe activities.</p>
+        <p class="subtitle">Spin shapes and emojis for identification, graph races, and trace-and-describe activities.</p>
       </div>
       <a class="home-link" href="../index.html">Tool Menu</a>
     </header>
@@ -383,60 +428,56 @@
     <main class="app-grid">
       <section class="panel" aria-label="Spinner setup">
         <h2>Setup</h2>
+        <textarea id="itemsInput" hidden></textarea>
 
         <div class="field">
-          <label for="templateSelect">Quick Starts</label>
-          <div class="template-row">
-            <button class="pill" data-template="shapes">Shapes</button>
-            <button class="pill" data-template="poetry">Poetry</button>
-            <button class="pill" data-template="countries">Countries</button>
-            <button class="pill" data-template="blank">Clear</button>
+          <span class="field-title">Spinner Mode</span>
+          <div class="template-row" aria-label="Shape library mode">
+            <button class="pill shape-mode active" data-shape-mode="basic">Basic</button>
+            <button class="pill shape-mode" data-shape-mode="advanced">Advanced</button>
           </div>
         </div>
 
-        <div class="field">
-          <label for="itemsInput">Wheel Entries</label>
-          <textarea id="itemsInput" spellcheck="true"></textarea>
-          <p class="help">One entry per line: <strong>label | shape | activity</strong>. Shapes: circle, square, rectangle, triangle, hexagon, star, heart, diamond, oval. Use <strong>image:https://...</strong> or upload an image for picture entries.</p>
-        </div>
+        <div class="advanced-settings hidden" id="advancedSettings">
+          <div class="field">
+            <label for="templateSelect">Quick Starts</label>
+            <div class="template-row">
+              <button class="pill" data-template="shapes">Shapes</button>
+              <button class="pill" data-template="blank">Clear</button>
+            </div>
+          </div>
 
-        <div class="field">
-          <label for="imageUpload">Add Image Entries</label>
-          <input id="imageUpload" type="file" accept="image/*" multiple>
-          <p class="help">Uploaded images stay in this browser session and can be included in copied share links.</p>
-        </div>
+          <div class="field">
+            <span class="field-title">Shape Library</span>
+            <div class="shape-choice-grid" id="shapeChoices"></div>
+            <label class="advanced-option" id="showLabelsOption">
+              <input id="showLabels" type="checkbox" checked>
+              <span>Show labels on spinner</span>
+            </label>
+            <label class="advanced-option" id="showAttributesOption">
+              <input id="showAttributes" type="checkbox">
+              <span>Show attributes after spin</span>
+            </label>
+            <p class="help"><span id="shapeLimitText">Choose up to 6 shapes.</span></p>
+          </div>
 
-        <div class="field">
-          <label for="modeSelect">Classroom Mode</label>
-          <select id="modeSelect">
-            <option value="identify">Identify or Describe</option>
-            <option value="poetry">Poetry Prompt</option>
-            <option value="trace">Spin, Read, and Trace</option>
-            <option value="graph">Graph Race</option>
-          </select>
-        </div>
+          <div class="field">
+            <label for="spinStyle">Spin Style</label>
+            <select id="spinStyle">
+              <option value="standard">Standard Spin</option>
+              <option value="power">Power Spin</option>
+            </select>
+          </div>
 
-        <div class="field">
-          <label for="spinStyle">Spin Style</label>
-          <select id="spinStyle">
-            <option value="standard">Standard Spin</option>
-            <option value="power">Power Spin</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="raceTarget">Graph Race Target</label>
-          <input id="raceTarget" type="number" min="2" max="20" value="5">
-        </div>
-
-        <div class="button-grid">
-          <button class="btn primary wide" id="applyBtn">Build Spinner</button>
-          <button class="btn outline" id="copyLinkBtn">Copy Share Link</button>
-          <button class="btn outline" id="copyEmbedBtn">Copy Embed Code</button>
-          <button class="btn outline" id="saveBtn">Download JSON</button>
-          <button class="btn outline" id="loadBtn">Load JSON</button>
-          <button class="btn danger wide" id="clearBtn">Reset Counts</button>
-          <input id="loadInput" type="file" accept="application/json,.json" hidden>
+          <div class="button-grid">
+            <button class="btn primary wide" id="applyBtn">Build Spinner</button>
+            <button class="btn outline" id="copyLinkBtn">Copy Share Link</button>
+            <button class="btn outline" id="copyEmbedBtn">Copy Embed Code</button>
+            <button class="btn outline" id="saveBtn">Download JSON</button>
+            <button class="btn outline" id="loadBtn">Load JSON</button>
+            <button class="btn danger wide" id="clearBtn">Reset Counts</button>
+            <input id="loadInput" type="file" accept="application/json,.json" hidden>
+          </div>
         </div>
       </section>
 
@@ -473,8 +514,10 @@
           </div>
         </div>
 
-        <h2 style="margin-top:18px;">Graph Race</h2>
-        <div class="race-list" id="raceList"></div>
+        <div class="graph-race-section hidden" id="graphRaceSection">
+          <h2 style="margin-top:18px;">Graph Race</h2>
+          <div class="race-list" id="raceList"></div>
+        </div>
 
         <h2 style="margin-top:18px;">History</h2>
         <div class="history-list" id="historyList"></div>
@@ -486,31 +529,54 @@
     const $ = (sel) => document.querySelector(sel);
     const $$ = (sel) => [...document.querySelectorAll(sel)];
 
-    const palettes = ["#FAA634", "#1E398D", "#D1282F", "#0070B9", "#3cb44b", "#FDDC3F", "#f58231", "#BBBDC0"];
+    const palettes = ["#D1282F", "#F58231", "#FDDC3F", "#7B2CBF", "#0070B9", "#3CB44B"];
+    const maxSelectedShapes = 6;
+    const basicShapes = [
+      { label: "Star", visual: "star" },
+      { label: "Oval", visual: "oval" },
+      { label: "Square", visual: "square" },
+      { label: "Rectangle", visual: "rectangle" },
+      { label: "Circle", visual: "circle" },
+      { label: "Triangle", visual: "triangle" }
+    ];
+    const advancedShapes = [
+      ...basicShapes,
+      { label: "Pentagon", visual: "pentagon" },
+      { label: "Trapezoid", visual: "trapezoid" },
+      { label: "Hexagon", visual: "hexagon" },
+      { label: "Octagon", visual: "octagon" },
+      { label: "Diamond", visual: "diamond" },
+      { label: "Heart", visual: "heart" },
+      { label: "Crescent", visual: "crescent" },
+      { label: "Rhombus", visual: "rhombus" },
+      { label: "Parallelogram", visual: "parallelogram" }
+    ];
+    const shapeLibraries = { basic: basicShapes, advanced: advancedShapes };
+    const shapeAttributes = {
+      star: "A star has points that stick out from the center.",
+      oval: "An oval is a stretched-out circle with no corners.",
+      square: "A square has four equal sides and four square corners.",
+      rectangle: "A rectangle has four sides and four square corners, with opposite sides the same length.",
+      circle: "A circle is round with no sides and no corners.",
+      triangle: "A triangle has three sides and three corners.",
+      pentagon: "A pentagon has five sides and five corners.",
+      trapezoid: "A trapezoid has four sides with one pair of sides that are parallel.",
+      hexagon: "A hexagon has six sides and six corners.",
+      octagon: "An octagon has eight sides and eight corners.",
+      diamond: "A diamond has four sides and looks like a square turned on its point.",
+      heart: "A heart has two rounded bumps at the top and a point at the bottom.",
+      crescent: "A crescent is a curved shape that looks like a thin moon.",
+      rhombus: "A rhombus has four equal sides and opposite sides that are parallel.",
+      parallelogram: "A parallelogram has four sides, with opposite sides that are parallel and the same length."
+    };
     const templates = {
       shapes: [
-        "Circle | circle | I have 0 sides.",
-        "Triangle | triangle | I have 3 sides.",
-        "Square | square | I have 4 equal sides.",
-        "Rectangle | rectangle | I have 2 long sides.",
-        "Hexagon | hexagon | I have 6 sides.",
-        "Star | star | Describe my points and lines."
-      ],
-      poetry: [
-        "Rain | image:rain | Write a line that uses sound.",
-        "Mountain | triangle | Write a line about something tall.",
-        "Sun | circle | Write a line that uses warmth.",
-        "Window | rectangle | Write a line about looking out.",
-        "Heart | heart | Write a line about a feeling.",
-        "Spark | star | Write a line with a surprise."
-      ],
-      countries: [
-        "Canada | rectangle | Identify the country and name one fact.",
-        "Mexico | diamond | Identify the country and name one landmark.",
-        "Japan | circle | Identify the country and name one tradition.",
-        "Brazil | oval | Identify the country and name one natural feature.",
-        "Egypt | triangle | Identify the country and name one ancient site.",
-        "India | hexagon | Identify the country and name one food."
+        "Star | star | Identify this shape and describe its attributes.",
+        "Oval | oval | Identify this shape and describe its attributes.",
+        "Square | square | Identify this shape and describe its attributes.",
+        "Rectangle | rectangle | Identify this shape and describe its attributes.",
+        "Circle | circle | Identify this shape and describe its attributes.",
+        "Triangle | triangle | Identify this shape and describe its attributes."
       ],
       blank: [""]
     };
@@ -521,12 +587,12 @@
       counts: {},
       rotation: 0,
       isSpinning: false,
-      mode: "identify",
       spinStyle: "standard",
-      raceTarget: 5
+      shapeLibraryMode: "basic",
+      showLabels: true,
+      showAttributes: false
     };
 
-    const imageCache = new Map();
     const canvas = $("#wheelCanvas");
     const ctx = canvas.getContext("2d");
 
@@ -553,55 +619,130 @@
         .map((line, i) => {
           const parts = line.split("|").map(p => p.trim());
           const label = parts[0] || "Entry " + (i + 1);
-          const visual = (parts[1] || inferVisual(label)).toLowerCase();
+          const visual = normalizeVisual(parts[1] || inferVisual(label));
           const activity = parts[2] || defaultActivity(label);
           const id = window.crypto && crypto.randomUUID ? crypto.randomUUID() : String(Date.now() + Math.random() + i);
-          return { id, label, visual, activity, color: palettes[i % palettes.length] };
+          const attribute = shapeAttributes[visual] || "";
+          return { id, label, visual, activity, attribute, color: sliceColor(i) };
         });
+    }
+
+    function normalizeVisual(visual) {
+      const trimmed = visual.trim();
+      return trimmed.toLowerCase();
+    }
+
+    function sliceColor(index) {
+      return palettes[index % palettes.length];
+    }
+
+    function shapeEntryLine(shape) {
+      return `${shape.label} | ${shape.visual} | Identify this shape and describe its attributes.`;
+    }
+
+    function selectedVisualsFromText() {
+      return new Set($("#itemsInput").value.split(/\n+/)
+        .map(line => line.split("|")[1])
+        .filter(Boolean)
+        .map(visual => normalizeVisual(visual)));
+    }
+
+    function setEntriesFromShapes(shapes) {
+      $("#itemsInput").value = shapes.map(shapeEntryLine).join("\n");
+      state.counts = {};
+      state.history = [];
+      build();
+    }
+
+    function renderShapeChoices(mode = state.shapeLibraryMode) {
+      state.shapeLibraryMode = mode;
+      const shapes = shapeLibraries[mode];
+      const selected = selectedVisualsFromText();
+      const selectedSet = selected.size
+        ? new Set(shapes.filter(shape => selected.has(shape.visual)).map(shape => shape.visual))
+        : new Set(basicShapes.map(shape => shape.visual));
+
+      $(".shape-mode[data-shape-mode='basic']").classList.toggle("active", mode === "basic");
+      $(".shape-mode[data-shape-mode='advanced']").classList.toggle("active", mode === "advanced");
+      $("#advancedSettings").classList.toggle("hidden", mode !== "advanced");
+      $("#graphRaceSection").classList.toggle("hidden", mode !== "advanced");
+      $("#showLabelsOption").classList.toggle("hidden", mode !== "advanced");
+      $("#shapeChoices").innerHTML = shapes.map(shape => `
+        <label class="shape-choice">
+          <input type="checkbox" value="${shape.visual}" ${selectedSet.has(shape.visual) ? "checked" : ""}>
+          <span>${shape.label}</span>
+        </label>
+      `).join("");
+      updateShapeChoiceState();
+    }
+
+    function updateShapeChoiceState() {
+      const choices = $$("#shapeChoices input");
+      const checked = choices.filter(input => input.checked);
+      choices.forEach(input => {
+        input.disabled = !input.checked && checked.length >= maxSelectedShapes;
+      });
+      $("#shapeLimitText").textContent = `${checked.length} selected. Choose up to ${maxSelectedShapes} shapes.`;
+    }
+
+    function syncShapeChoicesToEntries() {
+      const choices = $$("#shapeChoices input");
+      if (!choices.length) return;
+      const selected = selectedVisualsFromText();
+      choices.forEach(input => {
+        input.checked = selected.has(input.value);
+      });
+      updateShapeChoiceState();
+    }
+
+    function selectedShapesFromChoices() {
+      const selected = new Set($$("#shapeChoices input:checked").map(input => input.value));
+      return shapeLibraries[state.shapeLibraryMode].filter(shape => selected.has(shape.visual));
     }
 
     function inferVisual(label) {
       const v = label.toLowerCase();
-      for (const key of ["circle", "square", "rectangle", "triangle", "hexagon", "star", "heart", "diamond", "oval"]) {
+      for (const key of advancedShapes.map(shape => shape.visual)) {
         if (v.includes(key)) return key;
       }
       return "circle";
     }
 
     function defaultActivity(label) {
-      if (state.mode === "poetry") return "Write two sensory details about " + label + ".";
-      if (state.mode === "trace") return "Trace or sketch it, then describe its attributes.";
-      if (state.mode === "graph") return "Add one mark to the graph for " + label + ".";
       return "Identify it, describe it, or tell one thing you notice.";
     }
 
     function serialize() {
       return {
         entries: $("#itemsInput").value,
-        mode: state.mode,
         spinStyle: state.spinStyle,
-        raceTarget: state.raceTarget
+        shapeLibraryMode: state.shapeLibraryMode,
+        showLabels: state.showLabels,
+        showAttributes: state.showAttributes
       };
     }
 
     function applySerialized(data) {
       $("#itemsInput").value = data.entries || templates.shapes.join("\n");
-      $("#modeSelect").value = data.mode || "identify";
       $("#spinStyle").value = data.spinStyle || "standard";
-      $("#raceTarget").value = data.raceTarget || 5;
+      state.shapeLibraryMode = data.shapeLibraryMode || "basic";
+      $("#showLabels").checked = data.showLabels !== false;
+      $("#showAttributes").checked = data.showAttributes === true;
       build();
+      renderShapeChoices(state.shapeLibraryMode);
     }
 
     function build() {
-      state.mode = $("#modeSelect").value;
       state.spinStyle = $("#spinStyle").value;
-      state.raceTarget = Math.max(2, Math.min(20, parseInt($("#raceTarget").value || "5", 10)));
+      state.showLabels = $("#showLabels").checked || state.shapeLibraryMode !== "advanced";
+      state.showAttributes = state.shapeLibraryMode === "advanced" && $("#showAttributes").checked;
       state.entries = parseEntries($("#itemsInput").value);
       for (const e of state.entries) {
         if (!(e.label in state.counts)) state.counts[e.label] = 0;
       }
       drawWheel();
       renderMeta();
+      syncShapeChoicesToEntries();
     }
 
     function drawWheel() {
@@ -640,18 +781,20 @@
         ctx.stroke();
 
         const mid = start + slice / 2;
-        const iconX = cx + Math.cos(mid) * r * .56;
-        const iconY = cy + Math.sin(mid) * r * .56;
-        drawVisual(ctx, entry, iconX, iconY, Math.max(46, r * .18));
-
+        const labelRadius = r * .85;
+        const iconRadius = r * .55;
         ctx.save();
-        ctx.translate(cx + Math.cos(mid) * r * .78, cy + Math.sin(mid) * r * .78);
-        ctx.rotate(mid);
-        ctx.fillStyle = readableText(entry.color);
-        ctx.font = "800 25px Arial, Helvetica, sans-serif";
-        ctx.textAlign = "center";
-        ctx.textBaseline = "middle";
-        wrapCanvasText(ctx, entry.label, 0, 0, r * .28, 25);
+        ctx.translate(cx, cy);
+        ctx.rotate(mid - Math.PI / 2);
+        drawVisual(ctx, entry, 0, iconRadius, Math.max(88, r * .34));
+
+        if (state.showLabels) {
+          ctx.fillStyle = readableText(entry.color);
+          ctx.font = "900 24px Arial, Helvetica, sans-serif";
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          wrapCanvasText(ctx, entry.label, 0, labelRadius, r * .24, 25);
+        }
         ctx.restore();
       });
 
@@ -686,34 +829,27 @@
 
     function drawVisual(context, entry, x, y, size) {
       const visual = entry.visual || "circle";
-      if (visual.startsWith("image:")) {
-        const src = visual.slice(6);
-        const img = getImage(src);
-        if (img && img.complete && img.naturalWidth) {
-          context.save();
-          context.beginPath();
-          context.arc(x, y, size * .62, 0, Math.PI * 2);
-          context.clip();
-          context.drawImage(img, x - size * .65, y - size * .65, size * 1.3, size * 1.3);
-          context.restore();
-          return;
-        }
-      }
-
       context.save();
       context.translate(x, y);
       context.fillStyle = "#FFFFFF";
       context.strokeStyle = "#404041";
       context.lineWidth = Math.max(3, size * .06);
-      const s = size * .72;
+      const s = size * .82;
+      context.beginPath();
       if (visual === "square") context.rect(-s / 2, -s / 2, s, s);
-      else if (visual === "rectangle") context.rect(-s * .65, -s * .38, s * 1.3, s * .76);
-      else if (visual === "triangle") polygon(context, 3, s * .62, -Math.PI / 2);
-      else if (visual === "hexagon") polygon(context, 6, s * .58, Math.PI / 6);
-      else if (visual === "star") star(context, s * .62, s * .28);
-      else if (visual === "heart") heart(context, s);
-      else if (visual === "diamond") polygon(context, 4, s * .62, Math.PI / 4);
-      else if (visual === "oval") context.ellipse(0, 0, s * .58, s * .38, 0, 0, Math.PI * 2);
+      else if (visual === "rectangle") context.rect(-s * .56, -s * .36, s * 1.12, s * .72);
+      else if (visual === "triangle") polygon(context, 3, s * .58, -Math.PI / 2);
+      else if (visual === "pentagon") polygon(context, 5, s * .54, -Math.PI / 2);
+      else if (visual === "hexagon") polygon(context, 6, s * .53, Math.PI / 6);
+      else if (visual === "octagon") polygon(context, 8, s * .53, Math.PI / 8);
+      else if (visual === "star") star(context, s * .53, s * .24);
+      else if (visual === "heart") heart(context, s * .76);
+      else if (visual === "diamond") polygon(context, 4, s * .52, 0);
+      else if (visual === "rhombus") rhombus(context, s);
+      else if (visual === "trapezoid") trapezoid(context, s);
+      else if (visual === "parallelogram") parallelogram(context, s);
+      else if (visual === "crescent") crescent(context, s);
+      else if (visual === "oval") context.ellipse(0, 0, s * .55, s * .39, 0, 0, Math.PI * 2);
       else context.arc(0, 0, s * .48, 0, Math.PI * 2);
       context.fill();
       context.stroke();
@@ -753,15 +889,38 @@
       context.closePath();
     }
 
-    function getImage(src) {
-      if (src === "rain") return null;
-      if (imageCache.has(src)) return imageCache.get(src);
-      const img = new Image();
-      img.crossOrigin = "anonymous";
-      img.onload = drawWheel;
-      img.src = src;
-      imageCache.set(src, img);
-      return img;
+    function trapezoid(context, size) {
+      context.beginPath();
+      context.moveTo(-size * .34, -size * .36);
+      context.lineTo(size * .34, -size * .36);
+      context.lineTo(size * .54, size * .36);
+      context.lineTo(-size * .54, size * .36);
+      context.closePath();
+    }
+
+    function parallelogram(context, size) {
+      context.beginPath();
+      context.moveTo(-size * .34, -size * .38);
+      context.lineTo(size * .56, -size * .38);
+      context.lineTo(size * .34, size * .38);
+      context.lineTo(-size * .56, size * .38);
+      context.closePath();
+    }
+
+    function rhombus(context, size) {
+      context.beginPath();
+      context.moveTo(0, -size * .48);
+      context.lineTo(size * .56, 0);
+      context.lineTo(0, size * .48);
+      context.lineTo(-size * .56, 0);
+      context.closePath();
+    }
+
+    function crescent(context, size) {
+      context.beginPath();
+      context.arc(-size * .08, 0, size * .54, -Math.PI / 2, Math.PI / 2, false);
+      context.bezierCurveTo(size * .12, size * .32, size * .12, -size * .32, -size * .08, -size * .54);
+      context.closePath();
     }
 
     function spin() {
@@ -804,12 +963,10 @@
       state.isSpinning = false;
       $("#spinBtn").disabled = false;
       renderMeta();
-      if (state.mode === "graph" && state.counts[entry.label] >= state.raceTarget) {
-        $("#activityText").textContent = entry.label + " reached the graph race target. Reset counts to play again.";
-      }
     }
 
     function activityFor(entry) {
+      if (state.showAttributes && entry.attribute) return entry.attribute;
       if (entry.activity) return entry.activity;
       return defaultActivity(entry.label);
     }
@@ -823,7 +980,8 @@
       $("#raceList").innerHTML = state.entries.length
         ? state.entries.map(e => {
             const count = state.counts[e.label] || 0;
-            const pct = Math.min(100, count / state.raceTarget * 100);
+            const highest = Math.max(1, ...state.entries.map(entry => state.counts[entry.label] || 0));
+            const pct = Math.min(100, count / highest * 100);
             return `<div class="race-row"><span>${escapeHTML(e.label)}</span><div class="bar"><span style="width:${pct}%"></span></div><strong>${count}</strong></div>`;
           }).join("")
         : '<div class="empty">Build the spinner to start a graph race.</div>';
@@ -876,6 +1034,7 @@
 
     function init() {
       $("#itemsInput").value = templates.shapes.join("\n");
+      renderShapeChoices("basic");
       if (!loadFromHash()) build();
 
       $("#applyBtn").addEventListener("click", build);
@@ -884,9 +1043,9 @@
         const text = $("#winnerText").textContent + ". " + $("#activityText").textContent;
         if ("speechSynthesis" in window) speechSynthesis.speak(new SpeechSynthesisUtterance(text));
       });
-      $("#modeSelect").addEventListener("change", build);
       $("#spinStyle").addEventListener("change", build);
-      $("#raceTarget").addEventListener("change", build);
+      $("#showLabels").addEventListener("change", build);
+      $("#showAttributes").addEventListener("change", build);
       $("#clearBtn").addEventListener("click", () => {
         state.counts = {};
         state.history = [];
@@ -904,35 +1063,54 @@
         const file = event.target.files && event.target.files[0];
         if (!file) return;
         applySerialized(JSON.parse(await file.text()));
+        renderShapeChoices(state.shapeLibraryMode);
         event.target.value = "";
-      });
-      $("#imageUpload").addEventListener("change", (event) => {
-        const files = [...(event.target.files || [])];
-        if (!files.length) return;
-        Promise.all(files.map(file => new Promise(resolve => {
-          const reader = new FileReader();
-          reader.onload = () => resolve(`${file.name.replace(/\.[^.]+$/, "")} | image:${reader.result} | Identify or describe this picture.`);
-          reader.readAsDataURL(file);
-        }))).then(lines => {
-          $("#itemsInput").value = ($("#itemsInput").value.trim() + "\n" + lines.join("\n")).trim();
-          build();
-          event.target.value = "";
-        });
       });
       $$(".pill[data-template]").forEach(btn => {
         btn.addEventListener("click", () => {
           $("#itemsInput").value = templates[btn.dataset.template].join("\n");
           state.counts = {};
           state.history = [];
+          if (btn.dataset.template === "shapes") {
+            state.shapeLibraryMode = "basic";
+            renderShapeChoices("basic");
+          }
           build();
         });
+      });
+      $$(".shape-mode").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const mode = btn.dataset.shapeMode;
+          if (mode === "basic") {
+            $("#showLabels").checked = true;
+            $("#showAttributes").checked = false;
+            setEntriesFromShapes(basicShapes);
+          }
+          renderShapeChoices(mode);
+          build();
+        });
+      });
+      $("#shapeChoices").addEventListener("change", (event) => {
+        if (!event.target.matches("input[type='checkbox']")) return;
+        const checked = $$("#shapeChoices input:checked");
+        if (checked.length > maxSelectedShapes) {
+          event.target.checked = false;
+          showStatus(`Choose up to ${maxSelectedShapes} shapes at one time.`);
+          updateShapeChoiceState();
+          return;
+        }
+        const selected = selectedShapesFromChoices();
+        if (!selected.length) {
+          event.target.checked = true;
+          showStatus("Keep at least one shape on the spinner.");
+          updateShapeChoiceState();
+          return;
+        }
+        setEntriesFromShapes(selected);
       });
     }
 
     init();
   </script>
-<nav class="mg-bottom-nav" aria-label="Back navigation" style="text-align:center;padding:1.25rem 1.5rem;background:#071F4A;border-top:3px solid #FCB040;font-family:system-ui,-apple-system,sans-serif;">
-  <a href="../../index.html" style="color:#FDD17A;text-decoration:none;font-weight:700;font-size:0.85rem;margin:0 0.7rem;">← TCEA</a>
-</nav>
 </body>
 </html>
