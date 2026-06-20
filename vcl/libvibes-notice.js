@@ -9,6 +9,8 @@
    ============================================================ */
 (function () {
   var KEY = "lv-storage-notice-ack";
+  // Never show inside an embedded iframe — the host page already shows it.
+  try { if (window.top !== window.self) return; } catch (e) { return; }
   // If the visitor already acknowledged it, do nothing.
   try { if (localStorage.getItem(KEY) === "1") return; } catch (e) { /* storage blocked: still show once per load */ }
 
