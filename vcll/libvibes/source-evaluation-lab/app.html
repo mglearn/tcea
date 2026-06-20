@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>window.__VCLL_BASE="../../";</script>
+<script src="../../lock.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Source Evaluation Lab — The CRAAP Test</title>
+<style>
+  /* ===== TCEA LibVibes palette ===== */
+  :root{
+    --navy:#0A3476;
+    --gold:#FCB040;
+    --teal:#0E6B8A;
+    --bg:#F7F5EF;        /* soft off-white */
+    --card:#FFFFFF;
+    --ink:#1E2630;
+    --muted:#5C6675;
+    --line:#E3DFD4;
+    /* per-factor accent colors */
+    --c-currency:#0E6B8A;
+    --c-relevance:#0A3476;
+    --c-authority:#B5532A;
+    --c-accuracy:#2E7D52;
+    --c-purpose:#8A4FA0;
+    --accent:var(--c-currency);
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{
+    max-width:680px;
+    margin:0 auto;
+    padding:16px 16px 64px;
+  }
+
+  /* ===== Header ===== */
+  header.app{
+    text-align:center;
+    padding:18px 0 8px;
+  }
+  header.app h1{
+    margin:0;
+    font-size:1.5rem;
+    color:var(--navy);
+    letter-spacing:-.01em;
+  }
+  header.app .sub{
+    color:var(--muted);
+    font-size:.95rem;
+    margin-top:4px;
+  }
+  .pill{
+    display:inline-block;
+    background:var(--gold);
+    color:#3a2a00;
+    font-weight:700;
+    font-size:.72rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    padding:3px 10px;
+    border-radius:999px;
+    margin-bottom:8px;
+  }
+
+  /* ===== Cards ===== */
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:20px;
+    margin-top:16px;
+    box-shadow:0 2px 10px rgba(10,52,118,.05);
+  }
+
+  /* ===== Intro ===== */
+  .craap-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+    margin-top:14px;
+  }
+  .craap-row{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    padding:12px;
+    border-radius:12px;
+    background:#FBFAF6;
+    border:1px solid var(--line);
+  }
+  .craap-letter{
+    flex:0 0 40px;
+    height:40px;
+    width:40px;
+    border-radius:10px;
+    color:#fff;
+    font-weight:800;
+    font-size:1.25rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .craap-row h3{margin:0 0 2px;font-size:1rem;}
+  .craap-row p{margin:0;font-size:.9rem;color:var(--muted);}
+
+  .btn{
+    appearance:none;
+    border:none;
+    cursor:pointer;
+    font-family:inherit;
+    font-weight:700;
+    font-size:1rem;
+    border-radius:12px;
+    padding:13px 18px;
+    transition:transform .08s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn:active{transform:translateY(1px);}
+  .btn-primary{background:var(--navy);color:#fff;width:100%;margin-top:18px;}
+  .btn-primary:hover{background:#0c3f8f;}
+  .btn-gold{background:var(--gold);color:#3a2a00;}
+  .btn-gold:hover{background:#ffbe5c;}
+  .btn-ghost{background:transparent;color:var(--navy);border:2px solid var(--navy);}
+  .btn-ghost:hover{background:rgba(10,52,118,.06);}
+  .btn-row{display:flex;gap:10px;margin-top:18px;}
+  .btn-row .btn{flex:1;}
+  .btn:focus-visible{outline:3px solid var(--gold);outline-offset:2px;}
+
+  /* ===== Source preview ===== */
+  .source-box{
+    border-left:5px solid var(--teal);
+    background:#FBFAF6;
+    border-radius:0 12px 12px 0;
+    padding:14px 16px;
+    margin-top:14px;
+  }
+  .source-box .label{
+    font-size:.7rem;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--teal);
+    font-weight:700;
+  }
+  .source-box h2{margin:4px 0 2px;font-size:1.1rem;color:var(--navy);}
+  .source-meta{font-size:.85rem;color:var(--muted);}
+  .source-snippet{
+    margin-top:10px;
+    font-size:.92rem;
+    font-style:italic;
+    color:#34404e;
+    border-top:1px dashed var(--line);
+    padding-top:10px;
+  }
+
+  /* ===== Progress ===== */
+  .progress{
+    display:flex;
+    gap:6px;
+    margin:18px 0 6px;
+  }
+  .progress .dot{
+    flex:1;
+    height:8px;
+    border-radius:999px;
+    background:var(--line);
+    transition:background .3s ease;
+  }
+  .progress .dot.done{background:var(--gold);}
+  .progress .dot.active{background:var(--accent);}
+  .step-count{
+    font-size:.8rem;
+    color:var(--muted);
+    text-align:center;
+    margin-bottom:4px;
+  }
+
+  /* ===== Factor card ===== */
+  .factor-head{display:flex;align-items:center;gap:12px;}
+  .factor-badge{
+    flex:0 0 48px;width:48px;height:48px;border-radius:12px;
+    color:#fff;font-weight:800;font-size:1.4rem;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--accent);
+  }
+  .factor-head h2{margin:0;font-size:1.25rem;color:var(--accent);}
+  .factor-head .ftag{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+  .guiding{
+    margin-top:14px;
+    font-size:1.02rem;
+    font-weight:600;
+    color:var(--ink);
+  }
+  .guiding-help{font-size:.9rem;color:var(--muted);margin-top:4px;}
+
+  /* ===== Slider ===== */
+  .slider-area{margin-top:22px;}
+  .slider-value{
+    text-align:center;
+    font-size:.95rem;
+    color:var(--muted);
+    margin-bottom:10px;
+  }
+  .slider-value b{
+    color:var(--accent);
+    font-size:1.6rem;
+    display:block;
+    line-height:1;
+  }
+  input[type=range]{
+    -webkit-appearance:none;appearance:none;
+    width:100%;height:10px;border-radius:999px;
+    background:linear-gradient(90deg,var(--accent) 0%,var(--accent) var(--fill,50%),var(--line) var(--fill,50%),var(--line) 100%);
+    outline:none;margin:0;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none;appearance:none;
+    width:30px;height:30px;border-radius:50%;
+    background:#fff;border:4px solid var(--accent);
+    box-shadow:0 2px 6px rgba(0,0,0,.2);cursor:pointer;
+  }
+  input[type=range]::-moz-range-thumb{
+    width:26px;height:26px;border-radius:50%;
+    background:#fff;border:4px solid var(--accent);
+    box-shadow:0 2px 6px rgba(0,0,0,.2);cursor:pointer;
+  }
+  input[type=range]:focus-visible{outline:3px solid var(--gold);outline-offset:6px;border-radius:999px;}
+  .scale-labels{
+    display:flex;justify-content:space-between;
+    font-size:.75rem;color:var(--muted);margin-top:8px;
+  }
+
+  /* ===== Confidence meter ===== */
+  .verdict-wrap{text-align:center;}
+  .meter-track{
+    height:26px;border-radius:999px;background:var(--line);
+    overflow:hidden;margin:16px 0 6px;position:relative;
+  }
+  .meter-fill{
+    height:100%;width:0%;border-radius:999px;
+    background:linear-gradient(90deg,var(--teal),var(--navy));
+    transition:width 1.4s cubic-bezier(.22,.61,.36,1);
+  }
+  .meter-pct{font-size:2.4rem;font-weight:800;color:var(--navy);line-height:1;margin-top:8px;}
+  .verdict-tag{
+    display:inline-block;font-weight:800;font-size:1.1rem;
+    padding:8px 20px;border-radius:999px;margin-top:14px;color:#fff;
+  }
+  .v-strong{background:#2E7D52;}
+  .v-mixed{background:var(--gold);color:#3a2a00;}
+  .v-careful{background:#B5532A;}
+  .verdict-text{margin-top:14px;color:var(--muted);font-size:.95rem;}
+
+  .breakdown{margin-top:18px;text-align:left;}
+  .breakdown .brow{
+    display:flex;align-items:center;gap:10px;margin:8px 0;font-size:.9rem;
+  }
+  .breakdown .bname{flex:0 0 90px;font-weight:600;}
+  .breakdown .bbar{flex:1;height:10px;border-radius:999px;background:var(--line);overflow:hidden;}
+  .breakdown .bbar > span{display:block;height:100%;border-radius:999px;transition:width .8s ease;}
+  .breakdown .bscore{flex:0 0 34px;text-align:right;color:var(--muted);}
+
+  .hidden{display:none;}
+  footer{text-align:center;color:var(--muted);font-size:.78rem;margin-top:28px;}
+  footer b{color:var(--navy);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="app">
+    <div class="pill">TCEA LibVibes</div>
+    <h1>Source Evaluation Lab</h1>
+    <div class="sub">Is this source trustworthy? Put it through the CRAAP test.</div>
+  </header>
+
+  <!-- ============================================================= -->
+  <!-- ===== EXAMPLE SOURCES — librarians, edit this array! ========= -->
+  <!-- Each source: title, author, date, publisher, snippet.        -->
+  <!-- Add as many as you like. Mix strong + weak ones.             -->
+  <!-- The "ideal" values are only a hint to students; the score    -->
+  <!-- is driven by THEIR slider ratings.                           -->
+  <!-- ============================================================= -->
+  <script>
+  const SOURCES = [
+    {
+      // STRONG example
+      title: "Adolescent Sleep Patterns and Academic Performance",
+      author: "Dr. Lena Ortiz, Professor of Pediatric Medicine",
+      date: "March 2024",
+      publisher: "Journal of Adolescent Health (peer-reviewed)",
+      snippet: "In a study of 1,200 students, researchers found that teens who slept fewer than seven hours scored measurably lower on memory tasks. The article cites 38 sources and lists funding from a public university grant."
+    },
+    {
+      // WEAK example
+      title: "10 Crazy Facts About Sleep They Don't Want You to Know!!",
+      author: "Anonymous (no author listed)",
+      date: "No date shown",
+      publisher: "MegaHealthBlogz.net — banner ads for sleep pills",
+      snippet: "Doctors HATE this one weird trick! Studies (we won't say which) PROVE you only need 3 hours of sleep. Click here to buy our Miracle Sleep Gummies and feel amazing forever!"
+    },
+    {
+      // MIXED example
+      title: "The History of the Printing Press",
+      author: "J. Carter, freelance writer",
+      date: "2011",
+      publisher: "GeneralKnowledgeWiki (anyone can edit)",
+      snippet: "Gutenberg's printing press changed how books were made in the 1400s. The page is well written and easy to read, but it has no sources listed and was last updated over a decade ago."
+    }
+  ];
+
+  // ===== The five CRAAP factors with student-friendly guiding questions =====
+  const FACTORS = [
+    { key:"currency",  letter:"C", name:"Currency",
+      tag:"Is it up to date?",
+      color:"var(--c-currency)",
+      question:"When was this written, and does the date matter for my topic?",
+      help:"For fast-changing topics (science, tech, news) newer is usually better. For history, older can still be fine." },
+    { key:"relevance", letter:"R", name:"Relevance",
+      tag:"Does it fit my topic?",
+      color:"var(--c-relevance)",
+      question:"Does this source actually answer my research question?",
+      help:"A great source about the wrong topic still isn't useful. Is it aimed at the right audience and depth?" },
+    { key:"authority", letter:"A", name:"Authority",
+      tag:"Who made it?",
+      color:"var(--c-authority)",
+      question:"Who wrote this, and are they qualified to?",
+      help:"Look for an author's name, their credentials, and a trustworthy publisher or organization." },
+    { key:"accuracy",  letter:"A", name:"Accuracy",
+      tag:"Is it correct?",
+      color:"var(--c-accuracy)",
+      question:"Is the information supported by evidence I can check?",
+      help:"Look for sources, citations, and facts you can confirm elsewhere. Watch for typos and wild claims." },
+    { key:"purpose",   letter:"P", name:"Purpose",
+      tag:"Why was it made?",
+      color:"var(--c-purpose)",
+      question:"Why was this created — to inform, sell, persuade, or entertain?",
+      help:"Ads, strong emotions, or one-sided arguments can be a sign someone is trying to sell or sway you." }
+  ];
+  </script>
+
+  <!-- ===== SCREEN 1: INTRO ===== -->
+  <section id="screen-intro">
+    <div class="card">
+      <h2 style="margin-top:0;color:var(--navy);">The CRAAP Test</h2>
+      <p style="color:var(--muted);margin-top:4px;">
+        Not every source you find online is trustworthy. The <b>CRAAP test</b> gives you
+        five quick things to check before you trust — or cite — a source.
+      </p>
+      <div class="craap-grid" id="introGrid"></div>
+      <button class="btn btn-primary" id="startBtn">Start evaluating a source →</button>
+    </div>
+  </section>
+
+  <!-- ===== SCREEN 2: FACTOR-BY-FACTOR ===== -->
+  <section id="screen-factor" class="hidden">
+    <div class="card">
+      <div class="source-box">
+        <div class="label">Source under review</div>
+        <h2 id="srcTitle"></h2>
+        <div class="source-meta" id="srcMeta"></div>
+        <div class="source-snippet" id="srcSnippet"></div>
+      </div>
+
+      <div class="step-count" id="stepCount"></div>
+      <div class="progress" id="progress"></div>
+
+      <div class="factor-head">
+        <div class="factor-badge" id="fBadge"></div>
+        <div>
+          <div class="ftag" id="fTag"></div>
+          <h2 id="fName"></h2>
+        </div>
+      </div>
+
+      <p class="guiding" id="fQuestion"></p>
+      <p class="guiding-help" id="fHelp"></p>
+
+      <div class="slider-area">
+        <div class="slider-value">
+          <b id="sliderNum">3</b>
+          <span id="sliderWord">Okay</span>
+        </div>
+        <input type="range" id="slider" min="1" max="5" step="1" value="3"
+               aria-label="Rate this factor from 1 to 5">
+        <div class="scale-labels">
+          <span>1 · Poor</span><span>3 · Okay</span><span>5 · Excellent</span>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-ghost" id="backBtn">← Back</button>
+        <button class="btn btn-gold" id="nextBtn">Next →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SCREEN 3: CONFIDENCE METER ===== -->
+  <section id="screen-result" class="hidden">
+    <div class="card verdict-wrap">
+      <div class="pill" style="background:var(--teal);color:#fff;">Source Confidence</div>
+      <h2 style="margin:8px 0 0;color:var(--navy);" id="resTitle"></h2>
+
+      <div class="meter-track"><div class="meter-fill" id="meterFill"></div></div>
+      <div class="meter-pct" id="meterPct">0%</div>
+      <div><span class="verdict-tag" id="verdictTag">—</span></div>
+      <div class="verdict-text" id="verdictText"></div>
+
+      <div class="breakdown" id="breakdown"></div>
+
+      <div class="btn-row">
+        <button class="btn btn-ghost" id="reviewBtn">↺ Re-rate this source</button>
+        <button class="btn btn-gold" id="tryAnotherBtn">Try another source →</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Built with <b>LibVibes</b> · The CRAAP test: Currency · Relevance · Authority · Accuracy · Purpose
+  </footer>
+</div>
+
+<script>
+/* ============================ STATE ============================ */
+let sourceIndex = 0;       // which source we're on
+let factorIndex = 0;       // which factor (0-4)
+let ratings = [3,3,3,3,3]; // current source's 5 ratings
+
+const SCALE_WORDS = {1:"Poor",2:"Weak",3:"Okay",4:"Good",5:"Excellent"};
+
+/* ===== shorthand ===== */
+const $ = id => document.getElementById(id);
+
+/* ============================ INTRO ============================ */
+function buildIntro(){
+  const grid = $("introGrid");
+  grid.innerHTML = "";
+  FACTORS.forEach(f=>{
+    const row = document.createElement("div");
+    row.className = "craap-row";
+    row.innerHTML =
+      `<div class="craap-letter" style="background:${f.color}">${f.letter}</div>
+       <div>
+         <h3>${f.name} — <span style="font-weight:600;color:${f.color}">${f.tag}</span></h3>
+         <p>${f.help}</p>
+       </div>`;
+    grid.appendChild(row);
+  });
+}
+
+/* ===================== SCREEN SWITCHING ====================== */
+function show(screen){
+  $("screen-intro").classList.add("hidden");
+  $("screen-factor").classList.add("hidden");
+  $("screen-result").classList.add("hidden");
+  $(screen).classList.remove("hidden");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+/* ===================== START A SOURCE ======================= */
+function startSource(){
+  factorIndex = 0;
+  ratings = [3,3,3,3,3];
+  renderSourceBox();
+  renderFactor();
+  show("screen-factor");
+}
+
+function renderSourceBox(){
+  const s = SOURCES[sourceIndex];
+  $("srcTitle").textContent = s.title;
+  $("srcMeta").innerHTML =
+    `<b>${s.author}</b> · ${s.date}<br>${s.publisher}`;
+  $("srcSnippet").textContent = "“" + s.snippet + "”";
+}
+
+/* ===================== RENDER A FACTOR ====================== */
+function renderFactor(){
+  const f = FACTORS[factorIndex];
+  document.documentElement.style.setProperty("--accent", f.color);
+
+  $("fBadge").textContent = f.letter;
+  $("fTag").textContent   = f.tag;
+  $("fName").textContent  = f.name;
+  $("fQuestion").textContent = f.question;
+  $("fHelp").textContent     = f.help;
+
+  // restore prior rating for this factor
+  const val = ratings[factorIndex];
+  const slider = $("slider");
+  slider.value = val;
+  updateSliderVisual(val);
+
+  // progress dots
+  const prog = $("progress");
+  prog.innerHTML = "";
+  FACTORS.forEach((_,i)=>{
+    const d = document.createElement("div");
+    d.className = "dot" + (i<factorIndex?" done":i===factorIndex?" active":"");
+    prog.appendChild(d);
+  });
+  $("stepCount").textContent =
+    `Factor ${factorIndex+1} of ${FACTORS.length}`;
+
+  $("backBtn").textContent = factorIndex===0 ? "← Source info" : "← Back";
+  $("nextBtn").textContent =
+    factorIndex===FACTORS.length-1 ? "See confidence →" : "Next →";
+}
+
+function updateSliderVisual(val){
+  $("sliderNum").textContent  = val;
+  $("sliderWord").textContent = SCALE_WORDS[val];
+  const pct = ((val-1)/4)*100;
+  $("slider").style.setProperty("--fill", pct + "%");
+}
+
+/* ===================== SLIDER EVENTS ======================= */
+$("slider").addEventListener("input", e=>{
+  const v = parseInt(e.target.value,10);
+  ratings[factorIndex] = v;
+  updateSliderVisual(v);
+});
+
+/* ===================== NAV BUTTONS ========================= */
+$("nextBtn").addEventListener("click", ()=>{
+  if(factorIndex < FACTORS.length-1){
+    factorIndex++;
+    renderFactor();
+    window.scrollTo({top:0,behavior:"smooth"});
+  } else {
+    showResult();
+  }
+});
+
+$("backBtn").addEventListener("click", ()=>{
+  if(factorIndex > 0){
+    factorIndex--;
+    renderFactor();
+    window.scrollTo({top:0,behavior:"smooth"});
+  } else {
+    show("screen-intro");
+  }
+});
+
+/* ===================== RESULT / METER ====================== */
+function showResult(){
+  const s = SOURCES[sourceIndex];
+  $("resTitle").textContent = s.title;
+
+  const total = ratings.reduce((a,b)=>a+b,0);   // 5..25
+  const pct = Math.round(((total-5)/20)*100);     // 0..100
+
+  // verdict thresholds
+  let tag, cls, text;
+  if(pct >= 75){
+    tag="Strong"; cls="v-strong";
+    text="This looks like a trustworthy source. It holds up well across the CRAAP test — a solid choice to cite.";
+  } else if(pct >= 45){
+    tag="Mixed"; cls="v-mixed";
+    text="This source has some strengths and some weak spots. Use it carefully, and try to back it up with a stronger source.";
+  } else {
+    tag="Be Careful"; cls="v-careful";
+    text="Several CRAAP factors are weak here. Be skeptical — look for a more reliable source before you trust or cite this.";
+  }
+
+  const vt = $("verdictTag");
+  vt.textContent = tag;
+  vt.className = "verdict-tag " + cls;
+  $("verdictText").textContent = text;
+
+  // breakdown bars
+  const bd = $("breakdown");
+  bd.innerHTML = "";
+  FACTORS.forEach((f,i)=>{
+    const row = document.createElement("div");
+    row.className = "brow";
+    row.innerHTML =
+      `<div class="bname" style="color:${f.color}">${f.name}</div>
+       <div class="bbar"><span style="width:0%;background:${f.color}"></span></div>
+       <div class="bscore">${ratings[i]}/5</div>`;
+    bd.appendChild(row);
+  });
+
+  // reset meter then animate
+  const fill = $("meterFill");
+  fill.style.width = "0%";
+  $("meterPct").textContent = "0%";
+
+  show("screen-result");
+
+  // animate after paint
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    fill.style.width = pct + "%";
+    // animate breakdown bars
+    bd.querySelectorAll(".bbar > span").forEach((sp,i)=>{
+      sp.style.width = (ratings[i]/5*100) + "%";
+    });
+    // count-up the percentage
+    animateNumber(0, pct, 1400);
+  }));
+}
+
+function animateNumber(from,to,dur){
+  const start = performance.now();
+  function step(now){
+    const t = Math.min((now-start)/dur,1);
+    const eased = 1-Math.pow(1-t,3);
+    $("meterPct").textContent = Math.round(from+(to-from)*eased) + "%";
+    if(t<1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+/* ===================== RESULT BUTTONS ====================== */
+$("reviewBtn").addEventListener("click", ()=>{
+  factorIndex = 0;
+  renderSourceBox();
+  renderFactor();
+  show("screen-factor");
+});
+
+$("tryAnotherBtn").addEventListener("click", ()=>{
+  sourceIndex = (sourceIndex + 1) % SOURCES.length;
+  startSource();
+});
+
+/* ===================== STARTUP ============================= */
+$("startBtn").addEventListener("click", startSource);
+buildIntro();
+</script>
+<a href="../../libvibes.html" aria-label="Back to LibVibes" style="position:fixed;left:12px;bottom:12px;z-index:99999;background:#0A3476;color:#fff;font:700 12px/1 system-ui,-apple-system,Segoe UI,sans-serif;text-decoration:none;padding:8px 12px;border-radius:9px;box-shadow:0 3px 12px rgba(0,0,0,.28)">← LibVibes</a>
+<script src="../../libvibes-notice.js"></script>
+</body>
+</html>

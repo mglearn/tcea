@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>window.__VCLL_BASE="../../";</script>
+<script src="../../lock.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reading Challenge Tracker</title>
+<style>
+  /* ===== Palette =====
+     navy #0A3476 · gold #FCB040 · teal #0E6B8A · soft off-white background */
+  :root {
+    --navy: #0A3476;
+    --gold: #FCB040;
+    --teal: #0E6B8A;
+    --bg: #FAF7F0;
+    --card: #FFFFFF;
+    --ink: #18222E;
+    --muted: #4A5A6A;
+    --danger: #B43A2E;
+    --ring-track: #E3E9F1;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background:
+      radial-gradient(900px 500px at 50% -10%, rgba(252,176,64,0.18), transparent 60%),
+      var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+    min-height: 100vh;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 20px 16px 64px;
+  }
+
+  header.hero {
+    text-align: center;
+    padding: 8px 0 4px;
+  }
+  header.hero h1 {
+    margin: 6px 0 2px;
+    font-size: clamp(1.5rem, 6vw, 2.1rem);
+    color: var(--navy);
+    letter-spacing: -0.02em;
+  }
+  header.hero p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.98rem;
+  }
+  .crown { font-size: 2rem; line-height: 1; }
+
+  .card {
+    background: var(--card);
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(10,52,118,0.10);
+    padding: 22px 18px;
+    margin-top: 18px;
+  }
+
+  /* ===== Progress ring ===== */
+  .progress-card { text-align: center; }
+  .ring-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  svg.ring { width: min(240px, 64vw); height: min(240px, 64vw); display: block; }
+  .ring-track { fill: none; stroke: var(--ring-track); stroke-width: 16; }
+  .ring-fill {
+    fill: none;
+    stroke: url(#ringGrad);
+    stroke-width: 16;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transition: stroke-dashoffset 0.9s cubic-bezier(.22,1,.36,1);
+  }
+  .ring-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+  .ring-count {
+    font-size: clamp(2.2rem, 11vw, 3.2rem);
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1;
+  }
+  .ring-count .goal { color: var(--muted); font-weight: 700; font-size: 0.5em; }
+  .ring-label { color: var(--teal); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; margin-top: 4px; }
+  .ring-pct { color: var(--gold-text, #B07A12); font-weight: 700; font-size: 0.9rem; margin-top: 2px; }
+
+  .bump { animation: bump 0.6s ease; }
+  @keyframes bump {
+    0% { transform: scale(1); }
+    35% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+  }
+
+  /* Linear bar (companion to ring, also animated) */
+  .bar {
+    margin-top: 14px;
+    height: 14px;
+    background: var(--ring-track);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--teal), var(--gold));
+    transition: width 0.9s cubic-bezier(.22,1,.36,1);
+  }
+
+  /* Milestone badges */
+  .milestones {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .milestone {
+    flex: 1;
+    text-align: center;
+    padding: 8px 4px;
+    border-radius: 12px;
+    background: #F1F4F9;
+    color: var(--muted);
+    font-weight: 700;
+    font-size: 0.82rem;
+    border: 2px solid transparent;
+    transition: all 0.35s ease;
+  }
+  .milestone .ms-icon { display: block; font-size: 1.15rem; }
+  .milestone.reached {
+    background: linear-gradient(135deg, var(--gold), #ffd27a);
+    color: var(--navy);
+    border-color: var(--navy);
+    box-shadow: 0 4px 12px rgba(252,176,64,0.45);
+  }
+
+  /* ===== Add button ===== */
+  .add-btn {
+    display: block;
+    width: 100%;
+    margin-top: 18px;
+    padding: 16px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #fff;
+    background: linear-gradient(135deg, var(--navy), var(--teal));
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(10,52,118,0.30);
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  .add-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(10,52,118,0.36); }
+  .add-btn:active { transform: translateY(0); }
+  .add-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+  /* ===== Save / Load controls ===== */
+  .io-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .io-btn {
+    flex: 1 1 0;
+    padding: 12px 10px;
+    font-size: 0.95rem;
+    font-weight: 800;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.15s ease;
+  }
+  .io-btn.save {
+    color: var(--navy);
+    background: var(--gold);
+    border: 2px solid var(--navy);
+    box-shadow: 0 4px 12px rgba(252,176,64,0.40);
+  }
+  .io-btn.save:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(252,176,64,0.50); }
+  .io-btn.load {
+    color: #fff;
+    background: var(--teal);
+    border: 2px solid var(--teal);
+    box-shadow: 0 4px 12px rgba(14,107,138,0.30);
+  }
+  .io-btn.load:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(14,107,138,0.40); }
+  .io-btn:active { transform: translateY(0); }
+  .io-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+  .io-msg {
+    margin-top: 10px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.88rem;
+    display: none;
+  }
+  .io-msg.show { display: block; animation: slidein 0.3s ease; }
+  .io-msg.ok { background: #E3F1E8; color: #1B6B3A; border: 1px solid #BBE2C8; }
+  .io-msg.err { background: #F4E3E1; color: var(--danger); border: 1px solid #E9C9C5; }
+
+  /* ===== Book list ===== */
+  .list-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 0 0 8px;
+  }
+  .list-head h2 { margin: 0; color: var(--navy); font-size: 1.2rem; }
+  .list-head .count-pill {
+    background: var(--teal);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.82rem;
+    padding: 2px 10px;
+    border-radius: 999px;
+  }
+
+  ul.books { list-style: none; margin: 0; padding: 0; }
+  ul.books li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 6px;
+    border-bottom: 1px solid #EDF0F4;
+    animation: slidein 0.35s ease;
+  }
+  @keyframes slidein {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  ul.books li:last-child { border-bottom: none; }
+  .book-num {
+    flex: 0 0 auto;
+    width: 30px; height: 30px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--gold); color: var(--navy);
+    border-radius: 50%; font-weight: 800; font-size: 0.85rem;
+  }
+  .book-info { flex: 1 1 auto; min-width: 0; }
+  .book-title { font-weight: 700; color: var(--ink); overflow-wrap: anywhere; }
+  .book-date { color: var(--muted); font-size: 0.8rem; }
+  .del-btn {
+    flex: 0 0 auto;
+    width: 34px; height: 34px;
+    border: none; border-radius: 50%;
+    background: #F4E3E1; color: var(--danger);
+    font-size: 1.1rem; font-weight: 800; line-height: 1;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  .del-btn:hover { background: #E9C9C5; }
+  .del-btn:focus-visible { outline: 3px solid var(--danger); outline-offset: 2px; }
+
+  .empty {
+    text-align: center;
+    color: var(--muted);
+    padding: 18px 8px;
+    font-style: italic;
+  }
+
+  footer.note {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.82rem;
+    margin-top: 22px;
+  }
+
+  /* ===== Confetti ===== */
+  #confetti {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* Big milestone toast */
+  #toast {
+    position: fixed;
+    left: 50%;
+    top: 22%;
+    transform: translate(-50%, -50%) scale(0.6);
+    background: var(--navy);
+    color: #fff;
+    padding: 18px 26px;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    text-align: center;
+    z-index: 10000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.4s cubic-bezier(.22,1.6,.36,1);
+    max-width: 80vw;
+  }
+  #toast.show { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  #toast .toast-emoji { font-size: 2.4rem; display: block; }
+  #toast .toast-msg { font-weight: 800; font-size: 1.15rem; margin-top: 4px; }
+  #toast .toast-sub { color: var(--gold); font-weight: 700; margin-top: 2px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="crown" aria-hidden="true">📚🎉</div>
+    <h1>My Reading Challenge</h1>
+    <p>Track every book you finish this year. Saved right on your device.</p>
+  </header>
+
+  <!-- Progress card -->
+  <section class="card progress-card" aria-label="Reading progress">
+    <div class="ring-area">
+      <svg class="ring" id="ring" viewBox="0 0 200 200" role="img" aria-labelledby="ringTitle">
+        <title id="ringTitle">Progress ring</title>
+        <defs>
+          <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0E6B8A"/>
+            <stop offset="100%" stop-color="#FCB040"/>
+          </linearGradient>
+        </defs>
+        <circle class="ring-track" cx="100" cy="100" r="84"></circle>
+        <circle class="ring-fill" id="ringFill" cx="100" cy="100" r="84"></circle>
+      </svg>
+      <div class="ring-center">
+        <div class="ring-count" id="ringCount"><span id="readNum">0</span><span class="goal">/<span id="goalNum">20</span></span></div>
+        <div class="ring-label">Books Read</div>
+        <div class="ring-pct" id="ringPct">0%</div>
+      </div>
+    </div>
+
+    <div class="bar" aria-hidden="true">
+      <div class="bar-fill" id="barFill"></div>
+    </div>
+
+    <div class="milestones" role="list" aria-label="Milestones">
+      <div class="milestone" role="listitem" data-ms="25"><span class="ms-icon" aria-hidden="true">🌱</span>25%</div>
+      <div class="milestone" role="listitem" data-ms="50"><span class="ms-icon" aria-hidden="true">🔥</span>50%</div>
+      <div class="milestone" role="listitem" data-ms="75"><span class="ms-icon" aria-hidden="true">⭐</span>75%</div>
+      <div class="milestone" role="listitem" data-ms="100"><span class="ms-icon" aria-hidden="true">🏆</span>100%</div>
+    </div>
+
+    <button class="add-btn" id="addBtn">+ Add a book I finished</button>
+
+    <div class="io-controls">
+      <button class="io-btn save" id="saveFileBtn">⬇ Save to file</button>
+      <button class="io-btn load" id="loadFileBtn">⬆ Load from file</button>
+      <input type="file" id="loadFileInput" accept=".json,application/json" hidden>
+    </div>
+    <div class="io-msg" id="ioMsg" role="status" aria-live="polite"></div>
+  </section>
+
+  <!-- Book list -->
+  <section class="card" aria-label="Finished books">
+    <div class="list-head">
+      <h2>Finished Books</h2>
+      <span class="count-pill" id="listCount">0</span>
+    </div>
+    <ul class="books" id="bookList"></ul>
+    <p class="empty" id="emptyMsg">No books yet — add the first one you finished!</p>
+  </section>
+
+  <footer class="note">
+    Your books are saved only on this device (localStorage). No account needed.
+  </footer>
+</div>
+
+<canvas id="confetti" aria-hidden="true"></canvas>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* =========================================================
+   CHANGE YOUR GOAL HERE  ▼  (one place)
+   ========================================================= */
+const GOAL = 20; // <-- number of books to read this year
+/* ========================================================= */
+
+// Effective goal: starts at GOAL, but a loaded file may override it.
+let goal = GOAL;
+
+const STORAGE_KEY = 'tcea_reading_challenge_v1';
+const RADIUS = 84;
+const CIRC = 2 * Math.PI * RADIUS;
+const MILESTONES = [25, 50, 75, 100];
+
+// DOM refs
+const ringFill = document.getElementById('ringFill');
+const ringCount = document.getElementById('ringCount');
+const readNum = document.getElementById('readNum');
+const goalNum = document.getElementById('goalNum');
+const ringPct = document.getElementById('ringPct');
+const barFill = document.getElementById('barFill');
+const bookList = document.getElementById('bookList');
+const emptyMsg = document.getElementById('emptyMsg');
+const listCount = document.getElementById('listCount');
+const addBtn = document.getElementById('addBtn');
+const toast = document.getElementById('toast');
+const saveFileBtn = document.getElementById('saveFileBtn');
+const loadFileBtn = document.getElementById('loadFileBtn');
+const loadFileInput = document.getElementById('loadFileInput');
+const ioMsg = document.getElementById('ioMsg');
+
+// Set up ring dash geometry
+ringFill.style.strokeDasharray = CIRC;
+ringFill.style.strokeDashoffset = CIRC;
+
+// ---- State ----
+let state = load();
+
+function load() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (parsed && Array.isArray(parsed.books)) {
+        if (typeof parsed.goal === 'number' && parsed.goal > 0) goal = Math.round(parsed.goal);
+        return { books: parsed.books, reached: Array.isArray(parsed.reached) ? parsed.reached : [] };
+      }
+    }
+  } catch (e) { /* ignore corrupt data */ }
+  return { books: [], reached: [] };
+}
+
+function save() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ goal: goal, books: state.books, reached: state.reached }));
+  } catch (e) { /* storage may be unavailable */ }
+}
+
+function pct() {
+  if (goal <= 0) return 0;
+  return Math.min(100, Math.round((state.books.length / goal) * 100));
+}
+
+function formatDate(ts) {
+  const d = new Date(ts);
+  return d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+}
+
+// ---- Render ----
+function renderProgress(animate) {
+  const count = state.books.length;
+  const p = pct();
+  readNum.textContent = count;
+  goalNum.textContent = goal;
+  ringPct.textContent = p + '%';
+  const offset = CIRC * (1 - p / 100);
+  ringFill.style.strokeDashoffset = offset;
+  barFill.style.width = p + '%';
+
+  // Milestone badge states
+  document.querySelectorAll('.milestone').forEach(el => {
+    const ms = Number(el.dataset.ms);
+    el.classList.toggle('reached', p >= ms);
+  });
+
+  if (animate) {
+    ringCount.classList.remove('bump');
+    void ringCount.offsetWidth; // reflow to restart animation
+    ringCount.classList.add('bump');
+  }
+}
+
+function renderList() {
+  bookList.innerHTML = '';
+  const n = state.books.length;
+  listCount.textContent = n;
+  emptyMsg.style.display = n === 0 ? 'block' : 'none';
+
+  state.books.forEach((book, i) => {
+    const li = document.createElement('li');
+
+    const num = document.createElement('div');
+    num.className = 'book-num';
+    num.textContent = i + 1;
+
+    const info = document.createElement('div');
+    info.className = 'book-info';
+    const title = document.createElement('div');
+    title.className = 'book-title';
+    title.textContent = book.title;
+    const date = document.createElement('div');
+    date.className = 'book-date';
+    date.textContent = 'Added ' + formatDate(book.added);
+    info.appendChild(title);
+    info.appendChild(date);
+
+    const del = document.createElement('button');
+    del.className = 'del-btn';
+    del.setAttribute('aria-label', 'Delete "' + book.title + '"');
+    del.textContent = '×';
+    del.addEventListener('click', () => removeBook(book.id));
+
+    li.appendChild(num);
+    li.appendChild(info);
+    li.appendChild(del);
+    bookList.appendChild(li);
+  });
+}
+
+// ---- Actions ----
+function addBook() {
+  const title = prompt('What book did you finish? Enter the title:');
+  if (title === null) return;          // cancelled
+  const clean = title.trim();
+  if (!clean) return;                  // empty
+
+  const before = pct();
+  state.books.push({ id: Date.now() + '-' + Math.random().toString(36).slice(2, 7), title: clean, added: Date.now() });
+  save();
+  renderList();
+  renderProgress(true);
+  checkMilestones(before, pct());
+}
+
+function removeBook(id) {
+  state.books = state.books.filter(b => b.id !== id);
+  // Re-arm milestones the reader has now dropped below, so they can re-celebrate.
+  const p = pct();
+  state.reached = state.reached.filter(m => p >= m);
+  save();
+  renderList();
+  renderProgress(false);
+}
+
+// ---- Milestones / celebration ----
+function checkMilestones(before, after) {
+  let top = null;
+  MILESTONES.forEach(m => {
+    if (after >= m && !state.reached.includes(m)) {
+      state.reached.push(m);
+      top = m;
+    }
+  });
+  if (top !== null) {
+    save();
+    celebrate(top);
+  }
+}
+
+function celebrate(milestone) {
+  const messages = {
+    25:  { emoji: '🌱', msg: 'A quarter of the way!', sub: '25% reached' },
+    50:  { emoji: '🔥', msg: 'Halfway there!',        sub: '50% reached' },
+    75:  { emoji: '⭐', msg: 'Three-quarters done!',  sub: '75% reached' },
+    100: { emoji: '🏆', msg: 'Challenge complete!',   sub: 'Goal smashed! 🎉' }
+  };
+  const m = messages[milestone];
+  toast.innerHTML =
+    '<span class="toast-emoji" aria-hidden="true">' + m.emoji + '</span>' +
+    '<div class="toast-msg">' + m.msg + '</div>' +
+    '<div class="toast-sub">' + m.sub + '</div>';
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2600);
+
+  fireConfetti(milestone === 100 ? 220 : 120);
+}
+
+// ---- Hand-written confetti (no libraries) ----
+const canvas = document.getElementById('confetti');
+const ctx = canvas.getContext('2d');
+let confettiPieces = [];
+let confettiRunning = false;
+const COLORS = ['#0A3476', '#FCB040', '#0E6B8A', '#FFFFFF', '#FFD27A'];
+
+function sizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', sizeCanvas);
+sizeCanvas();
+
+function fireConfetti(amount) {
+  sizeCanvas();
+  for (let i = 0; i < amount; i++) {
+    confettiPieces.push({
+      x: Math.random() * canvas.width,
+      y: -20 - Math.random() * canvas.height * 0.3,
+      w: 6 + Math.random() * 8,
+      h: 8 + Math.random() * 10,
+      color: COLORS[(Math.random() * COLORS.length) | 0],
+      vx: (Math.random() - 0.5) * 4,
+      vy: 2 + Math.random() * 4,
+      rot: Math.random() * Math.PI * 2,
+      vrot: (Math.random() - 0.5) * 0.3,
+      life: 0
+    });
+  }
+  if (!confettiRunning) {
+    confettiRunning = true;
+    requestAnimationFrame(stepConfetti);
+  }
+}
+
+function stepConfetti() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  confettiPieces = confettiPieces.filter(p => p.y < canvas.height + 40 && p.life < 600);
+  confettiPieces.forEach(p => {
+    p.life++;
+    p.x += p.vx;
+    p.y += p.vy;
+    p.vy += 0.06;              // gravity
+    p.vx *= 0.995;
+    p.rot += p.vrot;
+    ctx.save();
+    ctx.translate(p.x, p.y);
+    ctx.rotate(p.rot);
+    ctx.fillStyle = p.color;
+    ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+    ctx.restore();
+  });
+  if (confettiPieces.length > 0) {
+    requestAnimationFrame(stepConfetti);
+  } else {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    confettiRunning = false;
+  }
+}
+
+// ---- Save / Load to file (no libraries) ----
+let ioMsgTimer = null;
+function showIoMsg(text, kind) {
+  ioMsg.textContent = text;
+  ioMsg.className = 'io-msg show ' + (kind === 'err' ? 'err' : 'ok');
+  if (ioMsgTimer) clearTimeout(ioMsgTimer);
+  ioMsgTimer = setTimeout(() => { ioMsg.className = 'io-msg'; }, 5000);
+}
+
+function saveToFile() {
+  // Export everything the tool keeps: the goal and the finished-books list (plus reached milestones).
+  const data = {
+    goal: goal,
+    books: state.books,
+    reached: state.reached,
+    exportedAt: new Date().toISOString()
+  };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'reading-challenge.json';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  showIoMsg('Saved ' + state.books.length + ' book' + (state.books.length === 1 ? '' : 's') + ' to reading-challenge.json', 'ok');
+}
+
+function loadFromFile(file) {
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onerror = () => showIoMsg('Could not read that file. Please try again.', 'err');
+  reader.onload = () => {
+    let parsed;
+    try {
+      parsed = JSON.parse(reader.result);
+    } catch (e) {
+      showIoMsg('That file is not valid JSON. Please choose a reading-challenge file.', 'err');
+      return;
+    }
+    // Validate expected shape: an object with a books array.
+    if (!parsed || typeof parsed !== 'object' || !Array.isArray(parsed.books)) {
+      showIoMsg('This does not look like a reading challenge file (no book list found).', 'err');
+      return;
+    }
+    // Sanitize the books list defensively.
+    const books = [];
+    for (const b of parsed.books) {
+      if (b && typeof b === 'object' && typeof b.title === 'string') {
+        books.push({
+          id: (b.id != null ? String(b.id) : Date.now() + '-' + Math.random().toString(36).slice(2, 7)),
+          title: b.title,
+          added: (typeof b.added === 'number' ? b.added : Date.now())
+        });
+      }
+    }
+    // Apply goal if present and valid, else keep current.
+    if (typeof parsed.goal === 'number' && parsed.goal > 0) goal = Math.round(parsed.goal);
+    state = { books: books, reached: Array.isArray(parsed.reached) ? parsed.reached.filter(m => MILESTONES.includes(m)) : [] };
+    // Reconcile milestones to current progress (no false re-celebration on import).
+    state.reached = MILESTONES.filter(m => pct() >= m);
+    save();
+    goalNum.textContent = goal;
+    renderList();
+    renderProgress(true);
+    showIoMsg('Loaded ' + books.length + ' book' + (books.length === 1 ? '' : 's') + ' from file.', 'ok');
+  };
+  reader.readAsText(file);
+}
+
+// ---- Wire up ----
+addBtn.addEventListener('click', addBook);
+saveFileBtn.addEventListener('click', saveToFile);
+loadFileBtn.addEventListener('click', () => loadFileInput.click());
+loadFileInput.addEventListener('change', (e) => {
+  const file = e.target.files && e.target.files[0];
+  loadFromFile(file);
+  loadFileInput.value = ''; // allow re-selecting the same file
+});
+
+// Initial paint. Reconcile any already-reached milestones with no celebration.
+(function init() {
+  goalNum.textContent = goal;
+  renderList();
+  // Make sure stored `reached` matches current progress (no false re-celebrations on load).
+  const p = pct();
+  state.reached = MILESTONES.filter(m => p >= m);
+  save();
+  // Animate the ring filling on first load.
+  renderProgress(false);
+  requestAnimationFrame(() => requestAnimationFrame(() => renderProgress(false)));
+})();
+</script>
+<a href="../../libvibes.html" aria-label="Back to LibVibes" style="position:fixed;left:12px;bottom:12px;z-index:99999;background:#0A3476;color:#fff;font:700 12px/1 system-ui,-apple-system,Segoe UI,sans-serif;text-decoration:none;padding:8px 12px;border-radius:9px;box-shadow:0 3px 12px rgba(0,0,0,.28)">← LibVibes</a>
+<script src="../../libvibes-notice.js"></script>
+</body>
+</html>

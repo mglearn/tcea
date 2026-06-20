@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>window.__VCLL_BASE="../../";</script>
+<script src="../../lock.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mock Award Voting Station · LibVibes</title>
+<meta name="description" content="A student book-award voting station with live animated results. A LibVibes built example (front-end demo).">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0A3476;--navy-dark:#071F4A;--gold:#FCB040;--gold-light:#FDD17A;
+    --teal:#0E6B8A;--teal-pale:#D9ECF2;--white:#fff;--text:#1A1A2E;--border:#e2e7f5;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'DM Sans',sans-serif;color:var(--text);background:linear-gradient(165deg,#12428F,#071F4A);min-height:100vh;padding:1.2rem;display:flex;justify-content:center}
+  .wrap{width:100%;max-width:860px}
+  header{text-align:center;color:#fff;margin-bottom:1.2rem}
+  h1{font-family:'DM Serif Display',serif;font-size:2.1rem}
+  h1 em{color:var(--gold);font-style:normal}
+  .sub{color:var(--gold-light);font-size:.92rem;margin-top:.3rem}
+  .tabs{display:flex;gap:.5rem;justify-content:center;margin-bottom:1.1rem;flex-wrap:wrap}
+  .tab{background:rgba(255,255,255,.1);color:#fff;border:0;font-family:inherit;font-weight:700;padding:.55rem 1.1rem;border-radius:20px;cursor:pointer}
+  .tab.active{background:var(--gold);color:var(--navy)}
+  .view{display:none}.view.active{display:block}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem}
+  .nominee{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 10px 26px rgba(0,0,0,.3);display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s}
+  .nominee:hover{transform:translateY(-4px)}
+  .nominee.picked{outline:4px solid var(--gold)}
+  .cover{height:150px;display:flex;align-items:center;justify-content:center;font-size:3rem;color:#fff}
+  .nominee .body{padding:.7rem .8rem;flex:1;display:flex;flex-direction:column}
+  .nominee h3{font-family:'DM Serif Display',serif;font-size:1.05rem;color:var(--navy);line-height:1.15}
+  .nominee .author{font-size:.8rem;color:var(--teal);font-style:italic;margin:.15rem 0 .4rem}
+  .nominee .blurb{font-size:.8rem;color:#444;flex:1}
+  .pick-btn{margin-top:.6rem;background:var(--navy);color:#fff;border:0;font-family:inherit;font-weight:700;padding:.5rem;border-radius:8px;cursor:pointer}
+  .pick-btn:hover{background:var(--teal)}
+  .ballot{background:#fff;border-radius:14px;padding:1.2rem;margin-top:1.1rem;box-shadow:0 10px 26px rgba(0,0,0,.3)}
+  .ballot label{font-weight:600;color:var(--navy);display:block;margin-bottom:.4rem}
+  .ballot select,.ballot textarea{width:100%;font-family:inherit;font-size:.95rem;padding:.6rem;border:2px solid var(--border);border-radius:9px;margin-bottom:.8rem}
+  .ballot textarea{resize:vertical;min-height:60px}
+  .submit{background:var(--gold);color:var(--navy);border:0;font-family:inherit;font-weight:800;padding:.8rem 1.4rem;border-radius:10px;cursor:pointer;font-size:1rem;width:100%}
+  .confirm{text-align:center;color:#fff;padding:2.5rem 1rem}
+  .confirm .big{font-size:3rem}
+  .confirm h2{font-family:'DM Serif Display',serif;font-size:1.6rem;margin:.5rem 0}
+  /* results */
+  .results-card{background:#fff;border-radius:14px;padding:1.3rem;box-shadow:0 10px 26px rgba(0,0,0,.3)}
+  .bar-row{display:flex;align-items:center;gap:.8rem;margin-bottom:.9rem}
+  .bar-row .name{width:34%;font-weight:600;color:var(--navy);font-size:.9rem;text-align:right}
+  .bar-track{flex:1;background:#eef2fa;border-radius:20px;height:30px;overflow:hidden;position:relative}
+  .bar-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--navy));border-radius:20px;width:0;transition:width .9s cubic-bezier(.2,.8,.2,1);display:flex;align-items:center;justify-content:flex-end;color:#fff;font-weight:700;font-size:.8rem;padding-right:.6rem;min-width:1.6rem}
+  .bar-row.leader .bar-fill{background:linear-gradient(90deg,var(--gold),#e8902a);color:var(--navy)}
+  .bar-row.leader .name::before{content:"👑 "}
+  .toggle-results{display:flex;align-items:center;gap:.5rem;margin-bottom:1rem;color:var(--navy);font-weight:600}
+  .reasons{margin-top:1.4rem}
+  .reasons h3{color:var(--navy);font-family:'DM Serif Display',serif;margin-bottom:.5rem}
+  .reason{background:var(--teal-pale);border-left:3px solid var(--teal);padding:.5rem .8rem;border-radius:0 8px 8px 0;margin-bottom:.5rem;font-size:.88rem;color:#214b59}
+  .admin-card{background:#fff;border-radius:14px;padding:1.3rem;box-shadow:0 10px 26px rgba(0,0,0,.3)}
+  .admin-row{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.8rem}
+  .admin-row button{font-family:inherit;font-weight:700;padding:.6rem 1rem;border-radius:9px;border:0;cursor:pointer}
+  .status-pill{display:inline-block;padding:.3rem .8rem;border-radius:20px;font-weight:700;font-size:.85rem}
+  .open-pill{background:#dff4e8;color:#1f7a4d}.closed-pill{background:#fde2e0;color:#b3403a}
+  .note{background:#fff6e3;border-left:4px solid var(--gold);padding:.7rem 1rem;border-radius:0 8px 8px 0;font-size:.82rem;color:#7a5a18;margin-bottom:1.1rem}
+  footer{text-align:center;color:#9fb2da;font-size:.8rem;margin-top:1.4rem}
+  footer a{color:var(--gold-light)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Mock <em>Caldecott</em> Award</h1>
+    <div class="sub">Read the nominees. Cast your vote. Watch the results roll in.</div>
+  </header>
+
+  <div class="note">
+    📝 <b>Demo version:</b> votes are saved in this browser so you can try the full flow.
+    The LibVibes prompt (#17) builds the real version backed by a Google Sheet so a whole class can vote from any device.
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" data-view="vote">🗳️ Ballot</button>
+    <button class="tab" data-view="results">📊 Results</button>
+    <button class="tab" data-view="admin">🔑 Admin</button>
+  </div>
+
+  <!-- VOTE -->
+  <div class="view active" id="vote">
+    <div id="voteArea">
+      <div class="gallery" id="gallery"></div>
+      <div class="ballot">
+        <label for="classSel">Your class</label>
+        <select id="classSel"></select>
+        <label for="reason">Why this book? (optional)</label>
+        <textarea id="reason" placeholder="I picked this because..."></textarea>
+        <button class="submit" id="submitVote">Submit my vote ▸</button>
+      </div>
+    </div>
+    <div class="confirm" id="confirm" style="display:none">
+      <div class="big">🎉</div>
+      <h2>Thanks for voting!</h2>
+      <p>Your ballot was counted. Check the Results tab to see how it's going.</p>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="view" id="results">
+    <div class="results-card">
+      <div class="toggle-results">
+        <input type="checkbox" id="showResults" checked>
+        <label for="showResults">Show live results (turn off to keep voters unbiased)</label>
+      </div>
+      <div id="bars"></div>
+      <div class="reasons" id="reasonsWrap"></div>
+    </div>
+  </div>
+
+  <!-- ADMIN -->
+  <div class="view" id="admin">
+    <div class="admin-card">
+      <p>Voting status: <span id="statusPill" class="status-pill"></span></p>
+      <p style="margin-top:.6rem;font-size:.9rem;color:#555">Total votes cast: <b id="totalVotes">0</b></p>
+      <div class="admin-row">
+        <button id="toggleOpen" style="background:var(--navy);color:#fff">Open / Close voting</button>
+        <button id="clearVotes" style="background:#fde2e0;color:#b3403a">Clear all votes</button>
+        <button id="resetDevice" style="background:#eef2fa;color:var(--navy)">Let this device vote again</button>
+        <button id="saveFile" style="background:var(--teal);color:#fff">⬇ Save to file</button>
+        <button id="loadFile" style="background:var(--gold);color:var(--navy)">⬆ Load from file</button>
+        <input type="file" id="fileInput" accept=".json,application/json" style="display:none">
+      </div>
+      <div id="ioMsg" style="display:none;margin-top:.7rem;padding:.5rem .8rem;border-radius:8px;font-size:.85rem;font-weight:600"></div>
+      <p style="margin-top:1rem;font-size:.8rem;color:#888">(In the real Sheets-backed version, admin is password-protected and votes export to your spreadsheet.)</p>
+    </div>
+  </div>
+
+  <footer>A <strong style="color:#fff">LibVibes</strong> built example · #17 Mock Award Voting Station · <a href="../../libvibes.html">Back to LibVibes</a></footer>
+</div>
+
+<script>
+/* ===== EDIT ME: nominees & classes ===== */
+const NOMINEES = [
+  {id:"a",title:"The Lighthouse Keeper's Cat",author:"M. Rivera",blurb:"A cozy seaside tale of friendship and brave little choices.",icon:"🐈",c:"#3b7ea1"},
+  {id:"b",title:"Moonlit Garden",author:"P. Okafor",blurb:"A wordless journey through a glowing midnight garden.",icon:"🌙",c:"#6b4ea8"},
+  {id:"c",title:"The Paper Dragon",author:"L. Chen",blurb:"A folded dragon comes alive to help a shy artist find her voice.",icon:"🐉",c:"#c2693b"},
+  {id:"d",title:"Brave Little Acorn",author:"S. Adeyemi",blurb:"One tiny seed dreams of becoming the tallest tree in the forest.",icon:"🌰",c:"#2e8b6f"},
+  {id:"e",title:"City of Kites",author:"J. Park",blurb:"Rooftops bloom with color on the day of the great kite festival.",icon:"🪁",c:"#b5485f"},
+  {id:"f",title:"The Quiet Whale",author:"R. Santos",blurb:"A gentle song travels the whole ocean to find a friend.",icon:"🐋",c:"#2f6bbf"}
+];
+const CLASSES = ["Ms. Adams","Mr. Brooks","Ms. Carter","Mr. Diaz","Ms. Evans"];
+
+const KEY="libvibes_mockaward_v1";
+const VOTEDKEY="libvibes_mockaward_voted_v1";
+function load(){ try{return JSON.parse(localStorage.getItem(KEY))||{open:true,votes:[]}}catch(e){return{open:true,votes:[]}} }
+function save(s){ localStorage.setItem(KEY,JSON.stringify(s)); }
+let state=load(), picked=null;
+
+const $=id=>document.getElementById(id);
+
+/* tabs */
+document.querySelectorAll(".tab").forEach(t=>t.addEventListener("click",()=>{
+  document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+  document.querySelectorAll(".view").forEach(x=>x.classList.remove("active"));
+  t.classList.add("active"); $(t.dataset.view).classList.add("active");
+  if(t.dataset.view==="results") renderResults();
+  if(t.dataset.view==="admin") renderAdmin();
+}));
+
+/* gallery */
+function renderGallery(){
+  $("gallery").innerHTML=NOMINEES.map(n=>`
+    <div class="nominee ${picked===n.id?'picked':''}" data-id="${n.id}">
+      <div class="cover" style="background:${n.c}">${n.icon}</div>
+      <div class="body">
+        <h3>${n.title}</h3>
+        <div class="author">${n.author}</div>
+        <div class="blurb">${n.blurb}</div>
+        <button class="pick-btn">${picked===n.id?'✓ Selected':'Pick this book'}</button>
+      </div>
+    </div>`).join("");
+  $("gallery").querySelectorAll(".nominee").forEach(el=>{
+    el.querySelector(".pick-btn").addEventListener("click",()=>{picked=el.dataset.id;renderGallery();});
+  });
+}
+$("classSel").innerHTML='<option value="">Choose your class…</option>'+CLASSES.map(c=>`<option>${c}</option>`).join("");
+
+$("submitVote").addEventListener("click",()=>{
+  state=load();
+  if(!state.open){ alert("Voting is currently closed. Ask the librarian!"); return; }
+  if(localStorage.getItem(VOTEDKEY)){ alert("Looks like this device already voted. (Admin can reset it.)"); return; }
+  if(!picked){ alert("Please pick a book first."); return; }
+  if(!$("classSel").value){ alert("Please choose your class."); return; }
+  state.votes.push({book:picked,cls:$("classSel").value,reason:$("reason").value.trim()});
+  save(state);
+  localStorage.setItem(VOTEDKEY,"1");
+  $("voteArea").style.display="none"; $("confirm").style.display="block";
+});
+
+/* results */
+function renderResults(){
+  state=load();
+  const counts=NOMINEES.map(n=>({...n,votes:state.votes.filter(v=>v.book===n.id).length}));
+  const total=state.votes.length||1;
+  const max=Math.max(1,...counts.map(c=>c.votes));
+  const show=$("showResults").checked;
+  $("bars").innerHTML=counts.map(c=>{
+    const pct=show?Math.round(c.votes/max*100):0;
+    const leader=show&&c.votes===max&&c.votes>0;
+    return `<div class="bar-row ${leader?'leader':''}">
+      <div class="name">${c.title}</div>
+      <div class="bar-track"><div class="bar-fill" style="width:${pct}%">${show?c.votes:''}</div></div>
+    </div>`;
+  }).join("");
+  // animate
+  requestAnimationFrame(()=>{
+    $("bars").querySelectorAll(".bar-fill").forEach((f,i)=>{
+      const pct=show?Math.round(counts[i].votes/max*100):0; f.style.width=pct+"%";
+    });
+  });
+  const reasons=state.votes.filter(v=>v.reason).slice(-12).reverse();
+  $("reasonsWrap").innerHTML = (show&&reasons.length)
+    ? `<h3>What voters said</h3>`+reasons.map(r=>`<div class="reason">“${r.reason}”</div>`).join("")
+    : "";
+}
+$("showResults").addEventListener("change",renderResults);
+
+/* admin */
+function renderAdmin(){
+  state=load();
+  $("statusPill").textContent=state.open?"OPEN":"CLOSED";
+  $("statusPill").className="status-pill "+(state.open?"open-pill":"closed-pill");
+  $("totalVotes").textContent=state.votes.length;
+}
+$("toggleOpen").addEventListener("click",()=>{state=load();state.open=!state.open;save(state);renderAdmin();});
+$("clearVotes").addEventListener("click",()=>{ if(confirm("Clear all votes?")){state=load();state.votes=[];save(state);renderAdmin();renderResults();}});
+$("resetDevice").addEventListener("click",()=>{localStorage.removeItem(VOTEDKEY);alert("This device can vote again.");location.reload();});
+
+/* ===== save / load all saved data to/from a .json file ===== */
+function ioMsg(text,ok){
+  const m=$("ioMsg"); m.textContent=text; m.style.display="block";
+  m.style.background=ok?"#dff4e8":"#fde2e0";
+  m.style.color=ok?"#1f7a4d":"#b3403a";
+}
+$("saveFile").addEventListener("click",()=>{
+  state=load();
+  const data={
+    app:"libvibes-mock-award-voting",
+    version:1,
+    exportedAt:new Date().toISOString(),
+    state:state,                                  // {open, votes:[{book,cls,reason}]}
+    votedThisDevice:!!localStorage.getItem(VOTEDKEY)
+  };
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+  a.href=url; a.download="mock-award-votes.json";
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  ioMsg("Saved "+state.votes.length+" vote(s) to mock-award-votes.json",true);
+});
+$("loadFile").addEventListener("click",()=>$("fileInput").click());
+$("fileInput").addEventListener("change",e=>{
+  const file=e.target.files&&e.target.files[0];
+  if(!file) return;
+  const reader=new FileReader();
+  reader.onerror=()=>ioMsg("Couldn't read that file. Please try again.",false);
+  reader.onload=()=>{
+    try{
+      const data=JSON.parse(reader.result);
+      // accept either the wrapped export {state:{...}} or a bare state {open,votes}
+      const s=(data&&data.state&&typeof data.state==="object")?data.state:data;
+      if(!s||typeof s!=="object"||!Array.isArray(s.votes))
+        throw new Error("missing votes");
+      const clean={
+        open: typeof s.open==="boolean" ? s.open : true,
+        votes: s.votes.filter(v=>v&&typeof v==="object").map(v=>({
+          book: String(v.book||""),
+          cls: String(v.cls||""),
+          reason: typeof v.reason==="string" ? v.reason : ""
+        }))
+      };
+      save(clean);
+      state=clean;
+      if(data&&typeof data.votedThisDevice==="boolean"){
+        if(data.votedThisDevice) localStorage.setItem(VOTEDKEY,"1");
+        else localStorage.removeItem(VOTEDKEY);
+      }
+      // restore visible state everywhere
+      if(localStorage.getItem(VOTEDKEY)){ $("voteArea").style.display="none"; $("confirm").style.display="block"; }
+      else { $("voteArea").style.display=""; $("confirm").style.display="none"; }
+      renderGallery(); renderAdmin(); renderResults();
+      ioMsg("Loaded "+clean.votes.length+" vote(s) from "+file.name,true);
+    }catch(err){
+      ioMsg("That file isn't a valid Mock Award export. Nothing was changed.",false);
+    }
+    $("fileInput").value="";   // allow re-loading the same file
+  };
+  reader.readAsText(file);
+});
+
+renderGallery();
+if(localStorage.getItem(VOTEDKEY)){ $("voteArea").style.display="none"; $("confirm").style.display="block"; }
+</script>
+<script src="../../libvibes-notice.js"></script>
+</body>
+</html>

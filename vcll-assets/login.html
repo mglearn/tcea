@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign in · LibVibes (Locked) | TCEA</title>
+<meta name="robots" content="noindex,nofollow">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="libvibes-base.css">
+<style>
+  body{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--navy-dark,#06234f);padding:1.5rem}
+  .login-card{width:100%;max-width:420px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:2.2rem 2rem 2rem;color:#fff}
+  .login-mark{width:46px;height:46px;border-radius:10px;background:var(--gold,#FCB040);color:var(--navy,#0A3476);font-family:'DM Serif Display',serif;font-size:1.6rem;display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem}
+  .login-card h1{font-family:'DM Serif Display',serif;font-size:1.5rem;margin:0 0 .3rem}
+  .login-card p.sub{color:var(--pale-navy,#b9c7df);font-size:.9rem;margin:0 0 1.5rem;line-height:1.5}
+  label{display:block;font-size:.78rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--gold-light,#ffd98a);margin:0 0 .35rem}
+  input{width:100%;box-sizing:border-box;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.18);border-radius:6px;color:#fff;padding:.7rem .8rem;font-size:.95rem;font-family:inherit;margin-bottom:1.1rem}
+  input:focus{outline:none;border-color:var(--gold,#FCB040)}
+  button{width:100%;background:var(--gold,#FCB040);color:var(--navy,#0A3476);border:none;border-radius:6px;padding:.8rem;font-size:.95rem;font-weight:700;font-family:inherit;cursor:pointer;transition:filter .15s}
+  button:hover{filter:brightness(1.06)}
+  button:disabled{opacity:.6;cursor:default}
+  .msg{min-height:1.2rem;font-size:.85rem;margin:.9rem 0 0;color:#ff9a9a}
+  .note{margin-top:1.4rem;font-size:.72rem;line-height:1.5;color:var(--pale-navy,#9fb0cc);border-top:1px solid rgba(255,255,255,.1);padding-top:1rem}
+</style>
+</head>
+<body>
+  <script>window.__VCLL_PUBLIC = true;</script>
+  <script src="lock.js"></script>
+
+  <form class="login-card" id="loginForm" autocomplete="on">
+    <div class="login-mark">L</div>
+    <h1>LibVibes — Locked Preview</h1>
+    <p class="sub">Enter your email and password to view the prompts and tools. Access is limited to invited TCEA reviewers.</p>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required autocomplete="username" placeholder="you@example.org">
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required autocomplete="current-password" placeholder="••••••••">
+
+    <button type="submit" id="submitBtn">Sign in</button>
+    <p class="msg" id="msg" role="alert"></p>
+
+    <p class="note">This is a proof-of-concept gate. It is not a substitute for real authentication; the production version will use Google sign-in (OAuth).</p>
+  </form>
+
+  <script>
+    // Already signed in? Skip the form.
+    if (window.VCLL && window.VCLL.authed()) {
+      var nxt = sessionStorage.getItem("vcll_next") || "index.html";
+      location.replace(nxt);
+    }
+    var form = document.getElementById("loginForm");
+    var msg = document.getElementById("msg");
+    var btn = document.getElementById("submitBtn");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      msg.textContent = "";
+      btn.disabled = true;
+      btn.textContent = "Checking…";
+      var email = document.getElementById("email").value;
+      var pw = document.getElementById("password").value;
+      window.VCLL.login(email, pw).then(function (ok) {
+        if (ok) {
+          var nxt = sessionStorage.getItem("vcll_next") || "index.html";
+          sessionStorage.removeItem("vcll_next");
+          location.replace(nxt);
+        } else {
+          msg.textContent = "Email or password not recognized.";
+          btn.disabled = false;
+          btn.textContent = "Sign in";
+        }
+      }).catch(function (err) {
+        msg.textContent = err.message || "Something went wrong. Try again.";
+        btn.disabled = false;
+        btn.textContent = "Sign in";
+      });
+    });
+  </script>
+</body>
+</html>

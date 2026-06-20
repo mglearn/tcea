@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>window.__VCLL_BASE="../../";</script>
+<script src="../../lock.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Book Spine Poetry Maker — LibVibes</title>
+<style>
+  /* ---- Warm bookish palette + brand accents ---- */
+  :root {
+    --bg: #FAF6EE;          /* soft off-white */
+    --ink: #2B2118;         /* warm dark brown ink */
+    --navy: #0A3476;
+    --gold: #FCB040;
+    --teal: #0E6B8A;
+    --paper: #FFFDF8;
+    --shelf: #B07A4A;       /* warm wood shelf */
+    --shelf-dark: #8A5A30;
+  }
+
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    overscroll-behavior: none;
+  }
+
+  header {
+    background: var(--navy);
+    color: var(--paper);
+    padding: 14px 16px 16px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,.2);
+  }
+  header h1 {
+    margin: 0;
+    font-size: 1.45rem;
+    letter-spacing: .5px;
+  }
+  header p {
+    margin: 6px 0 0;
+    font-size: .9rem;
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .wrap {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 14px 12px 60px;
+  }
+
+  /* ---- Toolbar ---- */
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 14px 0;
+    justify-content: center;
+  }
+  button.btn {
+    font-family: Georgia, serif;
+    font-size: .95rem;
+    padding: 11px 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,.18);
+    transition: transform .08s ease, filter .12s ease;
+    min-height: 44px;
+  }
+  button.btn:active { transform: translateY(1px) scale(.98); }
+  .btn-shuffle { background: var(--teal); }
+  .btn-download { background: var(--gold); color: var(--navy); font-weight: bold; }
+  .btn-clear { background: #9a3b2f; }
+  .btn-add { background: var(--navy); }
+
+  /* ---- Add-your-own form ---- */
+  .addform {
+    background: var(--paper);
+    border: 2px dashed var(--shelf);
+    border-radius: 12px;
+    padding: 12px;
+    margin: 8px auto 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+  .addform input[type=text] {
+    flex: 1 1 200px;
+    min-width: 160px;
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    padding: 10px 12px;
+    border: 1px solid #cdbfa6;
+    border-radius: 8px;
+    background: #fff;
+  }
+  .addform label {
+    font-size: .9rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .addform input[type=color] {
+    width: 44px; height: 44px;
+    border: none; background: none; cursor: pointer; padding: 0;
+  }
+
+  h2.section {
+    font-size: 1.05rem;
+    color: var(--navy);
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 4px;
+    margin: 22px 0 10px;
+  }
+  .hint { font-size: .82rem; color: #6b5d4a; font-style: italic; margin: 0 0 8px; }
+
+  /* ---- Book spines ---- */
+  .shelf {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 8px 10px;
+    background: linear-gradient(180deg, #c98c58 0%, var(--shelf) 70%, var(--shelf-dark) 100%);
+    border-radius: 8px;
+    padding: 16px 12px 10px;
+    min-height: 90px;
+    box-shadow: inset 0 -6px 0 rgba(0,0,0,.18), 0 3px 8px rgba(0,0,0,.15);
+  }
+
+  /* The vertical poem stack */
+  .stage {
+    background: var(--paper);
+    border: 1px solid #e3d8c2;
+    border-radius: 12px;
+    padding: 16px 14px;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 7px;
+    box-shadow: 0 3px 10px rgba(0,0,0,.08);
+    transition: background .15s ease, box-shadow .15s ease;
+  }
+  .stage.dropping {
+    background: #FFF6E0;
+    box-shadow: 0 0 0 3px var(--gold), 0 3px 10px rgba(0,0,0,.12);
+  }
+  .stage-empty {
+    text-align: center;
+    color: #a99877;
+    font-style: italic;
+    padding: 30px 10px;
+    pointer-events: none;
+  }
+
+  .spine {
+    position: relative;
+    border-radius: 5px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-weight: 600;
+    cursor: grab;
+    user-select: none;
+    touch-action: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,.28), inset 0 0 0 1px rgba(255,255,255,.12);
+    text-shadow: 0 1px 2px rgba(0,0,0,.35);
+    line-height: 1.15;
+    -webkit-user-select: none;
+  }
+  .spine:active { cursor: grabbing; }
+
+  /* Spines on the shelf stand UP like real books (tall + narrow). */
+  .shelf .spine {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    width: 38px;
+    min-height: 120px;
+    justify-content: flex-start;
+    padding: 12px 0;
+    transform: rotate(var(--tilt, 0deg));
+    transform-origin: bottom center;
+  }
+
+  /* Spines in the stage lie flat, stacked, reading top to bottom. */
+  .stage .spine {
+    writing-mode: horizontal-tb;
+    width: 100%;
+    min-height: 46px;
+    justify-content: flex-start;
+    font-size: 1.05rem;
+  }
+
+  .spine .title-text {
+    pointer-events: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .stage .spine .title-text { white-space: normal; }
+
+  /* dragging clone */
+  .spine.flying {
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+    writing-mode: horizontal-tb;
+    width: auto;
+    min-height: 0;
+    padding: 10px 16px;
+    opacity: .95;
+    transform: rotate(-2deg) scale(1.04);
+    box-shadow: 0 8px 18px rgba(0,0,0,.35);
+  }
+
+  .spine .remove {
+    position: absolute;
+    top: -8px; right: -8px;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: #fff;
+    color: #9a3b2f;
+    border: 1px solid #9a3b2f;
+    font-size: 14px; line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,.3);
+    writing-mode: horizontal-tb;
+  }
+  .stage .spine:hover .remove,
+  .stage .spine .remove.show { display: block; }
+
+  .spine[contenteditable="true"] { cursor: text; }
+
+  footer {
+    text-align: center;
+    font-size: .78rem;
+    color: #8a7a63;
+    padding: 24px 12px 0;
+  }
+  .toolbar-stage { justify-content: center; margin-top: 12px; }
+
+  @media (max-width: 480px) {
+    header h1 { font-size: 1.2rem; }
+    button.btn { flex: 1 1 auto; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>📚 Book Spine Poetry Maker</h1>
+  <p>Stack the titles. Read top to bottom. Make a poem.</p>
+</header>
+
+<div class="wrap">
+
+  <!-- =================================================================== -->
+  <!-- 12 STARTER TITLES — edit these freely! Each: [title, color]        -->
+  <!-- =================================================================== -->
+  <div class="addform" id="addForm">
+    <input type="text" id="newTitle" placeholder="Type your own book title…" maxlength="60" aria-label="New spine title">
+    <label>Color <input type="color" id="newColor" value="#0E6B8A" aria-label="Spine color"></label>
+    <button class="btn btn-add" id="addBtn" type="button">+ Add spine</button>
+  </div>
+
+  <h2 class="section">The Shelf <span class="hint" style="font-style:normal;font-weight:normal;">— drag a spine down into the stage</span></h2>
+  <p class="hint">Tip: double-tap (or double-click) any spine to rename it.</p>
+  <div class="shelf" id="shelf"></div>
+
+  <div class="toolbar">
+    <button class="btn btn-shuffle" id="shuffleBtn" type="button">🔀 Shuffle the shelf</button>
+  </div>
+
+  <h2 class="section">Your Poem</h2>
+  <div class="stage" id="stage">
+    <div class="stage-empty" id="stageEmpty">Drag book spines here to build your poem ↑</div>
+  </div>
+
+  <div class="toolbar toolbar-stage">
+    <button class="btn btn-download" id="downloadBtn" type="button">⬇ Download my poem (PNG)</button>
+    <button class="btn btn-clear" id="clearBtn" type="button">↺ Send all back to shelf</button>
+  </div>
+
+  <footer>LibVibes • Book Spine Poetry • A TCEA library activity. Works entirely offline.</footer>
+</div>
+
+<script>
+/* ===================================================================== */
+/*  STARTER SET — 12 evocative titles. Edit titles & colors as you like. */
+/*  Each entry: { title: "...", color: "#hex" }                          */
+/* ===================================================================== */
+const STARTER_TITLES = [
+  { title: "The Quiet After Rain",        color: "#0A3476" }, // navy
+  { title: "A Map of Small Wonders",      color: "#0E6B8A" }, // teal
+  { title: "Hold the Light a Little Longer", color: "#7A3B2E" },
+  { title: "Where the River Remembers",   color: "#2E6E4F" },
+  { title: "Letters We Never Sent",       color: "#6B4E8A" },
+  { title: "The Weight of Wild Things",   color: "#B5532A" },
+  { title: "Soft Thunder",                color: "#1F5C5C" },
+  { title: "Everything the Moon Knows",   color: "#3A4A8A" },
+  { title: "A House Full of Echoes",      color: "#8A5A30" },
+  { title: "Counting Birds at Dusk",      color: "#0E6B8A" },
+  { title: "The Last Page of Summer",     color: "#C98A2B" },
+  { title: "Carry Me Home Through Stars", color: "#0A3476" },
+];
+
+/* ---- State ---- */
+let spineData = [];   // { id, title, color }
+let nextId = 1;
+
+const shelfEl   = document.getElementById('shelf');
+const stageEl   = document.getElementById('stage');
+const stageEmpty= document.getElementById('stageEmpty');
+
+/* Build initial spines */
+function init() {
+  STARTER_TITLES.forEach(t => {
+    spineData.push({ id: nextId++, title: t.title, color: t.color });
+  });
+  renderShelf();
+}
+
+/* A varied "real book" look: each spine gets a height + slight tilt seed */
+function seedLook(id) {
+  // deterministic pseudo-variation from id
+  const heights = [120, 150, 135, 170, 110, 145, 160, 125];
+  const tilts   = [-3, -1, 0, 2, -2, 1, 3, -1];
+  return {
+    h: heights[id % heights.length],
+    tilt: tilts[id % tilts.length]
+  };
+}
+
+/* ---- Rendering ---- */
+function renderShelf() {
+  // remove all current shelf spines (keep nothing static)
+  shelfEl.innerHTML = '';
+  spineData.forEach(d => {
+    if (d.placed) return; // only unused spines live on the shelf
+    shelfEl.appendChild(makeSpine(d, 'shelf'));
+  });
+  refreshEmpty();
+}
+
+function refreshEmpty() {
+  const hasStacked = stageEl.querySelector('.spine');
+  stageEmpty.style.display = hasStacked ? 'none' : 'block';
+}
+
+function makeSpine(d, where) {
+  const el = document.createElement('div');
+  el.className = 'spine';
+  el.dataset.id = d.id;
+  el.style.background = gradientFor(d.color);
+
+  if (where === 'shelf') {
+    const look = seedLook(d.id);
+    el.style.minHeight = look.h + 'px';
+    el.style.setProperty('--tilt', look.tilt + 'deg');
+    el.style.fontSize = (d.title.length > 26 ? '0.8rem' : '0.95rem');
+  }
+
+  const txt = document.createElement('span');
+  txt.className = 'title-text';
+  txt.textContent = d.title;
+  el.appendChild(txt);
+
+  // remove button (used in stage)
+  const rm = document.createElement('span');
+  rm.className = 'remove';
+  rm.textContent = '×';
+  rm.title = 'Send back to shelf';
+  rm.addEventListener('click', (e) => {
+    e.stopPropagation();
+    sendBackToShelf(d.id);
+  });
+  el.appendChild(rm);
+
+  attachDrag(el, d);
+  attachEdit(el, txt, d);
+  return el;
+}
+
+function gradientFor(hex) {
+  // subtle vertical sheen so spines read as 3D book spines
+  return `linear-gradient(90deg, rgba(255,255,255,.18), rgba(0,0,0,0) 22%, rgba(0,0,0,0) 78%, rgba(0,0,0,.22)), ${hex}`;
+}
+
+/* ---- Rename via double-click / double-tap ---- */
+function attachEdit(el, txt, d) {
+  let lastTap = 0;
+  function beginEdit() {
+    const current = d.title;
+    const input = prompt('Rename this spine:', current);
+    if (input !== null && input.trim() !== '') {
+      d.title = input.trim();
+      txt.textContent = d.title;
+      el.style.fontSize = (d.title.length > 26 ? '0.8rem' : '');
+    }
+  }
+  el.addEventListener('dblclick', (e) => { e.preventDefault(); beginEdit(); });
+  // touch double-tap
+  el.addEventListener('touchend', (e) => {
+    const now = Date.now();
+    if (now - lastTap < 300 && !el._dragged) {
+      e.preventDefault();
+      beginEdit();
+    }
+    lastTap = now;
+  });
+}
+
+/* ===================================================================== */
+/*  DRAG & DROP — works for BOTH mouse and touch via Pointer Events,     */
+/*  with manual fallbacks. We use a "flying clone" that follows the      */
+/*  pointer, and decide drop target by geometry.                         */
+/* ===================================================================== */
+function attachDrag(el, d) {
+  let startX, startY, flying = null, moved = false;
+
+  function getPoint(ev) {
+    if (ev.touches && ev.touches[0]) return { x: ev.touches[0].clientX, y: ev.touches[0].clientY };
+    if (ev.changedTouches && ev.changedTouches[0]) return { x: ev.changedTouches[0].clientX, y: ev.changedTouches[0].clientY };
+    return { x: ev.clientX, y: ev.clientY };
+  }
+
+  function onDown(ev) {
+    if (ev.button !== undefined && ev.button !== 0) return;
+    const p = getPoint(ev);
+    startX = p.x; startY = p.y;
+    moved = false;
+    el._dragged = false;
+
+    document.addEventListener('mousemove', onMove, { passive: false });
+    document.addEventListener('mouseup', onUp);
+    document.addEventListener('touchmove', onMove, { passive: false });
+    document.addEventListener('touchend', onUp);
+  }
+
+  function startFly(p) {
+    flying = el.cloneNode(true);
+    flying.classList.add('flying');
+    flying.style.minHeight = '0';
+    flying.style.height = 'auto';
+    flying.style.width = 'auto';
+    flying.style.fontSize = '1rem';
+    // show full title horizontally in the clone
+    const t = flying.querySelector('.title-text');
+    if (t) { t.style.whiteSpace = 'nowrap'; }
+    document.body.appendChild(flying);
+    el.style.opacity = '0.25';
+    positionFly(p);
+  }
+
+  function positionFly(p) {
+    const w = flying.offsetWidth, h = flying.offsetHeight;
+    flying.style.left = (p.x - w / 2) + 'px';
+    flying.style.top  = (p.y - h / 2) + 'px';
+  }
+
+  function onMove(ev) {
+    const p = getPoint(ev);
+    const dx = p.x - startX, dy = p.y - startY;
+    if (!moved && Math.hypot(dx, dy) > 8) {
+      moved = true;
+      el._dragged = true;
+      startFly(p);
+    }
+    if (moved) {
+      ev.preventDefault();
+      positionFly(p);
+      highlightTargets(p);
+    }
+  }
+
+  function onUp(ev) {
+    document.removeEventListener('mousemove', onMove);
+    document.removeEventListener('mouseup', onUp);
+    document.removeEventListener('touchmove', onMove);
+    document.removeEventListener('touchend', onUp);
+
+    if (!moved) { cleanupFly(); return; }
+    const p = getPoint(ev);
+    handleDrop(d, p);
+    cleanupFly();
+    setTimeout(() => { el._dragged = false; }, 50);
+  }
+
+  function cleanupFly() {
+    if (flying) { flying.remove(); flying = null; }
+    el.style.opacity = '';
+    stageEl.classList.remove('dropping');
+  }
+
+  el.addEventListener('mousedown', onDown);
+  el.addEventListener('touchstart', onDown, { passive: true });
+}
+
+function pointInRect(p, rect) {
+  return p.x >= rect.left && p.x <= rect.right && p.y >= rect.top && p.y <= rect.bottom;
+}
+
+function highlightTargets(p) {
+  const overStage = pointInRect(p, stageEl.getBoundingClientRect());
+  stageEl.classList.toggle('dropping', overStage);
+}
+
+/* Decide where a dropped spine lands and reorder accordingly. */
+function handleDrop(d, p) {
+  const overStage = pointInRect(p, stageEl.getBoundingClientRect());
+  const overShelf = pointInRect(p, shelfEl.getBoundingClientRect());
+
+  if (overStage) {
+    placeInStageAt(d, p.y);
+  } else if (overShelf && d.placed) {
+    sendBackToShelf(d.id);
+  } else if (overStage === false && overShelf === false && d.placed) {
+    // dropped nowhere useful — leave where it was
+  }
+}
+
+/* Insert (or move) a spine into the stage at vertical position y. */
+function placeInStageAt(d, y) {
+  d.placed = true;
+  // figure insertion index among existing stage spines
+  const existing = Array.from(stageEl.querySelectorAll('.spine'));
+  let beforeNode = null;
+  for (const node of existing) {
+    if (node.dataset.id == d.id) continue;
+    const r = node.getBoundingClientRect();
+    if (y < r.top + r.height / 2) { beforeNode = node; break; }
+  }
+
+  // get or build the stage element for this spine
+  let el = stageEl.querySelector('.spine[data-id="'+d.id+'"]');
+  if (!el) {
+    // remove from shelf if present
+    const shelfNode = shelfEl.querySelector('.spine[data-id="'+d.id+'"]');
+    if (shelfNode) shelfNode.remove();
+    el = makeSpine(d, 'stage');
+  }
+  el.classList.remove('flying');
+  if (beforeNode) stageEl.insertBefore(el, beforeNode);
+  else stageEl.appendChild(el);
+  refreshEmpty();
+}
+
+function sendBackToShelf(id) {
+  const d = spineData.find(x => x.id === id);
+  if (!d) return;
+  d.placed = false;
+  const stageNode = stageEl.querySelector('.spine[data-id="'+id+'"]');
+  if (stageNode) stageNode.remove();
+  renderShelf();
+}
+
+/* ---- Shuffle the unused shelf spines ---- */
+document.getElementById('shuffleBtn').addEventListener('click', () => {
+  const unused = spineData.filter(d => !d.placed);
+  for (let i = unused.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [unused[i], unused[j]] = [unused[j], unused[i]];
+  }
+  // rebuild spineData order: placed ones keep relative order, unused replaced by shuffled
+  const placed = spineData.filter(d => d.placed);
+  spineData = placed.concat(unused);
+  renderShelf();
+});
+
+/* ---- Add your own spine ---- */
+document.getElementById('addBtn').addEventListener('click', addSpine);
+document.getElementById('newTitle').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') addSpine();
+});
+function addSpine() {
+  const title = document.getElementById('newTitle').value.trim();
+  const color = document.getElementById('newColor').value;
+  if (!title) { document.getElementById('newTitle').focus(); return; }
+  spineData.push({ id: nextId++, title, color });
+  document.getElementById('newTitle').value = '';
+  renderShelf();
+}
+
+/* ---- Clear stage ---- */
+document.getElementById('clearBtn').addEventListener('click', () => {
+  spineData.forEach(d => d.placed = false);
+  Array.from(stageEl.querySelectorAll('.spine')).forEach(n => n.remove());
+  renderShelf();
+});
+
+/* ===================================================================== */
+/*  PNG EXPORT — draw the stacked poem onto a Canvas, then download.     */
+/*  Pure Canvas 2D API. No libraries.                                    */
+/* ===================================================================== */
+document.getElementById('downloadBtn').addEventListener('click', () => {
+  const stacked = spineData.filter(d => d.placed);
+  // re-read DOM order so it matches what the user sees
+  const orderedIds = Array.from(stageEl.querySelectorAll('.spine')).map(n => +n.dataset.id);
+  const ordered = orderedIds.map(id => spineData.find(d => d.id === id)).filter(Boolean);
+
+  if (ordered.length === 0) {
+    alert('Stack a few spines into your poem first, then download!');
+    return;
+  }
+
+  const scale = 2; // crisp on retina / print
+  const W = 760;
+  const padX = 40, padTop = 110, gap = 14, spineH = 70, padBottom = 70;
+  const H = padTop + ordered.length * (spineH + gap) - gap + padBottom;
+
+  const canvas = document.createElement('canvas');
+  canvas.width = W * scale;
+  canvas.height = H * scale;
+  const ctx = canvas.getContext('2d');
+  ctx.scale(scale, scale);
+
+  // background (soft off-white)
+  ctx.fillStyle = '#FAF6EE';
+  ctx.fillRect(0, 0, W, H);
+
+  // title banner
+  ctx.fillStyle = '#0A3476';
+  ctx.fillRect(0, 0, W, 78);
+  ctx.fillStyle = '#FCB040';
+  ctx.font = 'bold 30px Georgia, serif';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('Book Spine Poetry', W / 2, 40);
+
+  // draw each spine
+  let y = padTop;
+  const spineW = W - padX * 2;
+  ordered.forEach(d => {
+    // shadow
+    ctx.save();
+    ctx.shadowColor = 'rgba(0,0,0,0.25)';
+    ctx.shadowBlur = 8;
+    ctx.shadowOffsetY = 4;
+    roundRect(ctx, padX, y, spineW, spineH, 6);
+    ctx.fillStyle = d.color;
+    ctx.fill();
+    ctx.restore();
+
+    // left sheen
+    const grad = ctx.createLinearGradient(padX, 0, padX + spineW, 0);
+    grad.addColorStop(0, 'rgba(255,255,255,0.18)');
+    grad.addColorStop(0.2, 'rgba(255,255,255,0)');
+    grad.addColorStop(0.8, 'rgba(0,0,0,0)');
+    grad.addColorStop(1, 'rgba(0,0,0,0.22)');
+    roundRect(ctx, padX, y, spineW, spineH, 6);
+    ctx.fillStyle = grad;
+    ctx.fill();
+
+    // title text (auto-fit font size)
+    ctx.fillStyle = '#ffffff';
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'middle';
+    let fs = 24;
+    ctx.font = fs + 'px Georgia, serif';
+    const maxTextW = spineW - 36;
+    while (ctx.measureText(d.title).width > maxTextW && fs > 13) {
+      fs -= 1;
+      ctx.font = fs + 'px Georgia, serif';
+    }
+    // subtle text shadow
+    ctx.save();
+    ctx.shadowColor = 'rgba(0,0,0,0.35)';
+    ctx.shadowOffsetY = 1;
+    ctx.shadowBlur = 2;
+    ctx.fillText(d.title, padX + 18, y + spineH / 2 + 1);
+    ctx.restore();
+
+    y += spineH + gap;
+  });
+
+  // footer credit
+  ctx.fillStyle = '#8a7a63';
+  ctx.font = 'italic 15px Georgia, serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('Made with the LibVibes Book Spine Poetry Maker', W / 2, H - 34);
+
+  // trigger download
+  const link = document.createElement('a');
+  link.download = 'book-spine-poem.png';
+  link.href = canvas.toDataURL('image/png');
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+});
+
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+}
+
+/* ---- Go! ---- */
+init();
+</script>
+<a href="../../libvibes.html" aria-label="Back to LibVibes" style="position:fixed;left:12px;bottom:12px;z-index:99999;background:#0A3476;color:#fff;font:700 12px/1 system-ui,-apple-system,Segoe UI,sans-serif;text-decoration:none;padding:8px 12px;border-radius:9px;box-shadow:0 3px 12px rgba(0,0,0,.28)">← LibVibes</a>
+<script src="../../libvibes-notice.js"></script>
+</body>
+</html>

@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>window.__VCLL_BASE="../../";</script>
+<script src="../../lock.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reading Bingo Board Generator</title>
+<style>
+  :root{
+    --navy:#0A3476;
+    --gold:#FCB040;
+    --teal:#0E6B8A;
+    --bg:#FAF7F0;
+    --ink:#1d2433;
+    --line:#d9d2c4;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Helvetica Neue",Arial,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    -webkit-text-size-adjust:100%;
+    line-height:1.4;
+  }
+  .wrap{
+    max-width:680px;
+    margin:0 auto;
+    padding:16px 14px 48px;
+  }
+  header.app-head{
+    text-align:center;
+    margin-bottom:14px;
+  }
+  header.app-head h1{
+    font-size:1.55rem;
+    color:var(--navy);
+    margin:.2em 0 .15em;
+    letter-spacing:.5px;
+  }
+  header.app-head p{
+    margin:0;
+    color:var(--teal);
+    font-weight:600;
+    font-size:.95rem;
+  }
+  .controls{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+    margin:14px 0 18px;
+  }
+  button{
+    font-family:inherit;
+    font-size:1rem;
+    font-weight:700;
+    border:none;
+    border-radius:10px;
+    padding:12px 16px;
+    cursor:pointer;
+    color:#fff;
+    flex:1 1 auto;
+    min-width:130px;
+    transition:transform .08s ease, filter .15s ease;
+    -webkit-tap-highlight-color:transparent;
+  }
+  button:active{transform:translateY(1px) scale(.99);}
+  .btn-shuffle{background:var(--teal);}
+  .btn-print{background:var(--gold);color:var(--navy);}
+  .btn-reset{background:var(--navy);}
+  .btn-save{background:var(--teal);}
+  .btn-load{background:var(--navy);}
+  button:hover{filter:brightness(1.06);}
+
+  .file-msg{
+    text-align:center;
+    font-size:.85rem;
+    font-weight:600;
+    margin:-6px 0 14px;
+    min-height:1.1em;
+  }
+  .file-msg.ok{color:var(--teal);}
+  .file-msg.err{color:#b0341d;}
+
+  .board-title{
+    text-align:center;
+    font-weight:700;
+    color:var(--navy);
+    margin:0 0 10px;
+    font-size:1.05rem;
+  }
+
+  .board{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:6px;
+    width:100%;
+    aspect-ratio:1 / 1;
+  }
+  .cell{
+    position:relative;
+    background:#fff;
+    border:2px solid var(--line);
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:4px;
+    cursor:pointer;
+    overflow:hidden;
+    -webkit-tap-highlight-color:transparent;
+    user-select:none;
+  }
+  .cell .label{
+    font-size:clamp(7px,2.2vw,12px);
+    line-height:1.15;
+    font-weight:600;
+    color:var(--ink);
+    word-break:break-word;
+    hyphens:auto;
+    z-index:1;
+  }
+  .cell.free{
+    background:var(--navy);
+    border-color:var(--navy);
+  }
+  .cell.free .label{
+    color:var(--gold);
+    font-weight:800;
+    font-size:clamp(9px,2.6vw,14px);
+    letter-spacing:.5px;
+  }
+  /* stamp */
+  .cell.marked .stamp{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    pointer-events:none;
+    z-index:2;
+    animation:stampIn .32s cubic-bezier(.18,.89,.32,1.28);
+  }
+  .cell.marked .stamp::after{
+    content:"\2714"; /* check mark */
+    width:62%;
+    height:62%;
+    border-radius:50%;
+    background:rgba(252,176,64,.92);
+    border:3px solid var(--teal);
+    color:var(--navy);
+    font-size:clamp(12px,4vw,22px);
+    font-weight:900;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 2px 6px rgba(10,52,118,.35);
+    transform:rotate(-12deg);
+  }
+  .cell.marked{
+    border-color:var(--teal);
+    background:#fff7e9;
+  }
+  .cell.win{
+    outline:3px solid var(--gold);
+    outline-offset:-2px;
+  }
+  @keyframes stampIn{
+    0%{transform:scale(0) rotate(40deg);opacity:0;}
+    70%{transform:scale(1.15) rotate(-12deg);opacity:1;}
+    100%{transform:scale(1) rotate(0);opacity:1;}
+  }
+
+  /* celebration banner */
+  .celebrate{
+    position:fixed;
+    left:50%;
+    top:18%;
+    transform:translateX(-50%) scale(.6);
+    background:var(--gold);
+    color:var(--navy);
+    font-weight:900;
+    font-size:2rem;
+    letter-spacing:2px;
+    padding:16px 34px;
+    border-radius:16px;
+    border:4px solid var(--navy);
+    box-shadow:0 12px 30px rgba(10,52,118,.35);
+    z-index:50;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .25s ease, transform .35s cubic-bezier(.18,.89,.32,1.28);
+  }
+  .celebrate.show{
+    opacity:1;
+    transform:translateX(-50%) scale(1);
+  }
+  /* confetti */
+  .confetti{
+    position:fixed;
+    top:-12px;
+    width:9px;
+    height:14px;
+    z-index:49;
+    pointer-events:none;
+    will-change:transform,opacity;
+  }
+
+  .hint{
+    text-align:center;
+    color:var(--teal);
+    font-size:.85rem;
+    margin-top:14px;
+  }
+
+  /* editor */
+  details.editor{
+    margin-top:22px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    background:#fff;
+    padding:6px 12px;
+  }
+  details.editor summary{
+    cursor:pointer;
+    font-weight:700;
+    color:var(--navy);
+    padding:8px 0;
+    list-style:none;
+  }
+  details.editor summary::-webkit-details-marker{display:none;}
+  details.editor summary::before{content:"\270E  ";}
+  .editor textarea{
+    width:100%;
+    min-height:180px;
+    font-family:inherit;
+    font-size:.9rem;
+    padding:8px;
+    border:1px solid var(--line);
+    border-radius:8px;
+    resize:vertical;
+  }
+  .editor .ed-actions{
+    display:flex;
+    gap:10px;
+    margin:10px 0;
+    flex-wrap:wrap;
+  }
+  .editor .ed-note{
+    font-size:.8rem;
+    color:#666;
+    margin:4px 0 10px;
+  }
+  .print-only{display:none;}
+
+  /* ---------- PRINT ---------- */
+  @media print{
+    @page{margin:12mm;}
+    body{background:#fff;color:#000;}
+    .wrap{max-width:none;padding:0;}
+    .controls,.hint,details.editor,.celebrate,.confetti{display:none !important;}
+    .print-only{display:block;text-align:center;margin-bottom:6mm;}
+    .print-only h2{margin:0 0 2mm;font-size:18pt;}
+    .print-only .nameline{font-size:11pt;margin-top:3mm;}
+    header.app-head h1{color:#000;}
+    header.app-head p{display:none;}
+    .board{gap:0;aspect-ratio:auto;page-break-inside:avoid;}
+    .cell{
+      border:1.5pt solid #000 !important;
+      border-radius:0;
+      background:#fff !important;
+      height:32mm;
+      page-break-inside:avoid;
+    }
+    .cell .label{color:#000 !important;font-size:9pt;}
+    .cell.free{background:#fff !important;}
+    .cell.free .label{color:#000 !important;}
+    .cell.marked{background:#fff !important;}
+    .cell.marked .stamp{animation:none;}
+    .cell.marked .stamp::after{
+      background:transparent !important;
+      border:2.5pt solid #000 !important;
+      color:#000 !important;
+      transform:none;
+      box-shadow:none;
+      width:70%;height:70%;
+    }
+    .cell.win{outline:none;}
+    .board-title{color:#000;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="app-head">
+    <h1>Reading Bingo</h1>
+    <p>Tap a square when you finish that challenge!</p>
+  </header>
+
+  <div class="print-only">
+    <h2>Summer Reading Bingo</h2>
+    <div class="nameline">Name: ____________________________ &nbsp;&nbsp; Grade: ________</div>
+  </div>
+
+  <div class="controls">
+    <button class="btn-shuffle" id="shuffleBtn">Shuffle new board</button>
+    <button class="btn-print" id="printBtn">Print my board</button>
+    <button class="btn-reset" id="resetBtn">Clear stamps</button>
+    <button class="btn-save" id="saveFileBtn">⬇ Save to file</button>
+    <button class="btn-load" id="loadFileBtn">⬆ Load from file</button>
+    <input type="file" id="loadFileInput" accept=".json,application/json" hidden>
+  </div>
+
+  <div class="file-msg" id="fileMsg" aria-live="polite"></div>
+
+  <div class="board-title">Fill a row, column, or diagonal to get BINGO!</div>
+
+  <div class="board" id="board" role="grid" aria-label="Reading Bingo board"></div>
+
+  <p class="hint">Your stamps are saved automatically on this device.</p>
+
+  <details class="editor">
+    <summary>Edit the challenge list</summary>
+    <p class="ed-note">One challenge per line. You need at least 24 to fill a board (the center is always FREE). Click "Save list" then "Shuffle new board".</p>
+    <textarea id="poolText" spellcheck="true"></textarea>
+    <div class="ed-actions">
+      <button class="btn-shuffle" id="savePoolBtn" style="flex:0 0 auto;">Save list</button>
+      <button class="btn-reset" id="restorePoolBtn" style="flex:0 0 auto;">Restore defaults</button>
+    </div>
+  </details>
+
+</div>
+
+<div class="celebrate" id="celebrate" aria-live="polite">BINGO!</div>
+
+<script>
+/* =========================================================================
+   READING CHALLENGE POOL  — edit these freely (about 30 challenges).
+   The board picks 24 at random; the center square is always FREE.
+   ========================================================================= */
+const DEFAULT_POOL = [
+  "Read a book set in space",
+  "Read a graphic novel",
+  "Read outside",
+  "Read a book by a new author",
+  "Read a mystery",
+  "Read a book with an animal on the cover",
+  "Read a book that became a movie",
+  "Read a biography or memoir",
+  "Read a funny book",
+  "Read a book recommended by a friend",
+  "Read a poem out loud",
+  "Read a fairy tale or myth",
+  "Read a non-fiction book",
+  "Read a book set in another country",
+  "Read for 30 minutes straight",
+  "Read a book with a number in the title",
+  "Read a book older than you are",
+  "Read to a younger kid or a pet",
+  "Read a book about science or nature",
+  "Read a book in a series",
+  "Read a book with a one-word title",
+  "Re-read an old favorite",
+  "Read a book a librarian picks for you",
+  "Read a scary or spooky story",
+  "Read a book about a real hero",
+  "Read a sports or adventure book",
+  "Read a book before bedtime",
+  "Read a book with a blue cover",
+  "Read a book set long ago",
+  "Read a book that made you think"
+];
+
+/* ---- storage keys ---- */
+const K_BOARD = "tcea_readingbingo_board_v1";
+const K_MARKS = "tcea_readingbingo_marks_v1";
+const K_POOL  = "tcea_readingbingo_pool_v1";
+
+const FREE_INDEX = 12; // center of a 0..24 grid
+
+let pool = loadPool();
+let board = [];   // array of 25 strings
+let marks = [];   // array of 25 booleans
+
+/* ---------- helpers ---------- */
+function loadPool(){
+  try{
+    const saved = JSON.parse(localStorage.getItem(K_POOL));
+    if(Array.isArray(saved) && saved.length) return saved;
+  }catch(e){}
+  return DEFAULT_POOL.slice();
+}
+function savePool(){
+  try{ localStorage.setItem(K_POOL, JSON.stringify(pool)); }catch(e){}
+}
+function shuffleArray(a){
+  const arr = a.slice();
+  for(let i=arr.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]] = [arr[j],arr[i]];
+  }
+  return arr;
+}
+
+/* Build a fresh board (24 challenges + FREE center). */
+function buildBoard(){
+  let picks = shuffleArray(pool).slice(0,24);
+  // pad if the user supplied fewer than 24 challenges
+  while(picks.length < 24) picks.push("Read a book!");
+  const cells = [];
+  let p = 0;
+  for(let i=0;i<25;i++){
+    if(i === FREE_INDEX) cells.push("FREE");
+    else cells.push(picks[p++]);
+  }
+  board = cells;
+  marks = new Array(25).fill(false);
+  marks[FREE_INDEX] = true; // FREE is always stamped
+  saveState();
+}
+
+function saveState(){
+  try{
+    localStorage.setItem(K_BOARD, JSON.stringify(board));
+    localStorage.setItem(K_MARKS, JSON.stringify(marks));
+  }catch(e){}
+}
+function loadState(){
+  try{
+    const b = JSON.parse(localStorage.getItem(K_BOARD));
+    const m = JSON.parse(localStorage.getItem(K_MARKS));
+    if(Array.isArray(b) && b.length===25 && Array.isArray(m) && m.length===25){
+      board = b; marks = m;
+      marks[FREE_INDEX] = true;
+      return true;
+    }
+  }catch(e){}
+  return false;
+}
+
+/* ---------- rendering ---------- */
+const boardEl = document.getElementById("board");
+
+function render(){
+  boardEl.innerHTML = "";
+  const winningCells = getWinningCells();
+  for(let i=0;i<25;i++){
+    const cell = document.createElement("div");
+    cell.className = "cell";
+    cell.setAttribute("role","gridcell");
+    cell.dataset.idx = i;
+    if(i === FREE_INDEX) cell.classList.add("free");
+    if(marks[i]) cell.classList.add("marked");
+    if(winningCells.has(i)) cell.classList.add("win");
+
+    const label = document.createElement("span");
+    label.className = "label";
+    label.textContent = board[i];
+    cell.appendChild(label);
+
+    if(marks[i]){
+      const stamp = document.createElement("span");
+      stamp.className = "stamp";
+      cell.appendChild(stamp);
+    }
+
+    if(i !== FREE_INDEX){
+      cell.addEventListener("click", () => toggleCell(i));
+    }
+    boardEl.appendChild(cell);
+  }
+}
+
+function toggleCell(i){
+  if(i === FREE_INDEX) return;
+  const before = hasBingo();
+  marks[i] = !marks[i];
+  saveState();
+  render();
+  const now = hasBingo();
+  if(now && !before){
+    celebrate();
+  }
+}
+
+/* ---------- BINGO detection ---------- */
+function winningLines(){
+  const lines = [];
+  for(let r=0;r<5;r++) lines.push([r*5,r*5+1,r*5+2,r*5+3,r*5+4]);       // rows
+  for(let c=0;c<5;c++) lines.push([c,c+5,c+10,c+15,c+20]);             // cols
+  lines.push([0,6,12,18,24]);                                          // diag \
+  lines.push([4,8,12,16,20]);                                          // diag /
+  return lines;
+}
+function hasBingo(){
+  return winningLines().some(line => line.every(idx => marks[idx]));
+}
+function getWinningCells(){
+  const set = new Set();
+  winningLines().forEach(line=>{
+    if(line.every(idx=>marks[idx])) line.forEach(idx=>set.add(idx));
+  });
+  return set;
+}
+
+/* ---------- celebration ---------- */
+const celebrateEl = document.getElementById("celebrate");
+let celebrateTimer = null;
+function celebrate(){
+  celebrateEl.classList.add("show");
+  clearTimeout(celebrateTimer);
+  celebrateTimer = setTimeout(()=>celebrateEl.classList.remove("show"), 2600);
+  launchConfetti();
+}
+function launchConfetti(){
+  const colors = ["#0A3476","#FCB040","#0E6B8A","#ffffff"];
+  const count = 70;
+  for(let i=0;i<count;i++){
+    const piece = document.createElement("div");
+    piece.className = "confetti";
+    piece.style.left = Math.random()*100 + "vw";
+    piece.style.background = colors[Math.floor(Math.random()*colors.length)];
+    piece.style.transform = "rotate(" + (Math.random()*360) + "deg)";
+    document.body.appendChild(piece);
+    const fall = 100 + Math.random()*20;     // vh
+    const drift = (Math.random()*30 - 15);   // vw
+    const dur = 1800 + Math.random()*1400;
+    piece.animate(
+      [
+        {transform:"translate(0,0) rotate(0deg)", opacity:1},
+        {transform:"translate("+drift+"vw,"+fall+"vh) rotate(720deg)", opacity:.9}
+      ],
+      {duration:dur, easing:"cubic-bezier(.3,.6,.6,1)"}
+    ).onfinish = ()=> piece.remove();
+  }
+}
+
+/* ---------- controls ---------- */
+document.getElementById("shuffleBtn").addEventListener("click", ()=>{
+  buildBoard();
+  render();
+});
+document.getElementById("printBtn").addEventListener("click", ()=> window.print());
+document.getElementById("resetBtn").addEventListener("click", ()=>{
+  marks = new Array(25).fill(false);
+  marks[FREE_INDEX] = true;
+  saveState();
+  render();
+});
+
+/* ---------- editor ---------- */
+const poolText = document.getElementById("poolText");
+function fillEditor(){ poolText.value = pool.join("\n"); }
+
+document.getElementById("savePoolBtn").addEventListener("click", ()=>{
+  const lines = poolText.value.split("\n").map(s=>s.trim()).filter(Boolean);
+  if(lines.length < 24){
+    alert("Please enter at least 24 challenges (you have " + lines.length + ").");
+    return;
+  }
+  pool = lines;
+  savePool();
+  buildBoard();
+  render();
+  alert("Saved! A fresh board was generated.");
+});
+document.getElementById("restorePoolBtn").addEventListener("click", ()=>{
+  pool = DEFAULT_POOL.slice();
+  savePool();
+  fillEditor();
+  buildBoard();
+  render();
+});
+
+/* ---------- save / load to file ---------- */
+const fileMsgEl = document.getElementById("fileMsg");
+let fileMsgTimer = null;
+function showFileMsg(text, isError){
+  fileMsgEl.textContent = text;
+  fileMsgEl.className = "file-msg " + (isError ? "err" : "ok");
+  clearTimeout(fileMsgTimer);
+  fileMsgTimer = setTimeout(()=>{ fileMsgEl.textContent = ""; fileMsgEl.className = "file-msg"; }, 5000);
+}
+
+document.getElementById("saveFileBtn").addEventListener("click", ()=>{
+  try{
+    const data = {
+      type: "tcea-reading-bingo",
+      version: 1,
+      board: board,
+      marks: marks,
+      pool: pool
+    };
+    const blob = new Blob([JSON.stringify(data, null, 2)], {type:"application/json"});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "reading-bingo.json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showFileMsg("Saved reading-bingo.json", false);
+  }catch(e){
+    showFileMsg("Sorry, could not save the file.", true);
+  }
+});
+
+document.getElementById("loadFileBtn").addEventListener("click", ()=>{
+  document.getElementById("loadFileInput").click();
+});
+
+document.getElementById("loadFileInput").addEventListener("change", (ev)=>{
+  const input = ev.target;
+  const file = input.files && input.files[0];
+  if(!file){ return; }
+  const reader = new FileReader();
+  reader.onerror = ()=>{ showFileMsg("Could not read that file.", true); input.value = ""; };
+  reader.onload = ()=>{
+    let data;
+    try{
+      data = JSON.parse(reader.result);
+    }catch(e){
+      showFileMsg("That file isn't valid JSON.", true);
+      input.value = "";
+      return;
+    }
+    if(!data || typeof data !== "object"
+       || !Array.isArray(data.board) || data.board.length !== 25
+       || !Array.isArray(data.marks) || data.marks.length !== 25){
+      showFileMsg("That file isn't a Reading Bingo save.", true);
+      input.value = "";
+      return;
+    }
+    // restore in-memory state
+    board = data.board.map(String);
+    marks = data.marks.map(Boolean);
+    marks[FREE_INDEX] = true;
+    if(Array.isArray(data.pool) && data.pool.length){
+      pool = data.pool.map(String);
+    }
+    // persist to localStorage
+    savePool();
+    saveState();
+    // refresh UI
+    fillEditor();
+    render();
+    showFileMsg("Loaded your saved board!", false);
+    input.value = "";
+  };
+  reader.readAsText(file);
+});
+
+/* ---------- init ---------- */
+if(!loadState()){
+  buildBoard();
+}
+fillEditor();
+render();
+</script>
+<a href="../../libvibes.html" aria-label="Back to LibVibes" style="position:fixed;left:12px;bottom:12px;z-index:99999;background:#0A3476;color:#fff;font:700 12px/1 system-ui,-apple-system,Segoe UI,sans-serif;text-decoration:none;padding:8px 12px;border-radius:9px;box-shadow:0 3px 12px rgba(0,0,0,.28)">← LibVibes</a>
+<script src="../../libvibes-notice.js"></script>
+</body>
+</html>

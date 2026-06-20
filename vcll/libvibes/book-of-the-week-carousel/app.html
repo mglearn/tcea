@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>window.__VCLL_BASE="../../";</script>
+<script src="../../lock.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book of the Week — Staff Picks Spotlight</title>
+<style>
+  /* ===== TCEA LibVibes palette ===== */
+  :root{
+    --navy:#0A3476;
+    --gold:#FCB040;
+    --teal:#0E6B8A;
+    --bg:#F6F4EE;          /* soft off-white */
+    --ink:#1c2333;
+    --muted:#5b667a;
+    --card:#ffffff;
+    --shadow:0 14px 38px rgba(10,52,118,.18);
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:var(--font);
+    background:var(--bg);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    min-height:100vh;
+    padding:24px 16px;
+  }
+
+  .masthead{
+    text-align:center;
+    margin-bottom:18px;
+  }
+  .masthead .kicker{
+    display:inline-block;
+    font-size:.72rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    font-weight:700;
+    color:var(--teal);
+    margin-bottom:6px;
+  }
+  .masthead h1{
+    margin:0;
+    font-size:1.6rem;
+    color:var(--navy);
+    line-height:1.1;
+  }
+  .masthead h1 span{color:var(--gold);}
+
+  /* ===== Carousel shell ===== */
+  .carousel{
+    position:relative;
+    width:100%;
+    max-width:860px;
+    background:var(--card);
+    border-radius:20px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    outline:none;
+  }
+  .carousel:focus-visible{box-shadow:var(--shadow),0 0 0 4px rgba(252,176,64,.55);}
+
+  .viewport{position:relative;}
+
+  /* ===== Slides (cross-fade) ===== */
+  .slide{
+    position:absolute;
+    inset:0;
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .6s ease;
+    display:flex;
+    flex-direction:column;
+  }
+  .slide.active{
+    position:relative;
+    opacity:1;
+    visibility:visible;
+  }
+
+  /* ===== Cover (CSS-drawn placeholder) ===== */
+  .cover{
+    position:relative;
+    flex:0 0 auto;
+    aspect-ratio:3/4;
+    width:100%;
+    display:flex;
+    align-items:stretch;
+    justify-content:center;
+    padding:22px;
+    background:#eef1f6;
+  }
+  .cover img{
+    width:100%;height:100%;object-fit:cover;
+    border-radius:10px;display:block;
+  }
+  /* the drawn fallback book card */
+  .book-art{
+    position:relative;
+    width:78%;
+    max-width:240px;
+    margin:auto;
+    border-radius:8px;
+    padding:18px 16px;
+    color:#fff;
+    box-shadow:0 12px 26px rgba(0,0,0,.28);
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    min-height:78%;
+    overflow:hidden;
+  }
+  .book-art::before{ /* spine */
+    content:"";position:absolute;left:0;top:0;bottom:0;width:10px;
+    background:rgba(0,0,0,.22);
+  }
+  .book-art::after{ /* gloss */
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(135deg,rgba(255,255,255,.28),rgba(255,255,255,0) 45%);
+    pointer-events:none;
+  }
+  .book-art .ba-top{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;opacity:.85;font-weight:700;}
+  .book-art .ba-title{font-size:1.15rem;font-weight:800;line-height:1.15;text-shadow:0 1px 2px rgba(0,0,0,.25);}
+  .book-art .ba-author{font-size:.78rem;opacity:.92;font-weight:600;}
+  .book-art .ba-rule{height:3px;width:34px;background:rgba(255,255,255,.85);border-radius:2px;margin:8px 0;}
+
+  /* ===== Text panel ===== */
+  .info{
+    flex:1;
+    padding:20px 22px 26px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .pill{
+    align-self:flex-start;
+    font-size:.72rem;
+    font-weight:800;
+    letter-spacing:.04em;
+    color:#fff;
+    padding:5px 12px;
+    border-radius:999px;
+    text-transform:uppercase;
+  }
+  .info .botw{
+    font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--gold);font-weight:800;
+  }
+  .info h2{margin:0;font-size:1.45rem;line-height:1.15;color:var(--navy);}
+  .info .author{margin:0;color:var(--muted);font-weight:600;font-size:.95rem;}
+  .info .pitch{margin:4px 0 0;font-size:1.02rem;line-height:1.5;color:var(--ink);}
+  .info .reserve{
+    margin-top:auto;
+    align-self:flex-start;
+    display:inline-block;
+    background:var(--teal);
+    color:#fff;
+    text-decoration:none;
+    font-weight:700;
+    padding:10px 18px;
+    border-radius:10px;
+    transition:transform .15s ease, background .15s ease;
+  }
+  .info .reserve:hover{background:#0a5570;transform:translateY(-1px);}
+
+  /* ===== Arrows ===== */
+  .arrow{
+    position:absolute;top:50%;transform:translateY(-50%);
+    z-index:5;
+    width:44px;height:44px;border-radius:50%;
+    border:none;cursor:pointer;
+    background:rgba(10,52,118,.82);
+    color:#fff;font-size:1.4rem;line-height:1;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 16px rgba(0,0,0,.25);
+    transition:background .15s ease, transform .15s ease;
+  }
+  .arrow:hover{background:var(--navy);transform:translateY(-50%) scale(1.06);}
+  .arrow:focus-visible{outline:3px solid var(--gold);outline-offset:2px;}
+  .arrow.prev{left:10px;}
+  .arrow.next{right:10px;}
+
+  /* ===== Dots + progress ===== */
+  .controls{
+    display:flex;align-items:center;justify-content:center;gap:14px;
+    padding:14px;background:#fff;border-top:1px solid #eef0f4;
+  }
+  .dots{display:flex;gap:8px;}
+  .dot{
+    width:11px;height:11px;border-radius:50%;border:none;cursor:pointer;
+    background:#cdd5e2;padding:0;transition:transform .15s,background .15s;
+  }
+  .dot:hover{background:#9fb0c9;}
+  .dot.active{background:var(--gold);transform:scale(1.25);}
+  .dot:focus-visible{outline:2px solid var(--navy);outline-offset:2px;}
+  .pausepill{
+    font-size:.7rem;color:var(--muted);font-weight:700;
+    background:#f0f2f6;padding:4px 10px;border-radius:999px;
+    min-width:74px;text-align:center;
+  }
+  .pausepill.paused{color:var(--teal);background:#e2f1f5;}
+
+  .hint{
+    margin-top:14px;font-size:.78rem;color:var(--muted);text-align:center;max-width:520px;
+  }
+
+  /* ===== Wide screens: cover left, text right ===== */
+  @media (min-width:680px){
+    .masthead h1{font-size:2rem;}
+    .slide{flex-direction:row;}
+    .cover{flex:0 0 42%;aspect-ratio:auto;padding:26px;}
+    .info{padding:30px 32px;}
+    .info h2{font-size:1.7rem;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .slide{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+  <header class="masthead">
+    <span class="kicker">TCEA LibVibes • Staff Picks</span>
+    <h1>Book of the <span>Week</span> Spotlight</h1>
+  </header>
+
+  <!-- ============================================================
+       BOOK LIST  — edit this array each week.
+       Each book:
+         cover  : a real cover image URL (leave "" to use the
+                  CSS-drawn placeholder card automatically)
+         title  : book title
+         author : author name
+         pitch  : one-sentence hook
+         genre  : genre label (gets its own colored pill, see GENRE_COLORS below)
+         link   : "Reserve / Find it" URL ("" hides the button)
+       ============================================================ -->
+  <main
+    class="carousel"
+    id="carousel"
+    tabindex="0"
+    role="region"
+    aria-roledescription="carousel"
+    aria-label="Book of the Week spotlight"
+  >
+    <div class="viewport" id="viewport" aria-live="polite"></div>
+
+    <button class="arrow prev" id="prev" aria-label="Previous book">&#8249;</button>
+    <button class="arrow next" id="next" aria-label="Next book">&#8250;</button>
+
+    <div class="controls">
+      <div class="dots" id="dots" role="tablist" aria-label="Choose a book"></div>
+      <span class="pausepill" id="pausepill" aria-live="polite">Playing</span>
+    </div>
+  </main>
+
+  <p class="hint">Auto-advances every 6 seconds • hover or focus to pause • use ← → keys or swipe on touch.</p>
+
+<script>
+  /* ============================================================
+     THE BOOKS  (6–8 staff picks — swap these out weekly)
+     ============================================================ */
+  const BOOKS = [
+    {
+      cover: "", // e.g. "https://covers.example.org/refugee.jpg"
+      title: "Refugee",
+      author: "Alan Gratz",
+      pitch: "Three young refugees across three eras race toward safety in a story that braids history into one breathless escape.",
+      genre: "Historical Fiction",
+      link: "#reserve-refugee"
+    },
+    {
+      cover: "",
+      title: "Long Way Down",
+      author: "Jason Reynolds",
+      pitch: "Sixty seconds, one elevator, seven floors of ghosts — a verse novel that asks whether revenge is worth the ride.",
+      genre: "Verse Novel",
+      link: "#reserve-longwaydown"
+    },
+    {
+      cover: "",
+      title: "The House in the Cerulean Sea",
+      author: "TJ Klune",
+      pitch: "A by-the-book caseworker visits an orphanage of magical misfits and discovers a found family worth fighting for.",
+      genre: "Fantasy",
+      link: "#reserve-cerulean"
+    },
+    {
+      cover: "",
+      title: "Hidden Figures",
+      author: "Margot Lee Shetterly",
+      pitch: "The true story of the Black women mathematicians whose calculations launched America into space.",
+      genre: "Nonfiction",
+      link: "#reserve-hiddenfigures"
+    },
+    {
+      cover: "",
+      title: "Cinder",
+      author: "Marissa Meyer",
+      pitch: "A cyborg mechanic with a secret past becomes the empire's last hope in this sci-fi reimagining of Cinderella.",
+      genre: "Sci-Fi",
+      link: "#reserve-cinder"
+    },
+    {
+      cover: "",
+      title: "One of Us Is Lying",
+      author: "Karen M. McManus",
+      pitch: "Five students walk into detention, one never walks out — and every survivor had a motive.",
+      genre: "Mystery",
+      link: "#reserve-oneofus"
+    },
+    {
+      cover: "",
+      title: "The Poet X",
+      author: "Elizabeth Acevedo",
+      pitch: "A Harlem teen pours her unspoken rebellions into a slam-poetry notebook and finally finds her voice.",
+      genre: "Verse Novel",
+      link: "#reserve-poetx"
+    }
+  ];
+
+  /* Auto-advance timing (milliseconds) */
+  const AUTO_MS = 6000;
+
+  /* Genre pill colors — each genre its own color. Unknown genres get a default. */
+  const GENRE_COLORS = {
+    "Historical Fiction": "#8C5A2B",
+    "Verse Novel":        "#7A3E9D",
+    "Fantasy":            "#0E6B8A",
+    "Nonfiction":         "#2E7D4F",
+    "Sci-Fi":             "#0A3476",
+    "Mystery":            "#B3322B"
+  };
+  const DEFAULT_PILL = "#5b667a";
+
+  /* Cover-card background colors for the CSS-drawn placeholder, cycled per slide. */
+  const ART_BG = [
+    "linear-gradient(160deg,#0A3476,#15539e)",
+    "linear-gradient(160deg,#7A3E9D,#a45fce)",
+    "linear-gradient(160deg,#0E6B8A,#1597bd)",
+    "linear-gradient(160deg,#2E7D4F,#46a86f)",
+    "linear-gradient(160deg,#B3322B,#d65149)",
+    "linear-gradient(160deg,#C8861F,#FCB040)",
+    "linear-gradient(160deg,#34495e,#54718e)"
+  ];
+
+  /* ============================================================
+     BUILD
+     ============================================================ */
+  const esc = s => String(s).replace(/[&<>"]/g, c =>
+    ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+  const viewport = document.getElementById('viewport');
+  const dotsWrap = document.getElementById('dots');
+  const carousel = document.getElementById('carousel');
+  const pausePill = document.getElementById('pausepill');
+
+  let index = 0;
+  let timer = null;
+  let paused = false;
+
+  BOOKS.forEach((b, i) => {
+    const pill = GENRE_COLORS[b.genre] || DEFAULT_PILL;
+
+    // cover: real image if provided, otherwise a CSS-drawn book card
+    const coverInner = b.cover
+      ? `<img src="${esc(b.cover)}" alt="Cover of ${esc(b.title)} by ${esc(b.author)}">`
+      : `<div class="book-art" style="background:${ART_BG[i % ART_BG.length]}">
+           <div class="ba-top">${esc(b.genre)}</div>
+           <div>
+             <div class="ba-title">${esc(b.title)}</div>
+             <div class="ba-rule"></div>
+             <div class="ba-author">${esc(b.author)}</div>
+           </div>
+         </div>`;
+
+    const reserve = b.link
+      ? `<a class="reserve" href="${esc(b.link)}">Reserve / Find it &#8594;</a>`
+      : '';
+
+    const slide = document.createElement('div');
+    slide.className = 'slide' + (i === 0 ? ' active' : '');
+    slide.setAttribute('role', 'group');
+    slide.setAttribute('aria-roledescription', 'slide');
+    slide.setAttribute('aria-label', `${i + 1} of ${BOOKS.length}: ${b.title}`);
+    slide.innerHTML = `
+      <div class="cover">${coverInner}</div>
+      <div class="info">
+        <span class="botw">Book of the Week</span>
+        <span class="pill" style="background:${pill}">${esc(b.genre)}</span>
+        <h2>${esc(b.title)}</h2>
+        <p class="author">by ${esc(b.author)}</p>
+        <p class="pitch">${esc(b.pitch)}</p>
+        ${reserve}
+      </div>`;
+    viewport.appendChild(slide);
+
+    const dot = document.createElement('button');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('role', 'tab');
+    dot.setAttribute('aria-label', `Show ${b.title}`);
+    dot.addEventListener('click', () => { goTo(i); restart(); });
+    dotsWrap.appendChild(dot);
+  });
+
+  const slides = Array.from(viewport.querySelectorAll('.slide'));
+  const dots = Array.from(dotsWrap.querySelectorAll('.dot'));
+
+  function goTo(n){
+    index = (n + slides.length) % slides.length;
+    slides.forEach((s, i) => {
+      s.classList.toggle('active', i === index);
+      s.setAttribute('aria-hidden', i === index ? 'false' : 'true');
+    });
+    dots.forEach((d, i) => {
+      d.classList.toggle('active', i === index);
+      d.setAttribute('aria-selected', i === index ? 'true' : 'false');
+    });
+  }
+  const next = () => goTo(index + 1);
+  const prev = () => goTo(index - 1);
+
+  /* ===== Auto-advance ===== */
+  function start(){
+    stop();
+    if (paused) return;
+    timer = setInterval(next, AUTO_MS);
+  }
+  function stop(){ if (timer){ clearInterval(timer); timer = null; } }
+  function restart(){ if (!paused) start(); }
+
+  function setPaused(p){
+    paused = p;
+    if (p){ stop(); pausePill.textContent = 'Paused'; pausePill.classList.add('paused'); }
+    else  { start(); pausePill.textContent = 'Playing'; pausePill.classList.remove('paused'); }
+  }
+
+  /* ===== Controls ===== */
+  document.getElementById('next').addEventListener('click', () => { next(); restart(); });
+  document.getElementById('prev').addEventListener('click', () => { prev(); restart(); });
+
+  /* Pause on hover / focus */
+  carousel.addEventListener('mouseenter', () => setPaused(true));
+  carousel.addEventListener('mouseleave', () => setPaused(false));
+  carousel.addEventListener('focusin',  () => setPaused(true));
+  carousel.addEventListener('focusout', (e) => {
+    if (!carousel.contains(e.relatedTarget)) setPaused(false);
+  });
+
+  /* Keyboard arrows */
+  carousel.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight'){ e.preventDefault(); next(); }
+    else if (e.key === 'ArrowLeft'){ e.preventDefault(); prev(); }
+  });
+
+  /* Touch swipe */
+  let startX = 0, startY = 0, swiping = false;
+  viewport.addEventListener('touchstart', (e) => {
+    const t = e.changedTouches[0];
+    startX = t.clientX; startY = t.clientY; swiping = true;
+    setPaused(true);
+  }, {passive:true});
+  viewport.addEventListener('touchend', (e) => {
+    if (!swiping) return;
+    swiping = false;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - startX, dy = t.clientY - startY;
+    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)){
+      if (dx < 0) next(); else prev();
+    }
+    setPaused(false);
+  }, {passive:true});
+
+  /* Pause when tab is hidden, resume when visible */
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stop(); else restart();
+  });
+
+  /* Go ===== */
+  goTo(0);
+  start();
+</script>
+<a href="../../libvibes.html" aria-label="Back to LibVibes" style="position:fixed;left:12px;bottom:12px;z-index:99999;background:#0A3476;color:#fff;font:700 12px/1 system-ui,-apple-system,Segoe UI,sans-serif;text-decoration:none;padding:8px 12px;border-radius:9px;box-shadow:0 3px 12px rgba(0,0,0,.28)">← LibVibes</a>
+<script src="../../libvibes-notice.js"></script>
+</body>
+</html>

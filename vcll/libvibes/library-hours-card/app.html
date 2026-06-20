@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>window.__VCLL_BASE="../../";</script>
+<script src="../../lock.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Library at a Glance</title>
+<style>
+  /* ============================================================
+     COLOR PALETTE (edit these if you like)
+     navy #0A3476  |  gold #FCB040  |  teal #0E6B8A  |  off-white bg
+     ============================================================ */
+  :root{
+    --navy:#0A3476;
+    --gold:#FCB040;
+    --teal:#0E6B8A;
+    --bg:#F7F4EC;          /* soft off-white */
+    --card:#FFFFFF;
+    --ink:#16263f;         /* dark readable text */
+    --muted:#4a5a72;
+    --open:#1d7d4f;
+    --closed:#b3261e;
+    --radius:16px;
+    --shadow:0 6px 20px rgba(10,52,118,.10);
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    padding:16px;
+  }
+
+  /* Gentle fade-in on load */
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    opacity:0;
+    transform:translateY(10px);
+    animation:fadeIn .7s ease forwards;
+  }
+  @keyframes fadeIn{ to{ opacity:1; transform:translateY(0);} }
+  @media (prefers-reduced-motion: reduce){
+    .wrap{animation:none;opacity:1;transform:none;}
+    .tile{transition:none;}
+  }
+
+  /* ---- Header ---- */
+  .card{
+    background:var(--card);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    overflow:hidden;
+  }
+  .header{
+    background:linear-gradient(135deg,var(--navy),var(--teal));
+    color:#fff;
+    padding:26px 22px 22px;
+    text-align:center;
+  }
+  .header h1{
+    margin:0;
+    font-size:clamp(1.5rem,5vw,2rem);
+    letter-spacing:.3px;
+  }
+  .header .welcome{
+    margin:8px 0 0;
+    font-size:1.02rem;
+    color:#e9f0f8;
+  }
+
+  /* ---- Status pill ---- */
+  .status-row{
+    display:flex;
+    justify-content:center;
+    margin-top:16px;
+  }
+  .pill{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    font-weight:700;
+    font-size:1rem;
+    padding:9px 18px;
+    border-radius:999px;
+    background:#fff;
+    box-shadow:0 2px 8px rgba(0,0,0,.18);
+  }
+  .pill .dot{
+    width:12px;height:12px;border-radius:50%;
+    flex:0 0 auto;
+  }
+  .pill.open{ color:var(--open); }
+  .pill.open .dot{ background:var(--open); box-shadow:0 0 0 4px rgba(29,125,79,.18); }
+  .pill.closed{ color:var(--closed); }
+  .pill.closed .dot{ background:var(--closed); box-shadow:0 0 0 4px rgba(179,38,30,.16); }
+  .pill .sub{
+    font-weight:600;
+    font-size:.82rem;
+    color:var(--muted);
+  }
+
+  /* ---- Body padding ---- */
+  .body{ padding:22px; }
+
+  .section-title{
+    font-size:.82rem;
+    text-transform:uppercase;
+    letter-spacing:1.4px;
+    color:var(--teal);
+    font-weight:800;
+    margin:0 0 10px;
+  }
+
+  /* ---- Today's hours banner ---- */
+  .today-banner{
+    background:#fff7e8;
+    border:1px solid #f5dca0;
+    border-left:6px solid var(--gold);
+    border-radius:12px;
+    padding:14px 16px;
+    margin-bottom:24px;
+  }
+  .today-banner .day{ font-weight:800; color:var(--navy); font-size:1.05rem; }
+  .today-banner .hrs{ font-size:1.25rem; font-weight:700; margin-top:2px; }
+
+  /* ---- Weekly table ---- */
+  .week{
+    width:100%;
+    border-collapse:collapse;
+    margin-bottom:26px;
+    font-size:1rem;
+  }
+  .week caption{ text-align:left; }
+  .week th, .week td{
+    padding:11px 12px;
+    text-align:left;
+    border-bottom:1px solid #ececec;
+  }
+  .week th[scope="col"]{
+    color:var(--muted);
+    font-size:.78rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
+  }
+  .week td.hrs-col{ text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .week tr.is-today{
+    background:#fff7e8;
+  }
+  .week tr.is-today th, .week tr.is-today td{
+    color:var(--navy);
+    font-weight:800;
+  }
+  .week tr.is-today th[scope="row"]::after{
+    content:"Today";
+    display:inline-block;
+    margin-left:8px;
+    background:var(--gold);
+    color:#3a2a00;
+    font-size:.66rem;
+    font-weight:800;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    padding:2px 7px;
+    border-radius:999px;
+    vertical-align:middle;
+  }
+
+  /* ---- Quick info tiles ---- */
+  .tiles{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  @media (min-width:620px){
+    .tiles{ grid-template-columns:repeat(3,1fr); }
+  }
+  .tile{
+    background:var(--card);
+    border:1px solid #eee;
+    border-top:4px solid var(--gold);
+    border-radius:14px;
+    padding:16px;
+    box-shadow:0 2px 8px rgba(10,52,118,.05);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .tile:hover, .tile:focus-within{
+    transform:translateY(-4px);
+    box-shadow:0 12px 24px rgba(10,52,118,.16);
+  }
+  .tile .icon{
+    width:42px;height:42px;border-radius:11px;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--navy);
+    margin-bottom:10px;
+  }
+  .tile .icon svg{ width:24px;height:24px; }
+  .tile h3{ margin:0 0 6px; font-size:1.05rem; color:var(--navy); }
+  .tile p{ margin:0; color:var(--muted); font-size:.95rem; }
+
+  /* ---- Footer ---- */
+  .foot{
+    text-align:center;
+    color:var(--muted);
+    font-size:.82rem;
+    padding:16px 22px 22px;
+  }
+  .foot a{ color:var(--teal); }
+
+  :focus-visible{ outline:3px solid var(--teal); outline-offset:2px; border-radius:6px; }
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="card">
+      <header class="header">
+        <h1 id="libName">Maplewood Middle School Library</h1>
+        <p class="welcome" id="welcomeMsg">Welcome! Browse, borrow, and find your next great read.</p>
+        <div class="status-row">
+          <span class="pill" id="statusPill" role="status" aria-live="polite">
+            <span class="dot" aria-hidden="true"></span>
+            <span id="statusText">Checking hours…</span>
+            <span class="sub" id="statusSub"></span>
+          </span>
+        </div>
+      </header>
+
+      <div class="body">
+        <!-- Today's hours -->
+        <h2 class="section-title">Today</h2>
+        <div class="today-banner">
+          <div class="day" id="todayName">—</div>
+          <div class="hrs" id="todayHours">—</div>
+        </div>
+
+        <!-- Weekly hours table -->
+        <h2 class="section-title">Weekly Hours</h2>
+        <table class="week" id="weekTable">
+          <thead>
+            <tr>
+              <th scope="col">Day</th>
+              <th scope="col" class="hrs-col">Hours</th>
+            </tr>
+          </thead>
+          <tbody id="weekBody"><!-- filled by JS --></tbody>
+        </table>
+
+        <!-- Quick info tiles -->
+        <h2 class="section-title">Quick Info</h2>
+        <div class="tiles">
+          <section class="tile" tabindex="0" aria-labelledby="t1h">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#FCB040" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </span>
+            <h3 id="t1h">Checkout Limits</h3>
+            <p id="tileCheckout"></p>
+          </section>
+
+          <section class="tile" tabindex="0" aria-labelledby="t2h">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#FCB040" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+            </span>
+            <h3 id="t2h">How to Renew</h3>
+            <p id="tileRenew"></p>
+          </section>
+
+          <section class="tile" tabindex="0" aria-labelledby="t3h">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#FCB040" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+            </span>
+            <h3 id="t3h">Wi-Fi &amp; Printing</h3>
+            <p id="tileWifi"></p>
+          </section>
+        </div>
+      </div>
+
+      <footer class="foot">
+        <span id="footNote"></span>
+      </footer>
+    </div>
+  </main>
+
+<script>
+/* ============================================================
+   EDIT YOUR LIBRARY INFO HERE
+   ------------------------------------------------------------
+   Everything a librarian needs to change lives in this block.
+   No coding needed — just replace the text between the quotes.
+   ============================================================ */
+
+const LIBRARY_NAME    = "Maplewood Middle School Library";
+const WELCOME_MESSAGE = "Welcome! Browse, borrow, and find your next great read.";
+
+/* Weekly hours.
+   - Use 24-hour time "HH:MM" so the Open/Closed pill works correctly.
+   - For a closed day, set:  { closed: true }
+   Order is Sunday (0) through Saturday (6). */
+const HOURS = {
+  0: { closed: true },                       // Sunday
+  1: { open: "07:45", close: "16:30" },      // Monday
+  2: { open: "07:45", close: "16:30" },      // Tuesday
+  3: { open: "07:45", close: "16:30" },      // Wednesday
+  4: { open: "07:45", close: "16:30" },      // Thursday
+  5: { open: "07:45", close: "15:00" },      // Friday
+  6: { closed: true }                        // Saturday
+};
+
+/* Three quick-info tiles */
+const CHECKOUT_INFO = "Students may borrow up to 3 books at a time for 2 weeks. No fines for late returns — just bring them back!";
+const RENEW_INFO    = "Renew at the front desk or online through Destiny Discover with your student ID. Each book renews once.";
+const WIFI_INFO     = "Free guest Wi-Fi: “Maple-Guest” (no password). Printing is 10¢ per page at the kiosk by the door.";
+
+/* Footer line */
+const FOOTER_NOTE = "Questions? Visit the front desk or email library@maplewood.edu";
+
+/* ============================================================
+   ↓↓↓  No need to edit below this line  ↓↓↓
+   ============================================================ */
+
+const DAY_NAMES = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+// Format "HH:MM" (24h) into a friendly "7:45 AM"
+function fmt(t){
+  const [h, m] = t.split(":").map(Number);
+  const ampm = h >= 12 ? "PM" : "AM";
+  let hr = h % 12; if (hr === 0) hr = 12;
+  return hr + ":" + String(m).padStart(2,"0") + " " + ampm;
+}
+
+// Hours text for a given day index
+function hoursText(idx){
+  const d = HOURS[idx];
+  if (!d || d.closed) return "Closed";
+  return fmt(d.open) + " – " + fmt(d.close);
+}
+
+// minutes since midnight for "HH:MM"
+function toMin(t){ const [h,m]=t.split(":").map(Number); return h*60+m; }
+
+function render(){
+  const now = new Date();
+  const dayIdx = now.getDay();
+  const nowMin = now.getHours()*60 + now.getMinutes();
+
+  // Header text
+  document.getElementById("libName").textContent    = LIBRARY_NAME;
+  document.getElementById("welcomeMsg").textContent = WELCOME_MESSAGE;
+  document.title = LIBRARY_NAME;
+
+  // Today's banner
+  document.getElementById("todayName").textContent  = DAY_NAMES[dayIdx];
+  document.getElementById("todayHours").textContent = hoursText(dayIdx);
+
+  // Weekly table (Mon-first reading order, with today highlighted)
+  const body = document.getElementById("weekBody");
+  body.innerHTML = "";
+  const order = [1,2,3,4,5,6,0]; // Mon..Sun
+  order.forEach(i=>{
+    const tr = document.createElement("tr");
+    if (i === dayIdx) {
+      tr.className = "is-today";
+      tr.setAttribute("aria-current","date");
+    }
+    const th = document.createElement("th");
+    th.setAttribute("scope","row");
+    th.textContent = DAY_NAMES[i];
+    const td = document.createElement("td");
+    td.className = "hrs-col";
+    td.textContent = hoursText(i);
+    tr.appendChild(th); tr.appendChild(td);
+    body.appendChild(tr);
+  });
+
+  // Tiles
+  document.getElementById("tileCheckout").textContent = CHECKOUT_INFO;
+  document.getElementById("tileRenew").textContent    = RENEW_INFO;
+  document.getElementById("tileWifi").textContent     = WIFI_INFO;
+  document.getElementById("footNote").textContent     = FOOTER_NOTE;
+
+  // Open / Closed status pill
+  const pill = document.getElementById("statusPill");
+  const txt  = document.getElementById("statusText");
+  const sub  = document.getElementById("statusSub");
+  const today = HOURS[dayIdx];
+
+  let isOpen = false, subMsg = "";
+  if (today && !today.closed){
+    const o = toMin(today.open), c = toMin(today.close);
+    if (nowMin < o){
+      subMsg = "Opens " + fmt(today.open);
+    } else if (nowMin >= o && nowMin < c){
+      isOpen = true;
+      subMsg = "Until " + fmt(today.close);
+    } else {
+      subMsg = "Closed for the day";
+    }
+  }
+
+  // If closed today (or after hours), find the next open day
+  if (!isOpen && (!subMsg || subMsg === "Closed for the day" || (today && today.closed))){
+    for (let step=1; step<=7; step++){
+      const ni = (dayIdx + step) % 7;
+      if (HOURS[ni] && !HOURS[ni].closed){
+        const label = step === 1 ? "Opens tomorrow" : "Opens " + DAY_NAMES[ni];
+        subMsg = label + " " + fmt(HOURS[ni].open);
+        break;
+      }
+    }
+  }
+
+  pill.classList.remove("open","closed");
+  pill.classList.add(isOpen ? "open" : "closed");
+  txt.textContent = isOpen ? "Open now" : "Closed now";
+  sub.textContent = subMsg;
+}
+
+render();
+// Keep the clock/status fresh while the card is open
+setInterval(render, 30000);
+</script>
+<a href="../../libvibes.html" aria-label="Back to LibVibes" style="position:fixed;left:12px;bottom:12px;z-index:99999;background:#0A3476;color:#fff;font:700 12px/1 system-ui,-apple-system,Segoe UI,sans-serif;text-decoration:none;padding:8px 12px;border-radius:9px;box-shadow:0 3px 12px rgba(0,0,0,.28)">← LibVibes</a>
+<script src="../../libvibes-notice.js"></script>
+</body>
+</html>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>window.__VCLL_BASE="../../";</script>
+<script src="../../lock.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Is It On the Shelf? — Library Catalog Lookup</title>
+<style>
+  /* ===== Palette ===== */
+  :root{
+    --navy:#0A3476;
+    --gold:#FCB040;
+    --teal:#0E6B8A;
+    --bg:#F7F5EF;          /* soft off-white */
+    --card:#FFFFFF;
+    --ink:#1E2733;
+    --muted:#5C6B7A;
+    --line:#E3E0D6;
+    --in:#1F8A4C;          /* green  - In */
+    --in-bg:#E6F4EC;
+    --hold:#B5760A;        /* amber  - On Hold */
+    --hold-bg:#FCF1DC;
+    --out:#C2362F;         /* red    - Checked Out */
+    --out-bg:#FBE7E5;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,
+      "Apple Color Emoji","Segoe UI Emoji",sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.45;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ===== Header ===== */
+  header.site{
+    background:var(--navy);
+    color:#fff;
+    padding:20px 16px 18px;
+  }
+  .wrap{max-width:880px;margin:0 auto;}
+  header.site h1{
+    margin:0;
+    font-size:1.45rem;
+    letter-spacing:.2px;
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  }
+  header.site h1 .book{font-size:1.4rem;}
+  header.site .sub{
+    margin:4px 0 0;
+    color:var(--gold);
+    font-weight:600;
+    font-size:.95rem;
+  }
+  .demo-note{
+    margin-top:12px;
+    background:rgba(252,176,64,.14);
+    border:1px solid var(--gold);
+    color:#fff;
+    border-radius:8px;
+    padding:8px 11px;
+    font-size:.82rem;
+    line-height:1.35;
+  }
+  .demo-note strong{color:var(--gold);}
+
+  /* ===== Controls ===== */
+  .controls{padding:16px;}
+  .searchbar{position:relative;}
+  .searchbar input{
+    width:100%;
+    font-size:1.05rem;
+    padding:14px 16px 14px 44px;
+    border:2px solid var(--line);
+    border-radius:12px;
+    background:var(--card);
+    color:var(--ink);
+    outline:none;
+    transition:border-color .15s,box-shadow .15s;
+  }
+  .searchbar input:focus{
+    border-color:var(--teal);
+    box-shadow:0 0 0 3px rgba(14,107,138,.16);
+  }
+  .searchbar .ico{
+    position:absolute;left:15px;top:50%;transform:translateY(-50%);
+    color:var(--teal);font-size:1.1rem;pointer-events:none;
+  }
+
+  .filters{
+    display:flex;gap:12px;flex-wrap:wrap;align-items:center;
+    margin-top:12px;
+  }
+  .filters label.field{
+    display:flex;flex-direction:column;gap:4px;
+    font-size:.78rem;font-weight:600;color:var(--muted);
+  }
+  .filters select{
+    font-size:.95rem;
+    padding:9px 12px;
+    border:2px solid var(--line);
+    border-radius:10px;
+    background:var(--card);
+    color:var(--ink);
+    min-width:160px;
+  }
+  .filters select:focus{outline:none;border-color:var(--teal);}
+
+  .toggle{
+    display:inline-flex;align-items:center;gap:9px;
+    cursor:pointer;user-select:none;
+    font-size:.92rem;font-weight:600;color:var(--ink);
+    margin-top:18px;
+  }
+  .toggle input{position:absolute;opacity:0;width:0;height:0;}
+  .switch{
+    width:42px;height:24px;border-radius:999px;background:#C9D0D8;
+    position:relative;transition:background .18s;flex:none;
+  }
+  .switch::after{
+    content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;
+    border-radius:50%;background:#fff;transition:transform .18s;
+    box-shadow:0 1px 2px rgba(0,0,0,.3);
+  }
+  .toggle input:checked + .switch{background:var(--teal);}
+  .toggle input:checked + .switch::after{transform:translateX(18px);}
+  .toggle input:focus-visible + .switch{box-shadow:0 0 0 3px rgba(14,107,138,.3);}
+
+  /* ===== Result meta line ===== */
+  .meta{
+    padding:0 16px;
+    font-size:.85rem;color:var(--muted);
+    margin:2px 0 4px;
+    min-height:20px;
+  }
+
+  /* ===== Results grid ===== */
+  .results{
+    padding:8px 16px 40px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+  @media(min-width:620px){
+    .results{grid-template-columns:1fr 1fr;}
+  }
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-left:5px solid var(--teal);
+    border-radius:12px;
+    padding:14px 15px;
+    display:flex;flex-direction:column;gap:6px;
+    box-shadow:0 1px 2px rgba(10,52,118,.05);
+  }
+  .card.s-in{border-left-color:var(--in);}
+  .card.s-hold{border-left-color:var(--hold);}
+  .card.s-out{border-left-color:var(--out);}
+
+  .card .title{font-size:1.05rem;font-weight:700;color:var(--navy);}
+  .card .author{font-size:.9rem;color:var(--muted);font-style:italic;}
+  .card .details{
+    display:flex;flex-wrap:wrap;gap:6px 14px;
+    font-size:.82rem;color:var(--ink);margin-top:2px;
+  }
+  .card .details b{color:var(--muted);font-weight:600;}
+  .card .genre-tag{
+    align-self:flex-start;
+    background:rgba(10,52,118,.07);
+    color:var(--navy);
+    font-size:.72rem;font-weight:600;
+    padding:2px 9px;border-radius:999px;
+  }
+
+  .pill{
+    align-self:flex-start;
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:.78rem;font-weight:700;
+    padding:4px 11px;border-radius:999px;
+    border:1px solid transparent;
+  }
+  .pill .dot{width:9px;height:9px;border-radius:50%;flex:none;}
+  .pill.in{background:var(--in-bg);color:var(--in);border-color:var(--in);}
+  .pill.in .dot{background:var(--in);}
+  .pill.hold{background:var(--hold-bg);color:var(--hold);border-color:var(--hold);}
+  .pill.hold .dot{background:var(--hold);}
+  .pill.out{background:var(--out-bg);color:var(--out);border-color:var(--out);}
+  .pill.out .dot{background:var(--out);}
+
+  /* ===== Empty state ===== */
+  .empty{
+    grid-column:1 / -1;
+    text-align:center;
+    padding:42px 22px;
+    color:var(--muted);
+  }
+  .empty .big{font-size:2.4rem;margin-bottom:6px;}
+  .empty h3{margin:0 0 6px;color:var(--navy);font-size:1.15rem;}
+  .empty p{margin:0 auto;max-width:380px;font-size:.95rem;}
+
+  /* ===== Skeleton shimmer ===== */
+  .sk{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-left:5px solid var(--line);
+    border-radius:12px;
+    padding:14px 15px;
+    display:flex;flex-direction:column;gap:9px;
+  }
+  .sk .bar{height:13px;border-radius:6px;background:#ECEAE2;overflow:hidden;position:relative;}
+  .sk .bar.w70{width:70%;}.sk .bar.w45{width:45%;}.sk .bar.w55{width:55%;}.sk .bar.w30{width:30%;}
+  .sk .bar::after{
+    content:"";position:absolute;inset:0;transform:translateX(-100%);
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.85),transparent);
+    animation:shimmer 1.25s infinite;
+  }
+  @keyframes shimmer{100%{transform:translateX(100%);}}
+
+  footer{
+    text-align:center;font-size:.78rem;color:var(--muted);
+    padding:18px 16px 30px;
+  }
+  footer .legend{
+    display:inline-flex;gap:14px;flex-wrap:wrap;justify-content:center;
+    margin-bottom:8px;
+  }
+  footer .legend span{display:inline-flex;align-items:center;gap:5px;}
+  footer .legend .dot{width:9px;height:9px;border-radius:50%;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <h1><span class="book" aria-hidden="true">&#128218;</span> Is It On the Shelf?</h1>
+    <p class="sub">Library Catalog Lookup</p>
+    <div class="demo-note">
+      <strong>Demo</strong> &mdash; the LibVibes prompt builds the live Google Sheets&ndash;backed version.
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="controls">
+    <div class="searchbar">
+      <span class="ico" aria-hidden="true">&#128269;</span>
+      <input id="q" type="search" autocomplete="off"
+             placeholder="Search by title or author&hellip;"
+             aria-label="Search books by title or author">
+    </div>
+
+    <div class="filters">
+      <label class="field">
+        Genre
+        <select id="genre" aria-label="Filter by genre">
+          <option value="">All genres</option>
+        </select>
+      </label>
+
+      <label class="toggle">
+        <input id="availOnly" type="checkbox">
+        <span class="switch" aria-hidden="true"></span>
+        Show only available
+      </label>
+    </div>
+  </div>
+
+  <p class="meta" id="meta" aria-live="polite"></p>
+
+  <section class="results" id="results" aria-live="polite"></section>
+</main>
+
+<footer>
+  <div class="legend" aria-hidden="true">
+    <span><span class="dot" style="background:#1F8A4C"></span>In</span>
+    <span><span class="dot" style="background:#B5760A"></span>On Hold</span>
+    <span><span class="dot" style="background:#C2362F"></span>Checked Out</span>
+  </div>
+  <div>Prototype for TCEA LibVibes &middot; sample data only</div>
+</footer>
+
+<script>
+/* =========================================================================
+   SAMPLE LIBRARY DATA  (in-memory prototype)
+   In the real LibVibes app these rows come live from a Google Sheet with
+   columns: Title, Author, Genre, Call Number, Status, Location.
+   Status values: "In" | "On Hold" | "Checked Out"
+   ========================================================================= */
+const BOOKS = [
+  { Title:"The Outsiders",                Author:"S. E. Hinton",        Genre:"Realistic Fiction", CallNumber:"FIC HIN",      Status:"In",          Location:"Fiction A-H" },
+  { Title:"The Giver",                    Author:"Lois Lowry",          Genre:"Science Fiction",   CallNumber:"FIC LOW",      Status:"Checked Out", Location:"Fiction I-P" },
+  { Title:"Refugee",                      Author:"Alan Gratz",          Genre:"Historical Fiction",CallNumber:"FIC GRA",      Status:"In",          Location:"Fiction A-H" },
+  { Title:"Long Way Down",                Author:"Jason Reynolds",      Genre:"Realistic Fiction", CallNumber:"FIC REY",      Status:"On Hold",     Location:"Fiction Q-Z" },
+  { Title:"The Hunger Games",             Author:"Suzanne Collins",     Genre:"Science Fiction",   CallNumber:"FIC COL",      Status:"Checked Out", Location:"Fiction A-H" },
+  { Title:"Brown Girl Dreaming",          Author:"Jacqueline Woodson",  Genre:"Poetry",            CallNumber:"811 WOO",      Status:"In",          Location:"Nonfiction 800s" },
+  { Title:"Hatchet",                      Author:"Gary Paulsen",        Genre:"Adventure",         CallNumber:"FIC PAU",      Status:"In",          Location:"Fiction I-P" },
+  { Title:"New Kid",                       Author:"Jerry Craft",         Genre:"Graphic Novel",     CallNumber:"GN CRA",       Status:"On Hold",     Location:"Graphic Novels" },
+  { Title:"Smile",                         Author:"Raina Telgemeier",    Genre:"Graphic Novel",     CallNumber:"GN TEL",       Status:"Checked Out", Location:"Graphic Novels" },
+  { Title:"Percy Jackson: The Lightning Thief", Author:"Rick Riordan",  Genre:"Fantasy",           CallNumber:"FIC RIO",      Status:"In",          Location:"Fiction Q-Z" },
+  { Title:"Wonder",                        Author:"R. J. Palacio",       Genre:"Realistic Fiction", CallNumber:"FIC PAL",      Status:"In",          Location:"Fiction I-P" },
+  { Title:"A Wrinkle in Time",             Author:"Madeleine L'Engle",   Genre:"Fantasy",           CallNumber:"FIC LEN",      Status:"Checked Out", Location:"Fiction I-P" },
+  { Title:"I Am Malala (Young Readers)",   Author:"Malala Yousafzai",    Genre:"Biography",         CallNumber:"921 YOU",      Status:"In",          Location:"Nonfiction 900s" },
+  { Title:"The Crossover",                 Author:"Kwame Alexander",     Genre:"Poetry",            CallNumber:"811 ALE",      Status:"On Hold",     Location:"Nonfiction 800s" },
+  { Title:"Bomb",                          Author:"Steve Sheinkin",      Genre:"Nonfiction",        CallNumber:"623.4 SHE",    Status:"In",          Location:"Nonfiction 600s" },
+  { Title:"Ghost",                         Author:"Jason Reynolds",      Genre:"Realistic Fiction", CallNumber:"FIC REY",      Status:"Checked Out", Location:"Fiction Q-Z" },
+  { Title:"Coraline",                      Author:"Neil Gaiman",         Genre:"Horror",            CallNumber:"FIC GAI",      Status:"In",          Location:"Fiction A-H" },
+  { Title:"The Cay",                       Author:"Theodore Taylor",     Genre:"Adventure",         CallNumber:"FIC TAY",      Status:"In",          Location:"Fiction Q-Z" },
+  { Title:"Roll of Thunder, Hear My Cry",  Author:"Mildred D. Taylor",   Genre:"Historical Fiction",CallNumber:"FIC TAY",      Status:"On Hold",     Location:"Fiction Q-Z" },
+  { Title:"March: Book One",               Author:"John Lewis",          Genre:"Graphic Novel",     CallNumber:"GN LEW",       Status:"In",          Location:"Graphic Novels" }
+];
+
+/* ===== Status helpers ===== */
+const STATUS_META = {
+  "In":          { cls:"in",   card:"s-in",   label:"In" },
+  "On Hold":     { cls:"hold", card:"s-hold", label:"On Hold" },
+  "Checked Out": { cls:"out",  card:"s-out",  label:"Checked Out" }
+};
+function isAvailable(status){ return status === "In"; }
+
+/* ===== DOM refs ===== */
+const qEl      = document.getElementById("q");
+const genreEl  = document.getElementById("genre");
+const availEl  = document.getElementById("availOnly");
+const resultsEl= document.getElementById("results");
+const metaEl   = document.getElementById("meta");
+
+/* ===== Populate genre dropdown ===== */
+[...new Set(BOOKS.map(b => b.Genre))].sort().forEach(g => {
+  const o = document.createElement("option");
+  o.value = g; o.textContent = g;
+  genreEl.appendChild(o);
+});
+
+/* ===== Escape for safe HTML insertion ===== */
+function esc(s){
+  return String(s).replace(/[&<>"']/g, c => (
+    {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]
+  ));
+}
+
+/* ===== Filtering logic ===== */
+function getFiltered(){
+  const q = qEl.value.trim().toLowerCase();
+  const genre = genreEl.value;
+  const availOnly = availEl.checked;
+  return BOOKS.filter(b => {
+    if (q){
+      const hit = b.Title.toLowerCase().includes(q) ||
+                  b.Author.toLowerCase().includes(q);
+      if (!hit) return false;
+    }
+    if (genre && b.Genre !== genre) return false;
+    if (availOnly && !isAvailable(b.Status)) return false;
+    return true;
+  });
+}
+
+/* ===== Card rendering ===== */
+function cardHTML(b){
+  const m = STATUS_META[b.Status] || { cls:"out", card:"s-out", label:b.Status };
+  return `
+    <article class="card ${m.card}">
+      <span class="genre-tag">${esc(b.Genre)}</span>
+      <div class="title">${esc(b.Title)}</div>
+      <div class="author">by ${esc(b.Author)}</div>
+      <div class="details">
+        <span><b>Call #:</b> ${esc(b.CallNumber)}</span>
+        <span><b>Where:</b> ${esc(b.Location)}</span>
+      </div>
+      <span class="pill ${m.cls}">
+        <span class="dot" aria-hidden="true"></span>${esc(m.label)}
+      </span>
+    </article>`;
+}
+
+function emptyHTML(){
+  return `
+    <div class="empty">
+      <div class="big" aria-hidden="true">&#128269;</div>
+      <h3>No matches found</h3>
+      <p>We couldn&rsquo;t find a book that matches. Try a different spelling or fewer
+         words &mdash; or ask a librarian at the front desk and we&rsquo;ll help you track it down.</p>
+    </div>`;
+}
+
+/* ===== Skeleton shimmer (shown briefly to mimic a live fetch) ===== */
+function skeletonHTML(n){
+  let one = `
+    <div class="sk">
+      <div class="bar w30"></div>
+      <div class="bar w70"></div>
+      <div class="bar w45"></div>
+      <div class="bar w55"></div>
+    </div>`;
+  return one.repeat(n);
+}
+
+/* ===== Render with debounced "loading" shimmer ===== */
+let loadTimer = null;
+function render(){
+  const list = getFiltered();
+  metaEl.textContent = "Loading…";
+
+  // brief skeleton to simulate a live data fetch
+  resultsEl.innerHTML = skeletonHTML(Math.min(4, Math.max(2, list.length || 2)));
+
+  clearTimeout(loadTimer);
+  loadTimer = setTimeout(() => {
+    if (list.length === 0){
+      resultsEl.innerHTML = emptyHTML();
+      metaEl.textContent = "0 books match your search.";
+      return;
+    }
+    resultsEl.innerHTML = list.map(cardHTML).join("");
+    const avail = list.filter(b => isAvailable(b.Status)).length;
+    metaEl.textContent =
+      `${list.length} ${list.length === 1 ? "book" : "books"} found · ${avail} available now`;
+  }, 280);
+}
+
+/* ===== Events ===== */
+qEl.addEventListener("input", render);
+genreEl.addEventListener("change", render);
+availEl.addEventListener("change", render);
+
+/* ===== Initial render ===== */
+render();
+</script>
+<a href="../../libvibes.html" aria-label="Back to LibVibes" style="position:fixed;left:12px;bottom:12px;z-index:99999;background:#0A3476;color:#fff;font:700 12px/1 system-ui,-apple-system,Segoe UI,sans-serif;text-decoration:none;padding:8px 12px;border-radius:9px;box-shadow:0 3px 12px rgba(0,0,0,.28)">← LibVibes</a>
+<script src="../../libvibes-notice.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>window.__VCLL_BASE="../";</script>
+<script src="../lock.js"></script>
+<base target="_top">
+<meta charset="UTF-8">
+<style>
+  :root{--navy:#0A3476;--navy-dark:#071F4A;--gold:#FCB040;--gold-light:#FDD17A;--teal:#0E6B8A;
+        --off-white:#F7F8FC;--text:#1A1A2E;--muted:#5A6680;--border:#E2E7F5;--ok:#1f9d63;--ok-bg:#e7f6ee;
+        --warn:#d98b0a;--warn-bg:#fdedcf;--bad:#c2493f;--bad-bg:#fbe3e1;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:var(--text);background:var(--off-white);line-height:1.5}
+  .wrap{max-width:900px;margin:0 auto;padding:1.4rem}
+  header{background:linear-gradient(160deg,var(--navy),var(--navy-dark));color:#fff;border-radius:14px;padding:1.2rem 1.3rem;border-bottom:4px solid var(--gold);display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+  header h1{margin:0;font-size:1.3rem}
+  .gate{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.3rem;margin-top:1rem;max-width:420px}
+  label{display:block;font-weight:700;color:var(--navy);font-size:.9rem;margin-bottom:.3rem}
+  input{width:100%;padding:.6rem .7rem;border:1.5px solid var(--border);border-radius:9px;font:inherit}
+  input:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px #d9ecf2}
+  .btn{font:inherit;font-weight:800;border:0;border-radius:10px;padding:.7rem 1.2rem;cursor:pointer;background:var(--gold);color:var(--navy);margin-top:.9rem}
+  .btn:hover{background:var(--gold-light)}
+  .btn:disabled{opacity:.6;cursor:not-allowed}
+  .msg{margin-top:.8rem;font-size:.9rem;color:var(--bad)}
+  .toolbar{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;margin:1rem 0}
+  .chip{font:inherit;font-size:.82rem;font-weight:700;border:1.5px solid var(--border);background:#fff;color:var(--navy);border-radius:999px;padding:.35rem .9rem;cursor:pointer}
+  .chip.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .count{color:var(--muted);font-size:.85rem;margin-left:auto}
+  .sub{background:#fff;border:1px solid var(--border);border-left:5px solid var(--muted);border-radius:12px;padding:1rem 1.1rem;margin-bottom:.8rem}
+  .sub[data-st="Approved"]{border-left-color:var(--ok)} .sub[data-st="Rejected"]{border-left-color:var(--bad)} .sub[data-st="Pending"]{border-left-color:var(--warn)}
+  .sub-top{display:flex;justify-content:space-between;gap:.8rem;flex-wrap:wrap;align-items:baseline}
+  .sub-top h3{margin:0;color:var(--navy);font-size:1.1rem}
+  .pill{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;padding:.2rem .6rem;border-radius:6px}
+  .pill.Pending{background:var(--warn-bg);color:var(--warn)} .pill.Approved{background:var(--ok-bg);color:var(--ok)} .pill.Rejected{background:var(--bad-bg);color:var(--bad)}
+  .meta{color:var(--muted);font-size:.83rem;margin:.25rem 0 .5rem}
+  .desc{font-size:.92rem;margin:.3rem 0}
+  details{margin:.4rem 0}
+  summary{cursor:pointer;font-weight:700;color:var(--teal);font-size:.85rem}
+  pre{white-space:pre-wrap;background:#f5f7fc;border:1px solid var(--border);border-radius:8px;padding:.7rem;font-size:.8rem;max-height:240px;overflow:auto;margin:.4rem 0 0}
+  .links a{color:var(--teal);font-weight:700;text-decoration:none;font-size:.85rem;margin-right:1rem}
+  .actions{display:flex;gap:.5rem;margin-top:.7rem;flex-wrap:wrap}
+  .a-ok{background:var(--ok);color:#fff} .a-bad{background:var(--bad);color:#fff} .a-pend{background:#eef2fa;color:var(--navy);border:1px solid var(--border)}
+  .actions button{font:inherit;font-weight:700;font-size:.82rem;border:0;border-radius:8px;padding:.45rem .9rem;cursor:pointer}
+  .hide{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><h1>LibVibes — Review submissions</h1><span style="font-size:.82rem;color:#cdd7ef">Approve or reject shared LibVibes</span></header>
+
+  <div class="gate" id="gate">
+    <label for="pw">Admin password</label>
+    <input id="pw" type="password" autocomplete="current-password" onkeydown="if(event.key==='Enter')load()">
+    <button class="btn" id="loginBtn" onclick="load()">Unlock</button>
+    <div class="msg" id="gateMsg"></div>
+  </div>
+
+  <div id="panel" class="hide">
+    <div class="toolbar">
+      <button class="chip active" data-f="Pending" onclick="setFilter('Pending',this)">Pending</button>
+      <button class="chip" data-f="all" onclick="setFilter('all',this)">All</button>
+      <button class="chip" data-f="Approved" onclick="setFilter('Approved',this)">Approved</button>
+      <button class="chip" data-f="Rejected" onclick="setFilter('Rejected',this)">Rejected</button>
+      <button class="chip" onclick="load()">↻ Refresh</button>
+      <span class="count" id="count"></span>
+    </div>
+    <div id="list"></div>
+  </div>
+</div>
+
+<script>
+  var PW='', DATA=[], FILTER='Pending';
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function load(){
+    PW=document.getElementById('pw').value;
+    var b=document.getElementById('loginBtn'); b.disabled=true; b.textContent='Loading…';
+    document.getElementById('gateMsg').textContent='';
+    google.script.run
+      .withSuccessHandler(function(rows){
+        DATA=rows; b.disabled=false; b.textContent='Unlock';
+        document.getElementById('gate').classList.add('hide');
+        document.getElementById('panel').classList.remove('hide');
+        render();
+      })
+      .withFailureHandler(function(err){
+        b.disabled=false; b.textContent='Unlock';
+        document.getElementById('gateMsg').textContent=(err&&err.message)||'Could not load.';
+      })
+      .adminList(PW);
+  }
+  function setFilter(f,el){ FILTER=f; document.querySelectorAll('.chip').forEach(function(c){c.classList.remove('active');}); if(el)el.classList.add('active'); render(); }
+  function render(){
+    var rows = DATA.filter(function(r){ return FILTER==='all' || (r.status||'Pending')===FILTER; });
+    document.getElementById('count').textContent = rows.length+' of '+DATA.length;
+    document.getElementById('list').innerHTML = rows.map(function(r){
+      var st=r.status||'Pending';
+      var sol = r.file ? '<a href="'+r.file+'" target="_blank" rel="noopener">Open saved HTML ↗</a>' : '';
+      var lnk = r.link ? '<a href="'+esc(r.link)+'" target="_blank" rel="noopener">Submitted link ↗</a>' : '';
+      return '<div class="sub" data-st="'+st+'">'
+        + '<div class="sub-top"><h3>'+esc(r.title)+'</h3><span class="pill '+st+'">'+st+'</span></div>'
+        + '<div class="meta">'+esc(r.name)+(r.email?' &lt;'+esc(r.email)+'&gt;':'')+(r.school?' · '+esc(r.school):'')
+          +' · '+esc(r.grade)+' · '+esc(r.category)+' · '+esc(r.timestamp)+'</div>'
+        + '<div class="desc">'+esc(r.description)+'</div>'
+        + '<div class="links">'+sol+' '+lnk+'</div>'
+        + '<details><summary>View prompt</summary><pre>'+esc(r.prompt)+'</pre></details>'
+        + '<div class="actions">'
+          + '<button class="a-ok" onclick="setStatus('+r.row+',\'Approved\')">✓ Approve</button>'
+          + '<button class="a-bad" onclick="setStatus('+r.row+',\'Rejected\')">✕ Reject</button>'
+          + '<button class="a-pend" onclick="setStatus('+r.row+',\'Pending\')">↺ Pending</button>'
+        + '</div></div>';
+    }).join('') || '<p style="color:var(--muted)">Nothing here.</p>';
+  }
+  function setStatus(row,status){
+    google.script.run
+      .withSuccessHandler(function(){
+        for(var i=0;i<DATA.length;i++){ if(DATA[i].row===row){ DATA[i].status=status; break; } }
+        render();
+      })
+      .withFailureHandler(function(err){ alert((err&&err.message)||'Failed.'); })
+      .adminSetStatus(PW,row,status);
+  }
+</script>
+</body>
+</html>

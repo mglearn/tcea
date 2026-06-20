@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>window.__VCLL_BASE="../../";</script>
+<script src="../../lock.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Makerspace Sign-Up Board · LibVibes</title>
+<style>
+  /* ===== Palette ===== */
+  :root{
+    --navy:#0A3476;
+    --gold:#FCB040;
+    --teal:#0E6B8A;
+    --bg:#F6F4EE;          /* soft off-white */
+    --ink:#1c2430;
+    --line:#dfdacb;
+    --open:#ffffff;
+    --taken:#eef4f6;
+    --shadow:0 1px 3px rgba(10,52,118,.10),0 6px 18px rgba(10,52,118,.08);
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,
+           "Apple Color Emoji","Segoe UI Emoji",sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:var(--font);
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.45;
+    -webkit-text-size-adjust:100%;
+  }
+
+  /* ===== Header ===== */
+  header{
+    background:var(--navy);
+    color:#fff;
+    padding:18px 16px 16px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .logo{
+    width:34px;height:34px;border-radius:9px;
+    background:var(--gold);color:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:18px;flex:0 0 auto;
+  }
+  header h1{font-size:1.18rem;margin:0;font-weight:700;letter-spacing:.2px}
+  header .sub{color:#cdd9ec;font-size:.82rem;margin-top:2px}
+
+  .demo-note{
+    margin:12px 0 0;
+    background:rgba(252,176,64,.16);
+    border:1px solid rgba(252,176,64,.55);
+    color:#ffe9c7;
+    font-size:.78rem;
+    padding:7px 10px;border-radius:8px;
+    display:inline-block;
+  }
+
+  /* ===== Controls ===== */
+  .controls{
+    max-width:1100px;margin:0 auto;padding:14px 16px 0;
+    display:flex;flex-wrap:wrap;gap:14px 22px;align-items:flex-end;
+  }
+  .field{display:flex;flex-direction:column;gap:5px}
+  .field label{font-size:.74rem;font-weight:700;text-transform:uppercase;
+    letter-spacing:.6px;color:var(--teal)}
+  .field input[type=date]{
+    font:inherit;padding:9px 11px;border:1.5px solid var(--line);
+    border-radius:9px;background:#fff;color:var(--ink);min-height:42px;
+  }
+  .toggle{
+    display:flex;align-items:center;gap:9px;cursor:pointer;
+    background:#fff;border:1.5px solid var(--line);border-radius:9px;
+    padding:9px 12px;min-height:42px;user-select:none;
+  }
+  .toggle input{display:none}
+  .switch{
+    width:40px;height:22px;border-radius:22px;background:#cdd2cf;
+    position:relative;transition:background .18s;flex:0 0 auto;
+  }
+  .switch::after{
+    content:"";position:absolute;top:2px;left:2px;width:18px;height:18px;
+    border-radius:50%;background:#fff;transition:transform .18s;
+    box-shadow:0 1px 2px rgba(0,0,0,.3);
+  }
+  .toggle input:checked + .switch{background:var(--teal)}
+  .toggle input:checked + .switch::after{transform:translateX(18px)}
+  .toggle .lbl{font-size:.82rem;font-weight:600}
+
+  /* ===== Legend / status ===== */
+  .meta{
+    max-width:1100px;margin:0 auto;padding:12px 16px 4px;
+    display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;
+    font-size:.8rem;color:#566;
+  }
+  .legend{display:flex;align-items:center;gap:7px}
+  .chip{width:15px;height:15px;border-radius:4px;border:1.5px solid var(--line)}
+  .chip.open{background:#fff;border-color:var(--teal)}
+  .chip.taken{background:var(--taken);border-color:#cdd6da}
+  .count{margin-left:auto;font-weight:700;color:var(--navy)}
+
+  /* ===== Grid ===== */
+  .grid-wrap{
+    max-width:1100px;margin:8px auto 0;padding:6px 16px 30px;
+  }
+  .scroller{
+    overflow-x:auto;overflow-y:visible;
+    border:1px solid var(--line);border-radius:14px;background:#fff;
+    box-shadow:var(--shadow);
+    -webkit-overflow-scrolling:touch;
+  }
+  table{border-collapse:separate;border-spacing:0;width:100%;min-width:560px}
+  thead th{
+    background:var(--navy);color:#fff;font-size:.78rem;font-weight:700;
+    padding:11px 10px;text-align:center;white-space:nowrap;
+    position:sticky;top:0;z-index:3;
+  }
+  thead th:first-child{left:0;z-index:5}
+  th.time-col,td.time-col{
+    position:sticky;left:0;z-index:2;
+    background:var(--gold);color:var(--navy);
+    font-weight:800;font-size:.8rem;white-space:nowrap;
+    text-align:left;padding:12px 12px;
+    box-shadow:2px 0 0 rgba(10,52,118,.12);
+    min-width:96px;
+  }
+  thead th.time-col{background:var(--navy);color:#fff}
+  tbody td{
+    border-bottom:1px solid #eee;border-right:1px solid #f1f1f1;
+    padding:8px;text-align:center;vertical-align:middle;min-width:118px;
+  }
+  tbody tr:last-child td{border-bottom:none}
+
+  /* cell content */
+  .slot{
+    width:100%;min-height:54px;border-radius:10px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:2px;padding:7px 8px;font:inherit;line-height:1.25;
+  }
+  .slot.open{
+    background:#fff;border:1.6px dashed var(--teal);color:var(--teal);
+    cursor:pointer;font-weight:700;transition:background .15s,transform .08s;
+  }
+  .slot.open:hover{background:#eef7fa}
+  .slot.open:active{transform:scale(.97)}
+  .slot.open .plus{font-size:1.1rem;line-height:1}
+  .slot.taken{
+    background:var(--taken);border:1.6px solid #cdd6da;color:var(--navy);
+    cursor:default;
+  }
+  .slot.taken .who{font-weight:700;font-size:.86rem;word-break:break-word}
+  .slot.taken .grade{font-size:.7rem;color:var(--teal);font-weight:600}
+  .slot.taken .tag{
+    font-size:.62rem;text-transform:uppercase;letter-spacing:.5px;
+    color:#8a94a0;margin-top:1px;
+  }
+  /* booking confirmation pop */
+  @keyframes pop{
+    0%{transform:scale(.6);opacity:0}
+    55%{transform:scale(1.08);opacity:1}
+    100%{transform:scale(1);opacity:1}
+  }
+  .slot.justbooked{animation:pop .45s ease both;
+    box-shadow:0 0 0 3px rgba(252,176,64,.6)}
+
+  /* ===== Modal ===== */
+  .overlay{
+    position:fixed;inset:0;background:rgba(10,52,118,.45);
+    display:none;align-items:center;justify-content:center;padding:18px;z-index:50;
+  }
+  .overlay.show{display:flex}
+  .modal{
+    background:#fff;border-radius:16px;width:100%;max-width:380px;
+    box-shadow:0 18px 50px rgba(10,52,118,.35);overflow:hidden;
+    animation:pop .25s ease both;
+  }
+  .modal-head{background:var(--teal);color:#fff;padding:14px 18px}
+  .modal-head h2{margin:0;font-size:1.05rem}
+  .modal-head .ctx{font-size:.8rem;color:#d7eef4;margin-top:2px}
+  .modal-body{padding:16px 18px 6px}
+  .modal-body .field{margin-bottom:13px}
+  .modal-body input[type=text],.modal-body select{
+    font:inherit;padding:10px 11px;border:1.5px solid var(--line);
+    border-radius:9px;background:#fff;width:100%;min-height:44px;
+  }
+  .err{color:#b3261e;font-size:.78rem;min-height:1.1em;margin:0 0 6px}
+  .modal-foot{display:flex;gap:10px;padding:6px 18px 18px}
+  button.btn{
+    font:inherit;font-weight:700;border:none;border-radius:10px;
+    padding:11px 14px;cursor:pointer;flex:1;min-height:46px;
+  }
+  .btn-primary{background:var(--navy);color:#fff}
+  .btn-primary:hover{background:#0c2f66}
+  .btn-ghost{background:#eef0ee;color:var(--ink)}
+  .btn-ghost:hover{background:#e3e6e3}
+
+  /* ===== Toast ===== */
+  .toast{
+    position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);
+    background:var(--navy);color:#fff;padding:12px 18px;border-radius:12px;
+    font-weight:700;font-size:.9rem;box-shadow:0 10px 30px rgba(0,0,0,.3);
+    opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:60;
+    display:flex;align-items:center;gap:9px;
+  }
+  .toast .check{
+    width:20px;height:20px;border-radius:50%;background:var(--gold);color:var(--navy);
+    display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:900;
+  }
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  footer{
+    max-width:1100px;margin:0 auto;padding:4px 16px 40px;
+    font-size:.74rem;color:#8a8f88;
+  }
+  .reset{
+    background:none;border:none;color:var(--teal);font:inherit;font-size:.74rem;
+    text-decoration:underline;cursor:pointer;padding:0;
+  }
+
+  /* ===== Data buttons (save / load) ===== */
+  .data-btns{display:flex;gap:10px;align-items:flex-end}
+  button.iobtn{
+    font:inherit;font-weight:700;font-size:.82rem;cursor:pointer;
+    background:#fff;border:1.5px solid var(--line);border-radius:9px;
+    color:var(--navy);padding:9px 13px;min-height:42px;
+    display:flex;align-items:center;gap:7px;transition:background .15s,border-color .15s;
+  }
+  button.iobtn:hover{background:#eef7fa;border-color:var(--teal)}
+  button.iobtn:active{transform:scale(.98)}
+  .io-msg{
+    max-width:1100px;margin:0 auto;padding:0 16px;
+    font-size:.8rem;min-height:1.1em;
+  }
+  .io-msg.ok{color:var(--teal);font-weight:600}
+  .io-msg.bad{color:#b3261e;font-weight:600}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div class="logo">L</div>
+    <div>
+      <h1>Makerspace Sign-Up Board</h1>
+      <div class="sub">Reserve a station during open lab time</div>
+    </div>
+  </div>
+  <div class="demo-note">Demo — the LibVibes prompt builds the live Google Sheets–backed version.</div>
+</header>
+
+<div class="controls">
+  <div class="field">
+    <label for="datePick">Pick a date</label>
+    <input type="date" id="datePick">
+  </div>
+  <label class="toggle" for="hideNames" title="Hide student names on the public board">
+    <input type="checkbox" id="hideNames">
+    <span class="switch"></span>
+    <span class="lbl">Hide names (show “Reserved”)</span>
+  </label>
+  <div class="data-btns">
+    <button type="button" class="iobtn" id="saveFileBtn" title="Download all bookings as a JSON file">⬇ Save to file</button>
+    <button type="button" class="iobtn" id="loadFileBtn" title="Restore bookings from a JSON file">⬆ Load from file</button>
+    <input type="file" id="loadFileInput" accept=".json,application/json" hidden>
+  </div>
+</div>
+
+<div class="io-msg" id="ioMsg"></div>
+
+<div class="meta">
+  <div class="legend"><span class="chip open"></span> Open</div>
+  <div class="legend"><span class="chip taken"></span> Taken</div>
+  <div class="count" id="openCount"></div>
+</div>
+
+<div class="grid-wrap">
+  <div class="scroller">
+    <table id="board" aria-label="Sign-up grid: time slots by station"></table>
+  </div>
+</div>
+
+<footer>
+  Bookings are saved in your browser (localStorage) so the demo persists across refreshes.
+  <button class="reset" id="resetBtn">Reset demo data</button>
+</footer>
+
+<!-- Booking modal -->
+<div class="overlay" id="overlay">
+  <form class="modal" id="bookForm">
+    <div class="modal-head">
+      <h2>Sign up for a station</h2>
+      <div class="ctx" id="modalCtx"></div>
+    </div>
+    <div class="modal-body">
+      <div class="field">
+        <label for="stuName">Student name</label>
+        <input type="text" id="stuName" autocomplete="off" maxlength="40" placeholder="First L.">
+      </div>
+      <div class="field">
+        <label for="stuGrade">Grade</label>
+        <select id="stuGrade">
+          <option value="">Select…</option>
+          <option>6</option><option>7</option><option>8</option>
+          <option>9</option><option>10</option><option>11</option><option>12</option>
+        </select>
+      </div>
+      <p class="err" id="formErr"></p>
+    </div>
+    <div class="modal-foot">
+      <button type="button" class="btn btn-ghost" id="cancelBtn">Cancel</button>
+      <button type="submit" class="btn btn-primary">Confirm booking</button>
+    </div>
+  </form>
+</div>
+
+<!-- Confirmation toast -->
+<div class="toast" id="toast"><span class="check">✓</span><span id="toastMsg">Booked!</span></div>
+
+<script>
+/* =========================================================================
+   EDIT HERE: Stations and Time Slots
+   These two arrays are the single place to configure the board.
+   (In the live LibVibes build these come from the Google Sheet.)
+   ========================================================================= */
+const STATIONS = [
+  "3D Printer",
+  "Laser Cutter",
+  "Vinyl Cutter",
+  "Sewing Station",
+  "Soldering Bench",
+  "Green Screen Studio"
+];
+
+const TIME_SLOTS = [
+  "8:00–8:45",
+  "8:50–9:35",
+  "9:40–10:25",
+  "10:30–11:15",
+  "12:30–1:15",
+  "1:20–2:05",
+  "2:10–2:55"
+];
+/* ========================================================================= */
+
+const STORAGE_KEY = "libvibes_makerspace_bookings_v1";
+
+/* ---- date helpers ---- */
+function todayISO(){
+  const d = new Date();
+  const off = d.getTimezoneOffset();
+  return new Date(d.getTime() - off*60000).toISOString().slice(0,10);
+}
+function prettyDate(iso){
+  const [y,m,d] = iso.split("-").map(Number);
+  const dt = new Date(y, m-1, d);
+  return dt.toLocaleDateString(undefined,{weekday:"long",month:"long",day:"numeric",year:"numeric"});
+}
+
+/* ---- storage ---- */
+function loadAll(){
+  try{ return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+  catch(e){ return {}; }
+}
+function saveAll(obj){
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
+}
+function keyFor(date, slot, station){ return date+"|"+slot+"|"+station; }
+
+/* Seed a little realistic sample data the first time the demo runs. */
+function seedIfEmpty(){
+  const all = loadAll();
+  if(Object.keys(all).length) return;
+  const d = todayISO();
+  const sample = [
+    [d, TIME_SLOTS[0], "3D Printer",          "Maya R.",   "7"],
+    [d, TIME_SLOTS[0], "Laser Cutter",        "Devon P.",  "8"],
+    [d, TIME_SLOTS[1], "Sewing Station",      "Priya S.",  "6"],
+    [d, TIME_SLOTS[2], "Green Screen Studio", "Liam K.",   "9"],
+    [d, TIME_SLOTS[2], "3D Printer",          "Aisha M.",  "10"],
+    [d, TIME_SLOTS[3], "Soldering Bench",     "Noah T.",   "11"],
+    [d, TIME_SLOTS[5], "Vinyl Cutter",        "Sofia G.",  "7"]
+  ];
+  sample.forEach(([date,slot,station,name,grade])=>{
+    all[keyFor(date,slot,station)] = {name, grade, ts:Date.now()};
+  });
+  saveAll(all);
+}
+
+/* ---- state ---- */
+let currentDate = todayISO();
+let hideNames = false;
+let pending = null; // {slot, station}
+
+const datePick   = document.getElementById("datePick");
+const hideToggle = document.getElementById("hideNames");
+const board      = document.getElementById("board");
+const openCount  = document.getElementById("openCount");
+const overlay    = document.getElementById("overlay");
+const modalCtx   = document.getElementById("modalCtx");
+const formErr    = document.getElementById("formErr");
+const stuName    = document.getElementById("stuName");
+const stuGrade   = document.getElementById("stuGrade");
+const toast      = document.getElementById("toast");
+const toastMsg   = document.getElementById("toastMsg");
+
+/* ---- render grid ---- */
+function render(justBookedKey){
+  const all = loadAll();
+  let open = 0;
+
+  let html = "<thead><tr><th class='time-col'>Time</th>";
+  STATIONS.forEach(s => html += "<th>"+escapeHtml(s)+"</th>");
+  html += "</tr></thead><tbody>";
+
+  TIME_SLOTS.forEach(slot=>{
+    html += "<tr><td class='time-col'>"+escapeHtml(slot)+"</td>";
+    STATIONS.forEach(station=>{
+      const k = keyFor(currentDate, slot, station);
+      const b = all[k];
+      if(b){
+        const who = hideNames ? "Reserved" : escapeHtml(b.name);
+        const grade = (!hideNames && b.grade) ? "<span class='grade'>Grade "+escapeHtml(b.grade)+"</span>" : "";
+        const justCls = (k===justBookedKey) ? " justbooked" : "";
+        html += "<td><div class='slot taken"+justCls+"' role='img' aria-label='Taken'>"
+              + "<span class='who'>"+who+"</span>"+grade
+              + "<span class='tag'>Taken</span></div></td>";
+      } else {
+        open++;
+        html += "<td><button type='button' class='slot open' "
+              + "data-slot='"+escapeAttr(slot)+"' data-station='"+escapeAttr(station)+"'>"
+              + "<span class='plus'>＋</span><span>Sign up</span></button></td>";
+      }
+    });
+    html += "</tr>";
+  });
+  html += "</tbody>";
+  board.innerHTML = html;
+
+  const total = TIME_SLOTS.length * STATIONS.length;
+  openCount.textContent = open + " of " + total + " slots open · " + prettyDate(currentDate);
+}
+
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function escapeAttr(s){return escapeHtml(s);}
+
+/* ---- open modal ---- */
+board.addEventListener("click", e=>{
+  const btn = e.target.closest(".slot.open");
+  if(!btn) return;
+  pending = { slot: btn.dataset.slot, station: btn.dataset.station };
+  modalCtx.textContent = pending.station + " · " + pending.slot + " · " + prettyDate(currentDate);
+  formErr.textContent = "";
+  stuName.value = ""; stuGrade.value = "";
+  overlay.classList.add("show");
+  setTimeout(()=>stuName.focus(),60);
+});
+
+function closeModal(){ overlay.classList.remove("show"); pending=null; }
+document.getElementById("cancelBtn").addEventListener("click", closeModal);
+overlay.addEventListener("click", e=>{ if(e.target===overlay) closeModal(); });
+document.addEventListener("keydown", e=>{ if(e.key==="Escape" && overlay.classList.contains("show")) closeModal(); });
+
+/* ---- submit booking (with double-booking guard) ---- */
+document.getElementById("bookForm").addEventListener("submit", e=>{
+  e.preventDefault();
+  if(!pending) return;
+  const name = stuName.value.trim();
+  const grade = stuGrade.value;
+  if(!name){ formErr.textContent = "Please enter a name."; stuName.focus(); return; }
+  if(!grade){ formErr.textContent = "Please select a grade."; stuGrade.focus(); return; }
+
+  const all = loadAll();
+  const k = keyFor(currentDate, pending.slot, pending.station);
+
+  /* Double-booking guard: re-check storage at write time. */
+  if(all[k]){
+    formErr.textContent = "Sorry — that slot was just taken. Pick another.";
+    closeModal();
+    render();
+    return;
+  }
+
+  all[k] = { name, grade, ts: Date.now() };
+  saveAll(all);
+  const bookedKey = k;
+  const bookedStation = pending.station, bookedSlot = pending.slot;
+  closeModal();
+  render(bookedKey);
+  showToast("Booked " + bookedStation + " at " + bookedSlot);
+});
+
+/* ---- toast ---- */
+let toastTimer;
+function showToast(msg){
+  toastMsg.textContent = msg;
+  toast.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>toast.classList.remove("show"), 2600);
+}
+
+/* ---- controls ---- */
+datePick.addEventListener("change", ()=>{ currentDate = datePick.value || todayISO(); render(); });
+hideToggle.addEventListener("change", ()=>{ hideNames = hideToggle.checked; render(); });
+document.getElementById("resetBtn").addEventListener("click", ()=>{
+  if(confirm("Clear all demo bookings and reload sample data?")){
+    localStorage.removeItem(STORAGE_KEY);
+    seedIfEmpty();
+    render();
+    showToast("Demo data reset");
+  }
+});
+
+/* ---- save / load to file ---- */
+const ioMsg = document.getElementById("ioMsg");
+function showIoMsg(text, kind){
+  ioMsg.textContent = text;
+  ioMsg.className = "io-msg" + (kind ? " " + kind : "");
+}
+
+/* Validate a parsed object is a usable bookings map. */
+function isValidBookings(obj){
+  if(!obj || typeof obj !== "object" || Array.isArray(obj)) return false;
+  for(const k in obj){
+    if(!Object.prototype.hasOwnProperty.call(obj, k)) continue;
+    const v = obj[k];
+    if(!v || typeof v !== "object") return false;
+    if(typeof v.name !== "string") return false; // grade/ts optional
+  }
+  return true;
+}
+
+document.getElementById("saveFileBtn").addEventListener("click", ()=>{
+  try{
+    const all = loadAll();
+    const json = JSON.stringify(all, null, 2);
+    const blob = new Blob([json], {type:"application/json"});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "signup-bookings.json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    const n = Object.keys(all).length;
+    showIoMsg("Saved " + n + " booking" + (n===1?"":"s") + " to signup-bookings.json", "ok");
+    showToast("Bookings saved to file");
+  }catch(err){
+    showIoMsg("Could not save file. Please try again.", "bad");
+  }
+});
+
+const loadFileInput = document.getElementById("loadFileInput");
+document.getElementById("loadFileBtn").addEventListener("click", ()=>{
+  loadFileInput.value = ""; // allow re-loading the same file
+  loadFileInput.click();
+});
+loadFileInput.addEventListener("change", ()=>{
+  const file = loadFileInput.files && loadFileInput.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onerror = ()=> showIoMsg("Couldn't read that file. Please try another.", "bad");
+  reader.onload = ()=>{
+    let data;
+    try{
+      data = JSON.parse(reader.result);
+    }catch(e){
+      showIoMsg("That doesn't look like a valid JSON file.", "bad");
+      return;
+    }
+    if(!isValidBookings(data)){
+      showIoMsg("That file isn't a bookings file we recognize.", "bad");
+      return;
+    }
+    saveAll(data);
+    render();
+    const n = Object.keys(data).length;
+    showIoMsg("Loaded " + n + " booking" + (n===1?"":"s") + " from " + file.name, "ok");
+    showToast("Bookings loaded from file");
+  };
+  reader.readAsText(file);
+});
+
+/* ---- init ---- */
+seedIfEmpty();
+datePick.value = currentDate;
+render();
+</script>
+<a href="../../libvibes.html" aria-label="Back to LibVibes" style="position:fixed;left:12px;bottom:12px;z-index:99999;background:#0A3476;color:#fff;font:700 12px/1 system-ui,-apple-system,Segoe UI,sans-serif;text-decoration:none;padding:8px 12px;border-radius:9px;box-shadow:0 3px 12px rgba(0,0,0,.28)">← LibVibes</a>
+<script src="../../libvibes-notice.js"></script>
+</body>
+</html>

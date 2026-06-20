@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>window.__VCLL_BASE="../../";</script>
+<script src="../../lock.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Your Next Read — LibVibes Genre Quiz</title>
+<style>
+  /* ===== Palette =====
+     navy #0A3476  gold #FCB040  teal #0E6B8A  off-white background.
+     Each genre result tints its own card via CSS custom properties. */
+  :root {
+    --navy: #0A3476;
+    --gold: #FCB040;
+    --teal: #0E6B8A;
+    --bg:   #F7F4EC;
+    --ink:  #1A2233;
+    --card: #ffffff;
+    --accent: var(--teal);   /* overridden per-result */
+    --accent-soft: #e8f1f5;  /* overridden per-result */
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 20px 16px 48px;
+  }
+
+  /* ===== Header ===== */
+  header {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+  .brand {
+    display: inline-block;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: var(--gold);
+    background: var(--navy);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+  }
+  h1 {
+    font-size: 1.7rem;
+    color: var(--navy);
+    margin: 12px 0 4px;
+    line-height: 1.15;
+  }
+  .sub {
+    margin: 0;
+    color: var(--teal);
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  /* ===== Progress bar ===== */
+  .progress-wrap {
+    margin: 18px 0 22px;
+  }
+  .progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .progress-track {
+    height: 12px;
+    background: #e3ddcf;
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--teal), var(--gold));
+    border-radius: 999px;
+    transition: width 0.45s cubic-bezier(.4,0,.2,1);
+  }
+
+  /* ===== Card / transitions ===== */
+  .card {
+    background: var(--card);
+    border-radius: 18px;
+    padding: 24px 20px;
+    box-shadow: 0 8px 28px rgba(10,52,118,0.10);
+    border: 1px solid rgba(10,52,118,0.06);
+  }
+
+  .stage {
+    transition: opacity 0.32s ease, transform 0.32s ease;
+  }
+  .stage.leaving {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  .stage.entering {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+
+  .q-count {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 8px;
+  }
+  .q-text {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin: 0 0 18px;
+    line-height: 1.25;
+  }
+
+  .options {
+    display: grid;
+    gap: 12px;
+  }
+  .option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    text-align: left;
+    background: #fbf9f3;
+    border: 2px solid #e3ddcf;
+    border-radius: 14px;
+    padding: 14px 16px;
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--ink);
+    cursor: pointer;
+    font-family: inherit;
+    transition: border-color 0.15s, background 0.15s, transform 0.1s;
+  }
+  .option .emoji {
+    font-size: 1.4rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .option:hover {
+    border-color: var(--teal);
+    background: #f0f6f8;
+  }
+  .option:active { transform: scale(0.98); }
+  .option:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 2px;
+  }
+
+  /* ===== Result ===== */
+  .result-card {
+    background: var(--card);
+    border-radius: 18px;
+    padding: 26px 22px;
+    box-shadow: 0 10px 32px rgba(10,52,118,0.14);
+    border-top: 10px solid var(--accent);
+  }
+  .result-emoji {
+    font-size: 3.2rem;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .result-kicker {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--accent);
+  }
+  .result-genre {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--navy);
+    margin: 2px 0 10px;
+  }
+  .result-blurb {
+    font-size: 1.05rem;
+    margin: 0 0 18px;
+    color: var(--ink);
+  }
+  .titles-head {
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--teal);
+    margin-bottom: 8px;
+  }
+  .titles {
+    list-style: none;
+    margin: 0 0 22px;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+  }
+  .titles li {
+    background: var(--accent-soft);
+    border-radius: 10px;
+    padding: 11px 14px;
+    font-weight: 600;
+  }
+  .titles li .by {
+    display: block;
+    font-weight: 500;
+    font-size: 0.88rem;
+    color: #555;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    background: var(--navy);
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    padding: 15px 20px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.15s, transform 0.1s;
+  }
+  .btn:hover { background: #0c3f8f; }
+  .btn:active { transform: scale(0.98); }
+  .btn:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 2px;
+  }
+
+  .hidden { display: none !important; }
+
+  footer {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 0.78rem;
+    color: #8a8576;
+  }
+
+  @media (min-width: 560px) {
+    h1 { font-size: 2rem; }
+    .q-text { font-size: 1.45rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="brand">TCEA LibVibes</span>
+    <h1>Find Your Next Read</h1>
+    <p class="sub">Answer 5 quick questions &amp; we'll match you to a genre!</p>
+  </header>
+
+  <!-- Progress bar (hidden on the result screen) -->
+  <div class="progress-wrap" id="progressWrap">
+    <div class="progress-label">
+      <span id="progressText">Question 1 of 5</span>
+      <span id="progressPct">0%</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+  </div>
+
+  <!-- Question stage -->
+  <div class="card stage" id="questionCard">
+    <div class="q-count" id="qCount"></div>
+    <h2 class="q-text" id="qText"></h2>
+    <div class="options" id="options"></div>
+  </div>
+
+  <!-- Result stage -->
+  <div class="result-card stage hidden" id="resultCard">
+    <div class="result-emoji" id="rEmoji"></div>
+    <div class="result-kicker">Your reading match is&hellip;</div>
+    <div class="result-genre" id="rGenre"></div>
+    <p class="result-blurb" id="rBlurb"></p>
+    <div class="titles-head">3 books to try</div>
+    <ul class="titles" id="rTitles"></ul>
+    <button class="btn" id="retryBtn">&#8635; Try again</button>
+  </div>
+
+  <footer>Made for the school library &middot; pick honestly, there are no wrong answers!</footer>
+</div>
+
+<script>
+/* ============================================================
+   EDIT HERE: QUESTIONS
+   ------------------------------------------------------------
+   5 friendly multiple-choice questions. Each option carries a
+   "genre" key that adds a point toward that genre. Genre keys
+   must match the GENRES object below:
+   fantasy, mystery, realistic, graphic, nonfiction, scifi
+   ============================================================ */
+const QUESTIONS = [
+  {
+    q: "What sounds like the perfect Saturday?",
+    options: [
+      { emoji: "🐉", text: "Exploring a make-believe kingdom",        genre: "fantasy" },
+      { emoji: "🔍", text: "Solving a tricky puzzle or riddle",        genre: "mystery" },
+      { emoji: "⚽", text: "Hanging out with friends doing real stuff", genre: "realistic" },
+      { emoji: "🚀", text: "Imagining what the future will be like",   genre: "scifi" }
+    ]
+  },
+  {
+    q: "How do you like your stories to feel?",
+    options: [
+      { emoji: "✨", text: "Full of magic and wonder",        genre: "fantasy" },
+      { emoji: "😲", text: "Surprising, with twists I don't see coming", genre: "mystery" },
+      { emoji: "🎨", text: "Lots of pictures and action",     genre: "graphic" },
+      { emoji: "🧠", text: "Packed with cool true facts",     genre: "nonfiction" }
+    ]
+  },
+  {
+    q: "Pick a place you'd want to visit:",
+    options: [
+      { emoji: "🏰", text: "A dragon's mountain castle",      genre: "fantasy" },
+      { emoji: "🌃", text: "A foggy city with a secret",      genre: "mystery" },
+      { emoji: "🏫", text: "A school that feels just like mine", genre: "realistic" },
+      { emoji: "🪐", text: "A colony on a faraway planet",    genre: "scifi" }
+    ]
+  },
+  {
+    q: "What's your reading speed lately?",
+    options: [
+      { emoji: "📚", text: "I love long adventures I can sink into", genre: "fantasy" },
+      { emoji: "⚡", text: "Quick and snappy, I read fast",    genre: "graphic" },
+      { emoji: "💡", text: "I stop to look things up and learn", genre: "nonfiction" },
+      { emoji: "🕵️", text: "I race to find out whodunit",      genre: "mystery" }
+    ]
+  },
+  {
+    q: "Which character would you cheer for?",
+    options: [
+      { emoji: "🦸", text: "A hero with secret powers",       genre: "fantasy" },
+      { emoji: "👟", text: "A regular kid facing real problems", genre: "realistic" },
+      { emoji: "🤖", text: "An inventor building wild gadgets", genre: "scifi" },
+      { emoji: "🐙", text: "A funny sidekick in a comic",      genre: "graphic" }
+    ]
+  }
+];
+
+/* ============================================================
+   EDIT HERE: GENRES, BLURBS & SAMPLE TITLES
+   ------------------------------------------------------------
+   Swap in titles from YOUR collection. Each genre has:
+   name, emoji, accent color, soft tint, blurb, and 3 titles.
+   ============================================================ */
+const GENRES = {
+  fantasy: {
+    name: "Fantasy",
+    emoji: "🐉",
+    color: "#7A4FC0",
+    soft:  "#efe8fb",
+    blurb: "You love magic, brave quests, and worlds that don't play by ordinary rules. Grab a fantasy and let your imagination soar!",
+    titles: [
+      { title: "The Lightning Thief",     by: "Rick Riordan" },
+      { title: "Amari and the Night Brothers", by: "B.B. Alston" },
+      { title: "The Girl Who Drank the Moon",  by: "Kelly Barnhill" }
+    ]
+  },
+  mystery: {
+    name: "Mystery",
+    emoji: "🔍",
+    color: "#0E6B8A",
+    soft:  "#e2f0f5",
+    blurb: "You're a natural detective who loves clues, secrets, and figuring things out before anyone else. A good mystery is calling your name!",
+    titles: [
+      { title: "The Westing Game",        by: "Ellen Raskin" },
+      { title: "Greenglass House",        by: "Kate Milford" },
+      { title: "Chasing Vermeer",         by: "Blue Balliett" }
+    ]
+  },
+  realistic: {
+    name: "Realistic Fiction",
+    emoji: "🌟",
+    color: "#C77F1E",
+    soft:  "#fbeed6",
+    blurb: "You connect with real-feeling characters, friendships, and everyday adventures. These stories feel like they could happen to you!",
+    titles: [
+      { title: "Wonder",                  by: "R.J. Palacio" },
+      { title: "Front Desk",              by: "Kelly Yang" },
+      { title: "New Kid",                 by: "Jerry Craft" }
+    ]
+  },
+  graphic: {
+    name: "Graphic Novel",
+    emoji: "🎨",
+    color: "#D94F70",
+    soft:  "#fbe3e9",
+    blurb: "You like your stories fast, funny, and full of art. Graphic novels pack big adventures into bold pictures and snappy words!",
+    titles: [
+      { title: "Smile",                   by: "Raina Telgemeier" },
+      { title: "Dog Man: Mothering Heights", by: "Dav Pilkey" },
+      { title: "Cardboard Kingdom",       by: "Chad Sell" }
+    ]
+  },
+  nonfiction: {
+    name: "Nonfiction",
+    emoji: "🧠",
+    color: "#2E8B57",
+    soft:  "#e3f3ea",
+    blurb: "You love learning true, amazing things about our world. Nonfiction is full of real facts, real people, and real wow moments!",
+    titles: [
+      { title: "Who Was Albert Einstein?", by: "Jess Brallier" },
+      { title: "National Geographic Kids Almanac", by: "Nat Geo Kids" },
+      { title: "Hidden Figures (Young Readers)", by: "Margot Lee Shetterly" }
+    ]
+  },
+  scifi: {
+    name: "Sci-Fi",
+    emoji: "🚀",
+    color: "#0A3476",
+    soft:  "#e1e8f3",
+    blurb: "You wonder about robots, space, and the future. Science fiction takes you to incredible places that don't exist... yet!",
+    titles: [
+      { title: "A Wrinkle in Time",       by: "Madeleine L'Engle" },
+      { title: "The Wild Robot",          by: "Peter Brown" },
+      { title: "Space Case",              by: "Stuart Gibbs" }
+    ]
+  }
+};
+
+/* ============================================================
+   QUIZ ENGINE  (no edits needed below this line)
+   ============================================================ */
+const TOTAL = QUESTIONS.length;
+let current = 0;
+let scores = {};
+
+const els = {
+  progressWrap: document.getElementById('progressWrap'),
+  progressText: document.getElementById('progressText'),
+  progressPct:  document.getElementById('progressPct'),
+  progressFill: document.getElementById('progressFill'),
+  questionCard: document.getElementById('questionCard'),
+  qCount: document.getElementById('qCount'),
+  qText:  document.getElementById('qText'),
+  options: document.getElementById('options'),
+  resultCard: document.getElementById('resultCard'),
+  rEmoji: document.getElementById('rEmoji'),
+  rGenre: document.getElementById('rGenre'),
+  rBlurb: document.getElementById('rBlurb'),
+  rTitles: document.getElementById('rTitles'),
+  retryBtn: document.getElementById('retryBtn')
+};
+
+function resetScores() {
+  scores = {};
+  Object.keys(GENRES).forEach(k => scores[k] = 0);
+}
+
+function updateProgress() {
+  const pct = Math.round((current / TOTAL) * 100);
+  els.progressFill.style.width = pct + '%';
+  els.progressText.textContent = 'Question ' + (current + 1) + ' of ' + TOTAL;
+  els.progressPct.textContent = pct + '%';
+}
+
+function renderQuestion() {
+  const item = QUESTIONS[current];
+  els.qCount.textContent = 'Question ' + (current + 1);
+  els.qText.textContent = item.q;
+  els.options.innerHTML = '';
+
+  item.options.forEach((opt) => {
+    const btn = document.createElement('button');
+    btn.className = 'option';
+    btn.type = 'button';
+    btn.innerHTML = '<span class="emoji" aria-hidden="true">' + opt.emoji +
+                    '</span><span>' + opt.text + '</span>';
+    btn.addEventListener('click', () => choose(opt.genre));
+    els.options.appendChild(btn);
+  });
+
+  updateProgress();
+  // focus first option for keyboard users
+  const first = els.options.querySelector('.option');
+  if (first) first.focus();
+}
+
+/* Slide/fade out then run a callback to swap content + slide in */
+function transitionStage(stageEl, swapFn) {
+  stageEl.classList.add('leaving');
+  setTimeout(() => {
+    swapFn();
+    stageEl.classList.remove('leaving');
+    stageEl.classList.add('entering');
+    // force reflow so the entering transition plays
+    void stageEl.offsetWidth;
+    requestAnimationFrame(() => stageEl.classList.remove('entering'));
+  }, 320);
+}
+
+function choose(genre) {
+  if (scores[genre] !== undefined) scores[genre]++;
+  current++;
+  if (current < TOTAL) {
+    transitionStage(els.questionCard, renderQuestion);
+  } else {
+    showResult();
+  }
+}
+
+function pickWinner() {
+  // Highest score wins; ties broken by question order of first appearance.
+  let best = null, bestScore = -1;
+  // walk in genre-definition order for stable, predictable ties
+  Object.keys(GENRES).forEach(k => {
+    if (scores[k] > bestScore) { bestScore = scores[k]; best = k; }
+  });
+  return best;
+}
+
+function showResult() {
+  // last progress tick to 100%
+  els.progressFill.style.width = '100%';
+  els.progressPct.textContent = '100%';
+  els.progressText.textContent = 'Done!';
+
+  const key = pickWinner();
+  const g = GENRES[key];
+
+  // tint the card with this genre's accent
+  document.documentElement.style.setProperty('--accent', g.color);
+  document.documentElement.style.setProperty('--accent-soft', g.soft);
+
+  els.rEmoji.textContent = g.emoji;
+  els.rGenre.textContent = g.name;
+  els.rBlurb.textContent = g.blurb;
+  els.rTitles.innerHTML = '';
+  g.titles.forEach(t => {
+    const li = document.createElement('li');
+    li.innerHTML = t.title + '<span class="by">by ' + t.by + '</span>';
+    els.rTitles.appendChild(li);
+  });
+
+  // swap question card out, result card in
+  els.questionCard.classList.add('leaving');
+  setTimeout(() => {
+    els.questionCard.classList.add('hidden');
+    els.progressWrap.classList.add('hidden');
+    els.resultCard.classList.remove('hidden');
+    els.resultCard.classList.add('entering');
+    void els.resultCard.offsetWidth;
+    requestAnimationFrame(() => els.resultCard.classList.remove('entering'));
+    els.retryBtn.focus();
+  }, 320);
+}
+
+function restart() {
+  els.resultCard.classList.add('leaving');
+  setTimeout(() => {
+    els.resultCard.classList.add('hidden');
+    els.resultCard.classList.remove('leaving');
+    els.questionCard.classList.remove('hidden', 'leaving');
+    els.progressWrap.classList.remove('hidden');
+    document.documentElement.style.setProperty('--accent', '#0E6B8A');
+    document.documentElement.style.setProperty('--accent-soft', '#e8f1f5');
+    current = 0;
+    resetScores();
+    renderQuestion();
+  }, 320);
+}
+
+els.retryBtn.addEventListener('click', restart);
+
+// init
+resetScores();
+renderQuestion();
+</script>
+<a href="../../libvibes.html" aria-label="Back to LibVibes" style="position:fixed;left:12px;bottom:12px;z-index:99999;background:#0A3476;color:#fff;font:700 12px/1 system-ui,-apple-system,Segoe UI,sans-serif;text-decoration:none;padding:8px 12px;border-radius:9px;box-shadow:0 3px 12px rgba(0,0,0,.28)">← LibVibes</a>
+<script src="../../libvibes-notice.js"></script>
+</body>
+</html>
