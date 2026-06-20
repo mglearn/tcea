@@ -663,6 +663,9 @@
   .hero-btn.primary:hover{background:var(--gold-light)}
   .hero-btn.ghost{color:#fff;border:1.5px solid rgba(255,255,255,.4)}
   .hero-btn.ghost:hover{border-color:var(--gold-light);color:var(--gold-light)}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2.5rem;align-items:center}
+  .hero-art img{width:100%;height:auto;display:block;filter:drop-shadow(0 14px 32px rgba(0,0,0,.4))}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr}.hero-art{max-width:440px;margin:1.5rem auto 0}}
   .deck-wrap{position:relative;width:100%;max-width:960px;margin:0 auto;aspect-ratio:1280/749;border-radius:14px;overflow:hidden;box-shadow:0 18px 44px rgba(10,52,118,.22);background:#000;border:1px solid var(--border)}
   .deck-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
   .deck-actions{display:flex;gap:.7rem;flex-wrap:wrap;justify-content:center;margin-top:1.4rem}
@@ -698,23 +701,28 @@
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
-  <div class="hero-inner">
-    <span class="eyebrow">Built for School Librarians</span>
-    <h1>Vibe Coding Projects <em>for Librarians</em></h1>
-    <p class="hero-lead">
-      Watch the session deck, grab the three take-home tools, and explore LibVibes &mdash; a full library of
-      starter prompts, built examples, and ready-to-run ideas. Drop the subscriptions. Keep the workflow. Own the files.
-    </p>
-    <div class="hero-actions">
-      <a class="hero-btn primary" href="#deck">&#9654;&nbsp; Slide Deck</a>
-      <a class="hero-btn ghost" href="libvibes-downloads.html">&#11015;&nbsp; Take-Home Tools</a>
-      <a class="hero-btn ghost" href="libvibes.html">&#10024;&nbsp; LibVibes</a>
+  <div class="hero-inner hero-grid">
+    <div class="hero-col">
+      <span class="eyebrow">Built for School Librarians</span>
+      <h1>Vibe Coding Projects <em>for Librarians</em></h1>
+      <p class="hero-lead">
+        Watch the session deck, grab the three take-home tools, and explore LibVibes &mdash; a full library of
+        starter prompts, built examples, and ready-to-run ideas. Drop the subscriptions. Keep the workflow. Own the files.
+      </p>
+      <div class="hero-actions">
+        <a class="hero-btn primary" href="#deck">&#9654;&nbsp; Slide Deck</a>
+        <a class="hero-btn ghost" href="libvibes-downloads.html">&#11015;&nbsp; Take-Home Tools</a>
+        <a class="hero-btn ghost" href="libvibes.html">&#10024;&nbsp; LibVibes</a>
+      </div>
+      <div class="hero-meta">
+        <div class="hero-meta-item"><strong>3 tools</strong>Plus one fully built example</div>
+        <div class="hero-meta-item"><strong>19 prompts</strong>Fresh-from-scratch in LibVibes</div>
+        <div class="hero-meta-item"><strong>22+ use cases</strong>Mapped to library programs</div>
+        <div class="hero-meta-item"><strong>$0</strong>Per student, per month, ever</div>
+      </div>
     </div>
-    <div class="hero-meta">
-      <div class="hero-meta-item"><strong>3 tools</strong>Plus one fully built example</div>
-      <div class="hero-meta-item"><strong>19 prompts</strong>Fresh-from-scratch in LibVibes</div>
-      <div class="hero-meta-item"><strong>22+ use cases</strong>Mapped to library programs</div>
-      <div class="hero-meta-item"><strong>$0</strong>Per student, per month, ever</div>
+    <div class="hero-art">
+      <img src="funvclib.png" alt="Librarians Vibe-Code — imagine, explore, build, share. Your library, your ideas, your future." loading="eager">
     </div>
   </div>
 </section>
