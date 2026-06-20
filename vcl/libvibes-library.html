@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LibVibes · Fresh Vibe-Coding Prompts for Librarians | TCEA</title>
-<meta name="description" content="LibVibes: 19 fresh-from-scratch, library-focused vibe-coding starter prompts with the VIBES framework, all 19 built and playable. By Miguel Guhlin, TCEA.">
+<title>Prompt Library · LibVibes | TCEA</title>
+<meta name="description" content="The full LibVibes prompt library: 19 library-focused vibe-coding starter prompts, each with a VIBES game plan and a copy button. By Miguel Guhlin, TCEA.">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -107,25 +107,6 @@
   .qa-btn-gold:hover{background:var(--gold-light)}
   .qa-count{font-size:.82rem;color:var(--text-muted)}
 
-  /* Collection (compact cards) */
-  .lv-collection{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:1rem}
-  .col-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(10,52,118,.05);transition:.15s}
-  .col-card[data-level="intermediate"]{border-left-color:var(--int)}
-  .col-card[data-level="advanced"]{border-left-color:var(--adv)}
-  .col-card[data-level="beginner"]{border-left-color:var(--beg)}
-  .col-card:hover{box-shadow:0 12px 26px rgba(10,52,118,.12);transform:translateY(-2px)}
-  .col-main{display:block;text-decoration:none;padding:.9rem 1rem .5rem;flex:1}
-  .col-top{display:flex;align-items:center;gap:.5rem;margin-bottom:.45rem}
-  .col-n{font-family:'DM Mono',monospace;font-weight:700;color:var(--navy);background:var(--gold-pale);border-radius:6px;padding:.15rem .45rem;font-size:.72rem}
-  .col-card h3{font-family:'DM Serif Display',serif;color:var(--navy);font-size:1.05rem;line-height:1.18;margin:0 0 .25rem}
-  .col-card p{color:var(--text-muted);font-size:.85rem;margin:0}
-  .col-foot{display:flex;align-items:center;justify-content:space-between;gap:.5rem;padding:.55rem 1rem .75rem;border-top:1px solid var(--border);margin-top:.4rem}
-  .col-link{font-size:.8rem;font-weight:700;color:var(--teal);text-decoration:none}
-  .col-link:hover{text-decoration:underline}
-  .col-copy{font:inherit;font-size:.78rem;font-weight:700;background:var(--navy);color:#fff;border:0;border-radius:7px;padding:.35rem .7rem;cursor:pointer}
-  .col-copy:hover{background:var(--teal)}
-  .col-copy.copied{background:var(--gold);color:var(--navy)}
-
   /* Prompt cards */
   .lv-grid{display:grid;gap:1.2rem}
   .lv-card{background:#fff;border:1px solid var(--border);border-left:5px solid var(--gold);border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(10,52,118,.05)}
@@ -181,17 +162,16 @@
 </style>
 </head>
 <body>
-
 <nav class="nav">
   <div class="nav-inner">
-    <a href="#top" class="nav-brand">
+    <a href="libvibes.html" class="nav-brand">
       <span class="nav-brand-mark">L</span>
       <span class="nav-brand-text">LibVibes<small>TCEA · Prompt Library</small></span>
     </a>
     <div class="nav-links">
       <div class="nav-dd">
         <a href="libvibes-examples.html" class="nav-dd-trigger">Built Examples ▾</a>
-        <div class="nav-dd-menu"><a href="libvibes-examples.html">All built examples →</a></div>
+        <div class="nav-dd-menu"><a href="libvibes-examples.html">All built examples &rarr;</a></div>
       </div>
       <a href="libvibes-vibes.html">VIBES</a>
       <a href="libvibes-library.html">Prompt Library</a>
@@ -202,49 +182,29 @@
   </div>
 </nav>
 
-<section class="hero" id="top">
-  <span class="eyebrow">Fresh-from-scratch · Library-focused</span>
-  <h1><em>Lib</em>Vibes</h1>
-  <div class="play">// part library, part vibes — fill in the blanks, vibe-code the rest</div>
-  <p class="hero-lead">
-    Nineteen brand-new starter prompts built for the real problems and learning exercises of a K-12 library —
-    shelving skills, information literacy, research practice, reading events, and the operational tools the
-    standard kit doesn't cover. Each one is fresh-from-scratch, comes with a copy button, and carries its own
-    VIBES game plan. All 19 are built, so you can play with every one right now.
-  </p>
-  <div class="hero-meta">
-    <div><strong>19</strong><span>starter prompts</span></div>
-    <div><strong>19</strong><span>built &amp; playable</span></div>
-    <div><strong>3</strong><span>skill levels</span></div>
-    <div><strong>$0</strong><span>to host &amp; run</span></div>
-  </div>
+<section class="hero" id="top" style="padding:2.6rem 1.4rem 2.8rem">
+  <span class="eyebrow">Paste · Iterate · Ship</span>
+  <h1>The Prompt <em>Library</em></h1>
+  <p class="hero-lead">All 19 starter prompts. Expand a prompt, hit <strong>Copy</strong>, and paste it into ChatGPT, Claude, Gemini, or BoodleBox — then iterate with its VIBES plan.</p>
 </section>
 
-<!-- ============ QUICK ACTIONS ============ -->
-<section id="quick" style="padding-bottom:0">
-  <div class="qa-wrap">
-    <form class="qa-form" id="lvSearchForm" role="search">
-      <input class="qa-input" id="lvSearch" type="search" placeholder="Search the 19 prompts by title, type, or keyword…" aria-label="Search the LibVibes prompts">
+<section id="library" style="padding-top:2.4rem">
+  <div class="qa-wrap" style="align-items:stretch;margin-bottom:1.4rem">
+    <form class="qa-form" id="lvSearchForm" role="search" style="max-width:none">
+      <input class="qa-input" id="lvSearch" type="search" placeholder="Search prompts by title, type, or keyword…" aria-label="Search the prompts">
       <button class="qa-btn qa-btn-navy" type="submit">🔎 Search</button>
     </form>
-    <button class="qa-btn qa-btn-gold" id="lvRandom" type="button">🎲 View a Random LibVibe</button>
     <div class="qa-count" id="lvSearchCount" aria-live="polite"></div>
   </div>
-</section>
 
-<!-- ============ COLLECTION ============ -->
-<section id="collection">
-  <div class="section-eyebrow">Browse</div>
-  <h2 class="section-title">Your LibVibes Collection</h2>
-  <div class="section-divider"></div>
-  <p class="section-lead">All 19 solutions. Open one to try the live tool on its own page, or copy its prompt to build your own. Want the deep dive? Visit the full <a href="libvibes-library.html">prompt library</a> or read the <a href="libvibes-vibes.html">VIBES framework</a>.</p>
   <div class="filter" id="filter">
     <button class="filter-pill active" data-f="all">All 19</button>
     <button class="filter-pill" data-f="beginner">🟢 Beginner</button>
     <button class="filter-pill" data-f="intermediate">🟡 Intermediate</button>
     <button class="filter-pill" data-f="advanced">🔴 Advanced</button>
   </div>
-  <div class="lv-collection" id="lvCollection"></div>
+
+  <div class="lv-grid" id="lvGrid"></div>
 </section>
 
 <footer>
@@ -252,9 +212,8 @@
   <p style="font-size:.85rem">Director of Professional Development, TCEA</p>
   <p style="margin-top:.6rem;font-size:.85rem">
     <a href="../index.html">← TCEA Directory</a> &nbsp;·&nbsp;
-    <a href="index.html">← Back to the main Vibe Coding page</a> &nbsp;·&nbsp;
-    <a href="https://blog.tcea.org">blog.tcea.org</a> &nbsp;·&nbsp;
-    <a href="https://mguhlin.org">mguhlin.org</a>
+    <a href="libvibes.html">← Back to LibVibes</a> &nbsp;·&nbsp;
+    <a href="https://blog.tcea.org">blog.tcea.org</a>
   </p>
   <p style="margin-top:1rem;opacity:.6;font-size:.75rem">LibVibes · Companion resource for "Vibe Your Way to Free" · TCEA 2026</p>
 </footer>
@@ -262,70 +221,75 @@
 <script src="libvibes-nav.js"></script>
 <script src="libvibes-data.js"></script>
 <script>
-/* ============ COLLECTION (compact cards) ============ */
-const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
-const {byNum,LVL,SOLUTIONS}=window.LIBVIBES;
+const VLET=["V","I","B","E","S"];
+const LVLNAME={beginner:"Beginner",intermediate:"Intermediate",advanced:"Advanced"};
 const SLUGS=window.LV_SLUGS;
-const lvlClass={beginner:"badge-lvl-beginner",intermediate:"badge-lvl-intermediate",advanced:"badge-lvl-advanced"};
-const col=document.getElementById("lvCollection");
-col.innerHTML=window.LV_PROMPTS.map(p=>{
-  const slug=SLUGS[p.n]; const blurb=(byNum[p.n]&&byNum[p.n].blurb)||"";
-  return `<article class="col-card" data-level="${p.level}" data-n="${p.n}">
-    <a class="col-main" href="libvibes/${slug}/index.html">
-      <div class="col-top"><span class="col-n">#${p.n}</span><span class="badge ${lvlClass[p.level]}">${LVL[p.level]}</span></div>
-      <h3>${esc(p.title)}</h3>
-      <p>${esc(blurb)}</p>
-    </a>
-    <div class="col-foot">
-      <a class="col-link" href="libvibes/${slug}/index.html">View &amp; try ↗</a>
-      <button class="col-copy" data-n="${p.n}">Copy prompt</button>
-    </div>
-  </article>`;
-}).join("");
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+const BUILT=new Set((window.LIBVIBES&&window.LIBVIBES.BUILT)||[]);
 
-col.querySelectorAll(".col-copy").forEach(btn=>{
+const grid=document.getElementById("lvGrid");
+grid.innerHTML=window.LV_PROMPTS.map(p=>`
+  <article class="lv-card" data-level="${p.level}">
+    <div class="lv-head">
+      <div class="lv-num">${p.n}</div>
+      <div class="lv-titlewrap">
+        <div class="lv-title"><a href="libvibes/${SLUGS[p.n]}/index.html" style="color:inherit;text-decoration:none">${esc(p.title)}</a></div>
+        <div class="lv-badges">
+          <span class="badge badge-lvl-${p.level}">${LVLNAME[p.level]}</span>
+          <span class="badge badge-type">${esc(p.type)}</span>
+          <span class="badge badge-host">${esc(p.host)}</span>
+          <a class="badge badge-host" style="text-decoration:none;background:var(--gold-pale);color:var(--navy)" href="libvibes/${SLUGS[p.n]}/index.html">↗ Open page</a>
+          ${BUILT.has(p.n)?`<a class="badge badge-type" style="text-decoration:none" href="libvibes/${SLUGS[p.n]}/app.html" target="_blank" rel="noopener">▶ Built example</a><a class="dl-link" href="libvibes/${SLUGS[p.n]}/${SLUGS[p.n]}.zip" download>⬇ .zip</a>`:""}
+        </div>
+      </div>
+    </div>
+    <details class="lv-vibes">
+      <summary>VIBES Framework for this build <span class="v-letters">V·I·B·E·S</span></summary>
+      <ul class="vibes-list">
+        ${p.vibes.map((v,i)=>`<li><b>${VLET[i]}</b>${esc(v)}</li>`).join("")}
+      </ul>
+    </details>
+    <details class="lv-vibes lv-prompt">
+      <summary>The starter prompt <span class="v-letters">copy &amp; paste</span></summary>
+      <pre class="lv-body" id="prompt-${p.n}">${esc(p.prompt)}</pre>
+    </details>
+    <div class="lv-actions"><button class="copy-btn" data-target="prompt-${p.n}">Copy prompt</button></div>
+  </article>`).join("");
+
+document.querySelectorAll(".copy-btn").forEach(btn=>{
   btn.addEventListener("click",async()=>{
-    const p=window.LV_PROMPTS.find(x=>x.n===+btn.dataset.n);
-    const text=p?p.prompt:"";
+    const text=document.getElementById(btn.dataset.target).textContent;
     try{ await navigator.clipboard.writeText(text); }
     catch(e){ const ta=document.createElement("textarea");ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand("copy");document.body.removeChild(ta); }
-    const o=btn.textContent; btn.textContent="Copied!"; btn.classList.add("copied");
-    setTimeout(()=>{btn.textContent=o;btn.classList.remove("copied");},1500);
+    const o=btn.innerText; btn.innerText="Copied!"; btn.classList.add("copied");
+    setTimeout(()=>{btn.innerText=o;btn.classList.remove("copied");},1700);
   });
 });
 
 const lvSearchEl=document.getElementById("lvSearch");
 const lvCountEl=document.getElementById("lvSearchCount");
-function runSearch(scroll){
-  const raw=lvSearchEl.value.trim(), q=raw.toLowerCase();
-  let shown=0;
-  col.querySelectorAll(".col-card").forEach(c=>{
-    const p=window.LV_PROMPTS.find(x=>x.n===+c.dataset.n);
-    const hay=(c.textContent+" "+(p?p.prompt+" "+p.type:"")).toLowerCase();
-    const hit=!q||hay.includes(q);
-    c.classList.toggle("hide",!hit); if(hit) shown++;
-  });
-  if(q){ document.querySelectorAll(".filter-pill").forEach(pp=>pp.classList.toggle("active",pp.dataset.f==="all")); }
-  lvCountEl.textContent=q?`${shown} solution${shown===1?"":"s"} match “${raw}”`:"";
-  if(scroll) document.getElementById("collection").scrollIntoView({behavior:"smooth"});
-}
-document.getElementById("lvSearchForm").addEventListener("submit",e=>{e.preventDefault();runSearch(true);});
-lvSearchEl.addEventListener("input",()=>runSearch(false));
-
 document.querySelectorAll(".filter-pill").forEach(pill=>{
   pill.addEventListener("click",()=>{
     document.querySelectorAll(".filter-pill").forEach(p=>p.classList.remove("active"));
     pill.classList.add("active");
     lvSearchEl.value=""; lvCountEl.textContent="";
     const f=pill.dataset.f;
-    col.querySelectorAll(".col-card").forEach(c=>c.classList.toggle("hide",!(f==="all"||c.dataset.level===f)));
+    document.querySelectorAll(".lv-card").forEach(c=>c.classList.toggle("hide",!(f==="all"||c.dataset.level===f)));
   });
 });
-
-document.getElementById("lvRandom").addEventListener("click",()=>{
-  const s=SOLUTIONS[Math.floor(Math.random()*SOLUTIONS.length)];
-  window.location.href="libvibes/"+s.slug+"/app.html";
-});
+function runSearch(scroll){
+  const raw=lvSearchEl.value.trim(), q=raw.toLowerCase();
+  let shown=0;
+  document.querySelectorAll(".lv-card").forEach(c=>{
+    const hit=!q||c.textContent.toLowerCase().includes(q);
+    c.classList.toggle("hide",!hit); if(hit) shown++;
+  });
+  if(q){ document.querySelectorAll(".filter-pill").forEach(p=>p.classList.toggle("active",p.dataset.f==="all")); }
+  lvCountEl.textContent=q?`${shown} prompt${shown===1?"":"s"} match “${raw}”`:"";
+  if(scroll) document.getElementById("library").scrollIntoView({behavior:"smooth"});
+}
+document.getElementById("lvSearchForm").addEventListener("submit",e=>{e.preventDefault();runSearch(true);});
+lvSearchEl.addEventListener("input",()=>runSearch(false));
 </script>
 </body>
 </html>
