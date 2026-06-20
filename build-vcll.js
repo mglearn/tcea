@@ -78,19 +78,25 @@ const dataPath = path.join(OUT, "libvibes-data.js");
 if (fs.existsSync(dataPath)) {
   const sandbox = { window: {} };
   vm.runInNewContext(fs.readFileSync(dataPath, "utf8"), sandbox);
-  const prompts = sandbox.window.LV_PROMPTS || [];
+  const w = sandbox.window;
+  const prompts = w.LV_PROMPTS || [];
   const body = prompts.map((p) => {
     const keys = Object.keys(p).filter((k) => k !== "prompt");
     const fields = keys.map((k) => JSON.stringify(k) + ":" + JSON.stringify(p[k]));
     fields.push('"prompt":LVdec("' + enc(p.prompt) + '")');
     return "{" + fields.join(",") + "}";
   }).join(",\n");
-  const out =
+  let out =
     "/* LibVibes prompt data — prompts obfuscated by build-vcll.js.\n" +
     "   Decoded at runtime via LVdec() (defined in lock.js). */\n" +
     "window.LV_PROMPTS=[\n" + body + "\n];\n";
+  // Preserve every OTHER global the original file defined (e.g. window.LV_SLUGS),
+  // otherwise pages that read them break.
+  const others = Object.keys(w).filter((k) => k !== "LV_PROMPTS");
+  for (const k of others) out += "window." + k + "=" + JSON.stringify(w[k]) + ";\n";
   fs.writeFileSync(dataPath, out);
-  console.log("Obfuscated " + prompts.length + " prompts in libvibes-data.js");
+  console.log("Obfuscated " + prompts.length + " prompts in libvibes-data.js" +
+              (others.length ? " (preserved: " + others.join(", ") + ")" : ""));
 }
 
 // 4) obfuscate every inline prompt (<div>/<pre> class="prompt-body") --
