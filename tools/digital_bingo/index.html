@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>iBINGO Game Maker</title>
+<title>Digital Bingo Game Maker</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -11,7 +11,7 @@
   --gold:#FCB040; --gold-light:#fdd17a; --gold-pale:#FEF0D0;
   --pale-navy:#D0D8F0; --white:#ffffff; --off-white:#f7f8fc;
   --text:#1a1a2e; --text-muted:#5a6680; --border:#e2e7f5; --teal:#0e6b8a;
-  /* iBINGO splash palette (from banner image) */
+  /* accent palette for bingo letters and feature dots */
   --ib-blue:#1565d8; --ib-blue-deep:#0d3a9e; --ib-teal:#17a7b5;
   --ib-yellow:#f5b81e; --ib-green:#5aa832; --ib-purple:#7b2fb0; --ib-red:#e8401f;
 }
@@ -22,8 +22,12 @@ h1,h2,h3{font-family:'DM Serif Display',serif;color:var(--navy);margin:0}
 .top-bar{height:12px;background:linear-gradient(90deg,
   var(--navy) 0 32%,var(--gold) 32% 52%,var(--ib-red) 52% 64%,
   var(--ib-blue) 64% 76%,var(--ib-teal) 76% 88%,var(--ib-green) 88% 96%,var(--ib-yellow) 96% 100%)}
-.tool-nav{max-width:920px;margin:0 auto;padding:14px 20px 0;display:flex;align-items:center;justify-content:space-between;gap:14px}
-.tool-nav .eyebrow{color:var(--gold);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.tool-header{max-width:920px;margin:0 auto;padding:20px 20px 18px;display:flex;align-items:flex-end;justify-content:space-between;gap:18px;border-bottom:2px solid var(--border)}
+.tool-header .title-block{display:grid;gap:6px}
+.tool-header .eyebrow{color:var(--gold);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.tool-header h1{font-size:clamp(1.8rem,5vw,2.8rem);line-height:1;color:var(--navy)}
+.tool-header .subtitle{margin:0;max-width:640px;color:var(--text-muted);font-size:.95rem;line-height:1.45}
+@media(max-width:640px){.tool-header{flex-direction:column;align-items:flex-start;gap:12px}}
 .home-link{display:inline-flex;align-items:center;min-height:38px;padding:0 16px;color:#fff;background:var(--navy);border-radius:8px;font-weight:700;text-decoration:none;font-size:.85rem;white-space:nowrap}
 .home-link:hover{background:var(--navy-mid)}
 .mg-bottom-nav{text-align:center;padding:1.25rem 1.5rem;background:var(--navy-dark);border-top:3px solid var(--gold);margin-top:8px}
@@ -34,9 +38,6 @@ h1,h2,h3{font-family:'DM Serif Display',serif;color:var(--navy);margin:0}
 .hero h1{color:var(--white);font-size:2rem}
 .hero h1 em{color:var(--gold);font-style:italic}
 .hero p{color:var(--pale-navy);margin:6px 0 0;font-size:.95rem}
-/* iBINGO splash banner on teacher page */
-.splash{max-width:920px;margin:0 auto;padding:20px 20px 0}
-.splash img{width:100%;height:auto;display:block;border-radius:14px;box-shadow:0 10px 30px rgba(13,58,158,.25)}
 .feature-strip{max-width:920px;margin:14px auto 0;padding:0 20px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 .feature{background:var(--white);border:1.5px solid var(--border);border-radius:10px;padding:12px;text-align:center}
 .feature .dot{width:30px;height:30px;border-radius:50%;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;font-size:1rem}
@@ -115,14 +116,15 @@ button{font-family:inherit;font-weight:600;border:none;border-radius:8px;padding
 
 <div id="splashHero" class="no-print">
   <div class="top-bar" aria-hidden="true"></div>
-  <div class="tool-nav">
-    <span class="eyebrow">TCEA Tools</span>
+  <header class="tool-header">
+    <div class="title-block">
+      <p class="eyebrow">TCEA Tools</p>
+      <h1>Digital Bingo Game Maker</h1>
+      <p class="subtitle">Paste your terms or load a TEKS-aligned vocabulary bank, generate a randomized card, and share one link with your whole class.</p>
+    </div>
     <a class="home-link" href="../index.html">Tool Menu</a>
-  </div>
-  <div class="splash">
-    <img src="ibingo-splash.png" alt="iBINGO Game Maker — paste your terms, generate a card, and share one link with your whole class.">
-  </div>
-  <div class="feature-strip">
+  </header>
+  <div class="feature-strip" style="margin-top:18px">
     <div class="feature"><div class="dot" style="background:var(--ib-teal);color:#fff">⏱</div><b>Fast &amp; Easy</b><span>Create in seconds</span></div>
     <div class="feature"><div class="dot" style="background:var(--ib-purple);color:#fff">👥</div><b>Classroom Ready</b><span>Engage every learner</span></div>
     <div class="feature"><div class="dot" style="background:var(--ib-green);color:#fff">🔗</div><b>One Link to Share</b><span>Simple for everyone</span></div>
@@ -243,22 +245,16 @@ Hallucination
 <!-- ============ PLAYER (student) ============ -->
 <div id="player" class="wrap" style="display:none">
   <div class="bingo-head">
-    <svg class="ibingo-logo" viewBox="0 0 360 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="iBINGO Game Maker">
+    <svg class="ibingo-logo" viewBox="0 0 300 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bingo">
       <defs>
-        <style>
-          .ib-letter{font-family:'DM Serif Display',Georgia,serif;font-weight:700;font-size:74px}
-          .ib-sub{font-family:'DM Sans',sans-serif;font-weight:700;font-size:20px;letter-spacing:1px}
-        </style>
+        <style>.ib-letter{font-family:'DM Serif Display',Georgia,serif;font-weight:700;font-size:74px}</style>
       </defs>
       <g text-anchor="middle">
-        <text x="34"  y="78" class="ib-letter" fill="#17a7b5">i</text>
-        <text x="78"  y="78" class="ib-letter" fill="#1565d8">B</text>
-        <text x="128" y="78" class="ib-letter" fill="#f5b81e">I</text>
-        <text x="166" y="78" class="ib-letter" fill="#5aa832">N</text>
-        <text x="222" y="78" class="ib-letter" fill="#7b2fb0">G</text>
-        <text x="284" y="78" class="ib-letter" fill="#e8401f">O</text>
-        <rect x="96" y="92" width="168" height="28" rx="6" fill="#0d3a9e"/>
-        <text x="180" y="112" class="ib-sub" fill="#ffffff">GAME MAKER</text>
+        <text x="34"  y="74" class="ib-letter" fill="#1565d8">B</text>
+        <text x="92"  y="74" class="ib-letter" fill="#f5b81e">I</text>
+        <text x="138" y="74" class="ib-letter" fill="#5aa832">N</text>
+        <text x="200" y="74" class="ib-letter" fill="#7b2fb0">G</text>
+        <text x="266" y="74" class="ib-letter" fill="#e8401f">O</text>
       </g>
     </svg>
     <h2 id="playTitle">BINGO</h2>
@@ -422,7 +418,7 @@ function buildEmbed(){
   height="780"
   style="border:0;max-width:680px;display:block;margin:0 auto;"
   loading="lazy"
-  title="iBINGO card">
+  title="Digital Bingo card">
 </iframe>`;
 }
 
