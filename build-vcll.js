@@ -137,7 +137,29 @@ function injectGuard(file) {
   fs.writeFileSync(file, html);
   return true;
 }
-const totals = { gated: 0, prompts: 0 };
+// 6) inject a "Back to Collection" link into bare app.html build examples.
+//    Shown only when the app is the top-level page (hidden inside the about
+//    page's preview iframe via the window.top check).
+function injectBackLink(file) {
+  let html = fs.readFileSync(file, "utf8");
+  if (html.indexOf("vcll-backlink") !== -1) return false;
+  const href = relBase(file) + "libvibes.html";
+  const snippet = '\n<script id="vcll-backlink">(function(){if(window.top!==window.self)return;' +
+    'function add(){var a=document.createElement("a");a.href="' + href + '";' +
+    'a.textContent="\\u2190 Collection";a.setAttribute("aria-label","Back to LibVibes Collection");' +
+    'a.style.cssText="position:fixed;top:12px;left:12px;z-index:2147483647;background:#0A3476;' +
+    'color:#FCB040;font:600 13px/1 system-ui,-apple-system,sans-serif;padding:9px 13px;' +
+    'border-radius:8px;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.3)";' +
+    'a.onmouseover=function(){a.style.filter="brightness(1.12)"};' +
+    'a.onmouseout=function(){a.style.filter=""};document.body.appendChild(a);}' +
+    'if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",add);else add();})();</script>\n';
+  if (/<\/body>/i.test(html)) html = html.replace(/<\/body>/i, snippet + "</body>");
+  else html += snippet;
+  fs.writeFileSync(file, html);
+  return true;
+}
+
+const totals = { gated: 0, prompts: 0, backlinks: 0 };
 function walk(dir) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
     const p = path.join(dir, e.name);
@@ -145,9 +167,11 @@ function walk(dir) {
     if (!e.isFile() || !e.name.toLowerCase().endsWith(".html")) continue;
     totals.prompts += encodePromptBodies(p);   // obfuscate inline prompts first
     totals.gated += injectGuard(p) ? 1 : 0;     // then inject the gate
+    if (e.name === "app.html") totals.backlinks += injectBackLink(p) ? 1 : 0;
   }
 }
 walk(OUT);
 console.log("Obfuscated " + totals.prompts + " inline prompts across all pages");
 console.log("Injected gate into " + totals.gated + " HTML pages");
+console.log("Injected Back-to-Collection link into " + totals.backlinks + " app.html examples");
 console.log("\nDone. The locked site is in vcll/  ->  served at /tcea/vcll/");
