@@ -45,7 +45,11 @@ function unescapeHtml(s) {
 }
 
 // 1) fresh copy ------------------------------------------------
+// credentials.md is the LIVE source of truth, edited in place. Preserve it
+// across the wipe so a rebuild never deletes users you've added.
 if (!fs.existsSync(SRC)) { console.error("Missing source folder: " + SRC); process.exit(1); }
+const credOut = path.join(OUT, "credentials.md");
+const existingCreds = fs.existsSync(credOut) ? fs.readFileSync(credOut, "utf8") : null;
 fs.rmSync(OUT, { recursive: true, force: true });
 fs.cpSync(SRC, OUT, { recursive: true });
 console.log("Copied vcl/ -> vcll/");
@@ -54,8 +58,14 @@ console.log("Copied vcl/ -> vcll/");
 for (const f of ["lock.js", "login.html", "gen-credential.html"]) {
   fs.copyFileSync(path.join(ASSETS, f), path.join(OUT, f));
 }
-fs.copyFileSync(CREDS, path.join(OUT, "credentials.md"));
-console.log("Added lock.js, login.html, gen-credential.html, credentials.md");
+if (existingCreds !== null) {
+  fs.writeFileSync(credOut, existingCreds);
+  console.log("Preserved existing vcll/credentials.md (users kept)");
+} else {
+  fs.copyFileSync(CREDS, credOut);
+  console.log("Seeded vcll/credentials.md from template");
+}
+console.log("Added lock.js, login.html, gen-credential.html");
 
 // 2b) drop unreferenced plaintext-prompt source files ---------
 for (const f of DROP_FILES) {
