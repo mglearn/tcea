@@ -22,11 +22,12 @@
     { n: 15, slug: "catalog-lookup",                 title: "Catalog Lookup",              full: "\"Is It On the Shelf?\" Catalog Lookup",level: "advanced",   type: "Operations",       blurb: "A live availability search demo (the prompt builds the Google-Sheets-backed version)." },
     { n: 16, slug: "signup-board",                   title: "Sign-Up Board",               full: "Makerspace / Study Room Sign-Up Board",level: "advanced",    type: "Operations",       blurb: "A time-slot booking grid demo (the prompt builds the Google-Sheets-backed version)." },
     { n: 17, slug: "mock-award-voting",              title: "Mock Caldecott Award",        full: "Mock Caldecott / Newbery Voting Station",level: "advanced",  type: "Library event",    blurb: "A nominee gallery, a ballot, and live animated results with a winner's crown." },
-    { n: 18, slug: "collection-diversity-dashboard", title: "Collection Snapshot",         full: "Collection Diversity Snapshot Dashboard",level: "advanced",  type: "Operations",       blurb: "A collection-snapshot dashboard demo (the prompt builds the Google-Sheets-backed version)." }
+    { n: 18, slug: "collection-diversity-dashboard", title: "Collection Snapshot",         full: "Collection Diversity Snapshot Dashboard",level: "advanced",  type: "Operations",       blurb: "A collection-snapshot dashboard demo (the prompt builds the Google-Sheets-backed version)." },
+    { n: 19, slug: "digital-citizenship-detective", title: "Digital Citizenship Game",     full: "Post or Pass? — Digital Citizenship Game",level: "intermediate", type: "Digital citizenship", blurb: "A scenario game: read a real online situation, choose what you'd do, and learn why — across six digital-citizenship skills." }
   ];
 
   /* ---- The only line to edit as tools ship: which prompt numbers are built ---- */
-  const BUILT = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
+  const BUILT = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
 
   const LVL = { beginner: "Beginner", intermediate: "Intermediate", advanced: "Advanced" };
   const byNum = Object.fromEntries(SOLUTIONS.map(s => [s.n, s]));

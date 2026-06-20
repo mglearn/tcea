@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LibVibes · Fresh Vibe-Coding Prompts for Librarians | TCEA</title>
-<meta name="description" content="LibVibes: 18 fresh-from-scratch, library-focused vibe-coding starter prompts with the VIBES framework, all 18 built and playable. By Miguel Guhlin, TCEA.">
+<meta name="description" content="LibVibes: 19 fresh-from-scratch, library-focused vibe-coding starter prompts with the VIBES framework, all 19 built and playable. By Miguel Guhlin, TCEA.">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -188,14 +188,14 @@
   <h1><em>Lib</em>Vibes</h1>
   <div class="play">// part library, part vibes — fill in the blanks, vibe-code the rest</div>
   <p class="hero-lead">
-    Eighteen brand-new starter prompts built for the real problems and learning exercises of a K-12 library —
+    Nineteen brand-new starter prompts built for the real problems and learning exercises of a K-12 library —
     shelving skills, information literacy, research practice, reading events, and the operational tools the
     standard kit doesn't cover. Each one is fresh-from-scratch, comes with a copy button, and carries its own
-    VIBES game plan. All 18 are built, so you can play with every one right now.
+    VIBES game plan. All 19 are built, so you can play with every one right now.
   </p>
   <div class="hero-meta">
-    <div><strong>18</strong><span>starter prompts</span></div>
-    <div><strong>18</strong><span>built &amp; playable</span></div>
+    <div><strong>19</strong><span>starter prompts</span></div>
+    <div><strong>19</strong><span>built &amp; playable</span></div>
     <div><strong>3</strong><span>skill levels</span></div>
     <div><strong>$0</strong><span>to host &amp; run</span></div>
   </div>
@@ -205,7 +205,7 @@
 <section id="quick" style="padding-bottom:0">
   <div class="qa-wrap">
     <form class="qa-form" id="lvSearchForm" role="search">
-      <input class="qa-input" id="lvSearch" type="search" placeholder="Search the 18 prompts by title, type, or keyword…" aria-label="Search the LibVibes prompts">
+      <input class="qa-input" id="lvSearch" type="search" placeholder="Search the 19 prompts by title, type, or keyword…" aria-label="Search the LibVibes prompts">
       <button class="qa-btn qa-btn-navy" type="submit">🔎 Search</button>
     </form>
     <button class="qa-btn qa-btn-gold" id="lvRandom" type="button">🎲 View a Random LibVibe</button>
@@ -233,10 +233,10 @@
   <div class="section-eyebrow">Paste · Iterate · Ship</div>
   <h2 class="section-title">The LibVibes Prompt Library</h2>
   <div class="section-divider"></div>
-  <p class="section-lead">All 18 prompts. Hit <b>Copy prompt</b>, paste into ChatGPT, Claude, Gemini, or BoodleBox, then iterate with the expandable VIBES plan. Each prompt also has its own shareable page — click a title or <b>↗ Open page</b> to link straight to a single starter. The four originals on the main page (ShareSpace, WonderWall, StickyBoard, Book Recommendation Gallery) stay exactly as they are — these fill the gaps around them.</p>
+  <p class="section-lead">All 19 prompts. Hit <b>Copy prompt</b>, paste into ChatGPT, Claude, Gemini, or BoodleBox, then iterate with the expandable VIBES plan. Each prompt also has its own shareable page — click a title or <b>↗ Open page</b> to link straight to a single starter. The four originals on the main page (ShareSpace, WonderWall, StickyBoard, Book Recommendation Gallery) stay exactly as they are — these fill the gaps around them.</p>
 
   <div class="filter" id="filter">
-    <button class="filter-pill active" data-f="all">All 18</button>
+    <button class="filter-pill active" data-f="all">All 19</button>
     <button class="filter-pill" data-f="beginner">🟢 Beginner</button>
     <button class="filter-pill" data-f="intermediate">🟡 Intermediate</button>
     <button class="filter-pill" data-f="advanced">🔴 Advanced</button>
@@ -611,12 +611,31 @@ Design:
 - Every chart has a plain-language caption explaining what it suggests
 
 Walk me through the Sheet setup and deployment. Give me all the files.`,
-vibes:["Turn an export you already have into evidence for weeding and budget requests.","Map your real column names and set your weeding cutoffs (age + last-checkout date).","Get the headline stats + one chart working first; add the rest of the charts; add the weeding flag last.","Sanity-check the numbers against the raw Sheet; confirm weeding candidates match your judgment.","Keep it private (password-gated); screenshot charts for your collection-development report."]}
+vibes:["Turn an export you already have into evidence for weeding and budget requests.","Map your real column names and set your weeding cutoffs (age + last-checkout date).","Get the headline stats + one chart working first; add the rest of the charts; add the weeding flag last.","Sanity-check the numbers against the raw Sheet; confirm weeding candidates match your judgment.","Keep it private (password-gated); screenshot charts for your collection-development report."]},
+
+{n:19,level:"intermediate",type:"Digital citizenship",host:"GitHub Pages / Sites",title:"Post or Pass? Digital Citizenship Game",
+prompt:`I am a school librarian. I am not a developer. Build me a single self-contained index.html file (no external libraries) that is a "digital citizenship" decision game for students in grades 4 through 9.
+
+How it works:
+- A deck of about 10 real online situations (a quiz app asking for personal info, a phishing "you won!" pop-up, a friend asking for a password, a mean group chat, a viral fake headline, a stranger asking for a selfie and location, four hours of gaming vs. homework, using an image without permission, a threatening DM)
+- For each situation the student picks one of 2 to 4 actions; the game marks it best / okay / risky, reveals the best answer, and explains WHY in student-friendly language
+- Each situation is tagged with one of six skills: Privacy, Kindness, Credibility, Security, Digital Footprint, and Balance
+- A running score and a progress bar across the deck
+- At the end, a "Digital Citizen Report" shows the total score and a per-skill breakdown bar so I can see where the class is strong or needs work
+- A "Play again" button reshuffles the deck
+
+Design:
+- Mobile-first; one situation on screen at a time with instant, animated feedback
+- Each of the six skills has its own color and icon; the chosen answer and the best answer are both highlighted
+- Palette navy #0A3476, gold #FCB040, teal #0E6B8A on a soft off-white
+
+Make the scenarios, skills, and explanations easy to edit in clearly-labeled arrays at the top of the script. Give me the complete file in one response.`,
+vibes:["Turn abstract \"be safe and kind online\" rules into real decisions students practice and feel.","Feed it scenarios from your own acceptable-use policy and recent situations so the cases ring true.","Get the scenario → choose → feedback loop working first; add scoring and the progress bar; add the per-skill report last.","Play every path on a phone; confirm each \"best\" answer and explanation is accurate and age-appropriate; check with a counselor.","Use it as a station or bell-ringer; embed in your digital-citizenship Google Site or project it for a class discussion."]}
 ];
 
 const VLET=["V","I","B","E","S"];
 const LVLNAME={beginner:"Beginner",intermediate:"Intermediate",advanced:"Advanced"};
-const SLUGS={1:"library-hours-card",2:"genre-quiz",3:"reading-challenge-tracker",4:"dewey-explorer-wheel",5:"event-countdown-banner",6:"call-number-shelving-game",7:"book-spine-poetry",8:"reading-bingo-generator",9:"book-of-the-week-carousel",10:"citation-quick-helper",11:"library-floor-map",12:"source-evaluation-lab",13:"boolean-search-trainer",14:"primary-secondary-sorter",15:"catalog-lookup",16:"signup-board",17:"mock-award-voting",18:"collection-diversity-dashboard"};
+const SLUGS={1:"library-hours-card",2:"genre-quiz",3:"reading-challenge-tracker",4:"dewey-explorer-wheel",5:"event-countdown-banner",6:"call-number-shelving-game",7:"book-spine-poetry",8:"reading-bingo-generator",9:"book-of-the-week-carousel",10:"citation-quick-helper",11:"library-floor-map",12:"source-evaluation-lab",13:"boolean-search-trainer",14:"primary-secondary-sorter",15:"catalog-lookup",16:"signup-board",17:"mock-award-voting",18:"collection-diversity-dashboard",19:"digital-citizenship-detective"};
 const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 /* Built tools come from the shared libvibes-nav.js (window.LIBVIBES.BUILT) */
 const BUILT=new Set((window.LIBVIBES&&window.LIBVIBES.BUILT)||[6,13,17]);
