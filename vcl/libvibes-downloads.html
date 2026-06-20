@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Take-Home Tools &amp; Downloads · LibVibes | TCEA</title>
+<meta name="description" content="The three take-home tools (ShareSpace, WonderWall, StickyBoard) plus every LibVibes download — demo zips, the built Book Recommendation Gallery, and bonus tools. By Miguel Guhlin, TCEA.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="libvibes-base.css">
+<style>
+  /* ---- Take-home tool cards ---- */
+  .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+  .tool-card{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:transform .15s,box-shadow .15s;display:flex;flex-direction:column}
+  .tool-card:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(10,52,118,.1)}
+  .tool-card-header{background:var(--navy);color:var(--white);padding:1.4rem 1.5rem 1.1rem;position:relative}
+  .tool-card-header::before{content:"";position:absolute;top:0;left:0;width:3rem;height:3px;background:var(--gold)}
+  .tool-card-name{font-family:'DM Serif Display',serif;font-size:1.6rem;margin-bottom:.25rem}
+  .tool-card-tagline{color:var(--gold-light);font-size:.85rem;font-style:italic}
+  .tool-card-body{padding:1.3rem 1.5rem 1rem;flex:1;display:flex;flex-direction:column;gap:.9rem}
+  .tool-card-desc{color:var(--text);font-size:.95rem}
+  .tool-card-replaces{margin-top:auto;background:var(--gold-pale);color:var(--navy);font-size:.78rem;font-weight:600;padding:.4rem .8rem;border-radius:3px;display:inline-flex;align-self:flex-start;letter-spacing:.03em}
+  .tool-card-links{border-top:1px solid var(--border);padding:.8rem 1.5rem 1.3rem;display:flex;gap:.6rem;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem .9rem;border-radius:5px;font-size:.82rem;font-weight:600;text-decoration:none;transition:background .15s,color .15s}
+  .btn-primary{background:var(--gold);color:var(--navy)}
+  .btn-primary:hover{background:var(--navy);color:var(--white)}
+  .btn-outline{background:var(--white);color:var(--navy);border:1.5px solid var(--navy)}
+  .btn-outline:hover{background:var(--navy);color:var(--white)}
+  /* ---- Download cards ---- */
+  .dl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+  .dl-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.2rem 1.4rem;display:flex;align-items:flex-start;gap:.9rem;text-decoration:none;color:var(--text);transition:all .15s}
+  .dl-card:hover{border-color:var(--navy);transform:translateY(-1px);box-shadow:0 4px 12px rgba(10,52,118,.08)}
+  .dl-icon{width:38px;height:38px;background:var(--gold);border-radius:6px;color:var(--navy);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;flex-shrink:0}
+  .dl-title{font-size:.95rem;font-weight:600;color:var(--navy);margin-bottom:.2rem}
+  .dl-sub{font-size:.78rem;color:var(--text-muted)}
+  .host-note{background:var(--gold-pale);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:.9rem 1.2rem;margin-bottom:1.6rem;font-size:.92rem;color:#5a4413}
+  .host-note a{color:var(--navy);font-weight:600}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="libvibes.html" class="nav-brand">
+      <span class="nav-brand-mark">L</span>
+      <span class="nav-brand-text">LibVibes<small>TCEA · Prompt Library</small></span>
+    </a>
+    <div class="nav-links">
+      <div class="nav-dd">
+        <a href="libvibes-examples.html" class="nav-dd-trigger">Built Examples &#9662;</a>
+        <div class="nav-dd-menu"><a href="libvibes-examples.html">All built examples &rarr;</a></div>
+      </div>
+      <a href="libvibes-vibes.html">VIBES</a>
+      <a href="libvibes-library.html">Prompt Library</a>
+      <a href="libvibes-prompts-bonus.html">Bonus Prompts</a>
+      <a href="libvibes-use-cases.html">Use Cases</a>
+      <a href="libvibes-downloads.html">Tools &amp; Downloads</a>
+      <a href="libvibes-host.html">Host It Free</a>
+      <a href="libvibes-submit.html">Share Yours</a>
+      <a href="libvibes-community.html">Community</a>
+      <a class="home" href="index.html">&#8962; Main Page</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" id="top" style="padding:2.6rem 1.4rem 2.8rem">
+  <span class="eyebrow">Download · Own · Host</span>
+  <h1>Take-Home <em>Tools</em></h1>
+  <p class="hero-lead">Three downloadable tools that replace paid subscriptions — plus every demo zip and bonus file from the session. Open the zip, read the SETUP.md inside, and you own every byte.</p>
+</section>
+
+<!-- ============ TAKE-HOME TOOLS ============ -->
+<section id="tools">
+  <div class="section-eyebrow">The Toolkit</div>
+  <h2 class="section-title">Three Tools You Take Home</h2>
+  <div class="section-divider"></div>
+  <p class="section-lead">Each tool runs on a single page or a small folder of files. Drop the subscriptions, keep the workflow, own the files. Want to build your own variations? See the <a href="libvibes-prompts-bonus.html">bonus starter prompts</a>.</p>
+
+  <div class="tools-grid">
+    <div class="tool-card">
+      <div class="tool-card-header">
+        <div class="tool-card-name">ShareSpace</div>
+        <div class="tool-card-tagline">Padlet alternative you own</div>
+      </div>
+      <div class="tool-card-body">
+        <p class="tool-card-desc">A student submission board where uploads land in your own Google Drive. Moderated or open. Categorized. Mobile-friendly.</p>
+        <span class="tool-card-replaces">Replaces Padlet, Bulb</span>
+      </div>
+      <div class="tool-card-links">
+        <a class="btn btn-primary" href="https://mglearn.github.io/vcs/sharespace-demo.zip">Download</a>
+        <a class="btn btn-outline" href="libvibes-prompts-bonus.html#p1">See Prompt</a>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-card-header">
+        <div class="tool-card-name">WonderWall</div>
+        <div class="tool-card-tagline">Moderated Q&amp;A wall</div>
+      </div>
+      <div class="tool-card-body">
+        <p class="tool-card-desc">Anonymous question wall for author visits, research workshops, and PD. You approve before questions go public.</p>
+        <span class="tool-card-replaces">Replaces Slido, Mentimeter</span>
+      </div>
+      <div class="tool-card-links">
+        <a class="btn btn-primary" href="https://mglearn.github.io/vcs/wonderwall-demo.zip">Download</a>
+        <a class="btn btn-outline" href="https://mglearn.github.io/vcs/wonderwall" target="_blank" rel="noopener">Live Demo</a>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-card-header">
+        <div class="tool-card-name">StickyBoard</div>
+        <div class="tool-card-tagline">Collaborative sticky-note canvas</div>
+      </div>
+      <div class="tool-card-body">
+        <p class="tool-card-desc">Multi-color sticky notes on a shared canvas. Built to fill the Jamboard-shaped hole in your library.</p>
+        <span class="tool-card-replaces">Replaces FigJam, Lucidspark</span>
+      </div>
+      <div class="tool-card-links">
+        <a class="btn btn-primary" href="https://mglearn.github.io/vcs/stickyboard-demo.zip">Download</a>
+        <a class="btn btn-outline" href="https://mglearn.github.io/vcs/stickyboard/" target="_blank" rel="noopener">Live Demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DOWNLOADS ============ -->
+<section id="downloads" style="padding-top:0">
+  <div class="section-eyebrow">Get the Files</div>
+  <h2 class="section-title">All Downloads &amp; Resources</h2>
+  <div class="section-divider"></div>
+  <p class="section-lead">Open the zip, read the SETUP.md inside, and you will be running in the time it takes to drink a coffee.</p>
+
+  <p class="host-note">
+    🌐 <strong>Never hosted a file before?</strong> The <a href="libvibes-host.html">GitHub Pages walkthrough</a> &mdash; video plus simple steps to put any of these tools online for free and embed them in Google Sites.
+  </p>
+
+  <div class="dl-grid">
+    <a class="dl-card" href="https://mglearn.github.io/vcs/book-recommendation-gallery.zip">
+      <div class="dl-icon">&#9733;</div>
+      <div>
+        <div class="dl-title">Book Recommendation Gallery</div>
+        <div class="dl-sub">book-recommendation-gallery.zip · Built example, ready to deploy</div>
+      </div>
+    </a>
+    <a class="dl-card" href="https://mglearn.github.io/vcs/sharespace-demo.zip">
+      <div class="dl-icon">S</div>
+      <div>
+        <div class="dl-title">ShareSpace (open)</div>
+        <div class="dl-sub">sharespace-demo.zip · No moderation, admin delete only</div>
+      </div>
+    </a>
+    <a class="dl-card" href="https://mglearn.github.io/vcs/sharespace-demo-moderated.zip">
+      <div class="dl-icon">S+</div>
+      <div>
+        <div class="dl-title">ShareSpace (moderated)</div>
+        <div class="dl-sub">sharespace-demo-moderated.zip · Approval flow built in</div>
+      </div>
+    </a>
+    <a class="dl-card" href="https://mglearn.github.io/vcs/wonderwall-demo.zip">
+      <div class="dl-icon">W</div>
+      <div>
+        <div class="dl-title">WonderWall</div>
+        <div class="dl-sub">wonderwall-demo.zip · Demo at mglearn.github.io/vcs/wonderwall</div>
+      </div>
+    </a>
+    <a class="dl-card" href="https://mglearn.github.io/vcs/stickyboard-demo.zip">
+      <div class="dl-icon">B</div>
+      <div>
+        <div class="dl-title">StickyBoard</div>
+        <div class="dl-sub">stickyboard-demo.zip · Includes image version</div>
+      </div>
+    </a>
+    <a class="dl-card" href="libvibes-all-tools.zip" download>
+      <div class="dl-icon">19</div>
+      <div>
+        <div class="dl-title">All 19 LibVibes Tools</div>
+        <div class="dl-sub">libvibes-all-tools.zip · Every built LibVibes solution</div>
+      </div>
+    </a>
+    <a class="dl-card" href="https://go.mgpd.org/md">
+      <div class="dl-icon">M</div>
+      <div>
+        <div class="dl-title">Markdown Cleaner</div>
+        <div class="dl-sub">go.mgpd.org/md · Bonus tool, works on phones</div>
+      </div>
+    </a>
+    <a class="dl-card" href="https://blog.tcea.org/vibe-coded-solutions/">
+      <div class="dl-icon">+</div>
+      <div>
+        <div class="dl-title">Original Blog Post</div>
+        <div class="dl-sub">blog.tcea.org/vibe-coded-solutions · Background and screenshots</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p><strong style="color:#fff;font-family:'DM Serif Display',serif;font-size:1.05rem">Miguel Guhlin</strong></p>
+  <p style="font-size:.85rem">Director of Professional Development, TCEA</p>
+  <p style="margin-top:.6rem;font-size:.85rem">
+    <a href="../index.html">&larr; TCEA Directory</a> &nbsp;&middot;&nbsp;
+    <a href="libvibes.html">&larr; Back to LibVibes</a> &nbsp;&middot;&nbsp;
+    <a href="index.html">Vibe Coding for Librarians</a> &nbsp;&middot;&nbsp;
+    <a href="https://blog.tcea.org">blog.tcea.org</a>
+  </p>
+  <p style="margin-top:1rem;opacity:.6;font-size:.75rem">LibVibes · Companion resource for "Vibe Your Way to Free" · TCEA 2026</p>
+</footer>
+
+<script src="libvibes-nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bonus Starter Prompts · LibVibes | TCEA</title>
+<meta name="description" content="Bonus starter prompts for librarians: seven ready-to-paste prompts that customize ShareSpace, WonderWall, and StickyBoard for real library programs. By Miguel Guhlin, TCEA.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="libvibes-base.css">
+<style>
+  .prompts-section{background:var(--navy-dark);color:var(--white)}
+  .prompts-section .section-title{color:var(--white)}
+  .prompts-section .section-eyebrow{color:var(--gold)}
+  .prompts-section .section-lead{color:var(--pale-navy)}
+  .prompts-section .section-lead a{color:var(--gold-light)}
+  .prompt-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-left:3px solid var(--gold);border-radius:6px;padding:1.3rem 1.4rem 1rem;margin-bottom:1rem;scroll-margin-top:5rem}
+  .prompt-header{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:.8rem}
+  .prompt-label{font-family:'DM Serif Display',serif;color:var(--white);font-size:1.1rem}
+  .prompt-tool{font-size:.7rem;font-weight:700;background:var(--gold);color:var(--navy);padding:.2rem .55rem;border-radius:3px;letter-spacing:.04em}
+  .prompt-body{font-family:'DM Mono',monospace;font-size:.85rem;color:var(--pale-navy);line-height:1.65;background:rgba(0,0,0,.25);padding:1rem 1.2rem;border-radius:5px;white-space:pre-wrap;border:1px solid rgba(255,255,255,.08)}
+  .copy-btn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:var(--gold-light);padding:.35rem .8rem;border-radius:4px;font-size:.78rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s}
+  .copy-btn:hover,.copy-btn.copied{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="libvibes.html" class="nav-brand">
+      <span class="nav-brand-mark">L</span>
+      <span class="nav-brand-text">LibVibes<small>TCEA · Prompt Library</small></span>
+    </a>
+    <div class="nav-links">
+      <div class="nav-dd">
+        <a href="libvibes-examples.html" class="nav-dd-trigger">Built Examples &#9662;</a>
+        <div class="nav-dd-menu"><a href="libvibes-examples.html">All built examples &rarr;</a></div>
+      </div>
+      <a href="libvibes-vibes.html">VIBES</a>
+      <a href="libvibes-library.html">Prompt Library</a>
+      <a href="libvibes-prompts-bonus.html">Bonus Prompts</a>
+      <a href="libvibes-use-cases.html">Use Cases</a>
+      <a href="libvibes-downloads.html">Tools &amp; Downloads</a>
+      <a href="libvibes-host.html">Host It Free</a>
+      <a href="libvibes-submit.html">Share Yours</a>
+      <a href="libvibes-community.html">Community</a>
+      <a class="home" href="index.html">&#8962; Main Page</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" id="top" style="padding:2.6rem 1.4rem 2.8rem">
+  <span class="eyebrow">Bonus · Paste &amp; Customize</span>
+  <h1>Bonus Starter <em>Prompts</em></h1>
+  <p class="hero-lead">Seven extra prompts that customize the three take-home tools &mdash; <strong>ShareSpace</strong>, <strong>WonderWall</strong>, and <strong>StickyBoard</strong> &mdash; into ready-to-run library programs. Looking for the 19 fresh-from-scratch prompts instead? Visit the <a href="libvibes-library.html" style="color:var(--gold-light)">Prompt Library</a>.</p>
+</section>
+
+<section class="prompts-section">
+  <div class="section-eyebrow">Starter Prompts</div>
+  <h2 class="section-title">Paste These Into Your AI of Choice</h2>
+  <div class="section-divider"></div>
+  <p class="section-lead">Drop a prompt into ChatGPT, Claude, Gemini, or BoodleBox. Then iterate with the <a href="libvibes-vibes.html">VIBES method</a>. Need the tool files first? Grab them on the <a href="libvibes-downloads.html">Tools &amp; Downloads</a> page.</p>
+
+  <div class="prompt-card" id="p0">
+    <div class="prompt-header">
+      <span class="prompt-label">Customize ShareSpace into a Book Recommendation Gallery</span>
+      <div style="display:flex;gap:.5rem;align-items:center">
+        <span class="prompt-tool">SHARESPACE</span>
+        <button class="copy-btn" data-target="b0">Copy</button>
+      </div>
+    </div>
+    <div class="prompt-body" id="b0">I am a school librarian. I am not a developer. I want to customize the ShareSpace tool (the four files: code.gs, submit.html, board.html, admin.html) into a Book Recommendation Gallery for my students.
+
+Please update the code so:
+- Three new fields are captured on submit: bookTitle (required), bookAuthor (required), gradeLevel (optional, dropdown from Pre-K through 12 and Staff)
+- The new fields are stored in the Google Sheet alongside the existing fields
+- The categories become: Realistic Fiction, Fantasy and Sci-Fi, Mystery and Adventure, Graphic Novel, Nonfiction, Biography and Memoir
+- The board card shows the cover image up top, then book title in a serif font, then author in italic, then a genre pill, then the student's review with a gold opening quotation mark, then "Recommended by [name] - [grade]" at the bottom
+- The submit form is reorganized to ask for: first name and grade in a two-column row, then school email, then book title, then author, then genre, then cover image, then "Why should other students read this?" as the review prompt
+- The admin page has two edit buttons per row: "Edit details" (title, author, grade, genre in a small editor) and "Edit review" (the existing reflection editor)
+- The admin search filters across title, author, name, email, and review text
+
+The page headers should read "Book Recommendation Gallery" and "Recommend a Book". Keep the navy and gold TCEA color scheme. Keep the Drive-backed architecture exactly as is.
+
+Give me all four files updated, in one response.</div>
+  </div>
+
+  <div class="prompt-card" id="p1">
+    <div class="prompt-header">
+      <span class="prompt-label">Summer Reading Submission Board</span>
+      <div style="display:flex;gap:.5rem;align-items:center">
+        <span class="prompt-tool">SHARESPACE</span>
+        <button class="copy-btn" data-target="b1">Copy</button>
+      </div>
+    </div>
+    <div class="prompt-body" id="b1">I am a school librarian. I am not a developer. I want to customize the ShareSpace tool for a summer reading program.
+
+Please update the code so:
+- The categories on the upload page are "Picture Book", "Chapter Book", "Graphic Novel", "Audiobook", and "Other"
+- The reflection prompt reads "Tell us in two or three sentences what you loved about this book"
+- The page header reads "Roosevelt Elementary Summer Reading"
+- The page accent color is a warm orange instead of the default
+- A small line at the bottom reminds students their submission will be reviewed before going live
+
+Keep everything else the same. Give me the full updated files in one response.</div>
+  </div>
+
+  <div class="prompt-card" id="p2">
+    <div class="prompt-header">
+      <span class="prompt-label">Author Visit Q&amp;A Wall</span>
+      <div style="display:flex;gap:.5rem;align-items:center">
+        <span class="prompt-tool">WONDERWALL</span>
+        <button class="copy-btn" data-target="b2">Copy</button>
+      </div>
+    </div>
+    <div class="prompt-body" id="b2">I am a school librarian. I am hosting an author visit with Jason Reynolds for grades 6 through 8.
+
+Please customize the WonderWall tool so:
+- The header reads "Questions for Jason Reynolds"
+- A short paragraph at the top reminds students to keep questions respectful and on-topic
+- The submission form asks for a first name only, no last names
+- Once approved, questions appear with the student's first name and grade level
+- The moderation password is the word I will tell you in my next message
+
+Keep the rest of the structure intact. Give me the complete file in one response.</div>
+  </div>
+
+  <div class="prompt-card" id="p3">
+    <div class="prompt-header">
+      <span class="prompt-label">Genre Sorting Activity</span>
+      <div style="display:flex;gap:.5rem;align-items:center">
+        <span class="prompt-tool">STICKYBOARD</span>
+        <button class="copy-btn" data-target="b3">Copy</button>
+      </div>
+    </div>
+    <div class="prompt-body" id="b3">I am a school librarian working with fourth graders on a genre sorting activity.
+
+Please customize the StickyBoard tool so:
+- The board has five labeled zones across the top: Realistic Fiction, Fantasy, Mystery, Biography, Informational
+- Sticky notes start in a "Books to Sort" zone at the bottom of the page
+- The sticky note prompt is "Type the title of a book you have read"
+- Sticky notes come in five matching colors, one per genre
+- The board title reads "Where Does This Book Belong?"
+
+Keep all the dragging and saving features intact. Give me the full file.</div>
+  </div>
+
+  <div class="prompt-card" id="p4">
+    <div class="prompt-header">
+      <span class="prompt-label">Makerspace Project Showcase</span>
+      <div style="display:flex;gap:.5rem;align-items:center">
+        <span class="prompt-tool">SHARESPACE</span>
+        <button class="copy-btn" data-target="b4">Copy</button>
+      </div>
+    </div>
+    <div class="prompt-body" id="b4">I am a school librarian running a Makerspace showcase. Students will submit photos, videos, or short writeups of what they built.
+
+Please customize the ShareSpace tool so:
+- The categories are "3D Print", "Cardboard Build", "Coding Project", "Textile/Sewing", and "Mixed Media"
+- The upload form asks for the student's name, grade, project category, and a one-sentence "What I learned"
+- The masonry board shows the project category as a colored pill on each card
+- The board title reads "Makerspace 2026 Showcase"
+- A small "Vote" button appears on each approved card; clicking it increments a counter
+
+Give me the complete updated files in one response.</div>
+  </div>
+
+  <div class="prompt-card" id="p5">
+    <div class="prompt-header">
+      <span class="prompt-label">Anonymous "Ask the Librarian" Wall</span>
+      <div style="display:flex;gap:.5rem;align-items:center">
+        <span class="prompt-tool">WONDERWALL</span>
+        <button class="copy-btn" data-target="b5">Copy</button>
+      </div>
+    </div>
+    <div class="prompt-body" id="b5">I am a middle school librarian. I want a tool where students can submit anonymous questions about books, research, or library services.
+
+Please customize the WonderWall tool so:
+- The header reads "Ask the Librarian"
+- The submission form is fully anonymous, no name, no grade
+- Submissions are tagged with one of three categories the student picks: "Book Help", "Research Help", "Library Question"
+- The public board groups questions by category
+- The moderation page shows the count of pending questions in each category
+- Approved questions show my one-paragraph answer if I add one
+
+Give me the full code.</div>
+  </div>
+
+  <div class="prompt-card" id="p6">
+    <div class="prompt-header">
+      <span class="prompt-label">Book Club Discussion Board</span>
+      <div style="display:flex;gap:.5rem;align-items:center">
+        <span class="prompt-tool">STICKYBOARD</span>
+        <button class="copy-btn" data-target="b6">Copy</button>
+      </div>
+    </div>
+    <div class="prompt-body" id="b6">I am a school librarian running a faculty book club. The book this month is "The Anxious Generation" by Jonathan Haidt.
+
+Please customize the StickyBoard tool so:
+- The board has four prompt zones: "A line that stuck with me", "A question I still have", "A connection to my classroom", "Something I disagree with"
+- Sticky notes come in four colors matched to those zones
+- The board title reads "Book Club: The Anxious Generation"
+- Below the title, the meeting date displays in a small italic line
+- New sticky notes default to the color of whatever zone they are dropped in
+
+Keep all drag, edit, and save features intact. Give me the full file.</div>
+  </div>
+</section>
+
+<footer>
+  <p><strong style="color:#fff;font-family:'DM Serif Display',serif;font-size:1.05rem">Miguel Guhlin</strong></p>
+  <p style="font-size:.85rem">Director of Professional Development, TCEA</p>
+  <p style="margin-top:.6rem;font-size:.85rem">
+    <a href="../index.html">&larr; TCEA Directory</a> &nbsp;&middot;&nbsp;
+    <a href="libvibes.html">&larr; Back to LibVibes</a> &nbsp;&middot;&nbsp;
+    <a href="libvibes-library.html">Prompt Library</a> &nbsp;&middot;&nbsp;
+    <a href="https://blog.tcea.org">blog.tcea.org</a>
+  </p>
+  <p style="margin-top:1rem;opacity:.6;font-size:.75rem">LibVibes · Companion resource for "Vibe Your Way to Free" · TCEA 2026</p>
+</footer>
+
+<script src="libvibes-nav.js"></script>
+<script>
+  document.querySelectorAll(".copy-btn").forEach(btn=>{
+    btn.addEventListener("click",async()=>{
+      const text=document.getElementById(btn.dataset.target).innerText;
+      try{ await navigator.clipboard.writeText(text); }
+      catch(e){ const ta=document.createElement("textarea");ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand("copy");document.body.removeChild(ta); }
+      const o=btn.innerText; btn.innerText="Copied!"; btn.classList.add("copied");
+      setTimeout(()=>{btn.innerText=o;btn.classList.remove("copied");},1800);
+    });
+  });
+</script>
+</body>
+</html>

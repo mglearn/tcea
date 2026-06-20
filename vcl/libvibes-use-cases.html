@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Library Use Cases · LibVibes | TCEA</title>
+<meta name="description" content="Library-tested use cases for ShareSpace, WonderWall, and StickyBoard — project ideas tagged by program area, filterable by tool or program. By Miguel Guhlin, TCEA.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="libvibes-base.css">
+<style>
+  .filter-bar{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.8rem}
+  .filter-pill{background:var(--white);border:1.5px solid var(--border);color:var(--text);padding:.45rem .95rem;border-radius:20px;font-size:.85rem;font-weight:700;cursor:pointer;transition:all .15s;font-family:inherit}
+  .filter-pill:hover{border-color:var(--navy);color:var(--navy)}
+  .filter-pill.active{background:var(--navy);color:var(--white);border-color:var(--navy)}
+  .uc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem}
+  .uc-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.3rem;display:flex;flex-direction:column;transition:opacity .2s,transform .2s}
+  .uc-card.hidden{display:none}
+  .uc-card-top{display:flex;align-items:center;gap:.5rem;margin-bottom:.7rem}
+  .uc-tool-badge{display:inline-block;font-size:.7rem;font-weight:700;padding:.2rem .55rem;border-radius:3px;letter-spacing:.04em}
+  .uc-tool-badge.sharespace{background:var(--gold-pale);color:var(--navy)}
+  .uc-tool-badge.wonderwall{background:var(--pale-navy);color:var(--navy)}
+  .uc-tool-badge.stickyboard{background:var(--teal-pale);color:var(--teal)}
+  .uc-program{font-size:.72rem;color:var(--text-muted);letter-spacing:.04em;text-transform:uppercase;margin-left:auto}
+  .uc-title{font-family:'DM Serif Display',serif;font-size:1.15rem;color:var(--navy);margin-bottom:.5rem;line-height:1.25}
+  .uc-desc{font-size:.88rem;color:var(--text);line-height:1.55;flex:1;margin-bottom:.8rem}
+  .uc-meta{font-size:.78rem;color:var(--text-muted);padding-top:.7rem;border-top:1px dashed var(--border)}
+  .uc-meta strong{color:var(--navy);font-weight:600}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="libvibes.html" class="nav-brand">
+      <span class="nav-brand-mark">L</span>
+      <span class="nav-brand-text">LibVibes<small>TCEA · Prompt Library</small></span>
+    </a>
+    <div class="nav-links">
+      <div class="nav-dd">
+        <a href="libvibes-examples.html" class="nav-dd-trigger">Built Examples &#9662;</a>
+        <div class="nav-dd-menu"><a href="libvibes-examples.html">All built examples &rarr;</a></div>
+      </div>
+      <a href="libvibes-vibes.html">VIBES</a>
+      <a href="libvibes-library.html">Prompt Library</a>
+      <a href="libvibes-prompts-bonus.html">Bonus Prompts</a>
+      <a href="libvibes-use-cases.html">Use Cases</a>
+      <a href="libvibes-downloads.html">Tools &amp; Downloads</a>
+      <a href="libvibes-host.html">Host It Free</a>
+      <a href="libvibes-submit.html">Share Yours</a>
+      <a href="libvibes-community.html">Community</a>
+      <a class="home" href="index.html">&#8962; Main Page</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" id="top" style="padding:2.6rem 1.4rem 2.8rem">
+  <span class="eyebrow">Library-Tested Ideas</span>
+  <h1>Library <em>Use Cases</em></h1>
+  <p class="hero-lead">Project ideas for the three take-home tools, tagged by program area. Filter by area or by tool &mdash; every card maps to something you probably already do. Grab the tool files on the <a href="libvibes-downloads.html" style="color:var(--gold-light)">Tools &amp; Downloads</a> page.</p>
+</section>
+
+<section id="use-cases">
+  <div class="section-eyebrow">Library Use Cases</div>
+  <h2 class="section-title">Project Ideas Tagged by Program Area</h2>
+  <div class="section-divider"></div>
+  <p class="section-lead">Filter by area or by tool. Every card maps to something you probably already do.</p>
+
+  <div class="filter-bar" role="group" aria-label="Filter use cases">
+    <button class="filter-pill active" data-filter="all">All</button>
+    <button class="filter-pill" data-filter="reading">Reading Programs</button>
+    <button class="filter-pill" data-filter="author">Author Visits</button>
+    <button class="filter-pill" data-filter="research">Research &amp; Inquiry</button>
+    <button class="filter-pill" data-filter="makerspace">Makerspace</button>
+    <button class="filter-pill" data-filter="bookclub">Book Clubs</button>
+    <button class="filter-pill" data-filter="staff">Staff &amp; PD</button>
+    <button class="filter-pill" data-filter="sharespace">ShareSpace</button>
+    <button class="filter-pill" data-filter="wonderwall">WonderWall</button>
+    <button class="filter-pill" data-filter="stickyboard">StickyBoard</button>
+  </div>
+
+  <div class="uc-grid" id="ucGrid"></div>
+</section>
+
+<footer>
+  <p><strong style="color:#fff;font-family:'DM Serif Display',serif;font-size:1.05rem">Miguel Guhlin</strong></p>
+  <p style="font-size:.85rem">Director of Professional Development, TCEA</p>
+  <p style="margin-top:.6rem;font-size:.85rem">
+    <a href="../index.html">&larr; TCEA Directory</a> &nbsp;&middot;&nbsp;
+    <a href="libvibes.html">&larr; Back to LibVibes</a> &nbsp;&middot;&nbsp;
+    <a href="libvibes-prompts-bonus.html">Bonus Prompts</a> &nbsp;&middot;&nbsp;
+    <a href="https://blog.tcea.org">blog.tcea.org</a>
+  </p>
+  <p style="margin-top:1rem;opacity:.6;font-size:.75rem">LibVibes · Companion resource for "Vibe Your Way to Free" · TCEA 2026</p>
+</footer>
+
+<script src="libvibes-nav.js"></script>
+<script>
+  const useCases = [
+    // SHARESPACE
+    { tool: "sharespace", program: "reading", title: "Summer Reading Submission Wall",
+      desc: "Students submit photos of themselves with a book and a short review. Files land in your Drive. Filter by grade or genre.",
+      meta: "Best for: K-12 summer programs and reading challenges" },
+    { tool: "sharespace", program: "author", title: "Author Visit Reflection Board",
+      desc: "Students drop a one-paragraph reflection plus a drawing or photo after meeting an author. Curate the best for the lobby wall.",
+      meta: "Best for: post-visit grades 3-8" },
+    { tool: "sharespace", program: "makerspace", title: "Makerspace Project Showcase",
+      desc: "End-of-quarter showcase. Students upload a photo of their build and answer one question: what would you change next time?",
+      meta: "Best for: 3D print, cardboard, e-textile, and coding builds" },
+    { tool: "sharespace", program: "reading", title: "Student Book Recommendation Gallery",
+      desc: "A rolling wall of student-curated recommendations. Each card shows the book, the recommender's grade, and one sentence on why.",
+      meta: "Best for: year-round browsing in the library lobby" },
+    { tool: "sharespace", program: "research", title: "Research Project Poster Submissions",
+      desc: "Replace the physical poster session. Students upload a PDF of their research poster plus a 30-second audio walk-through.",
+      meta: "Best for: middle and high school capstones" },
+    { tool: "sharespace", program: "staff", title: "Staff PD Book Club Artifact Wall",
+      desc: "Faculty drop annotations, sketchnotes, or one-page reflections from the book of the month. Searchable by chapter.",
+      meta: "Best for: campus or district book studies" },
+    { tool: "sharespace", program: "reading", title: "One Book One School Submissions",
+      desc: "Collect student responses to the shared title. Reflections, art, podcast clips, video reviews all go in the same Drive folder.",
+      meta: "Best for: campus-wide reading initiatives" },
+
+    // WONDERWALL
+    { tool: "wonderwall", program: "author", title: "Anonymous Author Visit Questions",
+      desc: "Students submit questions on phones or Chromebooks. You approve the keepers. Author sees only approved questions on screen.",
+      meta: "Best for: assemblies, video visits, and small-group sessions" },
+    { tool: "wonderwall", program: "research", title: "Research Workshop Stuck Point Wall",
+      desc: "When students hit a wall during database work, they post the question. You answer the common ones aloud once.",
+      meta: "Best for: any database or citation workshop" },
+    { tool: "wonderwall", program: "research", title: "Ask the Librarian Inquiry Board",
+      desc: "Standing anonymous question wall in the library. Students drop questions on books, services, or anything else. You answer weekly.",
+      meta: "Best for: middle and high school year-round use" },
+    { tool: "wonderwall", program: "bookclub", title: "Book Club Discussion Question Pool",
+      desc: "Members submit questions before the meeting. You curate the best five and use them to drive discussion.",
+      meta: "Best for: student or faculty book clubs" },
+    { tool: "wonderwall", program: "research", title: "Database Tutorial Q&A Station",
+      desc: "Pair with a recorded screencast. Students submit questions as they work; you record short follow-up clips for the ones that repeat.",
+      meta: "Best for: asynchronous library instruction" },
+    { tool: "wonderwall", program: "staff", title: "Library Staff Meeting Parking Lot",
+      desc: "Park anything that surfaces during the meeting and would otherwise derail. Revisit at the end or in the next agenda.",
+      meta: "Best for: department, grade-level, and committee meetings" },
+    { tool: "wonderwall", program: "reading", title: "New Title Suggestion Wall",
+      desc: "Standing wall where students suggest titles they want the library to acquire. You approve, tag, and route to your collection list.",
+      meta: "Best for: building a student-driven acquisition pipeline" },
+
+    // STICKYBOARD
+    { tool: "stickyboard", program: "reading", title: "Collaborative Genre Sorting",
+      desc: "Pre-loaded sticky notes with book titles. Students drag each into the right genre zone. Project on a screen for a whole-class activity.",
+      meta: "Best for: grades 2-6" },
+    { tool: "stickyboard", program: "reading", title: "Reading Response Head, Heart, Hand Board",
+      desc: "Three zones: what made me think, what made me feel, what I want to do. Students drop a sticky in each after reading.",
+      meta: "Best for: any read-aloud or book talk debrief" },
+    { tool: "stickyboard", program: "reading", title: "Book Talk Brainstorm Canvas",
+      desc: "Library aides or student readers brainstorm hook lines, key quotes, and a final pitch sentence for each title.",
+      meta: "Best for: pre-planning student-led book talks" },
+    { tool: "stickyboard", program: "staff", title: "Library Redesign Feedback Wall",
+      desc: "Replace the suggestion box. Patrons drop ideas on color-coded stickies: keep, change, add, remove. You see the pattern at a glance.",
+      meta: "Best for: end-of-year planning and space audits" },
+    { tool: "stickyboard", program: "reading", title: "Books I Want Next Year Collection",
+      desc: "Sticky-note version of a suggestion list. Students drop titles, authors, or even just vibes. You curate at the end of the year.",
+      meta: "Best for: collection development" },
+    { tool: "stickyboard", program: "staff", title: "Library Committee Planning Sessions",
+      desc: "Visible parking lot for goals, blockers, and quick wins during your monthly library committee meeting.",
+      meta: "Best for: committee and PLC work" },
+    { tool: "stickyboard", program: "makerspace", title: "Makerspace Idea Wall",
+      desc: "Standing brainstorm canvas. Students drop ideas for what they want to build. You harvest them when you plan the next unit.",
+      meta: "Best for: rotating Makerspace programming" },
+    { tool: "stickyboard", program: "bookclub", title: "Faculty Book Study Reflection Board",
+      desc: "Four quadrants: insight, question, application, disagreement. Faculty drop one sticky per meeting. Patterns emerge by month three.",
+      meta: "Best for: year-long PLC book studies" }
+  ];
+
+  const grid = document.getElementById("ucGrid");
+  const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  const badgeText = { sharespace: "ShareSpace", wonderwall: "WonderWall", stickyboard: "StickyBoard" };
+  const programLabel = { reading:"Reading", author:"Author Visit", research:"Research", makerspace:"Makerspace", bookclub:"Book Club", staff:"Staff/PD" };
+
+  grid.innerHTML = useCases.map(uc => `
+    <div class="uc-card" data-tool="${uc.tool}" data-program="${uc.program}">
+      <div class="uc-card-top">
+        <span class="uc-tool-badge ${uc.tool}">${badgeText[uc.tool]}</span>
+        <span class="uc-program">${programLabel[uc.program]}</span>
+      </div>
+      <div class="uc-title">${esc(uc.title)}</div>
+      <p class="uc-desc">${esc(uc.desc)}</p>
+      <div class="uc-meta">${esc(uc.meta)}</div>
+    </div>`).join("");
+
+  const pills = document.querySelectorAll(".filter-pill");
+  pills.forEach(pill => {
+    pill.addEventListener("click", () => {
+      pills.forEach(p => p.classList.remove("active"));
+      pill.classList.add("active");
+      const filter = pill.dataset.filter;
+      document.querySelectorAll(".uc-card").forEach(card => {
+        const hit = filter === "all" || filter === card.dataset.tool || filter === card.dataset.program;
+        card.classList.toggle("hidden", !hit);
+      });
+    });
+  });
+</script>
+</body>
+</html>
