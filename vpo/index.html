@@ -60,13 +60,15 @@
     }
     .brand h1{font-size:22px;line-height:1;margin:0}
     .brand p{margin:5px 0 0;color:#c8d7f2;font-size:12px}
-    nav button{
+    nav button, nav a.navlink{
       width:100%;border:0;background:transparent;color:#eaf1ff;
       text-align:left;padding:13px 12px;border-radius:14px;margin:3px 0;
-      display:flex;gap:10px;align-items:center;font-weight:700;cursor:pointer;
+      display:flex;gap:10px;align-items:center;font-weight:700;cursor:pointer;text-decoration:none;
     }
-    nav button.active, nav button:hover{background:rgba(252,176,64,.14);color:#fff}
+    nav button.active, nav button:hover, nav a.navlink:hover{background:rgba(252,176,64,.14);color:#fff}
     nav button.active{box-shadow:inset 4px 0 0 var(--gold)}
+    nav a.navlink{margin-top:8px;border-top:1px solid rgba(255,255,255,.12);border-radius:0 0 14px 14px;font-weight:800}
+    nav a.navlink .meta{margin-left:auto;font-size:11px;font-weight:800;color:var(--gold);border:1px solid rgba(252,176,64,.5);border-radius:999px;padding:2px 8px}
     .side-card{
       margin-top:24px;background:rgba(14,107,138,.42);border:1px solid rgba(255,255,255,.2);
       border-radius:18px;padding:16px;font-size:14px;line-height:1.45;
@@ -224,6 +226,7 @@
         <button data-view="templates">🧩 Templates</button>
         <button data-view="library">📚 Prompt Library</button>
         <button data-view="about">❔ How It Works</button>
+        <a class="navlink" href="modular.html">🧬 Modular Version <span class="meta">Advanced</span></a>
       </nav>
       <div class="side-card">
         <strong>💡 Tip</strong>
