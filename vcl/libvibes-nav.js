@@ -41,16 +41,6 @@
      ever has to be edited here.
      ============================================================ */
   const NAV_HTML = `
-    <a href="libvibes-vibes.html" data-page="libvibes-vibes.html">VIBES</a>
-
-    <div class="nav-dd">
-      <a href="libvibes-submit.html" class="nav-dd-trigger">Share Your Creation &#9662;</a>
-      <div class="nav-dd-menu">
-        <a href="libvibes-submit.html">Share Yours <small>&middot; submit your build</small></a>
-        <a href="libvibes-community.html">Community <small>&middot; see what others made</small></a>
-      </div>
-    </div>
-
     <div class="nav-dd">
       <a href="libvibes-learn-more.html" class="nav-dd-trigger">Learn More &#9662;</a>
       <div class="nav-dd-menu">
@@ -61,6 +51,10 @@
         <a href="libvibes-downloads.html">Tools &amp; Downloads</a>
         <a href="libvibes-host.html">Host It Free</a>
         <div class="dd-sep"></div>
+        <a href="libvibes-submit.html">Share Yours <small>&middot; submit your build</small></a>
+        <a href="libvibes-community.html">Community <small>&middot; see what others made</small></a>
+        <div class="dd-sep"></div>
+        <a href="libvibes-vibes.html">VIBES <small>&middot; the framework</small></a>
         <a href="libvibes-learn-more.html">What&rsquo;s all this? &rarr;</a>
       </div>
     </div>
