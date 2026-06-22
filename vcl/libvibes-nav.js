@@ -35,13 +35,65 @@
   // Expose for other scripts (e.g. the examples gallery)
   window.LIBVIBES = { SOLUTIONS, BUILT, byNum, LVL };
 
-  // Inject the "Built Examples" dropdown menu, if present on this page
-  const menu = document.querySelector(".nav-dd-menu");
-  if (menu) {
-    const items = BUILT.map(n => {
-      const s = byNum[n];
-      return `<a href="libvibes/${s.slug}/app.html" target="_blank" rel="noopener">${s.title} <small>· #${s.n} ${LVL[s.level]}</small></a>`;
-    }).join("");
-    menu.innerHTML = items + `<div class="dd-sep"></div><a href="libvibes-examples.html">All built examples &rarr;</a>`;
+  /* ============================================================
+     Single-source navigation. Every LibVibes page ships an empty
+     <div class="nav-links"></div>; this fills it so the nav only
+     ever has to be edited here.
+     ============================================================ */
+  const NAV_HTML = `
+    <a href="libvibes-vibes.html" data-page="libvibes-vibes.html">VIBES</a>
+
+    <div class="nav-dd">
+      <a href="libvibes-submit.html" class="nav-dd-trigger">Share Your Creation &#9662;</a>
+      <div class="nav-dd-menu">
+        <a href="libvibes-submit.html">Share Yours <small>&middot; submit your build</small></a>
+        <a href="libvibes-community.html">Community <small>&middot; see what others made</small></a>
+      </div>
+    </div>
+
+    <div class="nav-dd">
+      <a href="libvibes-learn-more.html" class="nav-dd-trigger">Learn More &#9662;</a>
+      <div class="nav-dd-menu">
+        <a href="libvibes-examples.html">Built Examples</a>
+        <a href="libvibes-library.html">Prompt Library</a>
+        <a href="libvibes-prompts-bonus.html">Bonus Prompts</a>
+        <a href="libvibes-use-cases.html">Use Cases</a>
+        <a href="libvibes-downloads.html">Tools &amp; Downloads</a>
+        <a href="libvibes-host.html">Host It Free</a>
+        <div class="dd-sep"></div>
+        <a href="libvibes-learn-more.html">What&rsquo;s all this? &rarr;</a>
+      </div>
+    </div>
+
+    <a class="home" href="libvibes.html">&#8962; LibVibes Home</a>
+    <a class="home home-alt" href="index.html">&#8962; Main Page</a>`;
+
+  const NAV_CSS = `
+    .nav-links a.home-alt{background:transparent;color:var(--gold-light);box-shadow:inset 0 0 0 1px rgba(252,176,64,.55)}
+    .nav-links a.home-alt:hover{background:var(--gold);color:var(--navy)}
+    .nav-links a[aria-current="page"]{box-shadow:inset 0 -2px 0 var(--gold)}
+    .nav-dd-trigger[aria-current="page"]{box-shadow:inset 0 -2px 0 var(--gold)}`;
+
+  function injectCss() {
+    if (document.getElementById("lv-nav-css")) return;
+    const s = document.createElement("style");
+    s.id = "lv-nav-css";
+    s.textContent = NAV_CSS;
+    document.head.appendChild(s);
   }
+
+  function renderNav() {
+    const wrap = document.querySelector(".nav-links");
+    if (!wrap) return;
+    injectCss();
+    wrap.innerHTML = NAV_HTML;
+    // Highlight the link that matches the current page.
+    const here = (location.pathname.split("/").pop() || "libvibes.html");
+    wrap.querySelectorAll("a[href]").forEach(a => {
+      if (a.getAttribute("href") === here) a.setAttribute("aria-current", "page");
+    });
+  }
+
+  if (document.querySelector(".nav-links")) renderNav();
+  else document.addEventListener("DOMContentLoaded", renderNav);
 })();
