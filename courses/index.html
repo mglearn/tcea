@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
   :root {
     --navy: #0A3476;
     --navy-dark: #071f4a;
@@ -65,6 +66,8 @@
 
   /* SECTION — tightened */
   .tcea-section { margin-bottom: 44px; scroll-margin-top: 100px; }
+  .tcea-section + .tcea-section { border-top: 2px solid var(--border); padding-top: 36px; position: relative; }
+  .tcea-section + .tcea-section::before { content: ""; position: absolute; top: -2px; left: 0; width: 64px; height: 2px; background: var(--gold); }
   .tcea-section-header { display: flex; align-items: flex-end; gap: 16px; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 2px solid var(--border); flex-wrap: wrap; }
   .tcea-section-icon { font-size: 1.6rem; line-height: 1; }
   .tcea-section-meta { flex: 1; }
@@ -169,6 +172,8 @@
 
     /* Keep groups from splitting awkwardly across pages */
     .tcea-section { margin-bottom: 16pt; page-break-inside: avoid; }
+    .tcea-section + .tcea-section { border-top: 0.75pt solid #ccc; padding-top: 10pt; }
+    .tcea-section + .tcea-section::before { display: none; }
     .tcea-section-header { border-bottom: 1pt solid #999; margin-bottom: 8pt; padding-bottom: 5pt; }
     .tcea-section-meta h2 { color: #0A3476; font-size: 13pt; }
     .tcea-section-meta p { color: #333; font-size: 8.5pt; }
@@ -214,7 +219,7 @@
   <div class="tcea-hero-badge">45+ Years Supporting Educators</div>
   <h1>Professional Learning<br><em>Built for Educators</em></h1>
   <p>Self-paced, credit-bearing courses, certifications, and knowledge boosters — designed by educators, for educators. Flexible online access, 24/7.</p>
-  <p class="tcea-hero-updated"><em>Last Updated: June 29, 2026 at 6:41 PM CDT</em></p>
+  <p class="tcea-hero-updated"><em>Last Updated: June 29, 2026 at 6:48 PM CDT</em></p>
   <div class="tcea-hero-actions">
     <a href="https://tcea.org/pd" class="btn-primary">Browse Full Catalog</a>
     <a href="https://tinyurl.com/tceahelp" class="btn-outline">Get a Quote</a>
@@ -230,9 +235,10 @@
 
 <nav class="tcea-nav">
   <div class="tcea-nav-inner">
+    <a href="#certs" class="tcea-nav-tab">🏅 Certifications</a>
+    <a href="#accel" class="tcea-nav-tab">🚀 Accelerator</a>
     <a href="#courses" class="tcea-nav-tab">✅ Courses</a>
     <a href="#boosters" class="tcea-nav-tab">💡 Knowledge Boosters</a>
-    <a href="#certs" class="tcea-nav-tab">🏅 Certifications</a>
     <a href="#parents" class="tcea-nav-tab">👨‍👩‍👧 Parent Boosters</a>
   </div>
 </nav>
@@ -260,6 +266,52 @@
     </div>
     <div class="tcea-free-badge">FREE · 2 CPE hrs</div>
   </div>
+
+  <section class="tcea-section" id="certs">
+    <div class="tcea-section-header">
+      <div class="tcea-section-icon">🏅</div>
+      <div class="tcea-section-meta">
+        <h2>Certifications</h2>
+        <p>Expert instruction, applied projects, and a capstone portfolio demonstrating mastery</p>
+      </div>
+      <div class="tcea-price-badge">$349 – $449</div>
+    </div>
+    <div class="tcea-cert-grid">
+      <a href="https://tcea.org/courses/instructional-coach-certification/" class="tcea-cert-card">
+        <h4>Instructional Coach Certification</h4>
+        <p>Develop practical leadership and instructional coaching skills aligned to real-world educational needs. Culminates in a portfolio project demonstrating mastery.</p>
+        <div class="tcea-cert-footer"><span class="tcea-chip tcea-chip-cpe">33 CPE hrs</span><span class="tcea-chip tcea-chip-badge">Badge + Cert</span><span class="tcea-chip tcea-chip-price">$349</span></div>
+      </a>
+      <a href="https://tcea.org/courses/cts/" class="tcea-cert-card">
+        <h4>Campus Technology Specialist (CTS)</h4>
+        <p>Comprehensive preparation for campus technology leadership. Build expertise in planning, implementation, and professional learning facilitation.</p>
+        <div class="tcea-cert-footer"><span class="tcea-chip tcea-chip-cpe">33 CPE hrs</span><span class="tcea-chip tcea-chip-badge">Badge + Cert</span><span class="tcea-chip tcea-chip-price">$349</span></div>
+      </a>
+      <a href="https://tcea.org/courses/it/" class="tcea-cert-card cert-gold">
+        <h4>IT/Tech Director Certification</h4>
+        <p>Advanced certification for technology directors covering leadership, infrastructure planning, security, and district-wide technology strategy.</p>
+        <div class="tcea-cert-footer"><span class="tcea-chip tcea-chip-cpe">49 CPE hrs</span><span class="tcea-chip tcea-chip-badge">Badge + Print Cert</span><span class="tcea-chip tcea-chip-price">$449</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="tcea-section" id="accel">
+    <div class="tcea-section-header">
+      <div class="tcea-section-icon">🚀</div>
+      <div class="tcea-section-meta">
+        <h2>Educator Accelerator</h2>
+        <p>A comprehensive, guided professional learning pathway with frameworks, tools, and classroom-ready resources · Digital Badge and Certificate</p>
+      </div>
+      <div class="tcea-price-badge gold">$149 · 22 CPE hrs</div>
+    </div>
+    <div class="tcea-cert-grid">
+      <a href="https://tcea.org/accelerators/ai-amplified-educator/" class="tcea-cert-card cert-gold">
+        <h4>TCEA AI-Amplified Educator Accelerator</h4>
+        <p>A deep, hands-on pathway that moves educators from AI awareness to confident classroom integration across multiple modules and stages, with applied practice and supporting resources throughout.</p>
+        <div class="tcea-cert-footer"><span class="tcea-chip tcea-chip-cpe">22 CPE hrs</span><span class="tcea-chip tcea-chip-badge">Badge + Cert</span><span class="tcea-chip tcea-chip-price">$149</span></div>
+      </a>
+    </div>
+  </section>
 
   <section class="tcea-section" id="courses">
     <div class="tcea-section-header">
@@ -366,34 +418,6 @@
     <div class="tcea-booster-grid">
       <a href="https://tcea.org/knowledge-boosters/gifted-talented-ai-implementation-ebook-practical-strategies-for-educators/" class="tcea-booster-card"><div class="tcea-booster-icon">🌟</div><div class="tcea-booster-title">Gifted &amp; Talented AI Implementation Ebook: Practical Strategies for Educators</div><div class="tcea-booster-price">$29 · Digital Certificate</div></a>
       <a href="https://tcea.org/knowledge-boosters/the-power-of-prior-knowledge-2/" class="tcea-booster-card"><div class="tcea-booster-icon">🧩</div><div class="tcea-booster-title">The Power of Prior Knowledge</div><div class="tcea-booster-price">$29 · Digital Certificate</div></a>
-    </div>
-  </section>
-
-  <section class="tcea-section" id="certs">
-    <div class="tcea-section-header">
-      <div class="tcea-section-icon">🏅</div>
-      <div class="tcea-section-meta">
-        <h2>Certifications</h2>
-        <p>Expert instruction, applied projects, and a capstone portfolio demonstrating mastery</p>
-      </div>
-      <div class="tcea-price-badge">$349 – $449</div>
-    </div>
-    <div class="tcea-cert-grid">
-      <a href="https://tcea.org/courses/instructional-coach-certification/" class="tcea-cert-card">
-        <h4>Instructional Coach Certification</h4>
-        <p>Develop practical leadership and instructional coaching skills aligned to real-world educational needs. Culminates in a portfolio project demonstrating mastery.</p>
-        <div class="tcea-cert-footer"><span class="tcea-chip tcea-chip-cpe">33 CPE hrs</span><span class="tcea-chip tcea-chip-badge">Badge + Cert</span><span class="tcea-chip tcea-chip-price">$349</span></div>
-      </a>
-      <a href="https://tcea.org/courses/cts/" class="tcea-cert-card">
-        <h4>Campus Technology Specialist (CTS)</h4>
-        <p>Comprehensive preparation for campus technology leadership. Build expertise in planning, implementation, and professional learning facilitation.</p>
-        <div class="tcea-cert-footer"><span class="tcea-chip tcea-chip-cpe">33 CPE hrs</span><span class="tcea-chip tcea-chip-badge">Badge + Cert</span><span class="tcea-chip tcea-chip-price">$349</span></div>
-      </a>
-      <a href="https://tcea.org/courses/it/" class="tcea-cert-card cert-gold">
-        <h4>IT/Tech Director Certification</h4>
-        <p>Advanced certification for technology directors covering leadership, infrastructure planning, security, and district-wide technology strategy.</p>
-        <div class="tcea-cert-footer"><span class="tcea-chip tcea-chip-cpe">49 CPE hrs</span><span class="tcea-chip tcea-chip-badge">Badge + Print Cert</span><span class="tcea-chip tcea-chip-price">$449</span></div>
-      </a>
     </div>
   </section>
 
