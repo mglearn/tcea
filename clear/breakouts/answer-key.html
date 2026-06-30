@@ -21,52 +21,77 @@
   th{background:#f0f3fa;color:var(--navy)}
   .ans{font-weight:800;color:var(--good)}
   .printbtn{background:var(--gold-d);color:#fff;border:none;border-radius:9px;padding:9px 18px;font-weight:700;cursor:pointer;margin-top:8px}
-  @media print{.printbtn,.crumb{display:none}}
+  @media print{.printbtn,.crumb,#gate{display:none}}
   footer{margin-top:30px;font-size:.8rem;color:var(--ink-soft);font-weight:600}
+  /* password gate */
+  #gate{max-width:420px;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:24px;margin-top:6px}
+  #gate label{display:block;font-weight:700;color:var(--navy);margin-bottom:8px}
+  #gate input{width:100%;padding:11px 13px;font-size:1rem;border:2px solid var(--line);border-radius:9px;font-family:inherit}
+  #gate input:focus{outline:none;border-color:var(--gold-d)}
+  #gate button{margin-top:12px;background:var(--navy);color:#fff;border:none;border-radius:9px;padding:11px 22px;font-weight:700;cursor:pointer;font-size:1rem}
+  #gateMsg{color:#9a2b2b;font-weight:700;font-size:.9rem;margin-top:10px;min-height:1.2em}
+  .lock-note{color:var(--ink-soft);font-size:.86rem;font-weight:600;margin:10px 0 16px}
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="crumb"><a href="index.html">‹ Critical Thinking Breakouts</a></div>
   <h1>Teacher Answer Key</h1>
-  <div class="warn">⚠️ For teachers only. Do not share this page or its URL with students — keep it out of the student-facing links.</div>
-  <button class="printbtn" onclick="window.print()">🖨 Print answer key</button>
+  <div class="warn">⚠️ For teachers only. Do not share this page, its URL, or the password with students.</div>
 
-  <h2>🍎 The Mixed-Up Lunchroom</h2>
-  <div class="band">Grades 3–5 · Logic &amp; observation</div>
-  <table>
-    <tr><th>Lock</th><th>Answer</th><th>Reasoning</th></tr>
-    <tr><td>1 — Count</td><td class="ans">3</td><td>Pizza, tacos, salad = 3 hot lunches. Ana's sandwich came from home, so she isn't counted.</td></tr>
-    <tr><td>2 — Evidence (MC)</td><td class="ans">Ana</td><td>Ana's note states a peanut allergy — direct evidence. No allergy clue exists for the others.</td></tr>
-    <tr><td>3 — Word</td><td class="ans">Ana</td><td>Menu says sandwiches came from home; only Ana has a sandwich.</td></tr>
-    <tr><td>4 — Order (sequence)</td><td class="ans">🍕 Pizza → 🌮 Tacos → 🥗 Salad</td><td>The exact order the menu board lists the hot lunches. (The 🥪 sandwich pad is a distractor.)</td></tr>
-  </table>
-  <p><b>Decoy clue:</b> the "Lost dog poster" gives no tray information — a teachable example of irrelevant info.</p>
+  <div id="gate">
+    <label for="pw">🔒 Enter the teacher password to view the answer key</label>
+    <input type="password" id="pw" autocomplete="off" autofocus placeholder="Password">
+    <button id="unlock">Unlock answer key</button>
+    <div id="gateMsg"></div>
+    <p class="lock-note">The answers are encrypted in this file — they cannot be read without the password, even by viewing the page source.</p>
+  </div>
 
-  <h2>📡 Signal Check: The Viral Claim</h2>
-  <div class="band">Grades 6–8 · Media literacy</div>
-  <table>
-    <tr><th>Lock</th><th>Answer</th><th>Reasoning</th></tr>
-    <tr><td>1 — Source (MC)</td><td class="ans">The official school district website</td><td>Primary, authoritative source — and it still lists summer break normally.</td></tr>
-    <tr><td>2 — Red-flag count</td><td class="ans">4</td><td>No author, no date, no source link, and "share before they delete" urgency = 4 red flags.</td></tr>
-    <tr><td>3 — Word</td><td class="ans">verify</td><td>Accepts: verify, verifying, fact check, fact-check, factcheck. Verify before you amplify.</td></tr>
-    <tr><td>4 — Process order</td><td class="ans">🛑 Pause → 🔎 Check → ⚖️ Decide → 📣 Share</td><td>Pause, check the source, decide, then share (or not). Reversing this spreads misinformation.</td></tr>
-    <tr><td>5 — Evidence sort (multi)</td><td class="ans">Check: official district website + three local news outlets</td><td>Those two are trustworthy primary/independent sources. Leave unchecked: the anonymous account, the "cousin's friend," and the like/share count — all noise.</td></tr>
-  </table>
-  <p><b>Decoy clue:</b> the unrelated weather alert models spotting a distraction.</p>
-
-  <h2>🔬 Lab Report Lockdown</h2>
-  <div class="band">Grades 9–12 · Scientific reasoning</div>
-  <table>
-    <tr><th>Lock</th><th>Answer</th><th>Reasoning</th></tr>
-    <tr><td>1 — Sample size</td><td class="ans">8</td><td>Only 8 students — far too few to generalize.</td></tr>
-    <tr><td>2 — Control group (MC)</td><td class="ans">A comparison (control) group that did NOT drink BrainFizz</td><td>Without a control group you can't isolate the drink's effect from the tutoring.</td></tr>
-    <tr><td>3 — Reasoning flaw (word)</td><td class="ans">causation</td><td>Accepts: causation, cause. "Correlation does not equal causation."</td></tr>
-    <tr><td>4 — Evidence strength (order)</td><td class="ans">📣 Ad → 📄 Tiny self-funded study → 🧪 Independent replicated study</td><td>Weakest to strongest. Independent replication is the gold standard; an ad is weakest.</td></tr>
-  </table>
-  <p><b>Decoy clue:</b> the can-design memo separates marketing from evidence of efficacy.</p>
+  <div id="content"></div>
 
   <footer>Critical Thinking Breakouts · Teacher answer key · Keep private.</footer>
 </div>
+
+<script>
+  const CIPHER = {
+    salt: "OQFz2snNWDlcFfh3FBPkPA==",
+    iv: "Wro/QeKL5Gn/BMaS",
+    iters: 250000,
+    data: "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"
+  };
+  const b64ToBytes = b => Uint8Array.from(atob(b), ch => ch.charCodeAt(0));
+
+  async function decrypt(password){
+    const enc = new TextEncoder();
+    const baseKey = await crypto.subtle.importKey("raw", enc.encode(password), "PBKDF2", false, ["deriveKey"]);
+    const key = await crypto.subtle.deriveKey(
+      {name:"PBKDF2", salt:b64ToBytes(CIPHER.salt), iterations:CIPHER.iters, hash:"SHA-256"},
+      baseKey, {name:"AES-GCM", length:256}, false, ["decrypt"]
+    );
+    const plain = await crypto.subtle.decrypt(
+      {name:"AES-GCM", iv:b64ToBytes(CIPHER.iv)}, key, b64ToBytes(CIPHER.data)
+    );
+    return new TextDecoder().decode(plain);
+  }
+
+  async function tryUnlock(){
+    const pw = document.getElementById("pw").value;
+    const msg = document.getElementById("gateMsg");
+    msg.textContent = "";
+    if(!pw){ msg.textContent = "Please enter the password."; return; }
+    try{
+      const html = await decrypt(pw);
+      document.getElementById("content").innerHTML = html;
+      document.getElementById("gate").style.display = "none";
+    }catch(e){
+      msg.textContent = "Incorrect password. Try again.";
+      document.getElementById("pw").value = "";
+      document.getElementById("pw").focus();
+    }
+  }
+
+  document.getElementById("unlock").addEventListener("click", tryUnlock);
+  document.getElementById("pw").addEventListener("keydown", e => { if(e.key === "Enter") tryUnlock(); });
+</script>
 </body>
 </html>
