@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Answer Key — The Locked Lighthouse: Hunt for the Big Idea</title>
+<style>
+  :root{--navy:#102a54;--gold-d:#c97f12;--paper:#fbf8f1;--ink:#1c2436;--ink-soft:#54607a;--card:#fff;--line:#e3e8f2;--good:#2f7a28}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55}
+  .wrap{max-width:760px;margin:0 auto;padding:28px 20px 80px}
+  .crumb{font-size:.82rem;font-weight:700;margin-bottom:14px}.crumb a{color:#2f6fe0;text-decoration:none}
+  .warn{background:#fde8e8;border:2px solid #f3b6b6;color:#9a2b2b;border-radius:12px;padding:14px 18px;font-weight:700;margin-bottom:20px}
+  h1{font-size:1.7rem;color:var(--navy);font-weight:800}
+  h2{font-size:1.2rem;color:var(--navy);margin:26px 0 4px;border-left:5px solid var(--gold-d);padding-left:12px}
+  .band{font-weight:700;color:var(--ink-soft);font-size:.86rem;margin-bottom:10px}
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.9rem}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  th{background:#f0f3fa;color:var(--navy)}.ans{font-weight:800;color:var(--good)}
+  .acc{margin-top:6px;font-size:.82rem;color:var(--ink-soft)}
+  .printbtn{background:var(--gold-d);color:#fff;border:none;border-radius:9px;padding:9px 18px;font-weight:700;cursor:pointer;margin-top:8px}
+  @media print{.printbtn,.crumb,#gate{display:none}}
+  #gate{max-width:420px;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:24px;margin-top:6px}
+  #gate label{display:block;font-weight:700;color:var(--navy);margin-bottom:8px}
+  #gate input{width:100%;padding:11px 13px;font-size:1rem;border:2px solid var(--line);border-radius:9px}
+  #gate input:focus{outline:none;border-color:var(--gold-d)}
+  #gate button{margin-top:12px;background:var(--navy);color:#fff;border:none;border-radius:9px;padding:11px 22px;font-weight:700;cursor:pointer;font-size:1rem}
+  #gateMsg{color:#9a2b2b;font-weight:700;font-size:.9rem;margin-top:10px;min-height:1.2em}
+  .lock-note{color:var(--ink-soft);font-size:.84rem;font-weight:600;margin:10px 0 0}
+  footer{margin-top:30px;font-size:.8rem;color:var(--ink-soft);font-weight:600}</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="crumb"><a href="../index.html">‹ Teacher hub</a></div>
+  <h1>Teacher Answer Key</h1>
+  <div class="warn">⚠️ For teachers only. Do not share this page, its URL, or the password with students.</div>
+  <div id="gate">
+    <label for="pw">🔒 Enter the teacher password to view the answer key</label>
+    <input type="password" id="pw" autocomplete="off" autofocus placeholder="Password">
+    <button id="unlock">Unlock answer key</button>
+    <div id="gateMsg"></div>
+    <p class="lock-note">The answers are encrypted in this file — unreadable without the password, even in the page source.</p>
+  </div>
+  <div id="content"></div>
+  <footer>Critical Thinking Breakouts · Teacher answer key · Keep private.</footer>
+</div>
+<script>const CIPHER={"salt":"DNdqH0CKdhJm+NSP6qynIA==","iv":"TsalPVuat6D+V7oW","iters":250000,"data":"yYIW6t7d+JoH6LchTYJdrrDgngJHLxV1O0VYOksPMupIg86bX8GA7sCLZYXmWFz0LEUxrfudkCXgvXoFXpZh4+dPZqp5ubzQ3HPZ2ooXSN80Ix+vK3+g+Nw43CaYfcpNl5++BXUeWWFmIJGixFp8YmEPcWbYIgBEYYJXIXf084PziESsfKIJElxoULTGYcO1fdjiHgc5+SXD3ukeWYMb+WXhyWDJZ+1kOrzmZKuhgP6B5cHUC2lNwBxl1s8KP1dWgYpamycGSuDy82UD+keqoLLlwSnK7rjTNjOvd3wGtTg1uDvdO2MAt4//RzP/oPac8IPftic9n8o3CuZd6qz8JTgqWUSH6XwOWe3bK07wTUERQLwLK9mRYWy8Cn0D5k2tL7VHTaOV4w1U1FuuVx+jotq/wgJUswftRJ4lhXS9qIBwpUOFYlQYz91N1zRNpx0cpOnm+EE+fHEB6bnUW8isspXByDzVnPW8KXOZgaCkZxD+TtY8UlQLu5dVSdBNqVUMP+BgOdAsYo3aSMu4V/r0N7pA/TmgqXzcChTzf66VYvQcX8M5Fa+V6h8A2DR06T72E0gcXGKBHwULtWfoAc0vS8akRPfIAvlmFAFhJ5APKvQU6shZaHZKtmH83UBMkrr9jkvlOqOGCoN3XR/tvWZVsQjna3CzFBiPuhUp3r78h+WgGkE5gnhnxI2STsf8Wz+/ywAgWQkO6rmIt2sCBDOn37LSVhlIIliK0ZrxP6wfzD68p+2KAuUa6pWfk7f1xThXjFtfZ9fsQBt8xaI1boHk20+Nc5skPdgg1RkBlctGss3XK6jIyvyI1E2+kbthtthmv3Vm1kPxCdFUozJfkFQOMlUvkx98vH+7kZ4XfzWf0PeFdQKADKy4DJn5D7ANY1aD6V9fYiXdpFOSs38q+Gsw26Lmzu8v67UYuVrZpKSWE8zKXM5WYFvnHEwJOn5DuKALAW/JMlpwbF10CrNIMEXO+3f9Xto5xwoE9TJKtkLMB71LN16PMQu+I0Mxx0GGDyebj/cJPzkjv+BziGEKyueUmABaSxDwB6or9g149Vi9bkoj3bRsTLZFBMlDers/6b0j86Huy7J3/qE1z+lNYl67AxGYB1c33fHClVwhLgpb/Q0IweABJB0W5C3DOVrIGZHJ5UdvljkG7Fhf47f+FD4gyFMG8ylUxUJIxJY0aLGeKJj209jl0r13aA8Z5Qe1GzGTJnxGFDkLITKfXJJyyWfWHPlfLHM1zfNF9MR0cDB+5Nn046EIO17zQESGFhQSVNOJXYJv5lFxhnq8R5eBF5mmGlq120g40WRX3cksMnBNw3FxNI5lvfCLRmcGSQx0itRVpr9xruC2FU/LOdYla9cmnd5H+sakuBRyT7u2e9apElrDnX3tVUAZal60MwnCXibNnN77i64hTyvLK6TmvyQwF/F6IleMKF5h8hTEdtlpV6ywgHsfYyM8U/cECCoZwxLY9DiBQMyxCHA63W+bo/13ygt0kayT+A3YtcQiOfioqujR6kG4pG1pW5N6DW8U8Q7iRgG8uxIMdBOPH3N0AZ76LT46j5Ye4NXumQ4n4zxYZv8p60TIx/hPO/g1pCvsi9P1T8AU8xfR8T35Sf52CehQcvKJZlFhR/dBEFe1WFjZYNsJJombKth62hxoynzaZ9ih7XNVi/TnAcrH+g1BJTCDcHPHrfmH2GW/80v7G6mI1v2IuWQBUXSIl6X5M4ByYfctaqQpKDf7wd8deMDnD/vEcbcuyobgB9MKQkuQ75pYDhKKzVIkfvJHJGOIbLWJzbimV28rQ7rxFjDdAwZeZTsKXwWOUPKoe93nT5TaOPlRAEBhgAnc9IlKRLfNwhtf6Y6v0eRoFmra2XFlt/re3597QTrW/MhBpvcHSRDc92KRg7gJEe/AVMZx6j3MTsGoOnAXmaho9PoWaaC2guit/DkkTMa7sZ5eXm/FOcHGbeBzi3iECDmEeWqR9rbStlHJx2vBm/lNI374gXAI0i0Q0Z3w/eGIu4Gt/3xVhHp0Igi8wfxS1Ol0gC5zxyv3+dE0ejM9r97hY7VRlOKox7+kFnOnlhUaV+SlV8duekiQMgUl1LRO3GFJI2kowBc/WeJqi4OTaPEAIBkhlZohHGDENoza8ONl02vi13k/E4mQCxSpMagx12y/qYDyuX9DzuJ37DGuWZvZb1hIAqt2AQv96RNrouVeQD8o24D7yb3ZO1NtWG+rkkXVBdvKcX0drqhNGaVYqXeQUa1tqKBegMwJtjXwdaqnGAikZIiKKKX2LB5FMbpTECVJonnkYf3rxcnlUIoBUS6OkJC4J3nMSvQJg/1O7Gk4X1N9/DWTY9OWuSEyTUPocahi/NAux6wnHZeaXDtG1Wr4RTnoErQp9GmG96GN8Zimi/ZSuuA2u2vKrX46v1NMymBE/dguUj83j81TPEnc9dVD5MwhCHpGX8PlonZJwiKBGIRNbkvWqcPrBkyxFA9stCtjmxiTFkZi6vvf9oklT7N/o7507YE7JMA1VfebW1NH6RCDk9Gc3c3+i9a4n6WMZEM7E3ojFubBu8JZVOoOETBg/crynFFy1GuvgNtQ0V7icu5Ba16jBo5WIZhKLiVT2iCb5g+WV8pcPyUbsmkqUiNeFakY8WhNLFy/Tfe0RpTLMpeaJkdP9QwfL00pkfnwZzHBHKqLVswUkLB546aYKl8q2iqgrcYShYVWs4mFVEjyhBt/3/3MuFrlniTRvFWFj0UDeRL4aaEi7XsR2acaiIBJRvAb2N30IjLMtXkdDRxigY7nJF9XL9GTHP4Qa0wcwAvWT+DHHR8H+x+20U3OIOZnMqxbkYtTuJc6aYCl+Np95ILCQGqWvdmKusf4ZTEWMEpXSJdUicsDO9KXvlapqRS3Kqai48FkF1HbhpgWBksX7LLBn+KD72jHl7YH9SktdKT5LNy6VwR1/CRA2ei9yWVk4V25AL5UkvDMJtVolbzEKkZBOhDIrlaxjegJbPCMLamkxd3PWKbgI3RCqPB9iz+NFjT7qtsy43l4DgooA1agVHFPvSKDDKNCzTRmuPZQi7oARWpISEMhyjNW00t0hwdeH2vMICMz1j6WMWTMfTxxuky6kipdkDMC45cXXzCGKlE4WfSkhyB1XIXIhySePJMacj07QfNHm9zaUSH/00l5VvBS3yLZVS5vsi2KNMNcpFAkmMeQDsyrCq7woH1xeBD7bKd44332FCtoQGB6KVU+daqI86dLyh9XOI4dwKdQzXVzUNx5GAWCGSiZYs3iZ1Xk1A4DatOBsylg6f2RJTI0cL89nakhh3oopv3l2kMDDYr+wb5oiZ4ZfdFsqvag77Pwo/WkEjsOJIBhsWQYZZwTJYnLW8wma3o0LIL3N25FB0+qMWl9/2qUnv8X+VIz/88WXCWQ8ZvBxlW9Fgza6bPDs7jUhX77yUvOyImEdBfRQyiRzEv2/P2z77YOEPEiHWnBoDzfNld0d28WdXRKGkiU2L9r5cswAxzi4PVdYc7JnGnYg8w3p77MP6XXSmDxrRaH2Y1pgUo/sUY7jUddOVJx7HvyYlqYqSXiW57EIqOF/H/L3MpTTH3i6i7W4AykBEsf+Hz85zVpx+DI9Nq+EnOQHX73K2WPKmRnFqjIpFeh87giSbp5NGGoiDNT74XWn8ZQC6StEf1XdVTTeS+8KAJrL0r3hJqnYtnimTEZCjhyYRNqtTA="};
+  const b64ToBytes=b=>Uint8Array.from(atob(b),ch=>ch.charCodeAt(0));
+  async function decrypt(pw){
+    const enc=new TextEncoder();
+    const bk=await crypto.subtle.importKey("raw",enc.encode(pw),"PBKDF2",false,["deriveKey"]);
+    const key=await crypto.subtle.deriveKey({name:"PBKDF2",salt:b64ToBytes(CIPHER.salt),iterations:CIPHER.iters,hash:"SHA-256"},bk,{name:"AES-GCM",length:256},false,["decrypt"]);
+    const plain=await crypto.subtle.decrypt({name:"AES-GCM",iv:b64ToBytes(CIPHER.iv)},key,b64ToBytes(CIPHER.data));
+    return new TextDecoder().decode(plain);
+  }
+  async function tryUnlock(){
+    const pw=document.getElementById("pw").value,msg=document.getElementById("gateMsg");msg.textContent="";
+    if(!pw){msg.textContent="Please enter the password.";return;}
+    try{document.getElementById("content").innerHTML=await decrypt(pw);document.getElementById("gate").style.display="none";}
+    catch(e){msg.textContent="Incorrect password. Try again.";document.getElementById("pw").value="";document.getElementById("pw").focus();}
+  }
+  document.getElementById("unlock").addEventListener("click",tryUnlock);
+  document.getElementById("pw").addEventListener("keydown",e=>{if(e.key==="Enter")tryUnlock();});</script>
+</body>
+</html>
