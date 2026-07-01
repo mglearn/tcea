@@ -303,6 +303,26 @@
   .spark-row .sp-val { font-weight: 800; color: var(--navy); }
   .spark-row .sp-val.down { color: var(--red); }
 
+  /* counts, stat strip, jump list */
+  .count-badge { display: inline-block; background: var(--gold); color: var(--navy-dark); font-size: 0.95rem; font-weight: 800; padding: 2px 13px; border-radius: 100px; vertical-align: middle; margin-left: 10px; }
+  .nav-count { display: inline-block; background: var(--pale-navy); color: var(--navy); font-size: 0.68rem; font-weight: 800; padding: 1px 7px; border-radius: 100px; margin-left: 5px; vertical-align: middle; }
+  .nav-tab.active .nav-count { background: var(--gold); color: var(--navy-dark); }
+
+  .stat-strip { display: flex; flex-wrap: wrap; gap: 14px; margin: 8px 0 30px; }
+  .stat-pill { background: var(--white); border: 1.5px solid var(--border); border-top: 4px solid var(--navy); border-radius: 12px; padding: 14px 22px; text-align: center; min-width: 118px; flex: 1 1 118px; }
+  .stat-pill.total { border-top-color: var(--gold); }
+  .stat-pill .sp-num { font-family: "DM Serif Display", serif; font-size: 1.85rem; color: var(--navy); line-height: 1; }
+  .stat-pill .sp-lab { font-size: 0.76rem; color: var(--text-muted); margin-top: 6px; font-weight: 600; }
+
+  .pattern-index-wrap { margin: 0 0 30px; padding: 18px 20px; background: var(--white); border: 1.5px solid var(--border); border-left: 4px solid var(--gold); border-radius: 12px; }
+  .pi-label { font-size: 9px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px; }
+  .pattern-index { list-style: none; margin: 0; padding: 0; columns: 270px; column-gap: 30px; }
+  .pattern-index li { break-inside: avoid; margin-bottom: 9px; font-size: 0.88rem; line-height: 1.5; }
+  .pattern-index li a { color: var(--navy); font-weight: 700; text-decoration: none; }
+  .pattern-index li a:hover { color: var(--navy-mid); text-decoration: underline; }
+  .pattern-index li .pi-desc { color: var(--text-muted); }
+  .pattern-card { scroll-margin-top: 78px; }
+
   @media (max-width: 640px) {
     .site-header h1 { font-size: 1.9rem; }
     .pattern-head, .pattern-body { padding: 18px; }
@@ -339,6 +359,13 @@
 
   <p class="section-intro">This guide focuses on patterns that live inside one HTML file with no build step and no backend. That matters because the place you embed a page decides what survives. WordPress strips inline scripts for many users. Google Sites sandboxes everything in an iframe. GitHub Pages serves whatever you give it. So the real measure of difficulty here is not how clever the code is. It is how many extra libraries the pattern needs, and whether those libraries get stripped out by your host.</p>
 
+  <div class="stat-strip">
+    <div class="stat-pill total"><div class="sp-num" id="countTotal">—</div><div class="sp-lab">Patterns total</div></div>
+    <div class="stat-pill"><div class="sp-num" id="countEasy">—</div><div class="sp-lab">Easy</div></div>
+    <div class="stat-pill"><div class="sp-num" id="countMedium">—</div><div class="sp-lab">Medium</div></div>
+    <div class="stat-pill"><div class="sp-num" id="countCharts">—</div><div class="sp-lab">Charts &amp; KPIs</div></div>
+  </div>
+
   <div class="feature-grid">
     <div class="feature-card"><div class="fc-icon">🧩</div><h4>Structure over data</h4><p>Pick the pattern that matches the question your reader is asking, then pour your data into it.</p></div>
     <div class="feature-card"><div class="fc-icon">📦</div><h4>Self-contained</h4><p>One file. All CSS and JavaScript embedded. Fonts from a CDN are fine. No frameworks.</p></div>
@@ -374,21 +401,21 @@
 
 <!-- ===================== EASY ===================== -->
 <section class="page" id="page-easy">
-  <h2 class="section-title">Easy Patterns</h2>
+  <h2 class="section-title">Easy Patterns <span class="count-badge" id="secEasy"></span></h2>
   <p class="section-intro">CSS only or near-zero JavaScript. Nothing to strip out, so these work in every host including WordPress Custom HTML blocks, Google Sites embeds, and GitHub Pages.</p>
   <div id="easyMount"></div>
 </section>
 
 <!-- ===================== MEDIUM ===================== -->
 <section class="page" id="page-medium">
-  <h2 class="section-title">Medium Patterns</h2>
+  <h2 class="section-title">Medium Patterns <span class="count-badge" id="secMedium"></span></h2>
   <p class="section-intro">These need a little vanilla JavaScript for filtering, switching, or animation. No external library. They run fine on GitHub Pages and inside iframe embeds. In WordPress, use an iframe rather than a Custom HTML block, since inline scripts get stripped on save.</p>
   <div id="mediumMount"></div>
 </section>
 
 <!-- ===================== CHARTS & KPIs ===================== -->
 <section class="page" id="page-charts">
-  <h2 class="section-title">Charts and KPIs</h2>
+  <h2 class="section-title">Charts and KPIs <span class="count-badge" id="secCharts"></span></h2>
   <p class="section-intro">Charts split into two camps. CSS and SVG charts stay self-contained and survive everywhere. Library charts like Chart.js or D3 look richer but pull in an external script that strict hosts block or sandbox. KPIs are the easiest win of all and belong on almost every dashboard.</p>
   <div id="chartsMount"></div>
 </section>
@@ -1209,7 +1236,7 @@ function cardHTML(p, idx){
       : '<span class="difficulty-tag easy">● Easy — self-contained</span>';
   }
   const promptId = 'prompt-' + p.id;
-  return `<div class="pattern-card" data-init="${idx}">
+  return `<div class="pattern-card" id="pat-${p.id}" data-init="${idx}">
     <div class="pattern-head">
       <div><h3>${p.name}</h3><div class="ph-desc">${p.desc}</div></div>
       ${diff}
@@ -1227,10 +1254,21 @@ function cardHTML(p, idx){
     </div>
   </div>`;
 }
+function oneLiner(desc){
+  const s = desc.split(/\.\s/)[0].trim();
+  return s.endsWith('.') ? s : s + '.';
+}
+function tierCount(tier){ return patterns.filter(p => p.tier === tier).length; }
 function mount(tier, elId){
   const el = document.getElementById(elId);
   const items = patterns.filter(p => p.tier === tier);
-  el.innerHTML = items.map((p,i) => cardHTML(p, patterns.indexOf(p))).join('');
+  const index = `<div class="pattern-index-wrap">
+      <div class="pi-label">Jump to a pattern — ${items.length} in this tier</div>
+      <ul class="pattern-index">${items.map(p =>
+        `<li><a href="#pat-${p.id}">${p.name}</a> — <span class="pi-desc">${oneLiner(p.desc)}</span></li>`
+      ).join('')}</ul>
+    </div>`;
+  el.innerHTML = index + items.map((p,i) => cardHTML(p, patterns.indexOf(p))).join('');
   // run demoInit for any interactive demos now in the DOM
   el.querySelectorAll('.pattern-card[data-init]').forEach(card => {
     const p = patterns[+card.dataset.init];
@@ -1240,6 +1278,22 @@ function mount(tier, elId){
 mount('easy','easyMount');
 mount('medium','mediumMount');
 mount('charts','chartsMount');
+
+/* ---------- counts ---------- */
+function setText(id, val){ const n = document.getElementById(id); if (n) n.textContent = val; }
+setText('countTotal', patterns.length);
+setText('countEasy', tierCount('easy'));
+setText('countMedium', tierCount('medium'));
+setText('countCharts', tierCount('charts'));
+setText('secEasy', tierCount('easy'));
+setText('secMedium', tierCount('medium'));
+setText('secCharts', tierCount('charts'));
+document.querySelectorAll('.nav-tab').forEach(tab => {
+  const tier = tab.dataset.page;
+  if (tier === 'easy' || tier === 'medium' || tier === 'charts') {
+    tab.insertAdjacentHTML('beforeend', ` <span class="nav-count">${tierCount(tier)}</span>`);
+  }
+});
 </script>
 </body>
 </html>
