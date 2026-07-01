@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TCEA Vibe-Coded Solutions Directory</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="A single searchable launch page for the HTML tools, dashboards, course references, prompt libraries, classroom games, and downloadable assets from TCEA.">
+<link rel="alternate" type="application/rss+xml" title="TCEA Vibe-Coded Solutions — Updates" href="feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -30,33 +33,6 @@
     background: var(--bg);
     line-height: 1.55;
   }
-
-  .mg-back-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 999999;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    padding: 0 18px;
-    background: var(--tcea-gold);
-    border-bottom: 1px solid rgba(10,52,118,0.25);
-    box-shadow: 0 1px 8px rgba(0,0,0,0.16);
-    font-size: 12.5px;
-  }
-  .mg-back-bar a {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    color: var(--tcea-blue);
-    text-decoration: none;
-    font-weight: 700;
-  }
-  .mg-back-bar a:hover { color: var(--tcea-blue-dark); }
-  .mg-back-arrow { color: var(--tcea-blue); }
-  @media print { .mg-back-bar { display: none !important; } }
 
   .hero {
     background:
@@ -129,48 +105,65 @@
     border-color: rgba(255,255,255,0.32);
   }
   .button.secondary:hover { border-color: var(--tcea-gold); color: var(--tcea-gold); }
+  .button svg { width: 16px; height: 16px; margin-right: 7px; }
 
-  .jump-nav {
+  /* ---- Sticky search + filter controls ---- */
+  .controls {
     position: sticky;
     top: 0;
     z-index: 20;
-    background: rgba(255,255,255,0.96);
+    background: rgba(255,255,255,0.97);
     border-bottom: 1px solid var(--line);
     backdrop-filter: blur(10px);
   }
-  .jump-inner {
+  .controls-inner {
     max-width: 1180px;
     margin: 0 auto;
     padding: 12px 28px;
     display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .search-row { display: flex; gap: 10px; align-items: center; }
+  .search-box {
+    flex: 1;
+    display: flex;
     align-items: center;
     gap: 8px;
-    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 9px 13px;
+    background: #fff;
   }
-  .jump-label {
-    flex: 0 0 auto;
-    margin-right: 4px;
-    font-family: "DM Mono", monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
+  .search-box:focus-within { border-color: var(--tcea-blue-mid); box-shadow: 0 0 0 3px rgba(18,66,143,0.12); }
+  .search-box svg { flex: 0 0 auto; color: var(--muted); width: 18px; height: 18px; }
+  .search-box input {
+    border: 0; outline: 0; flex: 1;
+    font: inherit; font-size: 0.98rem; color: var(--ink); background: transparent;
   }
-  .jump-nav a {
+  .search-clear {
+    border: 0; background: transparent; color: var(--muted);
+    cursor: pointer; font-size: 1.25rem; line-height: 1; padding: 0 4px; display: none;
+  }
+  .search-clear:hover { color: var(--tcea-blue); }
+  .result-count { flex: 0 0 auto; font-family: "DM Mono", monospace; font-size: 0.75rem; color: var(--muted); }
+  .chips { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 2px; }
+  .chip {
     flex: 0 0 auto;
+    cursor: pointer;
     color: var(--tcea-blue);
+    background: #fff;
     border: 1px solid var(--line);
     border-radius: 999px;
-    padding: 6px 11px;
-    text-decoration: none;
-    font-size: 0.86rem;
+    padding: 6px 12px;
+    font-size: 0.84rem;
     font-weight: 700;
+    white-space: nowrap;
   }
-  .jump-nav a:hover {
-    color: #fff;
-    background: var(--tcea-blue);
-    border-color: var(--tcea-blue);
-  }
+  .chip .count { opacity: 0.55; font-family: "DM Mono", monospace; font-size: 0.72rem; margin-left: 6px; }
+  .chip:hover { border-color: var(--tcea-blue); }
+  .chip.active { color: #fff; background: var(--tcea-blue); border-color: var(--tcea-blue); }
+  .chip.active .count { opacity: 0.85; }
 
   main {
     max-width: 1180px;
@@ -187,11 +180,7 @@
     border-bottom: 3px solid var(--tcea-blue);
     margin-bottom: 20px;
   }
-  .section-title {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-  }
+  .section-title { display: flex; align-items: baseline; gap: 12px; }
   .section-num {
     font-family: "DM Mono", monospace;
     color: var(--tcea-blue-dark);
@@ -209,11 +198,7 @@
     font-weight: 400;
     color: var(--tcea-blue-dark);
   }
-  .section-note {
-    margin: -8px 0 22px;
-    max-width: 760px;
-    color: var(--muted);
-  }
+  .section-note { margin: -8px 0 22px; max-width: 760px; color: var(--muted); }
 
   .grid {
     display: grid;
@@ -221,6 +206,7 @@
     gap: 16px;
   }
   .card {
+    position: relative;
     min-height: 218px;
     display: flex;
     flex-direction: column;
@@ -252,18 +238,8 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
   }
-  h3 {
-    margin: 0 0 8px;
-    color: var(--tcea-blue-dark);
-    font-size: 1.09rem;
-    line-height: 1.25;
-  }
-  .card p {
-    flex: 1;
-    margin: 0;
-    color: var(--muted);
-    font-size: 0.93rem;
-  }
+  h3 { margin: 0 0 8px; color: var(--tcea-blue-dark); font-size: 1.09rem; line-height: 1.25; }
+  .card p { flex: 1; margin: 0; color: var(--muted); font-size: 0.93rem; }
   .card-foot {
     display: flex;
     align-items: center;
@@ -293,11 +269,21 @@
     background: var(--tcea-gold);
     font-weight: 800;
   }
-
-  .asset-list {
-    display: grid;
-    gap: 10px;
+  .badge-new {
+    display: inline-block;
+    margin-left: 8px;
+    background: var(--tcea-gold);
+    color: var(--tcea-blue-dark);
+    font-family: "DM Mono", monospace;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    padding: 2px 6px;
+    border-radius: 4px;
+    vertical-align: middle;
   }
+
+  .asset-list { display: grid; gap: 10px; }
   .asset {
     display: flex;
     flex-wrap: wrap;
@@ -313,11 +299,10 @@
     text-decoration: none;
   }
   .asset strong { color: var(--tcea-blue-dark); }
-  .asset span {
-    color: var(--muted);
-    font-family: "DM Mono", monospace;
-    font-size: 0.78rem;
-  }
+  .asset span { color: var(--muted); font-family: "DM Mono", monospace; font-size: 0.78rem; }
+
+  .empty { display: none; text-align: center; padding: 64px 20px; color: var(--muted); }
+  .empty strong { display: block; color: var(--ink); font-size: 1.1rem; margin-bottom: 6px; }
 
   footer {
     background: var(--tcea-blue-dark);
@@ -331,10 +316,16 @@
 
   @media (max-width: 680px) {
     .hero-inner { padding: 42px 20px 48px; }
-    main { padding: 36px 20px 58px; }
-    .jump-inner { padding: 10px 20px; }
+    main { padding: 30px 20px 58px; }
+    .controls-inner { padding: 10px 20px; }
+    .search-row { flex-wrap: wrap; }
+    .result-count { width: 100%; }
     .section-head { align-items: flex-start; flex-direction: column; gap: 8px; }
     .card { min-height: auto; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .card { transition: none; }
   }
 </style>
 </head>
@@ -343,249 +334,215 @@
   <div class="hero-inner">
     <div class="eyebrow">TCEA Vibe-Coded Solutions</div>
     <h1>Vibe-Coded Solutions from TCEA</h1>
-    <p class="lede">A single launch page for the HTML tools, dashboards, course references, prompt libraries, classroom games, and downloadable assets from TCEA.</p>
+    <p class="lede">A single, searchable launch page for the HTML tools, dashboards, course references, prompt libraries, classroom games, and downloadable assets from TCEA.</p>
     <div class="hero-actions">
       <a class="button primary" href="https://blog.tcea.org/vibe-coded-solutions/" target="_blank" rel="noopener">Read the TechNotes article</a>
-      <a class="button secondary" href="#all-projects">Browse projects</a>
+      <a class="button secondary" href="feed.xml">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1.5" fill="currentColor" stroke="none"/></svg>
+        Subscribe (RSS)
+      </a>
     </div>
   </div>
 </header>
 
-<nav class="jump-nav" aria-label="Page sections">
-  <div class="jump-inner">
-    <span class="jump-label">Jump to</span>
-    <a href="#featured">Featured</a>
-    <a href="#ai">AI</a>
-    <a href="#instruction">Instruction</a>
-    <a href="#dashboards">Dashboards</a>
-    <a href="#tools">Tools</a>
-    <a href="#courses">Courses</a>
-    <a href="#activities">Activities</a>
-    <a href="#breakouts">Breakouts</a>
-    <a href="#assessment">Assessment</a>
-    <a href="#webdecks">WebDecks</a>
-    <a href="#assets">Data and Downloads</a>
+<nav class="controls" aria-label="Search and filter projects">
+  <div class="controls-inner">
+    <div class="search-row">
+      <label class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input id="search" type="search" placeholder="Search all solutions by name, description, or type…  (press /)" aria-label="Search solutions" autocomplete="off">
+        <button id="clear" class="search-clear" type="button" aria-label="Clear search">&times;</button>
+      </label>
+      <span id="count" class="result-count" role="status" aria-live="polite"></span>
+    </div>
+    <div id="chips" class="chips" role="tablist" aria-label="Filter by category"></div>
   </div>
 </nav>
 
 <main id="all-projects">
-  <section class="section" id="featured">
-    <div class="section-head">
-      <div class="section-title"><span class="section-num">01</span><h2>Featured Vibe-Coded Solutions</h2></div>
-    </div>
-    <p class="section-note">These projects connect most directly to the vibe-coded solutions workflow and related classroom implementation examples.</p>
-    <div class="grid">
-      <a class="card featured" href="https://blog.tcea.org/vibe-coded-solutions/" target="_blank" rel="noopener">
-        <div class="tag">TechNotes</div>
-        <h3>Vibe-Coded Solutions</h3>
-        <p>The TCEA blog post connected to this collection and the practical examples it supports.</p>
-        <div class="card-foot"><span class="path">blog.tcea.org/vibe-coded-solutions</span><span class="arrow">&rarr;</span></div>
-      </a>
-      <a class="card featured" href="vibeprojects/index.html">
-        <div class="tag">Classroom Projects</div>
-        <h3>Vibe-Coding in the Classroom</h3>
-        <p>A grade-band project gallery for classroom-ready vibe-coding ideas and student-facing activities.</p>
-        <div class="card-foot"><span class="path">vibeprojects/index.html</span><span class="arrow">&rarr;</span></div>
-      </a>
-      <a class="card featured" href="sharespace/index.html">
-        <div class="tag">Demo Build</div>
-        <h3>Vibe Coding a Free ShareSpace</h3>
-        <p>A slide-style walkthrough for building a free Padlet-style sharing space with a downloadable demo solution.</p>
-        <div class="card-foot"><span class="path">sharespace/index.html</span><span class="arrow">&rarr;</span></div>
-      </a>
-      <a class="card featured" href="vcl/index.html">
-        <div class="tag">Companion Site</div>
-        <h3>Vibe-Coding for Librarians</h3>
-        <p>A companion website with librarian-focused tools, use cases, prompts, and downloadable vibe-coding resources.</p>
-        <div class="card-foot"><span class="path">vcl/index.html</span><span class="arrow">&rarr;</span></div>
-      </a>
-      <a class="card featured" href="vpo/index.html">
-        <div class="tag">Prompt Builder</div>
-        <h3>Codex Project Organizer</h3>
-        <p>A beginner-friendly brief builder that turns a project idea into a structured Markdown prompt for AI-assisted coding, with a modular version for defining inputs, outputs, and tests.</p>
-        <div class="card-foot"><span class="path">vpo/index.html</span><span class="arrow">&rarr;</span></div>
-      </a>
-      <a class="card featured" href="tools/index.html">
-        <div class="tag">Tool Menu</div>
-        <h3>TCEA Tools Menu</h3>
-        <p>The launch menu for classroom utilities including spinners, dice, word search, drawing, puzzles, and fortune tools.</p>
-        <div class="card-foot"><span class="path">tools/index.html</span><span class="arrow">&rarr;</span></div>
-      </a>
-    </div>
-  </section>
-
-  <section class="section" id="ai">
-    <div class="section-head">
-      <div class="section-title"><span class="section-num">02</span><h2>AI Prompt Libraries and Adoption</h2></div>
-    </div>
-    <div class="grid">
-      <a class="card" href="custom-instructions-library/index.html"><div class="tag">AI Library</div><h3>TCEA AI Custom Instructions Library</h3><p>Reusable AI personas and custom instructions for productivity, planning, writing, and educator workflows.</p><div class="card-foot"><span class="path">custom-instructions-library/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="ai-essentials-prompt-library/index.html"><div class="tag">Prompt Library</div><h3>AI Essentials Prompt Library of 100</h3><p>A searchable set of educator prompts for AI Essentials training and classroom support.</p><div class="card-foot"><span class="path">ai-essentials-prompt-library/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="k12-image-prompt-library/index.html"><div class="tag">Image Prompts</div><h3>K-12 Image Prompt Library</h3><p>Classroom, library, and office-ready image prompts organized by task and instructional use.</p><div class="card-foot"><span class="path">k12-image-prompt-library/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="ai-adoption-checklist/index.html"><div class="tag">Checklist</div><h3>Generative AI Adoption Checklist</h3><p>A step-by-step institutional checklist for thoughtful generative AI adoption.</p><div class="card-foot"><span class="path">ai-adoption-checklist/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="checklist/index.html"><div class="tag">Checklist Copy</div><h3>Generative AI Adoption Checklist Folder Version</h3><p>A packaged folder version of the adoption checklist for distribution or embedding.</p><div class="card-foot"><span class="path">checklist/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="ai-adoption-roadmap/index.html"><div class="tag">Roadmap</div><h3>AI Adoption Roadmap</h3><p>An interactive roadmap for district and campus AI adoption stages, policies, and implementation moves.</p><div class="card-foot"><span class="path">ai-adoption-roadmap/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="ai-adoption-roadmap/long.html"><div class="tag">Roadmap</div><h3>AI Adoption Roadmap - Extended</h3><p>The longer version of the AI adoption roadmap with expanded guidance and phase detail.</p><div class="card-foot"><span class="path">ai-adoption-roadmap/long.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="alf/index.html"><div class="tag">AI Framework</div><h3>Augmented K-16 AI Learning Framework</h3><p>A role-based AI learning framework with scenario tools for leaders, designers, builders, facilitators, and instructional support teams.</p><div class="card-foot"><span class="path">alf/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="eles/index.html"><div class="tag">Alignment</div><h3>TCEA ELEs Alignment Assistant</h3><p>An assistant for connecting work to TCEA Essential Learning Experiences and related instructional goals.</p><div class="card-foot"><span class="path">eles/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="aidesign/index.html"><div class="tag">AI Design</div><h3>AI Design Companion</h3><p>A TCEA blue-and-gold strategy reference with ALDO prompts, visible learning resources, and AI-supported lesson design tools.</p><div class="card-foot"><span class="path">aidesign/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="aldo/index.html"><div class="tag">Prompt Studio</div><h3>ALDO Prompt Studio</h3><p>A guided studio for building strong AI prompts with the ALDO framework, worked examples, and references.</p><div class="card-foot"><span class="path">aldo/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="vcl/libvibes.html"><div class="tag">Prompt Library</div><h3>LibVibes Prompt Library</h3><p>Nineteen library-focused vibe-coding starter prompts, each with a VIBES game plan and its own linkable page, all nineteen built and playable.</p><div class="card-foot"><span class="path">vcl/libvibes.html</span><span class="arrow">&rarr;</span></div></a>
-    </div>
-  </section>
-
-  <section class="section" id="instruction">
-    <div class="section-head">
-      <div class="section-title"><span class="section-num">03</span><h2>Instructional Strategy Guides</h2></div>
-    </div>
-    <div class="grid">
-      <a class="card" href="coach-tool/index.html"><div class="tag">Coaching</div><h3>High-Effect Strategy Coach</h3><p>An interactive K-12 coaching tool for selecting and applying high-effect instructional strategies.</p><div class="card-foot"><span class="path">coach-tool/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="hesis/index.html"><div class="tag">Learning Phases</div><h3>Matching the Strategy to the Phase of Learning</h3><p>A guide to aligning visible learning strategies with surface, deep, and transfer learning.</p><div class="card-foot"><span class="path">hesis/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="surface-deep-transfer/index.html"><div class="tag">Learning Phases</div><h3>Comprehensive High-Impact Learning Phases</h3><p>A visual reference for surface, deep, and transfer learning with strategy recommendations.</p><div class="card-foot"><span class="path">surface-deep-transfer/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="topspreso/index.html"><div class="tag">Presentation</div><h3>Top Instructional Strategies</h3><p>A presentation-style guide to instructional strategies worth embracing for stronger learning outcomes.</p><div class="card-foot"><span class="path">topspreso/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="topstrategies/index.html"><div class="tag">Strategy Guide</div><h3>Beyond the 20 Percent Policy</h3><p>Classroom strategy guidance for responding to restrictive AI policies with better instructional design.</p><div class="card-foot"><span class="path">topstrategies/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="vlet/index.html"><div class="tag">Reference</div><h3>Visible Learning with Ed Tech</h3><p>A practical reference for phases, strategies, frameworks, and effect sizes for educators and leaders.</p><div class="card-foot"><span class="path">vlet/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="CTS/index.html"><div class="tag">Tech Integration</div><h3>Technology Integration Resources</h3><p>Two companion guides: Planning and Assessing Technology Integration (PATI) and a tour of EdTech frameworks (SAMR, TPACK, TIM, Triple E, and more).</p><div class="card-foot"><span class="path">CTS/index.html</span><span class="arrow">&rarr;</span></div></a>
-    </div>
-  </section>
-
-  <section class="section" id="dashboards">
-    <div class="section-head">
-      <div class="section-title"><span class="section-num">04</span><h2>Dashboards and Decision Tools</h2></div>
-    </div>
-    <div class="grid">
-      <a class="card" href="dashboard/index.html"><div class="tag">Registration</div><h3>TCEA Registration Dashboard</h3><p>A course registration and revenue dashboard for tracking professional development activity.</p><div class="card-foot"><span class="path">dashboard/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="Dashboard_SchoolKPIs/index.html"><div class="tag">District KPIs</div><h3>District KPI Dashboard</h3><p>A district-level KPI dashboard with an accompanying markdown data file.</p><div class="card-foot"><span class="path">Dashboard_SchoolKPIs/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="dashboardkpi/index.html"><div class="tag">Technology KPIs</div><h3>Technology Dashboard</h3><p>A technology-focused dashboard with KPI views and companion data.</p><div class="card-foot"><span class="path">dashboardkpi/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="kpi-dashboard/index.html"><div class="tag">K-12 KPI Builder</div><h3>K-12 KPI Dashboard Generator</h3><p>A browser-only dashboard builder for district, campus, instructional, and technology KPIs with export options for JSON, CSV, Markdown, HTML, and PDF.</p><div class="card-foot"><span class="path">kpi-dashboard/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="buyback/index.html"><div class="tag">Assessment</div><h3>Buyback Technology Vendor Assessment Tool</h3><p>A structured tool for evaluating buyback technology vendors against district priorities.</p><div class="card-foot"><span class="path">buyback/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="privacy-audit/index.html"><div class="tag">Family Privacy</div><h3>Family App Privacy Audit</h3><p>A 15-minute interactive guide for reviewing app permissions on a child's device.</p><div class="card-foot"><span class="path">privacy-audit/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="protect_rubric_v2/index.html"><div class="tag">Privacy Assessment</div><h3>PROTECT Rubric v2.0</h3><p>A student data privacy assessor for reviewing vendor policies, terms, addenda, and security documents.</p><div class="card-foot"><span class="path">protect_rubric_v2/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="ddp/index.html"><div class="tag">Field Guide</div><h3>Data Display Patterns</h3><p>A TCEA field guide to choosing the right chart and data-display pattern for dashboards and reports.</p><div class="card-foot"><span class="path">ddp/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="vibe_app_intake_package/index.html"><div class="tag">App Review</div><h3>School District App Intake Form</h3><p>A teacher and staff app intake form for submitting apps for district review, with an optional Google Sheets backend for collecting requests.</p><div class="card-foot"><span class="path">vibe_app_intake_package/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="blog/dats/index.html"><div class="tag">RFP Scoring</div><h3>Assessment System RFP Scoring Tool</h3><p>A weighted rubric for comparing district assessment systems, with non-negotiable gate checks and a side-by-side vendor comparison you can export to CSV.</p><div class="card-foot"><span class="path">blog/dats/index.html</span><span class="arrow">&rarr;</span></div></a>
-    </div>
-  </section>
-
-  <section class="section" id="tools">
-    <div class="section-head">
-      <div class="section-title"><span class="section-num">05</span><h2>Classroom Tools and Utilities</h2></div>
-    </div>
-    <p class="section-note">A compact set of classroom tools, generators, and student views. The main tools menu is listed first.</p>
-    <div class="grid">
-      <a class="card featured" href="tools/index.html"><div class="tag">Menu</div><h3>TCEA Tools Menu</h3><p>The top-level menu for the classroom utility collection.</p><div class="card-foot"><span class="path">tools/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="tools/wordsearch/index.html"><div class="tag">Generator</div><h3>Classroom Word Search Maker</h3><p>Create classroom word searches from custom terms and themes.</p><div class="card-foot"><span class="path">tools/wordsearch/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="tools/crossword/index.html"><div class="tag">Generator</div><h3>Crossword Puzzle Maker</h3><p>Build classroom crossword puzzles from custom clues and word lists.</p><div class="card-foot"><span class="path">tools/crossword/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="tools/crossword/student.html"><div class="tag">Student View</div><h3>Crossword Student View</h3><p>The student-facing view for solving generated crossword puzzles.</p><div class="card-foot"><span class="path">tools/crossword/student.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="tools/letterjam/index.html"><div class="tag">Puzzle</div><h3>LetterJam Puzzle Maker</h3><p>Generate letter-based word puzzles for vocabulary and language practice.</p><div class="card-foot"><span class="path">tools/letterjam/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="tools/letterjam/student.html"><div class="tag">Student View</div><h3>LetterJam Student View</h3><p>The student-facing view for playing LetterJam puzzles.</p><div class="card-foot"><span class="path">tools/letterjam/student.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="tools/mappuzzle/index.html"><div class="tag">Geography</div><h3>Map Puzzle Generator</h3><p>Generate map-based puzzles for geography and spatial-reasoning activities.</p><div class="card-foot"><span class="path">tools/mappuzzle/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="tools/memepuzzle/index.html"><div class="tag">Puzzle</div><h3>Meme Puzzle Maker</h3><p>Create and configure meme-based puzzles for classroom use.</p><div class="card-foot"><span class="path">tools/memepuzzle/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="tools/memepuzzle/student.html"><div class="tag">Student View</div><h3>Meme Puzzle Student</h3><p>The student-facing view for completing meme puzzle activities.</p><div class="card-foot"><span class="path">tools/memepuzzle/student.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="tools/wheelspinner/index.html"><div class="tag">Spinner</div><h3>Classroom Wheel Spinner</h3><p>A customizable spinner for names, prompts, choices, and classroom routines.</p><div class="card-foot"><span class="path">tools/wheelspinner/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="tools/storywheel/index.html"><div class="tag">Writing</div><h3>Story Wheel Maker</h3><p>A wheel-based generator for story ideas and writing prompts.</p><div class="card-foot"><span class="path">tools/storywheel/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="tools/shapespinner/index.html"><div class="tag">Spinner</div><h3>Classroom Shape Spinner</h3><p>A shape spinner for math, discussion, selection, and quick classroom activities.</p><div class="card-foot"><span class="path">tools/shapespinner/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="tools/dice/index.html"><div class="tag">Randomizer</div><h3>Classroom Dice Roller</h3><p>A flexible dice roller for games, questions, grouping, and classroom decisions.</p><div class="card-foot"><span class="path">tools/dice/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="tools/coinflipping/index.html"><div class="tag">Randomizer</div><h3>Classroom Coin Flipper</h3><p>A coin flipping utility with themes and classroom-friendly controls.</p><div class="card-foot"><span class="path">tools/coinflipping/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="tools/dotsboxes/index.html"><div class="tag">Game</div><h3>Dots and Boxes</h3><p>The classic Dots and Boxes pencil-and-paper game adapted for the classroom.</p><div class="card-foot"><span class="path">tools/dotsboxes/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="tools/drawsketch/index.html"><div class="tag">Drawing</div><h3>Draw and Sketch</h3><p>A quick sketching surface for drawing, annotation, and visual classroom prompts.</p><div class="card-foot"><span class="path">tools/drawsketch/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="tools/colorpop/index.html"><div class="tag">Drawing</div><h3>Color Pop Magic</h3><p>A scratch-canvas drawing tool for revealing hidden backgrounds with a custom cover color and pen.</p><div class="card-foot"><span class="path">tools/colorpop/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="tools/dicebreakers/index.html"><div class="tag">Icebreakers</div><h3>Dicebreaker Creator</h3><p>Create dice-based icebreaker activities for groups, meetings, and classes.</p><div class="card-foot"><span class="path">tools/dicebreakers/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="tools/dicebreakers/play.html"><div class="tag">Student View</div><h3>Dicebreaker Roll View</h3><p>The play view for rolling and running a Dicebreaker activity.</p><div class="card-foot"><span class="path">tools/dicebreakers/play.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="tools/fortune/index.html"><div class="tag">Teacher Tool</div><h3>Classroom Fortune Wheel Teacher</h3><p>The teacher-facing setup view for a classroom fortune wheel activity.</p><div class="card-foot"><span class="path">tools/fortune/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="tools/fortune/student.html"><div class="tag">Student View</div><h3>Classroom Fortune Wheel Student</h3><p>The student-facing fortune wheel view for classroom participation.</p><div class="card-foot"><span class="path">tools/fortune/student.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="ibingo/index.html"><div class="tag">Generator</div><h3>iBINGO Game Maker</h3><p>Build custom BINGO boards for review, vocabulary, and whole-class games.</p><div class="card-foot"><span class="path">ibingo/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="mappuzzle/index.html"><div class="tag">Geography</div><h3>Map Puzzle Generator</h3><p>A standalone map-based puzzle generator for geography and spatial-reasoning practice.</p><div class="card-foot"><span class="path">mappuzzle/index.html</span><span class="arrow">&rarr;</span></div></a>
-    </div>
-  </section>
-
-  <section class="section" id="courses">
-    <div class="section-head">
-      <div class="section-title"><span class="section-num">06</span><h2>Courses and Educator Resources</h2></div>
-    </div>
-    <div class="grid">
-      <a class="card" href="courses/ai_essentials.html"><div class="tag">Course</div><h3>AI Essentials for Educators</h3><p>A course export/reference page for AI Essentials content, activities, and linked resources.</p><div class="card-foot"><span class="path">courses/ai_essentials.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="courses/ai_essentials2.html"><div class="tag">Course Reference</div><h3>AI Essentials for Educators - Course Reference</h3><p>A second course reference version with expanded AI Essentials content.</p><div class="card-foot"><span class="path">courses/ai_essentials2.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="dailywrite/index.html"><div class="tag">Writing</div><h3>Daily Quick Write Generator</h3><p>Generate daily quick write prompts for classroom routines and literacy practice.</p><div class="card-foot"><span class="path">dailywrite/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="tceaainews/index.html"><div class="tag">Newsletter</div><h3>AI-Powered Newsletter Architecture</h3><p>A Lunch and Learn resource for building AI-assisted newsletter workflows for educators.</p><div class="card-foot"><span class="path">tceaainews/index.html</span><span class="arrow">&rarr;</span></div></a>
-    </div>
-  </section>
-
-  <section class="section" id="activities">
-    <div class="section-head">
-      <div class="section-title"><span class="section-num">07</span><h2>Games, Activities, and Specialty Builds</h2></div>
-    </div>
-    <div class="grid">
-      <a class="card" href="wds/index.html"><div class="tag">Cybersecurity Game</div><h3>When Disaster Strikes</h3><p>A K-12 cyber incident response tabletop game aligned to NIST CSF 2.0 and CISA guidance.</p><div class="card-foot"><span class="path">wds/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="oreos/index.html"><div class="tag">Personality Activity</div><h3>Oreo Teaching Personality Test</h3><p>A light classroom or workshop activity based on how participants eat Oreo cookies.</p><div class="card-foot"><span class="path">oreos/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="sharespace/index.html"><div class="tag">ShareSpace</div><h3>Vibe Coding a Free ShareSpace</h3><p>A guided demonstration for building and adapting a free ShareSpace workflow.</p><div class="card-foot"><span class="path">sharespace/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="vibeprojects/index.html"><div class="tag">Project Gallery</div><h3>Vibe-Coding in the Classroom</h3><p>Classroom project ideas and activities arranged for educator use.</p><div class="card-foot"><span class="path">vibeprojects/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="vcl/index.html"><div class="tag">Companion Site</div><h3>Vibe-Coding for Librarians</h3><p>Library-specific vibe-coding companion site with reusable tools, prompts, and program ideas.</p><div class="card-foot"><span class="path">vcl/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="vcll/index.html"><div class="tag">Session Site</div><h3>Vibe Coding Projects for Librarians</h3><p>The session companion site with library use cases, starter prompts, and downloadable tools for vibe-coding free alternatives to Padlet, Slido, and FigJam.</p><div class="card-foot"><span class="path">vcll/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="other/index.html"><div class="tag">Apps Showcase</div><h3>Apps by OneScreen</h3><p>A showcase of purpose-built classroom apps for educators tired of AI tools that miss the mark.</p><div class="card-foot"><span class="path">other/index.html</span><span class="arrow">&rarr;</span></div></a>
-    </div>
-  </section>
-
-  <section class="section" id="breakouts">
-    <div class="section-head">
-      <div class="section-title"><span class="section-num">08</span><h2>Critical Thinking Breakouts</h2></div>
-    </div>
-    <p class="section-note">The CLEAR Crew critical-thinking system: a detective-style thinking game plus a full library of breakout activities across grade bands and subjects, translated into seven languages.</p>
-    <div class="grid">
-      <a class="card featured" href="clear/index.html"><div class="tag">Thinking Game</div><h3>The CLEAR Crew &mdash; Detective Thinking Game</h3><p>Crack the case one clue at a time with the CLEAR thinking process &mdash; a critical-thinking checklist for young detectives.</p><div class="card-foot"><span class="path">clear/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="clear/breakouts/index.html"><div class="tag">Breakout Library</div><h3>Critical Thinking Breakouts</h3><p>Grade-band breakout activities (3-5, 6-8, 9-12) across ELA, science, and social studies that teach evidence-based reasoning, available in seven languages.</p><div class="card-foot"><span class="path">clear/breakouts/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="clear/breakouts/correlation.html"><div class="tag">Alignment</div><h3>Breakouts Correlation Guide</h3><p>A multilingual correlation guide mapping the Critical Thinking Breakouts to standards and thinking skills.</p><div class="card-foot"><span class="path">clear/breakouts/correlation.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="clear/breakouts/answer-key.html"><div class="tag">Facilitator</div><h3>Breakouts Answer Key</h3><p>The facilitator answer key and recording sheet for running the Critical Thinking Breakouts activities.</p><div class="card-foot"><span class="path">clear/breakouts/answer-key.html</span><span class="arrow">&rarr;</span></div></a>
-    </div>
-  </section>
-
-  <section class="section" id="assessment">
-    <div class="section-head">
-      <div class="section-title"><span class="section-num">09</span><h2>Assessment and Reflection Tools</h2></div>
-    </div>
-    <p class="section-note">Formative assessment, item analysis, and reflection tools for classrooms and facilitators.</p>
-    <div class="grid">
-      <a class="card" href="reflect-tool/index.html"><div class="tag">Reflection</div><h3>Reflection Time Assessment</h3><p>A guided reflection assessment for educators and learners to capture and review thinking.</p><div class="card-foot"><span class="path">reflect-tool/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="reflect-tool/facilitator-dashboard.html"><div class="tag">Facilitator</div><h3>Reflection Dashboard</h3><p>The facilitator dashboard view for reviewing reflection responses across a group.</p><div class="card-foot"><span class="path">reflect-tool/facilitator-dashboard.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="sia/itema.html"><div class="tag">Item Analysis</div><h3>Entry / Exit Ticket Item Analysis</h3><p>A tool for analyzing entry and exit ticket items to surface misconceptions and next steps.</p><div class="card-foot"><span class="path">sia/itema.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="sia/index.html"><div class="tag">Flashcards</div><h3>Water Cycle Pre-Assessment Flashcards</h3><p>A formative pre-assessment flashcard set, an example of student interactive assessment.</p><div class="card-foot"><span class="path">sia/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="sia/rec.html"><div class="tag">Recommendations</div><h3>ACE Framework Learning Recommendations</h3><p>Learning recommendations generated from the ACE framework for next instructional moves.</p><div class="card-foot"><span class="path">sia/rec.html</span><span class="arrow">&rarr;</span></div></a>
-    </div>
-  </section>
-
-  <section class="section" id="webdecks">
-    <div class="section-head">
-      <div class="section-title"><span class="section-num">10</span><h2>Presentations and WebDecks</h2></div>
-    </div>
-    <p class="section-note">Slide-style web decks and briefings for sessions and professional learning.</p>
-    <div class="grid">
-      <a class="card" href="webdecks/aidesign/index.html"><div class="tag">WebDeck</div><h3>AI as Your Instructional Design Partner</h3><p>A web-based slide deck on using AI as a partner in instructional design.</p><div class="card-foot"><span class="path">webdecks/aidesign/index.html</span><span class="arrow">&rarr;</span></div></a>
-      <a class="card" href="webdecks/nsf26/index.html"><div class="tag">Briefing</div><h3>NSF TechAccess: AI-Ready America</h3><p>A TCEA briefing web deck on the NSF TechAccess AI-Ready America initiative.</p><div class="card-foot"><span class="path">webdecks/nsf26/index.html</span><span class="arrow">&rarr;</span></div></a>
-    </div>
-  </section>
-
-  <section class="section" id="assets">
-    <div class="section-head">
-      <div class="section-title"><span class="section-num">11</span><h2>Data, Downloads, and Companion Files</h2></div>
-    </div>
-    <div class="asset-list">
-      <a class="asset" href="dashboard/data.md"><strong>Registration Dashboard Data</strong><span>dashboard/data.md</span></a>
-      <a class="asset" href="Dashboard_SchoolKPIs/data.md"><strong>District KPI Dashboard Data</strong><span>Dashboard_SchoolKPIs/data.md</span></a>
-      <a class="asset" href="dashboardkpi/data.md"><strong>Technology Dashboard Data</strong><span>dashboardkpi/data.md</span></a>
-      <a class="asset" href="kpi-dashboard/K12_KPI_Dashboard_README.md"><strong>K-12 KPI Dashboard Generator Notes</strong><span>kpi-dashboard/K12_KPI_Dashboard_README.md</span></a>
-      <a class="asset" href="tools/INSTRUCTIONS.md"><strong>Tools Build Instructions</strong><span>tools/INSTRUCTIONS.md</span></a>
-      <a class="asset" href="protect_rubric_v2/README.md"><strong>PROTECT Rubric v2.0 Notes</strong><span>protect_rubric_v2/README.md</span></a>
-      <a class="asset" href="vibeprojects/README.md"><strong>Vibe Projects Notes</strong><span>vibeprojects/README.md</span></a>
-      <a class="asset" href="wds/README.md"><strong>When Disaster Strikes Notes</strong><span>wds/README.md</span></a>
-      <a class="asset" href="sharespace/sharespace-demo.zip"><strong>ShareSpace Demo Solution</strong><span>sharespace/sharespace-demo.zip</span></a>
-      <a class="asset" href="vcl/libvibes-all-tools.zip"><strong>LibVibes — all 19 built tools</strong><span>vcl/libvibes-all-tools.zip</span></a>
-      <a class="asset" href="oreos/Oreo_Personality_Test.zip"><strong>Oreo Personality Test Download</strong><span>oreos/Oreo_Personality_Test.zip</span></a>
-    </div>
-  </section>
+  <div id="results"></div>
+  <div id="empty" class="empty">
+    <strong>No solutions match your search.</strong>
+    Try a different word, or <a href="#" id="reset-link">clear the filters</a>.
+  </div>
 </main>
 
 <footer>
-  TCEA Vibe-Coded Solutions Directory &middot; <a href="https://blog.tcea.org/vibe-coded-solutions/" target="_blank" rel="noopener">TechNotes article</a>
+  TCEA Vibe-Coded Solutions Directory &middot;
+  <a href="https://blog.tcea.org/vibe-coded-solutions/" target="_blank" rel="noopener">TechNotes article</a> &middot;
+  <a href="feed.xml">RSS updates</a>
 </footer>
+
+<script src="projects.js"></script>
+<script>
+(function () {
+  var DATA = window.TCEA_DATA || { SECTIONS: [], PROJECTS: [], DOWNLOADS: [] };
+  var SECTIONS = DATA.SECTIONS, PROJECTS = DATA.PROJECTS, DOWNLOADS = DATA.DOWNLOADS;
+
+  var els = {
+    search: document.getElementById("search"),
+    clear: document.getElementById("clear"),
+    count: document.getElementById("count"),
+    chips: document.getElementById("chips"),
+    results: document.getElementById("results"),
+    empty: document.getElementById("empty")
+  };
+
+  var state = { query: "", cat: "all" };
+  var updated = {}; // href -> ISO date string, populated from updates.json
+
+  // ---- helpers ----
+  function plain(s) { return (s || "").replace(/<[^>]+>/g, " ").replace(/&[a-z]+;/gi, " "); }
+  function haystack(p) { return plain(p.title + " " + p.desc + " " + p.tag).toLowerCase(); }
+  function displayPath(p) {
+    return p.external ? p.href.replace(/^https?:\/\//, "").replace(/\/$/, "") : p.href;
+  }
+  function isNew(href) {
+    var d = updated[href];
+    if (!d) return false;
+    var days = (Date.now() - new Date(d).getTime()) / 86400000;
+    return days <= 30;
+  }
+  function catCount(id) {
+    if (id === "assets") return DOWNLOADS.length;
+    return PROJECTS.filter(function (p) { return p.category === id; }).length;
+  }
+
+  function cardHTML(p) {
+    var newBadge = isNew(p.href) ? ' <span class="badge-new">NEW</span>' : "";
+    var ext = p.external ? ' target="_blank" rel="noopener"' : "";
+    return '<a class="card' + (p.featured ? " featured" : "") + '" href="' + p.href + '"' + ext + '>' +
+      '<div class="tag">' + p.tag + "</div>" +
+      "<h3>" + p.title + newBadge + "</h3>" +
+      "<p>" + p.desc + "</p>" +
+      '<div class="card-foot"><span class="path">' + displayPath(p) + '</span><span class="arrow">&rarr;</span></div>' +
+      "</a>";
+  }
+  function gridHTML(list) { return '<div class="grid">' + list.map(cardHTML).join("") + "</div>"; }
+
+  function sectionHTML(sec, list) {
+    var note = sec.note ? '<p class="section-note">' + sec.note + "</p>" : "";
+    return '<section class="section" id="sec-' + sec.id + '">' +
+      '<div class="section-head"><div class="section-title">' +
+      '<span class="section-num">' + sec.num + '</span><h2>' + sec.title + "</h2></div></div>" +
+      note + gridHTML(list) + "</section>";
+  }
+  function downloadsHTML(sec) {
+    var assets = DOWNLOADS.map(function (d) {
+      return '<a class="asset" href="' + d.href + '"><strong>' + d.name + "</strong><span>" + d.href + "</span></a>";
+    }).join("");
+    var note = sec.note ? '<p class="section-note">' + sec.note + "</p>" : "";
+    return '<section class="section" id="sec-' + sec.id + '">' +
+      '<div class="section-head"><div class="section-title">' +
+      '<span class="section-num">' + sec.num + '</span><h2>' + sec.title + "</h2></div></div>" +
+      note + '<div class="asset-list">' + assets + "</div></section>";
+  }
+
+  // ---- render ----
+  function render() {
+    var q = state.query.trim().toLowerCase();
+    var html = "";
+    var shown = 0;
+
+    if (q) {
+      // Flat search results across all projects (respecting an active category).
+      var matches = PROJECTS.filter(function (p) {
+        if (state.cat !== "all" && p.category !== state.cat) return false;
+        return haystack(p).indexOf(q) !== -1;
+      });
+      shown = matches.length;
+      if (matches.length) {
+        html = '<section class="section"><div class="section-head"><div class="section-title">' +
+          '<h2>Search results</h2></div></div>' + gridHTML(matches) + "</section>";
+      }
+      els.count.textContent = shown + (shown === 1 ? " match" : " matches");
+    } else if (state.cat === "all") {
+      // Full directory: every section in order.
+      SECTIONS.forEach(function (sec) {
+        if (sec.id === "assets") { html += downloadsHTML(sec); return; }
+        var list = PROJECTS.filter(function (p) { return p.category === sec.id; });
+        if (list.length) html += sectionHTML(sec, list);
+      });
+      shown = PROJECTS.length;
+      els.count.textContent = "Showing all " + shown + " solutions";
+    } else if (state.cat === "assets") {
+      var asec = SECTIONS.filter(function (s) { return s.id === "assets"; })[0];
+      html = downloadsHTML(asec);
+      shown = DOWNLOADS.length;
+      els.count.textContent = shown + " downloads";
+    } else {
+      var sec = SECTIONS.filter(function (s) { return s.id === state.cat; })[0];
+      var list = PROJECTS.filter(function (p) { return p.category === state.cat; });
+      html = sectionHTML(sec, list);
+      shown = list.length;
+      els.count.textContent = shown + (shown === 1 ? " solution" : " solutions");
+    }
+
+    els.results.innerHTML = html;
+    els.empty.style.display = shown === 0 ? "block" : "none";
+  }
+
+  // ---- chips ----
+  function buildChips() {
+    var chips = [{ id: "all", label: "All", count: PROJECTS.length }];
+    SECTIONS.forEach(function (s) {
+      chips.push({ id: s.id, label: s.title.replace(/&mdash;.*$/, "").trim(), count: catCount(s.id) });
+    });
+    els.chips.innerHTML = chips.map(function (c) {
+      return '<button class="chip' + (c.id === state.cat ? " active" : "") + '" role="tab" data-cat="' + c.id + '">' +
+        c.label + '<span class="count">' + c.count + "</span></button>";
+    }).join("");
+  }
+  function setActiveChip() {
+    Array.prototype.forEach.call(els.chips.children, function (b) {
+      b.classList.toggle("active", b.getAttribute("data-cat") === state.cat);
+    });
+  }
+
+  // ---- events ----
+  els.chips.addEventListener("click", function (e) {
+    var btn = e.target.closest(".chip");
+    if (!btn) return;
+    state.cat = btn.getAttribute("data-cat");
+    setActiveChip();
+    render();
+    window.scrollTo({ top: document.querySelector(".controls").offsetTop - 4, behavior: "smooth" });
+  });
+  els.search.addEventListener("input", function () {
+    state.query = els.search.value;
+    els.clear.style.display = state.query ? "block" : "none";
+    render();
+  });
+  els.clear.addEventListener("click", function () {
+    els.search.value = ""; state.query = ""; els.clear.style.display = "none";
+    render(); els.search.focus();
+  });
+  document.getElementById("reset-link").addEventListener("click", function (e) {
+    e.preventDefault();
+    els.search.value = ""; state.query = ""; state.cat = "all"; els.clear.style.display = "none";
+    setActiveChip(); render();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "/" && document.activeElement !== els.search) { e.preventDefault(); els.search.focus(); }
+    if (e.key === "Escape" && document.activeElement === els.search && els.search.value) {
+      els.search.value = ""; state.query = ""; els.clear.style.display = "none"; render();
+    }
+  });
+
+  // ---- init ----
+  buildChips();
+  render();
+
+  // Progressive enhancement: mark recently-updated projects (needs http, not file://).
+  fetch("updates.json", { cache: "no-cache" })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (data) {
+      if (!data || !data.items) return;
+      data.items.forEach(function (it) { updated[it.href] = it.date; });
+      render();
+    })
+    .catch(function () { /* offline / file:// — silently skip NEW badges */ });
+})();
+</script>
 </body>
 </html>

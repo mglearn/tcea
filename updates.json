@@ -1,0 +1,285 @@
+{
+  "generated": "2026-07-01T19:33:25.894Z",
+  "items": [
+    {
+      "href": "ddp/index.html",
+      "title": "Data Display Patterns",
+      "category": "Dashboards and Decision Tools",
+      "icon": "📊",
+      "date": "2026-07-01T11:10:19-05:00"
+    },
+    {
+      "href": "blog/dats/index.html",
+      "title": "Assessment System RFP Scoring Tool",
+      "category": "Dashboards and Decision Tools",
+      "icon": "📊",
+      "date": "2026-07-01T10:41:19-05:00"
+    },
+    {
+      "href": "clear/breakouts/correlation.html",
+      "title": "Breakouts Correlation Guide",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-07-01T10:10:54-05:00"
+    },
+    {
+      "href": "clear/breakouts/index.html",
+      "title": "Critical Thinking Breakouts",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-07-01T08:20:19-05:00"
+    },
+    {
+      "href": "clear/breakouts/answer-key.html",
+      "title": "Breakouts Answer Key",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-06-30T19:45:14-05:00"
+    },
+    {
+      "href": "clear/index.html",
+      "title": "The CLEAR Crew — Detective Thinking Game",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-06-29T11:07:24-05:00"
+    },
+    {
+      "href": "vibe_app_intake_package/index.html",
+      "title": "School District App Intake Form",
+      "category": "Dashboards and Decision Tools",
+      "icon": "📊",
+      "date": "2026-06-26T09:17:14-05:00"
+    },
+    {
+      "href": "vcl/libvibes.html",
+      "title": "LibVibes Prompt Library",
+      "category": "AI Prompt Libraries and Adoption",
+      "icon": "🤖",
+      "date": "2026-06-22T08:40:41-05:00"
+    },
+    {
+      "href": "vpo/index.html",
+      "title": "Codex Project Organizer",
+      "category": "Featured Vibe-Coded Solutions",
+      "icon": "⭐",
+      "date": "2026-06-21T13:03:07-05:00"
+    },
+    {
+      "href": "tools/index.html",
+      "title": "TCEA Tools Menu",
+      "category": "Featured Vibe-Coded Solutions",
+      "icon": "⭐",
+      "date": "2026-06-20T15:16:40-05:00"
+    },
+    {
+      "href": "tools/shapespinner/index.html",
+      "title": "Classroom Shape Spinner",
+      "category": "Classroom Tools and Utilities",
+      "icon": "🧰",
+      "date": "2026-06-20T15:03:34-05:00"
+    },
+    {
+      "href": "vcll/index.html",
+      "title": "Vibe Coding Projects for Librarians",
+      "category": "Games, Activities, and Specialty Builds",
+      "icon": "🎲",
+      "date": "2026-06-20T12:49:04-05:00"
+    },
+    {
+      "href": "vcl/index.html",
+      "title": "Vibe-Coding for Librarians",
+      "category": "Featured Vibe-Coded Solutions",
+      "icon": "⭐",
+      "date": "2026-06-19T22:30:40-05:00"
+    },
+    {
+      "href": "custom-instructions-library/index.html",
+      "title": "TCEA AI Custom Instructions Library",
+      "category": "AI Prompt Libraries and Adoption",
+      "icon": "🤖",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "ai-essentials-prompt-library/index.html",
+      "title": "AI Essentials Prompt Library of 100",
+      "category": "AI Prompt Libraries and Adoption",
+      "icon": "🤖",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "k12-image-prompt-library/index.html",
+      "title": "K-12 Image Prompt Library",
+      "category": "AI Prompt Libraries and Adoption",
+      "icon": "🤖",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "ai-adoption-checklist/index.html",
+      "title": "Generative AI Adoption Checklist",
+      "category": "AI Prompt Libraries and Adoption",
+      "icon": "🤖",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "ai-adoption-roadmap/index.html",
+      "title": "AI Adoption Roadmap",
+      "category": "AI Prompt Libraries and Adoption",
+      "icon": "🤖",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "ai-adoption-roadmap/long.html",
+      "title": "AI Adoption Roadmap - Extended",
+      "category": "AI Prompt Libraries and Adoption",
+      "icon": "🤖",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "coach-tool/index.html",
+      "title": "High-Effect Strategy Coach",
+      "category": "Instructional Strategy Guides",
+      "icon": "📘",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "hesis/index.html",
+      "title": "Matching the Strategy to the Phase of Learning",
+      "category": "Instructional Strategy Guides",
+      "icon": "📘",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "surface-deep-transfer/index.html",
+      "title": "Comprehensive High-Impact Learning Phases",
+      "category": "Instructional Strategy Guides",
+      "icon": "📘",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "topspreso/index.html",
+      "title": "Top Instructional Strategies",
+      "category": "Instructional Strategy Guides",
+      "icon": "📘",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "topstrategies/index.html",
+      "title": "Beyond the 20 Percent Policy",
+      "category": "Instructional Strategy Guides",
+      "icon": "📘",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "dashboard/index.html",
+      "title": "TCEA Registration Dashboard",
+      "category": "Dashboards and Decision Tools",
+      "icon": "📊",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "buyback/index.html",
+      "title": "Buyback Technology Vendor Assessment Tool",
+      "category": "Dashboards and Decision Tools",
+      "icon": "📊",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "privacy-audit/index.html",
+      "title": "Family App Privacy Audit",
+      "category": "Dashboards and Decision Tools",
+      "icon": "📊",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "tools/wordsearch/index.html",
+      "title": "Classroom Word Search Maker",
+      "category": "Classroom Tools and Utilities",
+      "icon": "🧰",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "tools/memepuzzle/index.html",
+      "title": "Meme Puzzle Maker",
+      "category": "Classroom Tools and Utilities",
+      "icon": "🧰",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "tools/memepuzzle/student.html",
+      "title": "Meme Puzzle Student",
+      "category": "Classroom Tools and Utilities",
+      "icon": "🧰",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "tools/wheelspinner/index.html",
+      "title": "Classroom Wheel Spinner",
+      "category": "Classroom Tools and Utilities",
+      "icon": "🧰",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "tools/storywheel/index.html",
+      "title": "Story Wheel Maker",
+      "category": "Classroom Tools and Utilities",
+      "icon": "🧰",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "tools/dice/index.html",
+      "title": "Classroom Dice Roller",
+      "category": "Classroom Tools and Utilities",
+      "icon": "🧰",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "tools/drawsketch/index.html",
+      "title": "Draw and Sketch",
+      "category": "Classroom Tools and Utilities",
+      "icon": "🧰",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "tools/dicebreakers/index.html",
+      "title": "Dicebreaker Creator",
+      "category": "Classroom Tools and Utilities",
+      "icon": "🧰",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "tools/dicebreakers/play.html",
+      "title": "Dicebreaker Roll View",
+      "category": "Classroom Tools and Utilities",
+      "icon": "🧰",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "dailywrite/index.html",
+      "title": "Daily Quick Write Generator",
+      "category": "Courses and Educator Resources",
+      "icon": "🎓",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "tceaainews/index.html",
+      "title": "AI-Powered Newsletter Architecture",
+      "category": "Courses and Educator Resources",
+      "icon": "🎓",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "sharespace/index.html",
+      "title": "Vibe Coding a Free ShareSpace",
+      "category": "Featured Vibe-Coded Solutions",
+      "icon": "⭐",
+      "date": "2026-06-19T11:29:32-05:00"
+    },
+    {
+      "href": "checklist/index.html",
+      "title": "Generative AI Adoption Checklist Folder Version",
+      "category": "AI Prompt Libraries and Adoption",
+      "icon": "🤖",
+      "date": "2026-06-19T11:29:32-05:00"
+    }
+  ]
+}

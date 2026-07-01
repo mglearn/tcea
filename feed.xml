@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TCEA Vibe-Coded Solutions — Updates</title>
+    <link>https://mglearn.github.io/tcea/</link>
+    <atom:link href="https://mglearn.github.io/tcea/feed.xml" rel="self" type="application/rss+xml" />
+    <description>New and updated HTML tools, dashboards, prompt libraries, and classroom resources from TCEA.</description>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Jul 2026 19:33:25 GMT</lastBuildDate>
+    <image>
+      <url>https://mglearn.github.io/tcea/favicon.svg</url>
+      <title>TCEA Vibe-Coded Solutions — Updates</title>
+      <link>https://mglearn.github.io/tcea/</link>
+    </image>
+    <item>
+      <title>📊 Data Display Patterns</title>
+      <link>https://mglearn.github.io/tcea/ddp/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/ddp/index.html</guid>
+      <category>Dashboards and Decision Tools</category>
+      <pubDate>Wed, 01 Jul 2026 16:10:19 GMT</pubDate>
+      <description>A TCEA field guide to choosing the right chart and data-display pattern for dashboards and reports.</description>
+    </item>
+    <item>
+      <title>📊 Assessment System RFP Scoring Tool</title>
+      <link>https://mglearn.github.io/tcea/blog/dats/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/blog/dats/index.html</guid>
+      <category>Dashboards and Decision Tools</category>
+      <pubDate>Wed, 01 Jul 2026 15:41:19 GMT</pubDate>
+      <description>A weighted rubric for comparing district assessment systems, with non-negotiable gate checks and a side-by-side vendor comparison you can export to CSV.</description>
+    </item>
+    <item>
+      <title>🕵️ Breakouts Correlation Guide</title>
+      <link>https://mglearn.github.io/tcea/clear/breakouts/correlation.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/clear/breakouts/correlation.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Wed, 01 Jul 2026 15:10:54 GMT</pubDate>
+      <description>A multilingual correlation guide mapping the Critical Thinking Breakouts to standards and thinking skills.</description>
+    </item>
+    <item>
+      <title>🕵️ Critical Thinking Breakouts</title>
+      <link>https://mglearn.github.io/tcea/clear/breakouts/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/clear/breakouts/index.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Wed, 01 Jul 2026 13:20:19 GMT</pubDate>
+      <description>Grade-band breakout activities (3-5, 6-8, 9-12) across ELA, science, and social studies that teach evidence-based reasoning, available in seven languages.</description>
+    </item>
+    <item>
+      <title>🕵️ Breakouts Answer Key</title>
+      <link>https://mglearn.github.io/tcea/clear/breakouts/answer-key.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/clear/breakouts/answer-key.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Wed, 01 Jul 2026 00:45:14 GMT</pubDate>
+      <description>The facilitator answer key and recording sheet for running the Critical Thinking Breakouts activities.</description>
+    </item>
+    <item>
+      <title>🕵️ The CLEAR Crew — Detective Thinking Game</title>
+      <link>https://mglearn.github.io/tcea/clear/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/clear/index.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Mon, 29 Jun 2026 16:07:24 GMT</pubDate>
+      <description>Crack the case one clue at a time with the CLEAR thinking process — a critical-thinking checklist for young detectives.</description>
+    </item>
+    <item>
+      <title>📊 School District App Intake Form</title>
+      <link>https://mglearn.github.io/tcea/vibe_app_intake_package/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/vibe_app_intake_package/index.html</guid>
+      <category>Dashboards and Decision Tools</category>
+      <pubDate>Fri, 26 Jun 2026 14:17:14 GMT</pubDate>
+      <description>A teacher and staff app intake form for submitting apps for district review, with an optional Google Sheets backend for collecting requests.</description>
+    </item>
+    <item>
+      <title>🤖 LibVibes Prompt Library</title>
+      <link>https://mglearn.github.io/tcea/vcl/libvibes.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/vcl/libvibes.html</guid>
+      <category>AI Prompt Libraries and Adoption</category>
+      <pubDate>Mon, 22 Jun 2026 13:40:41 GMT</pubDate>
+      <description>Nineteen library-focused vibe-coding starter prompts, each with a VIBES game plan and its own linkable page, all nineteen built and playable.</description>
+    </item>
+    <item>
+      <title>⭐ Codex Project Organizer</title>
+      <link>https://mglearn.github.io/tcea/vpo/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/vpo/index.html</guid>
+      <category>Featured Vibe-Coded Solutions</category>
+      <pubDate>Sun, 21 Jun 2026 18:03:07 GMT</pubDate>
+      <description>A beginner-friendly brief builder that turns a project idea into a structured Markdown prompt for AI-assisted coding, with a modular version for defining inputs, outputs, and tests.</description>
+    </item>
+    <item>
+      <title>⭐ TCEA Tools Menu</title>
+      <link>https://mglearn.github.io/tcea/tools/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/tools/index.html</guid>
+      <category>Featured Vibe-Coded Solutions</category>
+      <pubDate>Sat, 20 Jun 2026 20:16:40 GMT</pubDate>
+      <description>The launch menu for classroom utilities including spinners, dice, word search, drawing, puzzles, and fortune tools.</description>
+    </item>
+    <item>
+      <title>🧰 Classroom Shape Spinner</title>
+      <link>https://mglearn.github.io/tcea/tools/shapespinner/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/tools/shapespinner/index.html</guid>
+      <category>Classroom Tools and Utilities</category>
+      <pubDate>Sat, 20 Jun 2026 20:03:34 GMT</pubDate>
+      <description>A shape spinner for math, discussion, selection, and quick classroom activities.</description>
+    </item>
+    <item>
+      <title>🎲 Vibe Coding Projects for Librarians</title>
+      <link>https://mglearn.github.io/tcea/vcll/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/vcll/index.html</guid>
+      <category>Games, Activities, and Specialty Builds</category>
+      <pubDate>Sat, 20 Jun 2026 17:49:04 GMT</pubDate>
+      <description>The session companion site with library use cases, starter prompts, and downloadable tools for vibe-coding free alternatives to Padlet, Slido, and FigJam.</description>
+    </item>
+    <item>
+      <title>⭐ Vibe-Coding for Librarians</title>
+      <link>https://mglearn.github.io/tcea/vcl/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/vcl/index.html</guid>
+      <category>Featured Vibe-Coded Solutions</category>
+      <pubDate>Sat, 20 Jun 2026 03:30:40 GMT</pubDate>
+      <description>A companion website with librarian-focused tools, use cases, prompts, and downloadable vibe-coding resources.</description>
+    </item>
+    <item>
+      <title>🤖 TCEA AI Custom Instructions Library</title>
+      <link>https://mglearn.github.io/tcea/custom-instructions-library/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/custom-instructions-library/index.html</guid>
+      <category>AI Prompt Libraries and Adoption</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>Reusable AI personas and custom instructions for productivity, planning, writing, and educator workflows.</description>
+    </item>
+    <item>
+      <title>🤖 AI Essentials Prompt Library of 100</title>
+      <link>https://mglearn.github.io/tcea/ai-essentials-prompt-library/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/ai-essentials-prompt-library/index.html</guid>
+      <category>AI Prompt Libraries and Adoption</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>A searchable set of educator prompts for AI Essentials training and classroom support.</description>
+    </item>
+    <item>
+      <title>🤖 K-12 Image Prompt Library</title>
+      <link>https://mglearn.github.io/tcea/k12-image-prompt-library/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/k12-image-prompt-library/index.html</guid>
+      <category>AI Prompt Libraries and Adoption</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>Classroom, library, and office-ready image prompts organized by task and instructional use.</description>
+    </item>
+    <item>
+      <title>🤖 Generative AI Adoption Checklist</title>
+      <link>https://mglearn.github.io/tcea/ai-adoption-checklist/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/ai-adoption-checklist/index.html</guid>
+      <category>AI Prompt Libraries and Adoption</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>A step-by-step institutional checklist for thoughtful generative AI adoption.</description>
+    </item>
+    <item>
+      <title>🤖 AI Adoption Roadmap</title>
+      <link>https://mglearn.github.io/tcea/ai-adoption-roadmap/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/ai-adoption-roadmap/index.html</guid>
+      <category>AI Prompt Libraries and Adoption</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>An interactive roadmap for district and campus AI adoption stages, policies, and implementation moves.</description>
+    </item>
+    <item>
+      <title>🤖 AI Adoption Roadmap - Extended</title>
+      <link>https://mglearn.github.io/tcea/ai-adoption-roadmap/long.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/ai-adoption-roadmap/long.html</guid>
+      <category>AI Prompt Libraries and Adoption</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>The longer version of the AI adoption roadmap with expanded guidance and phase detail.</description>
+    </item>
+    <item>
+      <title>📘 High-Effect Strategy Coach</title>
+      <link>https://mglearn.github.io/tcea/coach-tool/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/coach-tool/index.html</guid>
+      <category>Instructional Strategy Guides</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>An interactive K-12 coaching tool for selecting and applying high-effect instructional strategies.</description>
+    </item>
+    <item>
+      <title>📘 Matching the Strategy to the Phase of Learning</title>
+      <link>https://mglearn.github.io/tcea/hesis/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/hesis/index.html</guid>
+      <category>Instructional Strategy Guides</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>A guide to aligning visible learning strategies with surface, deep, and transfer learning.</description>
+    </item>
+    <item>
+      <title>📘 Comprehensive High-Impact Learning Phases</title>
+      <link>https://mglearn.github.io/tcea/surface-deep-transfer/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/surface-deep-transfer/index.html</guid>
+      <category>Instructional Strategy Guides</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>A visual reference for surface, deep, and transfer learning with strategy recommendations.</description>
+    </item>
+    <item>
+      <title>📘 Top Instructional Strategies</title>
+      <link>https://mglearn.github.io/tcea/topspreso/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/topspreso/index.html</guid>
+      <category>Instructional Strategy Guides</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>A presentation-style guide to instructional strategies worth embracing for stronger learning outcomes.</description>
+    </item>
+    <item>
+      <title>📘 Beyond the 20 Percent Policy</title>
+      <link>https://mglearn.github.io/tcea/topstrategies/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/topstrategies/index.html</guid>
+      <category>Instructional Strategy Guides</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>Classroom strategy guidance for responding to restrictive AI policies with better instructional design.</description>
+    </item>
+    <item>
+      <title>📊 TCEA Registration Dashboard</title>
+      <link>https://mglearn.github.io/tcea/dashboard/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/dashboard/index.html</guid>
+      <category>Dashboards and Decision Tools</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>A course registration and revenue dashboard for tracking professional development activity.</description>
+    </item>
+    <item>
+      <title>📊 Buyback Technology Vendor Assessment Tool</title>
+      <link>https://mglearn.github.io/tcea/buyback/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/buyback/index.html</guid>
+      <category>Dashboards and Decision Tools</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>A structured tool for evaluating buyback technology vendors against district priorities.</description>
+    </item>
+    <item>
+      <title>📊 Family App Privacy Audit</title>
+      <link>https://mglearn.github.io/tcea/privacy-audit/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/privacy-audit/index.html</guid>
+      <category>Dashboards and Decision Tools</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>A 15-minute interactive guide for reviewing app permissions on a child's device.</description>
+    </item>
+    <item>
+      <title>🧰 Classroom Word Search Maker</title>
+      <link>https://mglearn.github.io/tcea/tools/wordsearch/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/tools/wordsearch/index.html</guid>
+      <category>Classroom Tools and Utilities</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>Create classroom word searches from custom terms and themes.</description>
+    </item>
+    <item>
+      <title>🧰 Meme Puzzle Maker</title>
+      <link>https://mglearn.github.io/tcea/tools/memepuzzle/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/tools/memepuzzle/index.html</guid>
+      <category>Classroom Tools and Utilities</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>Create and configure meme-based puzzles for classroom use.</description>
+    </item>
+    <item>
+      <title>🧰 Meme Puzzle Student</title>
+      <link>https://mglearn.github.io/tcea/tools/memepuzzle/student.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/tools/memepuzzle/student.html</guid>
+      <category>Classroom Tools and Utilities</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>The student-facing view for completing meme puzzle activities.</description>
+    </item>
+    <item>
+      <title>🧰 Classroom Wheel Spinner</title>
+      <link>https://mglearn.github.io/tcea/tools/wheelspinner/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/tools/wheelspinner/index.html</guid>
+      <category>Classroom Tools and Utilities</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>A customizable spinner for names, prompts, choices, and classroom routines.</description>
+    </item>
+    <item>
+      <title>🧰 Story Wheel Maker</title>
+      <link>https://mglearn.github.io/tcea/tools/storywheel/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/tools/storywheel/index.html</guid>
+      <category>Classroom Tools and Utilities</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>A wheel-based generator for story ideas and writing prompts.</description>
+    </item>
+    <item>
+      <title>🧰 Classroom Dice Roller</title>
+      <link>https://mglearn.github.io/tcea/tools/dice/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/tools/dice/index.html</guid>
+      <category>Classroom Tools and Utilities</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>A flexible dice roller for games, questions, grouping, and classroom decisions.</description>
+    </item>
+    <item>
+      <title>🧰 Draw and Sketch</title>
+      <link>https://mglearn.github.io/tcea/tools/drawsketch/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/tools/drawsketch/index.html</guid>
+      <category>Classroom Tools and Utilities</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>A quick sketching surface for drawing, annotation, and visual classroom prompts.</description>
+    </item>
+    <item>
+      <title>🧰 Dicebreaker Creator</title>
+      <link>https://mglearn.github.io/tcea/tools/dicebreakers/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/tools/dicebreakers/index.html</guid>
+      <category>Classroom Tools and Utilities</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>Create dice-based icebreaker activities for groups, meetings, and classes.</description>
+    </item>
+    <item>
+      <title>🧰 Dicebreaker Roll View</title>
+      <link>https://mglearn.github.io/tcea/tools/dicebreakers/play.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/tools/dicebreakers/play.html</guid>
+      <category>Classroom Tools and Utilities</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>The play view for rolling and running a Dicebreaker activity.</description>
+    </item>
+    <item>
+      <title>🎓 Daily Quick Write Generator</title>
+      <link>https://mglearn.github.io/tcea/dailywrite/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/dailywrite/index.html</guid>
+      <category>Courses and Educator Resources</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>Generate daily quick write prompts for classroom routines and literacy practice.</description>
+    </item>
+    <item>
+      <title>🎓 AI-Powered Newsletter Architecture</title>
+      <link>https://mglearn.github.io/tcea/tceaainews/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/tceaainews/index.html</guid>
+      <category>Courses and Educator Resources</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>A Lunch and Learn resource for building AI-assisted newsletter workflows for educators.</description>
+    </item>
+    <item>
+      <title>⭐ Vibe Coding a Free ShareSpace</title>
+      <link>https://mglearn.github.io/tcea/sharespace/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/sharespace/index.html</guid>
+      <category>Featured Vibe-Coded Solutions</category>
+      <pubDate>Fri, 19 Jun 2026 16:29:32 GMT</pubDate>
+      <description>A slide-style walkthrough for building a free Padlet-style sharing space with a downloadable demo solution.</description>
+    </item>
+    <item>
+      <title>🤖 Generative AI Adoption Checklist Folder Version</title>
+      <link>https://mglearn.github.io/tcea/checklist/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/checklist/index.html</guid>
+      <category>AI Prompt Libraries and Adoption</category>
+      <pubDate>Fri, 19 Jun 2026 16:29:32 GMT</pubDate>
+      <description>A packaged folder version of the adoption checklist for distribution or embedding.</description>
+    </item>
+  </channel>
+</rss>
