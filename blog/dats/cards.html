@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>District Assessment System Vendor Cards</title>
+<style>
+  :root{
+    --navy:#0A3476;
+    --navy-dark:#071f4a;
+    --navy-mid:#12428f;
+    --gold:#FCB040;
+    --gold-pale:#FEF0D0;
+    --sky:#e8f1ff;
+    --mint:#e8fff5;
+    --lav:#f0eafe;
+    --rose:#fff0f3;
+    --ink:#172033;
+    --muted:#5c677a;
+    --line:#d7deea;
+    --card:#ffffff;
+    --bg:#f6f8fc;
+    --good:#137a4c;
+    --warn:#8a5a00;
+    --shadow:0 18px 45px rgba(7,31,74,.16);
+    --radius:22px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;min-height:100%;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:linear-gradient(135deg,#f7f9fe 0%,#ecf3ff 54%,#fff7e8 100%)}
+  a{color:var(--navy);font-weight:750;text-decoration:none}
+  a:hover{text-decoration:underline}
+  .app{max-width:1120px;margin:0 auto;padding:22px clamp(14px,3vw,28px) 28px}
+  .hero{display:grid;grid-template-columns:1.3fr .7fr;gap:18px;align-items:stretch;margin-bottom:16px}
+  .titleBox{background:var(--navy);color:white;border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .titleBox:after{content:"";position:absolute;right:-72px;top:-72px;width:220px;height:220px;border-radius:999px;background:rgba(252,176,64,.22)}
+  h1{font-size:clamp(1.65rem,3.2vw,2.7rem);line-height:1.04;margin:0 0 8px;letter-spacing:-.03em}
+  .lead{font-size:clamp(.98rem,1.6vw,1.12rem);line-height:1.48;margin:0;color:#e8eefb;max-width:68ch}
+  .noteBox{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:0 10px 30px rgba(7,31,74,.08)}
+  .noteBox h2{font-size:1rem;margin:0 0 8px;color:var(--navy)}
+  .noteBox p{margin:0;color:var(--muted);line-height:1.45;font-size:.92rem}
+  .controls{display:grid;grid-template-columns:auto auto 1fr auto;gap:12px;align-items:center;margin:14px 0}
+  button,.select{border:1px solid var(--line);background:#fff;color:var(--navy-dark);border-radius:999px;padding:12px 16px;font-weight:800;box-shadow:0 8px 20px rgba(7,31,74,.08)}
+  button{cursor:pointer}
+  button:hover{border-color:var(--gold);transform:translateY(-1px)}
+  button:focus,.select:focus,a:focus{outline:3px solid rgba(252,176,64,.55);outline-offset:2px}
+  .select{width:100%;appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--navy) 50%),linear-gradient(135deg,var(--navy) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px,6px 6px;background-repeat:no-repeat}
+  .stage{position:relative;min-height:520px}
+  .card{display:none;background:var(--card);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);overflow:hidden}
+  .card.active{display:grid;grid-template-columns:.82fr 1.18fr;animation:fade .22s ease-out}
+  @keyframes fade{from{opacity:.35;transform:translateY(4px)}to{opacity:1;transform:none}}
+  .side{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-mid) 55%,#183c80 100%);color:#fff;padding:24px;display:flex;flex-direction:column;gap:16px;position:relative;overflow:hidden}
+  .side:after{content:"";position:absolute;right:-80px;bottom:-80px;width:220px;height:220px;border-radius:999px;background:rgba(252,176,64,.18)}
+  .tag{display:inline-flex;align-self:flex-start;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:7px 10px;font-size:.78rem;font-weight:800;letter-spacing:.02em;text-transform:uppercase}
+  .vendorName{font-size:clamp(1.55rem,3vw,2.35rem);line-height:1.02;margin:0;letter-spacing:-.035em}
+  .vendorSub{margin:0;color:#dbe6ff;font-size:.98rem;line-height:1.4}
+  .scoreBlock{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:20px;padding:16px;backdrop-filter:blur(8px)}
+  .scoreRow{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin-bottom:8px}
+  .scoreNum{font-size:2.65rem;font-weight:900;line-height:.9;color:#fff}
+  .scoreLabel{font-size:.8rem;color:#e8eefb;text-align:right;font-weight:750}
+  .meter{height:12px;background:rgba(255,255,255,.22);border-radius:999px;overflow:hidden}
+  .fill{height:100%;width:var(--w);background:linear-gradient(90deg,var(--gold),#fff1b8);border-radius:999px}
+  .fit{background:#fff;color:var(--ink);border-radius:20px;padding:14px;position:relative;z-index:1}
+  .fit h3{margin:0 0 8px;font-size:.9rem;color:var(--navy);text-transform:uppercase;letter-spacing:.03em}
+  .fit p{margin:0;color:var(--ink);line-height:1.4;font-size:.93rem}
+  .links{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;position:relative;z-index:1}
+  .links a{display:inline-flex;border-radius:999px;background:#fff;color:var(--navy);padding:10px 12px;font-size:.85rem;font-weight:850;border:1px solid rgba(255,255,255,.6)}
+  .body{padding:24px;display:grid;gap:16px}
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .panel{border:1px solid var(--line);border-radius:18px;padding:14px;background:#fff}
+  .panel.tint{background:var(--sky)}
+  .panel h3{margin:0 0 8px;color:var(--navy);font-size:.95rem}
+  .panel ul{margin:0;padding-left:18px;color:var(--ink);line-height:1.45;font-size:.93rem}
+  .panel li{margin:4px 0}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{border-radius:999px;padding:7px 10px;font-size:.78rem;font-weight:800;border:1px solid var(--line);background:#f7f9fe;color:var(--navy-dark)}
+  .chip.good{background:#eaf8f1;color:var(--good);border-color:#c7ead9}
+  .chip.warn{background:#fff7df;color:var(--warn);border-color:#f7d88a}
+  .subscores{display:grid;gap:10px}
+  .sub{display:grid;grid-template-columns:124px 1fr 34px;gap:8px;align-items:center;font-size:.82rem;color:var(--muted)}
+  .miniMeter{height:8px;background:#e9edf5;border-radius:999px;overflow:hidden}
+  .miniFill{height:100%;width:var(--mw);background:var(--navy);border-radius:999px}
+  .progress{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px;flex-wrap:wrap}
+  .dot{width:12px;height:12px;border-radius:999px;border:0;background:#c4ccda;padding:0;box-shadow:none}
+  .dot.active{width:34px;background:var(--gold)}
+  .count{text-align:center;color:var(--muted);font-weight:750;font-size:.9rem;margin-top:6px}
+  .footer{margin-top:14px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px;color:var(--muted);font-size:.88rem;line-height:1.45}
+  .footer strong{color:var(--navy)}
+  @media (max-width:880px){
+    .hero{grid-template-columns:1fr}
+    .card.active{grid-template-columns:1fr}
+    .stage{min-height:0}
+    .grid{grid-template-columns:1fr}
+  }
+  @media (max-width:560px){
+    .app{padding:12px}
+    .controls{grid-template-columns:1fr 1fr}.controls .select{grid-column:1 / -1;order:-1}
+    #randomBtn{grid-column:1 / -1}
+    button,.select{padding:11px 12px}
+    .titleBox,.side,.body{padding:18px}
+    .sub{grid-template-columns:98px 1fr 30px}
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <section class="hero" aria-labelledby="pageTitle">
+    <div class="titleBox">
+      <h1 id="pageTitle">District Assessment System Vendor Cards</h1>
+      <p class="lead">Flip through public-info snapshots for common K-12 assessment platforms. Use this as an early screening aid before demos, security review, and reference checks.</p>
+    </div>
+    <aside class="noteBox">
+      <h2>How to read the score</h2>
+      <p>The score is an estimated fit against a district assessment-system rubric using public product information. It is not a final RFP score. Require vendor-provided evidence before procurement.</p>
+    </aside>
+  </section>
+
+  <div class="controls" aria-label="Vendor card controls">
+    <button id="prevBtn" type="button" aria-label="Previous vendor">‹ Previous</button>
+    <button id="randomBtn" type="button" aria-label="Show a random vendor">Random vendor</button>
+    <select id="vendorSelect" class="select" aria-label="Choose a vendor"></select>
+    <button id="nextBtn" type="button" aria-label="Next vendor">Next ›</button>
+  </div>
+
+  <main id="stage" class="stage" aria-live="polite"></main>
+  <div id="dots" class="progress" aria-label="Vendor card position"></div>
+  <div id="count" class="count"></div>
+
+  <div class="footer">
+    <strong>Use in an RFP:</strong> Treat these cards as a pre-screen. Ask each vendor for security documentation, accessibility conformance, data-export details, implementation scope, item-bank licensing, interoperability support, and references from districts similar to yours.
+  </div>
+</div>
+
+<script>
+const vendors = [
+  {
+    name:'Eduphoria Aware', company:'Eduphoria', type:'District assessment management', score:84,
+    home:'https://www.eduphoria.com/products/aware', source:'https://support.eduphoria.net/docs/item-and-test-banks',
+    best:'Texas districts wanting local assessment creation, item banks, quick teacher-facing reports, and familiar standards workflows.',
+    stats:['Aware advertises pre-vetted test item banks and fifteen interactive item types.','Students can access assessment scores through the student interface.','Local item banks allow users to create, manage, and reuse questions.'],
+    strengths:['Strong district-created assessment workflow','Item bank and local item management','Good fit when TEKS-aligned local assessment is central'],
+    watch:['Verify export options before migration','Confirm accessibility documentation and SSO details','Check item-bank licensing and third-party bank costs'],
+    chips:['Assessment creation','Item banks','Texas fit','Teacher reports'],
+    subs:{'Instructional fit':4,'Standards/items':4,'Delivery/scoring':4,'Data action':4,'Interoperability':3,'Privacy/accessibility':4,'Support/cost':3}
+  },
+  {
+    name:'Mastery Connect', company:'Instructure', type:'Formative and benchmark assessment', score:85,
+    home:'https://www.instructure.com/mastery', source:'https://www.instructure.com/mastery/item-bank',
+    best:'Districts using Canvas or wanting standards-based formative checks, benchmark assessments, and PLC-friendly progress monitoring.',
+    stats:['Mastery Item Bank promotes 100K+ vetted, standards-aligned items.','Mastery Connect supports item-based formative and benchmark assessments.','Product messaging emphasizes Canvas connection and intervention planning.'],
+    strengths:['Large item-bank signal','Canvas alignment for districts already in that environment','Useful for formative checks and benchmark assessment cycles'],
+    watch:['Clarify non-Canvas experience','Ask how historical data migrates','Verify district-wide reporting needs beyond classroom assessment'],
+    chips:['100K+ items','Canvas connection','Benchmark assessment','PLC use'],
+    subs:{'Instructional fit':4,'Standards/items':5,'Delivery/scoring':4,'Data action':4,'Interoperability':4,'Privacy/accessibility':4,'Support/cost':3}
+  },
+  {
+    name:'Performance Matters', company:'PowerSchool', type:'Assessment and analytics platform', score:86,
+    home:'https://www.powerschool.com/solutions/personalized-learning/performance-matters/', source:'https://uc.powerschool-docs.com/performance-matters/latest/assessment-manager',
+    best:'Districts already in PowerSchool or looking for common district assessments, online or scan-sheet administration, and analytics in one environment.',
+    stats:['PowerSchool describes Performance Matters as support for classroom-level and common district assessments.','Assessment Manager can make tests available online or with scan sheets.','Student Item Analysis is part of the documented reporting workflow.'],
+    strengths:['Assessment plus analytics orientation','Online and paper workflow support','Potential value inside a PowerSchool-heavy district'],
+    watch:['Ask about implementation complexity','Clarify pricing across modules','Verify data portability outside the PowerSchool environment'],
+    chips:['Common assessments','Analytics','Scan sheets','PowerSchool ecosystem'],
+    subs:{'Instructional fit':4,'Standards/items':4,'Delivery/scoring':4,'Data action':5,'Interoperability':4,'Privacy/accessibility':4,'Support/cost':3}
+  },
+  {
+    name:'LinkIt!', company:'LinkIt!', type:'Assessment, analytics, and intervention support', score:84,
+    home:'https://www.linkit.com/', source:'https://www.linkit.com/products-services/assessment-solutions',
+    best:'Districts wanting local assessment capture, benchmark content, analytics, and MTSS or intervention management in one connected workflow.',
+    stats:['LinkIt! describes its platform as assessment management, data analytics, and intervention support.','Assessment Solutions include online and paper-based administration.','The platform promotes benchmark assessments, item banks, and progress monitoring tools.'],
+    strengths:['Assessment and MTSS connection','Online and paper testing support','Data warehouse and reporting emphasis'],
+    watch:['Clarify item-bank depth by state and subject','Ask for SIS and LMS integration evidence','Require role-based permissions and audit details'],
+    chips:['MTSS','Data analytics','Benchmark content','Paper and online'],
+    subs:{'Instructional fit':4,'Standards/items':4,'Delivery/scoring':4,'Data action':5,'Interoperability':4,'Privacy/accessibility':3,'Support/cost':3}
+  },
+  {
+    name:'DMAC Solutions', company:'DMAC', type:'Texas-focused assessment and data suite', score:82,
+    home:'https://www.dmac-solutions.net/', source:'https://www.dmac-solutions.net/online-testing',
+    best:'Texas districts that need TEKS-aligned local testing, STAAR/TELPAS reporting, interim assessment analysis, and accountability-oriented reports.',
+    stats:['DMAC reports cover STAAR, TELPAS, and Interim assessments by district, campus, teacher, or student.','TAG and TEKScore are positioned for TEKS-aligned assessment creation, administration, and analysis.','Real-time data insights and one-click reports are emphasized for local assessments.'],
+    strengths:['Strong Texas assessment fit','State assessment and accountability reporting','Local TEKS-aligned assessment workflow'],
+    watch:['May be less relevant outside Texas','Confirm modern user experience expectations','Check interoperability and export details closely'],
+    chips:['TEKS','STAAR/TELPAS','TAG','TEKScore'],
+    subs:{'Instructional fit':4,'Standards/items':4,'Delivery/scoring':4,'Data action':5,'Interoperability':3,'Privacy/accessibility':3,'Support/cost':4}
+  },
+  {
+    name:'Otus', company:'Otus', type:'Assessment, data, progress monitoring, and grading', score:81,
+    home:'https://otus.com/', source:'https://otus.com/platform',
+    best:'Districts wanting assessment data alongside grades, behavior, attendance, standards-based grading, and student performance views.',
+    stats:['Otus says it combines data, assessment, progress monitoring, and grading.','The platform page emphasizes automated data sharing from partners such as MAP Growth and DreamBox.','Public messaging focuses on real-time trends and reports for PLCs and leaders.'],
+    strengths:['Unified data view','Assessment plus grading and progress monitoring','Useful for standards-based grading districts'],
+    watch:['Clarify whether it replaces or surrounds your assessment system','Verify assessment authoring depth','Review Gen AI data-use controls carefully'],
+    chips:['Unified data','Progress monitoring','Gradebook','Standards-based grading'],
+    subs:{'Instructional fit':4,'Standards/items':3,'Delivery/scoring':3,'Data action':5,'Interoperability':4,'Privacy/accessibility':4,'Support/cost':3}
+  },
+  {
+    name:'Renaissance DnA', company:'Renaissance', type:'Assessment creation and management', score:85,
+    home:'https://www.renaissance.com/products/assessment/dna/', source:'https://www.renaissance.com/products/assessment/dna/',
+    best:'Districts wanting classroom formative, benchmark or common formative, and end-of-course assessment in a single standards-based platform.',
+    stats:['Renaissance DnA promotes classroom formative, benchmark/common formative, and end-of-course summative assessments.','The product page cites more than 80,000 standards- and DOK-aligned items.','Public materials emphasize prebuilt and custom reporting for instruction and district decisions.'],
+    strengths:['Large item-bank signal','Multiple assessment levels in one system','Custom reporting orientation'],
+    watch:['Clarify relationship to legacy Illuminate workflows','Ask about migration from existing item banks','Verify licensing across Renaissance products'],
+    chips:['80,000+ items','DOK-aligned','Benchmark','Custom reports'],
+    subs:{'Instructional fit':4,'Standards/items':5,'Delivery/scoring':4,'Data action':4,'Interoperability':4,'Privacy/accessibility':4,'Support/cost':3}
+  },
+  {
+    name:'Cambium Assessment', company:'Cambium Assessment', type:'Large-scale online testing', score:80,
+    home:'https://www.cambiumassessment.com/', source:'https://www.cambiumlearning.com/about-us/news/6106/cambium-assessment-breaks-assessment-record-in-2025-and-announces-newest-and-futu',
+    best:'States, large programs, or districts needing high-scale secure online testing more than everyday teacher-created classroom assessment.',
+    stats:['Cambium reported more than 130 million assessments administered in 2025.','The company reported support for 1.5 million simultaneous test takers and more than 16 million students in 2025.','Public pages emphasize customized standards-based assessments and large-scale statewide programs.'],
+    strengths:['Scale and secure testing infrastructure','State assessment experience','High-volume operational capacity'],
+    watch:['May be too large-scale for local assessment management alone','Clarify district-level authoring and reporting workflows','Expect custom scoping and contract review'],
+    chips:['130M+ assessments','1.5M simultaneous','State testing','Scale'],
+    subs:{'Instructional fit':3,'Standards/items':4,'Delivery/scoring':5,'Data action':4,'Interoperability':4,'Privacy/accessibility':5,'Support/cost':2}
+  },
+  {
+    name:'NWEA MAP Growth', company:'NWEA', type:'Growth assessment', score:78,
+    home:'https://www.nwea.org/map-growth/', source:'https://www.nwea.org/map-growth/',
+    best:'Districts needing trusted growth data in K-12 math, reading, language usage, and science, especially for planning support and measuring progress over time.',
+    stats:['MAP Growth covers K-12 math, reading, language usage, and science.','NWEA reports more than 13 million students served, 35,900+ schools, and 4,500+ districts.','Profile reports are positioned for student, class, school, and district-level insights.'],
+    strengths:['Strong growth-measure signal','Large adoption footprint','Useful reports for student growth conversations'],
+    watch:['Not a full local assessment-authoring replacement','Ask how data joins your local assessment data','Clarify Spanish-language and subject availability for your grades'],
+    chips:['13M+ students','K-12 growth','Math/reading/science','Reports'],
+    subs:{'Instructional fit':4,'Standards/items':3,'Delivery/scoring':4,'Data action':5,'Interoperability':4,'Privacy/accessibility':4,'Support/cost':3}
+  },
+  {
+    name:'i-Ready Assessment', company:'Curriculum Associates', type:'Adaptive diagnostic and assessment suite', score:77,
+    home:'https://www.curriculumassociates.com/programs/i-ready-assessment', source:'https://www.curriculumassociates.com/programs/i-ready-assessment',
+    best:'Districts seeking adaptive reading and mathematics diagnostics, foundational reading tasks, standards-based measures, and a connection to instructional next steps.',
+    stats:['i-Ready Assessment lists Literacy and Mathematics for grades K-12, with English and Spanish language support.','The suite brings adaptive assessment, foundational reading tasks, and standards-based measures into one platform.','i-Ready Inform is the new name for the former i-Ready Diagnostic.'],
+    strengths:['Adaptive diagnostic signal','Reading and math focus','Instructional next-step orientation'],
+    watch:['Not a broad local assessment-management replacement by itself','Review screen-time and instructional-use expectations','Verify current data privacy terms and any active legal concerns'],
+    chips:['Adaptive','K-12','Reading/math','English/Spanish'],
+    subs:{'Instructional fit':4,'Standards/items':3,'Delivery/scoring':4,'Data action':4,'Interoperability':3,'Privacy/accessibility':3,'Support/cost':3}
+  },
+  {
+    name:'Renaissance Star Assessments', company:'Renaissance', type:'Screening and progress monitoring', score:76,
+    home:'https://www.renaissance.com/products/assessment/star-assessments/', source:'https://www.renaissance.com/products/assessment/star-assessments/',
+    best:'Districts needing research-based screening and progress monitoring data in reading and math, especially as part of intervention cycles.',
+    stats:['Star Assessments are positioned for screening and progress monitoring.','Renaissance describes the data as instructionally meaningful and focused on reading and math growth.','Star Reading, Star Math, and Star Early Literacy are common product names in the Star family.'],
+    strengths:['Progress monitoring orientation','Reading and math screening','Useful intervention-cycle data'],
+    watch:['Not a full item-authoring or benchmark platform by itself','Check fit with local assessment workflows','Clarify Renaissance bundle pricing'],
+    chips:['Screening','Progress monitoring','Reading/math','Intervention'],
+    subs:{'Instructional fit':4,'Standards/items':3,'Delivery/scoring':4,'Data action':4,'Interoperability':3,'Privacy/accessibility':4,'Support/cost':3}
+  },
+  {
+    name:'Schoolnet', company:'Pearson', type:'Standards-aligned assessment platform', score:74,
+    home:'https://www.pearsonassessments.com/large-scale-assessments/district-assessment/schoolnet.html', source:'https://support.assessment.pearson.com/spaces/SCHOOL/pages/143491569/Assessment%2BCreation%2Bin%2BSchoolnet',
+    best:'Districts with existing Schoolnet workflows that need to compare the incumbent fairly against newer assessment and analytics systems.',
+    stats:['Pearson describes Schoolnet as a platform to create, manage, administer, monitor, and collect data from standards-aligned assessments.','Support documentation covers manual benchmark and classroom category tests with new or existing items.','Public report library materials include benchmark results, student analysis, and KPI dashboard references.'],
+    strengths:['Known incumbent in many districts','Standards-aligned assessment workflow','Benchmark and classroom assessment support'],
+    watch:['Run teacher usability checks, not just admin checks','Verify roadmap and modernization plans','Make data export and item migration a major RFP issue'],
+    chips:['Incumbent benchmark','Standards-aligned','Benchmark tests','Reports'],
+    subs:{'Instructional fit':3,'Standards/items':4,'Delivery/scoring':4,'Data action':3,'Interoperability':3,'Privacy/accessibility':4,'Support/cost':3}
+  }
+];
+let index = 0;
+const stage = document.getElementById('stage');
+const dots = document.getElementById('dots');
+const count = document.getElementById('count');
+const select = document.getElementById('vendorSelect');
+function esc(s){return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function subScoreHTML(subs){
+  return Object.entries(subs).map(([k,v]) => `<div class="sub"><span>${esc(k)}</span><div class="miniMeter" aria-hidden="true"><div class="miniFill" style="--mw:${v*20}%"></div></div><strong>${v}/5</strong></div>`).join('');
+}
+function cardHTML(v,i){
+  return `<article class="card ${i===index?'active':''}" aria-label="${esc(v.name)} vendor card">
+    <section class="side">
+      <span class="tag">${esc(v.type)}</span>
+      <h2 class="vendorName">${esc(v.name)}</h2>
+      <p class="vendorSub">${esc(v.company)} · public-info assessment snapshot</p>
+      <div class="scoreBlock">
+        <div class="scoreRow"><div class="scoreNum">${v.score}</div><div class="scoreLabel">Estimated rubric<br>fit score / 100</div></div>
+        <div class="meter" role="img" aria-label="Estimated rubric fit score ${v.score} out of 100"><div class="fill" style="--w:${v.score}%"></div></div>
+      </div>
+      <div class="fit"><h3>Best-fit use case</h3><p>${esc(v.best)}</p></div>
+      <div class="links">
+        <a href="${esc(v.home)}" target="_blank" rel="noopener">Home website</a>
+        <a href="${esc(v.source)}" target="_blank" rel="noopener">Source note</a>
+      </div>
+    </section>
+    <section class="body">
+      <div class="chips">${v.chips.map(c=>`<span class="chip ${c.match(/M\+|K-12|items|Scale|TEKS|MTSS|Analytics|Screening|Adaptive/i)?'good':''}">${esc(c)}</span>`).join('')}</div>
+      <div class="grid">
+        <div class="panel tint"><h3>Pertinent public stats</h3><ul>${v.stats.map(s=>`<li>${esc(s)}</li>`).join('')}</ul></div>
+        <div class="panel"><h3>Likely strengths</h3><ul>${v.strengths.map(s=>`<li>${esc(s)}</li>`).join('')}</ul></div>
+        <div class="panel"><h3>RFP watch-outs</h3><ul>${v.watch.map(s=>`<li>${esc(s)}</li>`).join('')}</ul></div>
+        <div class="panel"><h3>Mini rubric profile</h3><div class="subscores">${subScoreHTML(v.subs)}</div></div>
+      </div>
+    </section>
+  </article>`;
+}
+function render(){
+  stage.innerHTML = vendors.map(cardHTML).join('');
+  dots.innerHTML = vendors.map((v,i)=>`<button class="dot ${i===index?'active':''}" type="button" aria-label="Show ${esc(v.name)}" data-i="${i}"></button>`).join('');
+  count.textContent = `${index+1} of ${vendors.length}: ${vendors[index].name}`;
+  select.value = String(index);
+}
+vendors.forEach((v,i)=>{
+  const opt=document.createElement('option'); opt.value=String(i); opt.textContent=v.name; select.appendChild(opt);
+});
+document.getElementById('prevBtn').addEventListener('click',()=>{index=(index-1+vendors.length)%vendors.length;render();});
+document.getElementById('nextBtn').addEventListener('click',()=>{index=(index+1)%vendors.length;render();});
+document.getElementById('randomBtn').addEventListener('click',()=>{
+  if(vendors.length < 2){render();return;}
+  let next = index;
+  while(next === index){next = Math.floor(Math.random() * vendors.length);}
+  index = next;
+  render();
+});
+select.addEventListener('change',e=>{index=Number(e.target.value);render();});
+dots.addEventListener('click',e=>{const b=e.target.closest('button[data-i]'); if(b){index=Number(b.dataset.i);render();}});
+window.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){index=(index+1)%vendors.length;render();} if(e.key==='ArrowLeft'){index=(index-1+vendors.length)%vendors.length;render();}});
+render();
+</script>
+</body>
+</html>
