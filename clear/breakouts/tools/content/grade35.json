@@ -721,7 +721,7 @@
     {
      "type": "seq",
      "title": "Lock 4: The Warm-Up Order",
-     "q": "The freezer warmed up. Tap the states of water in the correct order as HEAT was added, from coldest solid to warmest gas (use Pages 3 and 5).",
+     "q": "The freezer warmed up. Tap the states of water in the correct order as HEAT was added (use Pages 3 and 5) — read the labels and clues to decide which comes first.",
      "pads": [
       {
        "key": "solid",
@@ -839,7 +839,7 @@
      },
      {
       "title": "Candado 4: El Orden del Calentamiento",
-      "q": "El congelador se calentó. Toca los estados del agua en el orden correcto a medida que se añadía CALOR, del sólido más frío al gas más caliente (usa las Páginas 3 y 5).",
+      "q": "El congelador se calentó. Toca los estados del agua en el orden correcto a medida que se AGREGÓ calor (usa las Páginas 3 y 5): lee las etiquetas y las pistas para decidir cuál va primero.",
       "reason": "La Página 3 muestra que el hielo sólido se fundió en agua líquida, y la Página 5 dice que el calor cambia el sólido a líquido y a gas. Las pistas dan el orden exacto del calentamiento."
      },
      {
@@ -921,7 +921,7 @@
      },
      {
       "title": "Khóa 4: Thứ Tự Khi Ấm Lên",
-      "q": "Tủ đông ấm lên. Hãy chạm vào các thể của nước theo đúng thứ tự khi NHIỆT được thêm vào, từ thể rắn lạnh nhất đến thể khí nóng nhất (dùng Trang 3 và 5).",
+      "q": "Tủ đông ấm lên. Chạm vào các trạng thái của nước theo đúng thứ tự khi NHIỆT được thêm vào (dùng Trang 3 và 5) — đọc nhãn và manh mối để quyết định cái nào đến trước.",
       "reason": "Trang 3 cho thấy đá rắn nóng chảy thành nước lỏng, và Trang 5 nói rằng nhiệt làm thể rắn chuyển thành thể lỏng rồi thành thể khí. Các manh mối cho thứ tự nóng lên chính xác."
      },
      {
@@ -1002,7 +1002,7 @@
      },
      {
       "title": "锁4：变暖的顺序",
-      "q": "冰柜变暖了。请按照加入热量的正确顺序，从最冷的固体到最热的气体，依次点出水的各种状态（使用第3页和第5页）。",
+      "q": "冰箱变暖了。当热量被加入时，按正确的顺序点击水的各种状态（使用第3页和第5页）——阅读标签和线索来判断哪个在前。",
       "reason": "第3页显示固态冰熔化成了液态水，第5页说加热使固体变成液体再变成气体。线索给出了确切的加热顺序。"
      },
      {
@@ -1084,7 +1084,7 @@
      },
      {
       "title": "ताला 4: गर्म होने का क्रम",
-      "q": "फ्रीज़र गर्म हो गया। जैसे-जैसे गर्मी जोड़ी गई, उसी सही क्रम में पानी की अवस्थाओं को छुओ, सबसे ठंडे ठोस से सबसे गर्म गैस तक (पन्ना 3 और 5 का उपयोग करो)।",
+      "q": "फ्रीज़र गर्म हो गया। जैसे-जैसे ऊष्मा दी गई, पानी की अवस्थाओं को सही क्रम में टैप करें (पेज 3 और 5 का उपयोग करें) — लेबल और संकेतों को पढ़कर तय करें कि कौन-सी पहले आती है।",
       "reason": "पन्ना 3 दिखाता है कि ठोस बर्फ़ पिघलकर तरल पानी में बदली, और पन्ना 5 कहता है कि गर्म करने से ठोस तरल में और तरल गैस में बदलता है। सुराग गर्म होने का सटीक क्रम देते हैं।"
      },
      {
@@ -1167,7 +1167,7 @@
      },
      {
       "title": "القفل 4: ترتيب الاحترار",
-      "q": "ارتفعت حرارة المُجمِّد. انقُر على حالات الماء بالترتيب الصحيح مع إضافة الحرارة، من الصلب الأبرد إلى الغاز الأدفأ (استخدم الصفحتين 3 و5).",
+      "q": "دفأت الثلاجة. اضغط على حالات الماء بالترتيب الصحيح كلما أُضيفت الحرارة (استخدم الصفحتين 3 و5) — اقرأ الملصقات والأدلة لتقرر أيها يأتي أولاً.",
       "reason": "تُظهِر الصفحة 3 أن الثلج الصلب انصهر إلى ماء سائل، وتقول الصفحة 5 إن التسخين يحوّل الصلب إلى سائل ثم إلى غاز. تعطي الأدلة ترتيب التسخين الدقيق."
      },
      {
@@ -1249,7 +1249,7 @@
      },
      {
       "title": "تالہ 4: گرم ہونے کی ترتیب",
-      "q": "فریزر گرم ہو گیا۔ جیسے جیسے حرارت شامل کی گئی، اسی درست ترتیب میں پانی کی حالتوں کو چھوؤ، سب سے ٹھنڈے ٹھوس سے سب سے گرم گیس تک (صفحہ 3 اور 5 کا استعمال کرو)۔",
+      "q": "فریزر گرم ہو گیا۔ جیسے جیسے حرارت شامل کی گئی، پانی کی حالتوں کو درست ترتیب میں ٹیپ کریں (صفحہ 3 اور 5 استعمال کریں) — لیبل اور اشارے پڑھ کر فیصلہ کریں کہ کون سی پہلے آتی ہے۔",
       "reason": "صفحہ 3 دکھاتا ہے کہ ٹھوس برف پگھل کر مائع پانی میں بدلی، اور صفحہ 5 کہتا ہے کہ گرم کرنے سے ٹھوس مائع میں اور مائع گیس میں بدلتا ہے۔ سراغ گرم ہونے کی صحیح ترتیب دیتے ہیں۔"
      },
      {
@@ -3397,7 +3397,7 @@
     {
      "type": "seq",
      "title": "Lock 5: Sort the Statement",
-     "q": "Tap the steps IN ORDER to decide if a statement is a fact: First read it, then look for a signal word, then decide if you can prove it, then label it.",
+     "q": "Tap the steps IN ORDER to decide if a statement is a fact — use the clues to work out which step must come first.",
      "reason": "Smart readers follow a process: read closely, hunt for opinion signal words, ask 'can I check this?', then label it fact or opinion. Following the steps in order keeps you from guessing.",
      "pads": [
       {
@@ -3515,7 +3515,7 @@
      },
      {
       "title": "Cerradura 5: Ordena la Afirmación",
-      "q": "Toca los pasos EN ORDEN para decidir si una afirmación es un hecho: Primero léela, luego busca una palabra señal, luego decide si la puedes probar, luego etiquétala.",
+      "q": "Toca los pasos EN ORDEN para decidir si una afirmación es un hecho: usa las pistas para averiguar qué paso va primero.",
       "reason": "Los lectores inteligentes siguen un proceso: leen con atención, buscan palabras señal de opinión, preguntan '¿puedo comprobar esto?', luego la etiquetan como hecho u opinión. Seguir los pasos en orden te evita adivinar."
      }
     ],
@@ -3607,7 +3607,7 @@
      },
      {
       "title": "Ổ Khóa 5: Sắp Xếp Câu Nói",
-      "q": "Nhấn các bước THEO THỨ TỰ để quyết định một câu có phải là sự thật không: Trước tiên đọc nó, rồi tìm từ báo hiệu, rồi quyết định em có chứng minh được không, rồi dán nhãn cho nó.",
+      "q": "Chạm vào các bước THEO THỨ TỰ để quyết định một câu có phải là sự thật hay không — dùng manh mối để tìm ra bước nào phải đến trước.",
       "reason": "Người đọc thông minh làm theo một quy trình: đọc kỹ, săn tìm từ báo hiệu ý kiến, tự hỏi 'mình kiểm chứng được không?', rồi dán nhãn là sự thật hay ý kiến. Làm theo thứ tự các bước giúp em không đoán mò."
      }
     ],
@@ -3697,7 +3697,7 @@
      },
      {
       "title": "第5把锁：整理这句陈述",
-      "q": "按顺序点击各个步骤，来判断一句陈述是不是事实：先读它，然后找信号词，然后判断你能不能证明它，最后给它贴标签。",
+      "q": "按顺序点击各个步骤，来判断一句话是否是事实——用线索找出哪一步必须在最前面。",
       "reason": "聪明的读者遵循一个流程：仔细读，寻找观点信号词，问'我能核查这个吗？'，然后把它标为事实或观点。按顺序遵循步骤能让你不靠猜。"
      }
     ],
@@ -3787,7 +3787,7 @@
      },
      {
       "title": "ताला 5: कथन को क्रम में लगाओ",
-      "q": "यह तय करने के लिए कि कोई कथन तथ्य है या नहीं, चरणों को क्रम में टैप करो: पहले इसे पढ़ो, फिर संकेत शब्द ढूँढो, फिर तय करो कि क्या तुम इसे साबित कर सकते हो, फिर इस पर लेबल लगाओ।",
+      "q": "किसी कथन के तथ्य होने का निर्णय करने के लिए चरणों को क्रम में टैप करें — संकेतों का उपयोग करके पता लगाएँ कि कौन-सा चरण पहले आना चाहिए।",
       "reason": "समझदार पाठक एक प्रक्रिया का पालन करते हैं: ध्यान से पढ़ो, राय के संकेत शब्द खोजो, पूछो 'क्या मैं इसे जाँच सकता हूँ?', फिर इसे तथ्य या राय का लेबल दो। चरणों को क्रम में मानने से तुम अंदाज़ा लगाने से बच जाते हो।"
      }
     ],
@@ -3877,7 +3877,7 @@
      },
      {
       "title": "القفل 5: رتّب العبارة",
-      "q": "انقر على الخطوات بالترتيب لتقرر ما إذا كانت العبارة حقيقة: أولًا اقرأها، ثم ابحث عن كلمة إشارة، ثم قرّر إن كنت تستطيع إثباتها، ثم صنّفها.",
+      "q": "اضغط على الخطوات بالترتيب لتقرر إن كانت العبارة حقيقة — استخدم الأدلة لتكتشف أي خطوة يجب أن تأتي أولاً.",
       "reason": "القرّاء الأذكياء يتبعون خطوات: يقرأون بتمعّن، يبحثون عن كلمات إشارة الرأي، يسألون 'هل أستطيع التحقق من هذا؟'، ثم يصنفونها حقيقة أو رأيًا. اتّباع الخطوات بالترتيب يمنعك من التخمين."
      }
     ],
@@ -3967,7 +3967,7 @@
      },
      {
       "title": "تالا 5: بیان کو ترتیب دو",
-      "q": "یہ طے کرنے کے لیے کہ کوئی بیان حقیقت ہے یا نہیں، مرحلوں کو ترتیب سے ٹیپ کرو: پہلے اسے پڑھو، پھر اشارہ لفظ ڈھونڈو، پھر طے کرو کہ کیا تم اسے ثابت کر سکتے ہو، پھر اس پر لیبل لگاؤ۔",
+      "q": "یہ فیصلہ کرنے کے لیے کہ کوئی بیان حقیقت ہے یا نہیں، مراحل کو ترتیب سے ٹیپ کریں — اشاروں کی مدد سے معلوم کریں کہ کون سا مرحلہ پہلے آنا چاہیے۔",
       "reason": "سمجھدار پڑھنے والے ایک طریقہ اپناتے ہیں: غور سے پڑھو، رائے کے اشارہ لفظ تلاش کرو، پوچھو 'کیا میں اسے جانچ سکتا ہوں؟'، پھر اسے حقیقت یا رائے کا لیبل دو۔ مرحلوں کو ترتیب سے اپنانا تمہیں اندازہ لگانے سے بچاتا ہے۔"
      }
     ],

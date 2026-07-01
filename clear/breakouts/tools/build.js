@@ -96,7 +96,11 @@ function mergeLock(m, lb, i){
     o.answer=[...new Set(all)];
   }
   else if(m.type==='seq'){ o.pads=m.pads.map((p,k)=>({k:p.key,e:p.emoji,c:PAD_COLORS[k%PAD_COLORS.length]})); o.answer=m.order; }
-  else if(m.type==='multi'){ o.items=m.items.map((it,k)=>({t:(lb&&lb.items&&lb.items[k])||it.text, strong:!!it.strong})); }
+  else if(m.type==='multi'){ o.items=m.items.map((it,k)=>{
+    const tr=lb&&lb.items&&lb.items[k];
+    const text=(tr&&typeof tr==='object')?tr.text:(tr||it.text); // master items are {text,strong}; translations are strings
+    return {t:text, strong:!!it.strong};
+  }); }
   return o;
 }
 
