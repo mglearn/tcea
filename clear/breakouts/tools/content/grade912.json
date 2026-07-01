@@ -5351,6 +5351,2172 @@
   }
  },
  {
+  "slug": "g912-ss-government",
+  "grade": "grade912",
+  "subject": "Social Studies",
+  "teks": "US Government 7-8",
+  "icon": "⚖️",
+  "master": {
+   "title": "The Locked Constitution Vault",
+   "sub": "A power-hungry official has sealed the archive to push through an unconstitutional order. Only citizens who understand how the branches check each other can crack the codes.",
+   "missionTitle": "Mission Brief: Restore the Balance",
+   "missionBody": "The National Archive Vault has been locked from the inside. An acting official is trying to bypass the courts, silence a newspaper, and rule alone. Inside the vault are five evidence cards drawn from the Constitution and the Bill of Rights. Open each clue, read carefully, and use ONLY what the clues prove to solve the locks. Do not rely on outside knowledge — the vault only trusts the evidence in front of you. Crack all locks to reopen the Archive and restore separation of powers.",
+   "clues": [
+    {
+     "ico": "🏛️",
+     "nm": "Three Branches",
+     "title": "Article I, II, III",
+     "body": "The Constitution creates three branches. Article I gives lawmaking power to Congress (the Legislative branch). Article II gives the power to enforce laws to the President (the Executive branch). Article III gives the power to interpret laws and decide cases to the Courts (the Judicial branch)."
+    },
+    {
+     "ico": "🔁",
+     "nm": "Checks & Balances",
+     "title": "How Branches Check Each Other",
+     "body": "Congress passes a bill. The President can veto it. Congress can override that veto with a two-thirds vote in both houses. The Supreme Court can then rule a law unconstitutional through judicial review. Each branch can limit the others so no branch becomes too powerful."
+    },
+    {
+     "ico": "🗣️",
+     "nm": "First Amendment",
+     "title": "Bill of Rights: Speech & Press",
+     "body": "The First Amendment protects freedom of speech, freedom of the press, freedom of religion, the right to assemble peaceably, and the right to petition the government. Government may not shut down a newspaper simply for criticizing officials."
+    },
+    {
+     "ico": "⚖️",
+     "nm": "Fair Trials",
+     "title": "4th, 5th & 6th Amendments",
+     "body": "The Fourth Amendment guards against unreasonable searches and seizures. The Fifth Amendment guarantees due process of law. The Sixth Amendment gives the accused the right to a speedy and public trial by an impartial jury and the right to a lawyer."
+    },
+    {
+     "ico": "🌽",
+     "nm": "Archive Menu",
+     "title": "Cafeteria Notice (Decoy)",
+     "body": "The Archive cafeteria will serve chili, cornbread, and iced tea on Fridays. Please return trays to the window. This notice has nothing to do with constitutional powers and will not help you solve any lock."
+    }
+   ],
+   "locks": [
+    {
+     "type": "mc",
+     "title": "Whose Power?",
+     "q": "The official wants to WRITE and PASS a brand-new law by himself. According to the clues, which branch actually holds the power to make laws?",
+     "reason": "Article I gives lawmaking power to Congress, the Legislative branch — not the President.",
+     "options": [
+      "The Executive branch (President)",
+      "The Legislative branch (Congress)",
+      "The Judicial branch (Courts)",
+      "No branch — any official may make laws"
+     ],
+     "answerIndex": 1
+    },
+    {
+     "type": "word",
+     "title": "Silenced Newspaper",
+     "q": "The official ordered a newspaper shut down for criticizing him. Which single freedom, named in the clues, does this violate? Type one word.",
+     "reason": "The First Amendment clue protects freedom of the press, so shutting a paper for criticism violates press freedom.",
+     "accepted": [
+      "press",
+      "freedom of press",
+      "freedom of the press",
+      "free press"
+     ]
+    },
+    {
+     "type": "digit",
+     "title": "Override Code",
+     "q": "A bill was vetoed by the President. What fraction of BOTH houses must vote to override the veto? Enter the two digits of that fraction with no slash (for example, one-half would be 12).",
+     "reason": "The Checks & Balances clue states Congress can override a veto with a two-thirds vote.",
+     "digitAnswer": "23"
+    },
+    {
+     "type": "seq",
+     "title": "Path of a Law",
+     "q": "Arrange the steps a disputed law actually travels through, using the Checks & Balances clue to decide which action comes first and which comes last.",
+     "reason": "Per the clue: Congress passes a bill, the President vetoes, Congress overrides with two-thirds, and finally the Court can strike it down by judicial review.",
+     "pads": [
+      {
+       "key": "pass",
+       "emoji": "🏛️",
+       "label": "Congress passes the bill"
+      },
+      {
+       "key": "veto",
+       "emoji": "🚫",
+       "label": "President vetoes it"
+      },
+      {
+       "key": "override",
+       "emoji": "🔁",
+       "label": "Congress overrides the veto"
+      },
+      {
+       "key": "court",
+       "emoji": "⚖️",
+       "label": "Court rules it unconstitutional"
+      }
+     ],
+     "order": [
+      "pass",
+      "veto",
+      "override",
+      "court"
+     ]
+    },
+    {
+     "type": "multi",
+     "title": "Rights of the Accused",
+     "q": "The official jailed a critic with NO trial and NO lawyer. Based ONLY on the clues, select every protection this action violates.",
+     "reason": "The 4th/5th/6th clue guarantees due process, a jury trial, and a right to a lawyer; the decoy menu proves nothing.",
+     "items": [
+      {
+       "text": "The right to a trial by an impartial jury",
+       "strong": true
+      },
+      {
+       "text": "The right to due process of law",
+       "strong": true
+      },
+      {
+       "text": "The right to a lawyer",
+       "strong": true
+      },
+      {
+       "text": "The right to free cornbread on Fridays",
+       "strong": false
+      },
+      {
+       "text": "The right to veto a bill personally",
+       "strong": false
+      }
+     ]
+    }
+   ],
+   "win": {
+    "stamp": "BALANCE RESTORED ✓",
+    "h2": "The Vault Reopens!",
+    "p": "You used evidence-based reasoning to apply separation of powers, checks and balances, and the Bill of Rights — proving each conclusion from the clues instead of guessing."
+   }
+  },
+  "langs": {
+   "es": {
+    "title": "La Bóveda Sellada de la Constitución",
+    "sub": "Un funcionario ávido de poder selló el archivo para imponer una orden inconstitucional. Solo los ciudadanos que entienden cómo se controlan las ramas podrán descifrar los códigos.",
+    "missionTitle": "Informe de Misión: Restaura el Equilibrio",
+    "missionBody": "La Bóveda del Archivo Nacional fue cerrada desde adentro. Un funcionario interino intenta evadir los tribunales, silenciar un periódico y gobernar solo. Dentro hay cinco tarjetas de evidencia tomadas de la Constitución y la Carta de Derechos. Abre cada pista, lee con cuidado y usa SOLO lo que las pistas prueban para resolver los candados. No uses conocimiento externo: la bóveda solo confía en la evidencia frente a ti. Descifra todos los candados para reabrir el Archivo y restaurar la separación de poderes.",
+    "clues": [
+     {
+      "nm": "Tres Ramas",
+      "title": "Artículos I, II, III",
+      "body": "La Constitución crea tres ramas. El Artículo I da el poder de hacer leyes al Congreso (la rama Legislativa). El Artículo II da el poder de hacer cumplir las leyes al Presidente (la rama Ejecutiva). El Artículo III da el poder de interpretar las leyes y decidir casos a los Tribunales (la rama Judicial)."
+     },
+     {
+      "nm": "Pesos y Contrapesos",
+      "title": "Cómo se Controlan las Ramas",
+      "body": "El Congreso aprueba un proyecto de ley. El Presidente puede vetarlo. El Congreso puede anular ese veto con un voto de dos tercios en ambas cámaras. La Corte Suprema puede luego declarar una ley inconstitucional mediante la revisión judicial. Cada rama puede limitar a las otras para que ninguna sea demasiado poderosa."
+     },
+     {
+      "nm": "Primera Enmienda",
+      "title": "Carta de Derechos: Expresión y Prensa",
+      "body": "La Primera Enmienda protege la libertad de expresión, la libertad de prensa, la libertad de religión, el derecho de reunión pacífica y el derecho de peticionar al gobierno. El gobierno no puede cerrar un periódico solo por criticar a los funcionarios."
+     },
+     {
+      "nm": "Juicios Justos",
+      "title": "Enmiendas 4, 5 y 6",
+      "body": "La Cuarta Enmienda protege contra registros y confiscaciones irrazonables. La Quinta Enmienda garantiza el debido proceso legal. La Sexta Enmienda otorga al acusado el derecho a un juicio rápido y público por un jurado imparcial y el derecho a un abogado."
+     },
+     {
+      "nm": "Menú del Archivo",
+      "title": "Aviso de la Cafetería (Señuelo)",
+      "body": "La cafetería del Archivo servirá chili, pan de maíz y té helado los viernes. Por favor devuelva las bandejas a la ventanilla. Este aviso no tiene nada que ver con los poderes constitucionales y no le ayudará a resolver ningún candado."
+     }
+    ],
+    "locks": [
+     {
+      "title": "¿De Quién es el Poder?",
+      "q": "El funcionario quiere ESCRIBIR y APROBAR una ley nueva por sí solo. Según las pistas, ¿qué rama realmente tiene el poder de hacer leyes?",
+      "reason": "El Artículo I da el poder de hacer leyes al Congreso, la rama Legislativa, no al Presidente.",
+      "options": [
+       "La rama Ejecutiva (Presidente)",
+       "La rama Legislativa (Congreso)",
+       "La rama Judicial (Tribunales)",
+       "Ninguna rama: cualquier funcionario puede hacer leyes"
+      ]
+     },
+     {
+      "title": "Periódico Silenciado",
+      "q": "El funcionario ordenó cerrar un periódico por criticarlo. ¿Qué libertad, nombrada en las pistas, viola esto? Escribe una palabra.",
+      "reason": "La pista de la Primera Enmienda protege la libertad de prensa, así que cerrar un periódico por criticar viola la libertad de prensa.",
+      "accepted": [
+       "prensa",
+       "libertad de prensa",
+       "libertad de la prensa"
+      ]
+     },
+     {
+      "title": "Código de Anulación",
+      "q": "Un proyecto de ley fue vetado por el Presidente. ¿Qué fracción de AMBAS cámaras debe votar para anular el veto? Ingresa los dos dígitos de esa fracción sin barra (por ejemplo, un medio sería 12).",
+      "reason": "La pista de Pesos y Contrapesos dice que el Congreso puede anular un veto con un voto de dos tercios."
+     },
+     {
+      "title": "El Camino de una Ley",
+      "q": "Ordena los pasos que realmente recorre una ley en disputa, usando la pista de Pesos y Contrapesos para decidir qué acción va primero y cuál va al final.",
+      "reason": "Según la pista: el Congreso aprueba un proyecto, el Presidente veta, el Congreso anula con dos tercios y finalmente la Corte puede anularla mediante revisión judicial.",
+      "pads": [
+       {
+        "label": "El Congreso aprueba el proyecto"
+       },
+       {
+        "label": "El Presidente lo veta"
+       },
+       {
+        "label": "El Congreso anula el veto"
+       },
+       {
+        "label": "La Corte lo declara inconstitucional"
+       }
+      ]
+     },
+     {
+      "title": "Derechos del Acusado",
+      "q": "El funcionario encarceló a un crítico SIN juicio y SIN abogado. Basándote SOLO en las pistas, selecciona todas las protecciones que esta acción viola.",
+      "reason": "La pista de las Enmiendas 4/5/6 garantiza el debido proceso, un juicio por jurado y el derecho a un abogado; el menú señuelo no prueba nada.",
+      "items": [
+       "El derecho a un juicio por un jurado imparcial",
+       "El derecho al debido proceso legal",
+       "El derecho a un abogado",
+       "El derecho a pan de maíz gratis los viernes",
+       "El derecho a vetar un proyecto de ley personalmente"
+      ]
+     }
+    ],
+    "win": {
+     "stamp": "EQUILIBRIO RESTAURADO ✓",
+     "h2": "¡La Bóveda se Reabre!",
+     "p": "Usaste el razonamiento basado en evidencia para aplicar la separación de poderes, los pesos y contrapesos y la Carta de Derechos, probando cada conclusión con las pistas en lugar de adivinar."
+    }
+   },
+   "vi": {
+    "title": "Hầm Khóa Hiến Pháp",
+    "sub": "Một quan chức khát quyền lực đã niêm phong kho lưu trữ để thông qua một mệnh lệnh vi hiến. Chỉ những công dân hiểu cách các nhánh kiểm soát lẫn nhau mới có thể phá được mật mã.",
+    "missionTitle": "Nhiệm Vụ: Khôi Phục Sự Cân Bằng",
+    "missionBody": "Hầm Lưu Trữ Quốc Gia đã bị khóa từ bên trong. Một quan chức tạm quyền đang cố né tránh tòa án, bịt miệng một tờ báo và cai trị một mình. Bên trong hầm có năm thẻ bằng chứng lấy từ Hiến pháp và Tuyên ngôn Nhân quyền. Hãy mở từng manh mối, đọc kỹ và CHỈ dùng những gì manh mối chứng minh để giải các ổ khóa. Đừng dùng kiến thức bên ngoài — hầm chỉ tin vào bằng chứng trước mặt bạn. Phá tất cả ổ khóa để mở lại Kho Lưu Trữ và khôi phục sự phân chia quyền lực.",
+    "clues": [
+     {
+      "nm": "Ba Nhánh",
+      "title": "Điều I, II, III",
+      "body": "Hiến pháp tạo ra ba nhánh. Điều I trao quyền làm luật cho Quốc hội (nhánh Lập pháp). Điều II trao quyền thi hành luật cho Tổng thống (nhánh Hành pháp). Điều III trao quyền giải thích luật và xét xử các vụ án cho Tòa án (nhánh Tư pháp)."
+     },
+     {
+      "nm": "Kiểm Soát & Cân Bằng",
+      "title": "Các Nhánh Kiểm Soát Nhau Thế Nào",
+      "body": "Quốc hội thông qua một dự luật. Tổng thống có thể phủ quyết nó. Quốc hội có thể bác bỏ phủ quyết đó bằng hai phần ba số phiếu ở cả hai viện. Sau đó Tòa án Tối cao có thể tuyên một luật là vi hiến thông qua quyền giám sát tư pháp. Mỗi nhánh có thể giới hạn các nhánh khác để không nhánh nào quá mạnh."
+     },
+     {
+      "nm": "Tu Chính Án Thứ Nhất",
+      "title": "Tuyên Ngôn Nhân Quyền: Ngôn Luận & Báo Chí",
+      "body": "Tu chính án thứ nhất bảo vệ tự do ngôn luận, tự do báo chí, tự do tôn giáo, quyền hội họp ôn hòa và quyền kiến nghị chính phủ. Chính phủ không được đóng cửa một tờ báo chỉ vì nó chỉ trích quan chức."
+     },
+     {
+      "nm": "Xét Xử Công Bằng",
+      "title": "Tu Chính Án 4, 5 & 6",
+      "body": "Tu chính án thứ tư bảo vệ chống lại việc khám xét và tịch thu vô lý. Tu chính án thứ năm bảo đảm quy trình tố tụng hợp pháp. Tu chính án thứ sáu cho bị cáo quyền được xét xử nhanh chóng và công khai bởi bồi thẩm đoàn vô tư và quyền có luật sư."
+     },
+     {
+      "nm": "Thực Đơn Kho Lưu Trữ",
+      "title": "Thông Báo Căng Tin (Mồi Nhử)",
+      "body": "Căng tin Kho Lưu Trữ sẽ phục vụ ớt chili, bánh ngô và trà đá vào các thứ Sáu. Vui lòng trả khay về cửa sổ. Thông báo này không liên quan gì đến quyền lực hiến pháp và sẽ không giúp bạn giải bất kỳ ổ khóa nào."
+     }
+    ],
+    "locks": [
+     {
+      "title": "Quyền Của Ai?",
+      "q": "Quan chức muốn TỰ MÌNH VIẾT và THÔNG QUA một luật mới. Theo các manh mối, nhánh nào thực sự nắm quyền làm luật?",
+      "reason": "Điều I trao quyền làm luật cho Quốc hội, nhánh Lập pháp, không phải Tổng thống.",
+      "options": [
+       "Nhánh Hành pháp (Tổng thống)",
+       "Nhánh Lập pháp (Quốc hội)",
+       "Nhánh Tư pháp (Tòa án)",
+       "Không nhánh nào — bất kỳ quan chức nào cũng có thể làm luật"
+      ]
+     },
+     {
+      "title": "Tờ Báo Bị Bịt Miệng",
+      "q": "Quan chức ra lệnh đóng cửa một tờ báo vì đã chỉ trích ông ta. Điều này vi phạm quyền tự do nào được nêu trong manh mối? Gõ một từ.",
+      "reason": "Manh mối Tu chính án thứ nhất bảo vệ tự do báo chí, nên đóng cửa một tờ báo vì chỉ trích là vi phạm tự do báo chí.",
+      "accepted": [
+       "báo chí",
+       "tự do báo chí"
+      ]
+     },
+     {
+      "title": "Mã Bác Bỏ",
+      "q": "Một dự luật đã bị Tổng thống phủ quyết. Cần bao nhiêu phần của CẢ HAI viện bỏ phiếu để bác bỏ phủ quyết? Nhập hai chữ số của phân số đó không có dấu gạch chéo (ví dụ, một phần hai là 12).",
+      "reason": "Manh mối Kiểm soát & Cân bằng nói Quốc hội có thể bác bỏ phủ quyết bằng hai phần ba số phiếu."
+     },
+     {
+      "title": "Con Đường Của Một Luật",
+      "q": "Sắp xếp các bước mà một luật đang tranh chấp thực sự trải qua, dùng manh mối Kiểm soát & Cân bằng để quyết định hành động nào đến trước và hành động nào đến cuối.",
+      "reason": "Theo manh mối: Quốc hội thông qua dự luật, Tổng thống phủ quyết, Quốc hội bác bỏ bằng hai phần ba, và cuối cùng Tòa án có thể bãi bỏ nó bằng giám sát tư pháp.",
+      "pads": [
+       {
+        "label": "Quốc hội thông qua dự luật"
+       },
+       {
+        "label": "Tổng thống phủ quyết nó"
+       },
+       {
+        "label": "Quốc hội bác bỏ phủ quyết"
+       },
+       {
+        "label": "Tòa án tuyên nó vi hiến"
+       }
+      ]
+     },
+     {
+      "title": "Quyền Của Bị Cáo",
+      "q": "Quan chức bỏ tù một người chỉ trích mà KHÔNG xét xử và KHÔNG có luật sư. Chỉ dựa vào các manh mối, hãy chọn mọi sự bảo vệ mà hành động này vi phạm.",
+      "reason": "Manh mối Tu chính án 4/5/6 bảo đảm quy trình tố tụng, xét xử bởi bồi thẩm đoàn và quyền có luật sư; thực đơn mồi nhử không chứng minh gì cả.",
+      "items": [
+       "Quyền được xét xử bởi bồi thẩm đoàn vô tư",
+       "Quyền được hưởng quy trình tố tụng hợp pháp",
+       "Quyền có luật sư",
+       "Quyền được ăn bánh ngô miễn phí vào thứ Sáu",
+       "Quyền tự mình phủ quyết một dự luật"
+      ]
+     }
+    ],
+    "win": {
+     "stamp": "CÂN BẰNG ĐÃ KHÔI PHỤC ✓",
+     "h2": "Hầm Đã Mở Lại!",
+     "p": "Bạn đã dùng lập luận dựa trên bằng chứng để áp dụng sự phân chia quyền lực, kiểm soát và cân bằng, và Tuyên ngôn Nhân quyền, chứng minh mỗi kết luận từ manh mối thay vì đoán mò."
+    }
+   },
+   "zh": {
+    "title": "上锁的宪法金库",
+    "sub": "一名渴权的官员封锁了档案库，想强行推行一项违宪命令。只有懂得各部门如何相互制衡的公民才能破解密码。",
+    "missionTitle": "任务简报：恢复平衡",
+    "missionBody": "国家档案金库被人从内部锁上了。一名代理官员正试图绕过法院、封杀一份报纸并独自统治。金库内有五张证据卡，取自宪法和权利法案。打开每条线索，仔细阅读，只用线索所能证明的内容来解锁。不要依赖外部知识——金库只相信你眼前的证据。破解所有锁，重新打开档案库，恢复三权分立。",
+    "clues": [
+     {
+      "nm": "三大部门",
+      "title": "第一、二、三条",
+      "body": "宪法设立了三个部门。第一条把立法权交给国会（立法部门）。第二条把执行法律的权力交给总统（行政部门）。第三条把解释法律和审理案件的权力交给法院（司法部门）。"
+     },
+     {
+      "nm": "制衡",
+      "title": "各部门如何相互制约",
+      "body": "国会通过一项法案。总统可以否决它。国会可以以两院各三分之二的票数推翻该否决。之后最高法院可以通过司法审查裁定某项法律违宪。每个部门都能限制其他部门，使任何一个部门都不会过于强大。"
+     },
+     {
+      "nm": "第一修正案",
+      "title": "权利法案：言论与新闻",
+      "body": "第一修正案保护言论自由、新闻自由、宗教自由、和平集会的权利以及向政府请愿的权利。政府不得仅因一份报纸批评官员就将其关闭。"
+     },
+     {
+      "nm": "公正审判",
+      "title": "第4、5、6修正案",
+      "body": "第四修正案防止不合理的搜查和扣押。第五修正案保障正当法律程序。第六修正案赋予被告由公正陪审团进行迅速而公开审判的权利以及聘请律师的权利。"
+     },
+     {
+      "nm": "档案库菜单",
+      "title": "食堂通知（干扰项）",
+      "body": "档案库食堂将于每周五供应辣椒炖菜、玉米面包和冰茶。请把餐盘送回窗口。此通知与宪法权力毫无关系，也不会帮助你解开任何锁。"
+     }
+    ],
+    "locks": [
+     {
+      "title": "谁的权力？",
+      "q": "这名官员想独自起草并通过一项全新的法律。根据线索，哪个部门真正拥有立法权？",
+      "reason": "第一条把立法权交给国会，即立法部门，而不是总统。",
+      "options": [
+       "行政部门（总统）",
+       "立法部门（国会）",
+       "司法部门（法院）",
+       "没有任何部门——任何官员都可以立法"
+      ]
+     },
+     {
+      "title": "被封杀的报纸",
+      "q": "官员因一份报纸批评他而下令关闭它。这侵犯了线索中提到的哪一项自由？请输入一个词。",
+      "reason": "第一修正案线索保护新闻自由，因此因批评而关闭报纸侵犯了新闻自由。",
+      "accepted": [
+       "新闻自由",
+       "新闻",
+       "出版自由"
+      ]
+     },
+     {
+      "title": "推翻密码",
+      "q": "一项法案被总统否决了。需要两院各多少比例投票才能推翻该否决？请输入该分数的两个数字，不要斜杠（例如，二分之一为12）。",
+      "reason": "制衡线索指出国会可以以三分之二的票数推翻否决。"
+     },
+     {
+      "title": "法律的历程",
+      "q": "排列一项有争议的法律实际经历的步骤，利用制衡线索来判断哪个行动在前、哪个在最后。",
+      "reason": "根据线索：国会通过法案，总统否决，国会以三分之二推翻，最后法院可通过司法审查将其废除。",
+      "pads": [
+       {
+        "label": "国会通过法案"
+       },
+       {
+        "label": "总统否决它"
+       },
+       {
+        "label": "国会推翻否决"
+       },
+       {
+        "label": "法院裁定其违宪"
+       }
+      ]
+     },
+     {
+      "title": "被告的权利",
+      "q": "官员未经审判、未请律师就把一名批评者关进监狱。仅根据线索，选出这一行为侵犯的所有保护。",
+      "reason": "第4/5/6修正案线索保障正当程序、陪审团审判和聘请律师的权利；干扰菜单什么也证明不了。",
+      "items": [
+       "由公正陪审团审判的权利",
+       "正当法律程序的权利",
+       "聘请律师的权利",
+       "每周五免费吃玉米面包的权利",
+       "个人否决法案的权利"
+      ]
+     }
+    ],
+    "win": {
+     "stamp": "平衡已恢复 ✓",
+     "h2": "金库重新开启！",
+     "p": "你运用基于证据的推理，应用了三权分立、制衡以及权利法案，用线索证明每个结论，而不是靠猜。"
+    }
+   },
+   "hi": {
+    "title": "बंद संविधान तिजोरी",
+    "sub": "सत्ता का भूखा एक अधिकारी एक असंवैधानिक आदेश थोपने के लिए अभिलेखागार को बंद कर चुका है। केवल वे नागरिक जो समझते हैं कि शाखाएँ एक-दूसरे पर नियंत्रण कैसे रखती हैं, कोड तोड़ सकते हैं।",
+    "missionTitle": "मिशन ब्रीफ: संतुलन बहाल करें",
+    "missionBody": "राष्ट्रीय अभिलेखागार तिजोरी अंदर से बंद कर दी गई है। एक कार्यवाहक अधिकारी अदालतों को दरकिनार करने, एक अखबार को चुप कराने और अकेले शासन करने की कोशिश कर रहा है। तिजोरी के अंदर संविधान और अधिकार विधेयक से लिए गए पाँच साक्ष्य कार्ड हैं। हर सुराग खोलें, ध्यान से पढ़ें, और तालों को हल करने के लिए केवल वही उपयोग करें जो सुराग सिद्ध करते हैं। बाहरी ज्ञान पर निर्भर न रहें — तिजोरी केवल आपके सामने मौजूद साक्ष्य पर भरोसा करती है। अभिलेखागार को फिर से खोलने और शक्तियों के पृथक्करण को बहाल करने के लिए सभी ताले तोड़ें।",
+    "clues": [
+     {
+      "nm": "तीन शाखाएँ",
+      "title": "अनुच्छेद I, II, III",
+      "body": "संविधान तीन शाखाएँ बनाता है। अनुच्छेद I कानून बनाने की शक्ति कांग्रेस (विधायी शाखा) को देता है। अनुच्छेद II कानूनों को लागू करने की शक्ति राष्ट्रपति (कार्यकारी शाखा) को देता है। अनुच्छेद III कानूनों की व्याख्या करने और मुकदमों का फैसला करने की शक्ति अदालतों (न्यायिक शाखा) को देता है।"
+     },
+     {
+      "nm": "नियंत्रण और संतुलन",
+      "title": "शाखाएँ एक-दूसरे को कैसे नियंत्रित करती हैं",
+      "body": "कांग्रेस एक विधेयक पारित करती है। राष्ट्रपति उसे वीटो कर सकता है। कांग्रेस दोनों सदनों में दो-तिहाई मतों से उस वीटो को पलट सकती है। इसके बाद सर्वोच्च न्यायालय न्यायिक समीक्षा के जरिए किसी कानून को असंवैधानिक घोषित कर सकता है। हर शाखा दूसरों को सीमित कर सकती है ताकि कोई भी शाखा बहुत शक्तिशाली न बने।"
+     },
+     {
+      "nm": "पहला संशोधन",
+      "title": "अधिकार विधेयक: भाषण और प्रेस",
+      "body": "पहला संशोधन भाषण की स्वतंत्रता, प्रेस की स्वतंत्रता, धर्म की स्वतंत्रता, शांतिपूर्ण सभा के अधिकार और सरकार से याचिका करने के अधिकार की रक्षा करता है। सरकार किसी अखबार को केवल अधिकारियों की आलोचना करने के लिए बंद नहीं कर सकती।"
+     },
+     {
+      "nm": "निष्पक्ष मुकदमे",
+      "title": "चौथा, पाँचवाँ और छठा संशोधन",
+      "body": "चौथा संशोधन अनुचित तलाशी और जब्ती से रक्षा करता है। पाँचवाँ संशोधन कानून की उचित प्रक्रिया की गारंटी देता है। छठा संशोधन आरोपी को निष्पक्ष जूरी द्वारा त्वरित और सार्वजनिक मुकदमे का अधिकार और वकील का अधिकार देता है।"
+     },
+     {
+      "nm": "अभिलेखागार मेनू",
+      "title": "कैफेटेरिया सूचना (भ्रामक)",
+      "body": "अभिलेखागार कैफेटेरिया शुक्रवार को चिली, कॉर्नब्रेड और आइस्ड टी परोसेगा। कृपया ट्रे खिड़की पर लौटाएँ। इस सूचना का संवैधानिक शक्तियों से कोई संबंध नहीं है और यह किसी भी ताले को हल करने में आपकी मदद नहीं करेगी।"
+     }
+    ],
+    "locks": [
+     {
+      "title": "किसकी शक्ति?",
+      "q": "अधिकारी अकेले ही एक बिल्कुल नया कानून लिखना और पारित करना चाहता है। सुरागों के अनुसार, किस शाखा के पास वास्तव में कानून बनाने की शक्ति है?",
+      "reason": "अनुच्छेद I कानून बनाने की शक्ति कांग्रेस, यानी विधायी शाखा को देता है, राष्ट्रपति को नहीं।",
+      "options": [
+       "कार्यकारी शाखा (राष्ट्रपति)",
+       "विधायी शाखा (कांग्रेस)",
+       "न्यायिक शाखा (अदालतें)",
+       "कोई शाखा नहीं — कोई भी अधिकारी कानून बना सकता है"
+      ]
+     },
+     {
+      "title": "चुप कराया गया अखबार",
+      "q": "अधिकारी ने उसकी आलोचना करने के लिए एक अखबार को बंद करने का आदेश दिया। यह सुरागों में नामित किस एक स्वतंत्रता का उल्लंघन करता है? एक शब्द टाइप करें।",
+      "reason": "पहला संशोधन सुराग प्रेस की स्वतंत्रता की रक्षा करता है, इसलिए आलोचना के लिए अखबार बंद करना प्रेस की स्वतंत्रता का उल्लंघन है।",
+      "accepted": [
+       "प्रेस",
+       "प्रेस की स्वतंत्रता"
+      ]
+     },
+     {
+      "title": "पलटने का कोड",
+      "q": "एक विधेयक को राष्ट्रपति ने वीटो कर दिया। वीटो को पलटने के लिए दोनों सदनों के कितने अंश को मतदान करना होगा? उस भिन्न के दो अंक बिना स्लैश के दर्ज करें (उदाहरण के लिए, आधा 12 होगा)।",
+      "reason": "नियंत्रण और संतुलन सुराग कहता है कि कांग्रेस दो-तिहाई मतों से वीटो पलट सकती है।"
+     },
+     {
+      "title": "एक कानून का रास्ता",
+      "q": "एक विवादित कानून वास्तव में जिन चरणों से गुजरता है उन्हें क्रम में लगाएँ, यह तय करने के लिए नियंत्रण और संतुलन सुराग का उपयोग करें कि कौन-सी क्रिया पहले आती है और कौन-सी अंत में।",
+      "reason": "सुराग के अनुसार: कांग्रेस विधेयक पारित करती है, राष्ट्रपति वीटो करता है, कांग्रेस दो-तिहाई से पलटती है, और अंत में अदालत न्यायिक समीक्षा से उसे रद्द कर सकती है।",
+      "pads": [
+       {
+        "label": "कांग्रेस विधेयक पारित करती है"
+       },
+       {
+        "label": "राष्ट्रपति उसे वीटो करता है"
+       },
+       {
+        "label": "कांग्रेस वीटो पलटती है"
+       },
+       {
+        "label": "अदालत उसे असंवैधानिक घोषित करती है"
+       }
+      ]
+     },
+     {
+      "title": "आरोपी के अधिकार",
+      "q": "अधिकारी ने एक आलोचक को बिना मुकदमे और बिना वकील के जेल में डाल दिया। केवल सुरागों के आधार पर, इस कार्रवाई द्वारा उल्लंघित हर सुरक्षा को चुनें।",
+      "reason": "चौथा/पाँचवाँ/छठा संशोधन सुराग उचित प्रक्रिया, जूरी मुकदमे और वकील के अधिकार की गारंटी देता है; भ्रामक मेनू कुछ भी सिद्ध नहीं करता।",
+      "items": [
+       "निष्पक्ष जूरी द्वारा मुकदमे का अधिकार",
+       "कानून की उचित प्रक्रिया का अधिकार",
+       "वकील का अधिकार",
+       "शुक्रवार को मुफ्त कॉर्नब्रेड का अधिकार",
+       "व्यक्तिगत रूप से किसी विधेयक को वीटो करने का अधिकार"
+      ]
+     }
+    ],
+    "win": {
+     "stamp": "संतुलन बहाल ✓",
+     "h2": "तिजोरी फिर से खुल गई!",
+     "p": "आपने शक्तियों के पृथक्करण, नियंत्रण और संतुलन तथा अधिकार विधेयक को लागू करने के लिए साक्ष्य-आधारित तर्क का उपयोग किया, अनुमान लगाने के बजाय हर निष्कर्ष को सुरागों से सिद्ध किया।"
+    }
+   },
+   "ar": {
+    "title": "خزنة الدستور المقفلة",
+    "sub": "مسؤول متعطش للسلطة أغلق الأرشيف لفرض أمر غير دستوري. لن يتمكن من كسر الرموز إلا المواطنون الذين يفهمون كيف تراقب السلطات بعضها بعضًا.",
+    "missionTitle": "موجز المهمة: استعد التوازن",
+    "missionBody": "أُغلقت خزنة الأرشيف الوطني من الداخل. يحاول مسؤول بالنيابة تجاوز المحاكم وإسكات صحيفة والحكم بمفرده. داخل الخزنة خمس بطاقات أدلة مأخوذة من الدستور ووثيقة الحقوق. افتح كل دليل، واقرأ بعناية، واستخدم فقط ما تثبته الأدلة لحل الأقفال. لا تعتمد على معرفة خارجية — الخزنة تثق فقط بالدليل الذي أمامك. اكسر كل الأقفال لإعادة فتح الأرشيف واستعادة الفصل بين السلطات.",
+    "clues": [
+     {
+      "nm": "السلطات الثلاث",
+      "title": "المواد I و II و III",
+      "body": "ينشئ الدستور ثلاث سلطات. تمنح المادة الأولى سلطة سن القوانين للكونغرس (السلطة التشريعية). تمنح المادة الثانية سلطة تنفيذ القوانين للرئيس (السلطة التنفيذية). تمنح المادة الثالثة سلطة تفسير القوانين والبت في القضايا للمحاكم (السلطة القضائية)."
+     },
+     {
+      "nm": "الضوابط والتوازنات",
+      "title": "كيف تراقب السلطات بعضها",
+      "body": "يُقرّ الكونغرس مشروع قانون. يمكن للرئيس أن ينقضه (فيتو). يمكن للكونغرس أن يتجاوز هذا النقض بتصويت ثلثي المجلسين. ثم يمكن للمحكمة العليا أن تحكم بعدم دستورية قانون عبر المراجعة القضائية. يمكن لكل سلطة أن تحدّ من الأخرى حتى لا تصبح أي سلطة قوية أكثر من اللازم."
+     },
+     {
+      "nm": "التعديل الأول",
+      "title": "وثيقة الحقوق: التعبير والصحافة",
+      "body": "يحمي التعديل الأول حرية التعبير وحرية الصحافة وحرية الدين وحق التجمع السلمي وحق تقديم الالتماس إلى الحكومة. لا يجوز للحكومة إغلاق صحيفة لمجرد انتقادها للمسؤولين."
+     },
+     {
+      "nm": "محاكمات عادلة",
+      "title": "التعديلات 4 و 5 و 6",
+      "body": "يحمي التعديل الرابع من عمليات التفتيش والمصادرة غير المعقولة. يضمن التعديل الخامس الإجراءات القانونية الواجبة. يمنح التعديل السادس المتهم الحق في محاكمة سريعة وعلنية أمام هيئة محلفين محايدة والحق في محامٍ."
+     },
+     {
+      "nm": "قائمة الأرشيف",
+      "title": "إشعار الكافتيريا (خدعة)",
+      "body": "ستقدم كافتيريا الأرشيف الفلفل الحار وخبز الذرة والشاي المثلج أيام الجمعة. يُرجى إعادة الصواني إلى النافذة. لا علاقة لهذا الإشعار بالسلطات الدستورية ولن يساعدك في حل أي قفل."
+     }
+    ],
+    "locks": [
+     {
+      "title": "سلطة من؟",
+      "q": "يريد المسؤول أن يكتب ويُقرّ قانونًا جديدًا بمفرده. وفقًا للأدلة، أي سلطة تملك فعلًا سلطة سن القوانين؟",
+      "reason": "تمنح المادة الأولى سلطة سن القوانين للكونغرس، وهو السلطة التشريعية، لا الرئيس.",
+      "options": [
+       "السلطة التنفيذية (الرئيس)",
+       "السلطة التشريعية (الكونغرس)",
+       "السلطة القضائية (المحاكم)",
+       "لا سلطة — يمكن لأي مسؤول سن القوانين"
+      ]
+     },
+     {
+      "title": "صحيفة أُسكتت",
+      "q": "أمر المسؤول بإغلاق صحيفة لأنها انتقدته. أي حرية مذكورة في الأدلة ينتهكها هذا؟ اكتب كلمة واحدة.",
+      "reason": "يحمي دليل التعديل الأول حرية الصحافة، لذا فإن إغلاق صحيفة بسبب الانتقاد ينتهك حرية الصحافة.",
+      "accepted": [
+       "الصحافة",
+       "حرية الصحافة",
+       "صحافة"
+      ]
+     },
+     {
+      "title": "رمز التجاوز",
+      "q": "نقض الرئيس مشروع قانون. ما النسبة من كلا المجلسين التي يجب أن تصوّت لتجاوز النقض؟ أدخل رقمي هذا الكسر دون شرطة مائلة (مثلًا، النصف هو 12).",
+      "reason": "يقول دليل الضوابط والتوازنات إن الكونغرس يمكنه تجاوز النقض بتصويت الثلثين."
+     },
+     {
+      "title": "مسار القانون",
+      "q": "رتّب الخطوات التي يمر بها قانون متنازع عليه فعليًا، مستخدمًا دليل الضوابط والتوازنات لتحديد أي إجراء يأتي أولًا وأيها يأتي أخيرًا.",
+      "reason": "وفقًا للدليل: يُقرّ الكونغرس مشروع القانون، ينقضه الرئيس، يتجاوزه الكونغرس بالثلثين، وأخيرًا يمكن للمحكمة إبطاله عبر المراجعة القضائية.",
+      "pads": [
+       {
+        "label": "يُقرّ الكونغرس مشروع القانون"
+       },
+       {
+        "label": "ينقضه الرئيس"
+       },
+       {
+        "label": "يتجاوز الكونغرس النقض"
+       },
+       {
+        "label": "تحكم المحكمة بعدم دستوريته"
+       }
+      ]
+     },
+     {
+      "title": "حقوق المتهم",
+      "q": "سجن المسؤول ناقدًا دون محاكمة ودون محامٍ. بناءً على الأدلة فقط، اختر كل حماية ينتهكها هذا الإجراء.",
+      "reason": "يضمن دليل التعديلات 4/5/6 الإجراءات الواجبة والمحاكمة أمام هيئة محلفين والحق في محامٍ؛ أما قائمة الخدعة فلا تثبت شيئًا.",
+      "items": [
+       "الحق في محاكمة أمام هيئة محلفين محايدة",
+       "الحق في الإجراءات القانونية الواجبة",
+       "الحق في محامٍ",
+       "الحق في خبز ذرة مجاني أيام الجمعة",
+       "الحق في نقض مشروع قانون شخصيًا"
+      ]
+     }
+    ],
+    "win": {
+     "stamp": "استُعيد التوازن ✓",
+     "h2": "الخزنة تُفتح من جديد!",
+     "p": "استخدمت الاستدلال القائم على الأدلة لتطبيق الفصل بين السلطات والضوابط والتوازنات ووثيقة الحقوق، مثبتًا كل استنتاج من الأدلة بدلًا من التخمين."
+    }
+   },
+   "ur": {
+    "title": "مقفل آئینی خزانہ",
+    "sub": "اقتدار کا بھوکا ایک اہلکار ایک غیر آئینی حکم مسلط کرنے کے لیے آرکائیو کو بند کر چکا ہے۔ صرف وہ شہری جو سمجھتے ہیں کہ شاخیں ایک دوسرے کو کیسے جانچتی ہیں، کوڈ توڑ سکتے ہیں۔",
+    "missionTitle": "مشن بریف: توازن بحال کریں",
+    "missionBody": "قومی آرکائیو خزانہ اندر سے بند کر دیا گیا ہے۔ ایک قائم مقام اہلکار عدالتوں کو نظرانداز کرنے، ایک اخبار کو خاموش کرانے اور اکیلے حکومت کرنے کی کوشش کر رہا ہے۔ خزانے کے اندر آئین اور بل آف رائٹس سے لیے گئے پانچ ثبوت کارڈ ہیں۔ ہر سراغ کھولیں، غور سے پڑھیں، اور تالے حل کرنے کے لیے صرف وہی استعمال کریں جو سراغ ثابت کرتے ہیں۔ بیرونی علم پر انحصار نہ کریں — خزانہ صرف آپ کے سامنے موجود ثبوت پر بھروسہ کرتا ہے۔ آرکائیو کو دوبارہ کھولنے اور اختیارات کی تقسیم بحال کرنے کے لیے تمام تالے توڑیں۔",
+    "clues": [
+     {
+      "nm": "تین شاخیں",
+      "title": "آرٹیکل I، II، III",
+      "body": "آئین تین شاخیں بناتا ہے۔ آرٹیکل I قانون سازی کا اختیار کانگریس (مقننہ) کو دیتا ہے۔ آرٹیکل II قوانین نافذ کرنے کا اختیار صدر (انتظامیہ) کو دیتا ہے۔ آرٹیکل III قوانین کی تشریح اور مقدمات کا فیصلہ کرنے کا اختیار عدالتوں (عدلیہ) کو دیتا ہے۔"
+     },
+     {
+      "nm": "جانچ اور توازن",
+      "title": "شاخیں ایک دوسرے کو کیسے روکتی ہیں",
+      "body": "کانگریس ایک بل منظور کرتی ہے۔ صدر اسے ویٹو کر سکتا ہے۔ کانگریس دونوں ایوانوں میں دو تہائی ووٹوں سے اس ویٹو کو مسترد کر سکتی ہے۔ اس کے بعد سپریم کورٹ عدالتی نظرثانی کے ذریعے کسی قانون کو غیر آئینی قرار دے سکتی ہے۔ ہر شاخ دوسری کو محدود کر سکتی ہے تاکہ کوئی بھی شاخ حد سے زیادہ طاقتور نہ ہو۔"
+     },
+     {
+      "nm": "پہلی ترمیم",
+      "title": "بل آف رائٹس: تقریر اور پریس",
+      "body": "پہلی ترمیم تقریر کی آزادی، پریس کی آزادی، مذہب کی آزادی، پرامن اجتماع کے حق اور حکومت سے درخواست کے حق کی حفاظت کرتی ہے۔ حکومت کسی اخبار کو صرف اہلکاروں پر تنقید کرنے پر بند نہیں کر سکتی۔"
+     },
+     {
+      "nm": "منصفانہ مقدمات",
+      "title": "چوتھی، پانچویں اور چھٹی ترمیم",
+      "body": "چوتھی ترمیم غیر معقول تلاشی اور ضبطی سے حفاظت کرتی ہے۔ پانچویں ترمیم قانون کے مناسب عمل کی ضمانت دیتی ہے۔ چھٹی ترمیم ملزم کو غیر جانبدار جیوری کے ذریعے تیز اور عوامی مقدمے کا حق اور وکیل کا حق دیتی ہے۔"
+     },
+     {
+      "nm": "آرکائیو مینو",
+      "title": "کیفے ٹیریا نوٹس (فریب)",
+      "body": "آرکائیو کیفے ٹیریا جمعہ کو چلی، کارن بریڈ اور آئسڈ ٹی پیش کرے گا۔ براہ کرم ٹرے کھڑکی پر واپس کریں۔ اس نوٹس کا آئینی اختیارات سے کوئی تعلق نہیں اور یہ کسی تالے کو حل کرنے میں آپ کی مدد نہیں کرے گا۔"
+     }
+    ],
+    "locks": [
+     {
+      "title": "کس کا اختیار؟",
+      "q": "اہلکار اکیلے ہی ایک بالکل نیا قانون لکھنا اور منظور کرنا چاہتا ہے۔ سراغوں کے مطابق، کس شاخ کے پاس واقعی قانون سازی کا اختیار ہے؟",
+      "reason": "آرٹیکل I قانون سازی کا اختیار کانگریس، یعنی مقننہ کو دیتا ہے، صدر کو نہیں۔",
+      "options": [
+       "انتظامیہ (صدر)",
+       "مقننہ (کانگریس)",
+       "عدلیہ (عدالتیں)",
+       "کوئی شاخ نہیں — کوئی بھی اہلکار قانون بنا سکتا ہے"
+      ]
+     },
+     {
+      "title": "خاموش کرایا گیا اخبار",
+      "q": "اہلکار نے اپنی تنقید پر ایک اخبار بند کرنے کا حکم دیا۔ یہ سراغوں میں مذکور کس آزادی کی خلاف ورزی کرتا ہے؟ ایک لفظ ٹائپ کریں۔",
+      "reason": "پہلی ترمیم کا سراغ پریس کی آزادی کی حفاظت کرتا ہے، اس لیے تنقید پر اخبار بند کرنا پریس کی آزادی کی خلاف ورزی ہے۔",
+      "accepted": [
+       "پریس",
+       "پریس کی آزادی"
+      ]
+     },
+     {
+      "title": "مسترد کرنے کا کوڈ",
+      "q": "ایک بل کو صدر نے ویٹو کر دیا۔ ویٹو کو مسترد کرنے کے لیے دونوں ایوانوں کے کتنے حصے کو ووٹ دینا ہوگا؟ اس کسر کے دو ہندسے بغیر سلیش کے درج کریں (مثلاً، آدھا 12 ہوگا)۔",
+      "reason": "جانچ اور توازن کا سراغ کہتا ہے کہ کانگریس دو تہائی ووٹوں سے ویٹو مسترد کر سکتی ہے۔"
+     },
+     {
+      "title": "قانون کا راستہ",
+      "q": "ایک متنازع قانون جن مراحل سے حقیقتاً گزرتا ہے انہیں ترتیب دیں، یہ طے کرنے کے لیے جانچ اور توازن کے سراغ کا استعمال کریں کہ کون سا عمل پہلے آتا ہے اور کون سا آخر میں۔",
+      "reason": "سراغ کے مطابق: کانگریس بل منظور کرتی ہے، صدر ویٹو کرتا ہے، کانگریس دو تہائی سے مسترد کرتی ہے، اور آخر میں عدالت عدالتی نظرثانی سے اسے کالعدم کر سکتی ہے۔",
+      "pads": [
+       {
+        "label": "کانگریس بل منظور کرتی ہے"
+       },
+       {
+        "label": "صدر اسے ویٹو کرتا ہے"
+       },
+       {
+        "label": "کانگریس ویٹو مسترد کرتی ہے"
+       },
+       {
+        "label": "عدالت اسے غیر آئینی قرار دیتی ہے"
+       }
+      ]
+     },
+     {
+      "title": "ملزم کے حقوق",
+      "q": "اہلکار نے ایک ناقد کو بغیر مقدمے اور بغیر وکیل کے جیل میں ڈال دیا۔ صرف سراغوں کی بنیاد پر، اس اقدام سے خلاف ورزی ہونے والی ہر حفاظت کو منتخب کریں۔",
+      "reason": "چوتھی/پانچویں/چھٹی ترمیم کا سراغ مناسب عمل، جیوری مقدمے اور وکیل کے حق کی ضمانت دیتا ہے؛ فریبی مینو کچھ ثابت نہیں کرتا۔",
+      "items": [
+       "غیر جانبدار جیوری کے ذریعے مقدمے کا حق",
+       "قانون کے مناسب عمل کا حق",
+       "وکیل کا حق",
+       "جمعہ کو مفت کارن بریڈ کا حق",
+       "ذاتی طور پر کسی بل کو ویٹو کرنے کا حق"
+      ]
+     }
+    ],
+    "win": {
+     "stamp": "توازن بحال ✓",
+     "h2": "خزانہ دوبارہ کھل گیا!",
+     "p": "آپ نے اختیارات کی تقسیم، جانچ و توازن اور بل آف رائٹس کو لاگو کرنے کے لیے ثبوت پر مبنی استدلال استعمال کیا، اندازہ لگانے کے بجائے ہر نتیجہ سراغوں سے ثابت کیا۔"
+    }
+   }
+  }
+ },
+ {
+  "slug": "g912-ss-economics",
+  "grade": "grade912",
+  "subject": "Social Studies",
+  "teks": "Economics 5(A), 8(A)",
+  "icon": "🏦",
+  "master": {
+   "title": "The Locked Ledger",
+   "sub": "A city's emergency food council left behind a sealed strongbox of economic evidence. Crack it before the market opens at dawn.",
+   "missionTitle": "Mission: Reopen the Market",
+   "missionBody": "You are the newest analyst on Harbor City's Economic Council. Overnight, a coffee shortage sent prices soaring and citizens are demanding answers. The retiring chief economist locked the council's decision-box and left only evidence cards behind. Open each CLUE, then use ONLY what those cards prove to solve the LOCKS. Do not rely on outside knowledge — the box only accepts reasoning the evidence supports. Solve every lock to reopen the market and restore order.",
+   "clues": [
+    {
+     "ico": "📈",
+     "nm": "Coffee Prices",
+     "title": "Clue 1 — The Price Report",
+     "body": "A drought destroyed half of Harbor City's coffee harvest. With far fewer beans available but just as many buyers wanting coffee, the shelf price jumped from $4 to $9 per bag in one week. Shops report empty shelves by noon."
+    },
+    {
+     "ico": "⚖️",
+     "nm": "The Trade-Off",
+     "title": "Clue 2 — The Council's Choice",
+     "body": "The Council has $1,000,000 in emergency funds. It can spend the money EITHER to subsidize coffee imports OR to repair the flood-damaged water plant — not both. The chief wrote: 'Whatever we choose, the true cost is the best thing we gave up.'"
+    },
+    {
+     "ico": "🏛️",
+     "nm": "Two Systems",
+     "title": "Clue 3 — Market vs. Command",
+     "body": "In a MARKET economy, prices rise and fall based on supply and demand, and businesses decide what to sell. In a COMMAND economy, a central government sets prices and decides what gets produced. Harbor City has always let prices move freely."
+    },
+    {
+     "ico": "🚚",
+     "nm": "Fresh Supply",
+     "title": "Clue 4 — The Incoming Shipment",
+     "body": "Because prices rose so high, coffee sellers from three neighboring regions rushed extra shipments to Harbor City to earn the profit. Within days, supply increased, shelves refilled, and prices began falling back toward $5."
+    },
+    {
+     "ico": "🎡",
+     "nm": "Festival Notice",
+     "title": "Clue 5 — The Spring Fair",
+     "body": "The annual Harbor City Spring Fair will feature a Ferris wheel, live music, and a pie-eating contest this Saturday from noon to 8 p.m. Admission is free for residents. Parking is available at the north lot."
+    },
+    {
+     "ico": "🧾",
+     "nm": "Chief's Definition",
+     "title": "Clue 6 — A Note on Terms",
+     "body": "The chief's glossary card reads: 'OPPORTUNITY COST is the value of the next-best alternative you give up when you make a choice. When the government FIXES a price below the market level, buyers want more than sellers will supply — a SHORTAGE results.'"
+    }
+   ],
+   "locks": [
+    {
+     "type": "digit",
+     "title": "Lock 1 — The Price Jump",
+     "q": "Using the Price Report, how many DOLLARS did one bag of coffee rise during the week of the drought? Enter the difference.",
+     "reason": "The price moved from $4 to $9, a rise of $5, because supply fell while demand stayed the same.",
+     "digitAnswer": "5"
+    },
+    {
+     "type": "mc",
+     "title": "Lock 2 — Why Prices Rose",
+     "q": "According to the clues, WHY did the coffee price climb from $4 to $9?",
+     "reason": "Clue 1 shows supply dropped (drought) while demand held steady, which pushes price up in a market economy.",
+     "options": [
+      "Supply fell while demand stayed the same",
+      "The government ordered a higher price",
+      "Demand disappeared completely",
+      "Buyers suddenly stopped wanting coffee"
+     ],
+     "answerIndex": 0
+    },
+    {
+     "type": "word",
+     "title": "Lock 3 — Name the Cost",
+     "q": "Clue 6 defines the value of the next-best alternative given up when the Council chooses one option over the other. What TWO-WORD economic term names this? (Think of what the Council loses by picking the water plant OR the coffee subsidy.)",
+     "reason": "Clue 2 and Clue 6 together define opportunity cost: choosing one use of the $1,000,000 means giving up the other.",
+     "accepted": [
+      "opportunity cost",
+      "opportunitycost",
+      "opportunity-cost"
+     ]
+    },
+    {
+     "type": "multi",
+     "title": "Lock 4 — Market Economy Evidence",
+     "q": "The box will only open if you select the statements the CLUES prove are true of Harbor City's MARKET economy. Choose every statement supported by the evidence.",
+     "reason": "Clues 3 and 4 show prices moving freely and sellers responding to profit — hallmarks of a market economy. A central government setting prices describes a command economy, not Harbor City.",
+     "items": [
+      {
+       "text": "Prices rose and fell based on supply and demand",
+       "strong": true
+      },
+      {
+       "text": "Sellers rushed in extra supply to earn the higher profit",
+       "strong": true
+      },
+      {
+       "text": "A central government set the price of coffee",
+       "strong": false
+      },
+      {
+       "text": "Businesses decided freely what to sell",
+       "strong": true
+      },
+      {
+       "text": "The government banned all coffee sales",
+       "strong": false
+      }
+     ]
+    },
+    {
+     "type": "seq",
+     "title": "Lock 5 — The Market Cycle",
+     "q": "Arrange the four events of the coffee crisis into the correct cause-and-effect order the clues describe. Use Clues 1 and 4 to decide which event comes first and which comes last.",
+     "reason": "Clues 1 and 4 trace the cycle: drought cuts supply → price spikes and shelves empty → high profit attracts new sellers → supply returns and price falls.",
+     "pads": [
+      {
+       "key": "drought",
+       "emoji": "🌵",
+       "label": "Drought destroys half the harvest"
+      },
+      {
+       "key": "spike",
+       "emoji": "📈",
+       "label": "Price spikes to $9, shelves empty"
+      },
+      {
+       "key": "sellers",
+       "emoji": "🚚",
+       "label": "New sellers rush in for profit"
+      },
+      {
+       "key": "fall",
+       "emoji": "📉",
+       "label": "Supply returns, price falls to $5"
+      }
+     ],
+     "order": [
+      "drought",
+      "spike",
+      "sellers",
+      "fall"
+     ]
+    }
+   ],
+   "win": {
+    "stamp": "MARKET REOPENED ✓",
+    "h2": "The Ledger Is Unlocked!",
+    "p": "You reasoned like an economist — reading evidence to explain supply and demand, weighing opportunity cost, and distinguishing a market economy from a command economy using only what the clues proved."
+   }
+  },
+  "langs": {
+   "es": {
+    "title": "El Libro Contable Cerrado",
+    "sub": "El consejo de emergencia alimentaria de una ciudad dejó una caja fuerte sellada con evidencia económica. Ábrela antes de que el mercado abra al amanecer.",
+    "missionTitle": "Misión: Reabrir el Mercado",
+    "missionBody": "Eres el analista más nuevo del Consejo Económico de Ciudad Puerto. Durante la noche, una escasez de café disparó los precios y los ciudadanos exigen respuestas. La economista jefe que se jubila cerró la caja de decisiones del consejo y solo dejó tarjetas de evidencia. Abre cada PISTA y luego usa SOLO lo que esas tarjetas demuestran para resolver los CERROJOS. No uses conocimiento externo: la caja solo acepta razonamientos que la evidencia respalde. Resuelve cada cerrojo para reabrir el mercado y restaurar el orden.",
+    "clues": [
+     {
+      "nm": "Precios del Café",
+      "title": "Pista 1 — El Informe de Precios",
+      "body": "Una sequía destruyó la mitad de la cosecha de café de Ciudad Puerto. Con muchos menos granos disponibles pero la misma cantidad de compradores que quieren café, el precio en el estante saltó de $4 a $9 por bolsa en una semana. Las tiendas reportan estantes vacíos para el mediodía."
+     },
+     {
+      "nm": "El Sacrificio",
+      "title": "Pista 2 — La Decisión del Consejo",
+      "body": "El Consejo tiene $1,000,000 en fondos de emergencia. Puede gastar el dinero O EN subsidiar importaciones de café O EN reparar la planta de agua dañada por la inundación, no en ambos. La jefa escribió: 'Sea lo que elijamos, el costo verdadero es lo mejor que dejamos de hacer.'"
+     },
+     {
+      "nm": "Dos Sistemas",
+      "title": "Pista 3 — Mercado vs. Mando",
+      "body": "En una economía de MERCADO, los precios suben y bajan según la oferta y la demanda, y las empresas deciden qué vender. En una economía de MANDO, un gobierno central fija los precios y decide qué se produce. Ciudad Puerto siempre ha dejado que los precios se muevan libremente."
+     },
+     {
+      "nm": "Suministro Fresco",
+      "title": "Pista 4 — El Envío Entrante",
+      "body": "Como los precios subieron tanto, vendedores de café de tres regiones vecinas enviaron cargamentos extra a Ciudad Puerto para ganar la ganancia. En días, la oferta aumentó, los estantes se llenaron y los precios comenzaron a bajar hacia $5."
+     },
+     {
+      "nm": "Aviso del Festival",
+      "title": "Pista 5 — La Feria de Primavera",
+      "body": "La Feria de Primavera anual de Ciudad Puerto tendrá una rueda de la fortuna, música en vivo y un concurso de comer pastel este sábado de mediodía a 8 p.m. La entrada es gratis para residentes. Hay estacionamiento en el lote norte."
+     },
+     {
+      "nm": "Definición de la Jefa",
+      "title": "Pista 6 — Una Nota sobre Términos",
+      "body": "La tarjeta de glosario de la jefa dice: 'El COSTO DE OPORTUNIDAD es el valor de la siguiente mejor alternativa que dejas de lado al tomar una decisión. Cuando el gobierno FIJA un precio por debajo del nivel del mercado, los compradores quieren más de lo que los vendedores ofrecerán: resulta una ESCASEZ.'"
+     }
+    ],
+    "locks": [
+     {
+      "title": "Cerrojo 1 — El Salto de Precio",
+      "q": "Usando el Informe de Precios, ¿cuántos DÓLARES subió una bolsa de café durante la semana de la sequía? Ingresa la diferencia.",
+      "reason": "El precio pasó de $4 a $9, una subida de $5, porque la oferta cayó mientras la demanda se mantuvo igual."
+     },
+     {
+      "title": "Cerrojo 2 — Por Qué Subieron los Precios",
+      "q": "Según las pistas, ¿POR QUÉ subió el precio del café de $4 a $9?",
+      "reason": "La Pista 1 muestra que la oferta cayó (sequía) mientras la demanda se mantuvo firme, lo que empuja el precio hacia arriba en una economía de mercado.",
+      "options": [
+       "La oferta cayó mientras la demanda se mantuvo igual",
+       "El gobierno ordenó un precio más alto",
+       "La demanda desapareció por completo",
+       "Los compradores dejaron de querer café de repente"
+      ]
+     },
+     {
+      "title": "Cerrojo 3 — Nombra el Costo",
+      "q": "La Pista 6 define el valor de la siguiente mejor alternativa que se deja de lado cuando el Consejo elige una opción sobre la otra. ¿Qué término económico de TRES PALABRAS nombra esto? (Piensa en lo que el Consejo pierde al elegir la planta de agua O el subsidio del café.)",
+      "reason": "Las Pistas 2 y 6 juntas definen el costo de oportunidad: elegir un uso del $1,000,000 significa renunciar al otro.",
+      "accepted": [
+       "costo de oportunidad",
+       "costodeoportunidad",
+       "costo-de-oportunidad"
+      ]
+     },
+     {
+      "title": "Cerrojo 4 — Evidencia de Economía de Mercado",
+      "q": "La caja solo se abrirá si seleccionas las afirmaciones que las PISTAS prueban que son ciertas sobre la economía de MERCADO de Ciudad Puerto. Elige cada afirmación respaldada por la evidencia.",
+      "reason": "Las Pistas 3 y 4 muestran precios que se mueven libremente y vendedores que responden a la ganancia: rasgos de una economía de mercado. Un gobierno central que fija precios describe una economía de mando, no a Ciudad Puerto.",
+      "items": [
+       "Los precios subían y bajaban según la oferta y la demanda",
+       "Los vendedores enviaron suministro extra para ganar la mayor ganancia",
+       "Un gobierno central fijó el precio del café",
+       "Las empresas decidían libremente qué vender",
+       "El gobierno prohibió todas las ventas de café"
+      ]
+     },
+     {
+      "title": "Cerrojo 5 — El Ciclo del Mercado",
+      "q": "Ordena los cuatro eventos de la crisis del café en el orden correcto de causa y efecto que describen las pistas. Usa las Pistas 1 y 4 para decidir qué evento va primero y cuál va al final.",
+      "reason": "Las Pistas 1 y 4 trazan el ciclo: la sequía reduce la oferta → el precio se dispara y los estantes se vacían → la alta ganancia atrae nuevos vendedores → la oferta regresa y el precio baja.",
+      "pads": [
+       {
+        "emoji": "🌵",
+        "label": "La sequía destruye la mitad de la cosecha"
+       },
+       {
+        "emoji": "📈",
+        "label": "El precio salta a $9, estantes vacíos"
+       },
+       {
+        "emoji": "🚚",
+        "label": "Nuevos vendedores llegan por la ganancia"
+       },
+       {
+        "emoji": "📉",
+        "label": "La oferta regresa, el precio baja a $5"
+       }
+      ]
+     }
+    ],
+    "win": {
+     "stamp": "MERCADO REABIERTO ✓",
+     "h2": "¡El Libro Contable Está Abierto!",
+     "p": "Razonaste como economista: leíste la evidencia para explicar la oferta y la demanda, sopesaste el costo de oportunidad y distinguiste una economía de mercado de una economía de mando usando solo lo que las pistas probaron."
+    }
+   },
+   "vi": {
+    "title": "Sổ Cái Bị Khóa",
+    "sub": "Hội đồng lương thực khẩn cấp của một thành phố đã để lại một két sắt niêm phong chứa bằng chứng kinh tế. Hãy mở nó trước khi chợ mở cửa lúc bình minh.",
+    "missionTitle": "Nhiệm Vụ: Mở Lại Chợ",
+    "missionBody": "Bạn là nhà phân tích mới nhất của Hội đồng Kinh tế Thành phố Cảng. Qua đêm, tình trạng thiếu cà phê khiến giá tăng vọt và người dân đòi câu trả lời. Nhà kinh tế trưởng sắp nghỉ hưu đã khóa hộp quyết định của hội đồng và chỉ để lại các thẻ bằng chứng. Hãy mở từng MANH MỐI, rồi CHỈ dùng những gì các thẻ đó chứng minh để giải các Ổ KHÓA. Đừng dựa vào kiến thức bên ngoài — hộp chỉ chấp nhận lập luận mà bằng chứng ủng hộ. Giải mọi ổ khóa để mở lại chợ và lập lại trật tự.",
+    "clues": [
+     {
+      "nm": "Giá Cà Phê",
+      "title": "Manh Mối 1 — Báo Cáo Giá",
+      "body": "Một đợt hạn hán đã phá hủy một nửa vụ mùa cà phê của Thành phố Cảng. Với ít hạt hơn nhiều nhưng vẫn có bấy nhiêu người muốn mua cà phê, giá trên kệ nhảy từ $4 lên $9 mỗi túi trong một tuần. Các cửa hàng báo cáo kệ trống trước buổi trưa."
+     },
+     {
+      "nm": "Sự Đánh Đổi",
+      "title": "Manh Mối 2 — Lựa Chọn Của Hội Đồng",
+      "body": "Hội đồng có $1,000,000 quỹ khẩn cấp. Có thể chi tiền HOẶC để trợ cấp nhập khẩu cà phê HOẶC để sửa nhà máy nước bị hư do lũ — không thể cả hai. Vị trưởng viết: 'Dù chọn gì, chi phí thật sự là điều tốt nhất mà ta đã từ bỏ.'"
+     },
+     {
+      "nm": "Hai Hệ Thống",
+      "title": "Manh Mối 3 — Thị Trường và Mệnh Lệnh",
+      "body": "Trong nền kinh tế THỊ TRƯỜNG, giá tăng giảm theo cung và cầu, và doanh nghiệp quyết định bán gì. Trong nền kinh tế MỆNH LỆNH, một chính phủ trung ương ấn định giá và quyết định sản xuất gì. Thành phố Cảng luôn để giá di chuyển tự do."
+     },
+     {
+      "nm": "Nguồn Cung Mới",
+      "title": "Manh Mối 4 — Lô Hàng Đến",
+      "body": "Vì giá tăng quá cao, người bán cà phê từ ba vùng lân cận vội vàng đưa các lô hàng thêm đến Thành phố Cảng để kiếm lợi nhuận. Trong vài ngày, nguồn cung tăng, kệ đầy lại, và giá bắt đầu giảm về $5."
+     },
+     {
+      "nm": "Thông Báo Lễ Hội",
+      "title": "Manh Mối 5 — Hội Chợ Xuân",
+      "body": "Hội Chợ Xuân hàng năm của Thành phố Cảng sẽ có vòng đu quay, nhạc sống và cuộc thi ăn bánh vào thứ Bảy này từ trưa đến 8 giờ tối. Vào cửa miễn phí cho cư dân. Có bãi đậu xe ở khu vực phía bắc."
+     },
+     {
+      "nm": "Định Nghĩa Của Trưởng",
+      "title": "Manh Mối 6 — Ghi Chú Về Thuật Ngữ",
+      "body": "Thẻ thuật ngữ của vị trưởng ghi: 'CHI PHÍ CƠ HỘI là giá trị của phương án tốt nhất kế tiếp mà bạn từ bỏ khi đưa ra một lựa chọn. Khi chính phủ ẤN ĐỊNH giá thấp hơn mức thị trường, người mua muốn nhiều hơn số người bán sẽ cung cấp — dẫn đến THIẾU HỤT.'"
+     }
+    ],
+    "locks": [
+     {
+      "title": "Ổ Khóa 1 — Cú Nhảy Giá",
+      "q": "Dùng Báo Cáo Giá, một túi cà phê đã tăng bao nhiêu ĐÔ LA trong tuần hạn hán? Nhập vào phần chênh lệch.",
+      "reason": "Giá chuyển từ $4 lên $9, tăng $5, vì cung giảm trong khi cầu giữ nguyên."
+     },
+     {
+      "title": "Ổ Khóa 2 — Vì Sao Giá Tăng",
+      "q": "Theo các manh mối, VÌ SAO giá cà phê leo từ $4 lên $9?",
+      "reason": "Manh Mối 1 cho thấy cung giảm (hạn hán) trong khi cầu giữ vững, điều này đẩy giá lên trong nền kinh tế thị trường.",
+      "options": [
+       "Cung giảm trong khi cầu giữ nguyên",
+       "Chính phủ ra lệnh giá cao hơn",
+       "Cầu biến mất hoàn toàn",
+       "Người mua đột nhiên ngừng muốn cà phê"
+      ]
+     },
+     {
+      "title": "Ổ Khóa 3 — Gọi Tên Chi Phí",
+      "q": "Manh Mối 6 định nghĩa giá trị của phương án tốt nhất kế tiếp bị từ bỏ khi Hội đồng chọn một phương án thay vì phương án kia. Thuật ngữ kinh tế BA TỪ nào gọi tên điều này? (Hãy nghĩ về điều Hội đồng mất khi chọn nhà máy nước HOẶC trợ cấp cà phê.)",
+      "reason": "Manh Mối 2 và 6 cùng định nghĩa chi phí cơ hội: chọn một cách dùng $1,000,000 nghĩa là từ bỏ cách kia.",
+      "accepted": [
+       "chi phí cơ hội",
+       "chiphicohoi",
+       "chi-phi-co-hoi"
+      ]
+     },
+     {
+      "title": "Ổ Khóa 4 — Bằng Chứng Kinh Tế Thị Trường",
+      "q": "Hộp chỉ mở nếu bạn chọn những phát biểu mà các MANH MỐI chứng minh là đúng về nền kinh tế THỊ TRƯỜNG của Thành phố Cảng. Chọn mọi phát biểu được bằng chứng ủng hộ.",
+      "reason": "Manh Mối 3 và 4 cho thấy giá di chuyển tự do và người bán phản ứng với lợi nhuận — đặc điểm của nền kinh tế thị trường. Một chính phủ trung ương ấn định giá mô tả nền kinh tế mệnh lệnh, không phải Thành phố Cảng.",
+      "items": [
+       "Giá tăng giảm theo cung và cầu",
+       "Người bán vội đưa thêm nguồn cung để kiếm lợi nhuận cao hơn",
+       "Một chính phủ trung ương ấn định giá cà phê",
+       "Doanh nghiệp tự do quyết định bán gì",
+       "Chính phủ cấm mọi hoạt động bán cà phê"
+      ]
+     },
+     {
+      "title": "Ổ Khóa 5 — Chu Kỳ Thị Trường",
+      "q": "Sắp xếp bốn sự kiện của khủng hoảng cà phê theo đúng thứ tự nhân quả mà các manh mối mô tả. Dùng Manh Mối 1 và 4 để quyết định sự kiện nào đến trước và sự kiện nào ở cuối.",
+      "reason": "Manh Mối 1 và 4 vạch ra chu kỳ: hạn hán cắt giảm cung → giá tăng vọt và kệ trống → lợi nhuận cao thu hút người bán mới → cung trở lại và giá giảm.",
+      "pads": [
+       {
+        "emoji": "🌵",
+        "label": "Hạn hán phá hủy nửa vụ mùa"
+       },
+       {
+        "emoji": "📈",
+        "label": "Giá tăng vọt lên $9, kệ trống"
+       },
+       {
+        "emoji": "🚚",
+        "label": "Người bán mới đổ đến vì lợi nhuận"
+       },
+       {
+        "emoji": "📉",
+        "label": "Cung trở lại, giá giảm về $5"
+       }
+      ]
+     }
+    ],
+    "win": {
+     "stamp": "CHỢ ĐÃ MỞ LẠI ✓",
+     "h2": "Sổ Cái Đã Được Mở Khóa!",
+     "p": "Bạn đã lập luận như một nhà kinh tế — đọc bằng chứng để giải thích cung và cầu, cân nhắc chi phí cơ hội, và phân biệt nền kinh tế thị trường với nền kinh tế mệnh lệnh chỉ bằng những gì các manh mối chứng minh."
+    }
+   },
+   "zh": {
+    "title": "被锁的账本",
+    "sub": "某城市的紧急食品委员会留下了一个密封的保险箱,里面装着经济证据。请在黎明市场开市前打开它。",
+    "missionTitle": "任务:重开市场",
+    "missionBody": "你是港口城经济委员会最新的分析师。一夜之间,咖啡短缺使价格飙升,市民们要求得到答案。即将退休的首席经济学家锁上了委员会的决策箱,只留下了证据卡。请打开每一张线索,然后仅用这些卡片所证明的内容来解开各个锁。不要依赖外部知识——箱子只接受证据支持的推理。解开每一把锁,重开市场,恢复秩序。",
+    "clues": [
+     {
+      "nm": "咖啡价格",
+      "title": "线索1——价格报告",
+      "body": "一场干旱摧毁了港口城一半的咖啡收成。可用的咖啡豆少得多,但想买咖啡的人一样多,货架价格在一周内从每袋4美元跳到9美元。商店报告说中午前货架就空了。"
+     },
+     {
+      "nm": "取舍",
+      "title": "线索2——委员会的选择",
+      "body": "委员会有100万美元的应急资金。这笔钱可以用来补贴咖啡进口,或者用来修复被洪水损坏的水厂——不能两者兼顾。首席写道:'无论我们选择什么,真正的成本就是我们放弃的最好的东西。'"
+     },
+     {
+      "nm": "两种制度",
+      "title": "线索3——市场与计划",
+      "body": "在市场经济中,价格根据供给和需求上下波动,由企业决定卖什么。在计划经济中,中央政府设定价格并决定生产什么。港口城一直让价格自由波动。"
+     },
+     {
+      "nm": "新供应",
+      "title": "线索4——即将到来的货运",
+      "body": "由于价格涨得太高,来自三个邻近地区的咖啡卖家为了赚取利润,急忙把额外的货运送到港口城。几天之内,供应增加,货架重新装满,价格开始回落到5美元。"
+     },
+     {
+      "nm": "节日通知",
+      "title": "线索5——春季集市",
+      "body": "港口城一年一度的春季集市将于本周六中午至晚上8点举办摩天轮、现场音乐和吃派比赛。居民免费入场。北停车场提供停车位。"
+     },
+     {
+      "nm": "首席的定义",
+      "title": "线索6——术语说明",
+      "body": "首席的术语卡上写着:'机会成本是你做出选择时放弃的次优选择的价值。当政府把价格固定在市场水平以下时,买家想要的比卖家愿意供应的更多——就会出现短缺。'"
+     }
+    ],
+    "locks": [
+     {
+      "title": "锁1——价格跳涨",
+      "q": "根据价格报告,在干旱那一周,一袋咖啡上涨了多少美元?请输入差额。",
+      "reason": "价格从4美元涨到9美元,上涨了5美元,因为供给下降而需求保持不变。"
+     },
+     {
+      "title": "锁2——价格为何上涨",
+      "q": "根据线索,咖啡价格为什么从4美元涨到9美元?",
+      "reason": "线索1显示供给下降(干旱)而需求保持稳定,这在市场经济中会推高价格。",
+      "options": [
+       "供给下降而需求保持不变",
+       "政府下令提高价格",
+       "需求完全消失",
+       "买家突然不想要咖啡了"
+      ]
+     },
+     {
+      "title": "锁3——命名成本",
+      "q": "线索6定义了当委员会选择一个选项而非另一个时所放弃的次优选择的价值。哪个四字经济术语命名了这个概念?(想想委员会选择水厂或咖啡补贴时会失去什么。)",
+      "reason": "线索2和线索6共同定义了机会成本:选择100万美元的一种用途意味着放弃另一种。",
+      "accepted": [
+       "机会成本",
+       "机会成本。"
+      ]
+     },
+     {
+      "title": "锁4——市场经济的证据",
+      "q": "只有当你选出各线索证明为港口城市场经济中真实的陈述时,箱子才会打开。选出所有有证据支持的陈述。",
+      "reason": "线索3和4显示价格自由波动、卖家对利润作出反应——这是市场经济的特征。中央政府设定价格描述的是计划经济,而非港口城。",
+      "items": [
+       "价格根据供给和需求上下波动",
+       "卖家急忙运来额外供应以赚取更高利润",
+       "中央政府设定了咖啡价格",
+       "企业自由决定卖什么",
+       "政府禁止了所有咖啡销售"
+      ]
+     },
+     {
+      "title": "锁5——市场周期",
+      "q": "把咖啡危机的四个事件按线索描述的正确因果顺序排列。用线索1和4来判断哪个事件在前、哪个在最后。",
+      "reason": "线索1和4勾勒出这个周期:干旱削减供给→价格飙升货架空→高利润吸引新卖家→供应恢复价格下跌。",
+      "pads": [
+       {
+        "emoji": "🌵",
+        "label": "干旱摧毁一半收成"
+       },
+       {
+        "emoji": "📈",
+        "label": "价格飙升到9美元,货架空了"
+       },
+       {
+        "emoji": "🚚",
+        "label": "新卖家为利润涌入"
+       },
+       {
+        "emoji": "📉",
+        "label": "供应恢复,价格降到5美元"
+       }
+      ]
+     }
+    ],
+    "win": {
+     "stamp": "市场已重开 ✓",
+     "h2": "账本已解锁!",
+     "p": "你像经济学家一样推理——解读证据来解释供给和需求,权衡机会成本,并仅凭线索所证明的内容来区分市场经济与计划经济。"
+    }
+   },
+   "hi": {
+    "title": "बंद बहीखाता",
+    "sub": "एक शहर की आपातकालीन खाद्य परिषद ने आर्थिक साक्ष्यों से भरा एक सीलबंद तिजोरी छोड़ी है। इसे भोर में बाज़ार खुलने से पहले खोलें।",
+    "missionTitle": "मिशन: बाज़ार फिर से खोलें",
+    "missionBody": "आप हार्बर सिटी आर्थिक परिषद के सबसे नए विश्लेषक हैं। रातोंरात, कॉफ़ी की कमी ने कीमतें आसमान छुआ दीं और नागरिक जवाब मांग रहे हैं। सेवानिवृत्त हो रहे मुख्य अर्थशास्त्री ने परिषद का निर्णय-बॉक्स बंद कर दिया और केवल साक्ष्य कार्ड छोड़े। हर सुराग खोलें, फिर तालों को हल करने के लिए केवल उन्हीं कार्डों से सिद्ध बातों का उपयोग करें। बाहरी ज्ञान पर निर्भर न रहें — बॉक्स केवल वही तर्क स्वीकार करता है जिसे साक्ष्य समर्थन देते हैं। बाज़ार फिर से खोलने और व्यवस्था बहाल करने के लिए हर ताला हल करें।",
+    "clues": [
+     {
+      "nm": "कॉफ़ी की कीमतें",
+      "title": "सुराग 1 — कीमत रिपोर्ट",
+      "body": "एक सूखे ने हार्बर सिटी की आधी कॉफ़ी फसल नष्ट कर दी। बहुत कम बीन्स उपलब्ध होने पर भी उतने ही खरीदार कॉफ़ी चाहते थे, इसलिए शेल्फ की कीमत एक सप्ताह में प्रति बैग $4 से $9 तक कूद गई। दुकानें दोपहर तक खाली शेल्फ की सूचना देती हैं।"
+     },
+     {
+      "nm": "अदला-बदली",
+      "title": "सुराग 2 — परिषद का चुनाव",
+      "body": "परिषद के पास $1,000,000 आपातकालीन धन है। यह पैसा या तो कॉफ़ी आयात पर सब्सिडी देने पर, या बाढ़ से क्षतिग्रस्त जल संयंत्र की मरम्मत पर खर्च कर सकती है — दोनों पर नहीं। मुख्य ने लिखा: 'हम जो भी चुनें, असली लागत वह सबसे अच्छी चीज़ है जिसे हमने छोड़ दिया।'"
+     },
+     {
+      "nm": "दो प्रणालियाँ",
+      "title": "सुराग 3 — बाज़ार बनाम आदेश",
+      "body": "बाज़ार अर्थव्यवस्था में, कीमतें आपूर्ति और मांग के आधार पर ऊपर-नीचे होती हैं, और व्यवसाय तय करते हैं कि क्या बेचना है। आदेश अर्थव्यवस्था में, एक केंद्रीय सरकार कीमतें तय करती है और तय करती है कि क्या उत्पादित हो। हार्बर सिटी ने हमेशा कीमतों को स्वतंत्र रूप से चलने दिया है।"
+     },
+     {
+      "nm": "ताज़ा आपूर्ति",
+      "title": "सुराग 4 — आने वाली खेप",
+      "body": "कीमतें इतनी ऊंची हो जाने के कारण, तीन पड़ोसी क्षेत्रों के कॉफ़ी विक्रेताओं ने मुनाफ़ा कमाने के लिए हार्बर सिटी में अतिरिक्त खेप भेज दी। कुछ ही दिनों में, आपूर्ति बढ़ी, शेल्फ फिर भर गए, और कीमतें $5 की ओर गिरने लगीं।"
+     },
+     {
+      "nm": "उत्सव सूचना",
+      "title": "सुराग 5 — वसंत मेला",
+      "body": "हार्बर सिटी का वार्षिक वसंत मेला इस शनिवार दोपहर से रात 8 बजे तक फेरिस व्हील, लाइव संगीत और पाई खाने की प्रतियोगिता प्रस्तुत करेगा। निवासियों के लिए प्रवेश निःशुल्क है। उत्तरी लॉट में पार्किंग उपलब्ध है।"
+     },
+     {
+      "nm": "मुख्य की परिभाषा",
+      "title": "सुराग 6 — शब्दों पर एक नोट",
+      "body": "मुख्य के शब्दावली कार्ड पर लिखा है: 'अवसर लागत वह अगला-सर्वोत्तम विकल्प का मूल्य है जिसे आप कोई चुनाव करते समय छोड़ देते हैं। जब सरकार कीमत को बाज़ार स्तर से नीचे तय करती है, तो खरीदार विक्रेताओं की आपूर्ति से अधिक चाहते हैं — कमी उत्पन्न होती है।'"
+     }
+    ],
+    "locks": [
+     {
+      "title": "ताला 1 — कीमत की छलांग",
+      "q": "कीमत रिपोर्ट का उपयोग करते हुए, सूखे के सप्ताह में एक बैग कॉफ़ी कितने डॉलर बढ़ी? अंतर दर्ज करें।",
+      "reason": "कीमत $4 से $9 तक गई, $5 की वृद्धि, क्योंकि आपूर्ति गिरी जबकि मांग समान रही।"
+     },
+     {
+      "title": "ताला 2 — कीमतें क्यों बढ़ीं",
+      "q": "सुरागों के अनुसार, कॉफ़ी की कीमत $4 से $9 तक क्यों चढ़ी?",
+      "reason": "सुराग 1 दिखाता है कि आपूर्ति गिरी (सूखा) जबकि मांग स्थिर रही, जो बाज़ार अर्थव्यवस्था में कीमत को ऊपर धकेलता है।",
+      "options": [
+       "आपूर्ति गिरी जबकि मांग समान रही",
+       "सरकार ने ऊंची कीमत का आदेश दिया",
+       "मांग पूरी तरह गायब हो गई",
+       "खरीदारों ने अचानक कॉफ़ी चाहना बंद कर दिया"
+      ]
+     },
+     {
+      "title": "ताला 3 — लागत का नाम बताएं",
+      "q": "सुराग 6 उस अगले-सर्वोत्तम विकल्प के मूल्य को परिभाषित करता है जिसे परिषद एक विकल्प को दूसरे पर चुनते समय छोड़ देती है। कौन सा दो-शब्द वाला आर्थिक शब्द इसका नाम है? (सोचें कि परिषद जल संयंत्र या कॉफ़ी सब्सिडी चुनने पर क्या खोती है।)",
+      "reason": "सुराग 2 और 6 मिलकर अवसर लागत को परिभाषित करते हैं: $1,000,000 के एक उपयोग को चुनना दूसरे को छोड़ना है।",
+      "accepted": [
+       "अवसर लागत",
+       "अवसरलागत"
+      ]
+     },
+     {
+      "title": "ताला 4 — बाज़ार अर्थव्यवस्था के साक्ष्य",
+      "q": "बॉक्स तभी खुलेगा जब आप वे कथन चुनेंगे जिन्हें सुराग हार्बर सिटी की बाज़ार अर्थव्यवस्था के बारे में सच सिद्ध करते हैं। साक्ष्य द्वारा समर्थित हर कथन चुनें।",
+      "reason": "सुराग 3 और 4 दिखाते हैं कि कीमतें स्वतंत्र रूप से चलती हैं और विक्रेता मुनाफ़े पर प्रतिक्रिया देते हैं — बाज़ार अर्थव्यवस्था के लक्षण। एक केंद्रीय सरकार जो कीमतें तय करती है, वह आदेश अर्थव्यवस्था का वर्णन करती है, हार्बर सिटी का नहीं।",
+      "items": [
+       "कीमतें आपूर्ति और मांग के आधार पर ऊपर-नीचे होती थीं",
+       "विक्रेताओं ने अधिक मुनाफ़ा कमाने के लिए अतिरिक्त आपूर्ति भेजी",
+       "एक केंद्रीय सरकार ने कॉफ़ी की कीमत तय की",
+       "व्यवसायों ने स्वतंत्र रूप से तय किया कि क्या बेचना है",
+       "सरकार ने सभी कॉफ़ी बिक्री पर प्रतिबंध लगा दिया"
+      ]
+     },
+     {
+      "title": "ताला 5 — बाज़ार चक्र",
+      "q": "कॉफ़ी संकट की चार घटनाओं को सुरागों द्वारा वर्णित सही कारण-और-प्रभाव क्रम में व्यवस्थित करें। यह तय करने के लिए कि कौन सी घटना पहले आती है और कौन सी अंत में, सुराग 1 और 4 का उपयोग करें।",
+      "reason": "सुराग 1 और 4 चक्र का पता लगाते हैं: सूखा आपूर्ति काटता है → कीमत उछलती है और शेल्फ खाली → उच्च मुनाफ़ा नए विक्रेताओं को आकर्षित करता है → आपूर्ति लौटती है और कीमत गिरती है।",
+      "pads": [
+       {
+        "emoji": "🌵",
+        "label": "सूखा आधी फसल नष्ट करता है"
+       },
+       {
+        "emoji": "📈",
+        "label": "कीमत $9 तक उछलती है, शेल्फ खाली"
+       },
+       {
+        "emoji": "🚚",
+        "label": "नए विक्रेता मुनाफ़े के लिए आते हैं"
+       },
+       {
+        "emoji": "📉",
+        "label": "आपूर्ति लौटती है, कीमत $5 तक गिरती है"
+       }
+      ]
+     }
+    ],
+    "win": {
+     "stamp": "बाज़ार फिर खुला ✓",
+     "h2": "बहीखाता खुल गया!",
+     "p": "आपने एक अर्थशास्त्री की तरह तर्क किया — आपूर्ति और मांग समझाने के लिए साक्ष्य पढ़े, अवसर लागत तौली, और केवल सुरागों से सिद्ध बातों का उपयोग करके बाज़ार अर्थव्यवस्था को आदेश अर्थव्यवस्था से अलग किया।"
+    }
+   },
+   "ar": {
+    "title": "دفتر الحسابات المُقفل",
+    "sub": "تركت لجنة الطوارئ الغذائية في مدينة ما خزنة مختومة مليئة بالأدلة الاقتصادية. افتحها قبل أن يفتح السوق عند الفجر.",
+    "missionTitle": "المهمة: إعادة فتح السوق",
+    "missionBody": "أنت أحدث محلل في المجلس الاقتصادي لمدينة الميناء. بين عشية وضحاها، تسبب نقص القهوة في ارتفاع الأسعار بشدة والمواطنون يطالبون بإجابات. أقفل كبير الاقتصاديين المتقاعد صندوق قرارات المجلس ولم يترك سوى بطاقات الأدلة. افتح كل دليل، ثم استخدم فقط ما تثبته تلك البطاقات لحل الأقفال. لا تعتمد على معرفة خارجية — الصندوق يقبل فقط الاستدلال الذي تدعمه الأدلة. حل كل قفل لإعادة فتح السوق واستعادة النظام.",
+    "clues": [
+     {
+      "nm": "أسعار القهوة",
+      "title": "الدليل 1 — تقرير الأسعار",
+      "body": "دمّر جفاف نصف محصول القهوة في مدينة الميناء. مع توفر حبوب أقل بكثير ولكن العدد نفسه من المشترين الراغبين في القهوة، قفز سعر الرف من 4 دولارات إلى 9 دولارات للكيس الواحد في أسبوع. تفيد المتاجر بأن الرفوف تفرغ بحلول الظهر."
+     },
+     {
+      "nm": "المفاضلة",
+      "title": "الدليل 2 — خيار المجلس",
+      "body": "لدى المجلس 1,000,000 دولار من أموال الطوارئ. يمكن إنفاق المال إما لدعم واردات القهوة أو لإصلاح محطة المياه المتضررة من الفيضان — وليس كليهما. كتب الكبير: 'مهما اخترنا، فإن التكلفة الحقيقية هي أفضل شيء تخلينا عنه.'"
+     },
+     {
+      "nm": "نظامان",
+      "title": "الدليل 3 — السوق مقابل التوجيه",
+      "body": "في اقتصاد السوق، ترتفع الأسعار وتنخفض بناءً على العرض والطلب، وتقرر الشركات ماذا تبيع. في الاقتصاد الموجّه، تحدد حكومة مركزية الأسعار وتقرر ماذا يُنتَج. سمحت مدينة الميناء دائمًا للأسعار بالتحرك بحرية."
+     },
+     {
+      "nm": "إمداد جديد",
+      "title": "الدليل 4 — الشحنة القادمة",
+      "body": "لأن الأسعار ارتفعت كثيرًا، سارع بائعو القهوة من ثلاث مناطق مجاورة بإرسال شحنات إضافية إلى مدينة الميناء لكسب الربح. خلال أيام، زاد العرض، وامتلأت الرفوف من جديد، وبدأت الأسعار تنخفض نحو 5 دولارات."
+     },
+     {
+      "nm": "إعلان المهرجان",
+      "title": "الدليل 5 — معرض الربيع",
+      "body": "سيقدم معرض الربيع السنوي في مدينة الميناء عجلة فيريس وموسيقى حية ومسابقة أكل الفطائر يوم السبت هذا من الظهر حتى الساعة 8 مساءً. الدخول مجاني للمقيمين. يتوفر موقف سيارات في الساحة الشمالية."
+     },
+     {
+      "nm": "تعريف الكبير",
+      "title": "الدليل 6 — ملاحظة حول المصطلحات",
+      "body": "تقول بطاقة مصطلحات الكبير: 'تكلفة الفرصة البديلة هي قيمة البديل الأفضل التالي الذي تتخلى عنه عند اتخاذ خيار. عندما تحدد الحكومة سعرًا أقل من مستوى السوق، يريد المشترون أكثر مما سيوفره البائعون — ينتج عن ذلك نقص.'"
+     }
+    ],
+    "locks": [
+     {
+      "title": "القفل 1 — قفزة السعر",
+      "q": "باستخدام تقرير الأسعار، كم دولارًا ارتفع كيس القهوة الواحد خلال أسبوع الجفاف؟ أدخل الفرق.",
+      "reason": "انتقل السعر من 4 دولارات إلى 9 دولارات، بزيادة 5 دولارات، لأن العرض انخفض بينما بقي الطلب كما هو."
+     },
+     {
+      "title": "القفل 2 — لماذا ارتفعت الأسعار",
+      "q": "وفقًا للأدلة، لماذا ارتفع سعر القهوة من 4 دولارات إلى 9 دولارات؟",
+      "reason": "يُظهر الدليل 1 أن العرض انخفض (الجفاف) بينما بقي الطلب ثابتًا، وهذا يدفع السعر للأعلى في اقتصاد السوق.",
+      "options": [
+       "انخفض العرض بينما بقي الطلب كما هو",
+       "أمرت الحكومة بسعر أعلى",
+       "اختفى الطلب تمامًا",
+       "توقف المشترون فجأة عن الرغبة في القهوة"
+      ]
+     },
+     {
+      "title": "القفل 3 — سمِّ التكلفة",
+      "q": "يعرّف الدليل 6 قيمة البديل الأفضل التالي الذي يُتخلى عنه عندما يختار المجلس خيارًا على الآخر. أي مصطلح اقتصادي من ثلاث كلمات يسمي هذا؟ (فكّر فيما يخسره المجلس باختيار محطة المياه أو دعم القهوة.)",
+      "reason": "يعرّف الدليلان 2 و6 معًا تكلفة الفرصة البديلة: اختيار استخدام واحد للمليون دولار يعني التخلي عن الآخر.",
+      "accepted": [
+       "تكلفة الفرصة البديلة",
+       "تكلفة الفرصة",
+       "تكلفةالفرصةالبديلة"
+      ]
+     },
+     {
+      "title": "القفل 4 — أدلة اقتصاد السوق",
+      "q": "لن يُفتح الصندوق إلا إذا اخترت العبارات التي تثبت الأدلة أنها صحيحة عن اقتصاد السوق في مدينة الميناء. اختر كل عبارة تدعمها الأدلة.",
+      "reason": "يُظهر الدليلان 3 و4 أن الأسعار تتحرك بحرية وأن البائعين يستجيبون للربح — سمات اقتصاد السوق. الحكومة المركزية التي تحدد الأسعار تصف الاقتصاد الموجّه، وليس مدينة الميناء.",
+      "items": [
+       "ارتفعت الأسعار وانخفضت بناءً على العرض والطلب",
+       "سارع البائعون بإرسال إمداد إضافي لكسب ربح أعلى",
+       "حددت حكومة مركزية سعر القهوة",
+       "قررت الشركات بحرية ماذا تبيع",
+       "حظرت الحكومة كل مبيعات القهوة"
+      ]
+     },
+     {
+      "title": "القفل 5 — دورة السوق",
+      "q": "رتّب الأحداث الأربعة لأزمة القهوة في ترتيب السبب والنتيجة الصحيح الذي تصفه الأدلة. استخدم الدليلين 1 و4 لتحديد أي حدث يأتي أولًا وأيها يأتي أخيرًا.",
+      "reason": "يرسم الدليلان 1 و4 الدورة: الجفاف يقلل العرض ← يقفز السعر وتفرغ الرفوف ← الربح المرتفع يجذب بائعين جددًا ← يعود العرض وينخفض السعر.",
+      "pads": [
+       {
+        "emoji": "🌵",
+        "label": "الجفاف يدمر نصف المحصول"
+       },
+       {
+        "emoji": "📈",
+        "label": "يقفز السعر إلى 9 دولارات، الرفوف فارغة"
+       },
+       {
+        "emoji": "🚚",
+        "label": "بائعون جدد يتدفقون طلبًا للربح"
+       },
+       {
+        "emoji": "📉",
+        "label": "يعود العرض، ينخفض السعر إلى 5 دولارات"
+       }
+      ]
+     }
+    ],
+    "win": {
+     "stamp": "أُعيد فتح السوق ✓",
+     "h2": "فُتح دفتر الحسابات!",
+     "p": "لقد استدللت مثل اقتصادي — قرأت الأدلة لتفسير العرض والطلب، ووازنت تكلفة الفرصة البديلة، وميّزت اقتصاد السوق عن الاقتصاد الموجّه باستخدام ما أثبتته الأدلة فقط."
+    }
+   },
+   "ur": {
+    "title": "مقفل کھاتہ",
+    "sub": "ایک شہر کی ہنگامی غذائی کونسل نے معاشی شواہد سے بھری ایک سربمہر تجوری چھوڑی ہے۔ اسے صبح سویرے بازار کھلنے سے پہلے کھولیں۔",
+    "missionTitle": "مشن: بازار دوبارہ کھولیں",
+    "missionBody": "آپ ہاربر سٹی اکنامک کونسل کے سب سے نئے تجزیہ کار ہیں۔ راتوں رات، کافی کی قلت نے قیمتیں آسمان پر پہنچا دیں اور شہری جواب مانگ رہے ہیں۔ ریٹائر ہونے والے چیف ماہرِ معاشیات نے کونسل کا فیصلہ باکس مقفل کر دیا اور صرف شواہد کے کارڈ چھوڑے۔ ہر سراغ کھولیں، پھر تالے حل کرنے کے لیے صرف انہی کارڈوں سے ثابت ہونے والی باتوں کا استعمال کریں۔ بیرونی علم پر انحصار نہ کریں — باکس صرف وہی استدلال قبول کرتا ہے جسے شواہد سہارا دیں۔ بازار دوبارہ کھولنے اور نظم بحال کرنے کے لیے ہر تالہ حل کریں۔",
+    "clues": [
+     {
+      "nm": "کافی کی قیمتیں",
+      "title": "سراغ 1 — قیمت کی رپورٹ",
+      "body": "ایک خشک سالی نے ہاربر سٹی کی آدھی کافی کی فصل تباہ کر دی۔ بہت کم دانے دستیاب ہونے کے باوجود اتنے ہی خریدار کافی چاہتے تھے، اس لیے شیلف کی قیمت ایک ہفتے میں فی تھیلا 4 ڈالر سے 9 ڈالر تک چھلانگ لگا گئی۔ دکانیں دوپہر تک خالی شیلف کی اطلاع دیتی ہیں۔"
+     },
+     {
+      "nm": "تبادلہ",
+      "title": "سراغ 2 — کونسل کا انتخاب",
+      "body": "کونسل کے پاس 1,000,000 ڈالر کے ہنگامی فنڈز ہیں۔ یہ رقم یا تو کافی کی درآمد پر سبسڈی دینے پر، یا سیلاب سے متاثرہ پانی کے پلانٹ کی مرمت پر خرچ کر سکتی ہے — دونوں پر نہیں۔ چیف نے لکھا: 'ہم جو بھی چنیں، اصل لاگت وہ بہترین چیز ہے جسے ہم نے چھوڑ دیا۔'"
+     },
+     {
+      "nm": "دو نظام",
+      "title": "سراغ 3 — بازار بمقابلہ حکم",
+      "body": "بازاری معیشت میں، قیمتیں رسد اور طلب کی بنیاد پر اوپر نیچے ہوتی ہیں، اور کاروبار طے کرتے ہیں کہ کیا بیچنا ہے۔ حکمی معیشت میں، ایک مرکزی حکومت قیمتیں طے کرتی ہے اور فیصلہ کرتی ہے کہ کیا پیدا ہو۔ ہاربر سٹی نے ہمیشہ قیمتوں کو آزادانہ حرکت کرنے دیا ہے۔"
+     },
+     {
+      "nm": "تازہ رسد",
+      "title": "سراغ 4 — آنے والی کھیپ",
+      "body": "چونکہ قیمتیں اتنی زیادہ ہو گئیں، تین پڑوسی علاقوں کے کافی فروش منافع کمانے کے لیے ہاربر سٹی میں اضافی کھیپ بھیجنے میں جلدی کر گئے۔ چند دنوں میں، رسد بڑھی، شیلف دوبارہ بھر گئے، اور قیمتیں 5 ڈالر کی طرف گرنے لگیں۔"
+     },
+     {
+      "nm": "تہوار کا نوٹس",
+      "title": "سراغ 5 — بہار میلہ",
+      "body": "ہاربر سٹی کا سالانہ بہار میلہ اس ہفتے کے دن دوپہر سے رات 8 بجے تک فیرس وہیل، براہِ راست موسیقی اور پائی کھانے کا مقابلہ پیش کرے گا۔ رہائشیوں کے لیے داخلہ مفت ہے۔ شمالی احاطے میں پارکنگ دستیاب ہے۔"
+     },
+     {
+      "nm": "چیف کی تعریف",
+      "title": "سراغ 6 — اصطلاحات پر ایک نوٹ",
+      "body": "چیف کے لغت کارڈ پر لکھا ہے: 'موقع کی لاگت وہ اگلے بہترین متبادل کی قدر ہے جسے آپ کوئی انتخاب کرتے وقت چھوڑ دیتے ہیں۔ جب حکومت قیمت کو بازار کی سطح سے نیچے مقرر کرتی ہے، تو خریدار بیچنے والوں کی رسد سے زیادہ چاہتے ہیں — قلت پیدا ہوتی ہے۔'"
+     }
+    ],
+    "locks": [
+     {
+      "title": "تالہ 1 — قیمت کی چھلانگ",
+      "q": "قیمت رپورٹ کا استعمال کرتے ہوئے، خشک سالی کے ہفتے میں کافی کا ایک تھیلا کتنے ڈالر بڑھا؟ فرق درج کریں۔",
+      "reason": "قیمت 4 ڈالر سے 9 ڈالر تک گئی، 5 ڈالر کا اضافہ، کیونکہ رسد گری جبکہ طلب یکساں رہی۔"
+     },
+     {
+      "title": "تالہ 2 — قیمتیں کیوں بڑھیں",
+      "q": "سراغوں کے مطابق، کافی کی قیمت 4 ڈالر سے 9 ڈالر تک کیوں چڑھی؟",
+      "reason": "سراغ 1 دکھاتا ہے کہ رسد گری (خشک سالی) جبکہ طلب مستحکم رہی، جو بازاری معیشت میں قیمت کو اوپر دھکیلتی ہے۔",
+      "options": [
+       "رسد گری جبکہ طلب یکساں رہی",
+       "حکومت نے زیادہ قیمت کا حکم دیا",
+       "طلب مکمل طور پر غائب ہو گئی",
+       "خریداروں نے اچانک کافی چاہنا بند کر دیا"
+      ]
+     },
+     {
+      "title": "تالہ 3 — لاگت کا نام بتائیں",
+      "q": "سراغ 6 اس اگلے بہترین متبادل کی قدر کی تعریف کرتا ہے جسے کونسل ایک انتخاب کو دوسرے پر چنتے وقت چھوڑ دیتی ہے۔ کون سی تین لفظی معاشی اصطلاح اس کا نام ہے؟ (سوچیں کہ کونسل پانی کا پلانٹ یا کافی سبسڈی چنتے وقت کیا کھوتی ہے۔)",
+      "reason": "سراغ 2 اور 6 مل کر موقع کی لاگت کی تعریف کرتے ہیں: 1,000,000 ڈالر کے ایک استعمال کو چننا دوسرے کو چھوڑنا ہے۔",
+      "accepted": [
+       "موقع کی لاگت",
+       "موقع کی قیمت",
+       "موقعکیلاگت"
+      ]
+     },
+     {
+      "title": "تالہ 4 — بازاری معیشت کے شواہد",
+      "q": "باکس تبھی کھلے گا جب آپ وہ بیانات چنیں گے جنہیں سراغ ہاربر سٹی کی بازاری معیشت کے بارے میں سچ ثابت کرتے ہیں۔ شواہد سے تائید شدہ ہر بیان چنیں۔",
+      "reason": "سراغ 3 اور 4 دکھاتے ہیں کہ قیمتیں آزادانہ حرکت کرتی ہیں اور بیچنے والے منافع پر ردعمل دیتے ہیں — بازاری معیشت کی خصوصیات۔ ایک مرکزی حکومت جو قیمتیں طے کرتی ہے، وہ حکمی معیشت بیان کرتی ہے، ہاربر سٹی نہیں۔",
+      "items": [
+       "قیمتیں رسد اور طلب کی بنیاد پر اوپر نیچے ہوتی تھیں",
+       "بیچنے والوں نے زیادہ منافع کمانے کے لیے اضافی رسد بھیجی",
+       "ایک مرکزی حکومت نے کافی کی قیمت طے کی",
+       "کاروباروں نے آزادانہ طے کیا کہ کیا بیچنا ہے",
+       "حکومت نے تمام کافی فروخت پر پابندی لگا دی"
+      ]
+     },
+     {
+      "title": "تالہ 5 — بازاری چکر",
+      "q": "کافی بحران کے چار واقعات کو سراغوں کے بیان کردہ درست علت و معلول کی ترتیب میں رکھیں۔ یہ طے کرنے کے لیے کہ کون سا واقعہ پہلے آتا ہے اور کون سا آخر میں، سراغ 1 اور 4 کا استعمال کریں۔",
+      "reason": "سراغ 1 اور 4 چکر کا نقشہ بناتے ہیں: خشک سالی رسد کاٹتی ہے ← قیمت چھلانگ لگاتی ہے اور شیلف خالی ← زیادہ منافع نئے بیچنے والوں کو کھینچتا ہے ← رسد لوٹتی ہے اور قیمت گرتی ہے۔",
+      "pads": [
+       {
+        "emoji": "🌵",
+        "label": "خشک سالی آدھی فصل تباہ کرتی ہے"
+       },
+       {
+        "emoji": "📈",
+        "label": "قیمت 9 ڈالر تک چھلانگ لگاتی ہے، شیلف خالی"
+       },
+       {
+        "emoji": "🚚",
+        "label": "نئے بیچنے والے منافع کے لیے آتے ہیں"
+       },
+       {
+        "emoji": "📉",
+        "label": "رسد لوٹتی ہے، قیمت 5 ڈالر تک گرتی ہے"
+       }
+      ]
+     }
+    ],
+    "win": {
+     "stamp": "بازار دوبارہ کھل گیا ✓",
+     "h2": "کھاتہ کھل گیا!",
+     "p": "آپ نے ایک ماہرِ معاشیات کی طرح استدلال کیا — رسد اور طلب کی وضاحت کے لیے شواہد پڑھے، موقع کی لاگت تولی، اور صرف سراغوں سے ثابت باتوں کا استعمال کرتے ہوئے بازاری معیشت کو حکمی معیشت سے الگ کیا۔"
+    }
+   }
+  }
+ },
+ {
+  "slug": "g912-ss-history",
+  "grade": "grade912",
+  "subject": "Social Studies",
+  "teks": "US History 1, 29",
+  "icon": "🕵️",
+  "master": {
+   "title": "The Sealed Archive: Road to Rupture",
+   "sub": "A locked archive holds five evidence cards from the years before a young republic split apart. Read the documents, ignore the junk, and let the paper trail — not the dates you memorized — tell you what caused what, and in what order.",
+   "missionTitle": "Case File: Rebuild the Chain of Causes",
+   "missionBody": "You are a junior historian at the State Documents Vault. A major national conflict tore the country apart, and the public wants a simple answer: 'it just happened.' Your job is to prove otherwise. The vault holds four real evidence cards and one useless scrap that got filed by mistake. Using ONLY what these documents actually say, you must reconstruct the chain of cause and effect and place the events in the correct order — reasoning from the evidence, NOT from any date you happen to remember. Solve every lock to seal your findings into the official record and show that history builds, step by step, toward a breaking point.",
+   "clues": [
+    {
+     "ico": "📜",
+     "nm": "Card A",
+     "title": "Petition of the Delegates (Document A)",
+     "body": "A regional assembly writes to the central government: 'We have sent THREE formal petitions asking that the new tax on our goods be lifted. Each was refused. We warn that continued refusal will force our provinces to consider withdrawing from the union.' The letter is stamped 'FIRST WARNING.'"
+    },
+    {
+     "ico": "🪶",
+     "nm": "Card B",
+     "title": "Governor's Reply (Document B)",
+     "body": "The central governor responds to Document A: 'The petition is denied. The tax stands. Any province that withdraws will be treated as being in rebellion, and troops will be sent to keep order.' The reply directly quotes and answers the delegates' warning."
+    },
+    {
+     "ico": "🔥",
+     "nm": "Card C",
+     "title": "Field Dispatch (Document C)",
+     "body": "A military courier reports: 'Following the governor's threat, three provinces voted to withdraw. This morning our garrison and the provincial militia exchanged the FIRST shots at the river bridge. Open conflict has begun.' Dispatch marked 'after the withdrawal vote.'"
+    },
+    {
+     "ico": "💰",
+     "nm": "Card D",
+     "title": "The Tax Ledger (Document D)",
+     "body": "An accounting page: 'A new tax was placed on all goods shipped from the southern provinces. Revenue collected: 40,000 coins in year one. Merchants filed complaints.' This is the tax the delegates were petitioning against — the original grievance behind the whole dispute."
+    },
+    {
+     "ico": "🧾",
+     "nm": "Card E",
+     "title": "Vault Supply Receipt (Document E)",
+     "body": "A storeroom invoice: 'Delivered to the archive — 12 reams of paper, 3 boxes of ink, 1 new filing cabinet, and lamp oil for the reading room. Signed by the night clerk.' Nothing here refers to any tax, petition, or conflict."
+    }
+   ],
+   "locks": [
+    {
+     "type": "mc",
+     "title": "Lock 1: Spot the Decoy",
+     "q": "Four cards are evidence about the road to conflict; one is useless junk that was filed by mistake. Which card proves NOTHING about the causes and should be ignored?",
+     "reason": "Document E is only a storeroom invoice for paper, ink, and lamp oil. It never mentions the tax, the petitions, the withdrawal, or the fighting, so it is the irrelevant decoy.",
+     "options": [
+      "Document A — the Petition of the Delegates",
+      "Document C — the Field Dispatch",
+      "Document D — the Tax Ledger",
+      "Document E — the Vault Supply Receipt"
+     ],
+     "answerIndex": 3
+    },
+    {
+     "type": "word",
+     "title": "Lock 2: The Root Cause",
+     "q": "Trace the dispute back to its beginning. According to the evidence, what single thing was the ORIGINAL grievance that the delegates kept petitioning against — the first cause the whole chain grows from? Answer in one word.",
+     "reason": "Document D shows the new TAX on shipped goods was the original grievance, and Document A confirms the delegates were petitioning to have that tax lifted. Everything else follows from it.",
+     "accepted": [
+      "tax",
+      "the tax",
+      "taxes",
+      "taxation"
+     ]
+    },
+    {
+     "type": "digit",
+     "title": "Lock 3: Count the Refusals",
+     "q": "The petition card tells you exactly how many times the delegates formally asked for relief before things escalated. Read Document A carefully. How many petitions were sent and refused?",
+     "reason": "Document A states plainly that THREE formal petitions were sent and each was refused, which is what pushed the delegates toward talk of withdrawing.",
+     "digitAnswer": "3"
+    },
+    {
+     "type": "seq",
+     "title": "Lock 4: Rebuild the Chain of Causes",
+     "q": "Do NOT use dates you memorized. Use the words inside the cards — each one says what it came 'after' or what it answers — to place these four events in the order they actually happened, earliest first.",
+     "reason": "The cards cross-reference each other: the tax (D) was the original grievance; the delegates then petitioned and warned (A); the governor answered that warning with a threat (B); after the withdrawal vote, the first shots were fired (C). D → A → B → C.",
+     "pads": [
+      {
+       "key": "d",
+       "emoji": "💰",
+       "label": "The tax is placed on shipped goods (Doc D)"
+      },
+      {
+       "key": "a",
+       "emoji": "📜",
+       "label": "Delegates petition and send a warning (Doc A)"
+      },
+      {
+       "key": "b",
+       "emoji": "🪶",
+       "label": "Governor denies the petition and threatens troops (Doc B)"
+      },
+      {
+       "key": "c",
+       "emoji": "🔥",
+       "label": "First shots fired after the withdrawal vote (Doc C)"
+      }
+     ],
+     "order": [
+      "d",
+      "a",
+      "b",
+      "c"
+     ]
+    },
+    {
+     "type": "multi",
+     "title": "Lock 5: What the Evidence Proves",
+     "q": "Select every statement that is PROVEN by the documents in this vault. Leave unchecked anything the cards do not actually support, even if it sounds true.",
+     "reason": "The cards prove the tax was the grievance (D), that petitions were refused (A/B), and that the governor's threat came before the first shots (B then C). The claims about who was 'right' or about a specific year are never established by these documents.",
+     "items": [
+      {
+       "text": "A new tax on shipped goods was the original grievance behind the dispute.",
+       "strong": true
+      },
+      {
+       "text": "The delegates' petitions were refused before any fighting broke out.",
+       "strong": true
+      },
+      {
+       "text": "The governor's threat of troops came before the first shots were fired.",
+       "strong": true
+      },
+      {
+       "text": "The conflict began in a specific year that these cards state outright.",
+       "strong": false
+      },
+      {
+       "text": "The documents prove which side was morally right in the dispute.",
+       "strong": false
+      }
+     ]
+    }
+   ],
+   "win": {
+    "stamp": "CHAIN OF CAUSES SEALED ✓",
+    "h2": "Case Closed, Historian.",
+    "p": "You practiced cause-and-effect and chronological reasoning: instead of leaning on memorized dates, you read primary sources, filtered out an irrelevant decoy, traced a grievance to its root, and ordered events FROM THE EVIDENCE itself."
+   }
+  },
+  "langs": {
+   "es": {
+    "title": "El Archivo Sellado: El Camino a la Ruptura",
+    "sub": "Un archivo cerrado guarda cinco tarjetas de evidencia de los años previos a la división de una joven república. Lee los documentos, ignora la basura y deja que el rastro de papel — no las fechas que memorizaste — te diga qué causó qué, y en qué orden.",
+    "missionTitle": "Expediente: Reconstruye la Cadena de Causas",
+    "missionBody": "Eres historiador júnior en la Bóveda de Documentos del Estado. Un gran conflicto nacional dividió al país, y el público quiere una respuesta simple: 'simplemente pasó'. Tu trabajo es demostrar lo contrario. La bóveda contiene cuatro tarjetas de evidencia reales y un papel inútil que se archivó por error. Usando SOLO lo que estos documentos realmente dicen, debes reconstruir la cadena de causa y efecto y colocar los eventos en el orden correcto — razonando a partir de la evidencia, NO de alguna fecha que recuerdes. Resuelve cada candado para sellar tus hallazgos en el registro oficial y demostrar que la historia se construye, paso a paso, hacia un punto de quiebre.",
+    "clues": [
+     {
+      "nm": "Tarjeta A",
+      "title": "Petición de los Delegados (Documento A)",
+      "body": "Una asamblea regional escribe al gobierno central: 'Hemos enviado TRES peticiones formales pidiendo que se elimine el nuevo impuesto sobre nuestros bienes. Cada una fue rechazada. Advertimos que la negativa continua obligará a nuestras provincias a considerar retirarse de la unión.' La carta lleva el sello 'PRIMERA ADVERTENCIA.'"
+     },
+     {
+      "nm": "Tarjeta B",
+      "title": "Respuesta del Gobernador (Documento B)",
+      "body": "El gobernador central responde al Documento A: 'La petición es denegada. El impuesto se mantiene. Cualquier provincia que se retire será tratada como en rebelión, y se enviarán tropas para mantener el orden.' La respuesta cita y contesta directamente la advertencia de los delegados."
+     },
+     {
+      "nm": "Tarjeta C",
+      "title": "Despacho de Campo (Documento C)",
+      "body": "Un mensajero militar informa: 'Tras la amenaza del gobernador, tres provincias votaron por retirarse. Esta mañana nuestra guarnición y la milicia provincial intercambiaron los PRIMEROS disparos en el puente del río. Ha comenzado el conflicto abierto.' Despacho marcado 'después del voto de retiro.'"
+     },
+     {
+      "nm": "Tarjeta D",
+      "title": "El Libro de Impuestos (Documento D)",
+      "body": "Una página contable: 'Se colocó un nuevo impuesto sobre todos los bienes enviados desde las provincias del sur. Ingresos recaudados: 40,000 monedas en el primer año. Los comerciantes presentaron quejas.' Este es el impuesto contra el que peticionaban los delegados — el agravio original detrás de toda la disputa."
+     },
+     {
+      "nm": "Tarjeta E",
+      "title": "Recibo de Suministros de la Bóveda (Documento E)",
+      "body": "Una factura del almacén: 'Entregado al archivo — 12 resmas de papel, 3 cajas de tinta, 1 archivador nuevo y aceite para lámpara para la sala de lectura. Firmado por el empleado nocturno.' Nada aquí se refiere a ningún impuesto, petición o conflicto."
+     }
+    ],
+    "locks": [
+     {
+      "title": "Candado 1: Detecta el Señuelo",
+      "q": "Cuatro tarjetas son evidencia sobre el camino al conflicto; una es basura inútil archivada por error. ¿Cuál tarjeta NO prueba nada sobre las causas y debe ignorarse?",
+      "reason": "El Documento E es solo una factura de almacén por papel, tinta y aceite para lámpara. Nunca menciona el impuesto, las peticiones, el retiro ni la lucha, así que es el señuelo irrelevante.",
+      "options": [
+       "Documento A — la Petición de los Delegados",
+       "Documento C — el Despacho de Campo",
+       "Documento D — el Libro de Impuestos",
+       "Documento E — el Recibo de Suministros"
+      ]
+     },
+     {
+      "title": "Candado 2: La Causa Raíz",
+      "q": "Rastrea la disputa hasta su inicio. Según la evidencia, ¿qué único elemento fue el agravio ORIGINAL contra el que los delegados seguían peticionando — la primera causa de la que crece toda la cadena? Responde en una palabra.",
+      "reason": "El Documento D muestra que el nuevo IMPUESTO sobre los bienes enviados fue el agravio original, y el Documento A confirma que los delegados peticionaban para que se eliminara ese impuesto. Todo lo demás se deriva de él.",
+      "accepted": [
+       "impuesto",
+       "el impuesto",
+       "impuestos",
+       "tributo"
+      ]
+     },
+     {
+      "title": "Candado 3: Cuenta los Rechazos",
+      "q": "La tarjeta de la petición te dice exactamente cuántas veces los delegados pidieron formalmente ayuda antes de que las cosas escalaran. Lee el Documento A con cuidado. ¿Cuántas peticiones se enviaron y fueron rechazadas?",
+      "reason": "El Documento A afirma claramente que se enviaron TRES peticiones formales y cada una fue rechazada, lo que empujó a los delegados a hablar de retirarse."
+     },
+     {
+      "title": "Candado 4: Reconstruye la Cadena de Causas",
+      "q": "NO uses fechas que memorizaste. Usa las palabras dentro de las tarjetas — cada una dice después de qué vino o a qué responde — para colocar estos cuatro eventos en el orden en que realmente ocurrieron, el más temprano primero.",
+      "reason": "Las tarjetas se refieren entre sí: el impuesto (D) fue el agravio original; luego los delegados peticionaron y advirtieron (A); el gobernador respondió a esa advertencia con una amenaza (B); tras el voto de retiro, se dispararon los primeros tiros (C). D → A → B → C."
+     },
+     {
+      "title": "Candado 5: Lo Que la Evidencia Prueba",
+      "q": "Selecciona cada afirmación que esté PROBADA por los documentos en esta bóveda. Deja sin marcar cualquier cosa que las tarjetas no respalden realmente, aunque suene verdadera.",
+      "reason": "Las tarjetas prueban que el impuesto fue el agravio (D), que las peticiones fueron rechazadas (A/B) y que la amenaza del gobernador vino antes de los primeros disparos (B luego C). Las afirmaciones sobre quién tenía la 'razón' o sobre un año específico nunca son establecidas por estos documentos.",
+      "items": [
+       "Un nuevo impuesto sobre los bienes enviados fue el agravio original detrás de la disputa.",
+       "Las peticiones de los delegados fueron rechazadas antes de que estallara la lucha.",
+       "La amenaza de tropas del gobernador vino antes de que se dispararan los primeros tiros.",
+       "El conflicto comenzó en un año específico que estas tarjetas declaran abiertamente.",
+       "Los documentos prueban qué lado tenía moralmente la razón en la disputa."
+      ]
+     }
+    ],
+    "win": {
+     "stamp": "CADENA DE CAUSAS SELLADA ✓",
+     "h2": "Caso Cerrado, Historiador.",
+     "p": "Practicaste el razonamiento de causa y efecto y cronológico: en lugar de apoyarte en fechas memorizadas, leíste fuentes primarias, filtraste un señuelo irrelevante, rastreaste un agravio hasta su raíz y ordenaste los eventos A PARTIR DE LA EVIDENCIA misma."
+    }
+   },
+   "vi": {
+    "title": "Kho Lưu Trữ Niêm Phong: Con Đường Đến Đổ Vỡ",
+    "sub": "Một kho lưu trữ khóa kín chứa năm thẻ bằng chứng từ những năm trước khi một nền cộng hòa non trẻ chia rẽ. Đọc các tài liệu, bỏ qua thứ vô dụng, và để dấu vết giấy tờ — không phải những ngày tháng bạn đã thuộc lòng — cho bạn biết điều gì gây ra điều gì, và theo thứ tự nào.",
+    "missionTitle": "Hồ Sơ Vụ Án: Dựng Lại Chuỗi Nguyên Nhân",
+    "missionBody": "Bạn là một sử gia trẻ tại Kho Tài Liệu của Bang. Một cuộc xung đột lớn của quốc gia đã xé nát đất nước, và công chúng muốn một câu trả lời đơn giản: 'nó chỉ đơn giản xảy ra'. Nhiệm vụ của bạn là chứng minh điều ngược lại. Kho chứa bốn thẻ bằng chứng thật và một mảnh giấy vô dụng bị lưu trữ nhầm. Chỉ dùng những gì các tài liệu này thực sự nói, bạn phải dựng lại chuỗi nhân quả và sắp xếp các sự kiện theo đúng thứ tự — suy luận từ bằng chứng, KHÔNG phải từ bất kỳ ngày tháng nào bạn tình cờ nhớ. Giải mọi ổ khóa để niêm phong phát hiện của bạn vào hồ sơ chính thức và cho thấy rằng lịch sử được xây dựng, từng bước một, hướng đến điểm đổ vỡ.",
+    "clues": [
+     {
+      "nm": "Thẻ A",
+      "title": "Đơn Kiến Nghị của Các Đại Biểu (Tài Liệu A)",
+      "body": "Một hội đồng khu vực viết cho chính quyền trung ương: 'Chúng tôi đã gửi BA đơn kiến nghị chính thức yêu cầu bãi bỏ thuế mới đánh vào hàng hóa của chúng tôi. Mỗi đơn đều bị từ chối. Chúng tôi cảnh báo rằng việc tiếp tục từ chối sẽ buộc các tỉnh của chúng tôi phải cân nhắc rút khỏi liên minh.' Bức thư được đóng dấu 'CẢNH BÁO ĐẦU TIÊN.'"
+     },
+     {
+      "nm": "Thẻ B",
+      "title": "Phúc Đáp của Thống Đốc (Tài Liệu B)",
+      "body": "Thống đốc trung ương phản hồi Tài Liệu A: 'Đơn kiến nghị bị bác bỏ. Thuế vẫn giữ nguyên. Bất kỳ tỉnh nào rút lui sẽ bị coi là nổi loạn, và quân đội sẽ được cử đến giữ trật tự.' Phúc đáp trích dẫn và trả lời trực tiếp lời cảnh báo của các đại biểu."
+     },
+     {
+      "nm": "Thẻ C",
+      "title": "Điện Báo Chiến Trường (Tài Liệu C)",
+      "body": "Một liên lạc viên quân sự báo cáo: 'Sau lời đe dọa của thống đốc, ba tỉnh đã bỏ phiếu rút lui. Sáng nay đồn trú của chúng tôi và dân quân tỉnh đã trao đổi những PHÁT SÚNG ĐẦU TIÊN tại cầu sông. Xung đột công khai đã bắt đầu.' Điện báo ghi 'sau cuộc bỏ phiếu rút lui.'"
+     },
+     {
+      "nm": "Thẻ D",
+      "title": "Sổ Cái Thuế (Tài Liệu D)",
+      "body": "Một trang kế toán: 'Một loại thuế mới đã được đánh vào tất cả hàng hóa vận chuyển từ các tỉnh phía nam. Doanh thu thu được: 40.000 đồng xu trong năm đầu tiên. Các thương nhân đã nộp đơn khiếu nại.' Đây là loại thuế mà các đại biểu đang kiến nghị chống lại — mối bất bình ban đầu đằng sau toàn bộ tranh chấp."
+     },
+     {
+      "nm": "Thẻ E",
+      "title": "Biên Nhận Vật Tư Kho (Tài Liệu E)",
+      "body": "Một hóa đơn kho: 'Giao đến kho lưu trữ — 12 ram giấy, 3 hộp mực, 1 tủ hồ sơ mới, và dầu đèn cho phòng đọc. Ký bởi nhân viên ca đêm.' Không có gì ở đây đề cập đến bất kỳ loại thuế, kiến nghị hay xung đột nào."
+     }
+    ],
+    "locks": [
+     {
+      "title": "Ổ Khóa 1: Nhận Diện Mồi Nhử",
+      "q": "Bốn thẻ là bằng chứng về con đường đến xung đột; một thẻ là rác vô dụng bị lưu trữ nhầm. Thẻ nào KHÔNG chứng minh điều gì về các nguyên nhân và nên bị bỏ qua?",
+      "reason": "Tài Liệu E chỉ là hóa đơn kho cho giấy, mực và dầu đèn. Nó không bao giờ đề cập đến thuế, kiến nghị, việc rút lui hay chiến sự, nên đó là mồi nhử không liên quan.",
+      "options": [
+       "Tài Liệu A — Đơn Kiến Nghị của Các Đại Biểu",
+       "Tài Liệu C — Điện Báo Chiến Trường",
+       "Tài Liệu D — Sổ Cái Thuế",
+       "Tài Liệu E — Biên Nhận Vật Tư"
+      ]
+     },
+     {
+      "title": "Ổ Khóa 2: Nguyên Nhân Gốc Rễ",
+      "q": "Lần theo tranh chấp về khởi đầu của nó. Theo bằng chứng, điều duy nhất nào là mối bất bình GỐC mà các đại biểu liên tục kiến nghị chống lại — nguyên nhân đầu tiên mà cả chuỗi phát triển từ đó? Trả lời bằng một từ.",
+      "reason": "Tài Liệu D cho thấy THUẾ mới đánh vào hàng hóa vận chuyển là mối bất bình gốc, và Tài Liệu A xác nhận các đại biểu đang kiến nghị để bãi bỏ loại thuế đó. Mọi thứ khác đều bắt nguồn từ đó.",
+      "accepted": [
+       "thuế",
+       "thuế mới",
+       "các loại thuế",
+       "sưu thuế"
+      ]
+     },
+     {
+      "title": "Ổ Khóa 3: Đếm Số Lần Bị Từ Chối",
+      "q": "Thẻ kiến nghị cho bạn biết chính xác các đại biểu đã chính thức yêu cầu giúp đỡ bao nhiêu lần trước khi mọi thứ leo thang. Đọc kỹ Tài Liệu A. Có bao nhiêu đơn kiến nghị đã được gửi và bị từ chối?",
+      "reason": "Tài Liệu A nói rõ rằng BA đơn kiến nghị chính thức đã được gửi và mỗi đơn đều bị từ chối, điều này đã đẩy các đại biểu đến chỗ nói về việc rút lui."
+     },
+     {
+      "title": "Ổ Khóa 4: Dựng Lại Chuỗi Nguyên Nhân",
+      "q": "ĐỪNG dùng những ngày tháng bạn đã thuộc lòng. Dùng những từ ngữ bên trong các thẻ — mỗi thẻ nói nó đến 'sau' điều gì hoặc trả lời điều gì — để sắp xếp bốn sự kiện này theo thứ tự chúng thực sự xảy ra, sớm nhất trước.",
+      "reason": "Các thẻ tham chiếu lẫn nhau: thuế (D) là mối bất bình gốc; sau đó các đại biểu kiến nghị và cảnh báo (A); thống đốc trả lời lời cảnh báo đó bằng một lời đe dọa (B); sau cuộc bỏ phiếu rút lui, những phát súng đầu tiên nổ ra (C). D → A → B → C."
+     },
+     {
+      "title": "Ổ Khóa 5: Điều Bằng Chứng Chứng Minh",
+      "q": "Chọn mọi phát biểu được CHỨNG MINH bởi các tài liệu trong kho này. Để trống bất kỳ điều gì mà các thẻ không thực sự hỗ trợ, ngay cả khi nó nghe có vẻ đúng.",
+      "reason": "Các thẻ chứng minh thuế là mối bất bình (D), rằng các kiến nghị bị từ chối (A/B), và lời đe dọa của thống đốc đến trước những phát súng đầu tiên (B rồi C). Các tuyên bố về việc ai 'đúng' hay về một năm cụ thể không bao giờ được các tài liệu này thiết lập.",
+      "items": [
+       "Một loại thuế mới đánh vào hàng hóa vận chuyển là mối bất bình gốc đằng sau tranh chấp.",
+       "Các đơn kiến nghị của các đại biểu bị từ chối trước khi bất kỳ cuộc chiến nào nổ ra.",
+       "Lời đe dọa điều quân của thống đốc đến trước khi những phát súng đầu tiên nổ ra.",
+       "Xung đột bắt đầu vào một năm cụ thể mà các thẻ này nêu rõ ràng.",
+       "Các tài liệu chứng minh bên nào đúng về mặt đạo đức trong tranh chấp."
+      ]
+     }
+    ],
+    "win": {
+     "stamp": "CHUỖI NGUYÊN NHÂN ĐÃ NIÊM PHONG ✓",
+     "h2": "Vụ Án Đã Khép Lại, Nhà Sử Học.",
+     "p": "Bạn đã thực hành suy luận nhân quả và theo trình tự thời gian: thay vì dựa vào những ngày tháng thuộc lòng, bạn đã đọc các nguồn sơ cấp, lọc bỏ một mồi nhử không liên quan, lần theo mối bất bình đến gốc rễ, và sắp xếp các sự kiện TỪ CHÍNH BẰNG CHỨNG."
+    }
+   },
+   "zh": {
+    "title": "封存的档案：走向分裂之路",
+    "sub": "一个上锁的档案库保存着五张证据卡，来自一个年轻共和国分裂前的岁月。阅读文件，忽略无用之物，让纸面线索——而非你背下的日期——告诉你什么导致了什么，以及顺序如何。",
+    "missionTitle": "案卷：重建因果链条",
+    "missionBody": "你是州档案库的一名初级历史学家。一场重大的全国冲突撕裂了这个国家，公众想要一个简单的答案：'它就那样发生了'。你的任务是证明并非如此。档案库藏有四张真实的证据卡和一张误归档的无用纸片。你必须仅凭这些文件真正所说的内容，重建因果链条并将事件按正确顺序排列——从证据中推理，而非从你恰好记得的任何日期。解开每一把锁，将你的发现封存进官方记录，证明历史是一步一步地朝着断裂点建立起来的。",
+    "clues": [
+     {
+      "nm": "卡片 A",
+      "title": "代表们的请愿书（文件 A）",
+      "body": "一个地区议会致信中央政府：'我们已经发出三份正式请愿，要求取消对我们货物征收的新税。每一份都被拒绝了。我们警告，持续的拒绝将迫使我们各省考虑退出联盟。'信上盖有'第一次警告'的印章。"
+     },
+     {
+      "nm": "卡片 B",
+      "title": "总督的回复（文件 B）",
+      "body": "中央总督回复文件 A：'请愿被驳回。税收维持不变。任何退出的省份将被视为叛乱，将派遣军队维持秩序。'回复直接引用并回答了代表们的警告。"
+     },
+     {
+      "nm": "卡片 C",
+      "title": "战地急件（文件 C）",
+      "body": "一名军方信使报告：'在总督威胁之后，三个省份投票退出。今晨我方驻军与省民兵在河桥交火，打响了第一枪。公开冲突已经开始。'急件标注'退出投票之后'。"
+     },
+     {
+      "nm": "卡片 D",
+      "title": "税收账簿（文件 D）",
+      "body": "一页账目：'对所有从南方各省运出的货物征收了一项新税。第一年征收收入：40,000枚硬币。商人们提出了投诉。'这正是代表们请愿反对的那项税——整场争端背后的最初不满。"
+     },
+     {
+      "nm": "卡片 E",
+      "title": "档案库供应收据（文件 E）",
+      "body": "一张仓库发票：'送交档案库——12令纸、3盒墨水、1个新档案柜，以及阅览室的灯油。由值夜文员签字。'这里没有任何内容涉及税收、请愿或冲突。"
+     }
+    ],
+    "locks": [
+     {
+      "title": "锁 1：找出诱饵",
+      "q": "四张卡片是关于走向冲突之路的证据；一张是被误归档的无用垃圾。哪张卡片对起因毫无证明作用，应当被忽略？",
+      "reason": "文件 E 只是一张关于纸张、墨水和灯油的仓库发票。它从未提及税收、请愿、退出或战斗，因此它是无关的诱饵。",
+      "options": [
+       "文件 A——代表们的请愿书",
+       "文件 C——战地急件",
+       "文件 D——税收账簿",
+       "文件 E——供应收据"
+      ]
+     },
+     {
+      "title": "锁 2：根本原因",
+      "q": "将争端追溯到它的起点。根据证据，代表们不断请愿反对的最初不满是哪一件事——整条链条从中生长出来的第一个原因？用一个词回答。",
+      "reason": "文件 D 显示对运出货物征收的新税是最初的不满，文件 A 确认代表们请愿要求取消该税。其他一切都由此衍生。",
+      "accepted": [
+       "税",
+       "税收",
+       "新税",
+       "赋税"
+      ]
+     },
+     {
+      "title": "锁 3：数一数被拒次数",
+      "q": "请愿卡片准确告诉你，在事态升级之前代表们正式请求救济了多少次。仔细阅读文件 A。共发出并被拒绝了多少份请愿？",
+      "reason": "文件 A 明确指出发出了三份正式请愿，每一份都被拒绝，这促使代表们开始谈论退出。"
+     },
+     {
+      "title": "锁 4：重建因果链条",
+      "q": "不要使用你背下的日期。使用卡片内的文字——每张都说明它在什么之'后'出现或它回答了什么——将这四个事件按它们实际发生的顺序排列，最早的在前。",
+      "reason": "卡片相互引用：税（D）是最初的不满；随后代表们请愿并警告（A）；总督以威胁回应该警告（B）；退出投票之后，打响了第一枪（C）。D → A → B → C。"
+     },
+     {
+      "title": "锁 5：证据所证明的",
+      "q": "选出这个档案库中的文件所能证明的每一项陈述。任何卡片实际上并不支持的内容，即使听起来是真的，也不要勾选。",
+      "reason": "卡片证明了税是不满之源（D），请愿被拒绝（A/B），以及总督的威胁在第一枪之前（先 B 后 C）。关于谁'有理'或关于某个具体年份的说法，这些文件从未确立。",
+      "items": [
+       "对运出货物征收的新税是争端背后的最初不满。",
+       "代表们的请愿在任何战斗爆发之前就被拒绝了。",
+       "总督派兵的威胁出现在打响第一枪之前。",
+       "冲突始于这些卡片明确说出的某个具体年份。",
+       "这些文件证明了争端中哪一方在道德上是正确的。"
+      ]
+     }
+    ],
+    "win": {
+     "stamp": "因果链条已封存 ✓",
+     "h2": "结案，历史学家。",
+     "p": "你练习了因果推理和时间顺序推理：你没有依赖背下的日期，而是阅读了原始史料，滤除了一个无关的诱饵，将不满追溯到根源，并从证据本身来排列事件的顺序。"
+    }
+   },
+   "hi": {
+    "title": "बंद अभिलेखागार: टूटन की ओर राह",
+    "sub": "एक बंद अभिलेखागार में एक युवा गणराज्य के बिखरने से पहले के वर्षों के पाँच साक्ष्य-कार्ड रखे हैं। दस्तावेज़ पढ़ें, बेकार चीज़ों को नज़रअंदाज़ करें, और कागज़ी सुरागों को — न कि याद की हुई तारीखों को — यह बताने दें कि किस चीज़ ने क्या कारण बनाया, और किस क्रम में।",
+    "missionTitle": "केस फ़ाइल: कारणों की श्रृंखला फिर से बनाएँ",
+    "missionBody": "आप राज्य दस्तावेज़ तिजोरी में एक कनिष्ठ इतिहासकार हैं। एक बड़े राष्ट्रीय संघर्ष ने देश को चीर दिया, और जनता एक सरल उत्तर चाहती है: 'यह बस हो गया'। आपका काम इसके विपरीत साबित करना है। तिजोरी में चार असली साक्ष्य-कार्ड और एक बेकार पर्ची है जो गलती से दाखिल हो गई। केवल इन दस्तावेज़ों में जो वास्तव में लिखा है उसका उपयोग करके, आपको कारण और प्रभाव की श्रृंखला फिर से बनानी है और घटनाओं को सही क्रम में रखना है — साक्ष्य से तर्क करके, न कि किसी तारीख से जो आपको याद हो। हर ताला खोलें ताकि अपने निष्कर्षों को आधिकारिक रिकॉर्ड में सील कर सकें और दिखा सकें कि इतिहास कदम-दर-कदम एक टूटन-बिंदु की ओर बनता है।",
+    "clues": [
+     {
+      "nm": "कार्ड A",
+      "title": "प्रतिनिधियों की याचिका (दस्तावेज़ A)",
+      "body": "एक क्षेत्रीय सभा केंद्रीय सरकार को लिखती है: 'हमने अपने माल पर लगे नए कर को हटाने के लिए तीन औपचारिक याचिकाएँ भेजी हैं। हर एक को अस्वीकार कर दिया गया। हम चेतावनी देते हैं कि लगातार इनकार हमारे प्रांतों को संघ से हटने पर विचार करने के लिए मजबूर करेगा।' पत्र पर 'पहली चेतावनी' की मुहर है।"
+     },
+     {
+      "nm": "कार्ड B",
+      "title": "राज्यपाल का उत्तर (दस्तावेज़ B)",
+      "body": "केंद्रीय राज्यपाल दस्तावेज़ A का उत्तर देते हैं: 'याचिका अस्वीकृत है। कर बना रहेगा। जो भी प्रांत हटेगा उसे विद्रोह में माना जाएगा, और व्यवस्था बनाए रखने के लिए सैनिक भेजे जाएँगे।' उत्तर प्रतिनिधियों की चेतावनी को सीधे उद्धृत करता और जवाब देता है।"
+     },
+     {
+      "nm": "कार्ड C",
+      "title": "रणक्षेत्र संदेश (दस्तावेज़ C)",
+      "body": "एक सैन्य संदेशवाहक रिपोर्ट करता है: 'राज्यपाल की धमकी के बाद, तीन प्रांतों ने हटने के लिए मतदान किया। आज सुबह हमारी छावनी और प्रांतीय मिलिशिया ने नदी के पुल पर पहली गोलियाँ चलाईं। खुला संघर्ष शुरू हो गया है।' संदेश पर लिखा है 'हटने के मतदान के बाद'।"
+     },
+     {
+      "nm": "कार्ड D",
+      "title": "कर बही (दस्तावेज़ D)",
+      "body": "एक लेखा-पृष्ठ: 'दक्षिणी प्रांतों से भेजे गए सभी माल पर एक नया कर लगाया गया। पहले वर्ष में एकत्रित राजस्व: 40,000 सिक्के। व्यापारियों ने शिकायतें दर्ज कीं।' यही वह कर है जिसके खिलाफ प्रतिनिधि याचिका दे रहे थे — पूरे विवाद के पीछे की मूल शिकायत।"
+     },
+     {
+      "nm": "कार्ड E",
+      "title": "तिजोरी आपूर्ति रसीद (दस्तावेज़ E)",
+      "body": "एक भंडार-गृह चालान: 'अभिलेखागार को भेजा गया — 12 रीम कागज़, 3 डिब्बे स्याही, 1 नई फ़ाइलिंग अलमारी, और वाचनालय के लिए दीपक का तेल। रात के क्लर्क द्वारा हस्ताक्षरित।' यहाँ कुछ भी किसी कर, याचिका या संघर्ष का उल्लेख नहीं करता।"
+     }
+    ],
+    "locks": [
+     {
+      "title": "ताला 1: छलावे को पहचानें",
+      "q": "चार कार्ड संघर्ष की राह के बारे में साक्ष्य हैं; एक बेकार कचरा है जो गलती से दाखिल हो गया। कौन सा कार्ड कारणों के बारे में कुछ भी साबित नहीं करता और नज़रअंदाज़ किया जाना चाहिए?",
+      "reason": "दस्तावेज़ E केवल कागज़, स्याही और दीपक के तेल का एक भंडार-गृह चालान है। यह कभी कर, याचिकाओं, हटने या लड़ाई का उल्लेख नहीं करता, इसलिए यह असंगत छलावा है।",
+      "options": [
+       "दस्तावेज़ A — प्रतिनिधियों की याचिका",
+       "दस्तावेज़ C — रणक्षेत्र संदेश",
+       "दस्तावेज़ D — कर बही",
+       "दस्तावेज़ E — आपूर्ति रसीद"
+      ]
+     },
+     {
+      "title": "ताला 2: मूल कारण",
+      "q": "विवाद को उसकी शुरुआत तक खोजें। साक्ष्य के अनुसार, वह एक चीज़ कौन सी थी जो मूल शिकायत थी जिसके खिलाफ प्रतिनिधि बार-बार याचिका देते रहे — पहला कारण जिससे पूरी श्रृंखला बढ़ती है? एक शब्द में उत्तर दें।",
+      "reason": "दस्तावेज़ D दिखाता है कि भेजे गए माल पर नया कर मूल शिकायत थी, और दस्तावेज़ A पुष्टि करता है कि प्रतिनिधि उस कर को हटाने के लिए याचिका दे रहे थे। बाकी सब कुछ इसी से निकलता है।",
+      "accepted": [
+       "कर",
+       "नया कर",
+       "टैक्स",
+       "कराधान"
+      ]
+     },
+     {
+      "title": "ताला 3: इनकारों की गिनती करें",
+      "q": "याचिका कार्ड आपको ठीक-ठीक बताता है कि हालात बिगड़ने से पहले प्रतिनिधियों ने कितनी बार औपचारिक रूप से राहत माँगी। दस्तावेज़ A ध्यान से पढ़ें। कितनी याचिकाएँ भेजी गईं और अस्वीकार की गईं?",
+      "reason": "दस्तावेज़ A स्पष्ट कहता है कि तीन औपचारिक याचिकाएँ भेजी गईं और हर एक अस्वीकार की गई, जिसने प्रतिनिधियों को हटने की बात करने पर मजबूर किया।"
+     },
+     {
+      "title": "ताला 4: कारणों की श्रृंखला फिर से बनाएँ",
+      "q": "याद की हुई तारीखों का उपयोग न करें। कार्डों के भीतर के शब्दों का उपयोग करें — हर एक बताता है कि वह किसके 'बाद' आया या किसका जवाब देता है — इन चार घटनाओं को उस क्रम में रखें जिसमें वे वास्तव में हुईं, सबसे पहले वाली पहले।",
+      "reason": "कार्ड एक-दूसरे का हवाला देते हैं: कर (D) मूल शिकायत थी; फिर प्रतिनिधियों ने याचिका दी और चेतावनी दी (A); राज्यपाल ने उस चेतावनी का उत्तर धमकी से दिया (B); हटने के मतदान के बाद, पहली गोलियाँ चलीं (C)। D → A → B → C।"
+     },
+     {
+      "title": "ताला 5: साक्ष्य क्या साबित करता है",
+      "q": "हर उस कथन का चयन करें जो इस तिजोरी के दस्तावेज़ों द्वारा साबित होता है। जो कुछ भी कार्ड वास्तव में समर्थन नहीं करते, उसे अचिह्नित छोड़ दें, भले ही वह सच लगे।",
+      "reason": "कार्ड साबित करते हैं कि कर शिकायत थी (D), कि याचिकाएँ अस्वीकार की गईं (A/B), और राज्यपाल की धमकी पहली गोलियों से पहले आई (पहले B फिर C)। कौन 'सही' था या किसी विशेष वर्ष के बारे में दावे इन दस्तावेज़ों द्वारा कभी स्थापित नहीं होते।",
+      "items": [
+       "भेजे गए माल पर एक नया कर विवाद के पीछे की मूल शिकायत थी।",
+       "किसी भी लड़ाई के भड़कने से पहले प्रतिनिधियों की याचिकाएँ अस्वीकार की गईं।",
+       "राज्यपाल की सैनिक भेजने की धमकी पहली गोलियाँ चलने से पहले आई।",
+       "संघर्ष एक विशेष वर्ष में शुरू हुआ जिसे ये कार्ड स्पष्ट रूप से बताते हैं।",
+       "दस्तावेज़ साबित करते हैं कि विवाद में कौन सा पक्ष नैतिक रूप से सही था।"
+      ]
+     }
+    ],
+    "win": {
+     "stamp": "कारणों की श्रृंखला सील ✓",
+     "h2": "केस बंद, इतिहासकार।",
+     "p": "आपने कारण-और-प्रभाव तथा कालक्रमिक तर्क का अभ्यास किया: याद की हुई तारीखों पर निर्भर रहने के बजाय, आपने प्राथमिक स्रोत पढ़े, एक असंगत छलावे को छाना, एक शिकायत को उसकी जड़ तक खोजा, और घटनाओं को स्वयं साक्ष्य से क्रमबद्ध किया।"
+    }
+   },
+   "ar": {
+    "title": "الأرشيف المختوم: الطريق إلى الانقسام",
+    "sub": "يحتوي أرشيف مغلق على خمس بطاقات أدلة من السنوات التي سبقت انقسام جمهورية فتية. اقرأ الوثائق، وتجاهل ما لا فائدة منه، ودع أثر الورق — لا التواريخ التي حفظتها — يخبرك بما تسبب في ماذا، وبأي ترتيب.",
+    "missionTitle": "ملف القضية: أعد بناء سلسلة الأسباب",
+    "missionBody": "أنت مؤرخ مبتدئ في خزانة وثائق الولاية. مزّق صراع وطني كبير البلاد، ويريد الجمهور إجابة بسيطة: 'لقد حدث فحسب'. مهمتك أن تثبت العكس. تحتوي الخزانة على أربع بطاقات أدلة حقيقية وقصاصة عديمة الفائدة حُفظت بالخطأ. باستخدام ما تقوله هذه الوثائق فعلاً فقط، عليك إعادة بناء سلسلة السبب والنتيجة ووضع الأحداث في الترتيب الصحيح — بالاستدلال من الأدلة، لا من أي تاريخ تصادف أن تتذكره. حل كل قفل لتختم نتائجك في السجل الرسمي وتُظهر أن التاريخ يُبنى، خطوة بخطوة، نحو نقطة الانكسار.",
+    "clues": [
+     {
+      "nm": "البطاقة أ",
+      "title": "التماس المندوبين (الوثيقة أ)",
+      "body": "تكتب جمعية إقليمية إلى الحكومة المركزية: 'لقد أرسلنا ثلاثة التماسات رسمية نطلب فيها إلغاء الضريبة الجديدة على بضائعنا. رُفض كل منها. نحذّر من أن استمرار الرفض سيضطر مقاطعاتنا إلى التفكير في الانسحاب من الاتحاد.' وقد خُتم الخطاب بعبارة 'تحذير أول'."
+     },
+     {
+      "nm": "البطاقة ب",
+      "title": "رد الحاكم (الوثيقة ب)",
+      "body": "يرد الحاكم المركزي على الوثيقة أ: 'الالتماس مرفوض. الضريبة باقية. أي مقاطعة تنسحب ستُعامَل على أنها في حالة تمرد، وستُرسَل القوات لحفظ النظام.' يقتبس الرد تحذير المندوبين ويجيب عليه مباشرة."
+     },
+     {
+      "nm": "البطاقة ج",
+      "title": "برقية ميدانية (الوثيقة ج)",
+      "body": "يبلّغ ساعٍ عسكري: 'عقب تهديد الحاكم، صوّتت ثلاث مقاطعات على الانسحاب. هذا الصباح تبادلت حاميتنا والميليشيا الإقليمية أولى الطلقات عند جسر النهر. لقد بدأ الصراع المفتوح.' البرقية مؤرخة بـ'بعد تصويت الانسحاب'."
+     },
+     {
+      "nm": "البطاقة د",
+      "title": "دفتر الضرائب (الوثيقة د)",
+      "body": "صفحة محاسبية: 'فُرضت ضريبة جديدة على جميع البضائع المشحونة من المقاطعات الجنوبية. الإيرادات المحصّلة: 40,000 قطعة نقدية في السنة الأولى. قدّم التجار شكاوى.' هذه هي الضريبة التي كان المندوبون يلتمسون ضدها — المظلمة الأصلية وراء النزاع كله."
+     },
+     {
+      "nm": "البطاقة هـ",
+      "title": "إيصال إمدادات الخزانة (الوثيقة هـ)",
+      "body": "فاتورة مستودع: 'سُلّم إلى الأرشيف — 12 رزمة ورق، و3 علب حبر، وخزانة ملفات جديدة، وزيت مصباح لقاعة القراءة. موقّعة من كاتب الليل.' لا شيء هنا يشير إلى أي ضريبة أو التماس أو صراع."
+     }
+    ],
+    "locks": [
+     {
+      "title": "القفل 1: اكشف الطُّعم",
+      "q": "أربع بطاقات هي أدلة على الطريق نحو الصراع؛ وواحدة خردة عديمة الفائدة حُفظت بالخطأ. أي بطاقة لا تثبت شيئاً عن الأسباب وينبغي تجاهلها؟",
+      "reason": "الوثيقة هـ ليست سوى فاتورة مستودع للورق والحبر وزيت المصباح. لا تذكر أبداً الضريبة أو الالتماسات أو الانسحاب أو القتال، لذا فهي الطُّعم غير ذي الصلة.",
+      "options": [
+       "الوثيقة أ — التماس المندوبين",
+       "الوثيقة ج — البرقية الميدانية",
+       "الوثيقة د — دفتر الضرائب",
+       "الوثيقة هـ — إيصال الإمدادات"
+      ]
+     },
+     {
+      "title": "القفل 2: السبب الجذري",
+      "q": "تتبّع النزاع إلى بدايته. وفقاً للأدلة، ما الشيء الوحيد الذي كان المظلمة الأصلية التي ظل المندوبون يلتمسون ضدها — السبب الأول الذي تنمو منه السلسلة كلها؟ أجب بكلمة واحدة.",
+      "reason": "تُظهر الوثيقة د أن الضريبة الجديدة على البضائع المشحونة كانت المظلمة الأصلية، وتؤكد الوثيقة أ أن المندوبين كانوا يلتمسون لإلغاء تلك الضريبة. كل شيء آخر يتفرع منها.",
+      "accepted": [
+       "ضريبة",
+       "الضريبة",
+       "ضرائب",
+       "الضريبة الجديدة"
+      ]
+     },
+     {
+      "title": "القفل 3: عُدّ مرات الرفض",
+      "q": "تخبرك بطاقة الالتماس بالضبط كم مرة طلب المندوبون الإنصاف رسمياً قبل أن تتصاعد الأمور. اقرأ الوثيقة أ بعناية. كم عدد الالتماسات التي أُرسلت ورُفضت؟",
+      "reason": "تنص الوثيقة أ بوضوح على أن ثلاثة التماسات رسمية أُرسلت ورُفض كل منها، وهو ما دفع المندوبين إلى الحديث عن الانسحاب."
+     },
+     {
+      "title": "القفل 4: أعد بناء سلسلة الأسباب",
+      "q": "لا تستخدم التواريخ التي حفظتها. استخدم الكلمات داخل البطاقات — كل بطاقة تقول ما جاءت 'بعده' أو ما تجيب عليه — لترتيب هذه الأحداث الأربعة بالترتيب الذي حدثت به فعلاً، الأقدم أولاً.",
+      "reason": "تشير البطاقات إلى بعضها البعض: الضريبة (د) كانت المظلمة الأصلية؛ ثم التمس المندوبون وحذّروا (أ)؛ ورد الحاكم على ذلك التحذير بتهديد (ب)؛ وبعد تصويت الانسحاب، أُطلقت أولى الطلقات (ج). د ← أ ← ب ← ج."
+     },
+     {
+      "title": "القفل 5: ما تثبته الأدلة",
+      "q": "اختر كل عبارة تثبتها وثائق هذه الخزانة. اترك دون تحديد أي شيء لا تدعمه البطاقات فعلاً، حتى لو بدا صحيحاً.",
+      "reason": "تثبت البطاقات أن الضريبة كانت المظلمة (د)، وأن الالتماسات رُفضت (أ/ب)، وأن تهديد الحاكم جاء قبل أولى الطلقات (ب ثم ج). أما الادعاءات حول من كان 'محقاً' أو حول سنة محددة فلا تُثبتها هذه الوثائق أبداً.",
+      "items": [
+       "كانت ضريبة جديدة على البضائع المشحونة هي المظلمة الأصلية وراء النزاع.",
+       "رُفضت التماسات المندوبين قبل اندلاع أي قتال.",
+       "جاء تهديد الحاكم بإرسال القوات قبل إطلاق أولى الطلقات.",
+       "بدأ الصراع في سنة محددة تذكرها هذه البطاقات صراحة.",
+       "تثبت الوثائق أي طرف كان على حق أخلاقياً في النزاع."
+      ]
+     }
+    ],
+    "win": {
+     "stamp": "سلسلة الأسباب مختومة ✓",
+     "h2": "أُغلقت القضية، أيها المؤرخ.",
+     "p": "لقد مارست الاستدلال بالسبب والنتيجة والاستدلال الزمني: بدلاً من الاعتماد على تواريخ محفوظة، قرأت مصادر أولية، ونقّيت طُعماً غير ذي صلة، وتتبّعت مظلمة إلى جذرها، ورتّبت الأحداث انطلاقاً من الأدلة نفسها."
+    }
+   },
+   "ur": {
+    "title": "بند آرکائیو: ٹوٹ کی جانب راستہ",
+    "sub": "ایک مقفل آرکائیو میں ایک نوجوان جمہوریہ کے بکھرنے سے پہلے کے برسوں کے پانچ ثبوتی کارڈ رکھے ہیں۔ دستاویزات پڑھیں، بیکار چیزوں کو نظر انداز کریں، اور کاغذی سراغوں کو — نہ کہ یاد کی ہوئی تاریخوں کو — یہ بتانے دیں کہ کس چیز نے کیا سبب بنایا، اور کس ترتیب میں۔",
+    "missionTitle": "کیس فائل: اسباب کی زنجیر دوبارہ بنائیں",
+    "missionBody": "آپ ریاستی دستاویزات کے خزانے میں ایک جونیئر مؤرخ ہیں۔ ایک بڑے قومی تنازع نے ملک کو چیر دیا، اور عوام ایک سادہ جواب چاہتے ہیں: 'یہ بس ہو گیا'۔ آپ کا کام اس کے برعکس ثابت کرنا ہے۔ خزانے میں چار حقیقی ثبوتی کارڈ اور ایک بیکار پرچی ہے جو غلطی سے فائل ہو گئی۔ صرف انہی دستاویزات میں جو کچھ واقعی لکھا ہے اسے استعمال کرتے ہوئے، آپ کو سبب اور اثر کی زنجیر دوبارہ بنانی ہے اور واقعات کو درست ترتیب میں رکھنا ہے — ثبوت سے استدلال کرتے ہوئے، نہ کہ کسی ایسی تاریخ سے جو آپ کو یاد ہو۔ ہر تالہ کھولیں تاکہ اپنے نتائج کو سرکاری ریکارڈ میں مہربند کر سکیں اور دکھا سکیں کہ تاریخ قدم بہ قدم ایک ٹوٹ کے نقطے کی جانب بنتی ہے۔",
+    "clues": [
+     {
+      "nm": "کارڈ A",
+      "title": "نمائندوں کی درخواست (دستاویز A)",
+      "body": "ایک علاقائی اسمبلی مرکزی حکومت کو لکھتی ہے: 'ہم نے اپنے سامان پر لگے نئے ٹیکس کو ختم کرنے کے لیے تین رسمی درخواستیں بھیجی ہیں۔ ہر ایک کو مسترد کر دیا گیا۔ ہم خبردار کرتے ہیں کہ مسلسل انکار ہمارے صوبوں کو اتحاد سے علیحدگی پر غور کرنے پر مجبور کرے گا۔' خط پر 'پہلی وارننگ' کی مہر ہے۔"
+     },
+     {
+      "nm": "کارڈ B",
+      "title": "گورنر کا جواب (دستاویز B)",
+      "body": "مرکزی گورنر دستاویز A کا جواب دیتا ہے: 'درخواست مسترد ہے۔ ٹیکس برقرار رہے گا۔ جو بھی صوبہ علیحدہ ہوگا اسے بغاوت میں شمار کیا جائے گا، اور نظم برقرار رکھنے کے لیے فوج بھیجی جائے گی۔' جواب نمائندوں کی وارننگ کا براہ راست حوالہ دیتا اور جواب دیتا ہے۔"
+     },
+     {
+      "nm": "کارڈ C",
+      "title": "میدانی پیغام (دستاویز C)",
+      "body": "ایک فوجی قاصد رپورٹ کرتا ہے: 'گورنر کی دھمکی کے بعد، تین صوبوں نے علیحدگی کے حق میں ووٹ دیا۔ آج صبح ہماری چھاؤنی اور صوبائی ملیشیا نے دریا کے پل پر پہلی گولیاں چلائیں۔ کھلا تنازع شروع ہو چکا ہے۔' پیغام پر لکھا ہے 'علیحدگی کے ووٹ کے بعد'۔"
+     },
+     {
+      "nm": "کارڈ D",
+      "title": "ٹیکس کھاتہ (دستاویز D)",
+      "body": "ایک حسابی صفحہ: 'جنوبی صوبوں سے بھیجے گئے تمام سامان پر ایک نیا ٹیکس لگایا گیا۔ پہلے سال میں جمع کردہ آمدنی: 40,000 سکے۔ تاجروں نے شکایات درج کرائیں۔' یہی وہ ٹیکس ہے جس کے خلاف نمائندے درخواست دے رہے تھے — پورے تنازع کے پیچھے اصل شکایت۔"
+     },
+     {
+      "nm": "کارڈ E",
+      "title": "خزانہ رسد رسید (دستاویز E)",
+      "body": "ایک گودام کا بل: 'آرکائیو کو پہنچایا گیا — 12 ریم کاغذ، 3 ڈبے سیاہی، 1 نئی فائلنگ الماری، اور مطالعہ کمرے کے لیے چراغ کا تیل۔ رات کے کلرک کے دستخط۔' یہاں کچھ بھی کسی ٹیکس، درخواست یا تنازع کا ذکر نہیں کرتا۔"
+     }
+    ],
+    "locks": [
+     {
+      "title": "تالہ 1: دھوکے کو پہچانیں",
+      "q": "چار کارڈ تنازع کی طرف راستے کے بارے میں ثبوت ہیں؛ ایک بیکار کچرا ہے جو غلطی سے فائل ہو گیا۔ کون سا کارڈ اسباب کے بارے میں کچھ ثابت نہیں کرتا اور نظر انداز کیا جانا چاہیے؟",
+      "reason": "دستاویز E صرف کاغذ، سیاہی اور چراغ کے تیل کا ایک گودام بل ہے۔ یہ کبھی ٹیکس، درخواستوں، علیحدگی یا لڑائی کا ذکر نہیں کرتی، اس لیے یہ غیر متعلقہ دھوکہ ہے۔",
+      "options": [
+       "دستاویز A — نمائندوں کی درخواست",
+       "دستاویز C — میدانی پیغام",
+       "دستاویز D — ٹیکس کھاتہ",
+       "دستاویز E — رسد رسید"
+      ]
+     },
+     {
+      "title": "تالہ 2: بنیادی سبب",
+      "q": "تنازع کو اس کی ابتدا تک تلاش کریں۔ ثبوت کے مطابق، وہ کون سی ایک چیز تھی جو اصل شکایت تھی جس کے خلاف نمائندے بار بار درخواست دیتے رہے — پہلا سبب جس سے پوری زنجیر پھوٹتی ہے؟ ایک لفظ میں جواب دیں۔",
+      "reason": "دستاویز D دکھاتی ہے کہ بھیجے گئے سامان پر نیا ٹیکس اصل شکایت تھی، اور دستاویز A تصدیق کرتی ہے کہ نمائندے اس ٹیکس کو ختم کرنے کے لیے درخواست دے رہے تھے۔ باقی سب کچھ اسی سے نکلتا ہے۔",
+      "accepted": [
+       "ٹیکس",
+       "نیا ٹیکس",
+       "محصول",
+       "ٹیکسز"
+      ]
+     },
+     {
+      "title": "تالہ 3: انکاروں کو گنیں",
+      "q": "درخواست کارڈ آپ کو بالکل ٹھیک بتاتا ہے کہ حالات بگڑنے سے پہلے نمائندوں نے کتنی بار رسمی طور پر ریلیف مانگا۔ دستاویز A غور سے پڑھیں۔ کتنی درخواستیں بھیجی گئیں اور مسترد کی گئیں؟",
+      "reason": "دستاویز A واضح کہتی ہے کہ تین رسمی درخواستیں بھیجی گئیں اور ہر ایک مسترد کی گئی، جس نے نمائندوں کو علیحدگی کی بات کرنے پر مجبور کیا۔"
+     },
+     {
+      "title": "تالہ 4: اسباب کی زنجیر دوبارہ بنائیں",
+      "q": "یاد کی ہوئی تاریخیں استعمال نہ کریں۔ کارڈوں کے اندر کے الفاظ استعمال کریں — ہر ایک بتاتا ہے کہ وہ کس کے 'بعد' آیا یا کس کا جواب دیتا ہے — ان چار واقعات کو اس ترتیب میں رکھیں جس میں وہ واقعی ہوئے، سب سے پہلے والا پہلے۔",
+      "reason": "کارڈ ایک دوسرے کا حوالہ دیتے ہیں: ٹیکس (D) اصل شکایت تھی؛ پھر نمائندوں نے درخواست دی اور خبردار کیا (A)؛ گورنر نے اس وارننگ کا جواب دھمکی سے دیا (B)؛ علیحدگی کے ووٹ کے بعد، پہلی گولیاں چلیں (C)۔ D ← A ← B ← C۔"
+     },
+     {
+      "title": "تالہ 5: ثبوت کیا ثابت کرتا ہے",
+      "q": "ہر اس بیان کا انتخاب کریں جو اس خزانے کی دستاویزات سے ثابت ہوتا ہے۔ جو کچھ کارڈ واقعی سہارا نہیں دیتے اسے غیر نشان زدہ چھوڑ دیں، چاہے وہ سچ لگے۔",
+      "reason": "کارڈ ثابت کرتے ہیں کہ ٹیکس شکایت تھی (D)، کہ درخواستیں مسترد ہوئیں (A/B)، اور گورنر کی دھمکی پہلی گولیوں سے پہلے آئی (پہلے B پھر C)۔ کون 'حق پر' تھا یا کسی مخصوص سال کے بارے میں دعوے ان دستاویزات سے کبھی ثابت نہیں ہوتے۔",
+      "items": [
+       "بھیجے گئے سامان پر ایک نیا ٹیکس تنازع کے پیچھے اصل شکایت تھی۔",
+       "کسی بھی لڑائی کے پھوٹنے سے پہلے نمائندوں کی درخواستیں مسترد کی گئیں۔",
+       "گورنر کی فوج بھیجنے کی دھمکی پہلی گولیاں چلنے سے پہلے آئی۔",
+       "تنازع ایک مخصوص سال میں شروع ہوا جسے یہ کارڈ کھل کر بیان کرتے ہیں۔",
+       "دستاویزات ثابت کرتی ہیں کہ تنازع میں کون سا فریق اخلاقی طور پر درست تھا۔"
+      ]
+     }
+    ],
+    "win": {
+     "stamp": "اسباب کی زنجیر مہربند ✓",
+     "h2": "کیس بند، مؤرخ صاحب۔",
+     "p": "آپ نے سبب و اثر اور زمانی ترتیب کے استدلال کی مشق کی: یاد کی ہوئی تاریخوں پر انحصار کرنے کے بجائے، آپ نے بنیادی ماخذ پڑھے، ایک غیر متعلقہ دھوکے کو چھانا، ایک شکایت کو اس کی جڑ تک تلاش کیا، اور واقعات کو خود ثبوت سے ترتیب دیا۔"
+    }
+   }
+  }
+ },
+ {
   "slug": "g912-ss-geography",
   "grade": "grade912",
   "subject": "Social Studies",

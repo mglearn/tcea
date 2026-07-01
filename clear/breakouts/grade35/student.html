@@ -26,7 +26,7 @@
     font-weight:600;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:12px}
   h1{font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(1.9rem,6vw,3rem);color:var(--navy);line-height:1.04}
   .sub{color:var(--ink-soft);font-weight:600;margin-top:8px;max-width:620px;margin-left:auto;margin-right:auto}
-  .progress-wrap{display:flex;align-items:center;gap:12px;justify-content:center;margin:18px 0 6px;flex-wrap:wrap}
+  .progress-wrap{display:flex;align-items:center;gap:12px;justify-content:center;flex-wrap:wrap;position:sticky;top:8px;z-index:30;margin:12px 0 6px;padding:10px 14px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:12px;box-shadow:0 4px 14px rgba(16,42,84,.07)}
   .lockdots{display:flex;gap:8px}
   .ld{width:30px;height:30px;border-radius:9px;background:#d8deea;display:flex;align-items:center;justify-content:center;
     font-size:1rem;transition:.3s;border:2px solid transparent}
@@ -181,7 +181,7 @@
 <script>
 /* ============ CLUE DATA ============ */
 const CLUES=[
-  {id:'ana',ico:'🥪',nm:"Ana's note",title:"Ana's tray",body:"A turkey sandwich, a juice box, and a note: \"I'm allergic to peanuts, so NO peanut snacks for me!\" Her gym shoes are tucked underneath."},
+  {id:'ana',ico:'🥪',nm:"Ana's note",title:"Ana's tray",body:"A turkey sandwich, a juice box, and a note: \"I'm allergic to peanuts, so NO peanut snacks for me!\""},
   {id:'ben',ico:'🍕',nm:"Ben's tray",title:"Ben's tray",body:"A slice of pizza, an empty milk carton, and a library book about volcanoes. A sticky note reads: \"Soccer practice at 4.\""},
   {id:'cleo',ico:'🥗',nm:"Cleo's tray",title:"Cleo's tray",body:"A salad, an apple, and a peanut butter granola bar. A folded paper shows a piano with the word \"Recital Friday.\""},
   {id:'diego',ico:'🌮',nm:"Diego's tray",title:"Diego's tray",body:"Two tacos, a water bottle, and a paintbrush still a little wet. A schedule lists \"Art Club — Tuesday.\""},
@@ -204,10 +204,10 @@ const LOCKS=[
   },
   {
     id:'L2',color:'var(--c4)',type:'mc',title:'Lock 2 — Evidence Lock',
-    q:'One student definitely should NOT eat the peanut butter granola bar. Who?',
+    q:'Ana’s note says she is allergic to peanuts. Whose tray has a snack Ana must NOT eat?',
     options:['Ben','Diego','Ana','Cleo'],
-    answerIndex:2,
-    reason:'Ana\'s own note says she is allergic to peanuts. That\'s direct evidence. The others have no allergy clue, so we can\'t claim anything about them.'
+    answerIndex:3,
+    reason:'You had to combine TWO clues: Ana\'s note says "no peanuts," and Cleo\'s tray has the peanut butter granola bar. So it\'s Cleo\'s snack Ana must avoid. No other tray has a peanut snack.'
   },
   {
     id:'L3',color:'var(--c3)',type:'word',title:'Lock 3 — Word Lock',
@@ -217,7 +217,7 @@ const LOCKS=[
   },
   {
     id:'L4',color:'var(--c1)',type:'seq',title:'Lock 4 — Order Lock',
-    q:'Tap the three HOT-lunch trays in the exact order the menu lists them: Pizza, then Tacos, then Salad.',
+    q:'Open the menu-board clue, then tap the three HOT-lunch trays in the exact order the menu lists them.',
     pads:[{k:'pizza',e:'🍕',c:'#e8590c'},{k:'taco',e:'🌮',c:'#f08a16'},{k:'salad',e:'🥗',c:'#46a23c'},{k:'sandwich',e:'🥪',c:'#7c5cbf'}],
     answer:['pizza','taco','salad'],
     reason:'The menu board lists Pizza, Tacos, Salad in that order. Following the given order — instead of your favorite food — is the careful-thinking move.'
