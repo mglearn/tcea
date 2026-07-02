@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>TCEA Critical Thinking Breakouts</title>
+<meta name="description" content="A searchable library of TCEA Critical Thinking Breakouts — self-contained, browser-based history and reasoning escape activities in seven languages.">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0a2463;--navy-d:#061a4a;--gold:#f4b41a;--gold-d:#b9850c;
+    --paper:#fbf9f3;--ink:#161c2e;--ink-soft:#586080;--card:#fff;--line:#e5e8f2;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Nunito',sans-serif;color:var(--ink);background:
+    radial-gradient(ellipse 60% 45% at 85% -5%,rgba(244,180,26,.16)0%,transparent 60%),
+    radial-gradient(ellipse 55% 45% at 0% 100%,rgba(10,36,99,.10)0%,transparent 60%),var(--paper);
+    min-height:100vh;line-height:1.55}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:30px 20px 90px}
+  header.top{text-align:center;padding:14px 0 6px}
+  .eyebrow{display:inline-block;background:var(--gold);color:var(--navy-d);font-family:'Fredoka',sans-serif;font-weight:700;
+    font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;padding:6px 18px;border-radius:100px;margin-bottom:14px}
+  h1{font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(2.1rem,6.5vw,3.5rem);color:var(--navy);line-height:1.02}
+  h1 .g{color:var(--gold-d)}
+  .sub{color:var(--ink-soft);font-weight:600;margin:12px auto 0;max-width:680px}
+  .tally{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:20px}
+  .tally .n{font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.9rem;color:var(--navy);line-height:1}
+  .tally .l{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:700;margin-top:2px}
+
+  h2.sec{font-family:'Fredoka',sans-serif;color:var(--navy);font-size:1.15rem;margin:34px 0 12px;
+    display:flex;align-items:center;gap:10px}
+  h2.sec::after{content:"";flex:1;height:2px;background:var(--line)}
+
+  .suites{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:780px){.suites{grid-template-columns:1fr}}
+  .suite{background:var(--card);border:2px solid var(--line);border-top:6px solid var(--accent,#0a2463);border-radius:16px;padding:20px;display:flex;flex-direction:column}
+  .suite h3{font-family:'Fredoka',sans-serif;color:var(--navy);font-size:1.15rem;margin-bottom:6px}
+  .suite p{font-weight:600;color:var(--ink-soft);font-size:.88rem;flex-grow:1;margin-bottom:12px}
+  .suite .links{display:flex;flex-wrap:wrap;gap:6px}
+  .suite .links a{font-family:'Fredoka',sans-serif;font-weight:600;font-size:.78rem;text-decoration:none;
+    padding:7px 12px;border-radius:8px;border:1.5px solid var(--line);color:var(--navy)}
+  .suite .links a.primary{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .suite .links a:hover{border-color:var(--gold-d)}
+
+  .toolbar{position:sticky;top:0;z-index:20;background:rgba(251,249,243,.94);backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:16px 0 14px;
+    display:flex;gap:10px;align-items:center;flex-wrap:wrap;box-shadow:0 4px 14px rgba(10,36,99,.06)}
+  #q{flex:1;min-width:200px;font-family:'Nunito',sans-serif;font-weight:600;font-size:1rem;padding:11px 14px;
+    border:2px solid var(--line);border-radius:10px;color:var(--ink)}
+  #q:focus{outline:none;border-color:var(--navy)}
+  .rand{background:var(--gold);color:var(--navy-d);border:none;border-radius:10px;padding:11px 18px;
+    font-family:'Fredoka',sans-serif;font-weight:700;cursor:pointer;font-size:.95rem;white-space:nowrap}
+  .rand:hover{background:var(--gold-d);color:#fff}
+  .chips{display:flex;gap:6px;flex-wrap:wrap;width:100%}
+  .chip{font-family:'Fredoka',sans-serif;font-weight:600;font-size:.76rem;padding:6px 12px;border-radius:100px;
+    border:1.5px solid var(--line);background:#fff;color:var(--ink-soft);cursor:pointer}
+  .chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .count{font-weight:700;color:var(--ink-soft);font-size:.82rem;margin-left:auto;white-space:nowrap}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+  .bk{display:flex;flex-direction:column;background:var(--card);border:2px solid var(--line);border-radius:14px;
+    padding:15px 16px;text-decoration:none;transition:.15s}
+  .bk:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 10px 24px rgba(10,36,99,.1)}
+  .bk .row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+  .dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+  .bk .suite-n{font-family:'Fredoka',sans-serif;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);font-weight:700}
+  .bk .band{margin-left:auto;font-family:'Fredoka',sans-serif;font-size:.66rem;font-weight:700;color:var(--navy);background:#eef2fb;border-radius:6px;padding:2px 8px}
+  .bk h4{font-family:'Fredoka',sans-serif;color:var(--navy);font-size:1.02rem;line-height:1.15;margin-bottom:5px}
+  .bk p{font-weight:600;color:var(--ink-soft);font-size:.82rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .bk .tagact{font-size:.66rem;font-weight:700;color:var(--gold-d);text-transform:uppercase;letter-spacing:.06em;margin-top:6px}
+  .empty{text-align:center;color:var(--ink-soft);font-weight:600;padding:40px 0}
+  footer{text-align:center;margin-top:36px;font-size:.8rem;color:var(--ink-soft);font-weight:600}
+  footer a{color:var(--navy);font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="eyebrow">TCEA Educator Resource</div>
+    <h1>Critical Thinking <span class="g">Breakouts</span></h1>
+    <p class="sub">A searchable library of self-contained, browser-based reasoning escapes — students open clues, weigh evidence, and crack the locks. No logins, no data collected, seven languages.</p>
+    <div class="tally">
+      <div><div class="n" id="tSuites">3</div><div class="l">Breakout sets</div></div>
+      <div><div class="n" id="tCount">0</div><div class="l">Breakouts &amp; activities</div></div>
+      <div><div class="n">7</div><div class="l">Languages</div></div>
+    </div>
+  </header>
+
+  <h2 class="sec">Breakout sets</h2>
+  <div class="suites" id="suites"></div>
+
+  <h2 class="sec">Find a breakout</h2>
+  <div class="toolbar">
+    <input id="q" type="search" placeholder="Search by name, topic, or content (e.g. Juneteenth, evidence, flag)…" autocomplete="off">
+    <button class="rand" id="rand">🎲 Surprise me</button>
+    <div class="chips" id="filters"></div>
+    <span class="count" id="count"></span>
+  </div>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" style="display:none">No breakouts match — try a different word.</div>
+
+  <footer>
+    TCEA Critical Thinking Breakouts · A TCEA educator resource · CC BY 4.0 (content) · MIT (code) ·
+    <a href="CRITICAL-THINKING-BREAKOUT-PROJECT-PACK.md">Build your own</a>
+  </footer>
+</div>
+
+<script src="catalog.js"></script>
+<script>
+(function () {
+  var C = window.CATALOG || { suites: [], breakouts: [] };
+  var accent = {}; C.suites.forEach(function (s) { accent[s.id] = s.accent; });
+  var suiteName = {}; C.suites.forEach(function (s) { suiteName[s.id] = s.name; });
+  var $ = function (s) { return document.querySelector(s); };
+  document.getElementById('tCount').textContent = C.breakouts.length;
+  document.getElementById('tSuites').textContent = C.suites.length;
+
+  // ---- suite cards
+  document.getElementById('suites').innerHTML = C.suites.map(function (s) {
+    return '<div class="suite" style="--accent:' + s.accent + '">' +
+      '<h3>' + esc(s.name) + '</h3><p>' + esc(s.desc) + '</p>' +
+      '<div class="links"><a class="primary" href="' + s.landing + '">Open ▶</a>' +
+      '<a href="' + s.correlation + '">🧭 Correlations</a>' +
+      '<a href="' + s.answerKey + '">🔑 Answer key</a></div></div>';
+  }).join('');
+
+  // ---- filters
+  var state = { q: '', suite: 'all', band: 'all' };
+  var bands = ['3–5', '6–8', '9–12'];
+  var chips = [{ k: 'suite', v: 'all', label: 'All sets' }]
+    .concat(C.suites.map(function (s) { return { k: 'suite', v: s.id, label: s.name.split(' ')[0] === 'CLEAR' ? 'CLEAR' : s.name.replace('July 5 & Black Freedom Holidays', 'July 5').replace('Fourth of July', 'July 4') }; }))
+    .concat([{ k: 'band', v: 'all', label: 'All grades' }])
+    .concat(bands.map(function (b) { return { k: 'band', v: b, label: 'Gr ' + b }; }));
+  document.getElementById('filters').innerHTML = chips.map(function (c, i) {
+    return '<button class="chip' + ((c.v === 'all' && (c.k === 'suite' ? state.suite : state.band) === 'all') ? ' on' : '') + '" data-k="' + c.k + '" data-v="' + c.v + '">' + esc(c.label) + '</button>';
+  }).join('');
+  document.getElementById('filters').addEventListener('click', function (e) {
+    var b = e.target.closest('.chip'); if (!b) return;
+    state[b.dataset.k] = b.dataset.v;
+    [].forEach.call(document.querySelectorAll('.chip'), function (c) {
+      if (c.dataset.k === b.dataset.k) c.classList.toggle('on', c.dataset.v === state[b.dataset.k]);
+    });
+    render();
+  });
+
+  function matches() {
+    var q = state.q.trim().toLowerCase();
+    var terms = q ? q.split(/\s+/) : [];
+    return C.breakouts.filter(function (b) {
+      if (state.suite !== 'all' && b.suite !== state.suite) return false;
+      if (state.band !== 'all' && b.band !== state.band) return false;
+      if (!terms.length) return true;
+      var hay = (b.title + ' ' + b.desc + ' ' + (b.kw || '') + ' ' + suiteName[b.suite]).toLowerCase();
+      return terms.every(function (t) { return hay.indexOf(t) !== -1; });
+    });
+  }
+
+  function render() {
+    var list = matches();
+    document.getElementById('count').textContent = list.length + ' result' + (list.length === 1 ? '' : 's');
+    document.getElementById('empty').style.display = list.length ? 'none' : 'block';
+    document.getElementById('grid').innerHTML = list.map(function (b) {
+      return '<a class="bk" href="' + b.href + '">' +
+        '<div class="row"><span class="dot" style="background:' + (accent[b.suite] || '#0a2463') + '"></span>' +
+        '<span class="suite-n">' + esc(shortSuite(b.suite)) + '</span>' +
+        (b.band ? '<span class="band">Gr ' + b.band + '</span>' : '') + '</div>' +
+        '<h4>' + esc(b.title) + '</h4>' +
+        '<p>' + esc(b.desc || '') + '</p>' +
+        (b.activity ? '<div class="tagact">Practice · 7 languages</div>' : '') +
+        '</a>';
+    }).join('');
+  }
+  function shortSuite(id) { return id === 'clear' ? 'CLEAR' : id === 'july4' ? 'July 4' : 'July 5'; }
+
+  document.getElementById('q').addEventListener('input', function (e) { state.q = e.target.value; render(); });
+  document.getElementById('rand').addEventListener('click', function () {
+    var list = matches(); if (!list.length) list = C.breakouts;
+    var pick = list[(Math.random() * list.length) | 0];
+    if (pick) location.href = pick.href;
+  });
+
+  function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+  render();
+})();
+</script>
+</body>
+</html>
