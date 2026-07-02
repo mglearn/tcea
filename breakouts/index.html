@@ -9,17 +9,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#0a2463;--navy-d:#061a4a;--gold:#f4b41a;--gold-d:#b9850c;
-    --paper:#fbf9f3;--ink:#161c2e;--ink-soft:#586080;--card:#fff;--line:#e5e8f2;
+    /* matched to ctob_hero.png — azure #054c8c bg, gold #fbd239 accent */
+    --navy:#054c8c;--navy-d:#023266;--gold:#fbd239;--gold-d:#d9a010;
+    --paper:#f4f8fc;--ink:#161c2e;--ink-soft:#516079;--card:#fff;--line:#dbe6f2;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:'Nunito',sans-serif;color:var(--ink);background:
-    radial-gradient(ellipse 60% 45% at 85% -5%,rgba(244,180,26,.16)0%,transparent 60%),
-    radial-gradient(ellipse 55% 45% at 0% 100%,rgba(10,36,99,.10)0%,transparent 60%),var(--paper);
+    radial-gradient(ellipse 60% 45% at 85% -5%,rgba(251,210,57,.16)0%,transparent 60%),
+    radial-gradient(ellipse 55% 45% at 0% 100%,rgba(5,76,140,.12)0%,transparent 60%),var(--paper);
     min-height:100vh;line-height:1.55}
   a{color:inherit}
   .wrap{max-width:1080px;margin:0 auto;padding:30px 20px 90px}
-  header.top{text-align:center;padding:14px 0 6px}
+  header.top{text-align:center;padding:6px 0 6px}
+  .hero{display:block;width:100%;height:auto;border-radius:16px;
+    box-shadow:0 10px 30px rgba(5,76,140,.18);margin-bottom:4px}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   .eyebrow{display:inline-block;background:var(--gold);color:var(--navy-d);font-family:'Fredoka',sans-serif;font-weight:700;
     font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;padding:6px 18px;border-radius:100px;margin-bottom:14px}
   h1{font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(2.1rem,6.5vw,3.5rem);color:var(--navy);line-height:1.02}
@@ -35,7 +39,7 @@
 
   .suites{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   @media(max-width:780px){.suites{grid-template-columns:1fr}}
-  .suite{background:var(--card);border:2px solid var(--line);border-top:6px solid var(--accent,#0a2463);border-radius:16px;padding:20px;display:flex;flex-direction:column}
+  .suite{background:var(--card);border:2px solid var(--line);border-top:6px solid var(--accent,#054c8c);border-radius:16px;padding:20px;display:flex;flex-direction:column}
   .suite h3{font-family:'Fredoka',sans-serif;color:var(--navy);font-size:1.15rem;margin-bottom:6px}
   .suite p{font-weight:600;color:var(--ink-soft);font-size:.88rem;flex-grow:1;margin-bottom:12px}
   .suite .links{display:flex;flex-wrap:wrap;gap:6px}
@@ -44,7 +48,7 @@
   .suite .links a.primary{background:var(--navy);color:#fff;border-color:var(--navy)}
   .suite .links a:hover{border-color:var(--gold-d)}
 
-  .toolbar{position:sticky;top:0;z-index:20;background:rgba(251,249,243,.94);backdrop-filter:blur(8px);
+  .toolbar{position:sticky;top:0;z-index:20;background:rgba(244,248,252,.94);backdrop-filter:blur(8px);
     -webkit-backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:16px 0 14px;
     display:flex;gap:10px;align-items:center;flex-wrap:wrap;box-shadow:0 4px 14px rgba(10,36,99,.06)}
   #q{flex:1;min-width:200px;font-family:'Nunito',sans-serif;font-weight:600;font-size:1rem;padding:11px 14px;
@@ -78,9 +82,9 @@
 <body>
 <div class="wrap">
   <header class="top">
-    <div class="eyebrow">TCEA Educator Resource</div>
-    <h1>Critical Thinking <span class="g">Breakouts</span></h1>
-    <p class="sub">A searchable library of self-contained, browser-based reasoning escapes — students open clues, weigh evidence, and crack the locks. No logins, no data collected, seven languages.</p>
+    <img class="hero" src="ctob_hero.png" width="2172" height="724"
+         alt="TCEA Critical Thinking Online Breakouts (CTOBs) — a searchable library of self-contained, browser-based reasoning escapes where students open clues, weigh evidence, and crack the locks. No logins, no data collected, seven languages.">
+    <h1 class="sr-only">TCEA Critical Thinking Online Breakouts (CTOBs)</h1>
     <div class="tally">
       <div><div class="n" id="tSuites">3</div><div class="l">Breakout sets</div></div>
       <div><div class="n" id="tCount">0</div><div class="l">Breakouts &amp; activities</div></div>
@@ -163,7 +167,7 @@
     document.getElementById('empty').style.display = list.length ? 'none' : 'block';
     document.getElementById('grid').innerHTML = list.map(function (b) {
       return '<a class="bk" href="' + b.href + '">' +
-        '<div class="row"><span class="dot" style="background:' + (accent[b.suite] || '#0a2463') + '"></span>' +
+        '<div class="row"><span class="dot" style="background:' + (accent[b.suite] || '#054c8c') + '"></span>' +
         '<span class="suite-n">' + esc(shortSuite(b.suite)) + '</span>' +
         (b.band ? '<span class="band">Gr ' + b.band + '</span>' : '') + '</div>' +
         '<h4>' + esc(b.title) + '</h4>' +
