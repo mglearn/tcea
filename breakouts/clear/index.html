@@ -45,65 +45,72 @@
     font-weight:600;text-decoration:none;padding:11px 22px;border-radius:100px;font-size:.95rem;transition:.18s;border:2px solid var(--navy)}
   .morebar a:hover{background:#fff;color:var(--navy);transform:translateY(-2px);box-shadow:0 8px 20px rgba(16,42,84,.14)}
   .morebar a .dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+  .langbar{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-bottom:8px}
+  .langbar .globe{font-size:1.1rem}
+  .breakout-i18n-switcher,#i18nSwitcher{font-family:'Nunito',sans-serif;font-weight:700;font-size:.9rem;padding:7px 12px;border:2px solid var(--line);border-radius:9px;background:#fff;color:var(--navy);cursor:pointer}
 </style>
 </head>
 <body>
 <div class="wrap">
+  <div class="langbar"><span class="globe" aria-hidden="true">🌐</span><div data-i18n-picker></div></div>
   <header class="top">
-    <div class="eyebrow">Digital Breakouts · Critical Thinking</div>
-    <h1>Critical Thinking Breakouts</h1>
-    <p class="sub">Three real-world reasoning escapes — one per grade band. Students open clues, weigh evidence, and crack four locks using logic, media literacy, and scientific skepticism. No logins, no prep, runs in any browser.</p>
+    <div class="eyebrow" data-i18n="eyebrow">Digital Breakouts · Critical Thinking</div>
+    <h1 data-i18n="h1">Critical Thinking Breakouts</h1>
+    <p class="sub" data-i18n="sub">Three real-world reasoning escapes — one per grade band. Students open clues, weigh evidence, and crack four locks using logic, media literacy, and scientific skepticism. No logins, no prep, runs in any browser.</p>
     <img src="assets/tile-hub.svg" alt="Critical Thinking Breakouts — real-world reasoning escapes for grades 3 to 12" style="width:100%;max-width:560px;border-radius:16px;margin-top:20px;box-shadow:0 10px 28px rgba(16,42,84,.14)">
   </header>
 
   <div class="grid">
     <a class="card" href="grade35/index.html">
       <img src="assets/tile-grade35.svg" alt="" style="width:100%;border-radius:12px;margin-bottom:14px">
-      <span class="band" style="background:var(--c3)">Grades 3–5</span>
+      <span class="band" style="background:var(--c3)" data-i18n="c1.band">Grades 3–5</span>
       <div class="ico">🍎</div>
-      <h2>The Mixed-Up Lunchroom</h2>
-      <div class="skill">Logic &amp; observation</div>
-      <p>Four lunch trays got mixed up. Match them using only what the clues prove — and learn when to say "the clue doesn't show that."</p>
-      <span class="go">Open breakout</span>
+      <h2 data-i18n="c1.h">The Mixed-Up Lunchroom</h2>
+      <div class="skill" data-i18n="c1.skill">Logic &amp; observation</div>
+      <p data-i18n="c1.p">Four lunch trays got mixed up. Match them using only what the clues prove — and learn when to say "the clue doesn't show that."</p>
+      <span class="go" data-i18n="cta">Open breakout</span>
     </a>
 
     <a class="card" href="grade68/index.html">
       <img src="assets/tile-grade68.svg" alt="" style="width:100%;border-radius:12px;margin-bottom:14px">
-      <span class="band" style="background:var(--c2)">Grades 6–8</span>
+      <span class="band" style="background:var(--c2)" data-i18n="c2.band">Grades 6–8</span>
       <div class="ico">📡</div>
-      <h2>Signal Check: The Viral Claim</h2>
-      <div class="skill">Media literacy</div>
-      <p>A shocking post is going viral. Trace it to the source, count the red flags, and decide whether to share — or stop the rumor.</p>
-      <span class="go">Open breakout</span>
+      <h2 data-i18n="c2.h">Signal Check: The Viral Claim</h2>
+      <div class="skill" data-i18n="c2.skill">Media literacy</div>
+      <p data-i18n="c2.p">A shocking post is going viral. Trace it to the source, count the red flags, and decide whether to share — or stop the rumor.</p>
+      <span class="go" data-i18n="cta">Open breakout</span>
     </a>
 
     <a class="card" href="grade912/index.html">
       <img src="assets/tile-grade912.svg" alt="" style="width:100%;border-radius:12px;margin-bottom:14px">
-      <span class="band" style="background:var(--c1)">Grades 9–12</span>
+      <span class="band" style="background:var(--c1)" data-i18n="c3.band">Grades 9–12</span>
       <div class="ico">🔬</div>
-      <h2>Lab Report Lockdown</h2>
-      <div class="skill">Scientific reasoning</div>
-      <p>A company's "miracle study" needs peer review. Catch the tiny sample, missing control group, and correlation-causation trap.</p>
-      <span class="go">Open breakout</span>
+      <h2 data-i18n="c3.h">Lab Report Lockdown</h2>
+      <div class="skill" data-i18n="c3.skill">Scientific reasoning</div>
+      <p data-i18n="c3.p">A company's "miracle study" needs peer review. Catch the tiny sample, missing control group, and correlation-causation trap.</p>
+      <span class="go" data-i18n="cta">Open breakout</span>
     </a>
   </div>
 
   <div class="morebar">
-    <a href="more/grade35.html"><span class="dot" style="background:var(--c3)"></span>More · Grades 3–5</a>
-    <a href="more/grade68.html"><span class="dot" style="background:var(--c2)"></span>More · Grades 6–8</a>
-    <a href="more/grade912.html"><span class="dot" style="background:var(--c1)"></span>More · Grades 9–12</a>
+    <a href="more/grade35.html"><span class="dot" style="background:var(--c3)"></span><span data-i18n="more.g35">More · Grades 3–5</span></a>
+    <a href="more/grade68.html"><span class="dot" style="background:var(--c2)"></span><span data-i18n="more.g68">More · Grades 6–8</span></a>
+    <a href="more/grade912.html"><span class="dot" style="background:var(--c1)"></span><span data-i18n="more.g912">More · Grades 9–12</span></a>
   </div>
 
   <div class="info">
-    <h3>How to use these</h3>
-    <p>Each breakout works as a bellringer, partner activity, station, or quick filler. Project it for a whole-class "crack the locks," or let pairs race. Every lock ends with a short <b>why</b> so the reasoning sticks, not just the answer.</p>
-    <p>Each grade card opens a <b>teacher launch page</b> (no answer key shown) with a button to start the student breakout. Answer keys for all three are in the separate teacher answer-key page kept out of the student folders.</p>
-    <p>Self-contained: each page is a single HTML file. The only outside request is Google Fonts. No data is collected. See the <a href="policy.html">privacy &amp; compliance policy</a>.</p>
-    <p>📄 <a href="recording-sheet.html">Printable student recording sheet</a> · 🔑 Teacher answer key is in <code>answer-key.html</code> (keep that one private).</p>
-    <p>🧭 <a href="correlation.html">Activity correlation guide</a> — every activity by grade &amp; content area, its TEKS alignment, and how it maps to the <b>CLEAR Thinking Process</b>.</p>
+    <h3 data-i18n="info.h">How to use these</h3>
+    <p data-i18n-html="info.p1">Each breakout works as a bellringer, partner activity, station, or quick filler. Project it for a whole-class "crack the locks," or let pairs race. Every lock ends with a short <b>why</b> so the reasoning sticks, not just the answer.</p>
+    <p data-i18n-html="info.p2">Each grade card opens a <b>teacher launch page</b> (no answer key shown) with a button to start the student breakout. Answer keys for all three are in the separate teacher answer-key page kept out of the student folders.</p>
+    <p data-i18n-html="info.p3">Self-contained: each page is a single HTML file. The only outside request is Google Fonts. No data is collected. See the <a href="policy.html">privacy &amp; compliance policy</a>.</p>
+    <p data-i18n-html="info.p4">📄 <a href="recording-sheet.html">Printable student recording sheet</a> · 🔑 Teacher answer key is in <code>answer-key.html</code> (keep that one private).</p>
+    <p data-i18n-html="info.p5">🧭 <a href="correlation.html">Activity correlation guide</a> — every activity by grade &amp; content area, its TEKS alignment, and how it maps to the <b>CLEAR Thinking Process</b>.</p>
   </div>
 
-  <footer>Critical Thinking Breakouts · A set of three real-world reasoning escapes for grades 3–12.</footer>
+  <footer data-i18n="footer">Critical Thinking Breakouts · A set of three real-world reasoning escapes for grades 3–12.</footer>
 </div>
+
+<script src="../assets/i18n.js" defer></script>
+<script src="i18n-index.js" defer></script>
 </body>
 </html>

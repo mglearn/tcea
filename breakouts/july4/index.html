@@ -15,6 +15,10 @@
     radial-gradient(ellipse 50% 40% at 0% 100%,rgba(10,36,99,.10)0%,transparent 60%),var(--paper);
     min-height:100vh;line-height:1.55}
   .wrap{max-width:900px;margin:0 auto;padding:36px 20px 80px}
+  .langbar{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-bottom:8px}
+  .langbar .globe{font-size:1.1rem}
+  .breakout-i18n-switcher,#i18nSwitcher{font-family:'Nunito',sans-serif;font-weight:700;font-size:.9rem;
+    padding:7px 12px;border:2px solid var(--line);border-radius:9px;background:#fff;color:var(--navy);cursor:pointer}
   header.top{text-align:center;padding:10px 0 4px}
   .eyebrow{display:inline-block;background:var(--navy);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;
     font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;padding:6px 18px;border-radius:100px;margin-bottom:14px}
@@ -45,74 +49,78 @@
 </head>
 <body>
 <div class="wrap">
+  <div class="langbar"><span class="globe" aria-hidden="true">🌐</span><div data-i18n-picker></div></div>
   <header class="top">
-    <div class="eyebrow">TCEA Educator Resource · Grades 3–12</div>
-    <h1>Fourth of July<br>Critical Thinking Breakouts</h1>
-    <p class="sub">Twelve self-contained history escape activities across three grade bands. Students open clues, weigh evidence, and crack four locks each — building U.S. history knowledge and critical-thinking habits at the same time. No logins, no prep, no data collected.</p>
+    <div class="eyebrow" data-i18n="eyebrow">TCEA Educator Resource · Grades 3–12</div>
+    <h1 data-i18n-html="h1">Fourth of July<br>Critical Thinking Breakouts</h1>
+    <p class="sub" data-i18n="sub">Twelve self-contained history escape activities across three grade bands. Students open clues, weigh evidence, and crack four locks each — building U.S. history knowledge and critical-thinking habits at the same time. No logins, no prep, no data collected.</p>
     <div class="tally">
-      <div><div class="n">3</div><div class="l">Grade bands</div></div>
-      <div><div class="n">12</div><div class="l">Breakouts</div></div>
-      <div><div class="n">48</div><div class="l">Locks total</div></div>
-      <div><div class="n">0</div><div class="l">Logins / data</div></div>
+      <div><div class="n">3</div><div class="l" data-i18n="tally.bands">Grade bands</div></div>
+      <div><div class="n">12</div><div class="l" data-i18n="tally.breakouts">Breakouts</div></div>
+      <div><div class="n">48</div><div class="l" data-i18n="tally.locks">Locks total</div></div>
+      <div><div class="n">0</div><div class="l" data-i18n="tally.logins">Logins / data</div></div>
     </div>
   </header>
 
   <div class="bands">
     <div class="band">
       <div class="ico">🍎</div>
-      <span class="lvl">Grades 3–5</span>
-      <h2>The Founding Story</h2>
-      <p>The Declaration, the flag, the growth of liberty, and why we celebrate — told through clear clues and a "prove it" habit.</p>
+      <span class="lvl" data-i18n="b1.lvl">Grades 3–5</span>
+      <h2 data-i18n="b1.h">The Founding Story</h2>
+      <p data-i18n="b1.p">The Declaration, the flag, the growth of liberty, and why we celebrate — told through clear clues and a "prove it" habit.</p>
       <ul>
-        <li>🏛️ The Secret of Independence Hall</li>
-        <li>🇺🇸 The Flag Maker's Workshop</li>
-        <li>🔔 The Liberty Bell's Long Journey</li>
-        <li>🎆 Fireworks Over the Harbor</li>
+        <li data-i18n="b1.li1">🏛️ The Secret of Independence Hall</li>
+        <li data-i18n="b1.li2">🇺🇸 The Flag Maker's Workshop</li>
+        <li data-i18n="b1.li3">🔔 The Liberty Bell's Long Journey</li>
+        <li data-i18n="b1.li4">🎆 Fireworks Over the Harbor</li>
       </ul>
-      <a class="go" href="grade35/index.html">Enter 3–5 ▶</a>
+      <a class="go" href="grade35/index.html" data-i18n="b1.cta">Enter 3–5 ▶</a>
     </div>
     <div class="band">
       <div class="ico">📡</div>
-      <span class="lvl">Grades 6–8</span>
-      <h2>Evidence & Analysis</h2>
-      <p>Primary-source reading, cause and effect, ideal vs. reality, and evaluating historical claims and sources.</p>
+      <span class="lvl" data-i18n="b2.lvl">Grades 6–8</span>
+      <h2 data-i18n="b2.h">Evidence &amp; Analysis</h2>
+      <p data-i18n="b2.p">Primary-source reading, cause and effect, ideal vs. reality, and evaluating historical claims and sources.</p>
       <ul>
-        <li>📜 The Draft in the Statehouse</li>
-        <li>🔎 Case File: Cause & Effect</li>
-        <li>🕊️ The Unfinished Promise</li>
-        <li>🗄️ Signal in the Archives</li>
+        <li data-i18n="b2.li1">📜 The Draft in the Statehouse</li>
+        <li data-i18n="b2.li2">🔎 Case File: Cause &amp; Effect</li>
+        <li data-i18n="b2.li3">🕊️ The Unfinished Promise</li>
+        <li data-i18n="b2.li4">🗄️ Signal in the Archives</li>
       </ul>
-      <a class="go" href="grade68/index.html">Enter 6–8 ▶</a>
+      <a class="go" href="grade68/index.html" data-i18n="b2.cta">Enter 6–8 ▶</a>
     </div>
     <div class="band">
       <div class="ico">🔬</div>
-      <span class="lvl">Grades 9–12</span>
-      <h2>Argument & Interpretation</h2>
-      <p>Enlightenment philosophy, the ratification debate, historiography, and rhetorical analysis of founding documents.</p>
+      <span class="lvl" data-i18n="b3.lvl">Grades 9–12</span>
+      <h2 data-i18n="b3.h">Argument &amp; Interpretation</h2>
+      <p data-i18n="b3.p">Enlightenment philosophy, the ratification debate, historiography, and rhetorical analysis of founding documents.</p>
       <ul>
-        <li>🧠 The Philosophy Vault</li>
-        <li>⚖️ Ratification Deadlock</li>
-        <li>📚 The Historian's Dilemma</li>
-        <li>🧪 The Rhetoric Lab</li>
+        <li data-i18n="b3.li1">🧠 The Philosophy Vault</li>
+        <li data-i18n="b3.li2">⚖️ Ratification Deadlock</li>
+        <li data-i18n="b3.li3">📚 The Historian's Dilemma</li>
+        <li data-i18n="b3.li4">🧪 The Rhetoric Lab</li>
       </ul>
-      <a class="go" href="grade912/index.html">Enter 9–12 ▶</a>
+      <a class="go" href="grade912/index.html" data-i18n="b3.cta">Enter 9–12 ▶</a>
     </div>
   </div>
 
   <div class="about">
-    <h3>About this suite</h3>
-    <p>Every activity is a single self-contained HTML file. The only outside request is Google Fonts (removable for zero-egress hosting). Progress lives only in the browser session.</p>
+    <h3 data-i18n="about.h">About this suite</h3>
+    <p data-i18n="about.p">Every activity is a single self-contained HTML file. The only outside request is Google Fonts (removable for zero-egress hosting). Progress lives only in the browser session.</p>
     <ul>
-      <li>Each grade band has its own hub, four teacher launch pages, four student breakouts, a private answer key, and a privacy &amp; compliance policy.</li>
-      <li>Five lock types across the suite: count/date, evidence (multiple choice), word, order (sequence), and evidence-sort (multi-select).</li>
-      <li>Standards are described as <em>aligned to</em> TEKS and Common Core strands, not reproductions of official standard text.</li>
-      <li>Licensing: CC BY 4.0 (content) · MIT (code).</li>
-      <li>🧭 <a href="correlation.html" style="color:#2f6fe0;text-decoration:none;font-weight:700">Activity correlation guide</a> — every activity by grade &amp; content area, its TEKS &amp; Common Core alignment, and CLEAR-process mapping.</li>
-      <li>🔑 <a href="answer-key.html" style="color:#2f6fe0;text-decoration:none;font-weight:700">Teacher answer key — all grades</a> — one <b>password-protected</b> page (AES-256) with the answers to all twelve breakouts. Share the password with teachers only.</li>
+      <li data-i18n="about.li1">Each grade band has its own hub, four teacher launch pages, four student breakouts, a private answer key, and a privacy &amp; compliance policy.</li>
+      <li data-i18n="about.li2">Five lock types across the suite: count/date, evidence (multiple choice), word, order (sequence), and evidence-sort (multi-select).</li>
+      <li data-i18n="about.li3">Standards are described as aligned to TEKS and Common Core strands, not reproductions of official standard text.</li>
+      <li data-i18n="about.li4">Licensing: CC BY 4.0 (content) · MIT (code).</li>
+      <li data-i18n-html="about.li5">🧭 <a href="correlation.html" style="color:#2f6fe0;text-decoration:none;font-weight:700">Activity correlation guide</a> — every activity by grade &amp; content area, its TEKS &amp; Common Core alignment, and CLEAR-process mapping.</li>
+      <li data-i18n-html="about.li6">🔑 <a href="answer-key.html" style="color:#2f6fe0;text-decoration:none;font-weight:700">Teacher answer key — all grades</a> — one <b>password-protected</b> page (AES-256) with the answers to all twelve breakouts. Share the password with teachers only.</li>
     </ul>
   </div>
 
-  <footer>Fourth of July Critical Thinking Breakouts · A TCEA educator resource · CC BY 4.0 (content) · MIT (code) · No logins, no data collected.</footer>
+  <footer data-i18n="footer">Fourth of July Critical Thinking Breakouts · A TCEA educator resource · CC BY 4.0 (content) · MIT (code) · No logins, no data collected.</footer>
 </div>
+
+<script src="../assets/i18n.js" defer></script>
+<script src="i18n-index.js" defer></script>
 </body>
 </html>

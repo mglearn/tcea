@@ -40,70 +40,77 @@
   .links{margin-top:22px;font-weight:700;font-size:.9rem;text-align:center}
   .links a{color:#0f7a5a;text-decoration:none;margin:0 8px}
   footer{text-align:center;margin-top:30px;font-size:.8rem;color:var(--ink-soft);font-weight:600}
+  .langbar{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-bottom:8px}
+  .langbar .globe{font-size:1.1rem}
+  .breakout-i18n-switcher,#i18nSwitcher{font-family:'Nunito',sans-serif;font-weight:700;font-size:.9rem;padding:7px 12px;border:2px solid var(--line);border-radius:9px;background:#fff;color:var(--navy);cursor:pointer}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="crumb"><a href="../index.html">‹ Freedom Days Critical Thinking Breakouts</a></div>
+  <div class="langbar"><span class="globe" aria-hidden="true">🌐</span><div data-i18n-picker></div></div>
+  <div class="crumb"><a href="../index.html" data-i18n="crumb">‹ Freedom Days Critical Thinking Breakouts</a></div>
   <header class="top">
-    <div class="eyebrow">Freedom Days Critical Thinking Breakouts · Grades 9–12</div>
-    <h1>Public Memory & Argument</h1>
-    <p class="sub">Four argument-focused breakouts for grades 9–12. Students examine public memory, historiography, and rhetoric — asking whose story a holiday tells, why some observances faded, and how to build an evidence-based case.</p>
+    <div class="eyebrow" data-i18n="eyebrow">Freedom Days Critical Thinking Breakouts · Grades 9–12</div>
+    <h1 data-i18n="h1">Public Memory & Argument</h1>
+    <p class="sub" data-i18n="sub">Four argument-focused breakouts for grades 9–12. Students examine public memory, historiography, and rhetoric — asking whose story a holiday tells, why some observances faded, and how to build an evidence-based case.</p>
   </header>
 
   <div class="cards">
     <div class="card">
       <div class="ico">🏛️</div>
-      <span class="tag">Public memory</span>
-      <h2>Contested Meaning: Whose Holiday?</h2>
-      <p>Analyze holidays as contested public memory, using Douglass’s July 5 challenge as the case study.</p>
-      <a class="go" href="meaning.html">Open breakout ▶</a>
+      <span class="tag" data-i18n="c1.tag">Public memory</span>
+      <h2 data-i18n="c1.h">Contested Meaning: Whose Holiday?</h2>
+      <p data-i18n="c1.p">Analyze holidays as contested public memory, using Douglass’s July 5 challenge as the case study.</p>
+      <a class="go" href="meaning.html" data-i18n="cta">Open breakout ▶</a>
     </div>
     <div class="card">
       <div class="ico">🔦</div>
-      <span class="tag">Historiography</span>
-      <h2>Recovering Lost Observances</h2>
-      <p>Investigate why some freedom observances faded — and how historians recover them from primary sources.</p>
-      <a class="go" href="lostobservances.html">Open breakout ▶</a>
+      <span class="tag" data-i18n="c2.tag">Historiography</span>
+      <h2 data-i18n="c2.h">Recovering Lost Observances</h2>
+      <p data-i18n="c2.p">Investigate why some freedom observances faded — and how historians recover them from primary sources.</p>
+      <a class="go" href="lostobservances.html" data-i18n="cta">Open breakout ▶</a>
     </div>
     <div class="card">
       <div class="ico">🎤</div>
-      <span class="tag">Ethos · Pathos · Logos</span>
-      <h2>The Rhetoric of Civic Speech</h2>
-      <p>Decode the rhetoric of Douglass’s July 5 address — the appeals and irony that made it persuasive.</p>
-      <a class="go" href="civicspeech.html">Open breakout ▶</a>
+      <span class="tag" data-i18n="c3.tag">Ethos · Pathos · Logos</span>
+      <h2 data-i18n="c3.h">The Rhetoric of Civic Speech</h2>
+      <p data-i18n="c3.p">Decode the rhetoric of Douglass’s July 5 address — the appeals and irony that made it persuasive.</p>
+      <a class="go" href="civicspeech.html" data-i18n="cta">Open breakout ▶</a>
     </div>
     <div class="card">
       <div class="ico">🏫</div>
-      <span class="tag">Build the case</span>
-      <h2>Designing a School Observance</h2>
-      <p>Master the structure of an evidence-based proposal by designing a freedom-day observance for your school.</p>
-      <a class="go" href="observancedesign.html">Open breakout ▶</a>
+      <span class="tag" data-i18n="c4.tag">Build the case</span>
+      <h2 data-i18n="c4.h">Designing a School Observance</h2>
+      <p data-i18n="c4.p">Master the structure of an evidence-based proposal by designing a freedom-day observance for your school.</p>
+      <a class="go" href="observancedesign.html" data-i18n="cta">Open breakout ▶</a>
     </div>
   </div>
 
   <div class="howto">
-    <h3>How to use these</h3>
-    <p>Each breakout works as a bellringer, partner activity, station, or quick filler. Project it for a whole-class “crack the locks,” or let pairs race. Every lock ends with a short <b>why</b> so the reasoning sticks, not just the answer.</p>
+    <h3 data-i18n="howto.h">How to use these</h3>
+    <p data-i18n-html="howto.p">Each breakout works as a bellringer, partner activity, station, or quick filler. Project it for a whole-class "crack the locks," or let pairs race. Every lock ends with a short <b>why</b> so the reasoning sticks, not just the answer.</p>
     <ul>
-      <li>Each card opens a <b>teacher launch page</b> (no answer key shown) with a button to start the student breakout.</li>
-      <li>Answers for all twelve breakouts are in one <b>password-protected</b> <a href="../answer-key.html">teacher answer key</a> covering every grade band — keep the password private.</li>
-      <li>Self-contained: each page is a single HTML file. The only outside request is Google Fonts. No data is collected.</li>
+      <li data-i18n-html="howto.li1">Each card opens a <b>teacher launch page</b> (no answer key shown) with a button to start the student breakout.</li>
+      <li data-i18n-html="howto.li2">Answers for all twelve breakouts are in one <b>password-protected</b> <a href="../answer-key.html">teacher answer key</a> covering every grade band — keep the password private.</li>
+      <li data-i18n="howto.li3">Self-contained: each page is a single HTML file. The only outside request is Google Fonts. No data is collected.</li>
     </ul>
   </div>
 
   <div class="links">
-    🔑 <a href="../answer-key.html">Teacher answer key · all grades (password)</a> ·
-    🔒 <a href="policy.html">Privacy &amp; compliance</a> ·
-    🧭 <a href="../correlation.html">Correlation guide</a>
+    🔑 <a href="../answer-key.html" data-i18n="links.answer">Teacher answer key · all grades (password)</a> ·
+    🔒 <a href="policy.html" data-i18n="links.privacy">Privacy &amp; compliance</a> ·
+    🧭 <a href="../correlation.html" data-i18n="links.correlation">Correlation guide</a>
   </div>
 
   <div style="background:#fdf5f5;border:2px solid #e8e2d5;border-left:5px solid #b21e28;border-radius:14px;padding:18px 22px;margin-top:24px">
-    <h3 style="font-family:'Fredoka',sans-serif;color:#0b6b3a;font-size:1.1rem;margin-bottom:6px">📋 For educators — standards &amp; classroom use</h3>
-    <p style="font-weight:600;color:#5c574c;font-size:.92rem;margin:0;line-height:1.5">These activities are written for Texas classrooms and aligned to the 2022 Social Studies TEKS. Consistent with <b>Texas Education Code §28.0022</b>, they present slavery and racism as <em>failures to live up to the nation’s founding principles of liberty and equality</em> — the argument Frederick Douglass made on July 5, 1852 — and are designed to be explored <b>objectively and free from political bias</b>. Students reason from primary-source evidence. No accounts, no logins, and no student data are collected. See the <a href="../correlation.html" style="color:#0f7a5a;font-weight:700;text-decoration:none">correlation guide</a> for full alignment; this is a supporting resource, not legal advice.</p>
+    <h3 data-i18n="edu.h" style="font-family:’Fredoka’,sans-serif;color:#0b6b3a;font-size:1.1rem;margin-bottom:6px">📋 For educators — standards &amp; classroom use</h3>
+    <p data-i18n-html="edu.p" style="font-weight:600;color:#5c574c;font-size:.92rem;margin:0;line-height:1.5">These activities are written for Texas classrooms and aligned to the 2022 Social Studies TEKS. Consistent with <b>Texas Education Code §28.0022</b>, they present slavery and racism as <em>failures to live up to the nation’s founding principles of liberty and equality</em> — the argument Frederick Douglass made on July 5, 1852 — and are designed to be explored <b>objectively and free from political bias</b>. Students reason from primary-source evidence. No accounts, no logins, and no student data are collected. See the <a href="../correlation.html" style="color:#0f7a5a;font-weight:700;text-decoration:none">correlation guide</a> for full alignment; this is a supporting resource, not legal advice.</p>
   </div>
 
-  <footer>Freedom Days Breakouts · Grades 9–12 · A TCEA educator resource · CC BY 4.0 (content) · MIT (code)</footer>
+  <footer data-i18n="footer">Freedom Days Breakouts · Grades 9–12 · A TCEA educator resource · CC BY 4.0 (content) · MIT (code)</footer>
 </div>
+
+<script src="../../assets/i18n.js" defer></script>
+<script src="i18n-index.js" defer></script>
 </body>
 </html>

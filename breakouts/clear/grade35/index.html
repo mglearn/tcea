@@ -32,33 +32,45 @@
   .teks code{background:#eef2fb;padding:1px 6px;border-radius:5px;color:var(--navy);font-weight:700}
   .note{background:#fffdf6;border-left:4px solid var(--gold-d);border-radius:8px;padding:12px 16px;margin-top:18px;font-weight:600;font-size:.9rem}
   footer{text-align:center;margin-top:28px;font-size:.8rem;color:var(--ink-soft);font-weight:600}
+  .langbar{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-bottom:8px}
+  .langbar .globe{font-size:1.1rem}
+  .breakout-i18n-switcher,#i18nSwitcher{font-family:'Nunito',sans-serif;font-weight:700;font-size:.9rem;padding:7px 12px;border:2px solid var(--line);border-radius:9px;background:#fff;color:var(--navy);cursor:pointer}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="crumb"><a href="../index.html">‹ Critical Thinking Breakouts</a></div>
-  <div class="eyebrow">Teacher Launch · Grades 3–5</div>
-  <h1>The Mixed-Up Lunchroom</h1>
-  <p class="band">Logic &amp; observation · Grades 3–5</p>
+  <div class="langbar"><span class="globe" aria-hidden="true">🌐</span><div data-i18n-picker></div></div>
+  <div class="crumb"><a href="../index.html" data-i18n="crumb">‹ Critical Thinking Breakouts</a></div>
+  <div class="eyebrow" data-i18n="eyebrow">Teacher Launch · Grades 3–5</div>
+  <h1 data-i18n="h1">The Mixed-Up Lunchroom</h1>
+  <p class="band" data-i18n="band">Logic &amp; observation · Grades 3–5</p>
 
   <img src="../assets/tile-grade35.svg" alt="" style="width:100%;border-radius:14px;margin-top:18px;box-shadow:0 8px 22px rgba(16,42,84,.12)">
 
   <div class="launch-card">
-    <p><b>Premise:</b> Four students left their lunch trays behind and they got mixed up. Students match trays to owners using only what the clues actually show — and practice saying "the clue doesn't prove that" instead of guessing.</p>
-    <p>Students open the clue board, examine the evidence, and solve four locks (a count lock, an evidence lock, a word lock, and an order lock). Each lock reveals a short reasoning explanation when solved. The answer key is not shown on this page.</p>
-    <a class="big-btn" href="student.html">▶ Open Student Breakout</a>
-    <div class="meta">Student activity: <code>grade35/student.html</code> · ~10–15 minutes · works on tablets, laptops, and interactive whiteboards.</div>
+    <p data-i18n-html="launch.p1"><b>Premise:</b> Four students left their lunch trays behind and they got mixed up. Students match trays to owners using only what the clues actually show — and practice saying "the clue doesn't prove that" instead of guessing.</p>
+    <p data-i18n="launch.p2">Students open the clue board, examine the evidence, and solve four locks (a count lock, an evidence lock, a word lock, and an order lock). Each lock reveals a short reasoning explanation when solved. The answer key is not shown on this page.</p>
+    <a class="big-btn" href="student.html" data-i18n="launch.btn">▶ Open Student Breakout</a>
+    <div class="meta" data-i18n-html="launch.meta">Student activity: <code>grade35/student.html</code> · ~10–15 minutes · works on tablets, laptops, and interactive whiteboards.</div>
   </div>
 
   <div class="teks">
-    <h2>Skills &amp; TEKS alignment</h2>
-    <p>Builds early inference and evidence skills in the ELAR Comprehension strand and logical-reasoning habits:</p>
-    <ul><li><code>ELA 3–5.6.F</code> make inferences and use textual evidence to support understanding.</li><li><code>ELA 3–5.6.G</code> evaluate details to determine what is most important.</li><li><code>ELA 3–5.7.C</code> use text evidence to support an appropriate response.</li><li>Logic: distinguishing supported conclusions from unsupported guesses (the "No Compute" habit).</li></ul>
+    <h2 data-i18n="teks.h">Skills &amp; TEKS alignment</h2>
+    <p data-i18n="teks.p">Builds early inference and evidence skills in the ELAR Comprehension strand and logical-reasoning habits:</p>
+    <ul>
+      <li data-i18n-html="teks.li1"><code>ELA 3–5.6.F</code> make inferences and use textual evidence to support understanding.</li>
+      <li data-i18n-html="teks.li2"><code>ELA 3–5.6.G</code> evaluate details to determine what is most important.</li>
+      <li data-i18n-html="teks.li3"><code>ELA 3–5.7.C</code> use text evidence to support an appropriate response.</li>
+      <li data-i18n="teks.li4">Logic: distinguishing supported conclusions from unsupported guesses (the "No Compute" habit).</li>
+    </ul>
   </div>
 
-  <div class="note">💡 <b>Teacher tip:</b> Pause after the "Lost dog poster" decoy clue and ask why it doesn't help — naming irrelevant information is a core critical-thinking move.</div>
+  <div class="note" data-i18n-html="note">💡 <b>Teacher tip:</b> Pause after the "Lost dog poster" decoy clue and ask why it doesn't help — naming irrelevant information is a core critical-thinking move.</div>
 
-  <footer>Critical Thinking Breakouts · Self-contained, no logins, no data collected.</footer>
+  <footer data-i18n="footer">Critical Thinking Breakouts · Self-contained, no logins, no data collected.</footer>
 </div>
+
+<script src="../../assets/i18n.js" defer></script>
+<script src="i18n-index.js" defer></script>
 </body>
 </html>

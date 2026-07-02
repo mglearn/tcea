@@ -32,33 +32,45 @@
   .teks code{background:#eef2fb;padding:1px 6px;border-radius:5px;color:var(--navy);font-weight:700}
   .note{background:#fffdf6;border-left:4px solid var(--gold-d);border-radius:8px;padding:12px 16px;margin-top:18px;font-weight:600;font-size:.9rem}
   footer{text-align:center;margin-top:28px;font-size:.8rem;color:var(--ink-soft);font-weight:600}
+  .langbar{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-bottom:8px}
+  .langbar .globe{font-size:1.1rem}
+  .breakout-i18n-switcher,#i18nSwitcher{font-family:'Nunito',sans-serif;font-weight:700;font-size:.9rem;padding:7px 12px;border:2px solid var(--line);border-radius:9px;background:#fff;color:var(--navy);cursor:pointer}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="crumb"><a href="../index.html">‹ Critical Thinking Breakouts</a></div>
-  <div class="eyebrow">Teacher Launch · Grades 6–8</div>
-  <h1>Signal Check: The Viral Claim</h1>
-  <p class="band">Media literacy · Grades 6–8</p>
+  <div class="langbar"><span class="globe" aria-hidden="true">🌐</span><div data-i18n-picker></div></div>
+  <div class="crumb"><a href="../index.html" data-i18n="crumb">‹ Critical Thinking Breakouts</a></div>
+  <div class="eyebrow" data-i18n="eyebrow">Teacher Launch · Grades 6–8</div>
+  <h1 data-i18n="h1">Signal Check: The Viral Claim</h1>
+  <p class="band" data-i18n="band">Media literacy · Grades 6–8</p>
 
   <img src="../assets/tile-grade68.svg" alt="" style="width:100%;border-radius:14px;margin-top:18px;box-shadow:0 8px 22px rgba(16,42,84,.12)">
 
   <div class="launch-card">
-    <p><b>Premise:</b> A shocking "BREAKING" post is going viral in the class group chat. Students trace it to its source, count the misinformation red flags, and put the verify-before-you-share process in order.</p>
-    <p>Students open the clue board, examine the evidence, and solve five locks (a source lock, a red-flag count lock, a word lock, a process-order lock, and an evidence-sort lock). Each lock reveals a short reasoning explanation when solved. The answer key is not shown on this page.</p>
-    <a class="big-btn" href="student.html">▶ Open Student Breakout</a>
-    <div class="meta">Student activity: <code>grade68/student.html</code> · ~10–15 minutes · works on tablets, laptops, and interactive whiteboards.</div>
+    <p data-i18n-html="launch.p1"><b>Premise:</b> A shocking "BREAKING" post is going viral in the class group chat. Students trace it to its source, count the misinformation red flags, and put the verify-before-you-share process in order.</p>
+    <p data-i18n="launch.p2">Students open the clue board, examine the evidence, and solve five locks (a source lock, a red-flag count lock, a word lock, a process-order lock, and an evidence-sort lock). Each lock reveals a short reasoning explanation when solved. The answer key is not shown on this page.</p>
+    <a class="big-btn" href="student.html" data-i18n="launch.btn">▶ Open Student Breakout</a>
+    <div class="meta" data-i18n-html="launch.meta">Student activity: <code>grade68/student.html</code> · ~10–15 minutes · works on tablets, laptops, and interactive whiteboards.</div>
   </div>
 
   <div class="teks">
-    <h2>Skills &amp; TEKS alignment</h2>
-    <p>Builds source-evaluation and inquiry skills across ELAR and digital-citizenship standards:</p>
-    <ul><li><code>ELA 6–8.12.J</code> examine sources for credibility, bias, and accuracy.</li><li><code>ELA 6–8.13</code> (inquiry/research) gather and assess the reliability of information.</li><li><code>ELA 6–8.6.F–H</code> infer, evaluate, and synthesize across sources.</li><li>Digital citizenship: verifying claims before amplifying them; recognizing urgency and emotional manipulation.</li></ul>
+    <h2 data-i18n="teks.h">Skills &amp; TEKS alignment</h2>
+    <p data-i18n="teks.p">Builds source-evaluation and inquiry skills across ELAR and digital-citizenship standards:</p>
+    <ul>
+      <li data-i18n-html="teks.li1"><code>ELA 6–8.12.J</code> examine sources for credibility, bias, and accuracy.</li>
+      <li data-i18n-html="teks.li2"><code>ELA 6–8.13</code> (inquiry/research) gather and assess the reliability of information.</li>
+      <li data-i18n-html="teks.li3"><code>ELA 6–8.6.F–H</code> infer, evaluate, and synthesize across sources.</li>
+      <li data-i18n="teks.li4">Digital citizenship: verifying claims before amplifying them; recognizing urgency and emotional manipulation.</li>
+    </ul>
   </div>
 
-  <div class="note">💡 <b>Teacher tip:</b> Connect it to a real example students have seen. Ask: "When have you almost shared something that turned out to be fake? What red flag did you miss?"</div>
+  <div class="note" data-i18n-html="note">💡 <b>Teacher tip:</b> Connect it to a real example students have seen. Ask: "When have you almost shared something that turned out to be fake? What red flag did you miss?"</div>
 
-  <footer>Critical Thinking Breakouts · Self-contained, no logins, no data collected.</footer>
+  <footer data-i18n="footer">Critical Thinking Breakouts · Self-contained, no logins, no data collected.</footer>
 </div>
+
+<script src="../../assets/i18n.js" defer></script>
+<script src="i18n-index.js" defer></script>
 </body>
 </html>

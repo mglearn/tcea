@@ -43,12 +43,16 @@
   .about li{margin:4px 0 4px 20px}
   .about a{color:#0f7a5a;font-weight:700;text-decoration:none}
   footer{text-align:center;margin-top:32px;font-size:.8rem;color:var(--ink-soft);font-weight:600}
+  .langbar{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-bottom:8px}
+  .langbar .globe{font-size:1.1rem}
+  .breakout-i18n-switcher,#i18nSwitcher{font-family:'Nunito',sans-serif;font-weight:700;font-size:.9rem;padding:7px 12px;border:2px solid var(--line);border-radius:9px;background:#fff;color:var(--green);cursor:pointer}
 </style>
 </head>
 <body>
 <div class="wrap">
+  <div class="langbar"><span class="globe" aria-hidden="true">🌐</span><div data-i18n-picker></div></div>
   <header class="top">
-    <svg class="hero-svg" viewBox="0 0 340 150" role="img" aria-label="A rising sun over a green field — a new day of freedom">
+    <svg class="hero-svg" viewBox="0 0 340 150" role="img" data-i18n-aria-label="hero.aria">
       <defs>
         <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stop-color="#fdf6e3"/><stop offset="1" stop-color="#fbf7ef"/>
@@ -67,75 +71,78 @@
       <rect x="0" y="120" width="340" height="30" fill="#0b6b3a"/>
       <rect x="0" y="120" width="340" height="4" fill="#075229"/>
     </svg>
-    <div class="eyebrow">TCEA Educator Resource · Grades 3–12</div>
-    <h1>July 5 <span class="accent">&amp;</span> Other Black<br>Freedom Holidays</h1>
-    <p class="sub">Twelve self-contained critical thinking breakouts across three grade bands. Students open clues, weigh evidence, and crack four locks each — exploring the freedom days the national calendar often overlooks, from Frederick Douglass’s July 5 address to Juneteenth, Pinkster, Watch Night, and more. No logins, no prep, no data collected.</p>
+    <div class="eyebrow" data-i18n="eyebrow">TCEA Educator Resource · Grades 3–12</div>
+    <h1 data-i18n-html="h1">July 5 <span class="accent">&amp;</span> Other Black<br>Freedom Holidays</h1>
+    <p class="sub" data-i18n="sub">Twelve self-contained critical thinking breakouts across three grade bands. Students open clues, weigh evidence, and crack four locks each — exploring the freedom days the national calendar often overlooks, from Frederick Douglass’s July 5 address to Juneteenth, Pinkster, Watch Night, and more. No logins, no prep, no data collected.</p>
     <div class="tally">
-      <div><div class="n">3</div><div class="l">Grade bands</div></div>
-      <div><div class="n">12</div><div class="l">Breakouts</div></div>
-      <div><div class="n">48</div><div class="l">Locks total</div></div>
-      <div><div class="n">0</div><div class="l">Logins / data</div></div>
+      <div><div class="n">3</div><div class="l" data-i18n="tally.bands">Grade bands</div></div>
+      <div><div class="n">12</div><div class="l" data-i18n="tally.breakouts">Breakouts</div></div>
+      <div><div class="n">48</div><div class="l" data-i18n="tally.locks">Locks total</div></div>
+      <div><div class="n">0</div><div class="l" data-i18n="tally.logins">Logins / data</div></div>
     </div>
   </header>
 
   <div class="bands">
     <div class="band">
       <div class="ico">🕊️</div>
-      <span class="lvl">Grades 3–5</span>
-      <h2>Remembering Freedom Days</h2>
+      <span class="lvl" data-i18n="b1.lvl">Grades 3–5</span>
+      <h2 data-i18n="b1.h">Remembering Freedom Days</h2>
       <ul>
-        <li>🗣️ The Day After the Fireworks</li>
-        <li>🕯️ Freedom’s Eve</li>
-        <li>🌷 The Pinkster Celebration</li>
-        <li>🎉 Juneteenth: Freedom Reaches Texas</li>
+        <li data-i18n="b1.li1">🗣️ The Day After the Fireworks</li>
+        <li data-i18n="b1.li2">🕯️ Freedom’s Eve</li>
+        <li data-i18n="b1.li3">🌷 The Pinkster Celebration</li>
+        <li data-i18n="b1.li4">🎉 Juneteenth: Freedom Reaches Texas</li>
       </ul>
-      <a class="go" href="grade35/index.html">Enter 3–5 ▶</a>
+      <a class="go" href="grade35/index.html" data-i18n="b1.cta">Enter 3–5 ▶</a>
     </div>
     <div class="band">
       <div class="ico">📜</div>
-      <span class="lvl">Grades 6–8</span>
-      <h2>Community, Voice & Evidence</h2>
+      <span class="lvl" data-i18n="b2.lvl">Grades 6–8</span>
+      <h2 data-i18n="b2.h">Community, Voice & Evidence</h2>
       <ul>
-        <li>📜 The Corinthian Hall Address</li>
-        <li>🎪 The First of August</li>
-        <li>🗳️ Election Day Festivals</li>
-        <li>📅 Freedom Calendars</li>
+        <li data-i18n="b2.li1">📜 The Corinthian Hall Address</li>
+        <li data-i18n="b2.li2">🎪 The First of August</li>
+        <li data-i18n="b2.li3">🗳️ Election Day Festivals</li>
+        <li data-i18n="b2.li4">📅 Freedom Calendars</li>
       </ul>
-      <a class="go" href="grade68/index.html">Enter 6–8 ▶</a>
+      <a class="go" href="grade68/index.html" data-i18n="b2.cta">Enter 6–8 ▶</a>
     </div>
     <div class="band">
       <div class="ico">⚖️</div>
-      <span class="lvl">Grades 9–12</span>
-      <h2>Public Memory & Argument</h2>
+      <span class="lvl" data-i18n="b3.lvl">Grades 9–12</span>
+      <h2 data-i18n="b3.h">Public Memory & Argument</h2>
       <ul>
-        <li>🏛️ Contested Meaning: Whose Holiday?</li>
-        <li>🔦 Recovering Lost Observances</li>
-        <li>🎤 The Rhetoric of Civic Speech</li>
-        <li>🏫 Designing a School Observance</li>
+        <li data-i18n="b3.li1">🏛️ Contested Meaning: Whose Holiday?</li>
+        <li data-i18n="b3.li2">🔦 Recovering Lost Observances</li>
+        <li data-i18n="b3.li3">🎤 The Rhetoric of Civic Speech</li>
+        <li data-i18n="b3.li4">🏫 Designing a School Observance</li>
       </ul>
-      <a class="go" href="grade912/index.html">Enter 9–12 ▶</a>
+      <a class="go" href="grade912/index.html" data-i18n="b3.cta">Enter 9–12 ▶</a>
     </div>
   </div>
 
   <div class="about">
-    <h3>About this suite</h3>
-    <p>The day after the Fourth of July has its own history. On July 5, 1852, Frederick Douglass asked what freedom meant for those who were not yet free — and Black communities across the country built their own “freedom calendars.” This suite invites students to investigate those days as evidence, not slogans.</p>
+    <h3 data-i18n="about.h">About this suite</h3>
+    <p data-i18n="about.p">The day after the Fourth of July has its own history. On July 5, 1852, Frederick Douglass asked what freedom meant for those who were not yet free — and Black communities across the country built their own "freedom calendars." This suite invites students to investigate those days as evidence, not slogans.</p>
     <ul>
-      <li>Each grade band has its own hub, four teacher launch pages, four student breakouts, a private answer key, and a privacy &amp; compliance policy.</li>
-      <li>Five lock types across the suite: date, evidence (multiple choice), word, order (sequence), and evidence-sort (multi-select).</li>
-      <li>Content is described as <em>aligned to</em> TEKS and Common Core strands, not reproductions of official standard text.</li>
-      <li>Licensing: CC BY 4.0 (content) · MIT (code).</li>
-      <li>🧭 <a href="correlation.html">Activity correlation guide</a> — every activity by grade &amp; content area, its TEKS &amp; Common Core alignment, and CLEAR-process mapping.</li>
-      <li>🔑 <a href="answer-key.html">Teacher answer key — all grades</a> — one <b>password-protected</b> page (AES-256) with the answers to all twelve breakouts. Share the password with teachers only.</li>
+      <li data-i18n="about.li1">Each grade band has its own hub, four teacher launch pages, four student breakouts, a private answer key, and a privacy &amp; compliance policy.</li>
+      <li data-i18n="about.li2">Five lock types across the suite: date, evidence (multiple choice), word, order (sequence), and evidence-sort (multi-select).</li>
+      <li data-i18n-html="about.li3">Content is described as <em>aligned to</em> TEKS and Common Core strands, not reproductions of official standard text.</li>
+      <li data-i18n="about.li4">Licensing: CC BY 4.0 (content) · MIT (code).</li>
+      <li data-i18n-html="about.li5">🧭 <a href="correlation.html">Activity correlation guide</a> — every activity by grade &amp; content area, its TEKS &amp; Common Core alignment, and CLEAR-process mapping.</li>
+      <li data-i18n-html="about.li6">🔑 <a href="answer-key.html">Teacher answer key — all grades</a> — one <b>password-protected</b> page (AES-256) with the answers to all twelve breakouts. Share the password with teachers only.</li>
     </ul>
   </div>
 
   <div style="background:#fdf5f5;border:2px solid #e8e2d5;border-left:5px solid #b21e28;border-radius:14px;padding:18px 22px;margin-top:24px">
-    <h3 style="font-family:'Fredoka',sans-serif;color:#0b6b3a;font-size:1.1rem;margin-bottom:6px">📋 For educators — standards &amp; classroom use</h3>
-    <p style="font-weight:600;color:#5c574c;font-size:.92rem;margin:0;line-height:1.5">These activities are written for Texas classrooms and aligned to the 2022 Social Studies TEKS. Consistent with <b>Texas Education Code §28.0022</b>, they present slavery and racism as <em>failures to live up to the nation’s founding principles of liberty and equality</em> — the argument Frederick Douglass made on July 5, 1852 — and are designed to be explored <b>objectively and free from political bias</b>. Students reason from primary-source evidence. No accounts, no logins, and no student data are collected. See the <a href="correlation.html" style="color:#0f7a5a;font-weight:700;text-decoration:none">correlation guide</a> for full alignment; this is a supporting resource, not legal advice.</p>
+    <h3 data-i18n="edu.h" style="font-family:’Fredoka’,sans-serif;color:#0b6b3a;font-size:1.1rem;margin-bottom:6px">📋 For educators — standards &amp; classroom use</h3>
+    <p data-i18n-html="edu.p" style="font-weight:600;color:#5c574c;font-size:.92rem;margin:0;line-height:1.5">These activities are written for Texas classrooms and aligned to the 2022 Social Studies TEKS. Consistent with <b>Texas Education Code §28.0022</b>, they present slavery and racism as <em>failures to live up to the nation’s founding principles of liberty and equality</em> — the argument Frederick Douglass made on July 5, 1852 — and are designed to be explored <b>objectively and free from political bias</b>. Students reason from primary-source evidence. No accounts, no logins, and no student data are collected. See the <a href="correlation.html" style="color:#0f7a5a;font-weight:700;text-decoration:none">correlation guide</a> for full alignment; this is a supporting resource, not legal advice.</p>
   </div>
 
-  <footer>July 5 &amp; Other Black Freedom Holidays · A TCEA educator resource · CC BY 4.0 (content) · MIT (code) · No logins, no data collected.</footer>
+  <footer data-i18n="footer">July 5 &amp; Other Black Freedom Holidays · A TCEA educator resource · CC BY 4.0 (content) · MIT (code) · No logins, no data collected.</footer>
 </div>
+
+<script src="../assets/i18n.js" defer></script>
+<script src="i18n-index.js" defer></script>
 </body>
 </html>
