@@ -3,8 +3,12 @@
 Twelve self-contained, browser-based digital "breakout" activities that invite students to
 investigate the freedom days the national calendar often overlooks — from Frederick Douglass's
 July 5, 1852 address to Juneteenth, Pinkster, Watch Night (Freedom's Eve), the First of August,
-and Negro Election Day. Students open clues, weigh short source excerpts, and solve four locks
+and the Election Day festivals (historically “Negro Election Day”). Students open clues, weigh short source excerpts, and solve four locks
 per breakout while practicing evidence-based reasoning. No accounts, no server, no data collection.
+
+## For educators — standards & classroom use
+
+These activities are written for Texas classrooms and aligned to the 2022 Social Studies TEKS. Consistent with **Texas Education Code §28.0022**, they present slavery and racism as *failures to live up to the nation's founding principles of liberty and equality* — the argument Frederick Douglass made on July 5, 1852 — and are designed to be explored **objectively and free from political bias** (§28.0022(a)(2)). Students reason from primary-source evidence. No accounts, no logins, and no student data are collected. See `correlation.html` for full standards alignment; this is a supporting resource, not legal advice.
 
 ## Quick start
 
@@ -42,7 +46,7 @@ Each band folder contains:
 **Grades 6–8 (Community, Voice & Evidence)**
 1. The Corinthian Hall Address — primary-source analysis of Douglass's 1852 speech
 2. The First of August — West Indies emancipation (1834) and its celebration
-3. Negro Election Day — a Black civic festival in colonial New England
+3. Election Day Festivals (Black Governors & Kings) — a Black civic festival in colonial New England, historically “Negro Election Day”
 4. Freedom Calendars — evaluating sources and what makes a claim strong
 
 **Grades 9–12 (Public Memory & Argument)**
