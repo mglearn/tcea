@@ -39,82 +39,90 @@
     .sheet{box-shadow:none;margin:0;padding:18px 14px;max-width:100%}
     @page{margin:1.4cm}
   }
+  /* shared i18n switcher */
+  .langbar{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-bottom:8px;max-width:760px;margin-left:auto;margin-right:auto;padding:0 20px}
+  .langbar .globe{font-size:1.1rem}
+  .breakout-i18n-switcher,#i18nSwitcher{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-weight:700;font-size:.9rem;padding:7px 12px;border:2px solid var(--line);border-radius:9px;background:#fff;color:var(--navy,#102a54);cursor:pointer}
 </style>
 </head>
 <body>
+  <div class="langbar"><span class="globe" aria-hidden="true">🌐</span><div data-i18n-picker></div></div>
   <div class="bar">
-    <a href="index.html">‹ Back to breakouts</a>
-    <button onclick="window.print()">🖨 Print this sheet</button>
+    <a href="index.html" data-i18n="back">‹ Back to breakouts</a>
+    <button onclick="window.print()" data-i18n="print">🖨 Print this sheet</button>
   </div>
 
   <div class="sheet">
     <div class="head">
-      <h1>Critical Thinking Breakout<br>Recording Sheet</h1>
-      <span class="badge">Detective Log</span>
+      <h1 data-i18n-html="sheet-title">Critical Thinking Breakout<br>Recording Sheet</h1>
+      <span class="badge" data-i18n="badge">Detective Log</span>
     </div>
 
     <div class="namerow">
-      <span>Name: ____________________</span>
-      <span>Date: ____________</span>
-      <span>Partner(s): ____________________</span>
+      <span data-i18n="name-field">Name: ____________________</span>
+      <span data-i18n="date-field">Date: ____________</span>
+      <span data-i18n="partner-field">Partner(s): ____________________</span>
     </div>
 
-    <div class="which">Which breakout?
-      <label><input type="checkbox"> 🍎 Mixed-Up Lunchroom (3–5)</label>
-      <label><input type="checkbox"> 📡 Signal Check (6–8)</label>
-      <label><input type="checkbox"> 🔬 Lab Report Lockdown (9–12)</label>
+    <div class="which"><span data-i18n="which-label">Which breakout?</span>
+      <label><input type="checkbox"> 🍎 <span data-i18n="which-g35">Mixed-Up Lunchroom (3–5)</span></label>
+      <label><input type="checkbox"> 📡 <span data-i18n="which-g68">Signal Check (6–8)</span></label>
+      <label><input type="checkbox"> 🔬 <span data-i18n="which-g912">Lab Report Lockdown (9–12)</span></label>
     </div>
 
-    <div class="intro">A good thinker can explain <b>why</b>, not just <b>what</b>. For each lock, write your answer <u>and</u> the clue or reason that proves it. If a clue doesn't prove something, write "No Compute" instead of guessing.</div>
+    <div class="intro" data-i18n-html="intro">A good thinker can explain <b>why</b>, not just <b>what</b>. For each lock, write your answer <u>and</u> the clue or reason that proves it. If a clue doesn't prove something, write "No Compute" instead of guessing.</div>
 
     <div class="lock">
-      <h3><span class="num">1</span> Lock 1</h3>
-      <div class="q">What is the question asking? (Write it in your own words.)</div>
+      <h3><span class="num">1</span> <span data-i18n="lock1-title">Lock 1</span></h3>
+      <div class="q" data-i18n="lock1-q">What is the question asking? (Write it in your own words.)</div>
       <div class="lines"></div>
-      <div class="field">My answer: <span class="answer-box"></span></div>
-      <div class="field">The clue/evidence that proves it:</div>
-      <div class="lines"></div>
-    </div>
-
-    <div class="lock">
-      <h3><span class="num">2</span> Lock 2</h3>
-      <div class="q">What is the question asking?</div>
-      <div class="lines"></div>
-      <div class="field">My answer: <span class="answer-box"></span></div>
-      <div class="field">The clue/evidence that proves it:</div>
+      <div class="field" data-i18n-html="my-answer">My answer: <span class="answer-box"></span></div>
+      <div class="field" data-i18n="clue-field">The clue/evidence that proves it:</div>
       <div class="lines"></div>
     </div>
 
     <div class="lock">
-      <h3><span class="num">3</span> Lock 3</h3>
-      <div class="q">What is the question asking?</div>
+      <h3><span class="num">2</span> <span data-i18n="lock2-title">Lock 2</span></h3>
+      <div class="q" data-i18n="lock-q">What is the question asking?</div>
       <div class="lines"></div>
-      <div class="field">My answer: <span class="answer-box"></span></div>
-      <div class="field">The clue/evidence that proves it:</div>
+      <div class="field" data-i18n-html="my-answer">My answer: <span class="answer-box"></span></div>
+      <div class="field" data-i18n="clue-field">The clue/evidence that proves it:</div>
       <div class="lines"></div>
     </div>
 
     <div class="lock">
-      <h3><span class="num">4</span> Lock 4</h3>
-      <div class="q">What is the question asking?</div>
+      <h3><span class="num">3</span> <span data-i18n="lock3-title">Lock 3</span></h3>
+      <div class="q" data-i18n="lock-q">What is the question asking?</div>
       <div class="lines"></div>
-      <div class="field">My answer: <span class="answer-box"></span></div>
-      <div class="field">The clue/evidence that proves it:</div>
+      <div class="field" data-i18n-html="my-answer">My answer: <span class="answer-box"></span></div>
+      <div class="field" data-i18n="clue-field">The clue/evidence that proves it:</div>
+      <div class="lines"></div>
+    </div>
+
+    <div class="lock">
+      <h3><span class="num">4</span> <span data-i18n="lock4-title">Lock 4</span></h3>
+      <div class="q" data-i18n="lock-q">What is the question asking?</div>
+      <div class="lines"></div>
+      <div class="field" data-i18n-html="my-answer">My answer: <span class="answer-box"></span></div>
+      <div class="field" data-i18n="clue-field">The clue/evidence that proves it:</div>
       <div class="lines"></div>
     </div>
 
     <div class="reflect">
-      <h3>🧠 Think it through</h3>
-      <div class="field">Which clue did NOT help at all? Why was it a distraction?</div>
+      <h3>🧠 <span data-i18n="reflect-title">Think it through</span></h3>
+      <div class="field" data-i18n="reflect-q1">Which clue did NOT help at all? Why was it a distraction?</div>
       <div class="lines"></div>
-      <div class="field">Where were you tempted to guess instead of using evidence?</div>
+      <div class="field" data-i18n="reflect-q2">Where were you tempted to guess instead of using evidence?</div>
       <div class="lines"></div>
-      <div class="field">One thing this breakout taught me about careful thinking:</div>
+      <div class="field" data-i18n="reflect-q3">One thing this breakout taught me about careful thinking:</div>
       <div class="lines"></div>
       <div class="lines"></div>
     </div>
   </div>
 
-  <footer>Critical Thinking Breakouts · Student Recording Sheet · Pairs with any of the three breakouts. By Miguel Guhlin (TCEA), CC BY 4.0.</footer>
+  <footer data-i18n="footer">Critical Thinking Breakouts · Student Recording Sheet · Pairs with any of the three breakouts. By Miguel Guhlin (TCEA), CC BY 4.0.</footer>
+
+<script src="../assets/i18n.js" defer></script>
+<script src="i18n-recording-sheet.js" defer></script>
 </body>
 </html>
