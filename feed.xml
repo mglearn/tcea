@@ -6,12 +6,44 @@
     <atom:link href="https://mglearn.github.io/tcea/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated HTML tools, dashboards, prompt libraries, and classroom resources from TCEA.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Jul 2026 19:33:25 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 02 Jul 2026 13:41:36 GMT</lastBuildDate>
     <image>
       <url>https://mglearn.github.io/tcea/favicon.svg</url>
       <title>TCEA Vibe-Coded Solutions — Updates</title>
       <link>https://mglearn.github.io/tcea/</link>
     </image>
+    <item>
+      <title>🕵️ Black Freedom Holidays Breakouts Correlation Guide</title>
+      <link>https://mglearn.github.io/tcea/breakouts/july5th/correlation.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/july5th/correlation.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Thu, 02 Jul 2026 13:41:36 GMT</pubDate>
+      <description>A standards correlation guide mapping the twelve July 5 &amp; Black Freedom Holidays breakouts by grade band to Texas Essential Knowledge and Skills, Common Core literacy standards, and the CLEAR thinking process.</description>
+    </item>
+    <item>
+      <title>🕵️ July 5 &amp; Black Freedom Holidays Breakouts</title>
+      <link>https://mglearn.github.io/tcea/breakouts/july5th/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/july5th/index.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Thu, 02 Jul 2026 13:41:36 GMT</pubDate>
+      <description>Twelve self-contained digital breakouts across three grade bands (3-5, 6-8, 9-12) exploring the freedom days the calendar often overlooks — Frederick Douglass s July 5 address, Juneteenth, Pinkster, Watch Night, and more. Students open clues, weigh evidence, and crack four locks each. No logins, no data collected.</description>
+    </item>
+    <item>
+      <title>🕵️ Fourth of July Digital Breakouts</title>
+      <link>https://mglearn.github.io/tcea/breakouts/july4/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/july4/index.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Thu, 02 Jul 2026 01:06:30 GMT</pubDate>
+      <description>Twelve self-contained U.S. history escape activities across three grade bands (3-5, 6-8, 9-12). Students open clues, weigh evidence, and crack four locks each — building history knowledge and critical-thinking habits. No logins, no data collected.</description>
+    </item>
+    <item>
+      <title>🕵️ Fourth of July Breakouts Correlation Guide</title>
+      <link>https://mglearn.github.io/tcea/breakouts/july4/correlation.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/july4/correlation.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Thu, 02 Jul 2026 00:39:27 GMT</pubDate>
+      <description>A standards correlation guide mapping the twelve Fourth of July breakouts by grade band to Texas Essential Knowledge and Skills, Common Core literacy standards, and the CLEAR thinking process.</description>
+    </item>
     <item>
       <title>📊 Data Display Patterns</title>
       <link>https://mglearn.github.io/tcea/ddp/index.html</link>
@@ -299,38 +331,6 @@
       <category>Classroom Tools and Utilities</category>
       <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
       <description>The play view for rolling and running a Dicebreaker activity.</description>
-    </item>
-    <item>
-      <title>🎓 Daily Quick Write Generator</title>
-      <link>https://mglearn.github.io/tcea/dailywrite/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/dailywrite/index.html</guid>
-      <category>Courses and Educator Resources</category>
-      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
-      <description>Generate daily quick write prompts for classroom routines and literacy practice.</description>
-    </item>
-    <item>
-      <title>🎓 AI-Powered Newsletter Architecture</title>
-      <link>https://mglearn.github.io/tcea/tceaainews/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/tceaainews/index.html</guid>
-      <category>Courses and Educator Resources</category>
-      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
-      <description>A Lunch and Learn resource for building AI-assisted newsletter workflows for educators.</description>
-    </item>
-    <item>
-      <title>⭐ Vibe Coding a Free ShareSpace</title>
-      <link>https://mglearn.github.io/tcea/sharespace/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/sharespace/index.html</guid>
-      <category>Featured Vibe-Coded Solutions</category>
-      <pubDate>Fri, 19 Jun 2026 16:29:32 GMT</pubDate>
-      <description>A slide-style walkthrough for building a free Padlet-style sharing space with a downloadable demo solution.</description>
-    </item>
-    <item>
-      <title>🤖 Generative AI Adoption Checklist Folder Version</title>
-      <link>https://mglearn.github.io/tcea/checklist/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/checklist/index.html</guid>
-      <category>AI Prompt Libraries and Adoption</category>
-      <pubDate>Fri, 19 Jun 2026 16:29:32 GMT</pubDate>
-      <description>A packaged folder version of the adoption checklist for distribution or embedding.</description>
     </item>
   </channel>
 </rss>

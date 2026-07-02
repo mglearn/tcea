@@ -1,6 +1,34 @@
 {
-  "generated": "2026-07-01T19:33:25.894Z",
+  "generated": "2026-07-02T13:41:36.974Z",
   "items": [
+    {
+      "href": "breakouts/july5th/correlation.html",
+      "title": "Black Freedom Holidays Breakouts Correlation Guide",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-07-02T13:41:36.935Z"
+    },
+    {
+      "href": "breakouts/july5th/index.html",
+      "title": "July 5 & Black Freedom Holidays Breakouts",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-07-02T13:41:36.922Z"
+    },
+    {
+      "href": "breakouts/july4/index.html",
+      "title": "Fourth of July Digital Breakouts",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-07-01T20:06:30-05:00"
+    },
+    {
+      "href": "breakouts/july4/correlation.html",
+      "title": "Fourth of July Breakouts Correlation Guide",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-07-01T19:39:27-05:00"
+    },
     {
       "href": "ddp/index.html",
       "title": "Data Display Patterns",
@@ -252,34 +280,6 @@
       "category": "Classroom Tools and Utilities",
       "icon": "🧰",
       "date": "2026-06-19T17:49:01-05:00"
-    },
-    {
-      "href": "dailywrite/index.html",
-      "title": "Daily Quick Write Generator",
-      "category": "Courses and Educator Resources",
-      "icon": "🎓",
-      "date": "2026-06-19T17:49:01-05:00"
-    },
-    {
-      "href": "tceaainews/index.html",
-      "title": "AI-Powered Newsletter Architecture",
-      "category": "Courses and Educator Resources",
-      "icon": "🎓",
-      "date": "2026-06-19T17:49:01-05:00"
-    },
-    {
-      "href": "sharespace/index.html",
-      "title": "Vibe Coding a Free ShareSpace",
-      "category": "Featured Vibe-Coded Solutions",
-      "icon": "⭐",
-      "date": "2026-06-19T11:29:32-05:00"
-    },
-    {
-      "href": "checklist/index.html",
-      "title": "Generative AI Adoption Checklist Folder Version",
-      "category": "AI Prompt Libraries and Adoption",
-      "icon": "🤖",
-      "date": "2026-06-19T11:29:32-05:00"
     }
   ]
 }

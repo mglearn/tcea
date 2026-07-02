@@ -779,6 +779,42 @@
     "desc": "The facilitator answer key and recording sheet for running the Critical Thinking Breakouts activities."
   },
   {
+    "category": "breakouts",
+    "featured": false,
+    "external": false,
+    "href": "breakouts/july4/index.html",
+    "tag": "Holiday Breakouts",
+    "title": "Fourth of July Digital Breakouts",
+    "desc": "Twelve self-contained U.S. history escape activities across three grade bands (3-5, 6-8, 9-12). Students open clues, weigh evidence, and crack four locks each &mdash; building history knowledge and critical-thinking habits. No logins, no data collected."
+  },
+  {
+    "category": "breakouts",
+    "featured": false,
+    "external": false,
+    "href": "breakouts/july4/correlation.html",
+    "tag": "Alignment",
+    "title": "Fourth of July Breakouts Correlation Guide",
+    "desc": "A standards correlation guide mapping the twelve Fourth of July breakouts by grade band to Texas Essential Knowledge and Skills, Common Core literacy standards, and the CLEAR thinking process."
+  },
+  {
+    "category": "breakouts",
+    "featured": false,
+    "external": false,
+    "href": "breakouts/july5th/index.html",
+    "tag": "Holiday Breakouts",
+    "title": "July 5 &amp; Black Freedom Holidays Breakouts",
+    "desc": "Twelve self-contained digital breakouts across three grade bands (3-5, 6-8, 9-12) exploring the freedom days the calendar often overlooks &mdash; Frederick Douglass&rsquo;s July 5 address, Juneteenth, Pinkster, Watch Night, and more. Students open clues, weigh evidence, and crack four locks each. No logins, no data collected."
+  },
+  {
+    "category": "breakouts",
+    "featured": false,
+    "external": false,
+    "href": "breakouts/july5th/correlation.html",
+    "tag": "Alignment",
+    "title": "Black Freedom Holidays Breakouts Correlation Guide",
+    "desc": "A standards correlation guide mapping the twelve July 5 &amp; Black Freedom Holidays breakouts by grade band to Texas Essential Knowledge and Skills, Common Core literacy standards, and the CLEAR thinking process."
+  },
+  {
     "category": "assessment",
     "featured": false,
     "external": false,
