@@ -30,14 +30,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           # Full history so build-feed.js can read each file's last-commit date.
           fetch-depth: 0
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: '20'
+          node-version: '22'
       - name: Build RSS feed (feed.xml + updates.json)
         run: node build-feed.js
       - name: Setup Pages
@@ -50,3 +50,8 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+        with:
+          # This site now takes ~7–12 min to publish (many files across all suites);
+          # the default 10-min timeout was aborting mid-publish. Give it 25 min.
+          timeout: 1500000
+          error_count: 15
