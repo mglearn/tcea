@@ -6,30 +6,30 @@
     <atom:link href="https://mglearn.github.io/tcea/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated HTML tools, dashboards, prompt libraries, and classroom resources from TCEA.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Jul 2026 13:41:36 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 02 Jul 2026 16:02:59 GMT</lastBuildDate>
     <image>
       <url>https://mglearn.github.io/tcea/favicon.svg</url>
       <title>TCEA Vibe-Coded Solutions — Updates</title>
       <link>https://mglearn.github.io/tcea/</link>
     </image>
     <item>
-      <title>🕵️ Black Freedom Holidays Breakouts Correlation Guide</title>
-      <link>https://mglearn.github.io/tcea/breakouts/july5th/correlation.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/july5th/correlation.html</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Thu, 02 Jul 2026 13:41:36 GMT</pubDate>
-      <description>A standards correlation guide mapping the twelve July 5 &amp; Black Freedom Holidays breakouts by grade band to Texas Essential Knowledge and Skills, Common Core literacy standards, and the CLEAR thinking process.</description>
-    </item>
-    <item>
       <title>🕵️ July 5 &amp; Black Freedom Holidays Breakouts</title>
       <link>https://mglearn.github.io/tcea/breakouts/july5th/index.html</link>
       <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/july5th/index.html</guid>
       <category>Critical Thinking Breakouts</category>
-      <pubDate>Thu, 02 Jul 2026 13:41:36 GMT</pubDate>
-      <description>Twelve self-contained digital breakouts across three grade bands (3-5, 6-8, 9-12) exploring the freedom days the calendar often overlooks — Frederick Douglass s July 5 address, Juneteenth, Pinkster, Watch Night, and more. Students open clues, weigh evidence, and crack four locks each. No logins, no data collected.</description>
+      <pubDate>Thu, 02 Jul 2026 14:33:59 GMT</pubDate>
+      <description>Twelve self-contained critical thinking breakouts across three grade bands (3-5, 6-8, 9-12) exploring the freedom days the calendar often overlooks — Frederick Douglass s July 5 address, Juneteenth, Pinkster, Watch Night, and more. Students open clues, weigh evidence, and crack four locks each. No logins, no data collected.</description>
     </item>
     <item>
-      <title>🕵️ Fourth of July Digital Breakouts</title>
+      <title>🕵️ Black Freedom Holidays Breakouts Correlation Guide</title>
+      <link>https://mglearn.github.io/tcea/breakouts/july5th/correlation.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/july5th/correlation.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Thu, 02 Jul 2026 14:33:59 GMT</pubDate>
+      <description>A standards correlation guide mapping the twelve July 5 &amp; Black Freedom Holidays breakouts by grade band to Texas Essential Knowledge and Skills, Common Core literacy standards, and the CLEAR thinking process.</description>
+    </item>
+    <item>
+      <title>🕵️ Fourth of July Critical Thinking Breakouts</title>
       <link>https://mglearn.github.io/tcea/breakouts/july4/index.html</link>
       <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/july4/index.html</guid>
       <category>Critical Thinking Breakouts</category>

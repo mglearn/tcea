@@ -12,7 +12,7 @@ window.BREAKOUT = {
   "en": {
    "crumb.teacher": "‹ Teacher launch",
    "crumb.suite": "Freedom Days Breakouts",
-   "header.eyebrow": "Digital Breakout · Grades 3–5",
+   "header.eyebrow": "Critical Thinking Breakout · Grades 3–5",
    "header.h1": "The Day After the Fireworks",
    "header.sub": "It is July 5, 1852. The fireworks are over. In Rochester, New York, a famous speaker steps forward with a hard question about freedom. Read the clues, then crack all four locks — using only what the clues actually prove.",
    "brief.label": "🕊️ Mission Brief",
@@ -46,7 +46,7 @@ window.BREAKOUT = {
   "es": {
    "crumb.teacher": "‹ Guía del docente",
    "crumb.suite": "Breakouts Días de Libertad",
-   "header.eyebrow": "Breakout digital · Grados 3–5",
+   "header.eyebrow": "Breakout de pensamiento crítico · Grados 3–5",
    "header.h1": "El día después de los fuegos artificiales",
    "header.sub": "Es el 5 de julio de 1852. Los fuegos artificiales terminaron. En Rochester, Nueva York, un orador famoso hace una pregunta difícil sobre la libertad. Lee las pistas y abre los cuatro candados usando solo lo que las pistas realmente demuestran.",
    "brief.label": "🕊️ Misión",
@@ -80,7 +80,7 @@ window.BREAKOUT = {
   "vi": {
    "crumb.teacher": "‹ Trang giáo viên",
    "crumb.suite": "Breakout Ngày Tự Do",
-   "header.eyebrow": "Breakout kỹ thuật số · Lớp 3–5",
+   "header.eyebrow": "Breakout tư duy phản biện · Lớp 3–5",
    "header.h1": "Ngày sau pháo hoa",
    "header.sub": "Bây giờ là ngày 5 tháng 7 năm 1852. Pháo hoa đã tàn. Tại Rochester, New York, một diễn giả nổi tiếng đặt ra một câu hỏi khó về tự do. Hãy đọc các manh mối rồi mở cả bốn ổ khóa — chỉ dùng những gì manh mối thực sự chứng minh.",
    "brief.label": "🕊️ Nhiệm vụ",
@@ -114,7 +114,7 @@ window.BREAKOUT = {
   "ar": {
    "crumb.teacher": "‹ صفحة المعلّم",
    "crumb.suite": "تحدّيات أيام الحرية",
-   "header.eyebrow": "تحدٍّ رقمي · الصفوف 3–5",
+   "header.eyebrow": "تحدّي التفكير النقدي · الصفوف 3–5",
    "header.h1": "اليوم التالي للألعاب النارية",
    "header.sub": "نحن في الخامس من يوليو عام 1852. انتهت الألعاب النارية. في مدينة روتشستر بولاية نيويورك، يتقدّم متحدّث شهير بسؤال صعب عن الحرية. اقرأ الأدلّة ثم افتح الأقفال الأربعة مستعينًا فقط بما تثبته الأدلّة فعلاً.",
    "brief.label": "🕊️ المهمّة",
@@ -148,7 +148,7 @@ window.BREAKOUT = {
   "hi": {
    "crumb.teacher": "‹ शिक्षक पृष्ठ",
    "crumb.suite": "स्वतंत्रता दिवस ब्रेकआउट",
-   "header.eyebrow": "डिजिटल ब्रेकआउट · कक्षा 3–5",
+   "header.eyebrow": "आलोचनात्मक चिंतन ब्रेकआउट · कक्षा 3–5",
    "header.h1": "आतिशबाज़ी के अगले दिन",
    "header.sub": "यह 5 जुलाई 1852 है। आतिशबाज़ी ख़त्म हो चुकी है। रोचेस्टर, न्यूयॉर्क में एक मशहूर वक्ता स्वतंत्रता के बारे में एक कठिन सवाल रखता है। सुरागों को पढ़ो और चारों तालों को खोलो — केवल वही मानो जो सुराग सचमुच साबित करते हैं।",
    "brief.label": "🕊️ मिशन",
@@ -182,7 +182,7 @@ window.BREAKOUT = {
   "ur": {
    "crumb.teacher": "‹ استاد کا صفحہ",
    "crumb.suite": "آزادی کے دن بریک آؤٹ",
-   "header.eyebrow": "ڈیجیٹل بریک آؤٹ · جماعت 3–5",
+   "header.eyebrow": "تنقیدی سوچ بریک آؤٹ · جماعت 3–5",
    "header.h1": "آتش بازی کے اگلے دن",
    "header.sub": "یہ 5 جولائی 1852 ہے۔ آتش بازی ختم ہو چکی ہے۔ روچسٹر، نیویارک میں ایک مشہور مقرر آزادی کے بارے میں ایک مشکل سوال اٹھاتا ہے۔ سراغ پڑھیں اور چاروں تالے کھولیں — صرف وہی مانیں جو سراغ واقعی ثابت کرتے ہیں۔",
    "brief.label": "🕊️ مشن",
@@ -216,7 +216,7 @@ window.BREAKOUT = {
   "zh": {
    "crumb.teacher": "‹ 教师页面",
    "crumb.suite": "自由日破解游戏",
-   "header.eyebrow": "数字破解 · 3–5 年级",
+   "header.eyebrow": "批判性思维破解 · 3–5 年级",
    "header.h1": "烟花之后的一天",
    "header.sub": "现在是 1852 年 7 月 5 日。烟花已经散去。在纽约州罗切斯特，一位著名的演讲者提出了一个关于自由的尖锐问题。阅读线索，然后打开全部四把锁——只依据线索真正证明的内容。",
    "brief.label": "🕊️ 任务简报",

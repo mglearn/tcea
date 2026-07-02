@@ -1,4 +1,4 @@
-# Fourth of July Digital Breakouts (Grades 3–12)
+# Fourth of July Critical Thinking Breakouts (Grades 3–12)
 
 Twelve self-contained, browser-based history "escape" activities for K–12 classrooms, organized into three grade bands. Students open clues, weigh evidence, and crack four locks per breakout while learning U.S. history and practicing critical-thinking habits. No accounts, no server, no data collection.
 

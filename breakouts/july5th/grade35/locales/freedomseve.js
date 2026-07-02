@@ -32,7 +32,7 @@ window.BREAKOUT = {
    "footer.privacy": "Privacy & compliance",
    "footer.disclaimer": "Translations are AI-seeded and pending native-speaker review.",
    "crumb.suite": "Freedom Days Breakouts",
-   "header.eyebrow": "Digital Breakout · Grades 3–5",
+   "header.eyebrow": "Critical Thinking Breakout · Grades 3–5",
    "header.h1": "Freedom's Eve",
    "header.sub": "It is the last night of 1862. In churches and homes, people gather and wait for something that will change their lives at midnight. Read the clues, then crack all four locks.",
    "brief.label": "🕯️ Mission Brief",
@@ -66,7 +66,7 @@ window.BREAKOUT = {
    "footer.privacy": "Privacidad y cumplimiento",
    "footer.disclaimer": "Las traducciones son generadas por IA y están pendientes de revisión por hablantes nativos.",
    "crumb.suite": "Breakouts Días de Libertad",
-   "header.eyebrow": "Breakout digital · Grados 3–5",
+   "header.eyebrow": "Breakout de pensamiento crítico · Grados 3–5",
    "header.h1": "La víspera de la libertad",
    "header.sub": "Es la última noche de 1862. En iglesias y hogares, la gente se reúne y espera algo que cambiará sus vidas a medianoche. Lee las pistas y abre los cuatro candados.",
    "brief.label": "🕯️ Misión",
@@ -100,7 +100,7 @@ window.BREAKOUT = {
    "footer.privacy": "Quyền riêng tư & tuân thủ",
    "footer.disclaimer": "Bản dịch do AI khởi tạo và đang chờ người bản ngữ rà soát.",
    "crumb.suite": "Breakout Ngày Tự Do",
-   "header.eyebrow": "Breakout kỹ thuật số · Lớp 3–5",
+   "header.eyebrow": "Breakout tư duy phản biện · Lớp 3–5",
    "header.h1": "Đêm trước ngày tự do",
    "header.sub": "Đây là đêm cuối cùng của năm 1862. Trong các nhà thờ và gia đình, mọi người tụ họp và chờ đợi điều sẽ thay đổi cuộc đời họ lúc nửa đêm. Hãy đọc các manh mối rồi mở cả bốn ổ khóa.",
    "brief.label": "🕯️ Nhiệm vụ",
@@ -134,7 +134,7 @@ window.BREAKOUT = {
    "footer.privacy": "الخصوصية والامتثال",
    "footer.disclaimer": "التّرجمات مُولّدة بالذكاء الاصطناعي وبانتظار مراجعة متحدّث أصلي.",
    "crumb.suite": "تحدّيات أيام الحرية",
-   "header.eyebrow": "تحدٍّ رقمي · الصفوف 3–5",
+   "header.eyebrow": "تحدّي التفكير النقدي · الصفوف 3–5",
    "header.h1": "عشية الحرية",
    "header.sub": "هذه هي الليلة الأخيرة من عام 1862. في الكنائس والمنازل، يتجمّع الناس وينتظرون شيئًا سيغيّر حياتهم عند منتصف الليل. اقرأ الأدلّة ثم افتح الأقفال الأربعة.",
    "brief.label": "🕯️ المهمّة",
@@ -168,7 +168,7 @@ window.BREAKOUT = {
    "footer.privacy": "गोपनीयता और अनुपालन",
    "footer.disclaimer": "अनुवाद AI द्वारा तैयार हैं और मातृभाषी समीक्षा की प्रतीक्षा में हैं।",
    "crumb.suite": "स्वतंत्रता दिवस ब्रेकआउट",
-   "header.eyebrow": "डिजिटल ब्रेकआउट · कक्षा 3–5",
+   "header.eyebrow": "आलोचनात्मक चिंतन ब्रेकआउट · कक्षा 3–5",
    "header.h1": "आज़ादी की पूर्व संध्या",
    "header.sub": "यह 1862 की अंतिम रात है। चर्चों और घरों में लोग इकट्ठे होते हैं और आधी रात को कुछ ऐसे का इंतज़ार करते हैं जो उनकी ज़िंदगी बदल देगा। सुराग पढ़ो और चारों ताले खोलो।",
    "brief.label": "🕯️ मिशन",
@@ -202,7 +202,7 @@ window.BREAKOUT = {
    "footer.privacy": "رازداری اور تعمیل",
    "footer.disclaimer": "تراجم AI سے تیار کیے گئے ہیں اور مقامی بولنے والے کی نظرِ ثانی کے منتظر ہیں۔",
    "crumb.suite": "آزادی کے دن بریک آؤٹ",
-   "header.eyebrow": "ڈیجیٹل بریک آؤٹ · جماعت 3–5",
+   "header.eyebrow": "تنقیدی سوچ بریک آؤٹ · جماعت 3–5",
    "header.h1": "آزادی کی پہلی شام",
    "header.sub": "یہ 1862 کی آخری رات ہے۔ گرجا گھروں اور گھروں میں لوگ اکٹھے ہوتے ہیں اور آدھی رات کو کسی ایسی چیز کا انتظار کرتے ہیں جو ان کی زندگی بدل دے گی۔ سراغ پڑھیں اور چاروں تالے کھولیں۔",
    "brief.label": "🕯️ مشن",
@@ -236,7 +236,7 @@ window.BREAKOUT = {
    "footer.privacy": "隐私与合规",
    "footer.disclaimer": "译文由 AI 生成，尚待母语者审校。",
    "crumb.suite": "自由日破解游戏",
-   "header.eyebrow": "数字破解 · 3–5 年级",
+   "header.eyebrow": "批判性思维破解 · 3–5 年级",
    "header.h1": "自由前夜",
    "header.sub": "这是 1862 年的最后一夜。在教堂和家中，人们聚集在一起，等待一件将在午夜改变他们生活的事情。阅读线索，然后打开全部四把锁。",
    "brief.label": "🕯️ 任务简报",
@@ -776,7 +776,7 @@ window.BREAKOUT = {
       "watch",
       "वॉच"
      ],
-     "reason": "\“सभा\” सुराग इस रात को “Freedom's Eve” या “Watch Night” कहता है। लापता शब्द Watch है — सुराग यह साबित करता है।"
+     "reason": "“सभा” सुराग इस रात को “Freedom's Eve” या “Watch Night” कहता है। लापता शब्द Watch है — सुराग यह साबित करता है।"
     },
     {
      "id": "L2",
@@ -788,7 +788,7 @@ window.BREAKOUT = {
      "answer": [
       "1863"
      ],
-     "reason": "\“तारीख़\” सुराग कहता है कि उद्घोषणा 1 जनवरी 1863 को लागू हुई।"
+     "reason": "“तारीख़” सुराग कहता है कि उद्घोषणा 1 जनवरी 1863 को लागू हुई।"
     },
     {
      "id": "L3",
@@ -803,7 +803,7 @@ window.BREAKOUT = {
       "एक नए राजा का"
      ],
      "answerIndex": 1,
-     "reason": "\“इंतज़ार\” सुराग कहता है कि लोग नए साल की शुरुआत में मुक्ति उद्घोषणा के लागू होने का इंतज़ार कर रहे थे।"
+     "reason": "“इंतज़ार” सुराग कहता है कि लोग नए साल की शुरुआत में मुक्ति उद्घोषणा के लागू होने का इंतज़ार कर रहे थे।"
     },
     {
      "id": "L4",
@@ -1012,7 +1012,7 @@ window.BREAKOUT = {
       "watch",
       "守夜"
      ],
-     "reason": "\“聚会\”线索将这个夜晚称为“Freedom's Eve”或“Watch Night”。缺失的词是 Watch——线索证明了这一点。"
+     "reason": "“聚会”线索将这个夜晚称为“Freedom's Eve”或“Watch Night”。缺失的词是 Watch——线索证明了这一点。"
     },
     {
      "id": "L2",
@@ -1024,7 +1024,7 @@ window.BREAKOUT = {
      "answer": [
       "1863"
      ],
-     "reason": "\“日期\”线索说宣言于 1863 年 1 月 1 日生效。"
+     "reason": "“日期”线索说宣言于 1863 年 1 月 1 日生效。"
     },
     {
      "id": "L3",
@@ -1039,7 +1039,7 @@ window.BREAKOUT = {
       "一位新国王"
      ],
      "answerIndex": 1,
-     "reason": "\“等待\”线索说人们在等待《解放宣言》在新年伊始生效。"
+     "reason": "“等待”线索说人们在等待《解放宣言》在新年伊始生效。"
     },
     {
      "id": "L4",

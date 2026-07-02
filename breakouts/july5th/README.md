@@ -1,4 +1,4 @@
-# July 5 & Other Black Freedom Holidays — Digital Breakouts (Grades 3–12)
+# July 5 & Other Black Freedom Holidays — Critical Thinking Breakouts (Grades 3–12)
 
 Twelve self-contained, browser-based digital "breakout" activities that invite students to
 investigate the freedom days the national calendar often overlooks — from Frederick Douglass's
