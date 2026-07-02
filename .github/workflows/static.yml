@@ -51,7 +51,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v5
         with:
-          # This site now takes ~7–12 min to publish (many files across all suites);
-          # the default 10-min timeout was aborting mid-publish. Give it 25 min.
-          timeout: 1500000
+          # deploy-pages hard-caps timeout at 600000 (10 min); the real fix for the
+          # "Timeout reached, aborting!" failures was cutting the deployed file count
+          # (~1176 -> ~874) by collapsing 304 redirect stubs into one 404.html handler.
           error_count: 15
