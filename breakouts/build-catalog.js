@@ -36,7 +36,7 @@ function localeMeta(suite) {
 
 function clearMeta() {
   const out = [];
-  const grab = (file, re) => { try { const m = fs.readFileSync(path.join(ROOT, file), 'utf8').match(re); return m ? m[1].replace(/\s*—\s*(Critical Thinking Breakout|Teacher Launch).*/, '').trim() : ''; } catch (e) { return ''; } };
+  const grab = (file, re) => { try { const m = fs.readFileSync(path.join(ROOT, file), 'utf8').match(re); return m ? m[1].replace(/\s*—.*$/, '').trim() : ''; } catch (e) { return ''; } };
   // 3 main band breakouts
   for (const band of ['grade35', 'grade68', 'grade912']) {
     const title = grab(`clear/${band}/student.html`, /<title>([^<]*)<\/title>/);
