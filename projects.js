@@ -755,7 +755,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "clear/breakouts/index.html",
+    "href": "breakouts/clear/index.html",
     "tag": "Breakout Library",
     "title": "Critical Thinking Breakouts",
     "desc": "Grade-band breakout activities (3-5, 6-8, 9-12) across ELA, science, and social studies that teach evidence-based reasoning, available in seven languages."
@@ -764,7 +764,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "clear/breakouts/correlation.html",
+    "href": "breakouts/clear/correlation.html",
     "tag": "Alignment",
     "title": "Breakouts Correlation Guide",
     "desc": "A multilingual correlation guide mapping the Critical Thinking Breakouts to standards and thinking skills."
@@ -773,7 +773,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "clear/breakouts/answer-key.html",
+    "href": "breakouts/clear/answer-key.html",
     "tag": "Facilitator",
     "title": "Breakouts Answer Key",
     "desc": "The facilitator answer key and recording sheet for running the Critical Thinking Breakouts activities."

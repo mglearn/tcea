@@ -6,34 +6,42 @@
     <atom:link href="https://mglearn.github.io/tcea/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated HTML tools, dashboards, prompt libraries, and classroom resources from TCEA.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Jul 2026 16:02:59 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 02 Jul 2026 16:13:28 GMT</lastBuildDate>
     <image>
       <url>https://mglearn.github.io/tcea/favicon.svg</url>
       <title>TCEA Vibe-Coded Solutions — Updates</title>
       <link>https://mglearn.github.io/tcea/</link>
     </image>
     <item>
-      <title>🕵️ July 5 &amp; Black Freedom Holidays Breakouts</title>
-      <link>https://mglearn.github.io/tcea/breakouts/july5th/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/july5th/index.html</guid>
+      <title>🕵️ Breakouts Answer Key</title>
+      <link>https://mglearn.github.io/tcea/breakouts/clear/answer-key.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/clear/answer-key.html</guid>
       <category>Critical Thinking Breakouts</category>
-      <pubDate>Thu, 02 Jul 2026 14:33:59 GMT</pubDate>
-      <description>Twelve self-contained critical thinking breakouts across three grade bands (3-5, 6-8, 9-12) exploring the freedom days the calendar often overlooks — Frederick Douglass s July 5 address, Juneteenth, Pinkster, Watch Night, and more. Students open clues, weigh evidence, and crack four locks each. No logins, no data collected.</description>
+      <pubDate>Thu, 02 Jul 2026 16:13:28 GMT</pubDate>
+      <description>The facilitator answer key and recording sheet for running the Critical Thinking Breakouts activities.</description>
     </item>
     <item>
-      <title>🕵️ Black Freedom Holidays Breakouts Correlation Guide</title>
-      <link>https://mglearn.github.io/tcea/breakouts/july5th/correlation.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/july5th/correlation.html</guid>
+      <title>🕵️ Breakouts Correlation Guide</title>
+      <link>https://mglearn.github.io/tcea/breakouts/clear/correlation.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/clear/correlation.html</guid>
       <category>Critical Thinking Breakouts</category>
-      <pubDate>Thu, 02 Jul 2026 14:33:59 GMT</pubDate>
-      <description>A standards correlation guide mapping the twelve July 5 &amp; Black Freedom Holidays breakouts by grade band to Texas Essential Knowledge and Skills, Common Core literacy standards, and the CLEAR thinking process.</description>
+      <pubDate>Thu, 02 Jul 2026 16:13:28 GMT</pubDate>
+      <description>A multilingual correlation guide mapping the Critical Thinking Breakouts to standards and thinking skills.</description>
+    </item>
+    <item>
+      <title>🕵️ Critical Thinking Breakouts</title>
+      <link>https://mglearn.github.io/tcea/breakouts/clear/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/clear/index.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Thu, 02 Jul 2026 16:13:28 GMT</pubDate>
+      <description>Grade-band breakout activities (3-5, 6-8, 9-12) across ELA, science, and social studies that teach evidence-based reasoning, available in seven languages.</description>
     </item>
     <item>
       <title>🕵️ Fourth of July Critical Thinking Breakouts</title>
       <link>https://mglearn.github.io/tcea/breakouts/july4/index.html</link>
       <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/july4/index.html</guid>
       <category>Critical Thinking Breakouts</category>
-      <pubDate>Thu, 02 Jul 2026 01:06:30 GMT</pubDate>
+      <pubDate>Thu, 02 Jul 2026 16:03:46 GMT</pubDate>
       <description>Twelve self-contained U.S. history escape activities across three grade bands (3-5, 6-8, 9-12). Students open clues, weigh evidence, and crack four locks each — building history knowledge and critical-thinking habits. No logins, no data collected.</description>
     </item>
     <item>
@@ -41,8 +49,24 @@
       <link>https://mglearn.github.io/tcea/breakouts/july4/correlation.html</link>
       <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/july4/correlation.html</guid>
       <category>Critical Thinking Breakouts</category>
-      <pubDate>Thu, 02 Jul 2026 00:39:27 GMT</pubDate>
+      <pubDate>Thu, 02 Jul 2026 16:03:46 GMT</pubDate>
       <description>A standards correlation guide mapping the twelve Fourth of July breakouts by grade band to Texas Essential Knowledge and Skills, Common Core literacy standards, and the CLEAR thinking process.</description>
+    </item>
+    <item>
+      <title>🕵️ July 5 &amp; Black Freedom Holidays Breakouts</title>
+      <link>https://mglearn.github.io/tcea/breakouts/july5th/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/july5th/index.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Thu, 02 Jul 2026 16:03:46 GMT</pubDate>
+      <description>Twelve self-contained critical thinking breakouts across three grade bands (3-5, 6-8, 9-12) exploring the freedom days the calendar often overlooks — Frederick Douglass s July 5 address, Juneteenth, Pinkster, Watch Night, and more. Students open clues, weigh evidence, and crack four locks each. No logins, no data collected.</description>
+    </item>
+    <item>
+      <title>🕵️ Black Freedom Holidays Breakouts Correlation Guide</title>
+      <link>https://mglearn.github.io/tcea/breakouts/july5th/correlation.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/july5th/correlation.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Thu, 02 Jul 2026 16:03:46 GMT</pubDate>
+      <description>A standards correlation guide mapping the twelve July 5 &amp; Black Freedom Holidays breakouts by grade band to Texas Essential Knowledge and Skills, Common Core literacy standards, and the CLEAR thinking process.</description>
     </item>
     <item>
       <title>📊 Data Display Patterns</title>
@@ -59,30 +83,6 @@
       <category>Dashboards and Decision Tools</category>
       <pubDate>Wed, 01 Jul 2026 15:41:19 GMT</pubDate>
       <description>A weighted rubric for comparing district assessment systems, with non-negotiable gate checks and a side-by-side vendor comparison you can export to CSV.</description>
-    </item>
-    <item>
-      <title>🕵️ Breakouts Correlation Guide</title>
-      <link>https://mglearn.github.io/tcea/clear/breakouts/correlation.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/clear/breakouts/correlation.html</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Wed, 01 Jul 2026 15:10:54 GMT</pubDate>
-      <description>A multilingual correlation guide mapping the Critical Thinking Breakouts to standards and thinking skills.</description>
-    </item>
-    <item>
-      <title>🕵️ Critical Thinking Breakouts</title>
-      <link>https://mglearn.github.io/tcea/clear/breakouts/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/clear/breakouts/index.html</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Wed, 01 Jul 2026 13:20:19 GMT</pubDate>
-      <description>Grade-band breakout activities (3-5, 6-8, 9-12) across ELA, science, and social studies that teach evidence-based reasoning, available in seven languages.</description>
-    </item>
-    <item>
-      <title>🕵️ Breakouts Answer Key</title>
-      <link>https://mglearn.github.io/tcea/clear/breakouts/answer-key.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/clear/breakouts/answer-key.html</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Wed, 01 Jul 2026 00:45:14 GMT</pubDate>
-      <description>The facilitator answer key and recording sheet for running the Critical Thinking Breakouts activities.</description>
     </item>
     <item>
       <title>🕵️ The CLEAR Crew — Detective Thinking Game</title>

@@ -1,33 +1,54 @@
 {
-  "generated": "2026-07-02T16:02:59.371Z",
+  "generated": "2026-07-02T16:13:28.813Z",
   "items": [
     {
-      "href": "breakouts/july5th/index.html",
-      "title": "July 5 & Black Freedom Holidays Breakouts",
+      "href": "breakouts/clear/answer-key.html",
+      "title": "Breakouts Answer Key",
       "category": "Critical Thinking Breakouts",
       "icon": "🕵️",
-      "date": "2026-07-02T09:33:59-05:00"
+      "date": "2026-07-02T16:13:28.733Z"
     },
     {
-      "href": "breakouts/july5th/correlation.html",
-      "title": "Black Freedom Holidays Breakouts Correlation Guide",
+      "href": "breakouts/clear/correlation.html",
+      "title": "Breakouts Correlation Guide",
       "category": "Critical Thinking Breakouts",
       "icon": "🕵️",
-      "date": "2026-07-02T09:33:59-05:00"
+      "date": "2026-07-02T16:13:28.719Z"
+    },
+    {
+      "href": "breakouts/clear/index.html",
+      "title": "Critical Thinking Breakouts",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-07-02T16:13:28.703Z"
     },
     {
       "href": "breakouts/july4/index.html",
       "title": "Fourth of July Critical Thinking Breakouts",
       "category": "Critical Thinking Breakouts",
       "icon": "🕵️",
-      "date": "2026-07-01T20:06:30-05:00"
+      "date": "2026-07-02T11:03:46-05:00"
     },
     {
       "href": "breakouts/july4/correlation.html",
       "title": "Fourth of July Breakouts Correlation Guide",
       "category": "Critical Thinking Breakouts",
       "icon": "🕵️",
-      "date": "2026-07-01T19:39:27-05:00"
+      "date": "2026-07-02T11:03:46-05:00"
+    },
+    {
+      "href": "breakouts/july5th/index.html",
+      "title": "July 5 & Black Freedom Holidays Breakouts",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-07-02T11:03:46-05:00"
+    },
+    {
+      "href": "breakouts/july5th/correlation.html",
+      "title": "Black Freedom Holidays Breakouts Correlation Guide",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-07-02T11:03:46-05:00"
     },
     {
       "href": "ddp/index.html",
@@ -42,27 +63,6 @@
       "category": "Dashboards and Decision Tools",
       "icon": "📊",
       "date": "2026-07-01T10:41:19-05:00"
-    },
-    {
-      "href": "clear/breakouts/correlation.html",
-      "title": "Breakouts Correlation Guide",
-      "category": "Critical Thinking Breakouts",
-      "icon": "🕵️",
-      "date": "2026-07-01T10:10:54-05:00"
-    },
-    {
-      "href": "clear/breakouts/index.html",
-      "title": "Critical Thinking Breakouts",
-      "category": "Critical Thinking Breakouts",
-      "icon": "🕵️",
-      "date": "2026-07-01T08:20:19-05:00"
-    },
-    {
-      "href": "clear/breakouts/answer-key.html",
-      "title": "Breakouts Answer Key",
-      "category": "Critical Thinking Breakouts",
-      "icon": "🕵️",
-      "date": "2026-06-30T19:45:14-05:00"
     },
     {
       "href": "clear/index.html",
