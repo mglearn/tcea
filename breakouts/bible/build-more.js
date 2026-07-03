@@ -69,6 +69,15 @@ function loadTrans(file) {
   catch (e) { console.error('bad translation file', p, e.message); return null; }
 }
 
+/* Spanish title/blurb of a band's hand-translated featured breakout */
+function featuredES(band) {
+  try {
+    const w = {}; eval(fs.readFileSync(path.join(GRADES, band.featured.file + '.js'), 'utf8').replace('window.BREAKOUT', 'w.BREAKOUT'));
+    const u = (w.BREAKOUT.UI || {}).es || {};
+    return { title: u['header.h1'] || band.featured.title, blurb: u['header.sub'] || band.featured.blurb };
+  } catch (e) { return { title: band.featured.title, blurb: band.featured.blurb }; }
+}
+
 function buildUI(band, spec, trans, consts) {
   const UI = {};
   for (const lg of LANGS) UI[lg] = commonForLang(lg);
@@ -209,9 +218,11 @@ function studentHtml(file, band, spec, nlocks) {
 }
 
 let written = 0, translated = 0;
-const lib = [];
+const lib = [], libES = [];
 for (const band of BANDS) {
   lib.push({ band: band.label, href: `grades/${band.featured.file}-student.html`, title: band.featured.title, blurb: band.featured.blurb, featured: true });
+  const fes = featuredES(band);
+  libES.push({ band: band.label, href: `grades/${band.featured.file}-student.html?lang=es`, title: fes.title, blurb: fes.blurb, featured: true });
   const specFile = path.join(GRADES, `_specs-${band.key}.json`);
   if (!fs.existsSync(specFile)) { console.error('no specs for', band.key); continue; }
   const consts = harvest(band);
@@ -224,9 +235,12 @@ for (const band of BANDS) {
     fs.writeFileSync(path.join(GRADES, file + '.js'), 'window.BREAKOUT = ' + JSON.stringify(obj, null, 1) + ';\n');
     fs.writeFileSync(path.join(GRADES, file + '-student.html'), studentHtml(file, band, spec, spec.locks.length));
     lib.push({ band: band.label, href: `grades/${file}-student.html`, title: spec.h1, blurb: spec.sub });
+    const et = trans && trans.es && trans.es.chrome;
+    libES.push({ band: band.label, href: `grades/${file}-student.html?lang=es`, title: (et && et.h1) || spec.h1, blurb: (et && et.sub) || spec.sub });
     written++;
   }
 }
 
 fs.writeFileSync(path.join(ROOT, 'breakouts.js'), 'window.BIBLE_LIB = ' + JSON.stringify(lib) + ';\n');
-console.log(`build-more: wrote ${written} breakouts (${translated} with translations), ${lib.length} library entries.`);
+fs.writeFileSync(path.join(ROOT, 'breakouts-es.js'), 'window.BIBLE_LIB_ES = ' + JSON.stringify(libES) + ';\n');
+console.log(`build-more: wrote ${written} breakouts (${translated} with translations), ${lib.length} library entries (+${libES.length} ES).`);
