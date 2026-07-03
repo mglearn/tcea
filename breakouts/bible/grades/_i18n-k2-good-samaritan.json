@@ -1,0 +1,416 @@
+{
+  "es": {
+    "chrome": {
+      "h1": "El Extraño que Ayudó",
+      "sub": "Una historia del libro de Lucas habla de un viajero herido y de las personas que pasaron de largo. Lee las pistas y descubre quién realmente lo ayudó.",
+      "briefH": "Lee como un detective",
+      "briefP": "Tu trabajo no es decir si esta historia es verdadera — tu trabajo es notar lo que dice el texto sobre quién ayudó y quién no. Eso es leer con atención.",
+      "winStamp": "HISTORIA RESUELTA",
+      "winH": "¡Encontraste quién ayudó!",
+      "winP": "Leíste las pistas y respondiste desde el texto — no desde una suposición. Eso es exactamente lo que hacen los buenos lectores."
+    },
+    "clues": [
+      {
+        "nm": "El Libro",
+        "title": "De dónde viene esta historia",
+        "body": "Esta historia es del Libro de Lucas, en la Biblia. Un maestro la cuenta para mostrar lo que significa ser un buen vecino. La leemos como cualquier historia."
+      },
+      {
+        "nm": "Viajero",
+        "title": "Un hombre resulta herido",
+        "body": "En la historia, un hombre camina por un camino. Unos ladrones lo atacan, le quitan sus cosas y lo dejan herido en el suelo."
+      },
+      {
+        "nm": "Pasan de largo",
+        "title": "Otros pasan caminando",
+        "body": "Dos personas ven al hombre herido y pasan de largo. La historia dice que cruzan al otro lado del camino. No se detienen."
+      },
+      {
+        "nm": "El Ayudante",
+        "title": "Un extraño se detiene",
+        "body": "Luego pasa un hombre de otro lugar — llamado samaritano. Se detiene, ayuda al hombre herido y lo cuida."
+      },
+      {
+        "nm": "Bondad",
+        "title": "Lo que hace el ayudante",
+        "body": "El samaritano limpia las heridas del hombre, lo pone en su propio animal, lo lleva a un lugar seguro y paga por su cuidado. La historia muestra cómo se ve la bondad en acción."
+      },
+      {
+        "nm": "Dato del Camino",
+        "title": "Verdad — ¿pero es el punto?",
+        "body": "Hace mucho tiempo, los caminos eran de tierra o piedras planas. Algunos caminos romanos estaban tan bien construidos que duraron miles de años. Verdad — pero eso no es lo que esta historia enseña."
+      }
+    ],
+    "locks": [
+      {
+        "title": "¿Quién se detuvo para ayudar al hombre herido?",
+        "q": "Según las pistas de la historia, ¿quién se detuvo y ayudó al viajero?",
+        "reason": "La pista 4 dice que un samaritano se detuvo y ayudó. Los buenos lectores responden desde lo que dice el texto, no desde lo que ya creen.",
+        "options": ["Un samaritano, un hombre de otro lugar", "Las dos primeras personas que lo vieron", "Un soldado que pasaba por allí"]
+      },
+      {
+        "title": "Pon la historia en orden",
+        "q": "Toca las tres partes en el orden en que la historia de Lucas las cuenta.",
+        "reason": "Primero el hombre resulta herido, luego dos personas pasan de largo, luego el samaritano ayuda. Poner los eventos en orden nos muestra la causa y el efecto que la historia enseña — las pistas 2, 3 y 4 lo muestran.",
+        "pads": ["🏃 Dos personas pasan de largo", "🚶 El hombre resulta herido en el camino", "🤝 El samaritano se detiene y ayuda"]
+      },
+      {
+        "title": "¿Cuáles pistas están realmente en la historia del Buen Samaritano?",
+        "q": "Marca SOLO lo que las pistas de la historia realmente nos dicen. Deja fuera la que es verdadera pero no pertenece.",
+        "reason": "El dato sobre la construcción de caminos es verdadero pero es un señuelo — no es lo que esta historia enseña. Separar los detalles relevantes de la historia de los hechos interesantes pero fuera de tema es el movimiento de pensamiento clave aquí.",
+        "items": ["Un hombre fue dejado herido en el camino", "Dos personas pasaron sin ayudar", "Los antiguos caminos romanos estaban tan bien construidos que duraron miles de años", "El samaritano pagó por el cuidado del hombre herido"]
+      },
+      {
+        "title": "¿Qué mostró el ayudante?",
+        "q": "La pista 5 dice que la historia muestra cómo se ve una cosa en acción, cuando el samaritano cuida al hombre herido. Escribe esa palabra de la pista 5.",
+        "reason": "La pista 5 dice que la historia muestra cómo se ve la «bondad» en acción. Encontrar la palabra que un texto usa para nombrar una lección es una habilidad de lectura importante.",
+        "answer": ["bondad", "amable"]
+      }
+    ]
+  },
+  "vi": {
+    "chrome": {
+      "h1": "Người Lạ Tốt Bụng",
+      "sub": "Một câu chuyện từ sách Lu-ca kể về một người lữ hành bị thương và những người đã đi ngang qua. Đọc các gợi ý và tìm hiểu ai đã thực sự giúp đỡ.",
+      "briefH": "Đọc như một thám tử",
+      "briefP": "Nhiệm vụ của em không phải là nói câu chuyện này có thật không — nhiệm vụ của em là chú ý xem văn bản nói gì về ai đã giúp đỡ và ai đã không. Đó là đọc kỹ.",
+      "winStamp": "CÂU CHUYỆN ĐÃ GIẢI",
+      "winH": "Em đã tìm ra người đã giúp đỡ!",
+      "winP": "Em đã đọc các gợi ý và trả lời từ văn bản — không phải đoán mò. Đó chính xác là điều mà người đọc giỏi làm."
+    },
+    "clues": [
+      {
+        "nm": "Cuốn Sách",
+        "title": "Câu chuyện này đến từ đâu",
+        "body": "Câu chuyện này đến từ sách Lu-ca, trong Kinh Thánh. Một người thầy kể nó để cho thấy ý nghĩa của việc là một người hàng xóm tốt. Chúng ta đọc nó như bất kỳ câu chuyện nào."
+      },
+      {
+        "nm": "Lữ Hành",
+        "title": "Một người đàn ông bị thương",
+        "body": "Trong câu chuyện, một người đàn ông đang đi trên đường. Những tên cướp tấn công anh, lấy đồ của anh và để anh nằm bị thương trên mặt đất."
+      },
+      {
+        "nm": "Đi Qua",
+        "title": "Những người khác đi ngang qua",
+        "body": "Hai người nhìn thấy người đàn ông bị thương và đi ngang qua. Câu chuyện nói rằng họ sang phía bên kia đường. Họ không dừng lại."
+      },
+      {
+        "nm": "Người Giúp Đỡ",
+        "title": "Một người lạ dừng lại",
+        "body": "Rồi một người đàn ông từ nơi khác — được gọi là người Sa-ma-ri — đi qua. Anh dừng lại, giúp người đàn ông bị thương và chăm sóc anh."
+      },
+      {
+        "nm": "Lòng Tốt",
+        "title": "Người giúp đỡ làm gì",
+        "body": "Người Sa-ma-ri băng bó vết thương của người đàn ông, đặt anh lên con vật của mình, đưa anh đến nơi an toàn và trả tiền cho việc chăm sóc anh. Câu chuyện cho thấy lòng tốt trông như thế nào trong hành động."
+      },
+      {
+        "nm": "Sự Thật Về Con Đường",
+        "title": "Đúng — nhưng đó có phải là điểm chính không?",
+        "body": "Ngày xưa, đường thường được làm bằng đất hoặc đá phẳng. Một số con đường La Mã được xây dựng tốt đến nỗi tồn tại hàng nghìn năm. Đúng — nhưng đó không phải là điều câu chuyện này dạy."
+      }
+    ],
+    "locks": [
+      {
+        "title": "Ai đã dừng lại để giúp người đàn ông bị thương?",
+        "q": "Theo các gợi ý trong câu chuyện, ai đã dừng lại và giúp đỡ người lữ hành?",
+        "reason": "Gợi ý 4 nói rằng một người Sa-ma-ri đã dừng lại và giúp đỡ. Người đọc giỏi trả lời từ những gì văn bản nói, không phải từ những gì họ đã nghĩ.",
+        "options": ["Một người Sa-ma-ri, một người đàn ông từ nơi khác", "Hai người đầu tiên nhìn thấy anh", "Một người lính đang đi qua"]
+      },
+      {
+        "title": "Sắp xếp câu chuyện theo thứ tự",
+        "q": "Chạm vào ba phần theo thứ tự câu chuyện Lu-ca kể.",
+        "reason": "Đầu tiên người đàn ông bị thương, rồi hai người đi ngang qua, rồi người Sa-ma-ri giúp đỡ. Sắp xếp các sự kiện theo thứ tự cho chúng ta thấy nguyên nhân và kết quả mà câu chuyện đang dạy — các gợi ý 2, 3 và 4 cho thấy điều đó.",
+        "pads": ["🏃 Hai người đi ngang qua", "🚶 Người đàn ông bị thương trên đường", "🤝 Người Sa-ma-ri dừng lại và giúp đỡ"]
+      },
+      {
+        "title": "Những gợi ý nào thực sự có trong câu chuyện Người Sa-ma-ri Nhân Lành?",
+        "q": "Chỉ đánh dấu những gì các gợi ý trong câu chuyện thực sự cho chúng ta biết. Bỏ qua cái đúng nhưng không liên quan.",
+        "reason": "Sự thật về xây dựng đường đúng nhưng là bẫy — đó không phải là điều câu chuyện này đang dạy. Tách biệt chi tiết câu chuyện liên quan với những sự thật thú vị nhưng không liên quan là động tác tư duy quan trọng ở đây.",
+        "items": ["Một người đàn ông bị bỏ lại bị thương trên đường", "Hai người đi ngang qua mà không giúp đỡ", "Những con đường La Mã cổ xưa được xây tốt đến nỗi tồn tại hàng nghìn năm", "Người Sa-ma-ri đã trả tiền cho việc chăm sóc người đàn ông bị thương"]
+      },
+      {
+        "title": "Người giúp đỡ đã cho thấy điều gì?",
+        "q": "Gợi ý 5 nói rằng câu chuyện cho thấy một điều trông như thế nào trong hành động, khi người Sa-ma-ri chăm sóc người đàn ông bị thương. Gõ một từ đó từ gợi ý 5.",
+        "reason": "Gợi ý 5 nói rằng câu chuyện cho thấy “lòng tốt” trông như thế nào trong hành động. Tìm từ mà một văn bản dùng để đặt tên cho một bài học là một kỹ năng đọc quan trọng.",
+        "answer": ["lòng tốt", "tốt bụng"]
+      }
+    ]
+  },
+  "ar": {
+    "chrome": {
+      "h1": "الغريب الذي ساعد",
+      "sub": "تحكي قصة من إنجيل لوقا عن مسافر مصاب وعن الأشخاص الذين مرّوا من جانبه. اقرأ الأدلة واكتشف من ساعد فعلاً.",
+      "briefH": "اقرأ مثل المحقق",
+      "briefP": "مهمتك ليست أن تقول إن هذه القصة حقيقية — مهمتك هي أن تلاحظ ما يقوله النص عمّن ساعد ومن لم يساعد. هذا هو القراءة المتأنية.",
+      "winStamp": "القصة محلولة",
+      "winH": "وجدتَ من ساعد!",
+      "winP": "قرأتَ الأدلة وأجبتَ من النص — وليس من التخمين. هذا بالضبط ما يفعله القرّاء الجيدون."
+    },
+    "clues": [
+      {
+        "nm": "الكتاب",
+        "title": "من أين تأتي هذه القصة",
+        "body": "هذه القصة من إنجيل لوقا في الكتاب المقدس. يرويها معلم ليُظهر ما معنى أن تكون جاراً طيباً. نقرأها كأي قصة."
+      },
+      {
+        "nm": "المسافر",
+        "title": "رجل يتعرض للأذى",
+        "body": "في القصة، رجل يسير على طريق. يهاجمه لصوص، ويأخذون أشياءه، ويتركونه مصاباً على الأرض."
+      },
+      {
+        "nm": "المرور",
+        "title": "آخرون يمرّون",
+        "body": "شخصان يريان الرجل المصاب ويمرّان من جانبه. تقول القصة إنهما يعبران إلى الجانب الآخر من الطريق. لا يتوقفان."
+      },
+      {
+        "nm": "المساعد",
+        "title": "غريب يتوقف",
+        "body": "ثم يمرّ رجل من مكان آخر — يُدعى السامري. يتوقف، ويساعد الرجل المصاب، ويعتني به."
+      },
+      {
+        "nm": "اللطف",
+        "title": "ما يفعله المساعد",
+        "body": "السامري يُنظّف جراح الرجل، ويضعه على حيوانه، ويأخذه إلى مكان آمن، ويدفع مقابل رعايته. تُظهر القصة كيف يبدو اللطف في الفعل."
+      },
+      {
+        "nm": "حقيقة عن الطريق",
+        "title": "صحيح — لكن هل هذه هي النقطة؟",
+        "body": "قديماً، كانت الطرق تُصنع من التراب أو الحجارة المسطحة. بعض الطرق الرومانية كانت مبنية بإتقان لدرجة أنها دامت آلاف السنين. صحيح — لكن هذا ليس ما تعلّمه هذه القصة."
+      }
+    ],
+    "locks": [
+      {
+        "title": "من توقّف لمساعدة الرجل المصاب؟",
+        "q": "وفقاً لأدلة القصة، من توقّف وساعد المسافر؟",
+        "reason": "الدليل 4 يقول إن سامرياً توقّف وساعد. القرّاء الجيدون يُجيبون من ما يقوله النص، وليس من ما يعتقدونه مسبقاً.",
+        "options": ["سامري، رجل من مكان آخر", "الشخصان الأولان اللذان رأياه", "جندي كان يمرّ"]
+      },
+      {
+        "title": "رتّب القصة بالترتيب",
+        "q": "اضغط على الأجزاء الثلاثة بالترتيب الذي تحكيه قصة لوقا.",
+        "reason": "أولاً يُصاب الرجل، ثم يمرّ شخصان، ثم يساعد السامري. ترتيب الأحداث يُظهر لنا السبب والنتيجة التي تعلّمها القصة — الأدلة 2 و3 و4 تُظهر ذلك.",
+        "pads": ["🏃 شخصان يمرّان", "🚶 الرجل مصاب على الطريق", "🤝 السامري يتوقف ويساعد"]
+      },
+      {
+        "title": "ما الأدلة الموجودة فعلاً في قصة السامري الصالح؟",
+        "q": "ضع علامة على ما تخبرنا به أدلة القصة فعلاً. اترك الصحيح الذي لا ينتمي إليها.",
+        "reason": "حقيقة بناء الطرق صحيحة لكنها طُعم — هذا ليس ما تعلّمه هذه القصة. التمييز بين تفاصيل القصة ذات الصلة والحقائق المثيرة للاهتمام البعيدة عن الموضوع هو الخطوة الفكرية الأساسية هنا.",
+        "items": ["تُرك رجل مصاباً على الطريق", "مرّ شخصان دون مساعدة", "الطرق الرومانية القديمة كانت مبنية بإتقان لدرجة أنها دامت آلاف السنين", "السامري دفع مقابل رعاية الرجل المصاب"]
+      },
+      {
+        "title": "ماذا أظهر المساعد؟",
+        "q": "يقول الدليل 5 إن القصة تُظهر كيف تبدو شيء واحد في الفعل، حين يعتني السامري بالرجل المصاب. اكتب تلك الكلمة الواحدة من الدليل 5.",
+        "reason": "يقول الدليل 5 إن القصة تُظهر كيف يبدو «اللطف» في الفعل. إيجاد الكلمة التي يستخدمها النص لتسمية الدرس مهارة قراءة مهمة.",
+        "answer": ["لطف", "طيب"]
+      }
+    ]
+  },
+  "hi": {
+    "chrome": {
+      "h1": "वह अजनबी जिसने मदद की",
+      "sub": "लूका की किताब की एक कहानी में एक घायल यात्री और उसके पास से गुजरने वाले लोगों के बारे में बताया गया है। सुराग पढ़ो और पता लगाओ किसने सच में मदद की।",
+      "briefH": "एक जासूस की तरह पढ़ो",
+      "briefP": "तुम्हारा काम यह नहीं कहना कि यह कहानी सच है या नहीं — तुम्हारा काम यह देखना है कि पाठ में किसने मदद की और किसने नहीं। यही ध्यान से पढ़ना है।",
+      "winStamp": "कहानी सुलझ गई",
+      "winH": "तुमने पता लगाया किसने मदद की!",
+      "winP": "तुमने सुराग पढ़े और पाठ से जवाब दिया — अनुमान से नहीं। यही सच में अच्छे पाठक करते हैं।"
+    },
+    "clues": [
+      {
+        "nm": "किताब",
+        "title": "यह कहानी कहाँ से आई",
+        "body": "यह कहानी बाइबिल में लूका की किताब से है। एक शिक्षक इसे सुनाता है यह दिखाने के लिए कि अच्छा पड़ोसी होने का क्या मतलब है। हम इसे किसी भी कहानी की तरह पढ़ते हैं।"
+      },
+      {
+        "nm": "यात्री",
+        "title": "एक आदमी घायल हो जाता है",
+        "body": "कहानी में, एक आदमी एक रास्ते पर चल रहा है। डाकू उस पर हमला करते हैं, उसका सामान ले जाते हैं, और उसे जमीन पर घायल छोड़ देते हैं।"
+      },
+      {
+        "nm": "गुजर जाना",
+        "title": "दूसरे लोग पास से चले जाते हैं",
+        "body": "दो लोग घायल आदमी को देखते हैं और सीधे पास से गुजर जाते हैं। कहानी कहती है कि वे रास्ते के दूसरी तरफ चले जाते हैं। वे नहीं रुकते।"
+      },
+      {
+        "nm": "मददगार",
+        "title": "एक अजनबी रुकता है",
+        "body": "फिर दूसरी जगह से एक आदमी — जिसे सामरी कहते हैं — वहाँ से गुजरता है। वह रुकता है, घायल आदमी की मदद करता है, और उसकी देखभाल करता है।"
+      },
+      {
+        "nm": "दयालुता",
+        "title": "मददगार क्या करता है",
+        "body": "सामरी आदमी के घावों को साफ करता है, उसे अपने जानवर पर बिठाता है, उसे सुरक्षित जगह ले जाता है, और उसकी देखभाल के लिए पैसे देता है। कहानी दिखाती है कि दयालुता काम में कैसी दिखती है।"
+      },
+      {
+        "nm": "रास्ते का तथ्य",
+        "title": "सच — लेकिन क्या यही बात है?",
+        "body": "बहुत पहले, रास्ते अक्सर मिट्टी या चपटे पत्थरों से बने होते थे। कुछ रोमन रास्ते इतनी अच्छी तरह बने थे कि हजारों साल तक टिके रहे। सच है — लेकिन यह कहानी यह नहीं सिखाती।"
+      }
+    ],
+    "locks": [
+      {
+        "title": "घायल आदमी की मदद के लिए कौन रुका?",
+        "q": "कहानी के सुराग के अनुसार, यात्री की मदद के लिए कौन रुका?",
+        "reason": "सुराग 4 कहता है कि एक सामरी रुका और उसने मदद की। अच्छे पाठक वही जवाब देते हैं जो पाठ कहता है, न कि वे पहले से क्या सोचते हैं।",
+        "options": ["एक सामरी, दूसरी जगह का आदमी", "पहले दो लोग जिन्होंने उसे देखा", "एक सिपाही जो वहाँ से गुजर रहा था"]
+      },
+      {
+        "title": "कहानी को क्रम में रखो",
+        "q": "तीन हिस्सों को उस क्रम में दबाओ जिसमें लूका की कहानी उन्हें सुनाती है।",
+        "reason": "पहले आदमी घायल होता है, फिर दो लोग पास से गुजर जाते हैं, फिर सामरी मदद करता है। घटनाओं को क्रम में रखना हमें दिखाता है कि कहानी जो कारण और प्रभाव सिखा रही है — सुराग 2, 3 और 4 यह दिखाते हैं।",
+        "pads": ["🏃 दो लोग पास से गुजर जाते हैं", "🚶 रास्ते पर आदमी घायल होता है", "🤝 सामरी रुकता है और मदद करता है"]
+      },
+      {
+        "title": "नेक सामरी की कहानी में कौन-से सुराग सच में हैं?",
+        "q": "केवल वही चिह्नित करो जो कहानी के सुराग हमें बताते हैं। वह छोड़ दो जो सच है पर कहानी का हिस्सा नहीं।",
+        "reason": "रास्ते बनाने का तथ्य सच है लेकिन यह एक भ्रामक बात है — यह वह नहीं है जो यह कहानी सिखाती है। प्रासंगिक कहानी विवरण और रोचक-लेकिन-असंगत तथ्यों के बीच अंतर करना यहाँ की मुख्य सोच है।",
+        "items": ["एक आदमी को रास्ते पर घायल छोड़ा गया", "दो लोग बिना मदद किए गुजर गए", "पुराने रोमन रास्ते इतनी अच्छी तरह बने थे कि हजारों साल तक टिके", "सामरी ने घायल आदमी की देखभाल के लिए पैसे दिए"]
+      },
+      {
+        "title": "मददगार ने क्या दिखाया?",
+        "q": "सुराग 5 कहता है कि कहानी दिखाती है कि एक चीज काम में कैसी दिखती है, जब सामरी घायल आदमी की देखभाल करता है। सुराग 5 से वह एक शब्द लिखो।",
+        "reason": "सुराग 5 कहता है कि कहानी दिखाती है कि «दयालुता» काम में कैसी दिखती है। वह शब्द खोजना जो एक पाठ किसी पाठ के लिए उपयोग करता है, एक महत्वपूर्ण पढ़ाई का कौशल है।",
+        "answer": ["दयालुता", "दयालु"]
+      }
+    ]
+  },
+  "ur": {
+    "chrome": {
+      "h1": "وہ اجنبی جس نے مدد کی",
+      "sub": "لوقا کی کتاب کی ایک کہانی ایک زخمی مسافر اور ان لوگوں کے بارے میں بتاتی ہے جو اس کے پاس سے گزر گئے۔ اشارے پڑھو اور معلوم کرو کہ کس نے واقعی مدد کی۔",
+      "briefH": "ایک جاسوس کی طرح پڑھو",
+      "briefP": "تمہارا کام یہ نہیں کہنا کہ یہ کہانی سچی ہے یا نہیں — تمہارا کام یہ دیکھنا ہے کہ متن میں کس نے مدد کی اور کس نے نہیں۔ یہی غور سے پڑھنا ہے۔",
+      "winStamp": "کہانی حل ہو گئی",
+      "winH": "تم نے معلوم کر لیا کہ کس نے مدد کی!",
+      "winP": "تم نے اشارے پڑھے اور متن سے جواب دیا — اندازے سے نہیں۔ یہی اچھے پڑھنے والے کرتے ہیں۔"
+    },
+    "clues": [
+      {
+        "nm": "کتاب",
+        "title": "یہ کہانی کہاں سے آئی",
+        "body": "یہ کہانی بائبل میں لوقا کی کتاب سے ہے۔ ایک استاد اسے سناتا ہے یہ دکھانے کے لیے کہ اچھا ہمسایہ ہونے کا کیا مطلب ہے۔ ہم اسے کسی بھی کہانی کی طرح پڑھتے ہیں۔"
+      },
+      {
+        "nm": "مسافر",
+        "title": "ایک آدمی زخمی ہو جاتا ہے",
+        "body": "کہانی میں، ایک آدمی ایک راستے پر چل رہا ہے۔ ڈاکو اس پر حملہ کرتے ہیں، اس کا سامان لے جاتے ہیں، اور اسے زمین پر زخمی چھوڑ دیتے ہیں۔"
+      },
+      {
+        "nm": "گزر جانا",
+        "title": "دوسرے لوگ گزر جاتے ہیں",
+        "body": "دو لوگ زخمی آدمی کو دیکھتے ہیں اور سیدھے گزر جاتے ہیں۔ کہانی کہتی ہے کہ وہ راستے کے دوسری طرف چلے جاتے ہیں۔ وہ نہیں رکتے۔"
+      },
+      {
+        "nm": "مددگار",
+        "title": "ایک اجنبی رکتا ہے",
+        "body": "پھر دوسری جگہ سے ایک آدمی — جسے سامری کہتے ہیں — وہاں سے گزرتا ہے۔ وہ رکتا ہے، زخمی آدمی کی مدد کرتا ہے، اور اس کی دیکھ بھال کرتا ہے۔"
+      },
+      {
+        "nm": "مہربانی",
+        "title": "مددگار کیا کرتا ہے",
+        "body": "سامری آدمی کے زخموں کو صاف کرتا ہے، اسے اپنے جانور پر بٹھاتا ہے، اسے محفوظ جگہ لے جاتا ہے، اور اس کی دیکھ بھال کے لیے پیسے دیتا ہے۔ کہانی دکھاتی ہے کہ مہربانی عمل میں کیسی نظر آتی ہے۔"
+      },
+      {
+        "nm": "راستے کی حقیقت",
+        "title": "سچ — لیکن کیا یہی بات ہے؟",
+        "body": "بہت پہلے، راستے اکثر مٹی یا چپٹے پتھروں سے بنے ہوتے تھے۔ کچھ رومی راستے اتنی اچھی طرح بنے تھے کہ ہزاروں سال تک قائم رہے۔ سچ ہے — لیکن یہ وہ نہیں ہے جو یہ کہانی سکھاتی ہے۔"
+      }
+    ],
+    "locks": [
+      {
+        "title": "زخمی آدمی کی مدد کے لیے کون رکا؟",
+        "q": "کہانی کے اشاروں کے مطابق، مسافر کی مدد کے لیے کون رکا؟",
+        "reason": "اشارہ 4 کہتا ہے کہ ایک سامری رکا اور اس نے مدد کی۔ اچھے پڑھنے والے وہی جواب دیتے ہیں جو متن کہتا ہے، نہ کہ وہ پہلے سے کیا سوچتے ہیں۔",
+        "options": ["ایک سامری، دوسری جگہ کا آدمی", "پہلے دو لوگ جنہوں نے اسے دیکھا", "ایک سپاہی جو وہاں سے گزر رہا تھا"]
+      },
+      {
+        "title": "کہانی کو ترتیب میں رکھو",
+        "q": "تین حصوں کو اس ترتیب میں دبائو جس میں لوقا کی کہانی انہیں سناتی ہے۔",
+        "reason": "پہلے آدمی زخمی ہوتا ہے، پھر دو لوگ گزر جاتے ہیں، پھر سامری مدد کرتا ہے۔ واقعات کو ترتیب میں رکھنا ہمیں وہ سبب اور اثر دکھاتا ہے جو کہانی سکھا رہی ہے — اشارے 2، 3 اور 4 یہ دکھاتے ہیں۔",
+        "pads": ["🏃 دو لوگ گزر جاتے ہیں", "🚶 راستے پر آدمی زخمی ہوتا ہے", "🤝 سامری رکتا ہے اور مدد کرتا ہے"]
+      },
+      {
+        "title": "نیک سامری کی کہانی میں کون سے اشارے واقعی ہیں؟",
+        "q": "صرف وہی نشان لگائو جو کہانی کے اشارے ہمیں بتاتے ہیں۔ وہ چھوڑ دو جو سچ ہے پر کہانی کا حصہ نہیں۔",
+        "reason": "راستے بنانے کی حقیقت سچی ہے لیکن یہ دھوکہ ہے — یہ وہ نہیں ہے جو یہ کہانی سکھاتی ہے۔ متعلقہ کہانی کی تفصیلات اور دلچسپ لیکن غیر متعلقہ حقائق کے درمیان فرق کرنا یہاں کی اہم سوچ ہے۔",
+        "items": ["ایک آدمی کو راستے پر زخمی چھوڑا گیا", "دو لوگ بغیر مدد کے گزر گئے", "پرانے رومی راستے اتنی اچھی طرح بنے تھے کہ ہزاروں سال تک قائم رہے", "سامری نے زخمی آدمی کی دیکھ بھال کے لیے پیسے دیے"]
+      },
+      {
+        "title": "مددگار نے کیا ظاہر کیا؟",
+        "q": "اشارہ 5 کہتا ہے کہ کہانی دکھاتی ہے کہ ایک چیز عمل میں کیسی نظر آتی ہے، جب سامری زخمی آدمی کی دیکھ بھال کرتا ہے۔ اشارہ 5 سے وہ ایک لفظ لکھو۔",
+        "reason": "اشارہ 5 کہتا ہے کہ کہانی دکھاتی ہے کہ «مہربانی» عمل میں کیسی نظر آتی ہے۔ وہ لفظ تلاش کرنا جو متن کسی سبق کا نام دینے کے لیے استعمال کرتا ہے ایک اہم پڑھنے کی مہارت ہے۔",
+        "answer": ["مہربانی", "مہربان"]
+      }
+    ]
+  },
+  "zh": {
+    "chrome": {
+      "h1": "那个伸出援手的陌生人",
+      "sub": "《路加福音》里的一个故事讲了一个受伤的旅人，以及从他身边经过的人们。读读线索，找出究竟是谁真正帮助了他。",
+      "briefH": "像侦探一样阅读",
+      "briefP": "你的任务不是判断这个故事是否真实——你的任务是留意文本说了谁帮助了人，谁没有帮助。这就是仔细阅读。",
+      "winStamp": "故事解开了",
+      "winH": "你找到了谁帮助了他！",
+      "winP": "你读了线索，从文本中找到了答案——而不是靠猜测。这正是好读者所做的事情。"
+    },
+    "clues": [
+      {
+        "nm": "书目",
+        "title": "这个故事从哪里来",
+        "body": "这个故事来自圣经里的《路加福音》。一位老师讲述这个故事，来说明做一个好邻居意味着什么。我们像读任何故事一样读它。"
+      },
+      {
+        "nm": "旅人",
+        "title": "一个人受了伤",
+        "body": "在故事里，一个人正在路上走。强盗袭击了他，抢走了他的东西，把他受伤地留在地上。"
+      },
+      {
+        "nm": "走过",
+        "title": "别人从旁经过",
+        "body": "两个人看到了受伤的人，却直接走了过去。故事说他们走到了路的另一边。他们没有停下来。"
+      },
+      {
+        "nm": "帮助者",
+        "title": "一个陌生人停下来了",
+        "body": "然后，一个来自另一个地方的人——叫做撒玛利亚人——走了过来。他停下来，帮助了受伤的人，照顾了他。"
+      },
+      {
+        "nm": "善良",
+        "title": "帮助者做了什么",
+        "body": "撒玛利亚人为那人包扎了伤口，把他放在自己的牲口上，带他到了安全的地方，并付钱照顾他。这个故事展示了善良在行动中的样子。"
+      },
+      {
+        "nm": "道路小知识",
+        "title": "是真的——但这是重点吗？",
+        "body": "很久以前，道路通常是用泥土或平石头铺成的。一些罗马道路建造得非常好，历经数千年仍然存在。是真的——但这不是这个故事所要教导的。"
+      }
+    ],
+    "locks": [
+      {
+        "title": "谁停下来帮助了受伤的人？",
+        "q": "根据故事线索，谁停下来帮助了旅人？",
+        "reason": "线索4说一个撒玛利亚人停下来并提供了帮助。好的读者根据文本所说的来回答，而不是根据他们已经想到的。",
+        "options": ["一个撒玛利亚人，来自另一个地方的人", "最先看到他的两个人", "一个路过的士兵"]
+      },
+      {
+        "title": "按顺序排列故事",
+        "q": "按照《路加福音》讲述的顺序，依次点击三个部分。",
+        "reason": "首先那人受伤，然后两个人经过，然后撒玛利亚人提供帮助。按顺序排列事件让我们看到故事所教导的因果关系——线索2、3和4说明了这一点。",
+        "pads": ["🏃 两个人从旁经过", "🚶 路上有人受伤", "🤝 撒玛利亚人停下来帮助"]
+      },
+      {
+        "title": "哪些线索真的在好撒玛利亚人的故事里？",
+        "q": "只勾选故事线索真正告诉我们的内容。去掉那个真实但不属于故事的。",
+        "reason": "关于道路建造的事实是真的，但它是一个干扰——这不是这个故事所要教导的。将相关故事细节与有趣但题外的事实区分开来，是这里关键的思维动作。",
+        "items": ["一个人被留在路上受伤", "两个人经过但没有帮助", "古罗马道路建造得非常好，历经数千年", "撒玛利亚人为受伤人的照顾付了钱"]
+      },
+      {
+        "title": "帮助者展示了什么？",
+        "q": "线索5说这个故事展示了一件事在行动中的样子，当撒玛利亚人照顾受伤的人时。从线索5中输入那一个词。",
+        "reason": "线索5说这个故事展示了「善良」在行动中的样子。找出文本用来命名一个教训的词，是一项重要的阅读技能。",
+        "answer": ["善良", "善心"]
+      }
+    ]
+  }
+}

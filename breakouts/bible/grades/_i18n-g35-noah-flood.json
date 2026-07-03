@@ -1,0 +1,416 @@
+{
+  "es": {
+    "chrome": {
+      "h1": "Noé y el Diluvio",
+      "sub": "Un relato sobre un gran diluvio, un barco lleno de animales y una promesa escrita en el cielo. Lee las pistas, sigue el orden de los eventos y demuestra tu razonamiento a partir del texto.",
+      "briefH": "Sigue la historia — luego prueba su tema",
+      "briefP": "Estás estudiando esto como un relato, igual que estudiarías cualquier historia sobre alguien que recibe una gran tarea. Observa cómo están ordenados los eventos y qué enseña la historia. Respalda cada respuesta con evidencia de las pistas — no con lo que ya sabes.",
+      "winStamp": "HISTORIA RESUELTA",
+      "winH": "¡Leíste el relato del diluvio!",
+      "winP": "Seguiste los eventos en orden, nombraste el tema y usaste pistas reales para respaldar tu razonamiento. Así es como los buenos lectores analizan una historia."
+    },
+    "clues": [
+      {
+        "nm": "La Tarea",
+        "title": "Noé recibe instrucciones",
+        "body": "En el relato del Génesis, Dios ve que las personas se comportan mal y decide enviar un gran diluvio. Dios le dice a Noé — descrito como un hombre bueno — que construya un gran barco llamado arca y que lleve a su familia y a dos de cada tipo de animal."
+      },
+      {
+        "nm": "El Arca",
+        "title": "Noé construye y carga",
+        "body": "El relato dice que Noé hace exactamente lo que se le indica. Construye el arca según las medidas dadas, reúne los animales y embarca a su familia. Noé sigue cada instrucción sin discutir."
+      },
+      {
+        "nm": "El Diluvio",
+        "title": "Las aguas suben",
+        "body": "La lluvia cae durante cuarenta días y cuarenta noches. El diluvio cubre la tierra. Noé, su familia y los animales permanecen seguros dentro del arca mientras las aguas suben."
+      },
+      {
+        "nm": "La Paloma",
+        "title": "Probando las aguas",
+        "body": "Cuando la lluvia se detiene, Noé envía una paloma en busca de tierra seca. Al principio la paloma regresa — no hay dónde posarse. La segunda vez, la paloma vuelve con una rama de olivo, señal de que la tierra está apareciendo."
+      },
+      {
+        "nm": "La Promesa",
+        "title": "Un arcoíris y un pacto",
+        "body": "Cuando el diluvio termina, Noé y su familia salen del arca. El relato dice que Dios hace un pacto — una promesa solemne — de nunca volver a inundar toda la tierra. Un arcoíris aparece como señal de esa promesa."
+      },
+      {
+        "nm": "Dato de Lluvia",
+        "title": "Verdadero, pero fuera del tema",
+        "body": "El lugar más lluvioso de la Tierra recibe aproximadamente 467 pulgadas de lluvia cada año. Ese es un hecho meteorológico verdadero — pero no tiene nada que ver con lo que el relato de Noé enseña sobre las promesas y los nuevos comienzos."
+      }
+    ],
+    "locks": [
+      {
+        "title": "Pon la historia en orden",
+        "q": "Toca los tres eventos clave del relato de Noé en el ORDEN en que el texto los presenta.",
+        "reason": "La historia sigue este orden: Noé construye y carga el arca, luego suben las aguas del diluvio, luego aparece el arcoíris como promesa. El orden ayuda a los lectores a ver cómo está estructurada una narración.",
+        "pads": ["🌊 Las aguas del diluvio suben", "🌈 La promesa del arcoíris", "🔨 Noé construye el arca"]
+      },
+      {
+        "title": "Nombra el tema",
+        "q": "¿Qué idea enseña MÁS claramente el relato de Noé?",
+        "reason": "Las pistas 1, 2 y 5 muestran a Noé obedeciendo, sobreviviendo y recibiendo una promesa — el tema de la historia es sobre la fidelidad que lleva a un nuevo comienzo. Las otras opciones están fuera del tema o son demasiado pequeñas.",
+        "options": ["Hacer lo que se te pide lleva a un nuevo comienzo y una nueva promesa", "La lluvia es peligrosa y las personas siempre deben llevar paraguas", "Los barcos deben construirse con medidas exactas"]
+      },
+      {
+        "title": "Reúne evidencia sólida",
+        "q": "Marca cada pista que sea evidencia SÓLIDA del tema «hacer lo que se te pide lleva a un nuevo comienzo». Deja fuera el hecho verdadero pero fuera del tema.",
+        "reason": "El dato sobre la lluvia es verdadero pero completamente fuera del tema. La evidencia sólida debe conectarse con lo que la historia enseña — obediencia, supervivencia y una nueva promesa.",
+        "items": ["Noé sigue cada instrucción y construye el arca", "El diluvio limpia la tierra y la familia de Noé sobrevive a salvo", "El lugar más lluvioso de la Tierra recibe 467 pulgadas de lluvia al año", "Dios hace una promesa con el arcoíris de que la tierra tendrá un nuevo comienzo"]
+      },
+      {
+        "title": "Nombra el libro de origen",
+        "q": "El relato de Noé proviene del primer libro de la Biblia hebrea. La pista 1 lo menciona. Escribe el nombre de ese libro.",
+        "reason": "La pista 1 nos dice que el relato proviene del Génesis, el primer libro de la Biblia hebrea. Conocer el libro de origen es parte de leer cualquier texto en su contexto.",
+        "answer": ["génesis", "genesis"]
+      }
+    ]
+  },
+  "vi": {
+    "chrome": {
+      "h1": "Nô-ê và Trận Đại Hồng Thủy",
+      "sub": "Câu chuyện về một trận lũ lụt lớn, một chiếc thuyền chứa đầy động vật và một lời hứa được viết trên bầu trời. Đọc các gợi ý, theo dõi trình tự sự kiện và chứng minh suy nghĩ của bạn từ văn bản.",
+      "briefH": "Theo dõi câu chuyện — rồi chứng minh chủ đề",
+      "briefP": "Bạn đang học điều này như một câu chuyện, giống như khi bạn học bất kỳ câu chuyện nào về một người được giao nhiệm vụ lớn. Chú ý đến cách các sự kiện được sắp xếp và câu chuyện dạy điều gì. Hãy dùng bằng chứng từ các gợi ý để trả lời — không phải những gì bạn đã biết.",
+      "winStamp": "ĐÃ GIẢI QUYẾT CÂU CHUYỆN",
+      "winH": "Bạn đã đọc câu chuyện về trận lũ lụt!",
+      "winP": "Bạn đã theo dõi các sự kiện theo thứ tự, đặt tên cho chủ đề và dùng các gợi ý thực tế để chứng minh suy nghĩ của mình. Đó chính là cách những người đọc tốt phân tích một câu chuyện."
+    },
+    "clues": [
+      {
+        "nm": "Nhiệm Vụ",
+        "title": "Nô-ê nhận được hướng dẫn",
+        "body": "Trong câu chuyện từ sách Sáng Thế, Đức Chúa Trời thấy con người hành xử xấu xa và quyết định gửi một trận lũ lụt lớn. Đức Chúa Trời bảo Nô-ê — được miêu tả là người tốt — hãy đóng một chiếc thuyền lớn gọi là tàu và đưa gia đình cùng hai con của mỗi loài động vật lên tàu."
+      },
+      {
+        "nm": "Chiếc Tàu",
+        "title": "Nô-ê đóng tàu và chất hàng",
+        "body": "Câu chuyện kể rằng Nô-ê làm đúng như những gì được bảo. Ông đóng chiếc tàu theo đúng kích thước được cho, tập hợp các động vật và đưa gia đình lên tàu. Nô-ê làm theo mọi hướng dẫn mà không phản đối."
+      },
+      {
+        "nm": "Trận Lũ",
+        "title": "Nước dâng lên",
+        "body": "Mưa rơi suốt bốn mươi ngày và bốn mươi đêm. Lũ lụt tràn ngập mặt đất. Nô-ê, gia đình ông và các động vật ở an toàn bên trong tàu trong khi nước dâng lên."
+      },
+      {
+        "nm": "Con Chim Bồ Câu",
+        "title": "Thử nghiệm vùng nước",
+        "body": "Sau khi mưa ngừng, Nô-ê thả một con chim bồ câu ra để tìm đất khô. Lúc đầu chim bồ câu quay về — không có chỗ để đậu. Lần thứ hai, chim bồ câu trở về với một cành ô-liu, dấu hiệu cho thấy đất đang xuất hiện."
+      },
+      {
+        "nm": "Lời Hứa",
+        "title": "Cầu vồng và giao ước",
+        "body": "Khi lũ lụt kết thúc, Nô-ê và gia đình rời tàu. Câu chuyện kể rằng Đức Chúa Trời lập một giao ước — một lời hứa trang trọng — sẽ không bao giờ làm ngập cả trái đất nữa. Một cầu vồng xuất hiện như dấu hiệu của lời hứa đó."
+      },
+      {
+        "nm": "Sự Thật Về Mưa",
+        "title": "Đúng, nhưng ngoài chủ đề",
+        "body": "Nơi ẩm ướt nhất trên Trái Đất nhận được khoảng 467 inch mưa mỗi năm. Đó là một sự thật về thời tiết — nhưng không liên quan gì đến điều mà câu chuyện về Nô-ê đang dạy về những lời hứa và những khởi đầu mới."
+      }
+    ],
+    "locks": [
+      {
+        "title": "Sắp xếp câu chuyện theo thứ tự",
+        "q": "Nhấn vào ba sự kiện chính từ câu chuyện về Nô-ê theo THỨTỰ mà văn bản kể.",
+        "reason": "Câu chuyện diễn ra theo thứ tự này: Nô-ê đóng và chất hàng lên tàu, rồi lũ lụt dâng lên, rồi cầu vồng xuất hiện như một lời hứa. Thứ tự giúp người đọc thấy cách một câu chuyện được cấu trúc.",
+        "pads": ["🌊 Nước lũ dâng lên", "🌈 Lời hứa cầu vồng", "🔨 Nô-ê đóng tàu"]
+      },
+      {
+        "title": "Đặt tên cho chủ đề",
+        "q": "Câu chuyện về Nô-ê dạy điều gì RÕ RÀNG NHẤT?",
+        "reason": "Các gợi ý 1, 2 và 5 đều cho thấy Nô-ê vâng lời, sống sót và nhận được lời hứa — chủ đề của câu chuyện là về sự trung thành dẫn đến một khởi đầu mới. Các lựa chọn khác không liên quan hoặc quá nhỏ.",
+        "options": ["Làm những gì được yêu cầu dẫn đến một khởi đầu mới và một lời hứa mới", "Mưa rất nguy hiểm và người ta luôn phải mang ô", "Thuyền phải được đóng theo đúng kích thước"]
+      },
+      {
+        "title": "Thu thập bằng chứng mạnh",
+        "q": "Đánh dấu mọi gợi ý là bằng chứng MẠNH cho chủ đề «làm những gì được yêu cầu dẫn đến một khởi đầu mới». Bỏ qua sự thật đúng nhưng ngoài chủ đề.",
+        "reason": "Sự thật về lượng mưa là đúng nhưng hoàn toàn ngoài chủ đề. Bằng chứng mạnh phải thực sự kết nối với điều câu chuyện đang dạy — sự vâng lời, sống sót và một lời hứa mới.",
+        "items": ["Nô-ê làm theo mọi hướng dẫn và đóng tàu", "Lũ lụt làm sạch mặt đất và gia đình Nô-ê sống sót an toàn", "Nơi ẩm ướt nhất Trái Đất nhận 467 inch mưa mỗi năm", "Đức Chúa Trời lập giao ước cầu vồng rằng trái đất sẽ có một khởi đầu mới"]
+      },
+      {
+        "title": "Đặt tên sách nguồn",
+        "q": "Câu chuyện về Nô-ê đến từ cuốn sách đầu tiên của Kinh Thánh Hebrew. Gợi ý 1 đặt tên cho nó. Gõ tên cuốn sách đó.",
+        "reason": "Gợi ý 1 cho chúng ta biết câu chuyện đến từ sách Sáng Thế, cuốn sách đầu tiên của Kinh Thánh Hebrew. Biết sách nguồn là một phần của việc đọc bất kỳ văn bản nào trong ngữ cảnh của nó.",
+        "answer": ["sáng thế", "genesis", "sách sáng thế"]
+      }
+    ]
+  },
+  "ar": {
+    "chrome": {
+      "h1": "نوح والطوفان",
+      "sub": "قصة عن طوفان عظيم، وسفينة مليئة بالحيوانات، ووعد مكتوب في السماء. اقرأ الأدلة، وتتبع ما حدث بالترتيب، وأثبت تفكيرك من النص.",
+      "briefH": "اتبع القصة — ثم أثبت موضوعها",
+      "briefP": "أنت تدرس هذا كقصة أدبية، تمامًا كما تدرس أي حكاية عن شخص كُلِّف بمهمة كبيرة. انتبه إلى كيفية ترتيب الأحداث وما تعلمه القصة. استند في كل إجابة إلى دليل من الأدلة — وليس إلى ما تعرفه مسبقًا.",
+      "winStamp": "تم حل القصة",
+      "winH": "لقد قرأت قصة الطوفان!",
+      "winP": "تتبعت الأحداث بالترتيب، وحددت الموضوع، واستخدمت أدلة حقيقية لتعزيز تفكيرك. هكذا يحلل القراء الجيدون القصة."
+    },
+    "clues": [
+      {
+        "nm": "المهمة",
+        "title": "نوح يتلقى التعليمات",
+        "body": "في القصة الواردة في سِفر التكوين، يرى الله أن الناس يتصرفون بشكل سيئ فيقرر إرسال طوفان عظيم. يأمر الله نوحًا — الموصوف بأنه رجل صالح — ببناء سفينة كبيرة تُسمى الفلك، وأن يُركب فيها أسرته وزوجين من كل نوع من الحيوانات."
+      },
+      {
+        "nm": "الفلك",
+        "title": "نوح يبني ويُحمِّل",
+        "body": "تقول القصة إن نوحًا يفعل بالضبط ما أُمر به. يبني الفلك وفق المقاسات المحددة، ويجمع الحيوانات، ويُصعد أسرته على متنه. يتبع نوح كل تعليمة دون اعتراض."
+      },
+      {
+        "nm": "الطوفان",
+        "title": "المياه ترتفع",
+        "body": "تهطل الأمطار أربعين يومًا وأربعين ليلة. يغمر الطوفان الأرض. يبقى نوح وأسرته والحيوانات في أمان داخل الفلك بينما ترتفع المياه."
+      },
+      {
+        "nm": "الحمامة",
+        "title": "اختبار المياه",
+        "body": "بعد توقف المطر، يُرسل نوح حمامة للبحث عن أرض جافة. في البداية تعود الحمامة — لا يوجد مكان للهبوط. في المرة الثانية، تعود الحمامة حاملةً غصن زيتون، وهو علامة على أن الأرض تظهر."
+      },
+      {
+        "nm": "الوعد",
+        "title": "قوس قزح وميثاق",
+        "body": "حين ينتهي الطوفان، يخرج نوح وأسرته من الفلك. تقول القصة إن الله يقطع عهدًا — وعدًا رسميًا — بألا يُغرق الأرض كلها مرة أخرى. يظهر قوس قزح علامةً على ذلك الوعد."
+      },
+      {
+        "nm": "حقيقة عن المطر",
+        "title": "صحيح، لكن خارج الموضوع",
+        "body": "يتلقى أكثر أماكن الأرض مطرًا نحو 467 بوصة من المطر كل عام. هذه حقيقة مناخية صحيحة — لكنها لا علاقة لها بما تعلمه قصة نوح عن الوعود والبدايات الجديدة."
+      }
+    ],
+    "locks": [
+      {
+        "title": "رتِّب القصة بالترتيب الصحيح",
+        "q": "اضغط على الأحداث الثلاثة الرئيسية من قصة نوح بالترتيب الذي يسردها فيه النص.",
+        "reason": "تسير القصة بهذا الترتيب: يبني نوح الفلك ويُحمِّله، ثم ترتفع مياه الطوفان، ثم يظهر قوس قزح وعدًا. يساعد الترتيب القراء على رؤية كيف يُبنى السرد.",
+        "pads": ["🌊 ترتفع مياه الطوفان", "🌈 وعد قوس قزح", "🔨 نوح يبني الفلك"]
+      },
+      {
+        "title": "حدِّد الموضوع",
+        "q": "ما الفكرة التي تعلمها قصة نوح بوضوح الأكبر؟",
+        "reason": "تُظهر الأدلة 1 و2 و5 نوحًا يطيع وينجو ويتلقى وعدًا — موضوع القصة هو الوفاء الذي يؤدي إلى بداية جديدة. الخيارات الأخرى إما خارج الموضوع أو صغيرة جدًا.",
+        "options": ["فعل ما يُطلب منك يؤدي إلى بداية جديدة ووعد جديد", "المطر خطير ويجب على الناس دائمًا حمل المظلات", "يجب بناء السفن وفق مقاسات دقيقة"]
+      },
+      {
+        "title": "اجمع الأدلة القوية",
+        "q": "ضع علامة على كل دليل هو دليل قوي على موضوع «فعل ما يُطلب منك يؤدي إلى بداية جديدة». اترك الحقيقة الصحيحة لكن الخارجة عن الموضوع.",
+        "reason": "حقيقة سجل الأمطار صحيحة لكنها خارجة عن الموضوع تمامًا. يجب أن يرتبط الدليل القوي فعلًا بما تعلمه القصة — الطاعة والنجاة والوعد الجديد.",
+        "items": ["نوح يتبع كل تعليمة ويبني الفلك", "يُنظف الطوفان الأرض وتنجو أسرة نوح بأمان", "يتلقى أكثر أماكن الأرض مطرًا 467 بوصة من المطر سنويًا", "يقطع الله ميثاق قوس قزح بأن الأرض ستحصل على بداية جديدة"]
+      },
+      {
+        "title": "سمِّ الكتاب المصدر",
+        "q": "قصة نوح مأخوذة من أول كتاب في الكتاب المقدس العبري. الدليل الأول يسميه. اكتب اسم ذلك الكتاب.",
+        "reason": "الدليل الأول يخبرنا أن القصة مأخوذة من سِفر التكوين، أول كتاب في الكتاب المقدس العبري. معرفة الكتاب المصدر جزء من قراءة أي نص في سياقه.",
+        "answer": ["التكوين", "سفر التكوين"]
+      }
+    ]
+  },
+  "hi": {
+    "chrome": {
+      "h1": "नूह और महाप्रलय",
+      "sub": "एक महान बाढ़, जानवरों से भरी एक नाव और आकाश में लिखे एक वचन की कहानी। सुराग पढ़ें, क्रम में जो हुआ उसका पता लगाएँ और पाठ से अपनी सोच साबित करें।",
+      "briefH": "कहानी का अनुसरण करें — फिर उसके विषय को साबित करें",
+      "briefP": "आप इसे एक कहानी के रूप में पढ़ रहे हैं, ठीक वैसे जैसे आप किसी बड़े काम को सौंपे गए किसी व्यक्ति की कहानी पढ़ते। ध्यान दें कि घटनाएँ कैसे क्रमबद्ध हैं और कहानी क्या सिखाती है। हर उत्तर को सुरागों के प्रमाण से पुष्ट करें — जो आप पहले से जानते हैं उससे नहीं।",
+      "winStamp": "कहानी हल हुई",
+      "winH": "आपने बाढ़ की कहानी पढ़ ली!",
+      "winP": "आपने घटनाओं को क्रम में समझा, विषय का नाम दिया और अपनी सोच को असली सुरागों से साबित किया। अच्छे पाठक इसी तरह किसी कहानी का विश्लेषण करते हैं।"
+    },
+    "clues": [
+      {
+        "nm": "कार्य",
+        "title": "नूह को निर्देश मिलते हैं",
+        "body": "उत्पत्ति की कहानी में, परमेश्वर देखता है कि लोग बुरा व्यवहार कर रहे हैं और वह एक महान बाढ़ भेजने का निर्णय लेता है। परमेश्वर नूह को — जिसे एक अच्छे व्यक्ति के रूप में वर्णित किया गया है — एक बड़ी नाव जिसे जहाज कहते हैं बनाने को कहता है और अपने परिवार तथा हर प्रकार के जानवरों में से दो-दो को उस पर ले जाने को कहता है।"
+      },
+      {
+        "nm": "जहाज",
+        "title": "नूह बनाता और लादता है",
+        "body": "कहानी कहती है कि नूह ठीक वही करता है जो उसे बताया गया है। वह दिए गए माप के अनुसार जहाज बनाता है, जानवरों को इकट्ठा करता है और अपने परिवार को चढ़ाता है। नूह बिना कोई बहस किए हर निर्देश का पालन करता है।"
+      },
+      {
+        "nm": "बाढ़",
+        "title": "पानी चढ़ता है",
+        "body": "चालीस दिन और चालीस रात तक बारिश होती है। बाढ़ जमीन को ढक लेती है। नूह, उसका परिवार और जानवर जहाज के अंदर सुरक्षित रहते हैं जबकि पानी चढ़ता रहता है।"
+      },
+      {
+        "nm": "कबूतर",
+        "title": "पानी की जाँच",
+        "body": "बारिश रुकने के बाद नूह सूखी जमीन खोजने के लिए एक कबूतर भेजता है। पहले कबूतर वापस आ जाता है — बैठने की कोई जगह नहीं है। दूसरी बार कबूतर एक जैतून की शाखा लेकर लौटता है, जो यह संकेत देती है कि जमीन दिखने लगी है।"
+      },
+      {
+        "nm": "वचन",
+        "title": "इंद्रधनुष और एक समझौता",
+        "body": "जब बाढ़ समाप्त होती है, नूह और उसका परिवार जहाज से निकलते हैं। कहानी कहती है कि परमेश्वर एक वाचा — एक गंभीर वचन — करता है कि वह फिर कभी पूरी पृथ्वी को नहीं डुबोएगा। उस वचन के चिह्न के रूप में एक इंद्रधनुष प्रकट होता है।"
+      },
+      {
+        "nm": "बारिश का तथ्य",
+        "title": "सच, लेकिन विषय से बाहर",
+        "body": "पृथ्वी के सबसे अधिक वर्षा वाले स्थान पर हर साल लगभग 467 इंच बारिश होती है। यह मौसम का एक सच्चा तथ्य है — लेकिन इसका नूह की कहानी से कोई संबंध नहीं है, जो वचनों और नई शुरुआत के बारे में सिखाती है।"
+      }
+    ],
+    "locks": [
+      {
+        "title": "कहानी को क्रम में रखें",
+        "q": "नूह की कहानी के तीन मुख्य घटनाओं को उस क्रम में टैप करें जिस क्रम में पाठ उन्हें बताता है।",
+        "reason": "कहानी इस क्रम में चलती है: नूह जहाज बनाता और लादता है, फिर बाढ़ का पानी चढ़ता है, फिर वचन के रूप में इंद्रधनुष प्रकट होता है। क्रम पाठकों को यह देखने में मदद करता है कि एक कहानी कैसे संरचित होती है।",
+        "pads": ["🌊 बाढ़ का पानी चढ़ता है", "🌈 इंद्रधनुष का वचन", "🔨 नूह जहाज बनाता है"]
+      },
+      {
+        "title": "विषय का नाम दें",
+        "q": "नूह की कहानी सबसे स्पष्ट रूप से कौन सा विचार सिखाती है?",
+        "reason": "सुराग 1, 2 और 5 सभी नूह को आज्ञा मानते, जीवित रहते और वचन पाते दिखाते हैं — कहानी का विषय यह है कि निष्ठा एक नई शुरुआत की ओर ले जाती है। अन्य विकल्प या तो विषय से बाहर हैं या बहुत छोटे हैं।",
+        "options": ["जो माँगा जाए वह करने से नई शुरुआत और नया वचन मिलता है", "बारिश खतरनाक है और लोगों को हमेशा छाता लेकर चलना चाहिए", "नावें सटीक माप के अनुसार बनाई जानी चाहिए"]
+      },
+      {
+        "title": "मजबूत सबूत इकट्ठा करें",
+        "q": "'जो माँगा जाए वह करने से नई शुरुआत मिलती है' विषय के लिए हर वह सुराग चिह्नित करें जो मजबूत सबूत है। सच लेकिन विषय से बाहर के तथ्य को छोड़ दें।",
+        "reason": "वर्षा रिकॉर्ड का तथ्य सच है लेकिन पूरी तरह विषय से बाहर है। मजबूत सबूत को कहानी जो सिखा रही है उससे वास्तव में जुड़ा होना चाहिए — आज्ञाकारिता, जीवित रहना और नया वचन।",
+        "items": ["नूह हर निर्देश का पालन करता है और जहाज बनाता है", "बाढ़ जमीन को साफ करती है और नूह का परिवार सुरक्षित बच जाता है", "पृथ्वी के सबसे अधिक वर्षा वाले स्थान पर 467 इंच बारिश होती है", "परमेश्वर इंद्रधनुष का वचन करता है कि पृथ्वी को नई शुरुआत मिलेगी"]
+      },
+      {
+        "title": "स्रोत पुस्तक का नाम दें",
+        "q": "नूह की कहानी हिब्रू बाइबल की पहली पुस्तक से है। सुराग 1 उसका नाम बताता है। उस पुस्तक का नाम टाइप करें।",
+        "reason": "सुराग 1 हमें बताता है कि कहानी उत्पत्ति से है, जो हिब्रू बाइबल की पहली पुस्तक है। स्रोत पुस्तक को जानना किसी भी पाठ को उसके संदर्भ में पढ़ने का हिस्सा है।",
+        "answer": ["उत्पत्ति", "genesis"]
+      }
+    ]
+  },
+  "ur": {
+    "chrome": {
+      "h1": "نوح اور طوفانِ عظیم",
+      "sub": "ایک عظیم سیلاب، جانوروں سے بھری کشتی، اور آسمان میں لکھے وعدے کی کہانی۔ اشارے پڑھیں، ترتیب میں واقعات کو سمجھیں، اور متن سے اپنی سوچ ثابت کریں۔",
+      "briefH": "کہانی کو فالو کریں — پھر اس کا موضوع ثابت کریں",
+      "briefP": "آپ اسے ایک ادبی کہانی کے طور پر پڑھ رہے ہیں، بالکل ویسے جیسے آپ کسی بڑے کام سونپے گئے شخص کی کہانی پڑھتے۔ دھیان دیں کہ واقعات کس ترتیب میں ہیں اور کہانی کیا سکھاتی ہے۔ ہر جواب کو اشاروں کے ثبوت سے پختہ کریں — نہ کہ جو آپ پہلے سے جانتے ہیں اس سے۔",
+      "winStamp": "کہانی حل ہوگئی",
+      "winH": "آپ نے سیلاب کی کہانی پڑھ لی!",
+      "winP": "آپ نے واقعات کو ترتیب میں سمجھا، موضوع کا نام لیا، اور اصلی اشاروں سے اپنی سوچ ثابت کی۔ اچھے قاری اسی طرح کہانی کا تجزیہ کرتے ہیں۔"
+    },
+    "clues": [
+      {
+        "nm": "کام",
+        "title": "نوح کو ہدایات ملتی ہیں",
+        "body": "کتابِ پیدائش کی کہانی میں، خدا دیکھتا ہے کہ لوگ برا برتاؤ کر رہے ہیں اور وہ ایک عظیم سیلاب بھیجنے کا فیصلہ کرتا ہے۔ خدا نوح کو — جسے ایک نیک آدمی کے طور پر بیان کیا گیا ہے — ہدایت کرتا ہے کہ ایک بڑی کشتی بنائے جسے کشتیِ نوح کہتے ہیں، اور اپنے گھر والوں اور ہر قسم کے جانوروں میں سے دو دو کو اس میں سوار کرے۔"
+      },
+      {
+        "nm": "کشتی",
+        "title": "نوح بناتے اور لادتے ہیں",
+        "body": "کہانی کہتی ہے کہ نوح بالکل وہی کرتے ہیں جو انہیں کہا گیا ہے۔ وہ دیے گئے پیمانے کے مطابق کشتی بناتے ہیں، جانوروں کو جمع کرتے ہیں، اور اپنے گھر والوں کو سوار کراتے ہیں۔ نوح بغیر کسی حجت کے ہر ہدایت پر عمل کرتے ہیں۔"
+      },
+      {
+        "nm": "سیلاب",
+        "title": "پانی چڑھتا ہے",
+        "body": "چالیس دن اور چالیس راتیں بارش ہوتی ہے۔ سیلاب زمین کو ڈھانپ لیتا ہے۔ نوح، ان کے گھر والے اور جانور کشتی کے اندر محفوظ رہتے ہیں جبکہ پانی چڑھتا رہتا ہے۔"
+      },
+      {
+        "nm": "کبوتر",
+        "title": "پانی کی جانچ",
+        "body": "بارش رکنے کے بعد نوح خشک زمین تلاش کرنے کے لیے ایک کبوتر چھوڑتے ہیں۔ پہلے کبوتر واپس آ جاتا ہے — بیٹھنے کی کوئی جگہ نہیں ہے۔ دوسری بار کبوتر زیتون کی شاخ لے کر لوٹتا ہے، جو اس بات کی نشانی ہے کہ زمین ظاہر ہونے لگی ہے۔"
+      },
+      {
+        "nm": "وعدہ",
+        "title": "قوس قزح اور ایک عہد",
+        "body": "جب سیلاب ختم ہوتا ہے، نوح اور ان کے گھر والے کشتی سے نکلتے ہیں۔ کہانی کہتی ہے کہ خدا ایک عہد کرتا ہے — ایک پکا وعدہ — کہ وہ دوبارہ پوری زمین کو کبھی نہیں ڈبوئے گا۔ اس وعدے کی نشانی کے طور پر قوس قزح ظاہر ہوتی ہے۔"
+      },
+      {
+        "nm": "بارش کی حقیقت",
+        "title": "سچ، لیکن موضوع سے باہر",
+        "body": "زمین کی سب سے زیادہ بارش والی جگہ پر ہر سال تقریباً 467 انچ بارش ہوتی ہے۔ یہ موسم کی ایک سچی حقیقت ہے — لیکن اس کا نوح کی کہانی سے کوئی تعلق نہیں، جو وعدوں اور نئی شروعات کے بارے میں سکھاتی ہے۔"
+      }
+    ],
+    "locks": [
+      {
+        "title": "کہانی کو ترتیب میں رکھیں",
+        "q": "نوح کی کہانی کے تین اہم واقعات کو اس ترتیب میں تھپتھپائیں جس ترتیب میں متن انہیں بیان کرتا ہے۔",
+        "reason": "کہانی اس ترتیب میں چلتی ہے: نوح کشتی بناتے اور لادتے ہیں، پھر سیلاب کا پانی چڑھتا ہے، پھر وعدے کے طور پر قوس قزح ظاہر ہوتی ہے۔ ترتیب قارئین کو یہ دیکھنے میں مدد دیتی ہے کہ ایک بیانیہ کیسے بنا ہے۔",
+        "pads": ["🌊 سیلاب کا پانی چڑھتا ہے", "🌈 قوس قزح کا وعدہ", "🔨 نوح کشتی بناتے ہیں"]
+      },
+      {
+        "title": "موضوع کا نام بتائیں",
+        "q": "نوح کی کہانی سب سے واضح طور پر کون سا خیال سکھاتی ہے؟",
+        "reason": "اشارے 1، 2 اور 5 سب نوح کو اطاعت کرتے، بچتے اور وعدہ پاتے دکھاتے ہیں — کہانی کا موضوع وفاداری کے ذریعے نئی شروعات ہے۔ دیگر اختیارات یا تو موضوع سے باہر ہیں یا بہت چھوٹے ہیں۔",
+        "options": ["جو مانگا جائے وہ کرنے سے نئی شروعات اور نیا وعدہ ملتا ہے", "بارش خطرناک ہے اور لوگوں کو ہمیشہ چھتری ساتھ رکھنی چاہیے", "کشتیاں صحیح پیمانے کے مطابق بنائی جانی چاہئیں"]
+      },
+      {
+        "title": "مضبوط ثبوت اکٹھا کریں",
+        "q": "موضوع «جو مانگا جائے وہ کرنے سے نئی شروعات ملتی ہے» کے لیے ہر وہ اشارہ نشان زد کریں جو مضبوط ثبوت ہے۔ سچی لیکن موضوع سے باہر حقیقت کو چھوڑ دیں۔",
+        "reason": "بارش کے ریکارڈ کی حقیقت سچ ہے لیکن موضوع سے بالکل باہر ہے۔ مضبوط ثبوت کو کہانی جو سکھا رہی ہے اس سے حقیقی طور پر جڑا ہونا چاہیے — اطاعت، بقا اور نیا وعدہ۔",
+        "items": ["نوح ہر ہدایت پر عمل کرتے ہیں اور کشتی بناتے ہیں", "سیلاب زمین کو صاف کرتا ہے اور نوح کا گھرانہ محفوظ بچ جاتا ہے", "زمین کی سب سے زیادہ بارش والی جگہ پر 467 انچ بارش ہوتی ہے", "خدا قوس قزح کا عہد کرتا ہے کہ زمین کو نئی شروعات ملے گی"]
+      },
+      {
+        "title": "ماخذ کتاب کا نام لیں",
+        "q": "نوح کی کہانی عبرانی بائبل کی پہلی کتاب سے ہے۔ اشارہ 1 اس کا نام بتاتا ہے۔ اس کتاب کا نام ٹائپ کریں۔",
+        "reason": "اشارہ 1 ہمیں بتاتا ہے کہ کہانی کتابِ پیدائش سے ہے، جو عبرانی بائبل کی پہلی کتاب ہے۔ ماخذ کتاب کو جاننا کسی بھی متن کو اس کے سیاق میں پڑھنے کا حصہ ہے۔",
+        "answer": ["پیدائش", "كتاب پیدائش", "genesis"]
+      }
+    ]
+  },
+  "zh": {
+    "chrome": {
+      "h1": "挪亚与大洪水",
+      "sub": "一个关于大洪水、满载动物的方舟，以及天空中写下的承诺的故事。阅读线索，按顺序追踪发生的事情，并从文本中证明你的思考。",
+      "briefH": "跟随故事——然后证明其主题",
+      "briefP": "你正在把这个故事当作文学来学习，就像你研究任何关于被委以重任的人的故事一样。注意事件的排列顺序以及故事所传达的道理。用线索中的证据支持每一个答案——而不是你已经知道的内容。",
+      "winStamp": "故事解开了",
+      "winH": "你读完了大洪水的故事！",
+      "winP": "你按顺序梳理了事件，说出了主题，并用真实的线索支持了你的思考。这就是优秀读者分析故事的方式。"
+    },
+    "clues": [
+      {
+        "nm": "任务",
+        "title": "挪亚接到指令",
+        "body": "在《创世记》的故事中，上帝看见人们行为败坏，决定降下一场大洪水。上帝告诉挪亚——被描述为一个好人——建造一艘叫做方舟的大船，并把他的家人以及每种动物各两只带上船。"
+      },
+      {
+        "nm": "方舟",
+        "title": "挪亚建造并装载",
+        "body": "故事说挪亚完全按照吩咐去做。他按照给定的尺寸建造方舟，聚集动物，并让家人上船。挪亚毫无异议地遵从每一条指令。"
+      },
+      {
+        "nm": "洪水",
+        "title": "水位上涨",
+        "body": "雨水降落了四十天四十夜。洪水淹没了大地。挪亚、他的家人和动物安全地留在方舟内，而水位不断上涨。"
+      },
+      {
+        "nm": "鸽子",
+        "title": "探测水情",
+        "body": "雨停之后，挪亚放出一只鸽子去寻找干地。起初鸽子飞回来了——无处可落。第二次，鸽子衔着一根橄榄枝回来，这是陆地正在显现的迹象。"
+      },
+      {
+        "nm": "承诺",
+        "title": "彩虹与盟约",
+        "body": "洪水结束后，挪亚和家人离开方舟。故事说上帝立了一个约——一个庄严的承诺——永远不再用洪水淹没整个地球。彩虹出现，作为那个承诺的记号。"
+      },
+      {
+        "nm": "雨水事实",
+        "title": "真实，但偏离主题",
+        "body": "地球上降雨量最多的地方每年大约会接收到467英寸的雨水。这是一个真实的气象事实——但它与挪亚故事所教导的关于承诺和新开始的内容毫无关系。"
+      }
+    ],
+    "locks": [
+      {
+        "title": "将故事按顺序排列",
+        "q": "按照文本讲述的顺序，点击挪亚故事中的三个关键事件。",
+        "reason": "故事按这个顺序发展：挪亚建造并装载方舟，然后洪水上涨，然后彩虹作为承诺出现。顺序帮助读者看清一个叙事是如何构建的。",
+        "pads": ["🌊 洪水水位上涨", "🌈 彩虹的承诺", "🔨 挪亚建造方舟"]
+      },
+      {
+        "title": "说出主题",
+        "q": "挪亚的故事最清楚地传达了哪个主题？",
+        "reason": "线索1、2和5都展示了挪亚服从、存活并获得承诺——故事的主题是忠信带来新的开始。其他选项要么偏离主题，要么太过片面。",
+        "options": ["做被要求做的事会带来新的开始和新的承诺", "雨水很危险，人们应该随时携带雨伞", "船必须按照精确的尺寸建造"]
+      },
+      {
+        "title": "收集有力证据",
+        "q": "勾选每一个能为「做被要求做的事会带来新开始」这一主题提供有力证据的线索。排除那个真实但偏离主题的事实。",
+        "reason": "降雨量记录的事实是真实的，但完全偏离主题。有力的证据必须真正与故事所教导的内容相关——服从、存活以及新的承诺。",
+        "items": ["挪亚遵从每一条指令并建造方舟", "洪水清洁了大地，挪亚的家人安全地存活下来", "地球上降雨量最多的地方每年接收467英寸的雨水", "上帝立彩虹之约，承诺大地将获得新的开始"]
+      },
+      {
+        "title": "说出来源书卷的名称",
+        "q": "挪亚的故事来自希伯来圣经的第一卷书。线索1说出了它的名字。请输入那卷书的名称。",
+        "reason": "线索1告诉我们故事来自《创世记》，即希伯来圣经的第一卷书。了解来源书卷是在语境中阅读任何文本的一部分。",
+        "answer": ["创世记", "genesis"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,500 @@
+{
+  "es": {
+    "chrome": {
+      "h1": "El Hombre y el Gran Pez",
+      "sub": "Una historia del Libro de Jonás cuenta lo que pasó cuando un hombre intentó huir de una tarea que le dieron. Lee las pistas y ponlas en orden.",
+      "briefH": "Lee como un detective",
+      "briefP": "Esta historia tiene muchos pasos. Tu trabajo es encontrar el orden correcto, responder solo con las pistas y encontrar el dato que no pertenece.",
+      "winStamp": "¡HISTORIA RESUELTA!",
+      "winH": "¡Seguiste cada paso!",
+      "winP": "Pusiste la historia en orden y respondiste según el texto. Eso es exactamente lo que hacen los buenos lectores."
+    },
+    "clues": [
+      {
+        "nm": "El Libro",
+        "title": "De dónde viene esta historia",
+        "body": "Esta historia viene del Libro de Jonás, en la Biblia. Es un libro corto con una gran aventura. Lo leemos como cualquier historia — notando qué pasa y en qué orden."
+      },
+      {
+        "nm": "Huir",
+        "title": "Jonás recibe una tarea — y huye",
+        "body": "En la historia, a Jonás le dicen que vaya a una gran ciudad llamada Nínive. En lugar de ir, sube a un barco y navega en dirección contraria."
+      },
+      {
+        "nm": "Gran Tormenta",
+        "title": "Una tormenta sacude el barco",
+        "body": "Una gran tormenta golpea el mar. Los marineros tienen miedo. Jonás les dice que está huyendo y que la tormenta es por su culpa. Les pide que lo lancen al mar."
+      },
+      {
+        "nm": "El Pez",
+        "title": "Un gran pez se traga a Jonás",
+        "body": "Un gran pez se traga a Jonás entero. La historia dice que Jonás estuvo dentro del pez tres días y tres noches."
+      },
+      {
+        "nm": "De Vuelta en Tierra",
+        "title": "Jonás sale — y va",
+        "body": "Después de tres días, el pez devuelve a Jonás a tierra firme. Esta vez, Jonás va a la ciudad de Nínive, tal como le habían dicho."
+      },
+      {
+        "nm": "Dato del Tiburón",
+        "title": "¿Verdadero — pero está en la historia?",
+        "body": "Los tiburones blancos pueden oler una pequeña gota de sangre desde muy lejos. Son cazadores increíbles. Ese es un dato verdadero sobre los tiburones — pero no es parte de la historia de Jonás."
+      }
+    ],
+    "locks": [
+      {
+        "title": "Pon la historia de Jonás en orden",
+        "q": "Toca las cuatro partes en el orden en que el Libro de Jonás las cuenta.",
+        "reason": "La historia va así: Jonás huye en dirección contraria, luego llega una tormenta, luego un pez lo traga, y después de tres días va a la ciudad. Poner los eventos en el orden correcto es cómo seguimos lo que una historia realmente muestra — las pistas 2, 3, 4 y 5 lo muestran.",
+        "pads": [
+          "🐟 El pez se traga a Jonás",
+          "🏃 Jonás navega en dirección contraria",
+          "🌅 Jonás va a la ciudad",
+          "⛈️ Gran tormenta en el mar"
+        ]
+      },
+      {
+        "title": "¿Cuánto tiempo estuvo Jonás dentro del pez?",
+        "q": "Según la Pista 4, ¿cuánto tiempo estuvo Jonás dentro del gran pez?",
+        "reason": "La Pista 4 dice tres días y tres noches. Responder con las palabras exactas del texto — sin adivinar — es la habilidad de lectura clave aquí.",
+        "options": [
+          "Tres días y tres noches",
+          "Una semana entera",
+          "Solo unas pocas horas"
+        ]
+      },
+      {
+        "title": "¿Qué pistas son realmente parte de la historia de Jonás?",
+        "q": "Marca SOLO lo que las pistas de la historia realmente nos dicen. Deja fuera el dato que no pertenece.",
+        "reason": "El dato del tiburón es verdadero pero es un señuelo — los tiburones no aparecen en la historia de Jonás. Los buenos lectores notan cuando un dato es real pero está fuera del tema.",
+        "items": [
+          "Jonás navegó en dirección contraria en lugar de ir a Nínive",
+          "Un gran pez se tragó a Jonás por tres días",
+          "Los tiburones blancos pueden oler sangre desde muy lejos",
+          "Después del pez, Jonás fue a la ciudad como le habían dicho"
+        ]
+      },
+      {
+        "title": "Nombra el libro",
+        "q": "La Pista 1 nombra el libro del que viene esta historia. Escribe su nombre.",
+        "reason": "La Pista 1 dice que esta historia viene del Libro de Jonás. Saber la fuente de un texto es el primer paso para leerlo con cuidado.",
+        "answer": ["jonás", "jonas"]
+      }
+    ]
+  },
+  "vi": {
+    "chrome": {
+      "h1": "Người Đàn Ông và Con Cá Lớn",
+      "sub": "Một câu chuyện từ Sách Giô-na kể về điều đã xảy ra khi một người đàn ông cố chạy trốn khỏi công việc được giao. Đọc các manh mối và sắp xếp theo thứ tự.",
+      "briefH": "Đọc như một thám tử",
+      "briefP": "Câu chuyện này có nhiều bước. Nhiệm vụ của bạn là tìm thứ tự đúng, chỉ trả lời dựa trên các manh mối và phát hiện chi tiết không thuộc về câu chuyện.",
+      "winStamp": "ĐÃ GIẢI CÂU CHUYỆN!",
+      "winH": "Bạn đã theo dõi từng bước!",
+      "winP": "Bạn đã sắp xếp câu chuyện theo thứ tự và trả lời dựa vào văn bản. Đó chính xác là điều những người đọc tốt làm."
+    },
+    "clues": [
+      {
+        "nm": "Quyển Sách",
+        "title": "Câu chuyện này đến từ đâu",
+        "body": "Câu chuyện này đến từ Sách Giô-na, trong Kinh Thánh. Đây là một cuốn sách ngắn với một cuộc phiêu lưu lớn. Chúng ta đọc nó như bất kỳ câu chuyện nào — chú ý điều gì xảy ra và theo thứ tự nào."
+      },
+      {
+        "nm": "Bỏ Trốn",
+        "title": "Giô-na nhận việc — và bỏ trốn",
+        "body": "Trong câu chuyện, Giô-na được bảo phải đến một thành phố lớn tên là Ni-ni-ve. Thay vì đi, ông lên thuyền và chèo theo hướng ngược lại."
+      },
+      {
+        "nm": "Bão Lớn",
+        "title": "Một cơn bão làm rung chuyển con thuyền",
+        "body": "Một cơn bão khổng lồ ập vào biển. Các thủy thủ sợ hãi. Giô-na nói với họ rằng ông đang bỏ trốn và cơn bão là do ông. Ông xin họ ném ông xuống biển."
+      },
+      {
+        "nm": "Con Cá",
+        "title": "Một con cá lớn nuốt Giô-na",
+        "body": "Một con cá lớn nuốt chửng Giô-na. Câu chuyện kể rằng Giô-na ở trong bụng cá ba ngày ba đêm."
+      },
+      {
+        "nm": "Trở Lại Đất Liền",
+        "title": "Giô-na ra ngoài — và đi",
+        "body": "Sau ba ngày, con cá nhả Giô-na ra trên đất khô. Lần này, Giô-na đi đến thành phố Ni-ni-ve, đúng như đã được bảo."
+      },
+      {
+        "nm": "Sự Thật Về Cá Mập",
+        "title": "Đúng — nhưng có trong câu chuyện không?",
+        "body": "Cá mập trắng có thể ngửi thấy một giọt máu nhỏ từ rất xa. Chúng là những thợ săn tuyệt vời. Đó là sự thật về cá mập — nhưng không phải là một phần của câu chuyện Giô-na."
+      }
+    ],
+    "locks": [
+      {
+        "title": "Sắp xếp câu chuyện Giô-na theo thứ tự",
+        "q": "Chạm vào bốn phần theo thứ tự Sách Giô-na kể chúng.",
+        "reason": "Câu chuyện diễn ra như sau: Giô-na chạy theo hướng sai, rồi bão ập đến, rồi cá nuốt ông, rồi sau ba ngày ông đến thành phố. Sắp xếp sự kiện theo đúng thứ tự là cách chúng ta theo dõi điều câu chuyện thực sự muốn truyền đạt — các manh mối 2, 3, 4 và 5 cho thấy điều đó.",
+        "pads": [
+          "🐟 Cá nuốt Giô-na",
+          "🏃 Giô-na chèo theo hướng sai",
+          "🌅 Giô-na đến thành phố",
+          "⛈️ Bão lớn trên biển"
+        ]
+      },
+      {
+        "title": "Giô-na ở trong bụng cá bao lâu?",
+        "q": "Theo Manh mối 4, Giô-na ở trong bụng con cá lớn bao lâu?",
+        "reason": "Manh mối 4 nói ba ngày ba đêm. Trả lời dựa trên đúng những từ trong văn bản — không đoán mò — là kỹ năng đọc quan trọng ở đây.",
+        "options": [
+          "Ba ngày và ba đêm",
+          "Cả một tuần",
+          "Chỉ vài tiếng đồng hồ"
+        ]
+      },
+      {
+        "title": "Những manh mối nào thực sự có trong câu chuyện Giô-na?",
+        "q": "Chỉ đánh dấu những gì các manh mối câu chuyện thực sự cho chúng ta biết. Bỏ qua sự thật không thuộc về câu chuyện.",
+        "reason": "Sự thật về cá mập là đúng nhưng là một cái bẫy — cá mập không xuất hiện trong câu chuyện Giô-na. Những người đọc giỏi nhận ra khi một sự thật là thật nhưng không liên quan đến chủ đề.",
+        "items": [
+          "Giô-na chèo thuyền theo hướng sai thay vì đến Ni-ni-ve",
+          "Một con cá lớn nuốt Giô-na trong ba ngày",
+          "Cá mập trắng có thể ngửi thấy máu từ rất xa",
+          "Sau khi ra khỏi cá, Giô-na đến thành phố như đã được bảo"
+        ]
+      },
+      {
+        "title": "Đặt tên cho cuốn sách",
+        "q": "Manh mối 1 nêu tên cuốn sách câu chuyện này đến từ đó. Gõ tên của nó.",
+        "reason": "Manh mối 1 nói câu chuyện này đến từ Sách Giô-na. Biết nguồn gốc của một văn bản là bước đầu tiên để đọc nó một cách cẩn thận.",
+        "answer": ["giô-na", "giô na", "giona"]
+      }
+    ]
+  },
+  "ar": {
+    "chrome": {
+      "h1": "الرجل والسمكة الكبيرة",
+      "sub": "تحكي قصة من سفر يونان عمّا حدث حين حاول رجلٌ الهروب من مهمةٍ أُسندت إليه. اقرأ الأدلة ورتّبها بالترتيب الصحيح.",
+      "briefH": "اقرأ مثل المحقق",
+      "briefP": "هذه القصة فيها خطوات كثيرة. مهمتك أن تجد الترتيب الصحيح، وتجيب من الأدلة فقط، وتكتشف الحقيقة التي لا تنتمي إلى القصة.",
+      "winStamp": "تمّ حلّ القصة!",
+      "winH": "تابعت كل خطوة!",
+      "winP": "رتّبتَ القصة بالترتيب الصحيح وأجبتَ من النص. هذا بالضبط ما يفعله القرّاء الجيدون."
+    },
+    "clues": [
+      {
+        "nm": "الكتاب",
+        "title": "من أين جاءت هذه القصة",
+        "body": "هذه القصة من سفر يونان في الكتاب المقدس. إنه سفرٌ قصير يحمل مغامرةً كبيرة. نقرؤه مثل أي قصة — نلاحظ ما يحدث وبأي ترتيب."
+      },
+      {
+        "nm": "الهروب",
+        "title": "يونان يتلقى مهمةً — ثم يهرب",
+        "body": "في القصة، يُؤمر يونان بالذهاب إلى مدينة كبيرة اسمها نينوى. لكن بدلاً من الذهاب، يركب سفينةً ويبحر في الاتجاه المعاكس."
+      },
+      {
+        "nm": "العاصفة الكبيرة",
+        "title": "عاصفةٌ تهزّ السفينة",
+        "body": "تضرب عاصفةٌ هائلة البحرَ. يخاف البحارة. يخبرهم يونان أنه يهرب وأن العاصفة بسببه. يطلب منهم أن يلقوه في البحر."
+      },
+      {
+        "nm": "السمكة",
+        "title": "سمكةٌ عظيمة تبتلع يونان",
+        "body": "تبتلع سمكةٌ عظيمة يونانَ كاملاً. تقول القصة إن يونان بقي داخل السمكة ثلاثة أيام وثلاث ليالٍ."
+      },
+      {
+        "nm": "العودة إلى البر",
+        "title": "يونان يخرج — ويذهب",
+        "body": "بعد ثلاثة أيام، تُلقي السمكة يونان على اليابسة. هذه المرة، يذهب يونان إلى مدينة نينوى كما أُمر."
+      },
+      {
+        "nm": "حقيقة القرش",
+        "title": "حقيقيةٌ — لكن هل هي في القصة؟",
+        "body": "يستطيع القرش الأبيض أن يشمّ قطرةً صغيرة من الدم من مسافة بعيدة جداً. إنه صيّادٌ مذهل. هذه حقيقةٌ عن القرش — لكنها ليست جزءاً من قصة يونان."
+      }
+    ],
+    "locks": [
+      {
+        "title": "رتّب قصة يونان بالترتيب الصحيح",
+        "q": "اضغط على الأجزاء الأربعة بالترتيب الذي يرويها سفر يونان.",
+        "reason": "تسير القصة هكذا: يونان يهرب في الاتجاه الخاطئ، ثم تضرب العاصفة، ثم تبتلعه السمكة، ثم بعد ثلاثة أيام يذهب إلى المدينة. ترتيب الأحداث هو الطريقة التي نتابع بها ما تُظهره القصة حقاً — الأدلة 2 و3 و4 و5 تبيّن ذلك.",
+        "pads": [
+          "🐟 السمكة تبتلع يونان",
+          "🏃 يونان يبحر في الاتجاه الخاطئ",
+          "🌅 يونان يذهب إلى المدينة",
+          "⛈️ عاصفةٌ كبيرة في البحر"
+        ]
+      },
+      {
+        "title": "كم بقي يونان داخل السمكة؟",
+        "q": "وفقاً للدليل الرابع، كم من الوقت بقي يونان داخل السمكة العظيمة؟",
+        "reason": "الدليل الرابع يقول ثلاثة أيام وثلاث ليالٍ. الإجابة بالكلمات الدقيقة للنص — لا بالتخمين — هي مهارة القراءة الأساسية هنا.",
+        "options": [
+          "ثلاثة أيام وثلاث ليالٍ",
+          "أسبوعٌ كامل",
+          "ساعاتٌ قليلة فقط"
+        ]
+      },
+      {
+        "title": "أيّ الأدلة موجودةٌ فعلاً في قصة يونان؟",
+        "q": "ضع علامة على ما تخبرنا به أدلة القصة فقط. اترك الحقيقة التي لا تنتمي إليها.",
+        "reason": "حقيقة القرش صحيحةٌ لكنها إلهاءٌ — القروش لا تظهر في قصة يونان. يلاحظ القرّاء الجيدون حين تكون الحقيقة صحيحةً لكنها خارج الموضوع.",
+        "items": [
+          "يونان أبحر في الاتجاه الخاطئ بدلاً من الذهاب إلى نينوى",
+          "سمكةٌ عظيمة ابتلعت يونان لمدة ثلاثة أيام",
+          "القرش الأبيض يستطيع شمّ الدم من مسافة بعيدة",
+          "بعد السمكة، ذهب يونان إلى المدينة كما أُمر"
+        ]
+      },
+      {
+        "title": "سمِّ الكتاب",
+        "q": "يذكر الدليل الأول اسم الكتاب الذي جاءت منه هذه القصة. اكتب اسمه.",
+        "reason": "الدليل الأول يقول إن هذه القصة من سفر يونان. معرفة مصدر النص هي الخطوة الأولى لقراءته بعناية.",
+        "answer": ["يونان"]
+      }
+    ]
+  },
+  "hi": {
+    "chrome": {
+      "h1": "आदमी और बड़ी मछली",
+      "sub": "योना की पुस्तक की एक कहानी बताती है कि क्या हुआ जब एक आदमी ने दिए गए काम से भागने की कोशिश की। सुराग पढ़ो और उन्हें क्रम में लगाओ।",
+      "briefH": "जासूस की तरह पढ़ो",
+      "briefP": "इस कहानी में कई कदम हैं। तुम्हारा काम है सही क्रम खोजना, केवल सुरागों से जवाब देना और वह तथ्य ढूंढना जो कहानी में नहीं है।",
+      "winStamp": "कहानी हल हो गई!",
+      "winH": "तुमने हर कदम का पालन किया!",
+      "winP": "तुमने कहानी को क्रम में रखा और पाठ से जवाब दिया। यही अच्छे पाठक करते हैं।"
+    },
+    "clues": [
+      {
+        "nm": "पुस्तक",
+        "title": "यह कहानी कहाँ से आई",
+        "body": "यह कहानी बाइबिल में योना की पुस्तक से है। यह एक छोटी सी पुस्तक है जिसमें एक बड़ा साहसिक काम है। हम इसे किसी भी कहानी की तरह पढ़ते हैं — यह देखते हुए कि क्या होता है और किस क्रम में।"
+      },
+      {
+        "nm": "भागना",
+        "title": "योना को काम मिलता है — और वह भागता है",
+        "body": "कहानी में, योना को निनवे नाम के एक बड़े शहर जाने को कहा जाता है। जाने की बजाय, वह एक नाव पर चढ़ जाता है और दूसरी दिशा में चला जाता है।"
+      },
+      {
+        "nm": "बड़ा तूफ़ान",
+        "title": "एक तूफ़ान नाव को हिला देता है",
+        "body": "एक बहुत बड़ा तूफ़ान समुद्र में आता है। नाविक डर जाते हैं। योना उन्हें बताता है कि वह भाग रहा है और तूफ़ान उसकी वजह से है। वह उनसे कहता है कि उसे समुद्र में फेंक दें।"
+      },
+      {
+        "nm": "मछली",
+        "title": "एक बड़ी मछली योना को निगल लेती है",
+        "body": "एक बड़ी मछली योना को पूरा निगल लेती है। कहानी कहती है कि योना तीन दिन और तीन रात मछली के अंदर रहा।"
+      },
+      {
+        "nm": "वापस ज़मीन पर",
+        "title": "योना बाहर आता है — और जाता है",
+        "body": "तीन दिनों के बाद, मछली योना को सूखी ज़मीन पर छोड़ देती है। इस बार, योना निनवे शहर जाता है, जैसा उसे कहा गया था।"
+      },
+      {
+        "nm": "शार्क का तथ्य",
+        "title": "सच — लेकिन क्या यह कहानी में है?",
+        "body": "सफ़ेद शार्क दूर से खून की एक छोटी बूंद सूंघ सकती है। वे अद्भुत शिकारी हैं। यह शार्क के बारे में एक सच्चाई है — लेकिन यह योना की कहानी का हिस्सा नहीं है।"
+      }
+    ],
+    "locks": [
+      {
+        "title": "योना की कहानी को क्रम में लगाओ",
+        "q": "चारों हिस्सों को उस क्रम में छुओ जिस क्रम में योना की पुस्तक उन्हें बताती है।",
+        "reason": "कहानी इस तरह जाती है: योना गलत रास्ते पर भागता है, फिर तूफ़ान आता है, फिर मछली उसे निगल लेती है, फिर तीन दिन बाद वह शहर जाता है। घटनाओं को सही क्रम में रखना यह समझने का तरीका है कि कहानी वास्तव में क्या दिखा रही है — सुराग 2, 3, 4 और 5 यह बताते हैं।",
+        "pads": [
+          "🐟 मछली योना को निगल लेती है",
+          "🏃 योना गलत दिशा में जाता है",
+          "🌅 योना शहर जाता है",
+          "⛈️ समुद्र में बड़ा तूफ़ान"
+        ]
+      },
+      {
+        "title": "योना मछली के अंदर कितने समय तक रहा?",
+        "q": "सुराग 4 के अनुसार, योना बड़ी मछली के अंदर कितने समय तक रहा?",
+        "reason": "सुराग 4 कहता है तीन दिन और तीन रात। पाठ के सटीक शब्दों से जवाब देना — अनुमान नहीं लगाना — यहाँ की मुख्य पठन कौशल है।",
+        "options": [
+          "तीन दिन और तीन रात",
+          "पूरे एक हफ्ते",
+          "बस कुछ घंटे"
+        ]
+      },
+      {
+        "title": "योना की कहानी में वास्तव में कौन से सुराग हैं?",
+        "q": "केवल वही चीज़ें चिह्नित करो जो कहानी के सुराग हमें वास्तव में बताते हैं। वह तथ्य छोड़ दो जो नहीं है।",
+        "reason": "शार्क का तथ्य सच है लेकिन यह एक भटकाने वाला है — शार्क योना की कहानी में नहीं आतीं। अच्छे पाठक तब ध्यान देते हैं जब कोई तथ्य सच होता है लेकिन विषय से बाहर होता है।",
+        "items": [
+          "योना निनवे जाने की बजाय गलत दिशा में चला गया",
+          "एक बड़ी मछली ने योना को तीन दिनों के लिए निगल लिया",
+          "सफ़ेद शार्क दूर से खून सूंघ सकती है",
+          "मछली के बाद, योना शहर गया जैसा उसे कहा गया था"
+        ]
+      },
+      {
+        "title": "पुस्तक का नाम बताओ",
+        "q": "सुराग 1 उस पुस्तक का नाम बताता है जिससे यह कहानी आई है। उसका नाम लिखो।",
+        "reason": "सुराग 1 कहता है कि यह कहानी योना की पुस्तक से है। किसी पाठ का स्रोत जानना उसे ध्यान से पढ़ने का पहला कदम है।",
+        "answer": ["योना", "yona"]
+      }
+    ]
+  },
+  "ur": {
+    "chrome": {
+      "h1": "آدمی اور بڑی مچھلی",
+      "sub": "یونس کی کتاب کی ایک کہانی بتاتی ہے کہ کیا ہوا جب ایک آدمی نے دیے گئے کام سے بھاگنے کی کوشش کی۔ اشارے پڑھو اور انہیں ترتیب میں لگاؤ۔",
+      "briefH": "جاسوس کی طرح پڑھو",
+      "briefP": "اس کہانی میں کئی مراحل ہیں۔ تمہارا کام ہے صحیح ترتیب ڈھونڈنا، صرف اشاروں سے جواب دینا اور وہ حقیقت ڈھونڈنا جو کہانی میں نہیں ہے۔",
+      "winStamp": "کہانی حل ہو گئی!",
+      "winH": "تم نے ہر قدم پر چلے!",
+      "winP": "تم نے کہانی کو ترتیب میں رکھا اور متن سے جواب دیا۔ یہی اچھے پڑھنے والے کرتے ہیں۔"
+    },
+    "clues": [
+      {
+        "nm": "کتاب",
+        "title": "یہ کہانی کہاں سے آئی",
+        "body": "یہ کہانی بائبل میں یونس کی کتاب سے ہے۔ یہ ایک چھوٹی کتاب ہے جس میں ایک بڑا مہم ہے۔ ہم اسے کسی بھی کہانی کی طرح پڑھتے ہیں — یہ دیکھتے ہوئے کہ کیا ہوتا ہے اور کس ترتیب میں۔"
+      },
+      {
+        "nm": "بھاگنا",
+        "title": "یونس کو کام ملتا ہے — اور وہ بھاگتا ہے",
+        "body": "کہانی میں، یونس کو نینوہ نام کے ایک بڑے شہر جانے کو کہا جاتا ہے۔ جانے کی بجائے، وہ ایک کشتی پر سوار ہو جاتا ہے اور دوسری طرف چلا جاتا ہے۔"
+      },
+      {
+        "nm": "بڑا طوفان",
+        "title": "ایک طوفان کشتی کو ہلا دیتا ہے",
+        "body": "ایک بہت بڑا طوفان سمندر میں آتا ہے۔ ملاح ڈر جاتے ہیں۔ یونس انہیں بتاتا ہے کہ وہ بھاگ رہا ہے اور طوفان اس کی وجہ سے ہے۔ وہ ان سے کہتا ہے کہ اسے سمندر میں پھینک دیں۔"
+      },
+      {
+        "nm": "مچھلی",
+        "title": "ایک بڑی مچھلی یونس کو نگل لیتی ہے",
+        "body": "ایک بڑی مچھلی یونس کو پوری طرح نگل لیتی ہے۔ کہانی کہتی ہے کہ یونس تین دن اور تین رات مچھلی کے اندر رہا۔"
+      },
+      {
+        "nm": "واپس زمین پر",
+        "title": "یونس باہر آتا ہے — اور جاتا ہے",
+        "body": "تین دنوں کے بعد، مچھلی یونس کو خشک زمین پر چھوڑ دیتی ہے۔ اس بار، یونس نینوہ شہر جاتا ہے، جیسا اسے کہا گیا تھا۔"
+      },
+      {
+        "nm": "شارک کی حقیقت",
+        "title": "سچ — لیکن کیا یہ کہانی میں ہے؟",
+        "body": "سفید شارک بہت دور سے خون کی ایک چھوٹی بوند سونگھ سکتی ہے۔ یہ حیرت انگیز شکاری ہیں۔ یہ شارک کے بارے میں ایک سچ ہے — لیکن یہ یونس کی کہانی کا حصہ نہیں ہے۔"
+      }
+    ],
+    "locks": [
+      {
+        "title": "یونس کی کہانی کو ترتیب میں لگاؤ",
+        "q": "چاروں حصوں کو اس ترتیب میں چھوؤ جس ترتیب میں یونس کی کتاب انہیں بتاتی ہے۔",
+        "reason": "کہانی اس طرح جاتی ہے: یونس غلط راستے پر بھاگتا ہے، پھر طوفان آتا ہے، پھر مچھلی اسے نگل لیتی ہے، پھر تین دن بعد وہ شہر جاتا ہے۔ واقعات کو صحیح ترتیب میں رکھنا یہ سمجھنے کا طریقہ ہے کہ کہانی واقعی کیا دکھا رہی ہے — اشارے 2، 3، 4 اور 5 یہ بتاتے ہیں۔",
+        "pads": [
+          "🐟 مچھلی یونس کو نگل لیتی ہے",
+          "🏃 یونس غلط سمت جاتا ہے",
+          "🌅 یونس شہر جاتا ہے",
+          "⛈️ سمندر میں بڑا طوفان"
+        ]
+      },
+      {
+        "title": "یونس مچھلی کے اندر کتنے وقت رہا؟",
+        "q": "اشارہ 4 کے مطابق، یونس بڑی مچھلی کے اندر کتنے وقت تک رہا؟",
+        "reason": "اشارہ 4 کہتا ہے تین دن اور تین رات۔ متن کے صحیح الفاظ سے جواب دینا — اندازہ نہ لگانا — یہاں کی بنیادی پڑھنے کی مہارت ہے۔",
+        "options": [
+          "تین دن اور تین رات",
+          "پورے ایک ہفتے",
+          "بس چند گھنٹے"
+        ]
+      },
+      {
+        "title": "یونس کی کہانی میں واقعی کون سے اشارے ہیں؟",
+        "q": "صرف وہی چیزیں نشان لگاؤ جو کہانی کے اشارے ہمیں واقعی بتاتے ہیں۔ وہ حقیقت چھوڑو جو نہیں ہے۔",
+        "reason": "شارک کی حقیقت سچ ہے لیکن یہ بھٹکانے والی ہے — شارک یونس کی کہانی میں نہیں آتیں۔ اچھے پڑھنے والے اس وقت دھیان دیتے ہیں جب کوئی حقیقت سچ ہو لیکن موضوع سے باہر ہو۔",
+        "items": [
+          "یونس نینوہ جانے کی بجائے غلط سمت چلا گیا",
+          "ایک بڑی مچھلی نے یونس کو تین دنوں کے لیے نگل لیا",
+          "سفید شارک دور سے خون سونگھ سکتی ہے",
+          "مچھلی کے بعد، یونس شہر گیا جیسا اسے کہا گیا تھا"
+        ]
+      },
+      {
+        "title": "کتاب کا نام بتاؤ",
+        "q": "اشارہ 1 اس کتاب کا نام بتاتا ہے جس سے یہ کہانی آئی ہے۔ اس کا نام لکھو۔",
+        "reason": "اشارہ 1 کہتا ہے کہ یہ کہانی یونس کی کتاب سے ہے۔ کسی متن کا ماخذ جاننا اسے غور سے پڑھنے کا پہلا قدم ہے۔",
+        "answer": ["یونس", "yunus"]
+      }
+    ]
+  },
+  "zh": {
+    "chrome": {
+      "h1": "那个人与大鱼",
+      "sub": "《约拿书》中的一个故事讲述了一个人试图逃避任务时发生的事情。读一读线索，然后按顺序排列。",
+      "briefH": "像侦探一样阅读",
+      "briefP": "这个故事有很多步骤。你的任务是找到正确的顺序，只根据线索作答，并找出不属于这个故事的那个事实。",
+      "winStamp": "故事解开了！",
+      "winH": "你跟上了每一步！",
+      "winP": "你按顺序排好了故事，并从文本中找到了答案。这正是优秀读者所做的事。"
+    },
+    "clues": [
+      {
+        "nm": "这本书",
+        "title": "这个故事来自哪里",
+        "body": "这个故事来自《圣经》中的《约拿书》。这是一本短小却充满大冒险的书。我们像读任何故事一样来读它——注意发生了什么，以及发生的顺序。"
+      },
+      {
+        "nm": "逃跑",
+        "title": "约拿接到任务——却逃跑了",
+        "body": "在故事里，约拿被告知要去一座叫尼尼微的大城市。但他没有去，而是上了一艘船，朝着相反的方向航行。"
+      },
+      {
+        "nm": "大风暴",
+        "title": "一场风暴震动了船",
+        "body": "一场巨大的风暴袭击了海面。水手们都很害怕。约拿告诉他们他在逃跑，风暴是因为他引起的。他请求水手们把他扔进海里。"
+      },
+      {
+        "nm": "大鱼",
+        "title": "一条大鱼吞下了约拿",
+        "body": "一条大鱼把约拿整个吞了下去。故事说约拿在鱼腹里待了三天三夜。"
+      },
+      {
+        "nm": "回到陆地",
+        "title": "约拿出来了——然后出发了",
+        "body": "三天后，大鱼把约拿吐到了干地上。这一次，约拿去了尼尼微城，正如他被告知的那样。"
+      },
+      {
+        "nm": "鲨鱼的事实",
+        "title": "真实——但它在故事里吗？",
+        "body": "大白鲨能从很远的地方嗅到一小滴血。它们是令人惊叹的猎手。这是关于鲨鱼的一个真实事实——但它不是约拿故事的一部分。"
+      }
+    ],
+    "locks": [
+      {
+        "title": "把约拿的故事按顺序排列",
+        "q": "按照《约拿书》讲述的顺序，依次点击四个部分。",
+        "reason": "故事是这样发展的：约拿朝错误的方向逃跑，然后风暴来袭，然后大鱼吞了他，三天后他去了那座城市。按正确顺序排列事件，是我们了解故事真正想表达什么的方式——线索2、3、4和5都说明了这一点。",
+        "pads": [
+          "🐟 大鱼吞下约拿",
+          "🏃 约拿朝错误的方向航行",
+          "🌅 约拿去了那座城市",
+          "⛈️ 海上的大风暴"
+        ]
+      },
+      {
+        "title": "约拿在鱼腹里待了多久？",
+        "q": "根据线索4，约拿在大鱼腹中待了多长时间？",
+        "reason": "线索4说三天三夜。根据文本的确切文字作答——而不是猜测——是这里的关键阅读技能。",
+        "options": [
+          "三天三夜",
+          "整整一个星期",
+          "只有几个小时"
+        ]
+      },
+      {
+        "title": "哪些线索真的在约拿的故事里？",
+        "q": "只勾选故事线索实际告诉我们的内容。把不属于这个故事的真实事实排除在外。",
+        "reason": "鲨鱼的事实是真实的，但它是一个干扰项——鲨鱼并没有出现在约拿的故事中。优秀的读者会注意到一个事实是真实的，但却与主题无关。",
+        "items": [
+          "约拿朝错误的方向航行，而不是去尼尼微",
+          "一条大鱼把约拿吞了三天",
+          "大白鲨能从远处嗅到血液",
+          "出了鱼腹之后，约拿按照被告知的去了那座城市"
+        ]
+      },
+      {
+        "title": "说出这本书的名字",
+        "q": "线索1说出了这个故事来自的书名。请输入它的名字。",
+        "reason": "线索1说这个故事来自《约拿书》。知道文本的来源是仔细阅读的第一步。",
+        "answer": ["约拿", "约拿书", "yueona"]
+      }
+    ]
+  }
+}

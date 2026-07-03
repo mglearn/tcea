@@ -1,0 +1,494 @@
+{
+  "es": {
+    "chrome": {
+      "h1": "El Juicio de Salomón: Argumento y Lógica",
+      "sub": "Dos mujeres reclaman al mismo bebé. Un rey propone una prueba impactante. Estudia cómo esta escena se construye como un argumento — un rompecabezas lógico diseñado para forzar que la verdad salga a la luz.",
+      "briefH": "Lee la prueba como un argumento",
+      "briefP": "Estás analizando el juicio de Salomón (1 Reyes) como retórica y lógica: cómo una prueba inteligentemente diseñada obliga a que la verdad emerja. Cada respuesta debe venir de las pistas — no se necesita conocimiento externo.",
+      "winStamp": "LÓGICA DEMOSTRADA",
+      "winH": "¡Leíste el juicio de Salomón como un retórico!",
+      "winP": "Nombraste el género, explicaste la lógica de la prueba, identificaste la técnica retórica y detectaste el señuelo — eso es lectura analítica."
+    },
+    "clues": [
+      {
+        "nm": "El Género",
+        "title": "¿Qué tipo de texto es este?",
+        "body": "Este pasaje de 1 Reyes es una narrativa — una historia corta — pero está estructurado como un argumento lógico. La escena presenta un problema (dos mujeres, un reclamo), una prueba (la propuesta de Salomón) y una demostración (la reacción de una mujer revela la verdad). Se lee como un rompecabezas lógico incrustado en una historia."
+      },
+      {
+        "nm": "El Problema",
+        "title": "Una disputa irresoluble",
+        "body": "Dos mujeres afirman ser la madre de un bebé vivo. No hay testigos. El rey Salomón no puede saber quién dice la verdad solo por el testimonio — ambas mujeres dicen lo mismo. La disputa parece imposible de resolver."
+      },
+      {
+        "nm": "La Prueba",
+        "title": "La propuesta de Salomón",
+        "body": "Salomón ordena traer una espada y propone cortar al bebé en dos, dando la mitad a cada mujer. La propuesta es extrema a propósito — está diseñada para no llevarse a cabo, sino para forzar una reacción que revele quién dice la verdad."
+      },
+      {
+        "nm": "La Lógica",
+        "title": "Por qué funciona la prueba",
+        "body": "La verdadera madre renuncia inmediatamente a su reclamo, diciendo: «Dale el niño — no lo mates.» La otra mujer acepta la división. La lógica de Salomón: solo la verdadera madre preferiría perder al niño antes que verlo herido. La reacción emocional se convierte en la evidencia."
+      },
+      {
+        "nm": "Una Conexión",
+        "title": "Forzar la verdad mediante una prueba",
+        "body": "La estructura del juicio de Salomón — diseñar una situación en la que solo quien dice la verdad respondería de cierta manera — aparece en la lógica y el derecho. En la literatura, Sherlock Holmes usa repetidamente esta técnica: organizar un escenario y observar quién reacciona de manera reveladora."
+      },
+      {
+        "nm": "Dato del Trono",
+        "title": "Verdadero, pero fuera de tema",
+        "body": "Según 1 Reyes, el trono de Salomón era de marfil recubierto de oro, con seis escalones y doce estatuas de leones flanqueando cada lado — una elaborada descripción de riqueza real. Esto está en el texto, pero no nos dice nada sobre cómo se construye la prueba lógica de Salomón."
+      }
+    ],
+    "locks": [
+      {
+        "title": "Explica la lógica",
+        "q": "Según la Pista 4, la prueba de Salomón funciona porque…",
+        "reason": "La Pista 4 explica la lógica: la reacción de la verdadera madre — renunciar a su reclamo para salvar al niño — es en sí misma la prueba. La prueba está diseñada para que solo quien dice la verdad responda de esa manera.",
+        "options": [
+          "Solo la verdadera madre preferiría perder al niño antes que verlo herido, por lo que su reacción es la evidencia",
+          "El rey tenía dos testigos que identificaron a la verdadera madre",
+          "El trono de marfil y oro le dio a Salomón autoridad divina para juzgar"
+        ]
+      },
+      {
+        "title": "Nombra la combinación de géneros",
+        "q": "La Pista 1 dice que este pasaje es una narrativa estructurada como algo más — un tipo de rompecabezas de razonamiento. ¿Qué frase de dos palabras usa?",
+        "reason": "La Pista 1 describe el pasaje como un «rompecabezas lógico incrustado en una historia» — una narrativa que funciona como un argumento lógico. Identificar esta combinación explica por qué la escena se lee como lo hace.",
+        "answer": ["rompecabezas lógico", "argumento lógico"]
+      },
+      {
+        "title": "Ordena los pasos del argumento",
+        "q": "Toca los tres movimientos del argumento de Salomón en el orden en que ocurren.",
+        "reason": "El argumento va del problema irresoluble (Pista 2) a la prueba diseñada por Salomón (Pista 3) hasta la reacción que demuestra la verdad (Pista 4). Secuenciar estos pasos muestra cómo el argumento está estructurado lógicamente.",
+        "pads": [
+          "💡 La reacción revela la verdad",
+          "🗡️ Propone dividir al bebé",
+          "🍼 Disputa irresoluble"
+        ]
+      },
+      {
+        "title": "Encuentra la evidencia analítica real",
+        "q": "Marca cada elemento que explique cómo funciona la prueba de Salomón como lógica o retórica. Omite el dato verdadero pero fuera de tema.",
+        "reason": "La descripción del trono es un detalle verdadero de 1 Reyes, pero no tiene nada que ver con cómo se construye la prueba lógica. Los tres elementos válidos explican cada uno un paso en el diseño del argumento.",
+        "items": [
+          "La prueba está diseñada para producir una reacción que solo quien dice la verdad tendría",
+          "El trono de Salomón era de marfil y oro con doce estatuas de leones",
+          "La disputa era imposible de resolver solo con testimonio — sin testigos",
+          "La respuesta emocional de la madre se convierte en la evidencia del argumento"
+        ]
+      }
+    ]
+  },
+  "vi": {
+    "chrome": {
+      "h1": "Phán Quyết Của Solomon: Lập Luận và Logic",
+      "sub": "Hai người phụ nữ tranh giành cùng một đứa trẻ. Một vị vua đề xuất một bài kiểm tra gây sốc. Hãy nghiên cứu cách cảnh này được xây dựng như một lập luận — một câu đố logic được thiết kế để buộc sự thật phải tự lộ ra.",
+      "briefH": "Đọc bài kiểm tra như một lập luận",
+      "briefP": "Bạn đang phân tích phán quyết của Solomon (1 Các Vua) như tu từ học và logic: cách một bài kiểm tra được thiết kế khéo léo buộc sự thật phải xuất hiện. Mọi câu trả lời phải đến từ các manh mối — không cần kiến thức bên ngoài.",
+      "winStamp": "LOGIC ĐÃ ĐƯỢC CHỨNG MINH",
+      "winH": "Bạn đã đọc phán quyết của Solomon như một nhà hùng biện!",
+      "winP": "Bạn đã xác định thể loại, giải thích logic của bài kiểm tra, xác định kỹ thuật tu từ, và phát hiện ra mồi nhử — đó là đọc phân tích."
+    },
+    "clues": [
+      {
+        "nm": "Thể Loại",
+        "title": "Đây là loại văn bản gì?",
+        "body": "Đoạn văn từ 1 Các Vua này là một câu chuyện tường thuật — một truyện ngắn — nhưng được cấu trúc như một lập luận logic. Cảnh này trình bày một vấn đề (hai người phụ nữ, một yêu cầu), một bài kiểm tra (đề xuất của Solomon), và một bằng chứng (phản ứng của một người phụ nữ tiết lộ sự thật). Nó đọc như một câu đố logic được nhúng trong một câu chuyện."
+      },
+      {
+        "nm": "Vấn Đề",
+        "title": "Một tranh chấp không thể giải quyết",
+        "body": "Hai người phụ nữ đều tuyên bố là mẹ của một đứa trẻ còn sống. Không có nhân chứng. Vua Solomon không thể biết ai đang nói sự thật chỉ từ lời khai — cả hai người phụ nữ đều nói cùng một điều. Tranh chấp dường như không thể giải quyết được."
+      },
+      {
+        "nm": "Bài Kiểm Tra",
+        "title": "Đề xuất của Solomon",
+        "body": "Solomon ra lệnh mang gươm đến và đề xuất chém đứa trẻ làm đôi, trao mỗi nửa cho mỗi người phụ nữ. Đề xuất này cực đoan một cách có chủ đích — nó được thiết kế không phải để thực hiện, mà để buộc ra một phản ứng tiết lộ ai đang nói sự thật."
+      },
+      {
+        "nm": "Logic",
+        "title": "Tại sao bài kiểm tra này hiệu quả",
+        "body": "Người mẹ thật lập tức từ bỏ yêu cầu của mình, nói: «Hãy trao đứa trẻ cho cô ấy — đừng giết nó.» Người phụ nữ kia đồng ý với việc chia đôi. Logic của Solomon: chỉ có người mẹ thật mới thà mất đứa con còn hơn thấy nó bị tổn hại. Phản ứng cảm xúc trở thành bằng chứng."
+      },
+      {
+        "nm": "Một Liên Kết",
+        "title": "Buộc sự thật thông qua một bài kiểm tra",
+        "body": "Cấu trúc phán quyết của Solomon — thiết kế một tình huống mà chỉ người nói sự thật mới phản ứng theo một cách nhất định — xuất hiện trong logic và luật pháp. Trong văn học, Sherlock Holmes liên tục sử dụng kỹ thuật này: sắp xếp một kịch bản và quan sát ai phản ứng theo cách tiết lộ sự thật."
+      },
+      {
+        "nm": "Sự Thật Về Ngai Vàng",
+        "title": "Đúng, nhưng lạc đề",
+        "body": "Theo 1 Các Vua, ngai vàng của Solomon được làm bằng ngà voi và dát vàng, với sáu bậc thang và mười hai tượng sư tử ở hai bên — một mô tả tỉ mỉ về sự giàu sang hoàng gia. Điều này có trong văn bản, nhưng nó không cho chúng ta biết gì về cách bài kiểm tra logic của Solomon được xây dựng."
+      }
+    ],
+    "locks": [
+      {
+        "title": "Giải thích logic",
+        "q": "Theo Manh Mối 4, bài kiểm tra của Solomon hiệu quả vì…",
+        "reason": "Manh Mối 4 giải thích logic: phản ứng của người mẹ thật — từ bỏ yêu cầu của mình để cứu đứa trẻ — chính là bằng chứng. Bài kiểm tra được thiết kế sao cho chỉ người nói sự thật mới phản ứng theo cách đó.",
+        "options": [
+          "Chỉ người mẹ thật mới thà mất đứa con còn hơn thấy nó bị tổn hại, vì vậy phản ứng của cô ấy là bằng chứng",
+          "Nhà vua có hai nhân chứng xác định người mẹ thật",
+          "Ngai vàng bằng ngà voi và vàng đã cho Solomon thẩm quyền thần thánh để phán xét"
+        ]
+      },
+      {
+        "title": "Đặt tên cho sự pha trộn thể loại",
+        "q": "Manh Mối 1 nói rằng đoạn văn này là một câu chuyện tường thuật được cấu trúc như một thứ khác — một loại câu đố lý luận. Nó sử dụng cụm từ hai chữ nào?",
+        "reason": "Manh Mối 1 mô tả đoạn văn là «câu đố logic được nhúng trong một câu chuyện» — một câu chuyện tường thuật hoạt động như một lập luận logic. Xác định sự pha trộn này giải thích tại sao cảnh này được đọc theo cách như vậy.",
+        "answer": ["câu đố logic", "lập luận logic"]
+      },
+      {
+        "title": "Sắp xếp các bước của lập luận",
+        "q": "Chạm vào ba bước trong lập luận của Solomon theo thứ tự chúng xảy ra.",
+        "reason": "Lập luận di chuyển từ vấn đề không thể giải quyết (Manh Mối 2) đến bài kiểm tra được thiết kế của Solomon (Manh Mối 3) đến phản ứng chứng minh sự thật (Manh Mối 4). Sắp xếp các bước này cho thấy lập luận được cấu trúc logic như thế nào.",
+        "pads": [
+          "💡 Phản ứng tiết lộ sự thật",
+          "🗡️ Đề xuất chia đôi đứa trẻ",
+          "🍼 Tranh chấp không thể giải quyết"
+        ]
+      },
+      {
+        "title": "Tìm bằng chứng phân tích thực sự",
+        "q": "Đánh dấu vào mỗi mục giải thích cách bài kiểm tra của Solomon hoạt động như logic hoặc tu từ. Bỏ qua sự kiện đúng nhưng lạc đề.",
+        "reason": "Mô tả ngai vàng là chi tiết đúng từ 1 Các Vua nhưng không liên quan gì đến cách bài kiểm tra logic được xây dựng. Ba mục mạnh mẽ mỗi cái giải thích một bước trong thiết kế của lập luận.",
+        "items": [
+          "Bài kiểm tra được thiết kế để tạo ra phản ứng mà chỉ người nói sự thật mới có",
+          "Ngai vàng của Solomon được làm bằng ngà voi và vàng với mười hai tượng sư tử",
+          "Tranh chấp không thể giải quyết chỉ từ lời khai — không có nhân chứng",
+          "Phản ứng cảm xúc của người mẹ trở thành bằng chứng trong lập luận"
+        ]
+      }
+    ]
+  },
+  "ar": {
+    "chrome": {
+      "h1": "حكم سليمان: الحجة والمنطق",
+      "sub": "امرأتان تطالبان بنفس الطفل. ملك يقترح اختباراً صادماً. ادرس كيف بُنيت هذه المشهد كحجة — أحجوبة منطقية مصممة لإجبار الحقيقة على الكشف عن نفسها.",
+      "briefH": "اقرأ الاختبار كحجة",
+      "briefP": "أنت تحلل حكم سليمان (سفر الملوك الأول) بوصفه خطابة ومنطقاً: كيف أن اختباراً مصمماً بذكاء يُجبر الحقيقة على الظهور. يجب أن تأتي كل إجابة من الأدلة — لا حاجة إلى معرفة خارجية.",
+      "winStamp": "المنطق أُثبت",
+      "winH": "لقد قرأت حكم سليمان كما يقرأه الخطيب!",
+      "winP": "سمّيت الجنس الأدبي، وشرحت منطق الاختبار، وحددت الأسلوب الخطابي، واكتشفت الإلهاء — هذه هي القراءة التحليلية."
+    },
+    "clues": [
+      {
+        "nm": "الجنس الأدبي",
+        "title": "ما نوع هذا النص؟",
+        "body": "هذا المقطع من سفر الملوك الأول هو سرد — قصة قصيرة — لكنه مبنيٌّ كحجة منطقية. تقدم المشهد مشكلةً (امرأتان، مطالبةٌ واحدة)، واختباراً (مقترح سليمان)، وبرهاناً (ردّ فعل إحدى المرأتين يكشف الحقيقة). يُقرأ كأحجوبة منطقية مدمجة في قصة."
+      },
+      {
+        "nm": "المشكلة",
+        "title": "نزاعٌ لا يمكن حسمه",
+        "body": "تدّعي امرأتان أنهما أمّ طفلٍ حيّ. لا يوجد شهود. لا يستطيع الملك سليمان معرفة من تقول الحقيقة من الشهادة وحدها — كلتا المرأتين تقولان الشيء ذاته. يبدو النزاع مستحيل الحلّ."
+      },
+      {
+        "nm": "الاختبار",
+        "title": "مقترح سليمان",
+        "body": "يأمر سليمان بإحضار سيف ويقترح تقسيم الطفل إلى نصفين، وإعطاء نصفٍ لكل امرأة. المقترح متطرفٌ عن قصد — إذ لم يُصمَّم لكي ينفَّذ، بل لإجبار ردّ فعلٍ يكشف من تقول الحقيقة."
+      },
+      {
+        "nm": "المنطق",
+        "title": "لماذا ينجح الاختبار",
+        "body": "تتخلى الأم الحقيقية فوراً عن مطالبتها قائلةً: «أعطوها الطفل — لا تقتلوه.» وتوافق المرأة الأخرى على التقسيم. منطق سليمان: الأم الحقيقية وحدها ستُفضّل خسارة الطفل على أن تراه يُؤذى. يصبح ردّ الفعل العاطفي هو الدليل."
+      },
+      {
+        "nm": "صلة بموضوع آخر",
+        "title": "إجبار الحقيقة عبر اختبار",
+        "body": "بنية حكم سليمان — تصميم موقف لا يستجيب له إلا الصادق بطريقة معينة — تظهر في المنطق والقانون. في الأدب، يستخدم شيرلوك هولمز هذه التقنية مراراً: يُهيّئ سيناريو ويُراقب من يتفاعل بالطريقة الكاشفة."
+      },
+      {
+        "nm": "حقيقة العرش",
+        "title": "صحيح، لكنه خارج الموضوع",
+        "body": "وفقاً لسفر الملوك الأول، كان عرش سليمان من العاج ومُطعَّماً بالذهب، بستّ درجات واثني عشر تمثالاً للأسود على جانبيه — وصفٌ مفصّل لثروة ملكية. هذا موجودٌ في النص، لكنه لا يخبرنا شيئاً عن كيفية بناء اختبار سليمان المنطقي."
+      }
+    ],
+    "locks": [
+      {
+        "title": "اشرح المنطق",
+        "q": "وفقاً للدليل الرابع، ينجح اختبار سليمان لأن…",
+        "reason": "يشرح الدليل الرابع المنطق: ردّ فعل الأم الحقيقية — التخلي عن مطالبتها لإنقاذ الطفل — هو الدليل بذاته. صُمِّم الاختبار بحيث لا تستجيب بهذه الطريقة إلا من تقول الحقيقة.",
+        "options": [
+          "الأم الحقيقية وحدها ستُفضّل خسارة الطفل على أن تراه يُؤذى، وردّ فعلها هو الدليل",
+          "كان الملك يمتلك شاهدَين عرّفا الأمَّ الحقيقية",
+          "أعطى عرش العاج والذهب سليمانَ سلطةً إلهية للحكم"
+        ]
+      },
+      {
+        "title": "سمِّ مزيج الجنس الأدبي",
+        "q": "يقول الدليل الأول إن هذا المقطع سردٌ مبنيٌّ كشيء آخر — نوعٌ من الأحاجي الاستدلالية. ما العبارة المكوّنة من كلمتين التي يستخدمها؟",
+        "reason": "يصف الدليل الأول المقطع بأنه «أحجوبة منطقية مدمجة في قصة» — سردٌ يعمل كحجة منطقية. تحديد هذا المزيج يُفسّر سبب قراءة المشهد بالطريقة التي يُقرأ بها.",
+        "answer": ["أحجوبة منطقية", "حجة منطقية"]
+      },
+      {
+        "title": "رتّب خطوات الحجة",
+        "q": "انقر على الخطوات الثلاث في حجة سليمان بالترتيب الذي تحدث فيه.",
+        "reason": "تنتقل الحجة من المشكلة العصيّة (الدليل الثاني) إلى الاختبار المُصمَّم من سليمان (الدليل الثالث) إلى ردّ الفعل الذي يُثبت الحقيقة (الدليل الرابع). يُظهر تسلسل هذه الخطوات كيف يُبنى الاستدلال المنطقي.",
+        "pads": [
+          "💡 ردّ الفعل يكشف الحقيقة",
+          "🗡️ يقترح تقسيم الطفل",
+          "🍼 نزاعٌ لا يمكن حسمه"
+        ]
+      },
+      {
+        "title": "ابحث عن الدليل التحليلي الحقيقي",
+        "q": "ضع علامة على كل عنصر يشرح كيف يعمل اختبار سليمان بوصفه منطقاً أو خطابة. اتركْ جانباً الحقيقة الصحيحة لكن خارجة عن الموضوع.",
+        "reason": "وصف العرش تفصيلٌ صحيح من سفر الملوك الأول لكنه لا علاقة له بكيفية بناء الاختبار المنطقي. يُفسّر كلٌّ من العناصر الثلاثة القوية خطوةً في تصميم الحجة.",
+        "items": [
+          "صُمِّم الاختبار لإنتاج ردّ فعلٍ لا يملكه إلا من يقول الحقيقة",
+          "كان عرش سليمان من العاج والذهب مع اثني عشر تمثالاً للأسود",
+          "كان النزاع مستحيل الحلّ من الشهادة وحدها — لا شهود",
+          "يصبح الردّ العاطفي للأم هو الدليل في الحجة"
+        ]
+      }
+    ]
+  },
+  "hi": {
+    "chrome": {
+      "h1": "सुलेमान का निर्णय: तर्क और तर्कशास्त्र",
+      "sub": "दो महिलाएँ एक ही बच्चे पर दावा करती हैं। एक राजा एक चौंकाने वाला परीक्षण प्रस्तावित करता है। अध्ययन करें कि यह दृश्य कैसे एक तर्क के रूप में बनाया गया है — एक तर्क-पहेली जो सत्य को स्वयं प्रकट करने के लिए विवश करती है।",
+      "briefH": "परीक्षण को एक तर्क के रूप में पढ़ें",
+      "briefP": "आप सुलेमान के निर्णय (1 राजा) का विश्लेषण वक्तृत्व और तर्कशास्त्र के रूप में कर रहे हैं: कैसे एक चतुराई से डिज़ाइन किया गया परीक्षण सत्य को उभरने के लिए विवश करता है। हर उत्तर सुरागों से आना चाहिए — किसी बाहरी ज्ञान की आवश्यकता नहीं है।",
+      "winStamp": "तर्क सिद्ध हुआ",
+      "winH": "आपने सुलेमान के निर्णय को एक वक्ता की तरह पढ़ा!",
+      "winP": "आपने शैली का नाम लिया, परीक्षण के तर्क को समझाया, वक्तृत्व तकनीक की पहचान की, और छलावे को पकड़ा — यह विश्लेषणात्मक पठन है।"
+    },
+    "clues": [
+      {
+        "nm": "शैली",
+        "title": "यह किस प्रकार का पाठ है?",
+        "body": "1 राजा का यह अंश एक कथा है — एक छोटी कहानी — लेकिन यह एक तार्किक तर्क के रूप में संरचित है। दृश्य एक समस्या प्रस्तुत करता है (दो महिलाएँ, एक दावा), एक परीक्षण (सुलेमान का प्रस्ताव), और एक प्रमाण (एक महिला की प्रतिक्रिया सत्य प्रकट करती है)। यह एक कहानी में अंतर्निहित तर्क-पहेली की तरह पढ़ा जाता है।"
+      },
+      {
+        "nm": "समस्या",
+        "title": "एक अनिर्णीत विवाद",
+        "body": "दो महिलाएँ दोनों एक जीवित बच्चे की माँ होने का दावा करती हैं। कोई गवाह नहीं है। राजा सुलेमान केवल गवाही से यह नहीं जान सकते कि कौन सच बोल रही है — दोनों महिलाएँ एक ही बात कहती हैं। विवाद हल करना असंभव लगता है।"
+      },
+      {
+        "nm": "परीक्षण",
+        "title": "सुलेमान का प्रस्ताव",
+        "body": "सुलेमान तलवार लाने का आदेश देते हैं और बच्चे को दो भागों में काटने का प्रस्ताव करते हैं, प्रत्येक महिला को आधा देते हुए। प्रस्ताव जानबूझकर अति है — इसे पूरा करने के लिए नहीं, बल्कि एक ऐसी प्रतिक्रिया को मजबूर करने के लिए डिज़ाइन किया गया है जो बताए कि कौन सच बोल रही है।"
+      },
+      {
+        "nm": "तर्क",
+        "title": "परीक्षण क्यों काम करता है",
+        "body": "असली माँ तुरंत अपना दावा छोड़ देती है, कहती है: «उसे बच्चा दे दो — उसे मत मारो।» दूसरी महिला विभाजन के लिए सहमत होती है। सुलेमान का तर्क: केवल असली माँ बच्चे को नुकसान देखने से बेहतर उसे खोना पसंद करेगी। भावनात्मक प्रतिक्रिया ही साक्ष्य बन जाती है।"
+      },
+      {
+        "nm": "एक संबंध",
+        "title": "परीक्षण के माध्यम से सत्य को विवश करना",
+        "body": "सुलेमान के निर्णय की संरचना — एक ऐसी स्थिति डिज़ाइन करना जहाँ केवल सत्य बोलने वाला एक निश्चित तरीके से प्रतिक्रिया करे — तर्कशास्त्र और कानून में प्रकट होती है। साहित्य में, शेरलॉक होम्स इस तकनीक का बार-बार उपयोग करते हैं: एक परिदृश्य व्यवस्थित करें और देखें कि कौन प्रकट करने वाले तरीके से प्रतिक्रिया करता है।"
+      },
+      {
+        "nm": "सिंहासन तथ्य",
+        "title": "सच, लेकिन विषय से परे",
+        "body": "1 राजा के अनुसार, सुलेमान का सिंहासन हाथीदाँत से बना था और सोने से मढ़ा हुआ था, छह सीढ़ियों और प्रत्येक तरफ बारह सिंह की मूर्तियों के साथ — शाही धन का एक विस्तृत वर्णन। यह पाठ में है, लेकिन यह हमें सुलेमान के तार्किक परीक्षण के निर्माण के बारे में कुछ नहीं बताता।"
+      }
+    ],
+    "locks": [
+      {
+        "title": "तर्क समझाएँ",
+        "q": "सुराग 4 के अनुसार, सुलेमान का परीक्षण काम करता है क्योंकि…",
+        "reason": "सुराग 4 तर्क को समझाता है: असली माँ की प्रतिक्रिया — बच्चे को बचाने के लिए अपना दावा छोड़ना — स्वयं प्रमाण है। परीक्षण इस तरह से डिज़ाइन किया गया है कि केवल सत्य बोलने वाला उस तरह से प्रतिक्रिया करे।",
+        "options": [
+          "केवल असली माँ बच्चे को नुकसान देखने से बेहतर उसे खोना पसंद करेगी, इसलिए उसकी प्रतिक्रिया ही साक्ष्य है",
+          "राजा के पास दो गवाह थे जिन्होंने असली माँ की पहचान की",
+          "हाथीदाँत और सोने के सिंहासन ने सुलेमान को न्याय करने की दैवीय शक्ति दी"
+        ]
+      },
+      {
+        "title": "शैली मिश्रण का नाम लें",
+        "q": "सुराग 1 कहता है कि यह अंश एक कथा है जो किसी और चीज़ के रूप में संरचित है — एक प्रकार की तर्क-पहेली। यह किस दो-शब्द वाक्यांश का उपयोग करता है?",
+        "reason": "सुराग 1 अंश को «एक कहानी में अंतर्निहित तर्क-पहेली» के रूप में वर्णित करता है — एक कथा जो तार्किक तर्क की तरह काम करती है। इस मिश्रण की पहचान करना बताता है कि दृश्य उस तरह से क्यों पढ़ा जाता है।",
+        "answer": ["तर्क-पहेली", "तार्किक तर्क"]
+      },
+      {
+        "title": "तर्क के चरणों को क्रमबद्ध करें",
+        "q": "सुलेमान के तर्क के तीन कदमों को उस क्रम में टैप करें जिस क्रम में वे होते हैं।",
+        "reason": "तर्क अनिर्णीत समस्या (सुराग 2) से सुलेमान के डिज़ाइन किए गए परीक्षण (सुराग 3) से उस प्रतिक्रिया तक जाता है जो सत्य सिद्ध करती है (सुराग 4)। इन चरणों को क्रमबद्ध करना दिखाता है कि तर्क कैसे तार्किक रूप से संरचित है।",
+        "pads": [
+          "💡 प्रतिक्रिया सत्य प्रकट करती है",
+          "🗡️ बच्चे को विभाजित करने का प्रस्ताव",
+          "🍼 अनिर्णीत विवाद"
+        ]
+      },
+      {
+        "title": "वास्तविक विश्लेषणात्मक साक्ष्य खोजें",
+        "q": "हर उस वस्तु को चिह्नित करें जो बताती है कि सुलेमान का परीक्षण तर्क या वक्तृत्व के रूप में कैसे काम करता है। सच लेकिन विषय से परे तथ्य को छोड़ें।",
+        "reason": "सिंहासन का वर्णन 1 राजा का एक सच्चा विवरण है लेकिन तार्किक परीक्षण के निर्माण से कोई संबंध नहीं है। तीनों मजबूत वस्तुएँ प्रत्येक तर्क के डिज़ाइन में एक कदम समझाती हैं।",
+        "items": [
+          "परीक्षण ऐसी प्रतिक्रिया उत्पन्न करने के लिए डिज़ाइन किया गया है जो केवल सत्य बोलने वाले के पास होगी",
+          "सुलेमान का सिंहासन हाथीदाँत और सोने का था जिसमें बारह सिंह की मूर्तियाँ थीं",
+          "केवल गवाही से विवाद हल करना असंभव था — कोई गवाह नहीं",
+          "माँ की भावनात्मक प्रतिक्रिया तर्क में साक्ष्य बन जाती है"
+        ]
+      }
+    ]
+  },
+  "ur": {
+    "chrome": {
+      "h1": "سلیمان کا فیصلہ: دلیل اور منطق",
+      "sub": "دو عورتیں ایک ہی بچے پر دعویٰ کرتی ہیں۔ ایک بادشاہ ایک چونکا دینے والا آزمائش تجویز کرتا ہے۔ مطالعہ کریں کہ یہ منظر ایک دلیل کے طور پر کیسے بنایا گیا ہے — ایک منطقی پہیلی جو سچ کو خود ظاہر ہونے پر مجبور کرنے کے لیے ڈیزائن کی گئی ہے۔",
+      "briefH": "آزمائش کو ایک دلیل کے طور پر پڑھیں",
+      "briefP": "آپ سلیمان کے فیصلے (سلاطین اول) کا بطور خطابت اور منطق تجزیہ کر رہے ہیں: کس طرح ایک ذہانت سے ڈیزائن کردہ آزمائش سچ کو ابھرنے پر مجبور کرتی ہے۔ ہر جواب اشاروں سے آنا چاہیے — کسی بیرونی علم کی ضرورت نہیں۔",
+      "winStamp": "منطق ثابت ہوئی",
+      "winH": "آپ نے سلیمان کے فیصلے کو ایک خطیب کی طرح پڑھا!",
+      "winP": "آپ نے صنف کا نام لیا، آزمائش کی منطق سمجھائی، خطابتی تکنیک کی نشاندہی کی، اور بھٹکاوے کو پکڑا — یہ تجزیاتی مطالعہ ہے۔"
+    },
+    "clues": [
+      {
+        "nm": "صنف",
+        "title": "یہ کس قسم کا متن ہے؟",
+        "body": "سلاطین اول کا یہ اقتباس ایک روایت ہے — ایک مختصر کہانی — لیکن یہ ایک منطقی دلیل کے طور پر مرتب ہے۔ منظر ایک مسئلہ پیش کرتا ہے (دو عورتیں، ایک دعویٰ)، ایک آزمائش (سلیمان کی تجویز)، اور ایک ثبوت (ایک عورت کا ردِّعمل سچ ظاہر کرتا ہے)۔ یہ ایک کہانی میں سمائی ہوئی منطقی پہیلی کی طرح پڑھی جاتی ہے۔"
+      },
+      {
+        "nm": "مسئلہ",
+        "title": "ایک ناقابلِ حل تنازعہ",
+        "body": "دو عورتیں دونوں ایک زندہ بچے کی ماں ہونے کا دعویٰ کرتی ہیں۔ کوئی گواہ نہیں۔ بادشاہ سلیمان صرف گواہی سے نہیں جان سکتے کہ کون سچ بول رہی ہے — دونوں عورتیں ایک ہی بات کہتی ہیں۔ تنازعہ ناقابلِ حل لگتا ہے۔"
+      },
+      {
+        "nm": "آزمائش",
+        "title": "سلیمان کی تجویز",
+        "body": "سلیمان تلوار لانے کا حکم دیتے ہیں اور بچے کو دو حصوں میں کاٹنے کی تجویز کرتے ہیں، ہر عورت کو آدھا دیتے ہوئے۔ تجویز جان بوجھ کر انتہائی ہے — یہ اس لیے ڈیزائن نہیں کی گئی کہ اسے عملی جامہ پہنایا جائے، بلکہ اس لیے کہ ایک ایسا ردِّعمل مجبور کیا جائے جو ظاہر کرے کہ کون سچ بول رہی ہے۔"
+      },
+      {
+        "nm": "منطق",
+        "title": "آزمائش کیوں کام کرتی ہے",
+        "body": "اصلی ماں فوری طور پر اپنا دعویٰ چھوڑ دیتی ہے، کہتے ہوئے: «بچہ اسے دے دو — اسے مت مارو۔» دوسری عورت تقسیم پر راضی ہو جاتی ہے۔ سلیمان کی منطق: صرف اصلی ماں بچے کو نقصان پہنچتے دیکھنے سے بہتر اسے کھونا پسند کرے گی۔ جذباتی ردِّعمل ثبوت بن جاتا ہے۔"
+      },
+      {
+        "nm": "ایک تعلق",
+        "title": "آزمائش کے ذریعے سچ کو مجبور کرنا",
+        "body": "سلیمان کے فیصلے کی ساخت — ایسی صورتحال ڈیزائن کرنا جہاں صرف سچ بولنے والا ایک خاص طریقے سے جواب دے — منطق اور قانون میں ظاہر ہوتی ہے۔ ادب میں، شرلاک ہولمز بار بار اس تکنیک کو استعمال کرتے ہیں: ایک منظرنامہ ترتیب دیں اور دیکھیں کہ کون ظاہر کرنے والے طریقے سے ردِّعمل کرتا ہے۔"
+      },
+      {
+        "nm": "تخت کی حقیقت",
+        "title": "سچ، لیکن موضوع سے ہٹ کر",
+        "body": "سلاطین اول کے مطابق، سلیمان کا تخت ہاتھی دانت سے بنا تھا اور سونے سے ملمع کیا گیا تھا، چھ سیڑھیوں اور ہر طرف بارہ شیروں کے مجسموں کے ساتھ — شاہی دولت کی ایک تفصیلی تفصیل۔ یہ متن میں موجود ہے، لیکن یہ ہمیں سلیمان کے منطقی آزمائش کی تعمیر کے بارے میں کچھ نہیں بتاتا۔"
+      }
+    ],
+    "locks": [
+      {
+        "title": "منطق سمجھائیں",
+        "q": "اشارہ 4 کے مطابق، سلیمان کی آزمائش کام کرتی ہے کیونکہ…",
+        "reason": "اشارہ 4 منطق کی وضاحت کرتا ہے: اصلی ماں کا ردِّعمل — بچے کو بچانے کے لیے اپنا دعویٰ چھوڑنا — خود ہی ثبوت ہے۔ آزمائش اس طرح ڈیزائن کی گئی ہے کہ صرف سچ بولنے والا اس طرح ردِّعمل دے۔",
+        "options": [
+          "صرف اصلی ماں بچے کو نقصان پہنچتے دیکھنے سے بہتر اسے کھونا پسند کرے گی، اس لیے اس کا ردِّعمل ثبوت ہے",
+          "بادشاہ کے پاس دو گواہ تھے جنہوں نے اصلی ماں کی شناخت کی",
+          "ہاتھی دانت اور سونے کے تخت نے سلیمان کو فیصلہ کرنے کی الہٰی اتھارٹی دی"
+        ]
+      },
+      {
+        "title": "صنف کے ملاپ کا نام لیں",
+        "q": "اشارہ 1 کہتا ہے کہ یہ اقتباس ایک روایت ہے جو کسی اور چیز کے طور پر مرتب ہے — ایک قسم کی استدلالی پہیلی۔ یہ کون سا دو الفاظ کا جملہ استعمال کرتا ہے؟",
+        "reason": "اشارہ 1 اقتباس کو «ایک کہانی میں سمائی ہوئی منطقی پہیلی» کے طور پر بیان کرتا ہے — ایک روایت جو منطقی دلیل کی طرح کام کرتی ہے۔ اس ملاپ کی شناخت وضاحت کرتی ہے کہ منظر اس طرح کیوں پڑھا جاتا ہے۔",
+        "answer": ["منطقی پہیلی", "منطقی دلیل"]
+      },
+      {
+        "title": "دلیل کے مراحل کو ترتیب دیں",
+        "q": "سلیمان کی دلیل کے تین اقدامات کو اس ترتیب میں ٹیپ کریں جس میں وہ ہوتے ہیں۔",
+        "reason": "دلیل ناقابلِ حل مسئلے (اشارہ 2) سے سلیمان کی ڈیزائن کردہ آزمائش (اشارہ 3) تک اس ردِّعمل تک جاتی ہے جو سچ ثابت کرتا ہے (اشارہ 4)۔ ان مراحل کو ترتیب دینا ظاہر کرتا ہے کہ دلیل کس طرح منطقی طور پر مرتب ہے۔",
+        "pads": [
+          "💡 ردِّعمل سچ ظاہر کرتا ہے",
+          "🗡️ بچے کو تقسیم کرنے کی تجویز",
+          "🍼 ناقابلِ حل تنازعہ"
+        ]
+      },
+      {
+        "title": "حقیقی تجزیاتی ثبوت تلاش کریں",
+        "q": "ہر اس چیز کو نشان لگائیں جو وضاحت کرے کہ سلیمان کی آزمائش بطور منطق یا خطابت کیسے کام کرتی ہے۔ سچ لیکن موضوع سے ہٹے ہوئے حقیقت کو چھوڑ دیں۔",
+        "reason": "تخت کی تفصیل سلاطین اول کی ایک سچی تفصیل ہے لیکن منطقی آزمائش کی تعمیر سے اس کا کوئی تعلق نہیں۔ تینوں مضبوط عناصر میں سے ہر ایک دلیل کے ڈیزائن میں ایک قدم سمجھاتا ہے۔",
+        "items": [
+          "آزمائش ایسا ردِّعمل پیدا کرنے کے لیے ڈیزائن کی گئی ہے جو صرف سچ بولنے والے کے پاس ہوگا",
+          "سلیمان کا تخت ہاتھی دانت اور سونے سے بنا تھا جس میں بارہ شیروں کے مجسمے تھے",
+          "صرف گواہی سے تنازعہ حل کرنا ناممکن تھا — کوئی گواہ نہیں",
+          "ماں کا جذباتی ردِّعمل دلیل میں ثبوت بن جاتا ہے"
+        ]
+      }
+    ]
+  },
+  "zh": {
+    "chrome": {
+      "h1": "所罗门的审判：论证与逻辑",
+      "sub": "两名女子争夺同一个孩子。一位国王提出了一个令人震惊的测试。研究这个场景如何作为一个论证被构建——一个旨在迫使真相自我揭示的逻辑谜题。",
+      "briefH": "将测试作为论证来阅读",
+      "briefP": "你正在分析所罗门的审判（列王纪上）作为修辞学和逻辑学：一个巧妙设计的测试如何迫使真相浮现。每个答案都必须来自线索——不需要外部知识。",
+      "winStamp": "逻辑已证明",
+      "winH": "你像修辞学家一样阅读了所罗门的审判！",
+      "winP": "你命名了文体类型，解释了测试的逻辑，识别了修辞技巧，并发现了干扰项——这就是分析性阅读。"
+    },
+    "clues": [
+      {
+        "nm": "文体类型",
+        "title": "这是什么类型的文本？",
+        "body": "列王纪上的这段文字是一个叙事——一个短篇故事——但它被构建为一个逻辑论证。场景呈现了一个问题（两名女子，一个主张）、一个测试（所罗门的提议）和一个证明（一名女子的反应揭示了真相）。它读起来像是嵌入故事中的逻辑谜题。"
+      },
+      {
+        "nm": "问题",
+        "title": "无法解决的争端",
+        "body": "两名女子都声称是一个活婴的母亲。没有证人。所罗门王仅凭证词无法得知谁在说真话——两名女子说的是同一件事。这场争端似乎无法解决。"
+      },
+      {
+        "nm": "测试",
+        "title": "所罗门的提议",
+        "body": "所罗门命人取来一把剑，提议将婴儿劈成两半，各给一名女子一半。这个提议故意极端——它的设计不是为了付诸实施，而是为了迫使一种反应，揭示谁在说真话。"
+      },
+      {
+        "nm": "逻辑",
+        "title": "测试为何奏效",
+        "body": "真正的母亲立即放弃了她的主张，说：「把孩子给她——不要杀它。」另一名女子同意分割。所罗门的逻辑：只有真正的母亲宁愿失去孩子也不愿看到它受伤。情感反应本身成为证据。"
+      },
+      {
+        "nm": "一个联系",
+        "title": "通过测试迫使真相",
+        "body": "所罗门审判的结构——设计一种情境，使得只有说真话的人才会以某种方式回应——出现在逻辑和法律中。在文学中，夏洛克·福尔摩斯反复使用这种技巧：安排一个场景并观察谁以揭示性的方式做出反应。"
+      },
+      {
+        "nm": "宝座事实",
+        "title": "真实，但与主题无关",
+        "body": "根据列王纪上，所罗门的宝座由象牙制成并覆以黄金，有六级台阶，两侧各有十二头狮子雕像——对皇家财富的详细描述。这在文本中有记载，但它没有告诉我们所罗门逻辑测试是如何构建的。"
+      }
+    ],
+    "locks": [
+      {
+        "title": "解释逻辑",
+        "q": "根据线索4，所罗门的测试之所以奏效，是因为……",
+        "reason": "线索4解释了逻辑：真正母亲的反应——放弃主张以拯救孩子——本身就是证明。测试的设计使得只有说真话的人才会如此回应。",
+        "options": [
+          "只有真正的母亲宁愿失去孩子也不愿看到它受伤，所以她的反应就是证据",
+          "国王有两名证人确认了真正的母亲",
+          "象牙和黄金宝座赋予了所罗门审判的神圣权威"
+        ]
+      },
+      {
+        "title": "命名文体混合",
+        "q": "线索1说这段文字是一个叙事，被构建为另一种东西——一种推理谜题。它使用了什么两字词组？",
+        "reason": "线索1将这段文字描述为「嵌入故事中的逻辑谜题」——一个像逻辑论证一样运作的叙事。识别这种混合解释了为什么这个场景读起来是那样的。",
+        "answer": ["逻辑谜题", "逻辑论证"]
+      },
+      {
+        "title": "排列论证步骤的顺序",
+        "q": "按照所罗门论证中三个步骤发生的顺序点击它们。",
+        "reason": "论证从无法解决的问题（线索2）到所罗门设计的测试（线索3）再到证明真相的反应（线索4）。排列这些步骤显示了论证是如何在逻辑上被构建的。",
+        "pads": [
+          "💡 反应揭示真相",
+          "🗡️ 提议将婴儿一分为二",
+          "🍼 无法解决的争端"
+        ]
+      },
+      {
+        "title": "找出真正的分析证据",
+        "q": "勾选每一个解释所罗门测试如何作为逻辑或修辞发挥作用的项目。排除真实但与主题无关的事实。",
+        "reason": "宝座描述是列王纪上的真实细节，但与逻辑测试的构建毫无关系。三个强有力的项目各自解释了论证设计中的一个步骤。",
+        "items": [
+          "测试被设计为产生只有说真话的人才会有的反应",
+          "所罗门的宝座由象牙和黄金制成，两侧有十二头狮子雕像",
+          "仅凭证词无法解决争端——没有证人",
+          "母亲的情感反应成为论证中的证据"
+        ]
+      }
+    ]
+  }
+}

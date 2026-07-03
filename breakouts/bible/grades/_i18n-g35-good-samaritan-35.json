@@ -1,0 +1,514 @@
+{
+  "es": {
+    "chrome": {
+      "h1": "El buen samaritano",
+      "sub": "Una historia corta que Jesús cuenta en el Evangelio de Lucas. ¿Quién cuenta verdaderamente como prójimo? Lee las pistas, encuentra la evidencia y prueba tu respuesta con el texto.",
+      "briefH": "Descubre quién ayuda — y qué enseña eso",
+      "briefP": "Estás estudiando esta parábola como literatura — una historia corta con una gran idea dentro. Tu trabajo es notar quién actúa, quién no, y qué enseña la historia sobre los vecinos. Usa solo las pistas para respaldar tus respuestas.",
+      "winStamp": "PRÓJIMO ENCONTRADO",
+      "winH": "¡Resolviste la parábola!",
+      "winP": "Encontraste el tema, reuniste evidencia real y nombraste la fuente. Así es exactamente como los lectores analizan una historia corta con una lección dentro."
+    },
+    "clues": [
+      {
+        "nm": "El camino",
+        "title": "Un hombre herido",
+        "body": "En la parábola contada por Jesús en el Evangelio de Lucas, un hombre viaja por el camino de Jerusalén a Jericó cuando unos ladrones lo atacan, lo golpean y lo dejan gravemente herido al costado del camino."
+      },
+      {
+        "nm": "El sacerdote",
+        "title": "El primero que pasa",
+        "body": "Un sacerdote — un líder religioso — baja por el camino y ve al hombre herido. La historia dice que el sacerdote cruza al otro lado y sigue caminando. No se detiene a ayudar."
+      },
+      {
+        "nm": "El levita",
+        "title": "El segundo que pasa",
+        "body": "Luego pasa un levita — otra figura religiosa. Él también ve al hombre herido, cruza al otro lado y sigue su camino sin ayudar."
+      },
+      {
+        "nm": "El samaritano",
+        "title": "El ayudante inesperado",
+        "body": "Un samaritano — alguien de un grupo con el que muchas personas de esa época no se llevaban bien — pasa después. Ve al hombre herido, se detiene, le venda las heridas, lo pone en su propia montura, lo lleva a una posada y paga por su cuidado. La historia convierte al forastero en el héroe."
+      },
+      {
+        "nm": "La fuente",
+        "title": "Dónde vive esta historia",
+        "body": "Esta parábola aparece en el Evangelio de Lucas, uno de los cuatro Evangelios del Nuevo Testamento de la Biblia cristiana. Se cuenta como una historia que Jesús usa para responder una pregunta: «¿Quién es mi prójimo?»"
+      },
+      {
+        "nm": "Dato del camino",
+        "title": "Verdadero, pero fuera de tema",
+        "body": "El antiguo camino de Jerusalén a Jericó descendía unos 1.000 metros de elevación a lo largo de aproximadamente 27 kilómetros. Es un dato verdadero sobre geografía — pero no es lo que la parábola enseña sobre los vecinos y el ayudar."
+      }
+    ],
+    "locks": [
+      {
+        "title": "Nombra el tema",
+        "q": "¿Qué enseña PRINCIPALMENTE la parábola del buen samaritano?",
+        "reason": "Las pistas 2, 3 y 4 muestran que los líderes religiosos pasan de largo mientras el samaritano — un forastero — es quien ayuda. La historia responde «¿quién es el prójimo?» mostrando la acción, no la pertenencia a un grupo.",
+        "options": [
+          "Un verdadero prójimo es quien realmente se detiene y ayuda — incluso un forastero",
+          "Los caminos largos son siempre peligrosos y la gente no debería viajar sola",
+          "Los líderes religiosos son siempre las mejores personas a quienes llamar para pedir ayuda"
+        ]
+      },
+      {
+        "title": "Reúne la evidencia",
+        "q": "Marca cada pista que sea EVIDENCIA SÓLIDA del tema «un verdadero prójimo es cualquiera que se detenga a ayudar». Deja fuera el dato verdadero pero fuera de tema.",
+        "reason": "El dato sobre la elevación es geografía verdadera pero no nos dice nada sobre quién es el prójimo. Las tres pistas sólidas muestran quién ayuda y quién no — esa es la evidencia en la que realmente se basa la historia.",
+        "items": [
+          "El sacerdote ve al hombre herido pero cruza al otro lado",
+          "El samaritano se detiene, venda las heridas y paga el cuidado del hombre herido",
+          "El camino de Jerusalén a Jericó desciende 1.000 metros de elevación",
+          "El levita también pasa de largo sin ayudar"
+        ]
+      },
+      {
+        "title": "Nombra la fuente",
+        "q": "La pista 5 nombra el Evangelio del que proviene esta parábola. Escribe el nombre de ese Evangelio.",
+        "reason": "La pista 5 nos dice que la parábola está en el Evangelio de Lucas. Nombrar la fuente es parte de estudiar cualquier texto de manera justa — nos ayuda a saber qué tipo de escritura estamos leyendo.",
+        "answer": [
+          "lucas",
+          "el evangelio de lucas",
+          "evangelio de lucas"
+        ]
+      },
+      {
+        "title": "Ordena a los que pasan",
+        "q": "Toca las tres personas que bajan por el camino en el ORDEN en que la historia los presenta.",
+        "reason": "La historia los presenta en este orden: el sacerdote, luego el levita, luego el samaritano. El orden importa — el lector espera un patrón de pasar de largo, lo que hace que la ayuda del samaritano sea aún más llamativa.",
+        "pads": [
+          "🧑‍⚖️ El levita",
+          "🫂 El samaritano",
+          "🚶 El sacerdote"
+        ]
+      }
+    ]
+  },
+  "vi": {
+    "chrome": {
+      "h1": "Người Samaritanô nhân lành",
+      "sub": "Một câu chuyện ngắn Chúa Giê-su kể trong sách Phúc âm Lu-ca. Ai thực sự là người hàng xóm? Đọc các manh mối, tìm bằng chứng và chứng minh câu trả lời từ văn bản.",
+      "briefH": "Tìm ai giúp đỡ — và điều đó dạy gì",
+      "briefP": "Bạn đang học câu chuyện này như một tác phẩm văn học — một câu chuyện ngắn chứa đựng một ý tưởng lớn. Nhiệm vụ của bạn là chú ý xem ai hành động, ai không, và câu chuyện dạy gì về người hàng xóm. Chỉ dùng các manh mối để hỗ trợ câu trả lời.",
+      "winStamp": "ĐÃ TÌM THẤY NGƯỜI HÀNG XÓM",
+      "winH": "Bạn đã giải mã dụ ngôn!",
+      "winP": "Bạn đã tìm ra chủ đề, thu thập bằng chứng thực sự và nêu tên nguồn. Đó chính xác là cách người đọc phân tích một câu chuyện ngắn có bài học bên trong."
+    },
+    "clues": [
+      {
+        "nm": "Con đường",
+        "title": "Một người bị thương",
+        "body": "Trong dụ ngôn do Chúa Giê-su kể trong Phúc âm Lu-ca, một người đàn ông đang đi trên con đường từ Giê-ru-sa-lem đến Giê-ri-cô thì bị cướp tấn công, đánh đập và bỏ lại bên vệ đường trong tình trạng bị thương nặng."
+      },
+      {
+        "nm": "Thầy tế lễ",
+        "title": "Người qua đường đầu tiên",
+        "body": "Một thầy tế lễ — một lãnh đạo tôn giáo — đi xuống con đường và nhìn thấy người bị thương. Câu chuyện kể rằng thầy tế lễ băng qua phía bên kia và tiếp tục đi. Ông ta không dừng lại để giúp đỡ."
+      },
+      {
+        "nm": "Người Lê-vi",
+        "title": "Người qua đường thứ hai",
+        "body": "Tiếp theo, một người Lê-vi — một nhân vật tôn giáo khác — đi qua. Anh ta cũng nhìn thấy người bị thương, băng qua phía bên kia và tiếp tục đi mà không giúp đỡ."
+      },
+      {
+        "nm": "Người Samaritanô",
+        "title": "Người giúp đỡ bất ngờ",
+        "body": "Một người Samaritanô — ai đó từ một nhóm mà nhiều người thời đó không hòa thuận — đi qua tiếp theo. Anh ta nhìn thấy người bị thương, dừng lại, băng bó vết thương, đặt người đó lên con vật của mình, đưa đến một quán trọ và trả tiền chăm sóc. Câu chuyện biến người ngoài thành anh hùng."
+      },
+      {
+        "nm": "Nguồn gốc",
+        "title": "Câu chuyện này ở đâu",
+        "body": "Dụ ngôn này xuất hiện trong Phúc âm Lu-ca, một trong bốn sách Phúc âm trong Tân Ước của Kinh Thánh Cơ Đốc giáo. Nó được kể như một câu chuyện Chúa Giê-su dùng để trả lời câu hỏi: 'Ai là người hàng xóm của tôi?'"
+      },
+      {
+        "nm": "Sự thật về con đường",
+        "title": "Đúng, nhưng lạc đề",
+        "body": "Con đường cổ đại từ Giê-ru-sa-lem đến Giê-ri-cô hạ xuống khoảng 1.000 mét độ cao trong khoảng 27 km. Đó là sự thật về địa lý — nhưng không phải điều dụ ngôn dạy về người hàng xóm và sự giúp đỡ."
+      }
+    ],
+    "locks": [
+      {
+        "title": "Đặt tên chủ đề",
+        "q": "Dụ ngôn Người Samaritanô nhân lành dạy gì RÕ RÀNG NHẤT?",
+        "reason": "Các manh mối 2, 3 và 4 cho thấy các lãnh đạo tôn giáo đi qua trong khi người Samaritanô — một người ngoài — là người giúp đỡ. Câu chuyện trả lời 'ai là người hàng xóm?' bằng cách cho thấy hành động, không phải thành viên nhóm.",
+        "options": [
+          "Người hàng xóm thực sự là người thực sự dừng lại và giúp đỡ — dù là người ngoài",
+          "Những con đường dài luôn nguy hiểm và mọi người không nên đi một mình",
+          "Các lãnh đạo tôn giáo luôn là những người tốt nhất để gọi giúp đỡ"
+        ]
+      },
+      {
+        "title": "Thu thập bằng chứng",
+        "q": "Đánh dấu mọi manh mối là BẰNG CHỨNG MẠNH cho chủ đề 'người hàng xóm thực sự là bất kỳ ai dừng lại để giúp đỡ.' Bỏ qua sự thật đúng nhưng lạc đề.",
+        "reason": "Sự thật về độ cao là địa lý đúng nhưng không cho chúng ta biết gì về người hàng xóm là ai. Ba manh mối mạnh đều cho thấy ai giúp đỡ và ai không — đó là bằng chứng mà câu chuyện thực sự dựa vào.",
+        "items": [
+          "Thầy tế lễ nhìn thấy người bị thương nhưng băng qua phía bên kia",
+          "Người Samaritanô dừng lại, băng bó và trả tiền chăm sóc người bị thương",
+          "Con đường từ Giê-ru-sa-lem đến Giê-ri-cô hạ xuống 1.000 mét độ cao",
+          "Người Lê-vi cũng đi qua mà không giúp đỡ"
+        ]
+      },
+      {
+        "title": "Đặt tên nguồn",
+        "q": "Manh mối 5 nêu tên sách Phúc âm mà dụ ngôn này đến từ đó. Gõ tên sách Phúc âm đó.",
+        "reason": "Manh mối 5 cho chúng ta biết dụ ngôn nằm trong Phúc âm Lu-ca. Đặt tên nguồn là một phần của việc nghiên cứu bất kỳ văn bản nào một cách công bằng — nó giúp chúng ta biết chúng ta đang đọc loại văn bản nào.",
+        "answer": [
+          "lu-ca",
+          "luca",
+          "phúc âm lu-ca"
+        ]
+      },
+      {
+        "title": "Sắp xếp thứ tự những người qua đường",
+        "q": "Chạm vào ba người đi xuống con đường theo THỨ TỰ câu chuyện giới thiệu họ.",
+        "reason": "Câu chuyện giới thiệu họ theo thứ tự này: Thầy tế lễ, rồi người Lê-vi, rồi người Samaritanô. Thứ tự quan trọng — người đọc mong đợi một kiểu bỏ qua, điều này làm cho sự giúp đỡ của người Samaritanô càng nổi bật hơn.",
+        "pads": [
+          "🧑‍⚖️ Người Lê-vi",
+          "🫂 Người Samaritanô",
+          "🚶 Thầy tế lễ"
+        ]
+      }
+    ]
+  },
+  "ar": {
+    "chrome": {
+      "h1": "السامري الصالح",
+      "sub": "قصة قصيرة يرويها يسوع في إنجيل لوقا. من هو الجار الحقيقي؟ اقرأ الأدلة وابحث عن الشواهد وأثبت إجابتك من النص.",
+      "briefH": "اكتشف من يساعد — وما الذي يُعلِّمه ذلك",
+      "briefP": "تدرس هذا النص بوصفه أدبًا — قصة قصيرة تحمل فكرة كبيرة بداخلها. مهمتك أن تلاحظ من يتصرف ومن لا يتصرف، وما تعلِّمه القصة عن الجيران. استخدم الأدلة وحدها لتدعيم إجاباتك.",
+      "winStamp": "وجدتَ الجار",
+      "winH": "لقد فككتَ رموز المَثَل!",
+      "winP": "وجدتَ الموضوع وجمعتَ أدلة حقيقية وسمَّيتَ المصدر. هذه بالضبط هي طريقة تحليل القراء لقصة قصيرة تحمل درسًا بداخلها."
+    },
+    "clues": [
+      {
+        "nm": "الطريق",
+        "title": "رجل مجروح",
+        "body": "في المَثَل الذي رواه يسوع في إنجيل لوقا، كان رجل يسافر على الطريق من أورشليم إلى أريحا حين اعترضه قطاع طرق وضربوه وتركوه مُثخَنًا بالجراح على جانب الطريق."
+      },
+      {
+        "nm": "الكاهن",
+        "title": "أول المارة",
+        "body": "جاء كاهن — وهو قائد ديني — ينزل في ذلك الطريق فرأى الرجل المجروح. تقول القصة إن الكاهن عبر إلى الجانب الآخر وواصل سيره، ولم يتوقف للمساعدة."
+      },
+      {
+        "nm": "اللاوي",
+        "title": "ثاني المارة",
+        "body": "بعد ذلك مرَّ لاوي — شخصية دينية أخرى. رأى هو الآخر الرجل المجروح فعبر إلى الجانب الآخر وسار دون أن يساعد."
+      },
+      {
+        "nm": "السامري",
+        "title": "المساعد غير المتوقع",
+        "body": "مرَّ بعد ذلك سامري — من جماعة كانت لا تتوافق مع كثير من الناس في ذلك الزمان. رأى الرجل المجروح فوقف وضمَّد جراحه وأركبه على دابته وأحضره إلى نُزُل ودفع ثمن رعايته. تجعل القصة من الغريب بطلًا للحدث."
+      },
+      {
+        "nm": "المصدر",
+        "title": "أين تعيش هذه القصة",
+        "body": "يرد هذا المَثَل في إنجيل لوقا، أحد الأناجيل الأربعة في العهد الجديد من الكتاب المقدس المسيحي. يُروى بوصفه قصة استخدمها يسوع للإجابة عن سؤال: «من هو جاري؟»"
+      },
+      {
+        "nm": "حقيقة عن الطريق",
+        "title": "صحيح لكنه خارج الموضوع",
+        "body": "كان الطريق القديم من أورشليم إلى أريحا يهبط نحو ألف متر في الارتفاع على مسافة تقارب سبعة وعشرين كيلومترًا. هذه حقيقة جغرافية صحيحة، لكنها ليست ما يُعلِّمه المَثَل عن الجيران والمساعدة."
+      }
+    ],
+    "locks": [
+      {
+        "title": "سمِّ الموضوع",
+        "q": "ما الذي يُعلِّمه مَثَل السامري الصالح بأوضح صورة؟",
+        "reason": "تُظهر الأدلة 2 و3 و4 أن القادة الدينيين مرُّوا دون توقف، بينما السامري — الغريب — هو من ساعد. تجيب القصة على سؤال «من هو الجار؟» بإبراز الفعل لا الانتماء إلى مجموعة.",
+        "options": [
+          "الجار الحقيقي هو من يتوقف فعلًا ويساعد — حتى لو كان غريبًا",
+          "الطرق الطويلة خطرة دائمًا ولا ينبغي للناس السفر منفردين",
+          "القادة الدينيون هم دائمًا أفضل من يُستعان بهم للمساعدة"
+        ]
+      },
+      {
+        "title": "اجمع الأدلة",
+        "q": "ضع علامة على كل دليل يمثِّل شاهدًا قويًّا على موضوع «الجار الحقيقي هو كل من يتوقف للمساعدة». استبعد الحقيقة الصحيحة الخارجة عن الموضوع.",
+        "reason": "حقيقة الارتفاع جغرافية صحيحة لكنها لا تخبرنا شيئًا عن معنى الجار. الأدلة الثلاثة القوية تُظهر جميعها من ساعد ومن لم يساعد — وهذا هو الأساس الذي تبني عليه القصة موضوعها.",
+        "items": [
+          "الكاهن يرى الرجل المجروح لكنه يعبر إلى الجانب الآخر",
+          "السامري يتوقف ويضمِّد الجراح ويدفع ثمن رعاية الرجل المجروح",
+          "الطريق من أورشليم إلى أريحا يهبط ألف متر في الارتفاع",
+          "اللاوي أيضًا يمر دون أن يساعد"
+        ]
+      },
+      {
+        "title": "سمِّ المصدر",
+        "q": "يسمِّي الدليل الخامس الإنجيل الذي جاء منه هذا المَثَل. اكتب اسم ذلك الإنجيل.",
+        "reason": "يخبرنا الدليل الخامس بأن المَثَل موجود في إنجيل لوقا. تسمية المصدر جزء من دراسة أي نص بشكل منصف — يساعدنا على معرفة نوع الكتابة التي نقرأها.",
+        "answer": [
+          "لوقا",
+          "إنجيل لوقا"
+        ]
+      },
+      {
+        "title": "رتِّب المارة بالترتيب",
+        "q": "اضغط على الأشخاص الثلاثة الذين نزلوا في الطريق بالترتيب الذي تقدِّمهم فيه القصة.",
+        "reason": "تقدِّمهم القصة بهذا الترتيب: الكاهن ثم اللاوي ثم السامري. الترتيب مهم — يتوقع القارئ نمطًا من التجاوز، مما يجعل مساعدة السامري أكثر إبهارًا.",
+        "pads": [
+          "🧑‍⚖️ اللاوي",
+          "🫂 السامري",
+          "🚶 الكاهن"
+        ]
+      }
+    ]
+  },
+  "hi": {
+    "chrome": {
+      "h1": "भला सामरी",
+      "sub": "एक छोटी कहानी जो यीशु ने लूका के सुसमाचार में सुनाई। सच्चा पड़ोसी कौन है? सुराग पढ़ो, सबूत खोजो और अपने उत्तर को पाठ से साबित करो।",
+      "briefH": "पता लगाओ कौन मदद करता है — और वह क्या सिखाता है",
+      "briefP": "तुम इसे साहित्यिक दृष्टान्त के रूप में पढ़ रहे हो — एक छोटी कहानी जिसके अंदर एक बड़ा विचार है। तुम्हारा काम यह देखना है कि कौन कार्य करता है, कौन नहीं, और कहानी पड़ोसियों के बारे में क्या सिखाती है। अपने उत्तरों का समर्थन करने के लिए केवल सुरागों का उपयोग करो।",
+      "winStamp": "पड़ोसी मिल गया",
+      "winH": "तुमने दृष्टान्त को सुलझा लिया!",
+      "winP": "तुमने विषय खोजा, असली सबूत इकट्ठा किए और स्रोत का नाम बताया। इसी तरह पाठक एक छोटी कहानी का विश्लेषण करते हैं जिसके अंदर एक पाठ होता है।"
+    },
+    "clues": [
+      {
+        "nm": "सड़क",
+        "title": "एक घायल आदमी",
+        "body": "लूका के सुसमाचार में यीशु द्वारा सुनाए गए दृष्टान्त में, एक आदमी यरूशलेम से यरीहो जाने वाली सड़क पर यात्रा कर रहा था कि डाकुओं ने उस पर हमला किया, उसे पीटा और सड़क के किनारे बुरी तरह घायल छोड़ दिया।"
+      },
+      {
+        "nm": "याजक",
+        "title": "पहला राहगीर",
+        "body": "एक याजक — एक धार्मिक नेता — उस सड़क से नीचे आया और घायल आदमी को देखा। कहानी कहती है कि याजक दूसरी तरफ हो गया और चलता रहा। उसने मदद के लिए रुकने की जहमत नहीं उठाई।"
+      },
+      {
+        "nm": "लेवी",
+        "title": "दूसरा राहगीर",
+        "body": "इसके बाद एक लेवी — एक और धार्मिक व्यक्ति — वहाँ से गुजरा। उसने भी घायल आदमी को देखा, दूसरी तरफ हो गया और बिना मदद किए आगे बढ़ गया।"
+      },
+      {
+        "nm": "सामरी",
+        "title": "अप्रत्याशित सहायक",
+        "body": "इसके बाद एक सामरी — किसी ऐसे समूह का व्यक्ति जिसके साथ उस समय के बहुत से लोगों की नहीं बनती थी — वहाँ से गुजरा। उसने घायल आदमी को देखा, रुका, उसके घावों पर पट्टी बाँधी, उसे अपने जानवर पर बिठाया, एक सराय में ले गया और उसकी देखभाल का खर्च चुकाया। कहानी बाहरी व्यक्ति को नायक बनाती है।"
+      },
+      {
+        "nm": "स्रोत",
+        "title": "यह कहानी कहाँ है",
+        "body": "यह दृष्टान्त लूका के सुसमाचार में आता है, जो ईसाई बाइबल के नए नियम के चार सुसमाचारों में से एक है। यह एक ऐसी कहानी के रूप में सुनाया गया है जिसे यीशु ने एक प्रश्न का उत्तर देने के लिए उपयोग किया: 'मेरा पड़ोसी कौन है?'"
+      },
+      {
+        "nm": "सड़क का तथ्य",
+        "title": "सच, लेकिन विषय से बाहर",
+        "body": "यरूशलेम से यरीहो तक की प्राचीन सड़क लगभग 27 किलोमीटर में करीब 1,000 मीटर की ऊँचाई नीचे उतरती थी। यह एक सच्चा भौगोलिक तथ्य है — लेकिन दृष्टान्त पड़ोसियों और मदद के बारे में जो सिखाता है वह यह नहीं है।"
+      }
+    ],
+    "locks": [
+      {
+        "title": "विषय का नाम बताओ",
+        "q": "भले सामरी का दृष्टान्त सबसे स्पष्ट रूप से क्या सिखाता है?",
+        "reason": "सुराग 2, 3 और 4 दिखाते हैं कि धार्मिक नेता बिना रुके गुजर जाते हैं जबकि सामरी — एक बाहरी व्यक्ति — वह है जो मदद करता है। कहानी 'पड़ोसी कौन है?' का उत्तर कार्य दिखाकर देती है, न कि समूह की सदस्यता दिखाकर।",
+        "options": [
+          "सच्चा पड़ोसी वह है जो वाकई रुककर मदद करे — चाहे वह बाहरी हो",
+          "लंबी सड़कें हमेशा खतरनाक होती हैं और लोगों को अकेले यात्रा नहीं करनी चाहिए",
+          "धार्मिक नेता हमेशा मदद के लिए बुलाने के लिए सबसे अच्छे लोग होते हैं"
+        ]
+      },
+      {
+        "title": "सबूत इकट्ठा करो",
+        "q": "हर उस सुराग पर निशान लगाओ जो 'सच्चा पड़ोसी वह है जो मदद के लिए रुके' विषय के लिए मजबूत सबूत है। सच लेकिन विषय से बाहर वाले तथ्य को छोड़ दो।",
+        "reason": "ऊँचाई का तथ्य सच्ची भूगोल है लेकिन हमें यह नहीं बताता कि पड़ोसी कौन है। तीनों मजबूत सुराग दिखाते हैं कि कौन मदद करता है और कौन नहीं — यही वह सबूत है जिस पर कहानी वास्तव में बनी है।",
+        "items": [
+          "याजक घायल आदमी को देखता है लेकिन दूसरी तरफ हो जाता है",
+          "सामरी रुकता है, पट्टी बाँधता है और घायल आदमी की देखभाल का खर्च चुकाता है",
+          "यरूशलेम से यरीहो की सड़क 1,000 मीटर ऊँचाई से नीचे उतरती है",
+          "लेवी भी बिना मदद किए आगे बढ़ जाता है"
+        ]
+      },
+      {
+        "title": "स्रोत का नाम बताओ",
+        "q": "सुराग 5 उस सुसमाचार का नाम बताता है जिससे यह दृष्टान्त आया है। उस सुसमाचार का नाम लिखो।",
+        "reason": "सुराग 5 हमें बताता है कि दृष्टान्त लूका के सुसमाचार में है। स्रोत का नाम बताना किसी भी पाठ को निष्पक्ष रूप से पढ़ने का हिस्सा है — यह हमें बताता है कि हम किस प्रकार का लेखन पढ़ रहे हैं।",
+        "answer": [
+          "लूका",
+          "लूका का सुसमाचार"
+        ]
+      },
+      {
+        "title": "राहगीरों को क्रम में रखो",
+        "q": "उन तीन लोगों को उस क्रम में छुओ जिस क्रम में कहानी उन्हें प्रस्तुत करती है।",
+        "reason": "कहानी उन्हें इस क्रम में प्रस्तुत करती है: याजक, फिर लेवी, फिर सामरी। क्रम महत्वपूर्ण है — पाठक आगे बढ़ते रहने के एक पैटर्न की उम्मीद करता है, जिससे सामरी की मदद और भी प्रभावशाली बन जाती है।",
+        "pads": [
+          "🧑‍⚖️ लेवी",
+          "🫂 सामरी",
+          "🚶 याजक"
+        ]
+      }
+    ]
+  },
+  "ur": {
+    "chrome": {
+      "h1": "نیک سامری",
+      "sub": "ایک چھوٹی سی کہانی جو یسوع نے لوقا کی انجیل میں سنائی۔ اصل پڑوسی کون ہے؟ اشارے پڑھو، ثبوت تلاش کرو اور متن سے اپنا جواب ثابت کرو۔",
+      "briefH": "معلوم کرو کون مدد کرتا ہے — اور اس سے کیا سبق ملتا ہے",
+      "briefP": "تم اسے ایک ادبی تمثیل کے طور پر پڑھ رہے ہو — ایک مختصر کہانی جس کے اندر ایک بڑا خیال چھپا ہے۔ تمہارا کام یہ دیکھنا ہے کہ کون عمل کرتا ہے، کون نہیں، اور کہانی پڑوسیوں کے بارے میں کیا سکھاتی ہے۔ اپنے جوابوں کی تائید کے لیے صرف اشارے استعمال کرو۔",
+      "winStamp": "پڑوسی مل گیا",
+      "winH": "تم نے تمثیل حل کر لی!",
+      "winP": "تم نے موضوع دریافت کیا، اصل ثبوت اکٹھے کیے اور ماخذ کا نام لیا۔ قاری بالکل اسی طرح ایسی مختصر کہانی کا تجزیہ کرتے ہیں جس کے اندر کوئی سبق ہو۔"
+    },
+    "clues": [
+      {
+        "nm": "سڑک",
+        "title": "ایک زخمی آدمی",
+        "body": "لوقا کی انجیل میں یسوع کی سنائی ہوئی تمثیل میں، ایک آدمی یروشلم سے یریحو جانے والی سڑک پر سفر کر رہا تھا کہ ڈاکوؤں نے اس پر حملہ کیا، اسے مارا پیٹا اور سڑک کے کنارے بری طرح زخمی چھوڑ دیا۔"
+      },
+      {
+        "nm": "کاہن",
+        "title": "پہلا راہگیر",
+        "body": "ایک کاہن — ایک مذہبی رہنما — اس سڑک سے نیچے آیا اور زخمی آدمی کو دیکھا۔ کہانی کہتی ہے کہ کاہن دوسری طرف ہو گیا اور چلتا رہا۔ اس نے مدد کے لیے رکنے کی زحمت نہیں اٹھائی۔"
+      },
+      {
+        "nm": "لاوی",
+        "title": "دوسرا راہگیر",
+        "body": "اس کے بعد ایک لاوی — ایک اور مذہبی شخصیت — وہاں سے گزرا۔ اس نے بھی زخمی آدمی کو دیکھا، دوسری طرف ہو گیا اور بغیر مدد کیے آگے بڑھ گیا۔"
+      },
+      {
+        "nm": "سامری",
+        "title": "غیر متوقع مددگار",
+        "body": "اس کے بعد ایک سامری — کسی ایسے گروہ کا فرد جس سے اس زمانے کے بہت سے لوگوں کی نہیں بنتی تھی — وہاں سے گزرا۔ اس نے زخمی آدمی کو دیکھا، رکا، اس کے زخموں پر پٹی باندھی، اسے اپنے جانور پر بیٹھایا، ایک سرائے میں لے گیا اور اس کی دیکھ بھال کا خرچ ادا کیا۔ کہانی باہری شخص کو ہیرو بناتی ہے۔"
+      },
+      {
+        "nm": "ماخذ",
+        "title": "یہ کہانی کہاں ہے",
+        "body": "یہ تمثیل لوقا کی انجیل میں آتی ہے، جو مسیحی بائبل کے نئے عہد نامے کی چار اناجیل میں سے ایک ہے۔ یہ ایک ایسی کہانی کے طور پر سنائی گئی ہے جو یسوع نے ایک سوال کا جواب دینے کے لیے استعمال کی: «میرا پڑوسی کون ہے؟»"
+      },
+      {
+        "nm": "سڑک کا واقعہ",
+        "title": "سچ، لیکن موضوع سے باہر",
+        "body": "یروشلم سے یریحو تک کی قدیم سڑک تقریباً ستائیس کلومیٹر میں ایک ہزار میٹر نیچے اترتی تھی۔ یہ جغرافیے کا ایک سچا واقعہ ہے — لیکن تمثیل پڑوسیوں اور مدد کے بارے میں جو سکھاتی ہے وہ یہ نہیں ہے۔"
+      }
+    ],
+    "locks": [
+      {
+        "title": "موضوع کا نام بتاؤ",
+        "q": "نیک سامری کی تمثیل سب سے واضح طور پر کیا سکھاتی ہے؟",
+        "reason": "اشارے 2، 3 اور 4 ظاہر کرتے ہیں کہ مذہبی رہنما بغیر رکے گزر جاتے ہیں جبکہ سامری — ایک باہری شخص — وہ ہے جو مدد کرتا ہے۔ کہانی 'پڑوسی کون ہے؟' کا جواب عمل دکھا کر دیتی ہے، نہ کہ گروہ کی رکنیت دکھا کر۔",
+        "options": [
+          "اصل پڑوسی وہ ہے جو واقعی رک کر مدد کرے — چاہے وہ باہری ہو",
+          "لمبی سڑکیں ہمیشہ خطرناک ہوتی ہیں اور لوگوں کو اکیلے سفر نہیں کرنا چاہیے",
+          "مذہبی رہنما ہمیشہ مدد کے لیے بلانے کے بہترین لوگ ہوتے ہیں"
+        ]
+      },
+      {
+        "title": "ثبوت اکٹھے کرو",
+        "q": "ہر اس اشارے پر نشان لگاؤ جو موضوع 'اصل پڑوسی وہ ہے جو مدد کے لیے رکے' کا مضبوط ثبوت ہو۔ سچے لیکن موضوع سے باہر کے واقعے کو چھوڑ دو۔",
+        "reason": "بلندی کا واقعہ سچی جغرافیائی معلومات ہے لیکن ہمیں یہ نہیں بتاتا کہ پڑوسی کون ہے۔ تینوں مضبوط اشارے ظاہر کرتے ہیں کہ کون مدد کرتا ہے اور کون نہیں — یہی وہ ثبوت ہے جس پر کہانی اصل میں بنی ہے۔",
+        "items": [
+          "کاہن زخمی آدمی کو دیکھتا ہے لیکن دوسری طرف ہو جاتا ہے",
+          "سامری رکتا ہے، پٹی باندھتا ہے اور زخمی آدمی کی دیکھ بھال کا خرچ ادا کرتا ہے",
+          "یروشلم سے یریحو کی سڑک ایک ہزار میٹر بلندی سے نیچے اترتی ہے",
+          "لاوی بھی بغیر مدد کیے آگے بڑھ جاتا ہے"
+        ]
+      },
+      {
+        "title": "ماخذ کا نام بتاؤ",
+        "q": "اشارہ 5 اس انجیل کا نام بتاتا ہے جس سے یہ تمثیل لی گئی ہے۔ اس انجیل کا نام لکھو۔",
+        "reason": "اشارہ 5 ہمیں بتاتا ہے کہ تمثیل لوقا کی انجیل میں ہے۔ ماخذ کا نام لینا کسی بھی متن کو منصفانہ طریقے سے پڑھنے کا حصہ ہے — یہ ہمیں بتاتا ہے کہ ہم کس قسم کی تحریر پڑھ رہے ہیں۔",
+        "answer": [
+          "لوقا",
+          "لوقا کی انجیل"
+        ]
+      },
+      {
+        "title": "راہگیروں کو ترتیب میں لگاؤ",
+        "q": "ان تین لوگوں کو اس ترتیب میں چھوؤ جس ترتیب میں کہانی انہیں پیش کرتی ہے۔",
+        "reason": "کہانی انہیں اس ترتیب میں پیش کرتی ہے: کاہن، پھر لاوی، پھر سامری۔ ترتیب اہم ہے — قاری گزر جانے کے ایک پیٹرن کی توقع رکھتا ہے، جو سامری کی مدد کو اور بھی نمایاں بناتا ہے۔",
+        "pads": [
+          "🧑‍⚖️ لاوی",
+          "🫂 سامری",
+          "🚶 کاہن"
+        ]
+      }
+    ]
+  },
+  "zh": {
+    "chrome": {
+      "h1": "好撒玛利亚人",
+      "sub": "耶稣在路加福音中讲述的一个小故事。谁才算是真正的邻居？阅读线索，找到证据，并从文本中证明你的答案。",
+      "briefH": "找出谁帮助了别人——以及这说明了什么",
+      "briefP": "你正在把这个故事当作文学作品来学习——一个内含重要思想的短篇故事。你的任务是注意谁采取了行动，谁没有，以及这个故事关于邻居教导了什么。仅使用线索来支持你的答案。",
+      "winStamp": "找到邻居了",
+      "winH": "你破解了这个比喻！",
+      "winP": "你找到了主题，收集了真实证据，并说出了来源。这正是读者分析一个内含教训的短篇故事的方式。"
+    },
+    "clues": [
+      {
+        "nm": "那条路",
+        "title": "一个受伤的人",
+        "body": "在耶稣于路加福音中讲述的比喻里，一个人正从耶路撒冷走向耶利哥，途中遭到强盗袭击、殴打，被留在路边奄奄一息。"
+      },
+      {
+        "nm": "祭司",
+        "title": "第一个路过的人",
+        "body": "一位祭司——一位宗教领袖——走下那条路，看见了受伤的人。故事说祭司绕到另一边继续走，没有停下来帮忙。"
+      },
+      {
+        "nm": "利未人",
+        "title": "第二个路过的人",
+        "body": "接下来，一位利未人——另一位宗教人士——走了过来。他也看见了受伤的人，绕到另一边，继续走路，没有提供帮助。"
+      },
+      {
+        "nm": "撒玛利亚人",
+        "title": "意想不到的帮助者",
+        "body": "接下来走过来的是一位撒玛利亚人——来自一个当时很多人与之不和的族群。他看见受伤的人，停了下来，为他包扎伤口，将他抱上自己的牲口，带他到一家客店，并支付了他的医疗费用。故事让这个外人成为了英雄。"
+      },
+      {
+        "nm": "来源",
+        "title": "这个故事来自哪里",
+        "body": "这个比喻出现在路加福音中，路加福音是基督教《圣经》新约中四部福音书之一。它被讲述为耶稣用来回答一个问题的故事：「我的邻居是谁？」"
+      },
+      {
+        "nm": "关于道路的事实",
+        "title": "正确，但与主题无关",
+        "body": "从耶路撒冷到耶利哥的古代道路在大约二十七公里的距离内下降了约一千米的海拔。这是一个关于地理的真实事实——但这并不是这个比喻关于邻居和帮助所要教导的内容。"
+      }
+    ],
+    "locks": [
+      {
+        "title": "说出主题",
+        "q": "好撒玛利亚人的比喻最清楚地教导了什么？",
+        "reason": "线索2、3和4显示，宗教领袖们走过而没有停下，而撒玛利亚人——一个外人——才是那个帮忙的人。故事通过展示行动而非群体归属来回答「谁是邻居？」",
+        "options": [
+          "真正的邻居是那个真正停下来帮助的人——即使是外人",
+          "长路总是危险的，人们不应该独自旅行",
+          "宗教领袖总是最好的求助对象"
+        ]
+      },
+      {
+        "title": "收集证据",
+        "q": "勾选每一个能有力支持「真正的邻居是任何停下来帮忙的人」这一主题的线索。排除那个正确但与主题无关的事实。",
+        "reason": "海拔事实是真实的地理信息，但没有告诉我们邻居是谁。三个有力线索都显示了谁帮助、谁没有帮助——这才是故事真正建立的证据基础。",
+        "items": [
+          "祭司看见受伤的人，却绕到另一边去了",
+          "撒玛利亚人停下来，为受伤的人包扎并支付了医疗费用",
+          "从耶路撒冷到耶利哥的道路海拔下降一千米",
+          "利未人也没有帮忙就走过去了"
+        ]
+      },
+      {
+        "title": "说出来源",
+        "q": "线索5说出了这个比喻所在的福音书的名称。请输入那部福音书的名称。",
+        "reason": "线索5告诉我们这个比喻在路加福音中。说出来源是公平学习任何文本的一部分——它帮助我们了解我们正在阅读的是哪种类型的写作。",
+        "answer": [
+          "路加",
+          "路加福音"
+        ]
+      },
+      {
+        "title": "按顺序排列路人",
+        "q": "按照故事介绍他们的顺序，点击那三个走下这条路的人。",
+        "reason": "故事按这个顺序介绍他们：祭司，然后是利未人，然后是撒玛利亚人。顺序很重要——读者期待一种路过不停的模式，这使得撒玛利亚人的帮助显得更加突出。",
+        "pads": [
+          "🧑‍⚖️ 利未人",
+          "🫂 撒玛利亚人",
+          "🚶 祭司"
+        ]
+      }
+    ]
+  }
+}
