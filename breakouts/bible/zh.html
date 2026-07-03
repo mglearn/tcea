@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es" dir="ltr">
+<html lang="zh" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
-<title>La Biblia como literatura · 24 actividades en español</title>
-<meta name="description" content="Versión en español · 7 idiomas disponibles">
+<title>作为文学的圣经 · 24 个中文活动</title>
+<meta name="description" content="中文版 · 提供 7 种语言">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>:root{--navy:#054c8c;--navy-d:#023266;--navy-mid:#2f6cae;--paper:#f4f8fc;--card:#fff;--ink:#161c2e;--ink-soft:#516079;--gold:#fbd239;--gold-d:#7a5208;--line:rgba(5,76,140,.14)}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -44,29 +44,29 @@ footer{background:var(--navy-d);border-top:1px solid rgba(5,76,140,.1);padding:2
 </head>
 <body>
 <nav class="topnav">
-  <a href="index.html" class="brand">La Biblia como literatura</a>
-  <div class="navlinks"><a href="index.html">English</a><a href="correlation.html">TEKS</a><a href="../index.html">Todas las actividades</a></div>
+  <a href="index.html" class="brand">作为文学的圣经</a>
+  <div class="navlinks"><a href="index.html">English</a><a href="correlation.html">TEKS</a><a href="../index.html">全部活动</a></div>
 </nav>
 <div class="wrap">
-  <div class="langrow"><span class="g">🌐</span><a href="index.html">English</a><i>·</i><span class="cur">Español</span><i>·</i><a href="vi.html">Tiếng Việt</a><i>·</i><a href="ar.html">العربية</a><i>·</i><a href="hi.html">हिन्दी</a><i>·</i><a href="ur.html">اردو</a><i>·</i><a href="zh.html">中文</a></div>
-  <div class="eyebrow">Versión en español · 7 idiomas disponibles</div>
-  <h1>La Biblia como literatura</h1>
-  <p class="lead">Las 24 actividades de pensamiento crítico, en español. Cada actividad abre directamente en español; dentro de cada una puedes cambiar de idioma con el selector 🌐. Los textos bíblicos se estudian de forma académica —como literatura, historia, retórica y alusión—, nunca de forma devocional, según la línea trazada por la Corte Suprema en Abington v. Schempp (1963).</p>
-  <div class="tally"><div><div class="n">24</div><div class="l">Actividades · 6 por nivel</div></div><div><div class="n">4</div><div class="l">Niveles · K–12</div></div><div><div class="n">7</div><div class="l">Idiomas</div></div><div><div class="n">$0</div><div class="l">Gratis · sin cuentas</div></div></div>
+  <div class="langrow"><span class="g">🌐</span><a href="index.html">English</a><i>·</i><a href="es.html">Español</a><i>·</i><a href="vi.html">Tiếng Việt</a><i>·</i><a href="ar.html">العربية</a><i>·</i><a href="hi.html">हिन्दी</a><i>·</i><a href="ur.html">اردو</a><i>·</i><span class="cur">中文</span></div>
+  <div class="eyebrow">中文版 · 提供 7 种语言</div>
+  <h1>作为文学的圣经</h1>
+  <p class="lead">24 个批判性思维活动，中文版。每个活动都直接以中文打开；在每个活动中，你可以用 🌐 按钮切换语言。圣经文本以学术方式研究——作为文学、历史、修辞与典故——绝不以宗教信仰方式，遵循美国最高法院在 Abington 诉 Schempp 案（1963）中划定的界线。</p>
+  <div class="tally"><div><div class="n">24</div><div class="l">活动 · 每级 6 个</div></div><div><div class="n">4</div><div class="l">年级 · K–12</div></div><div><div class="n">7</div><div class="l">语言</div></div><div><div class="n">$0</div><div class="l">免费 · 无需账户</div></div></div>
   <div id="grid"></div>
-  <div class="note"><p>Esta página enlaza cada actividad para que se abra en español. La misma biblioteca está disponible en 7 idiomas. ¿Prefieres inglés? Visita el panel principal.</p></div>
+  <div class="note"><p>本页将每个活动链接为以中文打开。同一套活动提供 7 种语言。想看英文？请访问主页面。</p></div>
 </div>
-<footer>Contenido CC BY 4.0 · Código MIT · La Biblia como literatura · Se ejecuta en tu navegador, sin recopilar datos</footer>
-<script src="breakouts-es.js"></script>
+<footer>内容 CC BY 4.0 · 代码 MIT · 作为文学的圣经 · 在你的浏览器中运行，不收集数据</footer>
+<script src="breakouts-zh.js"></script>
 <script>
 (function(){
-  var lib=window.BIBLE_LIB_ES||[],order=['K–2','3–5','6–8','9–12'],host=document.getElementById('grid');
+  var lib=window.BIBLE_LIB_ZH||[],order=['K–2','3–5','6–8','9–12'],host=document.getElementById('grid');
   if(!host)return;
   function e(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
   var by={};lib.forEach(function(x){(by[x.band]=by[x.band]||[]).push(x);});
   host.innerHTML=order.filter(function(b){return by[b];}).map(function(b){
-    var cards=by[b].map(function(x){return '<a class="card" href="'+x.href+'">'+(x.featured?'<span class="star">★ Destacada</span>':'')+'<span class="t">'+e(x.title)+'</span><span class="b">'+e(x.blurb)+'</span><span class="o">Abrir en español →</span></a>';}).join('');
-    return '<div class="band-h">Grados '+e(b)+'</div><div class="grid">'+cards+'</div>';
+    var cards=by[b].map(function(x){return '<a class="card" href="'+x.href+'">'+(x.featured?'<span class="star">★ 精选</span>':'')+'<span class="t">'+e(x.title)+'</span><span class="b">'+e(x.blurb)+'</span><span class="o">用中文打开 →</span></a>';}).join('');
+    return '<div class="band-h">年级 '+e(b)+'</div><div class="grid">'+cards+'</div>';
   }).join('');
 })();
 </script>

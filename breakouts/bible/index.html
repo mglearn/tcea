@@ -124,6 +124,12 @@ footer{position:relative;z-index:1;background:var(--forest-deep);border-top:1px 
 .lc-title{font-family:'Playfair Display',serif;font-size:1.04rem;font-weight:700;color:#12233a;line-height:1.16;margin-bottom:5px}
 .lc-blurb{font-size:.8rem;font-weight:300;color:rgba(81,96,121,.95);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .lc-open{margin-top:10px;font-size:.72rem;font-weight:600;color:var(--forest-mid)}
+.hero-langs{margin-top:22px;font-family:'DM Mono',monospace;font-size:.72rem;display:flex;gap:2px;flex-wrap:wrap;justify-content:center;align-items:center;animation:fadeDown .7s .36s ease both}
+.hero-langs .g{margin-inline-end:5px}
+.hero-langs .cur{color:var(--gold-light);font-weight:600;padding:2px 5px}
+.hero-langs a{color:var(--forest-mid);text-decoration:none;padding:2px 6px;border-radius:4px}
+.hero-langs a:hover{background:#eef2fb;color:var(--forest)}
+.hero-langs i{color:rgba(5,76,140,.2);font-style:normal}
 
 @keyframes fadeDown{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
@@ -148,6 +154,7 @@ footer{position:relative;z-index:1;background:var(--forest-deep);border-top:1px 
     <a href="#clear">CLEAR</a>
     <a href="correlation.html">TEKS</a>
     <a href="es.html">Español</a>
+    <a href="zh.html">中文</a>
     <a href="../index.html">All breakouts</a>
   </div>
 </nav>
@@ -162,6 +169,7 @@ footer{position:relative;z-index:1;background:var(--forest-deep);border-top:1px 
       <a href="#bands" class="btn-primary">Start a breakout →</a>
       <a href="correlation.html" class="btn-secondary">See TEKS alignment</a>
     </div>
+    <div class="hero-langs"><span class="g">🌐</span><span class="cur">English</span><i>·</i><a href="es.html">Español</a><i>·</i><a href="vi.html">Tiếng Việt</a><i>·</i><a href="ar.html">العربية</a><i>·</i><a href="hi.html">हिन्दी</a><i>·</i><a href="ur.html">اردو</a><i>·</i><a href="zh.html">中文</a></div>
     <div class="hero-tally">
       <div><span class="tally-num">4</span><span class="tally-label">Grade bands · K–12</span></div>
       <div class="tally-divider"></div>

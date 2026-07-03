@@ -49,7 +49,10 @@ bible/
 ├── answer-key.html     Password-gated teacher answer key (client-side AES-256-GCM encrypted payload)
 ├── policy.html         Privacy & compliance (FERPA/COPPA/SCOPE/GDPR/CIPA) and content framing
 ├── breakouts.js        window.BIBLE_LIB — manifest of all 24 breakouts, powers the landing "Full Library"
-├── build-more.js       Generator: turns grades/_specs-*.json into breakout .js + student pages + breakouts.js
+├── es.html vi.html ar.html hi.html ur.html zh.html   Per-language showcase pages (generated)
+├── breakouts-<lang>.js Per-language manifests (window.BIBLE_LIB_<LANG>) powering the showcase pages
+├── build-more.js       Generator: builds breakout .js + student pages, breakouts.js, and the
+│                       per-language manifests + showcase pages
 ├── README.md           This file
 └── grades/
     ├── k2.js   g35.js   g68.js   g912.js            The 4 "featured" breakouts (one per band)

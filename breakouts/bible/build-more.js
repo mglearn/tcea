@@ -69,13 +69,146 @@ function loadTrans(file) {
   catch (e) { console.error('bad translation file', p, e.message); return null; }
 }
 
-/* Spanish title/blurb of a band's hand-translated featured breakout */
-function featuredES(band) {
+/* ---- per-language showcase pages (es/vi/ar/hi/ur/zh) ---- */
+const SHOW_LANGS = ['es', 'vi', 'ar', 'hi', 'ur', 'zh'];
+const AUTONYM = { en: 'English', es: 'Español', vi: 'Tiếng Việt', ar: 'العربية', hi: 'हिन्दी', ur: 'اردو', zh: '中文' };
+const PAGE = { en: 'index.html', es: 'es.html', vi: 'vi.html', ar: 'ar.html', hi: 'hi.html', ur: 'ur.html', zh: 'zh.html' };
+const CHROME = {
+  es: { dir: 'ltr', htmlLang: 'es', navAll: 'Todas las actividades', bandWord: 'Grados', featured: '★ Destacada', openCTA: 'Abrir en español →',
+    docTitle: 'La Biblia como literatura · 24 actividades en español', h1: 'La Biblia como literatura', eyebrow: 'Versión en español · 7 idiomas disponibles',
+    lead: 'Las 24 actividades de pensamiento crítico, en español. Cada actividad abre directamente en español; dentro de cada una puedes cambiar de idioma con el selector 🌐. Los textos bíblicos se estudian de forma académica —como literatura, historia, retórica y alusión—, nunca de forma devocional, según la línea trazada por la Corte Suprema en Abington v. Schempp (1963).',
+    note: 'Esta página enlaza cada actividad para que se abra en español. La misma biblioteca está disponible en 7 idiomas. ¿Prefieres inglés? Visita el panel principal.',
+    footer: 'Contenido CC BY 4.0 · Código MIT · La Biblia como literatura · Se ejecuta en tu navegador, sin recopilar datos',
+    tally: [['24', 'Actividades · 6 por nivel'], ['4', 'Niveles · K–12'], ['7', 'Idiomas'], ['$0', 'Gratis · sin cuentas']] },
+  vi: { dir: 'ltr', htmlLang: 'vi', navAll: 'Tất cả hoạt động', bandWord: 'Lớp', featured: '★ Nổi bật', openCTA: 'Mở bằng tiếng Việt →',
+    docTitle: 'Kinh Thánh như văn học · 24 hoạt động bằng tiếng Việt', h1: 'Kinh Thánh như văn học', eyebrow: 'Phiên bản tiếng Việt · có 7 ngôn ngữ',
+    lead: '24 hoạt động tư duy phản biện, bằng tiếng Việt. Mỗi hoạt động mở trực tiếp bằng tiếng Việt; trong mỗi hoạt động, bạn có thể đổi ngôn ngữ bằng nút 🌐. Các văn bản Kinh Thánh được nghiên cứu một cách học thuật —như văn học, lịch sử, tu từ và điển tích—, không bao giờ mang tính sùng đạo, theo lằn ranh mà Tòa án Tối cao Hoa Kỳ vạch ra trong vụ Abington kiện Schempp (1963).',
+    note: 'Trang này liên kết mỗi hoạt động để mở bằng tiếng Việt. Cùng một thư viện có sẵn bằng 7 ngôn ngữ. Bạn thích tiếng Anh? Hãy vào trang chính.',
+    footer: 'Nội dung CC BY 4.0 · Mã nguồn MIT · Kinh Thánh như văn học · Chạy trong trình duyệt, không thu thập dữ liệu',
+    tally: [['24', 'Hoạt động · 6 mỗi cấp'], ['4', 'Cấp lớp · K–12'], ['7', 'Ngôn ngữ'], ['$0', 'Miễn phí · không cần tài khoản']] },
+  ar: { dir: 'rtl', htmlLang: 'ar', navAll: 'جميع الأنشطة', bandWord: 'الصفوف', featured: '★ مميّزة', openCTA: 'افتح بالعربية ←',
+    docTitle: 'الكتاب المقدس بوصفه أدبًا · 24 نشاطًا بالعربية', h1: 'الكتاب المقدس بوصفه أدبًا', eyebrow: 'النسخة العربية · تتوفر 7 لغات',
+    lead: '24 نشاطًا للتفكير النقدي، بالعربية. يفتح كل نشاط مباشرةً بالعربية؛ ويمكنك داخل كل نشاط تغيير اللغة عبر زر 🌐. تُدرَس النصوص الكتابية دراسةً أكاديمية —بوصفها أدبًا وتاريخًا وبلاغة وتلميحًا—، لا دراسةً تعبّدية، وفق الخط الذي رسمته المحكمة العليا الأمريكية في قضية أبينغتون ضد شيمب (1963).',
+    note: 'تربط هذه الصفحة كل نشاط ليفتح بالعربية. المكتبة نفسها متوفرة بسبع لغات. تفضّل الإنجليزية؟ زُر الصفحة الرئيسية.',
+    footer: 'المحتوى CC BY 4.0 · الشيفرة MIT · الكتاب المقدس بوصفه أدبًا · يعمل في متصفحك دون جمع بيانات',
+    tally: [['24', 'أنشطة · 6 لكل مستوى'], ['4', 'مستويات · K–12'], ['7', 'لغات'], ['$0', 'مجاني · دون حسابات']] },
+  hi: { dir: 'ltr', htmlLang: 'hi', navAll: 'सभी गतिविधियाँ', bandWord: 'कक्षा', featured: '★ विशेष', openCTA: 'हिन्दी में खोलें →',
+    docTitle: 'साहित्य के रूप में बाइबल · 24 गतिविधियाँ हिन्दी में', h1: 'साहित्य के रूप में बाइबल', eyebrow: 'हिन्दी संस्करण · 7 भाषाएँ उपलब्ध',
+    lead: '24 आलोचनात्मक-चिंतन गतिविधियाँ, हिन्दी में। हर गतिविधि सीधे हिन्दी में खुलती है; हर गतिविधि के भीतर आप 🌐 बटन से भाषा बदल सकते हैं। बाइबल के पाठों को अकादमिक रूप से पढ़ाया जाता है —साहित्य, इतिहास, अलंकार और संकेत के रूप में—, कभी भी धार्मिक भक्ति के रूप में नहीं, उस रेखा के अनुसार जो अमेरिकी सर्वोच्च न्यायालय ने Abington बनाम Schempp (1963) में खींची।',
+    note: 'यह पृष्ठ हर गतिविधि को हिन्दी में खोलने के लिए जोड़ता है। यही पुस्तकालय 7 भाषाओं में उपलब्ध है। अंग्रेज़ी पसंद है? मुख्य पृष्ठ देखें।',
+    footer: 'सामग्री CC BY 4.0 · कोड MIT · साहित्य के रूप में बाइबल · आपके ब्राउज़र में चलता है, कोई डेटा एकत्र नहीं',
+    tally: [['24', 'गतिविधियाँ · प्रति स्तर 6'], ['4', 'स्तर · K–12'], ['7', 'भाषाएँ'], ['$0', 'मुफ़्त · कोई खाता नहीं']] },
+  ur: { dir: 'rtl', htmlLang: 'ur', navAll: 'تمام سرگرمیاں', bandWord: 'جماعت', featured: '★ نمایاں', openCTA: 'اردو میں کھولیں ←',
+    docTitle: 'ادب کے طور پر بائبل · 24 سرگرمیاں اردو میں', h1: 'ادب کے طور پر بائبل', eyebrow: 'اردو نسخہ · 7 زبانیں دستیاب',
+    lead: 'تنقیدی سوچ کی 24 سرگرمیاں، اردو میں۔ ہر سرگرمی براہِ راست اردو میں کھلتی ہے؛ ہر سرگرمی کے اندر آپ 🌐 بٹن سے زبان بدل سکتے ہیں۔ بائبل کے متون کا مطالعہ علمی انداز میں کیا جاتا ہے —ادب، تاریخ، بلاغت اور تلمیح کے طور پر—، کبھی عبادتی انداز میں نہیں، اُس اصول کے مطابق جو امریکی سپریم کورٹ نے Abington بمقابلہ Schempp (1963) میں طے کیا۔',
+    note: 'یہ صفحہ ہر سرگرمی کو اردو میں کھولنے کے لیے جوڑتا ہے۔ یہی لائبریری 7 زبانوں میں دستیاب ہے۔ انگریزی پسند ہے؟ مرکزی صفحہ دیکھیں۔',
+    footer: 'مواد CC BY 4.0 · کوڈ MIT · ادب کے طور پر بائبل · آپ کے براؤزر میں چلتا ہے، کوئی ڈیٹا جمع نہیں',
+    tally: [['24', 'سرگرمیاں · فی سطح 6'], ['4', 'سطحیں · K–12'], ['7', 'زبانیں'], ['$0', 'مفت · کوئی اکاؤنٹ نہیں']] },
+  zh: { dir: 'ltr', htmlLang: 'zh', navAll: '全部活动', bandWord: '年级', featured: '★ 精选', openCTA: '用中文打开 →',
+    docTitle: '作为文学的圣经 · 24 个中文活动', h1: '作为文学的圣经', eyebrow: '中文版 · 提供 7 种语言',
+    lead: '24 个批判性思维活动，中文版。每个活动都直接以中文打开；在每个活动中，你可以用 🌐 按钮切换语言。圣经文本以学术方式研究——作为文学、历史、修辞与典故——绝不以宗教信仰方式，遵循美国最高法院在 Abington 诉 Schempp 案（1963）中划定的界线。',
+    note: '本页将每个活动链接为以中文打开。同一套活动提供 7 种语言。想看英文？请访问主页面。',
+    footer: '内容 CC BY 4.0 · 代码 MIT · 作为文学的圣经 · 在你的浏览器中运行，不收集数据',
+    tally: [['24', '活动 · 每级 6 个'], ['4', '年级 · K–12'], ['7', '语言'], ['$0', '免费 · 无需账户']] },
+};
+
+/* localized title/blurb of a band's hand-translated featured breakout, per language */
+function featuredLoc(band) {
+  const out = {}; const langs = ['en', ...SHOW_LANGS];
   try {
     const w = {}; eval(fs.readFileSync(path.join(GRADES, band.featured.file + '.js'), 'utf8').replace('window.BREAKOUT', 'w.BREAKOUT'));
-    const u = (w.BREAKOUT.UI || {}).es || {};
-    return { title: u['header.h1'] || band.featured.title, blurb: u['header.sub'] || band.featured.blurb };
-  } catch (e) { return { title: band.featured.title, blurb: band.featured.blurb }; }
+    const U = w.BREAKOUT.UI || {};
+    for (const lg of langs) { const u = U[lg] || {}; out[lg] = { title: u['header.h1'] || band.featured.title, blurb: u['header.sub'] || band.featured.blurb }; }
+  } catch (e) { for (const lg of langs) out[lg] = { title: band.featured.title, blurb: band.featured.blurb }; }
+  return out;
+}
+
+function showcaseCss() {
+  return `:root{--navy:#054c8c;--navy-d:#023266;--navy-mid:#2f6cae;--paper:#f4f8fc;--card:#fff;--ink:#161c2e;--ink-soft:#516079;--gold:#fbd239;--gold-d:#7a5208;--line:rgba(5,76,140,.14)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;color:var(--ink);line-height:1.6;background:radial-gradient(ellipse 60% 45% at 85% -5%,rgba(251,210,57,.16)0%,transparent 60%),radial-gradient(ellipse 55% 45% at 0% 100%,rgba(5,76,140,.12)0%,transparent 60%),var(--paper)}
+.topnav{position:fixed;top:0;left:0;right:0;z-index:200;height:56px;background:rgba(42,84,130,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 28px;gap:8px}
+.brand{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#e9f0fa;text-decoration:none}
+.navlinks{margin-inline-start:auto;display:flex;gap:4px}
+.navlinks a{font-size:.72rem;font-weight:500;color:rgba(214,228,240,.85);text-decoration:none;padding:6px 11px;border-radius:5px}
+.navlinks a:hover{background:rgba(255,255,255,.12);color:#fff}
+.wrap{max-width:1160px;margin:0 auto;padding:88px 24px 80px}
+.langrow{display:flex;flex-wrap:wrap;align-items:center;gap:2px;font-family:'DM Mono',monospace;font-size:.74rem;margin-bottom:22px}
+.langrow .g{margin-inline-end:6px}
+.langrow a{color:var(--navy-mid);text-decoration:none;padding:2px 5px;border-radius:4px}
+.langrow a:hover{background:#eef2fb;color:var(--navy)}
+.langrow .cur{color:var(--gold-d);font-weight:600;padding:2px 5px}
+.langrow i{color:var(--line);font-style:normal}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#eef2fb;border:1px solid rgba(5,76,140,.2);border-radius:100px;padding:6px 16px;font-family:'DM Mono',monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:#054c8c;margin-bottom:16px}
+.eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:#fbd239}
+h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.08;margin-bottom:12px}
+.lead{font-size:1rem;font-weight:300;color:var(--ink-soft);max-width:780px}
+.tally{display:flex;gap:30px;flex-wrap:wrap;margin:26px 0 8px}
+.tally .n{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:var(--navy-mid);line-height:1}
+.tally .l{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px}
+.band-h{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#054c8c;margin:34px 0 12px;display:flex;align-items:center;gap:12px}
+.band-h::after{content:"";flex:1;height:1px;background:rgba(5,76,140,.12)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;text-decoration:none;transition:border-color .2s,box-shadow .2s,transform .15s}
+.card:hover{border-color:rgba(5,76,140,.3);box-shadow:0 12px 34px rgba(0,0,0,.12);transform:translateY(-2px)}
+.card .star{font-family:'DM Mono',monospace;font-size:.58rem;font-weight:500;letter-spacing:.08em;color:var(--gold-d);margin-bottom:6px}
+.card .t{font-family:'Playfair Display',serif;font-size:1.04rem;font-weight:700;color:#12233a;line-height:1.16;margin-bottom:5px}
+.card .b{font-size:.8rem;font-weight:300;color:var(--ink-soft);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card .o{margin-top:10px;font-size:.72rem;font-weight:600;color:var(--navy-mid)}
+.note{background:rgba(252,176,64,.06);border:1px solid rgba(252,176,64,.28);border-inline-start:3px solid var(--gold);border-radius:10px;padding:16px 20px;margin:34px 0 0}
+.note p{font-size:.85rem;font-weight:300;color:var(--ink-soft)}
+footer{background:var(--navy-d);border-top:1px solid rgba(5,76,140,.1);padding:26px;text-align:center;font-family:'DM Mono',monospace;font-size:.62rem;color:rgba(188,205,228,.75);letter-spacing:.05em;margin-top:48px}`;
+}
+
+function showcasePage(lang) {
+  const c = CHROME[lang];
+  const bar = ['en', 'es', 'vi', 'ar', 'hi', 'ur', 'zh'].map((l, i) => {
+    const sep = i ? '<i>·</i>' : '';
+    return sep + (l === lang ? `<span class="cur">${AUTONYM[l]}</span>` : `<a href="${PAGE[l]}">${AUTONYM[l]}</a>`);
+  }).join('');
+  const tally = c.tally.map(t => `<div><div class="n">${esc(t[0])}</div><div class="l">${esc(t[1])}</div></div>`).join('');
+  return `<!DOCTYPE html>
+<html lang="${c.htmlLang}" dir="${c.dir}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>${esc(c.docTitle)}</title>
+<meta name="description" content="${esc(c.eyebrow)}">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>${showcaseCss()}</style>
+</head>
+<body>
+<nav class="topnav">
+  <a href="index.html" class="brand">${esc(c.h1)}</a>
+  <div class="navlinks"><a href="index.html">English</a><a href="correlation.html">TEKS</a><a href="../index.html">${esc(c.navAll)}</a></div>
+</nav>
+<div class="wrap">
+  <div class="langrow"><span class="g">🌐</span>${bar}</div>
+  <div class="eyebrow">${esc(c.eyebrow)}</div>
+  <h1>${esc(c.h1)}</h1>
+  <p class="lead">${esc(c.lead)}</p>
+  <div class="tally">${tally}</div>
+  <div id="grid"></div>
+  <div class="note"><p>${esc(c.note)}</p></div>
+</div>
+<footer>${esc(c.footer)}</footer>
+<script src="breakouts-${lang}.js"></script>
+<script>
+(function(){
+  var lib=window.BIBLE_LIB_${lang.toUpperCase()}||[],order=['K–2','3–5','6–8','9–12'],host=document.getElementById('grid');
+  if(!host)return;
+  function e(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  var by={};lib.forEach(function(x){(by[x.band]=by[x.band]||[]).push(x);});
+  host.innerHTML=order.filter(function(b){return by[b];}).map(function(b){
+    var cards=by[b].map(function(x){return '<a class="card" href="'+x.href+'">'+(x.featured?'<span class="star">${c.featured}</span>':'')+'<span class="t">'+e(x.title)+'</span><span class="b">'+e(x.blurb)+'</span><span class="o">${c.openCTA}</span></a>';}).join('');
+    return '<div class="band-h">${c.bandWord} '+e(b)+'</div><div class="grid">'+cards+'</div>';
+  }).join('');
+})();
+</script>
+</body>
+</html>
+`;
 }
 
 function buildUI(band, spec, trans, consts) {
@@ -218,11 +351,12 @@ function studentHtml(file, band, spec, nlocks) {
 }
 
 let written = 0, translated = 0;
-const lib = [], libES = [];
+const lib = [];
+const libs = {}; for (const lg of SHOW_LANGS) libs[lg] = [];
 for (const band of BANDS) {
   lib.push({ band: band.label, href: `grades/${band.featured.file}-student.html`, title: band.featured.title, blurb: band.featured.blurb, featured: true });
-  const fes = featuredES(band);
-  libES.push({ band: band.label, href: `grades/${band.featured.file}-student.html?lang=es`, title: fes.title, blurb: fes.blurb, featured: true });
+  const floc = featuredLoc(band);
+  for (const lg of SHOW_LANGS) libs[lg].push({ band: band.label, href: `grades/${band.featured.file}-student.html?lang=${lg}`, title: floc[lg].title, blurb: floc[lg].blurb, featured: true });
   const specFile = path.join(GRADES, `_specs-${band.key}.json`);
   if (!fs.existsSync(specFile)) { console.error('no specs for', band.key); continue; }
   const consts = harvest(band);
@@ -235,12 +369,17 @@ for (const band of BANDS) {
     fs.writeFileSync(path.join(GRADES, file + '.js'), 'window.BREAKOUT = ' + JSON.stringify(obj, null, 1) + ';\n');
     fs.writeFileSync(path.join(GRADES, file + '-student.html'), studentHtml(file, band, spec, spec.locks.length));
     lib.push({ band: band.label, href: `grades/${file}-student.html`, title: spec.h1, blurb: spec.sub });
-    const et = trans && trans.es && trans.es.chrome;
-    libES.push({ band: band.label, href: `grades/${file}-student.html?lang=es`, title: (et && et.h1) || spec.h1, blurb: (et && et.sub) || spec.sub });
+    for (const lg of SHOW_LANGS) {
+      const t = trans && trans[lg] && trans[lg].chrome;
+      libs[lg].push({ band: band.label, href: `grades/${file}-student.html?lang=${lg}`, title: (t && t.h1) || spec.h1, blurb: (t && t.sub) || spec.sub });
+    }
     written++;
   }
 }
 
 fs.writeFileSync(path.join(ROOT, 'breakouts.js'), 'window.BIBLE_LIB = ' + JSON.stringify(lib) + ';\n');
-fs.writeFileSync(path.join(ROOT, 'breakouts-es.js'), 'window.BIBLE_LIB_ES = ' + JSON.stringify(libES) + ';\n');
-console.log(`build-more: wrote ${written} breakouts (${translated} with translations), ${lib.length} library entries (+${libES.length} ES).`);
+for (const lg of SHOW_LANGS) {
+  fs.writeFileSync(path.join(ROOT, `breakouts-${lg}.js`), `window.BIBLE_LIB_${lg.toUpperCase()} = ${JSON.stringify(libs[lg])};\n`);
+  fs.writeFileSync(path.join(ROOT, `${lg}.html`), showcasePage(lg));
+}
+console.log(`build-more: wrote ${written} breakouts (${translated} with translations); ${lib.length} EN + ${SHOW_LANGS.length}×${libs.es.length} localized entries; pages: ${SHOW_LANGS.map(l => l + '.html').join(', ')}.`);
