@@ -18,6 +18,9 @@ input:focus{outline:none;border-color:var(--forest)}
 button{width:100%;background:var(--forest);color:#fff;border:none;border-radius:10px;padding:12px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1rem;cursor:pointer}
 button:hover{background:#2f6cae}
 .err{color:#c0392b;font-size:.85rem;min-height:18px;margin-top:8px}
+.req{margin-top:18px;padding-top:16px;border-top:1px solid rgba(5,76,140,.12);font-size:.82rem;color:#516079;line-height:1.5}
+.req a{color:var(--forest);font-weight:700;text-decoration:none}
+.req a:hover{text-decoration:underline}
 #out{display:none;background:#fff;color:#232526;max-width:860px;width:100%;margin:0 auto;border-radius:12px;padding:8px 4px}
 </style>
 </head>
@@ -28,6 +31,8 @@ button:hover{background:#2f6cae}
   <input type="password" id="pw" placeholder="Password" autocomplete="off">
   <button id="go">Unlock</button>
   <div class="err" id="err"></div>
+  <p class="req">Don't have the passcode? Teachers can request it with a short form.<br>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz41GKfI4kAbPUEutQnbNIbmQuk4MgWOzhq2ZURbFjrv35xQ/viewform?usp=header" target="_blank" rel="noopener">Request the answer-key passcode →</a></p>
 </div>
 <div id="out"></div>
 <script>
