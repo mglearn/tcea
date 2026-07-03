@@ -53,6 +53,8 @@ bible/
 ├── breakouts-<lang>.js Per-language manifests (window.BIBLE_LIB_<LANG>) powering the showcase pages
 ├── build-more.js       Generator: builds breakout .js + student pages, breakouts.js, and the
 │                       per-language manifests + showcase pages
+├── build-correlation.js  Regenerates the TEKS tables for all 24 in correlation.html (between markers)
+├── build-answer-key.js   Regenerates the encrypted answer key for all 24 (password passed at run time)
 ├── README.md           This file
 └── grades/
     ├── k2.js   g35.js   g68.js   g912.js            The 4 "featured" breakouts (one per band)
@@ -217,8 +219,8 @@ translated** — they are **not** produced by `build-more.js`. Edit them directl
 (PBKDF2, 250k iterations). The password is never transmitted; decryption happens in the browser. This is
 appropriate for answer keys but is not a substitute for server-side protection of sensitive materials.
 
-> Note: the encrypted payload currently covers the **4 featured** breakouts. The 20 generated breakouts
-> expose their reasoning in each lock's `reason` on solve; a future pass can extend the encrypted key to all 24.
+Regenerate it (covers all 24 breakouts) with `node build-answer-key.js '<password>'` — the password is
+passed at run time and never stored in the repo.
 
 ---
 

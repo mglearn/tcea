@@ -130,6 +130,9 @@ footer{position:relative;z-index:1;background:var(--forest-deep);border-top:1px 
 .hero-langs a{color:var(--forest-mid);text-decoration:none;padding:2px 6px;border-radius:4px}
 .hero-langs a:hover{background:#eef2fb;color:var(--forest)}
 .hero-langs i{color:rgba(5,76,140,.2);font-style:normal}
+.langsel{font-family:inherit;font-size:.72rem;font-weight:500;color:rgba(233,240,250,.92);background:rgba(255,255,255,.08);border:1px solid rgba(143,179,217,.3);border-radius:5px;padding:6px 8px;cursor:pointer;margin-inline-start:2px}
+.langsel:hover{background:rgba(255,255,255,.16)}
+.langsel option{color:#161c2e;background:#fff}
 
 @keyframes fadeDown{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
@@ -153,9 +156,15 @@ footer{position:relative;z-index:1;background:var(--forest-deep);border-top:1px 
     <a href="#framing">How it's taught</a>
     <a href="#clear">CLEAR</a>
     <a href="correlation.html">TEKS</a>
-    <a href="es.html">Español</a>
-    <a href="zh.html">中文</a>
-    <a href="../index.html">All breakouts</a>
+    <select class="langsel" aria-label="Language" onchange="if(this.value){location.href=this.value}">
+      <option value="">🌐 Languages</option>
+      <option value="es.html">Español</option>
+      <option value="vi.html">Tiếng Việt</option>
+      <option value="ar.html">العربية</option>
+      <option value="hi.html">हिन्दी</option>
+      <option value="ur.html">اردو</option>
+      <option value="zh.html">中文</option>
+    </select>
   </div>
 </nav>
 
@@ -390,7 +399,6 @@ footer{position:relative;z-index:1;background:var(--forest-deep);border-top:1px 
     <a href="correlation.html">TEKS correlation</a>
     <a href="policy.html">Privacy &amp; compliance</a>
     <a href="answer-key.html">Answer key</a>
-    <a href="../index.html">All TCEA breakouts</a>
   </div>
   <div class="footer-copy">CC BY 4.0 content · MIT code · Runs in your browser, no data collected</div>
 </footer>

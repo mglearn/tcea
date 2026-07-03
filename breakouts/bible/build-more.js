@@ -181,7 +181,7 @@ function showcasePage(lang) {
 <body>
 <nav class="topnav">
   <a href="index.html" class="brand">${esc(c.h1)}</a>
-  <div class="navlinks"><a href="index.html">English</a><a href="correlation.html">TEKS</a><a href="../index.html">${esc(c.navAll)}</a></div>
+  <div class="navlinks"><a href="index.html">English</a><a href="correlation.html">TEKS</a></div>
 </nav>
 <div class="wrap">
   <div class="langrow"><span class="g">🌐</span>${bar}</div>
