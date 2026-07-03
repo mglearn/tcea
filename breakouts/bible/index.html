@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Bible as Literature — Critical Thinking Online Breakouts (CTOBs)</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#054c8c;--forest-deep:#023266;--forest-mid:#2f6cae;--forest-light:#5b8fc0;
+  --forest-pale:#12233a;--forest-faint:#eef2fb;--charcoal:#f4f8fc;--charcoal-mid:#ffffff;
+  --charcoal-soft:#eef2fb;--charcoal-dim:#516079;--charcoal-mute:#516079;--cream:#161c2e;
+  --white:#054c8c;--gold:#fbd239;--gold-light:#7a5208;
+  --border-dark:rgba(5,76,140,0.14);--border-mid:rgba(5,76,140,0.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:radial-gradient(ellipse 60% 45% at 85% -5%,rgba(251,210,57,.16)0%,transparent 60%),radial-gradient(ellipse 55% 45% at 0% 100%,rgba(5,76,140,.12)0%,transparent 60%),var(--charcoal);color:var(--cream);line-height:1.6;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.6}
+
+/* nav */
+.topnav{position:fixed;top:0;left:0;right:0;z-index:200;height:56px;background:rgba(42,84,130,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border-dark);display:flex;align-items:center;padding:0 32px;gap:8px}
+.brand{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#e9f0fa;text-decoration:none}
+.brand span{color:#fbd239}
+.navlinks{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.navlinks a{font-size:.72rem;font-weight:500;color:rgba(233,240,250,0.92);text-decoration:none;padding:6px 11px;border-radius:5px;white-space:nowrap;transition:.15s}
+.navlinks a:hover{background:rgba(255,255,255,0.12);color:#fff}
+
+/* hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:88px 32px 48px;overflow:hidden;background:radial-gradient(ellipse 70% 55% at 50% 40%,rgba(58,110,165,0.28)0%,transparent 65%),radial-gradient(ellipse 40% 40% at 15% 75%,rgba(42,84,130,0.45)0%,transparent 55%),radial-gradient(ellipse 30% 35% at 85% 20%,rgba(91,143,192,0.15)0%,transparent 50%)}
+.hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(5,76,140,0.05)1px,transparent 1px),linear-gradient(90deg,rgba(5,76,140,0.05)1px,transparent 1px);background-size:56px 56px;pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:920px;text-align:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#eef2fb;border:1px solid rgba(5,76,140,0.2);border-radius:100px;padding:6px 18px;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:#054c8c;animation:fadeDown .7s 0s ease both}
+.eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:#fbd239;animation:pulse 2.5s ease infinite}
+.hero-title{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(2.6rem,7vw,5.4rem);line-height:0.98;letter-spacing:-0.025em;margin:22px 0 6px;animation:fadeDown .7s .1s ease both}
+.hero-title em{font-style:italic;color:#2f6cae}
+.hero-byline{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--charcoal-mute);animation:fadeDown .7s .18s ease both}
+.hero-desc{font-size:1.02rem;font-weight:300;color:rgba(81,96,121,0.95);max-width:660px;margin:20px auto 30px;animation:fadeDown .7s .25s ease both}
+.hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;animation:fadeDown .7s .32s ease both}
+.btn-primary{display:inline-flex;align-items:center;gap:7px;padding:12px 26px;border-radius:8px;font-size:.85rem;font-weight:600;text-decoration:none;background:var(--forest-mid);color:#fff;transition:filter .2s,transform .15s}
+.btn-primary:hover{filter:brightness(1.15);transform:translateY(-1px)}
+.btn-secondary{display:inline-flex;align-items:center;gap:7px;padding:12px 22px;border-radius:8px;font-size:.83rem;font-weight:500;text-decoration:none;border:1px solid rgba(5,76,140,0.22);color:rgba(81,96,121,0.95);transition:all .2s}
+.btn-secondary:hover{background:rgba(5,76,140,0.08);color:var(--forest-pale);border-color:rgba(81,96,121,0.9)}
+.hero-tally{display:flex;justify-content:center;gap:36px;flex-wrap:wrap;margin-top:44px;animation:fadeDown .7s .4s ease both}
+.tally-num{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:700;color:var(--forest-mid);line-height:1;display:block}
+.tally-label{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--charcoal-mute);margin-top:5px}
+.tally-divider{width:1px;background:rgba(5,76,140,0.14);align-self:stretch}
+
+/* index strip */
+.index-strip{background:var(--forest-deep);border-top:1px solid var(--border-dark);border-bottom:1px solid var(--border-dark);padding:14px 32px;display:flex;gap:6px;flex-wrap:wrap;align-items:center;justify-content:center;position:relative;z-index:1}
+.index-pill{display:inline-flex;align-items:center;gap:5px;padding:5px 13px;border:1px solid rgba(143,179,217,0.22);border-radius:100px;font-size:.72rem;color:rgba(214,228,240,0.82);text-decoration:none;transition:.15s}
+.index-pill:hover{background:rgba(255,255,255,0.10);color:#fff;border-color:rgba(143,179,217,0.5)}
+.pnum{font-family:'DM Mono',monospace;font-size:.6rem;color:var(--forest-light);opacity:.8}
+
+main{position:relative;z-index:1;max-width:1200px;margin:0 auto}
+.sec-divider{display:flex;align-items:center;gap:20px;padding:64px 32px 0;max-width:1200px;margin:0 auto}
+.sec-divider-line{flex:1;height:1px;background:rgba(5,76,140,0.10)}
+.sec-divider-lbl{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(81,96,121,0.9)}
+.sec-lead{max-width:1200px;margin:0 auto;padding:14px 32px 0}
+.sec-lead h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;line-height:1.1;margin-bottom:8px}
+.sec-lead p{font-size:.95rem;font-weight:300;color:rgba(81,96,121,0.95);max-width:720px}
+
+/* band cards */
+.slides{display:flex;flex-direction:column;gap:28px;padding:28px 24px 20px}
+.slide{position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(5,76,140,0.08);background:var(--charcoal-mid);display:grid;grid-template-columns:300px 1fr;min-height:230px;opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease,border-color .2s,box-shadow .2s}
+.slide.visible{opacity:1;transform:translateY(0)}
+.slide:hover{border-color:rgba(5,76,140,0.3);box-shadow:0 16px 60px rgba(0,0,0,0.35)}
+.slide-panel{position:relative;padding:34px 30px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;background:linear-gradient(160deg,#023266 0%,#054c8c 100%)}
+.slide-panel.v2{background:linear-gradient(160deg,#1d3a5c 0%,#023266 100%)}
+.slide-panel.v3{background:linear-gradient(160deg,#141f14 0%,#12253f 100%)}
+.slide-panel.v4{background:linear-gradient(160deg,#17342a 0%,#054c8c 100%)}
+.slide-cat{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;padding:4px 10px;border-radius:3px;display:inline-block;align-self:flex-start;margin-bottom:16px;background:rgba(251,210,57,0.18);color:#fbd239}
+.slide-band{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:900;color:#eef2fb;line-height:1}
+.slide-stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;line-height:1;color:#fbd239}
+.slide-stat-lbl{font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(233,240,250,0.7);margin-top:3px}
+.slide-wm{position:absolute;bottom:-24px;right:-6px;font-family:'Playfair Display',serif;font-size:7rem;font-weight:900;line-height:1;opacity:.09;color:#9fc2e8;pointer-events:none;user-select:none}
+.slide-content{padding:32px 38px;display:flex;flex-direction:column;justify-content:space-between;border-left:1px solid rgba(5,76,140,0.06)}
+.slide-content h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;margin-bottom:6px}
+.slide-content p.desc{font-size:.9rem;font-weight:300;color:rgba(81,96,121,0.95);margin-bottom:14px}
+.feat{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:18px}
+.feat-chip{font-size:.7rem;padding:4px 11px;border-radius:100px;border:1px solid rgba(5,76,140,0.2);color:#054c8c;background:#eef2fb}
+.slide-actions{display:flex;gap:10px;flex-wrap:wrap}
+
+/* prose cards for framing */
+.prose-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;padding:24px 24px 8px}
+.pcard{background:var(--charcoal-mid);border:1px solid var(--border-dark);border-radius:14px;padding:24px 22px}
+.pcard .kicker{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:#054c8c;margin-bottom:8px}
+.pcard h4{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;margin-bottom:8px}
+.pcard p{font-size:.86rem;font-weight:300;color:rgba(81,96,121,0.95)}
+.clear-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;padding:16px 24px 0}
+.clear-item{background:var(--charcoal-mid);border:1px solid var(--border-dark);border-radius:12px;padding:18px 16px;text-align:center}
+.clear-letter{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--forest-mid);line-height:1}
+.clear-word{font-family:'DM Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--forest-pale);margin:6px 0 4px}
+.clear-desc{font-size:.76rem;font-weight:300;color:rgba(81,96,121,0.85)}
+
+.callout{max-width:1152px;margin:24px auto 0;padding:0 24px}
+.callout-inner{background:rgba(252,176,64,0.06);border:1px solid rgba(252,176,64,0.25);border-left:3px solid var(--gold);border-radius:10px;padding:18px 22px}
+.callout-inner .kicker{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:6px}
+.callout-inner p{font-size:.86rem;font-weight:300;color:rgba(81,96,121,0.95)}
+
+footer{position:relative;z-index:1;background:var(--forest-deep);border-top:1px solid rgba(5,76,140,0.10);padding:36px 32px;margin-top:56px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.footer-brand{font-family:'Playfair Display',serif;font-size:.95rem;color:#e9f0fa}
+.footer-brand span{color:#fbd239}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap}
+.footer-links a{font-size:.78rem;color:rgba(215,228,244,0.85);text-decoration:none}
+.footer-links a:hover{color:#fff}
+.footer-copy{font-family:'DM Mono',monospace;font-size:.62rem;color:rgba(188,205,228,0.75);letter-spacing:.06em}
+
+#back-to-top{position:fixed;bottom:28px;right:28px;z-index:300;width:44px;height:44px;border-radius:50%;background:var(--forest);border:1px solid rgba(81,96,121,0.8);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem;cursor:pointer;text-decoration:none;opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s,background .2s;box-shadow:0 4px 20px rgba(0,0,0,0.4)}
+#back-to-top.visible{opacity:1;transform:translateY(0)}
+#back-to-top:hover{background:var(--forest-mid)}
+
+@keyframes fadeDown{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+
+@media(max-width:860px){
+  .topnav{padding:0 18px}
+  .slide{grid-template-columns:1fr;min-height:auto}
+  .slide-content{border-left:none;border-top:1px solid rgba(5,76,140,0.06);padding:26px 22px}
+  .slide-panel{padding:26px 22px 22px;min-height:150px;flex-direction:row;align-items:flex-end;justify-content:space-between}
+  footer{flex-direction:column;align-items:flex-start;gap:12px;padding:24px 20px}
+  .hero-tally{gap:22px}
+}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a href="index.html" class="brand">Bible as <span>Literature</span></a>
+  <div class="navlinks">
+    <a href="#bands">Activities</a>
+    <a href="#framing">How it's taught</a>
+    <a href="#clear">CLEAR</a>
+    <a href="correlation.html">TEKS</a>
+    <a href="../index.html">All breakouts</a>
+  </div>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="eyebrow">Critical Thinking Online Breakout · CTOB</div>
+    <h1 class="hero-title">Bible as <em>Literature</em></h1>
+    <p class="hero-byline">A TCEA Critical Thinking Online Breakout · Miguel Guhlin</p>
+    <p class="hero-desc">Texas adopted Bible stories for K–12 classrooms. This free suite studies those exact texts the way courts and the TEA say they must be studied — <strong>academically, as story and history, never devotionally</strong>. Students open clues, weigh evidence, separate what a text <em>says</em> from what a reader <em>believes</em>, and crack the locks.</p>
+    <div class="hero-cta">
+      <a href="#bands" class="btn-primary">Start a breakout →</a>
+      <a href="correlation.html" class="btn-secondary">See TEKS alignment</a>
+    </div>
+    <div class="hero-tally">
+      <div><span class="tally-num">4</span><span class="tally-label">Grade bands · K–12</span></div>
+      <div class="tally-divider"></div>
+      <div><span class="tally-num">16</span><span class="tally-label">Reasoning locks</span></div>
+      <div class="tally-divider"></div>
+      <div><span class="tally-num">7</span><span class="tally-label">Languages</span></div>
+      <div class="tally-divider"></div>
+      <div><span class="tally-num">$0</span><span class="tally-label">Free · no logins</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="index-strip">
+  <a class="index-pill" href="#bands"><span class="pnum">01</span> The four breakouts</a>
+  <a class="index-pill" href="#framing"><span class="pnum">02</span> Academic, not devotional</a>
+  <a class="index-pill" href="#clear"><span class="pnum">03</span> The CLEAR method</a>
+  <a class="index-pill" href="#strategies"><span class="pnum">04</span> Instructional strategies</a>
+  <a class="index-pill" href="correlation.html"><span class="pnum">05</span> TEKS correlation</a>
+</div>
+
+<main>
+
+  <div class="sec-divider"><div class="sec-divider-line"></div><span class="sec-divider-lbl">The Breakouts</span><div class="sec-divider-line"></div></div>
+  <div class="sec-lead" id="bands">
+    <h2>Four breakouts, one text per band</h2>
+    <p>Each activity is grounded in stories Texas actually adopted — the Bluebonnet Learning K–5 units and the 2025 required K–12 reading list. Every lock is solvable from the clues alone, and every clue set hides one true-but-irrelevant decoy so students practice separating evidence from noise.</p>
+  </div>
+
+  <div class="slides">
+
+    <div class="slide">
+      <div class="slide-panel">
+        <span class="slide-cat">Grades K–2</span>
+        <div><div class="slide-band">The Storyteller's Order</div></div>
+        <div><div class="slide-stat-num">Genesis</div><div class="slide-stat-lbl">+ the Golden Rule</div></div>
+        <div class="slide-wm">1</div>
+      </div>
+      <div class="slide-content">
+        <div>
+          <h3>The Storyteller's Order</h3>
+          <p class="desc">Emergent readers sequence the Genesis creation account and identify the Golden Rule's plain meaning — noticing what a story says and in what order, without judging whether it's true.</p>
+          <div class="feat">
+            <span class="feat-chip">Sequencing</span>
+            <span class="feat-chip">Story vs. fact</span>
+            <span class="feat-chip">Close listening</span>
+          </div>
+        </div>
+        <div class="slide-actions">
+          <a href="grades/k2-student.html" class="btn-primary">Open breakout →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-panel v2">
+        <span class="slide-cat">Grades 3–5</span>
+        <div><div class="slide-band">Underdogs &amp; Lions' Dens</div></div>
+        <div><div class="slide-stat-num">David · Daniel</div><div class="slide-stat-lbl">+ King Solomon</div></div>
+        <div class="slide-wm">2</div>
+      </div>
+      <div class="slide-content">
+        <div>
+          <h3>Underdogs &amp; Lions' Dens</h3>
+          <p class="desc">Students find the shared "underdog" theme across David &amp; Goliath and Daniel in the lions' den, defend it with textual evidence, then test it against the Solomon story where the pattern breaks.</p>
+          <div class="feat">
+            <span class="feat-chip">Theme</span>
+            <span class="feat-chip">Evidence gathering</span>
+            <span class="feat-chip">Counter-example</span>
+          </div>
+        </div>
+        <div class="slide-actions">
+          <a href="grades/g35-student.html" class="btn-primary">Open breakout →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-panel v3">
+        <span class="slide-cat">Grades 6–8</span>
+        <div><div class="slide-band">Parables &amp; Persuasion</div></div>
+        <div><div class="slide-stat-num">Prodigal Son</div><div class="slide-stat-lbl">+ Sermon on the Mount</div></div>
+        <div class="slide-wm">3</div>
+      </div>
+      <div class="slide-content">
+        <div>
+          <h3>Parables &amp; Persuasion</h3>
+          <p class="desc">Students name the parable genre, analyze "show don't tell" and rhetorical repetition, and connect the Sermon's technique to Dr. King's "I Have a Dream" — reading for craft, not creed.</p>
+          <div class="feat">
+            <span class="feat-chip">Genre</span>
+            <span class="feat-chip">Figurative language</span>
+            <span class="feat-chip">Rhetoric</span>
+          </div>
+        </div>
+        <div class="slide-actions">
+          <a href="grades/g68-student.html" class="btn-primary">Open breakout →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-panel v4">
+        <span class="slide-cat">Grades 9–12</span>
+        <div><div class="slide-band">Allusion, Archetype &amp; Argument</div></div>
+        <div><div class="slide-stat-num">Adam &amp; Eve</div><div class="slide-stat-lbl">+ Queen Esther</div></div>
+        <div class="slide-wm">4</div>
+      </div>
+      <div class="slide-content">
+        <div>
+          <h3>Allusion, Archetype &amp; Argument</h3>
+          <p class="desc">Students trace the "fall" archetype and biblical allusions through later literature, and draw the scholar's line between textual fact and interpretation — the very distinction that keeps this study constitutional.</p>
+          <div class="feat">
+            <span class="feat-chip">Archetype</span>
+            <span class="feat-chip">Allusion</span>
+            <span class="feat-chip">Text vs. interpretation</span>
+          </div>
+        </div>
+        <div class="slide-actions">
+          <a href="grades/g912-student.html" class="btn-primary">Open breakout →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="callout">
+    <div class="callout-inner">
+      <div class="kicker">For teachers</div>
+      <p>The password-protected <a href="answer-key.html" style="color:var(--gold-light)">answer key</a> holds every solution plus the CLEAR rationale students should be able to articulate for each lock. A <a href="correlation.html" style="color:var(--gold-light)">TEKS correlation guide</a> maps each activity to ELAR standards and names the high-effect-size strategy built into it.</p>
+    </div>
+  </div>
+
+  <div class="sec-divider"><div class="sec-divider-line"></div><span class="sec-divider-lbl">How It's Taught</span><div class="sec-divider-line"></div></div>
+  <div class="sec-lead" id="framing">
+    <h2>Academic, not devotional</h2>
+    <p>The U.S. Supreme Court (Abington v. Schempp, 1963) has long held that public schools may teach <em>about</em> the Bible's literary and historical influence, so long as the approach analyzes texts rather than promotes belief. The TEA makes the same claim about its adopted materials. This suite is built entirely on that line.</p>
+  </div>
+  <div class="prose-grid">
+    <div class="pcard">
+      <div class="kicker">What we do</div>
+      <h4>Study the text</h4>
+      <p>Sequence, theme, genre, archetype, allusion, rhetoric. Students ask what the story says and how it's built — the same questions they'd bring to Aesop, Homer, or Shakespeare.</p>
+    </div>
+    <div class="pcard">
+      <div class="kicker">What we avoid</div>
+      <h4>Never devotional</h4>
+      <p>No prayer, no truth claims, no "what this means for your faith." Where the text and a common interpretation diverge — as with Esther and "religious freedom" — students are taught to notice the gap, not resolve it.</p>
+    </div>
+    <div class="pcard">
+      <div class="kicker">Why it matters</div>
+      <h4>Every student included</h4>
+      <p>Framing these as literature keeps the classroom open to students of every faith and none. The 9–12 breakout makes that constitutional reasoning an explicit object of study.</p>
+    </div>
+  </div>
+
+  <div class="sec-divider"><div class="sec-divider-line"></div><span class="sec-divider-lbl">The Method</span><div class="sec-divider-line"></div></div>
+  <div class="sec-lead" id="clear">
+    <h2>CLEAR critical thinking</h2>
+    <p>Every lock walks students through one move in the CLEAR cycle. By the win screen they've run the whole loop at least once — make a claim, choose a lens, cite evidence, weigh an alternative, respond.</p>
+  </div>
+  <div class="clear-row">
+    <div class="clear-item"><div class="clear-letter">C</div><div class="clear-word">Claim</div><div class="clear-desc">State what the text is about</div></div>
+    <div class="clear-item"><div class="clear-letter">L</div><div class="clear-word">Lens</div><div class="clear-desc">Pick the genre / frame to read it through</div></div>
+    <div class="clear-item"><div class="clear-letter">E</div><div class="clear-word">Evidence</div><div class="clear-desc">Cite lines that prove the claim</div></div>
+    <div class="clear-item"><div class="clear-letter">A</div><div class="clear-word">Alternatives</div><div class="clear-desc">Test where the reading breaks down</div></div>
+    <div class="clear-item"><div class="clear-letter">R</div><div class="clear-word">Response</div><div class="clear-desc">Connect it to another text or idea</div></div>
+  </div>
+
+  <div class="sec-divider"><div class="sec-divider-line"></div><span class="sec-divider-lbl">Research-Based Design</span><div class="sec-divider-line"></div></div>
+  <div class="sec-lead" id="strategies">
+    <h2>High-effect-size strategies, built in</h2>
+    <p>Each breakout is engineered around instructional moves with strong effect sizes in Hattie's <em>Visible Learning</em> synthesis — not bolted on, but structural to how the locks work.</p>
+  </div>
+  <div class="prose-grid">
+    <div class="pcard">
+      <div class="kicker">d ≈ 0.75</div>
+      <h4>Classroom discussion &amp; feedback</h4>
+      <p>Every lock gives immediate, specific feedback, and the "why" panel models the reasoning — turning each attempt into a feedback loop, one of the highest-leverage moves in the research.</p>
+    </div>
+    <div class="pcard">
+      <div class="kicker">d ≈ 0.60</div>
+      <h4>Concept sorting &amp; evidence classification</h4>
+      <p>The "check all the strong evidence" locks are classification tasks: students sort relevant from irrelevant, the decoy from the real. Categorizing to find structure is a well-supported deep-learning strategy.</p>
+    </div>
+    <div class="pcard">
+      <div class="kicker">d ≈ 0.55</div>
+      <h4>Metacognitive &amp; strategy instruction</h4>
+      <p>CLEAR names the thinking move at each step. Making the strategy visible — "this is the Alternatives step" — is what pushes students from doing the task to understanding how they did it.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-brand">Bible as <span>Literature</span> · CTOB</div>
+  <div class="footer-links">
+    <a href="#bands">Activities</a>
+    <a href="correlation.html">TEKS correlation</a>
+    <a href="policy.html">Privacy &amp; compliance</a>
+    <a href="answer-key.html">Answer key</a>
+    <a href="../index.html">All TCEA breakouts</a>
+  </div>
+  <div class="footer-copy">CC BY 4.0 content · MIT code · Runs in your browser, no data collected</div>
+</footer>
+
+<a href="#top" id="back-to-top">↑</a>
+
+<script>
+const btt=document.getElementById('back-to-top');
+addEventListener('scroll',()=>btt.classList.toggle('visible',scrollY>500),{passive:true});
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:0.08});
+document.querySelectorAll('.slide').forEach(s=>io.observe(s));
+</script>
+</body>
+</html>

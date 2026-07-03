@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>TEKS Correlation — Bible as Literature Breakouts</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#054c8c;--forest-deep:#023266;--forest-mid:#2f6cae;--forest-light:#5b8fc0;--forest-pale:#12233a;--charcoal:#f4f8fc;--charcoal-mid:#ffffff;--charcoal-dim:#516079;--charcoal-mute:#516079;--cream:#161c2e;--gold:#fbd239;--gold-light:#8a5e08;--border-dark:rgba(5,76,140,0.14)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:radial-gradient(ellipse 60% 45% at 85% -5%,rgba(251,210,57,.16)0%,transparent 60%),radial-gradient(ellipse 55% 45% at 0% 100%,rgba(5,76,140,.12)0%,transparent 60%),var(--charcoal);color:var(--cream);line-height:1.6}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.6}
+.topnav{position:fixed;top:0;left:0;right:0;z-index:200;height:56px;background:rgba(42,84,130,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border-dark);display:flex;align-items:center;padding:0 32px;gap:8px}
+.brand{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#e9f0fa;text-decoration:none}
+.brand span{color:#fbd239}
+.navlinks{margin-left:auto;display:flex;gap:4px}
+.navlinks a{font-size:.72rem;font-weight:500;color:rgba(214,228,240,.65);text-decoration:none;padding:6px 11px;border-radius:5px}
+.navlinks a:hover{background:rgba(255,255,255,.12);color:#fff}
+.wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:96px 24px 80px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(58,110,165,.2);border:1px solid rgba(143,179,217,.3);border-radius:100px;padding:6px 16px;font-family:'DM Mono',monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:#bcd4ef;margin-bottom:16px}
+h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.05;margin-bottom:12px}
+.lead{font-size:1rem;font-weight:300;color:rgba(81,96,121,.95);max-width:760px;margin-bottom:8px}
+h2{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;margin:48px 0 6px;color:var(--forest-pale)}
+.band-sub{font-family:'DM Mono',monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--charcoal-mute);margin-bottom:16px}
+table{width:100%;border-collapse:collapse;margin:8px 0 4px;font-size:.84rem;background:var(--charcoal-mid);border-radius:10px;overflow:hidden}
+th{background:var(--forest-deep);color:#e9f0fa;font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:10px 12px;font-weight:500}
+td{padding:11px 12px;border-top:1px solid rgba(143,179,217,.08);vertical-align:top;color:rgba(81,96,121,.95)}
+td strong{color:var(--cream)}
+.teks{font-family:'DM Mono',monospace;font-size:.76rem;color:#054c8c}
+.es{display:inline-block;font-family:'DM Mono',monospace;font-size:.68rem;color:var(--gold-light);background:rgba(252,176,64,.1);border:1px solid rgba(252,176,64,.25);border-radius:4px;padding:1px 7px;margin-top:3px}
+.note{background:rgba(252,176,64,.06);border:1px solid rgba(252,176,64,.28);border-left:3px solid var(--gold);border-radius:10px;padding:18px 22px;margin:40px 0 0}
+.note .k{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:6px}
+.note p{font-size:.85rem;font-weight:300;color:rgba(214,228,240,.78);margin-bottom:6px}
+.note p:last-child{margin-bottom:0}
+.srcs{margin-top:14px;font-size:.8rem;color:var(--charcoal-mute)}
+.srcs a{color:#054c8c;text-decoration:none}
+.srcs a:hover{text-decoration:underline}
+footer{position:relative;z-index:1;background:var(--forest-deep);border-top:1px solid rgba(143,179,217,.12);padding:30px 32px;text-align:center;font-family:'DM Mono',monospace;font-size:.62rem;color:rgba(143,179,217,.35);letter-spacing:.06em}
+@media(max-width:720px){table,thead,tbody,th,td,tr{display:block}th{display:none}td{border-top:none;border-bottom:1px solid rgba(143,179,217,.08)}td::before{content:attr(data-l);display:block;font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--forest-light);margin-bottom:3px}tr{border-bottom:2px solid rgba(143,179,217,.15);margin-bottom:8px}}
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <a href="index.html" class="brand">Bible as <span>Literature</span></a>
+  <div class="navlinks"><a href="index.html">Home</a><a href="index.html#bands">Activities</a><a href="../index.html">All breakouts</a></div>
+</nav>
+
+<div class="wrap">
+  <div class="eyebrow">Standards Correlation</div>
+  <h1>TEKS Correlation Guide</h1>
+  <p class="lead">Each breakout is <strong>aligned to</strong> — not a reproduction of — the Texas Essential Knowledge and Skills for English Language Arts and Reading (19 TAC Chapter 110, Adopted 2017), organized by the seven integrated ELAR strands. Every activity also names the CLEAR reasoning focus and the high-effect-size instructional strategy engineered into its locks. Effect sizes (d) are drawn from Hattie's <em>Visible Learning</em> synthesis and are approximate.</p>
+
+  <h2>Grades K–2 · The Storyteller's Order</h2>
+  <div class="band-sub">Source texts: Book of Genesis (creation account) · the Golden Rule — Bluebonnet Learning K/1 units</div>
+  <table>
+    <tr><th>Lock</th><th>Skill</th><th>ELAR strand (aligned to)</th><th>CLEAR · strategy</th></tr>
+    <tr>
+      <td data-l="Lock"><strong>L1 · Sequence</strong></td>
+      <td data-l="Skill">Order the events of a story as the text presents them</td>
+      <td data-l="Strand">Comprehension — retell/sequence with support <span class="teks">§110.2(6), §110.4(6)</span></td>
+      <td data-l="CLEAR">Evidence <span class="es">Advance organizers d≈0.42</span></td>
+    </tr>
+    <tr>
+      <td data-l="Lock"><strong>L2 · Golden Rule</strong></td>
+      <td data-l="Skill">Identify what a text plainly states</td>
+      <td data-l="Strand">Comprehension — make inferences using text evidence <span class="teks">§110.2(6)(F)</span></td>
+      <td data-l="CLEAR">Claim <span class="es">Feedback d≈0.70</span></td>
+    </tr>
+    <tr>
+      <td data-l="Lock"><strong>L3 · Evidence sort</strong></td>
+      <td data-l="Skill">Separate what the story says from a true-but-irrelevant fact</td>
+      <td data-l="Strand">Response — use text evidence to support a response <span class="teks">§110.2(7)(C)</span></td>
+      <td data-l="CLEAR">Alternatives <span class="es">Classifying/sorting d≈0.60</span></td>
+    </tr>
+    <tr>
+      <td data-l="Lock"><strong>L4 · Name the book</strong></td>
+      <td data-l="Skill">Attribute a text to its source</td>
+      <td data-l="Strand">Multiple Genres — recognize characteristics of texts <span class="teks">§110.2(8)</span></td>
+      <td data-l="CLEAR">Lens <span class="es">Vocabulary/knowledge d≈0.62</span></td>
+    </tr>
+  </table>
+
+  <h2>Grades 3–5 · Underdogs &amp; Lions' Dens</h2>
+  <div class="band-sub">Source texts: David &amp; Goliath · Daniel in the lions' den (2025 required reading list) · King Solomon (Bluebonnet)</div>
+  <table>
+    <tr><th>Lock</th><th>Skill</th><th>ELAR strand (aligned to)</th><th>CLEAR · strategy</th></tr>
+    <tr>
+      <td data-l="Lock"><strong>L1 · Theme</strong></td>
+      <td data-l="Skill">Determine a theme shared across two texts</td>
+      <td data-l="Strand">Multiple Genres — determine theme using text evidence <span class="teks">§110.7(8)(A)</span></td>
+      <td data-l="CLEAR">Claim <span class="es">Feedback d≈0.70</span></td>
+    </tr>
+    <tr>
+      <td data-l="Lock"><strong>L2 · Evidence</strong></td>
+      <td data-l="Skill">Gather only evidence that supports the claim</td>
+      <td data-l="Strand">Response — use text evidence to support an appropriate response <span class="teks">§110.7(7)(C)</span></td>
+      <td data-l="CLEAR">Evidence <span class="es">Classifying/sorting d≈0.60</span></td>
+    </tr>
+    <tr>
+      <td data-l="Lock"><strong>L3 · Counter-example</strong></td>
+      <td data-l="Skill">Test a pattern against a case where it breaks</td>
+      <td data-l="Strand">Comprehension — make/correct/confirm inferences <span class="teks">§110.6(6)(F)</span></td>
+      <td data-l="CLEAR">Alternatives <span class="es">Metacognitive strategies d≈0.55</span></td>
+    </tr>
+    <tr>
+      <td data-l="Lock"><strong>L4 · Source</strong></td>
+      <td data-l="Skill">Situate texts in their larger collection/context</td>
+      <td data-l="Strand">Inquiry &amp; Research — identify/gather relevant sources <span class="teks">§110.7(12)</span></td>
+      <td data-l="CLEAR">Lens <span class="es">Prior knowledge activation d≈0.55</span></td>
+    </tr>
+  </table>
+
+  <h2>Grades 6–8 · Parables &amp; Persuasion</h2>
+  <div class="band-sub">Source texts: Parable of the Prodigal Son (Book of Luke) · Sermon on the Mount — Bluebonnet / required list</div>
+  <table>
+    <tr><th>Lock</th><th>Skill</th><th>ELAR strand (aligned to)</th><th>CLEAR · strategy</th></tr>
+    <tr>
+      <td data-l="Lock"><strong>L1 · Genre</strong></td>
+      <td data-l="Skill">Name the parable genre from its defining traits</td>
+      <td data-l="Strand">Multiple Genres — analyze genre characteristics &amp; structures <span class="teks">§110.22–24(8)</span></td>
+      <td data-l="CLEAR">Lens <span class="es">Concept mapping d≈0.64</span></td>
+    </tr>
+    <tr>
+      <td data-l="Lock"><strong>L2 · Claim</strong></td>
+      <td data-l="Skill">State a theme grounded in what the text dramatizes</td>
+      <td data-l="Strand">Comprehension — synthesize/evaluate details <span class="teks">§110.22–24(6)</span></td>
+      <td data-l="CLEAR">Claim <span class="es">Feedback d≈0.70</span></td>
+    </tr>
+    <tr>
+      <td data-l="Lock"><strong>L3 · Techniques</strong></td>
+      <td data-l="Skill">Identify rhetorical/literary devices in the text</td>
+      <td data-l="Strand">Author's Purpose &amp; Craft — analyze author's use of craft <span class="teks">§110.22–24(9)(D)</span></td>
+      <td data-l="CLEAR">Evidence <span class="es">Classifying/sorting d≈0.60</span></td>
+    </tr>
+    <tr>
+      <td data-l="Lock"><strong>L4 · Connection</strong></td>
+      <td data-l="Skill">Transfer a device (anaphora) to another text</td>
+      <td data-l="Strand">Response — analyze/make connections across texts <span class="teks">§110.22–24(7)</span></td>
+      <td data-l="CLEAR">Response <span class="es">Transfer strategies d≈0.86</span></td>
+    </tr>
+  </table>
+
+  <h2>Grades 9–12 · Allusion, Archetype &amp; Argument</h2>
+  <div class="band-sub">Source texts: Adam &amp; Eve (Genesis) · Queen Esther — required list / Bluebonnet · framed as literary source study</div>
+  <table>
+    <tr><th>Lock</th><th>Skill</th><th>ELAR strand (aligned to)</th><th>CLEAR · strategy</th></tr>
+    <tr>
+      <td data-l="Lock"><strong>L1 · Archetype</strong></td>
+      <td data-l="Skill">Name a narrative archetype (the "fall")</td>
+      <td data-l="Strand">Multiple Genres — analyze relationships/thematic links <span class="teks">§110.36(6) English I</span></td>
+      <td data-l="CLEAR">Lens <span class="es">Concept mapping d≈0.64</span></td>
+    </tr>
+    <tr>
+      <td data-l="Lock"><strong>L2 · Allusion</strong></td>
+      <td data-l="Skill">Trace an allusion to its source text</td>
+      <td data-l="Strand">Author's Purpose &amp; Craft — analyze allusion &amp; rhetorical devices <span class="teks">§110.36(9), §110.36(7)</span></td>
+      <td data-l="CLEAR">Evidence <span class="es">Elaborative interrogation d≈0.55</span></td>
+    </tr>
+    <tr>
+      <td data-l="Lock"><strong>L3 · Text vs. interpretation</strong></td>
+      <td data-l="Skill">Distinguish textual fact from reader interpretation</td>
+      <td data-l="Strand">Comprehension — evaluate details; distinguish fact/interpretation <span class="teks">§110.36(5)(F)(H)</span></td>
+      <td data-l="CLEAR">Alternatives <span class="es">Critical/evaluative thinking d≈0.55</span></td>
+    </tr>
+    <tr>
+      <td data-l="Lock"><strong>L4 · Constitutional line</strong></td>
+      <td data-l="Skill">Explain why a text is studied academically vs. devotionally</td>
+      <td data-l="Strand">Response — evaluate relevance/credibility by context &amp; source <span class="teks">§110.36(4)(H)</span></td>
+      <td data-l="CLEAR">Response <span class="es">Metacognitive strategies d≈0.55</span></td>
+    </tr>
+  </table>
+
+  <div class="note">
+    <div class="k">Framing &amp; legal basis</div>
+    <p>These materials teach the Bible <strong>as literature and history in a secular, academic frame</strong> — analyzing texts, not promoting belief. This mirrors the distinction the U.S. Supreme Court drew in <em>Abington School District v. Schempp</em> (1963), which permits the objective study of the Bible for its literary and historic qualities as part of a secular program of education, and the position the Texas Education Agency itself states for its adopted materials. Where a text and a common interpretation diverge (for example, the Book of Esther and "religious freedom"), students are guided to notice the gap rather than resolve it.</p>
+    <p><strong>Citations disclaimer:</strong> TEKS student-expectation numbers are provided as good-faith alignment references and are paraphrased, not reproduced. Districts should confirm exact citations against the current 19 TAC Chapter 110 before formal adoption. This guide is an instructional resource, not legal advice.</p>
+  </div>
+
+  <div class="srcs">
+    Primary references:
+    <a href="https://tea.texas.gov/academics/instructional-materials/bluebonnet-learning">TEA · Bluebonnet Learning</a> ·
+    <a href="https://tea.texas.gov/academics/curriculum-standards/teks-review/english-language-arts-and-reading-teks-review">TEA · ELAR TEKS (Ch. 110)</a> ·
+    <em>Abington School District v. Schempp</em>, 374 U.S. 203 (1963)
+  </div>
+</div>
+
+<footer>CC BY 4.0 content · MIT code · Bible as Literature CTOB · Aligned to, not reproducing, Texas TEKS</footer>
+</body>
+</html>
