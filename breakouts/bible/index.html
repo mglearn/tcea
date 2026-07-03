@@ -110,6 +110,18 @@ footer{position:relative;z-index:1;background:var(--forest-deep);border-top:1px 
 #back-to-top.visible{opacity:1;transform:translateY(0)}
 #back-to-top:hover{background:var(--forest-mid)}
 
+/* full library grid */
+.lib-bands{padding:22px 24px 8px;display:flex;flex-direction:column;gap:26px;position:relative;z-index:1}
+.lib-band-h{font-family:'DM Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:#054c8c;margin:0 0 12px;display:flex;align-items:center;gap:12px}
+.lib-band-h::after{content:"";flex:1;height:1px;background:rgba(5,76,140,.12)}
+.lib-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(238px,1fr));gap:14px}
+.lib-card{display:flex;flex-direction:column;background:var(--charcoal-mid);border:1px solid var(--border-dark);border-radius:12px;padding:16px 18px;text-decoration:none;transition:border-color .2s,box-shadow .2s,transform .15s}
+.lib-card:hover{border-color:rgba(5,76,140,.3);box-shadow:0 12px 34px rgba(0,0,0,.12);transform:translateY(-2px)}
+.lc-star{font-family:'DM Mono',monospace;font-size:.58rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:6px}
+.lc-title{font-family:'Playfair Display',serif;font-size:1.04rem;font-weight:700;color:#12233a;line-height:1.16;margin-bottom:5px}
+.lc-blurb{font-size:.8rem;font-weight:300;color:rgba(81,96,121,.95);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.lc-open{margin-top:10px;font-size:.72rem;font-weight:600;color:var(--forest-mid)}
+
 @keyframes fadeDown{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
 
@@ -149,7 +161,7 @@ footer{position:relative;z-index:1;background:var(--forest-deep);border-top:1px 
     <div class="hero-tally">
       <div><span class="tally-num">4</span><span class="tally-label">Grade bands · K–12</span></div>
       <div class="tally-divider"></div>
-      <div><span class="tally-num">16</span><span class="tally-label">Reasoning locks</span></div>
+      <div><span class="tally-num">24</span><span class="tally-label">Breakouts · 6 per band</span></div>
       <div class="tally-divider"></div>
       <div><span class="tally-num">7</span><span class="tally-label">Languages</span></div>
       <div class="tally-divider"></div>
@@ -159,19 +171,20 @@ footer{position:relative;z-index:1;background:var(--forest-deep);border-top:1px 
 </section>
 
 <div class="index-strip">
-  <a class="index-pill" href="#bands"><span class="pnum">01</span> The four breakouts</a>
-  <a class="index-pill" href="#framing"><span class="pnum">02</span> Academic, not devotional</a>
-  <a class="index-pill" href="#clear"><span class="pnum">03</span> The CLEAR method</a>
-  <a class="index-pill" href="#strategies"><span class="pnum">04</span> Instructional strategies</a>
-  <a class="index-pill" href="correlation.html"><span class="pnum">05</span> TEKS correlation</a>
+  <a class="index-pill" href="#bands"><span class="pnum">01</span> Featured breakouts</a>
+  <a class="index-pill" href="#library"><span class="pnum">02</span> Full library · 24</a>
+  <a class="index-pill" href="#framing"><span class="pnum">03</span> Academic, not devotional</a>
+  <a class="index-pill" href="#clear"><span class="pnum">04</span> The CLEAR method</a>
+  <a class="index-pill" href="#strategies"><span class="pnum">05</span> Instructional strategies</a>
+  <a class="index-pill" href="correlation.html"><span class="pnum">06</span> TEKS correlation</a>
 </div>
 
 <main>
 
   <div class="sec-divider"><div class="sec-divider-line"></div><span class="sec-divider-lbl">The Breakouts</span><div class="sec-divider-line"></div></div>
   <div class="sec-lead" id="bands">
-    <h2>Four breakouts, one text per band</h2>
-    <p>Each activity is grounded in stories Texas actually adopted — the Bluebonnet Learning K–5 units and the 2025 required K–12 reading list. Every lock is solvable from the clues alone, and every clue set hides one true-but-irrelevant decoy so students practice separating evidence from noise.</p>
+    <h2>Featured breakouts — one per band</h2>
+    <p>Start here: a flagship breakout for each grade band. All twenty-four activities are grounded in stories Texas actually adopted — the Bluebonnet Learning K–5 units and the 2025 required K–12 reading list. Every lock is solvable from the clues alone, and every clue set hides one true-but-irrelevant decoy so students practice separating evidence from noise. The <a href="#library" style="color:var(--forest-mid);font-weight:500">full library of all 24</a> is below.</p>
   </div>
 
   <div class="slides">
@@ -270,6 +283,13 @@ footer{position:relative;z-index:1;background:var(--forest-deep);border-top:1px 
 
   </div>
 
+  <div class="sec-divider" id="library"><div class="sec-divider-line"></div><span class="sec-divider-lbl">The Full Library</span><div class="sec-divider-line"></div></div>
+  <div class="sec-lead">
+    <h2>All 24 breakouts</h2>
+    <p>Six breakouts per grade band, each built on a different adopted text — creation, the flood, the Ten Commandments, Jonah, the Psalms, the Good Samaritan, Solomon, Esther, the Last Supper, and more. Every one is studied as literature: sequence, theme, genre, archetype, allusion, and the line between what a text states and what a reader believes.</p>
+  </div>
+  <div id="libGrid" class="lib-bands"></div>
+
   <div class="callout">
     <div class="callout-inner">
       <div class="kicker">For teachers</div>
@@ -352,11 +372,29 @@ footer{position:relative;z-index:1;background:var(--forest-deep);border-top:1px 
 
 <a href="#top" id="back-to-top">↑</a>
 
+<script src="breakouts.js"></script>
 <script>
 const btt=document.getElementById('back-to-top');
 addEventListener('scroll',()=>btt.classList.toggle('visible',scrollY>500),{passive:true});
 const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:0.08});
 document.querySelectorAll('.slide').forEach(s=>io.observe(s));
+
+(function(){
+  var lib=window.BIBLE_LIB||[], order=['K–2','3–5','6–8','9–12'], host=document.getElementById('libGrid');
+  if(!host)return;
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  var byBand={}; lib.forEach(function(x){(byBand[x.band]=byBand[x.band]||[]).push(x);});
+  host.innerHTML=order.filter(function(b){return byBand[b];}).map(function(b){
+    var cards=byBand[b].map(function(x){
+      return '<a class="lib-card" href="'+x.href+'">'+
+        (x.featured?'<span class="lc-star">★ Featured</span>':'')+
+        '<span class="lc-title">'+esc(x.title)+'</span>'+
+        '<span class="lc-blurb">'+esc(x.blurb)+'</span>'+
+        '<span class="lc-open">Open breakout →</span></a>';
+    }).join('');
+    return '<div><div class="lib-band-h">Grades '+esc(b)+'</div><div class="lib-grid">'+cards+'</div></div>';
+  }).join('');
+})();
 </script>
 </body>
 </html>

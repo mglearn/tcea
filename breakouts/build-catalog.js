@@ -60,25 +60,29 @@ function clearMeta() {
 
 function bibleMeta() {
   const out = [];
-  const bands = [['k2', 'K–2'], ['g35', '3–5'], ['g68', '6–8'], ['g912', '9–12']];
-  for (const [slug, band] of bands) {
-    const file = path.join(ROOT, 'bible/grades', slug + '.js');
-    if (!fs.existsSync(file)) continue;
+  const dir = path.join(ROOT, 'bible/grades');
+  if (!fs.existsSync(dir)) return out;
+  const bandOf = { k2: 'K–2', g35: '3–5', g68: '6–8', g912: '9–12' };
+  const files = fs.readdirSync(dir).filter(f => f.endsWith('.js')).sort();
+  for (const f of files) {
+    const slug = f.replace('.js', '');
+    const m = slug.match(/^(k2|g912|g68|g35)/);       // band prefix (existing k2.js … or new k2-<slug>.js)
+    if (!m) continue;
     try {
-      const w = {}; eval(fs.readFileSync(file, 'utf8').replace('window.BREAKOUT', 'w.BREAKOUT'));
+      const w = {}; eval(fs.readFileSync(path.join(dir, f), 'utf8').replace('window.BREAKOUT', 'w.BREAKOUT'));
       const b = w.BREAKOUT, en = b.CONTENT.en;
       const kw = [
         ...en.clues.flatMap(c => [c.nm, c.title, c.body]),
         ...en.locks.flatMap(l => [l.q, l.reason, ...(l.options || []), ...((l.items || []).map(i => i.t))]),
       ].join(' ').replace(/\s+/g, ' ').toLowerCase().slice(0, 600);
       out.push({
-        suite: 'bible', band, slug,
+        suite: 'bible', band: b.band || bandOf[m[1]], slug,
         title: b.UI.en['header.h1'],
         desc: b.UI.en['header.sub'],
         href: `bible/grades/${slug}-student.html`,
         kw,
       });
-    } catch (e) { console.error('skip bible', slug, e.message); }
+    } catch (e) { console.error('skip bible', f, e.message); }
   }
   return out;
 }

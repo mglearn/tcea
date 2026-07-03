@@ -35,7 +35,7 @@ window.BREAKOUT = {
    "ui.wordph": "Type your answer",
    "ui.clear": "clear",
    "footer.privacy": "Privacy & compliance",
-   "footer.disclaimer": "A study resource about religious literature, not religious instruction. Translations are AI-seeded and pending native-speaker review.",
+   "footer.disclaimer": "A study resource about religious literature, not religious instruction.",
    "fb.digit": "That number doesn't match the clues. Check again.",
    "fb.word": "Check the clues for the word that fits.",
    "fb.mc": "That reading isn't supported by the text. Look again.",

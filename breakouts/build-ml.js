@@ -47,7 +47,7 @@ const COMMON = {
   'fb.multiMissing': {en:"You're missing a piece of strong evidence. Find them all.",es:'Te falta una prueba sólida. Encuéntralas todas.',vi:'Bạn còn thiếu một bằng chứng vững chắc. Hãy tìm hết.',ar:'ينقصك دليل قويّ. اعثر عليها كلّها.',hi:'आपसे एक मज़बूत प्रमाण छूट रहा है। सभी को खोजें।',ur:'آپ سے ایک مضبوط ثبوت رہ گیا ہے۔ سب تلاش کریں۔',zh:'你还缺一个有力证据。把它们都找齐。'},
   'fb.seq':          {en:"That order doesn't match the clues. Try again.",es:'Ese orden no coincide con las pistas. Inténtalo de nuevo.',vi:'Thứ tự đó không khớp với manh mối. Hãy thử lại.',ar:'هذا الترتيب لا يطابق الأدلّة. حاول مرة أخرى.',hi:'यह क्रम सुरागों से मेल नहीं खाता। फिर से कोशिश करें।',ur:'یہ ترتیب سراغوں سے میل نہیں کھاتی۔ دوبارہ کوشش کریں۔',zh:'这个顺序与线索不符。请再试一次。'},
   'footer.privacy':  {en:'Privacy & compliance',es:'Privacidad y cumplimiento',vi:'Quyền riêng tư & tuân thủ',ar:'الخصوصية والامتثال',hi:'गोपनीयता और अनुपालन',ur:'رازداری اور تعمیل',zh:'隐私与合规'},
-  'footer.disclaimer':{en:'Translations are AI-seeded and pending native-speaker review.',es:'Las traducciones son generadas por IA y están pendientes de revisión por hablantes nativos.',vi:'Bản dịch do AI khởi tạo và đang chờ người bản ngữ rà soát.',ar:'التّرجمات مُولّدة بالذكاء الاصطناعي وبانتظار مراجعة متحدّث أصلي.',hi:'अनुवाद AI द्वारा तैयार हैं और मातृभाषी समीक्षा की प्रतीक्षा में हैं।',ur:'تراجم AI سے تیار کیے گئے ہیں اور مقامی بولنے والے کی نظرِ ثانی کے منتظر ہیں۔',zh:'译文由 AI 生成，尚待母语者审校。'},
+  'footer.disclaimer':{en:'',es:'',vi:'',ar:'',hi:'',ur:'',zh:''},
 };
 const LANGS = ['en','es','vi','ar','hi','ur','zh'];
 /* breakout-specific chrome keys that the translation pass must fill for es..zh */
@@ -128,7 +128,7 @@ ${FONTS}
 
   <footer>
     <span data-i18n="footer.text">${x.footer}</span> · <a href="policy.html" data-i18n="footer.privacy">Privacy &amp; compliance</a><br>
-    <span style="opacity:.7" data-i18n="footer.disclaimer">Translations are AI-seeded and pending native-speaker review.</span>
+    <span style="opacity:.7" data-i18n="footer.disclaimer"></span>
   </footer>
 </div>
 

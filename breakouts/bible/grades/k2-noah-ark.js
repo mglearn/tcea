@@ -1,0 +1,317 @@
+window.BREAKOUT = {
+ "id": "bible-k2-noah-ark",
+ "band": "K–2",
+ "confetti": [
+  "#054c8c",
+  "#2f6cae",
+  "#fbd239",
+  "#5b8fc0",
+  "#dbe6f2",
+  "#023266"
+ ],
+ "UI": {
+  "en": {
+   "sect.clues": "🔍 The Clues",
+   "sect.cluesHint": "Tap each clue to read it. (You can reopen them anytime.)",
+   "sect.locks": "🔒 The Locks",
+   "sect.locksHint": "Solve each lock using the clues above.",
+   "crumb.teacher": "‹ Teacher launch",
+   "ui.reset": "↺ Reset",
+   "ui.check": "Check",
+   "ui.gotit": "Got it",
+   "ui.playagain": "Play Again",
+   "ui.solved": "🔓 Solved!",
+   "ui.pcount": "{n} of {total} locks open",
+   "ui.wordph": "Type your answer",
+   "ui.clear": "clear",
+   "fb.digit": "That number doesn't match the clues. Check again.",
+   "fb.word": "Check the clues for the word that fits.",
+   "fb.mc": "That one isn't supported by the clues. Look again.",
+   "fb.multiExtra": "One pick isn't strong evidence. Strong means facts the clues actually prove.",
+   "fb.multiMissing": "You're missing a piece of strong evidence. Find them all.",
+   "fb.seq": "That order doesn't match the clues. Try again.",
+   "footer.privacy": "Privacy & compliance",
+   "crumb.suite": "Bible as Literature Breakouts",
+   "header.eyebrow": "Critical Thinking Breakout · Grades K–2",
+   "header.h1": "The Big Boat and the Rain",
+   "header.sub": "A story from Genesis tells how a man named Noah built a big boat. Read the clues and put the story in order the way the text tells it.",
+   "brief.label": "Your mission",
+   "brief.h": "Read like a detective",
+   "brief.p": "Your job is not to say if this story is true — your job is to notice what the story says and what happens first, next, and last. That is what good readers do.",
+   "footer.text": "Bible as Literature Breakouts · Taught as story, not scripture · Runs entirely in your browser — no logins, no data collected.",
+   "footer.disclaimer": "A study resource about religious literature, not religious instruction.",
+   "win.stamp": "STORY SOLVED",
+   "win.h": "You read the story like a detective!",
+   "win.p": "You found what the text says and put it in the right order — without guessing. Great close reading!"
+  },
+  "es": {
+   "sect.clues": "🔍 Las pistas",
+   "sect.cluesHint": "Toca cada pista para leerla. (Puedes volver a abrirlas cuando quieras.)",
+   "sect.locks": "🔒 Los candados",
+   "sect.locksHint": "Resuelve cada candado usando las pistas de arriba.",
+   "crumb.teacher": "‹ Guía del docente",
+   "ui.reset": "↺ Reiniciar",
+   "ui.check": "Comprobar",
+   "ui.gotit": "Entendido",
+   "ui.playagain": "Jugar de nuevo",
+   "ui.solved": "🔓 ¡Resuelto!",
+   "ui.pcount": "{n} de {total} candados abiertos",
+   "ui.wordph": "Escribe tu respuesta",
+   "ui.clear": "limpiar",
+   "fb.digit": "Ese número no coincide con las pistas. Revisa de nuevo.",
+   "fb.word": "Busca en las pistas la palabra que encaja.",
+   "fb.mc": "Esa opción no está respaldada por las pistas. Mira otra vez.",
+   "fb.multiExtra": "Una de tus elecciones no es evidencia sólida. Sólida significa hechos que las pistas realmente prueban.",
+   "fb.multiMissing": "Te falta una prueba sólida. Encuéntralas todas.",
+   "fb.seq": "Ese orden no coincide con las pistas. Inténtalo de nuevo.",
+   "footer.privacy": "Privacidad y cumplimiento"
+  },
+  "vi": {
+   "sect.clues": "🔍 Các manh mối",
+   "sect.cluesHint": "Chạm vào mỗi manh mối để đọc. (Bạn có thể mở lại bất cứ lúc nào.)",
+   "sect.locks": "🔒 Các ổ khóa",
+   "sect.locksHint": "Giải mỗi ổ khóa bằng các manh mối ở trên.",
+   "crumb.teacher": "‹ Trang giáo viên",
+   "ui.reset": "↺ Đặt lại",
+   "ui.check": "Kiểm tra",
+   "ui.gotit": "Đã hiểu",
+   "ui.playagain": "Chơi lại",
+   "ui.solved": "🔓 Đã giải!",
+   "ui.pcount": "Đã mở {n}/{total} ổ khóa",
+   "ui.wordph": "Nhập câu trả lời của bạn",
+   "ui.clear": "xóa",
+   "fb.digit": "Con số đó không khớp với manh mối. Hãy kiểm tra lại.",
+   "fb.word": "Hãy tìm trong manh mối từ phù hợp.",
+   "fb.mc": "Lựa chọn đó không được manh mối chứng minh. Hãy xem lại.",
+   "fb.multiExtra": "Một lựa chọn không phải bằng chứng vững chắc. Vững chắc nghĩa là sự thật mà manh mối thực sự chứng minh.",
+   "fb.multiMissing": "Bạn còn thiếu một bằng chứng vững chắc. Hãy tìm hết.",
+   "fb.seq": "Thứ tự đó không khớp với manh mối. Hãy thử lại.",
+   "footer.privacy": "Quyền riêng tư & tuân thủ"
+  },
+  "ar": {
+   "sect.clues": "🔍 الأدلّة",
+   "sect.cluesHint": "انقر كل دليل لقراءته. (يمكنك فتحه مجددًا في أي وقت.)",
+   "sect.locks": "🔒 الأقفال",
+   "sect.locksHint": "حلّ كل قفل مستعينًا بالأدلّة أعلاه.",
+   "crumb.teacher": "‹ صفحة المعلّم",
+   "ui.reset": "↺ إعادة",
+   "ui.check": "تحقّق",
+   "ui.gotit": "حسنًا",
+   "ui.playagain": "العب مجددًا",
+   "ui.solved": "🔓 تم الحل!",
+   "ui.pcount": "{n} من {total} أقفال مفتوحة",
+   "ui.wordph": "اكتب إجابتك",
+   "ui.clear": "مسح",
+   "fb.digit": "هذا الرقم لا يطابق الأدلّة. تحقّق مرة أخرى.",
+   "fb.word": "ابحث في الأدلّة عن الكلمة المناسبة.",
+   "fb.mc": "هذا الخيار لا تدعمه الأدلّة. انظر مرة أخرى.",
+   "fb.multiExtra": "أحد اختياراتك ليس دليلاً قويًا. القويّ يعني حقائق تثبتها الأدلّة فعلاً.",
+   "fb.multiMissing": "ينقصك دليل قويّ. اعثر عليها كلّها.",
+   "fb.seq": "هذا الترتيب لا يطابق الأدلّة. حاول مرة أخرى.",
+   "footer.privacy": "الخصوصية والامتثال"
+  },
+  "hi": {
+   "sect.clues": "🔍 सुराग",
+   "sect.cluesHint": "हर सुराग पढ़ने के लिए उस पर टैप करो। (इन्हें कभी भी दोबारा खोल सकते हो।)",
+   "sect.locks": "🔒 ताले",
+   "sect.locksHint": "ऊपर के सुरागों की मदद से हर ताला हल करो।",
+   "crumb.teacher": "‹ शिक्षक पृष्ठ",
+   "ui.reset": "↺ रीसेट",
+   "ui.check": "जाँचें",
+   "ui.gotit": "समझ गया",
+   "ui.playagain": "फिर से खेलें",
+   "ui.solved": "🔓 हल हो गया!",
+   "ui.pcount": "{total} में से {n} ताले खुले",
+   "ui.wordph": "अपना उत्तर लिखें",
+   "ui.clear": "साफ़",
+   "fb.digit": "यह संख्या सुरागों से मेल नहीं खाती। फिर से जाँचें।",
+   "fb.word": "सही शब्द के लिए सुरागों को देखें।",
+   "fb.mc": "यह विकल्प सुरागों से समर्थित नहीं है। फिर से देखें।",
+   "fb.multiExtra": "आपका एक चुनाव मज़बूत प्रमाण नहीं है। मज़बूत यानी वे तथ्य जो सुराग सचमुच साबित करते हैं।",
+   "fb.multiMissing": "आपसे एक मज़बूत प्रमाण छूट रहा है। सभी को खोजें।",
+   "fb.seq": "यह क्रम सुरागों से मेल नहीं खाता। फिर से कोशिश करें।",
+   "footer.privacy": "गोपनीयता और अनुपालन"
+  },
+  "ur": {
+   "sect.clues": "🔍 سراغ",
+   "sect.cluesHint": "ہر سراغ پڑھنے کے لیے اس پر ٹیپ کریں۔ (انہیں کبھی بھی دوبارہ کھول سکتے ہیں۔)",
+   "sect.locks": "🔒 تالے",
+   "sect.locksHint": "اوپر دیے گئے سراغوں کی مدد سے ہر تالا حل کریں۔",
+   "crumb.teacher": "‹ استاد کا صفحہ",
+   "ui.reset": "↺ دوبارہ",
+   "ui.check": "جانچیں",
+   "ui.gotit": "ٹھیک ہے",
+   "ui.playagain": "دوبارہ کھیلیں",
+   "ui.solved": "🔓 حل ہو گیا!",
+   "ui.pcount": "{total} میں سے {n} تالے کھلے",
+   "ui.wordph": "اپنا جواب لکھیں",
+   "ui.clear": "صاف",
+   "fb.digit": "یہ عدد سراغوں سے میل نہیں کھاتا۔ دوبارہ جانچیں۔",
+   "fb.word": "صحیح لفظ کے لیے سراغ دیکھیں۔",
+   "fb.mc": "یہ انتخاب سراغوں سے ثابت نہیں ہوتا۔ دوبارہ دیکھیں۔",
+   "fb.multiExtra": "آپ کا ایک انتخاب مضبوط ثبوت نہیں ہے۔ مضبوط یعنی وہ حقائق جو سراغ واقعی ثابت کرتے ہیں۔",
+   "fb.multiMissing": "آپ سے ایک مضبوط ثبوت رہ گیا ہے۔ سب تلاش کریں۔",
+   "fb.seq": "یہ ترتیب سراغوں سے میل نہیں کھاتی۔ دوبارہ کوشش کریں۔",
+   "footer.privacy": "رازداری اور تعمیل"
+  },
+  "zh": {
+   "sect.clues": "🔍 线索",
+   "sect.cluesHint": "点按每条线索来阅读。（你可以随时重新打开。）",
+   "sect.locks": "🔒 锁",
+   "sect.locksHint": "用上面的线索解开每一把锁。",
+   "crumb.teacher": "‹ 教师页面",
+   "ui.reset": "↺ 重置",
+   "ui.check": "检查",
+   "ui.gotit": "知道了",
+   "ui.playagain": "再玩一次",
+   "ui.solved": "🔓 已解开！",
+   "ui.pcount": "已打开 {n}/{total} 把锁",
+   "ui.wordph": "输入你的答案",
+   "ui.clear": "清除",
+   "fb.digit": "这个数字与线索不符。请再检查。",
+   "fb.word": "在线索中找出合适的词。",
+   "fb.mc": "这个选项没有线索支持。请再看看。",
+   "fb.multiExtra": "你的一个选择不是有力证据。有力是指线索真正证明的事实。",
+   "fb.multiMissing": "你还缺一个有力证据。把它们都找齐。",
+   "fb.seq": "这个顺序与线索不符。请再试一次。",
+   "footer.privacy": "隐私与合规"
+  }
+ },
+ "CONTENT": {
+  "en": {
+   "clues": [
+    {
+     "id": "c1",
+     "ico": "📖",
+     "nm": "The Book",
+     "title": "Where this story comes from",
+     "body": "This story is from the Book of Genesis, the first book of the Bible. We read it like any story — looking at who is in it, what happens, and what order things go in."
+    },
+    {
+     "id": "c2",
+     "ico": "🔨",
+     "nm": "Big Boat",
+     "title": "Noah builds the ark",
+     "body": "In the story, God tells Noah to build a very big boat called an ark. Noah does what he is told and builds it."
+    },
+    {
+     "id": "c3",
+     "ico": "🦁",
+     "nm": "Two by Two",
+     "title": "Animals come aboard",
+     "body": "After the ark is ready, animals come to Noah two by two — two of every kind. They all go onto the big boat."
+    },
+    {
+     "id": "c4",
+     "ico": "🌧️",
+     "nm": "Rain & Flood",
+     "title": "The rain comes down",
+     "body": "Then rain falls for a long time. Water covers the land. Noah, his family, and the animals are safe on the ark."
+    },
+    {
+     "id": "c5",
+     "ico": "🕊️",
+     "nm": "The Dove",
+     "title": "Dry land at last",
+     "body": "When the rain stops, Noah sends out a dove. The dove comes back with a leaf, which means the water is going down. Soon dry land appears."
+    },
+    {
+     "id": "c6",
+     "ico": "🐋",
+     "nm": "Big Fish Fact",
+     "title": "True — but is it in this story?",
+     "body": "Blue whales are the biggest animals on Earth. They can grow as long as two school buses. That is a true and amazing fact — but it is not part of the Noah story."
+    }
+   ],
+   "locks": [
+    {
+     "id": "L1",
+     "type": "seq",
+     "color": "#054c8c",
+     "title": "Put the flood story in order",
+     "q": "Tap the four parts in the order the Noah story tells them.",
+     "pads": [
+      {
+       "k": "b",
+       "e": "🦁 Animals come two by two",
+       "c": "#2f6cae"
+      },
+      {
+       "k": "d",
+       "e": "🕊️ Dove finds dry land",
+       "c": "#023266"
+      },
+      {
+       "k": "a",
+       "e": "🔨 Noah builds the ark",
+       "c": "#5b8fc0"
+      },
+      {
+       "k": "c",
+       "e": "🌧️ Rain and flood",
+       "c": "#054c8c"
+      }
+     ],
+     "answer": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "reason": "The text goes: build the ark, then animals come aboard, then rain and flood, then the dove finds dry land. Putting events in order is how readers follow what a story is really saying — clues 2, 3, 4, and 5 show it."
+    },
+    {
+     "id": "L2",
+     "type": "mc",
+     "color": "#2f6cae",
+     "title": "Why did animals come on the ark?",
+     "q": "According to the story clues, animals came onto the ark…",
+     "options": [
+      "Two by two, two of every kind",
+      "Only the big ones, like elephants",
+      "After the rain had already started"
+     ],
+     "answerIndex": 0,
+     "reason": "Clue 3 says animals came two by two, two of every kind, before the rain. Good readers answer from what the text says, not from a guess."
+    },
+    {
+     "id": "L3",
+     "type": "multi",
+     "color": "#fbd239",
+     "title": "Which facts are really in the Noah story?",
+     "q": "Check ONLY what the Noah story clues actually say. Leave out the true-but-off-topic one.",
+     "items": [
+      {
+       "t": "Noah built a big boat called an ark",
+       "strong": true
+      },
+      {
+       "t": "Animals came onto the ark two by two",
+       "strong": true
+      },
+      {
+       "t": "Blue whales can grow as long as two school buses",
+       "strong": false
+      },
+      {
+       "t": "A dove helped Noah know the water went down",
+       "strong": true
+      }
+     ],
+     "reason": "The blue whale fact is true but it is a decoy — it is not part of the Noah story. Strong readers spot when a fact is real but does not belong to the story being studied."
+    },
+    {
+     "id": "L4",
+     "type": "word",
+     "color": "#5b8fc0",
+     "title": "Name the book",
+     "q": "Clue 1 tells you the name of the book this story comes from. Type its name.",
+     "answer": [
+      "genesis"
+     ],
+     "reason": "Clue 1 says this story is from Genesis. Knowing where a text comes from helps us read it carefully and ask the right questions."
+    }
+   ]
+  }
+ }
+};

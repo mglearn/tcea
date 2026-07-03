@@ -64,7 +64,7 @@ ${FONTS}
 
   <footer>
     <span data-i18n="footer.text">${x.footer || 'CLEAR Critical Thinking Breakouts · Runs entirely in your browser — no logins, no data collected.'}</span> · <a href="policy.html" data-i18n="footer.privacy">Privacy &amp; compliance</a><br>
-    <span style="opacity:.7" data-i18n="footer.disclaimer">Translations are AI-seeded and pending native-speaker review.</span>
+    <span style="opacity:.7" data-i18n="footer.disclaimer"></span>
   </footer>
 </div>
 
