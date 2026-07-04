@@ -41,23 +41,21 @@ thinking move**. All are solvable from the evidence alone.
 | **2** | ✅ Make Some Noise! | ✅ **10 built** — solids & liquids, changing matter, pushes, Sun & Moon, wind & water, wild weather, recycling, producers & consumers, pollen & seeds, metamorphosis |
 | **3** | ✅ Blast Off! A Trip Through Space | ✅ **10 built** — states of matter, changes of state, measuring matter, forces at a distance, forms of energy, how soil forms, rapid Earth changes, food chains, fossils, survival structures |
 | **4** | ✅ Light It Up! The Secret of Circuits | ✅ **10 built** — mixtures & solutions, energy transfer, conductors & insulators, Moon phases, water cycle, erosion, weather vs. climate, resources, food webs, inherited vs. acquired traits |
-| **5** | ⏳ planned | ⏳ planned |
+| **5** | ✅ Round and Round: Day, Night, and Shadows | ✅ **10 built** — separating mixtures, particles, forces, energy transformations, light, sedimentary rock & fossil fuels, landforms, ecosystem changes, human impact, instinct vs. learned behavior |
 | **6** | ✅ Cargo Ship Rescue | ✅ **10 built** — states of matter, mixtures, periodic table, density, chemical change, forces, waves, seasons & tides, Earth's systems, ecosystems & cells |
 | **7** | ✅ Rescue Run | ✅ **10 built** — elements & compounds, solutions, motion & graphs, heat transfer, solar system, plate tectonics, watersheds, energy pyramids, body systems, classifying life |
 | **8** | ✅ Launch Control | ✅ **10 built** — classifying matter, acids & bases, conservation of mass, Newton's laws, waves & EM spectrum, stars & galaxies, weather systems, carbon & climate, ecosystem change, cells & heredity |
 
-Grades 6–8 are **complete** (3 featured + 30 concept breakouts). **Grade 1 is complete** too
-(featured *Push, Pull, and Play!* + 10 concept breakouts, pitched to early readers).
+🎉 **Grades 1–8 are ALL complete** — **8 featured breakouts + 80 concept breakouts** (10 per
+grade), each grade with a hub, a STEM engineering design challenge, a student word bank, a
+Skills & TEKS page, and a password-protected AES-256 answer key. All verified by real
+headless-browser solves; all 88 breakouts are indexed in the site-wide search, in 7 languages.
 
 **Anticipated next, in order:**
-1. **Grade 5** (elementary §112.A) — one hub + featured breakout + ~8–10 concept set + STEM
-   challenge + word bank + Skills&TEKS, same pattern as Grades 1–4 (TEA grade-5 design-challenge
-   PDF is in `info/`, which is local-only / gitignored).
-2. **Answer keys** — `node build-answer-key.js <1-8> <password>` supports every grade. Grades 1–4
-   and 6–8 keys are generated (passwords passed at run time, never committed); Grade 5 pending.
-3. **Native translations** — per-breakout `_i18n` files for the 7 languages (today the
+1. **Native translations** — per-breakout `_i18n` files for the 7 languages (today the
    non-English UI falls back to high-quality English; content still works in all 7).
-4. **Generated correlation page** and per-suite catalog polish as the set grows.
+2. **Generated correlation page** covering every breakout, and per-suite catalog polish.
+3. **Optional K breakout** (§112.2) to round out the K–8 span.
 
 ## Build & verify
 

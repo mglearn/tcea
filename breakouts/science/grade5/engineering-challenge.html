@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Shadow Tracker &amp; Sundial — Grade 5 Engineering Design Challenge</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#9f1239;--navy-d:#7a0d2c;--gold:#ca8a04;--sci:#0891b2;--paper:#fdf2f5;--ink:#2a1219;--ink-soft:#6b4a53;--card:#fff;--line:#f4d9e1;--accent:#16a34a}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Nunito',sans-serif;color:var(--ink);background:var(--paper);line-height:1.55}
+  .wrap{max-width:760px;margin:0 auto;padding:30px 22px 70px}
+  .crumb{font-size:.82rem;font-weight:700;margin-bottom:16px}
+  .crumb a{color:#9f1239;text-decoration:none}
+  .eyebrow{display:inline-block;background:var(--navy);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;
+    font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:12px}
+  h1{font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(1.7rem,5vw,2.5rem);color:var(--navy);line-height:1.05}
+  .lead{font-weight:600;color:var(--ink-soft);margin-top:8px}
+  h2{font-family:'Fredoka',sans-serif;color:var(--navy);font-size:1.2rem;margin:26px 0 8px;border-bottom:2px solid var(--line);padding-bottom:5px}
+  h3{font-family:'Fredoka',sans-serif;color:var(--sci);font-size:1rem;margin:16px 0 4px}
+  p,li{font-weight:600;color:var(--ink)}
+  ul,ol{margin:6px 0 6px 22px}
+  li{margin:4px 0}
+  .card{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:18px 22px;margin-top:14px}
+  .steps{list-style:none;margin:12px 0 0;padding:0;counter-reset:s}
+  .steps>li{position:relative;padding:10px 0 10px 46px;border-bottom:1px dashed var(--line)}
+  .steps>li:last-child{border-bottom:none}
+  .steps>li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:9px;width:32px;height:32px;
+    background:var(--navy);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;border-radius:50%;
+    display:flex;align-items:center;justify-content:center}
+  .steps b{color:var(--navy)}
+  table{width:100%;border-collapse:collapse;margin-top:10px;font-size:.95rem}
+  th,td{border:1px solid var(--line);padding:10px;text-align:left}
+  th{background:#fbe4ec;color:var(--navy);font-family:'Fredoka',sans-serif;font-weight:600}
+  td{height:36px}
+  .say{background:#fdeef3;border:2px solid var(--line);border-radius:12px;padding:16px 20px;margin-top:12px}
+  .say .line{border-bottom:1px solid var(--line);height:28px;margin:10px 0}
+  .career{background:#e6f6fa;border-left:4px solid var(--sci);border-radius:8px;padding:12px 16px;margin-top:14px;font-size:.92rem}
+  .teks{font-size:.82rem;color:var(--ink-soft);margin-top:6px}
+  code{background:#fbe4ec;padding:1px 6px;border-radius:5px;color:var(--navy);font-weight:700}
+  .print{display:inline-block;background:var(--navy);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;border:none;
+    font-size:.95rem;padding:10px 22px;border-radius:10px;margin-top:16px;cursor:pointer}
+  footer{text-align:center;margin-top:30px;font-size:.8rem;color:var(--ink-soft);font-weight:600}
+  @media print{.crumb,.print{display:none}body{background:#fff}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="crumb"><a href="index.html">‹ Teacher launch</a> · <a href="../index.html">Science Critical Thinking Breakouts</a></div>
+  <div class="eyebrow">Engineering Design Challenge · Grade 5</div>
+  <h1>Shadow Tracker &amp; Sundial</h1>
+  <p class="lead">A hands-on STEM buddy for the <b>Round and Round</b> breakout. Track a shadow across the day to watch Earth's spin at work — then use it to tell time like an ancient sundial.</p>
+
+  <div class="card">
+    <h3>🎯 The problem</h3>
+    <p>Can you use a shadow to tell time? As Earth spins, the Sun appears to move, so shadows move and change length. Build a <b>shadow tracker</b> that marks the shadow each hour — then read the time from it.</p>
+    <p class="teks"><b>Big question:</b> How does the shadow change through the day, and what does that tell you about Earth's spin?</p>
+  </div>
+
+  <h2>🧰 What you need</h2>
+  <ul>
+    <li>A stick, pencil, or straw stood straight up (the "gnomon")</li>
+    <li>A flat spot in the sun, or a paper plate with the stick through the center</li>
+    <li>Chalk or a marker to mark the shadow, and a clock to check the time</li>
+    <li>A sunny day and a spot the stick won't be moved</li>
+  </ul>
+
+  <h2>🔁 Be an engineer</h2>
+  <ol class="steps">
+    <li><b>Ask:</b> How does a shadow change through the day?</li>
+    <li><b>Imagine:</b> Predict — will the shadow be longer in the morning or at noon?</li>
+    <li><b>Plan:</b> Choose a spot where the stick stays still all day.</li>
+    <li><b>Build:</b> Stand the stick straight up so it makes a clear shadow.</li>
+    <li><b>Test:</b> Mark the tip of the shadow every hour and write the time next to it.</li>
+    <li><b>Make it better:</b> Use your marks as a sundial — can a friend read the time from the shadow? Fix any marks that are hard to read.</li>
+  </ol>
+
+  <h2>📊 Track the shadow</h2>
+  <table>
+    <tr><th>Time</th><th>Shadow length (short / medium / long)</th><th>Which way it points</th></tr>
+    <tr><td>Morning</td><td></td><td></td></tr>
+    <tr><td>Midday</td><td></td><td></td></tr>
+    <tr><td>Afternoon</td><td></td><td></td></tr>
+  </table>
+
+  <h2>🗣️ Tell about it</h2>
+  <div class="say">
+    <p>When was the shadow longest, and when was it shortest?</p>
+    <div class="line"></div>
+    <p>Why did the shadow move? (Try the words <i>rotate</i>, <i>spin</i>, and <i>shadow</i>.)</p>
+    <div class="line"></div>
+  </div>
+
+  <div class="career">🌞 <b>Meet a STEM job — Astronomer &amp; Meteorologist.</b> Astronomers study how Earth moves in space, and meteorologists use the Sun's energy and position to predict weather. People have used shadows and sundials to tell time for thousands of years. <span class="teks">(Grade 5 innovators to explore: scientists who study Earth, sky, and time.)</span></div>
+
+  <h3 style="margin-top:22px">TEKS for this challenge</h3>
+  <p class="teks"><code>5.9</code> Earth's rotation causes day/night &amp; changing shadows · <code>5.1(B)</code> plan &amp; do an investigation · <code>5.1(G)</code> develop &amp; use a model · <code>5.2(B)</code> analyze data &amp; patterns · <code>5.2(D)</code> evaluate a design. Aligned to, not reproduced from, the official TEKS — confirm before adoption.</p>
+
+  <button class="print" onclick="window.print()">🖨️ Print this page</button>
+  <footer>Grade 5 Science · Critical Thinking Online Breakouts · Self-contained, no logins, no data collected.</footer>
+</div>
+</body>
+</html>
