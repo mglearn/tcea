@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Blast Off! A Trip Through Space — Grade 3 Science Breakout</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>:root{--c1:#5b3a9e;--c2:#0d9488;--c3:#e0902a;--c4:#e0533a;--c5:#2f6fe0;--navy:#5b3a9e;--navy-d:#432a78;--gold:#e0902a;--gold-d:#b9740a;--paper:#f5f2fc;--ink:#241a3a;--ink-soft:#5a5078;--card:#fff;--line:#e4dcf5;--good:#0a8a5f;--bad:#e03131;--bg-a:rgba(13,148,136,.12);--bg-b:rgba(91,58,158,.10)}</style>
+<link rel="stylesheet" href="../../assets/breakout.css">
+</head>
+<body>
+<canvas id="confetti"></canvas>
+<div class="wrap">
+  <div class="langbar"><span class="globe" aria-hidden="true">🌐</span><div data-i18n-picker></div></div>
+  <div class="crumb"><a href="index.html" data-i18n="crumb.teacher">‹ Teacher launch</a> · <a href="glossary.html">📖 Word bank</a> · <a href="../index.html" data-i18n="crumb.suite">Science Critical Thinking Breakouts</a></div>
+
+  <header class="top">
+    <div class="eyebrow" data-i18n="header.eyebrow">Science Breakout · Grade 3</div>
+    <h1 data-i18n="header.h1">Blast Off! A Trip Through Space</h1>
+    <p class="sub" data-i18n="header.sub">You are the pilot of a spaceship! Read the clues and open all four locks to learn how the Sun, planets, and Moon move through our solar system.</p>
+  </header>
+
+  <div class="progress-wrap">
+    <span class="pcount" id="pcount">0 of 4 locks open</span>
+    <div class="lockdots" id="lockdots"></div>
+    <button class="resetbtn" id="resetBtn" data-i18n="ui.reset">↺ Start over</button>
+  </div>
+
+  <div class="brief">
+    <span class="tag" data-i18n="brief.label">🚀 Your Mission</span>
+    <h2 data-i18n="brief.h">Chart the solar system</h2>
+    <p data-i18n-html="brief.p">To fly safely, you must know your way around space. The Sun sits at the center, the planets <b>orbit</b> (travel around) the Sun, and the Moon orbits the Earth. Tap each clue, then open all four locks!</p>
+  </div>
+
+  <div class="section-title" data-i18n="sect.clues">🔍 The Clues</div>
+  <p class="hint" data-i18n="sect.cluesHint">Tap each clue to read it. You can open them again anytime.</p>
+  <div class="clue-grid" id="clueGrid"></div>
+
+  <div class="section-title" data-i18n="sect.locks">🔒 The Locks</div>
+  <p class="hint" data-i18n="sect.locksHint">Use the clues to open each lock.</p>
+  <div class="locks" id="locks"></div>
+
+  <footer>
+    <span data-i18n="footer.text">Science Critical Thinking Breakouts · Grade 3 · Runs in your browser — no logins, no data collected.</span> · <a href="../policy.html" data-i18n="footer.privacy">Privacy &amp; compliance</a><br>
+    <span style="opacity:.7" data-i18n="footer.disclaimer">Aligned to the 2021 Texas Essential Knowledge and Skills for Science (§112.5, Grade 3). Good-faith paraphrase; confirm before adoption.</span>
+  </footer>
+</div>
+
+<div class="modal-bg" id="modalBg"><div class="modal" id="modal"></div></div>
+<div class="win" id="win"><div class="win-card">
+  <div class="stamp" data-i18n="win.stamp">MISSION COMPLETE ✓</div>
+  <h2 data-i18n="win.h">Great flying, pilot!</h2>
+  <p data-i18n="win.p">You put the planets in order, learned that the Moon orbits the Earth while the Earth orbits the Sun, and named what it means to orbit. Now you can chart a course through our solar system!</p>
+  <button id="winReplay" data-i18n="ui.playagain">Play Again</button>
+</div></div>
+
+<script src="locales/grade3.js"></script>
+<script src="../../assets/i18n.js"></script>
+<script src="../../assets/breakout.js"></script>
+</body>
+</html>
