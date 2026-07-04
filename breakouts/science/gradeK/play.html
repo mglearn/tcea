@@ -56,28 +56,31 @@
 </div></div>
 
 <script src="more.js"></script>
+<script src="more-i18n.js"></script>
 <script>
 (function () {
   var params = new URLSearchParams(location.search);
   var slug = params.get('b');
   var lib = window.MORE || {};
-  var entry = lib[slug] || lib[Object.keys(lib)[0]];
-  var base = (window.MORE_BASE_UI && window.MORE_BASE_UI.en) || {};
-  var ui = Object.assign({}, base, {
-    'header.h1': entry.ui.h1,
-    'header.sub': entry.ui.sub,
-    'brief.h': entry.ui.briefH,
-    'brief.p': entry.ui.briefP,
-    'win.stamp': entry.ui.winStamp,
-    'win.h': entry.ui.winH,
-    'win.p': entry.ui.winP
-  });
+  var actualSlug = lib[slug] ? slug : Object.keys(lib)[0];
+  var entry = lib[actualSlug];
+  var I18N = window.MORE_I18N || {};
+  function hdr(u) { return { 'header.h1': u.h1, 'header.sub': u.sub, 'brief.h': u.briefH, 'brief.p': u.briefP, 'win.stamp': u.winStamp, 'win.h': u.winH, 'win.p': u.winP }; }
+  var baseEn = (window.MORE_BASE_UI && window.MORE_BASE_UI.en) || {};
+  var UI = { en: Object.assign({}, baseEn, hdr(entry.ui)) };
+  var CONTENT = { en: { clues: entry.clues, locks: entry.locks } };
+  for (var lang in I18N) {
+    var L = I18N[lang]; var t = L.breakouts && L.breakouts[actualSlug];
+    if (!t) continue;
+    UI[lang] = Object.assign({}, L.base, hdr(t.ui));
+    CONTENT[lang] = { clues: t.clues, locks: t.locks };
+  }
   window.BREAKOUT = {
     id: entry.id,
     band: 'K',
     confetti: entry.confetti || ['#0e7490', '#f59e0b', '#e11d48', '#16a34a', '#7c3aed'],
-    UI: { en: ui },
-    CONTENT: { en: { clues: entry.clues, locks: entry.locks } }
+    UI: UI,
+    CONTENT: CONTENT
   };
   document.title = entry.ui.h1 + ' — Kindergarten Science Critical Thinking Online Breakout';
 })();

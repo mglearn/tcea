@@ -1,0 +1,402 @@
+{
+  "chrome": {
+    "sect.clues": "🔍 Las pistas",
+    "sect.cluesHint": "Toca cada pista para verla. Puedes abrirlas otra vez cuando quieras.",
+    "sect.locks": "🔒 Los candados",
+    "sect.locksHint": "Usa las pistas para abrir cada candado.",
+    "ui.reset": "↺ Empezar de nuevo",
+    "ui.check": "Revisar",
+    "ui.gotit": "Entendido",
+    "ui.playagain": "Jugar otra vez",
+    "ui.solved": "🔓 ¡Abierto!",
+    "ui.pcount": "{n} de {total} candados abiertos",
+    "ui.wordph": "Escribe aquí",
+    "ui.clear": "borrar",
+    "fb.digit": "Todavía no. Mira otra vez.",
+    "fb.word": "Mira las pistas para encontrar la palabra.",
+    "fb.mc": "Ese no. Mira otra vez.",
+    "fb.multiExtra": "Una opción no es correcta. Elige solo las que hacen una sombra.",
+    "fb.multiMissing": "Te falta una. Encuéntralas todas.",
+    "fb.seq": "Ese orden no. Inténtalo otra vez.",
+    "footer.privacy": "Privacidad y cumplimiento"
+  },
+  "featured": {
+    "ui": {
+      "header.eyebrow": "Breakout de Ciencias · Kínder",
+      "header.h1": "Luz y sombras",
+      "header.sub": "¡Enciende una luz y mira lo que pasa! Toca las pistas y abre los cuatro candados para aprender sobre la luz y las sombras.",
+      "brief.label": "🔦 Tu tarea",
+      "brief.h": "Encuentra las sombras",
+      "brief.p": "Necesitamos <b>luz</b> para ver. Cuando algo bloquea la luz, hace una <b>sombra</b> oscura. ¡Toca cada pista y luego abre los cuatro candados!",
+      "win.stamp": "¡MUY BIEN! ✓",
+      "win.h": "¡Lo lograste!",
+      "win.p": "Aprendiste que necesitamos luz para ver, y que bloquear la luz hace una sombra. ¡Ahora ve a hacer tus propias sombras!",
+      "footer.text": "Breakouts de Pensamiento Crítico de Ciencias · Kínder · Funciona en tu navegador — sin inicios de sesión, sin recopilar datos.",
+      "footer.disclaimer": "Alineado con los Conocimientos y Destrezas Esenciales de Texas 2021 para Ciencias (§112.2, Kínder). Paráfrasis de buena fe; confirma antes de adoptarlo.",
+      "crumb.teacher": "‹ Inicio del maestro",
+      "crumb.suite": "Breakouts de Pensamiento Crítico de Ciencias"
+    },
+    "clues": [
+      {"nm": "Luz", "title": "Necesitamos luz", "body": "Solo podemos ver las cosas cuando hay <b>luz</b>. En la oscuridad, no podemos ver."},
+      {"nm": "Linterna", "title": "Una linterna", "body": "Una linterna hace luz. Nos ayuda a ver en la oscuridad."},
+      {"nm": "Sombra", "title": "Una sombra", "body": "Cuando algo bloquea la luz, hace una <b>sombra</b> oscura."},
+      {"nm": "Sombra de mano", "title": "Haz una sombra", "body": "Pon tu mano frente a una luz. Hace una <b>sombra</b> de mano en la pared."},
+      {"nm": "El Sol", "title": "Sombras del Sol", "body": "El Sol da luz de día. Los árboles y las personas hacen sombras con el sol."},
+      {"nm": "Dato del pez", "title": "Un dato del pez", "body": "Un pez puede nadar en el agua. Eso es verdad y divertido — pero no es sobre la luz ni las sombras."}
+    ],
+    "locks": [
+      {"title": "Haz una sombra", "q": "Haz una sombra con una linterna. Ponlo en orden. Toca los botones en orden.",
+        "pads": ["🌑 Aparece una sombra en la pared", "🔦 Enciende la luz", "🖐️ Pon tu mano en el camino"],
+        "reason": "Enciende la luz, pon tu mano en el camino, y aparece una sombra. Bloquear la luz hace una sombra."},
+      {"title": "¿Qué necesitas?", "q": "¿Qué necesitas para ver algo?",
+        "options": ["Luz.", "Un imán.", "Una piedra."],
+        "reason": "Necesitamos luz para ver. En la oscuridad, no podemos ver las cosas."},
+      {"title": "¿Qué hace una sombra?", "q": "Toca SOLO las cosas que hacen una sombra al bloquear la luz. Deja fuera el dato divertido.",
+        "items": ["Una mano frente a una linterna.", "Un árbol bajo el sol.", "Un juguete que bloquea una lámpara.", "Un pez que nada en el agua."],
+        "reason": "Una mano, un árbol y un juguete bloquean la luz y hacen sombras. El dato del pez es verdad pero no hace una sombra."},
+      {"title": "Nómbralo", "q": "Cuando algo bloquea la luz, hace una ____ oscura. Escribe la palabra.",
+        "word": ["sombra", "sombras"],
+        "reason": "Bloquear la luz hace una sombra. Necesitamos luz para ver, y las sombras muestran dónde se bloquea la luz."}
+    ]
+  },
+  "conceptBase": {
+    "header.eyebrow": "Ciencias de Kínder · Breakout rápido",
+    "brief.label": "🎈 ¡Vamos!",
+    "crumb.teacher": "‹ Más breakouts de Kínder",
+    "crumb.suite": "Ciencias de Kínder",
+    "footer.text": "Ciencias de Kínder · Breakouts de Pensamiento Crítico en Línea · Funciona en tu navegador — sin inicios de sesión, sin recopilar datos.",
+    "footer.disclaimer": "Alineado con los Conocimientos y Destrezas Esenciales de Texas 2021 para Ciencias (§112.2, Kínder). Paráfrasis de buena fe; confirma antes de adoptarlo."
+  },
+  "concept": {
+    "properties": {
+      "ui": {
+        "h1": "¡A ordenar!",
+        "sub": "¿Cómo podemos ordenar las cosas? Toca las pistas y abre los cuatro candados.",
+        "briefH": "Mira y ordena",
+        "briefP": "Podemos ordenar las cosas por cómo se ven — su color, forma y tamaño. ¡Toca las pistas y abre los candados!",
+        "winStamp": "¡ORDENADO! ✓",
+        "winH": "¡Muy bien ordenado!",
+        "winP": "Pusiste cosas en orden de tamaño, encontraste cómo ordenar y nombraste una manera. ¡El color, la forma y el tamaño nos ayudan a ordenar!"
+      },
+      "clues": [
+        {"nm": "Color", "title": "Color", "body": "Podemos ordenar por color. Las cosas pueden ser rojas, azules o verdes."},
+        {"nm": "Forma", "title": "Forma", "body": "Podemos ordenar por forma. Las cosas pueden ser redondas o cuadradas."},
+        {"nm": "Tamaño", "title": "Tamaño", "body": "Podemos ordenar por tamaño. Algunas cosas son grandes y otras son pequeñas."},
+        {"nm": "Tacto", "title": "Cómo se siente", "body": "Podemos ordenar por cómo se siente. Las cosas pueden ser suaves o duras."},
+        {"nm": "Grupos", "title": "Haz grupos", "body": "Cuando ordenamos, ponemos juntas las cosas que van juntas en grupos."},
+        {"nm": "Dato del pez", "title": "Un dato del pez", "body": "Un pez puede nadar. Eso es verdad y divertido — pero no es una manera de ordenar."}
+      ],
+      "locks": [
+        {"title": "De pequeño a grande", "q": "Pon estos en orden de PEQUEÑO a GRANDE. Toca los botones en orden.",
+          "pads": ["🐘 Elefante", "🐜 Hormiga", "🐱 Gato"],
+          "reason": "Una hormiga es pequeña, un gato es más grande y un elefante es el más grande. ¡Eso es ordenar por tamaño!"},
+        {"title": "Ordena por color", "q": "Rojo, azul y verde nos dicen el ____ de una cosa.",
+          "options": ["Color.", "Tamaño.", "Forma."],
+          "reason": "Rojo, azul y verde son colores. Podemos ordenar las cosas por su color."},
+        {"title": "Maneras de ordenar", "q": "Toca SOLO las maneras en que podemos ordenar las cosas. Deja fuera el dato divertido.",
+          "items": ["Por color.", "Por tamaño.", "Por forma.", "Un pez puede nadar."],
+          "reason": "Color, tamaño y forma son maneras de ordenar. El dato del pez es verdad pero no ordena las cosas."},
+        {"title": "Nombra una manera", "q": "Grande y pequeño nos dicen el ____ de una cosa. Escribe la palabra.",
+          "word": ["tamaño", "tamano", "tamaños"],
+          "reason": "El tamaño nos dice si una cosa es grande o pequeña. ¡Podemos ordenar por tamaño!"}
+      ]
+    },
+    "magnets": {
+      "ui": {
+        "h1": "Magia de imanes",
+        "sub": "¿Qué puede hacer un imán? Toca las pistas y abre los cuatro candados.",
+        "briefH": "Prueba un imán",
+        "briefP": "Un imán puede jalar algunas cosas hacia él. Un empujón mueve las cosas lejos. ¡Toca las pistas y abre los candados!",
+        "winStamp": "¡IMÁN! ✓",
+        "winH": "¡Buen trabajo!",
+        "winP": "Usaste un imán para jalar un clip, encontraste qué agarra y nombraste el jalón. ¡Los imanes jalan, y un empujón manda las cosas lejos!"
+      },
+      "clues": [
+        {"nm": "Imán", "title": "Un imán", "body": "Un imán puede jalar algunas cosas hacia él, como un clip."},
+        {"nm": "Metal", "title": "Cosas de metal", "body": "Los imanes jalan algunas cosas de metal, como clips y clavos."},
+        {"nm": "No todo", "title": "No todo", "body": "Un imán no jala un juguete, papel ni madera. Solo algo de metal."},
+        {"nm": "Empujón", "title": "Un empujón", "body": "Un empujón aleja algo de ti."},
+        {"nm": "Jalón", "title": "Un jalón", "body": "Un jalón acerca algo hacia ti. Un imán da un jalón."},
+        {"nm": "Dato del ave", "title": "Un dato del pingüino", "body": "Un pingüino no puede volar. Eso es verdad y divertido — pero no es sobre imanes."}
+      ],
+      "locks": [
+        {"title": "Agarra el clip", "q": "Usa un imán para agarrar un clip. Ponlo en orden. Toca los botones en orden.",
+          "pads": ["📎 El clip salta hacia el imán", "🧲 Acerca el imán", "➡️ Muévelo cerca del clip"],
+          "reason": "Sostén el imán, muévelo cerca del clip, y el clip salta hacia él. El imán jala el clip de metal."},
+        {"title": "¿Qué se pega?", "q": "¿Cuál jalará un imán?",
+          "options": ["Un bloque de madera.", "Un clip de metal.", "Un papel."],
+          "reason": "Un imán jala algo de metal, como un clip. No jala madera ni papel."},
+        {"title": "¿Imán o no?", "q": "Toca SOLO las cosas que un imán puede jalar. Deja fuera el dato divertido.",
+          "items": ["Un clip.", "Un clavo de metal.", "Una llave de metal.", "Un pingüino no puede volar."],
+          "reason": "Un imán jala cosas de metal como clips, clavos y llaves. El dato del pingüino es verdad pero no es sobre imanes."},
+        {"title": "Nómbralo", "q": "Un imán da un ____ que acerca el clip hacia él. Escribe la palabra.",
+          "word": ["jalón", "jalon", "tirón", "tiron"],
+          "reason": "Un imán da un jalón. Un jalón acerca las cosas hacia ti; un empujón las aleja."}
+      ]
+    },
+    "day-night": {
+      "ui": {
+        "h1": "Día y noche",
+        "sub": "¿Qué viene después del día? Toca las pistas y abre los cuatro candados.",
+        "briefH": "Mira el cielo",
+        "briefP": "El día y la noche se turnan, una y otra vez. ¡Toca las pistas y abre los candados!",
+        "winStamp": "¡CIELO LISTO! ✓",
+        "winH": "¡Buen trabajo!",
+        "winP": "Pusiste el día y la noche en orden, encontraste la luz del día y nombraste la noche. ¡El día y la noche se turnan en un patrón!"
+      },
+      "clues": [
+        {"nm": "Día", "title": "El día", "body": "De día, el Sol está arriba y el cielo está claro. Podemos ver bien."},
+        {"nm": "Noche", "title": "La noche", "body": "De noche, el Sol está abajo y el cielo está oscuro. Vemos la Luna y las estrellas."},
+        {"nm": "Se turnan", "title": "Se repiten", "body": "El día y la noche se turnan, una y otra vez. Eso es un patrón."},
+        {"nm": "Dormir", "title": "Dormimos de noche", "body": "Estamos despiertos de día y dormimos de noche."},
+        {"nm": "Estrellas", "title": "Estrellas de noche", "body": "Podemos ver las estrellas de noche, cuando el cielo está oscuro."},
+        {"nm": "Dato del pez", "title": "Un dato del pez", "body": "Un pez puede nadar. Eso es verdad y divertido — pero no es sobre el día y la noche."}
+      ],
+      "locks": [
+        {"title": "Día y luego noche", "q": "Pon el cielo en orden, empezando por la mañana. Toca los botones en orden.",
+          "pads": ["🌙 Noche (cielo oscuro)", "☀️ Día (el Sol está arriba)", "🌆 Tarde (el Sol se pone)"],
+          "reason": "Primero el día, luego la tarde, luego la noche. El día y la noche se turnan en un patrón."},
+        {"title": "Luz del día", "q": "¿Qué ilumina el cielo durante el día?",
+          "options": ["La Luna.", "El Sol.", "Las estrellas."],
+          "reason": "El Sol ilumina el cielo de día. La Luna y las estrellas salen de noche."},
+        {"title": "Eso es de noche", "q": "Toca SOLO las cosas que vemos o hacemos de NOCHE. Deja fuera el dato divertido.",
+          "items": ["Vemos la Luna.", "Vemos las estrellas.", "Dormimos.", "Un pez puede nadar."],
+          "reason": "La Luna, las estrellas y dormir pasan de noche. El dato del pez es verdad pero no es sobre la noche."},
+        {"title": "Nómbralo", "q": "El momento oscuro cuando vemos la Luna y las estrellas es la ____. Escribe la palabra.",
+          "word": ["noche"],
+          "reason": "La noche es el momento oscuro. El día y la noche se turnan una y otra vez."}
+      ]
+    },
+    "sky": {
+      "ui": {
+        "h1": "¡Mira hacia arriba!",
+        "sub": "¿Qué hay en el cielo? Toca las pistas y abre los cuatro candados.",
+        "briefH": "Encuentra las cosas del cielo",
+        "briefP": "El cielo está lleno de cosas — el Sol, la Luna, las estrellas y las nubes. ¡Toca las pistas y abre los candados!",
+        "winStamp": "¡CIELO LISTO! ✓",
+        "winH": "¡Observador del cielo!",
+        "winP": "Encontraste el cielo de día, viste qué trae la lluvia y nombraste las esponjosas. ¡El cielo está lleno de cosas para ver!"
+      },
+      "clues": [
+        {"nm": "Sol", "title": "El Sol", "body": "El Sol es una gran luz en el cielo durante el día. Es cálido y brillante."},
+        {"nm": "Luna", "title": "La Luna", "body": "La Luna está en el cielo, casi siempre de noche. Se ve blanca o plateada."},
+        {"nm": "Estrellas", "title": "Estrellas", "body": "Las estrellas son lucecitas que vemos en el cielo oscuro de la noche."},
+        {"nm": "Nubes", "title": "Nubes", "body": "Las nubes son blancas y esponjosas. Las nubes oscuras pueden traer lluvia."},
+        {"nm": "Mira arriba", "title": "Miramos arriba", "body": "Miramos hacia arriba para ver el Sol, la Luna, las estrellas y las nubes."},
+        {"nm": "Dato de la tortuga", "title": "Un dato de la tortuga", "body": "Una tortuga tiene un caparazón duro. Eso es verdad y genial — pero no está en el cielo."}
+      ],
+      "locks": [
+        {"title": "Del cielo de día al de noche", "q": "Pon el cielo en orden, del día brillante a la noche oscura. Toca los botones en orden.",
+          "pads": ["⭐ Salen las estrellas (noche)", "☀️ El Sol (día)", "🌙 La Luna (tarde)"],
+          "reason": "El Sol brilla de día, la Luna llega en la tarde y las estrellas salen de noche."},
+        {"title": "Hace lluvia", "q": "¿Qué en el cielo puede traernos lluvia?",
+          "options": ["El Sol.", "Las nubes oscuras.", "Las estrellas."],
+          "reason": "Las nubes oscuras pueden traer lluvia. El Sol y las estrellas no hacen lluvia."},
+        {"title": "En el cielo", "q": "Toca SOLO las cosas que vemos en el cielo. Deja fuera el dato divertido.",
+          "items": ["El Sol.", "La Luna.", "Las nubes.", "Una tortuga tiene un caparazón duro."],
+          "reason": "El Sol, la Luna y las nubes están en el cielo. El dato de la tortuga es verdad pero no está en el cielo."},
+        {"title": "Nómbralo", "q": "Las cosas blancas y esponjosas del cielo que pueden traer lluvia son las ____. Escribe la palabra.",
+          "word": ["nubes", "nube"],
+          "reason": "Las nubes son las cosas esponjosas del cielo. Las nubes oscuras pueden traer lluvia."}
+      ]
+    },
+    "rocks": {
+      "ui": {
+        "h1": "Ordena piedras",
+        "sub": "¿En qué son diferentes las piedras? Toca las pistas y abre los cuatro candados.",
+        "briefH": "Mira las piedras",
+        "briefP": "Las piedras vienen en muchos tamaños, colores y texturas. ¡Podemos ordenarlas! ¡Toca las pistas y abre los candados!",
+        "winStamp": "¡ORDENADO! ✓",
+        "winH": "¡Estrella de las piedras!",
+        "winP": "Pusiste piedras en orden de tamaño, encontraste una manera de ordenar y nombraste la cosa de la tierra. ¡Las piedras vienen en todos los tamaños, colores y texturas!"
+      },
+      "clues": [
+        {"nm": "Piedras", "title": "Piedras", "body": "Las piedras son pedazos duros de la tierra. Las encontramos en el suelo."},
+        {"nm": "Tamaño", "title": "Grande o pequeña", "body": "Algunas piedras son grandes. Otras son pequeñitas, como los guijarros."},
+        {"nm": "Color", "title": "Colores de piedra", "body": "Las piedras pueden ser grises, cafés, negras o blancas."},
+        {"nm": "Tacto", "title": "Lisa o áspera", "body": "Algunas piedras son lisas. Otras son rugosas y ásperas."},
+        {"nm": "Ordenar", "title": "Ordénalas", "body": "Podemos ordenar las piedras en grupos por tamaño, color o textura."},
+        {"nm": "Dato del ave", "title": "Un dato del pingüino", "body": "Un pingüino no puede volar. Eso es verdad y divertido — pero no es sobre piedras."}
+      ],
+      "locks": [
+        {"title": "De piedra pequeña a grande", "q": "Pon las piedras en orden de PEQUEÑA a GRANDE. Toca los botones en orden.",
+          "pads": ["🪨 Una gran roca", "⚪ Un guijarro pequeñito", "🪨 Una piedra del tamaño de la mano"],
+          "reason": "Un guijarro es el más pequeño, luego una piedra, luego una gran roca. ¡Eso es ordenar piedras por tamaño!"},
+        {"title": "Piedra rugosa", "q": "Una piedra rugosa nos dice cómo se ____.",
+          "options": ["Siente.", "Prueba.", "Escucha."],
+          "reason": "Rugosa o lisa nos dice cómo se siente una piedra. Podemos ordenar las piedras por su textura."},
+        {"title": "Maneras de ordenar piedras", "q": "Toca SOLO las maneras en que podemos ordenar las piedras. Deja fuera el dato divertido.",
+          "items": ["Por tamaño.", "Por color.", "Por cómo se sienten.", "Un pingüino no puede volar."],
+          "reason": "Tamaño, color y textura son maneras de ordenar piedras. El dato del pingüino es verdad pero no ordena piedras."},
+        {"title": "Nómbralo", "q": "Un pedazo duro de la tierra que encontramos en el suelo es una ____. Escribe la palabra.",
+          "word": ["roca", "piedra", "rocas", "piedras"],
+          "reason": "Una piedra es un pedazo duro de la tierra. Podemos ordenar las piedras por tamaño, color y textura."}
+      ]
+    },
+    "weather": {
+      "ui": {
+        "h1": "¿Cómo está el clima?",
+        "sub": "¿Soleado o lluvioso? Toca las pistas y abre los cuatro candados.",
+        "briefH": "Mira afuera",
+        "briefP": "El clima es lo que está haciendo el cielo. ¡Puede cambiar cada día! ¡Toca las pistas y abre los candados!",
+        "winStamp": "¡CLIMA! ✓",
+        "winH": "¡Estrella del clima!",
+        "winP": "Te preparaste para un día lluvioso, elegiste la ropa correcta y nombraste la palabra. ¡El clima cambia, y nos ayuda a elegir qué ponernos!"
+      },
+      "clues": [
+        {"nm": "Soleado", "title": "Soleado", "body": "El clima soleado es brillante y cálido."},
+        {"nm": "Lluvioso", "title": "Lluvioso", "body": "El clima lluvioso tiene lluvia que cae de las nubes."},
+        {"nm": "Ventoso", "title": "Ventoso", "body": "El clima ventoso tiene aire que se mueve rápido. Puede soplar las hojas."},
+        {"nm": "Frío", "title": "Frío y con nieve", "body": "El clima frío puede traer nieve. Nos ponemos abrigos calientes."},
+        {"nm": "Vístete", "title": "Vístete para el clima", "body": "Usamos el clima para elegir nuestra ropa — un abrigo cuando hace frío, un impermeable cuando está mojado."},
+        {"nm": "Dato del pez", "title": "Un dato del pez", "body": "Un pez puede nadar. Eso es verdad y divertido — pero no es clima."}
+      ],
+      "locks": [
+        {"title": "Un día lluvioso", "q": "¡Está lloviendo! Pon tu mañana en orden. Toca los botones en orden.",
+          "pads": ["🙂 Te quedas seco", "🌧️ Ves la lluvia", "🧥 Agarras un impermeable"],
+          "reason": "Ves la lluvia, agarras un impermeable y te quedas seco. ¡El clima nos ayuda a elegir qué ponernos!"},
+        {"title": "Día frío", "q": "Hace frío y hay nieve. ¿Qué debes ponerte?",
+          "options": ["Un abrigo caliente.", "Un traje de baño.", "Nada extra."],
+          "reason": "En un día frío y con nieve nos ponemos un abrigo caliente para no tener frío."},
+        {"title": "Tipos de clima", "q": "Toca SOLO los tipos de clima. Deja fuera el dato divertido.",
+          "items": ["Soleado.", "Lluvioso.", "Ventoso.", "Un pez puede nadar."],
+          "reason": "Soleado, lluvioso y ventoso son clima. El dato del pez es verdad pero no es clima."},
+        {"title": "Nómbralo", "q": "Soleado, lluvioso y con nieve nos dicen el ____ que hay afuera. Escribe la palabra.",
+          "word": ["clima", "tiempo"],
+          "reason": "El clima es lo que está haciendo el cielo. ¡Nos ayuda a elegir qué ponernos!"}
+      ]
+    },
+    "air-wind": {
+      "ui": {
+        "h1": "Siente el viento",
+        "sub": "¿Qué es el viento? Toca las pistas y abre los cuatro candados.",
+        "briefH": "Atrapa el aire",
+        "briefP": "El aire está a nuestro alrededor, aunque no lo podemos ver. ¡Al aire que se mueve lo llamamos viento! ¡Toca las pistas y abre los candados!",
+        "winStamp": "¡VENTOSO! ✓",
+        "winH": "¡Buen trabajo!",
+        "winP": "Volaste un papalote con el viento, encontraste cómo se llama el aire que se mueve y lo nombraste. ¡El aire está a nuestro alrededor, y el aire que se mueve es viento!"
+      },
+      "clues": [
+        {"nm": "Aire", "title": "Aire por todos lados", "body": "El aire está a nuestro alrededor. No lo podemos ver, pero ahí está."},
+        {"nm": "Viento", "title": "Viento", "body": "Al aire que se mueve lo llamamos viento. Lo podemos sentir en la cara."},
+        {"nm": "Papalote", "title": "El viento levanta un papalote", "body": "El viento puede levantar un papalote muy alto en el cielo."},
+        {"nm": "Hojas", "title": "El viento mueve cosas", "body": "El viento puede soplar hojas, banderas y un rehilete."},
+        {"nm": "Globo", "title": "El aire lo llena", "body": "El aire llena un globo y lo hace más grande."},
+        {"nm": "Dato de la tortuga", "title": "Un dato de la tortuga", "body": "Una tortuga tiene un caparazón duro. Eso es verdad y genial — pero no es sobre el aire ni el viento."}
+      ],
+      "locks": [
+        {"title": "Vuela un papalote", "q": "Vuela un papalote con el viento. Ponlo en orden. Toca los botones en orden.",
+          "pads": ["🪁 El papalote vuela alto", "🧍 Sostienes el papalote", "💨 Sopla el viento"],
+          "reason": "Sostienes el papalote, sopla el viento, y el papalote vuela alto. ¡El aire que se mueve — el viento — levanta el papalote!"},
+        {"title": "Aire que se mueve", "q": "¿Cómo llamamos al aire que se mueve?",
+          "options": ["Viento.", "Una piedra.", "Agua."],
+          "reason": "Al aire que se mueve lo llamamos viento. Lo podemos sentir y puede mover cosas."},
+        {"title": "El viento puede...", "q": "Toca SOLO las cosas que el viento puede hacer. Deja fuera el dato divertido.",
+          "items": ["Levantar un papalote.", "Soplar hojas.", "Girar un rehilete.", "Una tortuga tiene un caparazón duro."],
+          "reason": "El viento puede levantar papalotes, soplar hojas y girar rehiletes. El dato de la tortuga es verdad pero no es sobre el viento."},
+        {"title": "Nómbralo", "q": "El aire que se mueve y puede volar un papalote se llama ____. Escribe la palabra.",
+          "word": ["viento"],
+          "reason": "El viento es aire que se mueve. El aire está a nuestro alrededor, ¡y cuando se mueve lo llamamos viento!"}
+      ]
+    },
+    "plant-needs": {
+      "ui": {
+        "h1": "Ayuda a crecer una planta",
+        "sub": "¿Qué necesitan las plantas? Toca las pistas y abre los cuatro candados.",
+        "briefH": "Haz crecer una planta",
+        "briefP": "Las plantas necesitan algunas cosas para vivir y crecer — luz del sol, agua, aire y tierra. ¡Toca las pistas y abre los candados!",
+        "winStamp": "¡CRECIÓ! ✓",
+        "winH": "¡Mano verde!",
+        "winP": "Hiciste crecer una planta, encontraste lo que necesita y nombraste la cosa mojada. ¡Las plantas necesitan luz del sol, agua, aire y tierra para crecer!"
+      },
+      "clues": [
+        {"nm": "Luz del sol", "title": "Luz del sol", "body": "Las plantas necesitan luz del sol para crecer. La usan para hacer su comida."},
+        {"nm": "Agua", "title": "Agua", "body": "Las plantas necesitan agua. Las regamos para que no se sequen."},
+        {"nm": "Aire", "title": "Aire", "body": "Las plantas necesitan aire, igual que nosotros."},
+        {"nm": "Tierra", "title": "Tierra", "body": "Las plantas crecen en la tierra. Sus raíces se sujetan y beben el agua."},
+        {"nm": "Crecen", "title": "Crecen", "body": "Con luz del sol, agua, aire y tierra, una planta puede crecer grande y sana."},
+        {"nm": "Dato del ave", "title": "Un dato del pingüino", "body": "Un pingüino no puede volar. Eso es verdad y divertido — pero no es lo que necesita una planta."}
+      ],
+      "locks": [
+        {"title": "Haz crecer una flor", "q": "Haz crecer una flor. Ponlo en orden. Toca los botones en orden.",
+          "pads": ["🌻 Crece una flor", "🌰 Planta una semilla en la tierra", "💧 Dale agua y luz del sol"],
+          "reason": "Planta una semilla, dale agua y luz del sol, y crece una flor. ¡Las plantas necesitan esas cosas para crecer!"},
+        {"title": "Comida de la planta", "q": "¿Qué usan las plantas para hacer su comida?",
+          "options": ["Luz del sol.", "Un imán.", "Una piedra."],
+          "reason": "Las plantas usan la luz del sol para hacer su comida. También necesitan agua, aire y tierra."},
+        {"title": "Las plantas necesitan...", "q": "Toca SOLO las cosas que una planta necesita para crecer. Deja fuera el dato divertido.",
+          "items": ["Luz del sol.", "Agua.", "Tierra.", "Un pingüino no puede volar."],
+          "reason": "Las plantas necesitan luz del sol, agua y tierra (y aire). El dato del pingüino es verdad pero no es lo que necesita una planta."},
+        {"title": "Nómbralo", "q": "Las plantas necesitan esta cosa mojada para beber y no secarse: ____. Escribe la palabra.",
+          "word": ["agua"],
+          "reason": "Las plantas necesitan agua para crecer. También necesitan luz del sol, aire y tierra."}
+      ]
+    },
+    "animal-needs": {
+      "ui": {
+        "h1": "Qué necesitan los animales",
+        "sub": "¿Qué necesitan los animales para vivir? Toca las pistas y abre los cuatro candados.",
+        "briefH": "Ayuda a un animal",
+        "briefP": "Los animales necesitan comida, agua, aire y un hogar para vivir. ¡Toca las pistas y abre los candados!",
+        "winStamp": "¡CUIDADO! ✓",
+        "winH": "¡Ayudante de animales!",
+        "winP": "Alimentaste a un animal hambriento, encontraste lo que necesita y nombraste su hogar. ¡Los animales necesitan comida, agua, aire y refugio!"
+      },
+      "clues": [
+        {"nm": "Comida", "title": "Comida", "body": "Los animales necesitan comida para tener energía para vivir y crecer."},
+        {"nm": "Agua", "title": "Agua", "body": "Los animales necesitan agua para beber."},
+        {"nm": "Aire", "title": "Aire", "body": "Los animales necesitan aire para respirar."},
+        {"nm": "Refugio", "title": "Refugio", "body": "Los animales necesitan un hogar, o refugio, para estar seguros — un nido, una guarida o una madriguera."},
+        {"nm": "Espacio", "title": "Espacio", "body": "Los animales necesitan espacio para moverse, buscar comida y vivir."},
+        {"nm": "Dato del pez", "title": "Un dato del pez", "body": "Un pez puede nadar. Eso es verdad y divertido — pero no es algo que necesitan todos los animales."}
+      ],
+      "locks": [
+        {"title": "Alimenta a un pájaro hambriento", "q": "Ayuda a un pájaro hambriento. Ponlo en orden. Toca los botones en orden.",
+          "pads": ["🐦 El pájaro está lleno y feliz", "🐦 Un pájaro hambriento", "🍎 Encuentra comida para comer"],
+          "reason": "Un pájaro hambriento encuentra comida, come y está feliz. ¡Los animales necesitan comida para vivir y crecer!"},
+        {"title": "Un hogar seguro", "q": "¿Cómo llamamos al hogar seguro de un animal, como un nido o una guarida?",
+          "options": ["Refugio.", "Una piedra.", "Una nube."],
+          "reason": "El refugio es el hogar seguro de un animal, como un nido, una guarida o una madriguera."},
+        {"title": "Los animales necesitan...", "q": "Toca SOLO las cosas que un animal necesita para vivir. Deja fuera el dato divertido.",
+          "items": ["Comida.", "Agua.", "Refugio.", "Un pez puede nadar."],
+          "reason": "Los animales necesitan comida, agua y refugio (y aire). El dato del pez es verdad pero no es algo que necesitan todos los animales."},
+        {"title": "Nómbralo", "q": "Los animales comen ____ para tener energía para vivir y crecer. Escribe la palabra.",
+          "word": ["comida", "alimento"],
+          "reason": "Los animales necesitan comida para comer. También necesitan agua, aire y refugio."}
+      ]
+    },
+    "plant-parts": {
+      "ui": {
+        "h1": "Partes de una planta",
+        "sub": "¿Cuáles son las partes de una planta, y cómo crece? Toca las pistas y abre los cuatro candados.",
+        "briefH": "Conoce una planta",
+        "briefP": "Una planta tiene partes que la ayudan a vivir, y crece de una semilla pequeñita. ¡Toca las pistas y abre los candados!",
+        "winStamp": "¡CRECIÓ! ✓",
+        "winH": "¡Experto en plantas!",
+        "winP": "Hiciste crecer una planta de una semilla, encontraste la parte que bebe y nombraste las raíces. ¡Las plantas tienen partes que las ayudan a vivir y crecer!"
+      },
+      "clues": [
+        {"nm": "Raíces", "title": "Raíces", "body": "Las raíces crecen hacia abajo en la tierra. Sujetan la planta y beben el agua."},
+        {"nm": "Tallo", "title": "Tallo", "body": "El tallo sostiene la planta y lleva el agua a las hojas."},
+        {"nm": "Hojas", "title": "Hojas", "body": "Las hojas atrapan la luz del sol para ayudar a la planta a hacer comida."},
+        {"nm": "Flor", "title": "Flor", "body": "Muchas plantas hacen flores. Las flores pueden convertirse en fruta con semillas."},
+        {"nm": "Semilla", "title": "De una semilla", "body": "Una planta empieza como una semilla pequeñita. La semilla crece hasta ser un brote, y luego una planta grande. Una planta bebé se parece a su mamá."},
+        {"nm": "Dato del ave", "title": "Un dato del pingüino", "body": "Un pingüino no puede volar. Eso es verdad y divertido — pero no es una parte de la planta."}
+      ],
+      "locks": [
+        {"title": "De semilla a planta", "q": "Pon la vida de una planta en orden. Toca los botones en orden.",
+          "pads": ["🌻 Una planta grande", "🌰 Una semilla pequeñita", "🌱 Un brote pequeño"],
+          "reason": "Una semilla crece hasta ser un brote, luego una planta grande. ¡Una planta bebé se parece a su mamá!"},
+        {"title": "Atrapa la luz del sol", "q": "¿Qué parte de la planta atrapa la luz del sol para ayudar a hacer comida?",
+          "options": ["Las raíces.", "Las hojas.", "La semilla."],
+          "reason": "Las hojas atrapan la luz del sol para ayudar a la planta a hacer su comida. Las raíces beben agua; el tallo la sostiene."},
+        {"title": "Partes de una planta", "q": "Toca SOLO las partes de una planta. Deja fuera el dato divertido.",
+          "items": ["Raíces.", "Tallo.", "Hojas.", "Un pingüino no puede volar."],
+          "reason": "Raíces, tallo y hojas son partes de la planta. El dato del pingüino es verdad pero no es una parte de la planta."},
+        {"title": "Nómbralo", "q": "La parte de la planta que crece hacia abajo en la tierra y bebe el agua son las ____. Escribe la palabra.",
+          "word": ["raíces", "raices", "raíz", "raiz"],
+          "reason": "Las raíces crecen hacia abajo y beben agua. Cada parte de la planta la ayuda a vivir y crecer."}
+      ]
+    }
+  }
+}
