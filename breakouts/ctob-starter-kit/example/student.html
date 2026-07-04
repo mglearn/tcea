@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Round and Round: The Water Cycle — Example CTOB</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<!-- Set the suite palette here; breakout.css consumes these variables. -->
+<style>:root{--c1:#2f6fe0;--c2:#1aa3b8;--c3:#46a23c;--c4:#f0a316;--c5:#7c5cbf;--navy:#12406b;--navy-d:#0d2e4d;--gold:#f0a316;--gold-d:#c97f12;--paper:#f2f8fc;--ink:#15242f;--ink-soft:#4d6070;--card:#fff;--line:#d6e6f0;--good:#0a8a5f;--bad:#e03131;--bg-a:rgba(26,163,184,.12);--bg-b:rgba(47,111,224,.10)}</style>
+<link rel="stylesheet" href="../assets/breakout.css">
+</head>
+<body>
+<canvas id="confetti"></canvas>
+<div class="wrap">
+  <div class="langbar"><span class="globe" aria-hidden="true">🌐</span><div data-i18n-picker></div></div>
+  <div class="crumb"><a href="index.html" data-i18n="crumb.teacher">‹ Example hub</a> · <a href="udl.html">📘 UDL</a> · <a href="elps.html">🗣️ ELPS</a> · <a href="guide.html">📋 Lesson plan</a></div>
+
+  <header class="top">
+    <div class="eyebrow" data-i18n="header.eyebrow">Example Breakout · Grades 3–5</div>
+    <h1 data-i18n="header.h1">Round and Round: The Water Cycle</h1>
+    <p class="sub" data-i18n="header.sub">Read the six clues and open all four locks.</p>
+  </header>
+
+  <div class="progress-wrap">
+    <span class="pcount" id="pcount">0 of 4 locks open</span>
+    <div class="lockdots" id="lockdots"></div>
+    <button class="resetbtn" id="resetBtn" data-i18n="ui.reset">↺ Start over</button>
+  </div>
+
+  <div class="brief">
+    <span class="tag" data-i18n="brief.label">💧 Your job</span>
+    <h2 data-i18n="brief.h">Follow the water</h2>
+    <p data-i18n-html="brief.p">Use the clues to open all four locks. One clue is true but off-topic — find it and leave it out.</p>
+  </div>
+
+  <div class="section-title" data-i18n="sect.clues">🔍 The Clues</div>
+  <p class="hint" data-i18n="sect.cluesHint">Tap each clue to read it. You can reopen them anytime.</p>
+  <div class="clue-grid" id="clueGrid"></div>
+
+  <div class="section-title" data-i18n="sect.locks">🔒 The Locks</div>
+  <p class="hint" data-i18n="sect.locksHint">Use the clues to open each lock.</p>
+  <div class="locks" id="locks"></div>
+
+  <footer>
+    <span data-i18n="footer.text">Example CTOB · Runs in your browser — no logins, no data collected.</span><br>
+    <span style="opacity:.7" data-i18n="footer.disclaimer">A template example distributed with the CTOB Starter Kit. Content CC BY 4.0.</span>
+  </footer>
+</div>
+
+<div class="modal-bg" id="modalBg"><div class="modal" id="modal"></div></div>
+<div class="win" id="win"><div class="win-card">
+  <div class="stamp" data-i18n="win.stamp">SOLVED ✓</div>
+  <h2 data-i18n="win.h">Nice reasoning!</h2>
+  <p data-i18n="win.p">You traced the whole water cycle using only the evidence.</p>
+  <button id="winReplay" data-i18n="ui.playagain">Play again</button>
+</div></div>
+
+<!-- Load order matters: data file → i18n engine → render engine. -->
+<script src="example.js"></script>
+<script src="../assets/i18n.js"></script>
+<script src="../assets/breakout.js"></script>
+</body>
+</html>

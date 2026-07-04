@@ -1,0 +1,78 @@
+/* pd.css — shared styles for the teacher professional-development pages
+   (UDL supports, ELPS supports, Lesson-Plan Implementation Guide).
+   Each page sets its suite theme with CSS variables in an inline :root block:
+     --pd-accent, --pd-accent-d, --pd-navy, --pd-band-a, --pd-band-b
+   Everything else is shared so all five suites look like one family. */
+:root{
+  --pd-accent:#0a6b52; --pd-accent-d:#075640; --pd-navy:#0b3d5c;
+  --pd-band-a:rgba(10,107,82,.10); --pd-band-b:rgba(11,61,92,.08);
+  --pd-paper:#f5f8fa; --pd-ink:#152430; --pd-ink-soft:#4d5f6c;
+  --pd-card:#fff; --pd-line:#dbe6ec; --pd-link:#2f6fe0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;color:var(--pd-ink);line-height:1.55;
+  background:
+    radial-gradient(ellipse 60% 50% at 85% -5%,var(--pd-band-a) 0%,transparent 60%),
+    radial-gradient(ellipse 55% 45% at -5% 100%,var(--pd-band-b) 0%,transparent 60%),
+    var(--pd-paper);}
+.wrap{max-width:960px;margin:0 auto;padding:22px 20px 80px}
+.langbar{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-bottom:6px}
+.langbar .globe{font-size:1.1rem}
+.breakout-i18n-switcher,#i18nSwitcher{font-family:'Nunito',sans-serif;font-weight:700;font-size:.9rem;
+  padding:7px 12px;border:2px solid var(--pd-line);border-radius:9px;background:#fff;color:var(--pd-navy);cursor:pointer}
+.crumb{font-size:.82rem;font-weight:700;margin-bottom:12px}
+.crumb a{color:var(--pd-link);text-decoration:none}
+.crumb a:hover{text-decoration:underline}
+.eyebrow{display:inline-block;background:var(--pd-accent);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;
+  font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:12px}
+h1{font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(1.75rem,5vw,2.5rem);color:var(--pd-navy);line-height:1.15}
+.lead{font-weight:600;color:var(--pd-ink-soft);margin-top:8px;max-width:74ch}
+.goal{background:var(--pd-card);border:2px solid var(--pd-line);border-inline-start:6px solid var(--pd-accent);
+  border-radius:14px;padding:14px 20px;margin:20px 0 6px;font-weight:600;color:var(--pd-ink)}
+.goal b{color:var(--pd-navy)}
+h2{font-family:'Fredoka',sans-serif;color:var(--pd-navy);font-size:1.35rem;margin:34px 0 8px;
+  border-inline-start:5px solid var(--pd-accent-d);padding-inline-start:12px}
+h2 .num{color:var(--pd-accent-d)}
+h3{font-family:'Fredoka',sans-serif;color:var(--pd-accent-d);font-size:1.05rem;margin:20px 0 6px}
+p{margin:8px 0;max-width:74ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:10px}
+.card{background:var(--pd-card);border:2px solid var(--pd-line);border-radius:16px;padding:16px 18px}
+.card h4{font-family:'Fredoka',sans-serif;color:var(--pd-navy);font-size:1rem;margin-bottom:4px}
+.card .code{display:inline-block;background:var(--pd-band-a);color:var(--pd-accent-d);font-weight:800;
+  font-size:.7rem;padding:1px 8px;border-radius:100px;margin-inline-start:6px;vertical-align:middle}
+.card .sub{font-size:.82rem;color:var(--pd-ink-soft);font-weight:700;margin-bottom:8px}
+ul{margin:6px 0 4px;padding-inline-start:20px}
+li{margin:4px 0}
+.card ul{padding-inline-start:18px}
+.card li{font-size:.9rem}
+.apply{margin-top:10px;background:var(--pd-band-b);border-radius:10px;padding:10px 12px;font-size:.86rem;font-weight:600;color:var(--pd-ink)}
+.apply b{color:var(--pd-accent-d)}
+.note{background:var(--pd-card);border:2px solid var(--pd-line);border-radius:14px;padding:16px 20px;margin-top:18px;
+  font-size:.92rem;color:var(--pd-ink);font-weight:600}
+.note b{color:var(--pd-navy)}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:.86rem;background:var(--pd-card);
+  border:2px solid var(--pd-line);border-radius:12px;overflow:hidden}
+th,td{border-bottom:1px solid var(--pd-line);padding:9px 11px;text-align:start;vertical-align:top}
+th{background:var(--pd-accent);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600}
+tr:last-child td{border-bottom:none}
+td b{color:var(--pd-navy)}
+.tag{display:inline-block;color:#fff;background:var(--pd-accent-d);font-family:'Fredoka',sans-serif;font-weight:600;
+  font-size:.7rem;letter-spacing:.04em;padding:3px 10px;border-radius:100px}
+.steps{counter-reset:step;list-style:none;padding:0;margin-top:10px}
+.steps>li{counter-increment:step;position:relative;background:var(--pd-card);border:2px solid var(--pd-line);
+  border-radius:14px;padding:14px 18px 14px 56px;margin:10px 0}
+.steps>li::before{content:counter(step);position:absolute;inset-inline-start:14px;top:14px;width:30px;height:30px;
+  display:flex;align-items:center;justify-content:center;background:var(--pd-accent);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;border-radius:50%}
+[dir=rtl] .steps>li{padding:14px 56px 14px 18px}
+.steps h4{font-family:'Fredoka',sans-serif;color:var(--pd-navy);font-size:1rem;margin-bottom:3px}
+.steps .t{font-size:.74rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--pd-accent-d)}
+.disc{font-size:.82rem;color:var(--pd-ink-soft);margin-top:18px;font-style:italic;font-weight:600}
+.cite{font-size:.8rem;color:var(--pd-ink-soft);margin-top:8px;font-weight:700}
+.cite a{color:var(--pd-link);text-decoration:none}
+footer{text-align:center;margin-top:34px;font-size:.8rem;color:var(--pd-ink-soft);font-weight:600}
+footer a{color:var(--pd-link);text-decoration:none}
+@media print{
+  body{background:#fff}.langbar,.crumb{display:none}
+  .card,.note,.steps>li,table{break-inside:avoid}h2{break-after:avoid}
+}
