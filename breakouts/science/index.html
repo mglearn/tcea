@@ -29,10 +29,14 @@
   .foot-links a{color:#2f6fe0;text-decoration:none;font-weight:700}
   footer{text-align:center;margin-top:26px;font-size:.8rem;color:var(--ink-soft);font-weight:600}
   footer a{color:#2f6fe0;text-decoration:none}
+  .langbar{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-bottom:8px}
+  .langbar .globe{font-size:1.1rem}
+  .breakout-i18n-switcher,#i18nSwitcher{font-family:'Nunito',sans-serif;font-weight:700;font-size:.9rem;padding:7px 12px;border:2px solid var(--line);border-radius:9px;background:#fff;color:var(--navy);cursor:pointer}
 </style>
 </head>
 <body>
 <div class="wrap">
+  <div class="langbar"><span class="globe" aria-hidden="true">🌐</span><div data-i18n-picker></div></div>
   <div class="crumb"><a href="../index.html">‹ TCEA Critical Thinking Breakouts</a></div>
   <div class="eyebrow">Texas Science TEKS · Grades 6–8</div>
   <h1>Science Critical Thinking Online Breakouts</h1>
@@ -60,10 +64,12 @@
   </div>
 
   <div class="foot-links">
-    <b>For teachers:</b> each grade page includes a lock-by-lock TEKS correlation, the misconceptions targeted, a printable STEM engineering design challenge, a student word bank, and a password-protected answer key. Breakouts run in 7 languages via the language switcher (deep-link with <code>student.html?lang=es</code>). See the <a href="DEVELOPMENT-GUIDE.md">development guide</a> for the full grades 1–8 roadmap. Standards are <b>aligned to</b>, not reproduced from, the 2021 Texas Essential Knowledge and Skills for Science — confirm before adoption.
+    <b>For teachers:</b> each grade page includes a lock-by-lock TEKS correlation, the misconceptions targeted, a printable STEM engineering design challenge, a student word bank, and a password-protected answer key — all in seven languages (use the 🌐 menu at the top). See the <a href="DEVELOPMENT-GUIDE.md">development guide</a> for the full grades 1–8 roadmap. Standards are <b>aligned to</b>, not reproduced from, the 2021 Texas Essential Knowledge and Skills for Science — confirm before adoption.
   </div>
 
   <footer>Science Critical Thinking Online Breakouts · Self-contained, no logins, no data collected. · <a href="policy.html">Privacy &amp; compliance</a></footer>
 </div>
+<script src="../assets/i18n.js" defer></script>
+<script>document.addEventListener('DOMContentLoaded',function(){if(window.BreakoutI18n)BreakoutI18n.register('science-toc',{en:{}});});</script>
 </body>
 </html>

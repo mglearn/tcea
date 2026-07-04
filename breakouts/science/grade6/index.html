@@ -4,112 +4,70 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
-<title>Cargo Ship Rescue — Grade 6 Teacher Launch</title>
+<title>Grade 6 Science — Critical Thinking Online Breakouts</title>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{--navy:#0b3d5c;--navy-d:#072a41;--gold:#f0a316;--gold-d:#c97f12;--paper:#f2f8fb;
+  :root{--navy:#0b3d5c;--navy-d:#072a41;--gold:#f0a316;--paper:#f2f8fb;
     --ink:#122430;--ink-soft:#4a5d6b;--card:#fff;--line:#d7e6ee;--accent:#1aa3b8;--sci:#0a6b52}
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:'Nunito',sans-serif;color:var(--ink);background:var(--paper);min-height:100vh;line-height:1.55}
-  .wrap{max-width:720px;margin:0 auto;padding:30px 20px 80px}
-  .crumb{font-size:.82rem;font-weight:700;margin-bottom:18px}
+  .wrap{max-width:680px;margin:0 auto;padding:30px 20px 70px}
+  .crumb{font-size:.82rem;font-weight:700;margin-bottom:16px}
   .crumb a{color:#2f6fe0;text-decoration:none}
   .eyebrow{display:inline-block;background:var(--accent);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;
     font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:14px}
-  h1{font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(1.9rem,5.5vw,2.8rem);color:var(--navy);line-height:1.04}
+  h1{font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(1.9rem,5.5vw,2.7rem);color:var(--navy);line-height:1.04}
   .band{font-weight:700;color:var(--ink-soft);margin-top:6px}
-  .launch-card{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:26px;margin-top:24px}
-  .launch-card p{font-weight:600;color:var(--ink);margin-bottom:8px}
+  .card{background:var(--card);border:2px solid var(--line);border-top:6px solid var(--sci);border-radius:18px;padding:24px;margin-top:22px}
+  .feat{font-family:'Fredoka',sans-serif;font-weight:600;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--sci)}
+  .featname{font-family:'Fredoka',sans-serif;color:var(--navy);font-size:1.6rem;margin:2px 0 8px}
+  .card p{font-weight:600;color:var(--ink)}
   .big-btn{display:inline-block;background:var(--navy);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;
-    font-size:1.15rem;text-decoration:none;padding:15px 32px;border-radius:12px;margin-top:14px;transition:.18s}
+    font-size:1.12rem;text-decoration:none;padding:14px 30px;border-radius:12px;margin-top:14px;transition:.18s}
   .big-btn:hover{background:var(--navy-d);transform:translateY(-2px)}
-  .btn2{display:inline-block;background:#fff;color:var(--sci);border:2px solid var(--sci);font-family:'Fredoka',sans-serif;font-weight:600;
-    font-size:1rem;text-decoration:none;padding:12px 24px;border-radius:12px;margin-top:14px;transition:.18s}
-  .btn2:hover{background:var(--sci);color:#fff}
-  .meta{margin-top:14px;font-size:.86rem;color:var(--ink-soft);font-weight:600}
+  .meta{margin-top:12px;font-size:.85rem;color:var(--ink-soft);font-weight:600}
   .meta code{background:#e7f1f6;padding:1px 7px;border-radius:5px;color:var(--navy)}
-  .sec{background:#f7fbfd;border:2px solid var(--line);border-radius:16px;padding:20px 24px;margin-top:22px}
-  .sec h2{font-family:'Fredoka',sans-serif;color:var(--navy);font-size:1.12rem;margin-bottom:10px}
-  .sec h3{font-family:'Fredoka',sans-serif;color:var(--sci);font-size:.98rem;margin:14px 0 6px}
-  .sec p,.sec li{font-size:.9rem;color:var(--ink-soft);font-weight:600}
-  .sec li{margin:5px 0 5px 20px}
-  .sec code{background:#e7f1f6;padding:1px 6px;border-radius:5px;color:var(--navy);font-weight:700}
-  table.corr{width:100%;border-collapse:collapse;margin-top:10px;font-size:.82rem}
-  table.corr th,table.corr td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
-  table.corr th{background:var(--sci);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600}
-  table.corr td b{color:var(--navy)}
-  .note{background:#fffdf6;border-left:4px solid var(--gold-d);border-radius:8px;padding:12px 16px;margin-top:18px;font-weight:600;font-size:.9rem}
-  .misc{background:#fdf3f1;border-left:4px solid var(--c4,#e0533a);border-radius:8px;padding:12px 16px;margin-top:14px;font-weight:600;font-size:.88rem}
-  footer{text-align:center;margin-top:28px;font-size:.8rem;color:var(--ink-soft);font-weight:600}
+  .pillrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .pill{display:inline-flex;align-items:center;gap:6px;background:#fff;color:var(--navy);border:2px solid var(--line);
+    font-family:'Fredoka',sans-serif;font-weight:600;font-size:.95rem;text-decoration:none;padding:11px 18px;border-radius:100px;transition:.15s}
+  .pill:hover{border-color:var(--sci);color:var(--sci);transform:translateY(-2px)}
+  .pill.more{background:var(--sci);color:#fff;border-color:var(--sci)}
+  .pill.more:hover{background:var(--navy);border-color:var(--navy);color:#fff}
+  .note{background:#fffdf6;border-left:4px solid var(--gold);border-radius:8px;padding:12px 16px;margin-top:22px;font-weight:600;font-size:.9rem;color:var(--ink)}
+  footer{text-align:center;margin-top:26px;font-size:.8rem;color:var(--ink-soft);font-weight:600}
+  footer a{color:#2f6fe0;text-decoration:none}
   .langbar{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-bottom:8px}
   .langbar .globe{font-size:1.1rem}
   .breakout-i18n-switcher,#i18nSwitcher{font-family:'Nunito',sans-serif;font-weight:700;font-size:.9rem;padding:7px 12px;border:2px solid var(--line);border-radius:9px;background:#fff;color:var(--navy);cursor:pointer}
-  .disc{font-size:.78rem;color:var(--ink-soft);margin-top:10px;font-style:italic}
-  .feat{font-family:'Fredoka',sans-serif;font-weight:600;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--sci)}
-  .featname{font-family:'Fredoka',sans-serif;color:var(--navy);font-size:1.5rem;margin:2px 0 8px}
-  .btnrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-  .comingsoon{font-size:.86rem;color:var(--ink-soft);font-weight:600;margin-top:16px;padding:10px 14px;border:1.5px dashed var(--line);border-radius:10px}
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="langbar"><span class="globe" aria-hidden="true">🌐</span><div data-i18n-picker></div></div>
-  <div class="crumb"><a href="../index.html">‹ Science Critical Thinking Breakouts</a></div>
+  <div class="crumb"><a href="../index.html">‹ Science Critical Thinking Online Breakouts</a></div>
   <div class="eyebrow">Grade 6 Science · Texas TEKS §112.26</div>
   <h1>Grade 6 Science</h1>
-  <p class="band">Critical Thinking Online Breakouts, a hands-on STEM engineering challenge, and a student word bank.</p>
+  <p class="band">Critical Thinking Online Breakouts · a STEM engineering challenge · a student word bank</p>
 
-  <div class="launch-card">
+  <div class="card">
     <div class="feat">▶ Featured breakout</div>
-    <h2 class="featname">Cargo Ship Rescue</h2>
-    <p><b>Premise:</b> The freighter <i>TEKS Voyager</i> is riding too low, a deck crate keeps sliding, and the loading crane keeps losing power. Students act as the harbor engineer, read six pieces of evidence, and solve four locks — using density, net force, Newton's Third Law, and energy conservation — to clear the ship to sail.</p>
-    <p>Students open the evidence board and solve four locks (an energy-order <i>sequence</i>, a density <i>multiple-choice</i>, a balanced-forces <i>evidence sort</i>, and a Newton's-Law <i>word</i> lock). Each lock reveals a short reasoning explanation when solved. The answer key is not shown on this page.</p>
-    <a class="big-btn" href="student.html">▶ Open Student Breakout</a>
-    <div class="btnrow">
-      <a class="btn2" href="glossary.html">📖 Student word bank</a>
-      <a class="btn2" href="engineering-challenge.html">🛠️ STEM challenge</a>
-      <a class="btn2" href="answer-key.html">🔑 Answer key</a>
-    </div>
-    <div class="meta">Student activity: <code>grade6/student.html</code> · ~12–18 minutes · works on tablets, laptops, and interactive whiteboards.</div>
-    <div class="comingsoon">🧩 <b>Coming soon:</b> more Critical Thinking Online Breakouts for Grade 6 — one short activity for each key science concept (matter &amp; density, forces, energy, Sun–Earth–Moon, Earth's systems, and ecosystems).</div>
+    <div class="featname">Cargo Ship Rescue</div>
+    <p>Clear the freighter <i>TEKS Voyager</i> to sail — using density, net force, Newton's Third Law, and energy conservation to solve four locks. ~12–18 minutes.</p>
+    <a class="big-btn" href="student.html">▶ Open the breakout</a>
+    <div class="meta">Runs in the browser · 7 languages · <code>grade6/student.html</code></div>
   </div>
 
-  <div class="sec">
-    <h2>🎯 Why these concepts</h2>
-    <p>Every lock targets a documented Grade 6 misconception — the ideas that most depress achievement on state science assessments:</p>
-    <div class="misc">🚨 <b>Misconceptions this breakout confronts:</b> «heavy things always sink» (density vs. volume); «a moving object must have an unbalanced force on it» (net force = 0 can still mean stillness or steady motion); «Newton's Third-Law pairs cancel each other out» (they act on <i>different</i> objects); and «energy gets used up» (it transfers and transforms — it is conserved).</div>
+  <div class="pillrow">
+    <a class="pill more" href="more.html">🧩 More breakouts (10) →</a>
+    <a class="pill" href="engineering-challenge.html">🛠️ STEM challenge</a>
+    <a class="pill" href="glossary.html">📖 Word bank</a>
+    <a class="pill" href="skills-teks.html">📊 Skills &amp; TEKS</a>
+    <a class="pill" href="answer-key.html">🔑 Answer key</a>
   </div>
 
-  <div class="sec">
-    <h2>📋 Skills &amp; TEKS alignment</h2>
-    <p>Aligned to the 2021 Texas Essential Knowledge and Skills for Science, Grade 6 (§112.26). Recurring themes: <b>systems &amp; models, cause &amp; effect, energy &amp; matter, structure &amp; function, stability &amp; change.</b></p>
-    <table class="corr">
-      <tr><th>Lock</th><th>Skill / thinking move</th><th>TEKS (aligned to)</th><th>High-effect-size strategy</th></tr>
-      <tr><td><b>L1 · Sequence</b><br>Crane's energy</td><td>Order an energy-transformation chain; show energy is conserved.</td><td><code>6.8(A)</code> potential vs. kinetic; <code>6.8(B)</code> energy conserved through transfers &amp; transformations; <code>6.5(E)</code> energy flows through systems.</td><td>Concept mapping / sequencing (Hattie <i>d</i>≈0.64)</td></tr>
-      <tr><td><b>L2 · Multiple choice</b><br>Steel ship floats</td><td>Distinguish mass from volume; use density to explain flotation.</td><td><code>6.6(D)</code> compare density relative to fluids; <code>6.5(C)</code> scale, proportion &amp; quantity.</td><td>Confronting misconceptions / worked examples (<i>d</i>≈0.57)</td></tr>
-      <tr><td><b>L3 · Evidence sort</b><br>Balanced forces</td><td>Separate strong evidence from a true-but-irrelevant fact; reason that net force = 0.</td><td><code>6.7(A)</code> forces on objects; <code>6.7(B)</code> net force, balanced vs. unbalanced; <code>6.1(B)</code> evidence-based reasoning.</td><td>Classifying / sorting evidence (<i>d</i>≈0.60)</td></tr>
-      <tr><td><b>L4 · Word</b><br>Name the law</td><td>Identify Newton's Third Law force pairs acting on different objects.</td><td><code>6.7(C)</code> identify equal &amp; opposite force pairs (Newton's Third Law).</td><td>Feedback + transfer (<i>d</i>≈0.70–0.86)</td></tr>
-    </table>
-    <p class="disc">Standards are <b>aligned to</b>, not reproduced from, the official TEKS. Good-faith, paraphrased; confirm against the source before adoption. Not legal advice.</p>
-  </div>
+  <div class="note">🧑‍🏫 <b>Teacher note:</b> the <a href="more.html">10 concept breakouts</a> introduce or review one key idea each (matter, density, chemical change, forces, energy, waves, seasons &amp; tides, Earth's systems, ecosystems &amp; cells). See <a href="skills-teks.html">Skills &amp; TEKS</a> for the standards alignment and the misconceptions each activity confronts.</div>
 
-  <div class="sec">
-    <h2>🔧 STEM extension — Engineering Design Challenge</h2>
-    <p>Pair the breakout with a hands-on build so students <i>apply</i> the density concept from Lock 2. Following TEA's engineering design process (define → imagine → plan → create → test → improve), teams design an aluminum-foil <b>cargo barge</b> that carries the most pennies before sinking, then redesign to beat their first score.</p>
-    <h3>Anchored in engineering-practice TEKS</h3>
-    <ul>
-      <li><code>6.1(B)</code> use engineering practices to design solutions to problems</li>
-      <li><code>6.1(G)</code> develop and use models to represent solutions to engineering problems</li>
-      <li><code>6.2(D)</code> evaluate experimental and engineering designs</li>
-      <li><code>6.6(D)</code> (anchor content) density relative to fluids</li>
-    </ul>
-    <p><b>Career highlight:</b> Naval Architect / Marine Engineer (data via O*NET &amp; the Texas Workforce Commission).</p>
-    <a class="btn2" href="engineering-challenge.html">🛠️ Open the printable STEM challenge →</a>
-  </div>
-
-  <div class="note">💡 <b>Teacher tip:</b> Run the barge build <i>after</i> Lock 2. Ask students to predict, in writing, how a wider hull changes the barge's <b>volume</b> and therefore its <b>overall density</b> — then test the prediction. Close with a Claim–Evidence–Reasoning (CER) statement.</div>
-
-  <footer>Science Critical Thinking Breakouts · Self-contained, no logins, no data collected. · <a href="../policy.html">Privacy &amp; compliance</a></footer>
+  <footer>Science Critical Thinking Online Breakouts · Self-contained, no logins, no data collected. · <a href="../policy.html">Privacy &amp; compliance</a></footer>
 </div>
 
 <script src="../../assets/i18n.js" defer></script>

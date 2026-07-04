@@ -107,6 +107,27 @@ function scienceMeta() {
         kw: `grade ${g} ${kw}`,
       });
     } catch (e) { console.error('skip science', g, e.message); }
+    // "More" single-concept breakouts for this grade (science/grade<g>/more.js -> window.MORE)
+    const moreFp = path.join(ROOT, 'science', 'grade' + g, 'more.js');
+    if (fs.existsSync(moreFp)) {
+      try {
+        const w2 = { window: {} };
+        eval('(function(window){' + fs.readFileSync(moreFp, 'utf8') + '})(w2.window)');
+        const MORE = w2.window.MORE || {};
+        for (const slug of Object.keys(MORE)) {
+          const e = MORE[slug];
+          const kw = [...e.clues.flatMap(c => [c.nm, c.title, c.body]),
+            ...e.locks.flatMap(l => [l.q, l.reason, ...(l.options || []), ...((l.items || []).map(i => i.t))])]
+            .join(' ').replace(/\s+/g, ' ').toLowerCase().slice(0, 600);
+          out.push({
+            suite: 'science', band: '6–8', slug: 'grade' + g + '-' + slug,
+            title: e.ui.h1, desc: e.ui.sub,
+            href: `science/grade${g}/play.html?b=${slug}`,
+            kw: `grade ${g} ${e.concept || ''} ${e.teks || ''} ${kw}`, activity: true,
+          });
+        }
+      } catch (e) { console.error('skip science more', g, e.message); }
+    }
   }
   return out;
 }

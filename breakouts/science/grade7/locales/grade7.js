@@ -31,7 +31,7 @@ window.BREAKOUT = {
    "header.sub": "A hiker is missing in a Big Bend canyon and a storm is coming. You're on the search-and-rescue command team. Read the drone's motion data, keep the medical cooler cold, and solve all four locks to launch the rescue in time.",
    "brief.label": "🚁 Mission Brief",
    "brief.h": "Launch the rescue run",
-   "brief.p": "Command radios you: <b>«Drone's back with a distance–time graph, the med-cooler is warming in the sun, and we need a route — now.»</b> The clues you need are motion and heat. Open each piece of evidence, decide what it actually proves, and solve all four locks to send the team out safely.",
+   "brief.p": "Command radios you: <b>“Drone's back with a distance–time graph, the med-cooler is warming in the sun, and we need a route — now.”</b> The clues you need are motion and heat. Open each piece of evidence, decide what it actually proves, and solve all four locks to send the team out safely.",
    "footer.text": "Science Critical Thinking Breakouts · Runs entirely in your browser — no logins, no data collected.",
    "win.stamp": "RESCUE LAUNCHED ✓",
    "win.h": "The team rolls out!",

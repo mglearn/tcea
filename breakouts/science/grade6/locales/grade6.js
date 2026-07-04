@@ -31,7 +31,7 @@ window.BREAKOUT = {
    "header.sub": "The freighter TEKS Voyager is jammed at the Port of Houston. She's riding dangerously low, a deck crate keeps sliding, and the loading crane is bleeding power. You're the harbor engineer. Read the evidence, solve all four locks, and clear the ship to sail.",
    "brief.label": "⚓ Mission Brief",
    "brief.h": "Clear the Voyager to sail",
-   "brief.p": "The dock supervisor radios you: <b>«She won't stop settling, a crate slid across the deck, and the crane tripped out.»</b> Every problem has a science reason hiding in the evidence — density, forces, and energy. Open each piece of evidence, weigh what it actually proves, and solve all four locks to send the Voyager safely to sea.",
+   "brief.p": "The dock supervisor radios you: <b>“She won't stop settling, a crate slid across the deck, and the crane tripped out.”</b> Every problem has a science reason hiding in the evidence — density, forces, and energy. Open each piece of evidence, weigh what it actually proves, and solve all four locks to send the Voyager safely to sea.",
    "footer.text": "Science Critical Thinking Breakouts · Runs entirely in your browser — no logins, no data collected.",
    "win.stamp": "CLEARED TO SAIL ✓",
    "win.h": "The Voyager sails!",
@@ -132,7 +132,7 @@ window.BREAKOUT = {
      "type": "word",
      "color": "#e0533a",
      "title": "Name the Law",
-     "q": "The propeller pushes water backward and the water pushes the ship forward — equal size, opposite direction, on different objects. Which of Newton's laws is this? Type the number word (for example, «first»).",
+     "q": "The propeller pushes water backward and the water pushes the ship forward — equal size, opposite direction, on different objects. Which of Newton's laws is this? Type the number word (for example, “first”).",
      "answer": ["third", "3rd", "newton's third", "newtons third", "third law", "newton's third law", "action-reaction", "action reaction", "tercera"],
      "reason": "This is Newton's Third Law. Third-Law force pairs are equal and opposite but act on different objects, so they never cancel — which is exactly why the ship moves forward."
     }

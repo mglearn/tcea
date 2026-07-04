@@ -31,7 +31,7 @@ window.BREAKOUT = {
    "header.sub": "T-minus ten minutes. Before the rocket can fly, mission control must clear three systems: the fuel chemistry, the thrust math, and the telemetry link. You're the launch director. Read the data, solve all four locks, and give the go for launch.",
    "brief.label": "🚀 Mission Brief",
    "brief.h": "Give the go for launch",
-   "brief.p": "Flight control calls out: <b>«Fuel team needs the mass checked, guidance needs the acceleration, and comms needs the wavelength — all before the window closes.»</b> Every answer is hidden in the evidence: conservation of mass, Newton's Second Law, and waves. Open each piece, decide what it proves, and clear all four locks for launch.",
+   "brief.p": "Flight control calls out: <b>“Fuel team needs the mass checked, guidance needs the acceleration, and comms needs the wavelength — all before the window closes.”</b> Every answer is hidden in the evidence: conservation of mass, Newton's Second Law, and waves. Open each piece, decide what it proves, and clear all four locks for launch.",
    "footer.text": "Science Critical Thinking Breakouts · Runs entirely in your browser — no logins, no data collected.",
    "win.stamp": "GO FOR LAUNCH ✓",
    "win.h": "We have liftoff!",
@@ -46,7 +46,7 @@ window.BREAKOUT = {
      "ico": "⚗️",
      "nm": "Conservation of Mass",
      "title": "Atoms Are Never Lost",
-     "body": "In any chemical reaction, atoms are only <b>rearranged</b> — never created or destroyed. So the <b>total mass of the reactants equals the total mass of the products</b>. Even when fuel burns and seems to «disappear», the atoms simply become new gases. This is the <b>law of conservation of mass</b>."
+     "body": "In any chemical reaction, atoms are only <b>rearranged</b> — never created or destroyed. So the <b>total mass of the reactants equals the total mass of the products</b>. Even when fuel burns and seems to “disappear”, the atoms simply become new gases. This is the <b>law of conservation of mass</b>."
     },
     {
      "id": "c2",
