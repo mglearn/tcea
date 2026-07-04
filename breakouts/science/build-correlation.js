@@ -108,6 +108,8 @@ const html = `<!DOCTYPE html>
 
   <div class="note">🧑‍🏫 <b>How to read this:</b> each row is one breakout. The <b>Concept / skill</b> and <b>TEKS</b> columns name what it targets; the <b>Lock types</b> show the four reasoning moves. Each grade page also has a lock-by-lock <b>Skills &amp; TEKS</b> table with the thinking move and, for the featured breakout, a high-effect-size strategy (Hattie).</div>
 
+  <div class="crumb" style="margin:10px 0 0">🧑‍🏫 Teacher supports: <a href="udl.html">UDL supports</a> · <a href="elps.html">ELPS supports</a> · <a href="guide.html">Lesson-plan guide</a></div>
+
   ${rowsElem ? '<h2>🧒 Elementary · Grades K–5</h2>\n' + rowsElem : ''}
   ${rowsMid ? '<h2>🔬 Middle School · Grades 6–8</h2>\n' + rowsMid : ''}
 

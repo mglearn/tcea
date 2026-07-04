@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title data-i18n="doctitle">Teacher Supports</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>:root{--pd-accent:#0a6b52;--pd-accent-d:#075640;--pd-navy:#0b3d5c;--pd-band-a:rgba(10,107,82,.10);--pd-band-b:rgba(11,61,92,.08)}</style>
+<link rel="stylesheet" href="../assets/pd.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="langbar"><span class="globe" aria-hidden="true">🌐</span><div data-i18n-picker></div></div>
+  <div class="crumb"><a href="index.html" data-i18n="crumb">‹ Back</a></div>
+  <div class="eyebrow" data-i18n="eyebrow">Teacher Supports</div>
+  <h1 data-i18n="h1">Teacher Supports</h1>
+  <p class="lead" data-i18n="lead"></p>
+  <div class="note" data-i18n-html="howto"></div>
+  <h2 data-i18n="s1.h"></h2>
+  <p data-i18n-html="s1.p"></p>
+  <h2 data-i18n="s2.h"></h2>
+  <p data-i18n-html="s2.p"></p>
+  <h2 data-i18n="s3.h"></h2>
+  <p data-i18n-html="s3.p"></p>
+  <h2 data-i18n="s4.h"></h2>
+  <p data-i18n-html="s4.p"></p>
+  <h2 data-i18n="s5.h"></h2>
+  <p data-i18n-html="s5.p"></p>
+  <h2 data-i18n="s6.h"></h2>
+  <p data-i18n-html="s6.p"></p>
+  <h2 data-i18n="s7.h"></h2>
+  <p data-i18n-html="s7.p"></p>
+  <h2 data-i18n="s8.h"></h2>
+  <p data-i18n-html="s8.p"></p>
+
+  <h2 data-i18n="s9.h"></h2>
+  <p data-i18n="s9.intro"></p>
+  <ol class="steps">
+    <li><span class="t" data-i18n="p1.t"></span><h4 data-i18n="p1.h"></h4><p data-i18n="p1.b"></p></li>
+    <li><span class="t" data-i18n="p2.t"></span><h4 data-i18n="p2.h"></h4><p data-i18n="p2.b"></p></li>
+    <li><span class="t" data-i18n="p3.t"></span><h4 data-i18n="p3.h"></h4><p data-i18n="p3.b"></p></li>
+    <li><span class="t" data-i18n="p4.t"></span><h4 data-i18n="p4.h"></h4><p data-i18n="p4.b"></p></li>
+    <li><span class="t" data-i18n="p5.t"></span><h4 data-i18n="p5.h"></h4><p data-i18n="p5.b"></p></li>
+  </ol>
+
+  <h2 data-i18n="s10.h"></h2>
+  <div class="note" data-i18n-html="s10.list"></div>
+
+  <h2 data-i18n="s11.h"></h2>
+  <div class="note" data-i18n-html="s11.list"></div>
+
+  <h2 data-i18n="ex.h"></h2>
+  <div class="card">
+    <h4 data-i18n-html="ex.name"></h4>
+    <table>
+      <tr><th data-i18n="ex.lbl.bigidea"></th><td data-i18n="ex.bigidea"></td></tr>
+      <tr><th data-i18n="ex.lbl.eq"></th><td data-i18n="ex.eq"></td></tr>
+      <tr><th data-i18n="ex.lbl.obj"></th><td data-i18n="ex.obj"></td></tr>
+      <tr><th data-i18n="ex.lbl.lang"></th><td data-i18n="ex.lang"></td></tr>
+      <tr><th data-i18n="ex.lbl.vocab"></th><td data-i18n="ex.vocab"></td></tr>
+      <tr><th data-i18n="ex.lbl.success"></th><td data-i18n="ex.success"></td></tr>
+    </table>
+  </div>
+  <div class="crumb" style="margin-top:14px"><a href="udl.html" data-i18n="nav.udl">udl.html</a> · <a href="elps.html" data-i18n="nav.elps">elps.html</a> · <a href="correlation.html" data-i18n="nav.correlation">correlation.html</a></div>
+  <p class="disc" data-i18n="disc"></p>
+  
+  <footer><span data-i18n="footer"></span> · <a href="policy.html" data-i18n="footer.privacy">Privacy &amp; compliance</a></footer>
+</div>
+<script src="../assets/i18n.js"></script>
+<script src="../assets/guide-core-i18n.js"></script>
+<script src="../assets/pd-suite-i18n.js"></script>
+<script>
+(function(){
+  var LANGS=['en','es','vi','ar','hi','ur','zh'];
+  var CORE=window.PD_GUIDE||{}, SUITE=window.PD_SUITE||{};
+  var SK='science', PG='guide';
+  var merged={};
+  LANGS.forEach(function(l){
+    var core=CORE[l]||CORE.en||{};
+    var sAll=SUITE[l]||SUITE.en||{};
+    var s=sAll[SK]||{};
+    merged[l]=Object.assign({},core,s.common||{},s[PG]||{});
+  });
+  BreakoutI18n.register('science-guide',merged);
+})();
+</script>
+</body>
+</html>

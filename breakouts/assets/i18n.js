@@ -151,6 +151,12 @@
       if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
       else start();
     },
+    extend(widgetKey, dictionaries) {
+      const cur = state.dictionaries[widgetKey] || {};
+      for (const l in (dictionaries || {})) cur[l] = Object.assign({}, cur[l] || {}, dictionaries[l]);
+      state.dictionaries[widgetKey] = cur;
+      if (state.initialized) { ensurePickers(); apply(); }
+    },
     t(key, vars) { const v = lookup(key); return interpolate(v === undefined ? key : v, vars); },
     setLang(code) {
       const n = normalizeLang(code) || 'en';
