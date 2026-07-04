@@ -134,7 +134,7 @@
   var state = { q: '', suite: 'all', band: 'all' };
   var bands = ['K–2', '3–5', '6–8', '9–12'];
   var chips = [{ k: 'suite', v: 'all', label: 'All sets' }]
-    .concat(C.suites.map(function (s) { return { k: 'suite', v: s.id, label: s.name.split(' ')[0] === 'CLEAR' ? 'CLEAR' : s.name.replace('July 5 & Black Freedom Holidays', 'July 5').replace('Fourth of July', 'July 4').replace('Bible as Literature', 'Bible').replace('Science (Grades 6–8)', 'Science') }; }))
+    .concat(C.suites.map(function (s) { return { k: 'suite', v: s.id, label: s.name.split(' ')[0] === 'CLEAR' ? 'CLEAR' : s.name.replace('July 5 & Black Freedom Holidays', 'July 5').replace('Fourth of July', 'July 4').replace('Bible as Literature', 'Bible').replace('Science (Grades 1–8)', 'Science') }; }))
     .concat([{ k: 'band', v: 'all', label: 'All grades' }])
     .concat(bands.map(function (b) { return { k: 'band', v: b, label: 'Gr ' + b }; }));
   document.getElementById('filters').innerHTML = chips.map(function (c, i) {

@@ -89,7 +89,9 @@ function bibleMeta() {
 
 function scienceMeta() {
   const out = [];
-  for (const g of ['6', '7', '8']) {
+  const bandOf = g => (+g <= 2 ? 'K–2' : +g <= 5 ? '3–5' : '6–8');
+  for (const g of ['1', '2', '3', '4', '5', '6', '7', '8']) {
+    const band = bandOf(g);
     const fp = path.join(ROOT, 'science', 'grade' + g, 'locales', 'grade' + g + '.js');
     if (!fs.existsSync(fp)) continue;
     try {
@@ -100,7 +102,7 @@ function scienceMeta() {
         ...en.locks.flatMap(l => [l.q, l.reason, ...(l.options || []), ...((l.items || []).map(i => i.t))]),
       ].join(' ').replace(/\s+/g, ' ').toLowerCase().slice(0, 600);
       out.push({
-        suite: 'science', band: '6–8', slug: 'grade' + g,
+        suite: 'science', band, slug: 'grade' + g,
         title: b.UI.en['header.h1'],
         desc: b.UI.en['header.sub'],
         href: `science/grade${g}/index.html`,
@@ -120,7 +122,7 @@ function scienceMeta() {
             ...e.locks.flatMap(l => [l.q, l.reason, ...(l.options || []), ...((l.items || []).map(i => i.t))])]
             .join(' ').replace(/\s+/g, ' ').toLowerCase().slice(0, 600);
           out.push({
-            suite: 'science', band: '6–8', slug: 'grade' + g + '-' + slug,
+            suite: 'science', band, slug: 'grade' + g + '-' + slug,
             title: e.ui.h1, desc: e.ui.sub,
             href: `science/grade${g}/play.html?b=${slug}`,
             kw: `grade ${g} ${e.concept || ''} ${e.teks || ''} ${kw}`, activity: true,
@@ -145,8 +147,8 @@ const SUITES = [
   { id: 'bible', name: 'Bible as Literature', accent: '#2f6cae',
     desc: 'Four breakouts on Texas-adopted Bible stories, studied academically as literature and history — sequence, theme, genre, archetype, and allusion. Never devotional. Seven languages.',
     landing: 'bible/index.html', correlation: 'bible/correlation.html', answerKey: 'bible/answer-key.html' },
-  { id: 'science', name: 'Science (Grades 6–8)', accent: '#0a6b52',
-    desc: 'Critical Thinking Online Breakouts for the toughest middle-school science TEKS — density, forces, energy, motion graphs, conservation of mass — each with a hands-on STEM engineering design challenge and a student word bank. Seven languages.',
+  { id: 'science', name: 'Science (Grades 1–8)', accent: '#0a6b52',
+    desc: 'Critical Thinking Online Breakouts across the Texas science TEKS — from pushes and pulls to conservation of mass — each grade with a featured breakout, a concept set (one per key idea), a hands-on STEM engineering design challenge, and a student word bank. Seven languages.',
     landing: 'science/index.html' },
 ];
 

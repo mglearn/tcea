@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Grade 1 Science — Quick Breakout</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>:root{--c1:#e88b1a;--c2:#2f8f7f;--c3:#2f6fe0;--c4:#e0533a;--c5:#7c5cbf;--navy:#1f7a5a;--navy-d:#155c43;--gold:#e88b1a;--gold-d:#c06f0f;--paper:#fff8ee;--ink:#2a2018;--ink-soft:#6a5a48;--card:#fff;--line:#f0e2cd;--good:#0a8a5f;--bad:#e03131;--bg-a:rgba(232,139,26,.12);--bg-b:rgba(47,143,127,.10)}</style>
+<link rel="stylesheet" href="../../assets/breakout.css">
+</head>
+<body>
+<canvas id="confetti"></canvas>
+<div class="wrap">
+  <div class="langbar"><span class="globe" aria-hidden="true">🌐</span><div data-i18n-picker></div></div>
+  <div class="crumb"><a href="more.html" data-i18n="crumb.teacher">‹ More Grade 1 breakouts</a> · <a href="index.html" data-i18n="crumb.suite">Grade 1 Science</a></div>
+
+  <header class="top">
+    <div class="eyebrow" data-i18n="header.eyebrow">Grade 1 Science · Quick Breakout</div>
+    <h1 data-i18n="header.h1">Quick Breakout</h1>
+    <p class="sub" data-i18n="header.sub">Read the clues and open all four locks.</p>
+  </header>
+
+  <div class="progress-wrap">
+    <span class="pcount" id="pcount">0 of 4 locks open</span>
+    <div class="lockdots" id="lockdots"></div>
+    <button class="resetbtn" id="resetBtn" data-i18n="ui.reset">↺ Start over</button>
+  </div>
+
+  <div class="brief">
+    <span class="tag" data-i18n="brief.label">🎈 Let's Go</span>
+    <h2 data-i18n="brief.h">Let's go</h2>
+    <p data-i18n-html="brief.p">Use the clues to open all four locks.</p>
+  </div>
+
+  <div class="section-title" data-i18n="sect.clues">🔍 The Clues</div>
+  <p class="hint" data-i18n="sect.cluesHint">Tap each clue to read it. You can open them again anytime.</p>
+  <div class="clue-grid" id="clueGrid"></div>
+
+  <div class="section-title" data-i18n="sect.locks">🔒 The Locks</div>
+  <p class="hint" data-i18n="sect.locksHint">Use the clues to open each lock.</p>
+  <div class="locks" id="locks"></div>
+
+  <footer>
+    <span data-i18n="footer.text">Grade 1 Science · Critical Thinking Online Breakouts · Runs in your browser — no logins, no data collected.</span> · <a href="../policy.html" data-i18n="footer.privacy">Privacy &amp; compliance</a><br>
+    <span style="opacity:.7" data-i18n="footer.disclaimer">Aligned to the 2021 Texas Essential Knowledge and Skills for Science (§112.3, Grade 1). Good-faith paraphrase; confirm before adoption.</span>
+  </footer>
+</div>
+
+<div class="modal-bg" id="modalBg"><div class="modal" id="modal"></div></div>
+<div class="win" id="win"><div class="win-card">
+  <div class="stamp" data-i18n="win.stamp">OPEN ✓</div>
+  <h2 data-i18n="win.h">Great job!</h2>
+  <p data-i18n="win.p">You opened every lock with the clues.</p>
+  <button id="winReplay" data-i18n="ui.playagain">Play Again</button>
+</div></div>
+
+<script src="more.js"></script>
+<script>
+(function () {
+  var params = new URLSearchParams(location.search);
+  var slug = params.get('b');
+  var lib = window.MORE || {};
+  var entry = lib[slug] || lib[Object.keys(lib)[0]];
+  var base = (window.MORE_BASE_UI && window.MORE_BASE_UI.en) || {};
+  var ui = Object.assign({}, base, {
+    'header.h1': entry.ui.h1,
+    'header.sub': entry.ui.sub,
+    'brief.h': entry.ui.briefH,
+    'brief.p': entry.ui.briefP,
+    'win.stamp': entry.ui.winStamp,
+    'win.h': entry.ui.winH,
+    'win.p': entry.ui.winP
+  });
+  window.BREAKOUT = {
+    id: entry.id,
+    band: '1',
+    confetti: entry.confetti || ['#e88b1a', '#2f8f7f', '#2f6fe0', '#e0533a', '#f0c419'],
+    UI: { en: ui },
+    CONTENT: { en: { clues: entry.clues, locks: entry.locks } }
+  };
+  document.title = entry.ui.h1 + ' — Grade 1 Science Critical Thinking Online Breakout';
+})();
+</script>
+<script src="../../assets/i18n.js"></script>
+<script src="../../assets/breakout.js"></script>
+</body>
+</html>

@@ -37,18 +37,24 @@ thinking move**. All are solvable from the evidence alone.
 
 | Grade | Featured breakout | "More" set (one short breakout per key concept) |
 |-------|-------------------|--------------------------------------------------|
+| **1** | ✅ Push, Pull, and Play! | ✅ **10 built** — sorting, hot & cold, seasons, soil, water, weather, saving water, living/nonliving, food chains, animals |
+| **2–5** | ⏳ planned | ⏳ planned |
 | **6** | ✅ Cargo Ship Rescue | ✅ **10 built** — states of matter, mixtures, periodic table, density, chemical change, forces, waves, seasons & tides, Earth's systems, ecosystems & cells |
 | **7** | ✅ Rescue Run | ✅ **10 built** — elements & compounds, solutions, motion & graphs, heat transfer, solar system, plate tectonics, watersheds, energy pyramids, body systems, classifying life |
 | **8** | ✅ Launch Control | ✅ **10 built** — classifying matter, acids & bases, conservation of mass, Newton's laws, waves & EM spectrum, stars & galaxies, weather systems, carbon & climate, ecosystem change, cells & heredity |
 
-Grades 6–8 are now **complete**: 3 featured breakouts + **30 concept breakouts** (10 per grade).
+Grades 6–8 are **complete** (3 featured + 30 concept breakouts). **Grade 1 is complete** too
+(featured *Push, Pull, and Play!* + 10 concept breakouts, pitched to early readers).
 
 **Anticipated next, in order:**
-1. **Grades 1–5** (elementary §112.A) — one hub + featured breakout + concept set + STEM
-   challenge per grade (TEA grade-1–5 design-challenge PDFs are in `info/`).
-2. **Native translations** — per-breakout `_i18n` files for the 7 languages (today the
+1. **Grades 2–5** (elementary §112.A) — one hub + featured breakout + ~8–10 concept set + STEM
+   challenge + word bank + Skills&TEKS per grade, same pattern as Grade 1 (TEA grade-2–5
+   design-challenge PDFs are in `info/`, which is local-only / gitignored).
+2. **Answer keys for grades 1–5** — `node build-answer-key.js` currently supports 6–8; extend to
+   1–5 once passcodes are provided (Grade 1 hub omits the answer-key pill until then).
+3. **Native translations** — per-breakout `_i18n` files for the 7 languages (today the
    non-English UI falls back to high-quality English; content still works in all 7).
-3. **Generated correlation page** and per-suite catalog polish as the set grows.
+4. **Generated correlation page** and per-suite catalog polish as the set grows.
 
 ## Build & verify
 
