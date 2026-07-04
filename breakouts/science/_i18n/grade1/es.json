@@ -1,0 +1,402 @@
+{
+  "chrome": {
+    "sect.clues": "🔍 Las pistas",
+    "sect.cluesHint": "Toca cada pista para leerla. Puedes abrirlas otra vez cuando quieras.",
+    "sect.locks": "🔒 Los candados",
+    "sect.locksHint": "Usa las pistas para abrir cada candado.",
+    "ui.reset": "↺ Empezar de nuevo",
+    "ui.check": "Revisar",
+    "ui.gotit": "Entendido",
+    "ui.playagain": "Jugar otra vez",
+    "ui.solved": "🔓 ¡Abierto!",
+    "ui.pcount": "{n} de {total} candados abiertos",
+    "ui.wordph": "Escribe aquí",
+    "ui.clear": "borrar",
+    "fb.digit": "Todavía no. Mira las pistas otra vez.",
+    "fb.word": "Mira las pistas para encontrar la palabra correcta.",
+    "fb.mc": "Esa no. Revisa las pistas otra vez.",
+    "fb.multiExtra": "Una elección no es correcta. Elige solo las que mueven las cosas.",
+    "fb.multiMissing": "Te faltó una. Encuéntralas todas.",
+    "fb.seq": "Ese orden no. Inténtalo otra vez.",
+    "footer.privacy": "Privacidad y cumplimiento"
+  },
+  "featured": {
+    "ui": {
+      "header.eyebrow": "Escape de Ciencias · Grado 1",
+      "header.h1": "¡Empuja, jala y juega!",
+      "header.sub": "¡Es el recreo! Ayuda a tu clase en el patio de juegos. Lee las pistas y abre los cuatro candados para aprender cómo los empujones y jalones hacen que las cosas se muevan.",
+      "brief.label": "🛝 Tu tarea",
+      "brief.h": "Pon en marcha el patio de juegos",
+      "brief.p": "Los columpios, el carrito y la pelota están quietos. Para hacerlos mover, necesitas un <b>empujón</b> o un <b>jalón</b>. ¡Toca cada pista y abre los cuatro candados!",
+      "win.stamp": "CAMPEÓN DEL RECREO ✓",
+      "win.h": "¡Lo lograste!",
+      "win.p": "Sabes que un empujón aleja las cosas, un jalón las acerca y un empujón más grande las mueve más rápido. ¡Así es como las fuerzas hacen que todo se mueva!",
+      "footer.text": "Escapes de Pensamiento Crítico de Ciencias · Grado 1 · Funciona en tu navegador — sin inicios de sesión, sin datos recopilados.",
+      "footer.disclaimer": "Alineado con los Conocimientos y Habilidades Esenciales de Texas para Ciencias 2021 (§112.3, Grado 1). Paráfrasis de buena fe; confirme antes de adoptarlo.",
+      "crumb.teacher": "‹ Inicio del maestro",
+      "crumb.suite": "Escapes de Pensamiento Crítico de Ciencias"
+    },
+    "clues": [
+      {"nm": "Empujar", "title": "Un empujón", "body": "Un <b>empujón</b> aleja algo <b>de ti</b>. Empujas un columpio para hacerlo ir."},
+      {"nm": "Jalar", "title": "Un jalón", "body": "Un <b>jalón</b> acerca algo <b>hacia ti</b>. Jalas un carrito para acercarlo."},
+      {"nm": "Empezar y parar", "title": "Empezar, parar, girar", "body": "Un empujón o un jalón puede hacer que algo <b>empiece</b>, <b>pare</b>, vaya <b>más rápido</b> o <b>cambie de dirección</b>."},
+      {"nm": "Empujón grande", "title": "Grande o pequeño", "body": "Un empujón <b>más grande</b> mueve algo <b>más rápido</b> y <b>más lejos</b>. Un empujón pequeño lo mueve un poquito."},
+      {"nm": "Imán", "title": "Un imán", "body": "Un <b>imán</b> puede jalar algunas cosas, como los clips, incluso sin tocarlas."},
+      {"nm": "Dato de insecto", "title": "Un dato de la mariposa", "body": "Una mariposa tiene seis patas y prueba la comida con sus patas. Eso es verdad y divertido — pero no trata de empujones ni jalones."}
+    ],
+    "locks": [
+      {"title": "El columpio", "q": "Empujas un columpio. Pon los movimientos del columpio en orden. Toca los botones en orden.",
+       "pads": ["🛑 Se frena y para", "👋 Tú lo empujas", "⬆️ Sube muy alto"],
+       "reason": "Tu empujón hace que el columpio empiece y suba. Después se frena y para. Un empujón inicia el movimiento."},
+      {"title": "El carrito", "q": "Quieres que el carrito venga hacia TI. ¿Qué debes hacer?",
+       "options": ["Empujarlo lejos.", "Jalarlo hacia ti.", "Solo mirarlo."],
+       "reason": "Un jalón acerca algo hacia ti. Un empujón lo alejaría."},
+      {"title": "¿Qué mueve las cosas?", "q": "Toca SOLO las cosas que son un empujón o un jalón que hace mover algo. Deja fuera el dato divertido que no trata de mover.",
+       "items": ["Patear una pelota para hacerla rodar.", "Jalar un carrito por la acera.", "Empujar a un amigo en el columpio.", "Una mariposa tiene seis patas."],
+       "reason": "Patear, jalar y empujar mueven cosas con una fuerza. El dato de la mariposa es verdad pero no mueve nada."},
+      {"title": "Nómbralo", "q": "Cuando alejas una pelota de ti, le das un ____. Escribe la palabra.",
+       "word": ["empuje", "empujón", "empujon"],
+       "reason": "Un empujón aleja las cosas de ti. Nombrar la fuerza es el primer paso de la ciencia."}
+    ]
+  },
+  "conceptBase": {
+    "header.eyebrow": "Ciencias de Grado 1 · Escape rápido",
+    "brief.label": "🎈 ¡Vamos!",
+    "crumb.teacher": "‹ Más escapes de Grado 1",
+    "crumb.suite": "Ciencias de Grado 1",
+    "footer.text": "Ciencias de Grado 1 · Escapes de Pensamiento Crítico en Línea · Funciona en tu navegador — sin inicios de sesión, sin datos recopilados.",
+    "footer.disclaimer": "Alineado con los Conocimientos y Habilidades Esenciales de Texas para Ciencias 2021 (§112.3, Grado 1). Paráfrasis de buena fe; confirme antes de adoptarlo."
+  },
+  "concept": {
+    "properties": {
+      "ui": {
+        "h1": "A clasificar",
+        "sub": "¿Grande o pequeño? ¿Liso o áspero? Lee las pistas y abre los cuatro candados para clasificar cosas.",
+        "briefH": "Mira y clasifica",
+        "briefP": "Podemos clasificar cosas por cómo se ven y se sienten — color, forma, tamaño y de qué están hechas. ¡Toca las pistas y abre los candados!",
+        "winStamp": "CLASIFICADO ✓",
+        "winH": "¡Buena clasificación!",
+        "winP": "Ordenaste cosas por tamaño, descubriste cómo se siente algo y nombraste una forma de clasificar. El color, la forma, el tamaño y la textura nos ayudan a clasificar las cosas."
+      },
+      "clues": [
+        {"nm": "Color", "title": "Color", "body": "El color es una forma de clasificar. Las cosas pueden ser rojas, azules, verdes y más."},
+        {"nm": "Forma", "title": "Forma", "body": "La forma también es una forma de clasificar. Las cosas pueden ser redondas, cuadradas o largas."},
+        {"nm": "Cómo se siente", "title": "Cómo se siente", "body": "La textura es cómo se siente algo. Puede ser liso o áspero, blando o duro."},
+        {"nm": "Grande o pequeño", "title": "Grande o pequeño", "body": "Podemos clasificar por tamaño. Algunas cosas son grandes y otras son pequeñas."},
+        {"nm": "Hecho de", "title": "De qué está hecho", "body": "Podemos clasificar por lo que algo está hecho, como madera, metal o plástico."},
+        {"nm": "Dato del cielo", "title": "Un dato del arcoíris", "body": "Un arcoíris tiene siete colores. Eso es verdad y bonito — pero no es una forma de clasificar tus juguetes."}
+      ],
+      "locks": [
+        {"title": "De pequeño a grande", "q": "Pon estos en orden del MÁS PEQUEÑO al MÁS GRANDE. Toca los botones en orden.",
+         "pads": ["🐘 Elefante", "🐜 Hormiga", "🐱 Gato"],
+         "reason": "Una hormiga es la más pequeña, luego un gato, luego un elefante. Clasificar por tamaño es ponerlos en orden de pequeño a grande."},
+        {"title": "¿Cómo se siente?", "q": "Una roca es rugosa y dura. ¿Qué palabra dice cómo se SIENTE?",
+         "options": ["Roja.", "Áspera.", "Redonda."],
+         "reason": "Áspera dice la textura — cómo se siente algo. Roja dice el color y redonda dice la forma."},
+        {"title": "Formas de clasificar", "q": "Toca SOLO las formas de clasificar cosas. Deja fuera el dato divertido.",
+         "items": ["Por color.", "Por tamaño.", "Por lo que está hecho.", "Un arcoíris tiene siete colores."],
+         "reason": "El color, el tamaño y el material son formas de clasificar. El dato del arcoíris es verdad pero no te ayuda a clasificar."},
+        {"title": "Nombra una forma", "q": "Rojo, azul y verde son todos esto. Podemos clasificar por ____. Escribe la palabra.",
+         "word": ["color", "colores"],
+         "reason": "El color es una forma de clasificar cosas. Nombrar una propiedad nos ayuda a describir y clasificar."}
+      ]
+    },
+    "heat-changes": {
+      "ui": {
+        "h1": "Caliente y frío",
+        "sub": "¿Qué hace el calor? Lee las pistas y abre los cuatro candados.",
+        "briefH": "Míralo cambiar",
+        "briefP": "El calor puede cambiar las cosas. Puede derretir el hielo y cocinar la comida. El frío puede hacer que el agua se vuelva hielo. ¡Toca las pistas y abre los candados!",
+        "winStamp": "CAMBIADO ✓",
+        "winH": "¡Buen trabajo!",
+        "winP": "Derretiste un cubo de hielo, descubriste qué hace el calor y nombraste el cambio. El calor y el frío pueden cambiar las cosas a nuestro alrededor."
+      },
+      "clues": [
+        {"nm": "Calor", "title": "El calor cambia las cosas", "body": "El calor es energía tibia. Puede cambiar las cosas, como derretir el hielo o cocinar la comida."},
+        {"nm": "Derretir", "title": "El hielo se derrite", "body": "Cuando el hielo se calienta, se derrite y se vuelve agua."},
+        {"nm": "Congelar", "title": "El agua se congela", "body": "Cuando el agua se pone muy fría, se congela y se vuelve hielo."},
+        {"nm": "Cocinar", "title": "El calor cocina", "body": "Usamos el calor para cocinar la comida. Una vez que un huevo está cocido, no puede volver a estar crudo."},
+        {"nm": "Secar", "title": "El calor seca", "body": "Una secadora de ropa usa calor para secar la ropa mojada."},
+        {"nm": "Dato del búho", "title": "Un dato del búho", "body": "Un búho puede girar la cabeza casi por completo. Eso es verdad y genial — pero no trata del calor."}
+      ],
+      "locks": [
+        {"title": "Hielo que se derrite", "q": "Un cubo de hielo se calienta. Ponlo en orden. Toca los botones en orden.",
+         "pads": ["💧 Es un charco de agua", "🧊 Un cubo de hielo frío", "🔥 Se calienta y se derrite"],
+         "reason": "Un cubo de hielo frío se calienta, se derrite y se vuelve agua. El calor cambia el hielo en agua."},
+        {"title": "¿Qué lo derrite?", "q": "¿Qué hace que un cubo de hielo se derrita?",
+         "options": ["El calor (calentarse).", "El frío (enfriarse).", "Un empujón."],
+         "reason": "El calor hace que el hielo se derrita en agua. El frío lo mantendría congelado."},
+        {"title": "Lo que el calor puede hacer", "q": "Toca SOLO las cosas que el CALOR puede hacer. Deja fuera el dato divertido.",
+         "items": ["Derretir un cubo de hielo.", "Cocinar un huevo.", "Secar ropa mojada.", "Un búho puede girar mucho la cabeza."],
+         "reason": "El calor puede derretir, cocinar y secar. El dato del búho es verdad pero no trata del calor."},
+        {"title": "Nombra el cambio", "q": "El hielo se calienta y se vuelve agua. Decimos que el hielo se va a ____. Escribe la palabra.",
+         "word": ["derretir", "derrite"],
+         "reason": "El hielo se derrite cuando se calienta. Nombrar el cambio nos ayuda a decir qué hizo el calor."}
+      ]
+    },
+    "seasons": {
+      "ui": {
+        "h1": "La vuelta al año",
+        "sub": "Invierno, primavera, verano, otoño — lee las pistas y abre los cuatro candados.",
+        "briefH": "Sigue las estaciones",
+        "briefP": "Las cuatro estaciones vienen en el mismo orden cada año. ¡Toca las pistas y abre los candados para aprender el patrón!",
+        "winStamp": "ESTACIONES LISTAS ✓",
+        "winH": "¡Muy bien!",
+        "winP": "Ordenaste las estaciones y descubriste qué pasa en cada una. Las estaciones se repiten en un patrón todo el año."
+      },
+      "clues": [
+        {"nm": "Primavera", "title": "Primavera", "body": "En primavera hace más calor. Crecen las flores y nacen animales bebés."},
+        {"nm": "Verano", "title": "Verano", "body": "El verano es caluroso con días largos y soleados."},
+        {"nm": "Otoño", "title": "Otoño", "body": "En otoño refresca. Las hojas cambian de color y caen de los árboles."},
+        {"nm": "Invierno", "title": "Invierno", "body": "El invierno es frío. En algunos lugares nieva y los días son cortos."},
+        {"nm": "Patrón", "title": "Se repiten", "body": "Las estaciones vienen en el mismo orden cada año. Eso es un patrón."},
+        {"nm": "Dato del ave", "title": "Un dato del pingüino", "body": "Los pingüinos no pueden volar pero nadan muy bien. Eso es verdad y divertido — pero no trata de las estaciones."}
+      ],
+      "locks": [
+        {"title": "Orden de las estaciones", "q": "Pon las estaciones en orden, empezando con la primavera. Toca los botones en orden.",
+         "pads": ["🍂 Otoño", "🌸 Primavera", "❄️ Invierno", "☀️ Verano"],
+         "reason": "Primavera, luego verano, luego otoño, luego invierno. Las estaciones siguen el mismo orden cada año — un patrón."},
+        {"title": "La calurosa", "q": "¿Qué estación es calurosa con días largos y soleados?",
+         "options": ["Invierno.", "Verano.", "Otoño."],
+         "reason": "El verano es caluroso con días largos. El invierno es frío con días cortos."},
+        {"title": "Tiempo de otoño", "q": "Toca SOLO las cosas que pasan en OTOÑO. Deja fuera el dato divertido.",
+         "items": ["Las hojas cambian de color.", "Las hojas caen de los árboles.", "El clima refresca.", "Los pingüinos nadan muy bien."],
+         "reason": "En otoño las hojas cambian y caen y refresca. El dato del pingüino es verdad pero no trata del otoño."},
+        {"title": "La fría", "q": "La estación fría con días cortos, cuando en algunos lugares nieva, es el ____. Escribe la palabra.",
+         "word": ["invierno"],
+         "reason": "El invierno es la estación fría. Nombrar cada estación nos ayuda a ver el patrón del año."}
+      ]
+    },
+    "soil": {
+      "ui": {
+        "h1": "Todo sobre el suelo",
+        "sub": "¿Qué hay bajo tus pies? Lee las pistas y abre los cuatro candados.",
+        "briefH": "Explora el suelo",
+        "briefP": "El suelo es la tierra del piso. Viene en diferentes colores y texturas. ¡Las plantas crecen en él! Toca las pistas y abre los candados.",
+        "winStamp": "EXCAVADO ✓",
+        "winH": "¡Buena excavación!",
+        "winP": "Cultivaste una planta en el suelo, descubriste el mejor suelo para las plantas y lo nombraste. El suelo ayuda a las plantas a crecer y viene de muchos tipos."
+      },
+      "clues": [
+        {"nm": "Suelo", "title": "Suelo", "body": "El suelo es la tierra del piso. Las plantas crecen en él."},
+        {"nm": "Tierra vegetal", "title": "Tierra vegetal", "body": "La tierra vegetal es oscura y llena de alimento para las plantas. Es el mejor suelo para cultivar."},
+        {"nm": "Arena", "title": "Arena", "body": "La arena es suelo hecho de granitos sueltos. Se siente granulosa y el agua se filtra por ella."},
+        {"nm": "Arcilla", "title": "Arcilla", "body": "La arcilla es suelo que es pegajoso cuando está mojado. Se une formando una bola."},
+        {"nm": "Colores", "title": "Suelos diferentes", "body": "Los suelos pueden ser de diferentes colores y sentirse lisos, granulosos o pegajosos."},
+        {"nm": "Dato del mar", "title": "Un dato del pulpo", "body": "Un pulpo tiene ocho brazos. Eso es verdad y genial — pero no trata del suelo."}
+      ],
+      "locks": [
+        {"title": "Cultiva una planta", "q": "Pon estos en orden para cultivar una planta. Toca los botones en orden.",
+         "pads": ["🌻 Una planta crece hacia arriba", "🌰 Planta una semilla en el suelo", "🌱 Las raíces crecen hacia abajo"],
+         "reason": "Una semilla va en el suelo, las raíces crecen hacia abajo y una planta crece hacia arriba. El suelo ayuda a la planta a crecer."},
+        {"title": "Mejor para las plantas", "q": "¿Qué suelo es el mejor para cultivar plantas?",
+         "options": ["Arena.", "Tierra vegetal.", "Nada de suelo."],
+         "reason": "La tierra vegetal es oscura y llena de alimento para las plantas, así que es la mejor para cultivar."},
+        {"title": "Cómo son diferentes los suelos", "q": "Toca SOLO las formas en que los suelos pueden ser diferentes. Deja fuera el dato divertido.",
+         "items": ["Su color.", "Cómo se sienten.", "El tamaño de los granos.", "Un pulpo tiene ocho brazos."],
+         "reason": "Los suelos se diferencian en color, textura y tamaño de grano. El dato del pulpo es verdad pero no trata del suelo."},
+        {"title": "Nómbralo", "q": "La tierra del piso donde crecen las plantas se llama ____. Escribe la palabra.",
+         "word": ["suelo", "tierra"],
+         "reason": "El suelo es el terreno donde crecen las plantas. Nombrarlo nos ayuda a hablar de la tierra."}
+      ]
+    },
+    "water-earth": {
+      "ui": {
+        "h1": "Agua por todas partes",
+        "sub": "¡Charcos, estanques y el gran mar azul! Lee las pistas y abre los cuatro candados.",
+        "briefH": "Encuentra el agua",
+        "briefP": "El agua está en muchos lugares de la Tierra, desde charcos pequeños hasta el enorme océano. Un poco de agua es dulce y otra es salada. ¡Toca las pistas y abre los candados!",
+        "winStamp": "AGUA ENCONTRADA ✓",
+        "winH": "¡Chapoteo genial!",
+        "winP": "Ordenaste los lugares de agua por tamaño, encontraste el salado y lo nombraste. El agua en la Tierra viene de todos los tamaños, dulce y salada."
+      },
+      "clues": [
+        {"nm": "Charco", "title": "Charco", "body": "Un charco es un poquito de agua en el piso después de que llueve."},
+        {"nm": "Estanque", "title": "Estanque y lago", "body": "Un estanque es pequeño y un lago es más grande. Su agua es dulce, no salada."},
+        {"nm": "Océano", "title": "Océano", "body": "El océano es el agua más grande de todas. El agua del océano es salada."},
+        {"nm": "Dulce", "title": "Dulce o salada", "body": "El agua dulce no tiene sal. Podemos beberla. El agua salada es demasiado salada para beber."},
+        {"nm": "Ríos", "title": "Ríos", "body": "Un río es agua que corre por el suelo. El agua del río casi siempre es dulce."},
+        {"nm": "Dato de altura", "title": "Un dato de la jirafa", "body": "Una jirafa es el animal más alto. Eso es verdad y genial — pero no trata del agua."}
+      ],
+      "locks": [
+        {"title": "De pequeño a grande", "q": "Pon estos lugares de agua en orden del MÁS PEQUEÑO al MÁS GRANDE. Toca los botones en orden.",
+         "pads": ["🌊 Océano", "💧 Charco", "🏞️ Estanque"],
+         "reason": "Un charco es el más pequeño, luego un estanque, luego el enorme océano. El agua viene de muchos tamaños."},
+        {"title": "El salado", "q": "¿Qué agua es salada?",
+         "options": ["Un estanque.", "El océano.", "Un charco."],
+         "reason": "El agua del océano es salada. Los estanques y ríos son de agua dulce."},
+        {"title": "¿Dónde hay agua?", "q": "Toca SOLO los lugares donde encuentras agua. Deja fuera el dato divertido.",
+         "items": ["En un estanque.", "En un río.", "En el océano.", "Una jirafa es el animal más alto."],
+         "reason": "Los estanques, ríos y océanos tienen agua. El dato de la jirafa es verdad pero no trata del agua."},
+        {"title": "El grande", "q": "El agua más grande y salada de la Tierra es el ____. Escribe la palabra.",
+         "word": ["océano", "oceano", "mar"],
+         "reason": "El océano es el agua más grande y es salada. Nombrar los lugares de agua nos ayuda a describir la Tierra."}
+      ]
+    },
+    "weather": {
+      "ui": {
+        "h1": "¿Cómo está el clima?",
+        "sub": "¿Soleado, lluvioso o nevado? Lee las pistas y abre los cuatro candados.",
+        "briefH": "Mira el cielo",
+        "briefP": "El clima es lo que hacen el cielo y el aire hoy. Nos ayuda a elegir qué ponernos. ¡Toca las pistas y abre los candados!",
+        "winStamp": "PRONÓSTICO ✓",
+        "winH": "¡Estrella del clima!",
+        "winP": "Te preparaste para la lluvia, elegiste la ropa correcta y nombraste la palabra. El clima cambia y nos ayuda a planear el día."
+      },
+      "clues": [
+        {"nm": "Soleado", "title": "Soleado", "body": "El clima soleado es brillante y cálido con el cielo despejado."},
+        {"nm": "Lluvioso", "title": "Lluvioso", "body": "El clima lluvioso tiene nubes y agua que cae del cielo."},
+        {"nm": "Ventoso", "title": "Ventoso", "body": "El clima ventoso tiene aire que se mueve rápido. Puede empujar papalotes y hojas."},
+        {"nm": "Nevado", "title": "Frío y nevado", "body": "El clima frío puede traer nieve y hielo. Nos abrigamos para no tener frío."},
+        {"nm": "Qué ponerse", "title": "Vístete para el clima", "body": "Usamos el clima para elegir nuestra ropa — un abrigo cuando hace frío, un impermeable cuando llueve."},
+        {"nm": "Dato de la abeja", "title": "Un dato de la abeja", "body": "Las abejas hacen miel. Eso es verdad y dulce — pero no es clima."}
+      ],
+      "locks": [
+        {"title": "Un día lluvioso", "q": "Está lloviendo. Pon tu mañana en orden para no mojarte. Toca los botones en orden.",
+         "pads": ["🙂 Te quedas seco afuera", "🌧️ Ves la lluvia por la ventana", "🧥 Agarras un impermeable"],
+         "reason": "Ves la lluvia, agarras un impermeable y te quedas seco. El clima nos ayuda a elegir qué ponernos."},
+        {"title": "Ropa de día frío", "q": "Hace frío y está nevando. ¿Qué debes ponerte?",
+         "options": ["Un abrigo cálido.", "Un traje de baño.", "Nada extra."],
+         "reason": "En un día frío y nevado nos ponemos un abrigo cálido. El clima nos ayuda a estar cómodos."},
+        {"title": "Tipos de clima", "q": "Toca SOLO los tipos de clima. Deja fuera el dato divertido.",
+         "items": ["Lluvioso.", "Soleado.", "Ventoso.", "Las abejas hacen miel."],
+         "reason": "Lluvioso, soleado y ventoso son tipos de clima. El dato de la abeja es verdad pero no es clima."},
+        {"title": "Nómbralo", "q": "Soleado, lluvioso y nevado dicen el ____ de afuera. Escribe la palabra.",
+         "word": ["clima", "tiempo"],
+         "reason": "El clima es lo que hacen el cielo y el aire. Nombrarlo nos ayuda a planear el día."}
+      ]
+    },
+    "conserve-water": {
+      "ui": {
+        "h1": "Salva el agua",
+        "sub": "El agua es importante. Lee las pistas y abre los cuatro candados para ayudar a salvarla.",
+        "briefH": "Sé un ayudante del agua",
+        "briefP": "Necesitamos agua para beber, lavar y cultivar comida. No debemos desperdiciarla. ¡Toca las pistas y abre los candados para aprender cómo ahorrar agua!",
+        "winStamp": "AGUA AHORRADA ✓",
+        "winH": "¡Héroe del agua!",
+        "winP": "Ahorraste agua mientras te cepillabas los dientes, encontraste formas de ayudar y nombraste la palabra. Ahorrar agua guarda este recurso importante para todos."
+      },
+      "clues": [
+        {"nm": "La necesitamos", "title": "El agua es importante", "body": "Necesitamos agua para beber, para lavar y para cultivar nuestra comida."},
+        {"nm": "Cierra el grifo", "title": "Ciérralo", "body": "Cierra el grifo mientras te cepillas los dientes. No dejes que el agua corra y corra."},
+        {"nm": "Duchas cortas", "title": "Duchas cortas", "body": "Tomar una ducha corta usa menos agua que una larga."},
+        {"nm": "Mantenla limpia", "title": "Sin basura", "body": "Mantén la basura fuera de los estanques y ríos para que el agua esté limpia."},
+        {"nm": "No desperdicies", "title": "No desperdicies", "body": "Ahorrar agua es no desperdiciarla. Cada gota cuenta."},
+        {"nm": "Dato del koala", "title": "Un dato del koala", "body": "Los koalas duermen casi todo el día. Eso es verdad y tierno — pero no trata de ahorrar agua."}
+      ],
+      "locks": [
+        {"title": "Cepilla y ahorra", "q": "Pon estos en orden para ahorrar agua al cepillarte. Toca los botones en orden.",
+         "pads": ["🪥 Cepíllate los dientes", "💧 Moja tu cepillo", "🚫 Cierra el grifo"],
+         "reason": "Moja el cepillo, cierra el grifo y luego cepíllate. Cerrar el agua ahorra mucha de ella."},
+        {"title": "Ahorra al cepillarte", "q": "¿Cómo puedes ahorrar agua cuando te cepillas los dientes?",
+         "options": ["Dejar el grifo abierto todo el tiempo.", "Cerrar el grifo mientras te cepillas.", "Usar dos grifos."],
+         "reason": "Cerrar el grifo mientras te cepillas ahorra el agua que se iría por el desagüe."},
+        {"title": "Formas de ayudar", "q": "Toca SOLO las formas de ahorrar o proteger el agua. Deja fuera el dato divertido.",
+         "items": ["Cerrar el grifo cuando no lo usas.", "Tomar duchas cortas.", "Mantener la basura fuera de los ríos.", "Los koalas duermen casi todo el día."],
+         "reason": "Cerrar el agua, las duchas cortas y no tirar basura ayudan. El dato del koala es verdad pero no ahorra agua."},
+        {"title": "Nómbralo", "q": "Cuando no desperdiciamos el agua, la ____. Escribe la palabra.",
+         "word": ["ahorrar", "ahorra"],
+         "reason": "Ahorrar agua es usar solo la que necesitamos. Ahorrar guarda el agua para todos."}
+      ]
+    },
+    "living-nonliving": {
+      "ui": {
+        "h1": "¿Vivo o no?",
+        "sub": "¿Qué está vivo y qué no? Lee las pistas y abre los cuatro candados.",
+        "briefH": "Clasifica lo que está vivo",
+        "briefP": "Los seres vivos crecen, necesitan comida y agua, y tienen crías. Las cosas no vivas no. ¡Toca las pistas y abre los candados!",
+        "winStamp": "CLASIFICADO ✓",
+        "winH": "¡Conoces la vida!",
+        "winP": "Viste crecer a un cachorro, encontraste el ser vivo y lo nombraste. Los seres vivos crecen y necesitan comida, agua y aire."
+      },
+      "clues": [
+        {"nm": "Vivo", "title": "Seres vivos", "body": "Los seres vivos crecen, necesitan comida, agua y aire, y pueden tener crías. Un perro y un árbol están vivos."},
+        {"nm": "No vivo", "title": "Cosas no vivas", "body": "Las cosas no vivas no crecen, no comen ni tienen crías. Una roca y un juguete no están vivos."},
+        {"nm": "Necesidades", "title": "Necesidades básicas", "body": "Los seres vivos necesitan comida, agua, aire y espacio para vivir y crecer."},
+        {"nm": "Crías", "title": "Tienen crías", "body": "Los seres vivos pueden tener crías, o bebés, que crecen como ellos."},
+        {"nm": "Crecen", "title": "Crecen", "body": "Los seres vivos empiezan pequeños y crecen más grandes con el tiempo."},
+        {"nm": "Dato del autobús", "title": "Un dato del autobús", "body": "Los autobuses escolares se pintan de amarillo para verse fácilmente. Eso es verdad — pero un autobús no está vivo."}
+      ],
+      "locks": [
+        {"title": "El cachorro crece", "q": "Los seres vivos crecen. Pon al cachorro en orden. Toca los botones en orden.",
+         "pads": ["🐕 Un perro grande", "🐶 Un cachorrito", "🍖 Come y crece"],
+         "reason": "Un cachorrito come, crece y se vuelve un perro grande. Crecer es algo que solo hacen los seres vivos."},
+        {"title": "¿Cuál está vivo?", "q": "¿Cuál es un ser VIVO?",
+         "options": ["Una roca.", "Un árbol.", "Un carrito de juguete."],
+         "reason": "Un árbol está vivo — crece y necesita agua y aire. Una roca y un juguete no están vivos."},
+        {"title": "Encuentra los seres vivos", "q": "Toca SOLO los seres vivos. Deja fuera el dato divertido.",
+         "items": ["Un perro.", "Una flor.", "Un pez.", "Los autobuses escolares son amarillos."],
+         "reason": "Un perro, una flor y un pez están vivos — crecen y necesitan comida y agua. El dato del autobús es verdad pero un autobús no está vivo."},
+        {"title": "Nómbralo", "q": "Algo que crece, come y tiene crías es un ser ____. Escribe la palabra.",
+         "word": ["vivo", "viviente"],
+         "reason": "Los seres vivos crecen y necesitan comida, agua y aire. Clasificar lo vivo de lo no vivo es ciencia de verdad."}
+      ]
+    },
+    "food-chains": {
+      "ui": {
+        "h1": "¿Quién come qué?",
+        "sub": "¡Sigue la comida! Lee las pistas y abre los cuatro candados.",
+        "briefH": "Sigue la comida",
+        "briefP": "Los seres vivos necesitan comida. Una cadena alimenticia muestra quién come qué, empezando con el Sol y las plantas. ¡Toca las pistas y abre los candados!",
+        "winStamp": "CADENA UNIDA ✓",
+        "winH": "¡Experto en cadenas!",
+        "winP": "Armaste una cadena alimenticia, descubriste qué necesitan las plantas y la nombraste. Todo ser vivo necesita comida, y las cadenas alimenticias muestran cómo están todos conectados."
+      },
+      "clues": [
+        {"nm": "Sol", "title": "El Sol", "body": "El Sol da luz. Las plantas usan la luz del sol para crecer y hacer su propia comida."},
+        {"nm": "Plantas", "title": "Plantas", "body": "Las plantas hacen comida usando la luz del sol y agua. Muchos animales comen plantas."},
+        {"nm": "Comen plantas", "title": "Comen plantas", "body": "Algunos animales comen plantas, como una oruga que come una hoja."},
+        {"nm": "Comen animales", "title": "Comen animales", "body": "Algunos animales comen otros animales, como un pájaro que come una oruga."},
+        {"nm": "Cadena alimenticia", "title": "Una cadena alimenticia", "body": "Una cadena alimenticia muestra quién come qué: del Sol a la planta al que come plantas al que come animales."},
+        {"nm": "Dato de roca", "title": "Un dato del volcán", "body": "Un volcán puede lanzar lava caliente. Eso es verdad y asombroso — pero no es parte de una cadena alimenticia."}
+      ],
+      "locks": [
+        {"title": "Arma la cadena", "q": "Pon la cadena alimenticia en orden, empezando con el Sol. Toca los botones en orden.",
+         "pads": ["🐦 El pájaro come el insecto", "☀️ El Sol brilla", "🌿 Crece el pasto", "🐛 El insecto come el pasto"],
+         "reason": "El Sol ayuda a crecer el pasto, un insecto come el pasto y un pájaro come el insecto. Eso es una cadena alimenticia."},
+        {"title": "Comida de plantas", "q": "¿Qué necesitan las plantas para crecer y hacer su comida?",
+         "options": ["Luz del sol y agua.", "Un empujón.", "Una roca."],
+         "reason": "Las plantas usan la luz del sol y agua para hacer comida. Esa comida alimenta al resto de la cadena."},
+        {"title": "¿Quién come a quién?", "q": "Toca SOLO las que muestran que algo se come a otra cosa. Deja fuera el dato divertido.",
+         "items": ["Un pájaro come un insecto.", "Una vaca come pasto.", "Un pez grande come un pez pequeño.", "Un volcán lanza lava."],
+         "reason": "Un pájaro, una vaca y un pez comen algo en una cadena alimenticia. El dato del volcán es verdad pero no es comer."},
+        {"title": "Nómbralo", "q": "Todo ser vivo necesita ____ para vivir y crecer. Escribe la palabra.",
+         "word": ["comida", "alimento"],
+         "reason": "Todos los seres vivos necesitan comida. Una cadena alimenticia muestra cómo pasa la comida de un ser vivo al siguiente."}
+      ]
+    },
+    "animals": {
+      "ui": {
+        "h1": "Cuerpos y crías de animales",
+        "sub": "¿Cómo ayudan los cuerpos a los animales? Lee las pistas y abre los cuatro candados.",
+        "briefH": "Conoce a los animales",
+        "briefP": "Los animales tienen partes del cuerpo que les ayudan a vivir y a moverse. Los animales bebés se parecen a sus padres. ¡Toca las pistas y abre los candados!",
+        "winStamp": "ANIMALES LISTOS ✓",
+        "winH": "¡Experto en animales!",
+        "winP": "Hiciste crecer un pollito hasta ser gallina, encontraste qué ayuda a un pez a nadar y nombraste a quién se parece un bebé. Los cuerpos de los animales les ayudan a vivir, y los bebés se parecen a sus padres."
+      },
+      "clues": [
+        {"nm": "Alas", "title": "Alas", "body": "Las alas ayudan a un pájaro a volar por el aire."},
+        {"nm": "Aletas", "title": "Aletas", "body": "Las aletas ayudan a un pez a nadar por el agua."},
+        {"nm": "Patas", "title": "Patas", "body": "Las patas fuertes ayudan a los animales a correr, saltar y caminar."},
+        {"nm": "Se parecen", "title": "Los bebés se parecen", "body": "Los animales bebés se parecen mucho a sus padres. Un cachorro se parece a su papá perro."},
+        {"nm": "Crecen", "title": "Ciclo de vida", "body": "Los animales crecen. Un pollo empieza como huevo, se vuelve pollito y luego crece hasta ser gallina."},
+        {"nm": "Dato del cielo", "title": "Un dato del rayo", "body": "Un rayo es muy caliente. Eso es verdad y poderoso — pero no es una parte del cuerpo de un animal."}
+      ],
+      "locks": [
+        {"title": "Vida del pollo", "q": "Pon la vida del pollo en orden. Toca los botones en orden.",
+         "pads": ["🐔 Una gallina adulta", "🥚 Un huevo", "🐥 Un pollito bebé"],
+         "reason": "Un huevo se abre y sale un pollito, y el pollito crece hasta ser gallina. Ese es el ciclo de vida del animal."},
+        {"title": "Ayuda para nadar", "q": "¿Qué parte del cuerpo ayuda a un pez a moverse en el agua?",
+         "options": ["Alas.", "Aletas.", "Patas."],
+         "reason": "Las aletas ayudan a un pez a nadar. Las alas ayudan a los pájaros a volar y las patas ayudan a los animales a correr."},
+        {"title": "Partes que ayudan", "q": "Toca SOLO las partes del cuerpo que ayudan a un animal a moverse. Deja fuera el dato divertido.",
+         "items": ["Las alas ayudan a un pájaro a volar.", "Las aletas ayudan a un pez a nadar.", "Las patas ayudan a un conejo a saltar.", "Un rayo es muy caliente."],
+         "reason": "Las alas, las aletas y las patas ayudan a los animales a moverse. El dato del rayo es verdad pero no es una parte del cuerpo."},
+        {"title": "Nómbralo", "q": "Un animal bebé se parece mucho a su ____. Escribe la palabra.",
+         "word": ["padre", "madre", "mamá", "papá"],
+         "reason": "Los animales bebés se parecen a sus padres. Notar cómo las crías se parecen a los padres es una idea de ciencia."}
+      ]
+    }
+  }
+}
