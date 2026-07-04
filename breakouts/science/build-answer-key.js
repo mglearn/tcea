@@ -12,13 +12,15 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 
-const grade = String(process.argv[2] || '').trim();
+let grade = String(process.argv[2] || '').trim();
 const pw = process.argv[3] || process.env.AK_PW;
-if (!/^[1-8]$/.test(grade) || !pw) {
-  console.error("Usage: node build-answer-key.js <1-8> <password>");
+if (!/^([1-8]|[Kk])$/.test(grade) || !pw) {
+  console.error("Usage: node build-answer-key.js <K|1-8> <password>");
   process.exit(1);
 }
-const SECTION = { '1': '112.3', '2': '112.4', '3': '112.5', '4': '112.6', '5': '112.7', '6': '112.26', '7': '112.27', '8': '112.28' }[grade];
+grade = grade.toUpperCase(); // K
+const SECTION = { 'K': '112.2', '1': '112.3', '2': '112.4', '3': '112.5', '4': '112.6', '5': '112.7', '6': '112.26', '7': '112.27', '8': '112.28' }[grade];
+const gradeLabel = grade === 'K' ? 'Kindergarten' : 'Grade ' + grade;
 
 const ROOT = __dirname;
 const ITER = 250000;
@@ -48,7 +50,7 @@ h2{color:#0a6b52;border-bottom:2px solid #f0a316;padding-bottom:4px;margin-top:2
 em{color:#4a5d6b}
 .clue{font-size:.88rem;color:#4a5d6b;margin:5px 0}
 </style>
-<h1>Answer Key — ${esc(title)} (Grade ${grade})</h1>
+<h1>Answer Key — ${esc(title)} (${gradeLabel})</h1>
 <p>Teacher use only. Every lock is answerable from the evidence board alone; the rationale models the reasoning students should be able to state. Aligned to the 2021 Texas science TEKS (§${SECTION}).</p>
 <h2>Evidence board (6 clues — 1 is a decoy)</h2>`;
 const decoyId = en.clues[en.clues.length - 1].id; // c6 is the true-but-off-topic decoy in every science breakout
@@ -77,7 +79,7 @@ const page = `<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
-<title>Answer Key — ${esc(title)} (Grade ${grade})</title>
+<title>Answer Key — ${esc(title)} (${gradeLabel})</title>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--navy:#0b3d5c;--sci:#0a6b52;--gold:#f0a316;--paper:#f2f8fb;--ink:#122430}
@@ -98,11 +100,11 @@ button:hover{background:#0b3d5c}
 <body>
 <div class="gate" id="gate">
   <h1>🔒 Teacher Answer Key</h1>
-  <p class="sub">${esc(title)} · Grade ${grade} · enter the password to unlock the answers and rationales.</p>
+  <p class="sub">${esc(title)} · ${gradeLabel} · enter the password to unlock the answers and rationales.</p>
   <input type="password" id="pw" placeholder="Password" autocomplete="off">
   <button id="go">Unlock</button>
   <div class="err" id="err"></div>
-  <p class="req">Don't have the passcode? Ask your suite administrator for the Grade ${grade} answer-key password. Keys are kept out of the student pages.</p>
+  <p class="req">Don't have the passcode? Ask your suite administrator for the ${gradeLabel} answer-key password. Keys are kept out of the student pages.</p>
 </div>
 <div id="out"></div>
 <script>

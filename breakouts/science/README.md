@@ -37,6 +37,7 @@ thinking move**. All are solvable from the evidence alone.
 
 | Grade | Featured breakout | "More" set (one short breakout per key concept) |
 |-------|-------------------|--------------------------------------------------|
+| **K** | ✅ Light and Shadows | ✅ **10 built** — sorting, magnets, day & night, the sky, rocks, weather, air & wind, plant needs, animal needs, plant parts |
 | **1** | ✅ Push, Pull, and Play! | ✅ **10 built** — sorting, hot & cold, seasons, soil, water, weather, saving water, living/nonliving, food chains, animals |
 | **2** | ✅ Make Some Noise! | ✅ **10 built** — solids & liquids, changing matter, pushes, Sun & Moon, wind & water, wild weather, recycling, producers & consumers, pollen & seeds, metamorphosis |
 | **3** | ✅ Blast Off! A Trip Through Space | ✅ **10 built** — states of matter, changes of state, measuring matter, forces at a distance, forms of energy, how soil forms, rapid Earth changes, food chains, fossils, survival structures |
@@ -46,16 +47,17 @@ thinking move**. All are solvable from the evidence alone.
 | **7** | ✅ Rescue Run | ✅ **10 built** — elements & compounds, solutions, motion & graphs, heat transfer, solar system, plate tectonics, watersheds, energy pyramids, body systems, classifying life |
 | **8** | ✅ Launch Control | ✅ **10 built** — classifying matter, acids & bases, conservation of mass, Newton's laws, waves & EM spectrum, stars & galaxies, weather systems, carbon & climate, ecosystem change, cells & heredity |
 
-🎉 **Grades 1–8 are ALL complete** — **8 featured breakouts + 80 concept breakouts** (10 per
+🎉 **Grades K–8 are ALL complete** — **9 featured breakouts + 90 concept breakouts** (10 per
 grade), each grade with a hub, a STEM engineering design challenge, a student word bank, a
-Skills & TEKS page, and a password-protected AES-256 answer key. All verified by real
-headless-browser solves; all 88 breakouts are indexed in the site-wide search, in 7 languages.
+Skills & TEKS page, and a password-protected AES-256 answer key. A generated **standards
+correlation guide** (`correlation.html`, `node build-correlation.js`) maps all 99 to the TEKS.
+All verified by real headless-browser solves; all 99 breakouts are indexed in the site-wide
+search, in 7 languages.
 
-**Anticipated next, in order:**
+**Anticipated next:**
 1. **Native translations** — per-breakout `_i18n` files for the 7 languages (today the
    non-English UI falls back to high-quality English; content still works in all 7).
-2. **Generated correlation page** covering every breakout, and per-suite catalog polish.
-3. **Optional K breakout** (§112.2) to round out the K–8 span.
+2. Per-suite catalog polish and additional STEM extensions as desired.
 
 ## Build & verify
 

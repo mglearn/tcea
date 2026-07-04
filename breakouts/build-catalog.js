@@ -89,8 +89,8 @@ function bibleMeta() {
 
 function scienceMeta() {
   const out = [];
-  const bandOf = g => (+g <= 2 ? 'K–2' : +g <= 5 ? '3–5' : '6–8');
-  for (const g of ['1', '2', '3', '4', '5', '6', '7', '8']) {
+  const bandOf = g => (g === 'K' || +g <= 2 ? 'K–2' : +g <= 5 ? '3–5' : '6–8');
+  for (const g of ['K', '1', '2', '3', '4', '5', '6', '7', '8']) {
     const band = bandOf(g);
     const fp = path.join(ROOT, 'science', 'grade' + g, 'locales', 'grade' + g + '.js');
     if (!fs.existsSync(fp)) continue;
@@ -149,7 +149,7 @@ const SUITES = [
     landing: 'bible/index.html', correlation: 'bible/correlation.html', answerKey: 'bible/answer-key.html' },
   { id: 'science', name: 'Science (Grades 1–8)', accent: '#0a6b52',
     desc: 'Critical Thinking Online Breakouts across the Texas science TEKS — from pushes and pulls to conservation of mass — each grade with a featured breakout, a concept set (one per key idea), a hands-on STEM engineering design challenge, and a student word bank. Seven languages.',
-    landing: 'science/index.html' },
+    landing: 'science/index.html', correlation: 'science/correlation.html' },
 ];
 
 const breakouts = [...clearMeta(), ...localeMeta('july4'), ...localeMeta('july5th'), ...bibleMeta(), ...scienceMeta()];
