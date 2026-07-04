@@ -38,13 +38,13 @@ thinking move**. All are solvable from the evidence alone.
 | Grade | Featured breakout | "More" set (one short breakout per key concept) |
 |-------|-------------------|--------------------------------------------------|
 | **6** | ✅ Cargo Ship Rescue | ✅ **10 built** — states of matter, mixtures, periodic table, density, chemical change, forces, waves, seasons & tides, Earth's systems, ecosystems & cells |
-| **7** | ✅ Rescue Run | ⏳ planned (~8–10): elements/solutions, motion & graphs, thermal energy, solar system, plate tectonics, hydrosphere, energy pyramids, body systems, taxonomy |
+| **7** | ✅ Rescue Run | ✅ **10 built** — elements & compounds, solutions, motion & graphs, heat transfer, solar system, plate tectonics, watersheds, energy pyramids, body systems, classifying life |
 | **8** | ✅ Launch Control | ⏳ planned (~8–10): reactions & conservation of mass, Newton's laws, waves/EM spectrum, stars & universe, weather & climate & carbon cycle, succession, cells & heredity |
 
 **Anticipated next, in order:**
-1. **Grade 7 "More" set** (8–10 concept breakouts), then **Grade 8 "More" set** — same
-   `more.js` + `more.html` + `play.html` pattern as Grade 6; wire the "More breakouts" pill
-   on each hub (currently "coming soon").
+1. **Grade 8 "More" set** (8–10 concept breakouts) — same `more.js` + `more.html` +
+   `play.html` pattern as Grades 6–7; wire the "More breakouts" pill on the Grade 8 hub
+   (currently "coming soon").
 2. **Grades 1–5** (elementary §112.A) — one hub + featured breakout + concept set + STEM
    challenge per grade (TEA grade-1–5 design-challenge PDFs are in `info/`).
 3. **Native translations** — per-breakout `_i18n` files for the 7 languages (today the
