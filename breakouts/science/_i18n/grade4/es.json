@@ -1,0 +1,402 @@
+{
+ "chrome": {
+  "sect.clues": "🔍 Las pistas",
+  "sect.cluesHint": "Toca cada pista para leerla. Puedes volver a abrirlas cuando quieras.",
+  "sect.locks": "🔒 Los candados",
+  "sect.locksHint": "Usa las pistas para abrir cada candado.",
+  "ui.reset": "↺ Empezar de nuevo",
+  "ui.check": "Comprobar",
+  "ui.gotit": "Entendido",
+  "ui.playagain": "Jugar otra vez",
+  "ui.solved": "🔓 ¡Abierto!",
+  "ui.pcount": "{n} de {total} candados abiertos",
+  "ui.wordph": "Escribe tu respuesta",
+  "ui.clear": "borrar",
+  "fb.digit": "No es correcto. Mira las pistas otra vez.",
+  "fb.word": "Busca en las pistas la palabra que encaja.",
+  "fb.mc": "Esa opción no está respaldada por las pistas. Mira de nuevo.",
+  "fb.multiExtra": "Una de tus opciones no es correcta. Escoge solo lo que muestran las pistas.",
+  "fb.multiMissing": "Te falta una. Encuéntralas todas.",
+  "fb.seq": "Ese orden no coincide con las pistas. Inténtalo de nuevo.",
+  "footer.privacy": "Privacidad y cumplimiento"
+ },
+ "featured": {
+  "ui": {
+   "header.eyebrow": "Reto de Ciencias · 4.º grado",
+   "header.h1": "¡Que se encienda! El secreto de los circuitos",
+   "header.sub": "¡La lámpara del salón no enciende! Lee las pistas y abre los cuatro candados para aprender cómo fluye la electricidad en un circuito para crear luz y calor.",
+   "brief.label": "💡 Tu misión",
+   "brief.h": "Haz que la luz funcione",
+   "brief.p": "La electricidad es un tipo de energía, pero solo puede fluir por un <b>camino cerrado</b> llamado <b>circuito</b>. Si hay un hueco, la luz se apaga. Toca cada pista y luego abre los cuatro candados para arreglar la luz.",
+   "win.stamp": "LUCES ENCENDIDAS ✓",
+   "win.h": "¡Lo arreglaste!",
+   "win.p": "Seguiste cómo fluye la electricidad desde la pila, por los cables, hasta el foco y de vuelta. Un circuito cerrado convierte la energía eléctrica en luz y calor, ¡y ahora conoces su secreto!",
+   "footer.text": "Retos de Pensamiento Crítico de Ciencias · 4.º grado · Funciona en tu navegador, sin registros ni recopilación de datos.",
+   "footer.disclaimer": "Alineado con los Conocimientos y Destrezas Esenciales de Texas para Ciencias de 2021 (§112.6, 4.º grado). Paráfrasis de buena fe; confirma antes de adoptarlo.",
+   "crumb.teacher": "‹ Inicio para docentes",
+   "crumb.suite": "Retos de Pensamiento Crítico de Ciencias"
+  },
+  "clues": [
+   {"nm": "Electricidad", "title": "Energía eléctrica", "body": "La electricidad es un tipo de <b>energía</b>. Puede encender un foco, hacer sonar un timbre o producir calor."},
+   {"nm": "Camino cerrado", "title": "Un lazo cerrado", "body": "La electricidad necesita un <b>camino cerrado</b> —un lazo completo sin huecos— para fluir. Ese lazo se llama <b>circuito</b>."},
+   {"nm": "El foco", "title": "Cómo enciende un foco", "body": "En un circuito que funciona, la electricidad fluye desde la <b>pila</b>, por los <b>cables</b>, hasta el <b>foco</b> y de vuelta a la pila. Eso enciende el foco."},
+   {"nm": "Un hueco", "title": "Un corte lo detiene", "body": "Si hay un <b>hueco</b> o corte en el camino, la electricidad deja de fluir y el foco se apaga."},
+   {"nm": "Luz y calor", "title": "Dos tipos de energía", "body": "Un circuito puede convertir la energía eléctrica en energía <b>lumínica</b> (un foco brillante) y energía <b>térmica</b> (calor)."},
+   {"nm": "Dato curioso", "title": "Un dato de mariposas", "body": "Una mariposa saborea con sus patas. Es verdad y es divertido, pero no tiene que ver con los circuitos."}
+  ],
+  "locks": [
+   {"title": "Sigue la electricidad", "q": "Sigue el camino que recorre la electricidad en un circuito que funciona. Toca las fichas en orden.",
+    "pads": [{"e": "↩️ De vuelta a la pila"}, {"e": "🔋 Sale de la pila"}, {"e": "💡 Por el cable hasta el foco"}],
+    "reason": "La electricidad sale de la pila, fluye por el cable para encender el foco y regresa a la pila. Un lazo completo es lo que hace funcionar un circuito."},
+   {"title": "Por qué se apagó el foco", "q": "Cortaste uno de los cables. ¿Por qué se apagó el foco?",
+    "options": ["La pila se agotó al instante.", "El camino ya no está cerrado, así que la electricidad no puede fluir.", "El foco se puso demasiado brillante."],
+    "reason": "Un hueco rompe el camino cerrado, así que la electricidad ya no puede fluir por el lazo y el foco se apaga."},
+   {"title": "Verdadero sobre los circuitos", "q": "Toca SOLO las pistas verdaderas sobre los circuitos. Deja fuera el dato curioso.",
+    "items": [{"t": "La electricidad necesita un lazo cerrado para fluir."}, {"t": "Un hueco en el camino detiene la electricidad."}, {"t": "Un circuito puede producir luz y calor."}, {"t": "Una mariposa saborea con sus patas."}],
+    "reason": "Un circuito es un lazo cerrado; un hueco lo detiene; y puede producir luz y calor. El dato de la mariposa es verdad, pero no tiene que ver con los circuitos."},
+   {"title": "Nombra el lazo", "q": "Un camino cerrado por el que fluye la electricidad para encender un foco se llama ____. Escribe la palabra.",
+    "word": ["circuito", "circuitos"],
+    "reason": "Un circuito es un lazo cerrado para la electricidad. La electricidad solo puede fluir cuando el circuito está completo."}
+  ]
+ },
+ "conceptBase": {
+  "header.eyebrow": "Ciencias de 4.º grado · Reto rápido",
+  "brief.label": "🎯 Calentamiento",
+  "crumb.teacher": "‹ Más retos de 4.º grado",
+  "crumb.suite": "Ciencias de 4.º grado",
+  "footer.text": "Ciencias de 4.º grado · Retos de Pensamiento Crítico en línea · Funciona en tu navegador, sin registros ni recopilación de datos.",
+  "footer.disclaimer": "Alineado con los Conocimientos y Destrezas Esenciales de Texas para Ciencias de 2021 (§112.6, 4.º grado). Paráfrasis de buena fe; confirma antes de adoptarlo."
+ },
+ "concept": {
+  "mixtures-solutions": {
+   "ui": {
+    "h1": "A mezclar",
+    "sub": "¿Qué es una solución y a dónde va a parar la materia? Lee las pistas y abre los cuatro candados.",
+    "briefH": "Mezclar y separar",
+    "briefP": "Una solución es una mezcla especial donde una cosa se disuelve de manera uniforme en otra. Y no importa cómo mezcles, la cantidad total de materia sigue siendo la misma. ¡Usa las pistas para abrir los candados!",
+    "winStamp": "MEZCLADO ✓",
+    "winH": "¡Maestro de las mezclas!",
+    "winP": "Separaste una solución, notaste la mezcla uniforme y la nombraste. Cuando las cosas se mezclan, la materia se conserva: nada se pierde ni se crea."
+   },
+   "clues": [
+    {"nm": "Mezcla", "title": "Mezclas", "body": "Una mezcla es dos o más cosas mezcladas pero no unidas. Muchas mezclas se pueden volver a separar."},
+    {"nm": "Solución", "title": "Soluciones", "body": "Una solución es una mezcla especial donde una cosa se disuelve tan uniformemente que no puedes verla, como la sal en el agua o el azúcar en el té."},
+    {"nm": "Tipos", "title": "Dos tipos", "body": "Las soluciones pueden ser un sólido en un líquido (sal en agua) o un líquido en un líquido (concentrado de jugo en agua)."},
+    {"nm": "Se conserva", "title": "La materia se conserva", "body": "Cuando mezclas cosas, la cantidad total de materia sigue siendo la misma. Mezcla 10 gramos de sal en agua y la masa suma el mismo total."},
+    {"nm": "Separar", "title": "Recuperarla", "body": "Puedes separar la sal del agua salada dejando que el agua se evapore. La sal queda atrás, lo que prueba que seguía ahí."},
+    {"nm": "Dato curioso", "title": "Un dato de mariposas", "body": "Una mariposa saborea con sus patas. Es verdad y es divertido, pero no tiene que ver con las mezclas."}
+   ],
+   "locks": [
+    {"title": "Separa la solución", "q": "Recupera la sal del agua salada. Ponlo en orden. Toca las fichas en orden.",
+     "pads": [{"e": "🧂 La sal queda atrás"}, {"e": "🥣 Revuelve la sal en el agua (una solución)"}, {"e": "☀️ Deja que el agua se evapore"}],
+     "reason": "Revuelve la sal en el agua para hacer una solución, deja que el agua se evapore y la sal queda atrás, lo que prueba que la materia se conservó."},
+    {"title": "¿Cuál es una solución?", "q": "¿Cuál de estas es una solución?",
+     "options": ["Un tazón de nueces mezcladas con pasas.", "Sal disuelta uniformemente en agua.", "Un montón de piedritas."],
+     "reason": "Una solución es una mezcla donde una cosa se disuelve uniformemente, como la sal en el agua. Las nueces mezcladas quedan visibles y separadas."},
+    {"title": "Verdadero sobre mezclar", "q": "Toca SOLO las pistas verdaderas sobre las mezclas y las soluciones. Deja fuera el dato curioso.",
+     "items": [{"t": "En una solución, una cosa se disuelve uniformemente en otra."}, {"t": "Puedes separar el agua salada evaporando el agua."}, {"t": "Cuando mezclas, la cantidad total de materia sigue siendo la misma."}, {"t": "Una mariposa saborea con sus patas."}],
+     "reason": "Las soluciones están mezcladas uniformemente, se pueden separar y conservan la materia. El dato de la mariposa es verdad, pero no tiene que ver con mezclar."},
+    {"title": "Nómbrala", "q": "Una mezcla donde una cosa se disuelve uniformemente en otra, como la sal en el agua, es una ____. Escribe la palabra.",
+     "word": ["solución", "solucion", "soluciones"],
+     "reason": "Una solución es una mezcla uniforme. Nombrarla nos ayuda a describir cómo se combina la materia."}
+   ]
+  },
+  "energy-transfer": {
+   "ui": {
+    "h1": "Pasa la energía",
+    "sub": "¿Cómo se mueve la energía de una cosa a otra? Lee las pistas y abre los cuatro candados.",
+    "briefH": "Mueve la energía",
+    "briefP": "La energía puede moverse —o transferirse— de un objeto a otro, mediante el movimiento, las olas del agua y el sonido. ¡Usa las pistas para abrir los candados!",
+    "winStamp": "TRANSFERIDA ✓",
+    "winH": "¡Experto en energía!",
+    "winP": "Transferiste energía con una bola de boliche, viste lo que hace un objeto en movimiento y la nombraste. La energía puede moverse de un lugar a otro mediante el movimiento, las olas y el sonido."
+   },
+   "clues": [
+    {"nm": "Movimiento", "title": "Objetos en movimiento", "body": "Un objeto en movimiento lleva energía. Una bola de boliche que rueda puede transferir su energía a los pinos y derribarlos."},
+    {"nm": "Olas del agua", "title": "Olas del agua", "body": "Las olas en el agua llevan energía. Las ondas pueden empujar un barquito de juguete, aunque el agua casi no se mueve de su lugar."},
+    {"nm": "Sonido", "title": "Sonido", "body": "El sonido es energía que viaja por el aire desde una fuente hasta tus oídos."},
+    {"nm": "Transferir", "title": "Pasarla", "body": "Cuando un objeto golpea a otro, le transfiere parte de su energía. La energía se mueve, aunque el primer objeto se frene."},
+    {"nm": "Ejemplo", "title": "Choque de canicas", "body": "Una canica en movimiento que golpea a una canica quieta le pasa su energía, haciendo que la quieta se mueva."},
+    {"nm": "Dato curioso", "title": "Un dato de pingüinos", "body": "Los pingüinos se apiñan para mantenerse calientes. Es verdad y es tierno, pero no tiene que ver con transferir energía."}
+   ],
+   "locks": [
+    {"title": "Derriba los pinos", "q": "Lanza una bola de boliche. Ponlo en orden. Toca las fichas en orden.",
+     "pads": [{"e": "🎳 Los pinos caen (energía transferida)"}, {"e": "🟢 Lanzas la bola"}, {"e": "💥 La bola golpea los pinos"}],
+     "reason": "Lanzas la bola, golpea los pinos y les transfiere su energía para derribarlos. La energía se movió de la bola a los pinos."},
+    {"title": "Canica golpea canica", "q": "Una canica en movimiento golpea a una canica quieta. ¿Qué pasa?",
+     "options": ["No cambia nada.", "La canica en movimiento transfiere energía y hace que la quieta se mueva.", "Ambas canicas desaparecen."],
+     "reason": "La canica en movimiento transfiere parte de su energía a la canica quieta y la hace moverse. La energía pasa de un objeto a otro."},
+    {"title": "Formas de transferir energía", "q": "Toca SOLO las formas en que se transfiere energía. Deja fuera el dato curioso.",
+     "items": [{"t": "Una bola derribando pinos."}, {"t": "Una ola del agua empujando un barco."}, {"t": "El sonido viajando hasta tu oído."}, {"t": "Los pingüinos se apiñan para mantenerse calientes."}],
+     "reason": "El movimiento, las olas del agua y el sonido transfieren energía. El dato del pingüino es verdad, pero no es una transferencia de energía."},
+    {"title": "Nómbrala", "q": "Lo que se mueve de una bola de boliche a los pinos cuando los golpea es ____. Escribe la palabra.",
+     "word": ["energía", "energia"],
+     "reason": "La energía se transfiere de un objeto a otro. Seguirla muestra cómo el movimiento, las olas y el sonido llevan energía."}
+   ]
+  },
+  "conductors-insulators": {
+   "ui": {
+    "h1": "¿Dejar pasar o bloquear?",
+    "sub": "¿Qué materiales llevan el calor y la electricidad, y cuáles los detienen? Lee las pistas y abre los cuatro candados.",
+    "briefH": "Clasifica los materiales",
+    "briefP": "Un conductor deja pasar el calor y la electricidad con facilidad. Un aislante los bloquea o los frena. ¡Usa las pistas para abrir los candados!",
+    "winStamp": "CLASIFICADO ✓",
+    "winH": "¡Maestro de materiales!",
+    "winP": "Seguiste el calor subiendo por una cuchara, encontraste el mejor conductor y nombraste los bloqueadores. Los metales conducen la energía; el plástico, el hule y la madera la aíslan."
+   },
+   "clues": [
+    {"nm": "Conductor", "title": "Conductores", "body": "Un conductor deja pasar el calor y la electricidad con facilidad. El metal es un buen conductor."},
+    {"nm": "Aislante", "title": "Aislantes", "body": "Un aislante bloquea o frena el calor y la electricidad. El plástico, el hule y la madera son aislantes."},
+    {"nm": "Cuchara caliente", "title": "Una cuchara de metal", "body": "Una cuchara de metal en una sopa caliente se calienta hasta la punta del mango, porque el metal conduce el calor."},
+    {"nm": "Mango frío", "title": "Un mango de madera", "body": "Un mango de madera o de plástico se queda fresco al tacto, porque aísla y frena el calor."},
+    {"nm": "Cables", "title": "Los dos en uno", "body": "Un cable usa ambos: metal por dentro para llevar la electricidad (conductor) y plástico por fuera para mantenerte a salvo (aislante)."},
+    {"nm": "Dato curioso", "title": "Un dato de jirafas", "body": "La jirafa es el animal terrestre más alto. Es verdad y es genial, pero no tiene que ver con los conductores."}
+   ],
+   "locks": [
+    {"title": "Calienta la cuchara", "q": "Ponlo en orden para mostrar cómo el calor sube por una cuchara de metal. Toca las fichas en orden.",
+     "pads": [{"e": "🥄 El mango también se calienta"}, {"e": "🍲 La cuchara está en una sopa caliente"}, {"e": "➡️ El metal conduce el calor hacia arriba"}],
+     "reason": "La cuchara está en una sopa caliente, el metal conduce el calor hacia arriba y el mango se calienta. El metal es un buen conductor."},
+    {"title": "El mejor conductor", "q": "¿Qué material es el mejor conductor del calor y la electricidad?",
+     "options": ["El hule.", "El metal.", "La madera."],
+     "reason": "El metal deja pasar el calor y la electricidad con facilidad, así que es un buen conductor. El hule y la madera son aislantes."},
+    {"title": "Encuentra los aislantes", "q": "Toca SOLO los aislantes (materiales que bloquean o frenan la energía). Deja fuera el dato curioso.",
+     "items": [{"t": "El plástico."}, {"t": "El hule."}, {"t": "La madera."}, {"t": "La jirafa es el animal terrestre más alto."}],
+     "reason": "El plástico, el hule y la madera bloquean o frenan el calor y la electricidad, así que son aislantes. El dato de la jirafa es verdad, pero aquí no es una propiedad del material."},
+    {"title": "Nómbralo", "q": "Un material como el metal que deja pasar el calor y la electricidad con facilidad es un ____. Escribe la palabra.",
+     "word": ["conductor", "conductores"],
+     "reason": "Un conductor lleva el calor y la electricidad; un aislante los bloquea. Nombrarlos nos ayuda a elegir el material adecuado."}
+   ]
+  },
+  "moon-phases": {
+   "ui": {
+    "h1": "Por qué cambia la Luna",
+    "sub": "¿Por qué la Luna se ve diferente cada noche? Lee las pistas y abre los cuatro candados.",
+    "briefH": "Observa cómo cambia la Luna",
+    "briefP": "La Luna parece cambiar de forma a lo largo del mes, pero en realidad no cambia: solo vemos distintas cantidades de su lado iluminado por el Sol. ¡Usa las pistas para abrir los candados!",
+    "winStamp": "EN FASE ✓",
+    "winH": "¡Observador de la Luna!",
+    "winP": "Ordenaste las fases, aprendiste por qué ocurren y nombraste el patrón. Las fases de la Luna se repiten aproximadamente cada mes, según vemos más o menos de su lado iluminado por el Sol."
+   },
+   "clues": [
+    {"nm": "Luna nueva", "title": "Luna nueva", "body": "En luna nueva, el lado que da hacia nosotros no recibe luz del Sol, así que apenas podemos ver la Luna."},
+    {"nm": "Creciendo", "title": "Se hace más grande", "body": "Noche tras noche vemos más de su lado iluminado: primero una fina medialuna, luego media, y luego más."},
+    {"nm": "Luna llena", "title": "Luna llena", "body": "En luna llena vemos todo el lado iluminado, así que la Luna se ve como un círculo brillante."},
+    {"nm": "Un patrón", "title": "Se repite", "body": "Las fases siguen un patrón que se repite aproximadamente cada mes y luego vuelve a empezar."},
+    {"nm": "Misma forma", "title": "Luz del Sol, no la forma", "body": "La Luna en realidad no cambia de forma. Solo vemos distintas cantidades de su mitad iluminada mientras orbita la Tierra."},
+    {"nm": "Dato curioso", "title": "Un dato de pulpos", "body": "El pulpo tiene tres corazones. Es verdad y es curioso, pero no tiene que ver con la Luna."}
+   ],
+   "locks": [
+    {"title": "La Luna crece", "q": "Ordena las fases de la Luna de la más pequeña a la más llena. Toca las fichas en orden.",
+     "pads": [{"e": "🌕 Luna llena"}, {"e": "🌑 Luna nueva"}, {"e": "🌓 Media luna"}, {"e": "🌒 Medialuna"}],
+     "reason": "Desde la luna nueva vemos cada vez más luz del Sol: medialuna, luego media luna y luego llena. Las fases siguen un patrón que se repite."},
+    {"title": "Por qué cambia", "q": "¿Por qué la Luna se ve diferente en distintas noches?",
+     "options": ["La Luna realmente cambia de forma.", "Vemos distintas cantidades de su lado iluminado mientras orbita la Tierra.", "Las nubes cubren una parte de ella."],
+     "reason": "La Luna no cambia de forma. Mientras orbita la Tierra, vemos distintas cantidades de su mitad iluminada, y eso crea las fases."},
+    {"title": "Verdadero sobre las fases", "q": "Toca SOLO las pistas verdaderas sobre las fases de la Luna. Deja fuera el dato curioso.",
+     "items": [{"t": "Las fases se repiten en un patrón aproximadamente cada mes."}, {"t": "Estamos viendo el lado iluminado de la Luna."}, {"t": "La Luna en realidad no cambia de forma."}, {"t": "El pulpo tiene tres corazones."}],
+     "reason": "Las fases se repiten cada mes, muestran el lado iluminado y no cambian la forma real de la Luna. El dato del pulpo es verdad, pero no tiene que ver con la Luna."},
+    {"title": "Nómbralas", "q": "Las distintas formas que la Luna parece tomar a lo largo del mes se llaman sus ____. Escribe la palabra.",
+     "word": ["fases", "fase"],
+     "reason": "Las fases de la Luna son sus cambiantes formas iluminadas. Siguen un patrón mensual que se repite."}
+   ]
+  },
+  "water-cycle": {
+   "ui": {
+    "h1": "El ciclo del agua",
+    "sub": "¿Cómo se mueve el agua alrededor de la Tierra? Lee las pistas y abre los cuatro candados.",
+    "briefH": "Sigue el agua",
+    "briefP": "El agua se mueve alrededor de la Tierra en un ciclo interminable, impulsado por el Sol. ¡Usa las pistas para abrir los candados!",
+    "winStamp": "CICLO COMPLETO ✓",
+    "winH": "¡Científico del agua!",
+    "winP": "Seguiste el ciclo del agua, descubriste qué lo impulsa y nombraste un paso. El Sol hace subir el agua, la lleva a las nubes y la trae de vuelta, una y otra vez."
+   },
+   "clues": [
+    {"nm": "El Sol", "title": "La fuerza del Sol", "body": "El Sol es la energía que impulsa el ciclo del agua. Su calor lo pone todo en marcha."},
+    {"nm": "Evaporación", "title": "Evaporación", "body": "El Sol calienta el agua de los océanos y lagos, y se evapora, subiendo al aire como vapor de agua (un gas)."},
+    {"nm": "Condensación", "title": "Condensación", "body": "En lo alto del cielo el vapor se enfría y se condensa en gotitas que forman las nubes."},
+    {"nm": "Precipitación", "title": "Precipitación", "body": "Cuando las gotas se vuelven lo bastante pesadas, caen como lluvia o nieve: esto es la precipitación."},
+    {"nm": "Recolección", "title": "Recolección", "body": "El agua se junta en ríos, lagos y océanos, y el ciclo vuelve a empezar."},
+    {"nm": "Dato curioso", "title": "Un dato de flamencos", "body": "Los flamencos son rosados por la comida que comen. Es verdad y es divertido, pero no es parte del ciclo del agua."}
+   ],
+   "locks": [
+    {"title": "Por el ciclo", "q": "Pon el ciclo del agua en orden, empezando desde el océano. Toca las fichas en orden.",
+     "pads": [{"e": "🌧️ Cae la lluvia (precipitación)"}, {"e": "💨 El agua se evapora"}, {"e": "☁️ Se forman las nubes (condensación)"}],
+     "reason": "El agua se evapora, se condensa en nubes y cae como lluvia. El Sol impulsa este ciclo interminable."},
+    {"title": "¿Qué lo impulsa?", "q": "¿Qué da la energía que impulsa el ciclo del agua?",
+     "options": ["El viento.", "El Sol.", "La Luna."],
+     "reason": "El calor del Sol evapora el agua e impulsa todo el ciclo del agua."},
+    {"title": "Pasos del ciclo", "q": "Toca SOLO los pasos del ciclo del agua. Deja fuera el dato curioso.",
+     "items": [{"t": "El agua se evapora hacia el aire."}, {"t": "Las nubes se forman por condensación."}, {"t": "La lluvia cae como precipitación."}, {"t": "Los flamencos son rosados por su comida."}],
+     "reason": "La evaporación, la condensación y la precipitación son pasos del ciclo del agua. El dato del flamenco es verdad, pero no es parte del ciclo."},
+    {"title": "Nómbralo", "q": "Cuando el Sol calienta el agua y esta sube al aire como un gas, lo llamamos ____. Escribe la palabra.",
+     "word": ["evaporación", "evaporacion"],
+     "reason": "La evaporación eleva el agua hacia el aire para comenzar el ciclo del agua, todo impulsado por el Sol."}
+   ]
+  },
+  "erosion": {
+   "ui": {
+    "h1": "Dando nueva forma a la tierra",
+    "sub": "¿Cómo cambian el viento y el agua la tierra poco a poco? Lee las pistas y abre los cuatro candados.",
+    "briefH": "Mueve la tierra",
+    "briefP": "La superficie de la Tierra cambia lentamente a medida que la roca se rompe, se lleva y se deposita en un lugar nuevo. ¡Usa las pistas para abrir los candados!",
+    "winStamp": "REMODELADO ✓",
+    "winH": "¡Científico de la Tierra!",
+    "winP": "Seguiste la roca desde un acantilado hasta un banco de arena, nombraste el paso en que se la llevan y clasificaste los cambios lentos. El desgaste, la erosión y la deposición dan nueva forma a la tierra poco a poco."
+   },
+   "clues": [
+    {"nm": "Desgaste", "title": "Desgaste", "body": "El desgaste rompe la roca grande en pedazos cada vez más pequeños, con ayuda del viento, el agua y la congelación."},
+    {"nm": "Erosión", "title": "Erosión", "body": "La erosión se lleva los pedazos sueltos. El agua en movimiento, el viento y el hielo recogen tierra y roca y las trasladan."},
+    {"nm": "Deposición", "title": "Deposición", "body": "La deposición deja los pedazos transportados en un lugar nuevo, como cuando un río forma un banco de arena o una playa."},
+    {"nm": "Cañón", "title": "Formando un cañón", "body": "Durante muchísimo tiempo, la erosión de un río puede tallar un cañón profundo en la roca."},
+    {"nm": "El hielo también", "title": "Incluso el hielo", "body": "El hielo que se mueve lentamente, como un glaciar, también puede romper, transportar y depositar roca al desplazarse."},
+    {"nm": "Dato curioso", "title": "Un dato de loros", "body": "Algunos loros pueden imitar palabras. Es verdad y es divertido, pero no tiene que ver con dar nueva forma a la tierra."}
+   ],
+   "locks": [
+    {"title": "Del acantilado al banco de arena", "q": "Pon en orden el lento cambio de forma de la tierra. Toca las fichas en orden.",
+     "pads": [{"e": "🏖️ Los pedazos se depositan río abajo (deposición)"}, {"e": "🪨 La roca se rompe en pedazos (desgaste)"}, {"e": "🌊 El agua se lleva los pedazos (erosión)"}],
+     "reason": "La roca se rompe por el desgaste, se la lleva la erosión y la deposición la deja caer. Juntos dan nueva forma a la tierra poco a poco."},
+    {"title": "Se la llevan", "q": "¿Cómo se llama cuando el agua en movimiento o el viento se llevan pedazos de roca y tierra?",
+     "options": ["Deposición.", "Erosión.", "Condensación."],
+     "reason": "La erosión se lleva los pedazos sueltos. El desgaste rompe la roca primero, y la deposición deja los pedazos después."},
+    {"title": "Cambios lentos de la tierra", "q": "Toca SOLO las formas en que la tierra cambia de forma lentamente. Deja fuera el dato curioso.",
+     "items": [{"t": "El desgaste rompiendo la roca en pedazos."}, {"t": "El agua erosionando y llevándose la tierra."}, {"t": "El viento moviendo y depositando arena."}, {"t": "Un loro imitando palabras."}],
+     "reason": "El desgaste, la erosión y la deposición dan nueva forma a la tierra poco a poco. El dato del loro es verdad, pero no cambia la tierra."},
+    {"title": "Nómbrala", "q": "Cuando el agua en movimiento o el viento se llevan roca y tierra sueltas, eso es ____. Escribe la palabra.",
+     "word": ["erosión", "erosion"],
+     "reason": "La erosión es el paso en que se llevan los pedazos. El desgaste, la erosión y la deposición trabajan juntos para dar nueva forma a la Tierra."}
+   ]
+  },
+  "weather-climate": {
+   "ui": {
+    "h1": "¿Tiempo o clima?",
+    "sub": "¿Cuál es la diferencia entre el cielo de hoy y el tiempo habitual de un lugar? Lee las pistas y abre los cuatro candados.",
+    "briefH": "Diferéncialos",
+    "briefP": "El tiempo es lo que está pasando ahora mismo. El clima es el tiempo habitual de un lugar a lo largo de muchos años. ¡Usa las pistas para abrir los candados!",
+    "winStamp": "DIFERENCIADOS ✓",
+    "winH": "¡Buen razonamiento!",
+    "winP": "Ordenaste las escalas de tiempo, separaste el tiempo del clima y nombraste el de largo plazo. El tiempo cambia a diario; el clima es el patrón de largo plazo."
+   },
+   "clues": [
+    {"nm": "Tiempo", "title": "Tiempo", "body": "El tiempo es lo que hacen el cielo y el aire ahora mismo: la temperatura, la lluvia y el viento de hoy."},
+    {"nm": "Clima", "title": "Clima", "body": "El clima es el tiempo habitual de un lugar, medido a lo largo de muchos años."},
+    {"nm": "Cambios", "title": "Rápido y lento", "body": "El tiempo puede cambiar de una hora a otra. El clima se mantiene más o menos igual durante muchísimo tiempo."},
+    {"nm": "Desierto", "title": "Un ejemplo del desierto", "body": "Una tarde lluviosa en el desierto es tiempo. Pero 'este desierto suele estar seco todo el año' describe su clima."},
+    {"nm": "Lugares distintos", "title": "Distintos lugares", "body": "Distintos lugares tienen distintos climas: algunos suelen ser calurosos, otros suelen ser fríos, otros suelen ser húmedos."},
+    {"nm": "Dato curioso", "title": "Un dato de koalas", "body": "Los koalas duermen la mayor parte del día. Es verdad y es tierno, pero no tiene que ver con el tiempo ni el clima."}
+   ],
+   "locks": [
+    {"title": "De corto a largo", "q": "Ordena estos del tiempo más corto al más largo. Toca las fichas en orden.",
+     "pads": [{"e": "📅 Muchos años (clima)"}, {"e": "🌦️ Ahora mismo (tiempo)"}, {"e": "🍂 Una estación"}],
+     "reason": "El tiempo es ahora mismo, una estación es más larga y el clima son muchos años. El clima es el patrón de largo plazo del tiempo."},
+    {"title": "¿Tiempo o clima?", "q": "«Este lugar suele ser caluroso y seco todo el año.» ¿Es tiempo o clima?",
+     "options": ["Tiempo: está pasando ahora mismo.", "Clima: el tiempo habitual a lo largo de muchos años.", "Ninguno de los dos."],
+     "reason": "'Suele, todo el año, a lo largo de muchos años' describe el clima. El tiempo serían las condiciones específicas de hoy."},
+    {"title": "Eso es clima", "q": "Toca SOLO los enunciados que describen el clima (largo plazo). Deja fuera el dato curioso.",
+     "items": [{"t": "Esta región suele ser nevada cada invierno."}, {"t": "Este desierto recibe muy poca lluvia cada año."}, {"t": "Los veranos aquí son calurosos año tras año."}, {"t": "Los koalas duermen la mayor parte del día."}],
+     "reason": "'Suele', 'cada año' y 'año tras año' describen el clima. El dato del koala es verdad, pero no tiene que ver con el clima."},
+    {"title": "Nómbralo", "q": "El tiempo habitual de un lugar a lo largo de muchos años es su ____. Escribe la palabra.",
+     "word": ["clima"],
+     "reason": "El clima es el patrón de largo plazo; el tiempo es del día a día. Diferenciarlos es una idea clave de las ciencias de la Tierra."}
+   ]
+  },
+  "resources": {
+   "ui": {
+    "h1": "¿Se va a acabar?",
+    "sub": "¿Cuáles de los recursos de la Tierra podemos reemplazar y cuáles no? Lee las pistas y abre los cuatro candados.",
+    "briefH": "Clasifica los recursos",
+    "briefP": "Algunos recursos naturales se pueden reemplazar rápidamente (renovables); otros tardan millones de años y se pueden acabar (no renovables). ¡Usa las pistas para abrir los candados!",
+    "winStamp": "CLASIFICADO ✓",
+    "winH": "¡Guardián de recursos!",
+    "winP": "Viste cómo se forma el carbón, encontraste un recurso renovable y nombraste el tipo que no se acaba. Clasificar los recursos nos ayuda a usarlos con cuidado."
+   },
+   "clues": [
+    {"nm": "Renovable", "title": "Renovable", "body": "Los recursos renovables se pueden reemplazar rápidamente o no se acabarán pronto, como la luz del Sol, el viento y el agua en movimiento."},
+    {"nm": "No renovable", "title": "No renovable", "body": "Los recursos no renovables tardan millones de años en formarse y se pueden acabar, como el carbón, el petróleo y el gas natural."},
+    {"nm": "Siempre ahí", "title": "No se acaban", "body": "El Sol sigue brillando y el viento sigue soplando, así que podemos usarlos una y otra vez."},
+    {"nm": "Antiguo", "title": "De hace mucho", "body": "El carbón y el petróleo se formaron de plantas y animales que quedaron enterrados hace millones de años. Una vez que se agotan, ya no vuelven."},
+    {"nm": "Para energía", "title": "Producir energía", "body": "Usamos estos recursos para obtener energía: para generar electricidad, calentar casas y hacer andar los autos."},
+    {"nm": "Dato curioso", "title": "Un dato de globos", "body": "Un globo de helio flota. Es verdad y es divertido, pero no tiene que ver con los recursos."}
+   ],
+   "locks": [
+    {"title": "Cómo se forma el carbón", "q": "Pon en orden la lenta formación del carbón. Toca las fichas en orden.",
+     "pads": [{"e": "⛏️ Se forma el carbón (no renovable)"}, {"e": "🌿 Mueren plantas antiguas"}, {"e": "⏳ Enterradas por millones de años"}],
+     "reason": "Las plantas antiguas mueren, quedan enterradas por millones de años y lentamente se convierten en carbón. Como tarda tanto, el carbón es no renovable."},
+    {"title": "¿Cuál no se acaba?", "q": "¿Cuál es un recurso RENOVABLE que no se acabará pronto?",
+     "options": ["El carbón.", "La luz del Sol.", "El petróleo."],
+     "reason": "La luz del Sol sigue llegando, así que es renovable. El carbón y el petróleo son no renovables: una vez que se agotan, ya no vuelven."},
+    {"title": "Encuentra los no renovables", "q": "Toca SOLO los recursos no renovables (se pueden acabar). Deja fuera el dato curioso.",
+     "items": [{"t": "El carbón."}, {"t": "El petróleo."}, {"t": "El gas natural."}, {"t": "Un globo de helio flota."}],
+     "reason": "El carbón, el petróleo y el gas natural tardan millones de años en formarse y se pueden acabar. El dato del globo es verdad, pero aquí no es un recurso."},
+    {"title": "Nómbralo", "q": "Un recurso que se puede reemplazar rápidamente o que no se acabará pronto, como la luz del Sol o el viento, es ____. Escribe la palabra.",
+     "word": ["renovable", "renovables"],
+     "reason": "Los recursos renovables siguen llegando; los no renovables se pueden acabar. Nombrarlos nos ayuda a usar los recursos con cuidado."}
+   ]
+  },
+  "food-webs": {
+   "ui": {
+    "h1": "La red de la vida",
+    "sub": "¿Cómo se mueven la energía y la materia por un ecosistema? Lee las pistas y abre los cuatro candados.",
+    "briefH": "Sigue la red",
+    "briefP": "Una red alimentaria conecta muchas cadenas alimentarias. La energía fluye desde el Sol a través de los productores, los consumidores y los descomponedores. ¡Usa las pistas para abrir los candados!",
+    "winStamp": "RED SEGUIDA ✓",
+    "winH": "¡Experto en ecosistemas!",
+    "winP": "Seguiste la energía por la red, aprendiste lo que hacen los descomponedores y los nombraste. Una red alimentaria mueve la energía del Sol y recicla la materia a través de cada ser vivo."
+   },
+   "clues": [
+    {"nm": "Red alimentaria", "title": "Muchas cadenas", "body": "Una red alimentaria son muchas cadenas alimentarias conectadas, que muestran cómo se mueve la energía por un ecosistema."},
+    {"nm": "El Sol", "title": "La energía empieza", "body": "La energía del Sol pone en marcha toda red alimentaria. Las plantas la capturan para producir alimento."},
+    {"nm": "Productores", "title": "Productores", "body": "Los productores, como las plantas, fabrican su propio alimento usando la luz del Sol, el agua y el aire."},
+    {"nm": "Consumidores", "title": "Consumidores", "body": "Los consumidores comen otros seres vivos. Un conejo come plantas; un zorro se come al conejo."},
+    {"nm": "Descomponedores", "title": "Descomponedores", "body": "Los descomponedores, como los hongos y las bacterias, descomponen lo que muere y devuelven nutrientes al suelo, así se recicla la materia."},
+    {"nm": "Dato curioso", "title": "Un dato de volcanes", "body": "Un volcán puede lanzar lava muy alto en el aire. Es verdad y es impresionante, pero no es parte de una red alimentaria."}
+   ],
+   "locks": [
+    {"title": "Por la red", "q": "Ordena los roles según cómo fluye la energía. Toca las fichas en orden.",
+     "pads": [{"e": "🍄 El descomponedor lo descompone"}, {"e": "☀️ El Sol brilla"}, {"e": "🌿 El productor fabrica alimento"}, {"e": "🦊 El consumidor lo come"}],
+     "reason": "El Sol alimenta a los productores, los consumidores se los comen y los descomponedores descomponen lo muerto, reciclando la materia de vuelta al suelo."},
+    {"title": "Los recicladores", "q": "¿Qué hacen los descomponedores en una red alimentaria?",
+     "options": ["Fabrican su propio alimento con la luz del Sol.", "Descomponen lo que muere y devuelven nutrientes al suelo.", "Solo comen plantas vivas."],
+     "reason": "Los descomponedores descomponen plantas y animales muertos y reciclan sus nutrientes de vuelta al suelo para que los usen los productores."},
+    {"title": "Verdadero sobre las redes alimentarias", "q": "Toca SOLO las pistas verdaderas sobre las redes alimentarias. Deja fuera el dato curioso.",
+     "items": [{"t": "Una red alimentaria conecta muchas cadenas alimentarias."}, {"t": "La energía empieza con el Sol."}, {"t": "Los descomponedores reciclan nutrientes de vuelta al suelo."}, {"t": "Un volcán puede lanzar lava muy alto."}],
+     "reason": "Las redes alimentarias conectan cadenas, empiezan con el Sol y reciclan la materia mediante los descomponedores. El dato del volcán es verdad, pero no es parte de una red."},
+    {"title": "Nómbralo", "q": "Un ser vivo como un hongo que descompone lo que muere y recicla nutrientes es un ____. Escribe la palabra.",
+     "word": ["descomponedor", "descomponedores"],
+     "reason": "Los descomponedores reciclan la materia en una red alimentaria. Productores, consumidores y descomponedores juntos mantienen en movimiento la energía y la materia."}
+   ]
+  },
+  "inherited-acquired": {
+   "ui": {
+    "h1": "¿De nacimiento o aprendido?",
+    "sub": "¿Qué rasgos vienen de los padres y cuáles vienen de la vida? Lee las pistas y abre los cuatro candados.",
+    "briefH": "Clasifica los rasgos",
+    "briefP": "Algunos rasgos son heredados, transmitidos por los padres. Otros son adquiridos, obtenidos durante la vida. ¡Usa las pistas para abrir los candados!",
+    "winStamp": "CLASIFICADO ✓",
+    "winH": "¡Detective de rasgos!",
+    "winP": "Viste a un perro aprender un truco, encontraste un rasgo heredado y lo nombraste. Los rasgos heredados vienen de los padres; los adquiridos se aprenden u obtienen en la vida."
+   },
+   "clues": [
+    {"nm": "Heredado", "title": "Rasgos heredados", "body": "Los rasgos heredados se transmiten de los padres a sus crías. Naces con ellos, como el color de ojos o el color del pelaje de un perro."},
+    {"nm": "Adquirido", "title": "Rasgos adquiridos", "body": "Los rasgos adquiridos se obtienen durante la vida, no de los padres, como aprender a andar en bici o un perro que aprende un truco."},
+    {"nm": "Color de pelaje", "title": "De nacimiento", "body": "El color del pelaje de un cachorro viene de sus padres, así que es heredado."},
+    {"nm": "Un truco", "title": "Aprendido en la vida", "body": "Un perro que aprende a sentarse o dar la pata obtuvo esa habilidad durante la vida, así que es adquirida."},
+    {"nm": "Las plantas también", "title": "Las plantas tienen ambos", "body": "El color de la flor de una planta es heredado, pero una rama doblada por el viento fuerte es un cambio adquirido."},
+    {"nm": "Dato curioso", "title": "Un dato de rayos", "body": "Un rayo es muy caliente. Es verdad y es poderoso, pero no es un rasgo."}
+   ],
+   "locks": [
+    {"title": "Aprende un truco", "q": "Un perro aprende a sentarse: un rasgo adquirido. Ponlo en orden. Toca las fichas en orden.",
+     "pads": [{"e": "🐕 El perro aprende a sentarse"}, {"e": "🐶 Nace un cachorro"}, {"e": "🎓 Un entrenador le enseña"}],
+     "reason": "Nace un cachorro, un entrenador le enseña y el perro aprende a sentarse. Una habilidad aprendida durante la vida es un rasgo adquirido."},
+    {"title": "¿Cuál es heredado?", "q": "¿Cuál de estos es un rasgo HEREDADO (transmitido por los padres)?",
+     "options": ["El color del pelaje de un perro.", "Un truco que el perro aprendió.", "Una cicatriz de una caída."],
+     "reason": "El color del pelaje se transmite de los padres, así que es heredado. Los trucos aprendidos y las cicatrices se adquieren durante la vida."},
+    {"title": "Encuentra los rasgos adquiridos", "q": "Toca SOLO los rasgos adquiridos (obtenidos durante la vida). Deja fuera el dato curioso.",
+     "items": [{"t": "Saber andar en bici."}, {"t": "Una cicatriz de una caída."}, {"t": "Una rama de árbol doblada por el viento."}, {"t": "Un rayo es muy caliente."}],
+     "reason": "Andar en bici, una cicatriz y una rama doblada por el viento se obtienen todos durante la vida, así que son adquiridos. El dato del rayo es verdad, pero no es un rasgo."},
+    {"title": "Nómbralo", "q": "Un rasgo que se transmite de los padres, como el color de ojos, con el que naces, es ____. Escribe la palabra.",
+     "word": ["heredado", "heredada", "heredados"],
+     "reason": "Los rasgos heredados vienen de los padres; los adquiridos se obtienen en la vida. Clasificarlos es una idea clave de las ciencias de la vida."}
+   ]
+  }
+ }
+}

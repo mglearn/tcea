@@ -1,0 +1,402 @@
+{
+ "chrome": {
+  "sect.clues": "🔍 Las pistas",
+  "sect.cluesHint": "Toca cada pista para leerla. Puedes abrirlas de nuevo cuando quieras.",
+  "sect.locks": "🔒 Los candados",
+  "sect.locksHint": "Usa las pistas para abrir cada candado.",
+  "ui.reset": "↺ Empezar de nuevo",
+  "ui.check": "Comprobar",
+  "ui.gotit": "Entendido",
+  "ui.playagain": "Jugar otra vez",
+  "ui.solved": "🔓 ¡Abierto!",
+  "ui.pcount": "{n} de {total} candados abiertos",
+  "ui.wordph": "Escribe tu respuesta",
+  "ui.clear": "borrar",
+  "fb.digit": "No es correcto. Mira las pistas otra vez.",
+  "fb.word": "Busca en las pistas la palabra que encaja.",
+  "fb.mc": "Esa no la respaldan las pistas. Míralas otra vez.",
+  "fb.multiExtra": "Una de tus opciones no está bien. Elige solo lo que las pistas muestran sobre el giro de la Tierra.",
+  "fb.multiMissing": "Te falta una. Encuéntralas todas.",
+  "fb.seq": "Ese orden no coincide con las pistas. Inténtalo de nuevo.",
+  "footer.privacy": "Privacidad y cumplimiento"
+ },
+ "featured": {
+  "ui": {
+   "header.eyebrow": "Breakout de Ciencias · 5.º grado",
+   "header.h1": "Vueltas y vueltas: día, noche y sombras",
+   "header.sub": "¿Por qué parece que el Sol cruza el cielo y por qué se mueven las sombras? Lee las pistas y abre los cuatro candados para descubrir cómo el giro de la Tierra crea el día, la noche y las sombras.",
+   "brief.label": "🌍 Tu misión",
+   "brief.h": "Resuelve el misterio de la Tierra que gira",
+   "brief.p": "Parece que el Sol se mueve por el cielo, pero en realidad es <b>la Tierra la que gira</b> y crea el día, la noche y las sombras que se mueven. La Tierra <b>rota</b> una vez cada 24 horas aproximadamente. ¡Toca cada pista y luego abre los cuatro candados!",
+   "win.stamp": "¡A GIRAR! ✓",
+   "win.h": "¡Lo resolviste!",
+   "win.p": "Descubriste que es el giro de la Tierra —y no el Sol moviéndose— lo que crea el día y la noche, y hace que las sombras pasen de largas a cortas y de nuevo a largas. La Tierra rota una vez cada 24 horas aproximadamente, ¡y eso cambia todo lo que vemos en el cielo!",
+   "footer.text": "Breakouts de Pensamiento Crítico de Ciencias · 5.º grado · Funciona en tu navegador: sin inicios de sesión ni recopilación de datos.",
+   "footer.disclaimer": "Alineado con los Conocimientos y Destrezas Esenciales de Texas para Ciencias de 2021 (§112.7, 5.º grado). Paráfrasis de buena fe; confirma antes de adoptarlo.",
+   "crumb.teacher": "‹ Inicio para docentes",
+   "crumb.suite": "Breakouts de Pensamiento Crítico de Ciencias"
+  },
+  "clues": [
+   {"nm":"La Tierra gira","title":"La Tierra rota","body":"La Tierra <b>gira</b> (rota) sobre su eje una vuelta completa cada <b>24 horas</b> aproximadamente."},
+   {"nm":"Día y noche","title":"Día y noche","body":"A medida que la Tierra gira, el lado que da hacia el Sol tiene <b>día</b>. El lado que da hacia el otro lado tiene <b>noche</b>."},
+   {"nm":"El camino del Sol","title":"El Sol solo parece moverse","body":"El Sol parece salir por el este y ponerse por el oeste. Pero en realidad somos <b>nosotros</b> los que giramos: el Sol no se mueve a nuestro alrededor."},
+   {"nm":"Sombras","title":"Se forman sombras","body":"Se forma una <b>sombra</b> cuando un objeto bloquea la luz del Sol. A medida que cambia la posición del Sol en el cielo, las sombras cambian de posición y de largo."},
+   {"nm":"Largas y cortas","title":"Sombras largas y cortas","body":"Las sombras son <b>largas</b> por la mañana y por la tarde (el Sol está bajo) y <b>cortas</b> al mediodía (el Sol está alto)."},
+   {"nm":"Dato curioso","title":"Un dato de la mariposa","body":"Una mariposa saborea con las patas. Eso es cierto y divertido, pero no tiene que ver con el giro de la Tierra."}
+  ],
+  "locks": [
+   {"title":"Una sombra a lo largo del día","q":"Sigue una sombra desde la mañana hasta la tarde. Ponla en orden. Toca los botones en orden.",
+    "pads":[{"e":"🌆 Sombra larga de la tarde"},{"e":"🌄 Sombra larga de la mañana"},{"e":"☀️ Sombra corta del mediodía"}],
+    "reason":"Las sombras son largas por la mañana, cortas al mediodía y largas otra vez por la tarde. Cambian porque el giro de la Tierra cambia la posición del Sol en el cielo."},
+   {"title":"Por qué parece que el Sol se mueve","q":"¿Por qué parece que el Sol se mueve por el cielo cada día?",
+    "options":["El Sol orbita la Tierra una vez al día.","La Tierra está girando (rotando), así que el Sol solo parece moverse.","El Sol crece y encoge."],
+    "reason":"La Tierra gira sobre su eje, así que el Sol solo parece moverse por el cielo. En realidad somos nosotros los que giramos, no el Sol."},
+   {"title":"Verdadero sobre el giro de la Tierra","q":"Toca SOLO las pistas verdaderas sobre la rotación de la Tierra. Deja fuera el dato curioso.",
+    "items":[{"t":"La Tierra gira una vuelta completa cada 24 horas aproximadamente."},{"t":"El lado que da hacia el Sol tiene día."},{"t":"Las sombras cambian a medida que cambia la posición del Sol."},{"t":"Una mariposa saborea con las patas."}],
+    "reason":"La Tierra gira a diario, dando día y noche y sombras que se mueven. El dato de la mariposa es cierto pero no tiene que ver con el giro de la Tierra."},
+   {"title":"Nombra el giro","q":"La Tierra gira sobre su eje una vez cada 24 horas aproximadamente. Decimos que la Tierra va a ____. Escribe la palabra.",
+    "word":["rotar","rota","rotando","rotación","girar","gira"],
+    "reason":"La Tierra rota (gira) sobre su eje. Ese giro causa el día, la noche y las sombras que se mueven."}
+  ]
+ },
+ "conceptBase": {
+  "header.eyebrow": "Ciencias de 5.º grado · Breakout rápido",
+  "brief.label": "🎯 Calentamiento",
+  "crumb.teacher": "‹ Más breakouts de 5.º grado",
+  "crumb.suite": "Ciencias de 5.º grado",
+  "footer.text": "Ciencias de 5.º grado · Breakouts de Pensamiento Crítico en Línea · Funciona en tu navegador: sin inicios de sesión ni recopilación de datos.",
+  "footer.disclaimer": "Alineado con los Conocimientos y Destrezas Esenciales de Texas para Ciencias de 2021 (§112.7, 5.º grado). Paráfrasis de buena fe; confirma antes de adoptarlo."
+ },
+ "concept": {
+  "mixtures-keep-properties": {
+   "ui": {
+    "h1": "Sepáralo",
+    "sub": "¿Cómo separas una mezcla? Lee las pistas y abre los cuatro candados.",
+    "briefH": "Sepáralo",
+    "briefP": "En muchas mezclas, las partes conservan sus propias propiedades, así que puedes usar esas propiedades para separarlas. ¡Usa las pistas para abrir los candados!",
+    "winStamp": "¡SEPARADO! ✓",
+    "winH": "¡Maestro de mezclas!",
+    "winP": "Sacaste el hierro de la arena con un imán, encontraste el truco y nombraste la herramienta. Como las partes de una mezcla conservan sus propiedades, puedes separarlas."
+   },
+   "clues": [
+    {"nm":"Hierro y arena","title":"Limaduras de hierro en arena","body":"Mezcla limaduras de hierro en arena y el hierro sigue siendo magnético. Un imán puede volver a sacar el hierro."},
+    {"nm":"Conservan propiedades","title":"Las partes siguen igual","body":"En muchas mezclas, cada parte conserva sus propias propiedades. Nada cambia: las partes solo están mezcladas."},
+    {"nm":"Arena y agua","title":"Arena en agua","body":"Revuelve arena en agua y la arena se asienta en el fondo. Puedes verter el agua o filtrar la arena."},
+    {"nm":"Usa una propiedad","title":"Separar por propiedad","body":"Para separar una mezcla, usa una propiedad de una de las partes: magnetismo, tamaño o cómo se asienta."},
+    {"nm":"Filtro","title":"Filtrar","body":"Un filtro deja pasar el agua pero atrapa los trozos más grandes, como la arena, separando la mezcla."},
+    {"nm":"Dato curioso","title":"Un dato de la mariposa","body":"Una mariposa saborea con las patas. Eso es cierto y divertido, pero no tiene que ver con separar mezclas."}
+   ],
+   "locks": [
+    {"title":"Saca el hierro","q":"Separa las limaduras de hierro de la arena. Ponlo en orden. Toca los botones en orden.",
+     "pads":[{"e":"🧲 El hierro salta al imán"},{"e":"🥣 Limaduras de hierro mezcladas en arena"},{"e":"⬇️ Sostienes un imán encima"}],
+     "reason":"Las limaduras de hierro están mezcladas en la arena, sostienes un imán encima y el hierro salta al imán. El hierro conservó su propiedad magnética."},
+    {"title":"La mejor herramienta","q":"¿Cómo puedes separar las limaduras de hierro de la arena?",
+     "options":["Con un imán: el hierro sigue siendo magnético.","Calentándolo hasta que se derrita.","Añadiendo más arena."],
+     "reason":"El hierro conserva su propiedad magnética en la mezcla, así que un imán lo saca."},
+    {"title":"Verdadero sobre las mezclas","q":"Toca SOLO las pistas verdaderas sobre separar mezclas. Deja fuera el dato curioso.",
+     "items":[{"t":"Las partes de una mezcla conservan sus propias propiedades."},{"t":"Un imán puede sacar el hierro de la arena."},{"t":"La arena se asienta en el agua y se puede filtrar."},{"t":"Una mariposa saborea con las patas."}],
+     "reason":"Las partes conservan sus propiedades, así que el magnetismo o el filtrado pueden separarlas. El dato de la mariposa es cierto pero no tiene que ver con las mezclas."},
+    {"title":"Nombra la herramienta","q":"Puedes sacar las limaduras de hierro de la arena con un ____, porque el hierro es magnético. Escribe la palabra.",
+     "word":["imán","imanes","iman"],
+     "reason":"Un imán separa el hierro porque conservó su propiedad magnética en la mezcla."}
+   ]
+  },
+  "particles": {
+   "ui": {
+    "h1": "Demasiado pequeñas para ver",
+    "sub": "¿De qué está hecho todo? Lee las pistas y abre los cuatro candados.",
+    "briefH": "Encuentra los trocitos diminutos",
+    "briefP": "Toda la materia —incluso el aire que no puedes ver— está hecha de partículas diminutas demasiado pequeñas para ver. ¡Usa las pistas para abrir los candados!",
+    "winStamp": "¡ACERCADO! ✓",
+    "winH": "¡Bien pensado!",
+    "winP": "Llenaste un globo con partículas de aire invisibles, descubriste de qué está hecho el aire y las nombraste. Toda la materia está formada por partículas diminutas demasiado pequeñas para ver."
+   },
+   "clues": [
+    {"nm":"Partículas","title":"Partículas diminutas","body":"Toda la materia está hecha de partículas diminutas que son demasiado pequeñas para ver, incluso con los ojos."},
+    {"nm":"Aire","title":"El aire es real","body":"El aire está hecho de partículas. No puedes verlas, pero llenan un globo y ocupan espacio."},
+    {"nm":"Un olor","title":"Un olor se esparce","body":"Cuando se hornean galletas, el olor se esparce por toda la sala. Eso son partículas invisibles moviéndose por el aire."},
+    {"nm":"Ocupan espacio","title":"Ocupan espacio","body":"Aunque no puedas verlas, las partículas de aire ocupan espacio y pueden empujar las cosas."},
+    {"nm":"Empujan","title":"Empujando el globo","body":"Sopla dentro de un globo y las partículas de aire empujan hacia afuera, haciéndolo crecer."},
+    {"nm":"Dato curioso","title":"Un dato del pingüino","body":"Los pingüinos se acurrucan juntos para mantenerse calientes. Eso es cierto y adorable, pero no tiene que ver con las partículas."}
+   ],
+   "locks": [
+    {"title":"Infla un globo","q":"Llena un globo con aire. Ponlo en orden. Toca los botones en orden.",
+     "pads":[{"e":"🎈 El globo se hace más grande"},{"e":"🎈 Un globo vacío y desinflado"},{"e":"💨 Soplas partículas de aire adentro"}],
+     "reason":"Soplas partículas de aire dentro de un globo desinflado y crece. Las partículas invisibles ocupan espacio y lo empujan hacia afuera."},
+    {"title":"¿Qué es el aire?","q":"¿De qué está hecho el aire?",
+     "options":["De nada: está vacío.","De partículas diminutas demasiado pequeñas para ver.","Solo de agua."],
+     "reason":"El aire está hecho de partículas diminutas demasiado pequeñas para ver. Ocupan espacio y pueden empujar las cosas, como un globo."},
+    {"title":"Prueba de las partículas","q":"Toca SOLO las pistas que muestran que la materia está hecha de partículas diminutas. Deja fuera el dato curioso.",
+     "items":[{"t":"El aire llena un globo y ocupa espacio."},{"t":"Un olor se esparce por una sala."},{"t":"Las partículas de aire empujan las cosas aunque sean invisibles."},{"t":"Los pingüinos se acurrucan para mantenerse calientes."}],
+     "reason":"Llenar un globo, esparcir olores y empujar cosas muestran partículas invisibles. El dato del pingüino es cierto pero no tiene que ver con las partículas."},
+    {"title":"Nómbralas","q":"Toda la materia, incluso el aire, está hecha de trocitos diminutos demasiado pequeños para ver, llamados ____. Escribe la palabra.",
+     "word":["partículas","partícula","particulas"],
+     "reason":"La materia está hecha de partículas demasiado pequeñas para ver. Ocupan espacio y forman todo."}
+   ]
+  },
+  "forces-motion": {
+   "ui": {
+    "h1": "¿Equilibradas o no?",
+    "sub": "¿Cuándo cambian las fuerzas la forma en que algo se mueve? Lee las pistas y abre los cuatro candados.",
+    "briefH": "Suma las fuerzas",
+    "briefP": "Cuando las fuerzas sobre un objeto son iguales, su movimiento se mantiene igual. Cuando son desiguales, su movimiento cambia. ¡Usa las pistas para abrir los candados!",
+    "winStamp": "¡RESUELTO! ✓",
+    "winH": "¡Experto en fuerzas!",
+    "winP": "Ganaste un juego de tira y afloja con una fuerza desigual, viste lo que hacen las fuerzas desequilibradas y nombraste el empujón o el jalón. Las fuerzas desiguales cambian el movimiento; las iguales lo mantienen estable."
+   },
+   "clues": [
+    {"nm":"Fuerza","title":"Fuerzas","body":"Una fuerza es un empujón o un jalón. Las fuerzas pueden iniciar, detener, acelerar, frenar o girar un objeto."},
+    {"nm":"Iguales","title":"Fuerzas iguales","body":"Cuando las fuerzas sobre un objeto son iguales (equilibradas), se cancelan y su movimiento no cambia."},
+    {"nm":"Desiguales","title":"Fuerzas desiguales","body":"Cuando las fuerzas son desiguales (desequilibradas), el movimiento del objeto cambia: acelera, frena o gira."},
+    {"nm":"Más fuerza","title":"Mayor cambio","body":"Una fuerza desigual más grande causa un cambio más grande en el movimiento."},
+    {"nm":"Transferencia","title":"Pasar energía","body":"Una fuerza puede transferir energía. Un bate al golpear una pelota la empuja y la manda volando."},
+    {"nm":"Dato curioso","title":"Un dato de la jirafa","body":"La jirafa es el animal terrestre más alto. Eso es cierto y genial, pero no tiene que ver con las fuerzas."}
+   ],
+   "locks": [
+    {"title":"Gana el tira y afloja","q":"Pon el tira y afloja en orden. Toca los botones en orden.",
+     "pads":[{"e":"➡️ La cuerda se mueve hacia los ganadores"},{"e":"⚖️ Ambos equipos jalan por igual (no se mueve)"},{"e":"💪 Un equipo jala más fuerte (desigual)"}],
+     "reason":"Cuando ambos equipos jalan por igual, nada se mueve. Cuando uno jala más fuerte, las fuerzas son desiguales y la cuerda se mueve. Las fuerzas desiguales cambian el movimiento."},
+    {"title":"Fuerzas desequilibradas","q":"¿Qué pasa cuando las fuerzas sobre un objeto son DESIGUALES (desequilibradas)?",
+     "options":["No cambia nada.","Su movimiento cambia: acelera, frena o gira.","Desaparece."],
+     "reason":"Las fuerzas desiguales no se cancelan, así que el movimiento del objeto cambia. Las fuerzas iguales mantendrían el movimiento estable."},
+    {"title":"Fuerzas desiguales en acción","q":"Toca SOLO las maneras en que una fuerza desigual cambia el movimiento. Deja fuera el dato curioso.",
+     "items":[{"t":"Una patada fuerte manda una pelota volando."},{"t":"Un equipo más fuerte de tira y afloja jala la cuerda hacia su lado."},{"t":"Un empujón acelera un carrito."},{"t":"La jirafa es el animal terrestre más alto."}],
+     "reason":"Patear, jalar más fuerte y empujar son fuerzas desiguales que cambian el movimiento. El dato de la jirafa es cierto pero no es una fuerza."},
+    {"title":"Nómbrala","q":"Un empujón o un jalón que puede cambiar cómo se mueve algo es una ____. Escribe la palabra.",
+     "word":["fuerza","fuerzas"],
+     "reason":"Una fuerza es un empujón o un jalón. Las fuerzas iguales mantienen el movimiento estable; las desiguales lo cambian."}
+   ]
+  },
+  "energy-transform": {
+   "ui": {
+    "h1": "Cadena de energía",
+    "sub": "¿Cómo cambia la energía de una forma a otra? Lee las pistas y abre los cuatro candados.",
+    "briefH": "Sigue el cambio",
+    "briefP": "La energía nunca se crea ni se pierde, pero puede cambiar de una forma a otra. Eso es una transformación de energía. ¡Usa las pistas para abrir los candados!",
+    "winStamp": "¡TRANSFORMADA! ✓",
+    "winH": "¡Experto en energía!",
+    "winP": "Seguiste la energía de una linterna, encontraste el primer cambio y nombraste lo que se transforma. La energía solo cambia de forma: de química a eléctrica a luz y más allá."
+   },
+   "clues": [
+    {"nm":"Transformar","title":"Cambiar de forma","body":"La energía puede cambiar de una forma a otra. Esto se llama transformación de energía."},
+    {"nm":"Linterna","title":"Una linterna","body":"En una linterna, la energía química de la pila se convierte en energía eléctrica, que se convierte en energía luminosa."},
+    {"nm":"Nunca se pierde","title":"Nada se pierde","body":"La energía nunca se crea ni se destruye. Solo cambia de forma."},
+    {"nm":"Tostadora","title":"Una tostadora","body":"Una tostadora cambia la energía eléctrica en energía térmica (calor) para tostar el pan."},
+    {"nm":"Juguete de cuerda","title":"Un juguete de cuerda","body":"Un juguete de cuerda guarda energía cuando le das cuerda y luego la cambia en energía de movimiento."},
+    {"nm":"Dato curioso","title":"Un dato del loro","body":"Algunos loros pueden copiar palabras. Eso es cierto y divertido, pero no es una transformación de energía."}
+   ],
+   "locks": [
+    {"title":"Cadena de la linterna","q":"Ordena los cambios de energía dentro de una linterna. Toca los botones en orden.",
+     "pads":[{"e":"💡 Energía luminosa"},{"e":"🔋 Energía química (pila)"},{"e":"⚡ Energía eléctrica"}],
+     "reason":"La energía química de la pila se convierte en energía eléctrica, que se convierte en luz. La energía solo cambia de forma, un paso a la vez."},
+    {"title":"Primer cambio","q":"En una linterna, ¿en qué se convierte primero la energía química de la pila?",
+     "options":["En energía sonora.","En energía eléctrica (que luego se convierte en luz).","En nada."],
+     "reason":"La energía química se convierte primero en energía eléctrica, que luego se convierte en energía luminosa en el foco."},
+    {"title":"Transformaciones de energía","q":"Toca SOLO las transformaciones de energía. Deja fuera el dato curioso.",
+     "items":[{"t":"Una linterna convierte la energía de una pila en luz."},{"t":"Una tostadora convierte la electricidad en calor."},{"t":"Un juguete de cuerda convierte la energía guardada en movimiento."},{"t":"Un loro copia palabras."}],
+     "reason":"Cada aparato cambia la energía de una forma a otra. El dato del loro es cierto pero no es una transformación de energía."},
+    {"title":"Nómbrala","q":"Lo que cambia de forma (pero nunca se pierde) en una linterna o una tostadora es la ____. Escribe la palabra.",
+     "word":["energía","energia"],
+     "reason":"La energía cambia de forma pero nunca se crea ni se pierde. Seguir los cambios es una transformación de energía."}
+   ]
+  },
+  "light": {
+   "ui": {
+    "h1": "Rebotar, doblar o absorber",
+    "sub": "¿Qué puede hacer la luz? Lee las pistas y abre los cuatro candados.",
+    "briefH": "Sigue la luz",
+    "briefP": "La luz viaja en línea recta, pero puede rebotar, doblarse o ser absorbida. ¡Usa las pistas para abrir los candados!",
+    "winStamp": "¡ILUMINADO! ✓",
+    "winH": "¡Experto en luz!",
+    "winP": "Hiciste que la luz rebotara en un espejo, nombraste lo que hace y clasificaste sus trucos. La luz viaja recta, pero puede reflejarse, refractarse o ser absorbida."
+   },
+   "clues": [
+    {"nm":"Recta","title":"Líneas rectas","body":"La luz viaja en línea recta hasta que choca con algo."},
+    {"nm":"Reflejar","title":"Reflexión","body":"Cuando la luz choca con un espejo, rebota. Ese rebote se llama reflexión."},
+    {"nm":"Refractar","title":"Refracción","body":"Cuando la luz pasa al agua o a un lente, se dobla. Ese doblez se llama refracción: un popote se ve doblado en un vaso de agua."},
+    {"nm":"Absorber","title":"Absorción","body":"Cuando la luz choca con un objeto oscuro, puede ser absorbida. Eso es la absorción: una camisa negra se calienta bajo el sol."},
+    {"nm":"Vemos","title":"Ver las cosas","body":"Vemos los objetos cuando la luz rebota en ellos y entra en nuestros ojos."},
+    {"nm":"Dato curioso","title":"Un dato del pulpo","body":"Un pulpo tiene tres corazones. Eso es cierto y curioso, pero no tiene que ver con la luz."}
+   ],
+   "locks": [
+    {"title":"La luz encuentra un espejo","q":"Un rayo de luz choca con un espejo. Ponlo en orden. Toca los botones en orden.",
+     "pads":[{"e":"↩️ Rebota (se refleja)"},{"e":"➡️ La luz viaja en línea recta"},{"e":"🪞 Choca con el espejo"}],
+     "reason":"La luz viaja recta, choca con el espejo y rebota. Rebotar en una superficie es reflexión."},
+    {"title":"Luz que rebota","q":"¿Cómo se llama cuando la luz rebota en un espejo?",
+     "options":["Refracción.","Reflexión.","Absorción."],
+     "reason":"Que la luz rebote en una superficie es reflexión. Doblarse es refracción; ser absorbida es absorción."},
+    {"title":"Lo que la luz puede hacer","q":"Toca SOLO las cosas que la luz puede hacer. Deja fuera el dato curioso.",
+     "items":[{"t":"Rebotar en un espejo (reflejarse)."},{"t":"Doblarse al pasar al agua (refractarse)."},{"t":"Ser absorbida por un objeto oscuro (absorción)."},{"t":"Un pulpo tiene tres corazones."}],
+     "reason":"La luz puede reflejarse, refractarse y ser absorbida. El dato del pulpo es cierto pero no tiene que ver con la luz."},
+    {"title":"Nómbrala","q":"Cuando la luz rebota en un espejo, eso es la ____. Escribe la palabra.",
+     "word":["reflexión","reflexion","reflejo"],
+     "reason":"Que la luz rebote en una superficie es reflexión: una de las cosas que la luz puede hacer además de viajar recta."}
+   ]
+  },
+  "sedimentary-fossil-fuels": {
+   "ui": {
+    "h1": "Capas del tiempo",
+    "sub": "¿Cómo se forman las capas de roca y los combustibles fósiles? Lee las pistas y abre los cuatro candados.",
+    "briefH": "Construye las capas",
+    "briefP": "A lo largo de enormes cantidades de tiempo, las capas de sedimento se convierten en roca, y los seres vivos enterrados se convierten en combustibles fósiles. ¡Usa las pistas para abrir los candados!",
+    "winStamp": "¡EN CAPAS! ✓",
+    "winH": "¡Científico de la Tierra!",
+    "winP": "Prensaste sedimento hasta convertirlo en roca, aprendiste cómo se forman los combustibles fósiles y nombraste la roca en capas. Ambos tardan muchísimo tiempo, en lo profundo y bajo presión."
+   },
+   "clues": [
+    {"nm":"Sedimento","title":"Los trocitos se asientan","body":"El sedimento —arena, lodo y conchas— se asienta en capas en el fondo de los lagos y los mares."},
+    {"nm":"Prensado","title":"Prensado y cementado","body":"Con el tiempo, las capas se prensan y se cementan juntas formando roca sedimentaria."},
+    {"nm":"Más viejo abajo","title":"El fondo es lo más viejo","body":"Cada capa se asienta encima de la anterior, así que las capas de abajo son más viejas que las de arriba."},
+    {"nm":"Vida enterrada","title":"Combustibles fósiles","body":"Los combustibles fósiles —carbón, petróleo y gas natural— se forman de los restos enterrados de seres vivos antiguos, prensados durante millones de años."},
+    {"nm":"Para energía","title":"Los quemamos","body":"Extraemos y quemamos combustibles fósiles para obtener energía, pero tardaron millones de años en formarse."},
+    {"nm":"Dato curioso","title":"Un dato del globo","body":"Un globo de helio flota. Eso es cierto y divertido, pero no tiene que ver con las rocas ni los combustibles."}
+   ],
+   "locks": [
+    {"title":"Forma roca sedimentaria","q":"Pon en orden la formación de la roca sedimentaria. Toca los botones en orden.",
+     "pads":[{"e":"🪨 Se cementa en roca sedimentaria"},{"e":"🏖️ El sedimento se asienta en capas"},{"e":"⬇️ Las capas se prensan"}],
+     "reason":"El sedimento se asienta en capas, se prensa con el tiempo y se cementa en roca sedimentaria. Las capas de abajo se forman primero."},
+    {"title":"De dónde vienen los combustibles fósiles","q":"¿Cómo se forman los combustibles fósiles como el carbón y el petróleo?",
+     "options":["Se fabrican en fábricas.","De los restos enterrados de seres vivos antiguos, prensados durante millones de años.","Caen del cielo."],
+     "reason":"Los combustibles fósiles se forman de seres vivos antiguos enterrados y prensados durante millones de años; por eso se pueden agotar."},
+    {"title":"Capas del tiempo","q":"Toca SOLO las pistas verdaderas sobre las capas de roca y los combustibles fósiles. Deja fuera el dato curioso.",
+     "items":[{"t":"La roca sedimentaria se forma de capas prensadas de sedimento."},{"t":"Las capas de abajo son más viejas que las de arriba."},{"t":"Los combustibles fósiles se forman de seres vivos antiguos enterrados."},{"t":"Un globo de helio flota."}],
+     "reason":"El sedimento en capas, lo más viejo abajo y la vida enterrada describen cómo se forman. El dato del globo es cierto pero no viene al caso."},
+    {"title":"Nombra la roca","q":"La roca formada de capas prensadas y cementadas de sedimento es roca ____. Escribe la palabra.",
+     "word":["sedimentaria","sedimento","sedimentario"],
+     "reason":"La roca sedimentaria se forma de capas prensadas de sedimento, con las capas más viejas en el fondo."}
+   ]
+  },
+  "landforms": {
+   "ui": {
+    "h1": "Dando forma a la tierra",
+    "sub": "¿Cómo el viento, el agua y el hielo construyen accidentes geográficos? Lee las pistas y abre los cuatro candados.",
+    "briefH": "Talla la tierra",
+    "briefP": "A lo largo de muchísimo tiempo, el viento, el agua y el hielo dan forma lentamente a la tierra creando accidentes geográficos como deltas, cañones y dunas. ¡Usa las pistas para abrir los candados!",
+    "winStamp": "¡MOLDEADO! ✓",
+    "winH": "¡Escultor de la tierra!",
+    "winP": "Tallaste un cañón, encontraste el accidente geográfico del viento y nombraste lo que talla un río. El viento, el agua y el hielo construyen lentamente la tierra en la que vivimos."
+   },
+   "clues": [
+    {"nm":"Accidentes","title":"Qué son los accidentes geográficos","body":"Los accidentes geográficos son las formas de la tierra, como los cañones, los deltas y las dunas de arena."},
+    {"nm":"Delta","title":"Un delta","body":"Donde un río se encuentra con el mar, deja caer el sedimento que llevaba, formando un accidente geográfico plano llamado delta."},
+    {"nm":"Cañón","title":"Un cañón","body":"Un río puede cortar lentamente la roca hacia abajo durante muchísimo tiempo, tallando un cañón profundo."},
+    {"nm":"Duna","title":"Una duna de arena","body":"El viento puede amontonar arena formando una loma llamada duna, y moverla lentamente."},
+    {"nm":"Lentamente","title":"Toma tiempo","body":"El viento, el agua y el hielo dan forma a la tierra lentamente, a lo largo de cientos o miles de años."},
+    {"nm":"Dato curioso","title":"Un dato del flamenco","body":"Los flamencos son rosados por la comida que comen. Eso es cierto y divertido, pero no es un accidente geográfico."}
+   ],
+   "locks": [
+    {"title":"Talla un cañón","q":"¿Cómo talla un cañón un río? Ponlo en orden. Toca los botones en orden.",
+     "pads":[{"e":"🏔️ Se forma un cañón profundo"},{"e":"🌊 Un río fluye sobre la roca"},{"e":"⬇️ Corta lentamente la roca hacia abajo"}],
+     "reason":"Un río fluye sobre la roca y la corta lentamente hacia abajo, tallando un cañón profundo a lo largo de muchísimo tiempo."},
+    {"title":"El accidente del viento","q":"¿Qué accidente geográfico construye el viento al amontonar arena?",
+     "options":["Un delta.","Una duna de arena.","Un cañón."],
+     "reason":"El viento amontona arena en una duna. Un delta lo construye el sedimento de un río, y un cañón lo talla un río."},
+    {"title":"Viento, agua y hielo","q":"Toca SOLO los accidentes geográficos formados por el viento, el agua o el hielo. Deja fuera el dato curioso.",
+     "items":[{"t":"Un delta formado donde un río se encuentra con el mar."},{"t":"Un cañón tallado por un río."},{"t":"Una duna de arena amontonada por el viento."},{"t":"Los flamencos son rosados por su comida."}],
+     "reason":"Los deltas, los cañones y las dunas están formados por el viento, el agua o el hielo. El dato del flamenco es cierto pero no es un accidente geográfico."},
+    {"title":"Nómbralo","q":"Un valle profundo tallado por un río que corta la roca hacia abajo es un ____. Escribe la palabra.",
+     "word":["cañón","canon","cañon"],
+     "reason":"Un cañón lo talla un río a lo largo de mucho tiempo. El viento, el agua y el hielo forman cada uno distintos accidentes geográficos."}
+   ]
+  },
+  "ecosystem-changes": {
+   "ui": {
+    "h1": "Efecto dominó",
+    "sub": "¿Qué pasa cuando un ecosistema cambia? Lee las pistas y abre los cuatro candados.",
+    "briefH": "Predice el cambio",
+    "briefP": "Un ecosistema es una red de seres vivos. Cambia una parte y el efecto se propaga por toda la red. ¡Usa las pistas para abrir los candados!",
+    "winStamp": "¡PREDICHO! ✓",
+    "winH": "¡Experto en ecosistemas!",
+    "winP": "Predijiste un efecto dominó en la red alimentaria, viste cómo se propaga el cambio y nombraste el sistema. Cada parte de un ecosistema está conectada."
+   },
+   "clues": [
+    {"nm":"Red","title":"Una red conectada","body":"En un ecosistema, la energía fluye y la materia circula a través de una red alimentaria de muchos seres vivos."},
+    {"nm":"Quita una parte","title":"Un cambio importa","body":"Si una parte de la red cambia, afecta a las demás. Quita las ranas y toda la red lo siente."},
+    {"nm":"Más insectos","title":"Aumentan los insectos","body":"Sin ranas que se los coman, los insectos que las ranas comían pueden aumentar en número."},
+    {"nm":"Serpientes con hambre","title":"Las serpientes pasan hambre","body":"Las serpientes que comían las ranas ahora tienen menos comida, así que su número puede bajar."},
+    {"nm":"Se propaga","title":"El efecto se propaga","body":"Un solo cambio se propaga por todo el ecosistema, hacia arriba y hacia abajo en la red alimentaria."},
+    {"nm":"Dato curioso","title":"Un dato del volcán","body":"Un volcán puede lanzar lava muy alto en el aire. Eso es cierto y asombroso, pero no es parte de una red alimentaria."}
+   ],
+   "locks": [
+    {"title":"Si las ranas desaparecen","q":"Predice qué pasa si se quitan las ranas. Ponlo en orden. Toca los botones en orden.",
+     "pads":[{"e":"🐍 Las serpientes que comían ranas pasan hambre"},{"e":"🐸 Se quitan las ranas"},{"e":"🦗 Los insectos que comían las ranas aumentan"}],
+     "reason":"Quita las ranas y los insectos que comían aumentan, mientras que las serpientes que comían ranas pasan hambre. El cambio se propaga por toda la red."},
+    {"title":"Un pequeño cambio","q":"¿Qué le pasa a una red alimentaria cuando se quita un animal?",
+     "options":["No cambia nada más.","El cambio se propaga y afecta a toda la red.","Solo importa ese animal."],
+     "reason":"Todo en una red alimentaria está conectado, así que quitar una parte se propaga hacia arriba y hacia abajo por toda la red."},
+    {"title":"Efectos dominó","q":"Toca SOLO los efectos de quitar las ranas de la red. Deja fuera el dato curioso.",
+     "items":[{"t":"Los insectos que comían las ranas aumentan."},{"t":"Las serpientes que comían ranas tienen menos comida."},{"t":"Toda la red se ve afectada."},{"t":"Un volcán puede lanzar lava muy alto."}],
+     "reason":"Menos ranas significa más insectos y serpientes con más hambre: la red se ve afectada. El dato del volcán es cierto pero no viene al caso."},
+    {"title":"Nómbralo","q":"Una comunidad de seres vivos y no vivos conectados en una red es un ____. Escribe la palabra.",
+     "word":["ecosistema","ecosistemas"],
+     "reason":"Un ecosistema es una red conectada. Un cambio en una parte se propaga por todo el conjunto."}
+   ]
+  },
+  "human-impact": {
+   "ui": {
+    "h1": "¿Ayudar o dañar?",
+    "sub": "¿Cómo afectan las personas a los ecosistemas? Lee las pistas y abre los cuatro candados.",
+    "briefH": "Marca la diferencia",
+    "briefP": "Los humanos somos parte de los ecosistemas. Algunas de nuestras decisiones los dañan y otras los ayudan a sanar. ¡Usa las pistas para abrir los candados!",
+    "winStamp": "¡PROTEGIDO! ✓",
+    "winH": "¡Guardián de la Tierra!",
+    "winP": "Limpiaste un estanque, encontraste una acción que ayuda y nombraste el daño. Nuestras decisiones pueden dañar o sanar un ecosistema, así que elegimos con sabiduría."
+   },
+   "clues": [
+    {"nm":"Somos parte","title":"Las personas y la naturaleza","body":"Los humanos somos parte de los ecosistemas. Lo que hacemos afecta a los seres vivos y no vivos a nuestro alrededor."},
+    {"nm":"Dañar","title":"Decisiones dañinas","body":"La contaminación, talar bosques y tirar basura al agua pueden dañar un ecosistema."},
+    {"nm":"Ayudar","title":"Decisiones que ayudan","body":"Reciclar, plantar árboles, limpiar la basura y proteger los hábitats pueden ayudar a un ecosistema a sanar."},
+    {"nm":"Saludable","title":"Un ecosistema saludable","body":"Un ecosistema saludable tiene agua y aire limpios y muchos tipos de seres vivos."},
+    {"nm":"Nuestras decisiones","title":"Se suman","body":"Las pequeñas decisiones se suman. Muchas personas ayudando pueden proteger todo un ecosistema."},
+    {"nm":"Dato curioso","title":"Un dato del koala","body":"Los koalas duermen la mayor parte del día. Eso es cierto y adorable, pero no tiene que ver con el impacto humano."}
+   ],
+   "locks": [
+    {"title":"Sana un estanque","q":"Pon la historia del estanque en orden, de dañado a saludable. Toca los botones en orden.",
+     "pads":[{"e":"💧 El estanque vuelve a estar saludable"},{"e":"🗑️ La basura contamina el estanque"},{"e":"♻️ La gente lo limpia y recicla"}],
+     "reason":"La basura daña el estanque, la gente lo limpia y recicla, y el estanque vuelve a estar saludable. Las decisiones humanas pueden dañar o sanar un ecosistema."},
+    {"title":"Una acción que ayuda","q":"¿Qué acción humana AYUDA a un ecosistema?",
+     "options":["Tirar basura en un arroyo.","Plantar árboles.","Talar un bosque."],
+     "reason":"Plantar árboles ayuda a un ecosistema. Tirar basura y talar bosques lo dañan."},
+    {"title":"¿Qué daña un ecosistema?","q":"Toca SOLO las acciones humanas que DAÑAN un ecosistema. Deja fuera el dato curioso.",
+     "items":[{"t":"Contaminar el agua."},{"t":"Talar un bosque."},{"t":"Tirar basura en el suelo."},{"t":"Los koalas duermen la mayor parte del día."}],
+     "reason":"La contaminación, la tala y tirar basura dañan los ecosistemas. El dato del koala es cierto pero no es un impacto humano."},
+    {"title":"Nómbralo","q":"La basura y el agua y el aire sucios que dañan un ecosistema se llaman ____. Escribe la palabra.",
+     "word":["contaminación","contaminacion"],
+     "reason":"La contaminación daña los ecosistemas. Nuestras decisiones, como reciclar y limpiar, pueden ayudar a protegerlos."}
+   ]
+  },
+  "instinct-learned": {
+   "ui": {
+    "h1": "¿Nace sabiéndolo o lo aprende?",
+    "sub": "¿Qué comportamientos animales son innatos y cuáles se aprenden? Lee las pistas y abre los cuatro candados.",
+    "briefH": "Clasifica los comportamientos",
+    "briefP": "Algunos comportamientos animales son instintos: los animales nacen sabiéndolos. Otros se aprenden con la experiencia. ¡Usa las pistas para abrir los candados!",
+    "winStamp": "¡CLASIFICADO! ✓",
+    "winH": "¡Detective del comportamiento!",
+    "winP": "Observaste el instinto de una tortuga marina, encontraste el comportamiento innato y lo nombraste. Los instintos son innatos; los comportamientos aprendidos vienen de la experiencia."
+   },
+   "clues": [
+    {"nm":"Instinto","title":"Instintos","body":"Un instinto es un comportamiento con el que un animal nace sabiendo. Nadie se lo enseña: sucede automáticamente."},
+    {"nm":"Tortugas marinas","title":"Las tortugas van al mar","body":"Las tortugas marinas bebés se arrastran directo al océano en cuanto salen del cascarón, sin que nadie se lo muestre. Eso es un instinto."},
+    {"nm":"Aprendido","title":"Comportamientos aprendidos","body":"Un comportamiento aprendido viene de la experiencia o de que se lo enseñen. Los animales lo practican y lo recuerdan."},
+    {"nm":"Las orcas cazan","title":"Las orcas aprenden a cazar","body":"Las orcas aprenden a cazar en grupo observando y practicando con su familia. Eso es un comportamiento aprendido."},
+    {"nm":"Telaraña","title":"Habilidades innatas","body":"Una araña tejiendo una telaraña y un pájaro construyendo su primer nido son instintos: nacen sabiendo cómo hacerlo."},
+    {"nm":"Dato curioso","title":"Un dato del rayo","body":"Un rayo es muy caliente. Eso es cierto y poderoso, pero no es un comportamiento animal."}
+   ],
+   "locks": [
+    {"title":"El instinto de una tortuga","q":"Pon en orden el instinto de la tortuga marina. Toca los botones en orden.",
+     "pads":[{"e":"🌊 Se arrastran directo al agua"},{"e":"🥚 Los huevos salen del cascarón en la playa"},{"e":"🧠 Las crías saben ir hacia el mar"}],
+     "reason":"Los huevos salen del cascarón, las crías ya saben ir hacia el mar y se arrastran al agua, sin que nadie les enseñe. Eso es un instinto."},
+    {"title":"Nace sabiéndolo","q":"Las tortugas marinas bebés van al mar sin que nadie les enseñe. Este es un comportamiento ____.",
+     "options":["Aprendido.","Instintivo (nace sabiéndolo).","Enseñado por sus padres."],
+     "reason":"Un instinto es un comportamiento con el que un animal nace sabiendo, como las tortugas yendo al mar. Un comportamiento aprendido necesitaría experiencia o enseñanza."},
+    {"title":"Encuentra los instintos","q":"Toca SOLO los comportamientos instintivos (innatos). Deja fuera el dato curioso.",
+     "items":[{"t":"Una araña tejiendo su telaraña."},{"t":"Una tortuga bebé yendo hacia el mar."},{"t":"Un pájaro construyendo su primer nido."},{"t":"Un rayo es muy caliente."}],
+     "reason":"Tejer una telaraña, ir hacia el mar y construir un primer nido son instintos. El dato del rayo es cierto pero no es un comportamiento."},
+    {"title":"Nómbralo","q":"Un comportamiento con el que un animal nace sabiendo, sin que nadie se lo enseñe, es un ____. Escribe la palabra.",
+     "word":["instinto","instintos","instintivo"],
+     "reason":"Un instinto es un comportamiento innato; uno aprendido viene de la experiencia. Clasificarlos es una idea clave de las ciencias de la vida."}
+   ]
+  }
+ }
+}
