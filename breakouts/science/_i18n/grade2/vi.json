@@ -1,0 +1,402 @@
+{
+  "chrome": {
+    "sect.clues": "🔍 Các Manh Mối",
+    "sect.cluesHint": "Chạm vào từng manh mối để đọc. Con có thể mở lại bất cứ lúc nào.",
+    "sect.locks": "🔒 Các Ổ Khóa",
+    "sect.locksHint": "Dùng các manh mối để mở từng ổ khóa.",
+    "ui.reset": "↺ Bắt đầu lại",
+    "ui.check": "Kiểm tra",
+    "ui.gotit": "Hiểu rồi",
+    "ui.playagain": "Chơi Lại",
+    "ui.solved": "🔓 Mở rồi!",
+    "ui.pcount": "Đã mở {n} trong {total} ổ khóa",
+    "ui.wordph": "Gõ vào đây",
+    "ui.clear": "xóa",
+    "fb.digit": "Chưa đúng. Hãy xem lại các manh mối.",
+    "fb.word": "Hãy xem các manh mối để tìm từ đúng.",
+    "fb.mc": "Không phải cái đó. Hãy xem lại các manh mối.",
+    "fb.multiExtra": "Có một lựa chọn không đúng. Chỉ chọn những thứ tạo ra âm thanh.",
+    "fb.multiMissing": "Con bỏ sót một cái. Hãy tìm hết tất cả.",
+    "fb.seq": "Không đúng thứ tự. Thử lại nhé.",
+    "footer.privacy": "Quyền riêng tư & tuân thủ"
+  },
+  "featured": {
+    "ui": {
+      "header.eyebrow": "Trò Chơi Khoa Học · Lớp 2",
+      "header.h1": "Tạo Ra Âm Thanh Nào!",
+      "header.sub": "Lớp con đang biểu diễn! Đọc các manh mối và mở cả bốn ổ khóa để biết âm thanh được tạo ra như thế nào và làm sao nó đến tai con.",
+      "brief.label": "🔊 Nhiệm Vụ Của Con",
+      "brief.h": "Tìm hiểu âm thanh hoạt động ra sao",
+      "brief.p": "Trống, đàn ghi-ta và giọng nói đều tạo ra âm thanh — nhưng bằng cách nào? Bí mật là <b>rung</b> (chuyển động qua lại thật nhanh). Chạm vào từng manh mối, rồi mở cả bốn ổ khóa!",
+      "win.stamp": "CÓ ÂM THANH ✓",
+      "win.h": "Con làm được rồi!",
+      "win.p": "Con đã học được rằng âm thanh do những vật rung tạo ra, và âm thanh truyền qua không khí đến tai con. Bây giờ con đã biết bí mật của mọi cái trống, dây đàn và giọng nói!",
+      "footer.text": "Trò Chơi Tư Duy Phản Biện Khoa Học · Lớp 2 · Chạy trong trình duyệt của con — không cần đăng nhập, không thu thập dữ liệu.",
+      "footer.disclaimer": "Phù hợp với Kiến Thức và Kỹ Năng Thiết Yếu của Texas về Khoa Học năm 2021 (§112.4, Lớp 2). Diễn giải với thiện chí; hãy xác nhận trước khi sử dụng.",
+      "crumb.teacher": "‹ Khởi động dành cho giáo viên",
+      "crumb.suite": "Trò Chơi Tư Duy Phản Biện Khoa Học"
+    },
+    "clues": [
+      {"nm": "Âm thanh", "title": "Điều Gì Tạo Ra Âm Thanh", "body": "Âm thanh xuất hiện khi một vật <b>rung</b> — chuyển động qua lại thật nhanh."},
+      {"nm": "Trống", "title": "Cái Trống", "body": "Đánh vào trống thì mặt trống <b>rung</b> lên xuống. Điều đó tạo ra tiếng trống."},
+      {"nm": "Đàn ghi-ta", "title": "Cây Đàn Ghi-ta", "body": "Gảy dây đàn ghi-ta thì nó <b>rung</b> qua lại để tạo ra một nốt nhạc."},
+      {"nm": "Giọng Nói Của Con", "title": "Giọng Nói Của Con", "body": "Khi con nói hay hát, các bộ phận bên trong cổ họng con <b>rung</b> để tạo ra giọng nói."},
+      {"nm": "Đến Tai Con", "title": "Âm Thanh Truyền Đi", "body": "Những rung động truyền qua <b>không khí</b> cho đến khi chúng đến <b>tai</b> con. Rồi con nghe được âm thanh."},
+      {"nm": "Sự Thật Về Bầu Trời", "title": "Một Sự Thật Về Cầu Vồng", "body": "Cầu vồng xuất hiện sau cơn mưa khi Mặt Trời ló ra. Điều đó đúng và đẹp — nhưng nó không liên quan đến âm thanh."}
+    ],
+    "locks": [
+      {"title": "Nghe Tiếng Trống", "q": "Con đánh vào trống. Hãy sắp xếp theo thứ tự. Chạm vào các ô theo thứ tự.",
+       "pads": ["👂 Con nghe thấy", "🥁 Con đánh vào trống", "〰️ Mặt trống rung"],
+       "reason": "Con đánh vào trống, mặt trống rung, và âm thanh truyền đến tai con. Sự rung tạo ra âm thanh."},
+      {"title": "Điều Gì Tạo Ra Âm Thanh?", "q": "Điều gì tạo ra âm thanh?",
+       "options": ["Một vật đứng yên hoàn toàn.", "Một vật đang rung (chuyển động qua lại thật nhanh).", "Một màu sắc tươi sáng."],
+       "reason": "Âm thanh đến từ một vật đang rung. Một vật đứng yên không chuyển động thì không tạo ra âm thanh."},
+      {"title": "Những Vật Rung", "q": "Chỉ chạm vào những vật tạo ra âm thanh bằng cách rung. Bỏ qua sự thật vui.",
+       "items": ["Một dây đàn ghi-ta được gảy.", "Một cái trống đang bị đánh.", "Giọng con khi con hát.", "Một cầu vồng sau cơn mưa."],
+       "reason": "Dây đàn, cái trống và giọng nói của con đều rung để tạo ra âm thanh. Sự thật về cầu vồng thì đúng nhưng không tạo ra âm thanh."},
+      {"title": "Gọi Tên Nó", "q": "Âm thanh được tạo ra khi một vật chuyển động qua lại thật nhanh. Ta nói nó sẽ ____. Gõ từ đó.",
+       "word": ["rung", "rung động", "rung lên"],
+       "reason": "Các vật rung để tạo ra âm thanh. Gọi tên nguyên nhân là bước khoa học đầu tiên."}
+    ]
+  },
+  "conceptBase": {
+    "header.eyebrow": "Khoa Học Lớp 2 · Trò Chơi Nhanh",
+    "brief.label": "🎈 Cùng Đi Nào",
+    "crumb.teacher": "‹ Thêm trò chơi Lớp 2",
+    "crumb.suite": "Khoa Học Lớp 2",
+    "footer.text": "Khoa Học Lớp 2 · Trò Chơi Tư Duy Phản Biện Trực Tuyến · Chạy trong trình duyệt của con — không cần đăng nhập, không thu thập dữ liệu.",
+    "footer.disclaimer": "Phù hợp với Kiến Thức và Kỹ Năng Thiết Yếu của Texas về Khoa Học năm 2021 (§112.4, Lớp 2). Diễn giải với thiện chí; hãy xác nhận trước khi sử dụng."
+  },
+  "concept": {
+    "solid-liquid": {
+      "ui": {
+        "h1": "Chất Rắn Hay Chất Lỏng?",
+        "sub": "Nó giữ nguyên hình dạng, hay nó chảy? Đọc các manh mối và mở cả bốn ổ khóa.",
+        "briefH": "Phân loại chúng ra",
+        "briefP": "Chất rắn giữ nguyên hình dạng. Chất lỏng chảy và mang hình dạng của cái cốc đựng nó. Chạm vào các manh mối và mở các ổ khóa để phân loại chúng!",
+        "winStamp": "ĐÃ PHÂN LOẠI ✓",
+        "winH": "Phân loại giỏi lắm!",
+        "winP": "Con đã thấy một chất rắn tan thành chất lỏng, tìm ra chất lỏng, và gọi tên nó. Chất rắn giữ nguyên hình dạng còn chất lỏng thì chảy."
+      },
+      "clues": [
+        {"nm": "Chất rắn", "title": "Chất Rắn", "body": "Chất rắn giữ nguyên hình dạng của chính nó. Một khối gỗ, một hòn đá và một viên đá lạnh đều là chất rắn."},
+        {"nm": "Chất lỏng", "title": "Chất Lỏng", "body": "Chất lỏng chảy và mang hình dạng của cái cốc hoặc chai đựng nó. Nước và nước ép là chất lỏng."},
+        {"nm": "Sờ", "title": "Bề Mặt", "body": "Ta có thể phân loại chất rắn theo cảm giác khi sờ — thô ráp hay trơn nhẵn, cứng hay mềm."},
+        {"nm": "Dẻo", "title": "Dễ Uốn", "body": "Một số chất rắn dễ uốn cong (chúng dẻo), như sợi dây thun. Một số thì cứng, như cái muỗng."},
+        {"nm": "Nóng Hay Lạnh", "title": "Nhiệt Độ", "body": "Ta cũng có thể phân loại đồ vật theo nóng hay lạnh. Viên đá lạnh thì lạnh; súp ấm thì nóng."},
+        {"nm": "Sự Thật Về Bọ", "title": "Một Sự Thật Về Bươm Bướm", "body": "Bươm bướm nếm bằng chân của nó. Điều đó đúng và vui — nhưng nó không liên quan đến chất rắn hay chất lỏng."}
+      ],
+      "locks": [
+        {"title": "Cây Kem Tan Chảy", "q": "Một cây kem ấm dần lên. Hãy sắp xếp theo thứ tự. Chạm vào các ô theo thứ tự.",
+         "pads": ["💧 Nó nhỏ giọt thành chất lỏng", "🧊 Một cây kem cứng, đông lạnh", "☀️ Nó ấm dần lên"],
+         "reason": "Một cây kem cứng, đông lạnh là chất rắn. Khi ấm lên nó tan chảy và nhỏ giọt thành chất lỏng. Chất rắn có thể biến thành chất lỏng."},
+        {"title": "Cái Nào Là Chất Lỏng?", "q": "Cái nào là chất lỏng?",
+         "options": ["Một khối gỗ.", "Nước ép trong cốc.", "Một hòn đá."],
+         "reason": "Nước ép chảy và mang hình dạng của cái cốc, nên nó là chất lỏng. Khối gỗ và hòn đá giữ nguyên hình dạng, nên chúng là chất rắn."},
+        {"title": "Cách Mô Tả Chất Rắn", "q": "Chỉ chạm vào những cách ta có thể mô tả một chất rắn. Bỏ qua sự thật vui.",
+         "items": ["Cảm giác khi sờ (thô ráp hay trơn nhẵn).", "Nó uốn cong hay cứng.", "Nó nóng hay lạnh.", "Bươm bướm nếm bằng chân."],
+         "reason": "Bề mặt, độ dẻo và nhiệt độ đều mô tả một chất rắn. Sự thật về bươm bướm thì đúng nhưng không mô tả đồ vật đó."},
+        {"title": "Gọi Tên Nó", "q": "Nước và nước ép chảy và mang hình dạng của cái cốc. Chúng là ____. Gõ từ đó.",
+         "word": ["chất lỏng", "lỏng"],
+         "reason": "Chất lỏng chảy và mang hình dạng của cái cốc. Gọi tên nó giúp ta phân loại vật chất."}
+      ]
+    },
+    "change-it": {
+      "ui": {
+        "h1": "Thay Đổi Nó!",
+        "sub": "Cắt, gấp, làm tan chảy, làm đông — ta thay đổi mọi vật bằng cách nào? Đọc các manh mối và mở cả bốn ổ khóa.",
+        "briefH": "Tạo một thay đổi",
+        "briefP": "Ta có thể thay đổi hình dáng của một vật bằng cách cắt, gấp, làm tan chảy hoặc làm đông nó. Chạm vào các manh mối và mở các ổ khóa!",
+        "winStamp": "ĐÃ THAY ĐỔI ✓",
+        "winH": "Làm tốt lắm!",
+        "winP": "Con đã làm một bông tuyết bằng giấy, tìm ra cách làm đá, và gọi tên sự thay đổi. Ta có thể thay đổi vật chất bằng nhiều cách."
+      },
+      "clues": [
+        {"nm": "Cắt", "title": "Cắt", "body": "Cắt làm thay đổi hình dạng của giấy hay sợi dây thành những mảnh nhỏ hơn."},
+        {"nm": "Gấp", "title": "Gấp", "body": "Gấp giấy làm thay đổi hình dạng của nó. Gấp và cắt nó để làm một bông tuyết!"},
+        {"nm": "Chà nhám", "title": "Chà Nhám", "body": "Chà nhám gỗ thô ráp làm cho nó trơn nhẵn. Nó thay đổi bề mặt."},
+        {"nm": "Tan chảy", "title": "Tan Chảy", "body": "Nhiệt có thể làm tan chảy chất rắn thành chất lỏng, như bơ tan chảy trong chảo nóng."},
+        {"nm": "Đông", "title": "Làm Đông", "body": "Cái lạnh có thể làm đông chất lỏng thành chất rắn. Nước đông lại thành đá."},
+        {"nm": "Sự Thật Về Chim", "title": "Một Sự Thật Về Chim Cánh Cụt", "body": "Chim cánh cụt không bay được nhưng chúng bơi rất nhanh. Điều đó đúng và vui — nhưng nó không phải là cách thay đổi vật chất."}
+      ],
+      "locks": [
+        {"title": "Làm Một Bông Tuyết", "q": "Làm một bông tuyết bằng giấy. Hãy sắp xếp theo thứ tự. Chạm vào các ô theo thứ tự.",
+         "pads": ["❄️ Mở ra một bông tuyết", "📄 Một tờ giấy phẳng", "🔺 Gấp và cắt nó"],
+         "reason": "Bắt đầu với một tờ giấy phẳng, gấp và cắt nó, rồi mở ra một bông tuyết. Gấp và cắt làm thay đổi hình dạng của giấy."},
+        {"title": "Làm Đá", "q": "Con làm thế nào để biến nước thành đá?",
+         "options": ["Làm đông nó (làm cho nó thật lạnh).", "Cắt nó.", "Gấp nó."],
+         "reason": "Làm đông khiến nước thật lạnh nên nó biến thành đá cứng."},
+        {"title": "Cách Thay Đổi Vật Chất", "q": "Chỉ chạm vào những cách ta có thể thay đổi vật chất. Bỏ qua sự thật vui.",
+         "items": ["Cắt nó.", "Gấp nó.", "Làm tan chảy nó.", "Chim cánh cụt bơi nhanh."],
+         "reason": "Cắt, gấp và làm tan chảy đều thay đổi vật chất. Sự thật về chim cánh cụt thì đúng nhưng không thay đổi vật chất."},
+        {"title": "Gọi Tên Nó", "q": "Khi nước trở nên thật lạnh, nó biến thành đá. Ta nói nó sẽ ____. Gõ từ đó.",
+         "word": ["đông", "đông lại", "đông đá"],
+         "reason": "Cái lạnh làm nước đông lại thành đá. Gọi tên sự thay đổi cho biết ta đã làm gì với vật chất."}
+      ]
+    },
+    "push-collide": {
+      "ui": {
+        "h1": "Đẩy và Va Chạm",
+        "sub": "Điều gì xảy ra khi các vật đẩy và va vào nhau? Đọc các manh mối và mở cả bốn ổ khóa.",
+        "briefH": "Đẩy nó một cái",
+        "briefP": "Một cú đẩy có thể làm mọi vật di chuyển và thậm chí thay đổi hình dạng của chúng. Khi hai vật va vào nhau, chúng có thể thay đổi cách di chuyển. Chạm vào các manh mối và mở các ổ khóa!",
+        "winStamp": "VA CHẠM ✓",
+        "winH": "Cao thủ về lực!",
+        "winP": "Con đã làm quả bóng nảy khỏi tường, ép dẹp một cục đất sét, và gọi tên lực đó. Một cú đẩy có thể làm mọi vật di chuyển và thay đổi hình dạng của chúng."
+      },
+      "clues": [
+        {"nm": "Đẩy", "title": "Một Cú Đẩy", "body": "Một cú đẩy là một lực. Cú đẩy mạnh làm một vật di chuyển nhiều hơn cú đẩy nhẹ."},
+        {"nm": "Va", "title": "Các Vật Va Nhau", "body": "Khi hai vật chạm hay va vào nhau, chúng có thể thay đổi cách chúng đang di chuyển."},
+        {"nm": "Nảy", "title": "Đổi Hướng", "body": "Một quả bóng đập vào tường sẽ nảy ngược lại. Nó đổi hướng."},
+        {"nm": "Ép dẹp", "title": "Đổi Hình Dạng", "body": "Một số vật đổi hình dạng khi con đẩy vào chúng, như đất sét bị ép dẹp."},
+        {"nm": "Mạnh Hay Nhẹ", "title": "Con Đẩy Mạnh Ra Sao", "body": "Cú đẩy mạnh làm một vật đi nhanh hơn và xa hơn. Cú đẩy nhẹ chỉ làm nó di chuyển một chút."},
+        {"nm": "Sự Thật Về Chiều Cao", "title": "Một Sự Thật Về Hươu Cao Cổ", "body": "Hươu cao cổ là loài vật cao nhất. Điều đó đúng và thú vị — nhưng nó không liên quan đến việc đẩy."}
+      ],
+      "locks": [
+        {"title": "Bóng và Tường", "q": "Con lăn một quả bóng về phía tường. Hãy sắp xếp theo thứ tự. Chạm vào các ô theo thứ tự.",
+         "pads": ["↩️ Nó nảy ngược lại", "🏀 Quả bóng lăn", "🧱 Nó đập vào tường"],
+         "reason": "Quả bóng lăn, đập vào tường, và nảy ngược lại. Cú va chạm làm thay đổi hướng của quả bóng."},
+        {"title": "Ép Dẹp Đất Sét", "q": "Điều gì xảy ra khi con ép mạnh vào đất sét mềm?",
+         "options": ["Nó đổi hình dạng (nó bị ép dẹp).", "Nó biến thành chất lỏng.", "Không có gì xảy ra."],
+         "reason": "Một cú đẩy có thể thay đổi hình dạng của một vật. Đất sét mềm bị ép dẹp khi con ép nó."},
+        {"title": "Một Cú Đẩy Có Thể Làm Gì", "q": "Chỉ chạm vào những điều một cú đẩy có thể làm. Bỏ qua sự thật vui.",
+         "items": ["Một cú đá mạnh đưa quả bóng đi xa.", "Ép đất sét làm thay đổi hình dạng của nó.", "Hai chiếc xe đẩy va vào nhau rồi dừng lại.", "Hươu cao cổ là loài vật cao nhất."],
+         "reason": "Một cú đẩy có thể làm quả bóng di chuyển, thay đổi hình dạng, và làm chiếc xe dừng lại. Sự thật về hươu cao cổ thì đúng nhưng không phải là một cú đẩy."},
+        {"title": "Gọi Tên Nó", "q": "Khi con làm một vật di chuyển ra xa con, con đã cho nó một cú ____. Gõ từ đó.",
+         "word": ["đẩy", "cú đẩy"],
+         "reason": "Đẩy là lực làm mọi vật di chuyển ra xa. Gọi tên lực giúp ta giải thích cách mọi vật di chuyển."}
+      ]
+    },
+    "sun-moon": {
+      "ui": {
+        "h1": "Mặt Trời và Mặt Trăng",
+        "sub": "Tại sao Mặt Trăng lại sáng? Đọc các manh mối và mở cả bốn ổ khóa.",
+        "briefH": "Nhìn lên nào!",
+        "briefP": "Mặt Trời là một ngôi sao tỏa ra ánh sáng và hơi ấm. Mặt Trăng không tự tạo ra ánh sáng của mình — nó mượn ánh sáng từ Mặt Trời. Chạm vào các manh mối và mở các ổ khóa!",
+        "winStamp": "XONG BẦU TRỜI ✓",
+        "winH": "Người ngắm sao!",
+        "winP": "Con đã thấy vì sao Mặt Trăng sáng, biết Mặt Trời là một ngôi sao, và gọi tên nó. Mặt Trăng phát sáng vì ánh sáng mặt trời phản chiếu khỏi nó."
+      },
+      "clues": [
+        {"nm": "Mặt Trời", "title": "Mặt Trời Là Một Ngôi Sao", "body": "Mặt Trời là một ngôi sao. Nó cho Trái Đất ánh sáng và hơi ấm mỗi ngày."},
+        {"nm": "Mặt Trăng", "title": "Ánh Sáng Của Mặt Trăng", "body": "Mặt Trăng không tự tạo ra ánh sáng của mình. Nó phản chiếu (dội ngược lại) ánh sáng của Mặt Trời."},
+        {"nm": "Các Ngôi Sao", "title": "Những Ngôi Sao Xa Xôi", "body": "Các ngôi sao là những mặt trời ở rất, rất xa, nên chúng trông nhỏ xíu đối với ta."},
+        {"nm": "Kính Thiên Văn", "title": "Dùng Một Dụng Cụ", "body": "Kính thiên văn là một dụng cụ giúp ta nhìn các vật trên trời to hơn và rõ hơn so với chỉ dùng mắt thường."},
+        {"nm": "Dội Lại", "title": "Ánh Sáng Dội Lại", "body": "Ta thấy Mặt Trăng vì ánh sáng mặt trời chiếu vào nó rồi dội lại mắt ta."},
+        {"nm": "Sự Thật Về Biển", "title": "Một Sự Thật Về Bạch Tuộc", "body": "Bạch tuộc có tám cánh tay. Điều đó đúng và hay — nhưng nó không liên quan đến Mặt Trời hay Mặt Trăng."}
+      ],
+      "locks": [
+        {"title": "Vì Sao Mặt Trăng Sáng", "q": "Hãy sắp xếp theo thứ tự để cho thấy vì sao ta thấy Mặt Trăng. Chạm vào các ô theo thứ tự.",
+         "pads": ["👀 Ta thấy Mặt Trăng phát sáng", "☀️ Mặt Trời tạo ra ánh sáng", "🌙 Ánh sáng chiếu vào Mặt Trăng"],
+         "reason": "Mặt Trời tạo ra ánh sáng, ánh sáng chiếu vào Mặt Trăng, và dội lại tới ta nên ta thấy Mặt Trăng phát sáng. Mặt Trăng không tự tạo ra ánh sáng của mình."},
+        {"title": "Mặt Trời Là Gì?", "q": "Mặt Trời là một ____.",
+         "options": ["Một hành tinh.", "Một ngôi sao.", "Một mặt trăng."],
+         "reason": "Mặt Trời là một ngôi sao. Nó cho Trái Đất ánh sáng và hơi ấm."},
+        {"title": "Về Ánh Sáng Của Mặt Trăng", "q": "Chỉ chạm vào những manh mối đúng về ánh sáng của Mặt Trăng. Bỏ qua sự thật vui.",
+         "items": ["Mặt Trăng không tự tạo ra ánh sáng của mình.", "Mặt Trăng phản chiếu ánh sáng của Mặt Trời.", "Ta thấy Mặt Trăng vì ánh sáng mặt trời dội lại khỏi nó.", "Bạch tuộc có tám cánh tay."],
+         "reason": "Mặt Trăng sáng bằng cách dội lại ánh sáng của Mặt Trời. Sự thật về bạch tuộc thì đúng nhưng không liên quan đến Mặt Trăng."},
+        {"title": "Gọi Tên Nó", "q": "Mặt Trời cho ta ánh sáng và hơi ấm. Mặt Trời là một ____. Gõ từ đó.",
+         "word": ["ngôi sao", "sao"],
+         "reason": "Mặt Trời là một ngôi sao. Biết điều này giúp ta hiểu về bầu trời."}
+      ]
+    },
+    "wind-water": {
+      "ui": {
+        "h1": "Di Chuyển Trái Đất",
+        "sub": "Cát và đá di chuyển như thế nào? Đọc các manh mối và mở cả bốn ổ khóa.",
+        "briefH": "Xem nó di chuyển",
+        "briefP": "Gió và nước rất mạnh! Chúng có thể từ từ di chuyển cát và đá từ nơi này sang nơi khác. Chạm vào các manh mối và mở các ổ khóa!",
+        "winStamp": "ĐÃ DI CHUYỂN ✓",
+        "winH": "Người di chuyển đất!",
+        "winP": "Con đã dùng gió tạo một cồn cát, tìm ra thứ làm di chuyển cát, và gọi tên nó. Gió và nước từ từ thay đổi mặt đất."
+      },
+      "clues": [
+        {"nm": "Gió", "title": "Gió Làm Di Chuyển Cát", "body": "Gió có thể nhặt lên và làm di chuyển cát. Trên bãi biển, gió thổi cát thành những đống lớn gọi là cồn cát."},
+        {"nm": "Nước", "title": "Nước Làm Di Chuyển Đá", "body": "Dòng nước chảy của một con sông có thể mang cát và đá đi rồi thả chúng ở nơi xa."},
+        {"nm": "Cồn Cát", "title": "Cồn Cát", "body": "Cồn cát là một ngọn đồi cát do gió chất cát lên theo thời gian tạo thành."},
+        {"nm": "Từ Từ", "title": "Cần Có Thời Gian", "body": "Gió và nước thay đổi mặt đất từ từ, mỗi lần một chút."},
+        {"nm": "Đá Lăn", "title": "Những Hòn Đá Lăn", "body": "Nước chảy nhanh trong một con sông có thể lăn và làm di chuyển những hòn đá nhỏ về hạ nguồn."},
+        {"nm": "Sự Thật Màu Hồng", "title": "Một Sự Thật Về Hồng Hạc", "body": "Hồng hạc có màu hồng nhờ thức ăn chúng ăn. Điều đó đúng và vui — nhưng nó không làm di chuyển cát hay đá."}
+      ],
+      "locks": [
+        {"title": "Tạo Một Cồn Cát", "q": "Gió tạo ra một cồn cát như thế nào? Hãy sắp xếp theo thứ tự. Chạm vào các ô theo thứ tự.",
+         "pads": ["🏜️ Cát chất thành một cồn cát", "💨 Gió thổi", "🏖️ Cát di chuyển đi"],
+         "reason": "Gió thổi, cát di chuyển đi, và chất thành một cồn cát. Gió từ từ làm di chuyển cát."},
+        {"title": "Điều Gì Làm Di Chuyển Cát?", "q": "Điều gì có thể thổi cát trên bãi biển thành một đống lớn?",
+         "options": ["Gió.", "Một cục nam châm.", "Mặt Trăng."],
+         "reason": "Gió có thể nhặt lên và làm di chuyển cát thành cồn cát."},
+        {"title": "Điều Gì Làm Di Chuyển Trái Đất?", "q": "Chỉ chạm vào những thứ có thể làm di chuyển đất và đá. Bỏ qua sự thật vui.",
+         "items": ["Gió thổi cát.", "Một con sông mang theo đá.", "Mưa cuốn trôi đất.", "Hồng hạc có màu hồng nhờ thức ăn."],
+         "reason": "Gió, sông và mưa đều làm di chuyển đất và đá. Sự thật về hồng hạc thì đúng nhưng không làm di chuyển gì cả."},
+        {"title": "Gọi Tên Nó", "q": "Không khí chuyển động có thể thổi cát thành cồn cát được gọi là ____. Gõ từ đó.",
+         "word": ["gió"],
+         "reason": "Gió là không khí chuyển động có thể làm di chuyển cát. Gọi tên nó giúp ta giải thích cách mặt đất thay đổi."}
+      ]
+    },
+    "weather-severe": {
+      "ui": {
+        "h1": "Thời Tiết Dữ Dội",
+        "sub": "Ta đo thời tiết như thế nào, và một cơn bão là gì? Đọc các manh mối và mở cả bốn ổ khóa.",
+        "briefH": "Theo dõi bầu trời",
+        "briefP": "Ta dùng các dụng cụ để đo thời tiết, và đôi khi thời tiết trở nên dữ dội — như bão và lũ lụt. Chạm vào các manh mối và mở các ổ khóa!",
+        "winStamp": "ĐÃ THEO DÕI ✓",
+        "winH": "Người quan sát thời tiết!",
+        "winP": "Con đã xem một cơn bão lớn dần lên, tìm ra dụng cụ đo nhiệt độ, và gọi tên một kiểu thời tiết dữ dội. Các dụng cụ giúp ta đo thời tiết, và một số thời tiết rất khắc nghiệt."
+      },
+      "clues": [
+        {"nm": "Nhiệt kế", "title": "Đo Độ Nóng", "body": "Nhiệt kế là một dụng cụ cho biết trời nóng hay lạnh bao nhiêu (nhiệt độ)."},
+        {"nm": "Vũ Kế", "title": "Đo Lượng Mưa", "body": "Vũ kế là một dụng cụ đo lượng mưa rơi xuống."},
+        {"nm": "Bão Nhiệt Đới", "title": "Bão Nhiệt Đới", "body": "Bão nhiệt đới là một cơn bão khổng lồ với gió mạnh và rất nhiều mưa."},
+        {"nm": "Lốc Xoáy", "title": "Lốc Xoáy", "body": "Lốc xoáy là một cơn gió xoay tròn thật nhanh có thể cuốn mọi vật lên."},
+        {"nm": "Lũ Lụt", "title": "Lũ Lụt", "body": "Lũ lụt là khi có quá nhiều nước phủ lên vùng đất thường khô ráo."},
+        {"nm": "Sự Thật Buồn Ngủ", "title": "Một Sự Thật Về Gấu Koala", "body": "Gấu koala ngủ gần cả ngày. Điều đó đúng và dễ thương — nhưng nó không phải là thời tiết."}
+      ],
+      "locks": [
+        {"title": "Một Cơn Bão Lớn Dần", "q": "Hãy sắp xếp một cơn mưa bão theo thứ tự, từ yên bình đến lũ lụt. Chạm vào các ô theo thứ tự.",
+         "pads": ["🌊 Quá nhiều nước gây lũ lụt", "☁️ Những đám mây đen kéo đến", "🌧️ Mưa lớn rơi xuống"],
+         "reason": "Mây kéo đến, mưa lớn rơi xuống, và quá nhiều nước có thể làm ngập đất. Thời tiết có thể thay đổi từ yên bình đến dữ dội."},
+        {"title": "Đo Độ Nóng", "q": "Dụng cụ nào cho con biết trời nóng hay lạnh bao nhiêu?",
+         "options": ["Một cái vũ kế.", "Một cái nhiệt kế.", "Một kính thiên văn."],
+         "reason": "Nhiệt kế đo nhiệt độ — trời nóng hay lạnh bao nhiêu. Vũ kế đo lượng mưa."},
+        {"title": "Thời Tiết Dữ Dội", "q": "Chỉ chạm vào những kiểu thời tiết khắc nghiệt (dữ dội). Bỏ qua sự thật vui.",
+         "items": ["Một cơn bão nhiệt đới.", "Một cơn lốc xoáy.", "Một trận lũ lụt.", "Gấu koala ngủ gần cả ngày."],
+         "reason": "Bão nhiệt đới, lốc xoáy và lũ lụt đều là thời tiết khắc nghiệt. Sự thật về gấu koala thì đúng nhưng không phải là thời tiết."},
+        {"title": "Gọi Tên Nó", "q": "Một cơn gió xoay tròn thật nhanh có thể cuốn mọi vật lên là một cơn ____. Gõ từ đó.",
+         "word": ["lốc xoáy", "vòi rồng"],
+         "reason": "Lốc xoáy là một cơn gió xoáy. Gọi tên thời tiết dữ dội giúp ta giữ an toàn."}
+      ]
+    },
+    "recycle": {
+      "ui": {
+        "h1": "Giảm, Tái Sử Dụng, Tái Chế",
+        "sub": "Ta chăm sóc những thứ của Trái Đất như thế nào? Đọc các manh mối và mở cả bốn ổ khóa.",
+        "briefH": "Giúp Trái Đất",
+        "briefP": "Một số thứ đến từ thiên nhiên và một số do con người tạo ra. Ta có thể giảm, tái sử dụng và tái chế để chăm sóc Trái Đất. Chạm vào các manh mối và mở các ổ khóa!",
+        "winStamp": "ĐÃ TÁI CHẾ ✓",
+        "winH": "Người giúp Trái Đất!",
+        "winP": "Con đã tái chế một cái lon, tìm ra một tài nguyên thiên nhiên, và gọi tên từ đó. Giảm, tái sử dụng và tái chế đều giúp chăm sóc Trái Đất."
+      },
+      "clues": [
+        {"nm": "Thiên nhiên", "title": "Tài Nguyên Thiên Nhiên", "body": "Tài nguyên thiên nhiên đến từ thiên nhiên, như nước, gỗ và đá."},
+        {"nm": "Nhân tạo", "title": "Đồ Do Con Người Làm", "body": "Đồ nhân tạo do con người làm ra, như một chai nhựa hay một cái lon kim loại."},
+        {"nm": "Giảm", "title": "Giảm", "body": "Giảm nghĩa là dùng ít lại, như tắt đèn khi con không dùng."},
+        {"nm": "Tái sử dụng", "title": "Tái Sử Dụng", "body": "Tái sử dụng nghĩa là dùng lại một vật, như đổ đầy lại một chai nước."},
+        {"nm": "Tái chế", "title": "Tái Chế", "body": "Tái chế nghĩa là biến giấy, nhựa hay kim loại cũ thành thứ gì đó mới."},
+        {"nm": "Sự Thật Về Chim", "title": "Một Sự Thật Về Vẹt", "body": "Một số con vẹt có thể bắt chước lời nói. Điều đó đúng và vui — nhưng nó không liên quan đến tái chế."}
+      ],
+      "locks": [
+        {"title": "Tái Chế Một Cái Lon", "q": "Hãy sắp xếp theo thứ tự để tái chế một cái lon. Chạm vào các ô theo thứ tự.",
+         "pads": ["✨ Nó trở thành một cái lon mới", "🥤 Con dùng cái lon", "♻️ Bỏ nó vào thùng tái chế"],
+         "reason": "Dùng cái lon, bỏ nó vào thùng tái chế, và nó trở thành một cái lon mới. Tái chế biến đồ cũ thành đồ mới."},
+        {"title": "Từ Thiên Nhiên", "q": "Cái nào là tài nguyên THIÊN NHIÊN?",
+         "options": ["Một món đồ chơi bằng nhựa.", "Nước.", "Một cái lon kim loại."],
+         "reason": "Nước đến từ thiên nhiên, nên nó là tài nguyên thiên nhiên. Đồ chơi nhựa và lon kim loại do con người làm ra."},
+        {"title": "Giúp Trái Đất", "q": "Chỉ chạm vào những cách chăm sóc những thứ của Trái Đất. Bỏ qua sự thật vui.",
+         "items": ["Giảm — dùng ít lại.", "Tái sử dụng — dùng lại nó.", "Tái chế — biến nó thành thứ gì đó mới.", "Một số con vẹt có thể bắt chước lời nói."],
+         "reason": "Giảm, tái sử dụng và tái chế đều giúp Trái Đất. Sự thật về vẹt thì đúng nhưng không giúp ích cho tài nguyên."},
+        {"title": "Gọi Tên Nó", "q": "Biến giấy, nhựa hay kim loại cũ thành thứ gì đó mới là ____. Gõ từ đó.",
+         "word": ["tái chế"],
+         "reason": "Tái chế là biến đồ cũ thành đồ mới. Nó giúp bảo vệ tài nguyên của Trái Đất."}
+      ]
+    },
+    "producers-consumers": {
+      "ui": {
+        "h1": "Ai Làm Ra Thức Ăn?",
+        "sub": "Sinh vật sống nào làm ra thức ăn, và sinh vật nào ăn nó? Đọc các manh mối và mở cả bốn ổ khóa.",
+        "briefH": "Đi theo thức ăn",
+        "briefP": "Cây tự làm ra thức ăn của mình. Động vật ăn các sinh vật sống khác. Một chuỗi thức ăn cho thấy chúng kết nối với nhau ra sao. Chạm vào các manh mối và mở các ổ khóa!",
+        "winStamp": "ĐÃ NỐI CHUỖI ✓",
+        "winH": "Cao thủ chuỗi thức ăn!",
+        "winP": "Con đã dựng một chuỗi thức ăn, tìm ra kẻ làm ra thức ăn, và gọi tên nó. Sinh vật sản xuất làm ra thức ăn còn sinh vật tiêu thụ ăn các sinh vật sống khác."
+      },
+      "clues": [
+        {"nm": "Sinh vật sản xuất", "title": "Sinh Vật Sản Xuất", "body": "Sinh vật sản xuất tự làm ra thức ăn của mình. Cây là sinh vật sản xuất — chúng dùng ánh sáng mặt trời để làm ra thức ăn."},
+        {"nm": "Sinh vật tiêu thụ", "title": "Sinh Vật Tiêu Thụ", "body": "Sinh vật tiêu thụ không thể tự làm ra thức ăn, nên nó ăn các sinh vật sống khác. Động vật là sinh vật tiêu thụ."},
+        {"nm": "Ánh nắng", "title": "Cây Dùng Ánh Nắng", "body": "Cây dùng ánh sáng mặt trời và nước để làm ra thức ăn của mình."},
+        {"nm": "Chuỗi Thức Ăn", "title": "Một Chuỗi Thức Ăn", "body": "Một chuỗi thức ăn cho thấy ai ăn cái gì: từ cây đến kẻ ăn cây đến kẻ ăn động vật."},
+        {"nm": "Phụ thuộc", "title": "Động Vật Cần Cây", "body": "Sinh vật tiêu thụ phụ thuộc vào sinh vật sản xuất. Không có cây, kẻ ăn cây sẽ không có thức ăn."},
+        {"nm": "Sự Thật Nóng Bỏng", "title": "Một Sự Thật Về Núi Lửa", "body": "Núi lửa phun ra dung nham nóng. Điều đó đúng và dữ dội — nhưng nó không phải là một phần của chuỗi thức ăn."}
+      ],
+      "locks": [
+        {"title": "Dựng Chuỗi", "q": "Hãy sắp xếp chuỗi thức ăn theo thứ tự, bắt đầu với cây. Chạm vào các ô theo thứ tự.",
+         "pads": ["🦊 Cáo ăn thỏ", "🌿 Cây làm ra thức ăn", "🐰 Thỏ ăn cây"],
+         "reason": "Cây (sinh vật sản xuất) làm ra thức ăn, một con thỏ ăn cây, và một con cáo ăn thỏ. Sinh vật tiêu thụ phụ thuộc vào sinh vật sản xuất."},
+        {"title": "Kẻ Làm Ra Thức Ăn", "q": "Cái nào là sinh vật sản xuất tự làm ra thức ăn của mình?",
+         "options": ["Một con cáo.", "Một cây.", "Một con thỏ."],
+         "reason": "Cây là sinh vật sản xuất — nó tự làm ra thức ăn của mình từ ánh sáng mặt trời. Cáo và thỏ là sinh vật tiêu thụ."},
+        {"title": "Tìm Sinh Vật Tiêu Thụ", "q": "Chỉ chạm vào những sinh vật tiêu thụ (sinh vật sống ăn các sinh vật sống khác). Bỏ qua sự thật vui.",
+         "items": ["Một con thỏ.", "Một con cáo.", "Một con chim.", "Núi lửa phun ra dung nham."],
+         "reason": "Một con thỏ, một con cáo và một con chim đều ăn các sinh vật sống khác, nên chúng là sinh vật tiêu thụ. Sự thật về núi lửa thì đúng nhưng nó không ăn gì cả."},
+        {"title": "Gọi Tên Nó", "q": "Một sinh vật sống tự làm ra thức ăn của mình, như một cái cây, là một sinh vật ____. Gõ từ đó.",
+         "word": ["sản xuất"],
+         "reason": "Sinh vật sản xuất tự làm ra thức ăn của mình. Nó là điểm khởi đầu của mọi chuỗi thức ăn."}
+      ]
+    },
+    "pollination": {
+      "ui": {
+        "h1": "Di Chuyển Hạt Giống & Phấn Hoa",
+        "sub": "Cây được giúp lan rộng như thế nào? Đọc các manh mối và mở cả bốn ổ khóa.",
+        "briefH": "Giúp các cây",
+        "briefP": "Cây không thể đi lại, nên chúng được giúp di chuyển phấn hoa và hạt giống — bởi ong, gió và động vật. Chạm vào các manh mối và mở các ổ khóa!",
+        "winStamp": "ĐÃ LAN RỘNG ✓",
+        "winH": "Người giúp cây!",
+        "winP": "Con đã giúp một con ong di chuyển phấn hoa, tìm ra thứ làm di chuyển hạt giống, và gọi tên nó. Ong, gió và động vật đều giúp cây lan rộng và mọc lên."
+      },
+      "clues": [
+        {"nm": "Ong", "title": "Ong Mang Phấn Hoa", "body": "Một con ong đậu lên một bông hoa, dính phấn hoa lên mình, rồi mang nó đến bông hoa tiếp theo."},
+        {"nm": "Gió", "title": "Gió Làm Di Chuyển Hạt Giống", "body": "Gió có thể thổi những hạt giống nhẹ, như hạt bồ công anh mềm bông, đến một nơi mới."},
+        {"nm": "Động vật", "title": "Động Vật Mang Hạt Giống", "body": "Những hạt giống dính, như quả ké, có thể dính vào lông của con vật và đi nhờ đến một nơi mới."},
+        {"nm": "Phấn hoa", "title": "Phấn Hoa Làm Gì", "body": "Di chuyển phấn hoa từ bông hoa này sang bông hoa khác giúp cây tạo ra hạt giống mới."},
+        {"nm": "Cây Mới", "title": "Những Cây Mới Mọc Lên", "body": "Khi hạt giống rơi xuống một nơi mới, những cây mới có thể mọc lên ở đó."},
+        {"nm": "Sự Thật Về Bầu Trời", "title": "Một Sự Thật Về Sét", "body": "Sét rất nóng. Điều đó đúng và mạnh mẽ — nhưng nó không làm di chuyển phấn hoa hay hạt giống."}
+      ],
+      "locks": [
+        {"title": "Một Con Ong Bận Rộn", "q": "Một con ong giúp một bông hoa như thế nào? Hãy sắp xếp theo thứ tự. Chạm vào các ô theo thứ tự.",
+         "pads": ["🌼 Mang phấn hoa đến bông hoa tiếp theo", "🐝 Ong đậu lên một bông hoa", "🌸 Phấn hoa dính vào ong"],
+         "reason": "Con ong đậu xuống, phấn hoa dính vào nó, và nó mang phấn hoa đến bông hoa tiếp theo. Điều đó giúp cây tạo ra hạt giống."},
+        {"title": "Di Chuyển Hạt Giống", "q": "Điều gì giúp di chuyển những hạt bồ công anh mềm bông đến một nơi mới?",
+         "options": ["Gió.", "Một cục nam châm.", "Mặt Trăng."],
+         "reason": "Gió có thể thổi những hạt bồ công anh nhẹ đến một nơi mới, nơi những cây mới có thể mọc lên."},
+        {"title": "Giúp Cây Lan Rộng", "q": "Chỉ chạm vào những thứ giúp di chuyển phấn hoa hay hạt giống. Bỏ qua sự thật vui.",
+         "items": ["Một con ong mang phấn hoa.", "Gió thổi hạt giống.", "Một quả ké dính vào lông con vật.", "Sét rất nóng."],
+         "reason": "Ong, gió và động vật đều làm di chuyển phấn hoa và hạt giống. Sự thật về sét thì đúng nhưng không làm di chuyển gì cả."},
+        {"title": "Gọi Tên Nó", "q": "Bụi màu vàng mà ong mang từ bông hoa này sang bông hoa khác là ____. Gõ từ đó.",
+         "word": ["phấn hoa"],
+         "reason": "Phấn hoa di chuyển từ bông hoa này sang bông hoa khác để giúp cây tạo ra hạt giống. Gọi tên nó giải thích cách cây lan rộng."}
+      ]
+    },
+    "metamorphosis": {
+      "ui": {
+        "h1": "Con Non Có Giống Không?",
+        "sub": "Có phải mọi con non đều giống bố mẹ không? Đọc các manh mối và mở cả bốn ổ khóa.",
+        "briefH": "Xem chúng biến đổi",
+        "briefP": "Hầu hết con non đều giống bố mẹ — nhưng một số con biến đổi RẤT NHIỀU khi lớn lên, như sâu bướm thành bươm bướm! Chạm vào các manh mối và mở các ổ khóa.",
+        "winStamp": "ĐÃ LỚN LÊN ✓",
+        "winH": "Cao thủ vòng đời!",
+        "winP": "Con đã nuôi lớn một con bươm bướm, tìm ra sâu bướm biến thành gì, và gọi tên nó. Một số con vật biến đổi nhiều đến mức con non không giống bố mẹ!"
+      },
+      "clues": [
+        {"nm": "Giống Nhau", "title": "Hầu Hết Con Non Đều Giống", "body": "Hầu hết con non đều giống bố mẹ. Một con mèo con trông giống một con mèo."},
+        {"nm": "Sâu bướm", "title": "Một Sự Biến Đổi Lớn", "body": "Sâu bướm KHÔNG giống bươm bướm, nhưng nó lớn lên và biến đổi thành bươm bướm!"},
+        {"nm": "Bươm bướm", "title": "Vòng Đời Bươm Bướm", "body": "Bươm bướm bắt đầu là một quả trứng, trở thành sâu bướm, làm một cái kén nhộng, rồi biến thành bươm bướm."},
+        {"nm": "Ếch", "title": "Vòng Đời Ếch", "body": "Ếch bắt đầu là một quả trứng, nở thành nòng nọc có đuôi, rồi mọc chân và trở thành ếch."},
+        {"nm": "Biến thái", "title": "Biến Đổi Rất Nhiều", "body": "Khi một con vật biến đổi hình dạng rất nhiều khi lớn lên, ta gọi đó là sự biến thái."},
+        {"nm": "Sự Thật To Lớn", "title": "Một Sự Thật Về Voi", "body": "Voi có thể nghe bằng chân. Điều đó đúng và kỳ diệu — nhưng nó không liên quan đến việc lớn lên."}
+      ],
+      "locks": [
+        {"title": "Nuôi Lớn Một Con Bươm Bướm", "q": "Hãy sắp xếp vòng đời của bươm bướm theo thứ tự. Chạm vào các ô theo thứ tự.",
+         "pads": ["🦋 Bươm bướm", "🥚 Trứng", "🐛 Sâu bướm", "🛡️ Kén nhộng"],
+         "reason": "Trứng, rồi sâu bướm, rồi kén nhộng, rồi bươm bướm. Con vật biến đổi rất nhiều — đó là sự biến thái."},
+        {"title": "Nó Biến Thành Gì?", "q": "Sâu bướm biến thành gì?",
+         "options": ["Một con ếch.", "Một con bươm bướm.", "Một con chim."],
+         "reason": "Sâu bướm lớn lên và biến đổi thành một con bươm bướm. Con non trông chẳng giống con trưởng thành chút nào!"},
+        {"title": "Con Non Trông Khác Đi", "q": "Chỉ chạm vào những manh mối đúng về các con vật có con non trông khác đi. Bỏ qua sự thật vui.",
+         "items": ["Một con sâu bướm lớn lên thành bươm bướm.", "Một con nòng nọc lớn lên thành ếch.", "Những con non này trông rất khác so với bố mẹ.", "Voi có thể nghe bằng chân."],
+         "reason": "Sâu bướm và nòng nọc biến đổi rất nhiều khi lớn lên. Sự thật về voi thì đúng nhưng không liên quan đến việc lớn lên."},
+        {"title": "Gọi Tên Nó", "q": "Một con sâu bướm lớn lên trở thành một con ____. Gõ từ đó.",
+         "word": ["bươm bướm", "bướm"],
+         "reason": "Một con sâu bướm trở thành một con bươm bướm. Một số con vật biến đổi nhiều đến mức con non và bố mẹ trông khác nhau."}
+      ]
+    }
+  }
+}

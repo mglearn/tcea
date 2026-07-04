@@ -1,0 +1,402 @@
+{
+  "chrome": {
+    "sect.clues": "🔍 Las pistas",
+    "sect.cluesHint": "Toca cada pista para leerla. Puedes abrirlas otra vez cuando quieras.",
+    "sect.locks": "🔒 Los candados",
+    "sect.locksHint": "Usa las pistas para abrir cada candado.",
+    "ui.reset": "↺ Empezar de nuevo",
+    "ui.check": "Revisar",
+    "ui.gotit": "Entendido",
+    "ui.playagain": "Jugar otra vez",
+    "ui.solved": "🔓 ¡Abierto!",
+    "ui.pcount": "{n} de {total} candados abiertos",
+    "ui.wordph": "Escribe aquí",
+    "ui.clear": "borrar",
+    "fb.digit": "Todavía no. Mira las pistas otra vez.",
+    "fb.word": "Mira las pistas para encontrar la palabra correcta.",
+    "fb.mc": "Esa no. Revisa las pistas otra vez.",
+    "fb.multiExtra": "Una elección no es correcta. Elige solo las que hacen sonido.",
+    "fb.multiMissing": "Te faltó una. Encuéntralas todas.",
+    "fb.seq": "Ese orden no. Inténtalo otra vez.",
+    "footer.privacy": "Privacidad y cumplimiento"
+  },
+  "featured": {
+    "ui": {
+      "header.eyebrow": "Escape de Ciencias · Grado 2",
+      "header.h1": "¡Haz ruido!",
+      "header.sub": "¡Tu clase va a presentar un show! Lee las pistas y abre los cuatro candados para aprender cómo se hace el sonido y cómo llega a tus oídos.",
+      "brief.label": "🔊 Tu tarea",
+      "brief.h": "Descubre cómo funciona el sonido",
+      "brief.p": "Los tambores, las guitarras y las voces hacen sonido — pero ¿cómo? El secreto es <b>vibrar</b> (moverse de un lado a otro muy rápido). ¡Toca cada pista y abre los cuatro candados!",
+      "win.stamp": "SONIDO ENCENDIDO ✓",
+      "win.h": "¡Lo lograste!",
+      "win.p": "Aprendiste que el sonido lo hacen las cosas que vibran, y que el sonido viaja por el aire hasta tus oídos. ¡Ahora conoces el secreto de todo tambor, cuerda y voz!",
+      "footer.text": "Escapes de Pensamiento Crítico de Ciencias · Grado 2 · Funciona en tu navegador — sin inicios de sesión, sin datos recopilados.",
+      "footer.disclaimer": "Alineado con los Conocimientos y Habilidades Esenciales de Texas para Ciencias 2021 (§112.4, Grado 2). Paráfrasis de buena fe; confirme antes de adoptarlo.",
+      "crumb.teacher": "‹ Inicio del maestro",
+      "crumb.suite": "Escapes de Pensamiento Crítico de Ciencias"
+    },
+    "clues": [
+      {"nm": "Sonido", "title": "Qué hace el sonido", "body": "El sonido ocurre cuando algo <b>vibra</b> — se mueve de un lado a otro muy rápido."},
+      {"nm": "Tambor", "title": "Un tambor", "body": "Golpea un tambor y la parte de arriba <b>vibra</b> hacia arriba y hacia abajo. Eso hace el sonido del tambor."},
+      {"nm": "Guitarra", "title": "Una guitarra", "body": "Pulsa una cuerda de guitarra y <b>vibra</b> de un lado a otro para hacer una nota."},
+      {"nm": "Tu voz", "title": "Tu voz", "body": "Cuando hablas o cantas, unas partes dentro de tu garganta <b>vibran</b> para hacer tu voz."},
+      {"nm": "Hasta tus oídos", "title": "El sonido viaja", "body": "Las vibraciones se mueven por el <b>aire</b> hasta llegar a tus <b>oídos</b>. Entonces escuchas el sonido."},
+      {"nm": "Dato del cielo", "title": "Un dato del arcoíris", "body": "Un arcoíris aparece después de la lluvia cuando sale el Sol. Eso es verdad y bonito — pero no trata del sonido."}
+    ],
+    "locks": [
+      {"title": "Escucha el tambor", "q": "Golpeas un tambor. Ponlo en orden. Toca los botones en orden.",
+       "pads": ["👂 Lo escuchas", "🥁 Golpeas el tambor", "〰️ La parte de arriba del tambor vibra"],
+       "reason": "Golpeas el tambor, la parte de arriba vibra y el sonido viaja hasta tu oído. Vibrar hace el sonido."},
+      {"title": "¿Qué hace el sonido?", "q": "¿Qué hace un sonido?",
+       "options": ["Algo que está muy quieto.", "Algo que vibra (se mueve de un lado a otro rápido).", "Un color brillante."],
+       "reason": "El sonido viene de algo que vibra. Un objeto quieto y sin movimiento no hace ningún sonido."},
+      {"title": "Cosas que vibran", "q": "Toca SOLO las cosas que hacen sonido al vibrar. Deja fuera el dato divertido.",
+       "items": ["Una cuerda de guitarra pulsada.", "Un tambor que se golpea.", "Tu voz cuando cantas.", "Un arcoíris después de la lluvia."],
+       "reason": "Una cuerda, un tambor y tu voz vibran para hacer sonido. El dato del arcoíris es verdad pero no hace sonido."},
+      {"title": "Nómbralo", "q": "El sonido se hace cuando algo se mueve de un lado a otro rápido. Decimos que va a ____. Escribe la palabra.",
+       "word": ["vibrar", "vibra", "vibrando"],
+       "reason": "Las cosas vibran para hacer sonido. Nombrar la causa es el primer paso de la ciencia."}
+    ]
+  },
+  "conceptBase": {
+    "header.eyebrow": "Ciencias de Grado 2 · Escape rápido",
+    "brief.label": "🎈 ¡Vamos!",
+    "crumb.teacher": "‹ Más escapes de Grado 2",
+    "crumb.suite": "Ciencias de Grado 2",
+    "footer.text": "Ciencias de Grado 2 · Escapes de Pensamiento Crítico en Línea · Funciona en tu navegador — sin inicios de sesión, sin datos recopilados.",
+    "footer.disclaimer": "Alineado con los Conocimientos y Habilidades Esenciales de Texas para Ciencias 2021 (§112.4, Grado 2). Paráfrasis de buena fe; confirme antes de adoptarlo."
+  },
+  "concept": {
+    "solid-liquid": {
+      "ui": {
+        "h1": "¿Sólido o líquido?",
+        "sub": "¿Mantiene su forma o fluye? Lee las pistas y abre los cuatro candados.",
+        "briefH": "A clasificarlos",
+        "briefP": "Un sólido mantiene su forma. Un líquido fluye y toma la forma de su vaso. ¡Toca las pistas y abre los candados para clasificarlos!",
+        "winStamp": "CLASIFICADO ✓",
+        "winH": "¡Buena clasificación!",
+        "winP": "Viste un sólido derretirse en líquido, encontraste el líquido y lo nombraste. Los sólidos mantienen su forma y los líquidos fluyen."
+      },
+      "clues": [
+        {"nm": "Sólido", "title": "Sólidos", "body": "Un sólido mantiene su propia forma. Un bloque, una roca y un cubo de hielo son sólidos."},
+        {"nm": "Líquido", "title": "Líquidos", "body": "Un líquido fluye y toma la forma de su vaso o botella. El agua y el jugo son líquidos."},
+        {"nm": "Tocar", "title": "Textura", "body": "Podemos clasificar los sólidos por cómo se sienten — ásperos o lisos, duros o blandos."},
+        {"nm": "Flexible", "title": "Flexible", "body": "Algunos sólidos se doblan fácilmente (son flexibles), como una liga. Otros son rígidos, como una cuchara."},
+        {"nm": "Caliente o frío", "title": "Temperatura", "body": "También podemos clasificar las cosas por caliente o frío. Un cubo de hielo es frío; la sopa tibia es caliente."},
+        {"nm": "Dato del insecto", "title": "Un dato de la mariposa", "body": "Una mariposa prueba la comida con sus patas. Eso es verdad y divertido — pero no trata de sólidos ni líquidos."}
+      ],
+      "locks": [
+        {"title": "La paleta se derrite", "q": "Una paleta de hielo se calienta. Ponla en orden. Toca los botones en orden.",
+         "pads": ["💧 Gotea como líquido", "🧊 Una paleta de hielo dura y congelada", "☀️ Se calienta"],
+         "reason": "Una paleta de hielo dura y congelada es un sólido. Cuando se calienta se derrite y gotea como líquido. Los sólidos pueden volverse líquidos."},
+        {"title": "¿Cuál es un líquido?", "q": "¿Cuál es un líquido?",
+         "options": ["Un bloque de madera.", "Jugo en un vaso.", "Una roca."],
+         "reason": "El jugo fluye y toma la forma de su vaso, así que es un líquido. Un bloque y una roca mantienen su forma, así que son sólidos."},
+        {"title": "Formas de describir un sólido", "q": "Toca SOLO las formas de describir un sólido. Deja fuera el dato divertido.",
+         "items": ["Cómo se siente (áspero o liso).", "Si se dobla o es rígido.", "Si está caliente o frío.", "Una mariposa prueba con sus patas."],
+         "reason": "La textura, la flexibilidad y la temperatura describen un sólido. El dato de la mariposa es verdad pero no describe el objeto."},
+        {"title": "Nómbralo", "q": "El agua y el jugo fluyen y toman la forma del vaso. Son ____. Escribe la palabra.",
+         "word": ["líquido", "líquidos", "liquido"],
+         "reason": "Un líquido fluye y toma la forma de su vaso. Nombrarlo nos ayuda a clasificar la materia."}
+      ]
+    },
+    "change-it": {
+      "ui": {
+        "h1": "¡Cámbialo!",
+        "sub": "Cortar, doblar, derretir, congelar — ¿cómo cambiamos las cosas? Lee las pistas y abre los cuatro candados.",
+        "briefH": "Haz un cambio",
+        "briefP": "Podemos cambiar cómo se ve algo cortándolo, doblándolo, derritiéndolo o congelándolo. ¡Toca las pistas y abre los candados!",
+        "winStamp": "CAMBIADO ✓",
+        "winH": "¡Buen trabajo!",
+        "winP": "Hiciste un copo de nieve de papel, descubriste cómo hacer hielo y nombraste el cambio. Podemos cambiar la materia de muchas maneras."
+      },
+      "clues": [
+        {"nm": "Cortar", "title": "Cortar", "body": "Cortar cambia la forma del papel o del hilo en pedazos más pequeños."},
+        {"nm": "Doblar", "title": "Doblar", "body": "Doblar papel cambia su forma. ¡Dóblalo y córtalo para hacer un copo de nieve!"},
+        {"nm": "Lijar", "title": "Lijar", "body": "Lijar la madera áspera la hace lisa. Cambia la textura."},
+        {"nm": "Derretir", "title": "Derretir", "body": "El calor puede derretir un sólido en líquido, como la mantequilla que se derrite en una sartén caliente."},
+        {"nm": "Congelar", "title": "Congelar", "body": "El frío puede congelar un líquido en sólido. El agua se congela y se vuelve hielo."},
+        {"nm": "Dato del ave", "title": "Un dato del pingüino", "body": "Los pingüinos no pueden volar pero nadan muy rápido. Eso es verdad y divertido — pero no es una forma de cambiar la materia."}
+      ],
+      "locks": [
+        {"title": "Haz un copo de nieve", "q": "Haz un copo de nieve de papel. Ponlo en orden. Toca los botones en orden.",
+         "pads": ["❄️ Desdobla un copo de nieve", "📄 Una hoja de papel lisa", "🔺 Dóblalo y córtalo"],
+         "reason": "Empieza con una hoja lisa, dóblala y córtala, luego desdobla un copo de nieve. Doblar y cortar cambian la forma del papel."},
+        {"title": "Hacer hielo", "q": "¿Cómo cambias el agua en hielo?",
+         "options": ["Congelarla (ponerla muy fría).", "Cortarla.", "Doblarla."],
+         "reason": "Congelar pone el agua muy fría para que se convierta en hielo sólido."},
+        {"title": "Formas de cambiar la materia", "q": "Toca SOLO las formas de cambiar la materia. Deja fuera el dato divertido.",
+         "items": ["Cortarla.", "Doblarla.", "Derretirla.", "Los pingüinos nadan rápido."],
+         "reason": "Cortar, doblar y derretir cambian la materia. El dato del pingüino es verdad pero no cambia la materia."},
+        {"title": "Nómbralo", "q": "Cuando el agua se pone muy fría, se vuelve hielo. Decimos que se va a ____. Escribe la palabra.",
+         "word": ["congelar", "congela"],
+         "reason": "El frío hace que el agua se congele en hielo. Nombrar el cambio dice qué le hicimos a la materia."}
+      ]
+    },
+    "push-collide": {
+      "ui": {
+        "h1": "Empuja y choca",
+        "sub": "¿Qué pasa cuando las cosas empujan y chocan? Lee las pistas y abre los cuatro candados.",
+        "briefH": "Dale un empujón",
+        "briefP": "Un empujón puede mover cosas y hasta cambiar su forma. Cuando dos cosas chocan, pueden cambiar cómo se mueven. ¡Toca las pistas y abre los candados!",
+        "winStamp": "CHOQUE ✓",
+        "winH": "¡Experto en fuerzas!",
+        "winP": "Rebotaste una pelota en una pared, aplastaste plastilina y nombraste la fuerza. Un empujón puede mover cosas y cambiar su forma."
+      },
+      "clues": [
+        {"nm": "Empujar", "title": "Un empujón", "body": "Un empujón es una fuerza. Un empujón fuerte mueve algo más que un empujón suave."},
+        {"nm": "Chocar", "title": "Las cosas chocan", "body": "Cuando dos cosas se tocan o chocan, pueden cambiar cómo se están moviendo."},
+        {"nm": "Rebotar", "title": "Cambiar de dirección", "body": "Una pelota que pega en una pared rebota de vuelta. Cambia de dirección."},
+        {"nm": "Aplastar", "title": "Cambiar de forma", "body": "Algunas cosas cambian de forma cuando las empujas, como la plastilina que se aplasta."},
+        {"nm": "Fuerte o suave", "title": "Qué tan fuerte empujas", "body": "Un empujón fuerte hace que algo vaya más rápido y más lejos. Un empujón suave lo mueve un poquito."},
+        {"nm": "Dato de altura", "title": "Un dato de la jirafa", "body": "Una jirafa es el animal más alto. Eso es verdad y genial — pero no trata de empujones."}
+      ],
+      "locks": [
+        {"title": "Pelota y pared", "q": "Ruedas una pelota hacia una pared. Ponlo en orden. Toca los botones en orden.",
+         "pads": ["↩️ Rebota de vuelta", "🏀 La pelota rueda", "🧱 Pega en la pared"],
+         "reason": "La pelota rueda, pega en la pared y rebota de vuelta. El choque cambia la dirección de la pelota."},
+        {"title": "Aplasta la plastilina", "q": "¿Qué pasa cuando presionas fuerte plastilina blanda?",
+         "options": ["Cambia de forma (se aplasta).", "Se vuelve líquida.", "No pasa nada."],
+         "reason": "Un empujón puede cambiar la forma de un objeto. La plastilina blanda se aplasta cuando la presionas."},
+        {"title": "Lo que puede hacer un empujón", "q": "Toca SOLO las cosas que puede hacer un empujón. Deja fuera el dato divertido.",
+         "items": ["Una patada fuerte manda la pelota lejos.", "Presionar plastilina cambia su forma.", "Dos carritos chocan y se paran.", "Una jirafa es el animal más alto."],
+         "reason": "Un empujón puede mover una pelota, cambiar una forma y parar un carrito. El dato de la jirafa es verdad pero no es un empujón."},
+        {"title": "Nómbralo", "q": "Cuando alejas algo de ti, le das un ____. Escribe la palabra.",
+         "word": ["empuje", "empujón", "empujon"],
+         "reason": "Un empujón es la fuerza que aleja las cosas. Nombrar la fuerza nos ayuda a explicar cómo se mueven las cosas."}
+      ]
+    },
+    "sun-moon": {
+      "ui": {
+        "h1": "El Sol y la Luna",
+        "sub": "¿Por qué brilla la Luna? Lee las pistas y abre los cuatro candados.",
+        "briefH": "¡Mira hacia arriba!",
+        "briefP": "El Sol es una estrella que da luz y calor. La Luna no hace su propia luz — la toma prestada del Sol. ¡Toca las pistas y abre los candados!",
+        "winStamp": "CIELO LISTO ✓",
+        "winH": "¡Observador de estrellas!",
+        "winP": "Viste cómo brilla la Luna, aprendiste que el Sol es una estrella y lo nombraste. La Luna brilla porque la luz del Sol rebota en ella."
+      },
+      "clues": [
+        {"nm": "El Sol", "title": "El Sol es una estrella", "body": "El Sol es una estrella. Le da a la Tierra luz y calor todos los días."},
+        {"nm": "La Luna", "title": "La luz de la Luna", "body": "La Luna no hace su propia luz. Refleja (rebota) la luz del Sol."},
+        {"nm": "Estrellas", "title": "Estrellas lejanas", "body": "Las estrellas son soles que están muy, muy lejos, por eso se ven pequeñitas para nosotros."},
+        {"nm": "Telescopio", "title": "Usa una herramienta", "body": "Un telescopio es una herramienta que nos ayuda a ver los objetos del cielo más grandes y claros que solo con los ojos."},
+        {"nm": "Rebota", "title": "La luz rebota", "body": "Vemos la Luna porque la luz del Sol pega en ella y rebota hacia nuestros ojos."},
+        {"nm": "Dato del mar", "title": "Un dato del pulpo", "body": "Un pulpo tiene ocho brazos. Eso es verdad y genial — pero no trata del Sol ni de la Luna."}
+      ],
+      "locks": [
+        {"title": "Por qué brilla la Luna", "q": "Ponlo en orden para mostrar por qué vemos la Luna. Toca los botones en orden.",
+         "pads": ["👀 Vemos brillar la Luna", "☀️ El Sol hace luz", "🌙 La luz pega en la Luna"],
+         "reason": "El Sol hace luz, la luz pega en la Luna y rebota hacia nosotros, así vemos brillar la Luna. La Luna no hace su propia luz."},
+        {"title": "¿Qué es el Sol?", "q": "El Sol es una ____.",
+         "options": ["Un planeta.", "Una estrella.", "Una luna."],
+         "reason": "El Sol es una estrella. Le da a la Tierra luz y calor."},
+        {"title": "Sobre la luz de la Luna", "q": "Toca SOLO las pistas verdaderas sobre la luz de la Luna. Deja fuera el dato divertido.",
+         "items": ["La Luna no hace su propia luz.", "La Luna refleja la luz del Sol.", "Vemos la Luna porque la luz del Sol rebota en ella.", "Un pulpo tiene ocho brazos."],
+         "reason": "La Luna brilla rebotando la luz del Sol. El dato del pulpo es verdad pero no trata de la Luna."},
+        {"title": "Nómbralo", "q": "El Sol nos da luz y calor. El Sol es una ____. Escribe la palabra.",
+         "word": ["estrella", "estrellas"],
+         "reason": "El Sol es una estrella. Saber esto nos ayuda a entender el cielo."}
+      ]
+    },
+    "wind-water": {
+      "ui": {
+        "h1": "La Tierra en movimiento",
+        "sub": "¿Cómo se mueven la arena y las rocas? Lee las pistas y abre los cuatro candados.",
+        "briefH": "Míralo moverse",
+        "briefP": "¡El viento y el agua son fuertes! Pueden mover despacio la arena y las rocas de un lugar a otro. ¡Toca las pistas y abre los candados!",
+        "winStamp": "MOVIDO ✓",
+        "winH": "¡Movedor de la Tierra!",
+        "winP": "Construiste una duna de arena con el viento, descubriste qué mueve la arena y lo nombraste. El viento y el agua cambian la tierra despacio."
+      },
+      "clues": [
+        {"nm": "Viento", "title": "El viento mueve la arena", "body": "El viento puede levantar y mover la arena. En una playa sopla la arena en grandes montones llamados dunas."},
+        {"nm": "Agua", "title": "El agua mueve las rocas", "body": "El agua que corre en un río puede llevar arena y rocas y dejarlas lejos."},
+        {"nm": "Dunas", "title": "Dunas de arena", "body": "Una duna es una loma de arena que hace el viento al amontonar arena con el tiempo."},
+        {"nm": "Despacio", "title": "Toma tiempo", "body": "El viento y el agua cambian la tierra despacio, poquito a poquito."},
+        {"nm": "Rocas ruedan", "title": "Rocas que ruedan", "body": "El agua rápida de un río puede voltear y mover rocas pequeñas río abajo."},
+        {"nm": "Dato rosado", "title": "Un dato del flamenco", "body": "Los flamencos son rosados por la comida que comen. Eso es verdad y divertido — pero no mueve arena ni rocas."}
+      ],
+      "locks": [
+        {"title": "Construye una duna", "q": "¿Cómo hace el viento una duna de arena? Ponlo en orden. Toca los botones en orden.",
+         "pads": ["🏜️ La arena se amontona en una duna", "💨 El viento sopla", "🏖️ La arena se mueve"],
+         "reason": "El viento sopla, la arena se mueve y se amontona en una duna. El viento mueve la arena despacio."},
+        {"title": "¿Qué mueve la arena?", "q": "¿Qué puede soplar la arena en una playa hasta formar un gran montón?",
+         "options": ["El viento.", "Un imán.", "La Luna."],
+         "reason": "El viento puede levantar y mover la arena en dunas."},
+        {"title": "¿Qué mueve la Tierra?", "q": "Toca SOLO las cosas que pueden mover la tierra y las rocas. Deja fuera el dato divertido.",
+         "items": ["El viento que sopla la arena.", "Un río que lleva rocas.", "La lluvia que arrastra la tierra.", "Los flamencos son rosados por su comida."],
+         "reason": "El viento, los ríos y la lluvia mueven la tierra y las rocas. El dato del flamenco es verdad pero no mueve nada."},
+        {"title": "Nómbralo", "q": "El aire en movimiento que puede soplar la arena en dunas se llama ____. Escribe la palabra.",
+         "word": ["viento"],
+         "reason": "El viento es aire en movimiento que puede mover la arena. Nombrarlo nos ayuda a explicar cómo cambia la tierra."}
+      ]
+    },
+    "weather-severe": {
+      "ui": {
+        "h1": "Clima salvaje",
+        "sub": "¿Cómo medimos el clima y qué es una tormenta? Lee las pistas y abre los cuatro candados.",
+        "briefH": "Sigue el cielo",
+        "briefP": "Usamos herramientas para medir el clima, y a veces el clima se pone salvaje — como las tormentas y las inundaciones. ¡Toca las pistas y abre los candados!",
+        "winStamp": "SEGUIDO ✓",
+        "winH": "¡Vigilante del clima!",
+        "winP": "Viste crecer una tormenta, encontraste la herramienta para la temperatura y nombraste un clima salvaje. Las herramientas nos ayudan a medir el clima, y algunos climas son severos."
+      },
+      "clues": [
+        {"nm": "Termómetro", "title": "Medir el calor", "body": "Un termómetro es una herramienta que dice qué tan caliente o frío está (la temperatura)."},
+        {"nm": "Pluviómetro", "title": "Medir la lluvia", "body": "Un pluviómetro es una herramienta que mide cuánta lluvia cae."},
+        {"nm": "Huracán", "title": "Huracán", "body": "Un huracán es una tormenta enorme con viento fuerte y mucha lluvia."},
+        {"nm": "Tornado", "title": "Tornado", "body": "Un tornado es un viento rápido que gira y puede levantar cosas."},
+        {"nm": "Inundación", "title": "Inundación", "body": "Una inundación es cuando demasiada agua cubre la tierra que suele estar seca."},
+        {"nm": "Dato dormilón", "title": "Un dato del koala", "body": "Los koalas duermen casi todo el día. Eso es verdad y tierno — pero no es clima."}
+      ],
+      "locks": [
+        {"title": "Crece una tormenta", "q": "Pon una tormenta de lluvia en orden, de la calma a la inundación. Toca los botones en orden.",
+         "pads": ["🌊 Demasiada agua inunda", "☁️ Se juntan nubes oscuras", "🌧️ Cae lluvia fuerte"],
+         "reason": "Se juntan las nubes, cae lluvia fuerte y demasiada agua puede inundar la tierra. El clima puede pasar de la calma a algo severo."},
+        {"title": "Mide el calor", "q": "¿Qué herramienta te dice qué tan caliente o frío está?",
+         "options": ["Un pluviómetro.", "Un termómetro.", "Un telescopio."],
+         "reason": "Un termómetro mide la temperatura — qué tan caliente o frío está. Un pluviómetro mide la lluvia."},
+        {"title": "Clima salvaje", "q": "Toca SOLO los tipos de clima severo (salvaje). Deja fuera el dato divertido.",
+         "items": ["Un huracán.", "Un tornado.", "Una inundación.", "Los koalas duermen casi todo el día."],
+         "reason": "Los huracanes, los tornados y las inundaciones son clima severo. El dato del koala es verdad pero no es clima."},
+        {"title": "Nómbralo", "q": "Un viento rápido que gira y puede levantar cosas es un ____. Escribe la palabra.",
+         "word": ["tornado", "tornados"],
+         "reason": "Un tornado es un viento que gira. Nombrar el clima salvaje nos ayuda a estar seguros."}
+      ]
+    },
+    "recycle": {
+      "ui": {
+        "h1": "Reduce, reutiliza, recicla",
+        "sub": "¿Cómo cuidamos las cosas de la Tierra? Lee las pistas y abre los cuatro candados.",
+        "briefH": "Ayuda a la Tierra",
+        "briefP": "Algunas cosas vienen de la naturaleza y otras las hacen las personas. Podemos reducir, reutilizar y reciclar para cuidar la Tierra. ¡Toca las pistas y abre los candados!",
+        "winStamp": "RECICLADO ✓",
+        "winH": "¡Ayudante de la Tierra!",
+        "winP": "Reciclaste una lata, encontraste un recurso natural y nombraste la palabra. Reducir, reutilizar y reciclar ayudan a cuidar la Tierra."
+      },
+      "clues": [
+        {"nm": "Natural", "title": "Recursos naturales", "body": "Los recursos naturales vienen de la naturaleza, como el agua, la madera y las rocas."},
+        {"nm": "Hecho por gente", "title": "Cosas hechas por gente", "body": "Las cosas hechas por gente las hacen las personas, como una botella de plástico o una lata de metal."},
+        {"nm": "Reduce", "title": "Reducir", "body": "Reducir significa usar menos, como apagar las luces que no estás usando."},
+        {"nm": "Reutiliza", "title": "Reutilizar", "body": "Reutilizar significa usar algo otra vez, como volver a llenar una botella de agua."},
+        {"nm": "Recicla", "title": "Reciclar", "body": "Reciclar significa convertir papel, plástico o metal viejo en algo nuevo."},
+        {"nm": "Dato del ave", "title": "Un dato del loro", "body": "Algunos loros pueden copiar palabras. Eso es verdad y divertido — pero no trata del reciclaje."}
+      ],
+      "locks": [
+        {"title": "Recicla una lata", "q": "Ponlo en orden para reciclar una lata. Toca los botones en orden.",
+         "pads": ["✨ Se vuelve una lata nueva", "🥤 Usas la lata", "♻️ Ponla en el bote de reciclaje"],
+         "reason": "Usa la lata, ponla en el bote de reciclaje y se vuelve una lata nueva. Reciclar convierte cosas viejas en cosas nuevas."},
+        {"title": "De la naturaleza", "q": "¿Cuál es un recurso NATURAL?",
+         "options": ["Un juguete de plástico.", "El agua.", "Una lata de metal."],
+         "reason": "El agua viene de la naturaleza, así que es un recurso natural. Los juguetes de plástico y las latas de metal los hacen las personas."},
+        {"title": "Ayuda a la Tierra", "q": "Toca SOLO las formas de cuidar las cosas de la Tierra. Deja fuera el dato divertido.",
+         "items": ["Reducir — usar menos.", "Reutilizar — usarlo otra vez.", "Reciclar — convertirlo en algo nuevo.", "Algunos loros pueden copiar palabras."],
+         "reason": "Reducir, reutilizar y reciclar ayudan a la Tierra. El dato del loro es verdad pero no ayuda a los recursos."},
+        {"title": "Nómbralo", "q": "Convertir papel, plástico o metal viejo en algo nuevo es ____. Escribe la palabra.",
+         "word": ["reciclar", "recicla"],
+         "reason": "Reciclar es hacer nuevas las cosas viejas. Ayuda a cuidar los recursos de la Tierra."}
+      ]
+    },
+    "producers-consumers": {
+      "ui": {
+        "h1": "¿Quién hace la comida?",
+        "sub": "¿Qué seres vivos hacen comida y cuáles la comen? Lee las pistas y abre los cuatro candados.",
+        "briefH": "Sigue la comida",
+        "briefP": "Las plantas hacen su propia comida. Los animales comen otros seres vivos. Una cadena alimenticia muestra cómo se conectan. ¡Toca las pistas y abre los candados!",
+        "winStamp": "CADENA UNIDA ✓",
+        "winH": "¡Experto en cadenas!",
+        "winP": "Armaste una cadena alimenticia, encontraste al que hace la comida y lo nombraste. Los productores hacen comida y los consumidores comen otros seres vivos."
+      },
+      "clues": [
+        {"nm": "Productor", "title": "Productores", "body": "Un productor hace su propia comida. Las plantas son productores — usan la luz del sol para hacer comida."},
+        {"nm": "Consumidor", "title": "Consumidores", "body": "Un consumidor no puede hacer su propia comida, así que come otros seres vivos. Los animales son consumidores."},
+        {"nm": "Luz del sol", "title": "Las plantas usan el Sol", "body": "Las plantas usan la luz del sol y agua para hacer su comida."},
+        {"nm": "Cadena alimenticia", "title": "Una cadena alimenticia", "body": "Una cadena alimenticia muestra quién come qué: de la planta al que come plantas al que come animales."},
+        {"nm": "Depender", "title": "Los animales necesitan plantas", "body": "Los consumidores dependen de los productores. Sin plantas, los que comen plantas no tendrían comida."},
+        {"nm": "Dato caliente", "title": "Un dato del volcán", "body": "Un volcán lanza lava caliente. Eso es verdad y asombroso — pero no es parte de una cadena alimenticia."}
+      ],
+      "locks": [
+        {"title": "Arma la cadena", "q": "Pon la cadena alimenticia en orden, empezando con la planta. Toca los botones en orden.",
+         "pads": ["🦊 El zorro come el conejo", "🌿 La planta hace comida", "🐰 El conejo come la planta"],
+         "reason": "La planta (productor) hace comida, un conejo come la planta y un zorro come el conejo. Los consumidores dependen de los productores."},
+        {"title": "El que hace la comida", "q": "¿Cuál es un productor que hace su propia comida?",
+         "options": ["Un zorro.", "Una planta.", "Un conejo."],
+         "reason": "Una planta es un productor — hace su propia comida con la luz del sol. Los zorros y los conejos son consumidores."},
+        {"title": "Encuentra los consumidores", "q": "Toca SOLO los consumidores (seres vivos que comen otros seres vivos). Deja fuera el dato divertido.",
+         "items": ["Un conejo.", "Un zorro.", "Un pájaro.", "Un volcán lanza lava."],
+         "reason": "Un conejo, un zorro y un pájaro comen otros seres vivos, así que son consumidores. El dato del volcán es verdad pero no come."},
+        {"title": "Nómbralo", "q": "Un ser vivo que hace su propia comida, como una planta, es un ____. Escribe la palabra.",
+         "word": ["productor", "productores"],
+         "reason": "Un productor hace su propia comida. Es el comienzo de toda cadena alimenticia."}
+      ]
+    },
+    "pollination": {
+      "ui": {
+        "h1": "Mover semillas y polen",
+        "sub": "¿Cómo reciben ayuda las plantas para esparcirse? Lee las pistas y abre los cuatro candados.",
+        "briefH": "Ayuda a las plantas",
+        "briefP": "Las plantas no pueden caminar, así que reciben ayuda para mover el polen y las semillas — de las abejas, el viento y los animales. ¡Toca las pistas y abre los candados!",
+        "winStamp": "ESPARCIDO ✓",
+        "winH": "¡Ayudante de plantas!",
+        "winP": "Ayudaste a una abeja a mover polen, descubriste qué mueve las semillas y lo nombraste. Las abejas, el viento y los animales ayudan a las plantas a esparcirse y crecer."
+      },
+      "clues": [
+        {"nm": "Abejas", "title": "Las abejas llevan polen", "body": "Una abeja se posa en una flor, se le pega polen en el cuerpo y lo lleva a la siguiente flor."},
+        {"nm": "Viento", "title": "El viento mueve semillas", "body": "El viento puede soplar semillas ligeras, como las semillas esponjosas de un diente de león, a un lugar nuevo."},
+        {"nm": "Animales", "title": "Los animales llevan semillas", "body": "Las semillas pegajosas, como los abrojos, pueden pegarse al pelaje de un animal y viajar a un lugar nuevo."},
+        {"nm": "Polen", "title": "Qué hace el polen", "body": "Mover el polen de flor en flor ayuda a las plantas a hacer nuevas semillas."},
+        {"nm": "Plantas nuevas", "title": "Crecen plantas nuevas", "body": "Cuando las semillas caen en un lugar nuevo, allí pueden crecer plantas nuevas."},
+        {"nm": "Dato del cielo", "title": "Un dato del rayo", "body": "El rayo es muy caliente. Eso es verdad y poderoso — pero no mueve polen ni semillas."}
+      ],
+      "locks": [
+        {"title": "Una abeja ocupada", "q": "¿Cómo ayuda una abeja a una flor? Ponlo en orden. Toca los botones en orden.",
+         "pads": ["🌼 Lleva el polen a la siguiente flor", "🐝 La abeja se posa en una flor", "🌸 El polen se pega a la abeja"],
+         "reason": "La abeja se posa, el polen se le pega y lo lleva a la siguiente flor. Eso ayuda a la planta a hacer semillas."},
+        {"title": "Mueve las semillas", "q": "¿Qué ayuda a mover las semillas esponjosas de un diente de león a un lugar nuevo?",
+         "options": ["El viento.", "Un imán.", "La Luna."],
+         "reason": "El viento puede soplar las semillas ligeras del diente de león a un lugar nuevo donde pueden crecer plantas nuevas."},
+        {"title": "Ayudar a las plantas a esparcirse", "q": "Toca SOLO las cosas que ayudan a mover el polen o las semillas. Deja fuera el dato divertido.",
+         "items": ["Una abeja que lleva polen.", "El viento que sopla semillas.", "Un abrojo que se pega al pelaje de un animal.", "El rayo es muy caliente."],
+         "reason": "Las abejas, el viento y los animales mueven el polen y las semillas. El dato del rayo es verdad pero no mueve nada."},
+        {"title": "Nómbralo", "q": "El polvo amarillo que las abejas llevan de flor en flor es ____. Escribe la palabra.",
+         "word": ["polen"],
+         "reason": "El polen se mueve de flor en flor para ayudar a las plantas a hacer semillas. Nombrarlo explica cómo se esparcen las plantas."}
+      ]
+    },
+    "metamorphosis": {
+      "ui": {
+        "h1": "¿Los bebés se parecen?",
+        "sub": "¿Todos los bebés se parecen a sus padres? Lee las pistas y abre los cuatro candados.",
+        "briefH": "Míralos cambiar",
+        "briefP": "La mayoría de los animales bebés se parecen a sus padres — pero algunos cambian MUCHO cuando crecen, ¡como una oruga que se vuelve mariposa! Toca las pistas y abre los candados.",
+        "winStamp": "CRECIÓ ✓",
+        "winH": "¡Experto en ciclos de vida!",
+        "winP": "Hiciste crecer una mariposa, descubriste en qué se convierte una oruga y la nombraste. ¡Algunos animales cambian tanto que el bebé no se parece al padre!"
+      },
+      "clues": [
+        {"nm": "Se parecen", "title": "Casi todos los bebés se parecen", "body": "La mayoría de los animales bebés se parecen a sus padres. Un gatito se parece a un gato."},
+        {"nm": "Oruga", "title": "Un gran cambio", "body": "Una oruga NO se parece a una mariposa, ¡pero crece y se convierte en una!"},
+        {"nm": "Mariposa", "title": "Vida de la mariposa", "body": "Una mariposa empieza como huevo, se vuelve oruga, hace una crisálida y luego se convierte en mariposa."},
+        {"nm": "Rana", "title": "Vida de la rana", "body": "Una rana empieza como huevo, sale como renacuajo con cola, luego le crecen patas y se vuelve rana."},
+        {"nm": "Metamorfosis", "title": "Cambiar mucho", "body": "Cuando un animal cambia mucho de forma al crecer, lo llamamos metamorfosis."},
+        {"nm": "Dato grande", "title": "Un dato del elefante", "body": "Los elefantes pueden oír con las patas. Eso es verdad y asombroso — pero no trata de crecer."}
+      ],
+      "locks": [
+        {"title": "Haz crecer una mariposa", "q": "Pon la vida de la mariposa en orden. Toca los botones en orden.",
+         "pads": ["🦋 Mariposa", "🥚 Huevo", "🐛 Oruga", "🛡️ Crisálida"],
+         "reason": "Huevo, luego oruga, luego crisálida, luego mariposa. El animal cambia mucho — eso es metamorfosis."},
+        {"title": "¿En qué se convierte?", "q": "¿En qué se convierte una oruga?",
+         "options": ["Una rana.", "Una mariposa.", "Un pájaro."],
+         "reason": "Una oruga crece y se convierte en mariposa. ¡El bebé no se parece nada al adulto!"},
+        {"title": "Bebés que se ven diferentes", "q": "Toca SOLO las pistas verdaderas sobre animales cuyos bebés se ven diferentes. Deja fuera el dato divertido.",
+         "items": ["Una oruga se convierte en mariposa.", "Un renacuajo se convierte en rana.", "Estos bebés se ven muy diferentes a sus padres.", "Los elefantes pueden oír con las patas."],
+         "reason": "Las orugas y los renacuajos cambian mucho al crecer. El dato del elefante es verdad pero no trata de crecer."},
+        {"title": "Nómbralo", "q": "Una oruga crece hasta ser una ____. Escribe la palabra.",
+         "word": ["mariposa", "mariposas"],
+         "reason": "Una oruga se convierte en mariposa. Algunos animales cambian tanto que el bebé y el padre se ven diferentes."}
+      ]
+    }
+  }
+}

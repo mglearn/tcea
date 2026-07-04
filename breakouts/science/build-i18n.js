@@ -47,7 +47,7 @@ function zipLocks(enLocks, tLocks) {
     if (l.type === 'multi' && Array.isArray(t.items)) out.items = l.items.map((it, j) => Object.assign({}, it, { t: t.items[j] ?? it.t }));
     if (l.type === 'seq' && Array.isArray(t.pads)) out.pads = l.pads.map((p, j) => Object.assign({}, p, { e: t.pads[j] ?? p.e }));
     if (l.type === 'word') {
-      const tw = Array.isArray(t.word) ? t.word : [];
+      const tw = Array.isArray(t.word) ? t.word : (typeof t.word === 'string' && t.word ? [t.word] : []);
       out.answer = [...new Set([...tw, ...l.answer])];
     }
     return out;
