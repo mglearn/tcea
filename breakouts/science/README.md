@@ -39,17 +39,16 @@ thinking move**. All are solvable from the evidence alone.
 |-------|-------------------|--------------------------------------------------|
 | **6** | ✅ Cargo Ship Rescue | ✅ **10 built** — states of matter, mixtures, periodic table, density, chemical change, forces, waves, seasons & tides, Earth's systems, ecosystems & cells |
 | **7** | ✅ Rescue Run | ✅ **10 built** — elements & compounds, solutions, motion & graphs, heat transfer, solar system, plate tectonics, watersheds, energy pyramids, body systems, classifying life |
-| **8** | ✅ Launch Control | ⏳ planned (~8–10): reactions & conservation of mass, Newton's laws, waves/EM spectrum, stars & universe, weather & climate & carbon cycle, succession, cells & heredity |
+| **8** | ✅ Launch Control | ✅ **10 built** — classifying matter, acids & bases, conservation of mass, Newton's laws, waves & EM spectrum, stars & galaxies, weather systems, carbon & climate, ecosystem change, cells & heredity |
+
+Grades 6–8 are now **complete**: 3 featured breakouts + **30 concept breakouts** (10 per grade).
 
 **Anticipated next, in order:**
-1. **Grade 8 "More" set** (8–10 concept breakouts) — same `more.js` + `more.html` +
-   `play.html` pattern as Grades 6–7; wire the "More breakouts" pill on the Grade 8 hub
-   (currently "coming soon").
-2. **Grades 1–5** (elementary §112.A) — one hub + featured breakout + concept set + STEM
+1. **Grades 1–5** (elementary §112.A) — one hub + featured breakout + concept set + STEM
    challenge per grade (TEA grade-1–5 design-challenge PDFs are in `info/`).
-3. **Native translations** — per-breakout `_i18n` files for the 7 languages (today the
+2. **Native translations** — per-breakout `_i18n` files for the 7 languages (today the
    non-English UI falls back to high-quality English; content still works in all 7).
-4. **Generated correlation page** and per-suite catalog polish as the set grows.
+3. **Generated correlation page** and per-suite catalog polish as the set grows.
 
 ## Build & verify
 
