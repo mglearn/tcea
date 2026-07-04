@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Answer Key — Make Some Noise! (Grade 2)</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b3d5c;--sci:#0a6b52;--gold:#f0a316;--paper:#f2f8fb;--ink:#122430}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;background:radial-gradient(ellipse 60% 45% at 85% -5%,rgba(240,163,22,.16)0%,transparent 60%),radial-gradient(ellipse 55% 45% at 0% 100%,rgba(10,107,82,.12)0%,transparent 60%),var(--paper);color:var(--ink);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.gate{background:#fff;border:1px solid rgba(11,61,92,.14);border-radius:16px;padding:32px 28px;max-width:420px;width:100%;text-align:center;box-shadow:0 12px 34px rgba(11,61,92,.12)}
+h1{font-family:'Fredoka',sans-serif;color:var(--navy);font-size:1.4rem;margin-bottom:6px}
+p.sub{color:#4a5d6b;font-size:.9rem;margin-bottom:20px}
+input{width:100%;padding:12px 14px;border:2px solid rgba(11,61,92,.25);border-radius:10px;background:#f2f8fb;color:var(--ink);font-size:1rem;font-family:inherit;margin-bottom:12px}
+input:focus{outline:none;border-color:var(--sci)}
+button{width:100%;background:var(--sci);color:#fff;border:none;border-radius:10px;padding:12px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1rem;cursor:pointer}
+button:hover{background:#0b3d5c}
+.err{color:#c0392b;font-size:.85rem;min-height:18px;margin-top:8px}
+.req{margin-top:18px;padding-top:16px;border-top:1px solid rgba(11,61,92,.12);font-size:.82rem;color:#4a5d6b;line-height:1.5}
+#out{display:none;background:#fff;color:#122430;max-width:860px;width:100%;margin:0 auto;border-radius:12px;padding:8px 4px}
+</style>
+</head>
+<body>
+<div class="gate" id="gate">
+  <h1>🔒 Teacher Answer Key</h1>
+  <p class="sub">Make Some Noise! · Grade 2 · enter the password to unlock the answers and rationales.</p>
+  <input type="password" id="pw" placeholder="Password" autocomplete="off">
+  <button id="go">Unlock</button>
+  <div class="err" id="err"></div>
+  <p class="req">Don't have the passcode? Ask your suite administrator for the Grade 2 answer-key password. Keys are kept out of the student pages.</p>
+</div>
+<div id="out"></div>
+<script>
+const PAYLOAD = {"salt":"vu5hD9NY3hdCIzOD6j1UOQ==","iv":"O7J/fLMhwd/N2ouu","iter":250000,"ct":"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"};
+const b64d = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+async function unlock(pw){
+  const salt=b64d(PAYLOAD.salt), iv=b64d(PAYLOAD.iv), ct=b64d(PAYLOAD.ct);
+  const baseKey=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
+  const key=await crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:PAYLOAD.iter,hash:'SHA-256'},baseKey,{name:'AES-GCM',length:256},false,['decrypt']);
+  const plain=await crypto.subtle.decrypt({name:'AES-GCM',iv},key,ct);
+  return new TextDecoder().decode(plain);
+}
+document.getElementById('go').onclick=async()=>{
+  const pw=document.getElementById('pw').value;
+  try{
+    const html=await unlock(pw);
+    document.getElementById('gate').style.display='none';
+    const out=document.getElementById('out');
+    out.style.display='block'; out.innerHTML=html;
+  }catch(e){ document.getElementById('err').textContent='Incorrect password. Try again.'; }
+};
+document.getElementById('pw').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('go').click();});
+</script>
+</body>
+</html>

@@ -14,10 +14,11 @@ const crypto = require('crypto');
 
 const grade = String(process.argv[2] || '').trim();
 const pw = process.argv[3] || process.env.AK_PW;
-if (!/^[678]$/.test(grade) || !pw) {
-  console.error("Usage: node build-answer-key.js <6|7|8> <password>");
+if (!/^[1-8]$/.test(grade) || !pw) {
+  console.error("Usage: node build-answer-key.js <1-8> <password>");
   process.exit(1);
 }
+const SECTION = { '1': '112.3', '2': '112.4', '3': '112.5', '4': '112.6', '5': '112.7', '6': '112.26', '7': '112.27', '8': '112.28' }[grade];
 
 const ROOT = __dirname;
 const ITER = 250000;
@@ -48,7 +49,7 @@ em{color:#4a5d6b}
 .clue{font-size:.88rem;color:#4a5d6b;margin:5px 0}
 </style>
 <h1>Answer Key — ${esc(title)} (Grade ${grade})</h1>
-<p>Teacher use only. Every lock is answerable from the evidence board alone; the rationale models the reasoning students should be able to state. Aligned to the 2021 Texas science TEKS (§112.2${grade}).</p>
+<p>Teacher use only. Every lock is answerable from the evidence board alone; the rationale models the reasoning students should be able to state. Aligned to the 2021 Texas science TEKS (§${SECTION}).</p>
 <h2>Evidence board (6 clues — 1 is a decoy)</h2>`;
 const decoyId = en.clues[en.clues.length - 1].id; // c6 is the true-but-off-topic decoy in every science breakout
 en.clues.forEach(c => {

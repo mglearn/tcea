@@ -38,7 +38,8 @@ thinking move**. All are solvable from the evidence alone.
 | Grade | Featured breakout | "More" set (one short breakout per key concept) |
 |-------|-------------------|--------------------------------------------------|
 | **1** | ✅ Push, Pull, and Play! | ✅ **10 built** — sorting, hot & cold, seasons, soil, water, weather, saving water, living/nonliving, food chains, animals |
-| **2–5** | ⏳ planned | ⏳ planned |
+| **2** | ✅ Make Some Noise! | ✅ **10 built** — solids & liquids, changing matter, pushes, Sun & Moon, wind & water, wild weather, recycling, producers & consumers, pollen & seeds, metamorphosis |
+| **3–5** | ⏳ planned | ⏳ planned |
 | **6** | ✅ Cargo Ship Rescue | ✅ **10 built** — states of matter, mixtures, periodic table, density, chemical change, forces, waves, seasons & tides, Earth's systems, ecosystems & cells |
 | **7** | ✅ Rescue Run | ✅ **10 built** — elements & compounds, solutions, motion & graphs, heat transfer, solar system, plate tectonics, watersheds, energy pyramids, body systems, classifying life |
 | **8** | ✅ Launch Control | ✅ **10 built** — classifying matter, acids & bases, conservation of mass, Newton's laws, waves & EM spectrum, stars & galaxies, weather systems, carbon & climate, ecosystem change, cells & heredity |
@@ -47,11 +48,12 @@ Grades 6–8 are **complete** (3 featured + 30 concept breakouts). **Grade 1 is 
 (featured *Push, Pull, and Play!* + 10 concept breakouts, pitched to early readers).
 
 **Anticipated next, in order:**
-1. **Grades 2–5** (elementary §112.A) — one hub + featured breakout + ~8–10 concept set + STEM
-   challenge + word bank + Skills&TEKS per grade, same pattern as Grade 1 (TEA grade-2–5
+1. **Grades 3–5** (elementary §112.A) — one hub + featured breakout + ~8–10 concept set + STEM
+   challenge + word bank + Skills&TEKS per grade, same pattern as Grades 1–2 (TEA grade-3–5
    design-challenge PDFs are in `info/`, which is local-only / gitignored).
-2. **Answer keys for grades 1–5** — `node build-answer-key.js` currently supports 6–8; extend to
-   1–5 once passcodes are provided (Grade 1 hub omits the answer-key pill until then).
+2. **Answer keys** — `node build-answer-key.js <1-8> <password>` now supports every grade. Grades
+   2–8 keys are generated (passwords passed at run time, never committed). Grade 1 still needs a
+   passcode (its hub omits the answer-key pill until one is provided).
 3. **Native translations** — per-breakout `_i18n` files for the 7 languages (today the
    non-English UI falls back to high-quality English; content still works in all 7).
 4. **Generated correlation page** and per-suite catalog polish as the set grows.
