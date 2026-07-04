@@ -1,0 +1,367 @@
+{
+  "chrome": {
+    "sect.clues": "🔍 Bằng Chứng",
+    "sect.cluesHint": "Chạm vào từng bằng chứng để đọc. (Bạn có thể mở lại bất cứ lúc nào.)",
+    "sect.locks": "🔒 Các Ổ Khóa",
+    "sect.locksHint": "Chỉ dùng các bằng chứng ở trên để mở từng ổ khóa.",
+    "ui.reset": "↺ Bắt đầu lại",
+    "ui.check": "Kiểm tra",
+    "ui.gotit": "Hiểu rồi",
+    "ui.playagain": "Chơi Lại",
+    "ui.solved": "🔓 Đã Mở!",
+    "ui.pcount": "Đã mở {n} trên {total} ổ khóa",
+    "ui.wordph": "Nhập câu trả lời của bạn",
+    "ui.clear": "xóa",
+    "fb.digit": "Con số đó không khớp với bằng chứng. Hãy kiểm tra lại.",
+    "fb.word": "Hãy xem bằng chứng để tìm từ phù hợp.",
+    "fb.mc": "Đáp án đó không được bằng chứng ủng hộ. Hãy xem lại.",
+    "fb.multiExtra": "Một lựa chọn không phải là bằng chứng vững chắc. Bằng chứng vững chắc là những sự thật mà bằng chứng thực sự chứng minh về các lực.",
+    "fb.multiMissing": "Bạn còn thiếu một bằng chứng vững chắc. Hãy tìm cho đủ.",
+    "fb.seq": "Thứ tự đó không khớp với cách năng lượng truyền đi. Hãy thử lại.",
+    "footer.privacy": "Quyền riêng tư & tuân thủ"
+  },
+  "featured": {
+    "ui": {
+      "header.eyebrow": "Breakout Tư Duy Phản Biện Khoa Học · Lớp 6",
+      "header.h1": "Giải Cứu Tàu Hàng",
+      "header.sub": "Tàu chở hàng TEKS Voyager bị kẹt tại Cảng Houston. Con tàu chìm thấp một cách nguy hiểm, một thùng hàng trên boong cứ trượt đi, và cần cẩu bốc dỡ bị mất điện. Bạn là kỹ sư cảng. Hãy đọc bằng chứng, mở cả bốn ổ khóa, và cho phép con tàu ra khơi.",
+      "brief.label": "⚓ Nhiệm Vụ",
+      "brief.h": "Cho phép tàu Voyager ra khơi",
+      "brief.p": "Người giám sát bến tàu gọi bộ đàm cho bạn: <b>“Con tàu cứ chìm thấp mãi, một thùng hàng trượt ngang boong, và cần cẩu bị ngắt điện.”</b> Mỗi vấn đề đều có một lý do khoa học ẩn trong bằng chứng — khối lượng riêng, lực và năng lượng. Hãy mở từng bằng chứng, cân nhắc điều nó thực sự chứng minh, và mở cả bốn ổ khóa để đưa tàu Voyager ra khơi an toàn.",
+      "footer.text": "Breakout Tư Duy Phản Biện Khoa Học · Chạy hoàn toàn trên trình duyệt của bạn — không đăng nhập, không thu thập dữ liệu.",
+      "win.stamp": "ĐƯỢC PHÉP RA KHƠI ✓",
+      "win.h": "Tàu Voyager ra khơi!",
+      "win.p": "Bạn đã dùng khối lượng riêng để giải thích vì sao con tàu thép nổi, chứng minh các lực trên thùng hàng cân bằng, gọi tên Định Luật Ba của Newton, và lần theo năng lượng của cần cẩu mà không mất một jun nào. Đó chính là cách các kỹ sư hàng hải giữ an toàn cho tàu thật.",
+      "footer.disclaimer": "Phù hợp với Kiến Thức và Kỹ Năng Thiết Yếu về Khoa Học của Texas năm 2021 (§112.26, Lớp 6). Diễn giải với thiện chí; hãy xác nhận trước khi áp dụng.",
+      "crumb.teacher": "‹ Khởi động cho giáo viên",
+      "crumb.suite": "Các Breakout Tư Duy Phản Biện Khoa Học"
+    },
+    "clues": [
+      {
+        "nm": "Khối Lượng Riêng Quyết Định",
+        "title": "Khối Lượng Riêng Quyết Định Ai Nổi",
+        "body": "Khối lượng riêng = khối lượng ÷ thể tích. Một vật nổi trong chất lỏng khi khối lượng riêng <b>tổng thể</b> của nó <b>nhỏ hơn</b> khối lượng riêng của chất lỏng. Thép đặc hơn nước rất nhiều — một thanh thép đặc sẽ chìm. Nhưng thân tàu rỗng trải cùng khối lượng đó trên một thể tích khổng lồ, nên khối lượng riêng tổng thể của con tàu giảm xuống dưới nước, và nó nổi."
+      },
+      {
+        "nm": "Chìm Quá Thấp",
+        "title": "Vì Sao Tàu Voyager Chìm Thấp",
+        "body": "Mỗi thùng hàng được xếp lên làm tăng <b>khối lượng</b> nhưng không tăng <b>thể tích</b> của thân tàu. Nhiều khối lượng hơn trong cùng một thể tích đẩy khối lượng riêng tổng thể của con tàu tiến gần bằng nước. Xếp quá vạch mớn nước được sơn và khối lượng riêng tổng thể vượt qua nước — khi đó con tàu ngừng nổi và bắt đầu chìm."
+      },
+      {
+        "nm": "Thùng Hàng Trượt",
+        "title": "Thùng Hàng Đã Trượt",
+        "body": "Một thùng hàng nằm trên boong phẳng. Trọng lực kéo nó xuống; <b>lực pháp tuyến</b> của boong đẩy lên với độ lớn bằng nhau; <b>ma sát</b> giữ nó lại trước một cú đẩy nhẹ. Khi tất cả các lực tác dụng lên thùng hàng cộng lại bằng <b>không</b>, hợp lực bằng không và chuyển động của nó không thay đổi — đó là <b>cân bằng</b>. Một con sóng thêm một lực đẩy ngang nữa, hợp lực không còn bằng không, và thùng hàng trượt đi."
+      },
+      {
+        "nm": "Đẩy Ngược Lại",
+        "title": "Cú Đẩy Của Chân Vịt",
+        "body": "<b>Định Luật Ba</b> của Newton: với mỗi lực đều có một lực có độ lớn bằng nhau và ngược chiều tác dụng lên vật <b>kia</b>. Chân vịt đẩy nước <b>về phía sau</b>; nước đẩy con tàu <b>về phía trước</b>. Hai lực này có độ lớn bằng nhau và ngược chiều, nhưng chúng tác dụng lên <b>hai vật khác nhau</b>, nên chúng không triệt tiêu nhau — và con tàu tiến lên."
+      },
+      {
+        "nm": "Năng Lượng Của Cần Cẩu",
+        "title": "Năng Lượng Của Cần Cẩu Đi Về Đâu",
+        "body": "Cần cẩu chạy bằng <b>năng lượng điện</b> từ bến tàu. Nó nâng thùng hàng lên cao, tích trữ <b>thế năng hấp dẫn</b>. Khi hạ thùng hàng xuống, năng lượng tích trữ đó chuyển thành <b>động năng</b> của chuyển động. Năng lượng không bao giờ được tạo ra hay mất đi — nó chỉ truyền đi và đổi dạng. Hãy lần theo nó đúng thứ tự và sẽ không mất chút nào."
+      },
+      {
+        "nm": "Sự Thật Của Thợ Lặn",
+        "title": "Sự Thật Ưa Thích Của Thợ Lặn Cảng",
+        "body": "Bạch tuộc khổng lồ Thái Bình Dương có <b>ba trái tim</b> và máu màu xanh dựa trên đồng, và có thể chui qua bất kỳ khe hở nào lớn hơn cái mỏ của nó. Các thợ lặn cảng rất thích bắt gặp một con gần cọc cầu tàu. Đây là một sự thật đúng và tuyệt vời — nhưng nó không cho bạn biết gì về việc xếp hàng hay điều khiển tàu Voyager."
+      }
+    ],
+    "locks": [
+      {
+        "title": "Lần Theo Năng Lượng Của Cần Cẩu",
+        "q": "Hãy sắp xếp năng lượng của cần cẩu theo thứ tự nó chuyển hóa khi nâng rồi hạ một thùng hàng. Chạm vào các ô theo thứ tự.",
+        "pads": ["⬆️ Thế năng", "🔌 Điện năng", "⬇️ Động năng"],
+        "reason": "Năng lượng điện nâng thùng hàng lên (tích trữ thế năng), rồi hạ nó xuống giải phóng động năng. Lần theo sự truyền năng lượng đúng thứ tự cho thấy năng lượng được bảo toàn, không mất đi."
+      },
+      {
+        "title": "Vì Sao Tàu Thép Nổi",
+        "q": "Một thanh thép đặc thì chìm, thế mà tàu Voyager bằng thép lại nổi. Bằng chứng ủng hộ lời giải thích nào?",
+        "options": [
+          "Con tàu đơn giản là nhẹ hơn thanh thép.",
+          "Thân tàu rỗng trải khối lượng của con tàu trên một thể tích lớn, nên khối lượng riêng tổng thể của nó nhỏ hơn nước.",
+          "Nước đẩy mạnh hơn lên vật lớn so với vật nhỏ."
+        ],
+        "reason": "Khối lượng riêng so sánh khối lượng với thể tích. Tạo hình thép thành thân tàu rỗng làm tăng thể tích, khiến khối lượng riêng tổng thể nhỏ hơn nước — và đó là điều làm nó nổi."
+      },
+      {
+        "title": "Cân Bằng Hay Không?",
+        "q": "Trước khi sóng ập tới, thùng hàng nằm hoàn toàn yên. CHỈ chọn những bằng chứng vững chắc cho thấy các lực trên thùng hàng đã CÂN BẰNG (hợp lực = không). Bỏ qua sự thật đúng nhưng lạc đề.",
+        "items": [
+          "Trọng lực kéo xuống và lực pháp tuyến của boong đẩy lên có độ lớn bằng nhau.",
+          "Ma sát triệt tiêu một cú đẩy ngang nhẹ, nên thùng hàng không nhúc nhích.",
+          "Thùng hàng nằm yên — chuyển động của nó không thay đổi.",
+          "Bạch tuộc khổng lồ Thái Bình Dương có ba trái tim và máu màu xanh."
+        ],
+        "reason": "Các lực cân bằng cộng lại bằng không, nên chuyển động của vật không thay đổi. Bằng chứng vững chắc chỉ là những gì cho thấy hợp lực bằng không — sự thật về bạch tuộc là đúng nhưng không liên quan."
+      },
+      {
+        "title": "Gọi Tên Định Luật",
+        "q": "Chân vịt đẩy nước về phía sau và nước đẩy con tàu về phía trước — độ lớn bằng nhau, ngược chiều, trên hai vật khác nhau. Đây là định luật nào của Newton? Hãy nhập từ chỉ số (ví dụ: “thứ nhất”).",
+        "word": ["thứ ba", "định luật ba", "định luật ba của newton", "định luật thứ ba của newton", "định luật iii", "phản lực", "tác dụng-phản tác dụng", "ba"],
+        "reason": "Đây là Định Luật Ba của Newton. Cặp lực theo Định Luật Ba có độ lớn bằng nhau và ngược chiều nhưng tác dụng lên hai vật khác nhau, nên chúng không bao giờ triệt tiêu nhau — đó chính là lý do con tàu tiến về phía trước."
+      }
+    ]
+  },
+  "conceptBase": {
+    "header.eyebrow": "Khoa Học Lớp 6 · Breakout Khái Niệm Nhanh",
+    "brief.label": "🎯 Khởi Động",
+    "crumb.teacher": "‹ Thêm breakout Lớp 6",
+    "crumb.suite": "Khoa Học Lớp 6",
+    "footer.text": "Khoa Học Lớp 6 · Breakout Tư Duy Phản Biện Trực Tuyến · Chạy hoàn toàn trên trình duyệt của bạn — không đăng nhập, không thu thập dữ liệu.",
+    "footer.disclaimer": "Phù hợp với Kiến Thức và Kỹ Năng Thiết Yếu về Khoa Học của Texas năm 2021 (§112.26, Lớp 6). Diễn giải với thiện chí; hãy xác nhận trước khi áp dụng."
+  },
+  "concept": {
+    "states-matter": {
+      "ui": {
+        "h1": "Các Trạng Thái Của Vật Chất",
+        "sub": "Rắn, lỏng hay khí? Tất cả tùy thuộc vào cách các hạt nhỏ chuyển động. Hãy đọc bằng chứng và mở cả bốn ổ khóa.",
+        "briefH": "Cùng một chất, khác trạng thái",
+        "briefP": "Một cục nước đá, một vũng nước, và hơi nước đều là nước — nhưng các hạt hành xử rất khác nhau trong mỗi trạng thái. Hãy dùng bằng chứng để phân biệt chất rắn, chất lỏng và chất khí.",
+        "winStamp": "ĐÃ PHÂN LOẠI TRẠNG THÁI ✓",
+        "winH": "Bạn nắm rõ các trạng thái!",
+        "winP": "Bạn đã sắp xếp các trạng thái theo năng lượng của hạt, nhận ra điều gì làm cho chất khí là chất khí, và gọi tên năng lượng của các hạt chuyển động. Đó là cách vật chất đổi dạng."
+      },
+      "clues": [
+        {"nm": "Rắn", "title": "Chất Rắn Giữ Nguyên Hình Dạng", "body": "Trong chất rắn, các hạt xếp sát nhau và chỉ dao động tại chỗ. Chất rắn giữ nguyên hình dạng và thể tích của nó."},
+        {"nm": "Lỏng", "title": "Chất Lỏng Chảy", "body": "Trong chất lỏng, các hạt ở gần nhau nhưng trượt qua nhau. Chất lỏng giữ nguyên thể tích nhưng mang hình dạng của vật chứa."},
+        {"nm": "Khí", "title": "Chất Khí Lấp Đầy", "body": "Trong chất khí, các hạt ở xa nhau và di chuyển rất nhanh. Chất khí lan ra lấp đầy bất kỳ vật chứa nào."},
+        {"nm": "Thêm Nhiệt", "title": "Nhiệt Thêm Năng Lượng", "body": "Đun nóng vật chất cung cấp cho các hạt của nó nhiều động năng hơn, nên chúng chuyển động nhanh hơn và giãn ra xa nhau. Đủ nhiệt có thể làm tan chảy chất rắn hoặc đun sôi chất lỏng."},
+        {"nm": "Bớt Nhiệt", "title": "Làm Lạnh Làm Chậm Lại", "body": "Làm lạnh lấy bớt năng lượng đi, nên các hạt chậm lại và xếp sát nhau hơn. Đó là cách chất khí ngưng tụ hoặc chất lỏng đóng băng."},
+        {"nm": "Sự Thật Bầu Trời", "title": "Một Sự Thật Về Mây", "body": "Một đám mây tích lớn có thể chứa hơn một triệu pao giọt nước. Đó là một sự thật thú vị — nhưng nó không cho bạn biết các hạt chuyển động thế nào trong chất rắn, lỏng hay khí."}
+      ],
+      "locks": [
+        {"title": "Sắp Xếp Theo Năng Lượng Của Hạt", "q": "Hãy sắp xếp ba trạng thái từ ÍT năng lượng và khoảng cách hạt nhất đến NHIỀU nhất. Chạm vào các ô theo thứ tự.", "pads": ["💨 Khí", "🧊 Rắn", "💧 Lỏng"], "reason": "Các hạt có năng lượng và khoảng cách ít nhất ở chất rắn và nhiều nhất ở chất khí. Sắp xếp theo chuyển động của hạt là cách ta giải thích các trạng thái của vật chất."},
+        {"title": "Cái Nào Là Chất Khí?", "q": "Mô tả nào khớp với chất khí?", "options": ["Các hạt xếp sát nhau và chỉ dao động tại chỗ.", "Các hạt ở xa nhau, chuyển động nhanh, và lấp đầy bất kỳ vật chứa nào.", "Các hạt trượt qua nhau nhưng giữ thể tích cố định."], "reason": "Chất khí có các hạt nhanh, ở xa nhau, lan ra lấp đầy vật chứa — đó là điều phân biệt nó với chất rắn hay chất lỏng."},
+        {"title": "Nước Đá Tan Chảy", "q": "CHỈ chọn những bằng chứng vững chắc cho thấy đun nóng có thể làm tan nước đá. Bỏ qua sự thật đúng nhưng lạc đề.", "items": ["Nhiệt cung cấp cho các hạt nhiều năng lượng hơn nên chúng chuyển động nhanh hơn.", "Các hạt nhanh hơn giãn ra xa nhau, nên chất rắn có thể trở thành chất lỏng.", "Thêm năng lượng là điều làm chất rắn chuyển thành chất lỏng.", "Một đám mây tích có thể chứa hơn một triệu pao nước."], "reason": "Tan chảy xảy ra vì năng lượng thêm vào làm các hạt nhanh lên đến khi chúng trượt qua nhau. Sự thật về mây là đúng nhưng không liên quan gì đến tan chảy."},
+        {"title": "Gọi Tên Năng Lượng", "q": "Năng lượng của các hạt chuyển động — năng lượng tăng lên khi bạn đun nóng vật chất — được gọi là ____ năng. Hãy nhập từ đó.", "word": ["động", "động năng"], "reason": "Động năng là năng lượng của chuyển động. Đun nóng làm tăng động năng của các hạt, đó là lý do vật chất có thể đổi trạng thái."}
+      ]
+    },
+    "mixtures": {
+      "ui": {
+        "h1": "Hỗn Hợp Hay Chất Tinh Khiết?",
+        "sub": "Đồ ăn vặt trộn, nước muối, vàng nguyên chất — cái nào là gì? Hãy điều tra bằng chứng và mở cả bốn ổ khóa.",
+        "briefH": "Phân loại các chất",
+        "briefP": "Một số vật liệu là một chất tinh khiết; số khác là hỗn hợp mà bạn có thể tách ra lại. Hãy dùng bằng chứng để phân biệt chất tinh khiết với hỗn hợp trộn đều và hỗn hợp trộn không đều.",
+        "winStamp": "ĐÃ PHÂN LOẠI ✓",
+        "winH": "Bậc thầy hỗn hợp!",
+        "winP": "Bạn đã tách một hỗn hợp, nhận ra một hỗn hợp trộn đều, và gọi tên nó. Vì hỗn hợp không được kết hợp bằng phản ứng hóa học, bạn luôn có thể tách nó ra lại."
+      },
+      "clues": [
+        {"nm": "Tinh Khiết", "title": "Chất Tinh Khiết", "body": "Chất tinh khiết được tạo thành từ chỉ một loại hạt, như nước nguyên chất hay vàng nguyên chất. Nó không thể tách ra bằng các bước vật lý đơn giản."},
+        {"nm": "Hỗn Hợp", "title": "Hỗn Hợp", "body": "Hỗn hợp là hai hay nhiều vật liệu trộn với nhau nhưng KHÔNG kết hợp bằng phản ứng hóa học. Vì vậy, bạn có thể tách chúng ra lại."},
+        {"nm": "Đều", "title": "Trộn Đều", "body": "Hỗn hợp đồng nhất được trộn đều đến mức trông giống nhau khắp nơi — như nước muối. Bạn không thể nhìn thấy các phần riêng biệt."},
+        {"nm": "Không Đều", "title": "Trộn Không Đều", "body": "Hỗn hợp không đồng nhất có các phần mà bạn vẫn nhìn thấy và tách ra được, như đồ ăn vặt trộn hay món xà lách."},
+        {"nm": "Tách Ra", "title": "Tách Nó Ra", "body": "Bạn có thể tách nước muối bằng cách để nước bay hơi — muối còn lại. Điều này được vì hỗn hợp chưa bao giờ được kết hợp bằng phản ứng hóa học."},
+        {"nm": "Sự Thật Về Ong", "title": "Một Sự Thật Về Mật Ong", "body": "Ong mật ghé thăm khoảng hai triệu bông hoa để làm ra một pao mật. Đó là sự thật và tuyệt vời — nhưng nó sẽ không giúp bạn phân loại một hỗn hợp."}
+      ],
+      "locks": [
+        {"title": "Tách Nước Muối", "q": "Hãy sắp xếp các bước để tách muối ra khỏi nước muối. Chạm vào các ô theo thứ tự.", "pads": ["🧂 Muối còn lại", "🥣 Rót nước muối vào đĩa", "☀️ Nước bay hơi đi"], "reason": "Rót nó ra, để nước bay hơi, và muối còn lại. Nó tách được vì hỗn hợp không kết hợp bằng phản ứng hóa học."},
+        {"title": "Cái Nào Đồng Nhất?", "q": "Cái nào trong số này là hỗn hợp đồng nhất (trộn đều)?", "options": ["Đồ ăn vặt trộn với hạt và nho khô.", "Nước muối trông giống nhau khắp nơi.", "Một đống đồng nguyên chất."], "reason": "Nước muối được trộn đều đến mức trông đồng đều — đồng nhất. Đồ ăn vặt trộn thì không đều, còn đồng nguyên chất hoàn toàn không phải hỗn hợp."},
+        {"title": "Đồ Ăn Vặt Trộn Có Phải Hỗn Hợp Không?", "q": "CHỈ chọn những bằng chứng vững chắc cho thấy đồ ăn vặt trộn là hỗn hợp không đồng nhất. Bỏ qua sự thật đúng nhưng lạc đề.", "items": ["Bạn có thể nhìn thấy các hạt và nho khô riêng biệt.", "Bạn có thể nhặt các mảnh ra mà không cần phản ứng hóa học.", "Các phần không được trải đều.", "Ong mật ghé khoảng hai triệu bông hoa cho mỗi pao mật."], "reason": "Đồ ăn vặt trộn là không đồng nhất vì các phần của nó có thể nhìn thấy, không đều, và tách ra được. Sự thật về mật ong là đúng nhưng lạc đề."},
+        {"title": "Gọi Tên Hỗn Hợp Trộn Đều", "q": "Hỗn hợp được trộn đều đến mức trông giống nhau khắp nơi (như nước muối) được gọi là hỗn hợp ____. Hãy nhập từ đó.", "word": ["đồng nhất", "dung dịch"], "reason": "Hỗn hợp đồng nhất trông đồng đều khắp nơi. Gọi tên loại hỗn hợp là cách các nhà khoa học phân loại điều họ quan sát."}
+      ]
+    },
+    "periodic-table": {
+      "ui": {
+        "h1": "Đọc Bảng Tuần Hoàn",
+        "sub": "Kim loại, phi kim, và những chất ở giữa. Hãy dùng bằng chứng và mở cả bốn ổ khóa.",
+        "briefH": "Gặp gỡ các nguyên tố",
+        "briefP": "Bảng tuần hoàn sắp xếp mọi nguyên tố theo tính chất của chúng. Hãy dùng bằng chứng để phân biệt kim loại với phi kim — và nhận ra các á kim nằm giữa chúng.",
+        "winStamp": "ĐÃ GIẢI MÃ NGUYÊN TỐ ✓",
+        "winH": "Bậc thầy bảng tuần hoàn!",
+        "winP": "Bạn đã sắp xếp các loại nguyên tố, khớp tính chất của một kim loại, và gọi tên các nguyên tố ở giữa. Bảng tuần hoàn là một bản đồ về tính chất."
+      },
+      "clues": [
+        {"nm": "Kim Loại", "title": "Kim Loại", "body": "Hầu hết các nguyên tố là kim loại. Chúng thường sáng bóng, uốn cong mà không gãy, và dẫn nhiệt cùng điện. Chúng nằm ở bên trái và giữa bảng."},
+        {"nm": "Phi Kim", "title": "Phi Kim", "body": "Phi kim thường xỉn màu, giòn, và KHÔNG dẫn điện tốt. Chúng nằm ở bên phải bảng (trừ hiđrô)."},
+        {"nm": "Ở Giữa", "title": "Á Kim", "body": "Á kim nằm dọc theo 'bậc thang' giữa kim loại và phi kim. Chúng có một số tính chất của cả hai — silic, dùng trong chip máy tính, là một ví dụ."},
+        {"nm": "Đất Hiếm", "title": "Nguyên Tố Đất Hiếm", "body": "Nguyên tố đất hiếm là những kim loại đặc biệt dùng trong điện thoại, nam châm, và màn hình. Công nghệ hiện đại phụ thuộc vào chúng."},
+        {"nm": "Ký Hiệu", "title": "Ký Hiệu Nguyên Tố", "body": "Mỗi nguyên tố có một ký hiệu gồm một hoặc hai chữ cái, như O cho oxi hay Fe cho sắt. Bảng được sắp xếp theo tính chất của các nguyên tố này."},
+        {"nm": "Sự Thật Đại Dương", "title": "Một Sự Thật Về Cá Mập", "body": "Một con cá mập có thể mọc hàng ngàn cái răng trong suốt đời, thay răng liên tục. Đó là một sự thật đúng — nhưng nó sẽ không giúp bạn đọc bảng tuần hoàn."}
+      ],
+      "locks": [
+        {"title": "Từ Trái Sang Phải", "q": "Đi ngang qua bảng, hãy sắp xếp các nhóm này từ bên TRÁI sang bên PHẢI. Chạm vào các ô theo thứ tự.", "pads": ["🎈 Phi kim", "🔩 Kim loại", "🪜 Á kim"], "reason": "Kim loại chiếm bên trái và giữa, á kim tạo thành bậc thang, và phi kim nằm bên phải. Vị trí trên bảng cho bạn biết tính chất của một nguyên tố."},
+        {"title": "Nhận Ra Kim Loại", "q": "Bộ tính chất nào mô tả một kim loại?", "options": ["Xỉn màu, giòn, và dẫn điện kém.", "Sáng bóng, uốn cong được, và dẫn điện.", "Một chất khí lấp đầy vật chứa của nó."], "reason": "Kim loại sáng bóng, uốn cong được, và dẫn điện tốt. Xỉn-màu-và-giòn mô tả phi kim."},
+        {"title": "Vì Sao Silic Là Á Kim", "q": "CHỈ chọn những bằng chứng vững chắc cho thấy silic là á kim. Bỏ qua sự thật đúng nhưng lạc đề.", "items": ["Nó nằm dọc theo bậc thang giữa kim loại và phi kim.", "Nó có một số tính chất của kim loại và một số của phi kim.", "Nó được dùng trong chip máy tính làm chất bán dẫn.", "Một con cá mập có thể mọc hàng ngàn cái răng trong đời."], "reason": "Á kim nằm giữa hai nhóm và mang tính chất của cả hai. Sự thật về cá mập là đúng nhưng không liên quan."},
+        {"title": "Gọi Tên Các Chất Ở Giữa", "q": "Các nguyên tố dọc theo bậc thang, mang tính chất của cả kim loại VÀ phi kim, được gọi là ____. Hãy nhập từ đó.", "word": ["á kim"], "reason": "Á kim nằm giữa kim loại và phi kim. Gọi tên một loại từ tính chất của nó là tư duy khoa học cốt lõi."}
+      ]
+    },
+    "density": {
+      "ui": {
+        "h1": "Khối Lượng Riêng: Chìm Hay Nổi?",
+        "sub": "Vì sao một con tàu nặng lại nổi mà một đồng xu nhỏ lại chìm? Hãy dùng bằng chứng và mở cả bốn ổ khóa.",
+        "briefH": "Giải mã sự nổi",
+        "briefP": "Nổi không phải là chuyện nặng hay nhẹ — mà là khối lượng riêng so với chất lỏng. Hãy dùng bằng chứng để dự đoán cái gì chìm và cái gì nổi.",
+        "winStamp": "ĐÃ GIẢI MÃ SỰ NỔI ✓",
+        "winH": "Thám tử khối lượng riêng!",
+        "winP": "Bạn đã xếp chồng các chất lỏng theo khối lượng riêng, giải thích vì sao nước đá nổi, và gọi tên ý tưởng đó. Khối lượng riêng — khối lượng dồn trong thể tích — quyết định ai nổi."
+      },
+      "clues": [
+        {"nm": "Khối Lượng Riêng", "title": "Khối Lượng Riêng Là Gì", "body": "Khối lượng riêng là mức khối lượng dồn trong một khoảng không gian: khối lượng riêng = khối lượng ÷ thể tích. Hai vật cùng kích thước có thể có khối lượng riêng rất khác nhau."},
+        {"nm": "Quy Tắc Nổi", "title": "Quy Tắc Nổi", "body": "Một vật nổi trong chất lỏng khi khối lượng riêng của nó NHỎ HƠN của chất lỏng, và chìm khi khối lượng riêng của nó LỚN HƠN."},
+        {"nm": "Dầu & Nước", "title": "Chất Lỏng Xếp Lớp", "body": "Rót dầu, nước, và mật ong chung với nhau và chúng xếp thành lớp. Chất lỏng ít đặc nhất (dầu) nổi trên cùng; chất đặc nhất (mật ong) chìm xuống đáy."},
+        {"nm": "Nước Đá Nổi", "title": "Nước Đá Trên Nước", "body": "Nước đá nổi vì nước đóng băng ÍT đặc hơn nước lỏng. Điều đó khác thường — hầu hết chất rắn chìm trong chất lỏng của chính nó."},
+        {"nm": "Hình Dạng Quan Trọng", "title": "Hình Dạng Đổi Khối Lượng Riêng", "body": "Một viên đất sét chìm, nhưng dàn phẳng cùng cục đất sét đó thành hình thuyền và nó nổi. Hình thuyền chứa nhiều thể tích hơn, làm giảm khối lượng riêng tổng thể của nó."},
+        {"nm": "Sự Thật Về Cá Voi", "title": "Một Sự Thật Về Cá Voi", "body": "Trái tim của cá voi xanh to cỡ một chiếc ô tô nhỏ. Đó là một sự thật đúng và tuyệt vời — nhưng nó sẽ không cho bạn biết một vật có nổi hay không."}
+      ],
+      "locks": [
+        {"title": "Xếp Chồng Các Chất Lỏng", "q": "Hãy sắp xếp các chất lỏng từ lớp TRÊN CÙNG xuống lớp DƯỚI CÙNG (ít đặc nhất đến đặc nhất). Chạm vào các ô theo thứ tự.", "pads": ["🍯 Mật ong", "🫗 Dầu", "💧 Nước"], "reason": "Chất lỏng ít đặc nhất nổi trên cùng và chất đặc nhất chìm xuống đáy. Sắp xếp theo khối lượng riêng dự đoán được các lớp."},
+        {"title": "Vì Sao Nước Đá Nổi", "q": "Vì sao một cục nước đá nổi trong ly nước?", "options": ["Vì nước đá lạnh hơn nước.", "Vì nước đá ít đặc hơn nước lỏng.", "Vì nước đá không có trọng lượng."], "reason": "Nổi phụ thuộc vào khối lượng riêng, không phải nhiệt độ hay trọng lượng. Nước đá ít đặc hơn nước lỏng, nên nó nổi."},
+        {"title": "Viên Đất Sét vs. Thuyền Đất Sét", "q": "CHỈ chọn những bằng chứng vững chắc cho thấy thuyền đất sét nổi trong khi viên đất sét chìm. Bỏ qua sự thật đúng nhưng lạc đề.", "items": ["Hình thuyền trải cùng khối lượng trên nhiều thể tích hơn.", "Nhiều thể tích hơn làm giảm khối lượng riêng tổng thể của đất sét.", "Với khối lượng riêng nhỏ hơn của nước, chiếc thuyền nổi.", "Trái tim của cá voi xanh to cỡ một chiếc ô tô nhỏ."], "reason": "Cùng khối lượng trong nhiều thể tích hơn nghĩa là khối lượng riêng thấp hơn, nên chiếc thuyền nổi. Sự thật về cá voi là đúng nhưng lạc đề."},
+        {"title": "Gọi Tên Ý Tưởng", "q": "Khối lượng ÷ thể tích — lượng khối lượng dồn trong một khoảng không gian, quyết định sự nổi — được gọi là ____. Hãy nhập từ đó.", "word": ["khối lượng riêng"], "reason": "Khối lượng riêng là khối lượng trên mỗi thể tích. So sánh khối lượng riêng của vật với của chất lỏng cho bạn biết nó có nổi hay không."}
+      ]
+    },
+    "chemical-change": {
+      "ui": {
+        "h1": "Thám Tử Biến Đổi Hóa Học",
+        "sub": "Một chất MỚI đã hình thành, hay nó chỉ đổi hình dạng? Hãy dùng bằng chứng và mở cả bốn ổ khóa.",
+        "briefH": "Chất mới hay không?",
+        "briefP": "Biến đổi hóa học tạo ra một chất hoàn toàn mới; biến đổi vật lý thì không. Hãy dùng bằng chứng để đọc các manh mối mà một phản ứng để lại.",
+        "winStamp": "ĐÃ PHÁ ÁN ✓",
+        "winH": "Thám tử tài ba!",
+        "winP": "Bạn đã theo dõi gỉ sắt hình thành, nhận ra dấu hiệu của một chất khí mới, và gọi tên sự biến đổi. Khí, màu sắc, nhiệt, hay một chất rắn mới đều báo hiệu một biến đổi hóa học."
+      },
+      "clues": [
+        {"nm": "Hóa Học", "title": "Biến Đổi Hóa Học", "body": "Trong biến đổi hóa học, các nguyên tử sắp xếp lại để tạo ra một chất MỚI với tính chất mới. Nó thường không thể dễ dàng đảo ngược."},
+        {"nm": "Dấu Hiệu Khí", "title": "Dấu Hiệu: Một Chất Khí Mới", "body": "Bọt khí của một chất khí mới hình thành (mà không phải sôi) là dấu hiệu cho thấy một biến đổi hóa học đang xảy ra."},
+        {"nm": "Dấu Hiệu Nhiệt", "title": "Dấu Hiệu: Đổi Năng Lượng", "body": "Sự thay đổi nhiệt độ — hỗn hợp tự nóng lên hoặc lạnh đi — có thể báo hiệu một biến đổi hóa học."},
+        {"nm": "Dấu Hiệu Màu", "title": "Dấu Hiệu: Màu & Chất Rắn", "body": "Một sự đổi màu bất ngờ, hoặc một chất rắn mới (kết tủa) hình thành trong chất lỏng, cũng là dấu hiệu của một biến đổi hóa học."},
+        {"nm": "Vật Lý", "title": "Biến Đổi Vật Lý", "body": "Cắt, làm tan chảy, hay nghiền nát là những biến đổi VẬT LÝ — chất trông khác đi nhưng vẫn là cùng một vật liệu, và không có chất mới hình thành."},
+        {"nm": "Sự Thật Về Chim", "title": "Một Sự Thật Về Hồng Hạc", "body": "Hồng hạc chuyển màu hồng nhờ sắc tố trong thức ăn chúng ăn. Đó là một sự thật đúng về màu sắc — nhưng ăn tôm không phải là dấu hiệu biến đổi hóa học mà bạn đang kiểm tra ở đây."}
+      ],
+      "locks": [
+        {"title": "Xem Sắt Gỉ", "q": "Hãy sắp xếp những gì xảy ra khi sắt bị gỉ theo thời gian. Chạm vào các ô theo thứ tự.", "pads": ["🟤 Gỉ nâu (chất mới) hình thành", "🔩 Sắt sáng bóng", "💧 Tiếp xúc với không khí và nước"], "reason": "Sắt sáng bóng gặp không khí và nước, và một chất mới — gỉ — hình thành. Một chất mới là dấu ấn của biến đổi hóa học."},
+        {"title": "Cái Nào Là Hóa Học?", "q": "Cái nào trong số này là bằng chứng của một biến đổi HÓA HỌC?", "options": ["Một cục nước đá tan thành nước.", "Bọt của một chất khí mới hình thành khi hai chất lỏng trộn vào nhau.", "Một sợi dây bị uốn thành hình dạng mới."], "reason": "Một chất khí mới báo hiệu một chất mới — một biến đổi hóa học. Tan chảy và uốn cong là biến đổi vật lý."},
+        {"title": "Luộc Một Quả Trứng", "q": "CHỈ chọn những bằng chứng vững chắc cho thấy luộc trứng là một biến đổi hóa học. Bỏ qua sự thật đúng nhưng lạc đề.", "items": ["Phần trong suốt chuyển thành rắn và trắng — một chất mới.", "Sự biến đổi không thể đảo ngược lại thành trứng sống.", "Kết cấu và tính chất của nó thay đổi vĩnh viễn.", "Hồng hạc chuyển màu hồng nhờ sắc tố trong thức ăn của chúng."], "reason": "Một chất mới, không thể đảo ngược, với tính chất mới nghĩa là một biến đổi hóa học. Sự thật về hồng hạc là đúng nhưng lạc đề."},
+        {"title": "Gọi Tên Sự Biến Đổi", "q": "Một sự biến đổi tạo ra một chất hoàn toàn mới (thể hiện qua khí, màu, nhiệt, hoặc chất rắn mới) là biến đổi ____. Hãy nhập từ đó.", "word": ["hóa học"], "reason": "Một biến đổi hóa học tạo ra chất mới. Đọc các dấu hiệu là cách các nhà khoa học phân biệt nó với biến đổi vật lý."}
+      ]
+    },
+    "forces": {
+      "ui": {
+        "h1": "Cân Bằng Hay Không Cân Bằng?",
+        "sub": "Điều gì làm một vật bắt đầu chuyển động, dừng lại, hay đứng yên? Hãy dùng bằng chứng và mở cả bốn ổ khóa.",
+        "briefH": "Cộng các lực lại",
+        "briefP": "Lực là những cú đẩy và kéo. Khi chúng cộng lại bằng không, chuyển động không thay đổi; khi không, thì có thay đổi. Hãy dùng bằng chứng để lập luận về các lực.",
+        "winStamp": "ĐÃ HIỂU CÁC LỰC ✓",
+        "winH": "Chuyên gia về lực!",
+        "winP": "Bạn đã theo một quả bóng qua các lực cân bằng và không cân bằng, đọc một cuộc kéo co, và nhận ra một cặp lực theo Định Luật Ba của Newton. Hợp lực quyết định chuyển động."
+      },
+      "clues": [
+        {"nm": "Lực", "title": "Lực Là Đẩy & Kéo", "body": "Một lực là một cú đẩy hoặc kéo. Trọng lực, ma sát, từ tính, một cú đẩy tác dụng, và lực pháp tuyến (đỡ) đều là các lực."},
+        {"nm": "Hợp Lực", "title": "Hợp Lực", "body": "Hợp lực là phần còn lại sau khi bạn cộng tất cả các lực tác dụng lên một vật, bao gồm cả chiều của chúng."},
+        {"nm": "Cân Bằng", "title": "Lực Cân Bằng", "body": "Khi các lực cộng lại bằng KHÔNG, chúng cân bằng. Hợp lực cân bằng nghĩa là chuyển động của vật KHÔNG thay đổi — nó đứng yên hoặc tiếp tục chuyển động như cũ."},
+        {"nm": "Không Cân Bằng", "title": "Lực Không Cân Bằng", "body": "Khi các lực KHÔNG cộng lại bằng không, chúng không cân bằng. Hợp lực không cân bằng làm một vật tăng tốc, giảm tốc, hoặc đổi hướng."},
+        {"nm": "Định Luật Ba", "title": "Định Luật Ba Của Newton", "body": "Với mỗi lực đều có một lực bằng nhau và ngược chiều tác dụng lên vật KIA. Một tên lửa đẩy khí xuống dưới; khí đẩy tên lửa lên trên."},
+        {"nm": "Sự Thật Về Tốc Độ", "title": "Một Sự Thật Về Báo Săn", "body": "Báo săn có thể đạt khoảng 70 dặm một giờ trong những cú bứt tốc ngắn. Đó là một sự thật đúng về tốc độ — nhưng nó sẽ không cho bạn biết các lực có cân bằng hay không."}
+      ],
+      "locks": [
+        {"title": "Theo Dõi Quả Bóng Đá", "q": "Hãy sắp xếp những gì xảy ra với một quả bóng đá. Chạm vào các ô theo thứ tự.", "pads": ["💥 Bị đá — lực không cân bằng", "⚖️ Đứng yên — cân bằng", "🛑 Lăn và chậm lại — ma sát"], "reason": "Đứng yên (cân bằng) → bị đá (không cân bằng) → chậm lại do ma sát (lại không cân bằng). Một sự thay đổi chuyển động luôn nghĩa là một hợp lực không cân bằng."},
+        {"title": "Sợi Dây Bất Động", "q": "Trong kéo co, cả hai đội kéo mạnh nhưng sợi dây không di chuyển. Điều gì đúng?", "options": ["Các lực không cân bằng.", "Các lực cân bằng, nên hợp lực bằng không.", "Không ai đang kéo cả."], "reason": "Sợi dây không di chuyển vì các cú kéo triệt tiêu nhau — lực cân bằng, hợp lực bằng không. Những lực lớn vẫn có thể cộng lại thành không."},
+        {"title": "Tên Lửa Cất Cánh", "q": "CHỈ chọn những bằng chứng vững chắc cho thấy một tên lửa cất cánh thể hiện Định Luật Ba của Newton. Bỏ qua sự thật đúng nhưng lạc đề.", "items": ["Động cơ đẩy khí nóng xuống dưới.", "Khí đẩy tên lửa lên trên với một lực bằng nhau.", "Hai lực bằng nhau, ngược chiều, và tác dụng lên hai vật khác nhau.", "Báo săn có thể chạy khoảng 70 dặm một giờ."], "reason": "Cặp lực theo Định Luật Ba bằng nhau, ngược chiều, và tác dụng lên hai vật khác nhau — khí và tên lửa. Sự thật về báo săn là đúng nhưng lạc đề."},
+        {"title": "Gọi Tên Lực", "q": "Lực cản trở sự trượt và làm chậm một quả bóng đang lăn — lực cọ xát giữa các bề mặt — được gọi là ____. Hãy nhập từ đó.", "word": ["ma sát", "lực ma sát"], "reason": "Ma sát chống lại chuyển động giữa các bề mặt. Gọi tên từng lực là bước đầu tiên để cộng chúng thành một hợp lực."}
+      ]
+    },
+    "waves": {
+      "ui": {
+        "h1": "Sóng: Hai Loại",
+        "sub": "Âm thanh và ánh sáng mang năng lượng như thế nào? Hãy dùng bằng chứng và mở cả bốn ổ khóa.",
+        "briefH": "Lướt theo con sóng",
+        "briefP": "Sóng mang năng lượng từ nơi này sang nơi khác. Một số dao động qua lại hai bên, số khác nén và giãn. Hãy dùng bằng chứng để phân biệt sóng ngang với sóng dọc.",
+        "winStamp": "ĐÃ ĐỌC ĐƯỢC SÓNG ✓",
+        "winH": "Người lướt sóng!",
+        "winP": "Bạn đã lần theo cách âm thanh truyền đi, khớp một loại sóng, và gọi tên loại dao động hai bên. Sóng truyền năng lượng — không phải vật chất mà nó đi qua."
+      },
+      "clues": [
+        {"nm": "Sóng Mang", "title": "Sóng Mang Năng Lượng", "body": "Một con sóng mang NĂNG LƯỢNG từ nơi này sang nơi khác. Vật chất mà nó đi qua hầu như đứng yên — chỉ có năng lượng di chuyển đi."},
+        {"nm": "Sóng Ngang", "title": "Sóng Ngang", "body": "Trong sóng ngang, vật chất chuyển động lên xuống — vuông góc với hướng sóng truyền đi. Ánh sáng và gợn nước là sóng ngang."},
+        {"nm": "Sóng Dọc", "title": "Sóng Dọc", "body": "Trong sóng dọc, vật chất nén lại và giãn ra — tới lui CÙNG hướng sóng truyền đi. Âm thanh là sóng dọc."},
+        {"nm": "Biên Độ", "title": "Biên Độ", "body": "Biên độ là độ lớn của một con sóng. Biên độ lớn hơn mang nhiều năng lượng hơn — một âm thanh lớn hơn hay một con sóng nước cao hơn."},
+        {"nm": "Con Vịt Nhấp Nhô", "title": "Con Vịt Nhấp Nhô", "body": "Khi sóng đi qua dưới một con vịt đang nổi, con vịt nhấp nhô lên xuống nhưng vẫn ở gần cùng một chỗ. Năng lượng đi tiếp; con vịt không đi theo nó."},
+        {"nm": "Sự Thật Động Vật", "title": "Một Sự Thật Về Voi", "body": "Voi có thể cảm nhận những tiếng rền trầm qua mặt đất bằng chân của chúng. Đó là một sự thật đúng — nhưng nó không phải bằng chứng về loại sóng ở đây."}
+      ],
+      "locks": [
+        {"title": "Âm Thanh Truyền Đi Thế Nào", "q": "Hãy sắp xếp cách một sóng âm truyền tới tai bạn. Chạm vào các ô theo thứ tự.", "pads": ["👂 Tới tai bạn", "🔔 Một vật dao động", "🎚️ Không khí nén và giãn"], "reason": "Một dao động đẩy không khí thành các đợt nén và giãn (một sóng dọc) truyền tới tai bạn. Năng lượng di chuyển; không khí không bay ngang qua phòng."},
+        {"title": "Âm Thanh Là Loại Sóng Nào?", "q": "Âm thanh là loại sóng nào?", "options": ["Sóng ngang — vật chất chuyển động lên xuống.", "Sóng dọc — vật chất chuyển động tới lui theo hướng của sóng.", "Không loại nào — âm thanh không phải là sóng."], "reason": "Âm thanh nén và giãn không khí dọc theo đường đi của nó — một sóng dọc."},
+        {"title": "Năng Lượng, Không Phải Vật Chất", "q": "CHỈ chọn những bằng chứng vững chắc cho thấy một con sóng mang năng lượng, không phải vật chất. Bỏ qua sự thật đúng nhưng lạc đề.", "items": ["Một con vịt đang nổi nhấp nhô lên xuống nhưng vẫn ở nguyên chỗ.", "Nước trở về nơi cũ sau khi sóng đi qua.", "Chỉ có năng lượng di chuyển tới trước dọc theo con sóng.", "Voi có thể cảm nhận tiếng rền qua chân của chúng."], "reason": "Con vịt đứng yên cho thấy nước không bị cuốn đi — chỉ có năng lượng đi. Sự thật về voi là đúng nhưng lạc đề."},
+        {"title": "Gọi Tên Sóng", "q": "Một con sóng mà vật chất chuyển động lên xuống, vuông góc với hướng của sóng (như ánh sáng hay gợn nước), là sóng ____. Hãy nhập từ đó.", "word": ["ngang", "sóng ngang"], "reason": "Sóng ngang dao động vuông góc với hướng truyền của nó. Gọi tên loại sóng là cách ta phân loại sóng."}
+      ]
+    },
+    "earth-sun-moon": {
+      "ui": {
+        "h1": "Lý Do Của Các Mùa",
+        "sub": "Vì sao có mùa hè và mùa đông — và điều gì tạo ra thủy triều? Hãy dùng bằng chứng và mở cả bốn ổ khóa.",
+        "briefH": "Là độ nghiêng, đừng đổ tại khoảng cách",
+        "briefP": "Nhiều người nghĩ mùa hè nghĩa là Trái Đất gần Mặt Trời hơn. Không phải vậy! Hãy dùng bằng chứng để tìm nguyên nhân thật sự của các mùa và thủy triều.",
+        "winStamp": "ĐÃ VẠCH TRẦN LẦM TƯỞNG ✓",
+        "winH": "Thám tử về mùa!",
+        "winP": "Bạn đã lần theo độ nghiêng qua cả năm, vạch trần lầm tưởng về khoảng cách, và gọi tên nguyên nhân. Độ nghiêng của Trái Đất — không phải khoảng cách — tạo ra các mùa."
+      },
+      "clues": [
+        {"nm": "Độ Nghiêng", "title": "Trái Đất Bị Nghiêng", "body": "Trái Đất nghiêng khoảng 23,5° khi nó quay quanh Mặt Trời. Độ nghiêng đó luôn hướng cùng một phía suốt cả năm."},
+        {"nm": "Ánh Sáng Trực Tiếp", "title": "Trực Tiếp vs. Xiên", "body": "Khi nửa Trái Đất của bạn nghiêng VỀ PHÍA Mặt Trời, ánh sáng chiếu trực tiếp hơn — đó là mùa hè. Nghiêng ra xa và ánh sáng xiên và yếu hơn — đó là mùa đông."},
+        {"nm": "Không Phải Khoảng Cách", "title": "Khoảng Cách Không Gây Ra", "body": "Thực ra Trái Đất GẦN Mặt Trời nhất vào đầu tháng Một — mùa đông ở phương bắc. Vậy khoảng cách không thể là nguyên nhân của các mùa."},
+        {"nm": "Mùa Trái Ngược", "title": "Hai Nửa Trái Ngược", "body": "Khi là mùa hè ở Bắc Bán Cầu, thì là mùa đông ở Nam Bán Cầu. Cả hai đều cách Mặt Trời cùng một khoảng cách cùng lúc."},
+        {"nm": "Thủy Triều", "title": "Mặt Trăng & Thủy Triều", "body": "Trọng lực của Mặt Trăng kéo các đại dương của Trái Đất, tạo ra thủy triều lên và xuống khi Trái Đất quay."},
+        {"nm": "Sự Thật Ban Đêm", "title": "Một Sự Thật Về Cú", "body": "Một con cú có thể quay đầu khoảng 270 độ. Đó là một sự thật đúng và thú vị — nhưng nó sẽ không giải thích các mùa."}
+      ],
+      "locks": [
+        {"title": "Một Năm Nghiêng (Phương Bắc)", "q": "Đối với Bắc Bán Cầu, hãy sắp xếp những giai đoạn này khi năm đi từ mùa hè hướng tới mùa đông. Chạm vào các ô theo thứ tự.", "pads": ["❄️ Nghiêng ra xa — mùa đông", "☀️ Nghiêng về phía — mùa hè", "🍂 Nghiêng ngang — mùa thu"], "reason": "Nghiêng về phía Mặt Trời (mùa hè) → nghiêng ngang (mùa thu) → nghiêng ra xa (mùa đông). Chính độ nghiêng, làm thay đổi mức ánh sáng chiếu trực tiếp, điều khiển các mùa."},
+        {"title": "Điều Gì Gây Ra Các Mùa?", "q": "Điều gì thực sự gây ra các mùa của Trái Đất?", "options": ["Trái Đất di chuyển gần và xa Mặt Trời.", "Độ nghiêng của Trái Đất làm thay đổi mức ánh sáng chiếu trực tiếp lên mỗi bán cầu.", "Mặt Trời nóng lên và nguội đi."], "reason": "Các mùa đến từ độ nghiêng của Trái Đất, không phải khoảng cách. Độ nghiêng làm thay đổi mức ánh sáng chiếu trực tiếp lên mỗi bán cầu."},
+        {"title": "Vạch Trần Lầm Tưởng Khoảng Cách", "q": "CHỈ chọn những bằng chứng vững chắc cho thấy độ nghiêng (không phải khoảng cách) gây ra các mùa. Bỏ qua sự thật đúng nhưng lạc đề.", "items": ["Trái Đất gần Mặt Trời nhất vào tháng Một, trong mùa đông phương bắc.", "Hai bán cầu có mùa trái ngược nhau cùng một lúc.", "Một bán cầu nghiêng về phía Mặt Trời nhận nhiều ánh sáng trực tiếp hơn.", "Một con cú có thể quay đầu khoảng 270 độ."], "reason": "Các mùa trái ngược ở cùng khoảng cách, cộng với gần-nhất-vào-tháng-Một, chứng minh khoảng cách không phải nguyên nhân — độ nghiêng mới là. Sự thật về cú là đúng nhưng lạc đề."},
+        {"title": "Gọi Tên Nguyên Nhân", "q": "Nguyên nhân thật sự của các mùa là ____ của Trái Đất — độ nghiêng 23,5° làm thay đổi mức ánh sáng chiếu trực tiếp. Hãy nhập từ đó.", "word": ["độ nghiêng", "độ nghiêng trục"], "reason": "Độ nghiêng của Trái Đất là nguyên nhân của các mùa. Gọi tên nó — và loại trừ khoảng cách — là bước lập luận then chốt."}
+      ]
+    },
+    "earth-systems": {
+      "ui": {
+        "h1": "Bên Trong Trái Đất",
+        "sub": "Có gì dưới chân bạn, và đá thay đổi như thế nào? Hãy dùng bằng chứng và mở cả bốn ổ khóa.",
+        "briefH": "Đào sâu vào các hệ thống Trái Đất",
+        "briefP": "Trái Đất có các lớp bên trong và những loại đá dần dần đổi từ loại này sang loại khác. Hãy dùng bằng chứng để lập bản đồ các lớp và theo dõi chu trình đá.",
+        "winStamp": "ĐÃ LẬP BẢN ĐỒ TRÁI ĐẤT ✓",
+        "winH": "Thiên tài địa chất!",
+        "winP": "Bạn đã sắp xếp các lớp của Trái Đất, khớp cách đá mácma hình thành, và gọi tên một lớp. Đá của Trái Đất luôn tái tạo chậm rãi."
+      },
+      "clues": [
+        {"nm": "Các Lớp", "title": "Các Lớp Của Trái Đất", "body": "Từ ngoài vào trong, Trái Đất có lớp vỏ (bề mặt đá mỏng), lớp phủ (đá nóng dày chảy chậm), lõi ngoài (kim loại lỏng), và lõi trong (kim loại rắn)."},
+        {"nm": "Mácma", "title": "Đá Mácma", "body": "Đá mácma hình thành khi đá nóng chảy (macma hoặc dung nham) nguội lại và cứng lại — như đá từ một ngọn núi lửa."},
+        {"nm": "Trầm Tích", "title": "Đá Trầm Tích", "body": "Đá trầm tích hình thành khi những mảnh cát, bùn, và vỏ sò lắng thành từng lớp rồi bị ép và gắn kết lại theo thời gian."},
+        {"nm": "Biến Chất", "title": "Đá Biến Chất", "body": "Đá biến chất hình thành khi nhiệt và áp suất sâu dưới lòng đất biến một loại đá có sẵn thành một loại mới, mà không làm nó nóng chảy hoàn toàn."},
+        {"nm": "Chu Trình Đá", "title": "Chu Trình Đá", "body": "Bất kỳ loại đá nào cũng có thể chậm rãi trở thành loại khác theo thời gian — nóng chảy, nguội lại, phong hóa, hoặc bị ép và nung nóng. Đó là chu trình đá."},
+        {"nm": "Sự Thật Biển", "title": "Một Sự Thật Về Bạch Tuộc", "body": "Bạch tuộc có ba trái tim và máu màu xanh. Đó là một sự thật đúng và tuyệt vời — nhưng nó sẽ không giúp bạn sắp xếp các lớp của Trái Đất."}
+      ],
+      "locks": [
+        {"title": "Từ Bề Mặt Đến Trung Tâm", "q": "Hãy sắp xếp các lớp của Trái Đất từ BỀ MẶT xuống TRUNG TÂM. Chạm vào các ô theo thứ tự.", "pads": ["⚪ Lõi trong", "🌐 Lớp vỏ", "🟠 Lõi ngoài", "🟤 Lớp phủ"], "reason": "Lớp vỏ, rồi lớp phủ, rồi lõi ngoài, rồi lõi trong. Biết thứ tự là cách ta mô hình hóa Trái Đất như một hệ thống các lớp."},
+        {"title": "Đá Mácma Hình Thành Thế Nào", "q": "Loại đá nào hình thành khi đá nóng chảy nguội lại và cứng lại?", "options": ["Đá trầm tích.", "Đá mácma.", "Đá biến chất."], "reason": "Đá mácma đến từ macma hoặc dung nham nguội lại. Đá trầm tích hình thành từ những mảnh lắng đọng; đá biến chất từ nhiệt và áp suất."},
+        {"title": "Đá Thay Đổi", "q": "CHỈ chọn những bằng chứng vững chắc cho thấy đá đổi loại theo thời gian (chu trình đá). Bỏ qua sự thật đúng nhưng lạc đề.", "items": ["Nhiệt và áp suất có thể biến một loại đá thành đá biến chất.", "Lắng đọng và gắn kết những mảnh trầm tích tạo ra đá trầm tích.", "Nóng chảy và nguội lại có thể biến một loại đá thành đá mácma.", "Bạch tuộc có ba trái tim và máu màu xanh."], "reason": "Nóng chảy, lắng đọng, và nhiệt-cùng-áp-suất là các con đường của chu trình đá. Sự thật về bạch tuộc là đúng nhưng lạc đề."},
+        {"title": "Gọi Tên Lớp", "q": "Lớp đá nóng dày chảy chậm, ngay dưới lớp vỏ, là lớp ____. Hãy nhập từ đó.", "word": ["phủ", "lớp phủ"], "reason": "Lớp phủ nằm giữa lớp vỏ và lõi. Gọi tên các lớp xây dựng một mô hình về cấu trúc của Trái Đất."}
+      ]
+    },
+    "living-systems": {
+      "ui": {
+        "h1": "Các Hệ Thống Sống",
+        "sub": "Các sinh vật sống phụ thuộc vào nhau như thế nào — và chúng được tạo thành từ gì? Hãy dùng bằng chứng và mở cả bốn ổ khóa.",
+        "briefH": "Sự sống kết nối",
+        "briefP": "Mọi sinh vật sống đều được tạo thành từ tế bào và kết nối với những sinh vật khác trong một hệ sinh thái. Hãy dùng bằng chứng để lập luận về sinh vật, mối quan hệ, và tế bào.",
+        "winStamp": "SỰ SỐNG ĐÃ KẾT NỐI ✓",
+        "winH": "Nhà khoa học sự sống!",
+        "winP": "Bạn đã sắp xếp các cấp độ của sự sống, nhận ra một mối quan hệ đối tác, và gọi tên đơn vị cơ bản của sự sống. Từ tế bào đến quần xã, các sinh vật sống phụ thuộc vào nhau."
+      },
+      "clues": [
+        {"nm": "Hệ Sinh Thái", "title": "Hệ Sinh Thái", "body": "Một hệ sinh thái là tất cả các vật sống (hữu sinh) và vật không sống (vô sinh) trong một khu vực, tương tác với nhau — như một cái ao có cá, thực vật, nước, và ánh sáng mặt trời."},
+        {"nm": "Cấp Độ", "title": "Các Cấp Độ Của Sự Sống", "body": "Các sinh vật sống được tổ chức từ nhỏ đến lớn: một cá thể, rồi một quần thể (cùng loài), rồi một quần xã (nhiều loài cùng nhau)."},
+        {"nm": "Cộng Sinh", "title": "Giúp Đỡ Lẫn Nhau", "body": "Trong quan hệ cộng sinh, CẢ HAI đối tác đều có lợi — như một con ong lấy mật hoa trong khi nó thụ phấn cho một bông hoa."},
+        {"nm": "Ký Sinh", "title": "Một Bên Thắng, Một Bên Thua", "body": "Trong quan hệ ký sinh, một bên có lợi và bên kia bị hại — như một con ve hút máu một con chó."},
+        {"nm": "Tế Bào", "title": "Được Tạo Từ Tế Bào", "body": "Mọi sinh vật sống đều được tạo thành từ một hoặc nhiều tế bào. Tế bào là đơn vị cơ bản của sự sống, và các tế bào mới đến từ những tế bào có sẵn."},
+        {"nm": "Sự Thật Thời Tiết", "title": "Một Sự Thật Về Sét", "body": "Một tia sét nóng gấp khoảng năm lần bề mặt của Mặt Trời. Đó là một sự thật đúng — nhưng nó không nói về các hệ thống sống."}
+      ],
+      "locks": [
+        {"title": "Từ Nhỏ Đến Lớn", "q": "Hãy sắp xếp các cấp độ của sự sống từ nhóm NHỎ NHẤT đến LỚN NHẤT. Chạm vào các ô theo thứ tự.", "pads": ["🌳 Quần xã", "🐟 Một cá thể", "🐟🐟 Quần thể"], "reason": "Một cá thể, rồi một quần thể cùng loài, rồi một quần xã nhiều loài. Các cấp độ tổ chức cho thấy sự sống được cấu trúc thế nào."},
+        {"title": "Gọi Tên Mối Quan Hệ", "q": "Một con ong hút mật hoa trong khi thụ phấn cho một bông hoa, và cả hai đều có lợi. Mối quan hệ này là:", "options": ["Ký sinh — một bên bị hại.", "Cộng sinh — cả hai đều có lợi.", "Không bên nào bị ảnh hưởng."], "reason": "Khi cả hai đối tác đều có lợi, đó là cộng sinh. Ký sinh thì sẽ làm hại một trong hai."},
+        {"title": "Mọi Thứ Đều Là Tế Bào", "q": "CHỈ chọn những bằng chứng vững chắc cho học thuyết tế bào. Bỏ qua sự thật đúng nhưng lạc đề.", "items": ["Mọi sinh vật sống đều được tạo thành từ một hoặc nhiều tế bào.", "Tế bào là đơn vị cơ bản về cấu trúc và chức năng của sự sống.", "Các tế bào mới đến từ những tế bào đã có sẵn.", "Sét nóng gấp khoảng năm lần bề mặt của Mặt Trời."], "reason": "Ba câu đó là học thuyết tế bào. Sự thật về sét là đúng nhưng không liên quan gì đến tế bào."},
+        {"title": "Gọi Tên Đơn Vị", "q": "Đơn vị cơ bản mà mọi sinh vật sống được tạo thành là ____. Hãy nhập từ đó.", "word": ["tế bào"], "reason": "Tế bào là đơn vị cơ bản của sự sống. Gọi tên nó neo giữ mọi thứ từ sinh vật đến hệ sinh thái."}
+      ]
+    }
+  }
+}

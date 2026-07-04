@@ -1,0 +1,447 @@
+{
+ "chrome": {
+  "sect.clues": "🔍 Las pruebas",
+  "sect.cluesHint": "Toca cada prueba para leerla. Puedes abrirlas de nuevo cuando quieras.",
+  "sect.locks": "🔒 Los candados",
+  "sect.locksHint": "Abre cada candado usando solo las pruebas de arriba.",
+  "ui.reset": "↺ Reiniciar",
+  "ui.check": "Comprobar",
+  "ui.gotit": "Entendido",
+  "ui.playagain": "Jugar otra vez",
+  "ui.solved": "🔓 ¡Abierto!",
+  "ui.pcount": "{n} de {total} candados abiertos",
+  "ui.wordph": "Escribe tu respuesta",
+  "ui.clear": "borrar",
+  "fb.digit": "Ese número no coincide con las pruebas. Revísalo otra vez.",
+  "fb.word": "Busca en las pruebas la palabra que encaja.",
+  "fb.mc": "Esa no la respaldan las pruebas. Míralas otra vez.",
+  "fb.multiExtra": "Una de tus opciones no es una prueba sólida. Sólida significa hechos que las pruebas realmente demuestran sobre las fuerzas.",
+  "fb.multiMissing": "Te falta una prueba sólida. Encuéntralas todas.",
+  "fb.seq": "Ese orden no coincide con cómo se transfiere la energía. Inténtalo de nuevo.",
+  "footer.privacy": "Privacidad y cumplimiento"
+ },
+ "featured": {
+  "ui": {
+   "header.eyebrow": "Breakout de pensamiento crítico de Ciencias · 6.º grado",
+   "header.h1": "Rescate del barco de carga",
+   "header.sub": "El carguero TEKS Voyager está atascado en el Puerto de Houston. Va peligrosamente bajo en el agua, una caja de la cubierta se desliza sin parar y la grúa de carga pierde energía. Tú eres el ingeniero del puerto. Lee las pruebas, abre los cuatro candados y autoriza al barco a zarpar.",
+   "brief.label": "⚓ Tu misión",
+   "brief.h": "Autoriza al Voyager a zarpar",
+   "brief.p": "El supervisor del muelle te llama por radio: <b>“No deja de hundirse, una caja se deslizó por la cubierta y la grúa se apagó de golpe.”</b> Cada problema tiene una razón científica escondida en las pruebas: densidad, fuerzas y energía. Abre cada prueba, analiza qué demuestra en realidad y abre los cuatro candados para enviar al Voyager sano y salvo al mar.",
+   "win.stamp": "AUTORIZADO A ZARPAR ✓",
+   "win.h": "¡El Voyager zarpa!",
+   "win.p": "Usaste la densidad para explicar por qué flota un barco de acero, demostraste que las fuerzas sobre la caja estaban equilibradas, nombraste la Tercera Ley de Newton y seguiste la energía de la grúa sin perder ni un julio. Así es exactamente como los ingenieros marinos mantienen seguros los barcos reales.",
+   "footer.text": "Breakouts de pensamiento crítico de Ciencias · Funciona por completo en tu navegador: sin cuentas, sin recopilar datos.",
+   "footer.disclaimer": "Alineado con los Conocimientos y Destrezas Esenciales de Texas para Ciencias de 2021 (§112.26, 6.º grado). Paráfrasis de buena fe; confírmalo antes de adoptarlo.",
+   "crumb.teacher": "‹ Inicio para docentes",
+   "crumb.suite": "Breakouts de pensamiento crítico de Ciencias"
+  },
+  "clues": [
+   {
+    "nm": "La densidad manda",
+    "title": "La densidad decide quién flota",
+    "body": "Densidad = masa ÷ volumen. Un objeto flota en un fluido cuando su densidad <b>total</b> es <b>menor</b> que la del fluido. El acero es mucho más denso que el agua: una barra maciza de acero se hunde. Pero el casco hueco de un barco reparte la misma masa en un volumen enorme, así que la densidad total del barco baja por debajo de la del agua, y flota."
+   },
+   {
+    "nm": "Muy bajo en el agua",
+    "title": "Por qué el Voyager va tan bajo",
+    "body": "Cada caja que se carga añade <b>masa</b> pero no <b>volumen</b> al casco. Más masa en el mismo volumen empuja la densidad total del barco hacia la del agua. Si cargas más allá de la línea de carga pintada, la densidad total supera la del agua: entonces el barco deja de flotar y empieza a hundirse."
+   },
+   {
+    "nm": "La caja que se desliza",
+    "title": "La caja que se deslizó",
+    "body": "Una caja descansa sobre la cubierta plana. La gravedad la tira hacia abajo; la <b>fuerza normal</b> de la cubierta empuja hacia arriba con la misma intensidad; la <b>fricción</b> la sujeta ante un pequeño empujón. Cuando todas las fuerzas sobre la caja suman <b>cero</b>, la fuerza neta es cero y su movimiento no cambia: eso es estar <b>equilibrada</b>. Una ola añade un empujón extra hacia el lado, la fuerza neta deja de ser cero, y la caja se desliza."
+   },
+   {
+    "nm": "Empujar hacia atrás",
+    "title": "El empuje de la hélice",
+    "body": "<b>Tercera Ley</b> de Newton: para cada fuerza hay una fuerza igual y opuesta sobre el <b>otro</b> objeto. La hélice empuja el agua <b>hacia atrás</b>; el agua empuja el barco <b>hacia adelante</b>. Las dos fuerzas son iguales en intensidad y opuestas en dirección, pero actúan sobre <b>objetos diferentes</b>, así que no se cancelan, y el barco avanza."
+   },
+   {
+    "nm": "La energía de la grúa",
+    "title": "Adónde va la energía de la grúa",
+    "body": "La grúa funciona con <b>energía eléctrica</b> del muelle. Levanta una caja a lo alto y almacena <b>energía potencial gravitatoria</b>. Cuando la caja baja, esa energía almacenada se transforma en <b>energía cinética</b> de movimiento. La energía nunca se crea ni se destruye: solo se transfiere y cambia de forma. Síguela en orden y no se pierde nada."
+   },
+   {
+    "nm": "Dato de un buzo",
+    "title": "El dato favorito de un buzo del puerto",
+    "body": "El pulpo gigante del Pacífico tiene <b>tres corazones</b> y sangre azul con cobre, y puede pasar por cualquier hueco más grande que su pico. A los buzos del puerto les encanta verlo cerca de los pilotes. Es un dato verdadero y asombroso, pero no te dice nada sobre cargar o navegar el Voyager."
+   }
+  ],
+  "locks": [
+   {
+    "title": "Sigue la energía de la grúa",
+    "q": "Pon la energía de la grúa en el orden en que se transforma mientras levanta y luego baja una caja. Toca los botones en orden.",
+    "pads": ["⬆️ Potencial", "🔌 Eléctrica", "⬇️ Cinética"],
+    "reason": "La energía eléctrica levanta la caja (almacenando energía potencial), y luego al bajarla se libera energía cinética. Seguir las transferencias de energía en orden muestra que la energía se conserva, no se pierde."
+   },
+   {
+    "title": "Por qué flota el barco de acero",
+    "q": "Una barra maciza de acero se hunde, pero el Voyager de acero flota. ¿Qué explicación respaldan las pruebas?",
+    "options": [
+     "El barco simplemente pesa menos que la barra.",
+     "El casco hueco reparte la masa del barco en un gran volumen, así que su densidad total es menor que la del agua.",
+     "El agua empuja más fuerte sobre los objetos grandes que sobre los pequeños."
+    ],
+    "reason": "La densidad compara la masa con el volumen. Dar al acero forma de casco hueco aumenta su volumen, lo que baja la densidad total por debajo de la del agua, y eso es lo que hace que flote."
+   },
+   {
+    "title": "¿Equilibradas o no?",
+    "q": "Antes de que llegara la ola, la caja estaba perfectamente quieta. Marca SOLO las pruebas sólidas de que las fuerzas sobre la caja estaban EQUILIBRADAS (fuerza neta = cero). Deja fuera el dato verdadero pero fuera de tema.",
+    "items": [
+     "La gravedad que tira hacia abajo y la fuerza normal de la cubierta que empuja hacia arriba son iguales en intensidad.",
+     "La fricción cancela un empujón suave hacia el lado, así que la caja no se mueve.",
+     "La caja sigue quieta: su movimiento no cambia.",
+     "Un pulpo gigante del Pacífico tiene tres corazones y sangre azul."
+    ],
+    "reason": "Las fuerzas equilibradas suman cero, así que el movimiento de un objeto no cambia. Una prueba sólida es solo la que muestra que la fuerza neta es cero; el dato del pulpo es verdadero pero irrelevante."
+   },
+   {
+    "title": "Nombra la ley",
+    "q": "La hélice empuja el agua hacia atrás y el agua empuja el barco hacia adelante: igual intensidad, dirección opuesta, sobre objetos diferentes. ¿Cuál de las leyes de Newton es esta? Escribe la palabra del número (por ejemplo, “primera”).",
+    "word": ["tercera", "3ra", "tercera ley", "tercera ley de newton", "ley de newton tercera", "acción-reacción", "accion-reaccion", "acción reacción", "accion reaccion"],
+    "reason": "Esta es la Tercera Ley de Newton. Los pares de fuerzas de la Tercera Ley son iguales y opuestos pero actúan sobre objetos diferentes, así que nunca se cancelan, y por eso justamente el barco avanza."
+   }
+  ]
+ },
+ "conceptBase": {
+  "header.eyebrow": "Ciencias de 6.º grado · Breakout rápido de conceptos",
+  "brief.label": "🎯 Calentamiento",
+  "crumb.teacher": "‹ Más breakouts de 6.º grado",
+  "crumb.suite": "Ciencias de 6.º grado",
+  "footer.text": "Ciencias de 6.º grado · Breakouts en línea de pensamiento crítico · Funciona por completo en tu navegador: sin cuentas, sin recopilar datos.",
+  "footer.disclaimer": "Alineado con los Conocimientos y Destrezas Esenciales de Texas para Ciencias de 2021 (§112.26, 6.º grado). Paráfrasis de buena fe; confírmalo antes de adoptarlo."
+ },
+ "concept": {
+  "states-matter": {
+   "ui": {
+    "h1": "Estados de la materia",
+    "sub": "¿Sólido, líquido o gas? Todo depende de cómo se mueven las partículas diminutas. Lee las pruebas y abre los cuatro candados.",
+    "briefH": "La misma sustancia, distintos estados",
+    "briefP": "Un bloque de hielo, un charco y el vapor son todos agua, pero las partículas se comportan de forma muy distinta en cada uno. Usa las pruebas para distinguir sólidos, líquidos y gases.",
+    "winStamp": "ESTADOS ORDENADOS ✓",
+    "winH": "¡Dominas los estados!",
+    "winP": "Ordenaste los estados por la energía de las partículas, descubriste qué hace que un gas sea un gas y nombraste la energía de las partículas en movimiento. Así es como la materia cambia de forma."
+   },
+   "clues": [
+    {"nm": "Sólido", "title": "Los sólidos mantienen su forma", "body": "En un sólido, las partículas están muy juntas y solo vibran en su lugar. Un sólido conserva su propia forma y volumen."},
+    {"nm": "Líquido", "title": "Los líquidos fluyen", "body": "En un líquido, las partículas están juntas pero se deslizan unas sobre otras. Un líquido conserva su volumen pero toma la forma de su recipiente."},
+    {"nm": "Gas", "title": "Los gases lo llenan todo", "body": "En un gas, las partículas están muy separadas y se mueven muy rápido. Un gas se expande para llenar cualquier recipiente en el que esté."},
+    {"nm": "Añade calor", "title": "El calor añade energía", "body": "Calentar la materia da a sus partículas más energía cinética, así que se mueven más rápido y se separan. Con suficiente calor se puede derretir un sólido o hervir un líquido."},
+    {"nm": "Quita calor", "title": "Enfriar lo hace más lento", "body": "Enfriar quita energía, así que las partículas se mueven más despacio y se juntan más. Así es como un gas se condensa o un líquido se congela."},
+    {"nm": "Dato del cielo", "title": "Un dato sobre las nubes", "body": "Una gran nube cúmulo puede contener más de un millón de libras de gotitas de agua. Es un dato curioso, pero no te dice cómo se mueven las partículas en un sólido, líquido o gas."}
+   ],
+   "locks": [
+    {"title": "Ordena por energía de las partículas", "q": "Ordena los tres estados desde la MENOR energía y separación de las partículas hasta la MAYOR. Toca los botones en orden.",
+     "pads": ["💨 Gas", "🧊 Sólido", "💧 Líquido"],
+     "reason": "Las partículas tienen la menor energía y separación en un sólido y la mayor en un gas. Ordenar por el movimiento de las partículas es como explicamos los estados de la materia."},
+    {"title": "¿Cuál es un gas?", "q": "¿Qué descripción corresponde a un gas?",
+     "options": ["Las partículas están muy juntas y solo vibran en su lugar.", "Las partículas están muy separadas, se mueven rápido y llenan cualquier recipiente.", "Las partículas se deslizan unas sobre otras pero mantienen un volumen fijo."],
+     "reason": "Un gas tiene partículas rápidas y separadas que se expanden para llenar su recipiente; eso es lo que lo distingue de un sólido o un líquido."},
+    {"title": "Derretir hielo", "q": "Marca SOLO las pruebas sólidas de que calentar el hielo puede derretirlo. Deja fuera el dato verdadero pero fuera de tema.",
+     "items": ["El calor da más energía a las partículas para que se muevan más rápido.", "Las partículas más rápidas se separan, así que el sólido puede volverse líquido.", "Añadir energía es lo que cambia un sólido hacia un líquido.", "Una nube cúmulo puede contener más de un millón de libras de agua."],
+     "reason": "El hielo se derrite porque la energía añadida acelera las partículas hasta que se deslizan unas sobre otras. El dato de la nube es verdadero pero no tiene nada que ver con derretir."},
+    {"title": "Nombra la energía", "q": "La energía de las partículas en movimiento —la energía que aumenta al calentar la materia— se llama energía ____. Escribe la palabra.",
+     "word": ["cinética", "cinetica"],
+     "reason": "La energía cinética es la energía del movimiento. Calentar aumenta la energía cinética de las partículas, por eso la materia puede cambiar de estado."}
+   ]
+  },
+  "mixtures": {
+   "ui": {
+    "h1": "¿Mezcla o sustancia pura?",
+    "sub": "Mezcla de frutos secos, agua salada, oro puro: ¿cuál es cuál? Investiga las pruebas y abre los cuatro candados.",
+    "briefH": "Clasifica las sustancias",
+    "briefP": "Algunos materiales son una sustancia pura; otros son mezclas que podrías volver a separar. Usa las pruebas para distinguir sustancias puras de mezclas bien mezcladas y mezclas desiguales.",
+    "winStamp": "CLASIFICADO ✓",
+    "winH": "¡Maestro de las mezclas!",
+    "winP": "Separaste una mezcla, descubriste una mezcla uniforme y la nombraste. Como una mezcla no está unida químicamente, siempre puedes volver a separarla."
+   },
+   "clues": [
+    {"nm": "Pura", "title": "Sustancias puras", "body": "Una sustancia pura está hecha de un solo tipo de partícula, como el agua pura o el oro puro. No se puede separar con pasos físicos simples."},
+    {"nm": "Mezcla", "title": "Mezclas", "body": "Una mezcla son dos o más materiales mezclados pero NO unidos químicamente. Por eso puedes separarlos de nuevo."},
+    {"nm": "Uniforme", "title": "Mezcla uniforme", "body": "Una mezcla homogénea está mezclada tan uniformemente que se ve igual en todas partes, como el agua salada. No puedes ver las partes por separado."},
+    {"nm": "Desigual", "title": "Mezcla desigual", "body": "Una mezcla heterogénea tiene partes que todavía puedes ver y separar, como la mezcla de frutos secos o una ensalada."},
+    {"nm": "Separar", "title": "Volver a separarla", "body": "Puedes separar el agua salada dejando que el agua se evapore: la sal queda atrás. Esto funciona porque la mezcla nunca estuvo unida químicamente."},
+    {"nm": "Dato de la abeja", "title": "Un dato sobre la miel", "body": "Las abejas visitan unas dos millones de flores para hacer una libra de miel. Es verdadero y asombroso, pero no te ayudará a clasificar una mezcla."}
+   ],
+   "locks": [
+    {"title": "Separa el agua salada", "q": "Ordena los pasos para separar la sal del agua salada. Toca los botones en orden.",
+     "pads": ["🧂 La sal queda atrás", "🥣 Vierte el agua salada en un plato", "☀️ El agua se evapora"],
+     "reason": "Viértela, deja que el agua se evapore, y la sal queda. Se separa porque una mezcla no está unida químicamente."},
+    {"title": "¿Cuál es homogénea?", "q": "¿Cuál de estas es una mezcla homogénea (mezclada uniformemente)?",
+     "options": ["Mezcla de frutos secos con nueces y pasas.", "Agua salada que se ve igual en todas partes.", "Un montón de cobre puro."],
+     "reason": "El agua salada está mezclada tan uniformemente que se ve igual: homogénea. La mezcla de frutos secos es desigual, y el cobre puro no es una mezcla."},
+    {"title": "¿Es una mezcla la de frutos secos?", "q": "Marca SOLO las pruebas sólidas de que la mezcla de frutos secos es una mezcla heterogénea. Deja fuera el dato verdadero pero fuera de tema.",
+     "items": ["Puedes ver por separado las nueces y las pasas.", "Puedes separar las piezas sin una reacción química.", "Las partes no están repartidas de forma uniforme.", "Las abejas visitan unas dos millones de flores por libra de miel."],
+     "reason": "La mezcla de frutos secos es heterogénea porque sus partes son visibles, desiguales y separables. El dato de la miel es verdadero pero está fuera de tema."},
+    {"title": "Nombra la mezcla uniforme", "q": "Una mezcla combinada tan uniformemente que se ve igual en todas partes (como el agua salada) se llama mezcla ____. Escribe la palabra.",
+     "word": ["homogénea", "homogenea", "solución", "solucion"],
+     "reason": "Una mezcla homogénea se ve uniforme en todas partes. Nombrar el tipo es como los científicos clasifican lo que observan."}
+   ]
+  },
+  "periodic-table": {
+   "ui": {
+    "h1": "Leer la tabla periódica",
+    "sub": "Metales, no metales y los intermedios. Usa las pruebas y abre los cuatro candados.",
+    "briefH": "Conoce los elementos",
+    "briefP": "La tabla periódica ordena cada elemento según sus propiedades. Usa las pruebas para distinguir metales de no metales, y descubre los metaloides que están entre ellos.",
+    "winStamp": "ELEMENTOS DESCIFRADOS ✓",
+    "winH": "¡Maestro de la tabla!",
+    "winP": "Ordenaste los tipos de elementos, relacionaste las propiedades de un metal y nombraste los elementos intermedios. La tabla periódica es un mapa de propiedades."
+   },
+   "clues": [
+    {"nm": "Metales", "title": "Metales", "body": "La mayoría de los elementos son metales. Suelen ser brillantes, se doblan sin romperse y conducen el calor y la electricidad. Están a la izquierda y en el centro de la tabla."},
+    {"nm": "No metales", "title": "No metales", "body": "Los no metales suelen ser opacos, quebradizos y NO conducen bien. Están en el lado derecho de la tabla (excepto el hidrógeno)."},
+    {"nm": "Intermedios", "title": "Metaloides", "body": "Los metaloides están a lo largo de la 'escalera' entre los metales y los no metales. Tienen algunas propiedades de cada uno; el silicio, usado en los chips de computadora, es uno."},
+    {"nm": "Tierras raras", "title": "Elementos de tierras raras", "body": "Los elementos de tierras raras son metales especiales usados en teléfonos, imanes y pantallas. La tecnología moderna depende de ellos."},
+    {"nm": "Símbolos", "title": "Símbolos de los elementos", "body": "Cada elemento tiene un símbolo de una o dos letras, como O para el oxígeno o Fe para el hierro. La tabla se ordena según las propiedades de estos elementos."},
+    {"nm": "Dato del océano", "title": "Un dato sobre los tiburones", "body": "Un tiburón puede tener miles de dientes a lo largo de su vida, reemplazándolos constantemente. Es un dato verdadero, pero no te ayudará a leer la tabla periódica."}
+   ],
+   "locks": [
+    {"title": "De izquierda a derecha", "q": "Al recorrer la tabla, ordena estos grupos desde el lado IZQUIERDO hasta el lado DERECHO. Toca los botones en orden.",
+     "pads": ["🎈 No metales", "🔩 Metales", "🪜 Metaloides"],
+     "reason": "Los metales ocupan la izquierda y el centro, los metaloides forman la escalera, y los no metales están a la derecha. La posición en la tabla te dice las propiedades de un elemento."},
+    {"title": "Identifica el metal", "q": "¿Qué conjunto de propiedades describe un metal?",
+     "options": ["Opaco, quebradizo y mal conductor.", "Brillante, flexible y conduce la electricidad.", "Un gas que llena su recipiente."],
+     "reason": "Los metales son brillantes, flexibles y buenos conductores. Opaco y quebradizo describe a los no metales."},
+    {"title": "Por qué el silicio es un metaloide", "q": "Marca SOLO las pruebas sólidas de que el silicio es un metaloide. Deja fuera el dato verdadero pero fuera de tema.",
+     "items": ["Está a lo largo de la escalera, entre los metales y los no metales.", "Tiene algunas propiedades de los metales y algunas de los no metales.", "Se usa en los chips de computadora como semiconductor.", "Un tiburón puede formar miles de dientes a lo largo de su vida."],
+     "reason": "Un metaloide está entre los dos grupos y comparte propiedades de ambos. El dato del tiburón es verdadero pero irrelevante."},
+    {"title": "Nombra a los intermedios", "q": "Los elementos a lo largo de la escalera que comparten propiedades de metales Y no metales se llaman ____. Escribe la palabra.",
+     "word": ["metaloide", "metaloides"],
+     "reason": "Los metaloides están entre los metales y los no metales. Nombrar una categoría a partir de sus propiedades es pensamiento científico fundamental."}
+   ]
+  },
+  "density": {
+   "ui": {
+    "h1": "Densidad: ¿se hunde o flota?",
+    "sub": "¿Por qué flota un barco pesado pero se hunde una moneda pequeña? Usa las pruebas y abre los cuatro candados.",
+    "briefH": "Descifra el código de flotar",
+    "briefP": "Flotar no es cuestión de ser pesado o ligero: es cuestión de densidad comparada con la del fluido. Usa las pruebas para predecir qué se hunde y qué flota.",
+    "winStamp": "FLOTAR DESCIFRADO ✓",
+    "winH": "¡Detective de la densidad!",
+    "winP": "Apilaste líquidos por densidad, explicaste por qué flota el hielo y nombraste la idea. La densidad —masa concentrada en un volumen— decide quién flota."
+   },
+   "clues": [
+    {"nm": "Densidad", "title": "Qué es la densidad", "body": "La densidad es cuánta masa está concentrada en un espacio: densidad = masa ÷ volumen. Dos objetos del mismo tamaño pueden tener densidades muy distintas."},
+    {"nm": "Regla de flotar", "title": "La regla de flotar", "body": "Un objeto flota en un fluido cuando su densidad es MENOR que la del fluido, y se hunde cuando su densidad es MAYOR."},
+    {"nm": "Aceite y agua", "title": "Los líquidos se apilan", "body": "Vierte aceite, agua y miel juntos y se forman capas. El líquido menos denso (el aceite) flota arriba; el más denso (la miel) se hunde al fondo."},
+    {"nm": "El hielo flota", "title": "Hielo sobre el agua", "body": "El hielo flota porque el agua congelada es MENOS densa que el agua líquida. Es raro: la mayoría de los sólidos se hunden en su propio líquido."},
+    {"nm": "La forma importa", "title": "La forma cambia la densidad", "body": "Una bola de arcilla se hunde, pero si aplanas la misma arcilla en forma de barco, flota. La forma de barco ocupa más volumen, lo que baja su densidad total."},
+    {"nm": "Dato de la ballena", "title": "Un dato sobre las ballenas", "body": "El corazón de una ballena azul es casi del tamaño de un auto pequeño. Es un dato verdadero y asombroso, pero no te dirá si algo flota."}
+   ],
+   "locks": [
+    {"title": "Apila los líquidos", "q": "Ordena los líquidos desde la capa SUPERIOR hasta la INFERIOR (de menos denso a más denso). Toca los botones en orden.",
+     "pads": ["🍯 Miel", "🫗 Aceite", "💧 Agua"],
+     "reason": "El líquido menos denso flota arriba y el más denso se hunde al fondo. Ordenar por densidad predice las capas."},
+    {"title": "Por qué flota el hielo", "q": "¿Por qué flota un cubo de hielo en un vaso de agua?",
+     "options": ["Porque el hielo está más frío que el agua.", "Porque el hielo es menos denso que el agua líquida.", "Porque el hielo no pesa nada."],
+     "reason": "Flotar depende de la densidad, no de la temperatura ni del peso. El hielo es menos denso que el agua líquida, así que flota."},
+    {"title": "Bola de arcilla vs. barco de arcilla", "q": "Marca SOLO las pruebas sólidas de que un barco de arcilla flota mientras que una bola de arcilla se hunde. Deja fuera el dato verdadero pero fuera de tema.",
+     "items": ["La forma de barco reparte la misma masa en más volumen.", "Más volumen baja la densidad total de la arcilla.", "Con una densidad menor que la del agua, el barco flota.", "El corazón de una ballena azul es casi del tamaño de un auto pequeño."],
+     "reason": "La misma masa en más volumen significa menor densidad, así que el barco flota. El dato de la ballena es verdadero pero está fuera de tema."},
+    {"title": "Nombra la idea", "q": "Masa ÷ volumen —la cantidad de masa concentrada en un espacio, que decide si algo flota— se llama ____. Escribe la palabra.",
+     "word": ["densidad"],
+     "reason": "La densidad es masa por volumen. Comparar la densidad de un objeto con la de un fluido te dice si flota."}
+   ]
+  },
+  "chemical-change": {
+   "ui": {
+    "h1": "Detective del cambio químico",
+    "sub": "¿Se formó una sustancia NUEVA, o solo cambió de forma? Usa las pruebas y abre los cuatro candados.",
+    "briefH": "¿Sustancia nueva o no?",
+    "briefP": "Un cambio químico crea una sustancia totalmente nueva; un cambio físico no. Usa las pruebas para leer las pistas que deja una reacción.",
+    "winStamp": "CASO RESUELTO ✓",
+    "winH": "¡Detective astuto!",
+    "winP": "Seguiste la formación del óxido, descubriste la señal de un gas nuevo y nombraste el cambio. Un gas, un color, calor o un sólido nuevo son todas señales de un cambio químico."
+   },
+   "clues": [
+    {"nm": "Químico", "title": "Cambio químico", "body": "En un cambio químico, los átomos se reordenan para hacer una sustancia NUEVA con propiedades nuevas. Por lo general no se puede deshacer con facilidad."},
+    {"nm": "Señal de gas", "title": "Señal: un gas nuevo", "body": "Que se formen burbujas de un gas nuevo (sin hervir) es una señal de que está ocurriendo un cambio químico."},
+    {"nm": "Señal de calor", "title": "Señal: cambio de energía", "body": "Un cambio de temperatura —que la mezcla se caliente o se enfríe por sí sola— puede indicar un cambio químico."},
+    {"nm": "Señal de color", "title": "Señal: color y sólidos", "body": "Un cambio de color sorprendente, o la formación de un sólido nuevo (un precipitado) en un líquido, también son señales de un cambio químico."},
+    {"nm": "Físico", "title": "Cambio físico", "body": "Cortar, derretir o triturar son cambios FÍSICOS: la sustancia se ve distinta pero sigue siendo el mismo material, y no se forma ninguna sustancia nueva."},
+    {"nm": "Dato del ave", "title": "Un dato sobre los flamencos", "body": "Los flamencos se vuelven rosados por los pigmentos de la comida que comen. Es un dato verdadero sobre el color, pero comer camarones no es la señal de cambio químico que estás comprobando aquí."}
+   ],
+   "locks": [
+    {"title": "Observa oxidarse el hierro", "q": "Ordena lo que pasa a medida que el hierro se oxida con el tiempo. Toca los botones en orden.",
+     "pads": ["🟤 Se forma óxido marrón (sustancia nueva)", "🔩 Hierro brillante", "💧 Expuesto al aire y al agua"],
+     "reason": "El hierro brillante se encuentra con el aire y el agua, y se forma una sustancia nueva: el óxido. Una sustancia nueva es la marca de un cambio químico."},
+    {"title": "¿Cuál es químico?", "q": "¿Cuál de estos es evidencia de un cambio QUÍMICO?",
+     "options": ["Un cubo de hielo derritiéndose en agua.", "Burbujas de un gas nuevo que se forman al mezclar dos líquidos.", "Un alambre que se dobla en una nueva forma."],
+     "reason": "Un gas nuevo señala una sustancia nueva: un cambio químico. Derretir y doblar son cambios físicos."},
+    {"title": "Cocinar un huevo", "q": "Marca SOLO las pruebas sólidas de que cocinar un huevo es un cambio químico. Deja fuera el dato verdadero pero fuera de tema.",
+     "items": ["La parte clara se vuelve sólida y blanca: una sustancia nueva.", "El cambio no se puede revertir a un huevo crudo.", "Su textura y sus propiedades cambian de forma permanente.", "Los flamencos se vuelven rosados por los pigmentos de su comida."],
+     "reason": "Una sustancia nueva e irreversible con propiedades nuevas significa un cambio químico. El dato del flamenco es verdadero pero está fuera de tema."},
+    {"title": "Nombra el cambio", "q": "Un cambio que forma una sustancia totalmente nueva (mostrado por gas, color, calor o un sólido nuevo) es un cambio ____. Escribe la palabra.",
+     "word": ["químico", "quimico"],
+     "reason": "Un cambio químico crea una sustancia nueva. Leer las señales es como los científicos lo distinguen de un cambio físico."}
+   ]
+  },
+  "forces": {
+   "ui": {
+    "h1": "¿Equilibradas o desequilibradas?",
+    "sub": "¿Qué hace que un objeto arranque, se detenga o siga quieto? Usa las pruebas y abre los cuatro candados.",
+    "briefH": "Suma las fuerzas",
+    "briefP": "Las fuerzas son empujones y jalones. Cuando suman cero, el movimiento no cambia; cuando no, sí cambia. Usa las pruebas para razonar sobre las fuerzas.",
+    "winStamp": "FUERZAS RESUELTAS ✓",
+    "winH": "¡Experto en fuerzas!",
+    "winP": "Seguiste una pelota a través de fuerzas equilibradas y desequilibradas, interpretaste una cuerda tirada de ambos lados y descubriste un par de la Tercera Ley de Newton. La fuerza neta decide el movimiento."
+   },
+   "clues": [
+    {"nm": "Fuerza", "title": "Las fuerzas son empujones y jalones", "body": "Una fuerza es un empujón o un jalón. La gravedad, la fricción, el magnetismo, un empujón aplicado y la fuerza normal (de apoyo) son todas fuerzas."},
+    {"nm": "Fuerza neta", "title": "Fuerza neta", "body": "La fuerza neta es lo que queda después de sumar todas las fuerzas sobre un objeto, incluyendo sus direcciones."},
+    {"nm": "Equilibradas", "title": "Fuerzas equilibradas", "body": "Cuando las fuerzas suman CERO, están equilibradas. Una fuerza neta equilibrada significa que el movimiento del objeto NO cambia: se queda quieto o sigue moviéndose igual."},
+    {"nm": "Desequilibradas", "title": "Fuerzas desequilibradas", "body": "Cuando las fuerzas NO suman cero, están desequilibradas. Una fuerza neta desequilibrada hace que un objeto acelere, frene o cambie de dirección."},
+    {"nm": "Tercera Ley", "title": "Tercera Ley de Newton", "body": "Para cada fuerza hay una fuerza igual y opuesta sobre el OTRO objeto. Un cohete empuja el gas hacia abajo; el gas empuja el cohete hacia arriba."},
+    {"nm": "Dato de velocidad", "title": "Un dato sobre el guepardo", "body": "Un guepardo puede alcanzar unas 70 millas por hora en carreras cortas. Es un dato verdadero sobre la velocidad, pero no te dirá si las fuerzas están equilibradas."}
+   ],
+   "locks": [
+    {"title": "Sigue la pelota de fútbol", "q": "Ordena lo que le pasa a una pelota de fútbol. Toca los botones en orden.",
+     "pads": ["💥 Pateada: fuerza desequilibrada", "⚖️ Quieta: equilibrada", "🛑 Rueda y frena: fricción"],
+     "reason": "Quieta (equilibrada) → pateada (desequilibrada) → frenada por la fricción (desequilibrada otra vez). Un cambio en el movimiento siempre significa una fuerza neta desequilibrada."},
+    {"title": "La cuerda inmóvil", "q": "En la cuerda tirada de ambos lados, los dos equipos jalan fuerte pero la cuerda no se mueve. ¿Qué es cierto?",
+     "options": ["Las fuerzas están desequilibradas.", "Las fuerzas están equilibradas, así que la fuerza neta es cero.", "Nadie está jalando."],
+     "reason": "La cuerda no se mueve porque los jalones se cancelan: fuerzas equilibradas, fuerza neta cero. Fuerzas grandes pueden sumar cero."},
+    {"title": "Despegue del cohete", "q": "Marca SOLO las pruebas sólidas de que un cohete al despegar muestra la Tercera Ley de Newton. Deja fuera el dato verdadero pero fuera de tema.",
+     "items": ["El motor empuja el gas caliente hacia abajo.", "El gas empuja el cohete hacia arriba con una fuerza igual.", "Las dos fuerzas son iguales, opuestas y actúan sobre objetos diferentes.", "Un guepardo puede correr a unas 70 millas por hora."],
+     "reason": "Los pares de la Tercera Ley son iguales, opuestos y actúan sobre objetos diferentes: el gas y el cohete. El dato del guepardo es verdadero pero está fuera de tema."},
+    {"title": "Nombra la fuerza", "q": "La fuerza que resiste el deslizamiento y frena una pelota que rueda —la fuerza de roce entre superficies— se llama ____. Escribe la palabra.",
+     "word": ["fricción", "friccion", "roce"],
+     "reason": "La fricción se opone al movimiento entre superficies. Nombrar cada fuerza es el primer paso para sumarlas en una fuerza neta."}
+   ]
+  },
+  "waves": {
+   "ui": {
+    "h1": "Ondas: dos tipos",
+    "sub": "¿Cómo transportan energía el sonido y la luz? Usa las pruebas y abre los cuatro candados.",
+    "briefH": "Súbete a la onda",
+    "briefP": "Las ondas transportan energía de un lugar a otro. Algunas se mueven de lado a lado, otras se comprimen y estiran. Usa las pruebas para distinguir las ondas transversales de las longitudinales.",
+    "winStamp": "ONDAS LEÍDAS ✓",
+    "winH": "¡Domador de ondas!",
+    "winP": "Seguiste cómo viaja el sonido, relacionaste un tipo de onda y nombraste la de lado a lado. Las ondas transportan energía, no el material que atraviesan."
+   },
+   "clues": [
+    {"nm": "Las ondas transportan", "title": "Las ondas transportan energía", "body": "Una onda transporta ENERGÍA de un lugar a otro. El material que atraviesa casi siempre se queda en su sitio: solo la energía avanza."},
+    {"nm": "Transversal", "title": "Ondas transversales", "body": "En una onda transversal, el material se mueve de arriba abajo, en ángulo recto con la dirección en que viaja la onda. La luz y las ondas del agua son transversales."},
+    {"nm": "Longitudinal", "title": "Ondas longitudinales", "body": "En una onda longitudinal, el material se comprime y se separa, de un lado a otro en la MISMA dirección en que viaja la onda. El sonido es longitudinal."},
+    {"nm": "Amplitud", "title": "Amplitud", "body": "La amplitud es el tamaño de una onda. Una amplitud mayor transporta más energía: un sonido más fuerte o una ola de agua más alta."},
+    {"nm": "El pato flotando", "title": "El pato que se mece", "body": "Cuando las ondas pasan bajo un pato que flota, el pato sube y baja pero se queda casi en el mismo lugar. La energía avanza; el pato no viaja con ella."},
+    {"nm": "Dato de un animal", "title": "Un dato sobre los elefantes", "body": "Los elefantes pueden sentir retumbos graves a través del suelo con sus patas. Es un dato verdadero, pero aquí no es evidencia sobre el tipo de onda."}
+   ],
+   "locks": [
+    {"title": "Cómo viaja el sonido", "q": "Ordena cómo una onda de sonido llega a tu oído. Toca los botones en orden.",
+     "pads": ["👂 Llega a tu oído", "🔔 Un objeto vibra", "🎚️ El aire se comprime y se separa"],
+     "reason": "Una vibración empuja el aire en compresiones y separaciones (una onda longitudinal) que llegan a tu oído. La energía viaja; el aire no cruza volando la habitación."},
+    {"title": "¿Qué tipo es el sonido?", "q": "El sonido, ¿qué tipo de onda es?",
+     "options": ["Transversal: el material se mueve de arriba abajo.", "Longitudinal: el material se mueve de un lado a otro en la dirección de la onda.", "Ninguna: el sonido no es una onda."],
+     "reason": "El sonido comprime y separa el aire a lo largo de su camino: una onda longitudinal."},
+    {"title": "Energía, no materia", "q": "Marca SOLO las pruebas sólidas de que una onda mueve energía, no el material. Deja fuera el dato verdadero pero fuera de tema.",
+     "items": ["Un pato que flota sube y baja pero se queda en su sitio.", "El agua vuelve a donde estaba después de que pasa la onda.", "Solo la energía avanza a lo largo de la onda.", "Los elefantes pueden sentir retumbos a través de sus patas."],
+     "reason": "Que el pato se quede en su sitio muestra que el agua no es arrastrada: solo la energía lo es. El dato del elefante es verdadero pero está fuera de tema."},
+    {"title": "Nombra la onda", "q": "Una onda cuyo material se mueve de arriba abajo, en ángulo recto con la dirección de la onda (como la luz o una ondulación del agua), es una onda ____. Escribe la palabra.",
+     "word": ["transversal"],
+     "reason": "Una onda transversal se mueve en ángulo recto con su dirección de viaje. Nombrar el tipo es como clasificamos las ondas."}
+   ]
+  },
+  "earth-sun-moon": {
+   "ui": {
+    "h1": "La razón de las estaciones",
+    "sub": "¿Por qué tenemos verano e invierno, y qué causa las mareas? Usa las pruebas y abre los cuatro candados.",
+    "briefH": "La inclinación, no la distancia",
+    "briefP": "Mucha gente cree que el verano significa que la Tierra está más cerca del Sol. ¡No es así! Usa las pruebas para encontrar la causa real de las estaciones y las mareas.",
+    "winStamp": "MITO DESMONTADO ✓",
+    "winH": "¡Detective de estaciones!",
+    "winP": "Seguiste la inclinación a lo largo del año, desmontaste el mito de la distancia y nombraste la causa. La inclinación de la Tierra —no su distancia— produce las estaciones."
+   },
+   "clues": [
+    {"nm": "La inclinación", "title": "La Tierra está inclinada", "body": "La Tierra está inclinada unos 23.5° mientras orbita el Sol. Esa inclinación apunta en la misma dirección todo el año."},
+    {"nm": "Luz directa", "title": "Directa vs. inclinada", "body": "Cuando tu mitad de la Tierra se inclina HACIA el Sol, la luz solar llega más directa: eso es el verano. Al inclinarse en sentido contrario, la luz llega inclinada y más débil: eso es el invierno."},
+    {"nm": "No es la distancia", "title": "La distancia no lo hace", "body": "La Tierra está en realidad MÁS CERCA del Sol a principios de enero, invierno en el norte. Así que la distancia no puede ser lo que causa las estaciones."},
+    {"nm": "Estaciones opuestas", "title": "Mitades opuestas", "body": "Cuando es verano en el hemisferio norte, es invierno en el hemisferio sur. Ambos están a la misma distancia del Sol al mismo tiempo."},
+    {"nm": "Mareas", "title": "La Luna y las mareas", "body": "La gravedad de la Luna tira de los océanos de la Tierra y crea mareas altas y bajas a medida que la Tierra gira."},
+    {"nm": "Dato de la noche", "title": "Un dato sobre el búho", "body": "Un búho puede girar la cabeza unos 270 grados. Es un dato verdadero y curioso, pero no explica las estaciones."}
+   ],
+   "locks": [
+    {"title": "Un año de inclinación (norte)", "q": "Para el hemisferio norte, ordena estas etapas a medida que el año va del verano hacia el invierno. Toca los botones en orden.",
+     "pads": ["❄️ Inclinado en sentido contrario: invierno", "☀️ Inclinado hacia el Sol: verano", "🍂 Inclinado de lado: otoño"],
+     "reason": "Inclinado hacia el Sol (verano) → de lado (otoño) → inclinado en sentido contrario (invierno). Es la inclinación, que cambia qué tan directa llega la luz, lo que impulsa las estaciones."},
+    {"title": "¿Qué causa las estaciones?", "q": "¿Qué causa en realidad las estaciones de la Tierra?",
+     "options": ["Que la Tierra se acerque y se aleje del Sol.", "La inclinación de la Tierra, que cambia qué tan directa llega la luz solar a cada hemisferio.", "Que el Sol se caliente y se enfríe."],
+     "reason": "Las estaciones vienen de la inclinación de la Tierra, no de su distancia. La inclinación cambia qué tan directa golpea la luz solar cada hemisferio."},
+    {"title": "Desmonta el mito de la distancia", "q": "Marca SOLO las pruebas sólidas de que la inclinación (no la distancia) causa las estaciones. Deja fuera el dato verdadero pero fuera de tema.",
+     "items": ["La Tierra está más cerca del Sol en enero, durante el invierno del norte.", "Los dos hemisferios tienen estaciones opuestas al mismo tiempo.", "Un hemisferio inclinado hacia el Sol recibe luz más directa.", "Un búho puede girar la cabeza unos 270 grados."],
+     "reason": "Estaciones opuestas a la misma distancia, más lo de estar más cerca en enero, demuestran que la distancia no es la causa: la inclinación sí. El dato del búho es verdadero pero está fuera de tema."},
+    {"title": "Nombra la causa", "q": "La causa real de las estaciones es la ____ de la Tierra: la inclinación de 23.5° que cambia qué tan directa llega la luz solar. Escribe la palabra.",
+     "word": ["inclinación", "inclinacion"],
+     "reason": "La inclinación de la Tierra es la causa de las estaciones. Nombrarla —y descartar la distancia— es el razonamiento clave."}
+   ]
+  },
+  "earth-systems": {
+   "ui": {
+    "h1": "Dentro de la Tierra",
+    "sub": "¿Qué hay bajo tus pies, y cómo cambian las rocas? Usa las pruebas y abre los cuatro candados.",
+    "briefH": "Explora los sistemas de la Tierra",
+    "briefP": "La Tierra tiene capas en su interior y rocas que poco a poco cambian de un tipo a otro. Usa las pruebas para trazar las capas y seguir el ciclo de las rocas.",
+    "winStamp": "TIERRA TRAZADA ✓",
+    "winH": "¡Genio de la geología!",
+    "winP": "Ordenaste las capas de la Tierra, relacionaste cómo se forma la roca ígnea y nombraste una capa. Las rocas de la Tierra siempre se están reciclando poco a poco."
+   },
+   "clues": [
+    {"nm": "Capas", "title": "Las capas de la Tierra", "body": "De afuera hacia adentro, la Tierra tiene la corteza (superficie fina y rocosa), el manto (roca gruesa y caliente que fluye despacio), el núcleo externo (metal líquido) y el núcleo interno (metal sólido)."},
+    {"nm": "Ígnea", "title": "Roca ígnea", "body": "La roca ígnea se forma cuando la roca fundida (magma o lava) se enfría y se endurece, como la roca de un volcán."},
+    {"nm": "Sedimentaria", "title": "Roca sedimentaria", "body": "La roca sedimentaria se forma cuando trozos de arena, lodo y conchas se asientan en capas y se compactan y cementan con el tiempo."},
+    {"nm": "Metamórfica", "title": "Roca metamórfica", "body": "La roca metamórfica se forma cuando el calor y la presión, en lo profundo del subsuelo, transforman una roca existente en un tipo nuevo, sin llegar a fundirla del todo."},
+    {"nm": "Ciclo de las rocas", "title": "El ciclo de las rocas", "body": "Cualquier roca puede convertirse poco a poco en otro tipo con el tiempo: al fundirse, enfriarse, erosionarse o al ser comprimida y calentada. Ese es el ciclo de las rocas."},
+    {"nm": "Dato del mar", "title": "Un dato sobre el pulpo", "body": "Un pulpo tiene tres corazones y sangre azul. Es un dato verdadero y asombroso, pero no te ayudará a ordenar las capas de la Tierra."}
+   ],
+   "locks": [
+    {"title": "De la superficie al centro", "q": "Ordena las capas de la Tierra desde la SUPERFICIE hasta el CENTRO. Toca los botones en orden.",
+     "pads": ["⚪ Núcleo interno", "🌐 Corteza", "🟠 Núcleo externo", "🟤 Manto"],
+     "reason": "Corteza, luego manto, luego núcleo externo, luego núcleo interno. Conocer el orden es como modelamos la Tierra como un sistema de capas."},
+    {"title": "Cómo se forma la ígnea", "q": "¿Qué roca se forma cuando la roca fundida se enfría y se endurece?",
+     "options": ["Roca sedimentaria.", "Roca ígnea.", "Roca metamórfica."],
+     "reason": "La roca ígnea proviene de magma o lava enfriada. La sedimentaria se forma de trozos asentados; la metamórfica, del calor y la presión."},
+    {"title": "Las rocas cambian", "q": "Marca SOLO las pruebas sólidas de que las rocas cambian de tipo con el tiempo (el ciclo de las rocas). Deja fuera el dato verdadero pero fuera de tema.",
+     "items": ["El calor y la presión pueden transformar una roca en una roca metamórfica.", "Al asentarse y cementarse trozos de sedimento se forma roca sedimentaria.", "Fundir y enfriar puede convertir una roca en roca ígnea.", "Un pulpo tiene tres corazones y sangre azul."],
+     "reason": "Fundirse, asentarse y el calor con la presión son los caminos del ciclo de las rocas. El dato del pulpo es verdadero pero está fuera de tema."},
+    {"title": "Nombra la capa", "q": "La capa gruesa de roca caliente que fluye despacio, justo debajo de la corteza, es el ____. Escribe la palabra.",
+     "word": ["manto"],
+     "reason": "El manto está entre la corteza y el núcleo. Nombrar las capas construye un modelo de la estructura de la Tierra."}
+   ]
+  },
+  "living-systems": {
+   "ui": {
+    "h1": "Sistemas vivos",
+    "sub": "¿Cómo dependen unos de otros los seres vivos, y de qué están hechos? Usa las pruebas y abre los cuatro candados.",
+    "briefH": "La vida se conecta",
+    "briefP": "Todo ser vivo está hecho de células y conectado con otros en un ecosistema. Usa las pruebas para razonar sobre organismos, relaciones y células.",
+    "winStamp": "VIDA CONECTADA ✓",
+    "winH": "¡Científico de la vida!",
+    "winP": "Ordenaste los niveles de la vida, descubriste una colaboración y nombraste el bloque básico de la vida. Desde las células hasta las comunidades, los seres vivos dependen unos de otros."
+   },
+   "clues": [
+    {"nm": "Ecosistema", "title": "Ecosistemas", "body": "Un ecosistema son todos los seres vivos (bióticos) y las cosas no vivas (abióticas) de un área, interactuando juntos, como un estanque con peces, plantas, agua y luz solar."},
+    {"nm": "Niveles", "title": "Niveles de la vida", "body": "Los seres vivos se organizan de lo pequeño a lo grande: un organismo, luego una población (del mismo tipo), luego una comunidad (muchos tipos juntos)."},
+    {"nm": "Mutualismo", "title": "Ayudarse mutuamente", "body": "En el mutualismo, AMBOS integrantes se benefician, como una abeja que obtiene néctar mientras poliniza una flor."},
+    {"nm": "Parasitismo", "title": "Uno gana, uno pierde", "body": "En el parasitismo, uno se beneficia y el otro sale perjudicado, como una garrapata que se alimenta de un perro."},
+    {"nm": "Células", "title": "Hechos de células", "body": "Todos los seres vivos están hechos de una o más células. La célula es la unidad básica de la vida, y las células nuevas provienen de células existentes."},
+    {"nm": "Dato del clima", "title": "Un dato sobre el rayo", "body": "Un rayo es unas cinco veces más caliente que la superficie del Sol. Es un dato verdadero, pero no trata sobre los sistemas vivos."}
+   ],
+   "locks": [
+    {"title": "De pequeño a grande", "q": "Ordena los niveles de la vida desde el grupo MÁS PEQUEÑO hasta el MÁS GRANDE. Toca los botones en orden.",
+     "pads": ["🌳 Comunidad", "🐟 Un organismo", "🐟🐟 Población"],
+     "reason": "Un organismo, luego una población del mismo tipo, luego una comunidad de muchos tipos. Los niveles de organización muestran cómo se estructura la vida."},
+    {"title": "Nombra la relación", "q": "Una abeja sorbe néctar mientras poliniza una flor, y ambas se benefician. Esta relación es:",
+     "options": ["Parasitismo: uno sale perjudicado.", "Mutualismo: ambos se benefician.", "Ninguno de los dos se ve afectado."],
+     "reason": "Cuando ambos integrantes se benefician, es mutualismo. El parasitismo perjudicaría a uno de ellos."},
+    {"title": "Todo son células", "q": "Marca SOLO las pruebas sólidas de la teoría celular. Deja fuera el dato verdadero pero fuera de tema.",
+     "items": ["Todos los seres vivos están hechos de una o más células.", "La célula es la unidad básica de estructura y función de la vida.", "Las células nuevas provienen de células que ya existen.", "Un rayo es unas cinco veces más caliente que la superficie del Sol."],
+     "reason": "Esas tres afirmaciones son la teoría celular. El dato del rayo es verdadero pero no tiene nada que ver con las células."},
+    {"title": "Nombra la unidad", "q": "El bloque básico del que está hecho todo ser vivo es la ____. Escribe la palabra.",
+     "word": ["célula", "celula", "células", "celulas"],
+     "reason": "La célula es la unidad básica de la vida. Nombrarla ancla todo, desde los organismos hasta los ecosistemas."}
+   ]
+  }
+ }
+}
