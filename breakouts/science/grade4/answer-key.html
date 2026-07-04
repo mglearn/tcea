@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Answer Key — Light It Up! The Secret of Circuits (Grade 4)</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b3d5c;--sci:#0a6b52;--gold:#f0a316;--paper:#f2f8fb;--ink:#122430}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;background:radial-gradient(ellipse 60% 45% at 85% -5%,rgba(240,163,22,.16)0%,transparent 60%),radial-gradient(ellipse 55% 45% at 0% 100%,rgba(10,107,82,.12)0%,transparent 60%),var(--paper);color:var(--ink);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.gate{background:#fff;border:1px solid rgba(11,61,92,.14);border-radius:16px;padding:32px 28px;max-width:420px;width:100%;text-align:center;box-shadow:0 12px 34px rgba(11,61,92,.12)}
+h1{font-family:'Fredoka',sans-serif;color:var(--navy);font-size:1.4rem;margin-bottom:6px}
+p.sub{color:#4a5d6b;font-size:.9rem;margin-bottom:20px}
+input{width:100%;padding:12px 14px;border:2px solid rgba(11,61,92,.25);border-radius:10px;background:#f2f8fb;color:var(--ink);font-size:1rem;font-family:inherit;margin-bottom:12px}
+input:focus{outline:none;border-color:var(--sci)}
+button{width:100%;background:var(--sci);color:#fff;border:none;border-radius:10px;padding:12px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1rem;cursor:pointer}
+button:hover{background:#0b3d5c}
+.err{color:#c0392b;font-size:.85rem;min-height:18px;margin-top:8px}
+.req{margin-top:18px;padding-top:16px;border-top:1px solid rgba(11,61,92,.12);font-size:.82rem;color:#4a5d6b;line-height:1.5}
+#out{display:none;background:#fff;color:#122430;max-width:860px;width:100%;margin:0 auto;border-radius:12px;padding:8px 4px}
+</style>
+</head>
+<body>
+<div class="gate" id="gate">
+  <h1>🔒 Teacher Answer Key</h1>
+  <p class="sub">Light It Up! The Secret of Circuits · Grade 4 · enter the password to unlock the answers and rationales.</p>
+  <input type="password" id="pw" placeholder="Password" autocomplete="off">
+  <button id="go">Unlock</button>
+  <div class="err" id="err"></div>
+  <p class="req">Don't have the passcode? Ask your suite administrator for the Grade 4 answer-key password. Keys are kept out of the student pages.</p>
+</div>
+<div id="out"></div>
+<script>
+const PAYLOAD = {"salt":"UNMUFiEmeZGgA8wh4dXD2g==","iv":"AF1I/sg3cNHkTlVQ","iter":250000,"ct":"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"};
+const b64d = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+async function unlock(pw){
+  const salt=b64d(PAYLOAD.salt), iv=b64d(PAYLOAD.iv), ct=b64d(PAYLOAD.ct);
+  const baseKey=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
+  const key=await crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:PAYLOAD.iter,hash:'SHA-256'},baseKey,{name:'AES-GCM',length:256},false,['decrypt']);
+  const plain=await crypto.subtle.decrypt({name:'AES-GCM',iv},key,ct);
+  return new TextDecoder().decode(plain);
+}
+document.getElementById('go').onclick=async()=>{
+  const pw=document.getElementById('pw').value;
+  try{
+    const html=await unlock(pw);
+    document.getElementById('gate').style.display='none';
+    const out=document.getElementById('out');
+    out.style.display='block'; out.innerHTML=html;
+  }catch(e){ document.getElementById('err').textContent='Incorrect password. Try again.'; }
+};
+document.getElementById('pw').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('go').click();});
+</script>
+</body>
+</html>

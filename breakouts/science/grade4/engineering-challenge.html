@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Build a Circuit — Grade 4 Engineering Design Challenge</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#166534;--navy-d:#0f4a26;--gold:#ca8a04;--sci:#ca8a04;--paper:#f3faf4;--ink:#14261a;--ink-soft:#4a6b52;--card:#fff;--line:#d6ecda;--accent:#dc2626}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Nunito',sans-serif;color:var(--ink);background:var(--paper);line-height:1.55}
+  .wrap{max-width:760px;margin:0 auto;padding:30px 22px 70px}
+  .crumb{font-size:.82rem;font-weight:700;margin-bottom:16px}
+  .crumb a{color:#166534;text-decoration:none}
+  .eyebrow{display:inline-block;background:var(--navy);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;
+    font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:12px}
+  h1{font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(1.7rem,5vw,2.5rem);color:var(--navy);line-height:1.05}
+  .lead{font-weight:600;color:var(--ink-soft);margin-top:8px}
+  h2{font-family:'Fredoka',sans-serif;color:var(--navy);font-size:1.2rem;margin:26px 0 8px;border-bottom:2px solid var(--line);padding-bottom:5px}
+  h3{font-family:'Fredoka',sans-serif;color:var(--sci);font-size:1rem;margin:16px 0 4px}
+  p,li{font-weight:600;color:var(--ink)}
+  ul,ol{margin:6px 0 6px 22px}
+  li{margin:4px 0}
+  .card{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:18px 22px;margin-top:14px}
+  .steps{list-style:none;margin:12px 0 0;padding:0;counter-reset:s}
+  .steps>li{position:relative;padding:10px 0 10px 46px;border-bottom:1px dashed var(--line)}
+  .steps>li:last-child{border-bottom:none}
+  .steps>li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:9px;width:32px;height:32px;
+    background:var(--navy);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;border-radius:50%;
+    display:flex;align-items:center;justify-content:center}
+  .steps b{color:var(--navy)}
+  table{width:100%;border-collapse:collapse;margin-top:10px;font-size:.95rem}
+  th,td{border:1px solid var(--line);padding:10px;text-align:left}
+  th{background:#e4f2e8;color:var(--navy);font-family:'Fredoka',sans-serif;font-weight:600}
+  td{height:40px}
+  .say{background:#f2faf4;border:2px solid var(--line);border-radius:12px;padding:16px 20px;margin-top:12px}
+  .say .line{border-bottom:1px solid var(--line);height:28px;margin:10px 0}
+  .career{background:#e4f2e8;border-left:4px solid var(--navy);border-radius:8px;padding:12px 16px;margin-top:14px;font-size:.92rem}
+  .safety{background:#fdecec;border-left:4px solid var(--accent);border-radius:8px;padding:12px 16px;margin-top:14px;font-size:.9rem}
+  .teks{font-size:.82rem;color:var(--ink-soft);margin-top:6px}
+  code{background:#e4f2e8;padding:1px 6px;border-radius:5px;color:var(--navy);font-weight:700}
+  .print{display:inline-block;background:var(--navy);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;border:none;
+    font-size:.95rem;padding:10px 22px;border-radius:10px;margin-top:16px;cursor:pointer}
+  footer{text-align:center;margin-top:30px;font-size:.8rem;color:var(--ink-soft);font-weight:600}
+  @media print{.crumb,.print{display:none}body{background:#fff}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="crumb"><a href="index.html">‹ Teacher launch</a> · <a href="../index.html">Science Critical Thinking Breakouts</a></div>
+  <div class="eyebrow">Engineering Design Challenge · Grade 4</div>
+  <h1>Build a Circuit</h1>
+  <p class="lead">A hands-on STEM buddy for the <b>Light It Up!</b> breakout. Wire a battery, a wire, and a bulb into a working circuit — then test what happens with a gap, and which materials conduct.</p>
+
+  <div class="card">
+    <h3>🎯 The problem</h3>
+    <p>How can you make a small bulb light up? Build a <b>closed circuit</b> so electricity flows from the battery, through the wire, to the bulb, and back. Then break the loop and see what happens.</p>
+    <p class="teks"><b>Big question:</b> What must be true about the path for the bulb to light? And which materials let the electricity through?</p>
+  </div>
+
+  <h2>🧰 What you need</h2>
+  <ul>
+    <li>1 battery (a D-cell works well) and a battery holder if you have one</li>
+    <li>1 small bulb (and a bulb holder) or an LED</li>
+    <li>2–3 wires with the ends stripped (or aluminum foil strips)</li>
+    <li>Test materials: a paper clip, a coin, a rubber band, a plastic spoon, a pencil</li>
+  </ul>
+
+  <div class="safety">⚠️ <b>Safety:</b> use only a small battery and small bulb. Never use wall electricity. Ask a grown-up for help.</div>
+
+  <h2>🔁 Be an engineer</h2>
+  <ol class="steps">
+    <li><b>Ask:</b> How do I make the bulb light up?</li>
+    <li><b>Imagine:</b> Draw the loop — battery, wire, bulb, and back to the battery.</li>
+    <li><b>Plan:</b> Decide how the wires will connect the battery to the bulb.</li>
+    <li><b>Build:</b> Connect it into a full loop with no gaps. Watch the bulb light!</li>
+    <li><b>Test:</b> Now open the loop (pull one wire loose). Does the bulb go out? Then close it again.</li>
+    <li><b>Make it better:</b> Put each test material into the gap. Which ones let the bulb light (conductors) and which don't (insulators)?</li>
+  </ol>
+
+  <h2>📊 What conducts?</h2>
+  <table>
+    <tr><th>Material in the gap</th><th>Bulb lights? (conductor / insulator)</th></tr>
+    <tr><td>Paper clip or coin</td><td></td></tr>
+    <tr><td>Rubber band or plastic spoon</td><td></td></tr>
+  </table>
+
+  <h2>🗣️ Tell about it</h2>
+  <div class="say">
+    <p>What had to be true for the bulb to light?</p>
+    <div class="line"></div>
+    <p>Which materials were conductors, and which were insulators? (Try the words <i>circuit</i>, <i>closed path</i>, and <i>conductor</i>.)</p>
+    <div class="line"></div>
+  </div>
+
+  <div class="career">🔧 <b>Meet a STEM job — Electrical Engineer.</b> Electrical engineers design the circuits inside phones, lights, cars, and robots. They test their designs and fix the gaps — just like you did! <span class="teks">(Grade 4 innovators to explore: engineers who design electronics and clean energy.)</span></div>
+
+  <h3 style="margin-top:22px">TEKS for this challenge</h3>
+  <p class="teks"><code>4.8(C)</code> electricity in a closed path makes light &amp; heat · <code>4.8(B)</code> conductors &amp; insulators · <code>4.1(B)</code> plan &amp; do an investigation · <code>4.1(G)</code> develop &amp; use a model · <code>4.2(D)</code> evaluate a design. Aligned to, not reproduced from, the official TEKS — confirm before adoption.</p>
+
+  <button class="print" onclick="window.print()">🖨️ Print this page</button>
+  <footer>Grade 4 Science · Critical Thinking Online Breakouts · Self-contained, no logins, no data collected.</footer>
+</div>
+</body>
+</html>

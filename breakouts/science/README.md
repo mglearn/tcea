@@ -40,7 +40,8 @@ thinking move**. All are solvable from the evidence alone.
 | **1** | ✅ Push, Pull, and Play! | ✅ **10 built** — sorting, hot & cold, seasons, soil, water, weather, saving water, living/nonliving, food chains, animals |
 | **2** | ✅ Make Some Noise! | ✅ **10 built** — solids & liquids, changing matter, pushes, Sun & Moon, wind & water, wild weather, recycling, producers & consumers, pollen & seeds, metamorphosis |
 | **3** | ✅ Blast Off! A Trip Through Space | ✅ **10 built** — states of matter, changes of state, measuring matter, forces at a distance, forms of energy, how soil forms, rapid Earth changes, food chains, fossils, survival structures |
-| **4–5** | ⏳ planned | ⏳ planned |
+| **4** | ✅ Light It Up! The Secret of Circuits | ✅ **10 built** — mixtures & solutions, energy transfer, conductors & insulators, Moon phases, water cycle, erosion, weather vs. climate, resources, food webs, inherited vs. acquired traits |
+| **5** | ⏳ planned | ⏳ planned |
 | **6** | ✅ Cargo Ship Rescue | ✅ **10 built** — states of matter, mixtures, periodic table, density, chemical change, forces, waves, seasons & tides, Earth's systems, ecosystems & cells |
 | **7** | ✅ Rescue Run | ✅ **10 built** — elements & compounds, solutions, motion & graphs, heat transfer, solar system, plate tectonics, watersheds, energy pyramids, body systems, classifying life |
 | **8** | ✅ Launch Control | ✅ **10 built** — classifying matter, acids & bases, conservation of mass, Newton's laws, waves & EM spectrum, stars & galaxies, weather systems, carbon & climate, ecosystem change, cells & heredity |
@@ -49,12 +50,11 @@ Grades 6–8 are **complete** (3 featured + 30 concept breakouts). **Grade 1 is 
 (featured *Push, Pull, and Play!* + 10 concept breakouts, pitched to early readers).
 
 **Anticipated next, in order:**
-1. **Grades 4–5** (elementary §112.A) — one hub + featured breakout + ~8–10 concept set + STEM
-   challenge + word bank + Skills&TEKS per grade, same pattern as Grades 1–3 (TEA grade-4–5
-   design-challenge PDFs are in `info/`, which is local-only / gitignored).
-2. **Answer keys** — `node build-answer-key.js <1-8> <password>` now supports every grade. Grades
-   2–8 keys are generated (passwords passed at run time, never committed). Grade 1 still needs a
-   passcode (its hub omits the answer-key pill until one is provided).
+1. **Grade 5** (elementary §112.A) — one hub + featured breakout + ~8–10 concept set + STEM
+   challenge + word bank + Skills&TEKS, same pattern as Grades 1–4 (TEA grade-5 design-challenge
+   PDF is in `info/`, which is local-only / gitignored).
+2. **Answer keys** — `node build-answer-key.js <1-8> <password>` supports every grade. Grades 1–4
+   and 6–8 keys are generated (passwords passed at run time, never committed); Grade 5 pending.
 3. **Native translations** — per-breakout `_i18n` files for the 7 languages (today the
    non-English UI falls back to high-quality English; content still works in all 7).
 4. **Generated correlation page** and per-suite catalog polish as the set grows.
