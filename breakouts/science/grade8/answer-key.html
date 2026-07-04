@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Answer Key — Launch Control (Grade 8)</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b3d5c;--sci:#0a6b52;--gold:#f0a316;--paper:#f2f8fb;--ink:#122430}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;background:radial-gradient(ellipse 60% 45% at 85% -5%,rgba(240,163,22,.16)0%,transparent 60%),radial-gradient(ellipse 55% 45% at 0% 100%,rgba(10,107,82,.12)0%,transparent 60%),var(--paper);color:var(--ink);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.gate{background:#fff;border:1px solid rgba(11,61,92,.14);border-radius:16px;padding:32px 28px;max-width:420px;width:100%;text-align:center;box-shadow:0 12px 34px rgba(11,61,92,.12)}
+h1{font-family:'Fredoka',sans-serif;color:var(--navy);font-size:1.4rem;margin-bottom:6px}
+p.sub{color:#4a5d6b;font-size:.9rem;margin-bottom:20px}
+input{width:100%;padding:12px 14px;border:2px solid rgba(11,61,92,.25);border-radius:10px;background:#f2f8fb;color:var(--ink);font-size:1rem;font-family:inherit;margin-bottom:12px}
+input:focus{outline:none;border-color:var(--sci)}
+button{width:100%;background:var(--sci);color:#fff;border:none;border-radius:10px;padding:12px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1rem;cursor:pointer}
+button:hover{background:#0b3d5c}
+.err{color:#c0392b;font-size:.85rem;min-height:18px;margin-top:8px}
+.req{margin-top:18px;padding-top:16px;border-top:1px solid rgba(11,61,92,.12);font-size:.82rem;color:#4a5d6b;line-height:1.5}
+#out{display:none;background:#fff;color:#122430;max-width:860px;width:100%;margin:0 auto;border-radius:12px;padding:8px 4px}
+</style>
+</head>
+<body>
+<div class="gate" id="gate">
+  <h1>🔒 Teacher Answer Key</h1>
+  <p class="sub">Launch Control · Grade 8 · enter the password to unlock the answers and rationales.</p>
+  <input type="password" id="pw" placeholder="Password" autocomplete="off">
+  <button id="go">Unlock</button>
+  <div class="err" id="err"></div>
+  <p class="req">Don't have the passcode? Ask your suite administrator for the Grade 8 answer-key password. Keys are kept out of the student pages.</p>
+</div>
+<div id="out"></div>
+<script>
+const PAYLOAD = {"salt":"j1K/NDpqatzkCZTYOZdOxA==","iv":"cheIgsJhuEn6QQTQ","iter":250000,"ct":"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"};
+const b64d = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+async function unlock(pw){
+  const salt=b64d(PAYLOAD.salt), iv=b64d(PAYLOAD.iv), ct=b64d(PAYLOAD.ct);
+  const baseKey=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
+  const key=await crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:PAYLOAD.iter,hash:'SHA-256'},baseKey,{name:'AES-GCM',length:256},false,['decrypt']);
+  const plain=await crypto.subtle.decrypt({name:'AES-GCM',iv},key,ct);
+  return new TextDecoder().decode(plain);
+}
+document.getElementById('go').onclick=async()=>{
+  const pw=document.getElementById('pw').value;
+  try{
+    const html=await unlock(pw);
+    document.getElementById('gate').style.display='none';
+    const out=document.getElementById('out');
+    out.style.display='block'; out.innerHTML=html;
+  }catch(e){ document.getElementById('err').textContent='Incorrect password. Try again.'; }
+};
+document.getElementById('pw').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('go').click();});
+</script>
+</body>
+</html>

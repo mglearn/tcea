@@ -126,15 +126,15 @@
     return '<div class="suite" style="--accent:' + s.accent + '">' +
       '<h3>' + esc(s.name) + '</h3><p>' + esc(s.desc) + '</p>' +
       '<div class="links"><a class="primary" href="' + s.landing + '">Open ▶</a>' +
-      '<a href="' + s.correlation + '">🧭 Correlations</a>' +
-      '<a href="' + s.answerKey + '">🔑 Answer key</a></div></div>';
+      (s.correlation ? '<a href="' + s.correlation + '">🧭 Correlations</a>' : '') +
+      (s.answerKey ? '<a href="' + s.answerKey + '">🔑 Answer key</a>' : '') + '</div></div>';
   }).join('');
 
   // ---- filters
   var state = { q: '', suite: 'all', band: 'all' };
   var bands = ['K–2', '3–5', '6–8', '9–12'];
   var chips = [{ k: 'suite', v: 'all', label: 'All sets' }]
-    .concat(C.suites.map(function (s) { return { k: 'suite', v: s.id, label: s.name.split(' ')[0] === 'CLEAR' ? 'CLEAR' : s.name.replace('July 5 & Black Freedom Holidays', 'July 5').replace('Fourth of July', 'July 4').replace('Bible as Literature', 'Bible') }; }))
+    .concat(C.suites.map(function (s) { return { k: 'suite', v: s.id, label: s.name.split(' ')[0] === 'CLEAR' ? 'CLEAR' : s.name.replace('July 5 & Black Freedom Holidays', 'July 5').replace('Fourth of July', 'July 4').replace('Bible as Literature', 'Bible').replace('Science (Grades 6–8)', 'Science') }; }))
     .concat([{ k: 'band', v: 'all', label: 'All grades' }])
     .concat(bands.map(function (b) { return { k: 'band', v: b, label: 'Gr ' + b }; }));
   document.getElementById('filters').innerHTML = chips.map(function (c, i) {
@@ -176,7 +176,7 @@
         '</a>';
     }).join('');
   }
-  function shortSuite(id) { return id === 'clear' ? 'CLEAR' : id === 'july4' ? 'July 4' : id === 'july5th' ? 'July 5' : id === 'bible' ? 'Bible' : id; }
+  function shortSuite(id) { return id === 'clear' ? 'CLEAR' : id === 'july4' ? 'July 4' : id === 'july5th' ? 'July 5' : id === 'bible' ? 'Bible' : id === 'science' ? 'Science' : id; }
 
   document.getElementById('q').addEventListener('input', function (e) { state.q = e.target.value; render(); });
   document.getElementById('rand').addEventListener('click', function () {

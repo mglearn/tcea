@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Answer Key — Cargo Ship Rescue (Grade 6)</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b3d5c;--sci:#0a6b52;--gold:#f0a316;--paper:#f2f8fb;--ink:#122430}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;background:radial-gradient(ellipse 60% 45% at 85% -5%,rgba(240,163,22,.16)0%,transparent 60%),radial-gradient(ellipse 55% 45% at 0% 100%,rgba(10,107,82,.12)0%,transparent 60%),var(--paper);color:var(--ink);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.gate{background:#fff;border:1px solid rgba(11,61,92,.14);border-radius:16px;padding:32px 28px;max-width:420px;width:100%;text-align:center;box-shadow:0 12px 34px rgba(11,61,92,.12)}
+h1{font-family:'Fredoka',sans-serif;color:var(--navy);font-size:1.4rem;margin-bottom:6px}
+p.sub{color:#4a5d6b;font-size:.9rem;margin-bottom:20px}
+input{width:100%;padding:12px 14px;border:2px solid rgba(11,61,92,.25);border-radius:10px;background:#f2f8fb;color:var(--ink);font-size:1rem;font-family:inherit;margin-bottom:12px}
+input:focus{outline:none;border-color:var(--sci)}
+button{width:100%;background:var(--sci);color:#fff;border:none;border-radius:10px;padding:12px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1rem;cursor:pointer}
+button:hover{background:#0b3d5c}
+.err{color:#c0392b;font-size:.85rem;min-height:18px;margin-top:8px}
+.req{margin-top:18px;padding-top:16px;border-top:1px solid rgba(11,61,92,.12);font-size:.82rem;color:#4a5d6b;line-height:1.5}
+#out{display:none;background:#fff;color:#122430;max-width:860px;width:100%;margin:0 auto;border-radius:12px;padding:8px 4px}
+</style>
+</head>
+<body>
+<div class="gate" id="gate">
+  <h1>🔒 Teacher Answer Key</h1>
+  <p class="sub">Cargo Ship Rescue · Grade 6 · enter the password to unlock the answers and rationales.</p>
+  <input type="password" id="pw" placeholder="Password" autocomplete="off">
+  <button id="go">Unlock</button>
+  <div class="err" id="err"></div>
+  <p class="req">Don't have the passcode? Ask your suite administrator for the Grade 6 answer-key password. Keys are kept out of the student pages.</p>
+</div>
+<div id="out"></div>
+<script>
+const PAYLOAD = {"salt":"kv1jmTMVFDQ0KtVd0m+Nqg==","iv":"DxVbnZhpLfKnIewW","iter":250000,"ct":"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"};
+const b64d = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+async function unlock(pw){
+  const salt=b64d(PAYLOAD.salt), iv=b64d(PAYLOAD.iv), ct=b64d(PAYLOAD.ct);
+  const baseKey=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
+  const key=await crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:PAYLOAD.iter,hash:'SHA-256'},baseKey,{name:'AES-GCM',length:256},false,['decrypt']);
+  const plain=await crypto.subtle.decrypt({name:'AES-GCM',iv},key,ct);
+  return new TextDecoder().decode(plain);
+}
+document.getElementById('go').onclick=async()=>{
+  const pw=document.getElementById('pw').value;
+  try{
+    const html=await unlock(pw);
+    document.getElementById('gate').style.display='none';
+    const out=document.getElementById('out');
+    out.style.display='block'; out.innerHTML=html;
+  }catch(e){ document.getElementById('err').textContent='Incorrect password. Try again.'; }
+};
+document.getElementById('pw').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('go').click();});
+</script>
+</body>
+</html>

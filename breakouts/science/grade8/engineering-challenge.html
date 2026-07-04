@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Reaction in a Bag &amp; Straw Rocket — Grade 8 Engineering Design Challenge</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#1a2452;--navy-d:#101838;--gold:#f0a316;--sci:#2f8fd0;--paper:#f2f4fb;
+    --ink:#141a30;--ink-soft:#4c5573;--card:#fff;--line:#dde1ef;--accent:#3b46b5}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Nunito',sans-serif;color:var(--ink);background:var(--paper);line-height:1.55}
+  .wrap{max-width:760px;margin:0 auto;padding:30px 22px 70px}
+  .crumb{font-size:.82rem;font-weight:700;margin-bottom:16px}
+  .crumb a{color:#3b46b5;text-decoration:none}
+  .eyebrow{display:inline-block;background:var(--sci);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;
+    font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:12px}
+  h1{font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(1.6rem,4.6vw,2.3rem);color:var(--navy);line-height:1.06}
+  .lead{font-weight:600;color:var(--ink-soft);margin-top:8px}
+  h2{font-family:'Fredoka',sans-serif;color:var(--navy);font-size:1.2rem;margin:26px 0 8px;border-bottom:2px solid var(--line);padding-bottom:5px}
+  h3{font-family:'Fredoka',sans-serif;color:var(--sci);font-size:1rem;margin:16px 0 4px}
+  p,li{font-weight:600;color:var(--ink)}
+  ul,ol{margin:6px 0 6px 22px}
+  li{margin:4px 0}
+  .card{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:18px 22px;margin-top:14px}
+  .steps{list-style:none;margin:12px 0 0;padding:0;counter-reset:s}
+  .steps>li{position:relative;padding:10px 0 10px 46px;border-bottom:1px dashed var(--line)}
+  .steps>li:last-child{border-bottom:none}
+  .steps>li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:9px;width:32px;height:32px;
+    background:var(--sci);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;border-radius:50%;
+    display:flex;align-items:center;justify-content:center}
+  .steps b{color:var(--navy)}
+  table{width:100%;border-collapse:collapse;margin-top:10px;font-size:.9rem}
+  th,td{border:1px solid var(--line);padding:9px 10px;text-align:left}
+  th{background:#e9eefb;color:var(--navy);font-family:'Fredoka',sans-serif;font-weight:600}
+  td{height:34px}
+  .cer{background:#f7f9fe;border:2px solid var(--line);border-radius:12px;padding:16px 20px;margin-top:12px}
+  .cer .line{border-bottom:1px solid var(--line);height:26px;margin:8px 0}
+  .note{background:#fffdf6;border-left:4px solid var(--gold);border-radius:8px;padding:12px 16px;margin-top:14px;font-size:.92rem}
+  .career{background:#eef6fb;border-left:4px solid var(--sci);border-radius:8px;padding:12px 16px;margin-top:14px;font-size:.92rem}
+  .safety{background:#fdf0ee;border-left:4px solid var(--accent);border-radius:8px;padding:12px 16px;margin-top:14px;font-size:.9rem}
+  .teks{font-size:.82rem;color:var(--ink-soft);margin-top:6px}
+  code{background:#e6eaf7;padding:1px 6px;border-radius:5px;color:var(--navy);font-weight:700}
+  .print{display:inline-block;background:var(--navy);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;border:none;
+    font-size:.95rem;padding:10px 22px;border-radius:10px;margin-top:16px;cursor:pointer}
+  footer{text-align:center;margin-top:30px;font-size:.8rem;color:var(--ink-soft);font-weight:600}
+  @media print{.crumb,.print,.langbar{display:none}body{background:#fff}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="crumb"><a href="index.html">‹ Teacher launch</a> · <a href="../index.html">Science Critical Thinking Breakouts</a></div>
+  <div class="eyebrow">Engineering Design Challenge · Grade 8</div>
+  <h1>Reaction in a Bag &amp; Straw Rocket</h1>
+  <p class="lead">A two-part hands-on STEM companion to the <b>Launch Control</b> breakout. Part A proves conservation of mass (Lock 1 &amp; 3). Part B tests Newton's Second Law, a = F ÷ m (Lock 2).</p>
+
+  <div class="card">
+    <h3>🎯 The problem (define)</h3>
+    <p><b>Part A — Fuel check:</b> the launch team must prove that a chemical reaction doesn't lose mass. Design a <b>sealed system</b> that lets a fizzing reaction happen while you measure mass before and after.<br>
+    <b>Part B — Thrust check:</b> engineers must predict how added cargo changes a rocket's acceleration. Build a straw rocket and test how <b>payload mass</b> changes how far/fast it flies at a fixed launch push.</p>
+    <p class="teks"><b>Anchor questions:</b> If atoms are only rearranged, why should the sealed mass stay the same? And if a = F ÷ m, what should more mass do to the launch?</p>
+  </div>
+
+  <h2>🧰 Materials (per team of 2–4)</h2>
+  <ul>
+    <li><b>Part A:</b> a zip-seal bag, baking soda, vinegar, a small cup, a balance/scale</li>
+    <li><b>Part B:</b> a straw, paper, tape, a slightly wider straw or launcher, paperclips (payload mass), a tape measure</li>
+    <li>This recording sheet and a pencil</li>
+  </ul>
+
+  <div class="safety">⚠️ <b>Safety:</b> wear goggles for Part A. Do not over-fill or force a bulging bag — open it away from faces. Follow your teacher's TEA-approved lab safety rules.</div>
+
+  <h2>🔁 The engineering design process</h2>
+  <ol class="steps">
+    <li><b>Define</b> the problem: prove mass is conserved, then test how mass changes acceleration.</li>
+    <li><b>Imagine &amp; brainstorm</b>: how will you keep the reaction fully sealed? What payloads will you test?</li>
+    <li><b>Plan</b>: predict the after-reaction mass (Part A) and rank your payloads by expected distance (Part B).</li>
+    <li><b>Create</b>: build the sealed bag (keep vinegar in the cup until sealed) and the straw rocket.</li>
+    <li><b>Test</b>: mass the sealed bag before and after the fizz; launch the rocket with 0, 1, and 3 paperclips, measuring distance each time (repeat trials).</li>
+    <li><b>Improve</b>: if the bag lost mass, find the leak and reseal; refine the rocket fins so only mass is changing between launches (a fair test).</li>
+  </ol>
+
+  <h2>📊 Record your data</h2>
+  <h3>Part A — Conservation of mass</h3>
+  <table>
+    <tr><th></th><th>Mass BEFORE (g)</th><th>Mass AFTER (g)</th><th>Difference (g)</th></tr>
+    <tr><td><b>Sealed bag</b></td><td></td><td></td><td></td></tr>
+  </table>
+  <p class="teks">A difference near zero is your evidence: atoms rearranged, none escaped. <code>8.6(E)</code></p>
+  <h3>Part B — a = F ÷ m</h3>
+  <table>
+    <tr><th>Payload (paperclips)</th><th>0</th><th>1</th><th>3</th></tr>
+    <tr><td><b>Flight distance (cm)</b></td><td></td><td></td><td></td></tr>
+  </table>
+  <p class="teks">Same launch push (force), more mass → shorter/slower flight (less acceleration). <code>8.7(A)</code>, <code>8.2(B)</code></p>
+
+  <h2>🗣️ Explain it — Claim, Evidence, Reasoning (CER)</h2>
+  <div class="cer">
+    <p><b>Claim</b> — Was mass conserved? How did payload mass affect the flight?</p>
+    <div class="line"></div>
+    <p><b>Evidence</b> — Your two data tables.</p>
+    <div class="line"></div><div class="line"></div>
+    <p><b>Reasoning</b> — Use <i>atoms rearrange</i>, <i>sealed system</i>, <i>conservation of mass</i>, and <i>a = F ÷ m</i> to explain <b>why</b>. (In a sealed system no atoms leave, so mass is unchanged; with fixed force, more mass means less acceleration.)</p>
+    <div class="line"></div><div class="line"></div>
+  </div>
+
+  <div class="career">🚀 <b>STEM career highlight — Aerospace / Propulsion Engineer &amp; Chemical Engineer.</b> These engineers design rocket fuels and predict how a vehicle's changing mass (as fuel burns) affects its acceleration — the exact two ideas you tested. <span class="teks">(Labor data: O*NET &amp; the Texas Workforce Commission; <code>8.4(C)</code> investigate STEM careers.)</span></div>
+
+  <div class="note">🧩 <b>Extend it:</b> A real rocket <i>loses</i> mass as it burns fuel — so with steady thrust its acceleration <i>increases</i> over the flight. Ask students to connect that to both Lock 1 (the atoms/mass are conserved in the whole system, including exhaust) and Lock 2 (less mass → more acceleration).</div>
+
+  <h3 style="margin-top:22px">TEKS aligned to this challenge</h3>
+  <p class="teks"><code>8.6(E)</code> conservation of mass · <code>8.7(A)</code> Newton's Second Law · <code>8.1(B)</code> design solutions · <code>8.1(G)</code> develop &amp; use models · <code>8.2(B)</code> analyze data · <code>8.2(D)</code> evaluate designs · <code>8.4(C)</code> STEM careers. Cross-curricular: Math (differences, averages of trials, ratios), ELAR (CER writing). Aligned to, not reproduced from, the official TEKS — confirm before adoption.</p>
+
+  <button class="print" onclick="window.print()">🖨️ Print this handout</button>
+
+  <footer>Science Critical Thinking Breakouts · Grade 8 · Self-contained, no logins, no data collected.</footer>
+</div>
+</body>
+</html>

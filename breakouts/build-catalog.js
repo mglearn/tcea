@@ -87,6 +87,30 @@ function bibleMeta() {
   return out;
 }
 
+function scienceMeta() {
+  const out = [];
+  for (const g of ['6', '7', '8']) {
+    const fp = path.join(ROOT, 'science', 'grade' + g, 'locales', 'grade' + g + '.js');
+    if (!fs.existsSync(fp)) continue;
+    try {
+      const w = {}; eval(fs.readFileSync(fp, 'utf8').replace('window.BREAKOUT', 'w.BREAKOUT'));
+      const b = w.BREAKOUT, en = b.CONTENT.en;
+      const kw = [
+        ...en.clues.flatMap(c => [c.nm, c.title, c.body]),
+        ...en.locks.flatMap(l => [l.q, l.reason, ...(l.options || []), ...((l.items || []).map(i => i.t))]),
+      ].join(' ').replace(/\s+/g, ' ').toLowerCase().slice(0, 600);
+      out.push({
+        suite: 'science', band: '6–8', slug: 'grade' + g,
+        title: b.UI.en['header.h1'],
+        desc: b.UI.en['header.sub'],
+        href: `science/grade${g}/index.html`,
+        kw: `grade ${g} ${kw}`,
+      });
+    } catch (e) { console.error('skip science', g, e.message); }
+  }
+  return out;
+}
+
 const SUITES = [
   { id: 'clear', name: 'CLEAR Critical Thinking Breakouts', accent: '#7c5cbf',
     desc: 'A detective-style thinking system plus a full library of standards-aligned breakouts and 36 practice activities in seven languages.',
@@ -100,9 +124,12 @@ const SUITES = [
   { id: 'bible', name: 'Bible as Literature', accent: '#2f6cae',
     desc: 'Four breakouts on Texas-adopted Bible stories, studied academically as literature and history — sequence, theme, genre, archetype, and allusion. Never devotional. Seven languages.',
     landing: 'bible/index.html', correlation: 'bible/correlation.html', answerKey: 'bible/answer-key.html' },
+  { id: 'science', name: 'Science (Grades 6–8)', accent: '#0a6b52',
+    desc: 'Critical Thinking Online Breakouts for the toughest middle-school science TEKS — density, forces, energy, motion graphs, conservation of mass — each with a hands-on STEM engineering design challenge and a student word bank. Seven languages.',
+    landing: 'science/index.html' },
 ];
 
-const breakouts = [...clearMeta(), ...localeMeta('july4'), ...localeMeta('july5th'), ...bibleMeta()];
+const breakouts = [...clearMeta(), ...localeMeta('july4'), ...localeMeta('july5th'), ...bibleMeta(), ...scienceMeta()];
 const catalog = { generated: cp.execSync('git log -1 --format=%cI 2>/dev/null || true').toString().trim() || '', suites: SUITES, breakouts };
 fs.writeFileSync(path.join(ROOT, 'catalog.js'), 'window.CATALOG = ' + JSON.stringify(catalog) + ';\n');
 console.log(`catalog.js: ${SUITES.length} suites, ${breakouts.length} breakouts (${breakouts.filter(b => b.activity).length} practice activities)`);

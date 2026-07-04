@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Privacy &amp; Compliance — Science Critical Thinking Breakouts</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0b3d5c;--sci:#0a6b52;--paper:#f2f8fb;--ink:#122430;--ink-soft:#4a5d6b;--card:#fff;--line:#d7e6ee}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Nunito',sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+  .wrap{max-width:720px;margin:0 auto;padding:32px 22px 70px}
+  .crumb{font-size:.82rem;font-weight:700;margin-bottom:14px}
+  .crumb a{color:#2f6fe0;text-decoration:none}
+  h1{font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(1.7rem,5vw,2.4rem);color:var(--navy)}
+  h2{font-family:'Fredoka',sans-serif;color:var(--sci);font-size:1.15rem;margin:24px 0 6px}
+  p,li{font-weight:600;color:var(--ink-soft)}
+  ul{margin:6px 0 6px 22px}
+  li{margin:5px 0}
+  b{color:var(--ink)}
+  .card{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:20px 24px;margin-top:16px}
+  footer{text-align:center;margin-top:28px;font-size:.8rem;color:var(--ink-soft);font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="crumb"><a href="index.html">‹ Science Critical Thinking Breakouts</a></div>
+  <h1>Privacy &amp; Compliance</h1>
+  <p style="margin-top:8px">These breakouts are built to be safe for classroom use by design: they collect <b>nothing</b>.</p>
+
+  <div class="card">
+    <h2>What we collect</h2>
+    <p><b>Nothing.</b> There are no accounts, no logins, no analytics, no cookies used for tracking, and no data sent to any server. Everything runs inside the student's browser. Your progress (which locks are open) lives only in the page while it is open and is gone when you close the tab. The language choice is stored only in your own browser's <code>localStorage</code> and never leaves the device.</p>
+
+    <h2>The one outside request</h2>
+    <p>Pages load a web font (Google Fonts) for display. This can be removed by self-hosting the font for zero external requests. Every page sets <code>&lt;meta name="referrer" content="no-referrer"&gt;</code>.</p>
+
+    <h2>How this maps to the rules that protect students</h2>
+    <ul>
+      <li><b>FERPA</b> — no education records are created, stored, or shared.</li>
+      <li><b>COPPA</b> — no personal information is collected from children.</li>
+      <li><b>Texas SCOPE Act &amp; TEC §32.151–32.156</b> — no data collection, targeted advertising, or profiling of minors.</li>
+      <li><b>GDPR</b> — no personal data processing; nothing to export or erase.</li>
+      <li><b>CIPA</b> — static, self-contained educational content with no user-generated communication.</li>
+    </ul>
+
+    <h2>Accessibility (VPAT-lite)</h2>
+    <ul>
+      <li>Semantic headings, keyboard-operable locks, and text alternatives for icon glyphs.</li>
+      <li>Color choices aim for sufficient contrast; images carry descriptive alt text and hide gracefully if missing.</li>
+      <li>Full right-to-left support for Arabic and Urdu using logical CSS properties.</li>
+    </ul>
+
+    <h2>Standards &amp; framing</h2>
+    <p>Standards are <b>aligned to</b>, not reproduced from, the 2021 Texas Essential Knowledge and Skills for Science (§112.26–112.28). Alignments are a good-faith, paraphrased mapping; confirm against the official source before adoption. This is not legal advice.</p>
+  </div>
+
+  <footer>Science Critical Thinking Breakouts · Self-contained, no logins, no data collected.</footer>
+</div>
+</body>
+</html>

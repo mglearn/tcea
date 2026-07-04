@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Keep-It-Cold Cooler — Grade 7 Engineering Design Challenge</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#6e3b17;--navy-d:#4a2810;--gold:#e0902a;--sci:#2f8f7f;--paper:#fdf6ee;
+    --ink:#2a1c10;--ink-soft:#6a5140;--card:#fff;--line:#ecdcc9;--accent:#b5531f}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Nunito',sans-serif;color:var(--ink);background:var(--paper);line-height:1.55}
+  .wrap{max-width:760px;margin:0 auto;padding:30px 22px 70px}
+  .crumb{font-size:.82rem;font-weight:700;margin-bottom:16px}
+  .crumb a{color:#b5531f;text-decoration:none}
+  .eyebrow{display:inline-block;background:var(--sci);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;
+    font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:12px}
+  h1{font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(1.7rem,5vw,2.5rem);color:var(--navy);line-height:1.05}
+  .lead{font-weight:600;color:var(--ink-soft);margin-top:8px}
+  h2{font-family:'Fredoka',sans-serif;color:var(--navy);font-size:1.2rem;margin:26px 0 8px;border-bottom:2px solid var(--line);padding-bottom:5px}
+  h3{font-family:'Fredoka',sans-serif;color:var(--sci);font-size:1rem;margin:16px 0 4px}
+  p,li{font-weight:600;color:var(--ink)}
+  ul,ol{margin:6px 0 6px 22px}
+  li{margin:4px 0}
+  .card{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:18px 22px;margin-top:14px}
+  .steps{list-style:none;margin:12px 0 0;padding:0;counter-reset:s}
+  .steps>li{position:relative;padding:10px 0 10px 46px;border-bottom:1px dashed var(--line)}
+  .steps>li:last-child{border-bottom:none}
+  .steps>li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:9px;width:32px;height:32px;
+    background:var(--sci);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;border-radius:50%;
+    display:flex;align-items:center;justify-content:center}
+  .steps b{color:var(--navy)}
+  table{width:100%;border-collapse:collapse;margin-top:10px;font-size:.9rem}
+  th,td{border:1px solid var(--line);padding:9px 10px;text-align:left}
+  th{background:#eef6f3;color:var(--navy);font-family:'Fredoka',sans-serif;font-weight:600}
+  td{height:34px}
+  .graph{border:2px solid var(--line);border-radius:12px;margin-top:12px;padding:14px;background:#fff}
+  .graph-grid{background-image:linear-gradient(#f0e6d6 1px,transparent 1px),linear-gradient(90deg,#f0e6d6 1px,transparent 1px);background-size:28px 28px;border-left:2px solid var(--ink-soft);border-bottom:2px solid var(--ink-soft);height:200px;position:relative}
+  .graph .yl{font-size:.78rem;color:var(--ink-soft);font-weight:700}
+  .graph .xl{font-size:.78rem;color:var(--ink-soft);font-weight:700;text-align:center;margin-top:4px}
+  .cer{background:#fdf8f1;border:2px solid var(--line);border-radius:12px;padding:16px 20px;margin-top:12px}
+  .cer .line{border-bottom:1px solid var(--line);height:26px;margin:8px 0}
+  .note{background:#fffdf6;border-left:4px solid var(--gold);border-radius:8px;padding:12px 16px;margin-top:14px;font-size:.92rem}
+  .career{background:#eef6f3;border-left:4px solid var(--sci);border-radius:8px;padding:12px 16px;margin-top:14px;font-size:.92rem}
+  .teks{font-size:.82rem;color:var(--ink-soft);margin-top:6px}
+  code{background:#f4e7d6;padding:1px 6px;border-radius:5px;color:var(--navy);font-weight:700}
+  .print{display:inline-block;background:var(--navy);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;border:none;
+    font-size:.95rem;padding:10px 22px;border-radius:10px;margin-top:16px;cursor:pointer}
+  footer{text-align:center;margin-top:30px;font-size:.8rem;color:var(--ink-soft);font-weight:600}
+  @media print{.crumb,.print,.langbar{display:none}body{background:#fff}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="crumb"><a href="index.html">‹ Teacher launch</a> · <a href="../index.html">Science Critical Thinking Breakouts</a></div>
+  <div class="eyebrow">Engineering Design Challenge · Grade 7</div>
+  <h1>Keep-It-Cold Cooler</h1>
+  <p class="lead">A hands-on STEM companion to the <b>Rescue Run</b> breakout. Turn the thermal-equilibrium idea from Lock 4 into a real test — design an insulated container, then graph how it cools and read the slope like the drone's motion graph.</p>
+
+  <div class="card">
+    <h3>🎯 The problem (define)</h3>
+    <p>The rescue team's medicine must stay cold in the desert sun. Using common materials, design an <b>insulated container</b> that keeps an ice cube frozen the longest (or keeps cold water coldest over 15 minutes). Then redesign to beat your own record.</p>
+    <p class="teks"><b>Anchor question:</b> Heat always flows from hot to cold toward <i>thermal equilibrium</i>. Your insulation can't stop that — so which design <i>slows</i> it best, and how does your temperature-vs-time graph show it?</p>
+  </div>
+
+  <h2>🧰 Materials (per team of 2–4)</h2>
+  <ul>
+    <li>A small cup or container as the "core," plus a larger outer container</li>
+    <li>Insulators to test: cotton balls, foil, bubble wrap, paper towels, felt, foam</li>
+    <li>Ice cubes of equal size (or equal amounts of cold water) as the "medicine"</li>
+    <li>A thermometer (or temperature probe), a timer, tape, this recording sheet</li>
+  </ul>
+
+  <h2>🔁 The engineering design process</h2>
+  <ol class="steps">
+    <li><b>Define</b> the problem: keep the cold cargo cold the longest.</li>
+    <li><b>Imagine &amp; brainstorm</b>: which materials trap the least heat flow? Predict a ranking.</li>
+    <li><b>Plan</b>: choose your insulation layers and sketch the build.</li>
+    <li><b>Create</b>: build the cooler around the core; seal gaps that let convection in.</li>
+    <li><b>Test</b>: record the temperature every 2–3 minutes for ~15 minutes. Keep every team's start temperature and ice size the same (a fair test).</li>
+    <li><b>Improve</b>: change <i>one</i> variable (add a layer, seal a gap, add a reflective wrap) and retest so you know what helped.</li>
+  </ol>
+
+  <h2>📊 Record &amp; graph your data</h2>
+  <table>
+    <tr><th>Time (min)</th><th>0</th><th>3</th><th>6</th><th>9</th><th>12</th><th>15</th></tr>
+    <tr><td><b>Round 1 temp (°C)</b></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td><b>Round 2 temp (°C)</b></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+  <div class="graph">
+    <div class="yl">↑ Temperature (°C)</div>
+    <div class="graph-grid"></div>
+    <div class="xl">Time (min) →</div>
+  </div>
+  <p class="teks">Plot both rounds. A <b>flatter, gentler slope</b> means heat is flowing in more slowly — the better insulator. This is the same slope reading you used on the drone's <b>distance–time graph</b>. <code>7.2(B)</code> analyze data &amp; patterns · <code>7.7(C)</code> graph reasoning.</p>
+
+  <h2>🗣️ Explain it — Claim, Evidence, Reasoning (CER)</h2>
+  <div class="cer">
+    <p><b>Claim</b> — Which design kept the cargo cold the longest?</p>
+    <div class="line"></div>
+    <p><b>Evidence</b> — Compare the slopes of your two graphs.</p>
+    <div class="line"></div><div class="line"></div>
+    <p><b>Reasoning</b> — Use <i>heat flows hot→cold</i>, <i>conduction/convection/radiation</i>, and <i>thermal equilibrium</i> to explain <b>why</b>. (Insulation only slows the heat; given enough time, inside and outside still reach the same temperature.)</p>
+    <div class="line"></div><div class="line"></div>
+  </div>
+
+  <div class="career">🌡️ <b>STEM career highlight — Thermal / Mechanical Engineer &amp; Emergency-Management Logistics.</b> These professionals design coolers for vaccines, spacecraft heat shields, and building insulation — and plan how rescue supplies stay usable in the field. They use exactly what you tested: slow the heat flow toward equilibrium. <span class="teks">(Labor data: O*NET &amp; the Texas Workforce Commission; <code>7.4(C)</code> investigate STEM careers.)</span></div>
+
+  <div class="note">🧩 <b>Extend it:</b> Add a "sun" (a lamp) to introduce <b>radiation</b> and test a reflective foil layer — then connect back to <b>Lock 2</b>: two coolers can lose the same total heat but along very different paths, just like two drones with the same speed but different velocity.</div>
+
+  <h3 style="margin-top:22px">TEKS aligned to this challenge</h3>
+  <p class="teks"><code>7.8(A)</code> conduction/convection/radiation · <code>7.8(B)</code> heat flows warm→cool to equilibrium · <code>7.1(B)</code> design solutions · <code>7.1(G)</code> develop &amp; use models · <code>7.2(B)</code> analyze data · <code>7.2(D)</code> evaluate designs · <code>7.7(C)</code> graph interpretation · <code>7.4(C)</code> STEM careers. Cross-curricular: Math (graphing, slope, means), ELAR (CER writing). Aligned to, not reproduced from, the official TEKS — confirm before adoption.</p>
+
+  <button class="print" onclick="window.print()">🖨️ Print this handout</button>
+
+  <footer>Science Critical Thinking Breakouts · Grade 7 · Self-contained, no logins, no data collected.</footer>
+</div>
+</body>
+</html>
