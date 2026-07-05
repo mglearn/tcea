@@ -1,0 +1,71 @@
+{
+  "shared": {
+    "note": "🧑‍🏫 <b>Para docentes:</b> cada actividad se ejecuta en el navegador en unos 6 a 10 minutos, sin inicios de sesión ni recopilación de datos. Úsela para iniciar una unidad, como estación de trabajo o como boleto de salida. Consulte la página del grado para ver el breakout destacado, el reto STEM, el banco de palabras y la alineación con los TEKS.",
+    "grid.open": "▶ Abrir breakout"
+  },
+  "grades": {
+    "gradeK": {
+      "crumb": "<a href=\"index.html\">‹ Ciencias de Kínder</a> · <a href=\"../index.html\">Breakouts en Línea de Pensamiento Crítico de Ciencias</a>",
+      "eyebrow": "Kínder · Un breakout por idea",
+      "h1": "Más Breakouts de Kínder",
+      "lead": "Breakouts cortos con imágenes: uno para cada gran idea de Kínder (§112.2). Cada uno tiene seis pistas con imágenes (una es una pista tonta que hay que descartar) y cuatro candados. Funcionan mejor en una pantalla grande con toda la clase.",
+      "footer": "Ciencias de Kínder · Breakouts en Línea de Pensamiento Crítico · <a href=\"../policy.html\">Privacidad y cumplimiento</a>"
+    },
+    "grade1": {
+      "crumb": "<a href=\"index.html\">‹ Ciencias de 1.er Grado</a> · <a href=\"../index.html\">Breakouts en Línea de Pensamiento Crítico de Ciencias</a>",
+      "eyebrow": "1.er Grado · Un breakout por idea",
+      "h1": "Más Breakouts de 1.er Grado",
+      "lead": "Breakouts cortos de ciencias: uno para cada gran idea de 1.er Grado (§112.3). Cada uno tiene seis pistas con imágenes (una es una pista tonta que hay que descartar) y cuatro candados. Ideales para un calentamiento rápido o para aprender algo nuevo.",
+      "footer": "Ciencias de 1.er Grado · Breakouts en Línea de Pensamiento Crítico · <a href=\"../policy.html\">Privacidad y cumplimiento</a>"
+    },
+    "grade2": {
+      "crumb": "<a href=\"index.html\">‹ Ciencias de 2.º Grado</a> · <a href=\"../index.html\">Breakouts en Línea de Pensamiento Crítico de Ciencias</a>",
+      "eyebrow": "2.º Grado · Un breakout por idea",
+      "h1": "Más Breakouts de 2.º Grado",
+      "lead": "Breakouts cortos de ciencias: uno para cada gran idea de 2.º Grado (§112.4). Cada uno tiene seis pistas (una es una pista tonta que hay que descartar) y cuatro candados. Ideales para un calentamiento rápido o para aprender algo nuevo.",
+      "footer": "Ciencias de 2.º Grado · Breakouts en Línea de Pensamiento Crítico · <a href=\"../policy.html\">Privacidad y cumplimiento</a>"
+    },
+    "grade3": {
+      "crumb": "<a href=\"index.html\">‹ Ciencias de 3.er Grado</a> · <a href=\"../index.html\">Breakouts en Línea de Pensamiento Crítico de Ciencias</a>",
+      "eyebrow": "3.er Grado · Un breakout por concepto",
+      "h1": "Más Breakouts de 3.er Grado",
+      "lead": "Breakouts en Línea de Pensamiento Crítico cortos: uno para cada concepto clave de ciencias de 3.er Grado (§112.5). Cada uno tiene seis pistas (una es un señuelo que hay que descartar) y cuatro candados. Ideales para introducir un tema o comprobar la comprensión.",
+      "footer": "Ciencias de 3.er Grado · Breakouts en Línea de Pensamiento Crítico · <a href=\"../policy.html\">Privacidad y cumplimiento</a>"
+    },
+    "grade4": {
+      "crumb": "<a href=\"index.html\">‹ Ciencias de 4.º Grado</a> · <a href=\"../index.html\">Breakouts en Línea de Pensamiento Crítico de Ciencias</a>",
+      "eyebrow": "4.º Grado · Un breakout por concepto",
+      "h1": "Más Breakouts de 4.º Grado",
+      "lead": "Breakouts en Línea de Pensamiento Crítico cortos: uno para cada concepto clave de ciencias de 4.º Grado (§112.6). Cada uno tiene seis pistas (una es un señuelo que hay que descartar) y cuatro candados. Ideales para introducir un tema o comprobar la comprensión.",
+      "footer": "Ciencias de 4.º Grado · Breakouts en Línea de Pensamiento Crítico · <a href=\"../policy.html\">Privacidad y cumplimiento</a>"
+    },
+    "grade5": {
+      "crumb": "<a href=\"index.html\">‹ Ciencias de 5.º Grado</a> · <a href=\"../index.html\">Breakouts en Línea de Pensamiento Crítico de Ciencias</a>",
+      "eyebrow": "5.º Grado · Un breakout por concepto",
+      "h1": "Más Breakouts de 5.º Grado",
+      "lead": "Breakouts en Línea de Pensamiento Crítico cortos: uno para cada concepto clave de ciencias de 5.º Grado (§112.7). Cada uno tiene seis pistas (una es un señuelo que hay que descartar) y cuatro candados. Ideales para introducir un tema o comprobar la comprensión.",
+      "footer": "Ciencias de 5.º Grado · Breakouts en Línea de Pensamiento Crítico · <a href=\"../policy.html\">Privacidad y cumplimiento</a>"
+    },
+    "grade6": {
+      "crumb": "<a href=\"index.html\">‹ Ciencias de 6.º Grado</a> · <a href=\"../index.html\">Breakouts en Línea de Pensamiento Crítico de Ciencias</a>",
+      "eyebrow": "6.º Grado · Un breakout por concepto clave",
+      "h1": "Más Breakouts de 6.º Grado",
+      "lead": "Breakouts en Línea de Pensamiento Crítico cortos: uno para cada concepto clave de ciencias de 6.º Grado (§112.26). Cada uno es un calentamiento o repaso rápido: seis pruebas (una es un señuelo) y cuatro candados. Ideales para introducir un tema o comprobar la comprensión.",
+      "footer": "Ciencias de 6.º Grado · Breakouts en Línea de Pensamiento Crítico · <a href=\"../policy.html\">Privacidad y cumplimiento</a>"
+    },
+    "grade7": {
+      "crumb": "<a href=\"index.html\">‹ Ciencias de 7.º Grado</a> · <a href=\"../index.html\">Breakouts en Línea de Pensamiento Crítico de Ciencias</a>",
+      "eyebrow": "7.º Grado · Un breakout por concepto clave",
+      "h1": "Más Breakouts de 7.º Grado",
+      "lead": "Breakouts en Línea de Pensamiento Crítico cortos: uno para cada concepto clave de ciencias de 7.º Grado (§112.27). Cada uno es un calentamiento o repaso rápido: seis pruebas (una es un señuelo) y cuatro candados. Ideales para introducir un tema o comprobar la comprensión.",
+      "footer": "Ciencias de 7.º Grado · Breakouts en Línea de Pensamiento Crítico · <a href=\"../policy.html\">Privacidad y cumplimiento</a>"
+    },
+    "grade8": {
+      "crumb": "<a href=\"index.html\">‹ Ciencias de 8.º Grado</a> · <a href=\"../index.html\">Breakouts en Línea de Pensamiento Crítico de Ciencias</a>",
+      "eyebrow": "8.º Grado · Un breakout por concepto clave",
+      "h1": "Más Breakouts de 8.º Grado",
+      "lead": "Breakouts en Línea de Pensamiento Crítico cortos: uno para cada concepto clave de ciencias de 8.º Grado (§112.28). Cada uno es un calentamiento o repaso rápido: seis pruebas (una es un señuelo) y cuatro candados. Ideales para introducir un tema o comprobar la comprensión.",
+      "footer": "Ciencias de 8.º Grado · Breakouts en Línea de Pensamiento Crítico · <a href=\"../policy.html\">Privacidad y cumplimiento</a>"
+    }
+  }
+}

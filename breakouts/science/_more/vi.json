@@ -1,0 +1,71 @@
+{
+  "shared": {
+    "note": "🧑‍🏫 <b>Dành cho giáo viên:</b> mỗi hoạt động chạy trong trình duyệt trong khoảng 6–10 phút — không cần đăng nhập, không thu thập dữ liệu. Dùng một hoạt động để khởi động bài học, làm trạm học tập, hoặc làm bài kiểm tra ra về. Xem trang theo lớp để biết breakout nổi bật, thử thách STEM, kho từ vựng và sự tương thích với TEKS.",
+    "grid.open": "▶ Mở breakout"
+  },
+  "grades": {
+    "gradeK": {
+      "crumb": "<a href=\"index.html\">‹ Khoa học Mẫu giáo</a> · <a href=\"../index.html\">Breakout Trực tuyến Tư duy Phản biện Khoa học</a>",
+      "eyebrow": "Mẫu giáo · Một breakout cho mỗi ý tưởng",
+      "h1": "Thêm Breakout cho Mẫu giáo",
+      "lead": "Những breakout ngắn bằng tranh — mỗi cái cho một ý tưởng lớn của lớp Mẫu giáo (§112.2). Mỗi cái có sáu manh mối bằng tranh (một cái là mồi nhử ngớ ngẩn để loại ra) và bốn ổ khóa. Phù hợp nhất khi chiếu trên màn hình lớn cho cả lớp.",
+      "footer": "Khoa học Mẫu giáo · Breakout Trực tuyến Tư duy Phản biện · <a href=\"../policy.html\">Quyền riêng tư &amp; tuân thủ</a>"
+    },
+    "grade1": {
+      "crumb": "<a href=\"index.html\">‹ Khoa học Lớp 1</a> · <a href=\"../index.html\">Breakout Trực tuyến Tư duy Phản biện Khoa học</a>",
+      "eyebrow": "Lớp 1 · Một breakout cho mỗi ý tưởng",
+      "h1": "Thêm Breakout cho Lớp 1",
+      "lead": "Những breakout khoa học ngắn — mỗi cái cho một ý tưởng lớn của Lớp 1 (§112.3). Mỗi cái có sáu manh mối bằng tranh (một cái là mồi nhử ngớ ngẩn để loại ra) và bốn ổ khóa. Tuyệt vời để khởi động nhanh hoặc học điều gì đó mới.",
+      "footer": "Khoa học Lớp 1 · Breakout Trực tuyến Tư duy Phản biện · <a href=\"../policy.html\">Quyền riêng tư &amp; tuân thủ</a>"
+    },
+    "grade2": {
+      "crumb": "<a href=\"index.html\">‹ Khoa học Lớp 2</a> · <a href=\"../index.html\">Breakout Trực tuyến Tư duy Phản biện Khoa học</a>",
+      "eyebrow": "Lớp 2 · Một breakout cho mỗi ý tưởng",
+      "h1": "Thêm Breakout cho Lớp 2",
+      "lead": "Những breakout khoa học ngắn — mỗi cái cho một ý tưởng lớn của Lớp 2 (§112.4). Mỗi cái có sáu manh mối (một cái là mồi nhử ngớ ngẩn để loại ra) và bốn ổ khóa. Tuyệt vời để khởi động nhanh hoặc học điều gì đó mới.",
+      "footer": "Khoa học Lớp 2 · Breakout Trực tuyến Tư duy Phản biện · <a href=\"../policy.html\">Quyền riêng tư &amp; tuân thủ</a>"
+    },
+    "grade3": {
+      "crumb": "<a href=\"index.html\">‹ Khoa học Lớp 3</a> · <a href=\"../index.html\">Breakout Trực tuyến Tư duy Phản biện Khoa học</a>",
+      "eyebrow": "Lớp 3 · Một breakout cho mỗi khái niệm",
+      "h1": "Thêm Breakout cho Lớp 3",
+      "lead": "Những Breakout Trực tuyến Tư duy Phản biện ngắn — mỗi cái cho một khái niệm khoa học then chốt của Lớp 3 (§112.5). Mỗi cái có sáu manh mối (một cái là mồi nhử để loại ra) và bốn ổ khóa. Tuyệt vời để giới thiệu một chủ đề hoặc kiểm tra mức độ hiểu bài.",
+      "footer": "Khoa học Lớp 3 · Breakout Trực tuyến Tư duy Phản biện · <a href=\"../policy.html\">Quyền riêng tư &amp; tuân thủ</a>"
+    },
+    "grade4": {
+      "crumb": "<a href=\"index.html\">‹ Khoa học Lớp 4</a> · <a href=\"../index.html\">Breakout Trực tuyến Tư duy Phản biện Khoa học</a>",
+      "eyebrow": "Lớp 4 · Một breakout cho mỗi khái niệm",
+      "h1": "Thêm Breakout cho Lớp 4",
+      "lead": "Những Breakout Trực tuyến Tư duy Phản biện ngắn — mỗi cái cho một khái niệm khoa học then chốt của Lớp 4 (§112.6). Mỗi cái có sáu manh mối (một cái là mồi nhử để loại ra) và bốn ổ khóa. Tuyệt vời để giới thiệu một chủ đề hoặc kiểm tra mức độ hiểu bài.",
+      "footer": "Khoa học Lớp 4 · Breakout Trực tuyến Tư duy Phản biện · <a href=\"../policy.html\">Quyền riêng tư &amp; tuân thủ</a>"
+    },
+    "grade5": {
+      "crumb": "<a href=\"index.html\">‹ Khoa học Lớp 5</a> · <a href=\"../index.html\">Breakout Trực tuyến Tư duy Phản biện Khoa học</a>",
+      "eyebrow": "Lớp 5 · Một breakout cho mỗi khái niệm",
+      "h1": "Thêm Breakout cho Lớp 5",
+      "lead": "Những Breakout Trực tuyến Tư duy Phản biện ngắn — mỗi cái cho một khái niệm khoa học then chốt của Lớp 5 (§112.7). Mỗi cái có sáu manh mối (một cái là mồi nhử để loại ra) và bốn ổ khóa. Tuyệt vời để giới thiệu một chủ đề hoặc kiểm tra mức độ hiểu bài.",
+      "footer": "Khoa học Lớp 5 · Breakout Trực tuyến Tư duy Phản biện · <a href=\"../policy.html\">Quyền riêng tư &amp; tuân thủ</a>"
+    },
+    "grade6": {
+      "crumb": "<a href=\"index.html\">‹ Khoa học Lớp 6</a> · <a href=\"../index.html\">Breakout Trực tuyến Tư duy Phản biện Khoa học</a>",
+      "eyebrow": "Lớp 6 · Một breakout cho mỗi khái niệm then chốt",
+      "h1": "Thêm Breakout cho Lớp 6",
+      "lead": "Những Breakout Trực tuyến Tư duy Phản biện ngắn — mỗi cái cho một khái niệm khoa học then chốt của Lớp 6 (§112.26). Mỗi cái là một hoạt động khởi động hoặc ôn tập nhanh: sáu mẩu bằng chứng (một cái là mồi nhử) và bốn ổ khóa. Tuyệt vời để giới thiệu một chủ đề hoặc kiểm tra mức độ hiểu bài.",
+      "footer": "Khoa học Lớp 6 · Breakout Trực tuyến Tư duy Phản biện · <a href=\"../policy.html\">Quyền riêng tư &amp; tuân thủ</a>"
+    },
+    "grade7": {
+      "crumb": "<a href=\"index.html\">‹ Khoa học Lớp 7</a> · <a href=\"../index.html\">Breakout Trực tuyến Tư duy Phản biện Khoa học</a>",
+      "eyebrow": "Lớp 7 · Một breakout cho mỗi khái niệm then chốt",
+      "h1": "Thêm Breakout cho Lớp 7",
+      "lead": "Những Breakout Trực tuyến Tư duy Phản biện ngắn — mỗi cái cho một khái niệm khoa học then chốt của Lớp 7 (§112.27). Mỗi cái là một hoạt động khởi động hoặc ôn tập nhanh: sáu mẩu bằng chứng (một cái là mồi nhử) và bốn ổ khóa. Tuyệt vời để giới thiệu một chủ đề hoặc kiểm tra mức độ hiểu bài.",
+      "footer": "Khoa học Lớp 7 · Breakout Trực tuyến Tư duy Phản biện · <a href=\"../policy.html\">Quyền riêng tư &amp; tuân thủ</a>"
+    },
+    "grade8": {
+      "crumb": "<a href=\"index.html\">‹ Khoa học Lớp 8</a> · <a href=\"../index.html\">Breakout Trực tuyến Tư duy Phản biện Khoa học</a>",
+      "eyebrow": "Lớp 8 · Một breakout cho mỗi khái niệm then chốt",
+      "h1": "Thêm Breakout cho Lớp 8",
+      "lead": "Những Breakout Trực tuyến Tư duy Phản biện ngắn — mỗi cái cho một khái niệm khoa học then chốt của Lớp 8 (§112.28). Mỗi cái là một hoạt động khởi động hoặc ôn tập nhanh: sáu mẩu bằng chứng (một cái là mồi nhử) và bốn ổ khóa. Tuyệt vời để giới thiệu một chủ đề hoặc kiểm tra mức độ hiểu bài.",
+      "footer": "Khoa học Lớp 8 · Breakout Trực tuyến Tư duy Phản biện · <a href=\"../policy.html\">Quyền riêng tư &amp; tuân thủ</a>"
+    }
+  }
+}
