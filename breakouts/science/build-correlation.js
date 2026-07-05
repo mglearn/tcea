@@ -113,7 +113,7 @@ const html = `<!DOCTYPE html>
   ${rowsElem ? '<h2>🧒 Elementary · Grades K–5</h2>\n' + rowsElem : ''}
   ${rowsMid ? '<h2>🔬 Middle School · Grades 6–8</h2>\n' + rowsMid : ''}
 
-  <p class="disc">Standards are <b>aligned to</b>, not reproduced from, the official TEKS. This is a good-faith, paraphrased mapping; confirm against the source before adoption. Not legal advice. Featured-breakout TEKS name the anchor standard; see each grade's Skills &amp; TEKS page for the full lock-by-lock alignment.</p>
+  <p class="disc">Standards are <b>aligned to</b>, not reproduced from, the official TEKS. Featured-breakout TEKS name the anchor standard; see each grade's Skills &amp; TEKS page for the full lock-by-lock alignment.</p>
 
   <footer>Science Critical Thinking Online Breakouts · Self-contained, no logins, no data collected. · <a href="policy.html">Privacy &amp; compliance</a></footer>
 </div>
