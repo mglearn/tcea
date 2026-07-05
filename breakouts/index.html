@@ -176,15 +176,19 @@
 
   function render() {
     var list = matches();
+    var lang = I ? I.getLang() : 'en';
     document.getElementById('count').textContent = T(list.length === 1 ? 'count.one' : 'count.many', { n: list.length });
     document.getElementById('empty').style.display = list.length ? 'none' : 'block';
     document.getElementById('grid').innerHTML = list.map(function (b) {
+      var tt = (b.t && b.t[lang]) || null;
+      var title = (tt && tt.title) || b.title;
+      var desc = (tt && tt.desc) || b.desc || '';
       return '<a class="bk" href="' + b.href + '">' +
         '<div class="row"><span class="dot" style="background:' + (accent[b.suite] || '#054c8c') + '"></span>' +
         '<span class="suite-n">' + esc(shortSuite(b.suite)) + '</span>' +
         (b.band ? '<span class="band">' + esc(T('card.band', { b: b.band })) + '</span>' : '') + '</div>' +
-        '<h4>' + esc(b.title) + '</h4>' +
-        '<p>' + esc(b.desc || '') + '</p>' +
+        '<h4>' + esc(title) + '</h4>' +
+        '<p>' + esc(desc) + '</p>' +
         (b.activity ? '<div class="tagact">' + esc(T('tag.practice')) + '</div>' : '') +
         '</a>';
     }).join('');

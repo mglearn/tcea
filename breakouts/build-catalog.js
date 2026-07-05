@@ -5,6 +5,14 @@
 const fs = require('fs'), path = require('path'), cp = require('child_process');
 const ROOT = __dirname;
 const BAND = { grade35: '3–5', grade68: '6–8', grade912: '9–12', k2: 'K–2', g35: '3–5', g68: '6–8', g912: '9–12' };
+const LANGS = ['es', 'vi', 'ar', 'hi', 'ur', 'zh'];
+
+// build a per-language {title,desc} map from a breakout's UI object (skips missing langs)
+function uiT(UI, h1 = 'header.h1', sub = 'header.sub') {
+  const t = {};
+  for (const l of LANGS) { if (UI && UI[l] && UI[l][h1]) t[l] = { title: UI[l][h1], desc: UI[l][sub] }; }
+  return t;
+}
 
 function localeMeta(suite) {
   const out = [];
@@ -26,7 +34,7 @@ function localeMeta(suite) {
           title: b.UI.en['header.h1'],
           desc: b.UI.en['header.sub'],
           href: `${suite}/${band}/${slug}-student.html`,
-          kw,
+          kw, t: uiT(b.UI),
         });
       } catch (e) { console.error('skip', suite, f, e.message); }
     }
@@ -36,23 +44,34 @@ function localeMeta(suite) {
 
 function clearMeta() {
   const out = [];
-  const grab = (file, re) => { try { const m = fs.readFileSync(path.join(ROOT, file), 'utf8').match(re); return m ? m[1].replace(/\s*—.*$/, '').trim() : ''; } catch (e) { return ''; } };
-  // 3 main band breakouts
+  // 3 main band breakouts — read multi-language UI from the locale file
   for (const band of ['grade35', 'grade68', 'grade912']) {
-    const title = grab(`clear/${band}/student.html`, /<title>([^<]*)<\/title>/);
-    const desc = grab(`clear/${band}/student.html`, /<p class="[^"]*sub[^"]*"[^>]*>([^<]*)</) || 'A CLEAR critical-thinking breakout.';
-    if (title) out.push({ suite: 'clear', band: BAND[band], slug: band, title, desc, href: `clear/${band}/student.html`, kw: (title + ' ' + desc).toLowerCase() });
+    const fp = path.join(ROOT, 'clear', band, 'locales', band + '.js');
+    if (!fs.existsSync(fp)) continue;
+    try {
+      const w = {}; eval(fs.readFileSync(fp, 'utf8').replace('window.BREAKOUT', 'w.BREAKOUT'));
+      const b = w.BREAKOUT;
+      out.push({
+        suite: 'clear', band: BAND[band], slug: band,
+        title: b.UI.en['header.h1'], desc: b.UI.en['header.sub'],
+        href: `clear/${band}/student.html`,
+        kw: (b.UI.en['header.h1'] + ' ' + b.UI.en['header.sub']).toLowerCase(), t: uiT(b.UI),
+      });
+    } catch (e) { console.error('skip clear', band, e.message); }
   }
-  // practice activities (multilingual library) — link to the English entry
+  // practice activities (multilingual library) — title per language from each <lang>.html
   const adir = path.join(ROOT, 'clear/more/activities');
+  const grabTitle = fp => { try { return (fs.readFileSync(fp, 'utf8').match(/<title>([^<—]*)/) || [, ''])[1].trim(); } catch (e) { return ''; } };
   if (fs.existsSync(adir)) {
     for (const topic of fs.readdirSync(adir)) {
       const en = path.join(adir, topic, 'en.html');
       if (!fs.existsSync(en)) continue;
-      const title = (fs.readFileSync(en, 'utf8').match(/<title>([^<—]*)/) || [, topic])[1].trim();
+      const title = grabTitle(en) || topic;
       const bandKey = topic.split('-')[0]; // g35/g68/g912
       const subj = (topic.split('-')[1] || '').toUpperCase();
-      out.push({ suite: 'clear', band: BAND[bandKey] || '', slug: topic, title, desc: `Practice activity · ${subj} · 7 languages`, href: `clear/more/activities/${topic}/en.html`, kw: (title + ' ' + topic).toLowerCase(), activity: true });
+      const t = {};
+      for (const l of LANGS) { const tt = grabTitle(path.join(adir, topic, l + '.html')); if (tt) t[l] = { title: tt }; }
+      out.push({ suite: 'clear', band: BAND[bandKey] || '', slug: topic, title, desc: `Practice activity · ${subj} · 7 languages`, href: `clear/more/activities/${topic}/en.html`, kw: (title + ' ' + topic).toLowerCase(), activity: true, t });
     }
   }
   return out;
@@ -80,7 +99,7 @@ function bibleMeta() {
         title: b.UI.en['header.h1'],
         desc: b.UI.en['header.sub'],
         href: `bible/grades/${slug}-student.html`,
-        kw,
+        kw, t: uiT(b.UI),
       });
     } catch (e) { console.error('skip bible', f, e.message); }
   }
@@ -95,8 +114,11 @@ function scienceMeta() {
     const fp = path.join(ROOT, 'science', 'grade' + g, 'locales', 'grade' + g + '.js');
     if (!fs.existsSync(fp)) continue;
     try {
-      const w = {}; eval(fs.readFileSync(fp, 'utf8').replace('window.BREAKOUT', 'w.BREAKOUT'));
-      const b = w.BREAKOUT, en = b.CONTENT.en;
+      const w = { window: {} };
+      eval('(function(window){' + fs.readFileSync(fp, 'utf8') + '})(w.window)');
+      const i18nFp = path.join(ROOT, 'science', 'grade' + g, 'locales', 'grade' + g + '-i18n.js');
+      if (fs.existsSync(i18nFp)) eval('(function(window){' + fs.readFileSync(i18nFp, 'utf8') + '})(w.window)');
+      const b = w.window.BREAKOUT, en = b.CONTENT.en;
       const kw = [
         ...en.clues.flatMap(c => [c.nm, c.title, c.body]),
         ...en.locks.flatMap(l => [l.q, l.reason, ...(l.options || []), ...((l.items || []).map(i => i.t))]),
@@ -106,7 +128,7 @@ function scienceMeta() {
         title: b.UI.en['header.h1'],
         desc: b.UI.en['header.sub'],
         href: `science/grade${g}/index.html`,
-        kw: `grade ${g} ${kw}`,
+        kw: `grade ${g} ${kw}`, t: uiT(b.UI),
       });
     } catch (e) { console.error('skip science', g, e.message); }
     // "More" single-concept breakouts for this grade (science/grade<g>/more.js -> window.MORE)
@@ -115,17 +137,22 @@ function scienceMeta() {
       try {
         const w2 = { window: {} };
         eval('(function(window){' + fs.readFileSync(moreFp, 'utf8') + '})(w2.window)');
+        const moreI18nFp = path.join(ROOT, 'science', 'grade' + g, 'more-i18n.js');
+        if (fs.existsSync(moreI18nFp)) eval('(function(window){' + fs.readFileSync(moreI18nFp, 'utf8') + '})(w2.window)');
         const MORE = w2.window.MORE || {};
+        const MORE_I18N = w2.window.MORE_I18N || {};
         for (const slug of Object.keys(MORE)) {
           const e = MORE[slug];
           const kw = [...e.clues.flatMap(c => [c.nm, c.title, c.body]),
             ...e.locks.flatMap(l => [l.q, l.reason, ...(l.options || []), ...((l.items || []).map(i => i.t))])]
             .join(' ').replace(/\s+/g, ' ').toLowerCase().slice(0, 600);
+          const t = {};
+          for (const l of LANGS) { const tb = MORE_I18N[l] && MORE_I18N[l].breakouts && MORE_I18N[l].breakouts[slug]; if (tb && tb.ui) t[l] = { title: tb.ui.h1, desc: tb.ui.sub }; }
           out.push({
             suite: 'science', band, slug: 'grade' + g + '-' + slug,
             title: e.ui.h1, desc: e.ui.sub,
             href: `science/grade${g}/play.html?b=${slug}`,
-            kw: `grade ${g} ${e.concept || ''} ${e.teks || ''} ${kw}`, activity: true,
+            kw: `grade ${g} ${e.concept || ''} ${e.teks || ''} ${kw}`, activity: true, t,
           });
         }
       } catch (e) { console.error('skip science more', g, e.message); }
