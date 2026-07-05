@@ -49,40 +49,44 @@
     font-size:.95rem;padding:10px 22px;border-radius:10px;margin-top:16px;cursor:pointer}
   footer{text-align:center;margin-top:30px;font-size:.8rem;color:var(--ink-soft);font-weight:600}
   @media print{.crumb,.print,.langbar{display:none}body{background:#fff}}
+  .langbar{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-bottom:8px}
+  .langbar .globe{font-size:1.1rem}
+  .breakout-i18n-switcher,#i18nSwitcher{font-family:'Nunito',sans-serif;font-weight:700;font-size:.9rem;padding:7px 12px;border:2px solid var(--line);border-radius:9px;background:#fff;color:var(--navy);cursor:pointer}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="crumb"><a href="index.html">‹ Teacher launch</a> · <a href="../index.html">Science Critical Thinking Breakouts</a></div>
-  <div class="eyebrow">Engineering Design Challenge · Grade 7</div>
-  <h1>Keep-It-Cold Cooler</h1>
-  <p class="lead">A hands-on STEM companion to the <b>Rescue Run</b> breakout. Turn the thermal-equilibrium idea from Lock 4 into a real test — design an insulated container, then graph how it cools and read the slope like the drone's motion graph.</p>
+  <div class="langbar"><span class="globe" aria-hidden="true">🌐</span><div data-i18n-picker></div></div>
+  <div class="crumb" data-i18n-html="crumb"><a href="index.html">‹ Teacher launch</a> · <a href="../index.html">Science Critical Thinking Breakouts</a></div>
+  <div class="eyebrow" data-i18n="eyebrow">Engineering Design Challenge · Grade 7</div>
+  <h1 data-i18n="h1">Keep-It-Cold Cooler</h1>
+  <p class="lead" data-i18n-html="lead">A hands-on STEM companion to the <b>Rescue Run</b> breakout. Turn the thermal-equilibrium idea from Lock 4 into a real test — design an insulated container, then graph how it cools and read the slope like the drone's motion graph.</p>
 
   <div class="card">
-    <h3>🎯 The problem (define)</h3>
-    <p>The rescue team's medicine must stay cold in the desert sun. Using common materials, design an <b>insulated container</b> that keeps an ice cube frozen the longest (or keeps cold water coldest over 15 minutes). Then redesign to beat your own record.</p>
+    <h3 data-i18n-html="h3.0">🎯 The problem (define)</h3>
+    <p data-i18n-html="p.0">The rescue team's medicine must stay cold in the desert sun. Using common materials, design an <b>insulated container</b> that keeps an ice cube frozen the longest (or keeps cold water coldest over 15 minutes). Then redesign to beat your own record.</p>
     <p class="teks"><b>Anchor question:</b> Heat always flows from hot to cold toward <i>thermal equilibrium</i>. Your insulation can't stop that — so which design <i>slows</i> it best, and how does your temperature-vs-time graph show it?</p>
   </div>
 
-  <h2>🧰 Materials (per team of 2–4)</h2>
+  <h2 data-i18n-html="h2.0">🧰 Materials (per team of 2–4)</h2>
   <ul>
-    <li>A small cup or container as the "core," plus a larger outer container</li>
-    <li>Insulators to test: cotton balls, foil, bubble wrap, paper towels, felt, foam</li>
-    <li>Ice cubes of equal size (or equal amounts of cold water) as the "medicine"</li>
-    <li>A thermometer (or temperature probe), a timer, tape, this recording sheet</li>
+    <li data-i18n-html="li.0">A small cup or container as the "core," plus a larger outer container</li>
+    <li data-i18n-html="li.1">Insulators to test: cotton balls, foil, bubble wrap, paper towels, felt, foam</li>
+    <li data-i18n-html="li.2">Ice cubes of equal size (or equal amounts of cold water) as the "medicine"</li>
+    <li data-i18n-html="li.3">A thermometer (or temperature probe), a timer, tape, this recording sheet</li>
   </ul>
 
-  <h2>🔁 The engineering design process</h2>
+  <h2 data-i18n-html="h2.1">🔁 The engineering design process</h2>
   <ol class="steps">
-    <li><b>Define</b> the problem: keep the cold cargo cold the longest.</li>
-    <li><b>Imagine &amp; brainstorm</b>: which materials trap the least heat flow? Predict a ranking.</li>
-    <li><b>Plan</b>: choose your insulation layers and sketch the build.</li>
-    <li><b>Create</b>: build the cooler around the core; seal gaps that let convection in.</li>
-    <li><b>Test</b>: record the temperature every 2–3 minutes for ~15 minutes. Keep every team's start temperature and ice size the same (a fair test).</li>
-    <li><b>Improve</b>: change <i>one</i> variable (add a layer, seal a gap, add a reflective wrap) and retest so you know what helped.</li>
+    <li data-i18n-html="li.4"><b>Define</b> the problem: keep the cold cargo cold the longest.</li>
+    <li data-i18n-html="li.5"><b>Imagine &amp; brainstorm</b>: which materials trap the least heat flow? Predict a ranking.</li>
+    <li data-i18n-html="li.6"><b>Plan</b>: choose your insulation layers and sketch the build.</li>
+    <li data-i18n-html="li.7"><b>Create</b>: build the cooler around the core; seal gaps that let convection in.</li>
+    <li data-i18n-html="li.8"><b>Test</b>: record the temperature every 2–3 minutes for ~15 minutes. Keep every team's start temperature and ice size the same (a fair test).</li>
+    <li data-i18n-html="li.9"><b>Improve</b>: change <i>one</i> variable (add a layer, seal a gap, add a reflective wrap) and retest so you know what helped.</li>
   </ol>
 
-  <h2>📊 Record &amp; graph your data</h2>
+  <h2 data-i18n-html="h2.2">📊 Record &amp; graph your data</h2>
   <table>
     <tr><th>Time (min)</th><th>0</th><th>3</th><th>6</th><th>9</th><th>12</th><th>15</th></tr>
     <tr><td><b>Round 1 temp (°C)</b></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -95,17 +99,17 @@
   </div>
   <p class="teks">Plot both rounds. A <b>flatter, gentler slope</b> means heat is flowing in more slowly — the better insulator. This is the same slope reading you used on the drone's <b>distance–time graph</b>. <code>7.2(B)</code> analyze data &amp; patterns · <code>7.7(C)</code> graph reasoning.</p>
 
-  <h2>🗣️ Explain it — Claim, Evidence, Reasoning (CER)</h2>
+  <h2 data-i18n-html="h2.3">🗣️ Explain it — Claim, Evidence, Reasoning (CER)</h2>
   <div class="cer">
-    <p><b>Claim</b> — Which design kept the cargo cold the longest?</p>
+    <p data-i18n-html="p.1"><b>Claim</b> — Which design kept the cargo cold the longest?</p>
     <div class="line"></div>
-    <p><b>Evidence</b> — Compare the slopes of your two graphs.</p>
+    <p data-i18n-html="p.2"><b>Evidence</b> — Compare the slopes of your two graphs.</p>
     <div class="line"></div><div class="line"></div>
-    <p><b>Reasoning</b> — Use <i>heat flows hot→cold</i>, <i>conduction/convection/radiation</i>, and <i>thermal equilibrium</i> to explain <b>why</b>. (Insulation only slows the heat; given enough time, inside and outside still reach the same temperature.)</p>
+    <p data-i18n-html="p.3"><b>Reasoning</b> — Use <i>heat flows hot→cold</i>, <i>conduction/convection/radiation</i>, and <i>thermal equilibrium</i> to explain <b>why</b>. (Insulation only slows the heat; given enough time, inside and outside still reach the same temperature.)</p>
     <div class="line"></div><div class="line"></div>
   </div>
 
-  <div class="career">🌡️ <b>STEM career highlight — Thermal / Mechanical Engineer &amp; Emergency-Management Logistics.</b> These professionals design coolers for vaccines, spacecraft heat shields, and building insulation — and plan how rescue supplies stay usable in the field. They use exactly what you tested: slow the heat flow toward equilibrium. <span class="teks">(Labor data: O*NET &amp; the Texas Workforce Commission; <code>7.4(C)</code> investigate STEM careers.)</span></div>
+  <div class="career">🌡️ <b>STEM career highlight — Thermal / Mechanical Engineer &amp; Emergency-Management Logistics.</b> These professionals design coolers for vaccines, spacecraft heat shields, and building insulation — and plan how rescue supplies stay usable in the field. They use exactly what you tested: slow the heat flow toward equilibrium. <span class="teks" data-i18n-html="teks.0">(Labor data: O*NET &amp; the Texas Workforce Commission; <code>7.4(C)</code> investigate STEM careers.)</span></div>
 
   <div class="note">🧩 <b>Extend it:</b> Add a "sun" (a lamp) to introduce <b>radiation</b> and test a reflective foil layer — then connect back to <b>Lock 2</b>: two coolers can lose the same total heat but along very different paths, just like two drones with the same speed but different velocity.</div>
 
@@ -114,7 +118,9 @@
 
   <button class="print" onclick="window.print()">🖨️ Print this handout</button>
 
-  <footer>Science Critical Thinking Breakouts · Grade 7 · Self-contained, no logins, no data collected.</footer>
+  <footer data-i18n-html="footer">Science Critical Thinking Breakouts · Grade 7 · Self-contained, no logins, no data collected.</footer>
 </div>
+<script src="../../assets/i18n.js" defer></script>
+<script src="i18n-eng.js" defer></script>
 </body>
 </html>

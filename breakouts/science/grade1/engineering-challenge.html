@@ -43,61 +43,67 @@
     font-size:.95rem;padding:10px 22px;border-radius:10px;margin-top:16px;cursor:pointer}
   footer{text-align:center;margin-top:30px;font-size:.8rem;color:var(--ink-soft);font-weight:600}
   @media print{.crumb,.print{display:none}body{background:#fff}}
+  .langbar{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-bottom:8px}
+  .langbar .globe{font-size:1.1rem}
+  .breakout-i18n-switcher,#i18nSwitcher{font-family:'Nunito',sans-serif;font-weight:700;font-size:.9rem;padding:7px 12px;border:2px solid var(--line);border-radius:9px;background:#fff;color:var(--navy);cursor:pointer}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="crumb"><a href="index.html">‹ Teacher launch</a> · <a href="../index.html">Science Critical Thinking Breakouts</a></div>
-  <div class="eyebrow">Engineering Design Challenge · Grade 1</div>
-  <h1>Roll It Far!</h1>
-  <p class="lead">A hands-on STEM buddy for the <b>Push, Pull, and Play!</b> breakout. Build a ramp and use a push to send a toy car as far as you can — then make it even better.</p>
+  <div class="langbar"><span class="globe" aria-hidden="true">🌐</span><div data-i18n-picker></div></div>
+  <div class="crumb" data-i18n-html="crumb"><a href="index.html">‹ Teacher launch</a> · <a href="../index.html">Science Critical Thinking Breakouts</a></div>
+  <div class="eyebrow" data-i18n="eyebrow">Engineering Design Challenge · Grade 1</div>
+  <h1 data-i18n="h1">Roll It Far!</h1>
+  <p class="lead" data-i18n-html="lead">A hands-on STEM buddy for the <b>Push, Pull, and Play!</b> breakout. Build a ramp and use a push to send a toy car as far as you can — then make it even better.</p>
 
   <div class="card">
-    <h3>🎯 The problem</h3>
-    <p>Make a ramp that helps a toy car roll <b>far</b>. Let the car go from the top and see how far it rolls. Then change your ramp to make the car go even farther!</p>
+    <h3 data-i18n-html="h3.0">🎯 The problem</h3>
+    <p data-i18n-html="p.0">Make a ramp that helps a toy car roll <b>far</b>. Let the car go from the top and see how far it rolls. Then change your ramp to make the car go even farther!</p>
     <p class="teks"><b>Big question:</b> Does a taller (steeper) ramp make the car roll farther than a low ramp?</p>
   </div>
 
-  <h2>🧰 What you need</h2>
+  <h2 data-i18n-html="h2.0">🧰 What you need</h2>
   <ul>
-    <li>A toy car or a ball that rolls</li>
-    <li>Something to make a ramp: a book, a board, or a piece of cardboard</li>
-    <li>Blocks or books to lift the top of the ramp up</li>
-    <li>A way to measure: floor tiles, big steps, or a measuring tape</li>
+    <li data-i18n-html="li.0">A toy car or a ball that rolls</li>
+    <li data-i18n-html="li.1">Something to make a ramp: a book, a board, or a piece of cardboard</li>
+    <li data-i18n-html="li.2">Blocks or books to lift the top of the ramp up</li>
+    <li data-i18n-html="li.3">A way to measure: floor tiles, big steps, or a measuring tape</li>
   </ul>
 
-  <h2>🔁 Be an engineer</h2>
+  <h2 data-i18n-html="h2.1">🔁 Be an engineer</h2>
   <ol class="steps">
-    <li><b>Ask:</b> How can I make the car roll far?</li>
-    <li><b>Imagine:</b> Should the ramp be high or low? Take a guess!</li>
-    <li><b>Plan:</b> Pick your ramp and how high to lift it.</li>
-    <li><b>Build:</b> Set up your ramp. Let the car go from the top (no pushing — let gravity pull it!).</li>
-    <li><b>Test:</b> Measure how far the car rolled. Write it down.</li>
-    <li><b>Make it better:</b> Change <i>one</i> thing — make the ramp higher — and test again.</li>
+    <li data-i18n-html="li.4"><b>Ask:</b> How can I make the car roll far?</li>
+    <li data-i18n-html="li.5"><b>Imagine:</b> Should the ramp be high or low? Take a guess!</li>
+    <li data-i18n-html="li.6"><b>Plan:</b> Pick your ramp and how high to lift it.</li>
+    <li data-i18n-html="li.7"><b>Build:</b> Set up your ramp. Let the car go from the top (no pushing — let gravity pull it!).</li>
+    <li data-i18n-html="li.8"><b>Test:</b> Measure how far the car rolled. Write it down.</li>
+    <li data-i18n-html="li.9"><b>Make it better:</b> Change <i>one</i> thing — make the ramp higher — and test again.</li>
   </ol>
 
-  <h2>📊 What happened?</h2>
+  <h2 data-i18n-html="h2.2">📊 What happened?</h2>
   <table>
     <tr><th>Ramp</th><th>How far did the car roll?</th></tr>
     <tr><td>Low ramp</td><td></td></tr>
     <tr><td>Higher ramp</td><td></td></tr>
   </table>
 
-  <h2>🗣️ Tell about it</h2>
+  <h2 data-i18n-html="h2.3">🗣️ Tell about it</h2>
   <div class="say">
-    <p>Which ramp made the car roll farther?</p>
+    <p data-i18n-html="p.1">Which ramp made the car roll farther?</p>
     <div class="line"></div>
-    <p>Why do you think so? (Try the words <i>push</i>, <i>ramp</i>, and <i>far</i>.)</p>
+    <p data-i18n-html="p.2">Why do you think so? (Try the words <i>push</i>, <i>ramp</i>, and <i>far</i>.)</p>
     <div class="line"></div>
   </div>
 
-  <div class="career">🚗 <b>Meet a STEM job — Engineer.</b> Engineers build ramps, roads, and machines. They test their ideas and make them better, just like you did! <span class="teks">(Grade 1 scientists to meet: Katherine Johnson, Sally Ride, Ernest Just.)</span></div>
+  <div class="career">🚗 <b>Meet a STEM job — Engineer.</b> Engineers build ramps, roads, and machines. They test their ideas and make them better, just like you did! <span class="teks" data-i18n-html="teks.0">(Grade 1 scientists to meet: Katherine Johnson, Sally Ride, Ernest Just.)</span></div>
 
   <h3 style="margin-top:22px">TEKS for this challenge</h3>
   <p class="teks"><code>1.7(A)</code> pushes &amp; pulls change motion · <code>1.1(B)</code> plan &amp; do a simple test · <code>1.1(G)</code> make a model · <code>1.2(D)</code> tell if a design works. Aligned to, not reproduced from, the official TEKS — confirm before adoption.</p>
 
   <button class="print" onclick="window.print()">🖨️ Print this page</button>
-  <footer>Grade 1 Science · Critical Thinking Online Breakouts · Self-contained, no logins, no data collected.</footer>
+  <footer data-i18n-html="footer">Grade 1 Science · Critical Thinking Online Breakouts · Self-contained, no logins, no data collected.</footer>
 </div>
+<script src="../../assets/i18n.js" defer></script>
+<script src="i18n-eng.js" defer></script>
 </body>
 </html>

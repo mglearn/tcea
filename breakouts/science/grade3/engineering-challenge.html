@@ -43,60 +43,66 @@
     font-size:.95rem;padding:10px 22px;border-radius:10px;margin-top:16px;cursor:pointer}
   footer{text-align:center;margin-top:30px;font-size:.8rem;color:var(--ink-soft);font-weight:600}
   @media print{.crumb,.print{display:none}body{background:#fff}}
+  .langbar{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-bottom:8px}
+  .langbar .globe{font-size:1.1rem}
+  .breakout-i18n-switcher,#i18nSwitcher{font-family:'Nunito',sans-serif;font-weight:700;font-size:.9rem;padding:7px 12px;border:2px solid var(--line);border-radius:9px;background:#fff;color:var(--navy);cursor:pointer}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="crumb"><a href="index.html">‹ Teacher launch</a> · <a href="../index.html">Science Critical Thinking Breakouts</a></div>
-  <div class="eyebrow">Engineering Design Challenge · Grade 3</div>
-  <h1>Sun–Earth–Moon Model</h1>
-  <p class="lead">A hands-on STEM buddy for the <b>Blast Off!</b> breakout. Build a moving model that shows the Moon orbiting the Earth while the Earth orbits the Sun.</p>
+  <div class="langbar"><span class="globe" aria-hidden="true">🌐</span><div data-i18n-picker></div></div>
+  <div class="crumb" data-i18n-html="crumb"><a href="index.html">‹ Teacher launch</a> · <a href="../index.html">Science Critical Thinking Breakouts</a></div>
+  <div class="eyebrow" data-i18n="eyebrow">Engineering Design Challenge · Grade 3</div>
+  <h1 data-i18n="h1">Sun–Earth–Moon Model</h1>
+  <p class="lead" data-i18n-html="lead">A hands-on STEM buddy for the <b>Blast Off!</b> breakout. Build a moving model that shows the Moon orbiting the Earth while the Earth orbits the Sun.</p>
 
   <div class="card">
-    <h3>🎯 The problem</h3>
-    <p>How can you <b>model</b> the way objects move in space? Build a model that shows the <b>Moon going around the Earth</b>, and the <b>Earth going around the Sun</b>. A good model helps you explain what you cannot see all at once.</p>
+    <h3 data-i18n-html="h3.0">🎯 The problem</h3>
+    <p data-i18n-html="p.0">How can you <b>model</b> the way objects move in space? Build a model that shows the <b>Moon going around the Earth</b>, and the <b>Earth going around the Sun</b>. A good model helps you explain what you cannot see all at once.</p>
     <p class="teks"><b>Big question:</b> What does your model show well — and what can't it show? (Real space is <i>much</i> bigger and farther apart!)</p>
   </div>
 
-  <h2>🧰 What you need</h2>
+  <h2 data-i18n-html="h2.0">🧰 What you need</h2>
   <ul>
-    <li>3 balls of different sizes (big = Sun, medium = Earth, small = Moon) — or paper circles</li>
-    <li>2 craft sticks, straws, or pencils to hold the Earth and Moon</li>
-    <li>Tape, and a little clay or a paper plate for the Sun in the middle</li>
+    <li data-i18n-html="li.0">3 balls of different sizes (big = Sun, medium = Earth, small = Moon) — or paper circles</li>
+    <li data-i18n-html="li.1">2 craft sticks, straws, or pencils to hold the Earth and Moon</li>
+    <li data-i18n-html="li.2">Tape, and a little clay or a paper plate for the Sun in the middle</li>
   </ul>
 
-  <h2>🔁 Be an engineer</h2>
+  <h2 data-i18n-html="h2.1">🔁 Be an engineer</h2>
   <ol class="steps">
-    <li><b>Ask:</b> How can I show the Moon orbiting Earth and Earth orbiting the Sun?</li>
-    <li><b>Imagine:</b> Which ball is the Sun? Where do the Earth and Moon go?</li>
-    <li><b>Plan:</b> Decide how the Earth will move around the Sun, and how the Moon will move around the Earth.</li>
-    <li><b>Build:</b> Put the big "Sun" ball in the middle. Attach the "Earth" so it can circle the Sun, and the "Moon" so it can circle the Earth.</li>
-    <li><b>Test:</b> Move your model. Does the Earth go around the Sun? Does the Moon go around the Earth at the same time?</li>
-    <li><b>Make it better:</b> Fix anything that moves the wrong way, then show a friend.</li>
+    <li data-i18n-html="li.3"><b>Ask:</b> How can I show the Moon orbiting Earth and Earth orbiting the Sun?</li>
+    <li data-i18n-html="li.4"><b>Imagine:</b> Which ball is the Sun? Where do the Earth and Moon go?</li>
+    <li data-i18n-html="li.5"><b>Plan:</b> Decide how the Earth will move around the Sun, and how the Moon will move around the Earth.</li>
+    <li data-i18n-html="li.6"><b>Build:</b> Put the big "Sun" ball in the middle. Attach the "Earth" so it can circle the Sun, and the "Moon" so it can circle the Earth.</li>
+    <li data-i18n-html="li.7"><b>Test:</b> Move your model. Does the Earth go around the Sun? Does the Moon go around the Earth at the same time?</li>
+    <li data-i18n-html="li.8"><b>Make it better:</b> Fix anything that moves the wrong way, then show a friend.</li>
   </ol>
 
-  <h2>📊 Check your model</h2>
+  <h2 data-i18n-html="h2.2">📊 Check your model</h2>
   <table>
     <tr><th>Does your model show...</th><th>Yes / Not yet</th></tr>
     <tr><td>The Earth orbits the Sun?</td><td></td></tr>
     <tr><td>The Moon orbits the Earth?</td><td></td></tr>
   </table>
 
-  <h2>🗣️ Tell about it</h2>
+  <h2 data-i18n-html="h2.3">🗣️ Tell about it</h2>
   <div class="say">
-    <p>What does your model show well?</p>
+    <p data-i18n-html="p.1">What does your model show well?</p>
     <div class="line"></div>
-    <p>What can't your model show? (Try the words <i>orbit</i>, <i>model</i>, and <i>far</i>.)</p>
+    <p data-i18n-html="p.2">What can't your model show? (Try the words <i>orbit</i>, <i>model</i>, and <i>far</i>.)</p>
     <div class="line"></div>
   </div>
 
-  <div class="career">🔭 <b>Meet a STEM job — Astronomer &amp; Aerospace Engineer.</b> Astronomers study how objects move in space, and aerospace engineers build spacecraft to explore them. They use models — just like yours — to plan and explain. <span class="teks">(Grade 3 innovators to explore: scientists who study space and design rockets.)</span></div>
+  <div class="career">🔭 <b>Meet a STEM job — Astronomer &amp; Aerospace Engineer.</b> Astronomers study how objects move in space, and aerospace engineers build spacecraft to explore them. They use models — just like yours — to plan and explain. <span class="teks" data-i18n-html="teks.0">(Grade 3 innovators to explore: scientists who study space and design rockets.)</span></div>
 
   <h3 style="margin-top:22px">TEKS for this challenge</h3>
   <p class="teks"><code>3.9(A)</code> model the orbits of the Sun, Earth &amp; Moon · <code>3.1(B)</code> plan &amp; do a simple investigation · <code>3.1(G)</code> develop &amp; use a model · <code>3.2(A)</code> a model's advantages &amp; limits · <code>3.2(D)</code> evaluate a design. Aligned to, not reproduced from, the official TEKS — confirm before adoption.</p>
 
   <button class="print" onclick="window.print()">🖨️ Print this page</button>
-  <footer>Grade 3 Science · Critical Thinking Online Breakouts · Self-contained, no logins, no data collected.</footer>
+  <footer data-i18n-html="footer">Grade 3 Science · Critical Thinking Online Breakouts · Self-contained, no logins, no data collected.</footer>
 </div>
+<script src="../../assets/i18n.js" defer></script>
+<script src="i18n-eng.js" defer></script>
 </body>
 </html>

@@ -46,66 +46,70 @@
     font-size:.95rem;padding:10px 22px;border-radius:10px;margin-top:16px;cursor:pointer}
   footer{text-align:center;margin-top:30px;font-size:.8rem;color:var(--ink-soft);font-weight:600}
   @media print{.crumb,.print,.langbar{display:none}body{background:#fff}}
+  .langbar{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-bottom:8px}
+  .langbar .globe{font-size:1.1rem}
+  .breakout-i18n-switcher,#i18nSwitcher{font-family:'Nunito',sans-serif;font-weight:700;font-size:.9rem;padding:7px 12px;border:2px solid var(--line);border-radius:9px;background:#fff;color:var(--navy);cursor:pointer}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="crumb"><a href="index.html">‹ Teacher launch</a> · <a href="../index.html">Science Critical Thinking Breakouts</a></div>
-  <div class="eyebrow">Engineering Design Challenge · Grade 8</div>
-  <h1>Reaction in a Bag &amp; Straw Rocket</h1>
-  <p class="lead">A two-part hands-on STEM companion to the <b>Launch Control</b> breakout. Part A proves conservation of mass (Lock 1 &amp; 3). Part B tests Newton's Second Law, a = F ÷ m (Lock 2).</p>
+  <div class="langbar"><span class="globe" aria-hidden="true">🌐</span><div data-i18n-picker></div></div>
+  <div class="crumb" data-i18n-html="crumb"><a href="index.html">‹ Teacher launch</a> · <a href="../index.html">Science Critical Thinking Breakouts</a></div>
+  <div class="eyebrow" data-i18n="eyebrow">Engineering Design Challenge · Grade 8</div>
+  <h1 data-i18n="h1">Reaction in a Bag &amp; Straw Rocket</h1>
+  <p class="lead" data-i18n-html="lead">A two-part hands-on STEM companion to the <b>Launch Control</b> breakout. Part A proves conservation of mass (Lock 1 &amp; 3). Part B tests Newton's Second Law, a = F ÷ m (Lock 2).</p>
 
   <div class="card">
-    <h3>🎯 The problem (define)</h3>
-    <p><b>Part A — Fuel check:</b> the launch team must prove that a chemical reaction doesn't lose mass. Design a <b>sealed system</b> that lets a fizzing reaction happen while you measure mass before and after.<br>
+    <h3 data-i18n-html="h3.0">🎯 The problem (define)</h3>
+    <p data-i18n-html="p.0"><b>Part A — Fuel check:</b> the launch team must prove that a chemical reaction doesn't lose mass. Design a <b>sealed system</b> that lets a fizzing reaction happen while you measure mass before and after.<br>
     <b>Part B — Thrust check:</b> engineers must predict how added cargo changes a rocket's acceleration. Build a straw rocket and test how <b>payload mass</b> changes how far/fast it flies at a fixed launch push.</p>
     <p class="teks"><b>Anchor questions:</b> If atoms are only rearranged, why should the sealed mass stay the same? And if a = F ÷ m, what should more mass do to the launch?</p>
   </div>
 
-  <h2>🧰 Materials (per team of 2–4)</h2>
+  <h2 data-i18n-html="h2.0">🧰 Materials (per team of 2–4)</h2>
   <ul>
-    <li><b>Part A:</b> a zip-seal bag, baking soda, vinegar, a small cup, a balance/scale</li>
-    <li><b>Part B:</b> a straw, paper, tape, a slightly wider straw or launcher, paperclips (payload mass), a tape measure</li>
-    <li>This recording sheet and a pencil</li>
+    <li data-i18n-html="li.0"><b>Part A:</b> a zip-seal bag, baking soda, vinegar, a small cup, a balance/scale</li>
+    <li data-i18n-html="li.1"><b>Part B:</b> a straw, paper, tape, a slightly wider straw or launcher, paperclips (payload mass), a tape measure</li>
+    <li data-i18n-html="li.2">This recording sheet and a pencil</li>
   </ul>
 
   <div class="safety">⚠️ <b>Safety:</b> wear goggles for Part A. Do not over-fill or force a bulging bag — open it away from faces. Follow your teacher's TEA-approved lab safety rules.</div>
 
-  <h2>🔁 The engineering design process</h2>
+  <h2 data-i18n-html="h2.1">🔁 The engineering design process</h2>
   <ol class="steps">
-    <li><b>Define</b> the problem: prove mass is conserved, then test how mass changes acceleration.</li>
-    <li><b>Imagine &amp; brainstorm</b>: how will you keep the reaction fully sealed? What payloads will you test?</li>
-    <li><b>Plan</b>: predict the after-reaction mass (Part A) and rank your payloads by expected distance (Part B).</li>
-    <li><b>Create</b>: build the sealed bag (keep vinegar in the cup until sealed) and the straw rocket.</li>
-    <li><b>Test</b>: mass the sealed bag before and after the fizz; launch the rocket with 0, 1, and 3 paperclips, measuring distance each time (repeat trials).</li>
-    <li><b>Improve</b>: if the bag lost mass, find the leak and reseal; refine the rocket fins so only mass is changing between launches (a fair test).</li>
+    <li data-i18n-html="li.3"><b>Define</b> the problem: prove mass is conserved, then test how mass changes acceleration.</li>
+    <li data-i18n-html="li.4"><b>Imagine &amp; brainstorm</b>: how will you keep the reaction fully sealed? What payloads will you test?</li>
+    <li data-i18n-html="li.5"><b>Plan</b>: predict the after-reaction mass (Part A) and rank your payloads by expected distance (Part B).</li>
+    <li data-i18n-html="li.6"><b>Create</b>: build the sealed bag (keep vinegar in the cup until sealed) and the straw rocket.</li>
+    <li data-i18n-html="li.7"><b>Test</b>: mass the sealed bag before and after the fizz; launch the rocket with 0, 1, and 3 paperclips, measuring distance each time (repeat trials).</li>
+    <li data-i18n-html="li.8"><b>Improve</b>: if the bag lost mass, find the leak and reseal; refine the rocket fins so only mass is changing between launches (a fair test).</li>
   </ol>
 
-  <h2>📊 Record your data</h2>
-  <h3>Part A — Conservation of mass</h3>
+  <h2 data-i18n-html="h2.2">📊 Record your data</h2>
+  <h3 data-i18n-html="h3.1">Part A — Conservation of mass</h3>
   <table>
     <tr><th></th><th>Mass BEFORE (g)</th><th>Mass AFTER (g)</th><th>Difference (g)</th></tr>
     <tr><td><b>Sealed bag</b></td><td></td><td></td><td></td></tr>
   </table>
   <p class="teks">A difference near zero is your evidence: atoms rearranged, none escaped. <code>8.6(E)</code></p>
-  <h3>Part B — a = F ÷ m</h3>
+  <h3 data-i18n-html="h3.2">Part B — a = F ÷ m</h3>
   <table>
     <tr><th>Payload (paperclips)</th><th>0</th><th>1</th><th>3</th></tr>
     <tr><td><b>Flight distance (cm)</b></td><td></td><td></td><td></td></tr>
   </table>
   <p class="teks">Same launch push (force), more mass → shorter/slower flight (less acceleration). <code>8.7(A)</code>, <code>8.2(B)</code></p>
 
-  <h2>🗣️ Explain it — Claim, Evidence, Reasoning (CER)</h2>
+  <h2 data-i18n-html="h2.3">🗣️ Explain it — Claim, Evidence, Reasoning (CER)</h2>
   <div class="cer">
-    <p><b>Claim</b> — Was mass conserved? How did payload mass affect the flight?</p>
+    <p data-i18n-html="p.1"><b>Claim</b> — Was mass conserved? How did payload mass affect the flight?</p>
     <div class="line"></div>
-    <p><b>Evidence</b> — Your two data tables.</p>
+    <p data-i18n-html="p.2"><b>Evidence</b> — Your two data tables.</p>
     <div class="line"></div><div class="line"></div>
-    <p><b>Reasoning</b> — Use <i>atoms rearrange</i>, <i>sealed system</i>, <i>conservation of mass</i>, and <i>a = F ÷ m</i> to explain <b>why</b>. (In a sealed system no atoms leave, so mass is unchanged; with fixed force, more mass means less acceleration.)</p>
+    <p data-i18n-html="p.3"><b>Reasoning</b> — Use <i>atoms rearrange</i>, <i>sealed system</i>, <i>conservation of mass</i>, and <i>a = F ÷ m</i> to explain <b>why</b>. (In a sealed system no atoms leave, so mass is unchanged; with fixed force, more mass means less acceleration.)</p>
     <div class="line"></div><div class="line"></div>
   </div>
 
-  <div class="career">🚀 <b>STEM career highlight — Aerospace / Propulsion Engineer &amp; Chemical Engineer.</b> These engineers design rocket fuels and predict how a vehicle's changing mass (as fuel burns) affects its acceleration — the exact two ideas you tested. <span class="teks">(Labor data: O*NET &amp; the Texas Workforce Commission; <code>8.4(C)</code> investigate STEM careers.)</span></div>
+  <div class="career">🚀 <b>STEM career highlight — Aerospace / Propulsion Engineer &amp; Chemical Engineer.</b> These engineers design rocket fuels and predict how a vehicle's changing mass (as fuel burns) affects its acceleration — the exact two ideas you tested. <span class="teks" data-i18n-html="teks.0">(Labor data: O*NET &amp; the Texas Workforce Commission; <code>8.4(C)</code> investigate STEM careers.)</span></div>
 
   <div class="note">🧩 <b>Extend it:</b> A real rocket <i>loses</i> mass as it burns fuel — so with steady thrust its acceleration <i>increases</i> over the flight. Ask students to connect that to both Lock 1 (the atoms/mass are conserved in the whole system, including exhaust) and Lock 2 (less mass → more acceleration).</div>
 
@@ -114,7 +118,9 @@
 
   <button class="print" onclick="window.print()">🖨️ Print this handout</button>
 
-  <footer>Science Critical Thinking Breakouts · Grade 8 · Self-contained, no logins, no data collected.</footer>
+  <footer data-i18n-html="footer">Science Critical Thinking Breakouts · Grade 8 · Self-contained, no logins, no data collected.</footer>
 </div>
+<script src="../../assets/i18n.js" defer></script>
+<script src="i18n-eng.js" defer></script>
 </body>
 </html>

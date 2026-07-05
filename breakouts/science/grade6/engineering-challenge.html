@@ -45,41 +45,45 @@
     font-size:.95rem;padding:10px 22px;border-radius:10px;margin-top:16px;cursor:pointer}
   footer{text-align:center;margin-top:30px;font-size:.8rem;color:var(--ink-soft);font-weight:600}
   @media print{.crumb,.print,.langbar{display:none}body{background:#fff}}
+  .langbar{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-bottom:8px}
+  .langbar .globe{font-size:1.1rem}
+  .breakout-i18n-switcher,#i18nSwitcher{font-family:'Nunito',sans-serif;font-weight:700;font-size:.9rem;padding:7px 12px;border:2px solid var(--line);border-radius:9px;background:#fff;color:var(--navy);cursor:pointer}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="crumb"><a href="index.html">‹ Teacher launch</a> · <a href="../index.html">Science Critical Thinking Breakouts</a></div>
-  <div class="eyebrow">Engineering Design Challenge · Grade 6</div>
-  <h1>Build a Cargo Barge</h1>
-  <p class="lead">A hands-on STEM companion to the <b>Cargo Ship Rescue</b> breakout. Turn the density idea from Lock 2 into a real engineering test — then improve your design like a marine engineer.</p>
+  <div class="langbar"><span class="globe" aria-hidden="true">🌐</span><div data-i18n-picker></div></div>
+  <div class="crumb" data-i18n-html="crumb"><a href="index.html">‹ Teacher launch</a> · <a href="../index.html">Science Critical Thinking Breakouts</a></div>
+  <div class="eyebrow" data-i18n="eyebrow">Engineering Design Challenge · Grade 6</div>
+  <h1 data-i18n="h1">Build a Cargo Barge</h1>
+  <p class="lead" data-i18n-html="lead">A hands-on STEM companion to the <b>Cargo Ship Rescue</b> breakout. Turn the density idea from Lock 2 into a real engineering test — then improve your design like a marine engineer.</p>
 
   <div class="card">
-    <h3>🎯 The problem (define)</h3>
-    <p>The Port of Houston needs a barge that carries the <b>most cargo without sinking</b>. Using a single square of aluminum foil, design and build a barge hull that holds the greatest number of pennies before it sinks or takes on water. Then redesign to beat your own record.</p>
+    <h3 data-i18n-html="h3.0">🎯 The problem (define)</h3>
+    <p data-i18n-html="p.0">The Port of Houston needs a barge that carries the <b>most cargo without sinking</b>. Using a single square of aluminum foil, design and build a barge hull that holds the greatest number of pennies before it sinks or takes on water. Then redesign to beat your own record.</p>
     <p class="teks"><b>Anchor question:</b> How does the <i>shape</i> of your hull change its <i>volume</i>, and how does that change its <i>overall density</i> and how much cargo it can float?</p>
   </div>
 
-  <h2>🧰 Materials (per team of 2–4)</h2>
+  <h2 data-i18n-html="h2.0">🧰 Materials (per team of 2–4)</h2>
   <ul>
-    <li>2 squares of aluminum foil, 15 cm × 15 cm (one per build round)</li>
-    <li>A tub, sink, or large bowl of water</li>
-    <li>~60 pennies (or metal washers) as "cargo"</li>
-    <li>Paper towels, a ruler, and this recording sheet</li>
-    <li>Optional: a small amount of tape</li>
+    <li data-i18n-html="li.0">2 squares of aluminum foil, 15 cm × 15 cm (one per build round)</li>
+    <li data-i18n-html="li.1">A tub, sink, or large bowl of water</li>
+    <li data-i18n-html="li.2">~60 pennies (or metal washers) as "cargo"</li>
+    <li data-i18n-html="li.3">Paper towels, a ruler, and this recording sheet</li>
+    <li data-i18n-html="li.4">Optional: a small amount of tape</li>
   </ul>
 
-  <h2>🔁 The engineering design process</h2>
+  <h2 data-i18n-html="h2.1">🔁 The engineering design process</h2>
   <ol class="steps">
-    <li><b>Define</b> the problem: carry the most pennies on a foil barge without sinking.</li>
-    <li><b>Imagine &amp; brainstorm</b>: sketch two hull ideas. Which spreads the mass over the most volume — a flat raft, or a hull with tall walls?</li>
-    <li><b>Plan</b>: choose one design, measure your hull, and predict a penny count.</li>
-    <li><b>Create</b>: build your barge from one foil square. Seal any gaps.</li>
-    <li><b>Test</b>: float it, then add pennies <i>one at a time</i>, spread evenly, until it sinks. Record the last count that stayed afloat.</li>
-    <li><b>Improve</b>: redesign with the second foil square to beat Round 1. Change <i>one</i> thing (wall height, width, penny placement) so you know what helped.</li>
+    <li data-i18n-html="li.5"><b>Define</b> the problem: carry the most pennies on a foil barge without sinking.</li>
+    <li data-i18n-html="li.6"><b>Imagine &amp; brainstorm</b>: sketch two hull ideas. Which spreads the mass over the most volume — a flat raft, or a hull with tall walls?</li>
+    <li data-i18n-html="li.7"><b>Plan</b>: choose one design, measure your hull, and predict a penny count.</li>
+    <li data-i18n-html="li.8"><b>Create</b>: build your barge from one foil square. Seal any gaps.</li>
+    <li data-i18n-html="li.9"><b>Test</b>: float it, then add pennies <i>one at a time</i>, spread evenly, until it sinks. Record the last count that stayed afloat.</li>
+    <li data-i18n-html="li.10"><b>Improve</b>: redesign with the second foil square to beat Round 1. Change <i>one</i> thing (wall height, width, penny placement) so you know what helped.</li>
   </ol>
 
-  <h2>📊 Record your trials</h2>
+  <h2 data-i18n-html="h2.2">📊 Record your trials</h2>
   <table>
     <tr><th>Round</th><th>Hull sketch / one change made</th><th>Predicted pennies</th><th>Pennies held (afloat)</th></tr>
     <tr><td>1</td><td></td><td></td><td></td></tr>
@@ -87,17 +91,17 @@
   </table>
   <p class="teks">Math connection: find the <b>difference</b> between rounds, and if the class pools data, the <b>mean</b> pennies per design. <code>Math.6</code> ratios &amp; data; <code>6.2(B)</code> analyze data for patterns.</p>
 
-  <h2>🗣️ Explain it — Claim, Evidence, Reasoning (CER)</h2>
+  <h2 data-i18n-html="h2.3">🗣️ Explain it — Claim, Evidence, Reasoning (CER)</h2>
   <div class="cer">
-    <p><b>Claim</b> — What hull shape carried the most cargo?</p>
+    <p data-i18n-html="p.1"><b>Claim</b> — What hull shape carried the most cargo?</p>
     <div class="line"></div>
-    <p><b>Evidence</b> — What did your two trials show?</p>
+    <p data-i18n-html="p.2"><b>Evidence</b> — What did your two trials show?</p>
     <div class="line"></div><div class="line"></div>
-    <p><b>Reasoning</b> — Use the words <i>mass</i>, <i>volume</i>, and <i>density</i> to explain <b>why</b>. (A wider, deeper hull holds more mass in more volume, so the barge's overall density stays below the water's — and it floats.)</p>
+    <p data-i18n-html="p.3"><b>Reasoning</b> — Use the words <i>mass</i>, <i>volume</i>, and <i>density</i> to explain <b>why</b>. (A wider, deeper hull holds more mass in more volume, so the barge's overall density stays below the water's — and it floats.)</p>
     <div class="line"></div><div class="line"></div>
   </div>
 
-  <div class="career">🚢 <b>STEM career highlight — Naval Architect / Marine Engineer.</b> These engineers design ships, submarines, and offshore rigs so they float safely and carry cargo efficiently. They use the exact idea you just tested: shape the hull so the vessel's overall density stays below the water's. <span class="teks">(Labor data: O*NET &amp; the Texas Workforce Commission; <code>6.4(C)</code> investigate STEM careers.)</span></div>
+  <div class="career">🚢 <b>STEM career highlight — Naval Architect / Marine Engineer.</b> These engineers design ships, submarines, and offshore rigs so they float safely and carry cargo efficiently. They use the exact idea you just tested: shape the hull so the vessel's overall density stays below the water's. <span class="teks" data-i18n-html="teks.0">(Labor data: O*NET &amp; the Texas Workforce Commission; <code>6.4(C)</code> investigate STEM careers.)</span></div>
 
   <div class="note">🧩 <b>Extend it:</b> Add a "wave" by gently rocking the tub — connect back to <b>Lock 3</b> (an extra sideways push makes the forces on the cargo <i>unbalanced</i>). Or hang a paperclip "crane" and talk through the energy transfers from <b>Lock 1</b>.</div>
 
@@ -106,7 +110,9 @@
 
   <button class="print" onclick="window.print()">🖨️ Print this handout</button>
 
-  <footer>Science Critical Thinking Breakouts · Grade 6 · Self-contained, no logins, no data collected.</footer>
+  <footer data-i18n-html="footer">Science Critical Thinking Breakouts · Grade 6 · Self-contained, no logins, no data collected.</footer>
 </div>
+<script src="../../assets/i18n.js" defer></script>
+<script src="i18n-eng.js" defer></script>
 </body>
 </html>

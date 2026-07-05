@@ -44,63 +44,69 @@
     font-size:.95rem;padding:10px 22px;border-radius:10px;margin-top:16px;cursor:pointer}
   footer{text-align:center;margin-top:30px;font-size:.8rem;color:var(--ink-soft);font-weight:600}
   @media print{.crumb,.print{display:none}body{background:#fff}}
+  .langbar{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-bottom:8px}
+  .langbar .globe{font-size:1.1rem}
+  .breakout-i18n-switcher,#i18nSwitcher{font-family:'Nunito',sans-serif;font-weight:700;font-size:.9rem;padding:7px 12px;border:2px solid var(--line);border-radius:9px;background:#fff;color:var(--navy);cursor:pointer}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="crumb"><a href="index.html">‹ Teacher launch</a> · <a href="../index.html">Science Critical Thinking Breakouts</a></div>
-  <div class="eyebrow">Engineering Design Challenge · Grade 2</div>
-  <h1>String Phone</h1>
-  <p class="lead">A hands-on STEM buddy for the <b>Make Some Noise!</b> breakout. Build a cup-and-string phone and send your voice across the room using sound — then make it work even better.</p>
+  <div class="langbar"><span class="globe" aria-hidden="true">🌐</span><div data-i18n-picker></div></div>
+  <div class="crumb" data-i18n-html="crumb"><a href="index.html">‹ Teacher launch</a> · <a href="../index.html">Science Critical Thinking Breakouts</a></div>
+  <div class="eyebrow" data-i18n="eyebrow">Engineering Design Challenge · Grade 2</div>
+  <h1 data-i18n="h1">String Phone</h1>
+  <p class="lead" data-i18n-html="lead">A hands-on STEM buddy for the <b>Make Some Noise!</b> breakout. Build a cup-and-string phone and send your voice across the room using sound — then make it work even better.</p>
 
   <div class="card">
-    <h3>🎯 The problem</h3>
-    <p>How can you talk to a friend far away without shouting? Build a <b>string phone</b> that carries your voice along a string using sound. The string <b>vibrates</b> and carries the sound to the other cup!</p>
+    <h3 data-i18n-html="h3.0">🎯 The problem</h3>
+    <p data-i18n-html="p.0">How can you talk to a friend far away without shouting? Build a <b>string phone</b> that carries your voice along a string using sound. The string <b>vibrates</b> and carries the sound to the other cup!</p>
     <p class="teks"><b>Big question:</b> Does the string phone work better when the string is loose or pulled tight?</p>
   </div>
 
-  <h2>🧰 What you need</h2>
+  <h2 data-i18n-html="h2.0">🧰 What you need</h2>
   <ul>
-    <li>2 paper or plastic cups</li>
-    <li>A long piece of string or yarn (a few big steps long)</li>
-    <li>A pencil or a paper clip to help poke a small hole and hold the string</li>
-    <li>A friend or a partner</li>
+    <li data-i18n-html="li.0">2 paper or plastic cups</li>
+    <li data-i18n-html="li.1">A long piece of string or yarn (a few big steps long)</li>
+    <li data-i18n-html="li.2">A pencil or a paper clip to help poke a small hole and hold the string</li>
+    <li data-i18n-html="li.3">A friend or a partner</li>
   </ul>
 
   <div class="safety">⚠️ <b>Safety:</b> ask a grown-up to help poke the small hole in the bottom of each cup.</div>
 
-  <h2>🔁 Be an engineer</h2>
+  <h2 data-i18n-html="h2.1">🔁 Be an engineer</h2>
   <ol class="steps">
-    <li><b>Ask:</b> How can I send my voice to a friend across the room?</li>
-    <li><b>Imagine:</b> How will the sound travel? (Along the string!)</li>
-    <li><b>Plan:</b> Poke a small hole in the bottom of each cup for the string.</li>
-    <li><b>Build:</b> Thread the string through both cups and tie a knot or use a paper clip inside so it stays.</li>
-    <li><b>Test:</b> Walk apart until the string is tight. One person talks into a cup while the other listens.</li>
-    <li><b>Make it better:</b> Try it with the string loose, then tight. Which one works better?</li>
+    <li data-i18n-html="li.4"><b>Ask:</b> How can I send my voice to a friend across the room?</li>
+    <li data-i18n-html="li.5"><b>Imagine:</b> How will the sound travel? (Along the string!)</li>
+    <li data-i18n-html="li.6"><b>Plan:</b> Poke a small hole in the bottom of each cup for the string.</li>
+    <li data-i18n-html="li.7"><b>Build:</b> Thread the string through both cups and tie a knot or use a paper clip inside so it stays.</li>
+    <li data-i18n-html="li.8"><b>Test:</b> Walk apart until the string is tight. One person talks into a cup while the other listens.</li>
+    <li data-i18n-html="li.9"><b>Make it better:</b> Try it with the string loose, then tight. Which one works better?</li>
   </ol>
 
-  <h2>📊 What happened?</h2>
+  <h2 data-i18n-html="h2.2">📊 What happened?</h2>
   <table>
     <tr><th>String</th><th>Could you hear? (yes / no / a little)</th></tr>
     <tr><td>Loose string</td><td></td></tr>
     <tr><td>Tight string</td><td></td></tr>
   </table>
 
-  <h2>🗣️ Tell about it</h2>
+  <h2 data-i18n-html="h2.3">🗣️ Tell about it</h2>
   <div class="say">
-    <p>Did the string phone work better loose or tight?</p>
+    <p data-i18n-html="p.1">Did the string phone work better loose or tight?</p>
     <div class="line"></div>
-    <p>Why do you think so? (Try the words <i>sound</i>, <i>vibrate</i>, and <i>string</i>.)</p>
+    <p data-i18n-html="p.2">Why do you think so? (Try the words <i>sound</i>, <i>vibrate</i>, and <i>string</i>.)</p>
     <div class="line"></div>
   </div>
 
-  <div class="career">📞 <b>Meet a STEM job — Engineer &amp; Inventor.</b> Alexander Graham Bell invented a way to send voices far away — the telephone! Engineers use sound to help people talk across the world. <span class="teks">(Grade 2 scientists to meet: Alexander Graham Bell, Marie Daly, Mario Molina, Jane Goodall.)</span></div>
+  <div class="career">📞 <b>Meet a STEM job — Engineer &amp; Inventor.</b> Alexander Graham Bell invented a way to send voices far away — the telephone! Engineers use sound to help people talk across the world. <span class="teks" data-i18n-html="teks.0">(Grade 2 scientists to meet: Alexander Graham Bell, Marie Daly, Mario Molina, Jane Goodall.)</span></div>
 
   <h3 style="margin-top:22px">TEKS for this challenge</h3>
   <p class="teks"><code>2.8(A)</code> sound is made by vibrating matter · <code>2.8(C)</code> design a device that uses sound to communicate over a distance · <code>2.1(B)</code> plan &amp; do a simple test · <code>2.1(G)</code> make a model · <code>2.2(D)</code> tell if a design works. Aligned to, not reproduced from, the official TEKS — confirm before adoption.</p>
 
   <button class="print" onclick="window.print()">🖨️ Print this page</button>
-  <footer>Grade 2 Science · Critical Thinking Online Breakouts · Self-contained, no logins, no data collected.</footer>
+  <footer data-i18n-html="footer">Grade 2 Science · Critical Thinking Online Breakouts · Self-contained, no logins, no data collected.</footer>
 </div>
+<script src="../../assets/i18n.js" defer></script>
+<script src="i18n-eng.js" defer></script>
 </body>
 </html>

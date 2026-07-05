@@ -40,55 +40,61 @@
     font-size:.95rem;padding:10px 22px;border-radius:10px;margin-top:16px;cursor:pointer}
   footer{text-align:center;margin-top:30px;font-size:.8rem;color:var(--ink-soft);font-weight:600}
   @media print{.crumb,.print{display:none}body{background:#fff}}
+  .langbar{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-bottom:8px}
+  .langbar .globe{font-size:1.1rem}
+  .breakout-i18n-switcher,#i18nSwitcher{font-family:'Nunito',sans-serif;font-weight:700;font-size:.9rem;padding:7px 12px;border:2px solid var(--line);border-radius:9px;background:#fff;color:var(--navy);cursor:pointer}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="crumb"><a href="index.html">‹ Teacher launch</a> · <a href="../index.html">Science Critical Thinking Breakouts</a></div>
-  <div class="eyebrow">Engineering Design Challenge · Kindergarten</div>
-  <h1>Shadow Play</h1>
-  <p class="lead">A hands-on STEM buddy for the <b>Light and Shadows</b> breakout. Use a flashlight to make shadows, change their size, and make a shadow puppet.</p>
+  <div class="langbar"><span class="globe" aria-hidden="true">🌐</span><div data-i18n-picker></div></div>
+  <div class="crumb" data-i18n-html="crumb"><a href="index.html">‹ Teacher launch</a> · <a href="../index.html">Science Critical Thinking Breakouts</a></div>
+  <div class="eyebrow" data-i18n="eyebrow">Engineering Design Challenge · Kindergarten</div>
+  <h1 data-i18n="h1">Shadow Play</h1>
+  <p class="lead" data-i18n-html="lead">A hands-on STEM buddy for the <b>Light and Shadows</b> breakout. Use a flashlight to make shadows, change their size, and make a shadow puppet.</p>
 
   <div class="card">
-    <h3>🎯 The problem</h3>
-    <p>Can you make a shadow — and change it? Use a flashlight and your hands or a paper shape to make shadows on the wall. Then make them bigger and smaller!</p>
+    <h3 data-i18n-html="h3.0">🎯 The problem</h3>
+    <p data-i18n-html="p.0">Can you make a shadow — and change it? Use a flashlight and your hands or a paper shape to make shadows on the wall. Then make them bigger and smaller!</p>
     <p class="teks"><b>Big question:</b> What do you need to make a shadow, and how can you change its size?</p>
   </div>
 
-  <h2>🧰 What you need</h2>
+  <h2 data-i18n-html="h2.0">🧰 What you need</h2>
   <ul>
-    <li>A flashlight (or a sunny window)</li>
-    <li>A blank wall or a white paper "screen"</li>
-    <li>Your hands, and a paper shape on a craft stick to make a puppet</li>
+    <li data-i18n-html="li.0">A flashlight (or a sunny window)</li>
+    <li data-i18n-html="li.1">A blank wall or a white paper "screen"</li>
+    <li data-i18n-html="li.2">Your hands, and a paper shape on a craft stick to make a puppet</li>
   </ul>
 
   <div class="safety">⚠️ <b>Safety:</b> never shine a light right into anyone's eyes.</div>
 
-  <h2>🔁 Be an engineer</h2>
+  <h2 data-i18n-html="h2.1">🔁 Be an engineer</h2>
   <ol class="steps">
-    <li><b>Ask:</b> How can I make a shadow on the wall?</li>
-    <li><b>Try:</b> Shine the flashlight at the wall. Put your hand in the way — a shadow!</li>
-    <li><b>Change it:</b> Move your hand closer to the light. Does the shadow get bigger or smaller?</li>
-    <li><b>Build:</b> Make a shadow puppet from a paper shape on a stick.</li>
-    <li><b>Show:</b> Put on a little shadow show for a friend.</li>
-    <li><b>Talk:</b> What did you need to make the shadow?</li>
+    <li data-i18n-html="li.3"><b>Ask:</b> How can I make a shadow on the wall?</li>
+    <li data-i18n-html="li.4"><b>Try:</b> Shine the flashlight at the wall. Put your hand in the way — a shadow!</li>
+    <li data-i18n-html="li.5"><b>Change it:</b> Move your hand closer to the light. Does the shadow get bigger or smaller?</li>
+    <li data-i18n-html="li.6"><b>Build:</b> Make a shadow puppet from a paper shape on a stick.</li>
+    <li data-i18n-html="li.7"><b>Show:</b> Put on a little shadow show for a friend.</li>
+    <li data-i18n-html="li.8"><b>Talk:</b> What did you need to make the shadow?</li>
   </ol>
 
-  <h2>🗣️ Tell about it</h2>
+  <h2 data-i18n-html="h2.2">🗣️ Tell about it</h2>
   <div class="say">
-    <p>What did you need to make a shadow?</p>
+    <p data-i18n-html="p.1">What did you need to make a shadow?</p>
     <div class="line"></div>
-    <p>How did you make the shadow bigger? (Try the words <i>light</i> and <i>shadow</i>.)</p>
+    <p data-i18n-html="p.2">How did you make the shadow bigger? (Try the words <i>light</i> and <i>shadow</i>.)</p>
     <div class="line"></div>
   </div>
 
-  <div class="career">🔦 <b>Meet a STEM job — Lighting Designer.</b> Some engineers design the lights for stages, movies, and buildings. They use light and shadow to make things look just right — just like your shadow show! <span class="teks">(Kindergarten idea: light helps us see, and blocking it makes shadows.)</span></div>
+  <div class="career">🔦 <b>Meet a STEM job — Lighting Designer.</b> Some engineers design the lights for stages, movies, and buildings. They use light and shadow to make things look just right — just like your shadow show! <span class="teks" data-i18n-html="teks.0">(Kindergarten idea: light helps us see, and blocking it makes shadows.)</span></div>
 
   <h3 style="margin-top:22px">TEKS for this challenge</h3>
   <p class="teks"><code>K.8(A)</code> we see objects only with light · <code>K.8(B)</code> light is blocked, making shadows · <code>K.1(B)</code> try a simple investigation · <code>K.1(G)</code> make a model. Aligned to, not reproduced from, the official TEKS — confirm before adoption.</p>
 
   <button class="print" onclick="window.print()">🖨️ Print this page</button>
-  <footer>Kindergarten Science · Critical Thinking Online Breakouts · Self-contained, no logins, no data collected.</footer>
+  <footer data-i18n-html="footer">Kindergarten Science · Critical Thinking Online Breakouts · Self-contained, no logins, no data collected.</footer>
 </div>
+<script src="../../assets/i18n.js" defer></script>
+<script src="i18n-eng.js" defer></script>
 </body>
 </html>
