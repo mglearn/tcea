@@ -77,69 +77,82 @@
   .empty{text-align:center;color:var(--ink-soft);font-weight:600;padding:40px 0}
   footer{text-align:center;margin-top:36px;font-size:.8rem;color:var(--ink-soft);font-weight:600}
   footer a{color:var(--navy);font-weight:700}
+  .langbar{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-bottom:4px}
+  .langbar .globe{font-size:1.1rem}
+  .breakout-i18n-switcher,#i18nSwitcher{font-family:'Nunito',sans-serif;font-weight:700;font-size:.9rem;padding:7px 12px;border:2px solid var(--line);border-radius:9px;background:#fff;color:var(--navy);cursor:pointer}
 </style>
 </head>
 <body>
 <div class="wrap">
+  <div class="langbar"><span class="globe" aria-hidden="true">🌐</span><div data-i18n-picker></div></div>
   <header class="top">
     <img class="hero" src="ctob_hero.png" width="2172" height="724"
          alt="TCEA Critical Thinking Online Breakouts (CTOBs) — a searchable library of self-contained, browser-based reasoning escapes where students open clues, weigh evidence, and crack the locks. No logins, no data collected, seven languages.">
     <h1 class="sr-only">TCEA Critical Thinking Online Breakouts (CTOBs)</h1>
     <div class="tally">
-      <div><div class="n" id="tSuites">3</div><div class="l">Breakout sets</div></div>
-      <div><div class="n" id="tCount">0</div><div class="l">Breakouts &amp; activities</div></div>
-      <div><div class="n">7</div><div class="l">Languages</div></div>
+      <div><div class="n" id="tSuites">3</div><div class="l" data-i18n="tally.sets">Breakout sets</div></div>
+      <div><div class="n" id="tCount">0</div><div class="l" data-i18n-html="tally.count">Breakouts &amp; activities</div></div>
+      <div><div class="n">7</div><div class="l" data-i18n="tally.langs">Languages</div></div>
     </div>
   </header>
 
-  <h2 class="sec">Breakout sets</h2>
+  <h2 class="sec" data-i18n="sec.sets">Breakout sets</h2>
   <div class="suites" id="suites"></div>
 
-  <h2 class="sec">Find a breakout</h2>
+  <h2 class="sec" data-i18n="sec.find">Find a breakout</h2>
   <div class="toolbar">
-    <input id="q" type="search" placeholder="Search by name, topic, or content (e.g. Juneteenth, evidence, flag)…" autocomplete="off">
-    <button class="rand" id="rand">🎲 Surprise me</button>
+    <input id="q" type="search" data-i18n-placeholder="q.ph" placeholder="Search by name, topic, or content (e.g. Juneteenth, evidence, flag)…" autocomplete="off">
+    <button class="rand" id="rand" data-i18n="rand">🎲 Surprise me</button>
     <div class="chips" id="filters"></div>
     <span class="count" id="count"></span>
   </div>
   <div class="grid" id="grid"></div>
-  <div class="empty" id="empty" style="display:none">No breakouts match — try a different word.</div>
+  <div class="empty" id="empty" data-i18n="empty" style="display:none">No breakouts match — try a different word.</div>
 
-  <footer>
+  <footer data-i18n-html="footer">
     TCEA Critical Thinking Breakouts · A TCEA educator resource · CC BY 4.0 (content) · MIT (code) ·
     <a href="ctob_project_pack.md">Build your own</a>
   </footer>
 </div>
 
 <script src="catalog.js"></script>
+<script src="assets/i18n.js"></script>
+<script src="i18n-catalog.js"></script>
 <script>
 (function () {
   var C = window.CATALOG || { suites: [], breakouts: [] };
+  var I = window.BreakoutI18n;
+  function T(k, vars) { return I ? I.t(k, vars) : k; }
+  function has(k) { return I && I.t(k) !== k; }
   var accent = {}; C.suites.forEach(function (s) { accent[s.id] = s.accent; });
   var suiteName = {}; C.suites.forEach(function (s) { suiteName[s.id] = s.name; });
-  var $ = function (s) { return document.querySelector(s); };
   document.getElementById('tCount').textContent = C.breakouts.length;
   document.getElementById('tSuites').textContent = C.suites.length;
 
-  // ---- suite cards
-  document.getElementById('suites').innerHTML = C.suites.map(function (s) {
-    return '<div class="suite" style="--accent:' + s.accent + '">' +
-      '<h3>' + esc(s.name) + '</h3><p>' + esc(s.desc) + '</p>' +
-      '<div class="links"><a class="primary" href="' + s.landing + '">Open ▶</a>' +
-      (s.correlation ? '<a href="' + s.correlation + '">🧭 Correlations</a>' : '') +
-      (s.answerKey ? '<a href="' + s.answerKey + '">🔑 Answer key</a>' : '') + '</div></div>';
-  }).join('');
+  function sName(s) { return has('suite.name.' + s.id) ? T('suite.name.' + s.id) : s.name; }
+  function sDesc(s) { return has('suite.desc.' + s.id) ? T('suite.desc.' + s.id) : s.desc; }
 
-  // ---- filters
+  function renderSuites() {
+    document.getElementById('suites').innerHTML = C.suites.map(function (s) {
+      return '<div class="suite" style="--accent:' + s.accent + '">' +
+        '<h3>' + esc(sName(s)) + '</h3><p>' + esc(sDesc(s)) + '</p>' +
+        '<div class="links"><a class="primary" href="' + s.landing + '">' + esc(T('link.open')) + '</a>' +
+        (s.correlation ? '<a href="' + s.correlation + '">' + esc(T('link.corr')) + '</a>' : '') +
+        (s.answerKey ? '<a href="' + s.answerKey + '">' + esc(T('link.key')) + '</a>' : '') + '</div></div>';
+    }).join('');
+  }
+
   var state = { q: '', suite: 'all', band: 'all' };
   var bands = ['K–2', '3–5', '6–8', '9–12'];
-  var chips = [{ k: 'suite', v: 'all', label: 'All sets' }]
-    .concat(C.suites.map(function (s) { return { k: 'suite', v: s.id, label: s.name.split(' ')[0] === 'CLEAR' ? 'CLEAR' : s.name.replace('July 5 & Black Freedom Holidays', 'July 5').replace('Fourth of July', 'July 4').replace('Bible as Literature', 'Bible').replace('Science (Grades 1–8)', 'Science') }; }))
-    .concat([{ k: 'band', v: 'all', label: 'All grades' }])
-    .concat(bands.map(function (b) { return { k: 'band', v: b, label: 'Gr ' + b }; }));
-  document.getElementById('filters').innerHTML = chips.map(function (c, i) {
-    return '<button class="chip' + ((c.v === 'all' && (c.k === 'suite' ? state.suite : state.band) === 'all') ? ' on' : '') + '" data-k="' + c.k + '" data-v="' + c.v + '">' + esc(c.label) + '</button>';
-  }).join('');
+  function renderFilters() {
+    var chips = [{ k: 'suite', v: 'all', label: T('chip.allsets') }]
+      .concat(C.suites.map(function (s) { return { k: 'suite', v: s.id, label: shortSuite(s.id) }; }))
+      .concat([{ k: 'band', v: 'all', label: T('chip.allgrades') }])
+      .concat(bands.map(function (b) { return { k: 'band', v: b, label: T('chip.gr', { b: b }) }; }));
+    document.getElementById('filters').innerHTML = chips.map(function (c) {
+      return '<button class="chip' + (((c.k === 'suite' ? state.suite : state.band) === c.v) ? ' on' : '') + '" data-k="' + c.k + '" data-v="' + c.v + '">' + esc(c.label) + '</button>';
+    }).join('');
+  }
   document.getElementById('filters').addEventListener('click', function (e) {
     var b = e.target.closest('.chip'); if (!b) return;
     state[b.dataset.k] = b.dataset.v;
@@ -163,16 +176,16 @@
 
   function render() {
     var list = matches();
-    document.getElementById('count').textContent = list.length + ' result' + (list.length === 1 ? '' : 's');
+    document.getElementById('count').textContent = T(list.length === 1 ? 'count.one' : 'count.many', { n: list.length });
     document.getElementById('empty').style.display = list.length ? 'none' : 'block';
     document.getElementById('grid').innerHTML = list.map(function (b) {
       return '<a class="bk" href="' + b.href + '">' +
         '<div class="row"><span class="dot" style="background:' + (accent[b.suite] || '#054c8c') + '"></span>' +
         '<span class="suite-n">' + esc(shortSuite(b.suite)) + '</span>' +
-        (b.band ? '<span class="band">Gr ' + b.band + '</span>' : '') + '</div>' +
+        (b.band ? '<span class="band">' + esc(T('card.band', { b: b.band })) + '</span>' : '') + '</div>' +
         '<h4>' + esc(b.title) + '</h4>' +
         '<p>' + esc(b.desc || '') + '</p>' +
-        (b.activity ? '<div class="tagact">Practice · 7 languages</div>' : '') +
+        (b.activity ? '<div class="tagact">' + esc(T('tag.practice')) + '</div>' : '') +
         '</a>';
     }).join('');
   }
@@ -186,7 +199,10 @@
   });
 
   function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
-  render();
+
+  function renderAll() { renderSuites(); renderFilters(); render(); }
+  renderAll();
+  window.addEventListener('breakout-i18n:changed', renderAll);
 })();
 </script>
 </body>
