@@ -1,0 +1,100 @@
+{
+  "shared": {
+    "crumb": "‹ Science Critical Thinking Online Breakouts",
+    "feat": "▶ Featured breakout",
+    "btn.open": "▶ Open the breakout",
+    "pill.stem": "🛠️ STEM challenge",
+    "pill.words": "📖 Word bank",
+    "pill.skills": "📊 Skills &amp; TEKS",
+    "pill.key": "🔑 Answer key",
+    "footer": "Science Critical Thinking Online Breakouts · Self-contained, no logins, no data collected. · <a href=\"../policy.html\">Privacy &amp; compliance</a>",
+    "meta.pre": "Runs in the browser · 7 languages ·",
+    "supports.lead": "🧑‍🏫 Teacher supports:",
+    "supports.udl": "UDL supports",
+    "supports.elps": "ELPS supports",
+    "supports.guide": "Lesson-plan guide"
+  },
+  "grades": {
+    "gradeK": {
+      "eyebrow": "Kindergarten Science · Texas TEKS §112.2",
+      "h1": "Kindergarten Science",
+      "band": "Critical Thinking Online Breakouts · a shadow-play STEM challenge · a picture word bank",
+      "featname": "Light and Shadows",
+      "card.p": "Turn on a light and learn that we need light to see — and that blocking light makes a shadow. Six picture clues and four locks. ~6–10 minutes.",
+      "pill.more": "🧩 More breakouts (10) →",
+      "note": "🧑‍🏫 <b>Teacher note:</b> the <a href=\"more.html\">10 picture breakouts</a> each cover one big idea (sorting, magnets, day &amp; night, the sky, rocks, weather, air &amp; wind, plant needs, animal needs, and plant parts). Best on the board with the whole class. See <a href=\"skills-teks.html\">Skills &amp; TEKS</a> for the standards. The answer key is password-protected."
+    },
+    "grade1": {
+      "eyebrow": "Grade 1 Science · Texas TEKS §112.3",
+      "h1": "Grade 1 Science",
+      "band": "Critical Thinking Online Breakouts · a STEM ramp challenge · a picture word bank",
+      "featname": "Push, Pull, and Play!",
+      "card.p": "Help the class at the playground and learn how a push or a pull makes things move. Six picture clues and four locks. ~8–12 minutes.",
+      "pill.more": "🧩 More breakouts (10) →",
+      "note": "🧑‍🏫 <b>Teacher note:</b> the <a href=\"more.html\">10 picture breakouts</a> each cover one big idea (sorting, hot &amp; cold, seasons, soil, water, weather, saving water, living things, food chains, and animals). Great on the board with the whole class. See <a href=\"skills-teks.html\">Skills &amp; TEKS</a> for the standards. The answer key is password-protected."
+    },
+    "grade2": {
+      "eyebrow": "Grade 2 Science · Texas TEKS §112.4",
+      "h1": "Grade 2 Science",
+      "band": "Critical Thinking Online Breakouts · a STEM string-phone challenge · a picture word bank",
+      "featname": "Make Some Noise!",
+      "card.p": "Put on a show and learn how sound is made by things that vibrate — and how it travels to your ears. Six clues and four locks. ~8–12 minutes.",
+      "pill.more": "🧩 More breakouts (10) →",
+      "note": "🧑‍🏫 <b>Teacher note:</b> the <a href=\"more.html\">10 concept breakouts</a> each cover one big idea (solids &amp; liquids, changing matter, pushes, Sun &amp; Moon, wind &amp; water, wild weather, recycling, producers &amp; consumers, pollen &amp; seeds, and metamorphosis). See <a href=\"skills-teks.html\">Skills &amp; TEKS</a> for the standards. The answer key is password-protected."
+    },
+    "grade3": {
+      "eyebrow": "Grade 3 Science · Texas TEKS §112.5",
+      "h1": "Grade 3 Science",
+      "band": "Critical Thinking Online Breakouts · a STEM space-model challenge · a picture word bank",
+      "featname": "Blast Off! A Trip Through Space",
+      "card.p": "Pilot a spaceship and learn how the planets orbit the Sun and the Moon orbits the Earth. Six clues and four locks. ~10–15 minutes.",
+      "pill.more": "🧩 More breakouts (10) →",
+      "note": "🧑‍🏫 <b>Teacher note:</b> the <a href=\"more.html\">10 concept breakouts</a> each cover one key idea (states of matter, changes of state, measuring matter, forces at a distance, forms of energy, how soil forms, rapid Earth changes, food chains, fossils, and survival structures). See <a href=\"skills-teks.html\">Skills &amp; TEKS</a> for the standards. The answer key is password-protected."
+    },
+    "grade4": {
+      "eyebrow": "Grade 4 Science · Texas TEKS §112.6",
+      "h1": "Grade 4 Science",
+      "band": "Critical Thinking Online Breakouts · a build-a-circuit STEM challenge · a picture word bank",
+      "featname": "Light It Up! The Secret of Circuits",
+      "card.p": "Fix the classroom lamp and learn how electricity flows in a closed circuit to make light and heat. Six clues and four locks. ~10–15 minutes.",
+      "pill.more": "🧩 More breakouts (10) →",
+      "note": "🧑‍🏫 <b>Teacher note:</b> the <a href=\"more.html\">10 concept breakouts</a> each cover one key idea (mixtures &amp; solutions, energy transfer, conductors &amp; insulators, Moon phases, the water cycle, erosion, weather vs. climate, resources, food webs, and inherited vs. acquired traits). See <a href=\"skills-teks.html\">Skills &amp; TEKS</a> for the standards. The answer key is password-protected."
+    },
+    "grade5": {
+      "eyebrow": "Grade 5 Science · Texas TEKS §112.7",
+      "h1": "Grade 5 Science",
+      "band": "Critical Thinking Online Breakouts · a shadow-tracker STEM challenge · a picture word bank",
+      "featname": "Round and Round: Day, Night, and Shadows",
+      "card.p": "Solve why the Sun seems to cross the sky and why shadows move — it's all Earth's spin. Six clues and four locks. ~10–15 minutes.",
+      "pill.more": "🧩 More breakouts (10) →",
+      "note": "🧑‍🏫 <b>Teacher note:</b> the <a href=\"more.html\">10 concept breakouts</a> each cover one key idea (separating mixtures, particles, forces, energy transformations, light, sedimentary rock &amp; fossil fuels, landforms, ecosystem changes, human impact, and instinct vs. learned behavior). See <a href=\"skills-teks.html\">Skills &amp; TEKS</a> for the standards. The answer key is password-protected."
+    },
+    "grade6": {
+      "eyebrow": "Grade 6 Science · Texas TEKS §112.26",
+      "h1": "Grade 6 Science",
+      "band": "Critical Thinking Online Breakouts · a STEM engineering challenge · a student word bank",
+      "featname": "Cargo Ship Rescue",
+      "card.p": "Clear the freighter <i>TEKS Voyager</i> to sail — using density, net force, Newton's Third Law, and energy conservation to solve four locks. ~12–18 minutes.",
+      "pill.more": "🧩 More breakouts (10) →",
+      "note": "🧑‍🏫 <b>Teacher note:</b> the <a href=\"more.html\">10 concept breakouts</a> introduce or review one key idea each (matter, density, chemical change, forces, energy, waves, seasons &amp; tides, Earth's systems, ecosystems &amp; cells). See <a href=\"skills-teks.html\">Skills &amp; TEKS</a> for the standards alignment and the misconceptions each activity confronts."
+    },
+    "grade7": {
+      "eyebrow": "Grade 7 Science · Texas TEKS §112.27",
+      "h1": "Grade 7 Science",
+      "band": "Critical Thinking Online Breakouts · a STEM engineering challenge · a student word bank",
+      "featname": "Rescue Run",
+      "card.p": "Launch a search-and-rescue mission — reading a drone's distance–time graph, telling speed from velocity, and reasoning about heat and thermal equilibrium to solve four locks. ~12–18 minutes.",
+      "pill.more": "🧩 More breakouts (10) →",
+      "note": "🧑‍🏫 <b>Teacher note:</b> the <a href=\"more.html\">10 concept breakouts</a> introduce or review one key idea each (elements &amp; compounds, solutions, motion &amp; graphs, heat transfer, the solar system, plate tectonics, watersheds, energy pyramids, body systems, and classifying life). See <a href=\"skills-teks.html\">Skills &amp; TEKS</a> for the standards alignment and the misconceptions the featured breakout confronts."
+    },
+    "grade8": {
+      "eyebrow": "Grade 8 Science · Texas TEKS §112.28",
+      "h1": "Grade 8 Science",
+      "band": "Critical Thinking Online Breakouts · a STEM engineering challenge · a student word bank",
+      "featname": "Launch Control",
+      "card.p": "Clear a rocket for launch — proving conservation of mass, predicting acceleration with a = F ÷ m, and naming the telemetry wavelength to solve four locks. ~12–18 minutes.",
+      "pill.more": "🧩 More breakouts (10) →",
+      "note": "🧑‍🏫 <b>Teacher note:</b> the <a href=\"more.html\">10 concept breakouts</a> introduce or review one key idea each (classifying matter, acids &amp; bases, conservation of mass, Newton's laws, waves, stars &amp; galaxies, weather systems, carbon &amp; climate, ecosystem change, and cells &amp; heredity). See <a href=\"skills-teks.html\">Skills &amp; TEKS</a> for the standards alignment and the misconceptions the featured breakout confronts."
+    }
+  }
+}
