@@ -1,54 +1,103 @@
 {
-  "generated": "2026-07-02T16:13:28.813Z",
+  "generated": "2026-07-07T23:39:51.989Z",
   "items": [
     {
-      "href": "breakouts/clear/answer-key.html",
-      "title": "Breakouts Answer Key",
+      "href": "breakouts/idioms/index.html",
+      "title": "Idioms & Sayings for Multilingual Learners",
       "category": "Critical Thinking Breakouts",
       "icon": "🕵️",
-      "date": "2026-07-02T16:13:28.733Z"
+      "date": "2026-07-07T15:03:17-05:00"
     },
     {
-      "href": "breakouts/clear/correlation.html",
-      "title": "Breakouts Correlation Guide",
+      "href": "breakouts/idioms/correlation.html",
+      "title": "Idioms & Sayings Standards Alignment (ELPS / TEKS)",
       "category": "Critical Thinking Breakouts",
       "icon": "🕵️",
-      "date": "2026-07-02T16:13:28.719Z"
+      "date": "2026-07-07T14:11:41-05:00"
+    },
+    {
+      "href": "breakouts/index.html",
+      "title": "Critical Thinking Online Breakouts — Full Library",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-07-07T13:58:15-05:00"
+    },
+    {
+      "href": "breakouts/bible/index.html",
+      "title": "Bible as Literature Breakouts",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-07-07T12:49:03-05:00"
+    },
+    {
+      "href": "breakouts/bible/correlation.html",
+      "title": "Bible as Literature Breakouts Correlation Guide",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-07-07T11:04:11-05:00"
+    },
+    {
+      "href": "breakouts/science/index.html",
+      "title": "Science Critical Thinking Breakouts (Grades K–8)",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-07-05T15:15:43-05:00"
+    },
+    {
+      "href": "breakouts/science/correlation.html",
+      "title": "Science Breakouts Correlation Guide",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-07-05T15:05:58-05:00"
     },
     {
       "href": "breakouts/clear/index.html",
       "title": "Critical Thinking Breakouts",
       "category": "Critical Thinking Breakouts",
       "icon": "🕵️",
-      "date": "2026-07-02T16:13:28.703Z"
+      "date": "2026-07-04T15:05:03-05:00"
     },
     {
       "href": "breakouts/july4/index.html",
       "title": "Fourth of July Critical Thinking Breakouts",
       "category": "Critical Thinking Breakouts",
       "icon": "🕵️",
-      "date": "2026-07-02T11:03:46-05:00"
-    },
-    {
-      "href": "breakouts/july4/correlation.html",
-      "title": "Fourth of July Breakouts Correlation Guide",
-      "category": "Critical Thinking Breakouts",
-      "icon": "🕵️",
-      "date": "2026-07-02T11:03:46-05:00"
+      "date": "2026-07-04T15:05:03-05:00"
     },
     {
       "href": "breakouts/july5th/index.html",
       "title": "July 5 & Black Freedom Holidays Breakouts",
       "category": "Critical Thinking Breakouts",
       "icon": "🕵️",
-      "date": "2026-07-02T11:03:46-05:00"
+      "date": "2026-07-04T15:05:03-05:00"
+    },
+    {
+      "href": "breakouts/clear/correlation.html",
+      "title": "Breakouts Correlation Guide",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-07-04T14:59:15-05:00"
+    },
+    {
+      "href": "breakouts/july4/correlation.html",
+      "title": "Fourth of July Breakouts Correlation Guide",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-07-04T14:59:15-05:00"
     },
     {
       "href": "breakouts/july5th/correlation.html",
       "title": "Black Freedom Holidays Breakouts Correlation Guide",
       "category": "Critical Thinking Breakouts",
       "icon": "🕵️",
-      "date": "2026-07-02T11:03:46-05:00"
+      "date": "2026-07-04T14:59:15-05:00"
+    },
+    {
+      "href": "breakouts/clear/answer-key.html",
+      "title": "Breakouts Answer Key",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-07-02T16:20:15-05:00"
     },
     {
       "href": "ddp/index.html",
@@ -228,55 +277,6 @@
     {
       "href": "tools/memepuzzle/index.html",
       "title": "Meme Puzzle Maker",
-      "category": "Classroom Tools and Utilities",
-      "icon": "🧰",
-      "date": "2026-06-19T17:49:01-05:00"
-    },
-    {
-      "href": "tools/memepuzzle/student.html",
-      "title": "Meme Puzzle Student",
-      "category": "Classroom Tools and Utilities",
-      "icon": "🧰",
-      "date": "2026-06-19T17:49:01-05:00"
-    },
-    {
-      "href": "tools/wheelspinner/index.html",
-      "title": "Classroom Wheel Spinner",
-      "category": "Classroom Tools and Utilities",
-      "icon": "🧰",
-      "date": "2026-06-19T17:49:01-05:00"
-    },
-    {
-      "href": "tools/storywheel/index.html",
-      "title": "Story Wheel Maker",
-      "category": "Classroom Tools and Utilities",
-      "icon": "🧰",
-      "date": "2026-06-19T17:49:01-05:00"
-    },
-    {
-      "href": "tools/dice/index.html",
-      "title": "Classroom Dice Roller",
-      "category": "Classroom Tools and Utilities",
-      "icon": "🧰",
-      "date": "2026-06-19T17:49:01-05:00"
-    },
-    {
-      "href": "tools/drawsketch/index.html",
-      "title": "Draw and Sketch",
-      "category": "Classroom Tools and Utilities",
-      "icon": "🧰",
-      "date": "2026-06-19T17:49:01-05:00"
-    },
-    {
-      "href": "tools/dicebreakers/index.html",
-      "title": "Dicebreaker Creator",
-      "category": "Classroom Tools and Utilities",
-      "icon": "🧰",
-      "date": "2026-06-19T17:49:01-05:00"
-    },
-    {
-      "href": "tools/dicebreakers/play.html",
-      "title": "Dicebreaker Roll View",
       "category": "Classroom Tools and Utilities",
       "icon": "🧰",
       "date": "2026-06-19T17:49:01-05:00"

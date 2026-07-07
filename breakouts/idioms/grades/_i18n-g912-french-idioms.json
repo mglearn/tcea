@@ -1,0 +1,272 @@
+{
+  "es": {
+    "chrome": {
+      "h1": "Modismos franceses: la misma idea en otro idioma",
+      "sub": "El francés también está lleno de modismos — cuerdas para la lluvia, pastel para lo fácil, un conejo para dejar plantado a alguien. Lee las pistas, compara el francés con el inglés y abre los candados.",
+      "briefH": "Compara los modismos franceses con el inglés",
+      "briefP": "El significado de un modismo nunca es la suma de sus palabras — en ningún idioma. Compara la imagen de cada modismo francés con el inglés: a veces es la misma (pastel), a veces es distinta (cuerdas vs. gatos), a veces no hay ningún paralelo. Esa comparación es el corazón de aprender un idioma.",
+      "winStamp": "MODISMOS RESUELTOS",
+      "winH": "Félicitations!",
+      "winP": "Comparaste modismos franceses e ingleses — imágenes que coinciden, imágenes que contrastan y modismos propios de una sola cultura. Esa mirada entre idiomas es justo lo que construyen los buenos estudiantes de lenguas del mundo."
+    },
+    "clues": [
+      { "nm": "C'est du gâteau", "title": "'C'est du gâteau' (es pastel)", "body": "'C'est du gâteau' significa que algo es muy fácil. En inglés se dice 'a piece of cake' — la MISMA imagen: el pastel. Cuando dos idiomas comparten la imagen, el modismo es fácil de recordar." },
+      { "nm": "Il pleut des cordes", "title": "'Il pleut des cordes' (llueven cuerdas)", "body": "'Il pleut des cordes' significa que llueve muy fuerte. En inglés se dice 'raining cats and dogs' (llueven gatos y perros) — una imagen DISTINTA (cuerdas vs. animales), pero la misma tormenta." },
+      { "nm": "Poser un lapin", "title": "'Poser un lapin' (colocar un conejo)", "body": "'Poser un lapin à quelqu'un' significa dejar plantado a alguien — no presentarse cuando quedaste en verse. No hay un modismo inglés claro para esto: un dicho propio del francés." },
+      { "nm": "Donner sa langue au chat", "title": "'Donner sa langue au chat' (dar tu lengua al gato)", "body": "'Donner sa langue au chat' significa rendirse al intentar adivinar una respuesta. El inglés no tiene un modismo equivalente — otra imagen exclusiva del francés que vale la pena estudiar." },
+      { "nm": "La idea clave", "title": "Cómo viajan los modismos entre idiomas", "body": "Los modismos franceses, como los ingleses, no suman su significado palabra por palabra. Compara las imágenes: a veces la misma (pastel), a veces distinta (cuerdas vs. gatos), a veces sin ningún paralelo. Notar cuál es cuál te convierte en detective del lenguaje." },
+      { "nm": "Dato de la torre", "title": "Cierto, pero fuera de tema", "body": "La Torre Eiffel de París mide unos 330 metros de altura. Es un dato verdadero sobre Francia — pero no tiene nada que ver con lo que significan estos modismos." }
+    ],
+    "locks": [
+      {
+        "title": "¿Qué significa de verdad?",
+        "q": "En francés, 'poser un lapin à quelqu'un' significa en realidad…",
+        "reason": "La pista 3 dice que significa dejar plantado a alguien. La imagen literal — colocar un conejo — es la trampa. Los modismos casi nunca significan lo que dicen las palabras, ni en francés ni en inglés.",
+        "options": ["no presentarse a una cita — dejar plantado a alguien", "regalarle a alguien un conejo de mascota", "moverse en silencio, como un conejo"]
+      },
+      {
+        "title": "¿Qué es cierto sobre los modismos entre idiomas?",
+        "q": "Marca cada afirmación VERDADERA (usa las pistas). Deja fuera la falsa.",
+        "reason": "La afirmación falsa es la trampa: la traducción palabra por palabra es justo lo que rompe los modismos. Las tres verdaderas salen directamente de las pistas.",
+        "items": ["Los modismos franceses, como los ingleses, no son la suma de sus palabras", "El francés 'c'est du gâteau' y el inglés 'a piece of cake' usan la misma imagen — el pastel", "'Il pleut des cordes' y 'raining cats and dogs' pintan la misma tormenta con imágenes distintas", "Siempre puedes traducir un modismo francés palabra por palabra al inglés y conservar el significado"]
+      },
+      {
+        "title": "Ordena la historia",
+        "q": "Toca las tres líneas en el ORDEN que hace que 'poser un lapin' tenga sentido.",
+        "reason": "El contexto revela el significado: se hace un plan, una persona espera, nadie llega — ese no-show es lo que nombra 'poser un lapin'. Los modismos dependen del contexto.",
+        "pads": ["🕕 'Quedamos en vernos en el café a las seis.'", "😞 'Esperé una hora entera, pero ella nunca vino.'", "😠 'Elle t'a posé un lapin — ¡te dejó plantado!'"]
+      },
+      {
+        "title": "Compara los dos idiomas",
+        "q": "En inglés, una tarea fácil es 'a piece of ___.' En francés, 'c'est du ___' — la MISMA comida. Escribe esa comida en inglés, francés o español.",
+        "reason": "Ambos idiomas usan el pastel: inglés 'cake,' francés 'gâteau.' Cuando la imagen coincide entre idiomas, te ayuda a recordar el modismo.",
+        "answer": ["cake", "gâteau", "gateau", "du gâteau", "du gateau", "pastel", "tarta"]
+      }
+    ]
+  },
+  "vi": {
+    "chrome": {
+      "h1": "Thành ngữ tiếng Pháp: cùng một ý trong một ngôn ngữ khác",
+      "sub": "Tiếng Pháp cũng đầy thành ngữ — dây thừng chỉ mưa, bánh ngọt chỉ sự dễ dàng, một con thỏ chỉ việc thất hẹn. Đọc gợi ý, so sánh tiếng Pháp với tiếng Anh và mở các ổ khóa.",
+      "briefH": "So sánh thành ngữ tiếng Pháp với tiếng Anh",
+      "briefP": "Nghĩa của một thành ngữ không bao giờ là tổng của các từ — trong bất kỳ ngôn ngữ nào. Hãy so sánh hình ảnh của mỗi thành ngữ tiếng Pháp với tiếng Anh: đôi khi giống nhau (bánh ngọt), đôi khi khác nhau (dây thừng vs. mèo), đôi khi chẳng có gì tương đương. Sự so sánh ấy chính là cốt lõi của việc học một ngôn ngữ.",
+      "winStamp": "ĐÃ MỞ KHÓA THÀNH NGỮ",
+      "winH": "Félicitations!",
+      "winP": "Bạn đã so sánh thành ngữ tiếng Pháp và tiếng Anh — những hình ảnh trùng khớp, những hình ảnh tương phản, và những thành ngữ riêng của một nền văn hóa. Con mắt xuyên ngôn ngữ đó chính là điều mà những người học ngoại ngữ giỏi rèn luyện."
+    },
+    "clues": [
+      { "nm": "C'est du gâteau", "title": "'C'est du gâteau' (đúng là bánh ngọt)", "body": "'C'est du gâteau' nghĩa là điều gì đó rất dễ. Tiếng Anh nói 'a piece of cake' (một miếng bánh) — CÙNG một hình ảnh: bánh ngọt. Khi hai ngôn ngữ chia sẻ hình ảnh, thành ngữ rất dễ nhớ." },
+      { "nm": "Il pleut des cordes", "title": "'Il pleut des cordes' (trời mưa dây thừng)", "body": "'Il pleut des cordes' nghĩa là trời mưa rất to. Tiếng Anh nói 'raining cats and dogs' (mưa mèo và chó) — một hình ảnh KHÁC (dây thừng vs. động vật), nhưng vẫn là cùng một cơn mưa." },
+      { "nm": "Poser un lapin", "title": "'Poser un lapin' (đặt một con thỏ)", "body": "'Poser un lapin à quelqu'un' nghĩa là thất hẹn với ai đó — không xuất hiện khi đã hẹn gặp. Tiếng Anh không có thành ngữ tương đương rõ ràng: đây là một câu nói riêng của tiếng Pháp." },
+      { "nm": "Donner sa langue au chat", "title": "'Donner sa langue au chat' (đưa lưỡi mình cho con mèo)", "body": "'Donner sa langue au chat' nghĩa là từ bỏ, không đoán nữa. Tiếng Anh không có thành ngữ tương ứng — thêm một hình ảnh chỉ có ở tiếng Pháp đáng để học." },
+      { "nm": "Ý chính", "title": "Thành ngữ di chuyển giữa các ngôn ngữ như thế nào", "body": "Thành ngữ tiếng Pháp, cũng như tiếng Anh, không cộng từng từ lại thành nghĩa. Hãy so sánh hình ảnh: đôi khi giống nhau (bánh ngọt), đôi khi khác nhau (dây thừng vs. mèo), đôi khi chẳng có gì tương đương. Nhận ra cái nào là cái nào biến bạn thành thám tử ngôn ngữ." },
+      { "nm": "Sự thật về tháp", "title": "Đúng, nhưng lạc đề", "body": "Tháp Eiffel ở Paris cao khoảng 330 mét. Đó là một sự thật đúng về nước Pháp — nhưng nó chẳng liên quan gì đến nghĩa của các thành ngữ này." }
+    ],
+    "locks": [
+      {
+        "title": "Nó thật sự có nghĩa là gì?",
+        "q": "Trong tiếng Pháp, 'poser un lapin à quelqu'un' thật sự có nghĩa là…",
+        "reason": "Gợi ý 3 nói nó có nghĩa là thất hẹn với ai đó. Hình ảnh theo nghĩa đen — đặt một con thỏ — là cái bẫy. Thành ngữ hầu như không bao giờ có nghĩa như các từ nói, dù là tiếng Pháp hay tiếng Anh.",
+        "options": ["không đến chỗ hẹn — bỏ ai đó chờ suông", "tặng ai đó một con thỏ nuôi", "di chuyển lặng lẽ, như một con thỏ"]
+      },
+      {
+        "title": "Điều gì đúng về thành ngữ giữa các ngôn ngữ?",
+        "q": "Chọn mọi câu ĐÚNG (dùng các gợi ý). Bỏ qua câu sai.",
+        "reason": "Câu sai là cái bẫy: dịch từng từ một chính là điều làm hỏng thành ngữ. Ba câu đúng lấy thẳng từ các gợi ý.",
+        "items": ["Thành ngữ tiếng Pháp, cũng như tiếng Anh, không phải là tổng các từ của nó", "Tiếng Pháp 'c'est du gâteau' và tiếng Anh 'a piece of cake' dùng cùng một hình ảnh — bánh ngọt", "'Il pleut des cordes' và 'raining cats and dogs' vẽ cùng một cơn mưa bằng những hình ảnh khác nhau", "Bạn luôn có thể dịch một thành ngữ tiếng Pháp từng từ sang tiếng Anh mà vẫn giữ nguyên nghĩa"]
+      },
+      {
+        "title": "Sắp xếp câu chuyện",
+        "q": "Chạm vào ba dòng theo THỨ TỰ khiến 'poser un lapin' có nghĩa.",
+        "reason": "Ngữ cảnh hé lộ ý nghĩa: một cuộc hẹn được lập, một người chờ đợi, không ai đến — sự vắng mặt ấy chính là điều 'poser un lapin' gọi tên. Thành ngữ phụ thuộc vào ngữ cảnh.",
+        "pads": ["🕕 'Chúng tôi hẹn gặp nhau ở quán cà phê lúc sáu giờ.'", "😞 'Tôi đợi suốt một tiếng, nhưng cô ấy chẳng bao giờ đến.'", "😠 'Elle t'a posé un lapin — cô ấy đã cho cậu leo cây!'"]
+      },
+      {
+        "title": "So sánh hai ngôn ngữ",
+        "q": "Trong tiếng Anh, một việc dễ là 'a piece of ___.' Trong tiếng Pháp, 'c'est du ___' — CÙNG một món ăn. Gõ món ăn đó bằng tiếng Anh, tiếng Pháp hoặc tiếng Việt.",
+        "reason": "Cả hai ngôn ngữ đều dùng bánh ngọt: tiếng Anh 'cake,' tiếng Pháp 'gâteau.' Khi hình ảnh trùng nhau giữa các ngôn ngữ, nó giúp bạn nhớ thành ngữ.",
+        "answer": ["cake", "gâteau", "gateau", "du gâteau", "du gateau", "bánh", "bánh ngọt"]
+      }
+    ]
+  },
+  "ar": {
+    "chrome": {
+      "h1": "التعابير الفرنسية: الفكرة نفسها بلغة أخرى",
+      "sub": "الفرنسية أيضًا مليئة بالتعابير — حِبال للمطر، كعكة للأمر السهل، أرنب لمن يخلف الموعد. اقرأ الأدلة، قارن الفرنسية بالإنجليزية، وافتح الأقفال.",
+      "briefH": "قارن التعابير الفرنسية بالإنجليزية",
+      "briefP": "معنى التعبير الاصطلاحي ليس أبدًا مجموع كلماته — في أي لغة. قارن صورة كل تعبير فرنسي بالإنجليزية: أحيانًا تكون الصورة نفسها (كعكة)، وأحيانًا مختلفة (حِبال مقابل قطط)، وأحيانًا لا يوجد أي مقابل. تلك المقارنة هي جوهر تعلّم اللغة.",
+      "winStamp": "فُتحت التعابير",
+      "winH": "Félicitations!",
+      "winP": "لقد قارنت بين التعابير الفرنسية والإنجليزية — صور متطابقة، وصور متباينة، وتعابير خاصة بثقافة واحدة. تلك النظرة العابرة للغات هي بالضبط ما يبنيه متعلّمو لغات العالم المتمكنون."
+    },
+    "clues": [
+      { "nm": "C'est du gâteau", "title": "'C'est du gâteau' (إنها كعكة)", "body": "'C'est du gâteau' تعني أن شيئًا ما سهل جدًا. الإنجليزية تقول 'a piece of cake' (قطعة كعك) — الصورة نفسها: الكعكة. عندما تتشارك لغتان الصورة، يسهل تذكّر التعبير." },
+      { "nm": "Il pleut des cordes", "title": "'Il pleut des cordes' (تمطر حِبالًا)", "body": "'Il pleut des cordes' تعني أن المطر غزير جدًا. الإنجليزية تقول 'raining cats and dogs' (تمطر قططًا وكلابًا) — صورة مختلفة (حِبال مقابل حيوانات)، لكنها العاصفة المطرية نفسها." },
+      { "nm": "Poser un lapin", "title": "'Poser un lapin' (وضْع أرنب)", "body": "'Poser un lapin à quelqu'un' تعني أن تخلف موعد أحدهم — ألّا تحضر بعد أن اتفقتما على اللقاء. لا يوجد تعبير إنجليزي واضح لها: قول خاص بالفرنسية وحدها." },
+      { "nm": "Donner sa langue au chat", "title": "'Donner sa langue au chat' (تعطي لسانك للقط)", "body": "'Donner sa langue au chat' تعني أن تستسلم عن محاولة تخمين الإجابة. الإنجليزية ليس لديها تعبير مقابل — صورة أخرى فرنسية خالصة تستحق الدراسة." },
+      { "nm": "الفكرة الكبرى", "title": "كيف تنتقل التعابير بين اللغات", "body": "التعابير الفرنسية، مثل الإنجليزية، لا تتجمّع كلماتها كلمةً كلمةً لتعطي المعنى. قارن الصور: أحيانًا الصورة نفسها (كعكة)، وأحيانًا مختلفة (حِبال مقابل قطط)، وأحيانًا بلا أي مقابل. ملاحظة أيّها أيّ تجعلك محقق لغة." },
+      { "nm": "حقيقة عن البرج", "title": "صحيح، لكن خارج الموضوع", "body": "يبلغ ارتفاع برج إيفل في باريس نحو 330 مترًا. هذه حقيقة صحيحة عن فرنسا — لكنها لا علاقة لها بمعنى هذه التعابير." }
+    ],
+    "locks": [
+      {
+        "title": "ماذا يعني حقًا؟",
+        "q": "في الفرنسية، 'poser un lapin à quelqu'un' تعني في الحقيقة…",
+        "reason": "الدليل 3 يقول إنها تعني إخلاف موعد أحدهم. الصورة الحرفية — وضْع أرنب — هي الفخ. التعابير الاصطلاحية لا تعني تقريبًا ما تقوله الكلمات حرفيًا، لا في الفرنسية ولا في الإنجليزية.",
+        "options": ["ألّا تحضر إلى موعد — أن تترك أحدهم منتظرًا", "أن تُهدي أحدهم أرنبًا أليفًا", "أن تتحرك بهدوء، كأرنب"]
+      },
+      {
+        "title": "ما الصحيح عن التعابير بين اللغات؟",
+        "q": "اختر كل عبارة صحيحة (استعن بالأدلة). اترك العبارة الخاطئة.",
+        "reason": "العبارة الخاطئة هي الفخ: الترجمة كلمة بكلمة هي بالضبط ما يُفسد التعابير. العبارات الثلاث الصحيحة مأخوذة مباشرة من الأدلة.",
+        "items": ["التعابير الفرنسية، مثل الإنجليزية، ليست مجموع كلماتها", "الفرنسية 'c'est du gâteau' والإنجليزية 'a piece of cake' تستخدمان الصورة نفسها — الكعكة", "'Il pleut des cordes' و'raining cats and dogs' ترسمان العاصفة المطرية نفسها بصور مختلفة", "يمكنك دائمًا ترجمة تعبير فرنسي كلمة بكلمة إلى الإنجليزية مع الحفاظ على المعنى"]
+      },
+      {
+        "title": "رتّب القصة",
+        "q": "انقر على الأسطر الثلاثة بالترتيب الذي يجعل 'poser un lapin' منطقية.",
+        "reason": "السياق يكشف المعنى: يُتّفق على موعد، ينتظر شخص، لا يأتي أحد — ذلك الغياب هو ما يسميه 'poser un lapin'. التعابير تعتمد على السياق.",
+        "pads": ["🕕 'اتفقنا على اللقاء في المقهى الساعة السادسة.'", "😞 'انتظرتُ ساعة كاملة، لكنها لم تأتِ أبدًا.'", "😠 'Elle t'a posé un lapin — لقد أخلفت موعدك!'"]
+      },
+      {
+        "title": "قارن بين اللغتين",
+        "q": "في الإنجليزية، المهمة السهلة هي 'a piece of ___.' وفي الفرنسية 'c'est du ___' — الطعام نفسه. اكتب اسم ذلك الطعام بالإنجليزية أو الفرنسية أو العربية.",
+        "reason": "كلتا اللغتين تستخدمان الكعكة: الإنجليزية 'cake،' والفرنسية 'gâteau.' عندما تتطابق الصورة بين اللغتين، تساعدك على تذكّر التعبير.",
+        "answer": ["cake", "gâteau", "gateau", "du gâteau", "du gateau", "كعكة", "كعك"]
+      }
+    ]
+  },
+  "hi": {
+    "chrome": {
+      "h1": "फ्रेंच मुहावरे: वही विचार, दूसरी भाषा में",
+      "sub": "फ्रेंच भी मुहावरों से भरी है — बारिश के लिए रस्सियाँ, आसान के लिए केक, किसी को धोखा देने के लिए एक खरगोश। सुराग पढ़ो, फ्रेंच की तुलना अंग्रेज़ी से करो और तालों को खोलो।",
+      "briefH": "फ्रेंच मुहावरों की तुलना अंग्रेज़ी से करो",
+      "briefP": "किसी मुहावरे का अर्थ कभी भी उसके शब्दों का जोड़ नहीं होता — किसी भी भाषा में। हर फ्रेंच मुहावरे की तस्वीर की तुलना अंग्रेज़ी से करो: कभी वही (केक), कभी अलग (रस्सियाँ बनाम बिल्लियाँ), कभी कोई समानता ही नहीं। वही तुलना किसी भाषा को सीखने का मूल है।",
+      "winStamp": "मुहावरे खुल गए",
+      "winH": "Félicitations!",
+      "winP": "तुमने फ्रेंच और अंग्रेज़ी मुहावरों की तुलना की — मिलती हुई तस्वीरें, विपरीत तस्वीरें और सिर्फ़ एक संस्कृति के अपने मुहावरे। वह भाषाओं के बीच देखने वाली नज़र ठीक वही है जो अच्छे विश्व-भाषा सीखने वाले बनाते हैं।"
+    },
+    "clues": [
+      { "nm": "C'est du gâteau", "title": "'C'est du gâteau' (यह केक है)", "body": "'C'est du gâteau' का मतलब है कि कोई चीज़ बहुत आसान है। अंग्रेज़ी में कहते हैं 'a piece of cake' (केक का एक टुकड़ा) — वही तस्वीर: केक। जब दो भाषाएँ तस्वीर साझा करती हैं, तो मुहावरा याद रखना आसान होता है।" },
+      { "nm": "Il pleut des cordes", "title": "'Il pleut des cordes' (रस्सियाँ बरस रही हैं)", "body": "'Il pleut des cordes' का मतलब है बहुत तेज़ बारिश होना। अंग्रेज़ी में कहते हैं 'raining cats and dogs' (बिल्लियाँ और कुत्ते बरस रहे हैं) — एक अलग तस्वीर (रस्सियाँ बनाम जानवर), पर वही बारिश।" },
+      { "nm": "Poser un lapin", "title": "'Poser un lapin' (एक खरगोश रखना)", "body": "'Poser un lapin à quelqu'un' का मतलब है किसी को धोखा देना — मिलने का वादा करके न पहुँचना। इसके लिए अंग्रेज़ी में कोई साफ़ मुहावरा नहीं है: यह सिर्फ़ फ्रेंच का अपना कहावत है।" },
+      { "nm": "Donner sa langue au chat", "title": "'Donner sa langue au chat' (अपनी जीभ बिल्ली को देना)", "body": "'Donner sa langue au chat' का मतलब है जवाब अनुमान लगाने की कोशिश छोड़ देना। अंग्रेज़ी में इसका कोई मेल खाता मुहावरा नहीं — यह भी सिर्फ़ फ्रेंच की एक तस्वीर है, जिसे पढ़ना उपयोगी है।" },
+      { "nm": "बड़ी बात", "title": "मुहावरे भाषाओं के बीच कैसे सफ़र करते हैं", "body": "फ्रेंच मुहावरे, अंग्रेज़ी की तरह, शब्द-दर-शब्द जुड़कर अर्थ नहीं बनाते। तस्वीरों की तुलना करो: कभी वही (केक), कभी अलग (रस्सियाँ बनाम बिल्लियाँ), कभी कोई समानता ही नहीं। कौन-सी कौन है यह पहचानना तुम्हें भाषा का जासूस बना देता है।" },
+      { "nm": "मीनार का तथ्य", "title": "सच, पर विषय से बाहर", "body": "पेरिस की एफिल टॉवर लगभग 330 मीटर ऊँची है। यह फ्रांस के बारे में एक सच्चा तथ्य है — पर इसका इन मुहावरों के अर्थ से कोई लेना-देना नहीं।" }
+    ],
+    "locks": [
+      {
+        "title": "इसका असली मतलब क्या है?",
+        "q": "फ्रेंच में, 'poser un lapin à quelqu'un' का असली मतलब है…",
+        "reason": "सुराग 3 कहता है कि इसका मतलब है किसी को धोखा देना। शाब्दिक तस्वीर — एक खरगोश रखना — जाल है। मुहावरे लगभग कभी वह नहीं कहते जो शब्दों का शाब्दिक अर्थ होता है, न फ्रेंच में न अंग्रेज़ी में।",
+        "options": ["मिलने के लिए न पहुँचना — किसी को इंतज़ार में छोड़ देना", "किसी को पालतू खरगोश देना", "खरगोश की तरह चुपचाप चलना"]
+      },
+      {
+        "title": "भाषाओं के बीच मुहावरों के बारे में क्या सच है?",
+        "q": "हर सही कथन चुनो (सुरागों का उपयोग करो)। गलत कथन को छोड़ दो।",
+        "reason": "गलत कथन जाल है: शब्द-दर-शब्द अनुवाद ठीक वही है जो मुहावरों को तोड़ देता है। तीनों सही कथन सीधे सुरागों से आते हैं।",
+        "items": ["फ्रेंच मुहावरे, अंग्रेज़ी की तरह, अपने शब्दों का जोड़ नहीं होते", "फ्रेंच 'c'est du gâteau' और अंग्रेज़ी 'a piece of cake' एक ही तस्वीर इस्तेमाल करते हैं — केक", "'Il pleut des cordes' और 'raining cats and dogs' एक ही बारिश को अलग तस्वीरों से चित्रित करते हैं", "तुम किसी फ्रेंच मुहावरे को हमेशा शब्द-दर-शब्द अंग्रेज़ी में अनुवाद करके अर्थ बचा सकते हो"]
+      },
+      {
+        "title": "कहानी को क्रम में लगाओ",
+        "q": "तीन पंक्तियों को उस क्रम में छुओ जो 'poser un lapin' को अर्थपूर्ण बनाता है।",
+        "reason": "संदर्भ अर्थ को उजागर करता है: एक योजना बनती है, एक व्यक्ति इंतज़ार करता है, कोई नहीं आता — वही न-आना ही 'poser un lapin' का नाम है। मुहावरे संदर्भ पर निर्भर करते हैं।",
+        "pads": ["🕕 'हमने छह बजे कैफ़े में मिलने का तय किया था।'", "😞 'मैं पूरे एक घंटे इंतज़ार करता रहा, पर वह कभी नहीं आई।'", "😠 'Elle t'a posé un lapin — उसने तुम्हें धोखा दे दिया!'"]
+      },
+      {
+        "title": "दोनों भाषाओं की तुलना करो",
+        "q": "अंग्रेज़ी में, आसान काम है 'a piece of ___.' फ्रेंच में, 'c'est du ___' — वही खाना। वह खाना अंग्रेज़ी, फ्रेंच या हिंदी में लिखो।",
+        "reason": "दोनों भाषाएँ केक का उपयोग करती हैं: अंग्रेज़ी 'cake,' फ्रेंच 'gâteau.' जब तस्वीर भाषाओं में मिलती है, तो यह मुहावरा याद रखने में मदद करती है।",
+        "answer": ["cake", "gâteau", "gateau", "du gâteau", "du gateau", "केक"]
+      }
+    ]
+  },
+  "ur": {
+    "chrome": {
+      "h1": "فرانسیسی محاورے: وہی خیال، دوسری زبان میں",
+      "sub": "فرانسیسی بھی محاوروں سے بھری ہے — بارش کے لیے رسّیاں، آسان کے لیے کیک، کسی کو دھوکہ دینے کے لیے ایک خرگوش۔ سراغ پڑھیں، فرانسیسی کا انگریزی سے موازنہ کریں اور تالے کھولیں۔",
+      "briefH": "فرانسیسی محاوروں کا انگریزی سے موازنہ کریں",
+      "briefP": "کسی محاورے کا مطلب کبھی اس کے الفاظ کا مجموعہ نہیں ہوتا — کسی بھی زبان میں۔ ہر فرانسیسی محاورے کی تصویر کا انگریزی سے موازنہ کریں: کبھی وہی (کیک)، کبھی مختلف (رسّیاں بمقابلہ بلیاں)، کبھی کوئی مماثلت ہی نہیں۔ یہی موازنہ کسی زبان سیکھنے کی اصل روح ہے۔",
+      "winStamp": "محاورے کھل گئے",
+      "winH": "Félicitations!",
+      "winP": "آپ نے فرانسیسی اور انگریزی محاوروں کا موازنہ کیا — ملتی ہوئی تصویریں، متضاد تصویریں اور صرف ایک ثقافت کے اپنے محاورے۔ زبانوں کے درمیان دیکھنے والی وہ نظر بالکل وہی ہے جو اچھے عالمی زبان سیکھنے والے بناتے ہیں۔"
+    },
+    "clues": [
+      { "nm": "C'est du gâteau", "title": "'C'est du gâteau' (یہ کیک ہے)", "body": "'C'est du gâteau' کا مطلب ہے کہ کوئی چیز بہت آسان ہے۔ انگریزی میں کہتے ہیں 'a piece of cake' (کیک کا ایک ٹکڑا) — وہی تصویر: کیک۔ جب دو زبانیں تصویر بانٹتی ہیں، تو محاورہ یاد رکھنا آسان ہوتا ہے۔" },
+      { "nm": "Il pleut des cordes", "title": "'Il pleut des cordes' (رسّیاں برس رہی ہیں)", "body": "'Il pleut des cordes' کا مطلب ہے بہت تیز بارش ہونا۔ انگریزی میں کہتے ہیں 'raining cats and dogs' (بلیاں اور کتے برس رہے ہیں) — ایک مختلف تصویر (رسّیاں بمقابلہ جانور)، مگر وہی بارش۔" },
+      { "nm": "Poser un lapin", "title": "'Poser un lapin' (ایک خرگوش رکھنا)", "body": "'Poser un lapin à quelqu'un' کا مطلب ہے کسی کو دھوکہ دینا — ملنے کا وعدہ کر کے نہ پہنچنا۔ اس کے لیے انگریزی میں کوئی صاف محاورہ نہیں: یہ صرف فرانسیسی کا اپنا کہاوت ہے۔" },
+      { "nm": "Donner sa langue au chat", "title": "'Donner sa langue au chat' (اپنی زبان بلی کو دینا)", "body": "'Donner sa langue au chat' کا مطلب ہے جواب کا اندازہ لگانے کی کوشش چھوڑ دینا۔ انگریزی میں اس کا کوئی ہم معنی محاورہ نہیں — یہ بھی صرف فرانسیسی کی ایک تصویر ہے، جسے پڑھنا مفید ہے۔" },
+      { "nm": "بڑی بات", "title": "محاورے زبانوں کے درمیان کیسے سفر کرتے ہیں", "body": "فرانسیسی محاورے، انگریزی کی طرح، لفظ بہ لفظ جڑ کر مطلب نہیں بناتے۔ تصویروں کا موازنہ کریں: کبھی وہی (کیک)، کبھی مختلف (رسّیاں بمقابلہ بلیاں)، کبھی کوئی مماثلت ہی نہیں۔ کون سی کون ہے یہ پہچاننا آپ کو زبان کا جاسوس بنا دیتا ہے۔" },
+      { "nm": "مینار کی حقیقت", "title": "سچ، مگر موضوع سے باہر", "body": "پیرس کا ایفل ٹاور تقریباً 330 میٹر بلند ہے۔ یہ فرانس کے بارے میں ایک سچی حقیقت ہے — مگر اس کا ان محاوروں کے مطلب سے کوئی تعلق نہیں۔" }
+    ],
+    "locks": [
+      {
+        "title": "اس کا اصل مطلب کیا ہے؟",
+        "q": "فرانسیسی میں، 'poser un lapin à quelqu'un' کا اصل مطلب ہے…",
+        "reason": "سراغ 3 کہتا ہے کہ اس کا مطلب ہے کسی کو دھوکہ دینا۔ لفظی تصویر — ایک خرگوش رکھنا — جال ہے۔ محاورے تقریباً کبھی وہ نہیں کہتے جو الفاظ کا لفظی مطلب ہوتا ہے، نہ فرانسیسی میں نہ انگریزی میں۔",
+        "options": ["ملنے کے لیے نہ پہنچنا — کسی کو انتظار میں چھوڑ دینا", "کسی کو پالتو خرگوش دینا", "خرگوش کی طرح خاموشی سے چلنا"]
+      },
+      {
+        "title": "زبانوں کے درمیان محاوروں کے بارے میں کیا سچ ہے؟",
+        "q": "ہر سچا بیان منتخب کریں (سراغوں کا استعمال کریں)۔ غلط بیان کو چھوڑ دیں۔",
+        "reason": "غلط بیان جال ہے: لفظ بہ لفظ ترجمہ بالکل وہی ہے جو محاوروں کو توڑ دیتا ہے۔ تینوں سچے بیان سیدھے سراغوں سے آتے ہیں۔",
+        "items": ["فرانسیسی محاورے، انگریزی کی طرح، اپنے الفاظ کا مجموعہ نہیں ہوتے", "فرانسیسی 'c'est du gâteau' اور انگریزی 'a piece of cake' ایک ہی تصویر استعمال کرتے ہیں — کیک", "'Il pleut des cordes' اور 'raining cats and dogs' ایک ہی بارش کو مختلف تصویروں سے بناتے ہیں", "آپ کسی فرانسیسی محاورے کو ہمیشہ لفظ بہ لفظ انگریزی میں ترجمہ کر کے مطلب بچا سکتے ہیں"]
+      },
+      {
+        "title": "کہانی کو ترتیب دیں",
+        "q": "تین سطروں کو اس ترتیب میں چھوئیں جو 'poser un lapin' کو بامعنی بناتی ہے۔",
+        "reason": "سیاق و سباق مطلب کو ظاہر کرتا ہے: ایک منصوبہ بنتا ہے، ایک شخص انتظار کرتا ہے، کوئی نہیں آتا — وہی نہ آنا ہی 'poser un lapin' کا نام ہے۔ محاورے سیاق و سباق پر منحصر ہوتے ہیں۔",
+        "pads": ["🕕 'ہم نے چھ بجے کیفے میں ملنے کا طے کیا تھا۔'", "😞 'میں پورا ایک گھنٹہ انتظار کرتا رہا، مگر وہ کبھی نہ آئی۔'", "😠 'Elle t'a posé un lapin — اس نے تمہیں دھوکہ دے دیا!'"]
+      },
+      {
+        "title": "دونوں زبانوں کا موازنہ کریں",
+        "q": "انگریزی میں، آسان کام 'a piece of ___' ہے۔ فرانسیسی میں 'c'est du ___' — وہی کھانا۔ وہ کھانا انگریزی، فرانسیسی یا اردو میں لکھیں۔",
+        "reason": "دونوں زبانیں کیک استعمال کرتی ہیں: انگریزی 'cake،' فرانسیسی 'gâteau.' جب تصویر زبانوں میں ملتی ہے، تو یہ محاورہ یاد رکھنے میں مدد دیتی ہے۔",
+        "answer": ["cake", "gâteau", "gateau", "du gâteau", "du gateau", "کیک"]
+      }
+    ]
+  },
+  "zh": {
+    "chrome": {
+      "h1": "法语习语：同一个意思，换一种语言",
+      "sub": "法语里也满是习语——用绳子表示下雨，用蛋糕表示容易，用一只兔子表示放某人鸽子。读线索，把法语和英语对比，然后打开各把锁。",
+      "briefH": "把法语习语和英语对比",
+      "briefP": "习语的意思永远不是它各个词的总和——在任何语言里都是如此。把每个法语习语的画面和英语对比：有时相同（蛋糕），有时不同（绳子 vs. 猫），有时根本没有对应。这种对比正是学习一门语言的核心。",
+      "winStamp": "习语已解锁",
+      "winH": "Félicitations！",
+      "winP": "你对比了法语和英语习语——相同的画面、相反的画面，以及某种文化独有的习语。这种跨语言的眼光，正是优秀的世界语言学习者所培养的能力。"
+    },
+    "clues": [
+      { "nm": "C'est du gâteau", "title": "'C'est du gâteau'（这是蛋糕）", "body": "'C'est du gâteau' 的意思是某件事非常容易。英语说 'a piece of cake'（一块蛋糕）——同样的画面：蛋糕。当两种语言共享同一个画面时，这个习语就很好记。" },
+      { "nm": "Il pleut des cordes", "title": "'Il pleut des cordes'（下的是绳子）", "body": "'Il pleut des cordes' 的意思是雨下得非常大。英语说 'raining cats and dogs'（下猫下狗）——不同的画面（绳子 vs. 动物），但说的是同一场大雨。" },
+      { "nm": "Poser un lapin", "title": "'Poser un lapin'（放一只兔子）", "body": "'Poser un lapin à quelqu'un' 的意思是放某人鸽子——约好了见面却不出现。英语里没有干净利落的对应习语：这是法语独有的说法。" },
+      { "nm": "Donner sa langue au chat", "title": "'Donner sa langue au chat'（把舌头交给猫）", "body": "'Donner sa langue au chat' 的意思是放弃猜答案。英语里没有对应的习语——又一个值得学习的法语独有画面。" },
+      { "nm": "核心要点", "title": "习语如何在语言之间传递", "body": "法语习语和英语习语一样，都不能逐词相加得出意思。对比画面：有时相同（蛋糕），有时不同（绳子 vs. 猫），有时根本没有对应。分辨出哪个是哪个，你就成了语言侦探。" },
+      { "nm": "关于铁塔的事实", "title": "是真的，但跑题了", "body": "巴黎的埃菲尔铁塔约 330 米高。这是关于法国的一个真实事实——但它和这些习语的意思毫无关系。" }
+    ],
+    "locks": [
+      {
+        "title": "它真正的意思是什么？",
+        "q": "在法语里，'poser un lapin à quelqu'un' 真正的意思是……",
+        "reason": "线索 3 说它的意思是放某人鸽子。字面画面——放一只兔子——是陷阱。习语几乎从来不是字面意思，无论法语还是英语。",
+        "options": ["约好了却不出现——放某人鸽子", "送给某人一只宠物兔", "像兔子一样悄悄地移动"]
+      },
+      {
+        "title": "关于语言之间的习语，什么是真的？",
+        "q": "勾选每一条为真的说法（利用线索）。留下那条错误的。",
+        "reason": "错误的那条是陷阱：逐词翻译正是会破坏习语的做法。三条正确的说法都直接来自线索。",
+        "items": ["法语习语和英语习语一样，都不是各个词的总和", "法语 'c'est du gâteau' 和英语 'a piece of cake' 用的是同一个画面——蛋糕", "'Il pleut des cordes' 和 'raining cats and dogs' 用不同的画面描绘同一场大雨", "你总能把法语习语逐词翻译成英语并保留原意"]
+      },
+      {
+        "title": "把故事排好顺序",
+        "q": "按照能让 'poser un lapin' 说得通的顺序，点触这三行。",
+        "reason": "上下文揭示了意思：定下约会，一个人等待，没有人来——这种爽约正是 'poser un lapin' 所指的。习语依赖上下文。",
+        "pads": ["🕕 '我们约好六点在咖啡馆见面。'", "😞 '我整整等了一个小时，可她一直没来。'", "😠 'Elle t'a posé un lapin——她放你鸽子了！'"]
+      },
+      {
+        "title": "对比两种语言",
+        "q": "英语里，容易的事是 'a piece of ___.' 法语里是 'c'est du ___'——同一种食物。用英语、法语或中文写出那种食物。",
+        "reason": "两种语言都用蛋糕：英语 'cake'，法语 'gâteau'。当画面在两种语言之间一致时，它能帮你记住这个习语。",
+        "answer": ["cake", "gâteau", "gateau", "du gâteau", "du gateau", "蛋糕"]
+      }
+    ]
+  }
+}

@@ -64,6 +64,21 @@ h1 em{font-style:normal;color:var(--teal-mid)}
 .note p{font-size:.86rem;font-weight:300;color:var(--ink-soft)}
 .note b{color:var(--ink)}
 footer{background:var(--teal-d);padding:24px;text-align:center;font-size:.72rem;color:rgba(200,240,246,.8);margin-top:40px}
+.arcade{margin-top:30px}
+.arcade h2{font-family:'Fredoka',sans-serif;font-size:1.15rem;color:var(--teal-d);text-align:center;margin:0 0 4px}
+.arcade .sub{text-align:center;color:var(--ink-soft);font-weight:600;font-size:.85rem;margin:0 0 18px}
+.arcade-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:16px}
+.game-card{position:relative;display:flex;flex-direction:column;gap:8px;padding:22px 20px;border-radius:16px;text-decoration:none;color:#fff;overflow:hidden;box-shadow:0 10px 26px rgba(11,85,99,.18);transition:transform .15s ease,box-shadow .15s ease}
+.game-card:hover,.game-card:focus-visible{transform:translateY(-4px);box-shadow:0 16px 34px rgba(11,85,99,.28);outline:none}
+.game-card .ico{font-size:2.2rem;line-height:1}
+.game-card h3{font-family:'Fredoka',sans-serif;font-size:1.05rem;margin:0}
+.game-card p{font-size:.8rem;font-weight:400;line-height:1.4;margin:0;opacity:.96;flex:1}
+.game-card .play{font-weight:800;font-size:.82rem;letter-spacing:.02em;margin-top:2px}
+.game-card.g1{background:linear-gradient(135deg,#0e7490,#0891b2)}
+.game-card.g2{background:linear-gradient(140deg,#0b3d5c,#7c3aed)}
+.game-card.g3{background:linear-gradient(135deg,#0b5563,#f59e0b)}
+.game-card .badge{position:absolute;top:12px;right:14px;background:rgba(255,255,255,.22);border-radius:20px;padding:3px 10px;font-size:.64rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+@media (prefers-reduced-motion:reduce){.game-card{transition:none}.game-card:hover,.game-card:focus-visible{transform:none}}
 </style>
 </head>
 <body>
@@ -91,6 +106,7 @@ footer{background:var(--teal-d);padding:24px;text-align:center;font-size:.72rem;
   </div>
   <div class="tally">
     <div><div class="n" id="tCount">0</div><div class="l" data-i18n="tally.breakouts">Breakouts</div></div>
+    <div><div class="n">115+</div><div class="l" data-i18n="tally.idioms">Idioms &amp; sayings</div></div>
     <div><div class="n">3</div><div class="l" data-i18n="tally.bands">Grade bands · 3–12</div></div>
     <div><div class="n">7</div><div class="l" data-i18n="tally.langs">Languages</div></div>
     <div><div class="n">$0</div><div class="l" data-i18n="tally.free">Free</div></div>
@@ -100,17 +116,50 @@ footer{background:var(--teal-d);padding:24px;text-align:center;font-size:.72rem;
 <div class="wrap">
   <div class="find">
     <h2 data-i18n="find.h">Find an idiom breakout</h2>
-    <p data-i18n="find.p">Search by idiom, theme, language, or grade — or pick a grade band. (More breakouts are on the way; this is the Phase 1 English + Spanish start.)</p>
+    <p data-i18n="find.p">Search by idiom, theme, language, or grade — or pick a grade band. (Every breakout runs in all seven languages.)</p>
     <div class="toolbar">
       <input id="q" type="search" autocomplete="off" data-i18n-placeholder="find.ph" placeholder="Search by idiom, theme, or grade (e.g. body, hand, Spanish, grade 4)…" aria-label="Search idiom breakouts">
       <div class="chips" id="chips"></div>
       <span class="count" id="count"></span>
     </div>
   </div>
+
+  <section class="arcade" aria-labelledby="arcadeH">
+    <h2 id="arcadeH" data-i18n="arcade.h">🕹️ Idiom Arcade — play &amp; learn</h2>
+    <p class="sub" data-i18n="arcade.sub">Three fast, free browser games. No logins, nothing to install — just play.</p>
+    <div class="arcade-grid">
+      <a class="game-card g1" href="games/match-blitz.html">
+        <span class="badge" data-i18n="arcade.badge.timed">Timed</span>
+        <span class="ico" aria-hidden="true">🧩</span>
+        <h3 data-i18n="game.match.t">Idiom Match Blitz</h3>
+        <p data-i18n="game.match.d">Race the clock to match each idiom with its meaning — and build a hot streak.</p>
+        <span class="play" data-i18n="arcade.play">Play →</span>
+      </a>
+      <a class="game-card g2" href="games/meaning-meteors.html">
+        <span class="badge" data-i18n="arcade.badge.arcade">Arcade</span>
+        <span class="ico" aria-hidden="true">☄️</span>
+        <h3 data-i18n="game.meteors.t">Meaning Meteors</h3>
+        <p data-i18n="game.meteors.d">Catch the correct meaning as it falls from space — and dodge the traps. Three lives.</p>
+        <span class="play" data-i18n="arcade.play">Play →</span>
+      </a>
+      <a class="game-card g3" href="games/trap-escape.html">
+        <span class="badge" data-i18n="arcade.badge.reflex">Reflex</span>
+        <span class="ico" aria-hidden="true">⚡</span>
+        <h3 data-i18n="game.trap.t">Trap Escape</h3>
+        <p data-i18n="game.trap.d">Literal or real? Decide fast before the timer runs out. Keep your combo alive.</p>
+        <span class="play" data-i18n="arcade.play">Play →</span>
+      </a>
+    </div>
+  </section>
+
   <div id="grid" class="bands"></div>
 
   <div class="note">
     <p data-i18n-html="note"><b>How it's taught.</b> Idioms are Tier-1 vocabulary that trip up multilingual learners because the words don't add up to the meaning. Each breakout separates the literal picture from the real meaning, uses context, and <b>compares the idiom across languages</b> — sometimes the same image (hand ↔ <em>mano</em>), sometimes a different one (arm &amp; leg ↔ <em>un ojo</em>). Home languages are welcomed as a resource, aligned to the Texas ELPS (idiomatic expressions) and WIDA figurative-language expectations. The <b>idiom spotlight</b> above compares each idiom's <b>Spanish and French</b> equivalents — a bridge to the world-language / LOTE classroom. See the <a href="correlation.html" style="color:var(--teal-mid);font-weight:700">TEKS / ELPS alignment &amp; appropriateness guide →</a></p>
+  </div>
+
+  <div class="note" style="background:rgba(14,116,144,.06);border-color:rgba(14,116,144,.28);border-inline-start-color:var(--teal)">
+    <p data-i18n-html="teach"><b>For teachers.</b> Every breakout carries a lock-by-lock rationale, welcomes the home language as a resource, and runs in all seven languages (use the 🌐 menu). See the <a href="correlation.html" style="color:var(--teal-mid);font-weight:700">TEKS / ELPS alignment</a> and the teacher-support pages — <a href="udl.html" style="color:var(--teal-mid);font-weight:700">UDL</a>, <a href="elps.html" style="color:var(--teal-mid);font-weight:700">ELPS</a>, and a <a href="guide.html" style="color:var(--teal-mid);font-weight:700">lesson-plan guide</a> — each in all seven languages. Printable companions: a <a href="cards.html" style="color:var(--teal-mid);font-weight:700">idiom card deck</a> and a <a href="family.html" style="color:var(--teal-mid);font-weight:700">"Bring an Idiom From Home"</a> family activity.</p>
   </div>
 </div>
 
@@ -161,10 +210,36 @@ footer{background:var(--teal-d);padding:24px;text-align:center;font-size:.72rem;
     {i:"Bite the bullet",m:"to face something hard and get it over with",es:"apretar los dientes",g:"to clench your teeth",same:false},
     {i:"Give it a shot",m:"to try something",es:"darle una oportunidad",g:"to give it a chance",same:false},
     {i:"Actions speak louder than words",m:"what you do matters more than what you say",es:"obras son amores, y no buenas razones",g:"deeds are love, not fine words",same:false},
-    {i:"Learn the ropes",m:"to learn how something works",es:"aprender los trucos del oficio",g:"to learn the tricks of the trade",same:false}
+    {i:"Learn the ropes",m:"to learn how something works",es:"aprender los trucos del oficio",g:"to learn the tricks of the trade",same:false},
+    {i:"A blessing in disguise",m:"something that seems bad at first but turns out to be good",es:"no hay mal que por bien no venga",g:"there is no bad from which good doesn't come",same:false},
+    {i:"A drop in the bucket",m:"a very small amount compared to what is needed",es:"un grano de arena",g:"a grain of sand",same:false},
+    {i:"A leopard can't change its spots",m:"people can't change who they really are",es:"genio y figura hasta la sepultura",g:"character and form until the grave",same:false},
+    {i:"A fish out of water",m:"someone who feels out of place or uncomfortable",es:"como pulpo en un garaje",g:"like an octopus in a garage",same:false},
+    {i:"Bite off more than you can chew",m:"to take on more than you can handle",es:"el que mucho abarca poco aprieta",g:"who grasps a lot squeezes little",same:false},
+    {i:"Make a mountain out of a molehill",m:"to make a small problem seem much bigger than it is",es:"hacer de una pulga un elefante",g:"to make an elephant out of a flea",same:false},
+    {i:"Cry over spilled milk",m:"to stay upset about something already done that can't be changed",es:"a lo hecho, pecho",g:"to what's done, [give your] chest",same:false},
+    {i:"Kill the goose that lays the golden eggs",m:"to destroy something valuable out of greed or carelessness",es:"matar la gallina de los huevos de oro",g:"to kill the hen of the golden eggs",same:true},
+    {i:"Rome wasn't built in a day",m:"important things take time and patience",es:"no se ganó Zamora en una hora",g:"Zamora wasn't won in an hour",same:false},
+    {i:"A bird in the hand is worth two in the bush",m:"something you already have is worth more than what you might get",es:"más vale pájaro en mano que ciento volando",g:"a bird in hand is worth more than a hundred flying",same:true},
+    {i:"Out of the frying pan and into the fire",m:"to go from a bad situation into an even worse one",es:"salir de Guatemala para entrar en Guatepeor",g:"to leave 'Guate-bad' for 'Guate-worse'",same:false},
+    {i:"Let sleeping dogs lie",m:"leave a settled situation alone so you don't cause new trouble",es:"mejor no menear las cosas",g:"better not to stir things up",same:false},
+    {i:"Still waters run deep",m:"a quiet person may have deep thoughts or feelings inside",es:"guárdate del agua mansa",g:"beware of the calm water",same:true},
+    {i:"The apple of discord",m:"the thing that causes a quarrel between people",es:"la manzana de la discordia",g:"the apple of discord",same:true},
+    {i:"Make hay while the sun shines",m:"take advantage of a good opportunity while you can",es:"a la ocasión la pintan calva",g:"opportunity is painted bald",same:false},
+    {i:"Turn over a new leaf",m:"to make a fresh start and change for the better",es:"hacer borrón y cuenta nueva",g:"to make a blot and a new account",same:false},
+    {i:"Face the music",m:"to accept the consequences of what you've done",es:"dar la cara",g:"to give the face",same:false},
+    {i:"Cool as a cucumber",m:"very calm and relaxed, even under pressure",es:"más fresco que una lechuga",g:"fresher than a lettuce",same:false},
+    {i:"A dime a dozen",m:"so common that it has little value",es:"haberlos a montones",g:"to have them in heaps",same:false},
+    {i:"Have bigger fish to fry",m:"to have more important things to deal with",es:"tener cosas más importantes que hacer",g:"to have more important things to do",same:false},
+    {i:"A wolf in sheep's clothing",m:"a dangerous person who pretends to be harmless",es:"un lobo con piel de cordero",g:"a wolf in lamb's skin",same:true},
+    {i:"Where there's smoke, there's fire",m:"if there are signs of a problem, something is probably going on",es:"cuando el río suena, agua lleva",g:"when the river makes noise, it carries water",same:false},
+    {i:"Barking up the wrong tree",m:"to pursue a mistaken idea or blame the wrong thing",es:"errar el tiro",g:"to miss the shot",same:false},
+    {i:"Take it with a grain of salt",m:"don't fully believe it; treat it with some doubt",es:"tomar con pinzas",g:"to take with tweezers",same:false},
+    {i:"Look for a needle in a haystack",m:"to search for something almost impossible to find",es:"buscar una aguja en un pajar",g:"to look for a needle in a haystack",same:true},
+    {i:"A penny saved is a penny earned",m:"money you save is as good as money you earn",es:"quien guarda, halla",g:"whoever saves, finds",same:false}
   ];
   /* French equivalents (high-school world language) keyed by the English idiom — filled from _fr-spotlight.json */
-  var FR = {"Break the ice":{"fr":"briser la glace","g":"break the ice","same":true},"Kill two birds with one stone":{"fr":"faire d'une pierre deux coups","g":"make two hits with one stone","same":false},"Hit the nail on the head":{"fr":"taper dans le mille","g":"hit the bullseye (the thousand)","same":false},"A piece of cake":{"fr":"c'est du gâteau","g":"it's cake","same":true},"It's raining cats and dogs":{"fr":"il pleut des cordes","g":"it's raining ropes","same":false},"Cost an arm and a leg":{"fr":"coûter les yeux de la tête","g":"cost the eyes of the head","same":false},"Lend a hand":{"fr":"donner un coup de main","g":"give a stroke of the hand","same":true},"Pull someone's leg":{"fr":"faire marcher quelqu'un","g":"make someone walk","same":false},"Spill the beans":{"fr":"vendre la mèche","g":"sell the fuse","same":false},"Time flies":{"fr":"le temps file","g":"time races off","same":false},"The ball is in your court":{"fr":"la balle est dans ton camp","g":"the ball is in your camp","same":true},"Once in a blue moon":{"fr":"tous les trente-six du mois","g":"every thirty-sixth of the month","same":false},"When pigs fly":{"fr":"quand les poules auront des dents","g":"when hens have teeth","same":false},"Speak of the devil":{"fr":"quand on parle du loup, on en voit la queue","g":"when you speak of the wolf, you see its tail","same":false},"Better late than never":{"fr":"mieux vaut tard que jamais","g":"better late than never","same":true},"A little bird told me":{"fr":"mon petit doigt me l'a dit","g":"my little finger told me","same":false},"Hold your horses":{"fr":"doucement les chevaux","g":"gently, the horses","same":true},"Carpe diem":{"fr":"cueille le jour présent","g":"pluck the present day","same":false,"latin":"Carpe diem (Horace, Odes I.11)"},"Cross your fingers":{"fr":"croiser les doigts","g":"cross the fingers","same":true},"Butterflies in your stomach":{"fr":"avoir des papillons dans le ventre","g":"to have butterflies in the belly","same":true},"The tip of the iceberg":{"fr":"la partie émergée de l'iceberg","g":"the emerged part of the iceberg","same":true},"Head in the clouds":{"fr":"être dans les nuages","g":"to be in the clouds","same":true},"Read between the lines":{"fr":"lire entre les lignes","g":"read between the lines","same":true},"Add fuel to the fire":{"fr":"jeter de l'huile sur le feu","g":"throw oil on the fire","same":true},"Don't judge a book by its cover":{"fr":"l'habit ne fait pas le moine","g":"the robe doesn't make the monk","same":false},"Practice makes perfect":{"fr":"c'est en forgeant qu'on devient forgeron","g":"it's by forging that one becomes a blacksmith","same":false},"Two heads are better than one":{"fr":"deux avis valent mieux qu'un","g":"two opinions are worth more than one","same":false},"Beat around the bush":{"fr":"tourner autour du pot","g":"to turn around the pot","same":false},"It's not rocket science":{"fr":"ce n'est pas sorcier","g":"it's not witchcraft","same":false},"That rings a bell":{"fr":"ça me dit quelque chose","g":"that says something to me","same":false},"Get the ball rolling":{"fr":"lancer la machine","g":"get the machine going","same":false},"Back to the drawing board":{"fr":"retour à la case départ","g":"back to the starting square","same":false},"In a nutshell":{"fr":"en un mot","g":"in a word","same":false},"By the skin of your teeth":{"fr":"à un cheveu près","g":"within a hair's breadth","same":false},"Keep your chin up":{"fr":"garde le moral","g":"keep your spirits up","same":false},"Every cloud has a silver lining":{"fr":"après la pluie, le beau temps","g":"after the rain, fine weather","same":false},"Bite the bullet":{"fr":"serrer les dents","g":"to clench your teeth","same":false},"Give it a shot":{"fr":"tenter le coup","g":"attempt the try","same":false},"Actions speak louder than words":{"fr":"les actes valent mieux que les paroles","g":"deeds are worth more than words","same":true},"Learn the ropes":{"fr":"apprendre les ficelles du métier","g":"learn the strings of the trade","same":true}};
+  var FR = {"Break the ice":{"fr":"briser la glace","g":"break the ice","same":true},"Kill two birds with one stone":{"fr":"faire d'une pierre deux coups","g":"make two hits with one stone","same":false},"Hit the nail on the head":{"fr":"taper dans le mille","g":"hit the bullseye (the thousand)","same":false},"A piece of cake":{"fr":"c'est du gâteau","g":"it's cake","same":true},"It's raining cats and dogs":{"fr":"il pleut des cordes","g":"it's raining ropes","same":false},"Cost an arm and a leg":{"fr":"coûter les yeux de la tête","g":"cost the eyes of the head","same":false},"Lend a hand":{"fr":"donner un coup de main","g":"give a stroke of the hand","same":true},"Pull someone's leg":{"fr":"faire marcher quelqu'un","g":"make someone walk","same":false},"Spill the beans":{"fr":"vendre la mèche","g":"sell the fuse","same":false},"Time flies":{"fr":"le temps file","g":"time races off","same":false},"The ball is in your court":{"fr":"la balle est dans ton camp","g":"the ball is in your camp","same":true},"Once in a blue moon":{"fr":"tous les trente-six du mois","g":"every thirty-sixth of the month","same":false},"When pigs fly":{"fr":"quand les poules auront des dents","g":"when hens have teeth","same":false},"Speak of the devil":{"fr":"quand on parle du loup, on en voit la queue","g":"when you speak of the wolf, you see its tail","same":false},"Better late than never":{"fr":"mieux vaut tard que jamais","g":"better late than never","same":true},"A little bird told me":{"fr":"mon petit doigt me l'a dit","g":"my little finger told me","same":false},"Hold your horses":{"fr":"doucement les chevaux","g":"gently, the horses","same":true},"Carpe diem":{"fr":"cueille le jour présent","g":"pluck the present day","same":false,"latin":"Carpe diem (Horace, Odes I.11)"},"Cross your fingers":{"fr":"croiser les doigts","g":"cross the fingers","same":true},"Butterflies in your stomach":{"fr":"avoir des papillons dans le ventre","g":"to have butterflies in the belly","same":true},"The tip of the iceberg":{"fr":"la partie émergée de l'iceberg","g":"the emerged part of the iceberg","same":true},"Head in the clouds":{"fr":"être dans les nuages","g":"to be in the clouds","same":true},"Read between the lines":{"fr":"lire entre les lignes","g":"read between the lines","same":true},"Add fuel to the fire":{"fr":"jeter de l'huile sur le feu","g":"throw oil on the fire","same":true},"Don't judge a book by its cover":{"fr":"l'habit ne fait pas le moine","g":"the robe doesn't make the monk","same":false},"Practice makes perfect":{"fr":"c'est en forgeant qu'on devient forgeron","g":"it's by forging that one becomes a blacksmith","same":false},"Two heads are better than one":{"fr":"deux avis valent mieux qu'un","g":"two opinions are worth more than one","same":false},"Beat around the bush":{"fr":"tourner autour du pot","g":"to turn around the pot","same":false},"It's not rocket science":{"fr":"ce n'est pas sorcier","g":"it's not witchcraft","same":false},"That rings a bell":{"fr":"ça me dit quelque chose","g":"that says something to me","same":false},"Get the ball rolling":{"fr":"lancer la machine","g":"get the machine going","same":false},"Back to the drawing board":{"fr":"retour à la case départ","g":"back to the starting square","same":false},"In a nutshell":{"fr":"en un mot","g":"in a word","same":false},"By the skin of your teeth":{"fr":"à un cheveu près","g":"within a hair's breadth","same":false},"Keep your chin up":{"fr":"garde le moral","g":"keep your spirits up","same":false},"Every cloud has a silver lining":{"fr":"après la pluie, le beau temps","g":"after the rain, fine weather","same":false},"Bite the bullet":{"fr":"serrer les dents","g":"to clench your teeth","same":false},"Give it a shot":{"fr":"tenter le coup","g":"attempt the try","same":false},"Actions speak louder than words":{"fr":"les actes valent mieux que les paroles","g":"deeds are worth more than words","same":true},"Learn the ropes":{"fr":"apprendre les ficelles du métier","g":"learn the strings of the trade","same":true},"A blessing in disguise":{"fr":"à quelque chose malheur est bon","g":"misfortune is good for something","same":false},"A drop in the bucket":{"fr":"une goutte d'eau dans la mer","g":"a drop of water in the sea","same":true},"A leopard can't change its spots":{"fr":"chassez le naturel, il revient au galop","g":"chase away nature and it gallops back","same":false},"A fish out of water":{"fr":"comme un poisson hors de l'eau","g":"like a fish out of the water","same":true},"Bite off more than you can chew":{"fr":"avoir les yeux plus gros que le ventre","g":"to have eyes bigger than your belly","same":false},"Make a mountain out of a molehill":{"fr":"en faire tout un fromage","g":"to make a whole cheese out of it","same":false},"Cry over spilled milk":{"fr":"ce qui est fait est fait","g":"what is done is done","same":false},"Kill the goose that lays the golden eggs":{"fr":"tuer la poule aux œufs d'or","g":"to kill the hen with the golden eggs","same":true},"Rome wasn't built in a day":{"fr":"Rome ne s'est pas faite en un jour","g":"Rome wasn't made in a day","same":true},"A bird in the hand is worth two in the bush":{"fr":"un tiens vaut mieux que deux tu l'auras","g":"one 'here' beats two 'you'll have it'","same":false},"Out of the frying pan and into the fire":{"fr":"tomber de Charybde en Scylla","g":"to fall from Charybdis into Scylla","same":false},"Let sleeping dogs lie":{"fr":"il ne faut pas réveiller le chat qui dort","g":"you shouldn't wake the sleeping cat","same":false},"Still waters run deep":{"fr":"il n'est pire eau que l'eau qui dort","g":"there's no worse water than sleeping water","same":true},"The apple of discord":{"fr":"la pomme de discorde","g":"the apple of discord","same":true},"Make hay while the sun shines":{"fr":"il faut battre le fer tant qu'il est chaud","g":"strike the iron while it's hot","same":false},"Turn over a new leaf":{"fr":"tourner la page","g":"to turn the page","same":true},"Face the music":{"fr":"faire face","g":"to face up","same":false},"Cool as a cucumber":{"fr":"rester de marbre","g":"to stay [like] marble","same":false},"A dime a dozen":{"fr":"se trouver sous le sabot d'un cheval","g":"to be found under a horse's hoof","same":false},"Have bigger fish to fry":{"fr":"avoir d'autres chats à fouetter","g":"to have other cats to whip","same":false},"A wolf in sheep's clothing":{"fr":"un loup déguisé en agneau","g":"a wolf disguised as a lamb","same":true},"Where there's smoke, there's fire":{"fr":"il n'y a pas de fumée sans feu","g":"there's no smoke without fire","same":true},"Barking up the wrong tree":{"fr":"faire fausse route","g":"to take the wrong road","same":false},"Take it with a grain of salt":{"fr":"prendre avec des pincettes","g":"to take with tweezers","same":false,"latin":"from the Latin “cum grano salis”"},"Look for a needle in a haystack":{"fr":"chercher une aiguille dans une botte de foin","g":"to look for a needle in a bundle of hay","same":true},"A penny saved is a penny earned":{"fr":"un sou est un sou","g":"a penny is a penny","same":false}};
   var host=document.getElementById('spotlight'); if(!host)return;
   var idi=document.getElementById('spIdiom'), mea=document.getElementById('spMean'),
       es=document.getElementById('spEs'), btn=document.getElementById('spBtn'),

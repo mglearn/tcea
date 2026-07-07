@@ -165,7 +165,7 @@ function studentHtml(file, band, spec, nlocks) {
   <div class="locks" id="locks"></div>
 
   <footer>
-    <span data-i18n="footer.text">${esc(FOOTER_TEXT)}</span> · <a href="../../policy.html" data-i18n="footer.privacy">Privacy &amp; compliance</a><br>
+    <span data-i18n="footer.text">${esc(FOOTER_TEXT)}</span> · <a href="../policy.html" data-i18n="footer.privacy">Privacy &amp; compliance</a><br>
     <span style="opacity:.7" data-i18n="footer.disclaimer">${esc(DISCLAIMER)}</span>
   </footer>
 </div>

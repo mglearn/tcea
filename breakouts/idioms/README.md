@@ -4,10 +4,23 @@ A multilingual CTOB suite that teaches **idioms and sayings** to multilingual le
 world-language / multilingual classrooms, **grades 3–12**, using each learner's home language as a
 resource. See **[PLAN.md](PLAN.md)** for the full instructional plan, standards alignment, and sources.
 
-**Status:** Phase 1 live — **6 breakouts** (English + Spanish) across three grade bands, a
-search-first landing with a random **trilingual (EN/ES/FR) idiom spotlight**, and an
-**[ELPS/TEKS alignment page](correlation.html)**. See the full inventory under
-[Complete list of idioms & sayings](#complete-list-of-idioms--sayings).
+**Status:** Live — **12 breakouts fully translated into all 7 languages** (EN/ES/VI/AR/HI/UR/ZH)
+across three grade bands (incl. Phase 3 **French idioms** and **Latin roots** units for the LOTE /
+Classical-Languages classroom), a search-first landing with a random **trilingual (EN/ES/FR) idiom
+spotlight of 66 idioms**, an **[Idiom Arcade](#idiom-arcade)** of three arcade games below the search,
+**teacher-support pages** ([UDL](udl.html) · [ELPS](elps.html) · [guide](guide.html), 7 languages),
+printable **[companion pieces](cards.html)**, and an **[ELPS/TEKS alignment page](correlation.html)**.
+See the full inventory under [Complete list of idioms & sayings](#complete-list-of-idioms--sayings).
+
+## Idiom Arcade
+
+Three self-contained, arcade-style browser games are featured below the search on `index.html`, all
+sharing `games/idiom-data.js` (no logins, no data collected, playable by touch/mouse/keyboard, and
+respecting `prefers-reduced-motion`):
+
+- **`games/match-blitz.html`** — *Idiom Match Blitz*: race a countdown to match idioms with meanings; streak multiplier.
+- **`games/meaning-meteors.html`** — *Meaning Meteors*: a canvas catcher — grab the correct meaning as it falls, dodge the traps; 3 lives.
+- **`games/trap-escape.html`** — *Trap Escape*: literal-vs-figurative reflex game; decide fast before the timer empties; combo scoring.
 
 ## Layout
 
@@ -73,9 +86,9 @@ language, so **English-only content works in all 7 languages immediately** and t
 **Grades 9–12**
 - **Proverbs, Sayings & Latin Roots** — *the apple doesn't fall far from the tree* (de tal palo, tal astilla) · *better late than never* (más vale tarde que nunca) · *carpe diem* → Spanish *día* (a shared Latin root) · *the early bird catches the worm* (camarón que se duerme se lo lleva la corriente)
 
-### The landing "Idiom Spotlight" bank (40, trilingual)
+### The landing "Idiom Spotlight" bank (66, trilingual)
 
-Every load of `index.html` shows a random popular idiom with its meaning and its **Spanish and French** equivalents, tagged *same picture* / *different picture* (whether the languages use the same image). The full rotating bank:
+Every load of `index.html` shows a random popular idiom with its meaning and its **Spanish and French** equivalents, tagged *same picture* / *different picture* (whether the languages use the same image). The bank grew from 40 to **66** with a curated, K–12-screened set drawn from englishstudyonline, 7ESL, and the cogweb Spanish–English proverbs list (source of record: the `IDIOMS` array + `FR` map in `index.html`). A representative slice of the rotating bank:
 
 | English idiom | Meaning | Spanish (literal) | French (literal) |
 | --- | --- | --- | --- |

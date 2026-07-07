@@ -17,20 +17,21 @@ it?"* This is the differentiator, and it's exactly what the research supports.
 
 **Live now** (`breakouts/idioms/`, all deployed):
 - [x] Suite scaffold + **search-first landing** with a **7-language switcher** (BreakoutI18n, incl. RTL)
-- [x] **10 breakouts**, English + Spanish — 3–5: body, animal, food · 6–8: sports/school, time/money, color/emotion, weather · 9–12: proverbs+Latin, literary (Shakespeare), register/tone
+- [x] **12 breakouts, fully translated into all 7 languages** (EN/ES/VI/AR/HI/UR/ZH) — 3–5: body, animal, food · 6–8: sports/school, time/money, color/emotion, weather · 9–12: proverbs+Latin, literary (Shakespeare), register/tone, **French idioms (LOTE)**, **Latin roots & sayings (Classical Languages)**
 - [x] **Escalating difficulty** on the 6–12 breakouts (context MC → subtle-misconception multi → two-idiom synthesis seq → comprehensive word)
-- [x] **Random idiom spotlight** — 40 idioms, English + Spanish + French, same/different-picture tag; optional images auto-display if present (spec in `SPOTLIGHT-IMAGES.md`)
+- [x] **Random idiom spotlight** — **66 idioms**, English + Spanish + French, same/different-picture tag; curated from englishstudyonline / 7esl / cogweb proverbs and screened for K–12 appropriateness; optional images auto-display if present (spec in `SPOTLIGHT-IMAGES.md`)
+- [x] **Idiom Arcade** — three self-contained arcade games featured below the search on `index.html`: **Match Blitz** (timed matching), **Meaning Meteors** (canvas catcher), **Trap Escape** (literal-vs-real reflex). Shared dataset `games/idiom-data.js`.
+- [x] **Teacher-support pages** — `udl.html` / `elps.html` / `guide.html`, generated via the shared PD system (`_pd/suite/*.json` → `build-pd.js` + `gen-pd-pages.js`), all 7 languages
 - [x] **Standards alignment page** (`correlation.html`) — ELPS + ELAR + SLAR + LOTE + K–12 appropriateness statement
-- [x] **Teacher answer key** (`answer-key.html`, password-gated; passcode held by the author, not in the repo)
+- [x] **Companion pieces** — printable idiom **card deck** (`cards.html`) and a **"Bring an Idiom From Home"** family/L1 task (`family.html`)
+- [x] **Privacy page** (`policy.html`) + **teacher answer key** (`answer-key.html`, password-gated; passcode held by the author, not in the repo)
 - [x] Wired into the unified catalog + root launch-page search + RSS
 
 **To do (pick up here, roughly in priority order):**
-- [ ] **Teacher-support pages** — `udl.html` / `elps.html` / `guide.html`. Reuse the shared PD i18n system: add an `idioms` key to `_pd/suite/<lang>.json` (7 languages), then generate with `gen-pd-pages.js`. *The last of the "round it out" items.*
-- [ ] **Phase 2 — the other 5 languages** for breakout *content*: Vietnamese, Arabic, Hindi, Urdu, Chinese. (UI chrome is already 7-language; only clue/lock content is EN+ES.) One `_i18n-<band>-<slug>.json` per language, parallel-agent translation — see README → "Add a breakout."
-- [ ] **Phase 3 — French & Latin breakouts.** The spotlight already shows FR/Latin; build full units, aligned to LOTE (19 TAC Ch. 114, incl. Classical Languages, Subch. D).
-- [ ] **Optional: idiom spotlight images** — generate the 40 illustrations listed in `SPOTLIGHT-IMAGES.md` into `img/`.
-- [ ] **Companion pieces** — printable idiom card decks; a "Bring an idiom from home" family/L1 task.
-- [ ] **Optional: fuller Phase 1** — g35 has 3 breakouts; add 1–2 more for symmetry with 6–8/9–12 (4 / 3).
+- [ ] **Regenerate the answer key** to cover the two new 9–12 breakouts (french-idioms, latin-proverbs): `node breakouts/idioms/build-answer-key.js '<passcode>'` (passcode held by the author).
+- [ ] **Optional: idiom spotlight images** — generate the illustrations listed in `SPOTLIGHT-IMAGES.md` into `img/` (games and spotlight both auto-use images if present).
+- [ ] **Optional: fuller Phase 1** — g35 has 3 breakouts; add 1–2 more for symmetry with 6–8/9–12 (now 4 / 5).
+- [ ] **Optional: more world languages** — extend the FR-style spotlight map (German, Mandarin `zh`, ASL) and add full German/Mandarin breakouts.
 
 **Build commands:** `node breakouts/idioms/build.js` (breakouts + manifest) · `node breakouts/idioms/build-answer-key.js '<passcode>'` (answer key) · `cd breakouts && node build-catalog.js` (site catalog).
 

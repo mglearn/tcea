@@ -6,34 +6,74 @@
     <atom:link href="https://mglearn.github.io/tcea/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated HTML tools, dashboards, prompt libraries, and classroom resources from TCEA.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Jul 2026 16:13:28 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jul 2026 23:39:51 GMT</lastBuildDate>
     <image>
       <url>https://mglearn.github.io/tcea/favicon.svg</url>
       <title>TCEA Vibe-Coded Solutions — Updates</title>
       <link>https://mglearn.github.io/tcea/</link>
     </image>
     <item>
-      <title>🕵️ Breakouts Answer Key</title>
-      <link>https://mglearn.github.io/tcea/breakouts/clear/answer-key.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/clear/answer-key.html</guid>
+      <title>🕵️ Idioms &amp; Sayings for Multilingual Learners</title>
+      <link>https://mglearn.github.io/tcea/breakouts/idioms/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/idioms/index.html</guid>
       <category>Critical Thinking Breakouts</category>
-      <pubDate>Thu, 02 Jul 2026 16:13:28 GMT</pubDate>
-      <description>The facilitator answer key and recording sheet for running the Critical Thinking Breakouts activities.</description>
+      <pubDate>Tue, 07 Jul 2026 20:03:17 GMT</pubDate>
+      <description>A multilingual idioms &amp; sayings suite for grades 3–12 — decode English idioms with your home language as a resource (ESL) and compare sayings across languages, starting with English &amp; Spanish. Aligned to the Texas ELPS (idiomatic expressions) and WIDA; seven languages, no logins, no data collected.</description>
     </item>
     <item>
-      <title>🕵️ Breakouts Correlation Guide</title>
-      <link>https://mglearn.github.io/tcea/breakouts/clear/correlation.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/clear/correlation.html</guid>
+      <title>🕵️ Idioms &amp; Sayings Standards Alignment (ELPS / TEKS)</title>
+      <link>https://mglearn.github.io/tcea/breakouts/idioms/correlation.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/idioms/correlation.html</guid>
       <category>Critical Thinking Breakouts</category>
-      <pubDate>Thu, 02 Jul 2026 16:13:28 GMT</pubDate>
-      <description>A multilingual correlation guide mapping the Critical Thinking Breakouts to standards and thinking skills.</description>
+      <pubDate>Tue, 07 Jul 2026 19:11:41 GMT</pubDate>
+      <description>How the Idioms &amp; Sayings suite aligns to the Texas ELPS (19 TAC §74.4), the ELAR TEKS, and the LOTE TEKS for Bilingual/ESL and multilingual classrooms — with a K–12 public-school appropriateness statement and links to the Texas EL program frameworks.</description>
+    </item>
+    <item>
+      <title>🕵️ Critical Thinking Online Breakouts — Full Library</title>
+      <link>https://mglearn.github.io/tcea/breakouts/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/index.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Tue, 07 Jul 2026 18:58:15 GMT</pubDate>
+      <description>A single searchable library of every TCEA Critical Thinking Online Breakout (CTOB) — 193 self-contained, browser-based reasoning escapes across five suites (CLEAR, Fourth of July, July 5 &amp; Black Freedom Holidays, Bible as Literature, and Science) in seven languages. Search by name, topic, or grade; no logins, no data collected.</description>
+    </item>
+    <item>
+      <title>🕵️ Bible as Literature Breakouts</title>
+      <link>https://mglearn.github.io/tcea/breakouts/bible/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/bible/index.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Tue, 07 Jul 2026 17:49:03 GMT</pubDate>
+      <description>Thirty-one critical-thinking breakouts on the Texas-adopted Bible stories, studied academically — as literature and history, never devotionally. Covers every K–12 required-list Bible item (creation, Noah, David &amp; Goliath, the Psalms, the Prodigal Son, Job, 1 Corinthians 13, and more) across four grade bands, in seven languages.</description>
+    </item>
+    <item>
+      <title>🕵️ Bible as Literature Breakouts Correlation Guide</title>
+      <link>https://mglearn.github.io/tcea/breakouts/bible/correlation.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/bible/correlation.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Tue, 07 Jul 2026 16:04:11 GMT</pubDate>
+      <description>A TEKS correlation guide mapping each Bible as Literature breakout to the ELAR strands, the CLEAR reasoning focus, and the high-effect-size instructional strategy engineered into its locks.</description>
+    </item>
+    <item>
+      <title>🕵️ Science Critical Thinking Breakouts (Grades K–8)</title>
+      <link>https://mglearn.github.io/tcea/breakouts/science/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/science/index.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Sun, 05 Jul 2026 20:15:43 GMT</pubDate>
+      <description>Critical Thinking Online Breakouts across the Texas science TEKS, Grades K–8 — from pushes and pulls to conservation of mass. Each grade has a featured breakout, a concept set, a hands-on STEM engineering design challenge, and a student word bank, in seven languages.</description>
+    </item>
+    <item>
+      <title>🕵️ Science Breakouts Correlation Guide</title>
+      <link>https://mglearn.github.io/tcea/breakouts/science/correlation.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/science/correlation.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Sun, 05 Jul 2026 20:05:58 GMT</pubDate>
+      <description>A standards correlation guide mapping the Science Critical Thinking Breakouts by grade to the Texas science TEKS and the reasoning moves engineered into each lock.</description>
     </item>
     <item>
       <title>🕵️ Critical Thinking Breakouts</title>
       <link>https://mglearn.github.io/tcea/breakouts/clear/index.html</link>
       <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/clear/index.html</guid>
       <category>Critical Thinking Breakouts</category>
-      <pubDate>Thu, 02 Jul 2026 16:13:28 GMT</pubDate>
+      <pubDate>Sat, 04 Jul 2026 20:05:03 GMT</pubDate>
       <description>Grade-band breakout activities (3-5, 6-8, 9-12) across ELA, science, and social studies that teach evidence-based reasoning, available in seven languages.</description>
     </item>
     <item>
@@ -41,32 +81,48 @@
       <link>https://mglearn.github.io/tcea/breakouts/july4/index.html</link>
       <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/july4/index.html</guid>
       <category>Critical Thinking Breakouts</category>
-      <pubDate>Thu, 02 Jul 2026 16:03:46 GMT</pubDate>
+      <pubDate>Sat, 04 Jul 2026 20:05:03 GMT</pubDate>
       <description>Twelve self-contained U.S. history escape activities across three grade bands (3-5, 6-8, 9-12). Students open clues, weigh evidence, and crack four locks each — building history knowledge and critical-thinking habits. No logins, no data collected.</description>
-    </item>
-    <item>
-      <title>🕵️ Fourth of July Breakouts Correlation Guide</title>
-      <link>https://mglearn.github.io/tcea/breakouts/july4/correlation.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/july4/correlation.html</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Thu, 02 Jul 2026 16:03:46 GMT</pubDate>
-      <description>A standards correlation guide mapping the twelve Fourth of July breakouts by grade band to Texas Essential Knowledge and Skills, Common Core literacy standards, and the CLEAR thinking process.</description>
     </item>
     <item>
       <title>🕵️ July 5 &amp; Black Freedom Holidays Breakouts</title>
       <link>https://mglearn.github.io/tcea/breakouts/july5th/index.html</link>
       <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/july5th/index.html</guid>
       <category>Critical Thinking Breakouts</category>
-      <pubDate>Thu, 02 Jul 2026 16:03:46 GMT</pubDate>
+      <pubDate>Sat, 04 Jul 2026 20:05:03 GMT</pubDate>
       <description>Twelve self-contained critical thinking breakouts across three grade bands (3-5, 6-8, 9-12) exploring the freedom days the calendar often overlooks — Frederick Douglass s July 5 address, Juneteenth, Pinkster, Watch Night, and more. Students open clues, weigh evidence, and crack four locks each. No logins, no data collected.</description>
+    </item>
+    <item>
+      <title>🕵️ Breakouts Correlation Guide</title>
+      <link>https://mglearn.github.io/tcea/breakouts/clear/correlation.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/clear/correlation.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Sat, 04 Jul 2026 19:59:15 GMT</pubDate>
+      <description>A multilingual correlation guide mapping the Critical Thinking Breakouts to standards and thinking skills.</description>
+    </item>
+    <item>
+      <title>🕵️ Fourth of July Breakouts Correlation Guide</title>
+      <link>https://mglearn.github.io/tcea/breakouts/july4/correlation.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/july4/correlation.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Sat, 04 Jul 2026 19:59:15 GMT</pubDate>
+      <description>A standards correlation guide mapping the twelve Fourth of July breakouts by grade band to Texas Essential Knowledge and Skills, Common Core literacy standards, and the CLEAR thinking process.</description>
     </item>
     <item>
       <title>🕵️ Black Freedom Holidays Breakouts Correlation Guide</title>
       <link>https://mglearn.github.io/tcea/breakouts/july5th/correlation.html</link>
       <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/july5th/correlation.html</guid>
       <category>Critical Thinking Breakouts</category>
-      <pubDate>Thu, 02 Jul 2026 16:03:46 GMT</pubDate>
+      <pubDate>Sat, 04 Jul 2026 19:59:15 GMT</pubDate>
       <description>A standards correlation guide mapping the twelve July 5 &amp; Black Freedom Holidays breakouts by grade band to Texas Essential Knowledge and Skills, Common Core literacy standards, and the CLEAR thinking process.</description>
+    </item>
+    <item>
+      <title>🕵️ Breakouts Answer Key</title>
+      <link>https://mglearn.github.io/tcea/breakouts/clear/answer-key.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/clear/answer-key.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Thu, 02 Jul 2026 21:20:15 GMT</pubDate>
+      <description>The facilitator answer key and recording sheet for running the Critical Thinking Breakouts activities.</description>
     </item>
     <item>
       <title>📊 Data Display Patterns</title>
@@ -275,62 +331,6 @@
       <category>Classroom Tools and Utilities</category>
       <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
       <description>Create and configure meme-based puzzles for classroom use.</description>
-    </item>
-    <item>
-      <title>🧰 Meme Puzzle Student</title>
-      <link>https://mglearn.github.io/tcea/tools/memepuzzle/student.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/tools/memepuzzle/student.html</guid>
-      <category>Classroom Tools and Utilities</category>
-      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
-      <description>The student-facing view for completing meme puzzle activities.</description>
-    </item>
-    <item>
-      <title>🧰 Classroom Wheel Spinner</title>
-      <link>https://mglearn.github.io/tcea/tools/wheelspinner/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/tools/wheelspinner/index.html</guid>
-      <category>Classroom Tools and Utilities</category>
-      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
-      <description>A customizable spinner for names, prompts, choices, and classroom routines.</description>
-    </item>
-    <item>
-      <title>🧰 Story Wheel Maker</title>
-      <link>https://mglearn.github.io/tcea/tools/storywheel/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/tools/storywheel/index.html</guid>
-      <category>Classroom Tools and Utilities</category>
-      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
-      <description>A wheel-based generator for story ideas and writing prompts.</description>
-    </item>
-    <item>
-      <title>🧰 Classroom Dice Roller</title>
-      <link>https://mglearn.github.io/tcea/tools/dice/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/tools/dice/index.html</guid>
-      <category>Classroom Tools and Utilities</category>
-      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
-      <description>A flexible dice roller for games, questions, grouping, and classroom decisions.</description>
-    </item>
-    <item>
-      <title>🧰 Draw and Sketch</title>
-      <link>https://mglearn.github.io/tcea/tools/drawsketch/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/tools/drawsketch/index.html</guid>
-      <category>Classroom Tools and Utilities</category>
-      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
-      <description>A quick sketching surface for drawing, annotation, and visual classroom prompts.</description>
-    </item>
-    <item>
-      <title>🧰 Dicebreaker Creator</title>
-      <link>https://mglearn.github.io/tcea/tools/dicebreakers/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/tools/dicebreakers/index.html</guid>
-      <category>Classroom Tools and Utilities</category>
-      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
-      <description>Create dice-based icebreaker activities for groups, meetings, and classes.</description>
-    </item>
-    <item>
-      <title>🧰 Dicebreaker Roll View</title>
-      <link>https://mglearn.github.io/tcea/tools/dicebreakers/play.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/tools/dicebreakers/play.html</guid>
-      <category>Classroom Tools and Utilities</category>
-      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
-      <description>The play view for rolling and running a Dicebreaker activity.</description>
     </item>
   </channel>
 </rss>

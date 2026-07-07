@@ -16,7 +16,12 @@ figurative meaning shown in text. That contrast is the whole teaching point.
   devil) that should be drawn **playfully and non-violently / without literal devil imagery**.
 - **Alt text** is provided for accessibility; the page sets it automatically.
 
-## The 40 images
+## The 66 images
+
+Images **1–40** below were specced first (and all 40 `.webp` files are in `img/`). Images **41–66** cover
+the idioms added to the spotlight bank from englishstudyonline / 7ESL / the cogweb Spanish–English
+proverbs list — **these do not have image files yet** and are the ones still to draw.
+
 
 | # | Idiom | Filename | What to draw (the literal scene) | Alt text |
 | --- | --- | --- | --- | --- |
@@ -60,5 +65,33 @@ figurative meaning shown in text. That contrast is the whole teaching point.
 | 38 | Give it a shot | `img/give-it-a-shot.webp` | a hopeful person taking aim at a dartboard or hoop | Illustration of the literal, playful meaning of “Give it a shot.” |
 | 39 | Actions speak louder than words | `img/actions-speak-louder-than-words.webp` | a big figure doing a helpful deed beside a tiny faint speech bubble of words | Illustration of the literal, playful meaning of “Actions speak louder than words.” |
 | 40 | Learn the ropes | `img/learn-the-ropes.webp` | a mentor showing a newcomer how to tie and handle ropes on a small boat | Illustration of the literal, playful meaning of “Learn the ropes.” |
+| 41 | A blessing in disguise | `img/a-blessing-in-disguise.webp` | a small gift box wearing a playful disguise (mask/mustache), a happy surprise inside | Illustration of the literal, playful meaning of “A blessing in disguise.” |
+| 42 | A drop in the bucket | `img/a-drop-in-the-bucket.webp` | one tiny water droplet falling into a huge nearly-empty bucket | Illustration of the literal, playful meaning of “A drop in the bucket.” |
+| 43 | A leopard can't change its spots | `img/a-leopard-cant-change-its-spots.webp` | a friendly cartoon leopard trying (and failing) to paint over its spots | Illustration of the literal, playful meaning of “A leopard can't change its spots.” |
+| 44 | A fish out of water | `img/a-fish-out-of-water.webp` | a wide-eyed cartoon fish sitting awkwardly on dry land beside a pond | Illustration of the literal, playful meaning of “A fish out of water.” |
+| 45 | Bite off more than you can chew | `img/bite-off-more-than-you-can-chew.webp` | a person with an enormous sandwich stuffed in puffed cheeks, unable to chew | Illustration of the literal, playful meaning of “Bite off more than you can chew.” |
+| 46 | Make a mountain out of a molehill | `img/make-a-mountain-out-of-a-molehill.webp` | a tiny molehill with a huge mountain drawn ballooning out of it, a small mole peeking | Illustration of the literal, playful meaning of “Make a mountain out of a molehill.” |
+| 47 | Cry over spilled milk | `img/cry-over-spilled-milk.webp` | a tipped glass of milk with a small puddle and a sad-but-gentle teary face | Illustration of the literal, playful meaning of “Cry over spilled milk.” |
+| 48 | Kill the goose that lays the golden eggs | `img/kill-the-goose-that-lays-the-golden-eggs.webp` | a happy goose beside a nest of golden eggs, a warning finger — playful, non-violent | Illustration of the literal, playful meaning of “Kill the goose that lays the golden eggs.” |
+| 49 | Rome wasn't built in a day | `img/rome-wasnt-built-in-a-day.webp` | a half-finished cartoon Roman building with scaffolding and a small calendar | Illustration of the literal, playful meaning of “Rome wasn't built in a day.” |
+| 50 | A bird in the hand is worth two in the bush | `img/a-bird-in-the-hand-is-worth-two-in-the-bush.webp` | one bird resting on an open hand, two more perched in a nearby bush | Illustration of the literal, playful meaning of “A bird in the hand is worth two in the bush.” |
+| 51 | Out of the frying pan and into the fire | `img/out-of-the-frying-pan-and-into-the-fire.webp` | a plucky cartoon character hopping off a frying pan toward a small campfire — playful | Illustration of the literal, playful meaning of “Out of the frying pan and into the fire.” |
+| 52 | Let sleeping dogs lie | `img/let-sleeping-dogs-lie.webp` | a peacefully snoozing cartoon dog while a person tiptoes quietly past | Illustration of the literal, playful meaning of “Let sleeping dogs lie.” |
+| 53 | Still waters run deep | `img/still-waters-run-deep.webp` | a calm, glassy pond on top with a surprisingly deep, wondrous world below | Illustration of the literal, playful meaning of “Still waters run deep.” |
+| 54 | The apple of discord | `img/the-apple-of-discord.webp` | a single shiny golden apple on a pedestal as two friends reach for it | Illustration of the literal, playful meaning of “The apple of discord.” |
+| 55 | Make hay while the sun shines | `img/make-hay-while-the-sun-shines.webp` | a cheerful farmer gathering hay bales under a big bright sun | Illustration of the literal, playful meaning of “Make hay while the sun shines.” |
+| 56 | Turn over a new leaf | `img/turn-over-a-new-leaf.webp` | a hand flipping a big green leaf to reveal a fresh, bright new side | Illustration of the literal, playful meaning of “Turn over a new leaf.” |
+| 57 | Face the music | `img/face-the-music.webp` | a person standing bravely to face a small cheerful marching band | Illustration of the literal, playful meaning of “Face the music.” |
+| 58 | Cool as a cucumber | `img/cool-as-a-cucumber.webp` | a relaxed cartoon cucumber wearing sunglasses, lounging calmly | Illustration of the literal, playful meaning of “Cool as a cucumber.” |
+| 59 | A dime a dozen | `img/a-dime-a-dozen.webp` | a carton of a dozen identical items beside a single small coin | Illustration of the literal, playful meaning of “A dime a dozen.” |
+| 60 | Have bigger fish to fry | `img/have-bigger-fish-to-fry.webp` | a person waving off a tiny fish while a giant fish waits at the pan — playful | Illustration of the literal, playful meaning of “Have bigger fish to fry.” |
+| 61 | A wolf in sheep's clothing | `img/a-wolf-in-sheeps-clothing.webp` | a friendly cartoon wolf wearing a fluffy sheep costume, tail poking out — non-scary | Illustration of the literal, playful meaning of “A wolf in sheep's clothing.” |
+| 62 | Where there's smoke, there's fire | `img/where-theres-smoke-theres-fire.webp` | a curl of smoke rising with a small friendly campfire glowing below it | Illustration of the literal, playful meaning of “Where there's smoke, there's fire.” |
+| 63 | Barking up the wrong tree | `img/barking-up-the-wrong-tree.webp` | a cartoon dog barking up one tree while a cat sits smiling in the next tree over | Illustration of the literal, playful meaning of “Barking up the wrong tree.” |
+| 64 | Take it with a grain of salt | `img/take-it-with-a-grain-of-salt.webp` | a person sprinkling a single grain of salt over a note they're reading | Illustration of the literal, playful meaning of “Take it with a grain of salt.” |
+| 65 | Look for a needle in a haystack | `img/look-for-a-needle-in-a-haystack.webp` | a person with a magnifying glass searching a giant haystack for one tiny needle | Illustration of the literal, playful meaning of “Look for a needle in a haystack.” |
+| 66 | A penny saved is a penny earned | `img/a-penny-saved-is-a-penny-earned.webp` | a smiling piggy bank with one shiny coin dropping in and a small sparkle | Illustration of the literal, playful meaning of “A penny saved is a penny earned.” |
 
-_Missing scene notes: none._
+_Missing scene notes: images **41–66** are specced above but not yet drawn (no `.webp` files yet). Draw
+**#48 (kill the goose)**, **#51 (frying pan → fire)**, **#60 (bigger fish to fry)** and **#61 (wolf in
+sheep's clothing)** playfully and non-violently, consistent with the notes for #2/#37._

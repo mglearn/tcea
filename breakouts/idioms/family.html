@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Bring an Idiom From Home — Family &amp; Home-Language Activity</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --deep:#0b5563; --teal:#0e7490; --mid:#0891b2; --cyan:#22d3ee;
+    --amber:#f59e0b; --purple:#7c3aed; --paper:#f2fbfc; --ink:#122a2e;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    font-family:'Nunito',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(1000px 500px at 12% -10%, rgba(34,211,238,.16), transparent 60%),
+      radial-gradient(900px 500px at 110% 0%, rgba(245,158,11,.12), transparent 55%),
+      var(--paper);
+    line-height:1.55;
+  }
+  .wrap{max-width:860px;margin:0 auto;padding:22px 20px 60px}
+  h1,h2,h3{font-family:'Fredoka',sans-serif;line-height:1.15;margin:0}
+  a{color:var(--teal)}
+
+  .crumb{margin:2px 0 16px}
+  .crumb a{color:var(--teal);font-weight:700;text-decoration:none;font-family:'Fredoka',sans-serif}
+  .crumb a:hover{text-decoration:underline}
+
+  header.hero{
+    background:linear-gradient(135deg,var(--deep),var(--teal) 55%,var(--mid));
+    color:#eefdff;border-radius:22px;padding:24px 26px;
+    box-shadow:0 14px 34px rgba(11,85,99,.28);position:relative;overflow:hidden;
+  }
+  header.hero::after{
+    content:"";position:absolute;right:-30px;bottom:-40px;width:200px;height:200px;
+    background:radial-gradient(circle at 40% 40%, rgba(245,158,11,.45), transparent 65%);
+    pointer-events:none;
+  }
+  .eyebrow{font-family:'Fredoka',sans-serif;font-weight:600;letter-spacing:.14em;
+    text-transform:uppercase;font-size:.72rem;color:var(--cyan)}
+  header.hero h1{font-size:1.9rem;margin:6px 0 8px;font-weight:700}
+  header.hero p{margin:0;max-width:62ch;color:#dff7fb;font-weight:600}
+
+  .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:16px 0 4px}
+  .btn{
+    font-family:'Fredoka',sans-serif;font-weight:600;font-size:1rem;
+    border:0;border-radius:999px;padding:11px 20px;cursor:pointer;color:#08343c;
+    background:linear-gradient(180deg,var(--cyan),var(--mid));
+    box-shadow:0 6px 16px rgba(8,145,178,.35);
+  }
+  .btn:hover{filter:brightness(1.05)}
+
+  section{margin-top:16px}
+  .card{background:#fff;border:1px solid rgba(14,116,144,.16);border-radius:16px;
+    padding:16px 18px;box-shadow:0 6px 18px rgba(11,85,99,.06);break-inside:avoid}
+  h2{font-size:1.2rem;color:var(--deep);margin-bottom:8px}
+  h2 .dot{color:var(--amber)}
+  p{margin:6px 0}
+  .lead-note b{color:var(--purple)}
+
+  .greetings{list-style:none;margin:8px 0 0;padding:0;
+    display:grid;grid-template-columns:1fr 1fr;gap:6px 18px}
+  @media (max-width:560px){.greetings{grid-template-columns:1fr}}
+  .greetings li{padding:5px 0;border-bottom:1px dashed rgba(14,116,144,.22)}
+  .greetings .lang{font-family:'Fredoka',sans-serif;font-weight:700;color:var(--teal);
+    font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;display:block}
+  .greetings .word{font-weight:700;font-size:1.02rem}
+  .greetings .rtl{direction:rtl;unicode-bidi:isolate}
+
+  .template{background:linear-gradient(180deg,#fff,#f4fdff);
+    border:2px solid var(--mid);border-radius:16px;padding:18px 20px;break-inside:avoid}
+  .template h2{color:var(--teal)}
+  .field{margin:14px 0}
+  .field label{font-family:'Fredoka',sans-serif;font-weight:600;color:var(--deep);
+    display:block;font-size:1rem;margin-bottom:3px}
+  .field .hint{font-size:.82rem;color:#5b6f73;font-style:italic}
+  .line{border-bottom:2px solid var(--mid);height:1.7em;margin-top:6px}
+  .line.tall{height:3.4em;border-bottom:2px solid var(--mid);
+    background:repeating-linear-gradient(transparent,transparent 1.62em,rgba(14,116,144,.35) 1.63em,rgba(14,116,144,.35) 1.7em)}
+  .same-diff{display:flex;gap:22px;margin-top:6px;font-weight:700;color:var(--deep)}
+  .same-diff span{display:inline-flex;align-items:center;gap:7px}
+  .box{width:16px;height:16px;border:2px solid var(--mid);border-radius:4px;display:inline-block}
+
+  .frames{list-style:none;margin:8px 0 0;padding:0}
+  .frames li{background:rgba(34,211,238,.09);border-left:4px solid var(--cyan);
+    border-radius:0 10px 10px 0;padding:9px 12px;margin:8px 0;font-weight:600}
+  .frames b{color:var(--purple)}
+  .blank{display:inline-block;min-width:90px;border-bottom:2px solid var(--teal);
+    height:1.1em;vertical-align:baseline}
+
+  .teacher{background:rgba(245,158,11,.10);border:1px dashed var(--amber);
+    border-radius:14px;padding:14px 16px}
+  .teacher h3{color:#9a6a06;font-size:1rem;margin-bottom:4px}
+  .teacher p{font-size:.92rem;margin:4px 0}
+
+  footer{margin-top:30px;padding-top:16px;border-top:1px solid rgba(14,116,144,.2);
+    font-size:.85rem;color:#3d5a5f}
+  footer a{color:var(--teal);font-weight:700}
+
+  /* ---------- PRINT ---------- */
+  @media print{
+    body{background:#fff;color:#000;line-height:1.4}
+    .wrap{max-width:none;padding:0}
+    .no-print,.toolbar,.btn,.crumb,header.hero::after{display:none !important}
+    header.hero{background:#fff;color:#000;box-shadow:none;border:2px solid #000;
+      border-radius:0;padding:8px 10px;margin-bottom:6px}
+    header.hero .eyebrow,header.hero p{color:#000}
+    header.hero h1{font-size:1.5rem}
+    section{margin-top:8px}
+    .card,.template,.teacher{box-shadow:none;border:1px solid #000;border-radius:0;
+      padding:8px 10px;break-inside:avoid}
+    h2,h2 .dot,.template h2,.teacher h3,.lead-note b,.frames b,.greetings .lang{color:#000}
+    p{margin:3px 0}
+    .greetings li{border-bottom:1px dashed #000}
+    .line,.line.tall{border-bottom:2px solid #000}
+    .line.tall{background:none;height:2.6em}
+    .box{border-color:#000}
+    .frames li{background:#fff;border-left:3px solid #000;border-radius:0}
+    .blank{border-bottom:1.5px solid #000}
+    .same-diff{color:#000}
+    footer{display:none}
+    @page{size:letter;margin:.45in}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="crumb"><a href="index.html">‹ Idioms &amp; Sayings for Multilingual Learners</a></div>
+
+  <header class="hero">
+    <div class="eyebrow">Family &amp; home-language activity · grades 3–12</div>
+    <h1>Bring an Idiom From Home 🏡</h1>
+    <p>Every language has idioms — sayings whose words don't add up to their meaning. Your home
+       language is a gift. Sit with a family member and bring one of your family's sayings to class.</p>
+  </header>
+
+  <div class="toolbar no-print">
+    <button class="btn" onclick="window.print()">🖨️ Print</button>
+    <span style="font-weight:700;color:var(--deep)">Prints to one page on US Letter.</span>
+  </div>
+
+  <section class="card">
+    <h2><span class="dot">👋</span> Welcome, families!</h2>
+    <p class="lead-note">Thank you for sharing your language with us. In class we are learning
+       <b>idioms</b> — colorful sayings like "it's a piece of cake" (meaning <em>it's easy</em>).
+       <b>Every language has them,</b> and your family's sayings are just as rich. Helping your child
+       with this page teaches an important idea: <b>the home language is an asset,</b> not something to
+       leave at the door.</p>
+    <ul class="greetings" aria-label="A greeting in several languages">
+      <li><span class="lang">Spanish</span><span class="word">¡Bienvenidas familias!</span></li>
+      <li><span class="lang">Vietnamese</span><span class="word">Chào mừng các gia đình!</span></li>
+      <li><span class="lang">Arabic</span><span class="word rtl" lang="ar">أهلاً بكم أيها الأهالي!</span></li>
+      <li><span class="lang">Hindi</span><span class="word" lang="hi">परिवारों का स्वागत है!</span></li>
+      <li><span class="lang">Urdu</span><span class="word rtl" lang="ur">خاندانوں کو خوش آمدید!</span></li>
+      <li><span class="lang">Chinese</span><span class="word" lang="zh">欢迎各位家长！</span></li>
+    </ul>
+  </section>
+
+  <section class="template">
+    <h2>✍️ Our family idiom — fill this in together</h2>
+    <p class="hint" style="font-size:.9rem;color:#5b6f73">Write in your home language <em>and</em> in
+       English. Any language is welcome — you can even draw the picture the words make.</p>
+
+    <div class="field">
+      <label for="f1">An idiom or saying in my home language</label>
+      <span class="hint">You may write it in your own alphabet.</span>
+      <div class="line" id="f1" role="textbox" aria-label="An idiom or saying in my home language"></div>
+    </div>
+
+    <div class="field">
+      <label for="f2">What it says word-for-word (literal)</label>
+      <span class="hint">Translate each word — even if it sounds funny in English.</span>
+      <div class="line" id="f2" role="textbox" aria-label="What it says word for word"></div>
+    </div>
+
+    <div class="field">
+      <label for="f3">What it really means</label>
+      <div class="line" id="f3" role="textbox" aria-label="What it really means"></div>
+    </div>
+
+    <div class="field">
+      <label for="f4">An English idiom that is close</label>
+      <div class="line" id="f4" role="textbox" aria-label="An English idiom that is close"></div>
+      <div class="same-diff" role="group" aria-label="Same or different picture">
+        <span><span class="box" aria-hidden="true"></span> Same picture</span>
+        <span><span class="box" aria-hidden="true"></span> Different picture</span>
+        <span><span class="box" aria-hidden="true"></span> No English match yet</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="f5">Who taught it to me</label>
+      <div class="line" id="f5" role="textbox" aria-label="Who taught it to me"></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2><span class="dot">💬</span> Sentence frames to talk it through</h2>
+    <ul class="frames">
+      <li>In my language we say <span class="blank"></span>, which literally means
+          <span class="blank"></span>, but it really means <span class="blank"></span>.</li>
+      <li>My family uses this saying when <span class="blank"></span>.</li>
+      <li>The picture in my language is <span class="blank"></span>; the English picture is
+          <span class="blank"></span>.</li>
+      <li>An English idiom that is close is <span class="blank"></span> — it is the
+          <b>(same / different)</b> picture.</li>
+      <li>I learned this saying from <span class="blank"></span>, who says it when
+          <span class="blank"></span>.</li>
+      <li>A new English idiom I learned this week is <span class="blank"></span>, and it means
+          <span class="blank"></span>.</li>
+    </ul>
+  </section>
+
+  <section class="teacher">
+    <h3>📌 A note to teachers — sharing out</h3>
+    <p>Invite volunteers to read their completed frames aloud, then chart the class idioms under
+       <b>same picture</b> vs. <b>different picture</b>. Compare images across languages — that
+       cross-linguistic contrast is the metalinguistic teaching point. Honor every language equally;
+       there is no "right" home language. Post the collected idioms on a wall, add them to the class
+       card deck, or record short family read-alouds. Aligns with the Texas ELPS (idiomatic expressions)
+       and WIDA figurative-language expectations.</p>
+  </section>
+
+  <footer>
+    Idioms &amp; Sayings for Multilingual Learners · A TCEA educator resource ·
+    Runs entirely in your browser — no logins, no data collected.
+    <a href="policy.html">Privacy &amp; compliance</a>
+  </footer>
+</div>
+</body>
+</html>

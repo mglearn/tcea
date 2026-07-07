@@ -12,6 +12,7 @@ const SUITES = {
   clear:   { accent: '#7c5cbf', accentD: '#5a3fa0', navy: '#102a54', bandA: 'rgba(124,92,191,.12)', bandB: 'rgba(47,111,224,.08)', policy: true },
   july4:   { accent: '#0a2463', accentD: '#081b4a', navy: '#0a2463', bandA: 'rgba(10,36,99,.10)',  bandB: 'rgba(193,18,31,.08)',  policy: false },
   july5th: { accent: '#0b6b3a', accentD: '#08512c', navy: '#0b6b3a', bandA: 'rgba(11,107,58,.10)', bandB: 'rgba(178,30,40,.08)',  policy: false },
+  idioms:  { accent: '#0e7490', accentD: '#0b5563', navy: '#0b3d5c', bandA: 'rgba(14,116,144,.10)', bandB: 'rgba(245,158,11,.10)', policy: true },
 };
 
 const FONTS = '<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">';
