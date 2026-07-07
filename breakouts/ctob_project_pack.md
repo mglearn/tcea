@@ -87,6 +87,30 @@ allusions, hold the fact/interpretation line).
 
 ---
 
+### 2.5 Making a breakout harder — escalating difficulty
+
+Rigor comes from the **questions and distractors**, not from more clues or new mechanics. Keep the six
+clues and four locks; raise the cognitive demand, and order the four locks so difficulty **escalates**
+(confidence → application → analysis/synthesis → comprehensive):
+
+1. **MC — read it in context.** Don't ask "what does X mean?" (recall). Give a *sentence* and ask what the
+   term means *there*, and make the wrong options **plausible** (other real meanings), not the obvious
+   literal trap. Forces comprehension, not elimination.
+2. **MULTI — subtle-misconception decoy.** Replace the obviously-false item with a **believable-but-wrong**
+   claim — an overgeneralization ("because one example matches, all do"), a false rule ("if two languages
+   share a word, the idiom must match"), a common misconception. Students must reason, not spot the odd one.
+3. **SEQ — synthesis across a passage.** Order a short passage that uses **two** items (two idioms, two
+   events) so meaning is tracked across sentences — not single-item recall.
+4. **WORD — comprehensive.** Require synthesis *across* clues: name the **source domain** ("these idioms
+   come from sports/school"), the **conceptual metaphor** ("time is treated like money"), or trace a word
+   **back to its root** (Spanish *día* ← Latin *diem*). The hardest lock — it rewards reading the whole set.
+
+More levers (borrow as needed): **multi-step reasoning** (analyze/compare before answering); **require
+combining clues** to answer; keep the **one true-but-irrelevant decoy** clue so students must filter noise;
+**progressive skill stacking** (each lock adds one cognitive step); and use each lock's **`reason` panel as
+a built-in tiered hint** (direction → why → the rule). Rule of thumb: **harder, not more complicated** — a
+student should never be confused about the *task*, only challenged by the *thinking*.
+
 ## 3. The five lock types
 
 | type   | UI                              | data fields                                             |
@@ -228,6 +252,24 @@ Once a suite grows past ~10 activities the landing gets long. Two patterns keep 
   so both reuse the same code.
 
 ---
+
+### 6.2 Cross-linguistic suites, a random spotlight, and localizing the landing
+
+- **Cross-linguistic comparison (ML / world-language suites).** Pair each item with its **home-language
+  (L1) equivalent** and tag whether the image is the **same** (hand ↔ *mano*) or **different** (arm & leg
+  ↔ *un ojo*) — that contrast is the metalinguistic teaching point, and it maps to the ELPS cognates
+  expectation and the SLAR *cognados* standard. Make the **`word` lock accept the L1 answer**, not just
+  English. Extend to more languages (French, Latin, …) with a simple map keyed by the English term, and
+  flag Latin/Greek roots for high-school world-language classes.
+- **A random "spotlight" on the landing.** Surface one random item per page load (with a "show another"
+  button) from a small **curated, classroom-appropriate** bank — pure client-side `Math.random()`, no
+  dependencies. A strong "idiom / word of the day" hook.
+- **Localize a hand-authored landing with the same engine.** Load `assets/i18n.js`, drop a
+  `<div data-i18n-picker></div>`, mark chrome with `data-i18n` / `data-i18n-html` / `data-i18n-placeholder`,
+  and `BreakoutI18n.register()` a flat dictionary. For JS-rendered strings (filter chips, counts, card
+  labels, the spotlight), call `BreakoutI18n.t(key,{vars})` and **re-render on the `breakout-i18n:changed`
+  event** so a language switch updates them too. (Heed §4: `data-i18n` values hold literal characters;
+  only `data-i18n-html` values may carry `&amp;`/tags.)
 
 ## 7. Framing sensitive or contested topics
 
