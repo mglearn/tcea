@@ -82,10 +82,12 @@
   }
   function render(){
     var active=state.q.trim()!==''||state.band!=='all';
-    // gateway "search" mode: show nothing until the user types or picks a grade
+    // gateway "search" mode: before the user types, show the FEATURED breakouts (one per band),
+    // not the complete list, so the page never looks empty. Typing/chips then search all.
     if(MODE==='search'&&!active){
-      host.innerHTML='';
-      if(empty){empty.style.display='block';empty.textContent='Type a title, Bible text, story, or grade above to find a breakout — or open the full library.';}
+      var feat=lib.filter(function(x){return x.featured;});
+      host.innerHTML='<div><div class="lib-band-h">★ Featured · start typing to search all '+lib.length+'</div><div class="lib-grid">'+feat.map(cardHtml).join('')+'</div></div>';
+      if(empty)empty.style.display='none';
       if(countEl)countEl.textContent=lib.length+' breakouts';
       return;
     }
