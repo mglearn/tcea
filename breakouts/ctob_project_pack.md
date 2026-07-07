@@ -137,6 +137,14 @@ the localized `word` answers. A generator that zips translated text onto the Eng
 - Auto-builds a `<select>` from `<div data-i18n-picker></div>`.
 - Static chrome uses attributes: `data-i18n` (textContent), `data-i18n-html`,
   `data-i18n-placeholder/title/aria-label/alt`.
+- **Entities vs. textContent — a real bug class.** A `data-i18n` value is written via
+  `textContent`, so it must hold **literal characters, never HTML entities**: use `"Skills & TEKS"`,
+  **not** `"Skills &amp; TEKS"` (the latter renders the literal text `Skills &amp; TEKS`). Only
+  `data-i18n-html` values (and inline HTML) may carry `&amp;`/`&lt;`/`&gt;`. The same rule applies to
+  any card built in JS through an `esc()` helper (catalog/library grids): `esc()` re-escapes `&`, so
+  its source strings must be raw (`&`) — an `&amp;` in the data double-escapes to `&amp;amp;`. When you
+  capture text out of existing HTML to seed a dictionary, **decode entities first**. Rule of thumb: if
+  a value contains no `<tag>`, it should contain no `&amp;`.
 - `BreakoutI18n.t('key',{vars})` for JS-built strings (`{n} of {total}`).
 - Fires `breakout-i18n:changed` so dynamic UI (clue/lock boards) re-renders.
 - `BreakoutI18n.extend(widgetKey, dict)` **merges** extra keys into an already-registered
@@ -161,8 +169,8 @@ chrome + containers (`#clueGrid #locks #lockdots #pcount #resetBtn #modalBg #mod
 
 ## 5. Recommended build pipeline — specs + translation files + a generator
 
-Hand-writing 7-language locale files is error-prone. The reliable pattern (proven on the 24-
-breakout Bible suite):
+Hand-writing 7-language locale files is error-prone. The reliable pattern (proven on the 31-
+breakout Bible suite — every K–12 required-list Bible item, in 7 languages):
 
 1. **English spec files** — one compact JSON array per band holding pure English content
    (`_specs-<band>.json`): each breakout is `{slug,h1,sub,brief,win,clues[6],locks[4]}` with **no
@@ -202,6 +210,23 @@ To "show off" translations, generate **one landing page per language** (`es.html
 In the main nav, collapse languages into a compact **`<select>` dropdown** (not a row of links)
 so the header doesn't overflow. Drive it with `onchange="if(this.value)location.href=this.value"`.
 
+### 6.1 Landing-page IA — search-first, split the heavy stuff out
+
+Once a suite grows past ~10 activities the landing gets long. Two patterns keep it usable:
+
+- **Search-first, results-on-demand.** Give the landing a search box that filters the library by
+  title, topic, source text, and grade — but **render no result cards until the user types or picks a
+  filter** (show a one-line prompt instead, or the few *featured* items). Dumping the whole grid on load
+  buries everything else and reads as clutter. Back the search with a small per-item **keyword string**
+  (source reference + concept + required-list name) so a search for a concept that isn't in the visible
+  title/blurb (e.g. "humility", "anxious") still finds it. Add grade-band **filter chips** with
+  free-text synonyms ("grade 4" → the 3–5 band, "high school" → 9–12).
+- **Split long explainer sections into their own pages.** Keep the landing to hero + a searchable
+  library; move framing / method / strategies / correlation onto dedicated pages reached from a row of
+  numbered **nav pills**. Extract shared styling to one CSS file and the search logic to one JS file,
+  mode-flagged (`search` = hidden until active on the gateway; `browse` = show all on the library page)
+  so both reuse the same code.
+
 ---
 
 ## 7. Framing sensitive or contested topics
@@ -227,6 +252,11 @@ story, genre, theme, archetype, allusion, history — never devotionally**:
 - Keep it **inclusive of students of every faith and none**. Cite the legal basis: *Abington
   School District v. Schempp* (1963) permits objective study of the Bible for its literary/historic
   qualities; note the agency states the same for adopted materials.
+- **Bible-connected ≠ biblical.** A required list may pair scripture with **modern works that echo a
+  biblical value but are not scripture** (e.g. Kindergarten's *You Are Special* by Max Lucado and *The
+  Berenstain Bears and the Golden Rule*). If you build a breakout on one, **label it explicitly** as a
+  modern allegory/story studied as literature — in its intro, its source clue, and the correlation —
+  so it is never mistaken for the biblical text itself.
 
 ### 7.3 Always
 Standards are **"aligned to"** TEKS/CCSS strands — never reproduce official standard text. State
