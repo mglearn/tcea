@@ -213,7 +213,7 @@ window.BREAKOUT = {
      "ico": "🐦",
      "nm": "Early Bird",
      "title": "'The early bird catches the worm'",
-     "body": "This means those who act early get the reward. Spanish says 'a quien madruga, Dios le ayuda' (God helps the early riser) — a different picture, the same lesson."
+     "body": "This means those who act early get the reward. Spanish has a vivid saying about the same idea of not being lazy: 'camarón que se duerme se lo lleva la corriente' (a shrimp that falls asleep gets carried off by the current) — a completely different picture, a related lesson."
     },
     {
      "id": "c5",
@@ -344,7 +344,7 @@ window.BREAKOUT = {
      "ico": "🐦",
      "nm": "El madrugador",
      "title": "'The early bird catches the worm'",
-     "body": "Esto significa que quien actúa temprano obtiene la recompensa. El español dice 'a quien madruga, Dios le ayuda' — otra imagen, la misma lección."
+     "body": "Esto significa que quien actúa temprano obtiene la recompensa. El español tiene un dicho vívido con la misma idea de no ser perezoso: 'camarón que se duerme se lo lleva la corriente' — una imagen completamente distinta, una lección relacionada."
     },
     {
      "id": "c5",

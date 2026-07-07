@@ -869,6 +869,15 @@
     "desc": "A multilingual idioms &amp; sayings suite for grades 3–12 — decode English idioms with your home language as a resource (ESL) and compare sayings across languages, starting with English &amp; Spanish. Aligned to the Texas ELPS (idiomatic expressions) and WIDA; seven languages, no logins, no data collected."
   },
   {
+    "category": "breakouts",
+    "featured": false,
+    "external": false,
+    "href": "breakouts/idioms/correlation.html",
+    "tag": "Alignment",
+    "title": "Idioms &amp; Sayings Standards Alignment (ELPS / TEKS)",
+    "desc": "How the Idioms &amp; Sayings suite aligns to the Texas ELPS (19 TAC §74.4), the ELAR TEKS, and the LOTE TEKS for Bilingual/ESL and multilingual classrooms — with a K–12 public-school appropriateness statement and links to the Texas EL program frameworks."
+  },
+  {
     "category": "assessment",
     "featured": false,
     "external": false,
