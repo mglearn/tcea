@@ -75,6 +75,7 @@
   .bk p{font-weight:600;color:var(--ink-soft);font-size:.82rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
   .bk .tagact{font-size:.66rem;font-weight:700;color:var(--gold-d);text-transform:uppercase;letter-spacing:.06em;margin-top:6px}
   .empty{text-align:center;color:var(--ink-soft);font-weight:600;padding:40px 0}
+  .prompt{text-align:center;color:var(--ink-soft);font-weight:600;font-size:.9rem;padding:18px 0 6px;opacity:.85}
   footer{text-align:center;margin-top:36px;font-size:.8rem;color:var(--ink-soft);font-weight:600}
   footer a{color:var(--navy);font-weight:700}
   .langbar{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-bottom:4px}
@@ -175,6 +176,18 @@
   }
 
   function render() {
+    // Search-first: keep the landing compact — show no result cards until the
+    // user actually searches or picks a filter (the Breakout sets below are the
+    // default way to browse). This avoids dumping all breakouts in advance.
+    var active = state.q.trim() !== '' || state.suite !== 'all' || state.band !== 'all';
+    if (!active) {
+      document.getElementById('grid').innerHTML =
+        '<div class="prompt">' + esc(has('find.hint') ? T('find.hint')
+          : 'Type to search all ' + C.breakouts.length + ' breakouts — or browse the Breakout sets below ↓') + '</div>';
+      document.getElementById('empty').style.display = 'none';
+      document.getElementById('count').textContent = '';
+      return;
+    }
     var list = matches();
     var lang = I ? I.getLang() : 'en';
     document.getElementById('count').textContent = T(list.length === 1 ? 'count.one' : 'count.many', { n: list.length });
