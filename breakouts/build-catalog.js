@@ -208,7 +208,7 @@ const SUITES = [
     landing: 'science/index.html', correlation: 'science/correlation.html' },
   { id: 'idioms', name: 'Idioms & Sayings for Multilingual Learners', accent: '#0e7490',
     desc: 'Decode English idioms with your home language as a resource, and compare sayings across languages — for ESL and multilingual classrooms, grades 3–12. Aligned to the Texas ELPS. Seven languages.',
-    landing: 'idioms/index.html', correlation: 'idioms/correlation.html' },
+    landing: 'idioms/index.html', correlation: 'idioms/correlation.html', answerKey: 'idioms/answer-key.html' },
 ];
 
 const breakouts = [...clearMeta(), ...localeMeta('july4'), ...localeMeta('july5th'), ...bibleMeta(), ...scienceMeta(), ...idiomsMeta()];

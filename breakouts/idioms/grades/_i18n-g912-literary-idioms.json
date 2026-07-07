@@ -1,0 +1,47 @@
+{
+  "es": {
+    "chrome": {
+      "h1": "Wild Goose Chase: modismos nacidos de la literatura",
+      "sub": "Muchos modismos cotidianos fueron acuñados por escritores hace siglos. Sigue su rastro hasta la fuente literaria, compáralos entre idiomas y abre los candados que suben de dificultad.",
+      "briefH": "Rastrea los modismos hasta sus raíces literarias",
+      "briefP": "Algunos modismos que usas a diario fueron inventados por escritores — sobre todo por Shakespeare. Halla el significado, reconoce la alusión y compara entre idiomas.",
+      "winStamp": "ALUSIONES DESCIFRADAS",
+      "winH": "¡Rastreaste la fuente!",
+      "winP": "Emparejaste modismos con significados, detectaste su origen literario y razonaste sobre el lenguaje. Un trabajo refinado de alusión y etimología."
+    },
+    "clues": [
+      { "nm": "Wild Goose Chase", "title": "'A wild goose chase'", "body": "Una 'wild goose chase' (literalmente, una caza del ganso salvaje) es una búsqueda inútil y sin esperanza. Shakespeare la usó en Romeo and Juliet (hacia 1595). El español dice 'una búsqueda inútil' — sin ningún ganso." },
+      { "nm": "Green-Eyed Monster", "title": "'The green-eyed monster'", "body": "'The green-eyed monster' (el monstruo de ojos verdes) significa los celos. Shakespeare lo acuñó en Othello. El español dice 'el monstruo de los celos' — una imagen muy cercana." },
+      { "nm": "In a Pickle", "title": "'In a pickle'", "body": "Estar 'in a pickle' (literalmente, en un encurtido) significa estar en un aprieto. Shakespeare lo usó en The Tempest. El español dice 'estar en un aprieto' — una imagen distinta." },
+      { "nm": "Acuñados por escritores", "title": "De dónde vienen los modismos", "body": "Cientos de modismos ingleses aparecieron primero en la literatura y se repitieron hasta volverse frases cotidianas. Solo Shakespeare le regaló al inglés decenas de ellos." },
+      { "nm": "Alusión", "title": "Los modismos son alusiones", "body": "Cuando una frase remite a un texto más antiguo — una obra de teatro, un mito, la Biblia estudiada como literatura — eso es una alusión. Los modismos son alusiones que hemos dejado de notar." },
+      { "nm": "Dato de la pluma", "title": "Cierto, pero fuera de tema", "body": "Los escritores de la época de Shakespeare escribían con plumas de ave talladas de plumas de ganso. Es un dato histórico verdadero — pero no es lo que significan estos modismos." }
+    ],
+    "locks": [
+      {
+        "title": "Nómbralo y di su fuente",
+        "q": "¿Qué modismo nombra los CELOS, y qué escritor lo acuñó?",
+        "reason": "Pista 2: Shakespeare acuñó 'the green-eyed monster' para los celos en Othello. Reconocer la fuente literaria de un modismo es una destreza de alusión.",
+        "options": ["'the green-eyed monster,' acuñado por Shakespeare en Othello", "'in a pickle,' sacado de un libro de cocina", "'wild goose chase,' sacado de un manual de caza"]
+      },
+      {
+        "title": "¿Qué afirmaciones se sostienen?",
+        "q": "Marca cada afirmación VERDADERA. Una generaliza de más — déjala fuera.",
+        "reason": "La afirmación falsa generaliza de más: Shakespeare acuñó MUCHOS, pero los modismos también vienen de la Biblia como literatura, del mito, la navegación, los deportes y la vida diaria.",
+        "items": ["Un modismo puede ser una alusión a un texto más antiguo que hemos dejado de notar", "Shakespeare acuñó muchos modismos que todavía se usan en el inglés cotidiano", "'Green-eyed monster' (inglés) y 'monstruo de los celos' (español) nombran ambos los celos", "Todo modismo inglés fue inventado por Shakespeare"]
+      },
+      {
+        "title": "Sigue dos modismos",
+        "q": "Toca las tres líneas en el ORDEN que tenga sentido — usando TANTO 'wild goose chase' COMO 'in a pickle.'",
+        "reason": "El orden arma una historia: una búsqueda infructuosa ('wild goose chase') que los deja en apuros ('in a pickle'). Rastrear dos modismos literarios a lo largo de un pasaje es lectura de verdad.",
+        "pads": ["🪿 'Todo el viaje fue una búsqueda inútil.'", "🗺️ 'Manejamos por horas hasta la dirección equivocada.'", "🥒 'Ahora estamos en un aprieto — vamos tarde.'"]
+      },
+      {
+        "title": "Nombra la fuente",
+        "q": "Muchos de los modismos que usas a diario fueron escritos por primera vez por un solo dramaturgo hace unos 400 años. Escribe su apellido.",
+        "reason": "Shakespeare acuñó 'wild goose chase,' 'the green-eyed monster,' 'in a pickle' y decenas más. Rastrear modismos cotidianos hasta una sola fuente literaria es un trabajo avanzado de alusión.",
+        "answer": ["shakespeare"]
+      }
+    ]
+  }
+}

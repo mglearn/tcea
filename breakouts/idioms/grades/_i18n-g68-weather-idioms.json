@@ -1,0 +1,47 @@
+{
+  "es": {
+    "chrome": {
+      "h1": "Bajo el clima: modismos del tiempo",
+      "sub": "El inglés toma prestado del cielo — 'under the weather,' 'the calm before the storm.' Lee las pistas, compara entre idiomas y abre los candados que suben de nivel.",
+      "briefH": "Lee el clima como una metáfora",
+      "briefP": "El inglés usa tormentas, nubes y calma para describir estados de ánimo y momentos. Nota la metáfora, usa el contexto y compara entre idiomas.",
+      "winStamp": "PRONÓSTICO DESCIFRADO",
+      "winH": "¡Cielos despejados!",
+      "winP": "Leíste el clima como metáfora, comparaste idiomas y razonaste sobre los modismos. Un trabajo poderoso con el lenguaje figurado."
+    },
+    "clues": [
+      { "nm": "Bajo el clima", "title": "'Under the weather'", "body": "'Under the weather' (bajo el clima) significa sentirse enfermo — no estar parado bajo las nubes. En español decimos 'estar pachucho' o 'sentirse mal' — sin imagen del clima." },
+      { "nm": "La calma antes de la tormenta", "title": "'The calm before the storm'", "body": "'The calm before the storm' significa un momento tranquilo justo antes de un problema. En español decimos 'la calma antes de la tormenta' — ¡la MISMA imagen!" },
+      { "nm": "En la nube nueve", "title": "'On cloud nine'", "body": "'On cloud nine' (en la nube nueve) significa estar sumamente feliz. En español decimos 'estar en el séptimo cielo' — un número distinto, la misma idea: pura alegría." },
+      { "nm": "Tormenta en una taza", "title": "'A storm in a teacup'", "body": "'A storm in a teacup' (una tormenta en una taza de té) significa un gran alboroto por algo pequeño. En español decimos 'una tormenta en un vaso de agua' — casi la misma imagen." },
+      { "nm": "El clima como ánimo", "title": "El patrón", "body": "En todos los idiomas, el clima representa cómo se sienten las cosas — una tormenta para el problema, la calma para la paz. Algunas coinciden ('la calma antes de la tormenta'); otras cambian la imagen." },
+      { "nm": "Dato del copo de nieve", "title": "Cierto, pero fuera de tema", "body": "No hay dos copos de nieve exactamente iguales, pero todos tienen seis lados. Es un dato científico verdadero — pero no es lo que significan estos modismos." }
+    ],
+    "locks": [
+      {
+        "title": "Léelo en contexto",
+        "q": "Lee: 'El campeonato empieza mañana — ahora mismo es the calm before the storm.' ¿Qué significa AQUÍ?",
+        "reason": "El contexto —un gran evento mañana— muestra una calma tensa antes del problema. Es una metáfora, no un reporte del clima; los distractores no encajan.",
+        "options": ["un momento tranquilo antes de algo grande y estresante", "el clima de verdad está tranquilo", "el partido se canceló"]
+      },
+      {
+        "title": "¿Qué reglas se sostienen?",
+        "q": "Marca cada afirmación VERDADERA. Deja fuera la que solo suena verdadera.",
+        "reason": "La afirmación falsa es la trampa: el clima es una imagen, no el significado. Las otras tres son las verdaderas reglas para leer modismos.",
+        "items": ["No puedes obtener el significado de un modismo traduciendo sus palabras una por una", "'Calm before the storm' usa casi la MISMA imagen en inglés y en español", "La misma idea puede cambiar su imagen entre idiomas ('cloud nine' → 'séptimo cielo')", "Todo modismo del clima trata en realidad sobre el clima"]
+      },
+      {
+        "title": "Sigue dos modismos",
+        "q": "Toca las tres líneas en el ORDEN que tiene sentido — usando AMBOS 'under the weather' y 'on cloud nine.'",
+        "reason": "El orden sigue una recuperación: enfermo ('under the weather'), tratamiento, y luego alegría ('on cloud nine'). Seguir dos modismos a lo largo de un texto es lectura de verdad.",
+        "pads": ["🤒 'El lunes estaba under the weather.'", "💊 'Pero la medicina hizo efecto rápido.'", "☁️ '¡Para el viernes estaba on cloud nine!'"]
+      },
+      {
+        "title": "Nombra la fuente",
+        "q": "Todos estos modismos toman sus imágenes de una parte de la naturaleza. Nómbrala (una palabra).",
+        "reason": "Cada modismo aquí usa el CLIMA — tormentas, nubes, calma — para describir sentimientos y momentos. Detectar el dominio compartido de origen es síntesis.",
+        "answer": ["clima", "tiempo", "cielo"]
+      }
+    ]
+  }
+}

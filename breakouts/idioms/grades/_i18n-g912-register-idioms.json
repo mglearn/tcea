@@ -1,0 +1,47 @@
+{
+  "es": {
+    "chrome": {
+      "h1": "Registro y tono: cuándo usar un modismo",
+      "sub": "Los modismos son coloridos, pero no sirven para toda ocasión. Aprende cuándo encaja un modismo y cuándo no, compáralo con el español y abre los candados.",
+      "briefH": "Ajusta el modismo al momento",
+      "briefP": "Los modismos suelen ser informales. Saber CUÁNDO usar uno —y cuándo elegir un lenguaje sencillo y formal— es una destreza avanzada. Lee atento al registro y compáralo con el español.",
+      "winStamp": "REGISTRO DOMINADO",
+      "winH": "¡Leíste el ambiente!",
+      "winP": "Juzgaste cuándo encaja un modismo, comparaste el registro entre idiomas y razonaste sobre el tono. Eso es un uso del lenguaje avanzado y pragmático."
+    },
+    "clues": [
+      { "nm": "Informal por naturaleza", "title": "Los modismos suelen ser casuales", "body": "La mayoría de los modismos son INFORMALES: perfectos para hablar con amigos ('hit the books' = darle a los libros, 'a piece of cake' = pan comido), pero arriesgados en un ensayo formal o una solicitud de empleo." },
+      { "nm": "Registro", "title": "Qué significa 'registro'", "body": "El 'registro' es qué tan formal es tu lenguaje. Ajustas tu registro a tu público y tu propósito: casual con los amigos, formal en una entrevista o un trabajo académico." },
+      { "nm": "En un ensayo formal", "title": "Cuándo no encaja un modismo", "body": "En un ensayo formal, un modismo puede sonar fuera de lugar. 'The economy went belly-up' (la economía se fue a pique) es demasiado casual; 'la economía colapsó' encaja en un registro formal." },
+      { "nm": "Todo idioma tiene registro", "title": "No solo el inglés", "body": "El registro existe en todos los idiomas. El español lo marca con 'tú' (informal) frente a 'usted' (formal), y con palabras casuales frente a formales. Elegir el nivel correcto es parte de dominar una lengua." },
+      { "nm": "Tono", "title": "Los modismos fijan un tono", "body": "Los modismos también fijan un TONO: juguetón, directo, cálido. La misma idea puede sonar amistosa ('give it a shot' = darle una oportunidad) o formal ('hacer un intento'). Eliges según el efecto que buscas." },
+      { "nm": "Dato del papel", "title": "Cierto, pero fuera de tema", "body": "El papel de impresora estándar mide unos 0,1 mm de grosor, y el A4 es el tamaño más común del mundo. Es un dato verdadero, pero no tiene que ver con lo que significa el registro." }
+    ],
+    "locks": [
+      {
+        "title": "Ajusta el registro",
+        "q": "Estás escribiendo un ensayo FORMAL para una beca. ¿Qué oración encaja en el registro?",
+        "reason": "Un ensayo formal exige un lenguaje sencillo y formal. Los modismos ('hit the books,' 'a piece of cake') son demasiado casuales para ese público: la destreza está en ajustar el registro al propósito.",
+        "options": ["'Trabajé duro para alcanzar mis metas.'", "'De verdad le di a los libros ('hit the books') para alcanzar mis metas.'", "'Alcanzar mis metas fue pan comido ('a piece of cake').'"]
+      },
+      {
+        "title": "¿Qué afirmaciones se sostienen?",
+        "q": "Marca cada afirmación VERDADERA sobre el registro. Deja fuera la falsa.",
+        "reason": "La afirmación falsa ignora el registro: los modismos casi nunca encajan en la escritura formal. Saber CUÁNDO usar uno es justo el objetivo.",
+        "items": ["La mayoría de los modismos pertenecen a un registro informal", "Eliges tu registro para ajustarlo a tu público y tu propósito", "El registro también existe en otros idiomas (el español 'tú' frente a 'usted')", "Los modismos son apropiados en toda situación, incluida la escritura formal"]
+      },
+      {
+        "title": "Ordena la decisión",
+        "q": "Toca los tres pasos en el ORDEN que usarías para decidir si conviene usar un modismo.",
+        "reason": "El orden es el proceso de decisión: público y propósito → registro → elección de palabras. Hacer del registro un paso consciente es un uso del lenguaje avanzado y pragmático.",
+        "pads": ["🎚️ 'Eso me indica mi registro: casual o formal.'", "🎯 'Primero: ¿quién es mi público y cuál es mi propósito?'", "✅ 'Luego elijo: un modismo o palabras sencillas y formales.'"]
+      },
+      {
+        "title": "Nombra el registro",
+        "q": "Los modismos suelen pertenecer a qué registro: ¿formal o informal? Escríbelo (una palabra).",
+        "reason": "Los modismos suelen ser INFORMALES. Nombrar su registro por defecto —y saber cambiar a un lenguaje sencillo cuando se exige formalidad— es una destreza pragmática sofisticada.",
+        "answer": ["informal", "coloquial"]
+      }
+    ]
+  }
+}

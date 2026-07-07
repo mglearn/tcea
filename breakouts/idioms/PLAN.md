@@ -13,6 +13,29 @@ it?"* This is the differentiator, and it's exactly what the research supports.
 
 ---
 
+## 0. Status & roadmap — continue here
+
+**Live now** (`breakouts/idioms/`, all deployed):
+- [x] Suite scaffold + **search-first landing** with a **7-language switcher** (BreakoutI18n, incl. RTL)
+- [x] **10 breakouts**, English + Spanish — 3–5: body, animal, food · 6–8: sports/school, time/money, color/emotion, weather · 9–12: proverbs+Latin, literary (Shakespeare), register/tone
+- [x] **Escalating difficulty** on the 6–12 breakouts (context MC → subtle-misconception multi → two-idiom synthesis seq → comprehensive word)
+- [x] **Random idiom spotlight** — 40 idioms, English + Spanish + French, same/different-picture tag; optional images auto-display if present (spec in `SPOTLIGHT-IMAGES.md`)
+- [x] **Standards alignment page** (`correlation.html`) — ELPS + ELAR + SLAR + LOTE + K–12 appropriateness statement
+- [x] **Teacher answer key** (`answer-key.html`, password-gated; passcode held by the author, not in the repo)
+- [x] Wired into the unified catalog + root launch-page search + RSS
+
+**To do (pick up here, roughly in priority order):**
+- [ ] **Teacher-support pages** — `udl.html` / `elps.html` / `guide.html`. Reuse the shared PD i18n system: add an `idioms` key to `_pd/suite/<lang>.json` (7 languages), then generate with `gen-pd-pages.js`. *The last of the "round it out" items.*
+- [ ] **Phase 2 — the other 5 languages** for breakout *content*: Vietnamese, Arabic, Hindi, Urdu, Chinese. (UI chrome is already 7-language; only clue/lock content is EN+ES.) One `_i18n-<band>-<slug>.json` per language, parallel-agent translation — see README → "Add a breakout."
+- [ ] **Phase 3 — French & Latin breakouts.** The spotlight already shows FR/Latin; build full units, aligned to LOTE (19 TAC Ch. 114, incl. Classical Languages, Subch. D).
+- [ ] **Optional: idiom spotlight images** — generate the 40 illustrations listed in `SPOTLIGHT-IMAGES.md` into `img/`.
+- [ ] **Companion pieces** — printable idiom card decks; a "Bring an idiom from home" family/L1 task.
+- [ ] **Optional: fuller Phase 1** — g35 has 3 breakouts; add 1–2 more for symmetry with 6–8/9–12 (4 / 3).
+
+**Build commands:** `node breakouts/idioms/build.js` (breakouts + manifest) · `node breakouts/idioms/build-answer-key.js '<passcode>'` (answer key) · `cd breakouts && node build-catalog.js` (site catalog).
+
+---
+
 ## 1. Why idioms, and why this design (evidence-grounded)
 
 - **Idioms are a documented barrier and a required standard.** Colorín Colorado classifies everyday
