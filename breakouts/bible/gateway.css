@@ -20,7 +20,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .navlinks a:hover{background:rgba(255,255,255,0.12);color:#fff}
 
 /* hero */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:88px 32px 48px;overflow:hidden;background:radial-gradient(ellipse 70% 55% at 50% 40%,rgba(58,110,165,0.28)0%,transparent 65%),radial-gradient(ellipse 40% 40% at 15% 75%,rgba(42,84,130,0.45)0%,transparent 55%),radial-gradient(ellipse 30% 35% at 85% 20%,rgba(91,143,192,0.15)0%,transparent 50%)}
+.hero{position:relative;min-height:auto;display:flex;align-items:center;justify-content:center;padding:104px 32px 44px;overflow:hidden;background:radial-gradient(ellipse 70% 55% at 50% 40%,rgba(58,110,165,0.28)0%,transparent 65%),radial-gradient(ellipse 40% 40% at 15% 75%,rgba(42,84,130,0.45)0%,transparent 55%),radial-gradient(ellipse 30% 35% at 85% 20%,rgba(91,143,192,0.15)0%,transparent 50%)}
 .hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(5,76,140,0.05)1px,transparent 1px),linear-gradient(90deg,rgba(5,76,140,0.05)1px,transparent 1px);background-size:56px 56px;pointer-events:none}
 .hero-inner{position:relative;z-index:1;max-width:920px;text-align:center}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;background:#eef2fb;border:1px solid rgba(5,76,140,0.2);border-radius:100px;padding:6px 18px;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:#054c8c;animation:fadeDown .7s 0s ease both}
@@ -140,7 +140,7 @@ footer{position:relative;z-index:1;background:var(--forest-deep);border-top:1px 
 .langsel option{color:#161c2e;background:#fff}
 
 /* search-first gateway header + on-demand find */
-.find-sec{max-width:1200px;margin:0 auto;padding:96px 32px 0;position:relative;z-index:1}
+.find-sec{max-width:1200px;margin:0 auto;padding:36px 32px 0;position:relative;z-index:1}
 .find-sec h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:700;line-height:1.08;margin-bottom:8px}
 .find-sec p{font-size:.95rem;font-weight:300;color:rgba(81,96,121,0.95);max-width:720px;margin-bottom:18px}
 .find-sec .lib-toolbar{padding:0}
@@ -164,5 +164,5 @@ main.subpage{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:
   .slide-panel{padding:26px 22px 22px;min-height:150px;flex-direction:row;align-items:flex-end;justify-content:space-between}
   footer{flex-direction:column;align-items:flex-start;gap:12px;padding:24px 20px}
   .hero-tally{gap:22px}
-  .find-sec{padding-top:84px}
+  .find-sec{padding-top:28px}
 }
