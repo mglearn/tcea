@@ -815,6 +815,51 @@
     "desc": "A standards correlation guide mapping the twelve July 5 &amp; Black Freedom Holidays breakouts by grade band to Texas Essential Knowledge and Skills, Common Core literacy standards, and the CLEAR thinking process."
   },
   {
+    "category": "breakouts",
+    "featured": true,
+    "external": false,
+    "href": "breakouts/index.html",
+    "tag": "Breakout Library",
+    "title": "Critical Thinking Online Breakouts &mdash; Full Library",
+    "desc": "A single searchable library of every TCEA Critical Thinking Online Breakout (CTOB) &mdash; 193 self-contained, browser-based reasoning escapes across five suites (CLEAR, Fourth of July, July 5 &amp; Black Freedom Holidays, Bible as Literature, and Science) in seven languages. Search by name, topic, or grade; no logins, no data collected."
+  },
+  {
+    "category": "breakouts",
+    "featured": false,
+    "external": false,
+    "href": "breakouts/bible/index.html",
+    "tag": "Breakout Library",
+    "title": "Bible as Literature Breakouts",
+    "desc": "Thirty-one critical-thinking breakouts on the Texas-adopted Bible stories, studied academically &mdash; as literature and history, never devotionally. Covers every K&ndash;12 required-list Bible item (creation, Noah, David &amp; Goliath, the Psalms, the Prodigal Son, Job, 1 Corinthians 13, and more) across four grade bands, in seven languages."
+  },
+  {
+    "category": "breakouts",
+    "featured": false,
+    "external": false,
+    "href": "breakouts/bible/correlation.html",
+    "tag": "Alignment",
+    "title": "Bible as Literature Breakouts Correlation Guide",
+    "desc": "A TEKS correlation guide mapping each Bible as Literature breakout to the ELAR strands, the CLEAR reasoning focus, and the high-effect-size instructional strategy engineered into its locks."
+  },
+  {
+    "category": "breakouts",
+    "featured": false,
+    "external": false,
+    "href": "breakouts/science/index.html",
+    "tag": "Breakout Library",
+    "title": "Science Critical Thinking Breakouts (Grades K&ndash;8)",
+    "desc": "Critical Thinking Online Breakouts across the Texas science TEKS, Grades K&ndash;8 &mdash; from pushes and pulls to conservation of mass. Each grade has a featured breakout, a concept set, a hands-on STEM engineering design challenge, and a student word bank, in seven languages."
+  },
+  {
+    "category": "breakouts",
+    "featured": false,
+    "external": false,
+    "href": "breakouts/science/correlation.html",
+    "tag": "Alignment",
+    "title": "Science Breakouts Correlation Guide",
+    "desc": "A standards correlation guide mapping the Science Critical Thinking Breakouts by grade to the Texas science TEKS and the reasoning moves engineered into each lock."
+  },
+  {
     "category": "assessment",
     "featured": false,
     "external": false,
