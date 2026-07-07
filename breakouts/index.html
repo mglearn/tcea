@@ -206,7 +206,7 @@
         '</a>';
     }).join('');
   }
-  function shortSuite(id) { return id === 'clear' ? 'CLEAR' : id === 'july4' ? 'July 4' : id === 'july5th' ? 'July 5' : id === 'bible' ? 'Bible' : id === 'science' ? 'Science' : id; }
+  function shortSuite(id) { return id === 'clear' ? 'CLEAR' : id === 'july4' ? 'July 4' : id === 'july5th' ? 'July 5' : id === 'bible' ? 'Bible' : id === 'science' ? 'Science' : id === 'idioms' ? 'Idioms' : id; }
 
   document.getElementById('q').addEventListener('input', function (e) { state.q = e.target.value; render(); });
   document.getElementById('rand').addEventListener('click', function () {

@@ -1,0 +1,47 @@
+{
+  "es": {
+    "chrome": {
+      "h1": "Modismos con animales: cuando las palabras se vuelven salvajes",
+      "sub": "Los modismos en inglés están llenos de animales, ¡pero nadie habla de verdad de mascotas! Lee las pistas, compáralas con el español y abre los candados.",
+      "briefH": "Descubre el verdadero significado detrás de los animales",
+      "briefP": "Un modismo es una frase cuyo significado no se obtiene sumando las palabras. Estos usan animales, pero el significado está escondido. Encuéntralo y compara el inglés con el español. ¡Tu idioma es una pista!",
+      "winStamp": "MODISMOS RESUELTOS",
+      "winH": "¡Domaste los modismos!",
+      "winP": "Miraste más allá de los animales para hallar el significado real y comparaste dos idiomas. Así es exactamente como los buenos lectores manejan el lenguaje figurado."
+    },
+    "clues": [
+      { "nm": "Gatos y perros", "title": "'Raining cats and dogs'", "body": "'It's raining cats and dogs' significa que llueve muy fuerte, ¡no que caen animales del cielo! El español usa otra imagen: 'llueve a cántaros' (llueve como si vaciaran cántaros)." },
+      { "nm": "Para tus caballos", "title": "'Hold your horses'", "body": "'Hold your horses' significa espera, ten paciencia, aunque no haya ningún caballo. En español decimos 'para el carro' (detén la carreta): otra imagen, la misma idea: más despacio." },
+      { "nm": "Un pajarito", "title": "'A little bird told me'", "body": "'A little bird told me' significa que alguien me contó un secreto y no diré quién. En español decimos 'me lo dijo un pajarito': ¡la MISMA imagen, un pajarito!" },
+      { "nm": "El gato en la bolsa", "title": "'Let the cat out of the bag'", "body": "'Let the cat out of the bag' significa revelar un secreto sin querer. No hay ningún gato de verdad. En español decimos 'descubrir el pastel' (destapar el pastel): una imagen muy distinta, la misma idea." },
+      { "nm": "¿Igual o distinto?", "title": "Cómo viaja la imagen", "body": "Entre un idioma y otro, una idea puede mantener la misma imagen (little bird = pajarito) o cambiarla (cats and dogs → cántaros). Notar cuál es cuál te convierte en detective del lenguaje." },
+      { "nm": "Dato de elefante", "title": "Cierto, pero fuera de tema", "body": "El elefante es el animal terrestre más grande y puede pesar más de 6 toneladas. Es un dato verdadero sobre animales, pero no tiene nada que ver con lo que significan estos modismos." }
+    ],
+    "locks": [
+      {
+        "title": "¿Qué significa de verdad?",
+        "q": "¿Qué significa realmente 'it's raining cats and dogs'?",
+        "reason": "La pista 1 dice que significa que llueve muy fuerte. La imagen literal —animales que caen— es la trampa. Los modismos casi nunca significan lo que dicen las palabras.",
+        "options": ["Llueve muy fuerte", "Caen animales del cielo", "Debes meter a tus mascotas en casa"]
+      },
+      {
+        "title": "¿Qué es cierto sobre los modismos?",
+        "q": "Marca cada afirmación VERDADERA (usa las pistas). Deja fuera la falsa.",
+        "reason": "La afirmación falsa es la trampa: el animal es una imagen, no el significado. Las tres afirmaciones verdaderas salen directo de las pistas.",
+        "items": ["El significado de un modismo no es la suma de sus palabras", "El inglés 'a little bird told me' y el español 'me lo dijo un pajarito' usan la MISMA imagen: un pajarito", "'Hold your horses' significa esperar y tener paciencia", "Siempre puedes saber qué significa un modismo con animales pensando en el animal"]
+      },
+      {
+        "title": "Ordena la conversación",
+        "q": "Toca las tres líneas en el ORDEN que hace que 'hold your horses' tenga sentido.",
+        "reason": "El orden muestra el significado: una persona se apura, la otra dice 'hold your horses' (espera), y luego acuerdan esperar. Los modismos dependen del contexto.",
+        "pads": ["✋ 'Hold your horses — ¡no estoy listo!'", "🏃 '¡Salgamos ahora mismo, apúrate!'", "😌 'Está bien, esperaré un minuto.'"]
+      },
+      {
+        "title": "Compara los dos idiomas",
+        "q": "En inglés un secreto vino de 'a little ___.' En español, 'me lo dijo un ___' (pajarito). Escribe ese animal en inglés O en español.",
+        "reason": "Ambos idiomas usan el ave: inglés 'bird,' español 'pájaro/pajarito.' Cuando la imagen coincide entre idiomas, te ayuda a recordar el modismo.",
+        "answer": ["pájaro", "pajaro", "pajarito", "un pajarito", "ave"]
+      }
+    ]
+  }
+}

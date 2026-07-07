@@ -1,0 +1,47 @@
+{
+  "es": {
+    "chrome": {
+      "h1": "Refranes, dichos y raíces latinas",
+      "sub": "Muchos dichos en inglés son antiguos, y algunos provienen directamente del latín. Lee las pistas, síguelas a través de los idiomas y distingue el dicho de su significado.",
+      "briefH": "Sigue los dichos hasta su significado y sus raíces",
+      "briefP": "Un refrán es un dicho breve y tradicional que encierra una lección. Algunos dichos en inglés incluso provienen del latín. Halla el significado, compáralo entre idiomas y observa de dónde procede.",
+      "winStamp": "DICHOS DESCIFRADOS",
+      "winH": "¡Sabiduría descifrada!",
+      "winP": "Relacionaste refranes con sus significados, los comparaste entre idiomas y rastreaste una raíz latina: un trabajo sofisticado con el lenguaje figurado y tradicional."
+    },
+    "clues": [
+      { "nm": "Manzana y árbol", "title": "'The apple doesn't fall far from the tree'", "body": "Este refrán significa que los hijos se parecen a sus padres. El español dice 'de tal palo, tal astilla' — otra imagen, la misma lección." },
+      { "nm": "Más vale tarde", "title": "'Better late than never'", "body": "'Better late than never' (mejor tarde que nunca) significa que hacer algo tarde es mejor que no hacerlo. El español dice 'más vale tarde que nunca' — una correspondencia casi exacta, frase por frase." },
+      { "nm": "Carpe diem", "title": "Un dicho latino dentro del inglés", "body": "'Carpe diem' es una frase latina usada en inglés que significa 'aprovecha el día' — sácale el máximo al ahora. Como el español también desciende del latín, comparte la raíz: la palabra española 'día' proviene del latín 'diem.'" },
+      { "nm": "El madrugador", "title": "'The early bird catches the worm'", "body": "Esto significa que quien actúa temprano obtiene la recompensa. El español dice 'a quien madruga, Dios le ayuda' — otra imagen, la misma lección." },
+      { "nm": "Cómo viajan los dichos", "title": "A través del tiempo y los idiomas", "body": "Los refranes viajan a través del tiempo y de los idiomas. Algunos coinciden casi por completo ('better late than never' = 'más vale tarde que nunca'); otros cambian la imagen; y algunos, como 'carpe diem,' provienen directamente del latín — el antepasado del español, el francés y el italiano." },
+      { "nm": "Dato del pergamino", "title": "Cierto, pero fuera de tema", "body": "Uno de los pergaminos antiguos más largos jamás hallados mide más de 40 metros. Es un dato histórico verdadero — pero no tiene nada que ver con lo que significan estos dichos." }
+    ],
+    "locks": [
+      {
+        "title": "¿Qué significa el latín?",
+        "q": "¿Qué significa la frase latina 'carpe diem' en inglés?",
+        "reason": "La pista 3 dice que 'carpe diem' significa 'aprovecha el día.' Reconocer una frase latina que vive dentro del inglés es una destreza clave para lectores avanzados y estudiantes de lenguas del mundo.",
+        "options": ["Aprovecha el día — sácale el máximo al ahora", "Cuidado con el perro", "Roma no se construyó en un día"]
+      },
+      {
+        "title": "¿Qué es cierto sobre estos dichos?",
+        "q": "Marca cada afirmación VERDADERA (usa las pistas). Deja fuera la falsa.",
+        "reason": "La afirmación falsa es la trampa: muchos dichos son antiguos, y algunos provienen del latín. Las tres afirmaciones verdaderas salen directamente de las pistas.",
+        "items": ["Un refrán es un dicho breve y tradicional que encierra una lección", "El inglés 'better late than never' y el español 'más vale tarde que nunca' coinciden casi frase por frase", "La palabra latina 'diem' (en carpe diem) es la raíz de la palabra española 'día'", "Todos los dichos en inglés se inventaron en los últimos cien años"]
+      },
+      {
+        "title": "Construye el significado en orden",
+        "q": "Toca las tres líneas en el ORDEN que explica 'the early bird catches the worm.'",
+        "reason": "El orden construye la lección: actuar temprano, obtener las primeras oportunidades y el refrán que lo nombra. Los refranes comprimen toda una lección en una sola línea.",
+        "pads": ["🐛 'Así consigue las mejores oportunidades primero.'", "🌅 'Ella se despierta antes que todos los demás.'", "🏆 '¡El madrugador atrapa al gusano!'"]
+      },
+      {
+        "title": "Rastrea la raíz latina",
+        "q": "El latín 'diem' (en 'carpe diem') le dio al español su palabra para 'day' (día). Escribe esa palabra española — o su significado en inglés, 'day.'",
+        "reason": "Latín 'diem' → español 'día' (el inglés 'day' tiene el mismo significado). El latín es la raíz compartida que conecta el español, el francés y el italiano — una idea central para el estudio de las lenguas del mundo.",
+        "answer": ["día", "dia"]
+      }
+    ]
+  }
+}

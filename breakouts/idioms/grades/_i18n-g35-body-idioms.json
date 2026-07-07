@@ -1,0 +1,47 @@
+{
+  "es": {
+    "chrome": {
+      "h1": "Modismos del cuerpo: decirlo sin decirlo",
+      "sub": "El inglés está lleno de modismos que usan partes del cuerpo, ¡pero las palabras no significan lo que dicen! Lee las pistas, compáralas con el español y abre los candados.",
+      "briefH": "Descubre lo que de verdad significan los modismos",
+      "briefP": "Un modismo es una frase cuyo significado no se obtiene sumando las palabras. Fíjate en la trampa (la imagen literal), encuentra el significado real y compara el inglés con el español. ¡Tu idioma es una pista, no un problema!",
+      "winStamp": "MODISMOS RESUELTOS",
+      "winH": "¡Descifraste el código!",
+      "winP": "Distinguiste la imagen literal del significado real y comparaste dos idiomas. Así es exactamente como los buenos lectores manejan el lenguaje figurado."
+    },
+    "clues": [
+      { "nm": "Echar una mano", "title": "'Lend a hand' (echar una mano)", "body": "'To lend a hand' significa ayudar a alguien. ¡No regalas tu mano de verdad! En español decimos 'echar una mano' — la misma imagen: una mano." },
+      { "nm": "Un brazo y una pierna", "title": "'Cost an arm and a leg'", "body": "Si algo 'costs an arm and a leg' (cuesta un brazo y una pierna), es muy caro. El español usa otra parte del cuerpo: 'costar un ojo de la cara' — un ojo, no un brazo y una pierna." },
+      { "nm": "Tomar el pelo", "title": "'Pull someone's leg'", "body": "'To pull someone's leg' (tirar de la pierna de alguien) significa bromear, no tocarle la pierna. En español decimos 'tomar el pelo' — otra imagen, pero la misma idea: estar bromeando." },
+      { "nm": "La idea clave", "title": "Cómo funcionan los modismos", "body": "En todo modismo, las palabras no suman su significado. Los buenos lectores usan la oración que lo rodea (el contexto) para hallar el significado real, y lo comparan con cómo lo dice su propio idioma." },
+      { "nm": "Distinta imagen", "title": "Misma idea, distinta imagen", "body": "Los idiomas suelen compartir una idea, pero la pintan con imágenes distintas. A veces la imagen coincide (hand = mano); a veces cambia (un brazo y una pierna → un ojo). Notarlo te convierte en detective del lenguaje." },
+      { "nm": "Dato de huesos", "title": "Cierto, pero fuera de tema", "body": "El cuerpo humano adulto tiene 206 huesos. Es un dato científico verdadero sobre el cuerpo, pero no tiene nada que ver con lo que significan estos modismos." }
+    ],
+    "locks": [
+      {
+        "title": "¿Qué significa de verdad?",
+        "q": "¿Qué significa realmente 'cost an arm and a leg'?",
+        "reason": "La pista 2 dice que significa 'muy caro.' La imagen literal —dar partes del cuerpo— es la trampa. Los modismos casi nunca significan lo que dicen las palabras.",
+        "options": ["Es muy caro", "Tienes que dar tu brazo y tu pierna", "Te duele el brazo y la pierna"]
+      },
+      {
+        "title": "¿Qué es cierto sobre los modismos?",
+        "q": "Marca cada afirmación VERDADERA sobre los modismos (usa las pistas). Deja fuera la falsa.",
+        "reason": "La afirmación falsa es la trampa: traducir palabra por palabra es justo lo que NO funciona con los modismos. Las tres verdaderas salen de las pistas.",
+        "items": ["El significado de un modismo no es la suma de sus palabras", "El inglés 'lend a hand' y el español 'echar una mano' usan la misma imagen: una mano", "Distintos idiomas pueden compartir una idea pero pintarla con otra imagen", "Siempre puedes entender un modismo traduciendo cada palabra por separado"]
+      },
+      {
+        "title": "Ordena la broma",
+        "q": "Toca las tres líneas de la conversación en el ORDEN que hace que 'pull my leg' tenga sentido.",
+        "reason": "La broma solo funciona en orden: la afirmación sorprendente, luego la pregunta '¿me estás tomando el pelo?' (¿me estás bromeando?), y por fin la revelación de que era broma. Los modismos dependen del contexto.",
+        "pads": ["🤔 '¿Me estás tomando el pelo?'", "😲 '¡Gané un millón de dólares!'", "😅 'Sí, ¡solo estaba bromeando!'"]
+      },
+      {
+        "title": "Compara los dos idiomas",
+        "q": "En inglés decimos 'lend a hand.' En español decimos 'echar una ___' — la MISMA parte del cuerpo. Escribe esa parte del cuerpo en inglés O en español.",
+        "reason": "Ambos idiomas usan la mano: inglés 'hand,' español 'mano.' Tu idioma es una pista: cuando la imagen coincide entre idiomas, te ayuda a recordar el modismo.",
+        "answer": ["mano", "la mano", "una mano"]
+      }
+    ]
+  }
+}

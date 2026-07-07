@@ -106,6 +106,35 @@ function bibleMeta() {
   return out;
 }
 
+function idiomsMeta() {
+  const out = [];
+  const dir = path.join(ROOT, 'idioms/grades');
+  if (!fs.existsSync(dir)) return out;
+  const bandOf = { g35: '3–5', g68: '6–8', g912: '9–12' };
+  const files = fs.readdirSync(dir).filter(f => f.endsWith('.js')).sort();
+  for (const f of files) {
+    const slug = f.replace('.js', '');
+    const m = slug.match(/^(g35|g68|g912)/);
+    if (!m) continue;
+    try {
+      const w = {}; eval(fs.readFileSync(path.join(dir, f), 'utf8').replace('window.BREAKOUT', 'w.BREAKOUT'));
+      const b = w.BREAKOUT, en = b.CONTENT.en;
+      const kw = [
+        ...en.clues.flatMap(c => [c.nm, c.title, c.body]),
+        ...en.locks.flatMap(l => [l.q, l.reason, ...(l.options || []), ...((l.items || []).map(i => i.t))]),
+      ].join(' ').replace(/\s+/g, ' ').toLowerCase().slice(0, 600);
+      out.push({
+        suite: 'idioms', band: b.band || bandOf[m[1]], slug,
+        title: b.UI.en['header.h1'],
+        desc: b.UI.en['header.sub'],
+        href: `idioms/grades/${slug}-student.html`,
+        kw, t: uiT(b.UI),
+      });
+    } catch (e) { console.error('skip idioms', f, e.message); }
+  }
+  return out;
+}
+
 function scienceMeta() {
   const out = [];
   const bandOf = g => (g === 'K' || +g <= 2 ? 'K–2' : +g <= 5 ? '3–5' : '6–8');
@@ -177,9 +206,12 @@ const SUITES = [
   { id: 'science', name: 'Science (Grades 1–8)', accent: '#0a6b52',
     desc: 'Critical Thinking Online Breakouts across the Texas science TEKS — from pushes and pulls to conservation of mass — each grade with a featured breakout, a concept set (one per key idea), a hands-on STEM engineering design challenge, and a student word bank. Seven languages.',
     landing: 'science/index.html', correlation: 'science/correlation.html' },
+  { id: 'idioms', name: 'Idioms & Sayings for Multilingual Learners', accent: '#0e7490',
+    desc: 'Decode English idioms with your home language as a resource, and compare sayings across languages — for ESL and multilingual classrooms, grades 3–12. Aligned to the Texas ELPS. Seven languages.',
+    landing: 'idioms/index.html' },
 ];
 
-const breakouts = [...clearMeta(), ...localeMeta('july4'), ...localeMeta('july5th'), ...bibleMeta(), ...scienceMeta()];
+const breakouts = [...clearMeta(), ...localeMeta('july4'), ...localeMeta('july5th'), ...bibleMeta(), ...scienceMeta(), ...idiomsMeta()];
 const catalog = { generated: cp.execSync('git log -1 --format=%cI 2>/dev/null || true').toString().trim() || '', suites: SUITES, breakouts };
 fs.writeFileSync(path.join(ROOT, 'catalog.js'), 'window.CATALOG = ' + JSON.stringify(catalog) + ';\n');
 console.log(`catalog.js: ${SUITES.length} suites, ${breakouts.length} breakouts (${breakouts.filter(b => b.activity).length} practice activities)`);

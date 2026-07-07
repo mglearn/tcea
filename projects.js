@@ -860,6 +860,15 @@
     "desc": "A standards correlation guide mapping the Science Critical Thinking Breakouts by grade to the Texas science TEKS and the reasoning moves engineered into each lock."
   },
   {
+    "category": "breakouts",
+    "featured": false,
+    "external": false,
+    "href": "breakouts/idioms/index.html",
+    "tag": "Breakout Library",
+    "title": "Idioms &amp; Sayings for Multilingual Learners",
+    "desc": "A multilingual idioms &amp; sayings suite for grades 3–12 — decode English idioms with your home language as a resource (ESL) and compare sayings across languages, starting with English &amp; Spanish. Aligned to the Texas ELPS (idiomatic expressions) and WIDA; seven languages, no logins, no data collected."
+  },
+  {
     "category": "assessment",
     "featured": false,
     "external": false,

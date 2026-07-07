@@ -1,0 +1,47 @@
+{
+  "es": {
+    "chrome": {
+      "h1": "Tiempo y dinero: modismos que cuestan",
+      "sub": "El inglés trata el tiempo y el dinero como si fueran objetos — 'time flies' (el tiempo vuela), 'break the bank' (costar un dineral). Lee las pistas, compáralas entre idiomas y abre los candados.",
+      "briefH": "Lee el tiempo y el dinero como metáforas",
+      "briefP": "El inglés suele tratar el tiempo y el dinero como si fueran objetos que puedes ahorrar, gastar o perder. Fíjate en la metáfora, encuentra el significado y compara entre idiomas.",
+      "winStamp": "MODISMOS DESCIFRADOS",
+      "winH": "¡En el clavo!",
+      "winP": "Leíste el tiempo y el dinero como metáforas, hallaste sus significados y comparaste idiomas — un buen razonamiento sobre el lenguaje figurado."
+    },
+    "clues": [
+      { "nm": "El tiempo vuela", "title": "'Time flies'", "body": "'Time flies' significa que el tiempo pasa muy rápido. El español dice 'el tiempo vuela' — la MISMA imagen: ¡el tiempo volando!" },
+      { "nm": "Costar un dineral", "title": "'Break the bank'", "body": "'To break the bank' (romper el banco) significa costar demasiado o gastar todo tu dinero. El español dice 'costar un dineral' (costar una fortuna) — otra imagen, la misma idea: muy caro." },
+      { "nm": "De vez en cuando", "title": "'Once in a blue moon'", "body": "'Once in a blue moon' (una vez en una luna azul) significa muy rara vez. El español dice 'de vez en cuando' o 'de Pascuas a Ramos' — otra imagen, la misma idea: rara vez." },
+      { "nm": "Ahorrar / perder tiempo", "title": "El tiempo actúa como dinero", "body": "En inglés puedes 'save time' (ahorrar tiempo), 'spend time' (gastar tiempo) o 'waste time' (perder tiempo) — como si el tiempo fuera dinero. El español también lo hace: 'ahorrar tiempo' y 'perder el tiempo'." },
+      { "nm": "El tiempo como recurso", "title": "La metáfora compartida", "body": "Muchos idiomas tratan el tiempo como un recurso que se puede ahorrar o gastar. Algunos modismos conservan la misma imagen (time flies = el tiempo vuela); otros la cambian. Notar la metáfora es una destreza de lectura." },
+      { "nm": "Dato del diamante", "title": "Cierto, pero fuera de tema", "body": "El diamante es el material natural más duro de la Tierra. Es un dato científico verdadero, pero no tiene nada que ver con lo que significan estos modismos." }
+    ],
+    "locks": [
+      {
+        "title": "¿Qué significa de verdad?",
+        "q": "¿Qué significa realmente 'break the bank'?",
+        "reason": "La pista 2 dice que significa costar demasiado. La imagen literal —robar o romper un banco— es la trampa. Los modismos casi nunca significan lo que dicen las palabras.",
+        "options": ["Costar demasiado o gastar todo tu dinero", "Robar un banco", "Reparar un banco roto"]
+      },
+      {
+        "title": "¿Qué es cierto sobre los modismos?",
+        "q": "Marca cada afirmación VERDADERA (usa las pistas). Deja fuera la falsa.",
+        "reason": "La afirmación falsa es la trampa: 'break the bank' es una metáfora del costo, no un robo real. Las tres verdaderas salen directamente de las pistas.",
+        "items": ["El significado de un modismo no es la suma de sus palabras", "El inglés 'time flies' y el español 'el tiempo vuela' usan la MISMA imagen", "'Once in a blue moon' significa que algo pasa muy rara vez", "'Break the bank' significa robar un banco de verdad"]
+      },
+      {
+        "title": "Ordena la conversación",
+        "q": "Toca las tres líneas en el ORDEN que hace que 'once in a blue moon' tenga sentido.",
+        "reason": "El orden revela el significado: una pregunta, la respuesta 'once in a blue moon' y la paráfrasis 'casi nunca.' El contexto es lo que abre un modismo.",
+        "pads": ["🙂 'No, solo de vez en cuando (once in a blue moon).'", "🍦 '¿Comes helado todos los días?'", "😄 '¡Así que casi nunca!'"]
+      },
+      {
+        "title": "Compara los dos idiomas",
+        "q": "En inglés, el tiempo pasa rápido cuando 'time ___.' En español, 'el tiempo ___' (vuela). Ambos usan la MISMA imagen. Escribe la acción en inglés O en español.",
+        "reason": "Inglés 'flies,' español 'vuela' — la misma imagen (volar) para el tiempo que pasa rápido. Cuando la metáfora coincide entre idiomas, es fácil de recordar.",
+        "answer": ["vuela", "volar", "el tiempo vuela"]
+      }
+    ]
+  }
+}

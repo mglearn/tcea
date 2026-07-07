@@ -1,0 +1,47 @@
+{
+  "es": {
+    "chrome": {
+      "h1": "A jugar: modismos del deporte y la escuela",
+      "sub": "El inglés toma prestados modismos del deporte y la escuela todo el tiempo: 'hit the books,' 'drop the ball.' Lee las pistas, compáralas entre idiomas y abre los candados.",
+      "briefH": "Nombra el origen y el significado",
+      "briefP": "Estás leyendo modismos como lenguaje figurado: te fijas en CÓMO funciona la frase, no en si las palabras son literalmente ciertas. Encuentra el significado, usa el contexto y compara entre idiomas.",
+      "winStamp": "MODISMOS DESCIFRADOS",
+      "winH": "¡Juego, set y partido!",
+      "winP": "Separaste la imagen literal del significado real y comparaste idiomas. Notar cómo funciona el lenguaje figurado es una poderosa destreza de lectura."
+    },
+    "clues": [
+      { "nm": "Hit the Books", "title": "'Hit the books'", "body": "'Hit the books' significa estudiar mucho — en realidad no golpeas nada. El español dice 'ponerse a estudiar' o 'hincar los codos' (clavar los codos) — otra imagen, la misma idea." },
+      { "nm": "Ballpark Figure", "title": "'A ballpark figure'", "body": "Una 'ballpark figure' es un cálculo aproximado, no un número exacto. Viene del béisbol. El español dice 'una cifra aproximada' — sin imagen deportiva alguna." },
+      { "nm": "Drop the Ball", "title": "'Drop the ball'", "body": "'Drop the ball' significa cometer un error o fallar en una responsabilidad. El español dice 'meter la pata' (meter la pata/pie) — otra imagen, la misma idea: equivocarse." },
+      { "nm": "Ball in Your Court", "title": "'The ball is in your court'", "body": "'The ball is in your court' significa que es tu turno de decidir o actuar. El español dice 'la pelota está en tu tejado' — la MISMA pelota, en otro lugar." },
+      { "nm": "De dónde vienen", "title": "Los modismos tienen origen", "body": "Los modismos suelen venir de la vida diaria: deportes, escuela, trabajo. La misma idea puede conservar la imagen (ball → pelota) o cambiarla por completo. Rastrear el origen es una destreza de lectura." },
+      { "nm": "Dato del estadio", "title": "Cierto, pero fuera de tema", "body": "El estadio más grande del mundo tiene capacidad para unas 114,000 personas. Es un dato deportivo verdadero — pero no tiene nada que ver con lo que significan estos modismos." }
+    ],
+    "locks": [
+      {
+        "title": "¿Qué significa de verdad?",
+        "q": "¿Qué significa realmente 'drop the ball'?",
+        "reason": "La pista 3 dice que significa cometer un error. La imagen literal —dejar caer una pelota— es la trampa. Los modismos casi nunca significan lo que dicen las palabras.",
+        "options": ["Cometer un error o fallar en una responsabilidad", "Dejar caer de verdad un balón de básquetbol", "Ganar un partido"]
+      },
+      {
+        "title": "¿Qué es cierto sobre los modismos?",
+        "q": "Marca cada afirmación VERDADERA (usa las pistas). Deja fuera la falsa.",
+        "reason": "La afirmación falsa es la trampa: el deporte es una imagen, no el significado. Las tres afirmaciones verdaderas salen directamente de las pistas.",
+        "items": ["El significado de un modismo no es la suma de sus palabras", "El inglés 'the ball is in your court' y el español 'la pelota está en tu tejado' usan ambos una PELOTA", "Una 'ballpark figure' es un cálculo aproximado, no un número exacto", "Todo modismo deportivo trata en realidad de practicar un deporte"]
+      },
+      {
+        "title": "Ordena la conversación",
+        "q": "Toca las tres líneas en el ORDEN que hace que 'the ball is in your court' tenga sentido.",
+        "reason": "El orden muestra el significado: se envía una oferta, la otra persona pregunta si es su turno ('la pelota en mi tejado') y se confirma. Los modismos dependen del contexto.",
+        "pads": ["🤔 '¿Así que ahora la pelota está en mi tejado?'", "📩 'Te envié mi oferta.'", "✅ 'Sí — es tu decisión.'"]
+      },
+      {
+        "title": "Compara los dos idiomas",
+        "q": "Ambos modismos usan el mismo objeto deportivo para decir 'es tu turno': el inglés 'the ball is in your court' y el español 'la pelota está en tu tejado.' Escribe ese objeto en inglés O en español.",
+        "reason": "Inglés 'ball,' español 'pelota' — el mismo objeto, el mismo significado: es tu turno de actuar. Comparar entre idiomas agudiza la lectura.",
+        "answer": ["pelota", "la pelota", "una pelota"]
+      }
+    ]
+  }
+}

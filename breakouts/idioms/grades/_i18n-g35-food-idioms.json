@@ -1,0 +1,47 @@
+{
+  "es": {
+    "chrome": {
+      "h1": "Modismos de comida: no se trata del almuerzo",
+      "sub": "El inglés está lleno de modismos con comida, ¡pero ninguno habla de verdad de comer! Lee las pistas, compáralas con el español y abre los candados.",
+      "briefH": "Encuentra el significado escondido en la comida",
+      "briefP": "El significado de un modismo no es la suma de sus palabras. Estos usan comida, pero el verdadero significado está escondido. Encuéntralo y compara el inglés con el español. ¡Tu idioma es una pista!",
+      "winStamp": "MODISMOS RESUELTOS",
+      "winH": "¡Dejaste el plato limpio!",
+      "winP": "Miraste más allá de la comida hasta el significado real y comparaste dos idiomas. Así es exactamente como los buenos lectores manejan el lenguaje figurado."
+    },
+    "clues": [
+      { "nm": "Pan comido", "title": "'A piece of cake' (pan comido)", "body": "'A piece of cake' (un trozo de pastel) significa que algo es muy fácil, ¡no un postre! El español dice 'pan comido' — otra comida, la misma idea: fácil." },
+      { "nm": "Descubrir el pastel", "title": "'Spill the beans'", "body": "'Spill the beans' (derramar los frijoles) significa revelar un secreto. ¡No se derrama ningún frijol! El español dice 'descubrir el pastel' — otra imagen, la misma idea." },
+      { "nm": "La niña de mis ojos", "title": "'The apple of my eye'", "body": "'The apple of my eye' (la manzana de mi ojo) significa alguien a quien amas y valoras mucho. El español dice 'la niña de mis ojos' — otra imagen, pero conserva el ojo." },
+      { "nm": "Ganarse el pan", "title": "'Bring home the bacon'", "body": "'Bring home the bacon' (traer el tocino a casa) significa ganar dinero para la familia. El español dice 'ganarse el pan' — otra comida, la misma idea: ganarse la vida." },
+      { "nm": "Nueva receta", "title": "Misma idea, distinta comida", "body": "Entre idiomas, la idea se queda pero la 'comida' cambia: pastel → pan, tocino → pan. Notar el cambio te convierte en detective del lenguaje." },
+      { "nm": "Dato de pizza", "title": "Cierto, pero fuera de tema", "body": "La pizza más grande del mundo midió más de 13,000 pies cuadrados. Es un dato de comida verdadero, pero no tiene nada que ver con lo que significan estos modismos." }
+    ],
+    "locks": [
+      {
+        "title": "¿Qué significa de verdad?",
+        "q": "¿Qué significa realmente 'a piece of cake'?",
+        "reason": "La pista 1 dice que significa muy fácil. La imagen literal —un trozo de pastel— es la trampa. Los modismos casi nunca significan lo que dicen las palabras.",
+        "options": ["Algo muy fácil", "Una rebanada de postre", "Una fiesta de cumpleaños"]
+      },
+      {
+        "title": "¿Qué es cierto sobre los modismos?",
+        "q": "Marca cada afirmación VERDADERA (usa las pistas). Deja fuera la falsa.",
+        "reason": "La afirmación falsa es la trampa: la comida es una imagen, no el significado. Las tres verdaderas salen directamente de las pistas.",
+        "items": ["El significado de un modismo no es la suma de sus palabras", "El inglés 'bring home the bacon' y el español 'ganarse el pan' significan ganarse la vida", "'A piece of cake' significa algo muy fácil", "Todo modismo de comida trata en realidad de cocinar o comer"]
+      },
+      {
+        "title": "Ordena la conversación",
+        "q": "Toca las tres líneas en el ORDEN que hace que 'a piece of cake' tenga sentido.",
+        "reason": "El orden muestra el significado: la preocupación, la tranquilidad ('a piece of cake') y por fin el éxito. El contexto es lo que abre un modismo.",
+        "pads": ["😎 'No te preocupes, es pan comido.'", "😟 '¡Esta tarea de mates se ve dificilísima!'", "😃 'Tienes razón, ¡eso fue fácil!'"]
+      },
+      {
+        "title": "Compara los dos idiomas",
+        "q": "Ambos modismos nombran una comida que significa 'fácil': el inglés 'a piece of cake,' el español 'pan comido.' Escribe la comida en inglés O en español.",
+        "reason": "El inglés usa 'cake,' el español usa 'pan' — otra comida, el mismo significado: fácil. Comparar los dos desarrolla la conciencia del lenguaje.",
+        "answer": ["pan", "pan comido"]
+      }
+    ]
+  }
+}

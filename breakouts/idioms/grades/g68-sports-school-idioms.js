@@ -1,0 +1,452 @@
+window.BREAKOUT = {
+ "id": "idioms-g68-sports-school-idioms",
+ "band": "6–8",
+ "confetti": [
+  "#0e7490",
+  "#0891b2",
+  "#f59e0b",
+  "#22d3ee",
+  "#7c3aed",
+  "#0b5563"
+ ],
+ "UI": {
+  "en": {
+   "sect.clues": "🔍 The Clues",
+   "sect.cluesHint": "Tap each clue to read it. (You can reopen them anytime.)",
+   "sect.locks": "🔒 The Locks",
+   "sect.locksHint": "Solve each lock using the clues above.",
+   "crumb.teacher": "‹ Teacher launch",
+   "ui.reset": "↺ Reset",
+   "ui.check": "Check",
+   "ui.gotit": "Got it",
+   "ui.playagain": "Play Again",
+   "ui.solved": "🔓 Solved!",
+   "ui.pcount": "{n} of {total} locks open",
+   "ui.wordph": "Type your answer",
+   "ui.clear": "clear",
+   "fb.digit": "That number doesn't match the clues. Check again.",
+   "fb.word": "Check the clues for the word that fits.",
+   "fb.mc": "That one isn't supported by the clues. Look again.",
+   "fb.multiExtra": "One pick isn't strong evidence. Strong means facts the clues actually prove.",
+   "fb.multiMissing": "You're missing a piece of strong evidence. Find them all.",
+   "fb.seq": "That order doesn't match the clues. Try again.",
+   "footer.privacy": "Privacy & compliance",
+   "crumb.suite": "Idioms & Sayings for Multilingual Learners",
+   "header.eyebrow": "Idioms & Sayings · Grades 6–8",
+   "header.h1": "Game On: Sports & School Idioms",
+   "header.sub": "English idioms borrow from sports and school all the time — 'hit the books,' 'drop the ball.' Read the clues, compare them across languages, and crack the locks.",
+   "brief.label": "Your mission",
+   "brief.h": "Name the source and the meaning",
+   "brief.p": "You are reading idioms as figurative language — noticing HOW the phrase works, not whether the words are literally true. Find the meaning, use context, and compare across languages.",
+   "footer.text": "Idioms & Sayings for Multilingual Learners · A TCEA educator resource · Runs entirely in your browser — no logins, no data collected.",
+   "footer.disclaimer": "Idioms are studied as language and culture; home languages are welcomed as a resource.",
+   "win.stamp": "IDIOMS DECODED",
+   "win.h": "Game, set, match!",
+   "win.p": "You separated the literal picture from the real meaning and compared languages. Noticing how figurative language works is a powerful reading skill."
+  },
+  "es": {
+   "sect.clues": "🔍 Las pistas",
+   "sect.cluesHint": "Toca cada pista para leerla. (Puedes volver a abrirlas cuando quieras.)",
+   "sect.locks": "🔒 Los candados",
+   "sect.locksHint": "Resuelve cada candado usando las pistas de arriba.",
+   "crumb.teacher": "‹ Guía del docente",
+   "ui.reset": "↺ Reiniciar",
+   "ui.check": "Comprobar",
+   "ui.gotit": "Entendido",
+   "ui.playagain": "Jugar de nuevo",
+   "ui.solved": "🔓 ¡Resuelto!",
+   "ui.pcount": "{n} de {total} candados abiertos",
+   "ui.wordph": "Escribe tu respuesta",
+   "ui.clear": "limpiar",
+   "fb.digit": "Ese número no coincide con las pistas. Revisa de nuevo.",
+   "fb.word": "Busca en las pistas la palabra que encaja.",
+   "fb.mc": "Esa opción no está respaldada por las pistas. Mira otra vez.",
+   "fb.multiExtra": "Una de tus elecciones no es evidencia sólida. Sólida significa hechos que las pistas realmente prueban.",
+   "fb.multiMissing": "Te falta una prueba sólida. Encuéntralas todas.",
+   "fb.seq": "Ese orden no coincide con las pistas. Inténtalo de nuevo.",
+   "footer.privacy": "Privacidad y cumplimiento",
+   "header.h1": "A jugar: modismos del deporte y la escuela",
+   "header.sub": "El inglés toma prestados modismos del deporte y la escuela todo el tiempo: 'hit the books,' 'drop the ball.' Lee las pistas, compáralas entre idiomas y abre los candados.",
+   "brief.h": "Nombra el origen y el significado",
+   "brief.p": "Estás leyendo modismos como lenguaje figurado: te fijas en CÓMO funciona la frase, no en si las palabras son literalmente ciertas. Encuentra el significado, usa el contexto y compara entre idiomas.",
+   "win.stamp": "MODISMOS DESCIFRADOS",
+   "win.h": "¡Juego, set y partido!",
+   "win.p": "Separaste la imagen literal del significado real y comparaste idiomas. Notar cómo funciona el lenguaje figurado es una poderosa destreza de lectura."
+  },
+  "vi": {
+   "sect.clues": "🔍 Các manh mối",
+   "sect.cluesHint": "Chạm vào mỗi manh mối để đọc. (Bạn có thể mở lại bất cứ lúc nào.)",
+   "sect.locks": "🔒 Các ổ khóa",
+   "sect.locksHint": "Giải mỗi ổ khóa bằng các manh mối ở trên.",
+   "crumb.teacher": "‹ Trang giáo viên",
+   "ui.reset": "↺ Đặt lại",
+   "ui.check": "Kiểm tra",
+   "ui.gotit": "Đã hiểu",
+   "ui.playagain": "Chơi lại",
+   "ui.solved": "🔓 Đã giải!",
+   "ui.pcount": "Đã mở {n}/{total} ổ khóa",
+   "ui.wordph": "Nhập câu trả lời của bạn",
+   "ui.clear": "xóa",
+   "fb.digit": "Con số đó không khớp với manh mối. Hãy kiểm tra lại.",
+   "fb.word": "Hãy tìm trong manh mối từ phù hợp.",
+   "fb.mc": "Lựa chọn đó không được manh mối chứng minh. Hãy xem lại.",
+   "fb.multiExtra": "Một lựa chọn không phải bằng chứng vững chắc. Vững chắc nghĩa là sự thật mà manh mối thực sự chứng minh.",
+   "fb.multiMissing": "Bạn còn thiếu một bằng chứng vững chắc. Hãy tìm hết.",
+   "fb.seq": "Thứ tự đó không khớp với manh mối. Hãy thử lại.",
+   "footer.privacy": "Quyền riêng tư & tuân thủ"
+  },
+  "ar": {
+   "sect.clues": "🔍 الأدلّة",
+   "sect.cluesHint": "انقر كل دليل لقراءته. (يمكنك فتحه مجددًا في أي وقت.)",
+   "sect.locks": "🔒 الأقفال",
+   "sect.locksHint": "حلّ كل قفل مستعينًا بالأدلّة أعلاه.",
+   "crumb.teacher": "‹ صفحة المعلّم",
+   "ui.reset": "↺ إعادة",
+   "ui.check": "تحقّق",
+   "ui.gotit": "حسنًا",
+   "ui.playagain": "العب مجددًا",
+   "ui.solved": "🔓 تم الحل!",
+   "ui.pcount": "{n} من {total} أقفال مفتوحة",
+   "ui.wordph": "اكتب إجابتك",
+   "ui.clear": "مسح",
+   "fb.digit": "هذا الرقم لا يطابق الأدلّة. تحقّق مرة أخرى.",
+   "fb.word": "ابحث في الأدلّة عن الكلمة المناسبة.",
+   "fb.mc": "هذا الخيار لا تدعمه الأدلّة. انظر مرة أخرى.",
+   "fb.multiExtra": "أحد اختياراتك ليس دليلاً قويًا. القويّ يعني حقائق تثبتها الأدلّة فعلاً.",
+   "fb.multiMissing": "ينقصك دليل قويّ. اعثر عليها كلّها.",
+   "fb.seq": "هذا الترتيب لا يطابق الأدلّة. حاول مرة أخرى.",
+   "footer.privacy": "الخصوصية والامتثال"
+  },
+  "hi": {
+   "sect.clues": "🔍 सुराग",
+   "sect.cluesHint": "हर सुराग पढ़ने के लिए उस पर टैप करो। (इन्हें कभी भी दोबारा खोल सकते हो।)",
+   "sect.locks": "🔒 ताले",
+   "sect.locksHint": "ऊपर के सुरागों की मदद से हर ताला हल करो।",
+   "crumb.teacher": "‹ शिक्षक पृष्ठ",
+   "ui.reset": "↺ रीसेट",
+   "ui.check": "जाँचें",
+   "ui.gotit": "समझ गया",
+   "ui.playagain": "फिर से खेलें",
+   "ui.solved": "🔓 हल हो गया!",
+   "ui.pcount": "{total} में से {n} ताले खुले",
+   "ui.wordph": "अपना उत्तर लिखें",
+   "ui.clear": "साफ़",
+   "fb.digit": "यह संख्या सुरागों से मेल नहीं खाती। फिर से जाँचें।",
+   "fb.word": "सही शब्द के लिए सुरागों को देखें।",
+   "fb.mc": "यह विकल्प सुरागों से समर्थित नहीं है। फिर से देखें।",
+   "fb.multiExtra": "आपका एक चुनाव मज़बूत प्रमाण नहीं है। मज़बूत यानी वे तथ्य जो सुराग सचमुच साबित करते हैं।",
+   "fb.multiMissing": "आपसे एक मज़बूत प्रमाण छूट रहा है। सभी को खोजें।",
+   "fb.seq": "यह क्रम सुरागों से मेल नहीं खाता। फिर से कोशिश करें।",
+   "footer.privacy": "गोपनीयता और अनुपालन"
+  },
+  "ur": {
+   "sect.clues": "🔍 سراغ",
+   "sect.cluesHint": "ہر سراغ پڑھنے کے لیے اس پر ٹیپ کریں۔ (انہیں کبھی بھی دوبارہ کھول سکتے ہیں۔)",
+   "sect.locks": "🔒 تالے",
+   "sect.locksHint": "اوپر دیے گئے سراغوں کی مدد سے ہر تالا حل کریں۔",
+   "crumb.teacher": "‹ استاد کا صفحہ",
+   "ui.reset": "↺ دوبارہ",
+   "ui.check": "جانچیں",
+   "ui.gotit": "ٹھیک ہے",
+   "ui.playagain": "دوبارہ کھیلیں",
+   "ui.solved": "🔓 حل ہو گیا!",
+   "ui.pcount": "{total} میں سے {n} تالے کھلے",
+   "ui.wordph": "اپنا جواب لکھیں",
+   "ui.clear": "صاف",
+   "fb.digit": "یہ عدد سراغوں سے میل نہیں کھاتا۔ دوبارہ جانچیں۔",
+   "fb.word": "صحیح لفظ کے لیے سراغ دیکھیں۔",
+   "fb.mc": "یہ انتخاب سراغوں سے ثابت نہیں ہوتا۔ دوبارہ دیکھیں۔",
+   "fb.multiExtra": "آپ کا ایک انتخاب مضبوط ثبوت نہیں ہے۔ مضبوط یعنی وہ حقائق جو سراغ واقعی ثابت کرتے ہیں۔",
+   "fb.multiMissing": "آپ سے ایک مضبوط ثبوت رہ گیا ہے۔ سب تلاش کریں۔",
+   "fb.seq": "یہ ترتیب سراغوں سے میل نہیں کھاتی۔ دوبارہ کوشش کریں۔",
+   "footer.privacy": "رازداری اور تعمیل"
+  },
+  "zh": {
+   "sect.clues": "🔍 线索",
+   "sect.cluesHint": "点按每条线索来阅读。（你可以随时重新打开。）",
+   "sect.locks": "🔒 锁",
+   "sect.locksHint": "用上面的线索解开每一把锁。",
+   "crumb.teacher": "‹ 教师页面",
+   "ui.reset": "↺ 重置",
+   "ui.check": "检查",
+   "ui.gotit": "知道了",
+   "ui.playagain": "再玩一次",
+   "ui.solved": "🔓 已解开！",
+   "ui.pcount": "已打开 {n}/{total} 把锁",
+   "ui.wordph": "输入你的答案",
+   "ui.clear": "清除",
+   "fb.digit": "这个数字与线索不符。请再检查。",
+   "fb.word": "在线索中找出合适的词。",
+   "fb.mc": "这个选项没有线索支持。请再看看。",
+   "fb.multiExtra": "你的一个选择不是有力证据。有力是指线索真正证明的事实。",
+   "fb.multiMissing": "你还缺一个有力证据。把它们都找齐。",
+   "fb.seq": "这个顺序与线索不符。请再试一次。",
+   "footer.privacy": "隐私与合规"
+  }
+ },
+ "CONTENT": {
+  "en": {
+   "clues": [
+    {
+     "id": "c1",
+     "ico": "📚",
+     "nm": "Hit the Books",
+     "title": "'Hit the books'",
+     "body": "'Hit the books' means to study hard — you don't actually hit anything. Spanish says 'ponerse a estudiar' or 'hincar los codos' (dig in the elbows) — a different picture, same idea."
+    },
+    {
+     "id": "c2",
+     "ico": "⚾",
+     "nm": "Ballpark Figure",
+     "title": "'A ballpark figure'",
+     "body": "A 'ballpark figure' is a rough estimate, not an exact number. It comes from baseball. Spanish says 'una cifra aproximada' — no sports picture at all."
+    },
+    {
+     "id": "c3",
+     "ico": "🏀",
+     "nm": "Drop the Ball",
+     "title": "'Drop the ball'",
+     "body": "To 'drop the ball' means to make a mistake or fail a responsibility. Spanish says 'meter la pata' (put in the paw/foot) — a different picture, same idea: to mess up."
+    },
+    {
+     "id": "c4",
+     "ico": "🎾",
+     "nm": "Ball in Your Court",
+     "title": "'The ball is in your court'",
+     "body": "'The ball is in your court' means it is your turn to decide or act. Spanish says 'la pelota está en tu tejado' (the ball is on your roof) — the SAME ball, a different place."
+    },
+    {
+     "id": "c5",
+     "ico": "🌎",
+     "nm": "Where They Come From",
+     "title": "Idioms have sources",
+     "body": "Idioms often come from everyday life — sports, school, work. The same idea can keep the picture (ball → pelota) or change it entirely. Tracing the source is a reading skill."
+    },
+    {
+     "id": "c6",
+     "ico": "🏟️",
+     "nm": "Stadium Fact",
+     "title": "True, but off-topic",
+     "body": "The largest stadium in the world holds about 114,000 people. That is a true sports fact — but it has nothing to do with what these idioms mean."
+    }
+   ],
+   "locks": [
+    {
+     "id": "L1",
+     "type": "mc",
+     "color": "#0e7490",
+     "title": "What does it really mean?",
+     "q": "What does 'drop the ball' really mean?",
+     "options": [
+      "To make a mistake or fail a responsibility",
+      "To actually drop a basketball",
+      "To win a game"
+     ],
+     "answerIndex": 0,
+     "reason": "Clue 3 says it means to make a mistake. The literal picture — dropping a ball — is the trap. Idioms rarely mean what the words say."
+    },
+    {
+     "id": "L2",
+     "type": "multi",
+     "color": "#0891b2",
+     "title": "What is true about idioms?",
+     "q": "Check every statement that is TRUE (use the clues). Leave out the false one.",
+     "items": [
+      {
+       "t": "An idiom's meaning is not the sum of its words",
+       "strong": true
+      },
+      {
+       "t": "English 'the ball is in your court' and Spanish 'la pelota está en tu tejado' both use a BALL",
+       "strong": true
+      },
+      {
+       "t": "A 'ballpark figure' is a rough estimate, not an exact number",
+       "strong": true
+      },
+      {
+       "t": "Every sports idiom is really about playing a sport",
+       "strong": false
+      }
+     ],
+     "reason": "The false statement is the trap: the sport is a picture, not the meaning. The three true statements come straight from the clues."
+    },
+    {
+     "id": "L3",
+     "type": "seq",
+     "color": "#f59e0b",
+     "title": "Put the talk in order",
+     "q": "Tap the three lines in the ORDER that makes 'the ball is in your court' make sense.",
+     "pads": [
+      {
+       "k": "b",
+       "e": "🤔 'So the ball is in my court now?'",
+       "c": "#0891b2"
+      },
+      {
+       "k": "a",
+       "e": "📩 'I sent you my offer.'",
+       "c": "#0b5563"
+      },
+      {
+       "k": "c",
+       "e": "✅ 'Yes — it's your decision.'",
+       "c": "#22d3ee"
+      }
+     ],
+     "answer": [
+      "a",
+      "b",
+      "c"
+     ],
+     "reason": "The order shows the meaning: an offer is sent, the other person asks if it's their turn ('ball in my court'), and it's confirmed. Idioms depend on context."
+    },
+    {
+     "id": "L4",
+     "type": "word",
+     "color": "#7c3aed",
+     "title": "Compare the two languages",
+     "q": "Both idioms use the same sport object to mean 'it's your turn': English 'the ball is in your court,' Spanish 'la pelota está en tu tejado.' Type that object in English OR Spanish.",
+     "answer": [
+      "ball",
+      "pelota",
+      "la pelota"
+     ],
+     "reason": "English 'ball,' Spanish 'pelota' — the same object, the same meaning: it's your turn to act. Comparing across languages sharpens the reading."
+    }
+   ]
+  },
+  "es": {
+   "clues": [
+    {
+     "id": "c1",
+     "ico": "📚",
+     "nm": "Hit the Books",
+     "title": "'Hit the books'",
+     "body": "'Hit the books' significa estudiar mucho — en realidad no golpeas nada. El español dice 'ponerse a estudiar' o 'hincar los codos' (clavar los codos) — otra imagen, la misma idea."
+    },
+    {
+     "id": "c2",
+     "ico": "⚾",
+     "nm": "Ballpark Figure",
+     "title": "'A ballpark figure'",
+     "body": "Una 'ballpark figure' es un cálculo aproximado, no un número exacto. Viene del béisbol. El español dice 'una cifra aproximada' — sin imagen deportiva alguna."
+    },
+    {
+     "id": "c3",
+     "ico": "🏀",
+     "nm": "Drop the Ball",
+     "title": "'Drop the ball'",
+     "body": "'Drop the ball' significa cometer un error o fallar en una responsabilidad. El español dice 'meter la pata' (meter la pata/pie) — otra imagen, la misma idea: equivocarse."
+    },
+    {
+     "id": "c4",
+     "ico": "🎾",
+     "nm": "Ball in Your Court",
+     "title": "'The ball is in your court'",
+     "body": "'The ball is in your court' significa que es tu turno de decidir o actuar. El español dice 'la pelota está en tu tejado' — la MISMA pelota, en otro lugar."
+    },
+    {
+     "id": "c5",
+     "ico": "🌎",
+     "nm": "De dónde vienen",
+     "title": "Los modismos tienen origen",
+     "body": "Los modismos suelen venir de la vida diaria: deportes, escuela, trabajo. La misma idea puede conservar la imagen (ball → pelota) o cambiarla por completo. Rastrear el origen es una destreza de lectura."
+    },
+    {
+     "id": "c6",
+     "ico": "🏟️",
+     "nm": "Dato del estadio",
+     "title": "Cierto, pero fuera de tema",
+     "body": "El estadio más grande del mundo tiene capacidad para unas 114,000 personas. Es un dato deportivo verdadero — pero no tiene nada que ver con lo que significan estos modismos."
+    }
+   ],
+   "locks": [
+    {
+     "id": "L1",
+     "type": "mc",
+     "color": "#0e7490",
+     "title": "¿Qué significa de verdad?",
+     "q": "¿Qué significa realmente 'drop the ball'?",
+     "options": [
+      "Cometer un error o fallar en una responsabilidad",
+      "Dejar caer de verdad un balón de básquetbol",
+      "Ganar un partido"
+     ],
+     "answerIndex": 0,
+     "reason": "La pista 3 dice que significa cometer un error. La imagen literal —dejar caer una pelota— es la trampa. Los modismos casi nunca significan lo que dicen las palabras."
+    },
+    {
+     "id": "L2",
+     "type": "multi",
+     "color": "#0891b2",
+     "title": "¿Qué es cierto sobre los modismos?",
+     "q": "Marca cada afirmación VERDADERA (usa las pistas). Deja fuera la falsa.",
+     "items": [
+      {
+       "t": "El significado de un modismo no es la suma de sus palabras",
+       "strong": true
+      },
+      {
+       "t": "El inglés 'the ball is in your court' y el español 'la pelota está en tu tejado' usan ambos una PELOTA",
+       "strong": true
+      },
+      {
+       "t": "Una 'ballpark figure' es un cálculo aproximado, no un número exacto",
+       "strong": true
+      },
+      {
+       "t": "Todo modismo deportivo trata en realidad de practicar un deporte",
+       "strong": false
+      }
+     ],
+     "reason": "La afirmación falsa es la trampa: el deporte es una imagen, no el significado. Las tres afirmaciones verdaderas salen directamente de las pistas."
+    },
+    {
+     "id": "L3",
+     "type": "seq",
+     "color": "#f59e0b",
+     "title": "Ordena la conversación",
+     "q": "Toca las tres líneas en el ORDEN que hace que 'the ball is in your court' tenga sentido.",
+     "pads": [
+      {
+       "k": "b",
+       "e": "🤔 '¿Así que ahora la pelota está en mi tejado?'",
+       "c": "#0891b2"
+      },
+      {
+       "k": "a",
+       "e": "📩 'Te envié mi oferta.'",
+       "c": "#0b5563"
+      },
+      {
+       "k": "c",
+       "e": "✅ 'Sí — es tu decisión.'",
+       "c": "#22d3ee"
+      }
+     ],
+     "answer": [
+      "a",
+      "b",
+      "c"
+     ],
+     "reason": "El orden muestra el significado: se envía una oferta, la otra persona pregunta si es su turno ('la pelota en mi tejado') y se confirma. Los modismos dependen del contexto."
+    },
+    {
+     "id": "L4",
+     "type": "word",
+     "color": "#7c3aed",
+     "title": "Compara los dos idiomas",
+     "q": "Ambos modismos usan el mismo objeto deportivo para decir 'es tu turno': el inglés 'the ball is in your court' y el español 'la pelota está en tu tejado.' Escribe ese objeto en inglés O en español.",
+     "answer": [
+      "pelota",
+      "la pelota",
+      "una pelota",
+      "ball"
+     ],
+     "reason": "Inglés 'ball,' español 'pelota' — el mismo objeto, el mismo significado: es tu turno de actuar. Comparar entre idiomas agudiza la lectura."
+    }
+   ]
+  }
+ }
+};
