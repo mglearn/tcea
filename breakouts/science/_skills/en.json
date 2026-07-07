@@ -2,8 +2,8 @@
   "grades": {
     "gradeK": {
       "crumb": "<a href=\"index.html\">‹ Kindergarten Science</a>",
-      "eyebrow": "Skills &amp; TEKS · Kindergarten",
-      "h1": "Skills &amp; TEKS Alignment",
+      "eyebrow": "Skills & TEKS · Kindergarten",
+      "h1": "Skills & TEKS Alignment",
       "lead": "For the featured breakout <b>Light and Shadows</b> and the Kindergarten idea set — aligned to the 2021 Texas Essential Knowledge and Skills for Science (§112.2). Pitched to our youngest learners: observe, sort, sequence, and name.",
       "misc": "🚨 Early ideas this breakout builds: we can only see things when there is <i>light</i>; and when something blocks the light, it makes a <i>shadow</i>. (A common early idea to gently correct: “we can see in the dark” — we need a light source to see.)",
       "btn": "🛠️ Open the STEM challenge →",
@@ -41,8 +41,8 @@
     },
     "grade1": {
       "crumb": "<a href=\"index.html\">‹ Grade 1 Science</a>",
-      "eyebrow": "Skills &amp; TEKS · Grade 1",
-      "h1": "Skills &amp; TEKS Alignment",
+      "eyebrow": "Skills & TEKS · Grade 1",
+      "h1": "Skills & TEKS Alignment",
       "lead": "For the featured breakout <b>Push, Pull, and Play!</b> and the Grade 1 idea set — aligned to the 2021 Texas Essential Knowledge and Skills for Science (§112.3). Pitched to early readers: observe, sort, sequence, and name.",
       "misc": "🚨 Common early ideas this breakout gently corrects: “things move by themselves” (a push or a pull is needed to start motion); “you must touch something to move it” (a magnet can pull without touching); and “a pull and a push are the same” (a pull comes toward you, a push goes away).",
       "btn": "🛠️ Open the STEM challenge →",
@@ -80,8 +80,8 @@
     },
     "grade2": {
       "crumb": "<a href=\"index.html\">‹ Grade 2 Science</a>",
-      "eyebrow": "Skills &amp; TEKS · Grade 2",
-      "h1": "Skills &amp; TEKS Alignment",
+      "eyebrow": "Skills & TEKS · Grade 2",
+      "h1": "Skills & TEKS Alignment",
       "lead": "For the featured breakout <b>Make Some Noise!</b> and the Grade 2 idea set — aligned to the 2021 Texas Essential Knowledge and Skills for Science (§112.4). Pitched to early readers: observe, sort, sequence, and name.",
       "misc": "🚨 Common early ideas this breakout gently corrects: “a still object can make a sound on its own” (sound needs something <i>vibrating</i>); and “sound just appears at your ear” (vibrations travel through the air to get there).",
       "btn": "🛠️ Open the STEM challenge →",
@@ -119,8 +119,8 @@
     },
     "grade3": {
       "crumb": "<a href=\"index.html\">‹ Grade 3 Science</a>",
-      "eyebrow": "Skills &amp; TEKS · Grade 3",
-      "h1": "Skills &amp; TEKS Alignment",
+      "eyebrow": "Skills & TEKS · Grade 3",
+      "h1": "Skills & TEKS Alignment",
       "lead": "For the featured breakout <b>Blast Off! A Trip Through Space</b> and the Grade 3 concept set — aligned to the 2021 Texas Essential Knowledge and Skills for Science (§112.5). Pitched to upper-elementary: model, sequence, gather evidence, and name.",
       "misc": "🚨 Common ideas this breakout gently corrects: “the Sun goes around the Earth” (the planets, including Earth, orbit the Sun); and “the Moon orbits the Sun by itself” (the Moon orbits the <i>Earth</i>, and travels around the Sun along with it).",
       "btn": "🛠️ Open the STEM challenge →",
@@ -158,8 +158,8 @@
     },
     "grade4": {
       "crumb": "<a href=\"index.html\">‹ Grade 4 Science</a>",
-      "eyebrow": "Skills &amp; TEKS · Grade 4",
-      "h1": "Skills &amp; TEKS Alignment",
+      "eyebrow": "Skills & TEKS · Grade 4",
+      "h1": "Skills & TEKS Alignment",
       "lead": "For the featured breakout <b>Light It Up! The Secret of Circuits</b> and the Grade 4 concept set — aligned to the 2021 Texas Essential Knowledge and Skills for Science (§112.6). Pitched to upper-elementary: model, sequence, gather evidence, and name.",
       "misc": "🚨 Common ideas this breakout gently corrects: “electricity can flow through a wire with one end loose” (it needs a <i>complete, closed loop</i>); and “a bulb lights just because it touches a battery” (the electricity must flow out <i>and back</i> around the whole circuit).",
       "btn": "🛠️ Open the STEM challenge →",
@@ -197,8 +197,8 @@
     },
     "grade5": {
       "crumb": "<a href=\"index.html\">‹ Grade 5 Science</a>",
-      "eyebrow": "Skills &amp; TEKS · Grade 5",
-      "h1": "Skills &amp; TEKS Alignment",
+      "eyebrow": "Skills & TEKS · Grade 5",
+      "h1": "Skills & TEKS Alignment",
       "lead": "For the featured breakout <b>Round and Round: Day, Night, and Shadows</b> and the Grade 5 concept set — aligned to the 2021 Texas Essential Knowledge and Skills for Science (§112.7). Pitched to upper-elementary: model, sequence, gather evidence, and name.",
       "misc": "🚨 Common ideas this breakout gently corrects: “the Sun moves around the Earth each day” (it's Earth <i>spinning</i> that makes the Sun appear to cross the sky); and “shadows move for no reason” (they change because the Sun's apparent position changes as Earth rotates).",
       "btn": "🛠️ Open the STEM challenge →",
@@ -236,8 +236,8 @@
     },
     "grade6": {
       "crumb": "<a href=\"index.html\">‹ Grade 6 Science</a>",
-      "eyebrow": "Skills &amp; TEKS · Grade 6",
-      "h1": "Skills &amp; TEKS Alignment",
+      "eyebrow": "Skills & TEKS · Grade 6",
+      "h1": "Skills & TEKS Alignment",
       "lead": "For the featured breakout <b>Cargo Ship Rescue</b> and the Grade 6 concept set — aligned to the 2021 Texas Essential Knowledge and Skills for Science (§112.26).",
       "misc": "🚨 “heavy things always sink” (it's density vs. volume, not weight); “a moving object must have an unbalanced force on it” (a net force of zero can mean stillness <i>or</i> steady motion); “Newton's Third-Law pairs cancel each other out” (they act on <i>different</i> objects, so they don't); and “energy gets used up” (it transfers and transforms — it is conserved).",
       "btn": "🛠️ Open the STEM challenge →",
@@ -276,8 +276,8 @@
     },
     "grade7": {
       "crumb": "<a href=\"index.html\">‹ Grade 7 Science</a>",
-      "eyebrow": "Skills &amp; TEKS · Grade 7",
-      "h1": "Skills &amp; TEKS Alignment",
+      "eyebrow": "Skills & TEKS · Grade 7",
+      "h1": "Skills & TEKS Alignment",
       "lead": "For the featured breakout <b>Rescue Run</b> — aligned to the 2021 Texas Essential Knowledge and Skills for Science (§112.27).",
       "misc": "🚨 “a flat line on a distance–time graph means moving at a steady speed” (it means <i>stopped</i>); “speed and velocity are the same” (velocity adds direction and depends on <i>displacement</i>); “a downhill line means slowing down” (it means <i>returning</i> to the start); and “insulation adds cold / stops heat” (it only <i>slows</i> heat, which always flows hot→cold to equilibrium).",
       "btn": "🛠️ Open the STEM challenge →",
@@ -315,8 +315,8 @@
     },
     "grade8": {
       "crumb": "<a href=\"index.html\">‹ Grade 8 Science</a>",
-      "eyebrow": "Skills &amp; TEKS · Grade 8",
-      "h1": "Skills &amp; TEKS Alignment",
+      "eyebrow": "Skills & TEKS · Grade 8",
+      "h1": "Skills & TEKS Alignment",
       "lead": "For the featured breakout <b>Launch Control</b> — aligned to the 2021 Texas Essential Knowledge and Skills for Science (§112.28).",
       "misc": "🚨 “mass disappears when fuel burns” (atoms only rearrange — in a sealed system mass is conserved); “a heavier rocket accelerates faster because it's bigger” (for a fixed force, more mass means <i>less</i> acceleration); and “amplitude and wavelength are the same thing” (amplitude is energy; wavelength is the crest-to-crest distance).",
       "btn": "🛠️ Open the STEM challenge →",
