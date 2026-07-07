@@ -25,6 +25,18 @@ h1 em{font-style:normal;color:var(--teal-mid)}
 .tally{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin:26px 0 4px}
 .tally .n{font-family:'Fredoka',sans-serif;font-size:1.8rem;font-weight:700;color:var(--teal-mid);line-height:1}
 .tally .l{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px}
+.spotlight{max-width:600px;margin:24px auto 2px;background:var(--card);border:1px solid var(--line);border-inline-start:4px solid var(--amber);border-radius:14px;padding:18px 22px;box-shadow:0 8px 26px rgba(11,85,99,.08);text-align:center}
+.sp-label{font-family:'Fredoka',sans-serif;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-d);margin-bottom:8px}
+.sp-idiom{font-family:'Fredoka',sans-serif;font-size:clamp(1.3rem,3.4vw,1.7rem);font-weight:700;color:var(--teal-d);line-height:1.12}
+.sp-mean{font-size:.95rem;color:var(--ink-soft);margin-top:5px}
+.sp-mean b{color:var(--ink);font-weight:700}
+.sp-es{font-size:.9rem;color:var(--ink-soft);margin-top:10px}
+.sp-es b{color:var(--teal-mid)}
+.sp-gloss{opacity:.8}
+.sp-tag{display:inline-block;font-family:'Fredoka',sans-serif;font-size:.58rem;letter-spacing:.05em;text-transform:uppercase;padding:2px 9px;border-radius:100px;margin-inline-start:6px;background:#e0f7fa;color:var(--teal-d);vertical-align:middle}
+.sp-tag.diff{background:#fdeccf;color:var(--amber-d)}
+.sp-btn{margin-top:14px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:.8rem;color:var(--teal-d);background:#e8f6f8;border:1px solid var(--line);border-radius:100px;padding:7px 16px;cursor:pointer;transition:.15s}
+.sp-btn:hover{background:var(--teal);color:#fff;border-color:var(--teal)}
 .wrap{max-width:1080px;margin:0 auto;padding:14px 26px 60px}
 .find h2{font-family:'Fredoka',sans-serif;font-size:1.5rem;color:var(--teal-d);margin-bottom:8px}
 .find p{color:var(--ink-soft);font-weight:300;margin-bottom:14px}
@@ -61,6 +73,13 @@ footer{background:var(--teal-d);padding:24px;text-align:center;font-size:.72rem;
   <div class="eyebrow">Critical Thinking Online Breakout · Multilingual</div>
   <h1>Idioms &amp; <em>Sayings</em> for Multilingual Learners</h1>
   <p class="lede">Decode English idioms with your <strong>home language as a resource</strong>, and compare sayings across languages. For ESL and multilingual classrooms, grades 3–12. Runs in your browser — no logins, no data collected.</p>
+  <div class="spotlight" id="spotlight" hidden>
+    <div class="sp-label">🎲 Idiom spotlight</div>
+    <div class="sp-idiom" id="spIdiom"></div>
+    <div class="sp-mean" id="spMean"></div>
+    <div class="sp-es" id="spEs"></div>
+    <button class="sp-btn" id="spBtn" type="button">🎲 Show me another</button>
+  </div>
   <div class="tally">
     <div><div class="n" id="tCount">0</div><div class="l">Breakouts</div></div>
     <div><div class="n">3</div><div class="l">Grade bands · 3–12</div></div>
@@ -88,6 +107,46 @@ footer{background:var(--teal-d);padding:24px;text-align:center;font-size:.72rem;
 
 <footer>Idioms &amp; Sayings for Multilingual Learners · A TCEA educator resource · CC BY 4.0 (content) · MIT (code)</footer>
 
+<script>
+/* Idiom spotlight — a random popular idiom (with meaning + Spanish equivalent) on every load. */
+(function(){
+  var IDIOMS=[
+    {i:"Break the ice",m:"to ease tension or get a conversation started",es:"romper el hielo",g:"break the ice",same:true},
+    {i:"Kill two birds with one stone",m:"to solve two problems with one action",es:"matar dos pájaros de un tiro",g:"kill two birds with one shot",same:true},
+    {i:"Hit the nail on the head",m:"to be exactly right",es:"dar en el clavo",g:"hit the nail",same:true},
+    {i:"A piece of cake",m:"something very easy",es:"pan comido",g:"eaten bread",same:false},
+    {i:"It's raining cats and dogs",m:"it's raining very hard",es:"llueve a cántaros",g:"it's raining pitchers",same:false},
+    {i:"Cost an arm and a leg",m:"to be very expensive",es:"costar un ojo de la cara",g:"cost an eye of the face",same:false},
+    {i:"Lend a hand",m:"to help someone",es:"echar una mano",g:"throw a hand",same:true},
+    {i:"Pull someone's leg",m:"to joke with or tease someone",es:"tomar el pelo",g:"take the hair",same:false},
+    {i:"Spill the beans",m:"to reveal a secret",es:"descubrir el pastel",g:"uncover the cake",same:false},
+    {i:"Time flies",m:"time passes very quickly",es:"el tiempo vuela",g:"time flies",same:true},
+    {i:"The ball is in your court",m:"it's your turn to decide or act",es:"la pelota está en tu tejado",g:"the ball is on your roof",same:true},
+    {i:"Once in a blue moon",m:"very rarely",es:"de Pascuas a Ramos",g:"from Easter to Palm Sunday",same:false},
+    {i:"When pigs fly",m:"something that will never happen",es:"cuando las ranas críen pelo",g:"when frogs grow hair",same:false},
+    {i:"Speak of the devil",m:"the person we were talking about just showed up",es:"hablando del rey de Roma",g:"speaking of the king of Rome",same:false},
+    {i:"Better late than never",m:"doing something late beats not at all",es:"más vale tarde que nunca",g:"late is worth more than never",same:true},
+    {i:"A little bird told me",m:"I heard it secretly — I won't say from whom",es:"me lo dijo un pajarito",g:"a little bird told me",same:true},
+    {i:"Hold your horses",m:"wait — be patient",es:"para el carro",g:"stop the cart",same:false},
+    {i:"Carpe diem",m:"seize the day — make the most of now (from Latin)",es:"aprovecha el día",g:"the Latin “diem” gives Spanish “día”",same:false}
+  ];
+  var host=document.getElementById('spotlight'); if(!host)return;
+  var idi=document.getElementById('spIdiom'), mea=document.getElementById('spMean'),
+      es=document.getElementById('spEs'), btn=document.getElementById('spBtn'), last=-1;
+  function e(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function pick(){
+    var n; do{ n=Math.floor(Math.random()*IDIOMS.length); }while(IDIOMS.length>1 && n===last); last=n;
+    var d=IDIOMS[n];
+    idi.textContent='“'+d.i+'”';
+    mea.innerHTML='means — <b>'+e(d.m)+'</b>';
+    es.innerHTML='In Spanish: <b>'+e(d.es)+'</b> <span class="sp-gloss">('+e(d.g)+')</span>'+
+      ' <span class="sp-tag'+(d.same?'':' diff')+'">'+(d.same?'same picture':'different picture')+'</span>';
+    host.hidden=false;
+  }
+  btn.addEventListener('click',pick);
+  pick();
+})();
+</script>
 <script src="breakouts.js"></script>
 <script>
 (function(){
