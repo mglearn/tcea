@@ -17,6 +17,8 @@ body{font-family:'Nunito',sans-serif;color:var(--ink);line-height:1.6;background
 .navlinks{margin-inline-start:auto;display:flex;gap:4px}
 .navlinks a{font-size:.74rem;font-weight:600;color:rgba(224,247,250,.9);text-decoration:none;padding:6px 11px;border-radius:6px}
 .navlinks a:hover{background:rgba(255,255,255,.12);color:#fff}
+.langpick{display:inline-flex;align-items:center;gap:5px;font-size:.74rem;color:rgba(224,247,250,.9)}
+.langpick select{font-family:'Nunito',sans-serif;font-size:.74rem;font-weight:600;color:#0b5563;background:#eafcff;border:1px solid rgba(255,255,255,.3);border-radius:6px;padding:4px 6px;cursor:pointer}
 .hero{padding:100px 26px 30px;max-width:1080px;margin:0 auto;text-align:center}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;background:#e0f7fa;border:1px solid var(--line);border-radius:100px;padding:6px 16px;font-family:'Fredoka',sans-serif;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
 h1{font-family:'Fredoka',sans-serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.05;margin:16px 0 10px;color:var(--teal-d)}
@@ -66,34 +68,39 @@ footer{background:var(--teal-d);padding:24px;text-align:center;font-size:.72rem;
 <body>
 <nav class="topnav">
   <a href="../index.html" class="brand">Idioms &amp; <span>Sayings</span></a>
-  <div class="navlinks"><a href="../index.html">All breakouts</a><a href="correlation.html">TEKS / ELPS</a><a href="PLAN.md">Plan</a></div>
+  <div class="navlinks">
+    <a href="../index.html" data-i18n="nav.all">All breakouts</a>
+    <a href="correlation.html" data-i18n="nav.teks">TEKS / ELPS</a>
+    <a href="PLAN.md" data-i18n="nav.plan">Plan</a>
+    <span class="langpick" aria-hidden="false">🌐 <span data-i18n-picker></span></span>
+  </div>
 </nav>
 
 <section class="hero">
-  <div class="eyebrow">Critical Thinking Online Breakout · Multilingual</div>
-  <h1>Idioms &amp; <em>Sayings</em> for Multilingual Learners</h1>
-  <p class="lede">Decode English idioms with your <strong>home language as a resource</strong>, and compare sayings across languages. For ESL and multilingual classrooms, grades 3–12. Runs in your browser — no logins, no data collected.</p>
+  <div class="eyebrow" data-i18n="hero.eyebrow">Critical Thinking Online Breakout · Multilingual</div>
+  <h1 data-i18n-html="hero.h1">Idioms &amp; <em>Sayings</em> for Multilingual Learners</h1>
+  <p class="lede" data-i18n-html="hero.lede">Decode English idioms with your <strong>home language as a resource</strong>, and compare sayings across languages. For ESL and multilingual classrooms, grades 3–12. Runs in your browser — no logins, no data collected.</p>
   <div class="spotlight" id="spotlight" hidden>
-    <div class="sp-label">🎲 Idiom spotlight</div>
+    <div class="sp-label" data-i18n="sp.label">🎲 Idiom spotlight</div>
     <div class="sp-idiom" id="spIdiom"></div>
     <div class="sp-mean" id="spMean"></div>
     <div class="sp-es" id="spEs"></div>
-    <button class="sp-btn" id="spBtn" type="button">🎲 Show me another</button>
+    <button class="sp-btn" id="spBtn" type="button" data-i18n="sp.btn">🎲 Show me another</button>
   </div>
   <div class="tally">
-    <div><div class="n" id="tCount">0</div><div class="l">Breakouts</div></div>
-    <div><div class="n">3</div><div class="l">Grade bands · 3–12</div></div>
-    <div><div class="n">7</div><div class="l">Languages</div></div>
-    <div><div class="n">$0</div><div class="l">Free</div></div>
+    <div><div class="n" id="tCount">0</div><div class="l" data-i18n="tally.breakouts">Breakouts</div></div>
+    <div><div class="n">3</div><div class="l" data-i18n="tally.bands">Grade bands · 3–12</div></div>
+    <div><div class="n">7</div><div class="l" data-i18n="tally.langs">Languages</div></div>
+    <div><div class="n">$0</div><div class="l" data-i18n="tally.free">Free</div></div>
   </div>
 </section>
 
 <div class="wrap">
   <div class="find">
-    <h2>Find an idiom breakout</h2>
-    <p>Search by idiom, theme, language, or grade — or pick a grade band. (More breakouts are on the way; this is the Phase 1 English + Spanish start.)</p>
+    <h2 data-i18n="find.h">Find an idiom breakout</h2>
+    <p data-i18n="find.p">Search by idiom, theme, language, or grade — or pick a grade band. (More breakouts are on the way; this is the Phase 1 English + Spanish start.)</p>
     <div class="toolbar">
-      <input id="q" type="search" autocomplete="off" placeholder="Search by idiom, theme, or grade (e.g. body, hand, Spanish, grade 4)…" aria-label="Search idiom breakouts">
+      <input id="q" type="search" autocomplete="off" data-i18n-placeholder="find.ph" placeholder="Search by idiom, theme, or grade (e.g. body, hand, Spanish, grade 4)…" aria-label="Search idiom breakouts">
       <div class="chips" id="chips"></div>
       <span class="count" id="count"></span>
     </div>
@@ -101,12 +108,14 @@ footer{background:var(--teal-d);padding:24px;text-align:center;font-size:.72rem;
   <div id="grid" class="bands"></div>
 
   <div class="note">
-    <p><b>How it's taught.</b> Idioms are Tier-1 vocabulary that trip up multilingual learners because the words don't add up to the meaning. Each breakout separates the literal picture from the real meaning, uses context, and <b>compares the idiom across languages</b> — sometimes the same image (hand ↔ <em>mano</em>), sometimes a different one (arm &amp; leg ↔ <em>un ojo</em>). Home languages are welcomed as a resource, aligned to the Texas ELPS (idiomatic expressions) and WIDA figurative-language expectations. The <b>idiom spotlight</b> above compares each idiom's <b>Spanish and French</b> equivalents — a bridge to the world-language / LOTE classroom. See the <a href="correlation.html" style="color:var(--teal-mid);font-weight:700">TEKS / ELPS alignment &amp; appropriateness guide →</a></p>
+    <p data-i18n-html="note"><b>How it's taught.</b> Idioms are Tier-1 vocabulary that trip up multilingual learners because the words don't add up to the meaning. Each breakout separates the literal picture from the real meaning, uses context, and <b>compares the idiom across languages</b> — sometimes the same image (hand ↔ <em>mano</em>), sometimes a different one (arm &amp; leg ↔ <em>un ojo</em>). Home languages are welcomed as a resource, aligned to the Texas ELPS (idiomatic expressions) and WIDA figurative-language expectations. The <b>idiom spotlight</b> above compares each idiom's <b>Spanish and French</b> equivalents — a bridge to the world-language / LOTE classroom. See the <a href="correlation.html" style="color:var(--teal-mid);font-weight:700">TEKS / ELPS alignment &amp; appropriateness guide →</a></p>
   </div>
 </div>
 
-<footer>Idioms &amp; Sayings for Multilingual Learners · A TCEA educator resource · CC BY 4.0 (content) · MIT (code)</footer>
+<footer data-i18n-html="footer">Idioms &amp; Sayings for Multilingual Learners · A TCEA educator resource · CC BY 4.0 (content) · MIT (code)</footer>
 
+<script src="../assets/i18n.js"></script>
+<script src="i18n-landing.js"></script>
 <script>
 /* Idiom spotlight — a random popular idiom (with meaning + Spanish equivalent) on every load. */
 (function(){
@@ -158,22 +167,27 @@ footer{background:var(--teal-d);padding:24px;text-align:center;font-size:.72rem;
   var idi=document.getElementById('spIdiom'), mea=document.getElementById('spMean'),
       es=document.getElementById('spEs'), btn=document.getElementById('spBtn'), last=-1;
   function e(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
-  function pick(){
-    var n; do{ n=Math.floor(Math.random()*IDIOMS.length); }while(IDIOMS.length>1 && n===last); last=n;
-    var d=IDIOMS[n];
+  function T(k){return window.BreakoutI18n?BreakoutI18n.t(k):k;}
+  var cur=null;
+  function paint(d){
     idi.textContent='“'+d.i+'”';
-    mea.innerHTML='means — <b>'+e(d.m)+'</b>';
-    function line(label,term,gloss,same,extra){
-      return '<div>'+label+': <b>'+e(term)+'</b> <span class="sp-gloss">('+e(gloss)+')</span>'+
-        ' <span class="sp-tag'+(same?'':' diff')+'">'+(same?'same picture':'different picture')+'</span>'+(extra||'')+'</div>';
+    mea.innerHTML=e(T('sp.means'))+' — <b>'+e(d.m)+'</b>';
+    function line(labelKey,term,gloss,same,extra){
+      return '<div>'+e(T(labelKey))+': <b>'+e(term)+'</b> <span class="sp-gloss">('+e(gloss)+')</span>'+
+        ' <span class="sp-tag'+(same?'':' diff')+'">'+e(T(same?'sp.same':'sp.diff'))+'</span>'+(extra||'')+'</div>';
     }
-    var html=line('In Spanish',d.es,d.g,d.same);
+    var html=line('sp.es',d.es,d.g,d.same);
     var f=FR[d.i];
-    if(f) html+=line('In French',f.fr,f.g,f.same,f.latin?' <span class="sp-gloss">· from Latin: '+e(f.latin)+'</span>':'');
+    if(f) html+=line('sp.fr',f.fr,f.g,f.same,f.latin?' <span class="sp-gloss">· '+e(T('sp.latin'))+': '+e(f.latin)+'</span>':'');
     es.innerHTML=html;
     host.hidden=false;
   }
+  function pick(){
+    var n; do{ n=Math.floor(Math.random()*IDIOMS.length); }while(IDIOMS.length>1 && n===last); last=n;
+    cur=IDIOMS[n]; paint(cur);
+  }
   btn.addEventListener('click',pick);
+  window.addEventListener('breakout-i18n:changed',function(){ if(cur) paint(cur); });
   pick();
 })();
 </script>
@@ -185,24 +199,28 @@ footer{background:var(--teal-d);padding:24px;text-align:center;font-size:.72rem;
       chipHost=document.getElementById('chips'), countEl=document.getElementById('count');
   document.getElementById('tCount').textContent=lib.length;
   function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function T(k,v){return window.BreakoutI18n?BreakoutI18n.t(k,v):k;}
   var bandKw={'3–5':'3-5 grade 3 4 5 elementary','6–8':'6-8 grade 6 7 8 middle','9–12':'9-12 grade 9 10 11 12 high school'};
   var state={q:'',band:'all'};
   var present=order.filter(function(b){return lib.some(function(x){return x.band===b;});});
-  var chips=[{v:'all',label:'All grades'}].concat(present.map(function(b){return {v:b,label:'Grades '+b};}));
-  chipHost.innerHTML=chips.map(function(c){return '<button type="button" class="chip'+(c.v===state.band?' on':'')+'" data-b="'+esc(c.v)+'">'+esc(c.label)+'</button>';}).join('');
+  function renderChips(){
+    var chips=[{v:'all',label:T('chip.all')}].concat(present.map(function(b){return {v:b,label:T('lbl.grades')+' '+b};}));
+    chipHost.innerHTML=chips.map(function(c){return '<button type="button" class="chip'+(c.v===state.band?' on':'')+'" data-b="'+esc(c.v)+'">'+esc(c.label)+'</button>';}).join('');
+  }
   chipHost.addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;state.band=b.getAttribute('data-b');chipHost.querySelectorAll('.chip').forEach(function(c){c.classList.toggle('on',c.getAttribute('data-b')===state.band);});render();});
   function matches(){var q=state.q.trim().toLowerCase(),terms=q?q.split(/\s+/):[];return lib.filter(function(x){if(state.band!=='all'&&x.band!==state.band)return false;if(!terms.length)return true;var hay=(x.title+' '+x.blurb+' '+(x.kw||'')+' Grades '+x.band+' '+(bandKw[x.band]||'')).toLowerCase();return terms.every(function(t){return hay.indexOf(t)!==-1;});});}
   function render(){
     var list=matches(),by={};list.forEach(function(x){(by[x.band]=by[x.band]||[]).push(x);});
     grid.innerHTML=order.filter(function(b){return by[b];}).map(function(b){
-      return '<div><div class="band-h">Grades '+esc(b)+'</div><div class="grid">'+by[b].map(function(x){
-        return '<a class="card" href="'+x.href+'"><span class="t">'+esc(x.title)+'</span><span class="b">'+esc(x.blurb)+'</span><span class="o">Open breakout →</span></a>';
+      return '<div><div class="band-h">'+esc(T('lbl.grades'))+' '+esc(b)+'</div><div class="grid">'+by[b].map(function(x){
+        return '<a class="card" href="'+x.href+'"><span class="t">'+esc(x.title)+'</span><span class="b">'+esc(x.blurb)+'</span><span class="o">'+esc(T('card.open'))+'</span></a>';
       }).join('')+'</div></div>';
-    }).join('') || '<div class="prompt">No idiom breakouts match — try a different word or grade band.</div>';
-    countEl.textContent=list.length+(list.length===1?' breakout':' breakouts');
+    }).join('') || '<div class="prompt">'+esc(T('empty'))+'</div>';
+    countEl.textContent=T(list.length===1?'count.one':'count.many',{n:list.length});
   }
   input.addEventListener('input',function(e){state.q=e.target.value;render();});
-  render();
+  window.addEventListener('breakout-i18n:changed',function(){renderChips();render();});
+  renderChips(); render();
 })();
 </script>
 </body>
