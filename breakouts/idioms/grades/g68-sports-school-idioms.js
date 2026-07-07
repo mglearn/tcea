@@ -65,13 +65,13 @@ window.BREAKOUT = {
    "fb.multiMissing": "Te falta una prueba sólida. Encuéntralas todas.",
    "fb.seq": "Ese orden no coincide con las pistas. Inténtalo de nuevo.",
    "footer.privacy": "Privacidad y cumplimiento",
-   "header.h1": "A jugar: modismos del deporte y la escuela",
-   "header.sub": "El inglés toma prestados modismos del deporte y la escuela todo el tiempo: 'hit the books,' 'drop the ball.' Lee las pistas, compáralas entre idiomas y abre los candados.",
+   "header.h1": "A jugar: modismos de deportes y escuela",
+   "header.sub": "El inglés toma prestados modismos de los deportes y la escuela todo el tiempo: 'hit the books,' 'drop the ball.' Lee las pistas, compáralas entre idiomas y abre los candados.",
    "brief.h": "Nombra el origen y el significado",
-   "brief.p": "Estás leyendo modismos como lenguaje figurado: te fijas en CÓMO funciona la frase, no en si las palabras son literalmente ciertas. Encuentra el significado, usa el contexto y compara entre idiomas.",
-   "win.stamp": "MODISMOS DESCIFRADOS",
+   "brief.p": "Estás leyendo modismos como lenguaje figurado: fíjate en CÓMO funciona la frase, no en si las palabras son literalmente ciertas. Encuentra el significado, usa el contexto y compara entre idiomas.",
+   "win.stamp": "MODISMOS RESUELTOS",
    "win.h": "¡Juego, set y partido!",
-   "win.p": "Separaste la imagen literal del significado real y comparaste idiomas. Notar cómo funciona el lenguaje figurado es una poderosa destreza de lectura."
+   "win.p": "Separaste la imagen literal del significado real y comparaste dos idiomas. Notar cómo funciona el lenguaje figurado es una poderosa destreza de lectura."
   },
   "vi": {
    "sect.clues": "🔍 Các manh mối",
@@ -217,10 +217,10 @@ window.BREAKOUT = {
     },
     {
      "id": "c5",
-     "ico": "🌎",
-     "nm": "Where They Come From",
-     "title": "Idioms have sources",
-     "body": "Idioms often come from everyday life — sports, school, work. The same idea can keep the picture (ball → pelota) or change it entirely. Tracing the source is a reading skill."
+     "ico": "🔎",
+     "nm": "Literal or Figurative?",
+     "title": "Same words, two meanings",
+     "body": "Watch out — some of these can be literal too. You can really 'drop the ball' in a game, or figuratively fail a task. The sentence around the phrase (the context) tells you which meaning is meant. Strong readers let context decide."
     },
     {
      "id": "c6",
@@ -235,62 +235,62 @@ window.BREAKOUT = {
      "id": "L1",
      "type": "mc",
      "color": "#0e7490",
-     "title": "What does it really mean?",
-     "q": "What does 'drop the ball' really mean?",
+     "title": "Read it in context",
+     "q": "Read the sentence: 'Everyone was counting on Marco, but he dropped the ball and forgot to submit the form.' What does 'dropped the ball' mean HERE?",
      "options": [
-      "To make a mistake or fail a responsibility",
-      "To actually drop a basketball",
-      "To win a game"
+      "He failed to do his part",
+      "He handed the job to a teammate",
+      "He changed the plan at the last minute"
      ],
      "answerIndex": 0,
-     "reason": "Clue 3 says it means to make a mistake. The literal picture — dropping a ball — is the trap. Idioms rarely mean what the words say."
+     "reason": "The context — forgetting to submit the form — shows Marco failed his responsibility. The other options sound reasonable, but the sentence doesn't support them, and no real ball was dropped: it's figurative."
     },
     {
      "id": "L2",
      "type": "multi",
      "color": "#0891b2",
-     "title": "What is true about idioms?",
-     "q": "Check every statement that is TRUE (use the clues). Leave out the false one.",
+     "title": "Which rules are really true?",
+     "q": "Check every statement that is TRUE about how idioms work. One only SOUNDS true — leave it out.",
      "items": [
       {
-       "t": "An idiom's meaning is not the sum of its words",
+       "t": "You can't find an idiom's meaning by translating its words one by one",
        "strong": true
       },
       {
-       "t": "English 'the ball is in your court' and Spanish 'la pelota está en tu tejado' both use a BALL",
+       "t": "The same idea can use a different image in another language — 'drop the ball' vs. Spanish 'meter la pata'",
        "strong": true
       },
       {
-       "t": "A 'ballpark figure' is a rough estimate, not an exact number",
+       "t": "The same phrase can be literal or figurative depending on the sentence around it",
        "strong": true
       },
       {
-       "t": "Every sports idiom is really about playing a sport",
+       "t": "If English and Spanish use the same word in an idiom, the idiom must mean the same in both",
        "strong": false
       }
      ],
-     "reason": "The false statement is the trap: the sport is a picture, not the meaning. The three true statements come straight from the clues."
+     "reason": "The last statement only sounds true: sharing a word does NOT guarantee the idiom matches. The other three are the real rules for reading idioms in context."
     },
     {
      "id": "L3",
      "type": "seq",
      "color": "#f59e0b",
-     "title": "Put the talk in order",
-     "q": "Tap the three lines in the ORDER that makes 'the ball is in your court' make sense.",
+     "title": "Follow two idioms",
+     "q": "Tap the three lines in the ORDER that makes a coherent apology — using BOTH 'drop the ball' and 'the ball is in your court.'",
      "pads": [
       {
        "k": "b",
-       "e": "🤔 'So the ball is in my court now?'",
+       "e": "✅ 'This time I finished my part and sent it over.'",
        "c": "#0891b2"
       },
       {
        "k": "a",
-       "e": "📩 'I sent you my offer.'",
+       "e": "😬 'I know I dropped the ball on the last project.'",
        "c": "#0b5563"
       },
       {
        "k": "c",
-       "e": "✅ 'Yes — it's your decision.'",
+       "e": "🎾 'So now the ball is in your court.'",
        "c": "#22d3ee"
       }
      ],
@@ -299,20 +299,20 @@ window.BREAKOUT = {
       "b",
       "c"
      ],
-     "reason": "The order shows the meaning: an offer is sent, the other person asks if it's their turn ('ball in my court'), and it's confirmed. Idioms depend on context."
+     "reason": "The order builds a mini-story: admit a past failure ('dropped the ball'), do the work this time, then hand it off ('the ball is in your court'). Tracking two idioms across a passage is real reading."
     },
     {
      "id": "L4",
      "type": "word",
      "color": "#7c3aed",
-     "title": "Compare the two languages",
-     "q": "Both idioms use the same sport object to mean 'it's your turn': English 'the ball is in your court,' Spanish 'la pelota está en tu tejado.' Type that object in English OR Spanish.",
+     "title": "Name the source",
+     "q": "These idioms borrow their pictures from two everyday areas of life (think 'hit the books,' 'ballpark figure,' 'the ball is in your court'). Name ONE of those two areas in one word.",
      "answer": [
-      "ball",
-      "pelota",
-      "la pelota"
+      "sports",
+      "sport",
+      "school"
      ],
-     "reason": "English 'ball,' Spanish 'pelota' — the same object, the same meaning: it's your turn to act. Comparing across languages sharpens the reading."
+     "reason": "The idioms come from SPORTS ('ballpark,' 'drop the ball,' 'ball in your court') and SCHOOL ('hit the books'). Spotting an idiom's source domain — where its picture comes from — is a strong analytical move."
     }
    ]
   },
@@ -323,40 +323,40 @@ window.BREAKOUT = {
      "ico": "📚",
      "nm": "Hit the Books",
      "title": "'Hit the books'",
-     "body": "'Hit the books' significa estudiar mucho — en realidad no golpeas nada. El español dice 'ponerse a estudiar' o 'hincar los codos' (clavar los codos) — otra imagen, la misma idea."
+     "body": "'Hit the books' significa estudiar mucho — no golpeas nada de verdad. En español decimos 'ponerse a estudiar' o 'hincar los codos' — otra imagen, la misma idea."
     },
     {
      "id": "c2",
      "ico": "⚾",
      "nm": "Ballpark Figure",
      "title": "'A ballpark figure'",
-     "body": "Una 'ballpark figure' es un cálculo aproximado, no un número exacto. Viene del béisbol. El español dice 'una cifra aproximada' — sin imagen deportiva alguna."
+     "body": "Una 'ballpark figure' es un cálculo aproximado, no un número exacto. Viene del béisbol. En español decimos 'una cifra aproximada' — sin ninguna imagen deportiva."
     },
     {
      "id": "c3",
      "ico": "🏀",
      "nm": "Drop the Ball",
      "title": "'Drop the ball'",
-     "body": "'Drop the ball' significa cometer un error o fallar en una responsabilidad. El español dice 'meter la pata' (meter la pata/pie) — otra imagen, la misma idea: equivocarse."
+     "body": "'Drop the ball' significa cometer un error o fallar en una responsabilidad. En español decimos 'meter la pata' — otra imagen, la misma idea: equivocarse."
     },
     {
      "id": "c4",
      "ico": "🎾",
      "nm": "Ball in Your Court",
      "title": "'The ball is in your court'",
-     "body": "'The ball is in your court' significa que es tu turno de decidir o actuar. El español dice 'la pelota está en tu tejado' — la MISMA pelota, en otro lugar."
+     "body": "'The ball is in your court' significa que es tu turno de decidir o actuar. En español decimos 'la pelota está en tu tejado' — la MISMA pelota, en otro lugar."
     },
     {
      "id": "c5",
-     "ico": "🌎",
-     "nm": "De dónde vienen",
-     "title": "Los modismos tienen origen",
-     "body": "Los modismos suelen venir de la vida diaria: deportes, escuela, trabajo. La misma idea puede conservar la imagen (ball → pelota) o cambiarla por completo. Rastrear el origen es una destreza de lectura."
+     "ico": "🔎",
+     "nm": "¿Literal o figurado?",
+     "title": "Mismas palabras, dos significados",
+     "body": "Cuidado — algunos de estos también pueden ser literales. Puedes 'drop the ball' de verdad en un partido, o fallar una tarea en sentido figurado. La oración que rodea la frase (el contexto) te dice cuál es el significado. Los buenos lectores dejan que el contexto decida."
     },
     {
      "id": "c6",
      "ico": "🏟️",
-     "nm": "Dato del estadio",
+     "nm": "Dato de estadio",
      "title": "Cierto, pero fuera de tema",
      "body": "El estadio más grande del mundo tiene capacidad para unas 114,000 personas. Es un dato deportivo verdadero — pero no tiene nada que ver con lo que significan estos modismos."
     }
@@ -366,62 +366,62 @@ window.BREAKOUT = {
      "id": "L1",
      "type": "mc",
      "color": "#0e7490",
-     "title": "¿Qué significa de verdad?",
-     "q": "¿Qué significa realmente 'drop the ball'?",
+     "title": "Léelo en contexto",
+     "q": "Lee la oración: 'Everyone was counting on Marco, but he dropped the ball and forgot to submit the form.' ¿Qué significa 'dropped the ball' AQUÍ?",
      "options": [
-      "Cometer un error o fallar en una responsabilidad",
-      "Dejar caer de verdad un balón de básquetbol",
-      "Ganar un partido"
+      "No hizo su parte",
+      "Le pasó el trabajo a un compañero",
+      "Cambió el plan a último momento"
      ],
      "answerIndex": 0,
-     "reason": "La pista 3 dice que significa cometer un error. La imagen literal —dejar caer una pelota— es la trampa. Los modismos casi nunca significan lo que dicen las palabras."
+     "reason": "El contexto —olvidar entregar el formulario— muestra que Marco falló en su responsabilidad. Las otras opciones suenan razonables, pero la oración no las respalda, y no se cayó ninguna pelota de verdad: es figurado."
     },
     {
      "id": "L2",
      "type": "multi",
      "color": "#0891b2",
-     "title": "¿Qué es cierto sobre los modismos?",
-     "q": "Marca cada afirmación VERDADERA (usa las pistas). Deja fuera la falsa.",
+     "title": "¿Qué reglas son de verdad ciertas?",
+     "q": "Marca cada afirmación VERDADERA sobre cómo funcionan los modismos. Una solo SUENA cierta — déjala fuera.",
      "items": [
       {
-       "t": "El significado de un modismo no es la suma de sus palabras",
+       "t": "No puedes hallar el significado de un modismo traduciendo sus palabras una por una",
        "strong": true
       },
       {
-       "t": "El inglés 'the ball is in your court' y el español 'la pelota está en tu tejado' usan ambos una PELOTA",
+       "t": "La misma idea puede usar otra imagen en otro idioma — 'drop the ball' frente al español 'meter la pata'",
        "strong": true
       },
       {
-       "t": "Una 'ballpark figure' es un cálculo aproximado, no un número exacto",
+       "t": "La misma frase puede ser literal o figurada según la oración que la rodea",
        "strong": true
       },
       {
-       "t": "Todo modismo deportivo trata en realidad de practicar un deporte",
+       "t": "Si el inglés y el español usan la misma palabra en un modismo, el modismo debe significar lo mismo en ambos",
        "strong": false
       }
      ],
-     "reason": "La afirmación falsa es la trampa: el deporte es una imagen, no el significado. Las tres afirmaciones verdaderas salen directamente de las pistas."
+     "reason": "La última afirmación solo suena cierta: compartir una palabra NO garantiza que el modismo coincida. Las otras tres son las verdaderas reglas para leer modismos en contexto."
     },
     {
      "id": "L3",
      "type": "seq",
      "color": "#f59e0b",
-     "title": "Ordena la conversación",
-     "q": "Toca las tres líneas en el ORDEN que hace que 'the ball is in your court' tenga sentido.",
+     "title": "Sigue dos modismos",
+     "q": "Toca las tres líneas en el ORDEN que forma una disculpa coherente — usando TANTO 'drop the ball' como 'the ball is in your court.'",
      "pads": [
       {
        "k": "b",
-       "e": "🤔 '¿Así que ahora la pelota está en mi tejado?'",
+       "e": "✅ 'This time I finished my part and sent it over.'",
        "c": "#0891b2"
       },
       {
        "k": "a",
-       "e": "📩 'Te envié mi oferta.'",
+       "e": "😬 'I know I dropped the ball on the last project.'",
        "c": "#0b5563"
       },
       {
        "k": "c",
-       "e": "✅ 'Sí — es tu decisión.'",
+       "e": "🎾 'So now the ball is in your court.'",
        "c": "#22d3ee"
       }
      ],
@@ -430,21 +430,24 @@ window.BREAKOUT = {
       "b",
       "c"
      ],
-     "reason": "El orden muestra el significado: se envía una oferta, la otra persona pregunta si es su turno ('la pelota en mi tejado') y se confirma. Los modismos dependen del contexto."
+     "reason": "El orden arma una mini-historia: admitir un fallo pasado ('dropped the ball'), hacer el trabajo esta vez, y luego pasarlo ('the ball is in your court'). Seguir dos modismos a lo largo de un pasaje es lectura de verdad."
     },
     {
      "id": "L4",
      "type": "word",
      "color": "#7c3aed",
-     "title": "Compara los dos idiomas",
-     "q": "Ambos modismos usan el mismo objeto deportivo para decir 'es tu turno': el inglés 'the ball is in your court' y el español 'la pelota está en tu tejado.' Escribe ese objeto en inglés O en español.",
+     "title": "Nombra el origen",
+     "q": "Estos modismos toman prestadas sus imágenes de dos áreas cotidianas de la vida (piensa en 'hit the books,' 'ballpark figure,' 'the ball is in your court'). Nombra UNA de esas dos áreas en una palabra.",
      "answer": [
-      "pelota",
-      "la pelota",
-      "una pelota",
-      "ball"
+      "deportes",
+      "deporte",
+      "escuela",
+      "colegio",
+      "sports",
+      "sport",
+      "school"
      ],
-     "reason": "Inglés 'ball,' español 'pelota' — el mismo objeto, el mismo significado: es tu turno de actuar. Comparar entre idiomas agudiza la lectura."
+     "reason": "Los modismos vienen de los DEPORTES ('ballpark,' 'drop the ball,' 'ball in your court') y la ESCUELA ('hit the books'). Detectar el dominio de origen de un modismo — de dónde viene su imagen — es una jugada analítica poderosa."
     }
    ]
   }

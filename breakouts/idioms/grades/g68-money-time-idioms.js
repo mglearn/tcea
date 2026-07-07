@@ -65,13 +65,13 @@ window.BREAKOUT = {
    "fb.multiMissing": "Te falta una prueba sólida. Encuéntralas todas.",
    "fb.seq": "Ese orden no coincide con las pistas. Inténtalo de nuevo.",
    "footer.privacy": "Privacidad y cumplimiento",
-   "header.h1": "Tiempo y dinero: modismos que cuestan",
-   "header.sub": "El inglés trata el tiempo y el dinero como si fueran objetos — 'time flies' (el tiempo vuela), 'break the bank' (costar un dineral). Lee las pistas, compáralas entre idiomas y abre los candados.",
+   "header.h1": "Tiempo y dinero: modismos que cuestan caro",
+   "header.sub": "El inglés trata el tiempo y el dinero como si fueran objetos: 'time flies' (el tiempo vuela), 'break the bank' (costar un dineral). Lee las pistas, compáralas entre idiomas y abre los candados.",
    "brief.h": "Lee el tiempo y el dinero como metáforas",
-   "brief.p": "El inglés suele tratar el tiempo y el dinero como si fueran objetos que puedes ahorrar, gastar o perder. Fíjate en la metáfora, encuentra el significado y compara entre idiomas.",
+   "brief.p": "El inglés muchas veces trata el tiempo y el dinero como si fueran objetos que puedes ahorrar, gastar o perder. Nota la metáfora, encuentra el significado y compara entre idiomas.",
    "win.stamp": "MODISMOS DESCIFRADOS",
-   "win.h": "¡En el clavo!",
-   "win.p": "Leíste el tiempo y el dinero como metáforas, hallaste sus significados y comparaste idiomas — un buen razonamiento sobre el lenguaje figurado."
+   "win.h": "¡Justo en el clavo!",
+   "win.p": "Leíste el tiempo y el dinero como metáforas, hallaste los significados y comparaste idiomas: un fuerte razonamiento sobre el lenguaje figurado."
   },
   "vi": {
    "sect.clues": "🔍 Các manh mối",
@@ -217,10 +217,10 @@ window.BREAKOUT = {
     },
     {
      "id": "c5",
-     "ico": "🌎",
-     "nm": "Time as a Resource",
-     "title": "The shared metaphor",
-     "body": "Many languages treat time like a resource you can save or spend. Some idioms keep the same picture (time flies = el tiempo vuela); some change it. Noticing the metaphor is a reading skill."
+     "ico": "🚫",
+     "nm": "Word-for-Word Fails",
+     "title": "A false-friend warning",
+     "body": "Careful with word-for-word guesses. 'Break the bank' is NOT 'romper el banco' in Spanish, and 'once in a blue moon' has nothing to do with a real blue moon. Idioms almost never translate literally — you learn them as whole phrases."
     },
     {
      "id": "c6",
@@ -235,62 +235,62 @@ window.BREAKOUT = {
      "id": "L1",
      "type": "mc",
      "color": "#0e7490",
-     "title": "What does it really mean?",
-     "q": "What does 'break the bank' really mean?",
+     "title": "Read it in context",
+     "q": "Read: 'Don't worry — this trip won't break the bank.' What does 'break the bank' mean HERE?",
      "options": [
-      "To cost too much or use up all your money",
-      "To rob a bank",
-      "To fix a broken bank"
+      "It won't cost too much money",
+      "It won't take much time",
+      "It won't be very hard"
      ],
      "answerIndex": 0,
-     "reason": "Clue 2 says it means to cost too much. The literal picture — robbing or breaking a bank — is the trap. Idioms rarely mean what the words say."
+     "reason": "The context ('won't…') tells you it's about money — the trip won't cost too much. The distractors describe OTHER idioms (about time or difficulty), not this one."
     },
     {
      "id": "L2",
      "type": "multi",
      "color": "#0891b2",
-     "title": "What is true about idioms?",
-     "q": "Check every statement that is TRUE (use the clues). Leave out the false one.",
+     "title": "Which rules are really true?",
+     "q": "Check every TRUE statement. One overgeneralizes from a single example — leave it out.",
      "items": [
       {
        "t": "An idiom's meaning is not the sum of its words",
        "strong": true
       },
       {
-       "t": "English 'time flies' and Spanish 'el tiempo vuela' use the SAME picture",
+       "t": "English 'time flies' and Spanish 'el tiempo vuela' happen to use the SAME image",
        "strong": true
       },
       {
-       "t": "'Once in a blue moon' means something happens very rarely",
+       "t": "Most idioms cannot be translated word for word into another language",
        "strong": true
       },
       {
-       "t": "'Break the bank' means to actually rob a bank",
+       "t": "Because 'time flies' matches in both languages, all idioms will match between English and Spanish",
        "strong": false
       }
      ],
-     "reason": "The false statement is the trap: 'break the bank' is a metaphor for cost, not a real robbery. The three true statements come straight from the clues."
+     "reason": "The false statement overgeneralizes from one lucky match — 'time flies' matching does NOT mean every idiom matches. Reasoning from one example to 'all' is the trap."
     },
     {
      "id": "L3",
      "type": "seq",
      "color": "#f59e0b",
-     "title": "Put the talk in order",
-     "q": "Tap the three lines in the ORDER that makes 'once in a blue moon' make sense.",
+     "title": "Follow two idioms",
+     "q": "Tap the three lines in the ORDER that makes sense — using BOTH 'time flies' and 'once in a blue moon.'",
      "pads": [
       {
        "k": "b",
-       "e": "🙂 'No — only once in a blue moon.'",
+       "e": "🌙 'We only get together once in a blue moon.'",
        "c": "#0891b2"
       },
       {
        "k": "a",
-       "e": "🍦 'Do you eat ice cream every day?'",
+       "e": "👋 'I can't believe a whole year has passed — time flies!'",
        "c": "#0b5563"
       },
       {
        "k": "c",
-       "e": "😄 'So, almost never!'",
+       "e": "📅 'Let's not wait so long next time.'",
        "c": "#22d3ee"
       }
      ],
@@ -299,21 +299,18 @@ window.BREAKOUT = {
       "b",
       "c"
      ],
-     "reason": "The order shows the meaning: a question, the reply 'once in a blue moon,' and the paraphrase 'almost never.' Context is what unlocks an idiom."
+     "reason": "The order builds a thought: time passed fast ('time flies'), they rarely meet ('once in a blue moon'), so they should plan sooner. Tracking two idioms across a passage is real reading."
     },
     {
      "id": "L4",
      "type": "word",
      "color": "#7c3aed",
-     "title": "Compare the two languages",
-     "q": "In English, time passes fast when 'time ___.' In Spanish, 'el tiempo ___' (vuela). Both use the SAME picture. Type the action in English OR Spanish.",
+     "title": "Name the hidden comparison",
+     "q": "In these idioms, time is treated like one other thing you can 'save,' 'spend,' or 'waste.' Type that one thing (one word).",
      "answer": [
-      "flies",
-      "vuela",
-      "fly",
-      "volar"
+      "money"
      ],
-     "reason": "English 'flies,' Spanish 'vuela' — the same picture (flying) for time passing fast. When the metaphor matches across languages, it is easy to remember."
+     "reason": "English treats TIME like MONEY — you save it, spend it, or waste it. Naming that hidden comparison (a conceptual metaphor) is sophisticated figurative-language thinking."
     }
    ]
   },
@@ -323,7 +320,7 @@ window.BREAKOUT = {
      "id": "c1",
      "ico": "⏰",
      "nm": "El tiempo vuela",
-     "title": "'Time flies'",
+     "title": "'Time flies' (el tiempo vuela)",
      "body": "'Time flies' significa que el tiempo pasa muy rápido. El español dice 'el tiempo vuela' — la MISMA imagen: ¡el tiempo volando!"
     },
     {
@@ -338,28 +335,28 @@ window.BREAKOUT = {
      "ico": "🌙",
      "nm": "De vez en cuando",
      "title": "'Once in a blue moon'",
-     "body": "'Once in a blue moon' (una vez en una luna azul) significa muy rara vez. El español dice 'de vez en cuando' o 'de Pascuas a Ramos' — otra imagen, la misma idea: rara vez."
+     "body": "'Once in a blue moon' (una vez en una luna azul) significa muy rara vez. El español dice 'de vez en cuando' o 'de Pascuas a Ramos' — otra imagen, la misma idea: pocas veces."
     },
     {
      "id": "c4",
      "ico": "⏳",
-     "nm": "Ahorrar / perder tiempo",
-     "title": "El tiempo actúa como dinero",
-     "body": "En inglés puedes 'save time' (ahorrar tiempo), 'spend time' (gastar tiempo) o 'waste time' (perder tiempo) — como si el tiempo fuera dinero. El español también lo hace: 'ahorrar tiempo' y 'perder el tiempo'."
+     "nm": "Ahorrar / gastar tiempo",
+     "title": "El tiempo actúa como el dinero",
+     "body": "En inglés puedes 'save time' (ahorrar tiempo), 'spend time' (pasar tiempo) o 'waste time' (perder el tiempo), como si el tiempo fuera dinero. El español también lo hace: 'ahorrar tiempo' y 'perder el tiempo'."
     },
     {
      "id": "c5",
-     "ico": "🌎",
-     "nm": "El tiempo como recurso",
-     "title": "La metáfora compartida",
-     "body": "Muchos idiomas tratan el tiempo como un recurso que se puede ahorrar o gastar. Algunos modismos conservan la misma imagen (time flies = el tiempo vuela); otros la cambian. Notar la metáfora es una destreza de lectura."
+     "ico": "🚫",
+     "nm": "Palabra por palabra falla",
+     "title": "Aviso de falso amigo",
+     "body": "Cuidado con adivinar palabra por palabra. 'Break the bank' NO es 'romper el banco' en español, y 'once in a blue moon' no tiene nada que ver con una luna azul de verdad. Los modismos casi nunca se traducen al pie de la letra: se aprenden como frases completas."
     },
     {
      "id": "c6",
      "ico": "💎",
      "nm": "Dato del diamante",
      "title": "Cierto, pero fuera de tema",
-     "body": "El diamante es el material natural más duro de la Tierra. Es un dato científico verdadero, pero no tiene nada que ver con lo que significan estos modismos."
+     "body": "Los diamantes son el material natural más duro de la Tierra. Es un dato científico verdadero, pero no tiene nada que ver con lo que significan estos modismos."
     }
    ],
    "locks": [
@@ -367,62 +364,62 @@ window.BREAKOUT = {
      "id": "L1",
      "type": "mc",
      "color": "#0e7490",
-     "title": "¿Qué significa de verdad?",
-     "q": "¿Qué significa realmente 'break the bank'?",
+     "title": "Léelo en contexto",
+     "q": "Lee: 'Don't worry — this trip won't break the bank.' ¿Qué significa 'break the bank' AQUÍ?",
      "options": [
-      "Costar demasiado o gastar todo tu dinero",
-      "Robar un banco",
-      "Reparar un banco roto"
+      "No costará demasiado dinero",
+      "No tomará mucho tiempo",
+      "No será muy difícil"
      ],
      "answerIndex": 0,
-     "reason": "La pista 2 dice que significa costar demasiado. La imagen literal —robar o romper un banco— es la trampa. Los modismos casi nunca significan lo que dicen las palabras."
+     "reason": "El contexto ('won't…', no lo hará) te dice que se trata de dinero: el viaje no costará demasiado. Los distractores describen OTROS modismos (sobre el tiempo o la dificultad), no este."
     },
     {
      "id": "L2",
      "type": "multi",
      "color": "#0891b2",
-     "title": "¿Qué es cierto sobre los modismos?",
-     "q": "Marca cada afirmación VERDADERA (usa las pistas). Deja fuera la falsa.",
+     "title": "¿Qué reglas son de verdad ciertas?",
+     "q": "Marca cada afirmación VERDADERA. Una generaliza demasiado a partir de un solo ejemplo: déjala fuera.",
      "items": [
       {
        "t": "El significado de un modismo no es la suma de sus palabras",
        "strong": true
       },
       {
-       "t": "El inglés 'time flies' y el español 'el tiempo vuela' usan la MISMA imagen",
+       "t": "El inglés 'time flies' y el español 'el tiempo vuela' usan por casualidad la MISMA imagen",
        "strong": true
       },
       {
-       "t": "'Once in a blue moon' significa que algo pasa muy rara vez",
+       "t": "La mayoría de los modismos no se pueden traducir palabra por palabra a otro idioma",
        "strong": true
       },
       {
-       "t": "'Break the bank' significa robar un banco de verdad",
+       "t": "Como 'time flies' coincide en ambos idiomas, todos los modismos coincidirán entre el inglés y el español",
        "strong": false
       }
      ],
-     "reason": "La afirmación falsa es la trampa: 'break the bank' es una metáfora del costo, no un robo real. Las tres verdaderas salen directamente de las pistas."
+     "reason": "La afirmación falsa generaliza a partir de una coincidencia afortunada: que 'time flies' coincida NO significa que todos los modismos coincidan. Razonar de un solo ejemplo a 'todos' es la trampa."
     },
     {
      "id": "L3",
      "type": "seq",
      "color": "#f59e0b",
-     "title": "Ordena la conversación",
-     "q": "Toca las tres líneas en el ORDEN que hace que 'once in a blue moon' tenga sentido.",
+     "title": "Sigue dos modismos",
+     "q": "Toca las tres líneas en el ORDEN que tiene sentido, usando TANTO 'time flies' como 'once in a blue moon.'",
      "pads": [
       {
        "k": "b",
-       "e": "🙂 'No, solo de vez en cuando (once in a blue moon).'",
+       "e": "👋 '¡No puedo creer que haya pasado todo un año — time flies!'",
        "c": "#0891b2"
       },
       {
        "k": "a",
-       "e": "🍦 '¿Comes helado todos los días?'",
+       "e": "🌙 'Solo nos reunimos once in a blue moon.'",
        "c": "#0b5563"
       },
       {
        "k": "c",
-       "e": "😄 '¡Así que casi nunca!'",
+       "e": "📅 'No esperemos tanto la próxima vez.'",
        "c": "#22d3ee"
       }
      ],
@@ -431,22 +428,20 @@ window.BREAKOUT = {
       "b",
       "c"
      ],
-     "reason": "El orden revela el significado: una pregunta, la respuesta 'once in a blue moon' y la paráfrasis 'casi nunca.' El contexto es lo que abre un modismo."
+     "reason": "El orden arma una idea: el tiempo pasó rápido ('time flies'), casi nunca se ven ('once in a blue moon'), así que deberían planear antes. Seguir dos modismos a lo largo de un pasaje es lectura de verdad."
     },
     {
      "id": "L4",
      "type": "word",
      "color": "#7c3aed",
-     "title": "Compara los dos idiomas",
-     "q": "En inglés, el tiempo pasa rápido cuando 'time ___.' En español, 'el tiempo ___' (vuela). Ambos usan la MISMA imagen. Escribe la acción en inglés O en español.",
+     "title": "Nombra la comparación oculta",
+     "q": "En estos modismos, el tiempo se trata como otra cosa que puedes 'save' (ahorrar), 'spend' (gastar) o 'waste' (malgastar). Escribe esa cosa (una palabra).",
      "answer": [
-      "vuela",
-      "volar",
-      "el tiempo vuela",
-      "flies",
-      "fly"
+      "dinero",
+      "plata",
+      "money"
      ],
-     "reason": "Inglés 'flies,' español 'vuela' — la misma imagen (volar) para el tiempo que pasa rápido. Cuando la metáfora coincide entre idiomas, es fácil de recordar."
+     "reason": "El inglés trata el TIEMPO como el DINERO: lo ahorras, lo gastas o lo malgastas. Nombrar esa comparación oculta (una metáfora conceptual) es un razonamiento sofisticado sobre el lenguaje figurado."
     }
    ]
   }

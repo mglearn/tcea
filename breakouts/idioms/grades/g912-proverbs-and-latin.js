@@ -65,13 +65,13 @@ window.BREAKOUT = {
    "fb.multiMissing": "Te falta una prueba sólida. Encuéntralas todas.",
    "fb.seq": "Ese orden no coincide con las pistas. Inténtalo de nuevo.",
    "footer.privacy": "Privacidad y cumplimiento",
-   "header.h1": "Refranes, dichos y raíces latinas",
-   "header.sub": "Muchos dichos en inglés son antiguos, y algunos provienen directamente del latín. Lee las pistas, síguelas a través de los idiomas y distingue el dicho de su significado.",
-   "brief.h": "Sigue los dichos hasta su significado y sus raíces",
-   "brief.p": "Un refrán es un dicho breve y tradicional que encierra una lección. Algunos dichos en inglés incluso provienen del latín. Halla el significado, compáralo entre idiomas y observa de dónde procede.",
-   "win.stamp": "DICHOS DESCIFRADOS",
+   "header.h1": "Proverbios, refranes y raíces latinas",
+   "header.sub": "Muchos dichos en inglés son antiquísimos; algunos vienen directamente del latín. Lee las pistas, síguelas de una lengua a otra y separa el dicho de su significado.",
+   "brief.h": "Rastrea los dichos hasta su significado y su origen",
+   "brief.p": "Un proverbio es un dicho breve y tradicional que encierra una lección. Algunos dichos ingleses incluso provienen del latín. Halla el significado, compáralo entre lenguas y advierte de dónde surgió.",
+   "win.stamp": "REFRANES DESCIFRADOS",
    "win.h": "¡Sabiduría descifrada!",
-   "win.p": "Relacionaste refranes con sus significados, los comparaste entre idiomas y rastreaste una raíz latina: un trabajo sofisticado con el lenguaje figurado y tradicional."
+   "win.p": "Emparejaste proverbios con sus significados, los comparaste entre lenguas y rastreaste una raíz latina: un trabajo sofisticado con el lenguaje figurado y tradicional."
   },
   "vi": {
    "sect.clues": "🔍 Các manh mối",
@@ -217,10 +217,10 @@ window.BREAKOUT = {
     },
     {
      "id": "c5",
-     "ico": "🌎",
-     "nm": "How Sayings Travel",
-     "title": "Across time and languages",
-     "body": "Proverbs travel across time and languages. Some match closely ('better late than never' = 'más vale tarde que nunca'); some change the picture; and some, like 'carpe diem,' come straight from Latin — the ancestor of Spanish, French, and Italian."
+     "ico": "⚖️",
+     "nm": "Idiom vs. Proverb",
+     "title": "Two kinds of figurative language",
+     "body": "A quick distinction: an IDIOM is a fixed figurative phrase ('spill the beans'). A PROVERB is a short, traditional saying that states a general LESSON about life ('the early bird catches the worm'). Both are figurative — but a proverb teaches, while an idiom just names."
     },
     {
      "id": "c6",
@@ -235,47 +235,47 @@ window.BREAKOUT = {
      "id": "L1",
      "type": "mc",
      "color": "#0e7490",
-     "title": "What does the Latin mean?",
-     "q": "What does the Latin phrase 'carpe diem' mean in English?",
+     "title": "Tell the genres apart",
+     "q": "What makes a PROVERB different from an ordinary idiom?",
      "options": [
-      "Seize the day — make the most of now",
-      "Beware of the dog",
-      "Rome was not built in a day"
+      "A proverb states a general life lesson; an idiom is just a fixed figurative phrase",
+      "A proverb is always longer than an idiom",
+      "A proverb must come from Latin"
      ],
      "answerIndex": 0,
-     "reason": "Clue 3 says 'carpe diem' means 'seize the day.' Recognizing a Latin phrase that lives inside English is a key skill for advanced readers and world-language students."
+     "reason": "A proverb teaches a general lesson ('better late than never'); an idiom is simply a fixed figurative expression ('spill the beans'). Length and Latin origin don't define a proverb — its job of teaching a lesson does."
     },
     {
      "id": "L2",
      "type": "multi",
      "color": "#0891b2",
-     "title": "What is true about these sayings?",
-     "q": "Check every statement that is TRUE (use the clues). Leave out the false one.",
+     "title": "Which claims hold up?",
+     "q": "Check every TRUE statement. One makes a false claim about where languages and proverbs come from — leave it out.",
      "items": [
       {
-       "t": "A proverb is a short, traditional saying that carries a lesson",
+       "t": "A proverb is a short, traditional saying that carries a general lesson",
        "strong": true
       },
       {
-       "t": "English 'better late than never' and Spanish 'más vale tarde que nunca' match almost phrase for phrase",
+       "t": "Some sayings, like 'carpe diem,' entered English directly from Latin",
        "strong": true
       },
       {
-       "t": "The Latin word 'diem' (in carpe diem) is the root of the Spanish word 'día'",
+       "t": "The Latin word 'diem' is the root of the Spanish word 'día'",
        "strong": true
       },
       {
-       "t": "Every English saying was invented in the last hundred years",
+       "t": "Since English and Spanish both come from Latin, their proverbs are usually identical",
        "strong": false
       }
      ],
-     "reason": "The false statement is the trap: many sayings are ancient, and some come from Latin. The three true statements come straight from the clues."
+     "reason": "The false statement is doubly wrong: English is mainly Germanic (not descended from Latin), and even related languages usually express a proverb with a DIFFERENT image ('de tal palo, tal astilla' vs. 'the apple doesn't fall far from the tree')."
     },
     {
      "id": "L3",
      "type": "seq",
      "color": "#f59e0b",
-     "title": "Build the meaning in order",
+     "title": "Build the lesson",
      "q": "Tap the three lines in the ORDER that explains 'the early bird catches the worm.'",
      "pads": [
       {
@@ -299,20 +299,20 @@ window.BREAKOUT = {
       "b",
       "c"
      ],
-     "reason": "The order builds the lesson: acting early, getting the first chances, and the proverb that names it. Proverbs compress a whole lesson into one line."
+     "reason": "The order builds the lesson: acting early, getting the first chances, and the proverb that names it. Proverbs compress a whole lesson into a single line."
     },
     {
      "id": "L4",
      "type": "word",
      "color": "#7c3aed",
-     "title": "Trace the Latin root",
-     "q": "The Latin 'diem' (in 'carpe diem') gave Spanish its word for 'day.' Type that Spanish word — or the English meaning 'day.'",
+     "title": "Trace it back to Latin",
+     "q": "You've traced 'carpe diem' → Spanish 'día' (day). Type the ORIGINAL Latin word — the one inside 'carpe diem' — that this whole chain started from.",
      "answer": [
+      "diem",
       "día",
-      "dia",
-      "day"
+      "dia"
      ],
-     "reason": "Latin 'diem' → Spanish 'día' (English 'day' has the same meaning). Latin is the shared root that connects Spanish, French, and Italian — a central idea for world-language study."
+     "reason": "Latin 'diem' (day) is the root that survives in Spanish 'día.' Tracing a modern word BACK to its Latin source — not just forward — is core etymology work for advanced and Latin students."
     }
    ]
   },
@@ -323,42 +323,42 @@ window.BREAKOUT = {
      "ico": "🍎",
      "nm": "Manzana y árbol",
      "title": "'The apple doesn't fall far from the tree'",
-     "body": "Este refrán significa que los hijos se parecen a sus padres. El español dice 'de tal palo, tal astilla' — otra imagen, la misma lección."
+     "body": "Este proverbio (la manzana no cae lejos del árbol) significa que los hijos se parecen a sus padres. En español decimos 'de tal palo, tal astilla': otra imagen, la misma lección."
     },
     {
      "id": "c2",
      "ico": "⏰",
-     "nm": "Más vale tarde",
+     "nm": "Mejor tarde",
      "title": "'Better late than never'",
-     "body": "'Better late than never' (mejor tarde que nunca) significa que hacer algo tarde es mejor que no hacerlo. El español dice 'más vale tarde que nunca' — una correspondencia casi exacta, frase por frase."
+     "body": "'Better late than never' significa que hacer algo tarde es mejor que no hacerlo nunca. En español decimos 'más vale tarde que nunca': una correspondencia casi exacta, frase por frase."
     },
     {
      "id": "c3",
      "ico": "🏛️",
      "nm": "Carpe diem",
      "title": "Un dicho latino dentro del inglés",
-     "body": "'Carpe diem' es una frase latina usada en inglés que significa 'aprovecha el día' — sácale el máximo al ahora. Como el español también desciende del latín, comparte la raíz: la palabra española 'día' proviene del latín 'diem.'"
+     "body": "'Carpe diem' es una frase latina que se usa en inglés y significa 'aprovecha el día': saca el mayor partido del ahora. Como el español también desciende del latín, comparte esa raíz: la palabra española 'día' proviene del latín 'diem'."
     },
     {
      "id": "c4",
      "ico": "🐦",
      "nm": "El madrugador",
      "title": "'The early bird catches the worm'",
-     "body": "Esto significa que quien actúa temprano obtiene la recompensa. El español tiene un dicho vívido con la misma idea de no ser perezoso: 'camarón que se duerme se lo lleva la corriente' — una imagen completamente distinta, una lección relacionada."
+     "body": "Esto significa que quien actúa temprano obtiene la recompensa. El español tiene un dicho muy vívido sobre esa misma idea de no ser perezoso: 'camarón que se duerme se lo lleva la corriente': una imagen totalmente distinta, una lección emparentada."
     },
     {
      "id": "c5",
-     "ico": "🌎",
-     "nm": "Cómo viajan los dichos",
-     "title": "A través del tiempo y los idiomas",
-     "body": "Los refranes viajan a través del tiempo y de los idiomas. Algunos coinciden casi por completo ('better late than never' = 'más vale tarde que nunca'); otros cambian la imagen; y algunos, como 'carpe diem,' provienen directamente del latín — el antepasado del español, el francés y el italiano."
+     "ico": "⚖️",
+     "nm": "Modismo o proverbio",
+     "title": "Dos clases de lenguaje figurado",
+     "body": "Una distinción rápida: un MODISMO es una frase figurada fija ('spill the beans', irse de la lengua). Un PROVERBIO es un dicho breve y tradicional que enuncia una LECCIÓN general sobre la vida ('the early bird catches the worm'). Ambos son figurados, pero el proverbio enseña, mientras que el modismo solo nombra."
     },
     {
      "id": "c6",
      "ico": "📜",
      "nm": "Dato del pergamino",
      "title": "Cierto, pero fuera de tema",
-     "body": "Uno de los pergaminos antiguos más largos jamás hallados mide más de 40 metros. Es un dato histórico verdadero — pero no tiene nada que ver con lo que significan estos dichos."
+     "body": "Uno de los pergaminos antiguos más largos que se han hallado mide más de 40 metros. Es un dato histórico verdadero, pero no tiene nada que ver con lo que significan estos dichos."
     }
    ],
    "locks": [
@@ -366,48 +366,48 @@ window.BREAKOUT = {
      "id": "L1",
      "type": "mc",
      "color": "#0e7490",
-     "title": "¿Qué significa el latín?",
-     "q": "¿Qué significa la frase latina 'carpe diem' en inglés?",
+     "title": "Distingue los géneros",
+     "q": "¿Qué hace que un PROVERBIO sea distinto de un modismo corriente?",
      "options": [
-      "Aprovecha el día — sácale el máximo al ahora",
-      "Cuidado con el perro",
-      "Roma no se construyó en un día"
+      "Un proverbio enuncia una lección general de la vida; un modismo es solo una frase figurada fija",
+      "Un proverbio siempre es más largo que un modismo",
+      "Un proverbio tiene que venir del latín"
      ],
      "answerIndex": 0,
-     "reason": "La pista 3 dice que 'carpe diem' significa 'aprovecha el día.' Reconocer una frase latina que vive dentro del inglés es una destreza clave para lectores avanzados y estudiantes de lenguas del mundo."
+     "reason": "Un proverbio enseña una lección general ('más vale tarde que nunca'); un modismo es simplemente una expresión figurada fija ('irse de la lengua'). Ni la extensión ni el origen latino definen a un proverbio: lo define su función de enseñar una lección."
     },
     {
      "id": "L2",
      "type": "multi",
      "color": "#0891b2",
-     "title": "¿Qué es cierto sobre estos dichos?",
-     "q": "Marca cada afirmación VERDADERA (usa las pistas). Deja fuera la falsa.",
+     "title": "¿Qué afirmaciones se sostienen?",
+     "q": "Marca cada afirmación VERDADERA. Una hace una afirmación falsa sobre el origen de las lenguas y los proverbios: déjala fuera.",
      "items": [
       {
-       "t": "Un refrán es un dicho breve y tradicional que encierra una lección",
+       "t": "Un proverbio es un dicho breve y tradicional que encierra una lección general",
        "strong": true
       },
       {
-       "t": "El inglés 'better late than never' y el español 'más vale tarde que nunca' coinciden casi frase por frase",
+       "t": "Algunos dichos, como 'carpe diem', entraron al inglés directamente desde el latín",
        "strong": true
       },
       {
-       "t": "La palabra latina 'diem' (en carpe diem) es la raíz de la palabra española 'día'",
+       "t": "La palabra latina 'diem' es la raíz de la palabra española 'día'",
        "strong": true
       },
       {
-       "t": "Todos los dichos en inglés se inventaron en los últimos cien años",
+       "t": "Como el inglés y el español vienen ambos del latín, sus proverbios suelen ser idénticos",
        "strong": false
       }
      ],
-     "reason": "La afirmación falsa es la trampa: muchos dichos son antiguos, y algunos provienen del latín. Las tres afirmaciones verdaderas salen directamente de las pistas."
+     "reason": "La afirmación falsa es doblemente errónea: el inglés es principalmente germánico (no desciende del latín) y, además, incluso lenguas emparentadas suelen expresar un proverbio con una IMAGEN distinta ('de tal palo, tal astilla' frente a 'la manzana no cae lejos del árbol')."
     },
     {
      "id": "L3",
      "type": "seq",
      "color": "#f59e0b",
-     "title": "Construye el significado en orden",
-     "q": "Toca las tres líneas en el ORDEN que explica 'the early bird catches the worm.'",
+     "title": "Construye la lección",
+     "q": "Toca las tres líneas en el ORDEN que explica 'the early bird catches the worm' (al que madruga, la recompensa).",
      "pads": [
       {
        "k": "b",
@@ -416,12 +416,12 @@ window.BREAKOUT = {
       },
       {
        "k": "a",
-       "e": "🌅 'Ella se despierta antes que todos los demás.'",
+       "e": "🌅 'Se levanta antes que todos los demás.'",
        "c": "#0b5563"
       },
       {
        "k": "c",
-       "e": "🏆 '¡El madrugador atrapa al gusano!'",
+       "e": "🏆 '¡El pájaro madrugador atrapa el gusano!'",
        "c": "#22d3ee"
       }
      ],
@@ -430,20 +430,20 @@ window.BREAKOUT = {
       "b",
       "c"
      ],
-     "reason": "El orden construye la lección: actuar temprano, obtener las primeras oportunidades y el refrán que lo nombra. Los refranes comprimen toda una lección en una sola línea."
+     "reason": "El orden construye la lección: actuar temprano, obtener las primeras oportunidades y el proverbio que lo nombra. Los proverbios comprimen una lección entera en una sola línea."
     },
     {
      "id": "L4",
      "type": "word",
      "color": "#7c3aed",
-     "title": "Rastrea la raíz latina",
-     "q": "El latín 'diem' (en 'carpe diem') le dio al español su palabra para 'day' (día). Escribe esa palabra española — o su significado en inglés, 'day.'",
+     "title": "Rastréalo hasta el latín",
+     "q": "Ya rastreaste 'carpe diem' → español 'día' (day). Escribe la palabra latina ORIGINAL —la que está dentro de 'carpe diem'— de la que arrancó toda esta cadena.",
      "answer": [
+      "diem",
       "día",
-      "dia",
-      "day"
+      "dia"
      ],
-     "reason": "Latín 'diem' → español 'día' (el inglés 'day' tiene el mismo significado). El latín es la raíz compartida que conecta el español, el francés y el italiano — una idea central para el estudio de las lenguas del mundo."
+     "reason": "El latín 'diem' (día) es la raíz que sobrevive en el español 'día'. Rastrear una palabra moderna DE VUELTA hasta su fuente latina —no solo hacia adelante— es una tarea etimológica esencial para estudiantes avanzados y de latín."
     }
    ]
   }
