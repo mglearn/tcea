@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* build-correlation.js — regenerate the TEKS correlation tables for ALL 24 breakouts
+/* build-correlation.js — regenerate the TEKS correlation tables for ALL 31 breakouts
    and splice them into correlation.html between <!--CORR:START--> / <!--CORR:END-->.
    Titles are read live from grades/<key>.js so they stay in sync. TEKS citations are
    good-faith, paraphrased alignment references (see the disclaimer in correlation.html).
@@ -10,10 +10,10 @@ const path = require('path');
 const ROOT = __dirname, GRADES = path.join(ROOT, 'grades');
 
 const ORDER = {
-  'K–2': ['k2', 'k2-noah-ark', 'k2-good-samaritan', 'k2-solomon-choice', 'k2-jonah-fish', 'k2-moses-rules'],
-  '3–5': ['g35', 'g35-noah-flood', 'g35-jonah-second-chance', 'g35-good-samaritan-35', 'g35-moses-ten', 'g35-last-supper'],
-  '6–8': ['g68', 'g68-jonah-irony', 'g68-good-samaritan-68', 'g68-psalms-poetry', 'g68-esther-plot', 'g68-solomon-judgment'],
-  '9–12': ['g912', 'g912-noah-archetype', 'g912-psalm-23', 'g912-lamentations', 'g912-good-samaritan-law', 'g912-solomon-wisdom'],
+  'K–2': ['k2', 'k2-noah-ark', 'k2-good-samaritan', 'k2-solomon-choice', 'k2-jonah-fish', 'k2-moses-rules', 'k2-you-are-special'],
+  '3–5': ['g35', 'g35-noah-flood', 'g35-jonah-second-chance', 'g35-good-samaritan-35', 'g35-moses-ten', 'g35-last-supper', 'g35-humility', 'g35-moses-red-sea'],
+  '6–8': ['g68', 'g68-jonah-irony', 'g68-good-samaritan-68', 'g68-psalms-poetry', 'g68-esther-plot', 'g68-solomon-judgment', 'g68-do-not-be-anxious', 'g68-ecclesiastes'],
+  '9–12': ['g912', 'g912-noah-archetype', 'g912-psalm-23', 'g912-lamentations', 'g912-good-samaritan-law', 'g912-solomon-wisdom', 'g912-job', 'g912-corinthians-love'],
 };
 
 const R = (lock, skill, strand, teks, clear, strategy) => ({ lock, skill, strand, teks, clear, strategy });
@@ -148,6 +148,46 @@ const DATA = {
     R('L2 · Rhetoric', 'Name the rhetorical strategy (the clever test)', "Author's Purpose & Craft — analyze rhetorical devices", '§110.36(9)', 'Claim', 'Feedback d≈0.70'),
     R('L3 · Sequence', 'Order the steps of a rhetorical proof', "Author's Purpose & Craft — analyze how an argument is built", '§110.36(9)', 'Evidence', 'Advance organizers d≈0.42'),
     R('L4 · Text vs. interpretation', "Separate the text's ruling from its 'lesson'", 'Comprehension — distinguish fact/interpretation', '§110.36(5)(H)', 'Alternatives', 'Critical/evaluative thinking d≈0.55') ] },
+
+  // ---- gap-filling breakouts (official required-list coverage) ----
+  'k2-you-are-special': { sources: 'You Are Special by Max Lucado (Kindergarten required list) — a modern allegory, Bible-connected but NOT itself scripture; companion to The Berenstain Bears and the Golden Rule, likewise a modern book, not a biblical text', rows: [
+    R('L1 · Sequence', 'Order story events as the text presents them', 'Comprehension — retell/sequence events with support', '§110.2(6)(E)', 'Evidence', 'Advance organizers d≈0.42'),
+    R('L2 · Inference', "Answer from what a character believes, from the text", 'Comprehension — make inferences using text evidence', '§110.2(6)(F)', 'Claim', 'Feedback d≈0.70'),
+    R('L3 · Evidence sort', 'Separate story details from a true-but-off-topic fact', 'Response — use text evidence to support a response', '§110.2(7)(C)', 'Alternatives', 'Classifying/sorting d≈0.60'),
+    R('L4 · Name the maker', 'Recall a name the text gives', 'Comprehension — describe characters in a story', '§110.2(7)(B)', 'Lens', 'Vocabulary/knowledge d≈0.62') ] },
+
+  'g35-humility': { sources: 'The Necessity of Humility — the parable of the places of honor (Luke 14:7–11), Grade 4 required list', rows: [
+    R('L1 · Theme', 'Determine the theme of a parable', 'Multiple Genres — determine theme using text evidence', '§110.6(8)(A)', 'Claim', 'Feedback d≈0.70'),
+    R('L2 · Evidence', 'Gather only evidence that supports the theme', 'Response — use text evidence to support a response', '§110.6(7)(C)', 'Evidence', 'Classifying/sorting d≈0.60'),
+    R('L3 · Sequence', 'Order the steps of the advice', 'Comprehension — make/confirm inferences', '§110.6(6)(F)', 'Alternatives', 'Advance organizers d≈0.42'),
+    R('L4 · Source', 'Name the Gospel the parable comes from', 'Inquiry & Research — identify/gather relevant sources', '§110.6(12)', 'Lens', 'Prior knowledge activation d≈0.55') ] },
+  'g35-moses-red-sea': { sources: 'Moses: the burning bush (Exodus 3) and the parting of the sea (Exodus 14), Grade 5 required list', rows: [
+    R('L1 · Sequence', 'Order key events to see structure', 'Comprehension — make/confirm inferences', '§110.7(6)(F)', 'Evidence', 'Advance organizers d≈0.42'),
+    R('L2 · Theme', 'Determine the theme across two scenes', 'Multiple Genres — determine theme using text evidence', '§110.7(8)(A)', 'Claim', 'Feedback d≈0.70'),
+    R('L3 · Evidence', 'Gather only theme-supporting evidence', 'Response — use text evidence to support a response', '§110.7(7)(C)', 'Alternatives', 'Classifying/sorting d≈0.60'),
+    R('L4 · Source', 'Name the source book and chapters', 'Inquiry & Research — identify/gather relevant sources', '§110.7(12)', 'Lens', 'Prior knowledge activation d≈0.55') ] },
+
+  'g68-do-not-be-anxious': { sources: 'Do Not Be Anxious (Matthew 6:25–34), from the Sermon on the Mount — Grade 6 required list', rows: [
+    R('L1 · Technique', 'Identify the argument move (lesser-to-greater)', "Author's Purpose & Craft — analyze rhetorical/argument moves", '§110.22–24(9)(D)', 'Claim', 'Feedback d≈0.70'),
+    R('L2 · Evidence', 'Distinguish craft evidence from an off-topic fact', 'Response — use text evidence to support analysis', '§110.22–24(7)', 'Evidence', 'Classifying/sorting d≈0.60'),
+    R('L3 · Sequence', 'Order how examples build to a claim', 'Comprehension — synthesize/evaluate details', '§110.22–24(6)', 'Alternatives', 'Advance organizers d≈0.42'),
+    R('L4 · Genre & source', 'Name the sermon/Gospel the passage belongs to', 'Multiple Genres — analyze genre characteristics', '§110.22–24(8)', 'Lens', 'Concept mapping d≈0.64') ] },
+  'g68-ecclesiastes': { sources: 'Ecclesiastes 3 — "a time for everything," Hebrew wisdom poetry — Grade 8 required list', rows: [
+    R('L1 · Genre', 'Name the poetic genre from its traits', 'Multiple Genres — analyze poetic forms & structures', '§110.22–24(8)(B)', 'Lens', 'Concept mapping d≈0.64'),
+    R('L2 · Evidence', 'Separate structural evidence from an off-topic fact', 'Response — use text evidence to support analysis', '§110.22–24(7)', 'Evidence', 'Classifying/sorting d≈0.60'),
+    R('L3 · Sequence', "Order the poem's opening, list, and claim", 'Comprehension — synthesize/evaluate details', '§110.22–24(6)', 'Alternatives', 'Advance organizers d≈0.42'),
+    R('L4 · Device', 'Name the repeated word that carries the parallelism', "Author's Purpose & Craft — analyze literary devices", '§110.22–24(9)(D)', 'Claim', 'Feedback d≈0.70') ] },
+
+  'g912-job': { sources: 'Book of Job excerpts — the innocent-sufferer archetype; wisdom literature — English II required list', rows: [
+    R('L1 · Archetype', 'Name a narrative archetype (the innocent sufferer)', 'Multiple Genres — analyze thematic/structural links across texts', '§110.37(6)', 'Lens', 'Concept mapping d≈0.64'),
+    R('L2 · Text vs. interpretation', 'Distinguish what the text states from interpretation', 'Comprehension — distinguish fact from inference/interpretation', '§110.37(5)(H)', 'Alternatives', 'Critical/evaluative thinking d≈0.55'),
+    R('L3 · Sequence', "Trace the book's frame–debate–answer structure", 'Comprehension — evaluate details', '§110.37(5)(F)', 'Evidence', 'Advance organizers d≈0.42'),
+    R('L4 · Allusion', 'Trace an allusion into everyday language', "Author's Purpose & Craft — analyze allusion", '§110.37(9)', 'Response', 'Elaborative interrogation d≈0.55') ] },
+  'g912-corinthians-love': { sources: 'The Definition of Love (1 Corinthians 13) — definition by attribute; text vs. cultural afterlife — English IV required list', rows: [
+    R('L1 · Form & device', 'Name the form (epistle) and definition-by-attribute', 'Multiple Genres — analyze genre characteristics', '§110.39(6)', 'Lens', 'Concept mapping d≈0.64'),
+    R('L2 · Evidence', 'Gather evidence for how the passage defines love', 'Response — use text evidence to support analysis', '§110.39(7)', 'Evidence', 'Classifying/sorting d≈0.60'),
+    R('L3 · Sequence', 'Order the argument to its climax', "Author's Purpose & Craft — analyze how a text builds", '§110.39(9)', 'Alternatives', 'Advance organizers d≈0.42'),
+    R('L4 · Close reading', 'Read the passage’s climax closely (the word it lands on)', 'Comprehension — evaluate key details; text vs. context', '§110.39(5)(F)(H)', 'Response', 'Critical/evaluative thinking d≈0.55') ] },
 };
 
 function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }

@@ -1,0 +1,416 @@
+{
+  "es": {
+    "chrome": {
+      "h1": "El Sufriente Inocente",
+      "sub": "El Libro de Job pregunta por qué sufre una persona intachable. Lee las pistas, nombra el arquetipo y separa lo que el texto afirma de lo que los lectores añaden.",
+      "briefH": "Nombra el arquetipo — separa el texto de la interpretación",
+      "briefP": "Estás estudiando Job como literatura e historia en un marco secular y académico. Tu tarea es nombrar el patrón que emplea el libro y distinguir lo que el texto realmente afirma de la interpretación que un lector le aporta. Usa solo las pistas.",
+      "winStamp": "ARQUETIPO NOMBRADO",
+      "winH": "¡Leíste Job como un crítico!",
+      "winP": "Nombraste el arquetipo del sufriente inocente, rastreaste la estructura del libro y separaste el hecho textual de la interpretación. Así es exactamente como se estudia la literatura de forma académica."
+    },
+    "clues": [
+      {
+        "nm": "El Marco",
+        "title": "Un hombre intachable lo pierde todo",
+        "body": "El Libro de Job se abre con un marco en prosa: se describe a Job como un hombre intachable y adinerado. En una serie de desastres pierde su riqueza, sus hijos y su salud, aunque el texto dice que no ha hecho ningún mal."
+      },
+      {
+        "nm": "El Debate",
+        "title": "Los amigos argumentan",
+        "body": "Los amigos de Job llegan y argumentan, en largos discursos poéticos, que debe de haber pecado, porque suponen que el sufrimiento siempre es castigo. Job insiste en que es inocente y exige una respuesta."
+      },
+      {
+        "nm": "La Pregunta",
+        "title": "¿Por qué sufren los inocentes?",
+        "body": "El libro lidia con una pregunta difícil: ¿por qué sufriría una persona intachable? Es una pregunta que el libro plantea y explora extensamente en lugar de zanjarla con una razón sencilla."
+      },
+      {
+        "nm": "El Torbellino",
+        "title": "Una respuesta que no es una razón",
+        "body": "Cerca del final, una voz responde a Job «desde el torbellino», no dando razones del sufrimiento, sino haciéndole preguntas sobre la inmensidad de la creación, como «¿Dónde estabas tú cuando yo fundaba la tierra?»."
+      },
+      {
+        "nm": "La Fuente",
+        "title": "Forma y pervivencia",
+        "body": "Job pertenece a la literatura sapiencial de la Biblia hebrea. Mezcla un marco en prosa con un largo diálogo poético. Su historia es tan conocida que «la paciencia de Job» y «los consoladores de Job» son expresiones habituales (alusiones)."
+      },
+      {
+        "nm": "Dato del Viento",
+        "title": "Verdadero, pero fuera de tema",
+        "body": "Los vientos de un tornado potente pueden girar a más de 480 kilómetros por hora. Es un dato meteorológico verdadero, pero no es lo que el libro quiere decir con la voz que habla «desde el torbellino»."
+      }
+    ],
+    "locks": [
+      {
+        "title": "Nombra el arquetipo",
+        "q": "¿Qué arquetipo representa Job con MAYOR claridad?",
+        "options": ["El sufriente inocente: una persona intachable que sufre a pesar de todo", "El astuto embaucador que escapa de toda trampa", "El héroe recompensado de inmediato por cada buena acción"],
+        "reason": "Las Pistas 1, 2 y 3 establecen a una persona intachable que sufre y exige una respuesta: el arquetipo del sufriente inocente. En realidad el libro se resiste a la idea de que el buen comportamiento se recompense al instante, lo que descarta las otras opciones."
+      },
+      {
+        "title": "Texto frente a interpretación",
+        "q": "Marca cada afirmación que el TEXTO realmente enuncia. Deja fuera el dato verdadero pero fuera de tema.",
+        "items": ["Se describe a Job como intachable y aun así pierde su riqueza, sus hijos y su salud", "Los amigos argumentan que debe de haber pecado para sufrir tanto", "Los vientos de un tornado pueden girar a más de 480 kilómetros por hora", "La voz desde el torbellino responde con preguntas, no con razones"],
+        "reason": "El dato del tornado es meteorología verdadera pero fuera de tema: aquí el torbellino es una escena literaria, no un parte del tiempo. Las pistas fuertes son lo que el texto enuncia; separar eso de los datos y suposiciones externos es el movimiento académico central."
+      },
+      {
+        "title": "Ordena la estructura del libro",
+        "q": "Toca las tres partes en el ORDEN en que el libro las presenta.",
+        "pads": ["🗣️ Los amigos debaten por qué sufre", "🌪️ La voz responde desde el torbellino", "🏚️ Un hombre intachable lo pierde todo"],
+        "reason": "El libro pasa del marco (un hombre intachable lo pierde todo) al largo debate con los amigos, y de ahí a la respuesta desde el torbellino. Rastrear esa estructura muestra cómo el libro retiene una razón sencilla."
+      },
+      {
+        "title": "Nombra la alusión",
+        "q": "La Pista 5 da una expresión habitual: «la ___ de Job», usada para alguien que soporta la adversidad. Escribe la cualidad que completa el espacio.",
+        "answer": ["paciencia", "paciente"],
+        "reason": "La Pista 5 nombra la alusión «la paciencia de Job». Rastrear cómo un texto entra en el lenguaje cotidiano como alusión es una destreza lectora central en los grados 9–12."
+      }
+    ]
+  },
+  "vi": {
+    "chrome": {
+      "h1": "Người Vô Tội Chịu Khổ",
+      "sub": "Sách Gióp đặt câu hỏi tại sao một người không có lỗi lại phải chịu khổ. Đọc các gợi ý, đặt tên cho nguyên mẫu, và tách biệt những gì văn bản nói khỏi những gì độc giả thêm vào.",
+      "briefH": "Đặt tên nguyên mẫu — tách văn bản khỏi diễn giải",
+      "briefP": "Bạn đang nghiên cứu Gióp như văn học và lịch sử trong khung thế tục, học thuật. Nhiệm vụ của bạn là đặt tên cho khuôn mẫu mà sách sử dụng, và phân biệt những gì văn bản thực sự nói khỏi diễn giải mà độc giả mang đến. Chỉ dùng các gợi ý.",
+      "winStamp": "NGUYÊN MẪU ĐÃ ĐƯỢC ĐẶT TÊN",
+      "winH": "Bạn đã đọc Gióp như một nhà phê bình!",
+      "winP": "Bạn đã đặt tên cho nguyên mẫu người vô tội chịu khổ, theo dõi cấu trúc của sách, và tách biệt sự thật văn bản khỏi diễn giải. Đó chính xác là cách văn học được nghiên cứu theo lối học thuật."
+    },
+    "clues": [
+      {
+        "nm": "Khung Truyện",
+        "title": "Một người không có lỗi mất tất cả",
+        "body": "Sách Gióp mở đầu bằng một khung văn xuôi: Gióp được mô tả là một người không có lỗi và giàu có. Trong một loạt tai họa, ông mất của cải, con cái và sức khỏe — dù văn bản nói ông không làm điều gì sai."
+      },
+      {
+        "nm": "Cuộc Tranh Luận",
+        "title": "Các người bạn tranh luận",
+        "body": "Các người bạn của Gióp đến và tranh luận, trong những bài diễn thuyết thơ dài, rằng ông hẳn đã phạm tội — vì họ cho rằng đau khổ luôn là hình phạt. Gióp khẳng định mình vô tội và đòi một câu trả lời."
+      },
+      {
+        "nm": "Câu Hỏi",
+        "title": "Tại sao người vô tội chịu khổ?",
+        "body": "Sách vật lộn với một câu hỏi khó: tại sao một người không có lỗi lại phải chịu khổ? Đó là câu hỏi mà sách nêu lên và khám phá dài dòng thay vì khép lại bằng một lý do đơn giản."
+      },
+      {
+        "nm": "Cơn Lốc",
+        "title": "Một câu trả lời không phải là lý do",
+        "body": "Gần cuối, một tiếng nói đáp lời Gióp «từ cơn lốc» — không phải bằng cách đưa ra lý do cho sự đau khổ, mà bằng cách hỏi Gióp những câu hỏi về sự bao la của tạo hóa, chẳng hạn «Ngươi ở đâu khi ta đặt nền móng cho trái đất?»."
+      },
+      {
+        "nm": "Nguồn Gốc",
+        "title": "Hình thức và dư âm",
+        "body": "Gióp thuộc văn chương khôn ngoan của Kinh Thánh Hê-bơ-rơ. Nó pha trộn một khung văn xuôi với đối thoại thơ dài. Câu chuyện của nó nổi tiếng đến mức «sự kiên nhẫn của Gióp» và «những kẻ an ủi của Gióp» trở thành những thành ngữ quen thuộc (điển tích)."
+      },
+      {
+        "nm": "Sự Kiện Về Gió",
+        "title": "Đúng, nhưng lạc đề",
+        "body": "Gió của một cơn lốc xoáy mạnh có thể xoay ở tốc độ hơn 480 km/h. Đó là một sự thật thời tiết đúng — nhưng đó không phải điều sách muốn nói qua tiếng nói cất lên «từ cơn lốc»."
+      }
+    ],
+    "locks": [
+      {
+        "title": "Đặt tên nguyên mẫu",
+        "q": "Gióp thể hiện RÕ RÀNG nhất nguyên mẫu nào?",
+        "options": ["Người vô tội chịu khổ — một người không có lỗi nhưng vẫn phải chịu khổ", "Kẻ lừa gạt tinh ranh thoát khỏi mọi cạm bẫy", "Người hùng được thưởng ngay lập tức cho mỗi việc tốt"],
+        "reason": "Gợi ý 1, 2 và 3 thiết lập một người không có lỗi phải chịu khổ và đòi một câu trả lời — nguyên mẫu người vô tội chịu khổ. Thực ra sách chống lại ý tưởng rằng hành vi tốt được thưởng tức thì, điều này loại trừ các lựa chọn khác."
+      },
+      {
+        "title": "Văn bản so với diễn giải",
+        "q": "Đánh dấu mọi tuyên bố mà VĂN BẢN thực sự nói. Bỏ qua sự kiện đúng nhưng lạc đề.",
+        "items": ["Gióp được mô tả là không có lỗi nhưng vẫn mất của cải, con cái và sức khỏe", "Các người bạn tranh luận rằng ông hẳn đã phạm tội mới chịu khổ đến vậy", "Gió của một cơn lốc xoáy có thể xoay ở tốc độ hơn 480 km/h", "Tiếng nói từ cơn lốc đáp lại bằng câu hỏi, không phải lý do"],
+        "reason": "Sự kiện về lốc xoáy là thời tiết đúng nhưng lạc đề — cơn lốc ở đây là một cảnh văn học, không phải bản tin bão. Các gợi ý chính là những gì văn bản nói; tách biệt điều đó khỏi các sự kiện và giả định bên ngoài là động thái học thuật cốt lõi."
+      },
+      {
+        "title": "Sắp xếp cấu trúc của sách",
+        "q": "Chạm vào ba phần theo THỨ TỰ sách trình bày chúng.",
+        "pads": ["🗣️ Các người bạn tranh luận tại sao ông chịu khổ", "🌪️ Tiếng nói đáp lời từ cơn lốc", "🏚️ Một người không có lỗi mất tất cả"],
+        "reason": "Sách chuyển từ khung truyện (một người không có lỗi mất tất cả), đến cuộc tranh luận dài với các người bạn, rồi đến câu trả lời từ cơn lốc. Theo dõi cấu trúc đó cho thấy sách giữ lại một lý do đơn giản như thế nào."
+      },
+      {
+        "title": "Đặt tên điển tích",
+        "q": "Gợi ý 5 đưa ra một thành ngữ quen thuộc: «sự ___ của Gióp», dùng cho người chịu đựng gian khổ. Gõ phẩm chất điền vào chỗ trống.",
+        "answer": ["kiên nhẫn", "nhẫn nại"],
+        "reason": "Gợi ý 5 nêu tên điển tích «sự kiên nhẫn của Gióp». Theo dõi cách một văn bản đi vào ngôn ngữ hằng ngày như một điển tích là kỹ năng đọc cốt lõi ở lớp 9–12."
+      }
+    ]
+  },
+  "ar": {
+    "chrome": {
+      "h1": "المتألِّم البريء",
+      "sub": "يطرح سِفر أيوب سؤالاً: لماذا يتألَّم إنسانٌ بلا لوم؟ اقرأ الأدلة، وسمِّ النموذج البدئي، وافصل ما يُقرِّره النص عمّا يضيفه القرَّاء.",
+      "briefH": "سمِّ النموذج البدئي — افصل النص عن التفسير",
+      "briefP": "أنت تدرس أيوب بوصفه أدباً وتاريخاً في إطار علماني أكاديمي. مهمتك أن تسمِّي النمط الذي يستخدمه السِّفر، وأن تميِّز ما يُقرِّره النص فعلاً عن التفسير الذي يجلبه القارئ إليه. استخدم الأدلة فقط.",
+      "winStamp": "النموذج البدئي مُسمّى",
+      "winH": "لقد قرأت أيوب كناقد!",
+      "winP": "لقد سمَّيت نموذج المتألِّم البريء، وتتبَّعت بنية السِّفر، وفصلت الحقيقة النصية عن التفسير. هكذا تماماً يُدرَس الأدب أكاديمياً."
+    },
+    "clues": [
+      {
+        "nm": "الإطار",
+        "title": "رجلٌ بلا لوم يفقد كل شيء",
+        "body": "يُفتَتح سِفر أيوب بإطارٍ نثري: يُوصَف أيوب بأنه رجلٌ بلا لوم وثري. في سلسلةٍ من الكوارث يفقد ثروته وأبناءه وصحته — مع أن النص يقول إنه لم يقترف ذنباً."
+      },
+      {
+        "nm": "الجدال",
+        "title": "الأصدقاء يجادلون",
+        "body": "يصل أصدقاء أيوب ويجادلون، في خطبٍ شعرية طويلة، بأنه لا بدَّ أنه أخطأ — لأنهم يفترضون أن المعاناة دائماً عقاب. يصرُّ أيوب على براءته ويطالب بجواب."
+      },
+      {
+        "nm": "السؤال",
+        "title": "لماذا يتألَّم الأبرياء؟",
+        "body": "يصارع السِّفر سؤالاً عسيراً: لماذا يتألَّم إنسانٌ بلا لوم؟ إنه سؤال يطرحه السِّفر ويستكشفه مطوَّلاً بدلاً من حسمه بسببٍ بسيط."
+      },
+      {
+        "nm": "الزوبعة",
+        "title": "جوابٌ ليس سبباً",
+        "body": "قرب النهاية، يُجيب صوتٌ أيوبَ «من الزوبعة» — لا بتقديم أسبابٍ للمعاناة، بل بطرح أسئلةٍ على أيوب عن اتساع الخليقة، مثل «أين كنتَ حين أسَّست الأرض؟»."
+      },
+      {
+        "nm": "المصدر",
+        "title": "الشكل والأثر",
+        "body": "ينتمي أيوب إلى أدب الحكمة في الكتاب العبري. يمزج إطاراً نثرياً بحوارٍ شعري طويل. قصته معروفة إلى حدٍّ جعل «صبر أيوب» و«معزِّي أيوب» تعبيرين شائعين (تلميحات/إشارات أدبية)."
+      },
+      {
+        "nm": "حقيقة الريح",
+        "title": "صحيح، لكنه خارج الموضوع",
+        "body": "يمكن لرياح إعصارٍ قمعي عاتٍ أن تدور بسرعة تتجاوز 480 كيلومتراً في الساعة. هذه حقيقة جوية صحيحة — لكنها ليست ما يعنيه السِّفر بالصوت المتكلِّم «من الزوبعة»."
+      }
+    ],
+    "locks": [
+      {
+        "title": "سمِّ النموذج البدئي",
+        "q": "أيُّ نموذج بدئي يُمثِّله أيوب بأوضح صورة؟",
+        "options": ["المتألِّم البريء — إنسانٌ بلا لوم يتألَّم رغم ذلك", "المحتال الداهية الذي يفلت من كل فخ", "البطل الذي يُكافَأ فوراً على كل فعلٍ حسن"],
+        "reason": "الأدلة 1 و2 و3 تُرسِّخ إنساناً بلا لوم يتألَّم ويطالب بجواب — نموذج المتألِّم البريء. في الواقع يقاوم السِّفر فكرة أن السلوك الحسن يُكافَأ فوراً، وهذا يستبعد الخيارين الآخرين."
+      },
+      {
+        "title": "النص مقابل التفسير",
+        "q": "ضع علامة على كل عبارة يُقرِّرها النص فعلاً. اترك الحقيقة الصحيحة الخارجة عن الموضوع.",
+        "items": ["يُوصَف أيوب بأنه بلا لوم ومع ذلك يفقد ثروته وأبناءه وصحته", "يجادل الأصدقاء بأنه لا بدَّ أنه أخطأ ليتألَّم إلى هذا الحد", "يمكن لرياح إعصارٍ قمعي أن تدور بسرعة تتجاوز 480 كيلومتراً في الساعة", "الصوت من الزوبعة يُجيب بأسئلة لا بأسباب"],
+        "reason": "حقيقة الإعصار طقسٌ صحيح لكنها خارج الموضوع — الزوبعة هنا مشهدٌ أدبي، لا نشرة عاصفة. الأدلة القوية هي ما يُقرِّره النص؛ وفصل ذلك عن الحقائق والافتراضات الخارجية هو الحركة الأكاديمية الجوهرية."
+      },
+      {
+        "title": "رتِّب بنية السِّفر",
+        "q": "انقر على الأجزاء الثلاثة بالترتيب الذي يعرضها به السِّفر.",
+        "pads": ["🗣️ الأصدقاء يتجادلون في سبب تألُّمه", "🌪️ الصوت يُجيب من الزوبعة", "🏚️ رجلٌ بلا لوم يفقد كل شيء"],
+        "reason": "ينتقل السِّفر من الإطار (رجلٌ بلا لوم يفقد كل شيء) إلى الجدال الطويل مع الأصدقاء، ثم إلى الجواب من الزوبعة. تتبُّع تلك البنية يُظهر كيف يمتنع السِّفر عن تقديم سببٍ بسيط."
+      },
+      {
+        "title": "سمِّ التلميح الأدبي",
+        "q": "تُقدِّم الدليلة 5 تعبيراً شائعاً: «___ أيوب»، يُستخدَم لمن يحتمل الشدائد. اكتب الصفة التي تملأ الفراغ.",
+        "answer": ["صبر", "صابر"],
+        "reason": "تُسمِّي الدليلة 5 التلميح «صبر أيوب». تتبُّع كيف يدخل نصٌّ إلى اللغة اليومية بوصفه تلميحاً أدبياً مهارةُ قراءةٍ محورية في الصفوف 9–12."
+      }
+    ]
+  },
+  "hi": {
+    "chrome": {
+      "h1": "निर्दोष पीड़ित",
+      "sub": "अय्यूब की पुस्तक यह प्रश्न पूछती है कि एक निर्दोष व्यक्ति क्यों पीड़ित होता है। सुरागों को पढ़ें, आदि-प्रतिमान (आर्किटाइप) का नाम बताएँ, और जो पाठ कहता है उसे उससे अलग करें जो पाठक जोड़ते हैं।",
+      "briefH": "आदि-प्रतिमान का नाम बताएँ — पाठ को व्याख्या से अलग करें",
+      "briefP": "आप अय्यूब का अध्ययन एक धर्मनिरपेक्ष, शैक्षणिक ढाँचे में साहित्य और इतिहास के रूप में कर रहे हैं। आपका काम उस प्रतिमान का नाम बताना है जिसका पुस्तक उपयोग करती है, और यह अलग करना है कि पाठ वास्तव में क्या कहता है और पाठक उसमें कौन-सी व्याख्या लाता है। केवल सुरागों का उपयोग करें।",
+      "winStamp": "आदि-प्रतिमान नामित",
+      "winH": "आपने अय्यूब को एक समालोचक की तरह पढ़ा!",
+      "winP": "आपने निर्दोष-पीड़ित आदि-प्रतिमान का नाम बताया, पुस्तक की संरचना का पता लगाया, और पाठ्य तथ्य को व्याख्या से अलग किया। साहित्य का शैक्षणिक अध्ययन ठीक इसी प्रकार किया जाता है।"
+    },
+    "clues": [
+      {
+        "nm": "ढाँचा",
+        "title": "एक निर्दोष व्यक्ति सब कुछ खो देता है",
+        "body": "अय्यूब की पुस्तक एक गद्य ढाँचे से आरम्भ होती है: अय्यूब को एक निर्दोष और धनी व्यक्ति के रूप में वर्णित किया गया है। विपत्तियों की एक शृंखला में वह अपना धन, अपने बच्चे और अपना स्वास्थ्य खो देता है — यद्यपि पाठ कहता है कि उसने कोई अपराध नहीं किया।"
+      },
+      {
+        "nm": "विवाद",
+        "title": "मित्र तर्क देते हैं",
+        "body": "अय्यूब के मित्र आते हैं और लंबे काव्यात्मक भाषणों में तर्क देते हैं कि उसने अवश्य ही पाप किया होगा — क्योंकि वे मानते हैं कि पीड़ा सदैव दंड होती है। अय्यूब जोर देता है कि वह निर्दोष है और उत्तर की माँग करता है।"
+      },
+      {
+        "nm": "प्रश्न",
+        "title": "निर्दोष क्यों पीड़ित होते हैं?",
+        "body": "पुस्तक एक कठिन प्रश्न से जूझती है: एक निर्दोष व्यक्ति क्यों पीड़ित होगा? यह एक ऐसा प्रश्न है जिसे पुस्तक उठाती है और विस्तार से खोजती है, बजाय इसके कि उसे किसी सरल कारण से समेट दे।"
+      },
+      {
+        "nm": "बवंडर",
+        "title": "एक उत्तर जो कारण नहीं है",
+        "body": "अंत के निकट, एक आवाज़ अय्यूब को «बवंडर में से» उत्तर देती है — पीड़ा के कारण बताकर नहीं, बल्कि अय्यूब से सृष्टि की विशालता के बारे में प्रश्न पूछकर, जैसे «जब मैंने पृथ्वी की नींव रखी तब तू कहाँ था?»।"
+      },
+      {
+        "nm": "स्रोत",
+        "title": "रूप और उत्तरजीविता",
+        "body": "अय्यूब हिब्रू बाइबल के प्रज्ञा-साहित्य में है। यह एक गद्य ढाँचे को लंबे काव्यात्मक संवाद के साथ मिलाती है। इसकी कथा इतनी प्रसिद्ध है कि «अय्यूब का धैर्य» और «अय्यूब के दिलासा देने वाले» अंग्रेज़ी में सामान्य अभिव्यक्तियाँ (संकेत/अलंकार) बन गई हैं।"
+      },
+      {
+        "nm": "वायु तथ्य",
+        "title": "सत्य, परंतु विषयांतर",
+        "body": "एक शक्तिशाली बवंडर की हवाएँ 480 किलोमीटर प्रति घंटे से अधिक की गति से घूम सकती हैं। यह एक सच्चा मौसम-तथ्य है — परंतु «बवंडर में से» बोलने वाली आवाज़ से पुस्तक का यही अभिप्राय नहीं है।"
+      }
+    ],
+    "locks": [
+      {
+        "title": "आदि-प्रतिमान का नाम बताएँ",
+        "q": "अय्यूब सबसे स्पष्ट रूप से किस आदि-प्रतिमान का प्रतिनिधित्व करता है?",
+        "options": ["निर्दोष पीड़ित — एक निर्दोष व्यक्ति जो फिर भी पीड़ित होता है", "चतुर छलिया जो हर जाल से बच निकलता है", "नायक जिसे हर सत्कर्म के लिए तुरंत पुरस्कृत किया जाता है"],
+        "reason": "सुराग 1, 2 और 3 एक निर्दोष व्यक्ति को स्थापित करते हैं जो पीड़ित होता है और उत्तर माँगता है — निर्दोष-पीड़ित आदि-प्रतिमान। वास्तव में पुस्तक इस विचार का प्रतिरोध करती है कि अच्छे आचरण को तुरंत पुरस्कृत किया जाता है, जिससे अन्य विकल्प निरस्त हो जाते हैं।"
+      },
+      {
+        "title": "पाठ बनाम व्याख्या",
+        "q": "प्रत्येक उस कथन को चिह्नित करें जो पाठ वास्तव में कहता है। सत्य-परंतु-विषयांतर तथ्य को छोड़ दें।",
+        "items": ["अय्यूब को निर्दोष बताया गया है फिर भी वह अपना धन, बच्चे और स्वास्थ्य खो देता है", "मित्र तर्क देते हैं कि इतना पीड़ित होने के लिए उसने अवश्य पाप किया होगा", "एक बवंडर की हवाएँ 480 किलोमीटर प्रति घंटे से अधिक की गति से घूम सकती हैं", "बवंडर में से आने वाली आवाज़ प्रश्नों से उत्तर देती है, कारणों से नहीं"],
+        "reason": "बवंडर का तथ्य सच्चा मौसम है परंतु विषयांतर है — यहाँ बवंडर एक साहित्यिक दृश्य है, तूफ़ान की रिपोर्ट नहीं। सशक्त सुराग वही हैं जो पाठ कहता है; इसे बाहरी तथ्यों और अनुमानों से अलग करना ही केंद्रीय शैक्षणिक क्रिया है।"
+      },
+      {
+        "title": "पुस्तक की संरचना को क्रम में रखें",
+        "q": "तीनों भागों को उस क्रम में टैप करें जिसमें पुस्तक उन्हें प्रस्तुत करती है।",
+        "pads": ["🗣️ मित्र विवाद करते हैं कि वह क्यों पीड़ित है", "🌪️ आवाज़ बवंडर में से उत्तर देती है", "🏚️ एक निर्दोष व्यक्ति सब कुछ खो देता है"],
+        "reason": "पुस्तक ढाँचे (एक निर्दोष व्यक्ति सब कुछ खो देता है) से मित्रों के साथ लंबे विवाद तक, और वहाँ से बवंडर में से आए उत्तर तक बढ़ती है। उस संरचना का पता लगाना दिखाता है कि पुस्तक किसी सरल कारण को कैसे रोके रखती है।"
+      },
+      {
+        "title": "संकेत (अलंकार) का नाम बताएँ",
+        "q": "सुराग 5 एक सामान्य अभिव्यक्ति देता है: «अय्यूब का ___», जो कठिनाई सहने वाले के लिए प्रयुक्त होती है। रिक्त स्थान को भरने वाला गुण लिखें।",
+        "answer": ["धैर्य", "सब्र"],
+        "reason": "सुराग 5 «अय्यूब का धैर्य» संकेत का नाम देता है। किसी पाठ का रोज़मर्रा की भाषा में संकेत के रूप में प्रवेश करना कैसे होता है, इसका पता लगाना कक्षा 9–12 का एक केंद्रीय पठन-कौशल है।"
+      }
+    ]
+  },
+  "ur": {
+    "chrome": {
+      "h1": "بے گناہ مصیبت زدہ",
+      "sub": "ایوب کی کتاب یہ سوال پوچھتی ہے کہ ایک بے گناہ شخص کیوں مصیبت جھیلتا ہے۔ اشارے پڑھیں، آدی نمونے (آرکی ٹائپ) کا نام بتائیں، اور جو متن بیان کرتا ہے اسے اس سے الگ کریں جو قاری اضافہ کرتے ہیں۔",
+      "briefH": "آدی نمونے کا نام بتائیں — متن کو تفسیر سے الگ کریں",
+      "briefP": "آپ ایوب کا مطالعہ ایک سیکولر، علمی دائرے میں ادب اور تاریخ کے طور پر کر رہے ہیں۔ آپ کا کام اس نمونے کا نام بتانا ہے جسے کتاب استعمال کرتی ہے، اور یہ فرق کرنا ہے کہ متن دراصل کیا کہتا ہے اور قاری اس میں کون سی تفسیر لاتا ہے۔ صرف اشاروں کا استعمال کریں۔",
+      "winStamp": "آدی نمونہ نامزد",
+      "winH": "آپ نے ایوب کو ایک نقاد کی طرح پڑھا!",
+      "winP": "آپ نے بے گناہ مصیبت زدہ آدی نمونے کا نام بتایا، کتاب کی ساخت کا پتہ لگایا، اور متنی حقیقت کو تفسیر سے الگ کیا۔ ادب کا علمی مطالعہ بالکل اسی طرح کیا جاتا ہے۔"
+    },
+    "clues": [
+      {
+        "nm": "چوکھٹا",
+        "title": "ایک بے گناہ شخص سب کچھ کھو دیتا ہے",
+        "body": "ایوب کی کتاب ایک نثری چوکھٹے سے شروع ہوتی ہے: ایوب کو ایک بے گناہ اور دولت مند شخص کے طور پر بیان کیا گیا ہے۔ آفات کے ایک سلسلے میں وہ اپنی دولت، اپنے بچے اور اپنی صحت کھو دیتا ہے — حالانکہ متن کہتا ہے کہ اس نے کوئی غلطی نہیں کی۔"
+      },
+      {
+        "nm": "بحث",
+        "title": "دوست دلیل دیتے ہیں",
+        "body": "ایوب کے دوست آتے ہیں اور لمبی شاعرانہ تقریروں میں دلیل دیتے ہیں کہ اس نے ضرور گناہ کیا ہوگا — کیونکہ وہ فرض کرتے ہیں کہ تکلیف ہمیشہ سزا ہوتی ہے۔ ایوب اصرار کرتا ہے کہ وہ بے گناہ ہے اور جواب کا مطالبہ کرتا ہے۔"
+      },
+      {
+        "nm": "سوال",
+        "title": "بے گناہ کیوں تکلیف جھیلتے ہیں؟",
+        "body": "کتاب ایک مشکل سوال سے نبرد آزما ہے: ایک بے گناہ شخص کیوں تکلیف جھیلے گا؟ یہ ایک ایسا سوال ہے جسے کتاب اٹھاتی ہے اور تفصیل سے کھوجتی ہے، بجائے اس کے کہ اسے کسی سادہ وجہ سے سمیٹ دے۔"
+      },
+      {
+        "nm": "بگولہ",
+        "title": "ایک جواب جو وجہ نہیں ہے",
+        "body": "اختتام کے قریب، ایک آواز ایوب کو «بگولے میں سے» جواب دیتی ہے — تکلیف کی وجوہات بتا کر نہیں، بلکہ ایوب سے تخلیق کی وسعت کے بارے میں سوال پوچھ کر، جیسے «جب میں نے زمین کی بنیاد رکھی تو تُو کہاں تھا؟»۔"
+      },
+      {
+        "nm": "ماخذ",
+        "title": "شکل اور بقا",
+        "body": "ایوب عبرانی بائبل کے حکمت کے ادب میں شامل ہے۔ یہ ایک نثری چوکھٹے کو لمبے شاعرانہ مکالمے کے ساتھ ملاتی ہے۔ اس کی کہانی اتنی مشہور ہے کہ «ایوب کا صبر» اور «ایوب کے تسلی دینے والے» انگریزی میں عام محاورے (تلمیحات) بن چکے ہیں۔"
+      },
+      {
+        "nm": "ہوا کی حقیقت",
+        "title": "درست، لیکن موضوع سے ہٹ کر",
+        "body": "ایک طاقتور بگولے کی ہوائیں 480 کلومیٹر فی گھنٹہ سے زیادہ کی رفتار سے گھوم سکتی ہیں۔ یہ ایک سچی موسمی حقیقت ہے — لیکن «بگولے میں سے» بولنے والی آواز سے کتاب کا یہ مطلب نہیں ہے۔"
+      }
+    ],
+    "locks": [
+      {
+        "title": "آدی نمونے کا نام بتائیں",
+        "q": "ایوب سب سے واضح طور پر کس آدی نمونے کی نمائندگی کرتا ہے؟",
+        "options": ["بے گناہ مصیبت زدہ — ایک بے گناہ شخص جو پھر بھی تکلیف جھیلتا ہے", "چالاک فریبی جو ہر جال سے بچ نکلتا ہے", "ہیرو جسے ہر نیک عمل پر فوراً انعام ملتا ہے"],
+        "reason": "اشارے 1، 2 اور 3 ایک بے گناہ شخص کو قائم کرتے ہیں جو تکلیف جھیلتا ہے اور جواب مانگتا ہے — بے گناہ مصیبت زدہ آدی نمونہ۔ درحقیقت کتاب اس خیال کی مزاحمت کرتی ہے کہ اچھے برتاؤ کو فوراً انعام ملتا ہے، جو دیگر اختیارات کو خارج کر دیتا ہے۔"
+      },
+      {
+        "title": "متن بمقابلہ تفسیر",
+        "q": "ہر اس بیان کو نشان زد کریں جو متن دراصل کہتا ہے۔ سچی-مگر-موضوع سے ہٹی حقیقت کو چھوڑ دیں۔",
+        "items": ["ایوب کو بے گناہ بتایا گیا ہے پھر بھی وہ اپنی دولت، بچے اور صحت کھو دیتا ہے", "دوست دلیل دیتے ہیں کہ اتنی تکلیف جھیلنے کے لیے اس نے ضرور گناہ کیا ہوگا", "ایک بگولے کی ہوائیں 480 کلومیٹر فی گھنٹہ سے زیادہ کی رفتار سے گھوم سکتی ہیں", "بگولے میں سے آنے والی آواز سوالوں سے جواب دیتی ہے، وجوہات سے نہیں"],
+        "reason": "بگولے کی حقیقت سچا موسم ہے مگر موضوع سے ہٹ کر — یہاں بگولہ ایک ادبی منظر ہے، طوفان کی رپورٹ نہیں۔ مضبوط اشارے وہی ہیں جو متن کہتا ہے؛ اسے بیرونی حقائق اور مفروضوں سے الگ کرنا ہی مرکزی علمی اقدام ہے۔"
+      },
+      {
+        "title": "کتاب کی ساخت کو ترتیب دیں",
+        "q": "تینوں حصوں کو اس ترتیب میں ٹیپ کریں جس میں کتاب انہیں پیش کرتی ہے۔",
+        "pads": ["🗣️ دوست بحث کرتے ہیں کہ وہ کیوں تکلیف جھیلتا ہے", "🌪️ آواز بگولے میں سے جواب دیتی ہے", "🏚️ ایک بے گناہ شخص سب کچھ کھو دیتا ہے"],
+        "reason": "کتاب چوکھٹے (ایک بے گناہ شخص سب کچھ کھو دیتا ہے) سے دوستوں کے ساتھ لمبی بحث تک، اور وہاں سے بگولے میں سے آئے جواب تک بڑھتی ہے۔ اس ساخت کا پتہ لگانا دکھاتا ہے کہ کتاب کسی سادہ وجہ کو کیسے روکے رکھتی ہے۔"
+      },
+      {
+        "title": "تلمیح کا نام بتائیں",
+        "q": "اشارہ 5 ایک عام محاورہ دیتا ہے: «ایوب کا ___»، جو مشکل برداشت کرنے والے کے لیے استعمال ہوتا ہے۔ خالی جگہ پُر کرنے والی خوبی لکھیں۔",
+        "answer": ["صبر", "صابر"],
+        "reason": "اشارہ 5 «ایوب کا صبر» تلمیح کا نام دیتا ہے۔ کسی متن کا روزمرہ زبان میں تلمیح کے طور پر داخل ہونا کیسے ہوتا ہے، اس کا پتہ لگانا جماعت 9–12 کی ایک مرکزی مطالعاتی مہارت ہے۔"
+      }
+    ]
+  },
+  "zh": {
+    "chrome": {
+      "h1": "无辜的受难者",
+      "sub": "《约伯记》追问：一个无可指摘的人为何受苦。阅读线索，命名原型，并将文本所陈述的内容与读者所添加的内容区分开来。",
+      "briefH": "命名原型——将文本与诠释区分开",
+      "briefP": "你正在世俗的、学术的框架下，将约伯作为文学与历史加以研究。你的任务是命名这卷书所使用的模式，并区分文本实际陈述的内容与读者带入其中的诠释。只使用线索。",
+      "winStamp": "原型已命名",
+      "winH": "你像批评家一样读了约伯！",
+      "winP": "你命名了无辜受难者原型，追踪了这卷书的结构，并将文本事实与诠释区分开来。文学的学术研究正是如此进行的。"
+    },
+    "clues": [
+      {
+        "nm": "框架",
+        "title": "一个无可指摘的人失去一切",
+        "body": "《约伯记》以一段散文框架开篇：约伯被描述为一个无可指摘的富有之人。在一连串灾难中，他失去了财富、儿女和健康——尽管文本说他并未做错任何事。"
+      },
+      {
+        "nm": "辩论",
+        "title": "朋友们争辩",
+        "body": "约伯的朋友们前来，在冗长的诗体讲论中争辩说他必定犯了罪——因为他们假定苦难总是惩罚。约伯坚称自己无辜，并要求一个答案。"
+      },
+      {
+        "nm": "问题",
+        "title": "无辜者为何受苦？",
+        "body": "这卷书与一个艰难的问题搏斗：一个无可指摘的人为何会受苦？这是这卷书提出并长篇探讨的问题，而非用一个简单的理由加以了结。"
+      },
+      {
+        "nm": "旋风",
+        "title": "一个并非理由的回答",
+        "body": "临近结尾，一个声音「从旋风中」回答约伯——不是给出苦难的理由，而是就造化的浩瀚向约伯发问，例如「我立大地根基的时候，你在哪里？」。"
+      },
+      {
+        "nm": "来源",
+        "title": "体裁与流传",
+        "body": "约伯属于希伯来圣经的智慧文学。它将散文框架与冗长的诗体对话相糅合。其故事家喻户晓，以致「约伯的忍耐」和「约伯的安慰者」成为常见的英语表达（典故）。"
+      },
+      {
+        "nm": "风的事实",
+        "title": "正确，但离题",
+        "body": "强劲龙卷风的风速可超过每小时480公里。这是一个真实的天气事实——但这并非这卷书所说「从旋风中」发声的那个声音的含义。"
+      }
+    ],
+    "locks": [
+      {
+        "title": "命名原型",
+        "q": "约伯最清楚地代表哪一种原型？",
+        "options": ["无辜的受难者——一个无可指摘却仍然受苦的人", "机智的骗徒，能逃脱每一个陷阱", "因每一件善行而立即获得奖赏的英雄"],
+        "reason": "线索1、2和3确立了一个受苦并要求答案的无可指摘之人——无辜受难者原型。实际上这卷书抵制善行会即刻获得奖赏的观念，从而排除了其他选项。"
+      },
+      {
+        "title": "文本与诠释",
+        "q": "勾选文本实际陈述的每一项。排除那条正确但离题的事实。",
+        "items": ["约伯被描述为无可指摘，却失去了财富、儿女和健康", "朋友们争辩说他必定犯了罪才会受这么大的苦", "龙卷风的风速可超过每小时480公里", "从旋风中发出的声音以问题而非理由作答"],
+        "reason": "龙卷风的事实是真实的天气，却离题——这里的旋风是一个文学场景，而非风暴报告。强线索是文本所陈述的内容；将其与外部事实和假设区分开来，正是核心的学术动作。"
+      },
+      {
+        "title": "排列这卷书的结构",
+        "q": "按照这卷书呈现的顺序点击三个部分。",
+        "pads": ["🗣️ 朋友们辩论他为何受苦", "🌪️ 那声音从旋风中作答", "🏚️ 一个无可指摘的人失去一切"],
+        "reason": "这卷书从框架（一个无可指摘的人失去一切）推进到与朋友们的长篇辩论，再到从旋风中而来的回答。追踪这一结构，便可看出这卷书如何不给出一个简单的理由。"
+      },
+      {
+        "title": "命名典故",
+        "q": "线索5给出了一个常见表达：「约伯的___」，用于形容忍受苦难的人。请输入填入空白的品质。",
+        "answer": ["忍耐", "耐心"],
+        "reason": "线索5点出了典故「约伯的忍耐」。追踪一个文本如何作为典故进入日常语言，是9–12年级的一项核心阅读技能。"
+      }
+    ]
+  }
+}

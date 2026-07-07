@@ -1,0 +1,416 @@
+{
+  "es": {
+    "chrome": {
+      "h1": "La Zarza Ardiente y el Mar",
+      "sub": "Dos escenas famosas del Libro del Éxodo: una zarza que arde sin consumirse y un mar que abre un camino. Lee las pistas, sigue la historia y nombra su tema.",
+      "briefH": "Sigue la historia — luego nombra su tema",
+      "briefP": "Estás leyendo dos escenas del Éxodo como literatura — un relato sobre alguien inseguro de sí mismo a quien se le encomienda una gran tarea, y un escape por muy poco. Observa lo que ocurre en orden y usa solo las pistas para respaldar tus respuestas.",
+      "winStamp": "HISTORIA RESUELTA",
+      "winH": "¡Seguiste el camino de Moisés!",
+      "winP": "Pusiste las escenas en orden, nombraste el tema y usaste pistas reales para demostrarlo. Seguir cómo se construye una historia es una destreza de lectura clave."
+    },
+    "clues": [
+      {
+        "nm": "La Zarza",
+        "title": "Una zarza que no se consume",
+        "body": "En el Libro del Éxodo, Moisés está cuidando ovejas cuando ve algo extraño: una zarza que está en llamas pero no se consume. Una voz lo llama desde la zarza y le dice que saque a los israelitas de la esclavitud en Egipto."
+      },
+      {
+        "nm": "La Duda de Moisés",
+        "title": "«¿Quién soy yo?»",
+        "body": "Moisés no se siente preparado. Pregunta: «¿Quién soy yo para hacer esto?». Está inseguro y un poco asustado — pero en la historia acepta la tarea de todos modos."
+      },
+      {
+        "nm": "El Escape",
+        "title": "Fuera de Egipto y perseguidos",
+        "body": "Moisés saca a los israelitas de Egipto. Pero el faraón envía a su ejército tras ellos. Persiguen al pueblo hasta la orilla de un mar, con el agua delante y el ejército detrás."
+      },
+      {
+        "nm": "El Mar",
+        "title": "Un camino a través del agua",
+        "body": "Atrapados junto al mar, la historia dice que el agua se abre para que el pueblo cruce sobre tierra seca. Después de que llegan al otro lado, las aguas regresan. Esta escena está en el Éxodo, capítulo 14."
+      },
+      {
+        "nm": "La Fuente",
+        "title": "Dónde viven estas escenas",
+        "body": "Ambas escenas provienen del Libro del Éxodo — la zarza ardiente en el capítulo 3 y el cruce del mar en el capítulo 14. Leídas como literatura, hablan de un líder reticente y un rescate por muy poco."
+      },
+      {
+        "nm": "Dato del Mar",
+        "title": "Verdadero, pero fuera del tema",
+        "body": "El Mar Rojo es una masa de agua real y muy salada entre África y Arabia. Su agua es tan salada que los nadadores flotan con facilidad. Ese es un dato geográfico verdadero — pero no es lo que enseña la historia del Éxodo."
+      }
+    ],
+    "locks": [
+      {
+        "title": "Ordena las escenas",
+        "q": "Toca los tres eventos de la historia en el ORDEN en que el texto los presenta.",
+        "reason": "El orden de la historia es: la zarza ardiente llama a Moisés, luego el pueblo huye y es perseguido hasta el mar, luego el mar abre un camino. La secuencia ayuda a los lectores a ver cómo una narración avanza hacia su rescate.",
+        "pads": ["🌊 El mar abre un camino", "🔥 La zarza ardiente llama a Moisés", "🏃 El ejército persigue al pueblo hasta el mar"]
+      },
+      {
+        "title": "Nombra el tema",
+        "q": "¿Qué idea enseñan MÁS claramente estas dos escenas?",
+        "reason": "Las pistas 1, 2, 3 y 4 muestran a Moisés dudando, aceptando una gran tarea, y al pueblo escapando a través del peligro. Las otras opciones se aferran a detalles en lugar del tema de la historia.",
+        "options": ["Una persona insegura es llamada a una tarea difícil y es llevada a salvo a través del peligro", "Los desiertos son lugares peligrosos para los pastores y sus ovejas", "La mejor manera de cruzar el agua es esperar a que se seque"]
+      },
+      {
+        "title": "Reúne la evidencia",
+        "q": "Marca cada pista que sea evidencia SÓLIDA del tema «una persona insegura es llamada y llevada a salvo a través del peligro». Deja fuera el hecho verdadero pero fuera del tema.",
+        "reason": "El dato del agua salada es geografía verdadera pero no nos dice nada sobre el tema. La evidencia sólida debe conectarse con el llamado, la duda y el rescate que la historia realmente dramatiza.",
+        "items": ["Una zarza arde sin consumirse y una voz llama a Moisés a una tarea", "Moisés pregunta «¿Quién soy yo?» pero acepta la tarea de todos modos", "El Mar Rojo es tan salado que los nadadores flotan con facilidad", "Atrapados junto al mar, el agua se abre para que el pueblo cruce"]
+      },
+      {
+        "title": "Nombra el libro de origen",
+        "q": "La pista 5 nombra el libro del que provienen ambas escenas. Escribe el nombre de ese libro.",
+        "reason": "La pista 5 dice que ambas escenas están en el Libro del Éxodo. Conocer el libro de origen — e incluso los capítulos — es parte de leer un texto en su contexto.",
+        "answer": ["éxodo", "exodo"]
+      }
+    ]
+  },
+  "vi": {
+    "chrome": {
+      "h1": "Bụi Gai Cháy và Biển Cả",
+      "sub": "Hai cảnh nổi tiếng trong sách Xuất Hành: một bụi gai cháy mà không tàn lụi, và một biển cả mở ra lối đi. Đọc các gợi ý, theo dõi câu chuyện và đặt tên cho chủ đề của nó.",
+      "briefH": "Theo dõi câu chuyện — rồi đặt tên cho chủ đề",
+      "briefP": "Bạn đang đọc hai cảnh trong sách Xuất Hành như tác phẩm văn học — câu chuyện về một người không tự tin được giao một nhiệm vụ lớn, và một cuộc thoát hiểm trong gang tấc. Chú ý điều gì xảy ra theo thứ tự, và chỉ dùng các gợi ý để chứng minh câu trả lời của bạn.",
+      "winStamp": "ĐÃ GIẢI QUYẾT CÂU CHUYỆN",
+      "winH": "Bạn đã theo dõi hành trình của Môi-se!",
+      "winP": "Bạn đã sắp xếp các cảnh theo thứ tự, đặt tên cho chủ đề và dùng các gợi ý thực tế để chứng minh. Theo dõi cách một câu chuyện được xây dựng là một kỹ năng đọc quan trọng."
+    },
+    "clues": [
+      {
+        "nm": "Bụi Gai",
+        "title": "Bụi gai không cháy rụi",
+        "body": "Trong sách Xuất Hành, Môi-se đang chăn cừu thì thấy một cảnh lạ: một bụi gai đang cháy nhưng không tàn lụi. Một giọng nói gọi ông từ bụi gai và bảo ông dẫn dân Israel ra khỏi cảnh nô lệ ở Ai Cập."
+      },
+      {
+        "nm": "Sự Nghi Ngờ của Môi-se",
+        "title": "'Tôi là ai?'",
+        "body": "Môi-se không thấy mình sẵn sàng. Ông hỏi: 'Tôi là ai mà làm được việc này?' Ông không chắc chắn và hơi sợ hãi — nhưng trong câu chuyện ông vẫn nhận lấy nhiệm vụ."
+      },
+      {
+        "nm": "Cuộc Thoát Hiểm",
+        "title": "Ra khỏi Ai Cập và bị truy đuổi",
+        "body": "Môi-se dẫn dân Israel ra khỏi Ai Cập. Nhưng Pha-ra-ôn phái quân đội đuổi theo họ. Dân chúng bị đuổi đến tận bờ biển, nước ở phía trước và quân đội ở phía sau."
+      },
+      {
+        "nm": "Biển Cả",
+        "title": "Một lối đi xuyên qua nước",
+        "body": "Bị mắc kẹt bên biển, câu chuyện kể rằng nước rẽ ra để dân chúng băng qua trên đất khô. Sau khi họ đến bờ bên kia, nước quay trở lại. Cảnh này ở trong sách Xuất Hành, chương 14."
+      },
+      {
+        "nm": "Nguồn Gốc",
+        "title": "Nơi những cảnh này nằm",
+        "body": "Cả hai cảnh đều đến từ sách Xuất Hành — bụi gai cháy ở chương 3, và cuộc vượt biển ở chương 14. Đọc như văn học, chúng kể về một người lãnh đạo miễn cưỡng và một cuộc giải cứu trong gang tấc."
+      },
+      {
+        "nm": "Sự Thật Về Biển",
+        "title": "Đúng, nhưng ngoài chủ đề",
+        "body": "Biển Đỏ là một vùng nước thật, rất mặn nằm giữa châu Phi và bán đảo Ả Rập. Nước của nó mặn đến mức người bơi nổi lên dễ dàng. Đó là một sự thật địa lý — nhưng đó không phải điều câu chuyện Xuất Hành đang dạy."
+      }
+    ],
+    "locks": [
+      {
+        "title": "Sắp xếp các cảnh theo thứ tự",
+        "q": "Nhấn vào ba sự kiện trong câu chuyện theo THỨ TỰ mà văn bản kể.",
+        "reason": "Thứ tự của câu chuyện là: bụi gai cháy gọi Môi-se, rồi dân chúng chạy trốn và bị đuổi đến biển, rồi biển mở ra một lối đi. Trình tự giúp người đọc thấy cách một câu chuyện xây dựng đến cuộc giải cứu.",
+        "pads": ["🌊 Biển mở ra một lối đi", "🔥 Bụi gai cháy gọi Môi-se", "🏃 Quân đội đuổi dân chúng đến biển"]
+      },
+      {
+        "title": "Đặt tên cho chủ đề",
+        "q": "Hai cảnh này dạy RÕ RÀNG NHẤT điều gì?",
+        "reason": "Các gợi ý 1, 2, 3 và 4 cho thấy Môi-se nghi ngờ, nhận lấy một nhiệm vụ lớn, và dân chúng thoát khỏi nguy hiểm. Các lựa chọn khác bám vào chi tiết thay vì chủ đề của câu chuyện.",
+        "options": ["Một người không tự tin được gọi đến một nhiệm vụ khó và được đưa qua nguy hiểm an toàn", "Sa mạc là nơi nguy hiểm cho người chăn cừu và đàn cừu của họ", "Cách tốt nhất để băng qua nước là chờ nó khô cạn"]
+      },
+      {
+        "title": "Thu thập bằng chứng",
+        "q": "Đánh dấu mọi gợi ý là bằng chứng MẠNH cho chủ đề 'một người không tự tin được gọi và được đưa qua nguy hiểm an toàn'. Bỏ qua sự thật đúng nhưng ngoài chủ đề.",
+        "reason": "Sự thật về nước mặn là địa lý đúng nhưng không cho ta biết gì về chủ đề. Bằng chứng mạnh phải kết nối với lời gọi, sự nghi ngờ và cuộc giải cứu mà câu chuyện thực sự thể hiện.",
+        "items": ["Một bụi gai cháy mà không tàn lụi và một giọng nói gọi Môi-se đến một nhiệm vụ", "Môi-se hỏi 'Tôi là ai?' nhưng vẫn nhận lấy nhiệm vụ", "Biển Đỏ mặn đến mức người bơi nổi lên dễ dàng", "Bị mắc kẹt bên biển, nước rẽ ra để dân chúng băng qua"]
+      },
+      {
+        "title": "Đặt tên sách nguồn",
+        "q": "Gợi ý 5 nêu tên cuốn sách mà cả hai cảnh đến từ đó. Gõ tên cuốn sách đó.",
+        "reason": "Gợi ý 5 nói rằng cả hai cảnh đều ở trong sách Xuất Hành. Biết sách nguồn — và cả các chương — là một phần của việc đọc một văn bản trong ngữ cảnh của nó.",
+        "answer": ["xuất hành", "xuất ê-díp-tô ký", "exodus"]
+      }
+    ]
+  },
+  "ar": {
+    "chrome": {
+      "h1": "العُلَّيقة المُشتعِلة والبحر",
+      "sub": "مشهدان مشهوران من سِفر الخروج: عُلَّيقة تشتعل دون أن تحترق، وبحر يفتح طريقًا. اقرأ الأدلة، وتتبع القصة، وحدِّد موضوعها.",
+      "briefH": "تتبع القصة — ثم حدِّد موضوعها",
+      "briefP": "أنت تقرأ مشهدين من سِفر الخروج كأدب — حكاية عن شخص غير واثق من نفسه يُكلَّف بمهمة كبيرة، ونجاة في اللحظة الأخيرة. انتبه إلى ما يحدث بالترتيب، واستخدم الأدلة وحدها لدعم إجاباتك.",
+      "winStamp": "تم حل القصة",
+      "winH": "لقد تتبعت رحلة موسى!",
+      "winP": "رتبت المشاهد بالترتيب، وحددت الموضوع، واستخدمت أدلة حقيقية لإثباته. تتبع كيفية بناء القصة مهارة قراءة أساسية."
+    },
+    "clues": [
+      {
+        "nm": "العُلَّيقة",
+        "title": "عُلَّيقة لا تحترق",
+        "body": "في سِفر الخروج، يكون موسى يرعى الغنم حين يرى مشهدًا غريبًا: عُلَّيقة تشتعل بالنار لكنها لا تحترق. يناديه صوت من العُلَّيقة ويقول له أن يُخرج بني إسرائيل من العبودية في مصر."
+      },
+      {
+        "nm": "شكّ موسى",
+        "title": "«مَن أنا؟»",
+        "body": "لا يشعر موسى بأنه مستعد. يسأل: «مَن أنا حتى أفعل هذا؟» إنه غير واثق وخائف قليلًا — لكنه في القصة يقبل المهمة رغم ذلك."
+      },
+      {
+        "nm": "الهروب",
+        "title": "خارج مصر ومُطارَدون",
+        "body": "يقود موسى بني إسرائيل خارج مصر. لكن فرعون يرسل جيشه خلفهم. يُطارَد الناس حتى حافة بحر، والماء أمامهم والجيش خلفهم."
+      },
+      {
+        "nm": "البحر",
+        "title": "طريق عبر الماء",
+        "body": "وهم محاصرون عند البحر، تقول القصة إن الماء ينشق لكي يعبر الناس على أرض جافة. بعد أن يصلوا إلى الجانب الآخر، تعود المياه. هذا المشهد في سِفر الخروج، الإصحاح 14."
+      },
+      {
+        "nm": "المصدر",
+        "title": "أين يوجد هذان المشهدان",
+        "body": "كلا المشهدين مأخوذان من سِفر الخروج — العُلَّيقة المشتعلة في الإصحاح 3، وعبور البحر في الإصحاح 14. حين تُقرأ كأدب، تحكي عن قائد متردد ونجاة في اللحظة الأخيرة."
+      },
+      {
+        "nm": "حقيقة عن البحر",
+        "title": "صحيح، لكن خارج الموضوع",
+        "body": "البحر الأحمر مسطح مائي حقيقي شديد الملوحة بين أفريقيا وشبه الجزيرة العربية. ماؤه مالح لدرجة أن السباحين يطفون بسهولة. هذه حقيقة جغرافية صحيحة — لكنها ليست ما تعلمه قصة الخروج."
+      }
+    ],
+    "locks": [
+      {
+        "title": "رتِّب المشاهد",
+        "q": "اضغط على الأحداث الثلاثة من القصة بالترتيب الذي يعرضها به النص.",
+        "reason": "ترتيب القصة هو: العُلَّيقة المشتعلة تنادي موسى، ثم يهرب الناس ويُطارَدون حتى البحر، ثم ينفتح البحر طريقًا. يساعد التسلسل القراء على رؤية كيف تُبنى القصة نحو النجاة.",
+        "pads": ["🌊 البحر يفتح طريقًا", "🔥 العُلَّيقة المشتعلة تنادي موسى", "🏃 الجيش يطارد الناس حتى البحر"]
+      },
+      {
+        "title": "حدِّد الموضوع",
+        "q": "ما الفكرة التي يعلمها هذان المشهدان بأوضح صورة؟",
+        "reason": "تُظهر الأدلة 1 و2 و3 و4 موسى يشك، ويقبل مهمة كبيرة، والناس يهربون عبر الخطر. الخيارات الأخرى تتمسك بتفاصيل بدلًا من موضوع القصة.",
+        "options": ["شخص غير واثق يُدعى إلى مهمة صعبة ويُحمَل بأمان عبر الخطر", "الصحاري أماكن خطيرة للرعاة وأغنامهم", "أفضل طريقة لعبور الماء هي انتظار جفافه"]
+      },
+      {
+        "title": "اجمع الأدلة",
+        "q": "ضع علامة على كل دليل هو دليل قوي على موضوع «شخص غير واثق يُدعى ويُحمَل بأمان عبر الخطر». اترك الحقيقة الصحيحة لكن الخارجة عن الموضوع.",
+        "reason": "حقيقة الماء المالح جغرافيا صحيحة لكنها لا تخبرنا شيئًا عن الموضوع. يجب أن يرتبط الدليل القوي بالدعوة والشك والنجاة التي تجسدها القصة فعلًا.",
+        "items": ["عُلَّيقة تشتعل دون أن تحترق وصوت يدعو موسى إلى مهمة", "يسأل موسى «مَن أنا؟» لكنه يقبل المهمة رغم ذلك", "البحر الأحمر مالح لدرجة أن السباحين يطفون بسهولة", "وهم محاصرون عند البحر، ينشق الماء لكي يعبر الناس"]
+      },
+      {
+        "title": "سمِّ الكتاب المصدر",
+        "q": "الدليل 5 يسمي الكتاب الذي يأتي منه المشهدان. اكتب اسم ذلك الكتاب.",
+        "reason": "الدليل 5 يقول إن كلا المشهدين في سِفر الخروج. معرفة الكتاب المصدر — وحتى الإصحاحات — جزء من قراءة النص في سياقه.",
+        "answer": ["الخروج", "سفر الخروج"]
+      }
+    ]
+  },
+  "hi": {
+    "chrome": {
+      "h1": "जलती झाड़ी और समुद्र",
+      "sub": "निर्गमन की पुस्तक के दो प्रसिद्ध दृश्य: एक झाड़ी जो जलती है पर भस्म नहीं होती, और एक समुद्र जो रास्ता खोल देता है। सुराग पढ़ें, कहानी का पता लगाएँ और उसके विषय का नाम दें।",
+      "briefH": "कहानी का पता लगाएँ — फिर उसके विषय का नाम दें",
+      "briefP": "आप निर्गमन के दो दृश्यों को साहित्य के रूप में पढ़ रहे हैं — एक ऐसे व्यक्ति की कहानी जो खुद पर भरोसा नहीं करता पर जिसे एक बड़ा काम सौंपा जाता है, और एक बाल-बाल बचने की घटना। ध्यान दें कि क्रम में क्या होता है, और अपने उत्तरों को पुष्ट करने के लिए केवल सुरागों का उपयोग करें।",
+      "winStamp": "कहानी हल हुई",
+      "winH": "आपने मूसा की यात्रा का पता लगाया!",
+      "winP": "आपने दृश्यों को क्रम में रखा, विषय का नाम दिया और उसे साबित करने के लिए असली सुरागों का उपयोग किया। कहानी कैसे बनती है इसका पता लगाना एक महत्वपूर्ण पठन कौशल है।"
+    },
+    "clues": [
+      {
+        "nm": "झाड़ी",
+        "title": "एक झाड़ी जो भस्म नहीं होती",
+        "body": "निर्गमन की पुस्तक में, मूसा भेड़ें चरा रहा होता है तभी वह एक अजीब दृश्य देखता है: एक झाड़ी जो आग में जल रही है पर भस्म नहीं होती। झाड़ी से एक आवाज़ उसे पुकारती है और उससे कहती है कि इस्राएलियों को मिस्र की गुलामी से बाहर ले जाए।"
+      },
+      {
+        "nm": "मूसा का संदेह",
+        "title": "«मैं कौन हूँ?»",
+        "body": "मूसा को नहीं लगता कि वह तैयार है। वह पूछता है, «मैं कौन हूँ जो यह करूँ?» वह अनिश्चित है और थोड़ा डरा हुआ है — पर कहानी में वह फिर भी यह काम स्वीकार कर लेता है।"
+      },
+      {
+        "nm": "पलायन",
+        "title": "मिस्र से बाहर और पीछा किया गया",
+        "body": "मूसा इस्राएलियों को मिस्र से बाहर ले जाता है। पर फ़िरौन अपनी सेना उनके पीछे भेजता है। लोगों का एक समुद्र के किनारे तक पीछा किया जाता है, आगे पानी और पीछे सेना।"
+      },
+      {
+        "nm": "समुद्र",
+        "title": "पानी के बीच से एक रास्ता",
+        "body": "समुद्र के पास फँसे हुए, कहानी कहती है कि पानी फट जाता है ताकि लोग सूखी ज़मीन पर पार कर सकें। दूसरी ओर पहुँचने के बाद, पानी लौट आता है। यह दृश्य निर्गमन के अध्याय 14 में है।"
+      },
+      {
+        "nm": "स्रोत",
+        "title": "ये दृश्य कहाँ हैं",
+        "body": "दोनों दृश्य निर्गमन की पुस्तक से आते हैं — जलती झाड़ी अध्याय 3 में, और समुद्र पार करना अध्याय 14 में। साहित्य के रूप में पढ़े जाने पर, ये एक अनिच्छुक नेता और बाल-बाल बचने की कहानी बताते हैं।"
+      },
+      {
+        "nm": "समुद्र का तथ्य",
+        "title": "सच, लेकिन विषय से बाहर",
+        "body": "लाल सागर अफ्रीका और अरब के बीच का एक असली, बहुत खारा जल क्षेत्र है। इसका पानी इतना खारा है कि तैराक आसानी से तैरते रहते हैं। यह एक सच्चा भूगोल तथ्य है — पर यह वह नहीं है जो निर्गमन की कहानी सिखा रही है।"
+      }
+    ],
+    "locks": [
+      {
+        "title": "दृश्यों को क्रम में रखें",
+        "q": "कहानी के तीन घटनाओं को उस क्रम में टैप करें जिस क्रम में पाठ उन्हें प्रस्तुत करता है।",
+        "reason": "कहानी का क्रम है: जलती झाड़ी मूसा को पुकारती है, फिर लोग भागते हैं और समुद्र तक उनका पीछा किया जाता है, फिर समुद्र एक रास्ता खोलता है। क्रम पाठकों को यह देखने में मदद करता है कि एक कहानी अपने बचाव तक कैसे बनती है।",
+        "pads": ["🌊 समुद्र एक रास्ता खोलता है", "🔥 जलती झाड़ी मूसा को पुकारती है", "🏃 सेना लोगों का समुद्र तक पीछा करती है"]
+      },
+      {
+        "title": "विषय का नाम दें",
+        "q": "ये दो दृश्य सबसे स्पष्ट रूप से कौन सा विचार सिखाते हैं?",
+        "reason": "सुराग 1, 2, 3 और 4 मूसा को संदेह करते, एक बड़ा काम स्वीकार करते, और लोगों को खतरे से बचकर निकलते दिखाते हैं। अन्य विकल्प कहानी के विषय के बजाय विवरण पकड़ते हैं।",
+        "options": ["एक अनिश्चित व्यक्ति को कठिन काम के लिए बुलाया जाता है और खतरे से सुरक्षित पार कराया जाता है", "रेगिस्तान चरवाहों और उनकी भेड़ों के लिए खतरनाक जगहें हैं", "पानी पार करने का सबसे अच्छा तरीका उसके सूखने का इंतज़ार करना है"]
+      },
+      {
+        "title": "सबूत इकट्ठा करें",
+        "q": "«एक अनिश्चित व्यक्ति को बुलाया जाता है और खतरे से सुरक्षित पार कराया जाता है» विषय के लिए हर वह सुराग चिह्नित करें जो मजबूत सबूत है। सच लेकिन विषय से बाहर के तथ्य को छोड़ दें।",
+        "reason": "खारे पानी का तथ्य सच्चा भूगोल है पर हमें विषय के बारे में कुछ नहीं बताता। मजबूत सबूत को उस बुलावे, संदेह और बचाव से जुड़ा होना चाहिए जिसे कहानी वास्तव में दर्शाती है।",
+        "items": ["एक झाड़ी भस्म हुए बिना जलती है और एक आवाज़ मूसा को एक काम के लिए पुकारती है", "मूसा पूछता है «मैं कौन हूँ?» पर फिर भी काम स्वीकार कर लेता है", "लाल सागर इतना खारा है कि तैराक आसानी से तैरते हैं", "समुद्र के पास फँसे हुए, पानी फट जाता है ताकि लोग पार कर सकें"]
+      },
+      {
+        "title": "स्रोत पुस्तक का नाम दें",
+        "q": "सुराग 5 उस पुस्तक का नाम बताता है जिससे दोनों दृश्य आते हैं। उस पुस्तक का नाम टाइप करें।",
+        "reason": "सुराग 5 कहता है कि दोनों दृश्य निर्गमन की पुस्तक में हैं। स्रोत पुस्तक — और अध्यायों तक — को जानना किसी पाठ को उसके संदर्भ में पढ़ने का हिस्सा है।",
+        "answer": ["निर्गमन", "exodus"]
+      }
+    ]
+  },
+  "ur": {
+    "chrome": {
+      "h1": "جلتی جھاڑی اور سمندر",
+      "sub": "کتابِ خروج کے دو مشہور مناظر: ایک جھاڑی جو جلتی ہے مگر بھسم نہیں ہوتی، اور ایک سمندر جو راستہ کھول دیتا ہے۔ اشارے پڑھیں، کہانی کا سراغ لگائیں، اور اس کے موضوع کا نام بتائیں۔",
+      "briefH": "کہانی کا سراغ لگائیں — پھر اس کے موضوع کا نام بتائیں",
+      "briefP": "آپ کتابِ خروج کے دو مناظر کو ادب کے طور پر پڑھ رہے ہیں — ایک ایسے شخص کی کہانی جو خود پر بھروسا نہیں کرتا مگر جسے ایک بڑا کام سونپا جاتا ہے، اور بال بال بچ نکلنے کا واقعہ۔ دھیان دیں کہ ترتیب میں کیا ہوتا ہے، اور اپنے جوابات کو پختہ کرنے کے لیے صرف اشاروں کا استعمال کریں۔",
+      "winStamp": "کہانی حل ہوگئی",
+      "winH": "آپ نے موسیٰ کے سفر کا سراغ لگایا!",
+      "winP": "آپ نے مناظر کو ترتیب میں رکھا، موضوع کا نام لیا، اور اسے ثابت کرنے کے لیے اصلی اشاروں کا استعمال کیا۔ کہانی کیسے بنتی ہے اس کا سراغ لگانا ایک اہم مطالعہ کی مہارت ہے۔"
+    },
+    "clues": [
+      {
+        "nm": "جھاڑی",
+        "title": "ایک جھاڑی جو بھسم نہیں ہوتی",
+        "body": "کتابِ خروج میں، موسیٰ بھیڑیں چرا رہے ہوتے ہیں جب وہ ایک عجیب منظر دیکھتے ہیں: ایک جھاڑی جو آگ میں جل رہی ہے مگر بھسم نہیں ہوتی۔ جھاڑی سے ایک آواز انہیں پکارتی ہے اور کہتی ہے کہ بنی اسرائیل کو مصر کی غلامی سے باہر لے جائیں۔"
+      },
+      {
+        "nm": "موسیٰ کا شک",
+        "title": "«میں کون ہوں؟»",
+        "body": "موسیٰ کو نہیں لگتا کہ وہ تیار ہیں۔ وہ پوچھتے ہیں، «میں کون ہوں کہ یہ کروں؟» وہ غیر یقینی ہیں اور کچھ خوفزدہ بھی — مگر کہانی میں وہ پھر بھی یہ کام قبول کر لیتے ہیں۔"
+      },
+      {
+        "nm": "فرار",
+        "title": "مصر سے باہر اور تعاقب میں",
+        "body": "موسیٰ بنی اسرائیل کو مصر سے باہر لے جاتے ہیں۔ مگر فرعون اپنی فوج ان کے پیچھے بھیجتا ہے۔ لوگوں کا ایک سمندر کے کنارے تک تعاقب کیا جاتا ہے، آگے پانی اور پیچھے فوج۔"
+      },
+      {
+        "nm": "سمندر",
+        "title": "پانی کے بیچ سے ایک راستہ",
+        "body": "سمندر کے پاس پھنسے ہوئے، کہانی کہتی ہے کہ پانی پھٹ جاتا ہے تاکہ لوگ خشک زمین پر پار کر سکیں۔ دوسری طرف پہنچنے کے بعد، پانی لوٹ آتا ہے۔ یہ منظر کتابِ خروج کے باب 14 میں ہے۔"
+      },
+      {
+        "nm": "ماخذ",
+        "title": "یہ مناظر کہاں ہیں",
+        "body": "دونوں مناظر کتابِ خروج سے آتے ہیں — جلتی جھاڑی باب 3 میں، اور سمندر پار کرنا باب 14 میں۔ ادب کے طور پر پڑھے جانے پر، یہ ایک ہچکچاتے رہنما اور بال بال بچ نکلنے کی کہانی سناتے ہیں۔"
+      },
+      {
+        "nm": "سمندر کی حقیقت",
+        "title": "سچ، لیکن موضوع سے باہر",
+        "body": "بحیرۂ قلزم افریقہ اور عرب کے درمیان ایک اصلی، بہت کھارا پانی کا خطہ ہے۔ اس کا پانی اتنا کھارا ہے کہ تیراک آسانی سے تیرتے رہتے ہیں۔ یہ ایک سچی جغرافیائی حقیقت ہے — مگر یہ وہ نہیں جو خروج کی کہانی سکھا رہی ہے۔"
+      }
+    ],
+    "locks": [
+      {
+        "title": "مناظر کو ترتیب دیں",
+        "q": "کہانی کے تین واقعات کو اس ترتیب میں تھپتھپائیں جس ترتیب میں متن انہیں پیش کرتا ہے۔",
+        "reason": "کہانی کی ترتیب یہ ہے: جلتی جھاڑی موسیٰ کو پکارتی ہے، پھر لوگ بھاگتے ہیں اور ان کا سمندر تک تعاقب کیا جاتا ہے، پھر سمندر ایک راستہ کھولتا ہے۔ ترتیب قارئین کو یہ دیکھنے میں مدد دیتی ہے کہ کہانی اپنی نجات تک کیسے بنتی ہے۔",
+        "pads": ["🌊 سمندر ایک راستہ کھولتا ہے", "🔥 جلتی جھاڑی موسیٰ کو پکارتی ہے", "🏃 فوج لوگوں کا سمندر تک تعاقب کرتی ہے"]
+      },
+      {
+        "title": "موضوع کا نام بتائیں",
+        "q": "یہ دو مناظر سب سے واضح طور پر کون سا خیال سکھاتے ہیں؟",
+        "reason": "اشارے 1، 2، 3 اور 4 موسیٰ کو شک کرتے، ایک بڑا کام قبول کرتے، اور لوگوں کو خطرے سے بچ نکلتے دکھاتے ہیں۔ دیگر اختیارات کہانی کے موضوع کے بجائے تفصیلات پکڑتے ہیں۔",
+        "options": ["ایک غیر یقینی شخص کو ایک مشکل کام کے لیے بلایا جاتا ہے اور خطرے سے محفوظ گزارا جاتا ہے", "صحرا چرواہوں اور ان کی بھیڑوں کے لیے خطرناک جگہیں ہیں", "پانی پار کرنے کا بہترین طریقہ اس کے سوکھنے کا انتظار کرنا ہے"]
+      },
+      {
+        "title": "ثبوت اکٹھا کریں",
+        "q": "«ایک غیر یقینی شخص کو بلایا جاتا ہے اور خطرے سے محفوظ گزارا جاتا ہے» موضوع کے لیے ہر وہ اشارہ نشان زد کریں جو مضبوط ثبوت ہے۔ سچی لیکن موضوع سے باہر حقیقت کو چھوڑ دیں۔",
+        "reason": "کھارے پانی کی حقیقت سچی جغرافیہ ہے مگر ہمیں موضوع کے بارے میں کچھ نہیں بتاتی۔ مضبوط ثبوت کو اس بلاوے، شک اور نجات سے جڑا ہونا چاہیے جسے کہانی واقعی پیش کرتی ہے۔",
+        "items": ["ایک جھاڑی بھسم ہوئے بغیر جلتی ہے اور ایک آواز موسیٰ کو ایک کام کے لیے پکارتی ہے", "موسیٰ پوچھتے ہیں «میں کون ہوں؟» مگر پھر بھی کام قبول کر لیتے ہیں", "بحیرۂ قلزم اتنا کھارا ہے کہ تیراک آسانی سے تیرتے ہیں", "سمندر کے پاس پھنسے ہوئے، پانی پھٹ جاتا ہے تاکہ لوگ پار کر سکیں"]
+      },
+      {
+        "title": "ماخذ کتاب کا نام لیں",
+        "q": "اشارہ 5 اس کتاب کا نام بتاتا ہے جس سے دونوں مناظر آتے ہیں۔ اس کتاب کا نام ٹائپ کریں۔",
+        "reason": "اشارہ 5 کہتا ہے کہ دونوں مناظر کتابِ خروج میں ہیں۔ ماخذ کتاب — اور ابواب تک — کو جاننا کسی متن کو اس کے سیاق میں پڑھنے کا حصہ ہے۔",
+        "answer": ["خروج", "کتاب خروج", "exodus"]
+      }
+    ]
+  },
+  "zh": {
+    "chrome": {
+      "h1": "燃烧的荆棘与大海",
+      "sub": "《出埃及记》中的两个著名场景：一丛燃烧却烧不尽的荆棘，以及一片开出道路的大海。阅读线索，追踪故事，并说出它的主题。",
+      "briefH": "追踪故事——然后说出它的主题",
+      "briefP": "你正在把《出埃及记》中的两个场景当作文学来阅读——一个关于对自己没有把握、却被委以重任之人的故事，以及一次死里逃生。注意按顺序发生了什么，并只用线索来支持你的答案。",
+      "winStamp": "故事解开了",
+      "winH": "你追踪了摩西的旅程！",
+      "winP": "你把这些场景按顺序排列，说出了主题，并用真实的线索加以证明。追踪一个故事如何构建是一项关键的阅读技能。"
+    },
+    "clues": [
+      {
+        "nm": "荆棘",
+        "title": "一丛烧不尽的荆棘",
+        "body": "在《出埃及记》中，摩西正在牧羊时看见一个奇异的景象：一丛荆棘着了火却没有烧毁。有声音从荆棘中呼唤他，叫他把以色列人带出埃及的奴役。"
+      },
+      {
+        "nm": "摩西的疑惑",
+        "title": "「我是谁？」",
+        "body": "摩西觉得自己还没准备好。他问：「我是谁，竟能做这事？」他没有把握，还有些害怕——但在故事里他还是接受了这个任务。"
+      },
+      {
+        "nm": "逃离",
+        "title": "离开埃及并被追赶",
+        "body": "摩西带领以色列人离开埃及。但法老派军队追赶他们。人们一直被追到一片海的边上，前面是水，后面是军队。"
+      },
+      {
+        "nm": "大海",
+        "title": "水中的一条路",
+        "body": "被困在海边时，故事说水分开了，好让人们在干地上走过去。他们到达对岸之后，水又合拢回来。这个场景在《出埃及记》第14章。"
+      },
+      {
+        "nm": "来源",
+        "title": "这些场景出自何处",
+        "body": "两个场景都出自《出埃及记》——燃烧的荆棘在第3章，过海在第14章。作为文学来阅读，它们讲述了一位不情愿的领袖和一次惊险的获救。"
+      },
+      {
+        "nm": "大海的事实",
+        "title": "真实，但偏离主题",
+        "body": "红海是位于非洲和阿拉伯之间一片真实的、非常咸的水域。它的水咸到游泳的人很容易浮起来。这是一个真实的地理事实——但这不是《出埃及记》故事所要教导的内容。"
+      }
+    ],
+    "locks": [
+      {
+        "title": "为场景排序",
+        "q": "按照文本呈现的顺序，点击故事中的三个事件。",
+        "reason": "故事的顺序是：燃烧的荆棘呼唤摩西，然后人们逃跑并被追到海边，然后大海开出一条路。顺序帮助读者看清一个故事如何构建到它的获救。",
+        "pads": ["🌊 大海开出一条路", "🔥 燃烧的荆棘呼唤摩西", "🏃 军队把人们追到海边"]
+      },
+      {
+        "title": "说出主题",
+        "q": "这两个场景最清楚地传达了哪个主题？",
+        "reason": "线索1、2、3和4展示了摩西的疑惑、接受重任，以及人们穿越危险逃脱。其他选项抓住细节，而非故事的主题。",
+        "options": ["一个没有把握的人被召去完成一项艰难的任务，并被安全地带过危险", "沙漠对牧羊人和他们的羊群是危险的地方", "过水最好的办法是等它干涸"]
+      },
+      {
+        "title": "收集证据",
+        "q": "勾选每一个能为「一个没有把握的人被召唤并被安全带过危险」这一主题提供有力证据的线索。排除那个真实但偏离主题的事实。",
+        "reason": "咸水的事实是真实的地理，但没有告诉我们关于主题的任何信息。有力的证据必须与故事真正呈现的召唤、疑惑和获救相关联。",
+        "items": ["一丛荆棘燃烧却烧不尽，有声音召唤摩西去完成一项任务", "摩西问「我是谁？」但还是接受了任务", "红海咸到游泳的人很容易浮起来", "被困在海边时，水分开了，好让人们走过去"]
+      },
+      {
+        "title": "说出来源书卷的名称",
+        "q": "线索5说出了两个场景所出自的书卷。请输入那卷书的名称。",
+        "reason": "线索5说这两个场景都在《出埃及记》中。了解来源书卷——甚至章节——是在语境中阅读文本的一部分。",
+        "answer": ["出埃及记", "exodus"]
+      }
+    ]
+  }
+}

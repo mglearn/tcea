@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>The Innocent Sufferer — Bible as Literature Breakouts</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>:root{--navy:#054c8c;--navy-d:#023266;--red:#023266;--red-d:#012247;--gold:#fbd239;--gold-d:#d9a010;--paper:#f4f8fc;--ink:#161c2e;--ink-soft:#516079;--card:#fff;--line:#dbe6f2;--good:#2D8A5F;--bad:#c0392b;--c1:#054c8c;--c2:#2f6cae;--c3:#023266;--c4:#fbd239;--c5:#0e6b8a;--bg-a:rgba(251,210,57,.14);--bg-b:rgba(5,76,140,.10)}</style>
+<link rel="stylesheet" href="../../assets/breakout.css">
+</head>
+<body>
+<canvas id="confetti"></canvas>
+<div class="wrap">
+  <div class="langbar"><span class="globe" aria-hidden="true">🌐</span><div data-i18n-picker></div></div>
+  <div class="crumb"><a href="../index.html" data-i18n="crumb.teacher">‹ Teacher launch</a> · <a href="../index.html" data-i18n="crumb.suite">Bible as Literature Breakouts</a></div>
+
+  <header class="top">
+    <div class="eyebrow" data-i18n="header.eyebrow">Critical Thinking Breakout · Grades 9–12</div>
+    <h1 data-i18n="header.h1">The Innocent Sufferer</h1>
+    <p class="sub" data-i18n="header.sub">The Book of Job asks why a blameless person suffers. Read the clues, name the archetype, and separate what the text states from what readers add.</p>
+  </header>
+
+  <div class="progress-wrap">
+    <span class="pcount" id="pcount">0 of 4 locks open</span>
+    <div class="lockdots" id="lockdots"></div>
+    <button class="resetbtn" id="resetBtn" data-i18n="ui.reset">↺ Reset</button>
+  </div>
+
+  <div class="brief">
+    <span class="tag" data-i18n="brief.label">Your mission</span>
+    <h2 data-i18n="brief.h">Name the archetype — separate text from interpretation</h2>
+    <p data-i18n="brief.p">You are studying Job as literature and history in a secular, academic frame. Your job is to name the pattern the book uses, and to tell apart what the text actually states from an interpretation a reader brings to it. Use only the clues.</p>
+  </div>
+
+  <div class="section-title" data-i18n="sect.clues">🔍 The Clues</div>
+  <p class="hint" data-i18n="sect.cluesHint">Tap each clue to read it. (You can reopen them anytime.)</p>
+  <div class="clue-grid" id="clueGrid"></div>
+
+  <div class="section-title" data-i18n="sect.locks">🔒 The Locks</div>
+  <p class="hint" data-i18n="sect.locksHint">Solve each lock using the clues above.</p>
+  <div class="locks" id="locks"></div>
+
+  <footer>
+    <span data-i18n="footer.text">Bible as Literature Breakouts · Taught as story, not scripture · Runs entirely in your browser — no logins, no data collected.</span> · <a href="../policy.html" data-i18n="footer.privacy">Privacy &amp; compliance</a><br>
+    <span style="opacity:.7" data-i18n="footer.disclaimer">A study resource about religious literature, not religious instruction.</span>
+  </footer>
+</div>
+
+<div class="modal-bg" id="modalBg"><div class="modal" id="modal"></div></div>
+<div class="win" id="win"><div class="win-card">
+  <div class="stamp" data-i18n="win.stamp">ARCHETYPE NAMED</div>
+  <h2 data-i18n="win.h">You read Job like a critic!</h2>
+  <p data-i18n="win.p">You named the innocent-sufferer archetype, traced the book's structure, and separated textual fact from interpretation. That is exactly how literature is studied academically.</p>
+  <button id="winReplay" data-i18n="ui.playagain">Play Again</button>
+</div></div>
+
+<script src="g912-job.js"></script>
+<script src="../../assets/i18n.js"></script>
+<script src="../../assets/breakout.js"></script>
+</body>
+</html>

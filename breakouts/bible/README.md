@@ -1,13 +1,13 @@
 # Bible as Literature — Critical Thinking Online Breakouts (CTOBs)
 
-A self-contained, browser-based suite of **24 critical-thinking "breakout" activities** built on the
+A self-contained, browser-based suite of **31 critical-thinking "breakout" activities** built on the
 Bible stories Texas adopted for K–12 public-school classrooms (the **Bluebonnet Learning** K–5 units and
 the **2025 required K–12 reading list**). Every activity studies those texts the way courts and the Texas
 Education Agency say they must be studied — **academically, as story and history, never devotionally**.
 Students open clue cards, weigh evidence, separate what a text *says* from what a reader *believes*, and
 crack a set of reasoning "locks."
 
-- **24 breakouts · 6 per grade band** (K–2, 3–5, 6–8, 9–12)
+- **31 breakouts across 4 grade bands** (K–2, 3–5, 6–8, 9–12) — includes full coverage of the 2025 required-list Bible items
 - **7 languages** with RTL support (en, es, vi, ar, hi, ur, zh)
 - **Runs entirely in the browser** — no logins, no accounts, no data collected
 - **Free** · CC BY 4.0 (content) · MIT (code)
@@ -48,13 +48,13 @@ bible/
 ├── correlation.html    TEKS correlation guide (ELAR strands + CLEAR focus + effect-size strategy per lock)
 ├── answer-key.html     Password-gated teacher answer key (client-side AES-256-GCM encrypted payload)
 ├── policy.html         Privacy & compliance (FERPA/COPPA/SCOPE/GDPR/CIPA) and content framing
-├── breakouts.js        window.BIBLE_LIB — manifest of all 24 breakouts, powers the landing "Full Library"
+├── breakouts.js        window.BIBLE_LIB — manifest of all 31 breakouts, powers the landing "Full Library"
 ├── es.html vi.html ar.html hi.html ur.html zh.html   Per-language showcase pages (generated)
 ├── breakouts-<lang>.js Per-language manifests (window.BIBLE_LIB_<LANG>) powering the showcase pages
 ├── build-more.js       Generator: builds breakout .js + student pages, breakouts.js, and the
 │                       per-language manifests + showcase pages
-├── build-correlation.js  Regenerates the TEKS tables for all 24 in correlation.html (between markers)
-├── build-answer-key.js   Regenerates the encrypted answer key for all 24 (password passed at run time)
+├── build-correlation.js  Regenerates the TEKS tables for all 31 in correlation.html (between markers)
+├── build-answer-key.js   Regenerates the encrypted answer key for all 31 (password passed at run time)
 ├── README.md           This file
 └── grades/
     ├── k2.js   g35.js   g68.js   g912.js            The 4 "featured" breakouts (one per band)
@@ -77,10 +77,16 @@ searchable catalog (`../catalog.js` → `../index.html`).
 
 ---
 
-## The 24 breakouts
+## The 31 breakouts
 
 Each is grounded in an adopted text and pitched to its band's skill focus. `★` = the featured breakout shown
 as a highlight card on the landing page.
+
+> **Bible-connected, not biblical.** Two items on the Kindergarten required list — *You Are Special* (Max Lucado)
+> and *The Berenstain Bears and the Golden Rule* (Berenstain family) — are **modern children's books, not scripture**.
+> They are paired with the biblical texts because they dramatize the same values (inherent human worth; the Golden
+> Rule). The *You Are Special* breakout is included and explicitly framed as a modern allegory, studied as
+> literature. The Berenstain title's value (the Golden Rule) is covered inside the K–2 featured breakout.
 
 ### Grades K–2 — *sequence · story-vs-fact · close reading · naming the source*
 | Title | Source text | File |
@@ -91,6 +97,7 @@ as a highlight card on the landing page.
 | The King's Wise Idea | Solomon's judgment (1 Kings) | `k2-solomon-choice.js` |
 | The Man and the Big Fish | Jonah (Book of Jonah) | `k2-jonah-fish.js` |
 | Ten Rules to Live By | Moses & the Ten Commandments (Exodus) | `k2-moses-rules.js` |
+| The Wooden People and the Stickers | *You Are Special* (Max Lucado) — Bible-connected, **not** scripture | `k2-you-are-special.js` |
 
 ### Grades 3–5 — *theme · evidence gathering · counter-example · source/context*
 | Title | Source text | File |
@@ -101,6 +108,8 @@ as a highlight card on the landing page.
 | The Good Samaritan | The Good Samaritan (Luke) | `g35-good-samaritan-35.js` |
 | Moses and the Ten Commandments | Ten Commandments (Exodus) | `g35-moses-ten.js` |
 | The Last Supper: Text and Painting | Gospels + Da Vinci (5th-grade art history) | `g35-last-supper.js` |
+| The Lowest Seat | Humility at the feast (Luke 14:7–11) — Grade 4 | `g35-humility.js` |
+| The Burning Bush and the Sea | Moses: burning bush + Red Sea (Exodus 3 & 14) — Grade 5 | `g35-moses-red-sea.js` |
 
 ### Grades 6–8 — *genre · claim · technique/rhetoric · connection across texts*
 | Title | Source text | File |
@@ -111,6 +120,8 @@ as a highlight card on the landing page.
 | The Psalms: Reading Ancient Poetry | Psalms + Frost & Williams pairing | `g68-psalms-poetry.js` |
 | Esther: Dramatic Irony & Reversal | The Book of Esther | `g68-esther-plot.js` |
 | Solomon's Judgment: Argument & Logic | Solomon's judgment (1 Kings) | `g68-solomon-judgment.js` |
+| The Birds and the Lilies | Do Not Be Anxious (Matthew 6:25–34) — Grade 6 | `g68-do-not-be-anxious.js` |
+| A Time for Everything | Ecclesiastes 3 (wisdom poetry) — Grade 8 | `g68-ecclesiastes.js` |
 
 ### Grades 9–12 — *archetype · allusion · textual fact vs. interpretation · academic vs. devotional*
 | Title | Source text | File |
@@ -121,6 +132,8 @@ as a highlight card on the landing page.
 | The Art of Lament | Lamentations 3 (lament genre) | `g912-lamentations.js` |
 | From Parable to Law | Good Samaritan → "Good Samaritan laws" | `g912-good-samaritan-law.js` |
 | Wisdom Literature & the Clever Test | Solomon + wisdom-literature genre | `g912-solomon-wisdom.js` |
+| The Innocent Sufferer | Book of Job (archetype) — English II | `g912-job.js` |
+| The Definition of Love | 1 Corinthians 13 — English IV | `g912-corinthians-love.js` |
 
 ---
 
@@ -219,7 +232,7 @@ translated** — they are **not** produced by `build-more.js`. Edit them directl
 (PBKDF2, 250k iterations). The password is never transmitted; decryption happens in the browser. This is
 appropriate for answer keys but is not a substitute for server-side protection of sensitive materials.
 
-Regenerate it (covers all 24 breakouts) with `node build-answer-key.js '<password>'` — the password is
+Regenerate it (covers all 31 breakouts) with `node build-answer-key.js '<password>'` — the password is
 passed at run time and never stored in the repo.
 
 ---
