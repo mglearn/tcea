@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Instructional strategies — Bible as Literature</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="gateway.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <a href="index.html" class="brand">Bible as <span>Literature</span></a>
+  <div class="navlinks">
+    <a href="index.html#find">Find</a>
+    <a href="library.html">Library</a>
+    <a href="academic.html">How it's taught</a>
+    <a href="clear.html">CLEAR</a>
+    <a href="correlation.html">TEKS</a>
+    <select class="langsel" aria-label="Language" onchange="if(this.value){location.href=this.value}">
+      <option value="">🌐 Languages</option>
+      <option value="es.html">Español</option>
+      <option value="vi.html">Tiếng Việt</option>
+      <option value="ar.html">العربية</option>
+      <option value="hi.html">हिन्दी</option>
+      <option value="ur.html">اردو</option>
+      <option value="zh.html">中文</option>
+    </select>
+  </div>
+</nav>
+
+<main class="subpage" id="top">
+  <div class="subhead">
+    <a class="backlink" href="index.html">‹ Back to gateway</a>
+    <div class="eyebrow">Research-Based Design</div>
+    <h1>High-effect-size strategies, built in</h1>
+    <p class="sublead">Each breakout is engineered around instructional moves with strong effect sizes in Hattie's <em>Visible Learning</em> synthesis — not bolted on, but structural to how the locks work.</p>
+  </div>
+
+  <div class="prose-grid">
+    <div class="pcard">
+      <div class="kicker">d ≈ 0.75</div>
+      <h4>Classroom discussion &amp; feedback</h4>
+      <p>Every lock gives immediate, specific feedback, and the "why" panel models the reasoning — turning each attempt into a feedback loop, one of the highest-leverage moves in the research.</p>
+    </div>
+    <div class="pcard">
+      <div class="kicker">d ≈ 0.60</div>
+      <h4>Concept sorting &amp; evidence classification</h4>
+      <p>The "check all the strong evidence" locks are classification tasks: students sort relevant from irrelevant, the decoy from the real. Categorizing to find structure is a well-supported deep-learning strategy.</p>
+    </div>
+    <div class="pcard">
+      <div class="kicker">d ≈ 0.55</div>
+      <h4>Metacognitive &amp; strategy instruction</h4>
+      <p>CLEAR names the thinking move at each step. Making the strategy visible — "this is the Alternatives step" — is what pushes students from doing the task to understanding how they did it.</p>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:32px">
+    <div class="callout-inner">
+      <div class="kicker">See it mapped</div>
+      <p>The <a href="correlation.html" style="color:var(--gold-light)">TEKS correlation guide</a> names the specific strategy and effect size engineered into every lock, alongside its ELAR standard and CLEAR focus.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-brand">Bible as <span>Literature</span> · CTOB</div>
+  <div class="footer-links">
+    <a href="index.html">Gateway</a>
+    <a href="academic.html">Academic, not devotional</a>
+    <a href="clear.html">The CLEAR method</a>
+    <a href="correlation.html">TEKS correlation</a>
+  </div>
+  <div class="footer-copy">CC BY 4.0 content · MIT code · Runs in your browser, no data collected</div>
+</footer>
+
+<a href="#top" id="back-to-top">↑</a>
+
+<script>
+const btt=document.getElementById('back-to-top');
+addEventListener('scroll',()=>btt.classList.toggle('visible',scrollY>500),{passive:true});
+</script>
+</body>
+</html>
