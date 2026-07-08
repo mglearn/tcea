@@ -211,7 +211,7 @@ const SUITES = [
   { id: 'bible', name: 'Bible as Literature', accent: '#2f6cae',
     desc: 'Four breakouts on Texas-adopted Bible stories, studied academically as literature and history — sequence, theme, genre, archetype, and allusion. Never devotional. Seven languages.',
     landing: 'bible/index.html', correlation: 'bible/correlation.html', answerKey: 'bible/answer-key.html' },
-  { id: 'science', name: 'Science (Grades 1–8)', accent: '#0a6b52',
+  { id: 'science', name: 'Science (Grades K–8)', accent: '#0a6b52',
     desc: 'Critical Thinking Online Breakouts across the Texas science TEKS — from pushes and pulls to conservation of mass — each grade with a featured breakout, a concept set (one per key idea), a hands-on STEM engineering design challenge, and a student word bank. Seven languages.',
     landing: 'science/index.html', correlation: 'science/correlation.html' },
   { id: 'idioms', name: 'Idioms & Sayings for Multilingual Learners', accent: '#0e7490',
