@@ -635,15 +635,6 @@
     "desc": "Build custom BINGO boards for review, vocabulary, and whole-class games."
   },
   {
-    "category": "tools",
-    "featured": false,
-    "external": false,
-    "href": "mappuzzle/index.html",
-    "tag": "Geography",
-    "title": "Map Puzzle Generator",
-    "desc": "A standalone map-based puzzle generator for geography and spatial-reasoning practice."
-  },
-  {
     "category": "courses",
     "featured": false,
     "external": false,

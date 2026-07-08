@@ -6,12 +6,100 @@
     <atom:link href="https://mglearn.github.io/tcea/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated HTML tools, dashboards, prompt libraries, and classroom resources from TCEA.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Jul 2026 00:17:29 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2026 00:37:30 GMT</lastBuildDate>
     <image>
       <url>https://mglearn.github.io/tcea/favicon.svg</url>
       <title>TCEA Vibe-Coded Solutions — Updates</title>
       <link>https://mglearn.github.io/tcea/</link>
     </image>
+    <item>
+      <title>🕵️ Critical Thinking Breakouts</title>
+      <link>https://mglearn.github.io/tcea/breakouts/clear/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/clear/index.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Wed, 08 Jul 2026 00:29:56 GMT</pubDate>
+      <description>Grade-band breakout activities (3-5, 6-8, 9-12) across ELA, science, and social studies that teach evidence-based reasoning, available in seven languages.</description>
+    </item>
+    <item>
+      <title>🕵️ Fourth of July Critical Thinking Breakouts</title>
+      <link>https://mglearn.github.io/tcea/breakouts/july4/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/july4/index.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Wed, 08 Jul 2026 00:29:56 GMT</pubDate>
+      <description>Twelve self-contained U.S. history escape activities across three grade bands (3-5, 6-8, 9-12). Students open clues, weigh evidence, and crack four locks each — building history knowledge and critical-thinking habits. No logins, no data collected.</description>
+    </item>
+    <item>
+      <title>🕵️ July 5 &amp; Black Freedom Holidays Breakouts</title>
+      <link>https://mglearn.github.io/tcea/breakouts/july5th/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/july5th/index.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Wed, 08 Jul 2026 00:29:56 GMT</pubDate>
+      <description>Twelve self-contained critical thinking breakouts across three grade bands (3-5, 6-8, 9-12) exploring the freedom days the calendar often overlooks — Frederick Douglass s July 5 address, Juneteenth, Pinkster, Watch Night, and more. Students open clues, weigh evidence, and crack four locks each. No logins, no data collected.</description>
+    </item>
+    <item>
+      <title>🕵️ Critical Thinking Online Breakouts — Full Library</title>
+      <link>https://mglearn.github.io/tcea/breakouts/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/index.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Wed, 08 Jul 2026 00:29:56 GMT</pubDate>
+      <description>A single searchable library of every TCEA Critical Thinking Online Breakout (CTOB) — 193 self-contained, browser-based reasoning escapes across five suites (CLEAR, Fourth of July, July 5 &amp; Black Freedom Holidays, Bible as Literature, and Science) in seven languages. Search by name, topic, or grade; no logins, no data collected.</description>
+    </item>
+    <item>
+      <title>🕵️ Science Critical Thinking Breakouts (Grades K–8)</title>
+      <link>https://mglearn.github.io/tcea/breakouts/science/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/science/index.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Wed, 08 Jul 2026 00:29:56 GMT</pubDate>
+      <description>Critical Thinking Online Breakouts across the Texas science TEKS, Grades K–8 — from pushes and pulls to conservation of mass. Each grade has a featured breakout, a concept set, a hands-on STEM engineering design challenge, and a student word bank, in seven languages.</description>
+    </item>
+    <item>
+      <title>🤖 TCEA AI Custom Instructions Library</title>
+      <link>https://mglearn.github.io/tcea/custom-instructions-library/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/custom-instructions-library/index.html</guid>
+      <category>AI Prompt Libraries and Adoption</category>
+      <pubDate>Wed, 08 Jul 2026 00:26:23 GMT</pubDate>
+      <description>Reusable AI personas and custom instructions for productivity, planning, writing, and educator workflows.</description>
+    </item>
+    <item>
+      <title>🤖 Generative AI Adoption Checklist</title>
+      <link>https://mglearn.github.io/tcea/ai-adoption-checklist/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/ai-adoption-checklist/index.html</guid>
+      <category>AI Prompt Libraries and Adoption</category>
+      <pubDate>Wed, 08 Jul 2026 00:26:23 GMT</pubDate>
+      <description>A step-by-step institutional checklist for thoughtful generative AI adoption.</description>
+    </item>
+    <item>
+      <title>🤖 Generative AI Adoption Checklist Folder Version</title>
+      <link>https://mglearn.github.io/tcea/checklist/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/checklist/index.html</guid>
+      <category>AI Prompt Libraries and Adoption</category>
+      <pubDate>Wed, 08 Jul 2026 00:26:23 GMT</pubDate>
+      <description>A packaged folder version of the adoption checklist for distribution or embedding.</description>
+    </item>
+    <item>
+      <title>📘 Beyond the 20 Percent Policy</title>
+      <link>https://mglearn.github.io/tcea/topstrategies/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/topstrategies/index.html</guid>
+      <category>Instructional Strategy Guides</category>
+      <pubDate>Wed, 08 Jul 2026 00:26:23 GMT</pubDate>
+      <description>Classroom strategy guidance for responding to restrictive AI policies with better instructional design.</description>
+    </item>
+    <item>
+      <title>📘 Visible Learning with Ed Tech</title>
+      <link>https://mglearn.github.io/tcea/vlet/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/vlet/index.html</guid>
+      <category>Instructional Strategy Guides</category>
+      <pubDate>Wed, 08 Jul 2026 00:26:23 GMT</pubDate>
+      <description>A practical reference for phases, strategies, frameworks, and effect sizes for educators and leaders.</description>
+    </item>
+    <item>
+      <title>🎲 When Disaster Strikes</title>
+      <link>https://mglearn.github.io/tcea/wds/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/wds/index.html</guid>
+      <category>Games, Activities, and Specialty Builds</category>
+      <pubDate>Wed, 08 Jul 2026 00:26:23 GMT</pubDate>
+      <description>A K-12 cyber incident response tabletop game aligned to NIST CSF 2.0 and CISA guidance.</description>
+    </item>
     <item>
       <title>🕵️ Idioms &amp; Sayings for Multilingual Learners</title>
       <link>https://mglearn.github.io/tcea/breakouts/idioms/index.html</link>
@@ -37,14 +125,6 @@
       <description>How the Idioms &amp; Sayings suite aligns to the Texas ELPS (19 TAC §74.4), the ELAR TEKS, and the LOTE TEKS for Bilingual/ESL and multilingual classrooms — with a K–12 public-school appropriateness statement and links to the Texas EL program frameworks.</description>
     </item>
     <item>
-      <title>🕵️ Critical Thinking Online Breakouts — Full Library</title>
-      <link>https://mglearn.github.io/tcea/breakouts/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/index.html</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Tue, 07 Jul 2026 18:58:15 GMT</pubDate>
-      <description>A single searchable library of every TCEA Critical Thinking Online Breakout (CTOB) — 193 self-contained, browser-based reasoning escapes across five suites (CLEAR, Fourth of July, July 5 &amp; Black Freedom Holidays, Bible as Literature, and Science) in seven languages. Search by name, topic, or grade; no logins, no data collected.</description>
-    </item>
-    <item>
       <title>🕵️ Bible as Literature Breakouts</title>
       <link>https://mglearn.github.io/tcea/breakouts/bible/index.html</link>
       <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/bible/index.html</guid>
@@ -61,44 +141,12 @@
       <description>A TEKS correlation guide mapping each Bible as Literature breakout to the ELAR strands, the CLEAR reasoning focus, and the high-effect-size instructional strategy engineered into its locks.</description>
     </item>
     <item>
-      <title>🕵️ Science Critical Thinking Breakouts (Grades K–8)</title>
-      <link>https://mglearn.github.io/tcea/breakouts/science/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/science/index.html</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Sun, 05 Jul 2026 20:15:43 GMT</pubDate>
-      <description>Critical Thinking Online Breakouts across the Texas science TEKS, Grades K–8 — from pushes and pulls to conservation of mass. Each grade has a featured breakout, a concept set, a hands-on STEM engineering design challenge, and a student word bank, in seven languages.</description>
-    </item>
-    <item>
       <title>🕵️ Science Breakouts Correlation Guide</title>
       <link>https://mglearn.github.io/tcea/breakouts/science/correlation.html</link>
       <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/science/correlation.html</guid>
       <category>Critical Thinking Breakouts</category>
       <pubDate>Sun, 05 Jul 2026 20:05:58 GMT</pubDate>
       <description>A standards correlation guide mapping the Science Critical Thinking Breakouts by grade to the Texas science TEKS and the reasoning moves engineered into each lock.</description>
-    </item>
-    <item>
-      <title>🕵️ Critical Thinking Breakouts</title>
-      <link>https://mglearn.github.io/tcea/breakouts/clear/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/clear/index.html</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Sat, 04 Jul 2026 20:05:03 GMT</pubDate>
-      <description>Grade-band breakout activities (3-5, 6-8, 9-12) across ELA, science, and social studies that teach evidence-based reasoning, available in seven languages.</description>
-    </item>
-    <item>
-      <title>🕵️ Fourth of July Critical Thinking Breakouts</title>
-      <link>https://mglearn.github.io/tcea/breakouts/july4/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/july4/index.html</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Sat, 04 Jul 2026 20:05:03 GMT</pubDate>
-      <description>Twelve self-contained U.S. history escape activities across three grade bands (3-5, 6-8, 9-12). Students open clues, weigh evidence, and crack four locks each — building history knowledge and critical-thinking habits. No logins, no data collected.</description>
-    </item>
-    <item>
-      <title>🕵️ July 5 &amp; Black Freedom Holidays Breakouts</title>
-      <link>https://mglearn.github.io/tcea/breakouts/july5th/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/july5th/index.html</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Sat, 04 Jul 2026 20:05:03 GMT</pubDate>
-      <description>Twelve self-contained critical thinking breakouts across three grade bands (3-5, 6-8, 9-12) exploring the freedom days the calendar often overlooks — Frederick Douglass s July 5 address, Juneteenth, Pinkster, Watch Night, and more. Students open clues, weigh evidence, and crack four locks each. No logins, no data collected.</description>
     </item>
     <item>
       <title>🕵️ Breakouts Correlation Guide</title>
@@ -213,14 +261,6 @@
       <description>A companion website with librarian-focused tools, use cases, prompts, and downloadable vibe-coding resources.</description>
     </item>
     <item>
-      <title>🤖 TCEA AI Custom Instructions Library</title>
-      <link>https://mglearn.github.io/tcea/custom-instructions-library/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/custom-instructions-library/index.html</guid>
-      <category>AI Prompt Libraries and Adoption</category>
-      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
-      <description>Reusable AI personas and custom instructions for productivity, planning, writing, and educator workflows.</description>
-    </item>
-    <item>
       <title>🤖 AI Essentials Prompt Library of 100</title>
       <link>https://mglearn.github.io/tcea/ai-essentials-prompt-library/index.html</link>
       <guid isPermaLink="true">https://mglearn.github.io/tcea/ai-essentials-prompt-library/index.html</guid>
@@ -235,14 +275,6 @@
       <category>AI Prompt Libraries and Adoption</category>
       <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
       <description>Classroom, library, and office-ready image prompts organized by task and instructional use.</description>
-    </item>
-    <item>
-      <title>🤖 Generative AI Adoption Checklist</title>
-      <link>https://mglearn.github.io/tcea/ai-adoption-checklist/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/ai-adoption-checklist/index.html</guid>
-      <category>AI Prompt Libraries and Adoption</category>
-      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
-      <description>A step-by-step institutional checklist for thoughtful generative AI adoption.</description>
     </item>
     <item>
       <title>🤖 AI Adoption Roadmap</title>
@@ -293,44 +325,12 @@
       <description>A presentation-style guide to instructional strategies worth embracing for stronger learning outcomes.</description>
     </item>
     <item>
-      <title>📘 Beyond the 20 Percent Policy</title>
-      <link>https://mglearn.github.io/tcea/topstrategies/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/topstrategies/index.html</guid>
-      <category>Instructional Strategy Guides</category>
-      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
-      <description>Classroom strategy guidance for responding to restrictive AI policies with better instructional design.</description>
-    </item>
-    <item>
       <title>📊 TCEA Registration Dashboard</title>
       <link>https://mglearn.github.io/tcea/dashboard/index.html</link>
       <guid isPermaLink="true">https://mglearn.github.io/tcea/dashboard/index.html</guid>
       <category>Dashboards and Decision Tools</category>
       <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
       <description>A course registration and revenue dashboard for tracking professional development activity.</description>
-    </item>
-    <item>
-      <title>📊 Buyback Technology Vendor Assessment Tool</title>
-      <link>https://mglearn.github.io/tcea/buyback/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/buyback/index.html</guid>
-      <category>Dashboards and Decision Tools</category>
-      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
-      <description>A structured tool for evaluating buyback technology vendors against district priorities.</description>
-    </item>
-    <item>
-      <title>📊 Family App Privacy Audit</title>
-      <link>https://mglearn.github.io/tcea/privacy-audit/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/privacy-audit/index.html</guid>
-      <category>Dashboards and Decision Tools</category>
-      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
-      <description>A 15-minute interactive guide for reviewing app permissions on a child's device.</description>
-    </item>
-    <item>
-      <title>🧰 Classroom Word Search Maker</title>
-      <link>https://mglearn.github.io/tcea/tools/wordsearch/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/tools/wordsearch/index.html</guid>
-      <category>Classroom Tools and Utilities</category>
-      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
-      <description>Create classroom word searches from custom terms and themes.</description>
     </item>
   </channel>
 </rss>

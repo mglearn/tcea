@@ -1,6 +1,83 @@
 {
-  "generated": "2026-07-08T00:17:29.264Z",
+  "generated": "2026-07-08T00:37:30.709Z",
   "items": [
+    {
+      "href": "breakouts/clear/index.html",
+      "title": "Critical Thinking Breakouts",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-07-07T19:29:56-05:00"
+    },
+    {
+      "href": "breakouts/july4/index.html",
+      "title": "Fourth of July Critical Thinking Breakouts",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-07-07T19:29:56-05:00"
+    },
+    {
+      "href": "breakouts/july5th/index.html",
+      "title": "July 5 & Black Freedom Holidays Breakouts",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-07-07T19:29:56-05:00"
+    },
+    {
+      "href": "breakouts/index.html",
+      "title": "Critical Thinking Online Breakouts — Full Library",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-07-07T19:29:56-05:00"
+    },
+    {
+      "href": "breakouts/science/index.html",
+      "title": "Science Critical Thinking Breakouts (Grades K–8)",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-07-07T19:29:56-05:00"
+    },
+    {
+      "href": "custom-instructions-library/index.html",
+      "title": "TCEA AI Custom Instructions Library",
+      "category": "AI Prompt Libraries and Adoption",
+      "icon": "🤖",
+      "date": "2026-07-07T19:26:23-05:00"
+    },
+    {
+      "href": "ai-adoption-checklist/index.html",
+      "title": "Generative AI Adoption Checklist",
+      "category": "AI Prompt Libraries and Adoption",
+      "icon": "🤖",
+      "date": "2026-07-07T19:26:23-05:00"
+    },
+    {
+      "href": "checklist/index.html",
+      "title": "Generative AI Adoption Checklist Folder Version",
+      "category": "AI Prompt Libraries and Adoption",
+      "icon": "🤖",
+      "date": "2026-07-07T19:26:23-05:00"
+    },
+    {
+      "href": "topstrategies/index.html",
+      "title": "Beyond the 20 Percent Policy",
+      "category": "Instructional Strategy Guides",
+      "icon": "📘",
+      "date": "2026-07-07T19:26:23-05:00"
+    },
+    {
+      "href": "vlet/index.html",
+      "title": "Visible Learning with Ed Tech",
+      "category": "Instructional Strategy Guides",
+      "icon": "📘",
+      "date": "2026-07-07T19:26:23-05:00"
+    },
+    {
+      "href": "wds/index.html",
+      "title": "When Disaster Strikes",
+      "category": "Games, Activities, and Specialty Builds",
+      "icon": "🎲",
+      "date": "2026-07-07T19:26:23-05:00"
+    },
     {
       "href": "breakouts/idioms/index.html",
       "title": "Idioms & Sayings for Multilingual Learners",
@@ -23,13 +100,6 @@
       "date": "2026-07-07T14:11:41-05:00"
     },
     {
-      "href": "breakouts/index.html",
-      "title": "Critical Thinking Online Breakouts — Full Library",
-      "category": "Critical Thinking Breakouts",
-      "icon": "🕵️",
-      "date": "2026-07-07T13:58:15-05:00"
-    },
-    {
       "href": "breakouts/bible/index.html",
       "title": "Bible as Literature Breakouts",
       "category": "Critical Thinking Breakouts",
@@ -44,39 +114,11 @@
       "date": "2026-07-07T11:04:11-05:00"
     },
     {
-      "href": "breakouts/science/index.html",
-      "title": "Science Critical Thinking Breakouts (Grades K–8)",
-      "category": "Critical Thinking Breakouts",
-      "icon": "🕵️",
-      "date": "2026-07-05T15:15:43-05:00"
-    },
-    {
       "href": "breakouts/science/correlation.html",
       "title": "Science Breakouts Correlation Guide",
       "category": "Critical Thinking Breakouts",
       "icon": "🕵️",
       "date": "2026-07-05T15:05:58-05:00"
-    },
-    {
-      "href": "breakouts/clear/index.html",
-      "title": "Critical Thinking Breakouts",
-      "category": "Critical Thinking Breakouts",
-      "icon": "🕵️",
-      "date": "2026-07-04T15:05:03-05:00"
-    },
-    {
-      "href": "breakouts/july4/index.html",
-      "title": "Fourth of July Critical Thinking Breakouts",
-      "category": "Critical Thinking Breakouts",
-      "icon": "🕵️",
-      "date": "2026-07-04T15:05:03-05:00"
-    },
-    {
-      "href": "breakouts/july5th/index.html",
-      "title": "July 5 & Black Freedom Holidays Breakouts",
-      "category": "Critical Thinking Breakouts",
-      "icon": "🕵️",
-      "date": "2026-07-04T15:05:03-05:00"
     },
     {
       "href": "breakouts/clear/correlation.html",
@@ -177,13 +219,6 @@
       "date": "2026-06-19T22:30:40-05:00"
     },
     {
-      "href": "custom-instructions-library/index.html",
-      "title": "TCEA AI Custom Instructions Library",
-      "category": "AI Prompt Libraries and Adoption",
-      "icon": "🤖",
-      "date": "2026-06-19T17:49:01-05:00"
-    },
-    {
       "href": "ai-essentials-prompt-library/index.html",
       "title": "AI Essentials Prompt Library of 100",
       "category": "AI Prompt Libraries and Adoption",
@@ -193,13 +228,6 @@
     {
       "href": "k12-image-prompt-library/index.html",
       "title": "K-12 Image Prompt Library",
-      "category": "AI Prompt Libraries and Adoption",
-      "icon": "🤖",
-      "date": "2026-06-19T17:49:01-05:00"
-    },
-    {
-      "href": "ai-adoption-checklist/index.html",
-      "title": "Generative AI Adoption Checklist",
       "category": "AI Prompt Libraries and Adoption",
       "icon": "🤖",
       "date": "2026-06-19T17:49:01-05:00"
@@ -247,38 +275,10 @@
       "date": "2026-06-19T17:49:01-05:00"
     },
     {
-      "href": "topstrategies/index.html",
-      "title": "Beyond the 20 Percent Policy",
-      "category": "Instructional Strategy Guides",
-      "icon": "📘",
-      "date": "2026-06-19T17:49:01-05:00"
-    },
-    {
       "href": "dashboard/index.html",
       "title": "TCEA Registration Dashboard",
       "category": "Dashboards and Decision Tools",
       "icon": "📊",
-      "date": "2026-06-19T17:49:01-05:00"
-    },
-    {
-      "href": "buyback/index.html",
-      "title": "Buyback Technology Vendor Assessment Tool",
-      "category": "Dashboards and Decision Tools",
-      "icon": "📊",
-      "date": "2026-06-19T17:49:01-05:00"
-    },
-    {
-      "href": "privacy-audit/index.html",
-      "title": "Family App Privacy Audit",
-      "category": "Dashboards and Decision Tools",
-      "icon": "📊",
-      "date": "2026-06-19T17:49:01-05:00"
-    },
-    {
-      "href": "tools/wordsearch/index.html",
-      "title": "Classroom Word Search Maker",
-      "category": "Classroom Tools and Utilities",
-      "icon": "🧰",
       "date": "2026-06-19T17:49:01-05:00"
     }
   ]
