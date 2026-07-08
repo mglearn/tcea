@@ -15,7 +15,7 @@
    ============================================================ */
 const fs = require("fs");
 const path = require("path");
-const { execSync } = require("child_process");
+const { execFileSync } = require("child_process");
 
 const ROOT = __dirname;
 const SITE_URL = (process.env.SITE_URL || "https://mglearn.github.io/tcea/").replace(/\/?$/, "/");
@@ -54,7 +54,7 @@ function capWords(s, n) {
 }
 function gitDate(file) {
   try {
-    const out = execSync("git log -1 --format=%cI -- " + JSON.stringify(file), {
+    const out = execFileSync("git", ["log", "-1", "--format=%cI", "--", file], {
       cwd: ROOT, stdio: ["ignore", "pipe", "ignore"]
     }).toString().trim();
     return out || null;

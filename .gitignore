@@ -5,3 +5,8 @@
 .DS_Store
 Thumbs.db
 *~
+
+# dependencies & secrets
+node_modules/
+.env
+.env.*

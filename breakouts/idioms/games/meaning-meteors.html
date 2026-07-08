@@ -275,7 +275,7 @@
       hadCorrect = false;
       spawnTimer = 0;
       target = pick(DATA);
-      els.targetIdiom.innerHTML = '<span class="emoji">'+ (target.emoji||"✨") +'</span>' + escapeHtml(target.idiom);
+      els.targetIdiom.innerHTML = '<span class="emoji">'+ escapeHtml(target.emoji||"✨") +'</span>' + escapeHtml(target.idiom);
 
       // difficulty scales with score
       baseSpeed = 42 + Math.min(score * 1.5, 78);      // px/sec-ish

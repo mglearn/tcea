@@ -89,6 +89,31 @@
     return str.replace(/\{([^}]+)\}/g, (m, k) => (vars[k] !== undefined ? String(vars[k]) : m));
   }
 
+  // Defense-in-depth: dictionary values are author/contributor content compiled into
+  // the site, but a bad edit to a locale file must never be able to inject script into
+  // a data-i18n-html sink. Parse into an inert <template> (nothing loads/executes),
+  // drop dangerous elements, and strip event handlers + javascript: URLs. Legitimate
+  // markup (<b>, <em>, <a href>, <span>, <br>, …) is preserved.
+  const UNSAFE_TAGS = /^(SCRIPT|STYLE|IFRAME|OBJECT|EMBED|LINK|META|BASE|FORM|INPUT|BUTTON|TEXTAREA|SVG|MATH)$/;
+  function sanitizeHTML(html) {
+    const tpl = document.createElement('template');
+    tpl.innerHTML = String(html);
+    (function walk(node) {
+      Array.prototype.slice.call(node.childNodes).forEach(function (el) {
+        if (el.nodeType !== 1) return;                       // keep text nodes
+        if (UNSAFE_TAGS.test(el.tagName)) { el.remove(); return; }
+        Array.prototype.slice.call(el.attributes).forEach(function (a) {
+          const n = a.name.toLowerCase();
+          if (n.indexOf('on') === 0) el.removeAttribute(a.name);
+          else if ((n === 'href' || n === 'src' || n === 'xlink:href') && /^\s*(javascript|data|vbscript):/i.test(a.value)) el.removeAttribute(a.name);
+          else if (n === 'style' && /expression\(|url\(\s*['"]?\s*javascript:/i.test(a.value)) el.removeAttribute(a.name);
+        });
+        walk(el);
+      });
+    })(tpl.content);
+    return tpl.innerHTML;
+  }
+
   function apply() {
     const cfg = LANGS.find(l => l.code === state.lang) || LANGS[0];
     document.documentElement.lang = cfg.htmlLang || cfg.code;
@@ -98,7 +123,7 @@
       const v = lookup(el.getAttribute('data-i18n')); if (v !== undefined) el.textContent = v;
     });
     document.querySelectorAll('[data-i18n-html]').forEach(el => {
-      const v = lookup(el.getAttribute('data-i18n-html')); if (v !== undefined) el.innerHTML = v;
+      const v = lookup(el.getAttribute('data-i18n-html')); if (v !== undefined) el.innerHTML = sanitizeHTML(v);
     });
     ['placeholder', 'title', 'aria-label', 'alt'].forEach(attr => {
       document.querySelectorAll(`[data-i18n-${attr}]`).forEach(el => {

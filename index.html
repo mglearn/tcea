@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
 <title>TCEA Vibe-Coded Solutions Directory</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="description" content="A single searchable launch page for the HTML tools, dashboards, course references, prompt libraries, classroom games, and downloadable assets from TCEA.">
@@ -408,6 +409,28 @@
     return PROJECTS.filter(function (p) { return p.category === id; }).length;
   }
 
+  // Defense-in-depth: project metadata is author-controlled HTML (it carries entities
+  // like &amp;), so we render it as HTML — but pass the assembled markup through an
+  // inert <template> that drops any script/handler/javascript: URL before it hits the DOM.
+  var UNSAFE_TAGS = /^(SCRIPT|STYLE|IFRAME|OBJECT|EMBED|LINK|META|BASE|FORM|INPUT|BUTTON|TEXTAREA|SVG|MATH)$/;
+  function sanitizeHTML(html) {
+    var tpl = document.createElement("template");
+    tpl.innerHTML = String(html);
+    (function walk(node) {
+      Array.prototype.slice.call(node.childNodes).forEach(function (el) {
+        if (el.nodeType !== 1) return;
+        if (UNSAFE_TAGS.test(el.tagName)) { el.remove(); return; }
+        Array.prototype.slice.call(el.attributes).forEach(function (a) {
+          var n = a.name.toLowerCase();
+          if (n.indexOf("on") === 0) el.removeAttribute(a.name);
+          else if ((n === "href" || n === "src" || n === "xlink:href") && /^\s*(javascript|data|vbscript):/i.test(a.value)) el.removeAttribute(a.name);
+        });
+        walk(el);
+      });
+    })(tpl.content);
+    return tpl.innerHTML;
+  }
+
   function cardHTML(p) {
     var newBadge = isNew(p.href) ? ' <span class="badge-new">NEW</span>' : "";
     var ext = p.external ? ' target="_blank" rel="noopener"' : "";
@@ -478,7 +501,7 @@
       els.count.textContent = shown + (shown === 1 ? " solution" : " solutions");
     }
 
-    els.results.innerHTML = html;
+    els.results.innerHTML = sanitizeHTML(html);
     els.empty.style.display = shown === 0 ? "block" : "none";
   }
 

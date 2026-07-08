@@ -2,8 +2,16 @@
 /* build-catalog.js — scan all breakout suites and emit catalog.js (window.CATALOG),
    powering the top-level breakouts/index.html (search + randomizer).
    Run:  node breakouts/build-catalog.js */
-const fs = require('fs'), path = require('path'), cp = require('child_process');
+const fs = require('fs'), path = require('path'), cp = require('child_process'), vm = require('vm');
 const ROOT = __dirname;
+
+// Load a breakout/i18n data file (which assigns to `window`) inside an isolated VM
+// sandbox — no require/process/globalThis reachable — instead of eval()-ing it in
+// this process. `windowObj` receives the file's `window.*` assignments.
+function loadIntoWindow(src, windowObj) {
+  vm.runInNewContext(src, { window: windowObj }, { timeout: 5000 });
+  return windowObj;
+}
 const BAND = { grade35: '3–5', grade68: '6–8', grade912: '9–12', k2: 'K–2', g35: '3–5', g68: '6–8', g912: '9–12' };
 const LANGS = ['es', 'vi', 'ar', 'hi', 'ur', 'zh'];
 
@@ -23,7 +31,7 @@ function localeMeta(suite) {
       if (!f.endsWith('.js')) continue;
       const slug = f.replace('.js', '');
       try {
-        const w = {}; eval(fs.readFileSync(path.join(dir, f), 'utf8').replace('window.BREAKOUT', 'w.BREAKOUT'));
+        const w = {}; loadIntoWindow(fs.readFileSync(path.join(dir, f), 'utf8'), w);
         const b = w.BREAKOUT, en = b.CONTENT.en;
         const kw = [
           ...en.clues.flatMap(c => [c.nm, c.title, c.body]),
@@ -49,7 +57,7 @@ function clearMeta() {
     const fp = path.join(ROOT, 'clear', band, 'locales', band + '.js');
     if (!fs.existsSync(fp)) continue;
     try {
-      const w = {}; eval(fs.readFileSync(fp, 'utf8').replace('window.BREAKOUT', 'w.BREAKOUT'));
+      const w = {}; loadIntoWindow(fs.readFileSync(fp, 'utf8'), w);
       const b = w.BREAKOUT;
       out.push({
         suite: 'clear', band: BAND[band], slug: band,
@@ -88,7 +96,7 @@ function bibleMeta() {
     const m = slug.match(/^(k2|g912|g68|g35)/);       // band prefix (existing k2.js … or new k2-<slug>.js)
     if (!m) continue;
     try {
-      const w = {}; eval(fs.readFileSync(path.join(dir, f), 'utf8').replace('window.BREAKOUT', 'w.BREAKOUT'));
+      const w = {}; loadIntoWindow(fs.readFileSync(path.join(dir, f), 'utf8'), w);
       const b = w.BREAKOUT, en = b.CONTENT.en;
       const kw = [
         ...en.clues.flatMap(c => [c.nm, c.title, c.body]),
@@ -117,7 +125,7 @@ function idiomsMeta() {
     const m = slug.match(/^(g35|g68|g912)/);
     if (!m) continue;
     try {
-      const w = {}; eval(fs.readFileSync(path.join(dir, f), 'utf8').replace('window.BREAKOUT', 'w.BREAKOUT'));
+      const w = {}; loadIntoWindow(fs.readFileSync(path.join(dir, f), 'utf8'), w);
       const b = w.BREAKOUT, en = b.CONTENT.en;
       const kw = [
         ...en.clues.flatMap(c => [c.nm, c.title, c.body]),
@@ -144,9 +152,9 @@ function scienceMeta() {
     if (!fs.existsSync(fp)) continue;
     try {
       const w = { window: {} };
-      eval('(function(window){' + fs.readFileSync(fp, 'utf8') + '})(w.window)');
+      loadIntoWindow(fs.readFileSync(fp, 'utf8'), w.window);
       const i18nFp = path.join(ROOT, 'science', 'grade' + g, 'locales', 'grade' + g + '-i18n.js');
-      if (fs.existsSync(i18nFp)) eval('(function(window){' + fs.readFileSync(i18nFp, 'utf8') + '})(w.window)');
+      if (fs.existsSync(i18nFp)) loadIntoWindow(fs.readFileSync(i18nFp, 'utf8'), w.window);
       const b = w.window.BREAKOUT, en = b.CONTENT.en;
       const kw = [
         ...en.clues.flatMap(c => [c.nm, c.title, c.body]),
@@ -165,9 +173,9 @@ function scienceMeta() {
     if (fs.existsSync(moreFp)) {
       try {
         const w2 = { window: {} };
-        eval('(function(window){' + fs.readFileSync(moreFp, 'utf8') + '})(w2.window)');
+        loadIntoWindow(fs.readFileSync(moreFp, 'utf8'), w2.window);
         const moreI18nFp = path.join(ROOT, 'science', 'grade' + g, 'more-i18n.js');
-        if (fs.existsSync(moreI18nFp)) eval('(function(window){' + fs.readFileSync(moreI18nFp, 'utf8') + '})(w2.window)');
+        if (fs.existsSync(moreI18nFp)) loadIntoWindow(fs.readFileSync(moreI18nFp, 'utf8'), w2.window);
         const MORE = w2.window.MORE || {};
         const MORE_I18N = w2.window.MORE_I18N || {};
         for (const slug of Object.keys(MORE)) {

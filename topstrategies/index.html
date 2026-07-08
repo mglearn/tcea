@@ -310,7 +310,7 @@ tr:nth-child(even) td{background:var(--off-white)}
 </main>
 
 <footer class="site-footer">
-  Based on <a href="https://blog.tcea.org" target="_blank">TCEA Technotes</a> research. Effect sizes from Hattie's Visible Learning MetaX database. ELPS alignment: Texas Education Agency. &copy; 2026 TCEA.
+  Based on <a href="https://blog.tcea.org" target="_blank" rel="noopener noreferrer">TCEA Technotes</a> research. Effect sizes from Hattie's Visible Learning MetaX database. ELPS alignment: Texas Education Agency. &copy; 2026 TCEA.
 </footer>
 
 <script>
@@ -569,7 +569,7 @@ function renderCards() {
         <span class="strategy-chevron">&#8964;</span>
       </div>
       <div class="strategy-body${isOpen?' open':''}" id="sbody-${idx}">
-        <div class="strategy-intro">${s.intro} <a href="${s.metax}" target="_blank" style="color:var(--teal);font-size:13px">MetaX →</a></div>
+        <div class="strategy-intro">${s.intro} <a href="${s.metax}" target="_blank" style="color:var(--teal);font-size:13px" rel="noopener noreferrer">MetaX →</a></div>
         <div class="content-tabs" id="ctabs-${idx}">
           ${contentAreas.map((c,ci) => `<button class="ctab${ci===0?' active':''}" onclick="setContent(${idx},'${c.id}',this)">${c.label}</button>`).join('')}
         </div>

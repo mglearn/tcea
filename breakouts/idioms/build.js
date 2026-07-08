@@ -193,6 +193,7 @@ for (const band of BANDS) {
   if (!fs.existsSync(specFile)) { console.error('no specs for', band.key, '(skipping)'); continue; }
   const specs = JSON.parse(fs.readFileSync(specFile, 'utf8'));
   for (const spec of specs) {
+    if (!/^[a-z0-9-]+$/.test(spec.slug || '')) { console.error('bad slug (skipping):', JSON.stringify(spec.slug)); continue; }
     const file = `${band.key}-${spec.slug}`;
     const trans = loadTrans(file);
     if (trans) translated++;
