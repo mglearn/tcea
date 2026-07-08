@@ -866,7 +866,16 @@
     "href": "breakouts/idioms/index.html",
     "tag": "Breakout Library",
     "title": "Idioms &amp; Sayings for Multilingual Learners",
-    "desc": "A multilingual idioms &amp; sayings suite for grades 3–12 — decode English idioms with your home language as a resource (ESL) and compare sayings across languages, starting with English &amp; Spanish. Aligned to the Texas ELPS (idiomatic expressions) and WIDA; seven languages, no logins, no data collected."
+    "desc": "A multilingual idioms &amp; sayings suite for grades 3–12 — decode English idioms with your home language as a resource (ESL) and compare sayings across languages. 12 breakouts fully translated into seven languages (including French &amp; Latin units for world-language classrooms), a 66-idiom illustrated spotlight, a three-game Idiom Arcade, printable card decks, and teacher UDL/ELPS/lesson-plan supports. Aligned to the Texas ELPS (idiomatic expressions) and WIDA; no logins, no data collected."
+  },
+  {
+    "category": "breakouts",
+    "featured": false,
+    "external": false,
+    "href": "breakouts/idioms/index.html#arcade",
+    "tag": "Games",
+    "title": "Idiom Arcade — 3 Idiom Games",
+    "desc": "Three fast, free, self-contained arcade games that teach English idioms: Match Blitz (timed idiom–meaning matching), Meaning Meteors (a catch-the-meaning canvas arcade), and Trap Escape (a literal-vs-figurative reflex game). Playable by touch, mouse, or keyboard; runs entirely in the browser with no logins and no data collected."
   },
   {
     "category": "breakouts",

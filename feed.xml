@@ -6,7 +6,7 @@
     <atom:link href="https://mglearn.github.io/tcea/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated HTML tools, dashboards, prompt libraries, and classroom resources from TCEA.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Jul 2026 23:39:51 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2026 00:08:01 GMT</lastBuildDate>
     <image>
       <url>https://mglearn.github.io/tcea/favicon.svg</url>
       <title>TCEA Vibe-Coded Solutions — Updates</title>
@@ -17,8 +17,16 @@
       <link>https://mglearn.github.io/tcea/breakouts/idioms/index.html</link>
       <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/idioms/index.html</guid>
       <category>Critical Thinking Breakouts</category>
-      <pubDate>Tue, 07 Jul 2026 20:03:17 GMT</pubDate>
-      <description>A multilingual idioms &amp; sayings suite for grades 3–12 — decode English idioms with your home language as a resource (ESL) and compare sayings across languages, starting with English &amp; Spanish. Aligned to the Texas ELPS (idiomatic expressions) and WIDA; seven languages, no logins, no data collected.</description>
+      <pubDate>Tue, 07 Jul 2026 23:48:54 GMT</pubDate>
+      <description>A multilingual idioms &amp; sayings suite for grades 3–12 — decode English idioms with your home language as a resource (ESL) and compare sayings across languages. 12 breakouts fully translated into seven languages (including French &amp; Latin units for world-language classrooms), a 66-idiom illustrated spotlight, a three-game Idiom Arcade, printable card decks, and teacher UDL/ELPS/lesson-plan supports. Aligned to the Texas ELPS (idiomatic expressions) and WIDA; no logins, no data collected.</description>
+    </item>
+    <item>
+      <title>🕵️ Idiom Arcade — 3 Idiom Games</title>
+      <link>https://mglearn.github.io/tcea/breakouts/idioms/index.html#arcade</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/idioms/index.html#arcade</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Tue, 07 Jul 2026 23:48:54 GMT</pubDate>
+      <description>Three fast, free, self-contained arcade games that teach English idioms: Match Blitz (timed idiom–meaning matching), Meaning Meteors (a catch-the-meaning canvas arcade), and Trap Escape (a literal-vs-figurative reflex game). Playable by touch, mouse, or keyboard; runs entirely in the browser with no logins and no data collected.</description>
     </item>
     <item>
       <title>🕵️ Idioms &amp; Sayings Standards Alignment (ELPS / TEKS)</title>
@@ -323,14 +331,6 @@
       <category>Classroom Tools and Utilities</category>
       <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
       <description>Create classroom word searches from custom terms and themes.</description>
-    </item>
-    <item>
-      <title>🧰 Meme Puzzle Maker</title>
-      <link>https://mglearn.github.io/tcea/tools/memepuzzle/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/tools/memepuzzle/index.html</guid>
-      <category>Classroom Tools and Utilities</category>
-      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
-      <description>Create and configure meme-based puzzles for classroom use.</description>
     </item>
   </channel>
 </rss>

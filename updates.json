@@ -1,12 +1,19 @@
 {
-  "generated": "2026-07-07T23:39:51.989Z",
+  "generated": "2026-07-08T00:08:01.141Z",
   "items": [
     {
       "href": "breakouts/idioms/index.html",
       "title": "Idioms & Sayings for Multilingual Learners",
       "category": "Critical Thinking Breakouts",
       "icon": "🕵️",
-      "date": "2026-07-07T15:03:17-05:00"
+      "date": "2026-07-07T18:48:54-05:00"
+    },
+    {
+      "href": "breakouts/idioms/index.html#arcade",
+      "title": "Idiom Arcade — 3 Idiom Games",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-07-07T18:48:54-05:00"
     },
     {
       "href": "breakouts/idioms/correlation.html",
@@ -270,13 +277,6 @@
     {
       "href": "tools/wordsearch/index.html",
       "title": "Classroom Word Search Maker",
-      "category": "Classroom Tools and Utilities",
-      "icon": "🧰",
-      "date": "2026-06-19T17:49:01-05:00"
-    },
-    {
-      "href": "tools/memepuzzle/index.html",
-      "title": "Meme Puzzle Maker",
       "category": "Classroom Tools and Utilities",
       "icon": "🧰",
       "date": "2026-06-19T17:49:01-05:00"
