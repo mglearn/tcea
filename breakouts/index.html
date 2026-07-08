@@ -81,6 +81,22 @@
   .langbar{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-bottom:4px}
   .langbar .globe{font-size:1.1rem}
   .breakout-i18n-switcher,#i18nSwitcher{font-family:'Nunito',sans-serif;font-weight:700;font-size:.9rem;padding:7px 12px;border:2px solid var(--line);border-radius:9px;background:#fff;color:var(--navy);cursor:pointer}
+
+  /* ===== Visual refinements — additive polish, no layout changes ===== */
+  *{-webkit-tap-highlight-color:transparent}
+  .suite,.bk{transition:transform .18s cubic-bezier(.2,.7,.3,1),border-color .18s ease,box-shadow .2s ease}
+  .suite{box-shadow:0 4px 16px rgba(10,36,99,.05)}
+  .suite:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(10,36,99,.11)}
+  .bk{box-shadow:0 2px 8px rgba(10,36,99,.05)}
+  .bk:hover{box-shadow:0 12px 28px rgba(10,36,99,.13)}
+  .suite .links a,.chip{transition:transform .15s ease,background .15s ease,border-color .15s ease,color .15s ease}
+  .suite .links a:hover,.chip:hover{transform:translateY(-1px)}
+  .bk:focus-visible,.suite .links a:focus-visible,.chip:focus-visible,
+  .breakout-i18n-switcher:focus-visible,#i18nSwitcher:focus-visible,a:focus-visible,input:focus-visible{
+    outline:3px solid var(--accent,#0891b2);outline-offset:2px;border-radius:9px}
+  @media (prefers-reduced-motion:reduce){
+    .suite,.bk,.suite .links a,.chip{transition:none}
+    .suite:hover,.bk:hover,.suite .links a:hover,.chip:hover{transform:none}}
 </style>
 </head>
 <body>

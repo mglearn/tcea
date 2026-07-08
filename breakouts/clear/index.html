@@ -48,6 +48,10 @@
   .langbar{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-bottom:8px}
   .langbar .globe{font-size:1.1rem}
   .breakout-i18n-switcher,#i18nSwitcher{font-family:'Nunito',sans-serif;font-weight:700;font-size:.9rem;padding:7px 12px;border:2px solid var(--line);border-radius:9px;background:#fff;color:var(--navy);cursor:pointer}
+
+  /* additive: keyboard-focus rings + tap polish — no layout change */
+  *{-webkit-tap-highlight-color:transparent}
+  a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,.card:focus-visible,.suite:focus-visible{outline:3px solid #1f6feb;outline-offset:2px;border-radius:9px}
 </style>
 </head>
 <body>

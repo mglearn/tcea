@@ -123,3 +123,33 @@ footer a{color:var(--c3);font-weight:700}
 [dir="rtl"] .digits{direction:ltr}
 [dir="rtl"] .mc button,[dir="rtl"] .multi-opt{text-align:right}
 [dir="rtl"] .seq-clear{margin-left:0;margin-right:8px}
+
+/* ===== Visual refinements — additive only (no layout/structure changes) ===== */
+*{-webkit-tap-highlight-color:transparent}
+.clue,.lock,.mc button,.multi-opt,.resetbtn,.lk-submit,.seqpad,.modal .closebtn,.win-card button{
+  transition:transform .18s cubic-bezier(.2,.7,.3,1),box-shadow .2s ease,border-color .18s ease,background .18s ease,color .18s ease}
+.clue{box-shadow:0 2px 7px rgba(10,36,99,.05)}
+.clue:hover{box-shadow:0 12px 26px rgba(10,36,99,.13)}
+.clue:active{transform:translateY(-1px)}
+.lock{box-shadow:0 4px 16px rgba(10,36,99,.06);transition:box-shadow .22s ease,border-color .2s ease,background .2s ease}
+.lock:hover{box-shadow:0 12px 30px rgba(10,36,99,.11)}
+.mc button:hover,.multi-opt:hover{transform:translateY(-1px)}
+.mc button:active,.multi-opt:active{transform:scale(.99)}
+.seqpad:hover{transform:translateY(-2px)}
+.lk-submit{box-shadow:0 4px 12px rgba(10,36,99,.18)}
+.lk-submit:hover{transform:translateY(-1px);box-shadow:0 9px 22px rgba(10,36,99,.24)}
+.lk-submit:active{transform:translateY(0);box-shadow:0 3px 8px rgba(10,36,99,.20)}
+.resetbtn:hover{transform:translateY(-1px)}
+.win-card button:hover,.modal .closebtn:hover{transform:translateY(-1px);filter:brightness(1.04)}
+.modal{box-shadow:0 24px 60px rgba(10,29,61,.30)}
+.win-card{box-shadow:0 30px 80px rgba(10,29,61,.38)}
+/* clearer keyboard focus (accessibility) without changing mouse states */
+.clue:focus-visible,.mc button:focus-visible,.multi-opt:focus-visible,.seqpad:focus-visible,
+.lk-submit:focus-visible,.resetbtn:focus-visible,.win-card button:focus-visible,.modal .closebtn:focus-visible,
+.breakout-i18n-switcher:focus-visible,#i18nSwitcher:focus-visible,.crumb a:focus-visible,footer a:focus-visible{
+  outline:3px solid var(--c3);outline-offset:2px;border-radius:9px}
+.digit:focus-visible,.wordin:focus-visible{outline:3px solid var(--c3);outline-offset:1px}
+@media (prefers-reduced-motion:reduce){
+  .clue,.lock,.mc button,.multi-opt,.resetbtn,.lk-submit,.seqpad,.modal .closebtn,.win-card button{transition:none}
+  .clue:active,.mc button:hover,.mc button:active,.multi-opt:hover,.multi-opt:active,.seqpad:hover,
+  .lk-submit:hover,.lk-submit:active,.resetbtn:hover,.win-card button:hover,.modal .closebtn:hover{transform:none;filter:none}}

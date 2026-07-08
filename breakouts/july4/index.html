@@ -45,6 +45,10 @@
   .about p,.about li{font-weight:600;color:var(--ink-soft);font-size:.92rem}
   .about li{margin:4px 0 4px 20px}
   footer{text-align:center;margin-top:32px;font-size:.8rem;color:var(--ink-soft);font-weight:600}
+
+  /* additive: keyboard-focus rings + tap polish — no layout change */
+  *{-webkit-tap-highlight-color:transparent}
+  a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,.card:focus-visible,.suite:focus-visible{outline:3px solid #1f6feb;outline-offset:2px;border-radius:9px}
 </style>
 </head>
 <body>
