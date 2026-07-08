@@ -29,7 +29,7 @@ it?"* This is the differentiator, and it's exactly what the research supports.
 
 **To do (pick up here, roughly in priority order):**
 - [x] **Answer key** regenerated to cover all 12 breakouts (incl. french-idioms, latin-proverbs).
-- [ ] **Optional: idiom spotlight images** — **50 of 66 drawn**; the remaining **16 (spotlight #51–66)** are specced in `SPOTLIGHT-IMAGES.md`. Drop `.webp` files into `img/` and they auto-display.
+- [x] **Idiom spotlight images** — all **66 of 66 drawn** and in `img/`; auto-displayed by the spotlight (reference: `SPOTLIGHT-IMAGES.md`).
 - [ ] **Optional: fuller Phase 1** — g35 has 3 breakouts; add 1–2 more for symmetry with 6–8/9–12 (now 4 / 5).
 - [ ] **Optional: more world languages** — extend the FR-style spotlight map (German, Mandarin `zh`, ASL) and add full German/Mandarin breakouts.
 

@@ -18,9 +18,8 @@ figurative meaning shown in text. That contrast is the whole teaching point.
 
 ## The 66 images
 
-Images **1–50** are drawn and in `img/`. Images **51–66** cover the remaining idioms added to the
-spotlight bank from englishstudyonline / 7ESL / the cogweb Spanish–English proverbs list — **these do not
-have image files yet** and are the ones still to draw. (50 of 66 present.)
+**All 66 images are drawn and in `img/`** — the spotlight is fully illustrated. The table below is the
+reference for filenames/scenes/alt text (handy when refreshing an image or extending the bank).
 
 
 | # | Idiom | Filename | What to draw (the literal scene) | Alt text |
@@ -92,6 +91,5 @@ have image files yet** and are the ones still to draw. (50 of 66 present.)
 | 65 | Look for a needle in a haystack | `img/look-for-a-needle-in-a-haystack.webp` | a person with a magnifying glass searching a giant haystack for one tiny needle | Illustration of the literal, playful meaning of “Look for a needle in a haystack.” |
 | 66 | A penny saved is a penny earned | `img/a-penny-saved-is-a-penny-earned.webp` | a smiling piggy bank with one shiny coin dropping in and a small sparkle | Illustration of the literal, playful meaning of “A penny saved is a penny earned.” |
 
-_Missing scene notes: images **51–66** are specced above but not yet drawn (no `.webp` files yet). Draw
-**#51 (frying pan → fire)**, **#60 (bigger fish to fry)** and **#61 (wolf in sheep's clothing)** playfully
-and non-violently, consistent with the notes for #2/#37._
+_Missing scene notes: none — all 66 `.webp` files are present. When refreshing #2, #37, #48, #51, #60,
+or #61, keep them playful and non-violent (no literal weapon/violence)._
