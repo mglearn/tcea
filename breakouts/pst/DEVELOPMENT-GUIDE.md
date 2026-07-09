@@ -255,5 +255,41 @@ copyrighted images directly — **link to the hosting museum/collection page** r
 
 ---
 
+## 8. PST Arcade Tickets — entry/exit "games" (`pst/games/`, planned)
+
+Lightweight, **arcade-style entry and exit tickets** for **each unit component** (the surface, deep,
+and transfer phases of every unit). They get **their own space** (`breakouts/pst/games/`) with their
+own catalog + correlations, **and** are **linked from where they're most useful** — an *entry* ticket
+at the top of each phase page (activate prior knowledge / quick pre-check) and an *exit* ticket at the
+bottom (retrieval-practice check for understanding). Bidirectional: phase pages link to their tickets;
+the games hub links back to the units.
+
+**Why:** entry/exit tickets are high-leverage retrieval practice — *effects of testing* **d≈0.54–0.63**
+and *feedback* **d≈0.62**. Each ticket names its strategy + TEKS, like the activities do.
+
+**Architecture (data-driven — one engine, many tickets):**
+- `pst/games/assets/arcade.js` + `arcade.css` — a small reusable **arcade engine** (self-contained,
+  no logins, no data collected, keyboard-operable, 7 languages via the shared `assets/i18n.js`, RTL
+  for ar/ur, matches `pst.css` look). A handful of reusable **formats**: *Quick Match* (tap/drag
+  pairs), *Beat the Clock* (timed multiple-choice), *Sort It* (category sort), *Fill the Gap* (cloze).
+  Score/streak/timer for the "arcade" feel; results shown to the student only (nothing stored/sent).
+- Per-ticket **content data** keyed to the unit + phase (vocabulary, key facts, claims, the KWHL), in
+  a `games/<grade>/<unit>.js` (or per-ticket) data file, English-first with the same 7-language
+  dictionary pattern as the units. Each ticket declares: grade, unit, phase, `type: entry|exit`,
+  format, TEKS SE(s), effect-size tag.
+- `pst/games/index.html` — the **games hub**: catalog of all tickets grouped by grade → unit → phase,
+  filterable by grade/type/format; links into each ticket and back to its unit.
+- `pst/games/correlation.html` — a **games correlation**: Ticket → Unit → Phase → type → TEKS SE →
+  high-effect strategy (retrieval/feedback), mirroring the suite correlation page.
+- **Linking:** on each `surface/deep/transfer.html`, add a small "🎮 Entry ticket" pill near the top
+  and "🎮 Exit ticket" near the bottom (open the arcade ticket for that phase); the unit hub lists the
+  unit's tickets; the games hub and suite splash cross-link.
+
+**Conventions:** same as units — no "confirm before adoption / not legal advice"; `.disc` "aligned to";
+accessible + RTL; verified any external links; content English-first then the phased native
+translation. **Fold the arcade engine into the PST Project Pack (§6)** as a reusable engine.
+
+---
+
 *Content CC BY 4.0; code MIT. Aligned to the Texas Essential Knowledge and Skills for Social Studies
 (19 TAC Ch.113); paraphrased in good faith. Effect sizes from Visible Learning MetaX.*
