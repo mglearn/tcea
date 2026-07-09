@@ -119,7 +119,22 @@ per-key fallback; native `vi/ar/hi/ur/zh` layers are a later pass (same disclaim
 - **G8 · §113.20 · US History to 1877.** A founding-era or expansion-era problem of rights,
   compromise, and union (constitutional compromise, westward expansion, abolition).
 
-Each new grade band should re-confirm the anchor SEs against the `ch113a-d` PDFs before authoring.
+**High School (§113.C) — next band after 3–8.** Course-based, not grade-based; each course is its
+own hub under `breakouts/pst/hs-<course>/`. Confirm SEs against `ch113c-0.pdf` before authoring.
+- **US History Since 1877 · §113.41.** Candidate anchors: imperialism & the **Panama Canal**
+  (T. Roosevelt, "big stick", 1903 Panama independence, the canal-zone question — a rich
+  ill-structured stakeholder problem: *should the U.S. build and control a canal across Panama, and
+  how?*); also the Progressive Era, the Depression/New Deal, the Cold War, and Civil Rights.
+  Reference for the Panama Canal unit:
+  `https://www.studenthandouts.com/american-history/apush-readings/0810-panama-canal-americas.htm`
+- **World History · §113.42.** A turning-point dilemma (revolution, industrialization, decolonization).
+- **World Geography · §113.43.** A resource/urbanization/human–environment problem at global scale.
+- **US Government · §113.44.** A constitutional/rights/federalism policy problem.
+- **Economics (Free Enterprise) · §113.45.** A market/scarcity/policy trade-off problem.
+HS problem-solving anchor SE = each course's social-studies-skills "problem-solving and
+decision-making" SE (confirm the exact `(c)(NN)(B)` per course in `ch113c-0.pdf`).
+
+Each new grade/course band should re-confirm the anchor SEs against the `ch113a-d` PDFs before authoring.
 
 ---
 
