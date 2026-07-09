@@ -20,6 +20,12 @@ body{font-family:'Nunito',sans-serif;color:var(--ink);background:var(--paper);mi
 .wrap{max-width:860px;margin:0 auto;padding:30px 20px 80px}
 .wrap.narrow{max-width:720px}
 
+/* front-page hero banner */
+.pst-hero{display:block;width:100%;height:auto;border-radius:16px;
+  box-shadow:0 12px 34px rgba(27,27,75,.20);margin:2px 0 10px;border:1px solid var(--line)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
 /* chrome */
 .langbar{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-bottom:8px}
 .langbar .globe{font-size:1.1rem}
