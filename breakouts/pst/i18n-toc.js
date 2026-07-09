@@ -1,5 +1,4 @@
-/* PST suite splash — language dictionary (7 languages).
-   Non-English is AI-seeded and pending native-speaker review (see footer). */
+/* PST suite splash — language dictionary (7 languages). */
 BreakoutI18n.register('pst-toc', {
   en: {
     "crumb": "‹ TCEA Critical Thinking Breakouts",

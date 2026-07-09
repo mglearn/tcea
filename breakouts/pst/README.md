@@ -36,8 +36,7 @@ Jigsaw Organizer**.
 
 **Languages:** the splash, hero, PD pages, and card chrome are fully multilingual (en/es/vi/ar/hi/ur/zh,
 RTL for Arabic & Urdu). Unit *bodies* are English-first (served in all 7 via per-key fallback); the
-native-language translation of unit bodies is an in-progress pass, phased by grade — AI-seeded,
-pending native review.
+native-language translation of unit bodies is an in-progress pass, phased by grade.
 
 `info/` holds source material only (PBL method, effect-size evidence, rubrics, TEKS PDFs) and is
 **git-ignored — never deployed**.
