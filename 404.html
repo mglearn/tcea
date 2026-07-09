@@ -7,23 +7,22 @@
 <title>Page moved — TCEA</title>
 <style>body{font-family:system-ui,-apple-system,sans-serif;max-width:560px;margin:64px auto;padding:0 22px;color:#1c2436;line-height:1.6}a{color:#2f6fe0}h1{font-size:1.3rem}</style>
 <script>
-/* Auto-forward for published deep links. The CLEAR breakouts moved from
-   /clear/breakouts/*  ->  /breakouts/clear/*. GitHub Pages serves this 404.html
-   for any unresolved path, so every old link still redirects (no per-file stubs). */
+/* Auto-forward for published deep links. GitHub Pages serves this 404.html for any
+   unresolved path, so old links still redirect (no per-file stubs).
+     - CLEAR breakouts moved  /clear/breakouts/*  ->  /breakouts/clear/*
+     - Problem-Solving Teaching moved  /breakouts/pst/*  ->  /pst/* */
 (function () {
-  var p = location.pathname;
+  var p = location.pathname, s = location.search, h = location.hash;
   var m = p.match(/\/clear\/breakouts(\/.*)?$/);
-  if (m) {
-    var base = p.slice(0, m.index);           // e.g. "/tcea"
-    var rest = m[1] || '/';                    // e.g. "/grade35/student.html"
-    location.replace(base + '/breakouts/clear' + rest + location.search + location.hash);
-  }
+  if (m) { location.replace(p.slice(0, m.index) + '/breakouts/clear' + (m[1] || '/') + s + h); return; }
+  var q = p.match(/^(.*?)\/breakouts\/pst(\/.*)?$/);
+  if (q) { location.replace(q[1] + '/pst' + (q[2] || '/') + s + h); return; }
 })();
 </script>
 </head>
 <body>
 <h1>This page may have moved</h1>
-<p>We couldn’t find that page. If you followed an older CLEAR breakout link, you’re being redirected automatically.</p>
+<p>We couldn’t find that page. If you followed an older link (a CLEAR breakout, or a Problem-Solving Teaching page that has moved to <a href="/tcea/pst/">/pst</a>), you’re being redirected automatically.</p>
 <p><a href="/tcea/breakouts/">TCEA Critical Thinking Breakouts</a> &middot; <a href="/tcea/">TCEA home</a></p>
 </body>
 </html>
