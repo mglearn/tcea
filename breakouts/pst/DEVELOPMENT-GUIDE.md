@@ -152,5 +152,56 @@ Each new grade/course band should re-confirm the anchor SEs against the `ch113a-
    `?lang=` deep links work.
 6. Once the `ch113` PDFs are confirmed, spot-check every TEKS citation against the source.
 
+---
+
+## 6. PST Project Pack (planned deliverable)
+
+Build a **self-contained PST Project Pack**, modeled on `../ctob_project_pack.md` +
+`../ctob-starter-kit/` + `../ctob-starter-kit.zip`, so anyone (or any chatbot) can generate a new
+PST unit from scratch without this repo. Deliver three artifacts:
+
+**(a) `pst_project_pack.md`** — the authoring bible. Sections to cover:
+1. What Problem-Solving Teaching / PBL is (not a breakout — no locks); the research spine
+   (PST *d*≈0.61, PBL *d*≈0.53; surface→deep→transfer) and the effect-size table.
+2. **The non-negotiable structure:** surface → deep → transfer, with the transfer problem **gated**;
+   the six-step transfer arc (Meet the Problem → stakeholder roles → Hunches/Know/Need-to-Know KWHL
+   → inquiry → 8-part solution brief → debrief); the anchor SE = the grade/course's
+   "problem-solving and decision-making" TEKS `(c)(NN)(B)`.
+3. **Content craft:** how to pick an ill-structured, TEKS-anchored driving problem; stakeholder role
+   design; activity tags (effect-size + TEKS); grade-band reading ladder; honest-history framing
+   (TEC §28.0022) for slavery/race/contested topics; "aligned to" wording; **no "confirm before
+   adoption / not legal advice" disclaimer**.
+4. **The files per unit** (index/surface/deep/transfer/facilitator-guide/assessment + i18n-unit.js),
+   the grade/course hub, and exact relative paths.
+5. **The language engine** (`assets/i18n.js` → `BreakoutI18n`): data-i18n / data-i18n-html, the
+   7-language dictionary, per-key fallback, auto-RTL for ar/ur, and the **body-translation mechanism**
+   (page-prefixed keys ix./sf./dp./tr./fg./as.; 7-lang parity; typographic quotes; validity checks)
+   established in the translation pass.
+6. **The jigsaw standard:** ACE Powered Jigsaw Organizer + the Gamma/TCEA teacher guides + the
+   vetted per-expert-group source pattern (see [[pst-jigsaw-resources]]).
+7. **Vetted-resource rule:** every activity carries a `.res` line; curl/browser-verify every URL
+   (note the .gov/.org bot-blockers).
+8. **Reused infra:** `assets/pst.css` classes; the PD pipeline (UDL/ELPS/guide via `_pd` +
+   `build-pd.js` + `gen-pd-pages.js`); the correlation page; `policy.html`; catalog registration.
+9. **Assessment pack** (student solution rubric + Deb Allen individual-in-group + ITUE
+   problem-quality rubric) and the facilitator-guide shape (map of possibilities, curriculum map,
+   pacing, prompts, sources).
+10. Build & verify workflow; palette; and a **copy-paste starter prompt for a chatbot** that
+    produces a complete, verified PST unit.
+
+**(b) `pst-starter-kit/`** — a runnable kit: `assets/` (`i18n.js`, `pst.css`, PD cores + `pd.css`),
+the PD `_pd/*` JSON + `build-pd.js` + `gen-pd-pages.js`, a `policy.template.html`, a `validate.js`
+(checks 7-language key parity + link resolution + no-banned-phrases + gate present), a **worked
+example unit** (all 6 pages, one language layered), the ACE-organizer reference, `README.md`, and a
+copy of the pack `.md`.
+
+**(c) `pst-starter-kit.zip`** — the zipped kit for download; surface it on the suite splash and in
+the top-level `breakouts/index.html` alongside the CTOB starter kit.
+
+Keep it in lockstep with the live suite: whatever conventions the built units use (this guide) are
+what the pack teaches.
+
+---
+
 *Content CC BY 4.0; code MIT. Aligned to the Texas Essential Knowledge and Skills for Social Studies
 (19 TAC Ch.113); paraphrased in good faith. Effect sizes from Visible Learning MetaX.*
