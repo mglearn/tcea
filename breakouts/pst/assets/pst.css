@@ -79,6 +79,12 @@ a.card.soon{pointer-events:none}
   border:1.5px solid var(--line);border-radius:100px;padding:3px 10px}
 .act h3{margin:0 0 4px}
 
+/* resource line inside an activity */
+.res{margin-top:13px;font-size:.85rem;color:var(--ink-soft);font-weight:600;border-top:1px dashed var(--line);padding-top:11px;line-height:1.9}
+.res b{color:var(--ink)}
+.res a{color:#4a53c8;font-weight:700;text-decoration:none}
+.res a:hover{text-decoration:underline}
+
 /* stakeholder / role cards */
 .roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:16px}
 .role{background:#fff;border:2px solid var(--line);border-radius:14px;padding:15px 17px}
@@ -119,6 +125,21 @@ tr:last-child td{border-bottom:none}
 .disc{font-size:.8rem;color:var(--ink-soft);font-weight:600;margin-top:26px;font-style:italic}
 footer{text-align:center;margin-top:26px;font-size:.8rem;color:var(--ink-soft);font-weight:600}
 footer a{color:#4a53c8;text-decoration:none}
+
+/* "About this strategy" dropdown */
+.about{margin-top:20px;border:2px solid var(--line);border-radius:14px;background:#fff;overflow:hidden}
+.about>summary{cursor:pointer;list-style:none;padding:15px 20px;font-family:'Fredoka',sans-serif;font-weight:600;
+  color:var(--navy);background:var(--surface-bg);display:flex;align-items:center;gap:10px;font-size:1rem}
+.about>summary::-webkit-details-marker{display:none}
+.about>summary::after{content:"▾";margin-inline-start:auto;transition:transform .2s}
+.about[open]>summary::after{transform:rotate(180deg)}
+.about .body{padding:4px 20px 20px}
+.about .body h4{font-family:'Fredoka',sans-serif;color:var(--plum);margin:16px 0 3px;font-size:1rem}
+.about .body p{font-size:.9rem;color:var(--ink-soft);font-weight:600;margin:3px 0}
+.about .qlinks{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.about .qlinks a{font-family:'Fredoka',sans-serif;font-weight:600;font-size:.83rem;text-decoration:none;color:var(--navy);
+  border:1.5px solid var(--line);border-radius:100px;padding:9px 15px;transition:.15s}
+.about .qlinks a:hover{border-color:var(--ac);color:var(--ac);transform:translateY(-1px)}
 
 /* group label */
 .grouplabel{font-family:'Fredoka',sans-serif;font-weight:600;color:var(--navy);font-size:1.05rem;margin:26px 0 2px;display:flex;align-items:center;gap:10px}
