@@ -219,7 +219,7 @@ const SUITES = [
     landing: 'idioms/index.html', correlation: 'idioms/correlation.html', answerKey: 'idioms/answer-key.html' },
   { id: 'pst', name: 'Problem-Solving Teaching (PBL Units, Grades 3–8)', accent: '#4f3a8c',
     desc: 'Problem-Based Learning units for the Texas history and social-studies classroom — real, ill-structured problems students work as stakeholders, built deliberately from surface to deep to transfer learning. Not breakouts (no locks). Aligned to the social studies TEKS (19 TAC Ch.113). Seven languages.',
-    landing: 'pst/index.html', correlation: 'pst/correlation.html' },
+    landing: '../pst/index.html', correlation: '../pst/correlation.html' },
 ];
 
 const breakouts = [...clearMeta(), ...localeMeta('july4'), ...localeMeta('july5th'), ...bibleMeta(), ...scienceMeta(), ...idiomsMeta()];
