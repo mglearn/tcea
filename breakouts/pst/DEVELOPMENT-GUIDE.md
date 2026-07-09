@@ -6,9 +6,16 @@ Breakouts — there are **no locks, clues, or answer keys**. Each unit is a mult
 problem* that students work as **stakeholders** while the teacher guides (Stepien & Pyke, 1997;
 Hmelo-Silver, 2004).
 
-> **Status:** Grade 5 (US History, §113.16) is the **built + verified pilot** — the *A New Life —
-> the Immigration Question, 1914* unit (`grade5/immigration/`). It is the reusable template. All
-> other grades below are **specced, not built**.
+> **Status:** All six grades are **built + verified** — one flagship unit each:
+> - **G3** §113.14 Communities — *The Town Square Problem* (`grade3/town-square/`)
+> - **G4** §113.15 Texas History — *1835: What Should Our Family Do?* (`grade4/1835/`)
+> - **G5** §113.16 US History — *A New Life: the Immigration Question, 1914* (`grade5/immigration/`) — the reusable template
+> - **G6** §113.18 World Cultures — *The Shared River* (`grade6/shared-river/`)
+> - **G7** §113.19 Texas History — *Spindletop, 1901* (`grade7/spindletop/`)
+> - **G8** §113.20 US History to 1877 — *Philadelphia, 1787* (`grade8/philadelphia-1787/`)
+>
+> Next phase: additional units per grade (each grade hub already shows a "more coming" slot), then
+> native translation passes for the unit bodies.
 
 Source material lives in `info/` (local only, git-ignored — never deployed): the PBL method
 (`pbl.md`, `Problem-Solving Teaching.pdf`), the effect-size evidence (`metax_pst.md`,

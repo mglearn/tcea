@@ -1,0 +1,36 @@
+/* Grade 3 hub — language dictionary. English-authored; the engine serves all 7
+   languages via per-key fallback until native layers are added (see footer). */
+BreakoutI18n.register('pst-grade3-index', {
+  en: {
+    "crumb": "‹ Problem-Solving Teaching",
+    "eyebrow": "Grade 3 · Communities · TEKS §113.14",
+    "h1": "Grade 3 — Communities",
+    "sub": "Problem-Based Learning units for Grade 3 social studies. Each unit moves students from building knowledge (surface) to organizing it (deep) to solving a real, ill-structured community problem as a stakeholder (transfer).",
+    "phase.surface": "① Surface", "phase.surface.h": "Build the knowledge", "phase.surface.p": "Vocabulary, community facts, jigsaw reading, map work.",
+    "phase.deep": "② Deep", "phase.deep.h": "Connect & organize", "phase.deep.p": "Needs vs. wants, scarcity, supply & demand, a concept map and a claim.",
+    "phase.transfer": "③ Transfer", "phase.transfer.h": "Solve the problem", "phase.transfer.p": "Meet the problem, take a role, investigate, weigh options, vote, debrief.",
+    "units.h": "📚 Units",
+    "unit.ts.tag": "Featured · Communities · §113.14",
+    "unit.ts.h": "The Town Square Problem — Meeting a Community's Needs",
+    "unit.ts.p": "A growing town has one empty lot left on the square. Families, shop owners, and town leaders all want something different for it — but there isn't enough money or space for everything. Students become stakeholders and decide together. 5–8 class periods.",
+    "unit.ts.go": "Open the unit →",
+    "unit.soon.tag": "More units", "unit.soon.h": "More Grade 3 problems coming",
+    "unit.soon.p": "Where to put a new bus stop, how a town saves for a big project, and how neighbors solve a shared problem are next — each as a stakeholder problem.",
+    "soon": "Coming soon",
+    "teks.h": "🧭 Grade 3 TEKS this unit is aligned to (§113.14)",
+    "teks.th.se": "TEKS SE", "teks.th.what": "What students do",
+    "teks.2": "Explain reasons people form communities (security, laws, well-being) and how communities meet needs — government, education, communication, transportation, recreation.",
+    "teks.3B": "Describe how people adapt to and modify their environment.",
+    "teks.4C": "Use map elements — title, compass rose, legend, scale, and grid — to read and make a map.",
+    "teks.5": "Explain earning, spending, saving, and donating; make a simple budget.",
+    "teks.6": "Explain supply and demand, scarcity, and the difference between cost, price, and profit.",
+    "teks.7": "Describe how local government is organized and the services it provides.",
+    "teks.9": "Identify good citizenship, explain civic responsibility, and take part in voting on a decision.",
+    "teks.14": "Gather and compare sources, tell cause from effect, and make a claim with evidence.",
+    "teks.15": "Communicate ideas clearly in speaking and writing.",
+    "teks.16B": "<b>Use the problem-solving process:</b> identify a problem, gather information, list and consider options, weigh advantages and disadvantages, choose and implement a solution, and evaluate its effectiveness.",
+    "teks.note": "<b>Note:</b> §113.14(c)(16)(B) <i>is</i> the problem-solving process — this unit's transfer phase enacts it step for step. Standards are <b>aligned to</b>, not reproduced from, 19 TAC Ch.113.",
+    "supports.lead": "🧑‍🏫 Teacher supports:", "supports.udl": "UDL", "supports.elps": "ELPS", "supports.guide": "PBL facilitation guide", "supports.corr": "Activity → TEKS correlation",
+    "footer": "Problem-Solving Teaching · PBL units · Self-contained, no logins, no data collected. · <a href=\"../policy.html\">Privacy &amp; compliance</a>"
+  }
+});
