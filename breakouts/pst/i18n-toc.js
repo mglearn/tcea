@@ -35,6 +35,7 @@ BreakoutI18n.register('pst-toc', {
     "about.link.guide2": "🧑‍🏫 PBL facilitation guide",
     "about.link.udl": "♿ UDL supports",
     "about.link.elps": "🗣️ ELPS supports",
+    "about.link.dash": "📊 Suite dashboard",
     "foot": "<b>For teachers:</b> each unit includes a facilitator guide and an assessment pack (PBL problem rubric + individual-in-group assessment). The teacher supports — <b>UDL, ELPS, the PBL facilitation guide, and the standards &amp; strategy correlation</b> — are in the <b>“About this strategy”</b> panel at the top of this page, each in seven languages. Standards are <b>aligned to</b>, not reproduced from, the Texas Essential Knowledge and Skills for Social Studies (19 TAC Ch.113).",
     "footer": "Problem-Solving Teaching · PBL units · Self-contained, no logins, no data collected. · <a href=\"policy.html\">Privacy &amp; compliance</a>"
   },
