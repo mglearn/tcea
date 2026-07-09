@@ -1,5 +1,5 @@
 /* i18n dictionary — CLEAR Critical Thinking Breakouts · policy.html
-   Non-English is AI-seeded, pending native-speaker review. */
+   English is the source language. */
 BreakoutI18n.register('clear-policy', {
   en: {
     eyebrow: 'Privacy & Compliance · Combined Reference',

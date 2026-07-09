@@ -1,4 +1,4 @@
-/* Wrapper-page i18n dictionary — CLEAR suite landing. Non-English AI-seeded, native-review pending. */
+/* Wrapper-page i18n dictionary — CLEAR suite landing. English is the source language. */
 BreakoutI18n.register('clear-index', {
  "en": {
   "eyebrow": "Critical Thinking Breakouts",

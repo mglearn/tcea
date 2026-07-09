@@ -1,5 +1,5 @@
 /* Wrapper-page i18n dictionary — July 4 · Grades 6–8 band hub.
-   Non-English is AI-seeded, pending native-speaker review. */
+   English is the source language. */
 BreakoutI18n.register('july4-g68-index', {
   en: {
     crumb: '‹ Fourth of July Critical Thinking Breakouts',

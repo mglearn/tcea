@@ -1,5 +1,5 @@
 /* Wrapper-page i18n dictionary — July 4 · Grades 3–5 · Policy.
-   Non-English is AI-seeded, pending native-speaker review. */
+   English is the source language. */
 BreakoutI18n.register('july4-g35-policy', {
   en: {
     crumb: '‹ July 4th Breakouts · Grades 3–5',

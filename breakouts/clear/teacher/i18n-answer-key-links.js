@@ -1,6 +1,6 @@
 /* i18n registration — CLEAR Teacher Answer Key Links page (static chrome only).
    Activity titles, URLs, and copy buttons for individual links are NOT translated.
-   Non-English text is AI-seeded, pending native-speaker review. */
+   English is the source language. */
 BreakoutI18n.register('clear-teacher-links', {
   en: {
     eyebrow: 'Teacher Reference · Private',

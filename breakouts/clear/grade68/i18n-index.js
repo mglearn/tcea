@@ -1,5 +1,5 @@
 /* Wrapper-page i18n dictionary — CLEAR Critical Thinking Breakouts · Grades 6–8 band hub.
-   Non-English is AI-seeded, pending native-speaker review. */
+   English is the source language. */
 BreakoutI18n.register('clear-g68-index', {
   en: {
     crumb: '‹ Critical Thinking Breakouts',

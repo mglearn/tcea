@@ -1,5 +1,5 @@
 /* i18n dictionary — CLEAR Critical Thinking Breakouts · Grades 6–8 activity hub.
-   Non-English is AI-seeded, pending native-speaker review. */
+   English is the source language. */
 BreakoutI18n.register('clear-more-g68', {
   en: {
     crumb: '‹ Critical Thinking Breakouts',

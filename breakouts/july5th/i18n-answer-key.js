@@ -1,5 +1,5 @@
 /* Wrapper-page i18n dictionary — July 5th · Teacher Answer Key (locked).
-   Non-English is AI-seeded, pending native-speaker review. */
+   English is the source language. */
 BreakoutI18n.register('july5th-answerkey', {
   en: {
     crumb: '‹ July 5 & Black Freedom Holidays',

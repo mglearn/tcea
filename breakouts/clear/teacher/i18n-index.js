@@ -1,6 +1,6 @@
 /* i18n registration — CLEAR Teacher Hub index page (static chrome only).
    Activity titles, TEKS codes, and student-facing links are NOT translated.
-   Non-English text is AI-seeded, pending native-speaker review. */
+   English is the source language. */
 BreakoutI18n.register('clear-teacher-index', {
   en: {
     eyebrow: 'Teacher Hub · Private',

@@ -1,5 +1,5 @@
 /* Wrapper-page i18n dictionary — July 5 suite landing.
-   Non-English is AI-seeded, pending native-speaker review. */
+   English is the source language. */
 BreakoutI18n.register('july5th-index', {
   en: {
     'hero.aria': 'A rising sun over a green field — a new day of freedom',

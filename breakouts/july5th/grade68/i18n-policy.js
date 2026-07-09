@@ -1,5 +1,5 @@
 /* Wrapper-page i18n dictionary — July 5 · Grades 6–8 policy page.
-   Non-English is AI-seeded, pending native-speaker review. */
+   English is the source language. */
 BreakoutI18n.register('july5th-g68-policy', {
   en: {
     crumb: '‹ Freedom Days Breakouts · Grades 6–8',

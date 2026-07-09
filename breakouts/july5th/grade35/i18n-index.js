@@ -1,5 +1,5 @@
 /* Wrapper-page i18n dictionary — July 5 · Grades 3–5 band hub.
-   Non-English is AI-seeded, pending native-speaker review. */
+   English is the source language. */
 BreakoutI18n.register('july5th-g35-index', {
   en: {
     crumb: '‹ Freedom Days Critical Thinking Breakouts',

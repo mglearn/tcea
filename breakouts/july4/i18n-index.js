@@ -1,5 +1,5 @@
 /* Wrapper-page i18n dictionary — July 4 · Suite landing (Grades 3–12).
-   Non-English is AI-seeded, pending native-speaker review. */
+   English is the source language. */
 BreakoutI18n.register('july4-index', {
   en: {
     eyebrow: 'TCEA Educator Resource · Grades 3–12',

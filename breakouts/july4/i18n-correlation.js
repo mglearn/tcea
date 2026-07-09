@@ -1,5 +1,5 @@
 /* Wrapper-page i18n dictionary — July 4 · Activity Correlation Guide.
-   Non-English is AI-seeded, pending native-speaker review. */
+   English is the source language. */
 BreakoutI18n.register('july4-correlation', {
   en: {
     crumb: '‹ Fourth of July Critical Thinking Breakouts',

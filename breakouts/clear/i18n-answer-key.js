@@ -1,6 +1,6 @@
 /* i18n registration — CLEAR Teacher Answer Key page (static chrome only).
    The encrypted answer content is NOT translated here.
-   Non-English text is AI-seeded, pending native-speaker review. */
+   English is the source language. */
 BreakoutI18n.register('clear-answerkey', {
   en: {
     crumb: '‹ Critical Thinking Breakouts',
