@@ -137,5 +137,29 @@
       "ex.lang": "Students explain — in English or their home language — what an idiom means and name an equivalent saying from their L1 (translanguaging).",
       "ex.vocab": "idiom, figurative language, literal, context, home language (L1)"
     }
+  },
+  "pst": {
+    "common": {
+      "crumb": "‹ Problem-Solving Teaching",
+      "footer": "Problem-Solving Teaching · PBL units · Runs in your browser — no logins, no data collected."
+    },
+    "udl": {
+      "eyebrow": "UDL Supports · Problem-Solving Teaching · Grades 3–8",
+      "lead": "Practical ways to open the Problem-Solving Teaching PBL units (Grades 3–8) to every learner, organized by the three principles of the CAST Universal Design for Learning Guidelines (version 3.0). Each unit builds from surface to deep to transfer learning and casts students as stakeholders solving a real problem — already building in many of these supports across all seven languages."
+    },
+    "elps": {
+      "eyebrow": "ELPS Supports · Problem-Solving Teaching · Grades 3–8",
+      "lead": "How to use the Problem-Solving Teaching PBL units with emergent bilingual students, aligned to the Texas English Language Proficiency Standards across listening, speaking, reading, and writing. PBL is language-rich — students discuss hunches, argue from evidence, and present a solution — so scaffolds matter at every phase."
+    },
+    "guide": {
+      "eyebrow": "PBL Facilitation Guide · Problem-Solving Teaching · Grades 3–8",
+      "lead": "A ready structure for facilitating a Problem-Based Learning unit — surface, then deep, then the transfer problem — following a standard Texas lesson-plan format. A worked Grade 5 example appears at the end.",
+      "ex.name": "Grade 5 · A New Life — the Immigration Question, 1914",
+      "ex.bigidea": "People weigh push and pull factors and real constraints when deciding whether and how to build a new life; those choices shaped U.S. immigration and industrialization.",
+      "ex.eq": "The year is 1914 — should the Baldoni family be allowed to build a new life here, and how?",
+      "ex.obj": "Students will take a stakeholder role, gather evidence about early-1900s immigration, and propose and defend a solution to the family's problem, citing sources.",
+      "ex.lang": "Students explain hunches and defend a recommendation orally or in writing — in English or their home language — using sentence stems and a shared word bank.",
+      "ex.vocab": "immigrate, emigrate, push factor, pull factor, Ellis Island, quota, tenement, naturalization, stakeholder"
+    }
   }
 }

@@ -1,0 +1,131 @@
+/* TCEA Problem-Solving Teaching (PST) — shared suite styles.
+   PBL units, not breakouts: surface → deep → transfer.
+   Phase colors encode the learning progression:
+     surface = blue, deep = purple, transfer = amber.
+   Fonts + card system match the Critical Thinking Breakout family. */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap');
+
+:root{
+  --navy:#2a2a6c;--navy-d:#1b1b4b;--plum:#4f3a8c;--paper:#f5f4fb;
+  --ink:#1b1f3b;--ink-soft:#565b7e;--card:#fff;--line:#e0dcf0;
+  --gold:#e0a418;--gold-d:#b9820c;
+  /* learning-phase palette */
+  --surface:#2f6fe0;--surface-bg:#eef4fe;
+  --deep:#7c4fbf;--deep-bg:#f3edfb;
+  --transfer:#c2410c;--transfer-bg:#fdf0e7;
+  --ac:var(--plum);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Nunito',sans-serif;color:var(--ink);background:var(--paper);min-height:100vh;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:30px 20px 80px}
+.wrap.narrow{max-width:720px}
+
+/* chrome */
+.langbar{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-bottom:8px}
+.langbar .globe{font-size:1.1rem}
+.breakout-i18n-switcher,#i18nSwitcher{font-family:'Nunito',sans-serif;font-weight:700;font-size:.9rem;padding:7px 12px;border:2px solid var(--line);border-radius:9px;background:#fff;color:var(--navy);cursor:pointer}
+.crumb{font-size:.82rem;font-weight:700;margin-bottom:16px}
+.crumb a{color:#4a53c8;text-decoration:none}
+.eyebrow{display:inline-block;background:var(--ac);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;
+  font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:14px}
+h1{font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(1.9rem,5.6vw,2.9rem);color:var(--navy);line-height:1.05}
+h2{font-family:'Fredoka',sans-serif;font-weight:600;color:var(--navy);font-size:1.4rem;margin:30px 0 10px}
+h3{font-family:'Fredoka',sans-serif;font-weight:600;color:var(--navy);font-size:1.1rem;margin:2px 0 6px}
+.sub,.lead{font-weight:600;color:var(--ink-soft);margin-top:10px;max-width:64ch}
+p{margin:8px 0}
+b,strong{color:var(--ink)}
+a{color:#4a53c8}
+ul,ol{margin:8px 0 8px 22px}
+li{margin:5px 0;font-weight:600;color:var(--ink-soft)}
+li b{color:var(--ink)}
+
+/* cards + grids */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:22px}
+.card{background:var(--card);border:2px solid var(--line);border-top:6px solid var(--ac);border-radius:16px;padding:22px;
+  display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:.16s}
+a.card:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(42,42,108,.13);border-color:var(--ac)}
+.card .tag{font-family:'Fredoka',sans-serif;font-weight:600;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ac)}
+.card h3{margin:4px 0 6px}
+.card p{font-size:.9rem;color:var(--ink-soft);font-weight:600;flex:1;margin:0}
+.card .go{font-family:'Fredoka',sans-serif;font-weight:600;color:var(--navy);margin-top:14px}
+.card.soon{opacity:.55}
+a.card.soon{pointer-events:none}
+
+/* phase badges + phase blocks */
+.phase{display:inline-flex;align-items:center;gap:7px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:.74rem;
+  letter-spacing:.06em;text-transform:uppercase;padding:5px 13px;border-radius:100px;color:#fff}
+.phase.surface{background:var(--surface)}
+.phase.deep{background:var(--deep)}
+.phase.transfer{background:var(--transfer)}
+.phase .d{font-weight:700;opacity:.85;font-size:.68rem}
+.pmap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:22px 0}
+@media(max-width:640px){.pmap{grid-template-columns:1fr}}
+.pmap .p{border:2px solid var(--line);border-radius:14px;padding:16px;background:#fff;border-top-width:6px}
+.pmap .p.surface{border-top-color:var(--surface)}
+.pmap .p.deep{border-top-color:var(--deep)}
+.pmap .p.transfer{border-top-color:var(--transfer)}
+.pmap .p h4{font-family:'Fredoka',sans-serif;color:var(--navy);font-size:1.02rem;margin:6px 0 4px}
+.pmap .p p{font-size:.85rem;color:var(--ink-soft);font-weight:600;margin:0}
+
+/* an activity block on a phase page */
+.act{background:#fff;border:2px solid var(--line);border-radius:16px;padding:20px 22px;margin-top:18px}
+.act.surface{border-inline-start:6px solid var(--surface)}
+.act.deep{border-inline-start:6px solid var(--deep)}
+.act.transfer{border-inline-start:6px solid var(--transfer)}
+.act .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:6px}
+.act .es{font-family:'Fredoka',sans-serif;font-weight:600;font-size:.7rem;color:#fff;background:var(--gold-d);
+  border-radius:100px;padding:3px 10px;letter-spacing:.03em}
+.act .teks{font-family:'Fredoka',sans-serif;font-weight:600;font-size:.7rem;color:var(--ac);
+  border:1.5px solid var(--line);border-radius:100px;padding:3px 10px}
+.act h3{margin:0 0 4px}
+
+/* stakeholder / role cards */
+.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:16px}
+.role{background:#fff;border:2px solid var(--line);border-radius:14px;padding:15px 17px}
+.role .who{font-family:'Fredoka',sans-serif;color:var(--navy);font-weight:600;font-size:1rem}
+.role p{font-size:.85rem;margin:5px 0 0}
+
+/* KWHL / generic table */
+table{border-collapse:collapse;width:100%;margin-top:14px;background:#fff;border:2px solid var(--line);border-radius:12px;overflow:hidden;font-size:.9rem}
+th,td{text-align:start;padding:10px 13px;border-bottom:1px solid var(--line);vertical-align:top;font-weight:600;color:var(--ink-soft)}
+th{background:var(--surface-bg);color:var(--navy);font-family:'Fredoka',sans-serif;font-weight:600}
+td b{color:var(--ink)}
+tr:last-child td{border-bottom:none}
+
+/* notes + callouts */
+.note{background:#fbfaff;border:2px solid var(--line);border-radius:14px;padding:16px 20px;margin-top:20px;font-size:.9rem;color:var(--ink-soft);font-weight:600}
+.note a{color:#4a53c8;font-weight:700}
+.goal{background:var(--surface-bg);border-inline-start:5px solid var(--surface);border-radius:10px;padding:14px 18px;margin-top:16px;font-weight:600;color:var(--ink)}
+.gate{background:var(--transfer-bg);border-inline-start:5px solid var(--transfer);border-radius:10px;padding:14px 18px;margin-top:16px;font-weight:700;color:#7a2e08}
+.dq{background:#fff;border:2px dashed var(--ac);border-radius:14px;padding:18px 22px;margin-top:18px;font-family:'Fredoka',sans-serif;color:var(--navy);font-size:1.15rem;font-weight:500}
+
+/* pills / nav row */
+.pillrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.pill{display:inline-flex;align-items:center;gap:6px;background:#fff;color:var(--navy);border:2px solid var(--line);
+  font-family:'Fredoka',sans-serif;font-weight:600;font-size:.92rem;text-decoration:none;padding:10px 17px;border-radius:100px;transition:.15s}
+.pill:hover{border-color:var(--ac);color:var(--ac);transform:translateY(-2px)}
+.pill.go{background:var(--ac);color:#fff;border-color:var(--ac)}
+.pill.go:hover{background:var(--navy);border-color:var(--navy);color:#fff}
+.stepnav{display:flex;justify-content:space-between;gap:12px;margin-top:30px;flex-wrap:wrap}
+.stepnav a{font-family:'Fredoka',sans-serif;font-weight:600;text-decoration:none;color:var(--navy);
+  border:2px solid var(--line);border-radius:10px;padding:11px 18px;background:#fff}
+.stepnav a.next{background:var(--ac);color:#fff;border-color:var(--ac)}
+
+/* footer */
+.disc{font-size:.8rem;color:var(--ink-soft);font-weight:600;margin-top:26px;font-style:italic}
+footer{text-align:center;margin-top:26px;font-size:.8rem;color:var(--ink-soft);font-weight:600}
+footer a{color:#4a53c8;text-decoration:none}
+
+/* group label */
+.grouplabel{font-family:'Fredoka',sans-serif;font-weight:600;color:var(--navy);font-size:1.05rem;margin:26px 0 2px;display:flex;align-items:center;gap:10px}
+.grouplabel::after{content:"";flex:1;height:2px;background:var(--line)}
+
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,.card:focus-visible{outline:3px solid #4a53c8;outline-offset:2px;border-radius:9px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}a.card:hover,.pill:hover{transform:none}}
+
+@media print{
+  .langbar,.stepnav,.pillrow{display:none}
+  body{background:#fff}
+  .wrap{max-width:100%;padding:0}
+  .card,.act,.note,table{break-inside:avoid}
+}
