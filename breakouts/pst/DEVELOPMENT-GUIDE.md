@@ -203,5 +203,57 @@ what the pack teaches.
 
 ---
 
+## 7. ACE Image Inquiry — historical art-analysis unit (`pst/analysis/`, planned)
+
+A distinct unit type at **`breakouts/pst/analysis/`**: a short (10–15 min) routine for reading
+**American history paintings as historical sources**. Audience: **grades 9–12, AP, IB, dual-credit,
+early-college** (TEKS has no "grade 13" — treat as early-college/dual-credit extension). Strongest
+TEKS ties: **HS U.S. History Since 1877 (§113.41), AP U.S. History, IB History of the Americas,
+U.S. Government (§113.44)** — the standards explicitly encourage artworks/museum resources, primary
+& secondary sources, multiple points of view, evaluating sources for validity/credibility/bias, and
+communicating a claim with evidence.
+
+**ACE = Articulate → Connect → Extend** (maps to **surface → deep → transfer**; pairs with
+high-effect strategies). This is the same ACE through-line as the ACE Powered Jigsaw Organizer.
+
+| ACE step | Student move | Teacher prompt | Student stems |
+|----------|-------------|----------------|---------------|
+| **Articulate It** (surface) | Describe only what is visible — no lecture first | "List eight things you notice. What is happening in the image?" | "I notice…" · "The first thing my eye goes to is…" · "The artist makes ___ look important by…" |
+| **Connect It** (deep) | Link visual evidence to historical context (title/artist/date revealed now) | "What event, issue, era, or TEKS topic does this connect to? What evidence supports that?" | "This connects to ___ because…" · "One detail that supports this is…" · "The artist's point of view may be…" |
+| **Extend It** (transfer) | Transfer to a new source/question | "What does this painting leave out? What source would you need next?" | "A source I would need next is…" · "This painting leaves out…" · "A question this raises is…" |
+
+**Student product** — a 3-line exit ticket (Articulate / Connect / Extend). Watch the *Extend* line
+most: naming the missing source = thinking like a historian.
+**Rubric:** Surface = lists details, no importance · Developing = connects details to the topic with
+some evidence · Strong = makes a claim, supports it with visual evidence, and names what the image
+leaves out.
+
+**Starter set of paintings (image → TEKS hook):**
+- *Washington Crossing the Delaware* (Leutze, 1851) — Revolutionary memory, leadership, AP USH.
+- *Declaration of Independence* (Trumbull) — founding documents, Celebrate Freedom Week, art & memory.
+- *Signing of the Constitution* (Christy) — constitutional republic, representative gov't, US Gov.
+- *American Progress* (after Gast) — westward expansion, Manifest Destiny, displacement, **bias/omission — use carefully**.
+- *America Today* (Benton) — industrialization, urbanization, labor, 1920s popular culture.
+- *Both Members of This Club* (Bellows) — urban life, Progressive Era, race, law, public/private space.
+- *The Passion of Sacco and Vanzetti* (Shahn) — Red Scare, immigration, nativism, civil liberties.
+- *The Migration Series, Panel 1* (Jacob Lawrence) — WWI home front, Great Migration, race, labor.
+- *Rosie the Riveter* (Rockwell) — WWII, women in the workforce, home-front mobilization, propaganda.
+- *The Problem We All Live With* (Rockwell) — civil rights, school desegregation, Brown v. Board, Ruby Bridges.
+- *Man's First Step on the Moon* (Rockwell) — Space Race, Apollo, Cold War, science & identity.
+
+**"Run it tomorrow" model:** open with *The Problem We All Live With* (no backstory) → 8 observations
+→ reveal title/artist/Ruby Bridges → connect to civil rights/desegregation → "What source would you
+need next to understand this event more fairly?" — which turns looking-at-a-painting into building an
+investigation.
+
+**Build notes:** reuse `assets/pst.css`, the i18n engine (7 languages), the vetted-resource `.res`
+pattern (link the paintings to their museum/collection pages — The Met, Smithsonian, LoC, NPS,
+Norman Rockwell Museum — curl/verify each), and honest-history framing (TEC §28.0022) for
+*American Progress*, *The Problem We All Live With*, the Migration Series, etc. Cite the ACE routine's
+source framing (Carol Jago / K-12 Dive on slow-looking; ACE → surface/deep/transfer). Do not use
+copyrighted images directly — **link to the hosting museum/collection page** rather than embedding.
+
+---
+
 *Content CC BY 4.0; code MIT. Aligned to the Texas Essential Knowledge and Skills for Social Studies
 (19 TAC Ch.113); paraphrased in good faith. Effect sizes from Visible Learning MetaX.*
