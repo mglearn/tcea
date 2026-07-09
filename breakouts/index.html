@@ -113,7 +113,7 @@
     </div>
   </header>
 
-  <h2 class="sec" data-i18n="sec.find">Find a breakout</h2>
+  <h2 class="sec" data-i18n="sec.find">Find a breakout or activity</h2>
   <div class="toolbar">
     <input id="q" type="search" data-i18n-placeholder="q.ph" placeholder="Search by name, topic, or content (e.g. Juneteenth, evidence, flag)…" autocomplete="off">
     <button class="rand" id="rand" data-i18n="rand">🎲 Surprise me</button>
@@ -125,6 +125,9 @@
 
   <h2 class="sec" data-i18n="sec.sets">Breakout sets</h2>
   <div class="suites" id="suites"></div>
+
+  <h2 class="sec" id="activitiesSec" data-i18n="sec.activities">Activities</h2>
+  <div class="suites" id="activities"></div>
 
   <footer data-i18n-html="footer">
     TCEA Critical Thinking Breakouts · A TCEA educator resource · CC BY 4.0 (content) · MIT (code) ·
@@ -144,26 +147,34 @@
   var accent = {}; C.suites.forEach(function (s) { accent[s.id] = s.accent; });
   var suiteName = {}; C.suites.forEach(function (s) { suiteName[s.id] = s.name; });
   document.getElementById('tCount').textContent = C.breakouts.length;
-  document.getElementById('tSuites').textContent = C.suites.length;
+  document.getElementById('tSuites').textContent = C.suites.filter(function (s) { return !s.activity; }).length;
 
   function sName(s) { return has('suite.name.' + s.id) ? T('suite.name.' + s.id) : s.name; }
   function sDesc(s) { return has('suite.desc.' + s.id) ? T('suite.desc.' + s.id) : s.desc; }
 
+  function suiteCard(s) {
+    return '<div class="suite" style="--accent:' + s.accent + '">' +
+      '<h3>' + esc(sName(s)) + '</h3><p>' + esc(sDesc(s)) + '</p>' +
+      '<div class="links"><a class="primary" href="' + s.landing + '">' + esc(T('link.open')) + '</a>' +
+      (s.correlation ? '<a href="' + s.correlation + '">' + esc(T('link.corr')) + '</a>' : '') +
+      (s.answerKey ? '<a href="' + s.answerKey + '">' + esc(T('link.key')) + '</a>' : '') + '</div></div>';
+  }
+
   function renderSuites() {
-    document.getElementById('suites').innerHTML = C.suites.map(function (s) {
-      return '<div class="suite" style="--accent:' + s.accent + '">' +
-        '<h3>' + esc(sName(s)) + '</h3><p>' + esc(sDesc(s)) + '</p>' +
-        '<div class="links"><a class="primary" href="' + s.landing + '">' + esc(T('link.open')) + '</a>' +
-        (s.correlation ? '<a href="' + s.correlation + '">' + esc(T('link.corr')) + '</a>' : '') +
-        (s.answerKey ? '<a href="' + s.answerKey + '">' + esc(T('link.key')) + '</a>' : '') + '</div></div>';
-    }).join('');
+    var sets = C.suites.filter(function (s) { return !s.activity; });
+    var acts = C.suites.filter(function (s) { return s.activity; });
+    document.getElementById('suites').innerHTML = sets.map(suiteCard).join('');
+    var actEl = document.getElementById('activities');
+    if (actEl) actEl.innerHTML = acts.map(suiteCard).join('');
+    var actSec = document.getElementById('activitiesSec');
+    if (actSec) actSec.style.display = acts.length ? '' : 'none';
   }
 
   var state = { q: '', suite: 'all', band: 'all' };
   var bands = ['K–2', '3–5', '6–8', '9–12'];
   function renderFilters() {
     var chips = [{ k: 'suite', v: 'all', label: T('chip.allsets') }]
-      .concat(C.suites.map(function (s) { return { k: 'suite', v: s.id, label: shortSuite(s.id) }; }))
+      .concat(C.suites.filter(function (s) { return !s.activity; }).map(function (s) { return { k: 'suite', v: s.id, label: shortSuite(s.id) }; }))
       .concat([{ k: 'band', v: 'all', label: T('chip.allgrades') }])
       .concat(bands.map(function (b) { return { k: 'band', v: b, label: T('chip.gr', { b: b }) }; }));
     document.getElementById('filters').innerHTML = chips.map(function (c) {

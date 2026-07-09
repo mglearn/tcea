@@ -3,7 +3,7 @@
   "tally.count": "Breakouts &amp; actividades",
   "tally.langs": "Idiomas",
   "sec.sets": "Colecciones de breakouts",
-  "sec.find": "Encuentra un breakout",
+  "sec.find": "Encuentra un breakout o una actividad",
   "q.ph": "Busca por nombre, tema o contenido (p. ej. Juneteenth, evidencia, bandera)…",
   "rand": "🎲 Sorpréndeme",
   "empty": "Ningún breakout coincide: prueba con otra palabra.",
@@ -27,5 +27,6 @@
   "suite.name.bible": "La Biblia como literatura",
   "suite.desc.bible": "Cuatro breakouts sobre relatos bíblicos adoptados en Texas, estudiados académicamente como literatura e historia: secuencia, tema, género, arquetipo y alusión. Nunca devocional. Siete idiomas.",
   "suite.name.science": "Ciencias (Grados K–8)",
-  "suite.desc.science": "Critical Thinking Online Breakouts que abarcan los TEKS de ciencias de Texas, desde empujes y jalones hasta la conservación de la masa; cada grado con un breakout destacado, un conjunto de conceptos (uno por idea clave), un reto práctico de diseño de ingeniería STEM y un banco de palabras para estudiantes. Siete idiomas."
+  "suite.desc.science": "Critical Thinking Online Breakouts que abarcan los TEKS de ciencias de Texas, desde empujes y jalones hasta la conservación de la masa; cada grado con un breakout destacado, un conjunto de conceptos (uno por idea clave), un reto práctico de diseño de ingeniería STEM y un banco de palabras para estudiantes. Siete idiomas.",
+  "sec.activities": "Actividades"
 }
