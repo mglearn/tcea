@@ -34,6 +34,16 @@ follows the **surface → deep → transfer** progression (`info/CheckEffectSize
 `transfer.html` say this explicitly and visibly. Do not let students "meet the problem" before they
 have the knowledge to reason about it.
 
+**Jigsaw standard (every unit's Surface phase):** the surface jigsaw uses the **ACE Powered Jigsaw
+Organizer** for students (Google Drive:
+`https://drive.google.com/file/d/1QDMCkQryKHWdo5qCIeQRslXneJcyWhLE/view?usp=sharing`). Each expert
+group gets **vetted, grade-appropriate article + video links** (LoC, NPS, HISTORY, etc.) on the
+Surface page — one set per topic, `target="_blank" rel="noopener"`, with a "confirm access through
+your district" note. Teacher jigsaw how-to lives in the facilitator guide: the **Gamma** guide
+(*Implementing the Jigsaw Method*, `gamma.app/docs/...riss443gzf45138`) and the TCEA blog posts
+(*The Power of the Jigsaw*, *PBL Your Jigsaw*, *Will Jigsaw help on individual tests?*). Flow:
+expert groups → home groups → each teaches → **individual** check for accountability.
+
 ---
 
 ## 2. The PBL flow inside the Transfer phase (from `info/pbl.md`)
@@ -121,5 +131,4 @@ Each new grade band should re-confirm the anchor SEs against the `ch113a-d` PDFs
 6. Once the `ch113` PDFs are confirmed, spot-check every TEKS citation against the source.
 
 *Content CC BY 4.0; code MIT. Aligned to the Texas Essential Knowledge and Skills for Social Studies
-(19 TAC Ch.113); paraphrased in good faith — confirm before adoption; not legal advice. Effect sizes
-from Visible Learning MetaX.*
+(19 TAC Ch.113); paraphrased in good faith. Effect sizes from Visible Learning MetaX.*

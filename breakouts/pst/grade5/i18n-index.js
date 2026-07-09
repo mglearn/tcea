@@ -28,7 +28,7 @@ BreakoutI18n.register('pst-grade5-index', {
     "teks.23": "Use and question primary and secondary sources; identify points of view; develop and communicate a claim with evidence.",
     "teks.25E": "Engage in civil discourse about a topic with multiple perspectives.",
     "teks.26B": "<b>Use the problem-solving process:</b> identify a problem, gather information, list and consider options, weigh advantages and disadvantages, choose and implement a solution, and evaluate its effectiveness.",
-    "teks.note": "<b>Note:</b> §113.16(c)(26)(B) <i>is</i> the problem-solving process — this unit's transfer phase enacts it step for step. Standards are <b>aligned to</b>, not reproduced from, 19 TAC Ch.113; confirm before adoption.",
+    "teks.note": "<b>Note:</b> §113.16(c)(26)(B) <i>is</i> the problem-solving process — this unit's transfer phase enacts it step for step. Standards are <b>aligned to</b>, not reproduced from, 19 TAC Ch.113.",
     "supports.lead": "🧑‍🏫 Teacher supports:", "supports.udl": "UDL", "supports.elps": "ELPS", "supports.guide": "PBL facilitation guide", "supports.corr": "Activity → TEKS correlation",
     "footer": "Problem-Solving Teaching · PBL units · Self-contained, no logins, no data collected. · <a href=\"../policy.html\">Privacy &amp; compliance</a>"
   }

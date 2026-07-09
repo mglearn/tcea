@@ -20,7 +20,7 @@ BreakoutI18n.register('pst-toc', {
     "card.g7.tag": "Grade 7 · Texas History · §113.19", "card.g7.h": "Grade 7 — Texas History", "card.g7.p": "Coming soon: a deeper Texas-history dilemma across revolution, statehood, and change.",
     "card.g8.tag": "Grade 8 · US History to 1877 · §113.20", "card.g8.h": "Grade 8 — United States History", "card.g8.p": "Coming soon: a founding-era or expansion-era problem of rights, compromise, and union.",
     "soon": "Coming soon",
-    "foot": "<b>For teachers:</b> each unit includes a facilitator guide, an assessment pack (PBL problem rubric + individual-in-group assessment), and an Activity → Skill → TEKS → high-effect-strategy correlation. See the <b><a href=\"correlation.html\">standards &amp; strategy correlation</a></b> and the teacher supports — <a href=\"udl.html\">UDL</a>, <a href=\"elps.html\">ELPS</a>, and the <a href=\"guide.html\">PBL facilitation guide</a> — each in seven languages. Standards are <b>aligned to</b>, not reproduced from, the Texas Essential Knowledge and Skills for Social Studies (19 TAC Ch.113) — confirm before adoption.",
+    "foot": "<b>For teachers:</b> each unit includes a facilitator guide, an assessment pack (PBL problem rubric + individual-in-group assessment), and an Activity → Skill → TEKS → high-effect-strategy correlation. See the <b><a href=\"correlation.html\">standards &amp; strategy correlation</a></b> and the teacher supports — <a href=\"udl.html\">UDL</a>, <a href=\"elps.html\">ELPS</a>, and the <a href=\"guide.html\">PBL facilitation guide</a> — each in seven languages. Standards are <b>aligned to</b>, not reproduced from, the Texas Essential Knowledge and Skills for Social Studies (19 TAC Ch.113).",
     "footer": "Problem-Solving Teaching · PBL units · Self-contained, no logins, no data collected. · <a href=\"policy.html\">Privacy &amp; compliance</a>"
   },
   es: {
@@ -42,7 +42,7 @@ BreakoutI18n.register('pst-toc', {
     "card.g7.tag": "Grado 7 · Historia de Texas · §113.19", "card.g7.h": "Grado 7 — Historia de Texas", "card.g7.p": "Próximamente: un dilema más profundo de la historia de Texas: revolución, estadidad y cambio.",
     "card.g8.tag": "Grado 8 · Historia de EE. UU. hasta 1877 · §113.20", "card.g8.h": "Grado 8 — Historia de los Estados Unidos", "card.g8.p": "Próximamente: un problema de la era fundacional o de expansión sobre derechos, acuerdos y unión.",
     "soon": "Próximamente",
-    "foot": "<b>Para los maestros:</b> cada unidad incluye una guía de facilitación, un paquete de evaluación (rúbrica del problema ABP + evaluación individual dentro del grupo) y una correlación Actividad → Destreza → TEKS → estrategia de alto impacto. Consulta la <b><a href=\"correlation.html\">correlación de estándares y estrategias</a></b> y los apoyos para el maestro — <a href=\"udl.html\">UDL</a>, <a href=\"elps.html\">ELPS</a> y la <a href=\"guide.html\">guía de facilitación de ABP</a> — cada uno en siete idiomas. Los estándares están <b>alineados con</b>, no reproducidos de, los Conocimientos y Destrezas Esenciales de Texas para Estudios Sociales (19 TAC Cap. 113): confírmalos antes de adoptarlos.",
+    "foot": "<b>Para los maestros:</b> cada unidad incluye una guía de facilitación, un paquete de evaluación (rúbrica del problema ABP + evaluación individual dentro del grupo) y una correlación Actividad → Destreza → TEKS → estrategia de alto impacto. Consulta la <b><a href=\"correlation.html\">correlación de estándares y estrategias</a></b> y los apoyos para el maestro — <a href=\"udl.html\">UDL</a>, <a href=\"elps.html\">ELPS</a> y la <a href=\"guide.html\">guía de facilitación de ABP</a> — cada uno en siete idiomas. Los estándares están <b>alineados con</b>, no reproducidos de, los Conocimientos y Destrezas Esenciales de Texas para Estudios Sociales (19 TAC Cap. 113).",
     "footer": "Enseñanza para la Resolución de Problemas · Unidades ABP · Independientes, sin inicios de sesión, sin recopilación de datos. · <a href=\"policy.html\">Privacidad y cumplimiento</a>"
   },
   vi: {
@@ -64,7 +64,7 @@ BreakoutI18n.register('pst-toc', {
     "card.g7.tag": "Lớp 7 · Lịch sử Texas · §113.19", "card.g7.h": "Lớp 7 — Lịch sử Texas", "card.g7.p": "Sắp ra mắt: một tình huống khó xử sâu hơn về lịch sử Texas qua cách mạng, lập bang và đổi thay.",
     "card.g8.tag": "Lớp 8 · Lịch sử Hoa Kỳ đến 1877 · §113.20", "card.g8.h": "Lớp 8 — Lịch sử Hoa Kỳ", "card.g8.p": "Sắp ra mắt: một vấn đề thời lập quốc hoặc thời mở rộng về quyền, thỏa hiệp và liên bang.",
     "soon": "Sắp ra mắt",
-    "foot": "<b>Dành cho giáo viên:</b> mỗi đơn vị bao gồm hướng dẫn điều phối, bộ đánh giá (bảng tiêu chí vấn đề PBL + đánh giá cá nhân trong nhóm), và bảng đối chiếu Hoạt động → Kỹ năng → TEKS → chiến lược tác động cao. Xem <b><a href=\"correlation.html\">bảng đối chiếu tiêu chuẩn &amp; chiến lược</a></b> và các hỗ trợ giáo viên — <a href=\"udl.html\">UDL</a>, <a href=\"elps.html\">ELPS</a> và <a href=\"guide.html\">hướng dẫn điều phối PBL</a> — mỗi tài liệu bằng bảy ngôn ngữ. Các tiêu chuẩn được <b>căn chỉnh theo</b>, không sao chép từ, Kiến thức và Kỹ năng Thiết yếu của Texas cho Nghiên cứu Xã hội (19 TAC Ch.113) — hãy xác nhận trước khi áp dụng.",
+    "foot": "<b>Dành cho giáo viên:</b> mỗi đơn vị bao gồm hướng dẫn điều phối, bộ đánh giá (bảng tiêu chí vấn đề PBL + đánh giá cá nhân trong nhóm), và bảng đối chiếu Hoạt động → Kỹ năng → TEKS → chiến lược tác động cao. Xem <b><a href=\"correlation.html\">bảng đối chiếu tiêu chuẩn &amp; chiến lược</a></b> và các hỗ trợ giáo viên — <a href=\"udl.html\">UDL</a>, <a href=\"elps.html\">ELPS</a> và <a href=\"guide.html\">hướng dẫn điều phối PBL</a> — mỗi tài liệu bằng bảy ngôn ngữ. Các tiêu chuẩn được <b>căn chỉnh theo</b>, không sao chép từ, Kiến thức và Kỹ năng Thiết yếu của Texas cho Nghiên cứu Xã hội (19 TAC Ch.113).",
     "footer": "Dạy học Giải quyết Vấn đề · Đơn vị PBL · Độc lập, không đăng nhập, không thu thập dữ liệu. · <a href=\"policy.html\">Quyền riêng tư &amp; tuân thủ</a>"
   },
   ar: {
@@ -86,7 +86,7 @@ BreakoutI18n.register('pst-toc', {
     "card.g7.tag": "الصف 7 · تاريخ تكساس · §113.19", "card.g7.h": "الصف السابع — تاريخ تكساس", "card.g7.p": "قريبًا: معضلة أعمق في تاريخ تكساس عبر الثورة والانضمام والتغيّر.",
     "card.g8.tag": "الصف 8 · تاريخ الولايات المتحدة حتى 1877 · §113.20", "card.g8.h": "الصف الثامن — تاريخ الولايات المتحدة", "card.g8.p": "قريبًا: مشكلة من حقبة التأسيس أو التوسّع حول الحقوق والتسوية والاتحاد.",
     "soon": "قريبًا",
-    "foot": "<b>للمعلّمين:</b> تتضمّن كل وحدة دليل تيسير، وحزمة تقييم (سلّم تقدير مشكلة PBL + تقييم فردي داخل المجموعة)، ومواءمة النشاط ← المهارة ← TEKS ← استراتيجية عالية الأثر. راجع <b><a href=\"correlation.html\">مواءمة المعايير والاستراتيجيات</a></b> ودعم المعلّم — <a href=\"udl.html\">UDL</a> و<a href=\"elps.html\">ELPS</a> و<a href=\"guide.html\">دليل تيسير PBL</a> — كلٌّ بسبع لغات. المعايير <b>مواءَمة مع</b> معايير المعرفة والمهارات الأساسية في تكساس للدراسات الاجتماعية (19 TAC Ch.113) وليست منسوخة عنها — تأكّد منها قبل الاعتماد.",
+    "foot": "<b>للمعلّمين:</b> تتضمّن كل وحدة دليل تيسير، وحزمة تقييم (سلّم تقدير مشكلة PBL + تقييم فردي داخل المجموعة)، ومواءمة النشاط ← المهارة ← TEKS ← استراتيجية عالية الأثر. راجع <b><a href=\"correlation.html\">مواءمة المعايير والاستراتيجيات</a></b> ودعم المعلّم — <a href=\"udl.html\">UDL</a> و<a href=\"elps.html\">ELPS</a> و<a href=\"guide.html\">دليل تيسير PBL</a> — كلٌّ بسبع لغات. المعايير <b>مواءَمة مع</b> معايير المعرفة والمهارات الأساسية في تكساس للدراسات الاجتماعية (19 TAC Ch.113) وليست منسوخة عنها.",
     "footer": "التدريس القائم على حل المشكلات · وحدات PBL · مكتفية ذاتيًا، دون تسجيل دخول، دون جمع بيانات. · <a href=\"policy.html\">الخصوصية والامتثال</a>"
   },
   hi: {
@@ -108,7 +108,7 @@ BreakoutI18n.register('pst-toc', {
     "card.g7.tag": "कक्षा 7 · टेक्सास इतिहास · §113.19", "card.g7.h": "कक्षा 7 — टेक्सास इतिहास", "card.g7.p": "जल्द आ रहा है: क्रांति, राज्यत्व और परिवर्तन के पार एक गहरी टेक्सास-इतिहास दुविधा।",
     "card.g8.tag": "कक्षा 8 · 1877 तक अमेरिकी इतिहास · §113.20", "card.g8.h": "कक्षा 8 — संयुक्त राज्य का इतिहास", "card.g8.p": "जल्द आ रहा है: अधिकारों, समझौते और संघ पर संस्थापन-युग या विस्तार-युग की एक समस्या।",
     "soon": "जल्द आ रहा है",
-    "foot": "<b>शिक्षकों के लिए:</b> प्रत्येक इकाई में एक सुविधाकर्ता मार्गदर्शिका, एक मूल्यांकन पैकेट (PBL समस्या रूब्रिक + समूह में व्यक्तिगत मूल्यांकन), और एक गतिविधि → कौशल → TEKS → उच्च-प्रभाव रणनीति सहसंबंध शामिल है। <b><a href=\"correlation.html\">मानक एवं रणनीति सहसंबंध</a></b> और शिक्षक सहायता देखें — <a href=\"udl.html\">UDL</a>, <a href=\"elps.html\">ELPS</a>, और <a href=\"guide.html\">PBL सुविधा मार्गदर्शिका</a> — प्रत्येक सात भाषाओं में। मानक टेक्सास सामाजिक अध्ययन के आवश्यक ज्ञान और कौशल (19 TAC Ch.113) के साथ <b>संरेखित</b> हैं, उनसे पुनरुत्पादित नहीं — अपनाने से पहले पुष्टि करें।",
+    "foot": "<b>शिक्षकों के लिए:</b> प्रत्येक इकाई में एक सुविधाकर्ता मार्गदर्शिका, एक मूल्यांकन पैकेट (PBL समस्या रूब्रिक + समूह में व्यक्तिगत मूल्यांकन), और एक गतिविधि → कौशल → TEKS → उच्च-प्रभाव रणनीति सहसंबंध शामिल है। <b><a href=\"correlation.html\">मानक एवं रणनीति सहसंबंध</a></b> और शिक्षक सहायता देखें — <a href=\"udl.html\">UDL</a>, <a href=\"elps.html\">ELPS</a>, और <a href=\"guide.html\">PBL सुविधा मार्गदर्शिका</a> — प्रत्येक सात भाषाओं में। मानक टेक्सास सामाजिक अध्ययन के आवश्यक ज्ञान और कौशल (19 TAC Ch.113) के साथ <b>संरेखित</b> हैं, उनसे पुनरुत्पादित नहीं।",
     "footer": "समस्या-समाधान शिक्षण · PBL इकाइयाँ · स्व-निहित, कोई लॉगिन नहीं, कोई डेटा एकत्र नहीं। · <a href=\"policy.html\">गोपनीयता एवं अनुपालन</a>"
   },
   ur: {
@@ -130,7 +130,7 @@ BreakoutI18n.register('pst-toc', {
     "card.g7.tag": "جماعت 7 · ٹیکساس تاریخ · §113.19", "card.g7.h": "جماعت 7 — ٹیکساس کی تاریخ", "card.g7.p": "جلد آ رہا ہے: انقلاب، ریاستی حیثیت اور تبدیلی کے پار ایک گہری ٹیکساس-تاریخ کی کشمکش۔",
     "card.g8.tag": "جماعت 8 · 1877 تک امریکی تاریخ · §113.20", "card.g8.h": "جماعت 8 — ریاستہائے متحدہ کی تاریخ", "card.g8.p": "جلد آ رہا ہے: حقوق، سمجھوتے اور اتحاد پر بانیانِ دور یا توسیعِ دور کا ایک مسئلہ۔",
     "soon": "جلد آ رہا ہے",
-    "foot": "<b>اساتذہ کے لیے:</b> ہر اکائی میں ایک سہولت کار گائیڈ، ایک تشخیصی پیکٹ (PBL مسئلہ روبرک + گروپ میں انفرادی تشخیص)، اور ایک سرگرمی ← مہارت ← TEKS ← اعلیٰ اثر حکمتِ عملی مطابقت شامل ہے۔ <b><a href=\"correlation.html\">معیارات و حکمتِ عملی مطابقت</a></b> اور اساتذہ کی معاونت دیکھیں — <a href=\"udl.html\">UDL</a>، <a href=\"elps.html\">ELPS</a>، اور <a href=\"guide.html\">PBL سہولت کاری گائیڈ</a> — ہر ایک سات زبانوں میں۔ معیارات ٹیکساس سماجی علوم کے ضروری علم و مہارت (19 TAC Ch.113) کے ساتھ <b>ہم آہنگ</b> ہیں، ان سے نقل نہیں — اپنانے سے پہلے تصدیق کریں۔",
+    "foot": "<b>اساتذہ کے لیے:</b> ہر اکائی میں ایک سہولت کار گائیڈ، ایک تشخیصی پیکٹ (PBL مسئلہ روبرک + گروپ میں انفرادی تشخیص)، اور ایک سرگرمی ← مہارت ← TEKS ← اعلیٰ اثر حکمتِ عملی مطابقت شامل ہے۔ <b><a href=\"correlation.html\">معیارات و حکمتِ عملی مطابقت</a></b> اور اساتذہ کی معاونت دیکھیں — <a href=\"udl.html\">UDL</a>، <a href=\"elps.html\">ELPS</a>، اور <a href=\"guide.html\">PBL سہولت کاری گائیڈ</a> — ہر ایک سات زبانوں میں۔ معیارات ٹیکساس سماجی علوم کے ضروری علم و مہارت (19 TAC Ch.113) کے ساتھ <b>ہم آہنگ</b> ہیں، ان سے نقل نہیں۔",
     "footer": "مسئلہ حل کرنے کی تدریس · PBL اکائیاں · خود کفیل، کوئی لاگ اِن نہیں، کوئی ڈیٹا جمع نہیں۔ · <a href=\"policy.html\">رازداری و تعمیل</a>"
   },
   zh: {
@@ -152,7 +152,7 @@ BreakoutI18n.register('pst-toc', {
     "card.g7.tag": "7 年级 · 德州历史 · §113.19", "card.g7.h": "7 年级 — 德州历史", "card.g7.p": "即将推出：一个跨越革命、建州与变迁的更深入的德州历史两难问题。",
     "card.g8.tag": "8 年级 · 1877 年前的美国历史 · §113.20", "card.g8.h": "8 年级 — 美国历史", "card.g8.p": "即将推出：一个关于权利、妥协与联邦的建国时期或扩张时期问题。",
     "soon": "即将推出",
-    "foot": "<b>教师专区：</b>每个单元都包含一份引导者指南、一套评估包（PBL 问题量规 + 小组内个人评估），以及一份“活动 → 技能 → TEKS → 高效策略”对照表。请查看<b><a href=\"correlation.html\">标准与策略对照</a></b>以及教师支持——<a href=\"udl.html\">UDL</a>、<a href=\"elps.html\">ELPS</a> 和 <a href=\"guide.html\">PBL 引导指南</a>——每份均提供七种语言。标准<b>对齐于</b>但非复制自德州社会研究基本知识与技能（19 TAC 第 113 章），采用前请自行核实。",
+    "foot": "<b>教师专区：</b>每个单元都包含一份引导者指南、一套评估包（PBL 问题量规 + 小组内个人评估），以及一份“活动 → 技能 → TEKS → 高效策略”对照表。请查看<b><a href=\"correlation.html\">标准与策略对照</a></b>以及教师支持——<a href=\"udl.html\">UDL</a>、<a href=\"elps.html\">ELPS</a> 和 <a href=\"guide.html\">PBL 引导指南</a>——每份均提供七种语言。标准<b>对齐于</b>但非复制自德州社会研究基本知识与技能（19 TAC 第 113 章）。",
     "footer": "问题解决教学 · PBL 单元 · 独立运行，无需登录，不收集数据。 · <a href=\"policy.html\">隐私与合规</a>"
   }
 });

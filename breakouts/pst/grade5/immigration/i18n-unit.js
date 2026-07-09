@@ -10,6 +10,6 @@ BreakoutI18n.register('pst-immigration', {
     "nav.hub": "Unit home", "nav.facilitator": "Facilitator guide", "nav.assess": "Assessment",
     "footer": "A New Life · Problem-Solving Teaching · Self-contained, no logins, no data collected. · <a href=\"../../policy.html\">Privacy &amp; compliance</a>",
     "footer.deep": "A New Life · Problem-Solving Teaching · Self-contained, no logins, no data collected. · <a href=\"../../policy.html\">Privacy &amp; compliance</a>",
-    "disc": "Aligned to (not reproduced from) 19 TAC Ch.113 §113.16; effect sizes from Visible Learning MetaX. Confirm before adoption; not legal advice. This narrative is a teaching fiction based on the early-1900s immigration experience."
+    "disc": "Aligned to (not reproduced from) 19 TAC Ch.113 §113.16; effect sizes from Visible Learning MetaX. This narrative is a teaching fiction based on the early-1900s immigration experience."
   }
 });
