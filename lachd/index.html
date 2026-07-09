@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spy the Idea: Nepantla and Rasquachismo</title>
+  <style>
+    :root {
+      --navy:#0a3476;
+      --gold:#fcb040;
+      --teal:#14b8a6;
+      --sky:#dff3ff;
+      --cream:#fff8ea;
+      --ink:#182235;
+      --muted:#5e6a7e;
+      --card:#ffffff;
+      --danger:#b42318;
+      --success:#027a48;
+      --radius:24px;
+      --shadow:0 22px 60px rgba(10,52,118,.18);
+      --font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing:border-box; }
+    html, body { min-height:100%; margin:0; font-family:var(--font); color:var(--ink); background:linear-gradient(135deg,#071b3d,#0a3476 45%,#096b72); }
+    button, input, select { font:inherit; }
+    button { cursor:pointer; }
+    .screen { display:none; min-height:100dvh; padding:clamp(18px,3vw,42px); }
+    .screen.active { display:block; }
+    .shell { max-width:1120px; margin:0 auto; }
+    .hero { min-height:calc(100dvh - 84px); display:grid; grid-template-columns:1.1fr .9fr; align-items:center; gap:clamp(22px,5vw,70px); color:#fff; }
+    h1 { font-size:clamp(2.5rem,7vw,6.2rem); line-height:.9; letter-spacing:-.06em; margin:0 0 18px; }
+    h2 { font-size:clamp(1.75rem,4vw,3.2rem); line-height:1; margin:0 0 10px; letter-spacing:-.04em; }
+    h3 { margin:0 0 8px; font-size:1.15rem; }
+    p { line-height:1.55; }
+    .lead { font-size:clamp(1.05rem,2vw,1.45rem); max-width:720px; color:#e9f6ff; }
+    .tag { display:inline-flex; gap:8px; align-items:center; padding:8px 14px; border:1px solid rgba(255,255,255,.25); background:rgba(255,255,255,.12); border-radius:999px; color:#fff; font-weight:700; margin-bottom:18px; }
+    .bridge-art { background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.22); border-radius:32px; padding:24px; box-shadow:var(--shadow); }
+    .bridge-art svg { width:100%; height:auto; display:block; }
+    .panel { background:rgba(255,255,255,.96); color:var(--ink); border-radius:var(--radius); padding:clamp(18px,3vw,32px); box-shadow:var(--shadow); }
+    .controls { display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:24px; }
+    .btn { border:0; border-radius:999px; padding:13px 18px; font-weight:800; background:var(--gold); color:#281500; box-shadow:0 8px 20px rgba(252,176,64,.28); }
+    .btn.secondary { background:#fff; color:var(--navy); border:1px solid rgba(10,52,118,.2); box-shadow:none; }
+    .btn.ghost { background:transparent; color:#fff; border:1px solid rgba(255,255,255,.35); box-shadow:none; }
+    .btn.small { padding:8px 12px; font-size:.92rem; }
+    .setting-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:18px; }
+    .setting { border:1px solid #d7deeb; border-radius:18px; padding:14px; background:#fff; }
+    .setting label { display:block; font-weight:800; color:var(--navy); margin-bottom:8px; }
+    .seg { display:flex; flex-wrap:wrap; gap:8px; }
+    .seg button { border:1px solid #c8d3e3; background:#f6f8fc; border-radius:999px; padding:8px 11px; font-weight:700; color:#26344c; }
+    .seg button.active { background:var(--navy); color:#fff; border-color:var(--navy); }
+    .level-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; margin-top:24px; }
+    .level-card { background:#fff; border:1px solid #dce5f2; border-radius:24px; padding:20px; text-align:left; box-shadow:0 12px 35px rgba(10,52,118,.12); transition:.18s transform ease, .18s box-shadow ease; }
+    .level-card:hover, .level-card:focus { transform:translateY(-3px); box-shadow:0 18px 45px rgba(10,52,118,.18); outline:3px solid rgba(252,176,64,.45); }
+    .badge-icon { width:76px; height:76px; border-radius:22px; display:grid; place-items:center; font-size:2.4rem; background:linear-gradient(135deg,#fff1c9,#dff3ff); margin-bottom:14px; }
+    .topbar { display:flex; justify-content:space-between; align-items:center; gap:10px; color:#fff; margin-bottom:16px; }
+    .score-pill { display:inline-flex; align-items:center; gap:8px; padding:10px 14px; background:rgba(255,255,255,.13); border:1px solid rgba(255,255,255,.22); border-radius:999px; font-weight:800; }
+    .game-layout { display:grid; grid-template-columns:1fr 320px; gap:18px; }
+    .arena { position:relative; min-height:560px; overflow:hidden; background:linear-gradient(180deg,#f4fbff,#fff8ea); border-radius:30px; border:1px solid rgba(255,255,255,.5); box-shadow:var(--shadow); }
+    .clue-box { position:absolute; left:18px; right:18px; top:18px; z-index:3; background:rgba(10,52,118,.95); color:#fff; border-radius:22px; padding:18px; box-shadow:0 15px 35px rgba(10,52,118,.22); }
+    .clue-label { font-size:.82rem; text-transform:uppercase; letter-spacing:.09em; opacity:.8; font-weight:800; }
+    .clue-text { font-size:clamp(1.05rem,2vw,1.35rem); line-height:1.35; margin:6px 0 0; font-weight:800; }
+    .word { position:absolute; z-index:2; border:0; border-radius:999px; padding:12px 16px; background:#fff; color:var(--navy); font-weight:900; box-shadow:0 10px 24px rgba(10,52,118,.16); border:2px solid rgba(10,52,118,.08); min-width:120px; }
+    .word:hover, .word:focus { outline:3px solid rgba(252,176,64,.55); }
+    .word.correct { background:#dcfae6; color:#035c3d; border-color:#039855; }
+    .word.wrong { background:#fee4e2; color:#912018; border-color:#d92d20; }
+    .sidebar { display:grid; gap:14px; }
+    .meter { height:12px; background:#e3e9f2; border-radius:999px; overflow:hidden; }
+    .meter span { display:block; height:100%; width:0%; background:linear-gradient(90deg,var(--teal),var(--gold)); transition:.2s width ease; }
+    .feedback { min-height:78px; padding:14px; border-radius:18px; background:#f6f8fc; color:#26344c; font-weight:700; }
+    .feedback.good { background:#ecfdf3; color:#027a48; }
+    .feedback.bad { background:#fff1f3; color:#b42318; }
+    .option-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:180px; padding:0 18px 18px; }
+    .option-grid .word { position:static; width:100%; min-height:64px; white-space:normal; }
+    .results { text-align:center; max-width:760px; margin:0 auto; color:#fff; padding-top:clamp(30px,8vh,80px); }
+    .stars { font-size:3rem; letter-spacing:.1em; margin:10px 0; color:var(--gold); }
+    .result-card { background:#fff; color:var(--ink); border-radius:30px; padding:28px; box-shadow:var(--shadow); margin-top:18px; }
+    .study-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:18px; }
+    .study-item { background:#fff; color:var(--ink); border-radius:18px; padding:16px; border-left:6px solid var(--gold); }
+    .study-item strong { color:var(--navy); display:block; margin-bottom:6px; }
+    .footer-note { color:rgba(255,255,255,.8); font-size:.92rem; margin-top:24px; }
+    .hidden { display:none !important; }
+    @media (max-width:900px) {
+      .hero, .game-layout { grid-template-columns:1fr; }
+      .level-grid, .setting-grid, .study-list { grid-template-columns:1fr; }
+      .arena { min-height:520px; }
+    }
+    @media (max-width:560px) {
+      .screen { padding:14px; }
+      .option-grid { grid-template-columns:1fr; }
+      .topbar { align-items:flex-start; flex-direction:column; }
+      .controls .btn { width:100%; }
+    }
+  </style>
+</head>
+<body>
+  <section id="home" class="screen active" aria-labelledby="home-title">
+    <div class="shell hero">
+      <div>
+        <div class="tag">🕵️ Static classroom game</div>
+        <h1 id="home-title">Spy the Idea</h1>
+        <p class="lead">Match the clue to the concept from <strong>Nepantla as Infrastructure</strong>. The better you read, the higher your bridge-builder rank.</p>
+        <div class="controls">
+          <button class="btn" id="startBtn">Start the quest</button>
+          <button class="btn ghost" id="studyBtn">Peek at the word list first</button>
+        </div>
+        <div class="panel" style="margin-top:24px;">
+          <h3>Game settings</h3>
+          <div class="setting-grid">
+            <div class="setting">
+              <label>Speed</label>
+              <div class="seg" data-setting="speed">
+                <button data-value="relaxed" class="active">Relaxed</button>
+                <button data-value="normal">Normal</button>
+                <button data-value="fast">Fast</button>
+              </div>
+            </div>
+            <div class="setting">
+              <label>How many terms?</label>
+              <div class="seg" data-setting="count">
+                <button data-value="5" class="active">5</button>
+                <button data-value="10">10</button>
+                <button data-value="15">15</button>
+                <button data-value="all">All</button>
+              </div>
+            </div>
+            <div class="setting">
+              <label>Mode</label>
+              <div class="seg" data-setting="mode">
+                <button data-value="classic" class="active">Calm</button>
+                <button data-value="falling">Falling</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bridge-art" aria-hidden="true">
+        <svg viewBox="0 0 600 480" role="img" aria-label="Bridge between two classroom worlds">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#fcb040"/><stop offset="1" stop-color="#14b8a6"/></linearGradient>
+          </defs>
+          <rect width="600" height="480" rx="30" fill="#ffffff" opacity=".08"/>
+          <circle cx="110" cy="105" r="56" fill="#fcb040" opacity=".95"/>
+          <circle cx="490" cy="110" r="56" fill="#14b8a6" opacity=".95"/>
+          <path d="M70 330 C190 205, 410 205, 530 330" fill="none" stroke="url(#g)" stroke-width="36" stroke-linecap="round"/>
+          <path d="M96 332 L504 332" stroke="#fff8ea" stroke-width="18" stroke-linecap="round"/>
+          <path d="M150 316 L150 240 M220 316 L220 218 M300 316 L300 206 M380 316 L380 218 M450 316 L450 240" stroke="#fff" stroke-width="10" stroke-linecap="round" opacity=".85"/>
+          <rect x="70" y="355" width="145" height="72" rx="18" fill="#fff8ea"/>
+          <rect x="385" y="355" width="145" height="72" rx="18" fill="#dff3ff"/>
+          <circle cx="300" cy="250" r="42" fill="#0a3476"/>
+          <path d="M282 252 l13 13 27-35" fill="none" stroke="#fcb040" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="levels" class="screen" aria-labelledby="levels-title">
+    <div class="shell">
+      <button class="btn ghost small" data-go="home">← Back</button>
+      <div class="panel" style="margin-top:18px;">
+        <h2 id="levels-title">Pick your quest</h2>
+        <p>Choose how far into the paper you want students to go.</p>
+        <div class="level-grid">
+          <button class="level-card" data-level="beginner">
+            <div class="badge-icon">🌱</div><h3>Threshold Walker</h3><p>Core terms: nepantla, rasquachismo, third space, and the two adoption paths.</p>
+          </button>
+          <button class="level-card" data-level="intermediate">
+            <div class="badge-icon">🌉</div><h3>Bridge Builder</h3><p>Core terms plus static deployment, translanguaging, and classroom infrastructure.</p>
+          </button>
+          <button class="level-card" data-level="advanced">
+            <div class="badge-icon">🧭</div><h3>Nepantla Navigator</h3><p>All terms, including conocimiento, borderland epistemology, and tool examples.</p>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="game" class="screen" aria-labelledby="game-title">
+    <div class="shell">
+      <div class="topbar">
+        <div class="score-pill"><span id="points">0</span> pts · <span id="levelName">Quest</span></div>
+        <div class="controls" style="margin:0;"><button class="btn ghost small" id="quitBtn">Quit to levels</button></div>
+      </div>
+      <div class="game-layout">
+        <main class="arena" id="arena" aria-live="polite">
+          <div class="clue-box">
+            <div class="clue-label">Tap the concept that matches the clue</div>
+            <div class="clue-text" id="clueText">Clue goes here.</div>
+          </div>
+          <div class="option-grid hidden" id="optionGrid"></div>
+        </main>
+        <aside class="sidebar">
+          <div class="panel">
+            <h3>Progress</h3>
+            <p><strong id="roundText">0 of 0</strong></p>
+            <div class="meter"><span id="progressBar"></span></div>
+          </div>
+          <div class="panel">
+            <h3>Accuracy</h3>
+            <p><strong id="accuracyText">0%</strong></p>
+            <div class="meter"><span id="accuracyBar"></span></div>
+          </div>
+          <div id="feedback" class="feedback">Read the clue. Find the matching idea.</div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="results" class="screen" aria-labelledby="results-title">
+    <div class="results">
+      <button class="btn ghost small" data-go="levels">← Levels</button>
+      <h2 id="results-title">Quest complete</h2>
+      <div class="stars" id="stars">★ ★ ★</div>
+      <div class="result-card">
+        <h3 id="rankTitle">Bridge Builder</h3>
+        <p><strong id="finalStats">0 pts · 0% accuracy</strong></p>
+        <p id="rankMessage">You matched concepts from the source text.</p>
+        <div class="controls" style="justify-content:center;">
+          <button class="btn" id="badgeBtn">Save badge</button>
+          <button class="btn secondary" id="shareBtn">Copy summary</button>
+          <button class="btn secondary" data-go="study">Study the full word list</button>
+          <button class="btn secondary" data-go="levels">Play another level</button>
+        </div>
+      </div>
+      <p class="footer-note">Runs fully in the browser. No login, no server, no student data collection.</p>
+    </div>
+  </section>
+
+  <section id="study" class="screen" aria-labelledby="study-title">
+    <div class="shell">
+      <button class="btn ghost small" data-go="home">← Home</button>
+      <div class="panel" style="margin-top:18px;">
+        <h2 id="study-title">The word list</h2>
+        <p>Every concept in the game, written as a quick study sheet.</p>
+      </div>
+      <div class="study-list" id="studyList"></div>
+    </div>
+  </section>
+
+  <script>
+    const TERMS = [
+  {
+    "term": "Nepantla",
+    "level": "beginner",
+    "clue": "The in-between threshold space where old frameworks break down and new ones get assembled.",
+    "detail": "In the source text, nepantla is framed as unstable, precarious, and generative rather than a comfortable middle ground."
+  },
+  {
+    "term": "Rasquachismo",
+    "level": "beginner",
+    "clue": "The underdog sensibility of making the most from the least with resourcefulness and dignity.",
+    "detail": "The text connects rasquachismo to how the tools were made: available materials, little institutional blessing, function before polish."
+  },
+  {
+    "term": "Nepantlera",
+    "level": "beginner",
+    "clue": "A bridge worker who moves between worlds without fully belonging to either side.",
+    "detail": "The educator and tool-builder are both framed as nepantleras doing passage work between systems."
+  },
+  {
+    "term": "Enterprise adoption",
+    "level": "beginner",
+    "clue": "The path of district licenses, procurement cycles, vendor platforms, and per-seat pricing.",
+    "detail": "The text names this as one dominant path for Gen AI entering classrooms."
+  },
+  {
+    "term": "Unstructured individual use",
+    "level": "beginner",
+    "clue": "A teacher using a free chatbot account without shared practice or instructional scaffolding.",
+    "detail": "The text argues that under-resourced schools are poorly served by this path and by enterprise adoption."
+  },
+  {
+    "term": "Third space",
+    "level": "beginner",
+    "clue": "A space between fixed systems where new practices can be built, tested, and transformed.",
+    "detail": "The tools are described as aspiring to build this kind of space for educators."
+  },
+  {
+    "term": "Static deployment",
+    "level": "intermediate",
+    "clue": "Publishing tools as static pages with no server, database, or dependency chain.",
+    "detail": "The pasted text uses GitHub Pages as the example of this design choice."
+  },
+  {
+    "term": "Technology disobedience",
+    "level": "intermediate",
+    "clue": "Refusing the login and license model as a modest act of sovereignty.",
+    "detail": "The text links no-login, no-license tools to technology disobedience and sovereignty."
+  },
+  {
+    "term": "Translanguaging",
+    "level": "intermediate",
+    "clue": "Using more than one language as a legitimate way of thinking and learning, not as a deficit.",
+    "detail": "The text connects this to Anzaldúa’s deliberate weave of English, Spanish, and Nahuatl."
+  },
+  {
+    "term": "Lugar de en medio",
+    "level": "intermediate",
+    "clue": "The middle place where the tools sit: more deliberate than DIY and more accessible than enterprise.",
+    "detail": "The phrase is used to name the tools’ intentional in-between position."
+  },
+  {
+    "term": "Under-resourced classroom",
+    "level": "intermediate",
+    "clue": "The setting where budgets, devices, time, and formal software access may not match instructional need.",
+    "detail": "The text centers schools and teachers working at the margins of budget and access."
+  },
+  {
+    "term": "Frontier AI models",
+    "level": "intermediate",
+    "clue": "Advanced Gen AI systems that teachers may need to translate into practical classroom use.",
+    "detail": "The educator as nepantlera moves between these models and the day-to-day classroom."
+  },
+  {
+    "term": "Conocimiento",
+    "level": "advanced",
+    "clue": "Anzaldúa’s process of awareness and transformation that moves from inner work to public acts.",
+    "detail": "The text notes that nepantla anchors this theory in Light in the Dark/Luz en lo Oscuro."
+  },
+  {
+    "term": "Borderland epistemology",
+    "level": "advanced",
+    "clue": "A way of knowing that comes from seeing double, from two or more cultural perspectives at once.",
+    "detail": "The text describes Anzaldúa’s later work as sharpening nepantla into this kind of way of knowing."
+  },
+  {
+    "term": "AI Skills",
+    "level": "advanced",
+    "clue": "One of the tool examples placed inside the in-between infrastructure described in the paper.",
+    "detail": "AI Skills appears alongside DrawSplat.org and Critical Thinking Online Breakouts."
+  },
+  {
+    "term": "DrawSplat.org",
+    "level": "advanced",
+    "clue": "A free, browser-based classroom tool named as an example of nepantla infrastructure.",
+    "detail": "The text says DrawSplat.org is part of the multilingual, no-login tool ecosystem."
+  },
+  {
+    "term": "CTOBs",
+    "level": "advanced",
+    "clue": "Critical Thinking Online Breakouts, named as one of the practical tools in the in-between space.",
+    "detail": "The text says these breakouts are available in seven languages alongside DrawSplat.org."
+  },
+  {
+    "term": "Incompleteness as feature",
+    "level": "advanced",
+    "clue": "The idea that tools remain open to feedback and adaptation because the space itself keeps changing.",
+    "detail": "The text treats slow, incomplete, evolving work as consistent with nepantla."
+  }
+];
+    const SETTINGS = { speed:'relaxed', count:'5', mode:'classic' };
+    const SPEEDS = { relaxed: 10500, normal: 7600, fast: 5400 };
+    const LEVEL_LABELS = { beginner:'Threshold Walker', intermediate:'Bridge Builder', advanced:'Nepantla Navigator' };
+    const state = { level:'beginner', pool:[], round:0, points:0, correct:0, attempts:0, current:null, activeWords:[], timer:null, locked:false };
+
+    const screens = Array.from(document.querySelectorAll('.screen'));
+    const arena = document.getElementById('arena');
+    const optionGrid = document.getElementById('optionGrid');
+    const clueText = document.getElementById('clueText');
+    const feedback = document.getElementById('feedback');
+
+    function showScreen(id) {
+      screens.forEach(screen => screen.classList.toggle('active', screen.id === id));
+      if (id === 'study') renderStudyList();
+    }
+
+    function shuffle(items) {
+      const copy = [...items];
+      for (let index = copy.length - 1; index > 0; index--) {
+        const swapIndex = Math.floor(Math.random() * (index + 1));
+        [copy[index], copy[swapIndex]] = [copy[swapIndex], copy[index]];
+      }
+      return copy;
+    }
+
+    function getTermsForLevel(level) {
+      const allowed = level === 'beginner' ? ['beginner'] : level === 'intermediate' ? ['beginner','intermediate'] : ['beginner','intermediate','advanced'];
+      return TERMS.filter(item => allowed.includes(item.level));
+    }
+
+    function getQuestionCount(available) {
+      if (SETTINGS.count === 'all') return available.length;
+      return Math.min(Number(SETTINGS.count), available.length);
+    }
+
+    function startGame(level) {
+      const available = shuffle(getTermsForLevel(level));
+      state.level = level;
+      state.pool = available.slice(0, getQuestionCount(available));
+      state.round = 0;
+      state.points = 0;
+      state.correct = 0;
+      state.attempts = 0;
+      state.locked = false;
+      document.getElementById('levelName').textContent = LEVEL_LABELS[level];
+      showScreen('game');
+      nextRound();
+    }
+
+    function nextRound() {
+      clearRound();
+      if (state.round >= state.pool.length) return finishGame();
+      state.current = state.pool[state.round];
+      state.round += 1;
+      state.locked = false;
+      clueText.textContent = state.current.clue;
+      updateHud();
+      feedback.className = 'feedback';
+      feedback.textContent = 'Read the clue. Find the matching idea.';
+      if (SETTINGS.mode === 'classic') renderClassicOptions();
+      else renderFallingWords();
+    }
+
+    function clearRound() {
+      if (state.timer) clearInterval(state.timer);
+      state.timer = null;
+      state.activeWords.forEach(node => node.remove());
+      state.activeWords = [];
+      optionGrid.innerHTML = '';
+      optionGrid.classList.add('hidden');
+    }
+
+    function makeChoices() {
+      const distractors = shuffle(TERMS.filter(item => item.term !== state.current.term)).slice(0, 5);
+      return shuffle([state.current, ...distractors]);
+    }
+
+    function createWordButton(item) {
+      const button = document.createElement('button');
+      button.className = 'word';
+      button.type = 'button';
+      button.textContent = item.term;
+      button.dataset.term = item.term;
+      button.addEventListener('click', () => checkAnswer(button, item));
+      return button;
+    }
+
+    function renderClassicOptions() {
+      optionGrid.classList.remove('hidden');
+      makeChoices().forEach(item => optionGrid.appendChild(createWordButton(item)));
+    }
+
+    function renderFallingWords() {
+      optionGrid.classList.add('hidden');
+      const choices = makeChoices();
+      const width = Math.max(300, arena.clientWidth - 160);
+      choices.forEach((item, index) => {
+        const button = createWordButton(item);
+        const left = 24 + ((index * 137) % width);
+        const top = 165 + (index % 2) * 52;
+        button.style.left = `${left}px`;
+        button.style.top = `${top}px`;
+        button.dataset.y = String(top);
+        arena.appendChild(button);
+        state.activeWords.push(button);
+      });
+      const limit = SPEEDS[SETTINGS.speed];
+      const started = Date.now();
+      state.timer = setInterval(() => {
+        const elapsed = Date.now() - started;
+        state.activeWords.forEach((node, index) => {
+          const base = Number(node.dataset.y || 160);
+          const distance = (elapsed / limit) * (arena.clientHeight - base - 70);
+          node.style.top = `${base + distance + Math.sin((elapsed / 500) + index) * 4}px`;
+        });
+        if (elapsed >= limit && !state.locked) {
+          if (state.timer) clearInterval(state.timer);
+          state.timer = null;
+          state.attempts += 1;
+          feedback.className = 'feedback bad';
+          feedback.textContent = `Time ran out. The answer was ${state.current.term}.`;
+          state.locked = true;
+          setTimeout(nextRound, 1200);
+        }
+      }, 40);
+    }
+
+    function checkAnswer(button, item) {
+      if (state.locked) return;
+      state.locked = true;
+      if (state.timer) { clearInterval(state.timer); state.timer = null; }
+      state.attempts += 1;
+      const isCorrect = item.term === state.current.term;
+      button.classList.add(isCorrect ? 'correct' : 'wrong');
+      if (isCorrect) {
+        state.correct += 1;
+        const bonus = SETTINGS.mode === 'falling' ? 15 : 10;
+        state.points += bonus;
+        feedback.className = 'feedback good';
+        feedback.textContent = `Correct: ${state.current.detail}`;
+      } else {
+        const correctButton = Array.from(document.querySelectorAll('.word')).find(node => node.dataset.term === state.current.term);
+        if (correctButton) correctButton.classList.add('correct');
+        feedback.className = 'feedback bad';
+        feedback.textContent = `Not quite. The answer was ${state.current.term}. ${state.current.detail}`;
+      }
+      updateHud();
+      setTimeout(nextRound, isCorrect ? 1050 : 1700);
+    }
+
+    function updateHud() {
+      document.getElementById('points').textContent = String(state.points);
+      document.getElementById('roundText').textContent = `${Math.min(state.round, state.pool.length)} of ${state.pool.length}`;
+      const progress = state.pool.length ? (state.round - 1) / state.pool.length * 100 : 0;
+      document.getElementById('progressBar').style.width = `${Math.max(0, progress)}%`;
+      const accuracy = state.attempts ? Math.round(state.correct / state.attempts * 100) : 0;
+      document.getElementById('accuracyText').textContent = `${accuracy}%`;
+      document.getElementById('accuracyBar').style.width = `${accuracy}%`;
+    }
+
+    function finishGame() {
+      clearRound();
+      const accuracy = state.attempts ? Math.round(state.correct / state.attempts * 100) : 0;
+      const starCount = accuracy >= 90 ? 3 : accuracy >= 70 ? 2 : accuracy >= 50 ? 1 : 0;
+      const rank = accuracy >= 90 ? 'Nepantla Navigator' : accuracy >= 70 ? 'Bridge Builder' : accuracy >= 50 ? 'Threshold Walker' : 'Return to the Word List';
+      document.getElementById('stars').textContent = starCount ? '★ '.repeat(starCount).trim() : '☆ ☆ ☆';
+      document.getElementById('rankTitle').textContent = rank;
+      document.getElementById('finalStats').textContent = `${state.points} pts · ${accuracy}% accuracy · ${state.correct}/${state.pool.length} correct`;
+      document.getElementById('rankMessage').textContent = accuracy >= 70 ? 'You can connect key concepts from the source text.' : 'Study the list, then replay with calm mode first.';
+      showScreen('results');
+    }
+
+    function renderStudyList() {
+      const list = document.getElementById('studyList');
+      list.innerHTML = '';
+      TERMS.forEach(item => {
+        const card = document.createElement('article');
+        card.className = 'study-item';
+        card.innerHTML = `<strong>${escapeHtml(item.term)}</strong><span>${escapeHtml(item.clue)}</span>`;
+        list.appendChild(card);
+      });
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+    }
+
+    function saveBadge() {
+      const accuracy = state.attempts ? Math.round(state.correct / state.attempts * 100) : 0;
+      const canvas = document.createElement('canvas');
+      canvas.width = 1200;
+      canvas.height = 675;
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#0a3476';
+      ctx.fillRect(0,0,canvas.width,canvas.height);
+      ctx.fillStyle = '#fcb040';
+      ctx.beginPath();
+      ctx.arc(990,120,90,0,Math.PI*2);
+      ctx.fill();
+      ctx.strokeStyle = '#14b8a6';
+      ctx.lineWidth = 28;
+      ctx.beginPath();
+      ctx.moveTo(130,430);
+      ctx.bezierCurveTo(360,260,840,260,1070,430);
+      ctx.stroke();
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'bold 78px sans-serif';
+      ctx.fillText('Spy the Idea', 90, 155);
+      ctx.font = 'bold 48px sans-serif';
+      ctx.fillText(document.getElementById('rankTitle').textContent, 90, 245);
+      ctx.font = '32px sans-serif';
+      ctx.fillText(`${state.points} points · ${accuracy}% accuracy`, 90, 310);
+      ctx.fillText('Nepantla and Rasquachismo', 90, 545);
+      const link = document.createElement('a');
+      link.download = 'spy-the-idea-badge.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+
+    async function copySummary() {
+      const accuracy = state.attempts ? Math.round(state.correct / state.attempts * 100) : 0;
+      const text = `I completed Spy the Idea: Nepantla and Rasquachismo with ${state.points} points and ${accuracy}% accuracy.`;
+      try {
+        await navigator.clipboard.writeText(text);
+        feedback.textContent = 'Summary copied.';
+      } catch (error) {
+        alert(text);
+      }
+    }
+
+    document.querySelectorAll('[data-go]').forEach(button => button.addEventListener('click', () => showScreen(button.dataset.go)));
+    document.getElementById('startBtn').addEventListener('click', () => showScreen('levels'));
+    document.getElementById('studyBtn').addEventListener('click', () => showScreen('study'));
+    document.getElementById('quitBtn').addEventListener('click', () => { clearRound(); showScreen('levels'); });
+    document.getElementById('badgeBtn').addEventListener('click', saveBadge);
+    document.getElementById('shareBtn').addEventListener('click', copySummary);
+    document.querySelectorAll('.level-card').forEach(card => card.addEventListener('click', () => startGame(card.dataset.level)));
+    document.querySelectorAll('.seg button').forEach(button => {
+      button.addEventListener('click', () => {
+        const group = button.closest('.seg');
+        SETTINGS[group.dataset.setting] = button.dataset.value;
+        group.querySelectorAll('button').forEach(item => item.classList.toggle('active', item === button));
+      });
+    });
+    window.addEventListener('resize', () => { if (document.getElementById('game').classList.contains('active') && SETTINGS.mode === 'falling' && state.current && !state.locked) { clearRound(); clueText.textContent = state.current.clue; renderFallingWords(); } });
+    renderStudyList();
+  </script>
+</body>
+</html>
