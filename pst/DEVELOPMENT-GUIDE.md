@@ -121,7 +121,7 @@ per-key fallback; native `vi/ar/hi/ur/zh` layers are a later pass (same disclaim
 
 **High School (§113.C) — next band after 3–8.** Course-based, not grade-based; each course is its
 own hub under `pst/hs-<course>/`. Confirm SEs against `ch113c-0.pdf` before authoring.
-- **US History Since 1877 · §113.41.** Candidate anchors: imperialism & the **Panama Canal**
+- **US History Since 1877 · §113.41 — BUILT & LIVE 2026-07-10 (pst/hs-us-history/panama-canal/).** Anchors confirmed vs ch113c-0.pdf: canal geography (c)(12), world-power/expansionism (c)(7), source skills (c)(29), communication (c)(30), problem-solving process (c)(32)(B). Imperialism & the **Panama Canal**
   (T. Roosevelt, "big stick", 1903 Panama independence, the canal-zone question — a rich
   ill-structured stakeholder problem: *should the U.S. build and control a canal across Panama, and
   how?*); also the Progressive Era, the Depression/New Deal, the Cold War, and Civil Rights.
