@@ -6,6 +6,7 @@
    Do not translate: URLs, TEKS codes (§113.20…), effect-size labels, proper links. */
 BreakoutI18n.register('pst-westward-1845', {
   en: {
+    "tk.entry": "🎟️ Entry ticket — 1-minute warm-up", "tk.exit": "🎫 Exit ticket — check yourself",
     // chrome
     "crumb.unit": "‹ Crossing the Continent, 1845 (unit home)",
     "crumb.grade": "‹ Grade 8 — US History",
@@ -336,6 +337,7 @@ BreakoutI18n.register('pst-westward-1845', {
     "as.45": "Adapted from \"Rubric to Evaluate PBL Problems,\" © ITUE Leaders 2004, updated 2019 (itue.udel.edu)."
   },
   es: {
+    "tk.entry": "🎟️ Boleto de entrada — repaso de 1 minuto", "tk.exit": "🎫 Boleto de salida — comprueba lo que sabes",
     "crumb.unit": "‹ Cruzando el continente, 1845 (inicio de la unidad)",
     "crumb.grade": "‹ Grado 8 — Historia de EE. UU.",
     "nav.prev": "‹ Atrás", "nav.next": "Siguiente ›",
@@ -659,6 +661,7 @@ BreakoutI18n.register('pst-westward-1845', {
     "as.45": "Adaptado de \"Rubric to Evaluate PBL Problems,\" © ITUE Leaders 2004, actualizado en 2019 (itue.udel.edu)."
   },
   vi: {
+    "tk.entry": "🎟️ Vé vào — khởi động 1 phút", "tk.exit": "🎫 Vé ra — tự kiểm tra",
     "crumb.unit": "‹ Băng qua lục địa, 1845 (trang chính của bài học)",
     "crumb.grade": "‹ Lớp 8 — Lịch sử Hoa Kỳ",
     "nav.prev": "‹ Quay lại", "nav.next": "Tiếp theo ›",
@@ -982,6 +985,7 @@ BreakoutI18n.register('pst-westward-1845', {
     "as.45": "Điều chỉnh từ \"Rubric to Evaluate PBL Problems,\" © ITUE Leaders 2004, cập nhật năm 2019 (itue.udel.edu)."
   },
   ar: {
+    "tk.entry": "🎟️ تذكرة الدخول — إحماء دقيقة واحدة", "tk.exit": "🎫 تذكرة الخروج — اختبر نفسك",
     "crumb.unit": "‹ عبور القارة، 1845 (الصفحة الرئيسية للوحدة)",
     "crumb.grade": "‹ الصف الثامن — تاريخ الولايات المتحدة",
     "nav.prev": "‹ رجوع", "nav.next": "التالي ›",
@@ -1305,6 +1309,7 @@ BreakoutI18n.register('pst-westward-1845', {
     "as.45": "مقتبَس من \"Rubric to Evaluate PBL Problems,\" © ITUE Leaders 2004، محدّث عام 2019 (itue.udel.edu)."
   },
   hi: {
+    "tk.entry": "🎟️ प्रवेश टिकट — 1 मिनट का वार्म-अप", "tk.exit": "🎫 निकास टिकट — स्वयं जाँचें",
     "crumb.unit": "‹ महाद्वीप को पार करते हुए, 1845 (इकाई का मुख पृष्ठ)",
     "crumb.grade": "‹ कक्षा 8 — अमेरिकी इतिहास",
     "nav.prev": "‹ वापस", "nav.next": "आगे ›",
@@ -1628,6 +1633,7 @@ BreakoutI18n.register('pst-westward-1845', {
     "as.45": "\"Rubric to Evaluate PBL Problems,\" © ITUE Leaders 2004 से अनुकूलित, 2019 में अद्यतन (itue.udel.edu)।"
   },
   ur: {
+    "tk.entry": "🎟️ داخلے کا ٹکٹ — 1 منٹ کی وارم اپ", "tk.exit": "🎫 اخراج کا ٹکٹ — خود کو جانچیں",
     "crumb.unit": "‹ براعظم کو عبور کرتے ہوئے، 1845 (یونٹ کا مرکزی صفحہ)",
     "crumb.grade": "‹ جماعت 8 — امریکی تاریخ",
     "nav.prev": "‹ واپس", "nav.next": "اگلا ›",
@@ -1951,6 +1957,7 @@ BreakoutI18n.register('pst-westward-1845', {
     "as.45": "\"Rubric to Evaluate PBL Problems,\" © ITUE Leaders 2004 سے ماخوذ، 2019 میں تازہ کاری (itue.udel.edu)۔"
   },
   zh: {
+    "tk.entry": "🎟️ 入场券 — 1 分钟热身", "tk.exit": "🎫 离场券 — 自我检查",
     "crumb.unit": "‹ 横跨大陆，1845（单元主页）",
     "crumb.grade": "‹ 八年级 — 美国历史",
     "nav.prev": "‹ 返回", "nav.next": "下一步 ›",

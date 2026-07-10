@@ -7895,3 +7895,992 @@ window.PST_TICKETS = (window.PST_TICKETS || []).concat([
 
 ]);
 
+/* ── g8-reform-1848.js ── */
+/* PST Arcade — ticket registry (Grade 8 · A Nation to Reform, 1848). Each ticket is retrieval
+   practice for one unit + phase. English-first; other languages carried inline per ticket
+   (ticket.i18n[lang]). The engine (arcade.js) reads window.PST_TICKETS. Nothing is stored or sent.
+   Same shape as every other data file: {id, grade, unit, unitTitle, phase, type, format, teks,
+   strat, d, i18n}. This scenario dramatizes the real reform movements of the mid-1800s; abolition,
+   women's-rights, and reform history is kept factual and respectful (TEC §28.0022). */
+window.PST_TICKETS = (window.PST_TICKETS || []).concat([
+
+  /* ───────── Grade 8 · A Nation to Reform, 1848 · SURFACE ───────── */
+  {
+    id: 'g8-reform-1848-surface-entry', grade: 8, unit: 'reform-1848',
+    unitTitle: "A Nation to Reform, 1848 — How Do You Change a Nation?", phase: 'surface', type: 'entry',
+    format: 'mcq', teks: '§113.20(c)(24)', strat: 'Retrieval practice', d: 0.54,
+    i18n: { en: {
+      title: 'Warm-up: reform words',
+      seconds: 45,
+      questions: [
+        { q: 'An effort to change society to make it better or more fair is a…', choices: ['reform', 'convention', 'petition'], a: 0 },
+        { q: 'The movement to end slavery was called…', choices: ['temperance', 'abolition', 'suffrage'], a: 1 },
+        { q: 'The right to vote is called…', choices: ['suffrage', 'petition', 'reform'], a: 0 },
+        { q: 'The movement to reduce or ban the drinking of alcohol was…', choices: ['abolition', 'suffrage', 'temperance'], a: 2 }
+      ],
+      takeaway: 'Know these four words and you can read the rest of the unit with confidence.'
+    },
+    es: {
+      title: 'Calentamiento: palabras de la reforma',
+      seconds: 45,
+      questions: [
+        { q: 'Un esfuerzo por cambiar la sociedad para mejorarla o hacerla más justa es una…', choices: ['reforma', 'convención', 'petición'], a: 0 },
+        { q: 'El movimiento para acabar con la esclavitud se llamaba…', choices: ['templanza', 'abolición', 'sufragio'], a: 1 },
+        { q: 'El derecho a votar se llama…', choices: ['sufragio', 'petición', 'reforma'], a: 0 },
+        { q: 'El movimiento para reducir o prohibir el consumo de alcohol era…', choices: ['abolición', 'sufragio', 'templanza'], a: 2 }
+      ],
+      takeaway: 'Domina estas cuatro palabras y podrás leer el resto de la unidad con confianza.'
+    },
+    vi: {
+      title: 'Khởi động: từ vựng về cải cách',
+      seconds: 45,
+      questions: [
+        { q: 'Một nỗ lực thay đổi xã hội để nó tốt hơn hoặc công bằng hơn là một cuộc…', choices: ['cải cách', 'đại hội', 'thỉnh nguyện'], a: 0 },
+        { q: 'Phong trào chấm dứt chế độ nô lệ được gọi là…', choices: ['tiết chế rượu', 'bãi nô', 'quyền bầu cử'], a: 1 },
+        { q: 'Quyền được bỏ phiếu được gọi là…', choices: ['quyền bầu cử', 'thỉnh nguyện', 'cải cách'], a: 0 },
+        { q: 'Phong trào giảm hoặc cấm việc uống rượu bia là…', choices: ['bãi nô', 'quyền bầu cử', 'tiết chế rượu'], a: 2 }
+      ],
+      takeaway: 'Nắm được bốn từ này là bạn có thể đọc phần còn lại của đơn vị bài học một cách tự tin.'
+    },
+    ar: {
+      title: 'تهيئة: كلمات الإصلاح',
+      seconds: 45,
+      questions: [
+        { q: 'الجهد لتغيير المجتمع لجعله أفضل أو أكثر عدلًا هو…', choices: ['إصلاح', 'مؤتمر', 'عريضة'], a: 0 },
+        { q: 'حركة إنهاء العبودية كانت تُسمّى…', choices: ['الاعتدال', 'إلغاء العبودية', 'حق الاقتراع'], a: 1 },
+        { q: 'حق التصويت يُسمّى…', choices: ['حق الاقتراع', 'عريضة', 'إصلاح'], a: 0 },
+        { q: 'حركة تقليل شرب الكحول أو منعه كانت…', choices: ['إلغاء العبودية', 'حق الاقتراع', 'الاعتدال'], a: 2 }
+      ],
+      takeaway: 'أتقن هذه الكلمات الأربع وستقرأ بقية الوحدة بثقة.'
+    },
+    hi: {
+      title: 'वार्म-अप: सुधार के शब्द',
+      seconds: 45,
+      questions: [
+        { q: 'समाज को बेहतर या अधिक न्यायपूर्ण बनाने के लिए बदलने का प्रयास है…', choices: ['सुधार', 'सम्मेलन', 'याचिका'], a: 0 },
+        { q: 'दासता को समाप्त करने के आंदोलन को कहा जाता था…', choices: ['संयम (मद्यनिषेध)', 'दास-उन्मूलन', 'मताधिकार'], a: 1 },
+        { q: 'मतदान के अधिकार को कहते हैं…', choices: ['मताधिकार', 'याचिका', 'सुधार'], a: 0 },
+        { q: 'शराब पीने को कम करने या रोकने का आंदोलन था…', choices: ['दास-उन्मूलन', 'मताधिकार', 'संयम (मद्यनिषेध)'], a: 2 }
+      ],
+      takeaway: 'इन चार शब्दों को जान लें और आप शेष इकाई आत्मविश्वास से पढ़ सकेंगे।'
+    },
+    ur: {
+      title: 'وارم اپ: اصلاح کے الفاظ',
+      seconds: 45,
+      questions: [
+        { q: 'معاشرے کو بہتر یا زیادہ منصفانہ بنانے کے لیے بدلنے کی کوشش ہے…', choices: ['اصلاح', 'کنونشن', 'درخواست'], a: 0 },
+        { q: 'غلامی ختم کرنے کی تحریک کہلاتی تھی…', choices: ['اعتدال (شراب نوشی کی روک تھام)', 'خاتمۂ غلامی', 'حقِ رائے دہی'], a: 1 },
+        { q: 'ووٹ دینے کے حق کو کہتے ہیں…', choices: ['حقِ رائے دہی', 'درخواست', 'اصلاح'], a: 0 },
+        { q: 'شراب نوشی کو کم یا بند کرنے کی تحریک تھی…', choices: ['خاتمۂ غلامی', 'حقِ رائے دہی', 'اعتدال (شراب نوشی کی روک تھام)'], a: 2 }
+      ],
+      takeaway: 'ان چار الفاظ کو جان لیں تو آپ باقی اکائی اعتماد کے ساتھ پڑھ سکیں گے۔'
+    },
+    zh: {
+      title: '热身：改革词汇',
+      seconds: 45,
+      questions: [
+        { q: '为使社会更美好或更公正而作出的改变努力称为…', choices: ['改革', '大会', '请愿'], a: 0 },
+        { q: '终结奴隶制的运动被称为…', choices: ['禁酒', '废奴', '选举权'], a: 1 },
+        { q: '投票的权利称为…', choices: ['选举权', '请愿', '改革'], a: 0 },
+        { q: '减少或禁止饮酒的运动是…', choices: ['废奴', '选举权', '禁酒'], a: 2 }
+      ],
+      takeaway: '掌握这四个词，你就能自信地读完本单元的其余部分。'
+    } }
+  },
+  {
+    id: 'g8-reform-1848-surface-exit', grade: 8, unit: 'reform-1848',
+    unitTitle: "A Nation to Reform, 1848 — How Do You Change a Nation?", phase: 'surface', type: 'exit',
+    format: 'match', teks: '§113.20(c)(24)', strat: 'Vocabulary & feedback', d: 0.62,
+    i18n: { en: {
+      title: 'Exit: match the word to its meaning',
+      pairs: [
+        ['abolition', 'the movement to end slavery'],
+        ['suffrage', 'the right to vote'],
+        ['temperance', 'the movement to reduce or ban alcohol'],
+        ['convention', 'a large meeting called to plan action or make demands'],
+        ['petition', 'a signed request asking government to act']
+      ],
+      takeaway: 'If you matched all five, you are ready to go deep. If not, revisit the word bank.'
+    },
+    es: {
+      title: 'Salida: relaciona la palabra con su significado',
+      pairs: [
+        ['abolición', 'el movimiento para acabar con la esclavitud'],
+        ['sufragio', 'el derecho a votar'],
+        ['templanza', 'el movimiento para reducir o prohibir el alcohol'],
+        ['convención', 'una gran reunión convocada para planear acciones o hacer demandas'],
+        ['petición', 'una solicitud firmada que pide al gobierno que actúe']
+      ],
+      takeaway: 'Si relacionaste las cinco, estás listo para ir a lo profundo. Si no, repasa el banco de palabras.'
+    },
+    vi: {
+      title: 'Phiếu ra: ghép từ với nghĩa của nó',
+      pairs: [
+        ['bãi nô', 'phong trào chấm dứt chế độ nô lệ'],
+        ['quyền bầu cử', 'quyền được bỏ phiếu'],
+        ['tiết chế rượu', 'phong trào giảm hoặc cấm rượu bia'],
+        ['đại hội', 'một cuộc họp lớn được triệu tập để lên kế hoạch hành động hoặc đưa ra yêu sách'],
+        ['thỉnh nguyện', 'một đơn có chữ ký yêu cầu chính quyền hành động']
+      ],
+      takeaway: 'Nếu bạn ghép đúng cả năm, bạn đã sẵn sàng học chuyên sâu. Nếu chưa, hãy xem lại kho từ vựng.'
+    },
+    ar: {
+      title: 'الخروج: طابِق الكلمة مع معناها',
+      pairs: [
+        ['إلغاء العبودية', 'حركة إنهاء العبودية'],
+        ['حق الاقتراع', 'حق التصويت'],
+        ['الاعتدال', 'حركة تقليل الكحول أو منعه'],
+        ['المؤتمر', 'اجتماع كبير يُعقد للتخطيط للعمل أو تقديم المطالب'],
+        ['العريضة', 'طلب موقّع يدعو الحكومة إلى اتخاذ إجراء']
+      ],
+      takeaway: 'إذا طابقت الخمس جميعًا، فأنت مستعد للتعمّق. وإلا، فراجِع بنك الكلمات.'
+    },
+    hi: {
+      title: 'निकास: शब्द को उसके अर्थ से मिलाएँ',
+      pairs: [
+        ['दास-उन्मूलन', 'दासता को समाप्त करने का आंदोलन'],
+        ['मताधिकार', 'मतदान का अधिकार'],
+        ['संयम (मद्यनिषेध)', 'शराब को कम करने या प्रतिबंधित करने का आंदोलन'],
+        ['सम्मेलन', 'कार्रवाई की योजना बनाने या माँगें रखने के लिए बुलाई गई बड़ी बैठक'],
+        ['याचिका', 'सरकार से कार्रवाई का अनुरोध करता एक हस्ताक्षरित पत्र']
+      ],
+      takeaway: 'यदि आपने पाँचों मिला दिए, तो आप गहन में जाने के लिए तैयार हैं। यदि नहीं, तो शब्द-बैंक फिर देखें।'
+    },
+    ur: {
+      title: 'اخراج: لفظ کو اس کے مطلب سے ملائیں',
+      pairs: [
+        ['خاتمۂ غلامی', 'غلامی ختم کرنے کی تحریک'],
+        ['حقِ رائے دہی', 'ووٹ دینے کا حق'],
+        ['اعتدال (شراب نوشی کی روک تھام)', 'شراب کو کم یا ممنوع کرنے کی تحریک'],
+        ['کنونشن', 'کارروائی کی منصوبہ بندی یا مطالبات کے لیے بلایا گیا بڑا اجتماع'],
+        ['درخواست', 'حکومت سے کارروائی کی طلب کرنے والی دستخط شدہ درخواست']
+      ],
+      takeaway: 'اگر آپ نے پانچوں ملا دیے تو آپ گہرائی میں جانے کو تیار ہیں۔ ورنہ لفظی بینک دوبارہ دیکھیں۔'
+    },
+    zh: {
+      title: '离场：把词语与其含义配对',
+      pairs: [
+        ['废奴', '终结奴隶制的运动'],
+        ['选举权', '投票的权利'],
+        ['禁酒', '减少或禁止酒类的运动'],
+        ['大会', '为筹划行动或提出诉求而召集的大型会议'],
+        ['请愿', '请求政府采取行动的签名请求']
+      ],
+      takeaway: '如果五个都配对正确，你就可以进入深层学习了。若没有，请重温词汇表。'
+    } }
+  },
+
+  /* ───────── Grade 8 · A Nation to Reform, 1848 · DEEP ───────── */
+  {
+    id: 'g8-reform-1848-deep-entry', grade: 8, unit: 'reform-1848',
+    unitTitle: "A Nation to Reform, 1848 — How Do You Change a Nation?", phase: 'deep', type: 'entry',
+    format: 'cloze', teks: '§113.20(c)(24), (c)(25)', strat: 'Retrieval practice', d: 0.54,
+    i18n: { en: {
+      title: 'Warm-up: cause, goal & tactic',
+      items: [
+        { before: 'A movement’s', after: 'is what it wants to achieve — for abolitionists, ending slavery.', choices: ['goal', 'tactic', 'opposition'], a: 0 },
+        { before: 'A signed request to government and a public speech are examples of a', after: 'a movement uses.', choices: ['goal', 'tactic', 'cause'], a: 1 },
+        { before: 'The Second Great Awakening and the nation’s ideals helped', after: 'the reform movements of the mid-1800s.', choices: ['spark', 'silence', 'ban'], a: 0 }
+      ],
+      takeaway: 'Every movement has a cause, a goal, a tactic, and opposition. Keep the four straight.'
+    },
+    es: {
+      title: 'Calentamiento: causa, meta y táctica',
+      items: [
+        { before: 'La', after: 'de un movimiento es lo que quiere lograr — para los abolicionistas, acabar con la esclavitud.', choices: ['meta', 'táctica', 'oposición'], a: 0 },
+        { before: 'Una solicitud firmada al gobierno y un discurso público son ejemplos de una', after: 'que usa un movimiento.', choices: ['meta', 'táctica', 'causa'], a: 1 },
+        { before: 'El Segundo Gran Despertar y los ideales de la nación ayudaron a', after: 'los movimientos de reforma de mediados del siglo XIX.', choices: ['encender', 'silenciar', 'prohibir'], a: 0 }
+      ],
+      takeaway: 'Todo movimiento tiene causa, meta, táctica y oposición. Mantén los cuatro claros.'
+    },
+    vi: {
+      title: 'Khởi động: nguyên nhân, mục tiêu và chiến thuật',
+      items: [
+        { before: 'Của một phong trào,', after: 'là điều nó muốn đạt được — với những người bãi nô, đó là chấm dứt chế độ nô lệ.', choices: ['mục tiêu', 'chiến thuật', 'sự chống đối'], a: 0 },
+        { before: 'Một đơn có chữ ký gửi chính quyền và một bài diễn thuyết công khai là ví dụ về một', after: 'mà một phong trào sử dụng.', choices: ['mục tiêu', 'chiến thuật', 'nguyên nhân'], a: 1 },
+        { before: 'Cuộc Đại Thức Tỉnh Lần Hai và những lý tưởng của quốc gia đã giúp', after: 'các phong trào cải cách giữa những năm 1800.', choices: ['thổi bùng', 'dập tắt', 'cấm đoán'], a: 0 }
+      ],
+      takeaway: 'Mỗi phong trào đều có nguyên nhân, mục tiêu, chiến thuật và sự chống đối. Hãy phân biệt rõ bốn điều đó.'
+    },
+    ar: {
+      title: 'تهيئة: السبب والهدف والتكتيك',
+      items: [
+        { before: 'إن', after: 'الحركة هو ما تريد تحقيقه — بالنسبة لدعاة إلغاء العبودية، هو إنهاء العبودية.', choices: ['الهدف', 'التكتيك', 'المعارضة'], a: 0 },
+        { before: 'العريضة الموقّعة إلى الحكومة والخطاب العام مثالان على', after: 'تستخدمه الحركة.', choices: ['هدف', 'تكتيك', 'سبب'], a: 1 },
+        { before: 'ساعدت الصحوة الكبرى الثانية ومُثُل الأمة على', after: 'حركات الإصلاح في منتصف القرن التاسع عشر.', choices: ['إشعال', 'إسكات', 'حظر'], a: 0 }
+      ],
+      takeaway: 'لكل حركة سبب وهدف وتكتيك ومعارضة. حافظ على تمييز الأربعة.'
+    },
+    hi: {
+      title: 'वार्म-अप: कारण, लक्ष्य और युक्ति',
+      items: [
+        { before: 'किसी आंदोलन का', after: 'वह है जो वह हासिल करना चाहता है — दास-उन्मूलनवादियों के लिए, दासता का अंत।', choices: ['लक्ष्य', 'युक्ति', 'विरोध'], a: 0 },
+        { before: 'सरकार को एक हस्ताक्षरित अनुरोध और एक सार्वजनिक भाषण उदाहरण हैं एक', after: 'के जिसे कोई आंदोलन प्रयोग करता है।', choices: ['लक्ष्य', 'युक्ति', 'कारण'], a: 1 },
+        { before: 'द्वितीय महान जागृति और राष्ट्र के आदर्शों ने मदद की', after: '19वीं सदी के मध्य के सुधार आंदोलनों को।', choices: ['प्रज्वलित करने में', 'चुप कराने में', 'प्रतिबंधित करने में'], a: 0 }
+      ],
+      takeaway: 'हर आंदोलन का एक कारण, लक्ष्य, युक्ति और विरोध होता है। चारों को अलग-अलग समझें।'
+    },
+    ur: {
+      title: 'وارم اپ: وجہ، مقصد اور حکمتِ عملی',
+      items: [
+        { before: 'کسی تحریک کا', after: 'وہ ہے جو وہ حاصل کرنا چاہتی ہے — خاتمۂ غلامی کے حامیوں کے لیے، غلامی کا خاتمہ۔', choices: ['مقصد', 'حکمتِ عملی', 'مخالفت'], a: 0 },
+        { before: 'حکومت کو ایک دستخط شدہ درخواست اور ایک عوامی تقریر مثالیں ہیں ایک', after: 'کی جسے کوئی تحریک استعمال کرتی ہے۔', choices: ['مقصد', 'حکمتِ عملی', 'وجہ'], a: 1 },
+        { before: 'دوسری عظیم بیداری اور قوم کے نصب العین نے مدد کی', after: 'انیسویں صدی کے وسط کی اصلاحی تحریکوں کو۔', choices: ['بھڑکانے میں', 'خاموش کرانے میں', 'ممنوع کرنے میں'], a: 0 }
+      ],
+      takeaway: 'ہر تحریک کی ایک وجہ، مقصد، حکمتِ عملی اور مخالفت ہوتی ہے۔ چاروں کو الگ الگ سمجھیں۔'
+    },
+    zh: {
+      title: '热身：起因、目标与策略',
+      items: [
+        { before: '一个运动的', after: '就是它想要实现的目标——对废奴者而言，就是终结奴隶制。', choices: ['目标', '策略', '反对'], a: 0 },
+        { before: '递交政府的签名请求和公开演讲，都是运动所使用的一种', after: '的例子。', choices: ['目标', '策略', '起因'], a: 1 },
+        { before: '第二次大觉醒和国家的理想帮助', after: '了19世纪中叶的改革运动。', choices: ['点燃', '压制', '禁止'], a: 0 }
+      ],
+      takeaway: '每个运动都有起因、目标、策略和反对。把这四者分清楚。'
+    } }
+  },
+  {
+    id: 'g8-reform-1848-deep-exit', grade: 8, unit: 'reform-1848',
+    unitTitle: "A Nation to Reform, 1848 — How Do You Change a Nation?", phase: 'deep', type: 'exit',
+    format: 'sort', teks: '§113.20(c)(24), (c)(25)', strat: 'Concept organization', d: 0.64,
+    i18n: { en: {
+      title: 'Exit: sort — goal or tactic?',
+      cats: ['Goal (what a movement wants)', 'Tactic (how it works for change)'],
+      items: [
+        { t: 'End slavery immediately', c: 0 },
+        { t: 'Win equal rights and the vote', c: 0 },
+        { t: 'Open free public schools', c: 0 },
+        { t: 'Publish an antislavery newspaper', c: 1 },
+        { t: 'Hold a convention and issue a declaration', c: 1 },
+        { t: 'Gather signatures on a petition', c: 1 }
+      ],
+      takeaway: 'Sorting goals from tactics is the concept map behind every reformer’s plan.'
+    },
+    es: {
+      title: 'Salida: clasifica — ¿meta o táctica?',
+      cats: ['Meta (lo que quiere un movimiento)', 'Táctica (cómo busca el cambio)'],
+      items: [
+        { t: 'Acabar con la esclavitud de inmediato', c: 0 },
+        { t: 'Lograr la igualdad de derechos y el voto', c: 0 },
+        { t: 'Abrir escuelas públicas gratuitas', c: 0 },
+        { t: 'Publicar un periódico antiesclavista', c: 1 },
+        { t: 'Celebrar una convención y emitir una declaración', c: 1 },
+        { t: 'Reunir firmas en una petición', c: 1 }
+      ],
+      takeaway: 'Separar metas de tácticas es el mapa conceptual detrás del plan de todo reformador.'
+    },
+    vi: {
+      title: 'Phiếu ra: phân loại — mục tiêu hay chiến thuật?',
+      cats: ['Mục tiêu (điều một phong trào muốn)', 'Chiến thuật (cách nó tạo ra thay đổi)'],
+      items: [
+        { t: 'Chấm dứt chế độ nô lệ ngay lập tức', c: 0 },
+        { t: 'Giành quyền bình đẳng và quyền bầu cử', c: 0 },
+        { t: 'Mở trường công miễn phí', c: 0 },
+        { t: 'Xuất bản một tờ báo chống chế độ nô lệ', c: 1 },
+        { t: 'Tổ chức một đại hội và ban hành một bản tuyên ngôn', c: 1 },
+        { t: 'Thu thập chữ ký trên một đơn thỉnh nguyện', c: 1 }
+      ],
+      takeaway: 'Phân biệt mục tiêu với chiến thuật chính là sơ đồ khái niệm đằng sau kế hoạch của mọi nhà cải cách.'
+    },
+    ar: {
+      title: 'الخروج: صنّف — هدف أم تكتيك؟',
+      cats: ['هدف (ما تريده الحركة)', 'تكتيك (كيف تسعى للتغيير)'],
+      items: [
+        { t: 'إنهاء العبودية فورًا', c: 0 },
+        { t: 'نيل الحقوق المتساوية وحق التصويت', c: 0 },
+        { t: 'فتح مدارس عامة مجانية', c: 0 },
+        { t: 'إصدار صحيفة مناهضة للعبودية', c: 1 },
+        { t: 'عقد مؤتمر وإصدار إعلان', c: 1 },
+        { t: 'جمع التوقيعات على عريضة', c: 1 }
+      ],
+      takeaway: 'تمييز الأهداف عن التكتيكات هو الخريطة المفاهيمية وراء خطة كل مُصلِح.'
+    },
+    hi: {
+      title: 'निकास: छाँटें — लक्ष्य या युक्ति?',
+      cats: ['लक्ष्य (आंदोलन क्या चाहता है)', 'युक्ति (वह बदलाव के लिए कैसे काम करता है)'],
+      items: [
+        { t: 'दासता को तुरंत समाप्त करना', c: 0 },
+        { t: 'समान अधिकार और मतदान का अधिकार पाना', c: 0 },
+        { t: 'निःशुल्क सार्वजनिक विद्यालय खोलना', c: 0 },
+        { t: 'दासता-विरोधी अखबार प्रकाशित करना', c: 1 },
+        { t: 'एक सम्मेलन आयोजित करना और घोषणापत्र जारी करना', c: 1 },
+        { t: 'याचिका पर हस्ताक्षर जुटाना', c: 1 }
+      ],
+      takeaway: 'लक्ष्यों को युक्तियों से अलग करना ही हर सुधारक की योजना के पीछे का अवधारणा मानचित्र है।'
+    },
+    ur: {
+      title: 'اخراج: چھانٹیں — مقصد یا حکمتِ عملی؟',
+      cats: ['مقصد (تحریک کیا چاہتی ہے)', 'حکمتِ عملی (وہ تبدیلی کے لیے کیسے کام کرتی ہے)'],
+      items: [
+        { t: 'غلامی کو فوراً ختم کرنا', c: 0 },
+        { t: 'مساوی حقوق اور حقِ رائے دہی حاصل کرنا', c: 0 },
+        { t: 'مفت سرکاری اسکول کھولنا', c: 0 },
+        { t: 'غلامی مخالف اخبار شائع کرنا', c: 1 },
+        { t: 'ایک کنونشن منعقد کرنا اور اعلامیہ جاری کرنا', c: 1 },
+        { t: 'درخواست پر دستخط جمع کرنا', c: 1 }
+      ],
+      takeaway: 'مقاصد کو حکمتِ عملیوں سے الگ کرنا ہی ہر مصلح کے منصوبے کے پیچھے تصوراتی نقشہ ہے۔'
+    },
+    zh: {
+      title: '离场：分类——目标还是策略？',
+      cats: ['目标（运动想要什么）', '策略（如何促成改变）'],
+      items: [
+        { t: '立即终结奴隶制', c: 0 },
+        { t: '争取平等权利和选举权', c: 0 },
+        { t: '开办免费公立学校', c: 0 },
+        { t: '出版一份反奴隶制的报纸', c: 1 },
+        { t: '召开大会并发表一份宣言', c: 1 },
+        { t: '在请愿书上征集签名', c: 1 }
+      ],
+      takeaway: '把目标与策略分开，就是每位改革者计划背后的概念图。'
+    } }
+  },
+
+  /* ───────── Grade 8 · A Nation to Reform, 1848 · TRANSFER ───────── */
+  {
+    id: 'g8-reform-1848-transfer-entry', grade: 8, unit: 'reform-1848',
+    unitTitle: "A Nation to Reform, 1848 — How Do You Change a Nation?", phase: 'transfer', type: 'entry',
+    format: 'mcq', teks: '§113.20(c)(31)(B)', strat: 'Retrieval practice', d: 0.54,
+    i18n: { en: {
+      title: 'Warm-up: the problem-solving process',
+      seconds: 45,
+      questions: [
+        { q: 'The FIRST step of the problem-solving process is to…', choices: ['pick a solution', 'define the problem', 'defend a claim'], a: 1 },
+        { q: 'Before choosing a strategy, a good problem-solver…', choices: ['gathers information & weighs options', 'guesses quickly', 'ignores other views'], a: 0 },
+        { q: 'A strong solution is defended with…', choices: ['a loud voice', 'claim + evidence', 'only feelings'], a: 1 },
+        { q: 'After choosing and defending a solution, the last step is to…', choices: ['forget it', 'evaluate how well it worked', 'hide the trade-offs'], a: 1 }
+      ],
+      takeaway: 'Define → gather → weigh → decide → defend → evaluate. That is the whole transfer move.'
+    },
+    es: {
+      title: 'Calentamiento: el proceso de resolución de problemas',
+      seconds: 45,
+      questions: [
+        { q: 'El PRIMER paso del proceso de resolución de problemas es…', choices: ['elegir una solución', 'definir el problema', 'defender una afirmación'], a: 1 },
+        { q: 'Antes de elegir una estrategia, quien resuelve bien problemas…', choices: ['reúne información y sopesa opciones', 'adivina rápido', 'ignora otras opiniones'], a: 0 },
+        { q: 'Una solución sólida se defiende con…', choices: ['una voz fuerte', 'afirmación + evidencia', 'solo sentimientos'], a: 1 },
+        { q: 'Tras elegir y defender una solución, el último paso es…', choices: ['olvidarla', 'evaluar qué tan bien funcionó', 'ocultar las concesiones'], a: 1 }
+      ],
+      takeaway: 'Definir → reunir → sopesar → decidir → defender → evaluar. Ese es todo el movimiento de transferencia.'
+    },
+    vi: {
+      title: 'Khởi động: quy trình giải quyết vấn đề',
+      seconds: 45,
+      questions: [
+        { q: 'Bước ĐẦU TIÊN của quy trình giải quyết vấn đề là…', choices: ['chọn một giải pháp', 'xác định vấn đề', 'bảo vệ một luận điểm'], a: 1 },
+        { q: 'Trước khi chọn một chiến lược, người giải quyết vấn đề giỏi sẽ…', choices: ['thu thập thông tin & cân nhắc các phương án', 'đoán nhanh', 'bỏ qua quan điểm khác'], a: 0 },
+        { q: 'Một giải pháp vững chắc được bảo vệ bằng…', choices: ['một giọng nói to', 'luận điểm + bằng chứng', 'chỉ cảm xúc'], a: 1 },
+        { q: 'Sau khi chọn và bảo vệ một giải pháp, bước cuối cùng là…', choices: ['quên nó đi', 'đánh giá xem nó hiệu quả ra sao', 'giấu đi các đánh đổi'], a: 1 }
+      ],
+      takeaway: 'Xác định → thu thập → cân nhắc → quyết định → bảo vệ → đánh giá. Đó chính là toàn bộ bước chuyển giao.'
+    },
+    ar: {
+      title: 'تهيئة: عملية حل المشكلة',
+      seconds: 45,
+      questions: [
+        { q: 'الخطوة الأولى في عملية حل المشكلة هي…', choices: ['اختيار حل', 'تحديد المشكلة', 'الدفاع عن ادعاء'], a: 1 },
+        { q: 'قبل اختيار استراتيجية، يقوم حلّال المشكلات الجيد بـ…', choices: ['جمع المعلومات وموازنة الخيارات', 'التخمين بسرعة', 'تجاهل الآراء الأخرى'], a: 0 },
+        { q: 'الحل القوي يُدافَع عنه بـ…', choices: ['صوت عالٍ', 'ادعاء + دليل', 'المشاعر فقط'], a: 1 },
+        { q: 'بعد اختيار حل والدفاع عنه، الخطوة الأخيرة هي…', choices: ['نسيانه', 'تقييم مدى نجاحه', 'إخفاء المفاضلات'], a: 1 }
+      ],
+      takeaway: 'حدِّد ← اجمع ← وازِن ← قرِّر ← دافِع ← قيِّم. تلك هي حركة النقل بأكملها.'
+    },
+    hi: {
+      title: 'वार्म-अप: समस्या-समाधान की प्रक्रिया',
+      seconds: 45,
+      questions: [
+        { q: 'समस्या-समाधान प्रक्रिया का पहला चरण है…', choices: ['एक समाधान चुनना', 'समस्या को परिभाषित करना', 'एक दावे का बचाव करना'], a: 1 },
+        { q: 'रणनीति चुनने से पहले, एक अच्छा समस्या-समाधानकर्ता…', choices: ['जानकारी जुटाता है और विकल्पों को तौलता है', 'जल्दी से अनुमान लगाता है', 'अन्य विचारों को अनदेखा करता है'], a: 0 },
+        { q: 'एक मजबूत समाधान का बचाव किया जाता है…', choices: ['एक ऊँची आवाज़ से', 'दावा + साक्ष्य से', 'केवल भावनाओं से'], a: 1 },
+        { q: 'समाधान चुनने और उसका बचाव करने के बाद, अंतिम चरण है…', choices: ['उसे भूल जाना', 'यह आँकना कि वह कितना अच्छा रहा', 'समझौतों को छिपाना'], a: 1 }
+      ],
+      takeaway: 'परिभाषित करें → जुटाएँ → तौलें → निर्णय लें → बचाव करें → आँकें। यही पूरी अंतरण चाल है।'
+    },
+    ur: {
+      title: 'وارم اپ: مسئلہ حل کرنے کا عمل',
+      seconds: 45,
+      questions: [
+        { q: 'مسئلہ حل کرنے کے عمل کا پہلا مرحلہ ہے…', choices: ['ایک حل چننا', 'مسئلے کو متعین کرنا', 'ایک دعوے کا دفاع کرنا'], a: 1 },
+        { q: 'حکمتِ عملی چننے سے پہلے، ایک اچھا مسئلہ حل کرنے والا…', choices: ['معلومات جمع کرتا اور اختیارات تولتا ہے', 'جلدی سے اندازہ لگاتا ہے', 'دوسری آراء کو نظرانداز کرتا ہے'], a: 0 },
+        { q: 'ایک مضبوط حل کا دفاع کیا جاتا ہے…', choices: ['ایک بلند آواز سے', 'دعویٰ + ثبوت سے', 'صرف جذبات سے'], a: 1 },
+        { q: 'حل چننے اور اس کا دفاع کرنے کے بعد، آخری مرحلہ ہے…', choices: ['اسے بھول جانا', 'یہ جانچنا کہ وہ کتنا کارگر رہا', 'سمجھوتوں کو چھپانا'], a: 1 }
+      ],
+      takeaway: 'متعین کریں ← جمع کریں ← تولیں ← فیصلہ کریں ← دفاع کریں ← جانچیں۔ یہی پوری منتقلی کی چال ہے۔'
+    },
+    zh: {
+      title: '热身：解决问题的过程',
+      seconds: 45,
+      questions: [
+        { q: '解决问题过程的第一步是…', choices: ['挑选一个方案', '界定问题', '为一个主张辩护'], a: 1 },
+        { q: '在选择策略之前，优秀的解决问题者会…', choices: ['收集信息并权衡各种方案', '快速猜测', '无视他人的观点'], a: 0 },
+        { q: '有力的解决方案要靠什么来辩护…', choices: ['大嗓门', '主张 + 证据', '只有感受'], a: 1 },
+        { q: '在选定并辩护方案之后，最后一步是…', choices: ['把它忘掉', '评估它的效果如何', '隐藏其中的取舍'], a: 1 }
+      ],
+      takeaway: '界定 → 收集 → 权衡 → 决定 → 辩护 → 评估。这就是整个迁移动作。'
+    } }
+  },
+  {
+    id: 'g8-reform-1848-transfer-exit', grade: 8, unit: 'reform-1848',
+    unitTitle: "A Nation to Reform, 1848 — How Do You Change a Nation?", phase: 'transfer', type: 'exit',
+    format: 'cloze', teks: '§113.20(c)(31)(B)', strat: 'Feedback', d: 0.62,
+    i18n: { en: {
+      title: 'Exit: claim, evidence & trade-offs',
+      items: [
+        { before: 'A claim without', after: 'from the sources is just an opinion.', choices: ['evidence', 'a title', 'a map'], a: 0 },
+        { before: 'A reformer must weigh the', after: 'of each strategy — bold change vs. the change most likely to win.', choices: ['trade-offs', 'colors', 'spelling'], a: 0 },
+        { before: 'The last step of the process is to', after: 'how well your strategy actually worked.', choices: ['evaluate', 'forget', 'hide'], a: 0 }
+      ],
+      takeaway: 'Claim + evidence + trade-offs, then evaluate — that is thinking like a reformer and a citizen.'
+    },
+    es: {
+      title: 'Salida: afirmación, evidencia y concesiones',
+      items: [
+        { before: 'Una afirmación sin', after: 'de las fuentes es solo una opinión.', choices: ['evidencia', 'un título', 'un mapa'], a: 0 },
+        { before: 'Un reformador debe sopesar las', after: 'de cada estrategia — el cambio audaz frente al cambio con más posibilidades de ganar.', choices: ['concesiones', 'colores', 'ortografía'], a: 0 },
+        { before: 'El último paso del proceso es', after: 'qué tan bien funcionó realmente tu estrategia.', choices: ['evaluar', 'olvidar', 'ocultar'], a: 0 }
+      ],
+      takeaway: 'Afirmación + evidencia + concesiones, y luego evaluar: así se piensa como reformador y como ciudadano.'
+    },
+    vi: {
+      title: 'Phiếu ra: luận điểm, bằng chứng và đánh đổi',
+      items: [
+        { before: 'Một luận điểm không có', after: 'từ các nguồn thì chỉ là một ý kiến.', choices: ['bằng chứng', 'một tiêu đề', 'một tấm bản đồ'], a: 0 },
+        { before: 'Một nhà cải cách phải cân nhắc những', after: 'của mỗi chiến lược — thay đổi táo bạo so với thay đổi dễ giành thắng lợi nhất.', choices: ['đánh đổi', 'màu sắc', 'chính tả'], a: 0 },
+        { before: 'Bước cuối cùng của quy trình là', after: 'xem chiến lược của bạn thực sự hiệu quả đến đâu.', choices: ['đánh giá', 'quên đi', 'che giấu'], a: 0 }
+      ],
+      takeaway: 'Luận điểm + bằng chứng + đánh đổi, rồi đánh giá — đó là tư duy như một nhà cải cách và một công dân.'
+    },
+    ar: {
+      title: 'الخروج: ادعاء ودليل ومفاضلات',
+      items: [
+        { before: 'الادعاء بلا', after: 'من المصادر ما هو إلا رأي.', choices: ['دليل', 'عنوان', 'خريطة'], a: 0 },
+        { before: 'على المُصلِح أن يوازن', after: 'كل استراتيجية — التغيير الجريء مقابل التغيير الأرجح فوزًا.', choices: ['مفاضلات', 'ألوان', 'إملاء'], a: 0 },
+        { before: 'الخطوة الأخيرة في العملية هي أن', after: 'مدى نجاح استراتيجيتك فعلًا.', choices: ['تقيّم', 'تنسى', 'تخفي'], a: 0 }
+      ],
+      takeaway: 'ادعاء + دليل + مفاضلات، ثم التقييم — ذلك هو التفكير كمُصلِح ومواطن.'
+    },
+    hi: {
+      title: 'निकास: दावा, साक्ष्य और समझौते',
+      items: [
+        { before: 'स्रोतों से', after: 'के बिना दावा महज़ एक राय है।', choices: ['साक्ष्य', 'एक शीर्षक', 'एक नक्शा'], a: 0 },
+        { before: 'एक सुधारक को हर रणनीति के', after: 'को तौलना चाहिए — साहसिक बदलाव बनाम जीतने की सबसे अधिक संभावना वाला बदलाव।', choices: ['समझौतों', 'रंगों', 'वर्तनी'], a: 0 },
+        { before: 'प्रक्रिया का अंतिम चरण है यह', after: 'कि आपकी रणनीति वास्तव में कितनी कारगर रही।', choices: ['आँकना', 'भूलना', 'छिपाना'], a: 0 }
+      ],
+      takeaway: 'दावा + साक्ष्य + समझौते, फिर आँकना — यही एक सुधारक और एक नागरिक की तरह सोचना है।'
+    },
+    ur: {
+      title: 'اخراج: دعویٰ، ثبوت اور سمجھوتے',
+      items: [
+        { before: 'مآخذ سے', after: 'کے بغیر دعویٰ محض ایک رائے ہے۔', choices: ['ثبوت', 'ایک عنوان', 'ایک نقشہ'], a: 0 },
+        { before: 'ایک مصلح کو ہر حکمتِ عملی کے', after: 'کو تولنا چاہیے — جرأت مندانہ تبدیلی بمقابلہ سب سے زیادہ جیتنے کے امکان والی تبدیلی۔', choices: ['سمجھوتوں', 'رنگوں', 'ہجے'], a: 0 },
+        { before: 'عمل کا آخری مرحلہ یہ', after: 'ہے کہ آپ کی حکمتِ عملی حقیقتاً کتنی کارگر رہی۔', choices: ['جانچنا', 'بھولنا', 'چھپانا'], a: 0 }
+      ],
+      takeaway: 'دعویٰ + ثبوت + سمجھوتے، پھر جانچنا — یہی ایک مصلح اور ایک شہری کی طرح سوچنا ہے۔'
+    },
+    zh: {
+      title: '离场：主张、证据与取舍',
+      items: [
+        { before: '缺少来自资料的', after: '，主张只是一种意见。', choices: ['证据', '一个标题', '一张地图'], a: 0 },
+        { before: '改革者必须权衡每种策略的', after: '——大胆的变革与最可能取胜的变革之间。', choices: ['取舍', '颜色', '拼写'], a: 0 },
+        { before: '这一过程的最后一步是', after: '你的策略实际效果如何。', choices: ['评估', '忘记', '隐藏'], a: 0 }
+      ],
+      takeaway: '主张 + 证据 + 取舍，然后评估——这就是像改革者和公民一样思考。'
+    } }
+  }
+
+]);
+
+/* ── g8-westward-1845.js ── */
+/* PST Arcade — ticket registry (Grade 8 · Crossing the Continent, 1845).
+   English-first; other languages carried inline per ticket (ticket.i18n[lang]). The engine
+   (arcade.js) reads window.PST_TICKETS. Nothing is stored or sent. Content on Manifest Destiny,
+   displacement, and slavery expansion is kept factual and respectful toward Native nations,
+   Mexican residents, and enslaved people (TEC §28.0022). */
+window.PST_TICKETS = (window.PST_TICKETS || []).concat([
+
+  /* ───────── Grade 8 · Westward 1845 · SURFACE ───────── */
+  {
+    id: 'g8-westward-1845-surface-entry', grade: 8, unit: 'westward-1845',
+    unitTitle: "Crossing the Continent, 1845 — How Far Should the Nation Go?", phase: 'surface', type: 'entry',
+    format: 'mcq', teks: '§113.20(c)(6)', strat: 'Retrieval practice', d: 0.54,
+    i18n: { en: {
+      title: 'Warm-up: expansion words',
+      seconds: 45,
+      questions: [
+        { q: 'The 1840s belief that the U.S. was meant to expand across the continent was called…', choices: ['Manifest Destiny', 'popular sovereignty', 'sectionalism'], a: 0 },
+        { q: 'Adding a new territory such as Texas to the country is called…', choices: ['cession', 'annexation', 'migration'], a: 1 },
+        { q: 'Land given up by one country to another — like the Mexican Cession — is a…', choices: ['cession', 'treaty', 'frontier'], a: 0 },
+        { q: 'Loyalty to your region over the nation as a whole is called…', choices: ['annexation', 'sectionalism', 'territory'], a: 1 }
+      ],
+      takeaway: 'Know these four words and the rest of the unit will read clearly.'
+    },
+    es: {
+      title: 'Calentamiento: palabras de la expansión',
+      seconds: 45,
+      questions: [
+        { q: 'La creencia de la década de 1840 de que EE. UU. debía expandirse por el continente se llamaba…', choices: ['Destino Manifiesto', 'soberanía popular', 'seccionalismo'], a: 0 },
+        { q: 'Añadir un nuevo territorio como Texas al país se llama…', choices: ['cesión', 'anexión', 'migración'], a: 1 },
+        { q: 'La tierra que un país cede a otro —como la Cesión Mexicana— es una…', choices: ['cesión', 'tratado', 'frontera'], a: 0 },
+        { q: 'La lealtad a tu región por encima de la nación en su conjunto se llama…', choices: ['anexión', 'seccionalismo', 'territorio'], a: 1 }
+      ],
+      takeaway: 'Domina estas cuatro palabras y el resto de la unidad se leerá con claridad.'
+    },
+    vi: {
+      title: 'Khởi động: từ vựng về mở rộng lãnh thổ',
+      seconds: 45,
+      questions: [
+        { q: 'Niềm tin thập niên 1840 rằng Hoa Kỳ có sứ mệnh mở rộng khắp lục địa được gọi là…', choices: ['Vận Mệnh Hiển Nhiên', 'chủ quyền nhân dân', 'chủ nghĩa phân vùng'], a: 0 },
+        { q: 'Việc sáp nhập một lãnh thổ mới như Texas vào đất nước được gọi là…', choices: ['nhượng địa', 'sáp nhập', 'di cư'], a: 1 },
+        { q: 'Vùng đất mà một nước nhượng lại cho nước khác — như phần nhượng địa Mexico — là một…', choices: ['nhượng địa', 'hiệp ước', 'biên cương'], a: 0 },
+        { q: 'Lòng trung thành với vùng miền của mình hơn cả quốc gia được gọi là…', choices: ['sáp nhập', 'chủ nghĩa phân vùng', 'lãnh thổ'], a: 1 }
+      ],
+      takeaway: 'Nắm bốn từ này thì phần còn lại của bài học sẽ rõ ràng.'
+    },
+    ar: {
+      title: 'تهيئة: كلمات التوسّع',
+      seconds: 45,
+      questions: [
+        { q: 'الاعتقاد في أربعينيات القرن التاسع عشر بأنّ الولايات المتحدة مقدَّر لها أن تتوسّع عبر القارة سُمّي…', choices: ['القدَر المتجلّي', 'السيادة الشعبية', 'النزعة الإقليمية'], a: 0 },
+        { q: 'ضمّ إقليم جديد مثل تكساس إلى البلاد يُسمّى…', choices: ['تنازلًا', 'ضمًّا', 'هجرة'], a: 1 },
+        { q: 'الأرض التي تتنازل عنها دولة لأخرى — كالتنازل المكسيكي — هي…', choices: ['تنازل', 'معاهدة', 'حدود'], a: 0 },
+        { q: 'الولاء لإقليمك فوق الأمّة ككل يُسمّى…', choices: ['ضمًّا', 'النزعة الإقليمية', 'إقليمًا'], a: 1 }
+      ],
+      takeaway: 'أتقِن هذه الكلمات الأربع وستقرأ بقية الوحدة بوضوح.'
+    },
+    hi: {
+      title: 'वार्म-अप: विस्तार के शब्द',
+      seconds: 45,
+      questions: [
+        { q: '1840 के दशक की यह मान्यता कि अमेरिका को महाद्वीप भर में फैलना था, कहलाती थी…', choices: ['मैनिफेस्ट डेस्टिनी', 'लोकप्रिय संप्रभुता', 'क्षेत्रीयतावाद'], a: 0 },
+        { q: 'टेक्सास जैसे किसी नए क्षेत्र को देश में जोड़ना कहलाता है…', choices: ['अधिहरण (सेशन)', 'विलय (एनेक्सेशन)', 'प्रवास'], a: 1 },
+        { q: 'एक देश द्वारा दूसरे को दी गई भूमि — जैसे मेक्सिकन सेशन — है एक…', choices: ['अधिहरण (सेशन)', 'संधि', 'सीमांत'], a: 0 },
+        { q: 'समूचे राष्ट्र के बजाय अपने क्षेत्र के प्रति निष्ठा कहलाती है…', choices: ['विलय', 'क्षेत्रीयतावाद', 'क्षेत्र'], a: 1 }
+      ],
+      takeaway: 'इन चार शब्दों को जान लें और शेष इकाई स्पष्ट रूप से पढ़ी जाएगी।'
+    },
+    ur: {
+      title: 'وارم اپ: توسیع کے الفاظ',
+      seconds: 45,
+      questions: [
+        { q: '1840 کی دہائی کا یہ عقیدہ کہ امریکہ کو براعظم بھر میں پھیلنا تھا، کہلاتا تھا…', choices: ['مینی فیسٹ ڈیسٹنی', 'عوامی خودمختاری', 'علاقائیت'], a: 0 },
+        { q: 'ٹیکساس جیسے کسی نئے علاقے کو ملک میں شامل کرنا کہلاتا ہے…', choices: ['دستبرداری (سیشن)', 'الحاق (اینیکسیشن)', 'ہجرت'], a: 1 },
+        { q: 'ایک ملک کی جانب سے دوسرے کو دی گئی زمین — جیسے میکسیکن سیشن — ہے ایک…', choices: ['دستبرداری (سیشن)', 'معاہدہ', 'سرحدی علاقہ'], a: 0 },
+        { q: 'پوری قوم کے بجائے اپنے علاقے سے وفاداری کہلاتی ہے…', choices: ['الحاق', 'علاقائیت', 'علاقہ'], a: 1 }
+      ],
+      takeaway: 'ان چار الفاظ کو جان لیں تو باقی اکائی واضح طور پر پڑھی جائے گی۔'
+    },
+    zh: {
+      title: '热身：扩张词汇',
+      seconds: 45,
+      questions: [
+        { q: '1840 年代认为美国注定要横跨大陆扩张的信念被称为…', choices: ['天定命运', '人民主权', '地方主义'], a: 0 },
+        { q: '把得克萨斯这样的新领地并入国家称为…', choices: ['割让', '兼并', '迁移'], a: 1 },
+        { q: '一国让与另一国的土地——如墨西哥割让地——是一种…', choices: ['割让', '条约', '边疆'], a: 0 },
+        { q: '把对本地区的忠诚置于整个国家之上称为…', choices: ['兼并', '地方主义', '领地'], a: 1 }
+      ],
+      takeaway: '掌握这四个词，本单元的其余部分就会读得清楚。'
+    } }
+  },
+  {
+    id: 'g8-westward-1845-surface-exit', grade: 8, unit: 'westward-1845',
+    unitTitle: "Crossing the Continent, 1845 — How Far Should the Nation Go?", phase: 'surface', type: 'exit',
+    format: 'match', teks: '§113.20(c)(6)', strat: 'Vocabulary & feedback', d: 0.62,
+    i18n: { en: {
+      title: 'Exit: match the word to its meaning',
+      pairs: [
+        ['annexation', 'adding a new territory to the country'],
+        ['cession', 'land one country gives up to another'],
+        ['sectionalism', 'loyalty to your region over the whole nation'],
+        ['popular sovereignty', 'letting a territory vote on whether it allows slavery'],
+        ['treaty', 'a formal, written agreement between nations']
+      ],
+      takeaway: 'If you matched all five, you are ready to go deep. If not, revisit the word bank.'
+    },
+    es: {
+      title: 'Salida: relaciona la palabra con su significado',
+      pairs: [
+        ['anexión', 'añadir un nuevo territorio al país'],
+        ['cesión', 'tierra que un país cede a otro'],
+        ['seccionalismo', 'lealtad a tu región por encima de toda la nación'],
+        ['soberanía popular', 'dejar que un territorio vote si permite la esclavitud'],
+        ['tratado', 'un acuerdo formal y escrito entre naciones']
+      ],
+      takeaway: 'Si relacionaste las cinco, estás listo para ir a lo profundo. Si no, repasa el banco de palabras.'
+    },
+    vi: {
+      title: 'Phiếu ra: ghép từ với nghĩa của nó',
+      pairs: [
+        ['sáp nhập', 'thêm một lãnh thổ mới vào đất nước'],
+        ['nhượng địa', 'vùng đất một nước nhượng lại cho nước khác'],
+        ['chủ nghĩa phân vùng', 'lòng trung thành với vùng miền hơn cả quốc gia'],
+        ['chủ quyền nhân dân', 'để một lãnh thổ bỏ phiếu xem có cho phép chế độ nô lệ hay không'],
+        ['hiệp ước', 'một thỏa thuận chính thức, bằng văn bản giữa các quốc gia']
+      ],
+      takeaway: 'Nếu bạn ghép đúng cả năm, bạn đã sẵn sàng học chuyên sâu. Nếu chưa, hãy xem lại kho từ vựng.'
+    },
+    ar: {
+      title: 'الخروج: طابِق الكلمة مع معناها',
+      pairs: [
+        ['الضمّ', 'إضافة إقليم جديد إلى البلاد'],
+        ['التنازل', 'أرض تتنازل عنها دولة لأخرى'],
+        ['النزعة الإقليمية', 'الولاء لإقليمك فوق الأمّة كلها'],
+        ['السيادة الشعبية', 'ترك الإقليم يصوّت على السماح بالعبودية من عدمه'],
+        ['المعاهدة', 'اتفاق رسمي مكتوب بين الأمم']
+      ],
+      takeaway: 'إذا طابقت الخمس جميعًا، فأنت مستعد للتعمّق. وإلا، فراجِع بنك الكلمات.'
+    },
+    hi: {
+      title: 'निकास: शब्द को उसके अर्थ से मिलाएँ',
+      pairs: [
+        ['विलय', 'देश में एक नया क्षेत्र जोड़ना'],
+        ['अधिहरण', 'भूमि जो एक देश दूसरे को देता है'],
+        ['क्षेत्रीयतावाद', 'समूचे राष्ट्र के बजाय अपने क्षेत्र के प्रति निष्ठा'],
+        ['लोकप्रिय संप्रभुता', 'किसी क्षेत्र को यह वोट देने देना कि वह दासता की अनुमति दे या नहीं'],
+        ['संधि', 'राष्ट्रों के बीच एक औपचारिक, लिखित समझौता']
+      ],
+      takeaway: 'यदि आपने पाँचों मिला दिए, तो आप गहन में जाने के लिए तैयार हैं। यदि नहीं, तो शब्द-बैंक फिर देखें।'
+    },
+    ur: {
+      title: 'اخراج: لفظ کو اس کے مطلب سے ملائیں',
+      pairs: [
+        ['الحاق', 'ملک میں ایک نیا علاقہ شامل کرنا'],
+        ['دستبرداری', 'زمین جو ایک ملک دوسرے کو دیتا ہے'],
+        ['علاقائیت', 'پوری قوم کے بجائے اپنے علاقے سے وفاداری'],
+        ['عوامی خودمختاری', 'کسی علاقے کو یہ ووٹ دینے دینا کہ وہ غلامی کی اجازت دے یا نہیں'],
+        ['معاہدہ', 'اقوام کے درمیان ایک باقاعدہ، تحریری سمجھوتہ']
+      ],
+      takeaway: 'اگر آپ نے پانچوں ملا دیے تو آپ گہرائی میں جانے کو تیار ہیں۔ ورنہ لفظی بینک دوبارہ دیکھیں۔'
+    },
+    zh: {
+      title: '离场：把词语与其含义配对',
+      pairs: [
+        ['兼并', '把一块新领地并入国家'],
+        ['割让', '一国让与另一国的土地'],
+        ['地方主义', '把对本地区的忠诚置于整个国家之上'],
+        ['人民主权', '让某领地投票决定是否允许蓄奴'],
+        ['条约', '国家之间正式的书面协议']
+      ],
+      takeaway: '如果五个都配对正确，你就可以进入深层学习了。若没有，请重温词汇表。'
+    } }
+  },
+
+  /* ───────── Grade 8 · Westward 1845 · DEEP ───────── */
+  {
+    id: 'g8-westward-1845-deep-entry', grade: 8, unit: 'westward-1845',
+    unitTitle: "Crossing the Continent, 1845 — How Far Should the Nation Go?", phase: 'deep', type: 'entry',
+    format: 'cloze', teks: '§113.20(c)(6), (c)(7), (c)(12)', strat: 'Retrieval practice', d: 0.54,
+    i18n: { en: {
+      title: 'Warm-up: opportunity & cost',
+      items: [
+        { before: 'New land opening for settler farms was an', after: 'for some families.', choices: ['opportunity', 'a treaty', 'a cession'], a: 0 },
+        { before: 'For Native nations, the same expansion moved onto their homelands and was a great', after: 'to them.', choices: ['reward', 'cost', 'annexation'], a: 1 },
+        { before: 'Because each new territory reopened slavery, expansion pushed North and South toward', after: 'and crisis.', choices: ['sectionalism', 'migration', 'a frontier'], a: 0 }
+      ],
+      takeaway: 'The same expansion was opportunity for some and cost for others — hold both.'
+    },
+    es: {
+      title: 'Calentamiento: oportunidad y costo',
+      items: [
+        { before: 'Que se abriera nueva tierra para granjas de colonos fue una', after: 'para algunas familias.', choices: ['oportunidad', 'un tratado', 'una cesión'], a: 0 },
+        { before: 'Para las naciones indígenas, esa misma expansión invadió sus tierras y fue un gran', after: 'para ellas.', choices: ['premio', 'costo', 'anexión'], a: 1 },
+        { before: 'Como cada nuevo territorio reabría la esclavitud, la expansión empujó al Norte y al Sur hacia', after: 'y la crisis.', choices: ['el seccionalismo', 'la migración', 'una frontera'], a: 0 }
+      ],
+      takeaway: 'La misma expansión fue oportunidad para unos y costo para otros: ten en cuenta ambos.'
+    },
+    vi: {
+      title: 'Khởi động: cơ hội & cái giá',
+      items: [
+        { before: 'Việc mở ra vùng đất mới cho các trang trại của người định cư là một', after: 'đối với một số gia đình.', choices: ['cơ hội', 'một hiệp ước', 'một phần nhượng địa'], a: 0 },
+        { before: 'Với các dân tộc bản địa, chính cuộc mở rộng ấy tràn vào quê hương họ và là một', after: 'lớn đối với họ.', choices: ['phần thưởng', 'cái giá', 'sự sáp nhập'], a: 1 },
+        { before: 'Vì mỗi lãnh thổ mới lại khơi lại chế độ nô lệ, cuộc mở rộng đẩy miền Bắc và miền Nam về phía', after: 'và khủng hoảng.', choices: ['chủ nghĩa phân vùng', 'sự di cư', 'một vùng biên cương'], a: 0 }
+      ],
+      takeaway: 'Cùng một cuộc mở rộng là cơ hội cho người này và cái giá cho người khác — hãy giữ cả hai.'
+    },
+    ar: {
+      title: 'تهيئة: الفرصة والكلفة',
+      items: [
+        { before: 'فتح أرض جديدة لمزارع المستوطنين كان', after: 'لبعض العائلات.', choices: ['فرصة', 'معاهدة', 'تنازلًا'], a: 0 },
+        { before: 'أمّا للأمم الأصلية، فقد زحف التوسّع نفسه على أوطانهم وكان', after: 'كبيرة عليهم.', choices: ['مكافأة', 'كلفة', 'ضمًّا'], a: 1 },
+        { before: 'ولأنّ كل إقليم جديد يعيد فتح مسألة العبودية، دفع التوسّع الشمال والجنوب نحو', after: 'والأزمة.', choices: ['النزعة الإقليمية', 'الهجرة', 'حدود'], a: 0 }
+      ],
+      takeaway: 'التوسّع نفسه كان فرصة للبعض وكلفة على غيرهم — احمل الاثنين معًا.'
+    },
+    hi: {
+      title: 'वार्म-अप: अवसर और लागत',
+      items: [
+        { before: 'बसने वालों के खेतों के लिए नई भूमि का खुलना कुछ परिवारों के लिए एक', after: 'था।', choices: ['अवसर', 'एक संधि', 'एक अधिहरण'], a: 0 },
+        { before: 'मूल राष्ट्रों के लिए वही विस्तार उनकी मातृभूमि पर चढ़ आया और उनके लिए एक बड़ी', after: 'था।', choices: ['इनाम', 'लागत', 'विलय'], a: 1 },
+        { before: 'चूँकि हर नया क्षेत्र दासता को फिर से खोल देता था, विस्तार ने उत्तर और दक्षिण को', after: 'और संकट की ओर धकेला।', choices: ['क्षेत्रीयतावाद', 'प्रवास', 'एक सीमांत'], a: 0 }
+      ],
+      takeaway: 'वही विस्तार कुछ के लिए अवसर और दूसरों के लिए लागत था — दोनों को थामें।'
+    },
+    ur: {
+      title: 'وارم اپ: موقع اور قیمت',
+      items: [
+        { before: 'آبادکاروں کے کھیتوں کے لیے نئی زمین کا کھلنا کچھ خاندانوں کے لیے ایک', after: 'تھا۔', choices: ['موقع', 'ایک معاہدہ', 'ایک دستبرداری'], a: 0 },
+        { before: 'مقامی اقوام کے لیے وہی توسیع اُن کے وطن پر چڑھ آئی اور اُن کے لیے ایک بڑی', after: 'تھی۔', choices: ['انعام', 'قیمت', 'الحاق'], a: 1 },
+        { before: 'چونکہ ہر نیا علاقہ غلامی کو دوبارہ کھول دیتا تھا، توسیع نے شمال اور جنوب کو', after: 'اور بحران کی طرف دھکیلا۔', choices: ['علاقائیت', 'ہجرت', 'ایک سرحدی علاقہ'], a: 0 }
+      ],
+      takeaway: 'وہی توسیع کچھ کے لیے موقع اور دوسروں کے لیے قیمت تھی — دونوں کو تھامیں۔'
+    },
+    zh: {
+      title: '热身：机遇与代价',
+      items: [
+        { before: '为拓荒者农场开放新的土地，对一些家庭来说是一种', after: '。', choices: ['机遇', '一份条约', '一块割让地'], a: 0 },
+        { before: '对原住民族而言，同样的扩张侵入了他们的家园，对他们来说是巨大的', after: '。', choices: ['奖赏', '代价', '兼并'], a: 1 },
+        { before: '由于每一块新领地都重新掀起蓄奴之争，扩张把北方与南方推向', after: '与危机。', choices: ['地方主义', '迁移', '一片边疆'], a: 0 }
+      ],
+      takeaway: '同样的扩张对一些人是机遇、对另一些人是代价——两者都要记住。'
+    } }
+  },
+  {
+    id: 'g8-westward-1845-deep-exit', grade: 8, unit: 'westward-1845',
+    unitTitle: "Crossing the Continent, 1845 — How Far Should the Nation Go?", phase: 'deep', type: 'exit',
+    format: 'sort', teks: '§113.20(c)(6), (c)(7), (c)(12), (c)(21)', strat: 'Concept organization', d: 0.64,
+    i18n: { en: {
+      title: 'Exit: opportunity or cost of expansion?',
+      cats: ['An opportunity for some', 'A cost for others'],
+      items: [
+        { t: 'Settler families gaining farmland in the West', c: 0 },
+        { t: 'The nation reaching the Pacific with new ports', c: 0 },
+        { t: 'New land and resources for a growing economy', c: 0 },
+        { t: 'Native nations losing their homelands', c: 1 },
+        { t: 'Mexican residents becoming foreigners on their own land', c: 1 },
+        { t: 'Enslaved people whose futures were bargained over the territories', c: 1 }
+      ],
+      takeaway: 'Sorting who gained and who paid is the concept map behind a fair judgment of expansion.'
+    },
+    es: {
+      title: 'Salida: ¿oportunidad o costo de la expansión?',
+      cats: ['Una oportunidad para algunos', 'Un costo para otros'],
+      items: [
+        { t: 'Familias de colonos que obtienen tierras de cultivo en el Oeste', c: 0 },
+        { t: 'La nación alcanzando el Pacífico con nuevos puertos', c: 0 },
+        { t: 'Nueva tierra y recursos para una economía en crecimiento', c: 0 },
+        { t: 'Naciones indígenas que pierden sus tierras', c: 1 },
+        { t: 'Residentes mexicanos que se vuelven extranjeros en su propia tierra', c: 1 },
+        { t: 'Personas esclavizadas cuyo futuro se negoció por los territorios', c: 1 }
+      ],
+      takeaway: 'Clasificar quién ganó y quién pagó es el mapa conceptual detrás de un juicio justo de la expansión.'
+    },
+    vi: {
+      title: 'Phiếu ra: cơ hội hay cái giá của mở rộng?',
+      cats: ['Cơ hội cho một số người', 'Cái giá cho những người khác'],
+      items: [
+        { t: 'Các gia đình định cư có được đất canh tác ở miền Tây', c: 0 },
+        { t: 'Đất nước vươn tới Thái Bình Dương với các cảng mới', c: 0 },
+        { t: 'Đất đai và tài nguyên mới cho một nền kinh tế đang lớn mạnh', c: 0 },
+        { t: 'Các dân tộc bản địa mất đi quê hương', c: 1 },
+        { t: 'Cư dân Mexico trở thành người ngoại quốc ngay trên đất của mình', c: 1 },
+        { t: 'Những người nô lệ có tương lai bị mặc cả qua các lãnh thổ', c: 1 }
+      ],
+      takeaway: 'Phân loại ai được lợi và ai phải trả giá là sơ đồ khái niệm đằng sau một phán xét công bằng về mở rộng.'
+    },
+    ar: {
+      title: 'الخروج: فرصة أم كلفة للتوسّع؟',
+      cats: ['فرصة للبعض', 'كلفة على غيرهم'],
+      items: [
+        { t: 'عائلات مستوطنة تنال أراضٍ زراعية في الغرب', c: 0 },
+        { t: 'الأمّة تصل إلى المحيط الهادئ بموانئ جديدة', c: 0 },
+        { t: 'أرض وموارد جديدة لاقتصاد متنامٍ', c: 0 },
+        { t: 'أمم أصلية تفقد أوطانها', c: 1 },
+        { t: 'سكّان مكسيكيون يصبحون غرباء على أرضهم', c: 1 },
+        { t: 'أشخاص مستعبَدون تُساوَم مصائرهم على الأقاليم', c: 1 }
+      ],
+      takeaway: 'تصنيف مَن كسب ومَن دفع هو الخريطة المفاهيمية وراء حُكم عادل على التوسّع.'
+    },
+    hi: {
+      title: 'निकास: विस्तार — अवसर या लागत?',
+      cats: ['कुछ के लिए एक अवसर', 'दूसरों के लिए एक लागत'],
+      items: [
+        { t: 'पश्चिम में कृषि भूमि पाने वाले बसने वाले परिवार', c: 0 },
+        { t: 'नए बंदरगाहों के साथ प्रशांत तक पहुँचता राष्ट्र', c: 0 },
+        { t: 'बढ़ती अर्थव्यवस्था के लिए नई भूमि और संसाधन', c: 0 },
+        { t: 'अपनी मातृभूमि खोते मूल राष्ट्र', c: 1 },
+        { t: 'अपनी ही भूमि पर विदेशी बन जाते मैक्सिकन निवासी', c: 1 },
+        { t: 'दास लोग जिनके भविष्य को क्षेत्रों पर सौदेबाज़ी में डाला गया', c: 1 }
+      ],
+      takeaway: 'किसे लाभ हुआ और किसने कीमत चुकाई — यह छाँटना ही विस्तार के न्यायसंगत निर्णय के पीछे का अवधारणा मानचित्र है।'
+    },
+    ur: {
+      title: 'اخراج: توسیع — موقع یا قیمت؟',
+      cats: ['کچھ کے لیے ایک موقع', 'دوسروں کے لیے ایک قیمت'],
+      items: [
+        { t: 'مغرب میں کاشتکاری کی زمین پانے والے آبادکار خاندان', c: 0 },
+        { t: 'نئی بندرگاہوں کے ساتھ بحرالکاہل تک پہنچتی قوم', c: 0 },
+        { t: 'بڑھتی معیشت کے لیے نئی زمین اور وسائل', c: 0 },
+        { t: 'اپنا وطن کھوتی مقامی اقوام', c: 1 },
+        { t: 'اپنی ہی زمین پر اجنبی بن جاتے میکسیکن باشندے', c: 1 },
+        { t: 'غلام لوگ جن کے مستقبل کو علاقوں پر سودے بازی میں ڈالا گیا', c: 1 }
+      ],
+      takeaway: 'کس نے فائدہ اٹھایا اور کس نے قیمت چکائی — یہ چھانٹنا ہی توسیع کے منصفانہ فیصلے کے پیچھے تصوراتی نقشہ ہے۔'
+    },
+    zh: {
+      title: '离场：扩张是机遇还是代价？',
+      cats: ['对一些人是机遇', '对另一些人是代价'],
+      items: [
+        { t: '在西部获得农田的拓荒家庭', c: 0 },
+        { t: '国家凭借新港口抵达太平洋', c: 0 },
+        { t: '为不断增长的经济带来新土地与资源', c: 0 },
+        { t: '失去家园的原住民族', c: 1 },
+        { t: '在自己的土地上沦为外国人的墨西哥居民', c: 1 },
+        { t: '未来被拿来在这些领地上讨价还价的被奴役者', c: 1 }
+      ],
+      takeaway: '分清谁受益、谁付出代价，就是对扩张作出公正判断背后的概念图。'
+    } }
+  },
+
+  /* ───────── Grade 8 · Westward 1845 · TRANSFER ───────── */
+  {
+    id: 'g8-westward-1845-transfer-entry', grade: 8, unit: 'westward-1845',
+    unitTitle: "Crossing the Continent, 1845 — How Far Should the Nation Go?", phase: 'transfer', type: 'entry',
+    format: 'mcq', teks: '§113.20(c)(31)(B)', strat: 'Retrieval practice', d: 0.54,
+    i18n: { en: {
+      title: 'Warm-up: the problem-solving steps',
+      seconds: 45,
+      questions: [
+        { q: 'The FIRST move in the problem-solving process is to…', choices: ['pick a solution', 'define the problem', 'defend a claim'], a: 1 },
+        { q: 'Before choosing terms, a good problem-solver…', choices: ['gathers valid information & weighs options', 'guesses quickly', 'ignores other stakeholders'], a: 0 },
+        { q: 'A strong proposal for expansion is backed by…', choices: ['a loud voice', 'evidence & named trade-offs', 'only feelings'], a: 1 },
+        { q: 'After choosing a solution, the LAST step is to…', choices: ['forget it', 'evaluate how well it worked', 'hide the human cost'], a: 1 }
+      ],
+      takeaway: 'Define → gather → weigh → decide → defend → evaluate. That is §113.20(c)(31)(B).'
+    },
+    es: {
+      title: 'Calentamiento: los pasos para resolver problemas',
+      seconds: 45,
+      questions: [
+        { q: 'El PRIMER paso del proceso de resolución de problemas es…', choices: ['elegir una solución', 'definir el problema', 'defender una afirmación'], a: 1 },
+        { q: 'Antes de elegir los términos, quien resuelve bien problemas…', choices: ['reúne información válida y sopesa opciones', 'adivina rápido', 'ignora a otras partes interesadas'], a: 0 },
+        { q: 'Una propuesta sólida de expansión se respalda con…', choices: ['una voz fuerte', 'evidencia y concesiones nombradas', 'solo sentimientos'], a: 1 },
+        { q: 'Después de elegir una solución, el ÚLTIMO paso es…', choices: ['olvidarla', 'evaluar qué tan bien funcionó', 'ocultar el costo humano'], a: 1 }
+      ],
+      takeaway: 'Definir → reunir → sopesar → decidir → defender → evaluar. Eso es §113.20(c)(31)(B).'
+    },
+    vi: {
+      title: 'Khởi động: các bước giải quyết vấn đề',
+      seconds: 45,
+      questions: [
+        { q: 'Bước ĐẦU TIÊN trong quy trình giải quyết vấn đề là…', choices: ['chọn một giải pháp', 'xác định vấn đề', 'bảo vệ một luận điểm'], a: 1 },
+        { q: 'Trước khi chọn các điều khoản, người giải quyết vấn đề giỏi sẽ…', choices: ['thu thập thông tin xác thực & cân nhắc phương án', 'đoán nhanh', 'bỏ qua các bên liên quan khác'], a: 0 },
+        { q: 'Một đề xuất mở rộng vững chắc được củng cố bằng…', choices: ['một giọng nói to', 'bằng chứng & những đánh đổi được nêu rõ', 'chỉ cảm xúc'], a: 1 },
+        { q: 'Sau khi chọn một giải pháp, bước CUỐI CÙNG là…', choices: ['quên nó đi', 'đánh giá xem nó hiệu quả ra sao', 'giấu đi cái giá con người'], a: 1 }
+      ],
+      takeaway: 'Xác định → thu thập → cân nhắc → quyết định → bảo vệ → đánh giá. Đó là §113.20(c)(31)(B).'
+    },
+    ar: {
+      title: 'تهيئة: خطوات حل المشكلة',
+      seconds: 45,
+      questions: [
+        { q: 'الخطوة الأولى في عملية حل المشكلة هي…', choices: ['اختيار حل', 'تحديد المشكلة', 'الدفاع عن ادعاء'], a: 1 },
+        { q: 'قبل اختيار الشروط، يقوم حلّال المشكلات الجيد بـ…', choices: ['جمع معلومات صحيحة وموازنة الخيارات', 'التخمين بسرعة', 'تجاهل أصحاب المصلحة الآخرين'], a: 0 },
+        { q: 'الاقتراح القوي للتوسّع يُدعم بـ…', choices: ['صوت عالٍ', 'أدلة ومفاضلات مذكورة', 'المشاعر فقط'], a: 1 },
+        { q: 'بعد اختيار حل، الخطوة الأخيرة هي…', choices: ['أن تنساه', 'أن تقيّم مدى نجاحه', 'أن تخفي الكلفة البشرية'], a: 1 }
+      ],
+      takeaway: 'حدِّد ← اجمع ← وازِن ← قرِّر ← دافِع ← قيِّم. تلك هي §113.20(c)(31)(B).'
+    },
+    hi: {
+      title: 'वार्म-अप: समस्या-समाधान के चरण',
+      seconds: 45,
+      questions: [
+        { q: 'समस्या-समाधान प्रक्रिया का पहला चरण है…', choices: ['एक समाधान चुनना', 'समस्या को परिभाषित करना', 'एक दावे का बचाव करना'], a: 1 },
+        { q: 'शर्तें चुनने से पहले, एक अच्छा समस्या-समाधानकर्ता…', choices: ['वैध जानकारी जुटाता है और विकल्पों को तौलता है', 'जल्दी से अनुमान लगाता है', 'अन्य हितधारकों को अनदेखा करता है'], a: 0 },
+        { q: 'विस्तार का एक मजबूत प्रस्ताव किस पर टिका होता है…', choices: ['एक ऊँची आवाज़', 'साक्ष्य और नामित समझौते', 'केवल भावनाएँ'], a: 1 },
+        { q: 'समाधान चुनने के बाद, अंतिम चरण है…', choices: ['उसे भूल जाना', 'यह आँकना कि वह कितना अच्छा रहा', 'मानवीय लागत को छिपाना'], a: 1 }
+      ],
+      takeaway: 'परिभाषित करें → जुटाएँ → तौलें → निर्णय लें → बचाव करें → आँकें। यही §113.20(c)(31)(B) है।'
+    },
+    ur: {
+      title: 'وارم اپ: مسئلہ حل کرنے کے مراحل',
+      seconds: 45,
+      questions: [
+        { q: 'مسئلہ حل کرنے کے عمل کا پہلا مرحلہ ہے…', choices: ['ایک حل چننا', 'مسئلے کو متعین کرنا', 'ایک دعوے کا دفاع کرنا'], a: 1 },
+        { q: 'شرائط چننے سے پہلے، ایک اچھا مسئلہ حل کرنے والا…', choices: ['درست معلومات جمع کرتا اور اختیارات تولتا ہے', 'جلدی سے اندازہ لگاتا ہے', 'دیگر اسٹیک ہولڈرز کو نظرانداز کرتا ہے'], a: 0 },
+        { q: 'توسیع کی ایک مضبوط تجویز کی بنیاد ہوتی ہے…', choices: ['ایک بلند آواز', 'ثبوت اور مذکورہ سمجھوتے', 'صرف جذبات'], a: 1 },
+        { q: 'حل چننے کے بعد، آخری مرحلہ ہے…', choices: ['اسے بھول جانا', 'یہ جانچنا کہ وہ کتنا کارگر رہا', 'انسانی قیمت کو چھپانا'], a: 1 }
+      ],
+      takeaway: 'متعین کریں ← جمع کریں ← تولیں ← فیصلہ کریں ← دفاع کریں ← جانچیں۔ یہی §113.20(c)(31)(B) ہے۔'
+    },
+    zh: {
+      title: '热身：解决问题的步骤',
+      seconds: 45,
+      questions: [
+        { q: '解决问题过程的第一步是…', choices: ['挑选一个方案', '界定问题', '为一个主张辩护'], a: 1 },
+        { q: '在选定条件之前，优秀的解决问题者会…', choices: ['收集可靠信息并权衡各种方案', '快速猜测', '无视其他利益相关者'], a: 0 },
+        { q: '一份有力的扩张方案背后有…', choices: ['大嗓门', '证据与明确指出的取舍', '只有感受'], a: 1 },
+        { q: '选定方案之后，最后一步是…', choices: ['把它忘掉', '评估它的效果如何', '隐藏人的代价'], a: 1 }
+      ],
+      takeaway: '界定 → 收集 → 权衡 → 决定 → 辩护 → 评估。这就是 §113.20(c)(31)(B)。'
+    } }
+  },
+  {
+    id: 'g8-westward-1845-transfer-exit', grade: 8, unit: 'westward-1845',
+    unitTitle: "Crossing the Continent, 1845 — How Far Should the Nation Go?", phase: 'transfer', type: 'exit',
+    format: 'cloze', teks: '§113.20(c)(31)(B)', strat: 'Feedback', d: 0.62,
+    i18n: { en: {
+      title: 'Exit: claim, evidence & trade-offs',
+      items: [
+        { before: 'A proposal for expansion without', after: 'is just an opinion.', choices: ['evidence', 'a title', 'a map'], a: 0 },
+        { before: 'A fair judgment names the human cost — to Native nations, Mexican residents, and', after: 'people.', choices: ['enslaved', 'foreign', 'wealthy'], a: 0 },
+        { before: 'Naming the', after: 'of your terms shows you weighed them honestly.', choices: ['trade-offs', 'colors', 'vocabulary'], a: 0 }
+      ],
+      takeaway: 'Claim + evidence + trade-offs, told honestly, is thinking like a historian and a citizen.'
+    },
+    es: {
+      title: 'Salida: afirmación, evidencia y concesiones',
+      items: [
+        { before: 'Una propuesta de expansión sin', after: 'es solo una opinión.', choices: ['evidencia', 'un título', 'un mapa'], a: 0 },
+        { before: 'Un juicio justo nombra el costo humano —para las naciones indígenas, los residentes mexicanos y las personas', after: '.', choices: ['esclavizadas', 'extranjeras', 'ricas'], a: 0 },
+        { before: 'Nombrar las', after: 'de tus términos muestra que los sopesaste con honestidad.', choices: ['concesiones', 'colores', 'vocabulario'], a: 0 }
+      ],
+      takeaway: 'Afirmación + evidencia + concesiones, contadas con honestidad, es pensar como historiador y ciudadano.'
+    },
+    vi: {
+      title: 'Phiếu ra: luận điểm, bằng chứng & đánh đổi',
+      items: [
+        { before: 'Một đề xuất mở rộng không có', after: 'thì chỉ là một ý kiến.', choices: ['bằng chứng', 'một tiêu đề', 'một tấm bản đồ'], a: 0 },
+        { before: 'Một phán xét công bằng nêu rõ cái giá con người — với các dân tộc bản địa, cư dân Mexico, và những người', after: '.', choices: ['nô lệ', 'ngoại quốc', 'giàu có'], a: 0 },
+        { before: 'Nêu ra những', after: 'trong các điều khoản của bạn cho thấy bạn đã cân nhắc chúng một cách trung thực.', choices: ['đánh đổi', 'màu sắc', 'từ vựng'], a: 0 }
+      ],
+      takeaway: 'Luận điểm + bằng chứng + đánh đổi, được kể trung thực, chính là tư duy như một nhà sử học và một công dân.'
+    },
+    ar: {
+      title: 'الخروج: ادعاء ودليل ومفاضلات',
+      items: [
+        { before: 'اقتراح للتوسّع بلا', after: 'ما هو إلا رأي.', choices: ['دليل', 'عنوان', 'خريطة'], a: 0 },
+        { before: 'الحُكم العادل يذكر الكلفة البشرية — على الأمم الأصلية والسكّان المكسيكيين والأشخاص', after: '.', choices: ['المستعبَدين', 'الأجانب', 'الأثرياء'], a: 0 },
+        { before: 'إن تسمية', after: 'الخاصة بشروطك تُظهر أنك وازنتها بأمانة.', choices: ['المفاضلات', 'الألوان', 'المفردات'], a: 0 }
+      ],
+      takeaway: 'ادعاء + دليل + مفاضلات، تُروى بأمانة، هي التفكير كمؤرّخ ومواطن.'
+    },
+    hi: {
+      title: 'निकास: दावा, साक्ष्य और समझौते',
+      items: [
+        { before: 'बिना', after: 'के विस्तार का प्रस्ताव महज़ एक राय है।', choices: ['साक्ष्य', 'एक शीर्षक', 'एक नक्शा'], a: 0 },
+        { before: 'एक न्यायसंगत निर्णय मानवीय लागत को नाम देता है — मूल राष्ट्रों, मैक्सिकन निवासियों और', after: 'लोगों के लिए।', choices: ['दास बनाए गए', 'विदेशी', 'धनी'], a: 0 },
+        { before: 'अपनी शर्तों की', after: 'का नाम लेना दिखाता है कि आपने उन्हें ईमानदारी से तौला।', choices: ['समझौतों', 'रंगों', 'शब्दावली'], a: 0 }
+      ],
+      takeaway: 'दावा + साक्ष्य + समझौते, ईमानदारी से बताए गए, एक इतिहासकार और एक नागरिक की तरह सोचना है।'
+    },
+    ur: {
+      title: 'اخراج: دعویٰ، ثبوت اور سمجھوتے',
+      items: [
+        { before: 'بغیر', after: 'کے توسیع کی تجویز محض ایک رائے ہے۔', choices: ['ثبوت', 'ایک عنوان', 'ایک نقشہ'], a: 0 },
+        { before: 'ایک منصفانہ فیصلہ انسانی قیمت کا نام لیتا ہے — مقامی اقوام، میکسیکن باشندوں، اور', after: 'لوگوں کے لیے۔', choices: ['غلام بنائے گئے', 'غیر ملکی', 'دولت مند'], a: 0 },
+        { before: 'اپنی شرائط کے', after: 'کا نام لینا ظاہر کرتا ہے کہ آپ نے انہیں ایمانداری سے تولا۔', choices: ['سمجھوتوں', 'رنگوں', 'الفاظ'], a: 0 }
+      ],
+      takeaway: 'دعویٰ + ثبوت + سمجھوتے، ایمانداری سے بیان کیے جائیں، تو یہ ایک مؤرخ اور ایک شہری کی طرح سوچنا ہے۔'
+    },
+    zh: {
+      title: '离场：主张、证据与取舍',
+      items: [
+        { before: '没有', after: '的扩张方案只是一种意见。', choices: ['证据', '一个标题', '一张地图'], a: 0 },
+        { before: '公正的判断会指出人的代价——对原住民族、墨西哥居民，以及被', after: '的人。', choices: ['奴役', '外国', '富有'], a: 0 },
+        { before: '说出你所提条件中的', after: '，表明你诚实地权衡了它们。', choices: ['取舍', '颜色', '词汇'], a: 0 }
+      ],
+      takeaway: '主张 + 证据 + 取舍，诚实地讲出来，就是像史学家和公民一样思考。'
+    } }
+  }
+
+]);
+

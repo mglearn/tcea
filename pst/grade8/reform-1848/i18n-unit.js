@@ -5,6 +5,7 @@
    Do not translate: URLs, TEKS codes (§113.20…), effect-size labels, proper links. */
 BreakoutI18n.register('pst-reform-1848', {
   en: {
+    "tk.entry": "🎟️ Entry ticket — 1-minute warm-up", "tk.exit": "🎫 Exit ticket — check yourself",
     // chrome
     "crumb.unit": "‹ A Nation to Reform, 1848 (unit home)",
     "crumb.grade": "‹ Grade 8 — US History",
@@ -339,6 +340,7 @@ BreakoutI18n.register('pst-reform-1848', {
     "as.45": "Adapted from “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, updated 2019 (itue.udel.edu)."
   },
   es: {
+    "tk.entry": "🎟️ Boleto de entrada — repaso de 1 minuto", "tk.exit": "🎫 Boleto de salida — comprueba lo que sabes",
     "crumb.unit": "‹ Una nación por reformar, 1848 (inicio de la unidad)",
     "crumb.grade": "‹ Grado 8 — Historia de EE. UU.",
     "nav.prev": "‹ Atrás", "nav.next": "Siguiente ›",
@@ -666,6 +668,7 @@ BreakoutI18n.register('pst-reform-1848', {
     "as.45": "Adaptado de «Rúbrica para evaluar problemas de ABP», © ITUE Leaders 2004, actualizado en 2019 (itue.udel.edu)."
   },
   vi: {
+    "tk.entry": "🎟️ Vé vào — khởi động 1 phút", "tk.exit": "🎫 Vé ra — tự kiểm tra",
     "crumb.unit": "‹ Một quốc gia cần cải cách, 1848 (trang chính của đơn vị)",
     "crumb.grade": "‹ Lớp 8 — Lịch sử Hoa Kỳ",
     "nav.prev": "‹ Quay lại", "nav.next": "Tiếp ›",
@@ -993,6 +996,7 @@ BreakoutI18n.register('pst-reform-1848', {
     "as.45": "Được điều chỉnh từ “Thang điểm Đánh giá Vấn đề PBL,” © ITUE Leaders 2004, cập nhật 2019 (itue.udel.edu)."
   },
   ar: {
+    "tk.entry": "🎟️ تذكرة الدخول — إحماء دقيقة واحدة", "tk.exit": "🎫 تذكرة الخروج — اختبر نفسك",
     "crumb.unit": "‹ أمة بحاجة إلى إصلاح، 1848 (الصفحة الرئيسية للوحدة)",
     "crumb.grade": "‹ الصف الثامن — تاريخ الولايات المتحدة",
     "nav.prev": "‹ رجوع", "nav.next": "التالي ›",
@@ -1320,6 +1324,7 @@ BreakoutI18n.register('pst-reform-1848', {
     "as.45": "مُكيَّف عن «مقياس تقدير تقييم مشكلات التعلّم القائم على المشكلات»، © ITUE Leaders 2004، مُحدَّث 2019 (itue.udel.edu)."
   },
   hi: {
+    "tk.entry": "🎟️ प्रवेश टिकट — 1 मिनट का वार्म-अप", "tk.exit": "🎫 निकास टिकट — स्वयं जाँचें",
     "crumb.unit": "‹ सुधार की प्रतीक्षा में एक राष्ट्र, 1848 (इकाई मुखपृष्ठ)",
     "crumb.grade": "‹ कक्षा 8 — अमेरिकी इतिहास",
     "nav.prev": "‹ वापस", "nav.next": "आगे ›",
@@ -1647,6 +1652,7 @@ BreakoutI18n.register('pst-reform-1848', {
     "as.45": "«PBL समस्याओं के मूल्यांकन के लिए रूब्रिक» से अनुकूलित, © ITUE Leaders 2004, 2019 में अद्यतन (itue.udel.edu)।"
   },
   ur: {
+    "tk.entry": "🎟️ داخلے کا ٹکٹ — 1 منٹ کی وارم اپ", "tk.exit": "🎫 اخراج کا ٹکٹ — خود کو جانچیں",
     "crumb.unit": "‹ اصلاح کی منتظر ایک قوم، 1848 (یونٹ کا مرکزی صفحہ)",
     "crumb.grade": "‹ آٹھویں جماعت — امریکی تاریخ",
     "nav.prev": "‹ واپس", "nav.next": "آگے ›",
@@ -1974,6 +1980,7 @@ BreakoutI18n.register('pst-reform-1848', {
     "as.45": "«PBL مسائل کی تشخیص کے لیے روبرک» سے ماخوذ، © ITUE Leaders 2004، 2019 میں تازہ کاری (itue.udel.edu)۔"
   },
   zh: {
+    "tk.entry": "🎟️ 入场券 — 1 分钟热身", "tk.exit": "🎫 离场券 — 自我检查",
     "crumb.unit": "‹ 有待改革的国家，1848（单元主页）",
     "crumb.grade": "‹ 八年级 — 美国历史",
     "nav.prev": "‹ 返回", "nav.next": "下一步 ›",
