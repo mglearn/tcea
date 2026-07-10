@@ -137,5 +137,52 @@
       "ex.lang": "Học sinh giải thích — bằng tiếng Anh hoặc tiếng mẹ đẻ — một thành ngữ có nghĩa gì và nêu tên một câu nói tương đương từ L1 của mình (chuyển ngữ).",
       "ex.vocab": "thành ngữ, ngôn ngữ hình tượng, nghĩa đen, ngữ cảnh, tiếng mẹ đẻ (L1)"
     }
+  },
+  "pst": {
+    "common": {
+      "crumb": "‹ Dạy học Giải quyết Vấn đề",
+      "footer": "Dạy học Giải quyết Vấn đề · Các đơn vị PBL · Chạy trong trình duyệt của bạn — không đăng nhập, không thu thập dữ liệu."
+    },
+    "udl": {
+      "eyebrow": "Hỗ trợ UDL · Dạy học Giải quyết Vấn đề · Lớp 3–8",
+      "lead": "Những cách thiết thực để mở các đơn vị PBL Dạy học Giải quyết Vấn đề (Lớp 3–8) cho mọi người học, được sắp xếp theo ba nguyên tắc của Hướng dẫn Thiết kế Phổ quát cho Học tập của CAST (phiên bản 3.0). Mỗi đơn vị đi từ học bề mặt đến học sâu rồi đến chuyển giao, và đặt học sinh vào vai các bên liên quan giải quyết một vấn đề thực — vốn đã tích hợp sẵn nhiều hỗ trợ này trên cả bảy ngôn ngữ.",
+      "doctitle": "Hỗ trợ UDL — Dạy học Giải quyết Vấn đề",
+      "howto": "🧑‍🏫 <b>Cách sử dụng trang này:</b> mỗi trong ba nguyên tắc dưới đây liệt kê các lựa chọn thiết kế của CAST (kèm số hướng dẫn), rồi một ô <b>“Trong các đơn vị này”</b> với những hành động cụ thể bạn có thể thực hiện ngay hôm nay. Hãy kết hợp với trang <b>hỗ trợ ELPS</b> cho học sinh song ngữ mới nổi và <b>hướng dẫn kế hoạch bài học</b> để có một cấu trúc sẵn dùng.",
+      "eng.apply": "<b>Trong các đơn vị này:</b> học sinh xử lý một vấn đề thực, chưa được cấu trúc rõ ràng, trong vai các bên liên quan — một vấn đề để suy luận, không phải một bài kiểm tra để vượt qua <b>(7.3)</b>. Không có gì ở đây mang tính đặt cược cao; học sinh chỉnh sửa lối suy nghĩ khi bằng chứng xuất hiện, nên nỗ lực là an toàn <b>(8.2, 9.1)</b>. Hãy để học sinh tự chọn ngôn ngữ bằng menu 🌐 và chọn vai bên liên quan cũng như cách phân nhóm <b>(7.1)</b>. Các giai đoạn rõ ràng bề mặt → sâu → chuyển giao và bảng chung Linh cảm/Đã biết/Cần biết làm cho mục tiêu hiện rõ và đánh dấu từng bước <b>(8.1, 8.5)</b>. Dùng nhóm để học sinh cùng suy luận thành lời <b>(8.3, 8.4)</b>, và kết thúc bằng các câu hỏi siêu nhận thức trong phần tổng kết <b>(9.3)</b>.",
+      "rep.apply": "<b>Trong các đơn vị này:</b> mỗi trang chạy bằng bảy ngôn ngữ từ menu 🌐, để người học đa ngôn ngữ có thể tiếp cận cùng một ý tưởng bằng tiếng mẹ đẻ và bằng tiếng Anh <b>(2.3, 1.1)</b>. Nội dung được chia thành các hoạt động ngắn và các giai đoạn rõ ràng mà học sinh có thể xem lại bất cứ lúc nào <b>(1.1, 3.2)</b>. Nơi một đơn vị có kho từ vựng hoặc bảng chú giải, hãy dạy trước để làm rõ từ vựng <b>(2.1, 2.2)</b>. Bản đồ khái niệm giai đoạn sâu và phân tích nguồn làm rõ các phân biệt “ý chính với chi tiết” và điểm nhìn <b>(3.2)</b>. Kích hoạt kiến thức nền ở giai đoạn bề mặt và chỉ ra nơi ý tưởng xuất hiện ở chỗ khác để hỗ trợ chuyển giao <b>(3.1, 3.4)</b>.",
+      "act.apply": "<b>Trong các đơn vị này:</b> học sinh thể hiện điều mình biết theo nhiều cách — sắp xếp và lập bản đồ ý tưởng, xây dựng một luận điểm kèm bằng chứng, đảm nhận một vai bên liên quan và trình bày bản tóm tắt giải pháp — để sự hiểu biết truyền qua nhiều hơn một kênh <b>(5.1, 4.1)</b>. Mọi thứ đều dùng được với chuột, cảm ứng hoặc bàn phím và chạy trong trình duyệt mà không cần đăng nhập, nên nó kết hợp gọn gàng với trình đọc màn hình, thu phóng, hoặc công cụ công nghệ hỗ trợ của học khu <b>(4.2)</b>. Các mẫu câu mở đầu và bản tóm tắt 8 phần làm giàn giáo cho sự diễn đạt trong khi học sinh phát triển sự trôi chảy <b>(5.3)</b>. Hãy để học sinh thuật lại lập luận của mình — bằng chứng nào, lựa chọn nào, tại sao — để làm cho suy nghĩ hiện rõ và tự theo dõi tiến bộ của mình <b>(6.3, 6.4)</b>."
+    },
+    "elps": {
+      "eyebrow": "Hỗ trợ ELPS · Dạy học Giải quyết Vấn đề · Lớp 3–8",
+      "lead": "Cách sử dụng các đơn vị PBL Dạy học Giải quyết Vấn đề với học sinh song ngữ mới nổi, phù hợp với Chuẩn Trình độ Tiếng Anh Texas trên các kỹ năng nghe, nói, đọc và viết. PBL giàu ngôn ngữ — học sinh thảo luận linh cảm, lập luận từ bằng chứng và trình bày một giải pháp — nên giàn giáo quan trọng ở mọi giai đoạn.",
+      "doctitle": "Hỗ trợ ELPS — Dạy học Giải quyết Vấn đề",
+      "howto": "🧑‍🏫 <b>Cách sử dụng trang này:</b> bốn thẻ tóm tắt các kỳ vọng liên môn của học sinh theo ELPS cho từng lĩnh vực và ghép chúng với những hành động cụ thể cho các đơn vị này. Bảng sau đó cho thấy mỗi cấp độ trình độ trông ra sao và các hoạt động làm giàn giáo cho nó như thế nào. Hãy kết hợp trang này với trang <b>hỗ trợ UDL</b> và <b>hướng dẫn kế hoạch bài học</b>.",
+      "accom.p": "ELPS yêu cầu việc giảng dạy được <b>truyền đạt, sắp xếp trình tự và làm giàn giáo</b> theo cấp độ trình độ của từng học sinh. Các đơn vị này làm phần lớn điều đó thay bạn: menu 🌐 hiển thị trang bằng tiếng mẹ đẻ của học sinh bên cạnh tiếng Anh; nội dung được chia thành các hoạt động ngắn và các giai đoạn rõ ràng bề mặt → sâu → chuyển giao; các mẫu câu mở đầu hỗ trợ nói và viết; và công việc mang tính hợp tác, ít đặt cược, để học sinh mạo hiểm với ngôn ngữ mới một cách an toàn. Bật tiếng mẹ đẻ trong lần đọc đầu tiên, rồi mời một lượt đọc bằng tiếng Anh.",
+      "dom.read.apply": "<b>Hãy thử điều này:</b> giới thiệu trước chủ đề của đơn vị và bất kỳ kho từ vựng nào trước khi đọc (trước khi đọc). Chỉ ra các từ đồng nguồn giữa tiếng mẹ đẻ và tiếng Anh trong các nguồn. Hãy để học sinh xem lại các bài đọc và ghi chú của mình bao nhiêu lần tùy nhu cầu — đọc lại là một chiến lược, không phải là thất bại.",
+      "dom.write.apply": "<b>Hãy thử điều này:</b> dùng các mẫu câu mở đầu và bản tóm tắt giải pháp 8 phần làm khung viết ít đặt cược, để học sinh tập trung vào ý tưởng. Sau một hoạt động, hãy để học sinh viết một hoặc hai câu giải thích luận điểm của mình và bằng chứng cho nó, sử dụng từ vựng mục tiêu và một mẫu câu mở đầu.",
+      "levels.th.scaffold": "Cách làm giàn giáo cho hoạt động"
+    },
+    "guide": {
+      "eyebrow": "Hướng dẫn Điều phối PBL · Dạy học Giải quyết Vấn đề · Lớp 3–8",
+      "lead": "Một cấu trúc sẵn dùng để điều phối một đơn vị Học tập Dựa trên Vấn đề — bề mặt, rồi sâu, rồi vấn đề chuyển giao — theo định dạng kế hoạch bài học chuẩn của Texas. Một ví dụ đã triển khai của Lớp 5 xuất hiện ở cuối.",
+      "ex.name": "Lớp 5 · Một cuộc sống mới — câu hỏi về Nhập cư, 1914",
+      "ex.bigidea": "Con người cân nhắc các yếu tố đẩy và kéo cùng những ràng buộc thực tế khi quyết định có nên và làm thế nào để xây dựng một cuộc sống mới; những lựa chọn đó đã định hình việc nhập cư và công nghiệp hóa của Hoa Kỳ.",
+      "ex.eq": "Đó là năm 1914 — liệu gia đình Baldoni có nên được phép xây dựng một cuộc sống mới ở đây không, và bằng cách nào?",
+      "ex.obj": "Học sinh sẽ đảm nhận một vai bên liên quan, thu thập bằng chứng về việc nhập cư đầu những năm 1900, và đề xuất cùng bảo vệ một giải pháp cho vấn đề của gia đình, có trích dẫn nguồn.",
+      "ex.lang": "Học sinh giải thích linh cảm và bảo vệ một khuyến nghị bằng lời nói hoặc bằng viết — bằng tiếng Anh hoặc tiếng mẹ đẻ — sử dụng các mẫu câu mở đầu và một kho từ vựng chung.",
+      "ex.vocab": "nhập cư, di cư, yếu tố đẩy, yếu tố kéo, đảo Ellis, hạn ngạch, khu nhà trọ, nhập quốc tịch, bên liên quan",
+      "doctitle": "Hướng dẫn Kế hoạch Bài học — Dạy học Giải quyết Vấn đề",
+      "h1": "Xây dựng một Bài học Xoay quanh một Đơn vị PBL",
+      "howto": "🧑‍🏫 <b>Cách sử dụng hướng dẫn này:</b> một đơn vị PBL trải dài qua nhiều bài học — học <b>bề mặt</b> và <b>sâu</b> trước, rồi vấn đề <b>chuyển giao</b>. Các phần dưới đây phản chiếu một kế hoạch bài học chuẩn; mỗi phần nêu rõ điều cần quyết định và cách các giai đoạn của đơn vị khớp vào. Hãy kết hợp với các trang hỗ trợ <b>UDL</b> và <b>ELPS</b> cho phần phân hóa.",
+      "s1.p": "Ghi lại những thông tin thiết yếu để kế hoạch có thể tái sử dụng và xem xét được: <b>giáo viên, cơ sở/học khu, khối lớp, khóa học/môn học, đơn vị, tên bài học, ngày, thời lượng, bối cảnh giảng dạy</b> (cả lớp / nhóm nhỏ / trung tâm / phòng thí nghiệm / trực tuyến / kết hợp), <b>số học sinh,</b> và <b>kỹ năng tiên quyết hoặc kiến thức trước đó.</b> Một đơn vị PBL thường kéo dài 5–8 tiết học; hãy lập kế hoạch cho mỗi bài học như một giai đoạn hoặc bước trong vòng cung đó.",
+      "s2.p": "Nêu tên chuẩn chính mà đơn vị hướng tới và rút trích dẫn chính xác từ hướng dẫn <b>tương quan chuẩn</b> cho bộ này — bao gồm cả <b>TEKS về quy trình giải quyết vấn đề</b> của khối lớp, mà giai đoạn chuyển giao hiện thực hóa. Thêm <b>ELPS</b> cho học sinh song ngữ mới nổi của bạn (nghe, nói, đọc, viết) và một mục tiêu ngôn ngữ. Liệt kê bất kỳ chuẩn liên thông nào mà cơ sở của bạn yêu cầu.",
+      "s3.p": "Nêu <b>ý tưởng lớn / khái niệm</b> mà đơn vị hướng tới xây dựng, <b>câu hỏi dẫn dắt</b> của đơn vị (một hoặc hai <b>câu hỏi cốt lõi</b>), và một <b>lý do</b> ngắn gọn — tại sao điều này quan trọng và nó kết nối với đơn vị hoặc thế giới thực như thế nào.",
+      "s5.p": "Dạy trước hai hoặc ba thuật ngữ mà vấn đề xoay quanh. Nơi đơn vị có kho từ vựng hoặc bảng chú giải, hãy dùng nó. Cung cấp các định nghĩa thân thiện với học sinh, một hình ảnh, và <b>các mẫu câu mở đầu</b> cho thảo luận — ví dụ, “Bằng chứng cho tôi biết ___, nên tôi nghĩ ___.”",
+      "s6.p": "<b>Công nghệ:</b> một thiết bị cho mỗi học sinh hoặc cặp đôi, một trình duyệt hiện đại, và đường liên kết đơn vị — không đăng nhập và không thu thập dữ liệu. <b>Tùy chọn:</b> một máy chiếu để đọc vấn đề và giữ bảng KWHL chung, tai nghe để đọc thành tiếng, và tài liệu in cho các nhóm ngoại tuyến. Liệt kê bất kỳ tài liệu nào của giáo viên và học sinh mà bài học của bạn thêm vào quanh hoạt động.",
+      "s9.intro": "Một vòng cung khả thi đặt vấn đề ở trung tâm, sau khi học sinh đã xây dựng và tổ chức kiến thức. Hãy điều chỉnh thời lượng cho khối tiết của bạn.",
+      "p2.b": "Đọc thành tiếng phần trần thuật <b>Gặp gỡ Vấn đề</b> và suy nghĩ thành lời qua câu hỏi bên liên quan đầu tiên. Làm mẫu bảng chung <b>Linh cảm → Đã biết → Cần biết</b> (KWHL), và trả lời một câu hỏi bằng một câu hỏi để học sinh lập kế hoạch tìm hiểu.",
+      "p3.h": "Các nhóm xử lý vấn đề trong vai các bên liên quan",
+      "p4.b": "Học sinh xem lại bằng ngôn ngữ thứ hai, mở rộng sang một vấn đề liên quan, hoặc tự trả lời một câu hỏi <b>chuyển giao</b> ngắn — quy trình giải quyết vấn đề này còn phù hợp ở đâu khác?"
+    }
   }
 }
