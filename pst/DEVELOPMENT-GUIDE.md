@@ -154,7 +154,7 @@ Each new grade/course band should re-confirm the anchor SEs against the `ch113a-
 
 ---
 
-## 6. PST Project Pack (planned deliverable)
+## 6. PST Project Pack — BUILT & LIVE 2026-07-10 (pst/pst_project_pack.md + pst-starter-kit/ + .zip)
 
 Build a **self-contained PST Project Pack**, modeled on `../breakouts/ctob_project_pack.md` +
 `../breakouts/ctob-starter-kit/` + `../breakouts/ctob-starter-kit.zip`, so anyone (or any chatbot) can generate a new
