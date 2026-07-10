@@ -194,8 +194,9 @@ BreakoutI18n.register('pst-dashboard', { en: {
       : t('tix.none');
     // grade table
     var gr=D.grades||{}; var rows='';
-    Object.keys(gr).forEach(function(g){var v=gr[g];var num=g.replace('grade','');
-      rows+='<tr><td><b>'+esc(t('g.gradeN',{n:num}))+'</b></td><td>'+v.units+'</td><td>'+v.surface+'</td><td>'+v.deep+'</td><td>'+v.transfer+'</td><td><b>'+(v.surface+v.deep+v.transfer)+'</b></td></tr>';});
+    Object.keys(gr).forEach(function(g){var v=gr[g];
+      var label = g.indexOf('grade')===0 ? t('g.gradeN',{n:g.replace('grade','')}) : (v.label||g);
+      rows+='<tr><td><b>'+esc(label)+'</b></td><td>'+v.units+'</td><td>'+v.surface+'</td><td>'+v.deep+'</td><td>'+v.transfer+'</td><td><b>'+(v.surface+v.deep+v.transfer)+'</b></td></tr>';});
     document.querySelector('#gradeTable tbody').innerHTML = rows;
   }
   render();

@@ -33,15 +33,15 @@ Jigsaw Organizer**.
   `pst/games/`, High School §113.C with a Panama Canal unit, an ACE Image Inquiry art-analysis unit
   `pst/analysis/`, and a portable **PST Project Pack**).
 - **Privacy:** [`policy.html`](policy.html) — collects nothing.
-- **Arcade:** [`games/index.html`](games/index.html) — 114 entry/exit retrieval tickets (all 18 units +
-  the HS Panama Canal unit), 4 formats, 7 languages. Also: an ACE Image-Inquiry routine
+- **Arcade:** [`games/index.html`](games/index.html) — 138 entry/exit retrieval tickets (all 18 grade units +
+  the 5-unit HS US-History course), 4 formats, 7 languages. Also: an ACE Image-Inquiry routine
   [`analysis/index.html`](analysis/index.html) and a High-School course [`hs-us-history/index.html`](hs-us-history/index.html).
 - **Build your own:** [`pst_project_pack.md`](pst_project_pack.md) — the full blueprint — plus the
   [`pst-starter-kit/`](pst-starter-kit/) (engine, build tooling, a complete worked example,
   `validate.js`, and a copy-paste chatbot prompt). Download: [`pst-starter-kit.zip`](pst-starter-kit.zip).
 
 **Languages:** everything is fully multilingual (en/es/vi/ar/hi/ur/zh, RTL for Arabic & Urdu) — the
-splash, hero, PD pages, card chrome, all 18 unit bodies, the HS course, and the 114 arcade tickets.
+splash, hero, PD pages, card chrome, all 18 unit bodies, the HS course, and the 138 arcade tickets.
 
 `info/` holds source material only (PBL method, effect-size evidence, rubrics, TEKS PDFs) and is
 **git-ignored — never deployed**.

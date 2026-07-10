@@ -10,8 +10,8 @@ standards framework (the reference suite targets Texas social-studies TEKS, 19 T
 > The engine and translations are commodity. The **quality of a PST unit lives in the problem design
 > and the surface → deep → transfer sequence** (§2–§4). Read those first.
 
-The reference implementation is the TCEA PST suite: 18 units across grades 3–8 (three per grade), a
-High-School course band (§113.C), an ACE Image-Inquiry routine, and 114 arcade tickets — all in
+The reference implementation is the TCEA PST suite: 18 units across grades 3–8 (three per grade) plus a
+five-unit High-School US-History course (§113.C), an ACE Image-Inquiry routine, and 138 arcade tickets — all in
 7 languages. This pack distills how it is built so you can replicate it in a repo or in any chatbot.
 
 ---
@@ -84,7 +84,7 @@ Each activity names **(a) a TEKS student expectation** and **(b) a named high-ef
 *d*.** Put them in a `.meta` row: `<span class="es">Jigsaw method · d 0.92</span><span class="teks">§113.16(c)(4)(F)</span>`.
 The transfer phase's anchor SE is the standard's **problem-solving / decision-making process** SE —
 confirm its exact number against the source standard (in the reference: grade units use
-`§113.1x(c)(NN)(B)`; HS US History uses `§113.41(c)(32)(B)`).
+`§113.1x(c)(NN)(B)`; HS US History uses `§113.41(c)(31)(B)`).
 
 ## 4. High-effect strategy palette (name the move, cite the d)
 
@@ -307,7 +307,7 @@ Learning phases: `--surface:#2f6fe0 · --deep:#7c4fbf · --transfer:#c2410c` (ea
 
 ---
 
-*Distilled from the TCEA Problem-Solving Teaching suite (18 grades-3–8 units, an HS US-History course,
-an ACE Image-Inquiry routine, and 114 arcade tickets — all 7 languages, each with UDL/ELPS/lesson-plan
+*Distilled from the TCEA Problem-Solving Teaching suite (18 grades-3–8 units + a five-unit HS US-History course,
+an ACE Image-Inquiry routine, and 138 arcade tickets — all 7 languages, each with UDL/ELPS/lesson-plan
 teacher-support pages). Content CC BY 4.0; code MIT. Standards are "aligned to," not reproduced from,
 official standards — confirm before adoption; not legal advice.*

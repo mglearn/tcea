@@ -6,7 +6,13 @@
    Run:  node pst/build-dashboard.js */
 const fs = require('fs'), path = require('path'), cp = require('child_process');
 const ROOT = __dirname;
-const GRADES = ['grade3', 'grade4', 'grade5', 'grade6', 'grade7', 'grade8'];
+// each band = a folder holding unit subfolders, plus a display label for the "By band" table
+const BANDS = [
+  { dir: 'grade3', label: 'Grade 3' }, { dir: 'grade4', label: 'Grade 4' },
+  { dir: 'grade5', label: 'Grade 5' }, { dir: 'grade6', label: 'Grade 6' },
+  { dir: 'grade7', label: 'Grade 7' }, { dir: 'grade8', label: 'Grade 8' },
+  { dir: 'hs-us-history', label: 'HS · US History' },
+];
 const PHASES = ['surface', 'deep', 'transfer'];
 const decode = s => s.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&#39;|&rsquo;/g, "'");
 
@@ -15,14 +21,15 @@ const strategies = {};            // name -> { count, d }
 const grades = {};                // gradeN -> { units, surface, deep, transfer }
 let unitCount = 0;
 
-for (const g of GRADES) {
+for (const band of BANDS) {
+  const g = band.dir;
   const gdir = path.join(ROOT, g);
   if (!fs.existsSync(gdir)) continue;
-  grades[g] = { units: 0, surface: 0, deep: 0, transfer: 0 };
+  grades[g] = { label: band.label, units: 0, surface: 0, deep: 0, transfer: 0 };
   for (const entry of fs.readdirSync(gdir, { withFileTypes: true })) {
     if (!entry.isDirectory()) continue;                       // each unit is a subfolder
     const udir = path.join(gdir, entry.name);
-    if (!fs.existsSync(path.join(udir, 'index.html'))) continue;
+    if (!fs.existsSync(path.join(udir, 'surface.html'))) continue;  // real units have phase pages
     grades[g].units++; unitCount++;
     for (const ph of PHASES) {
       const fp = path.join(udir, ph + '.html');
