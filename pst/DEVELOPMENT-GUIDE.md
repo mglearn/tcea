@@ -267,7 +267,26 @@ copyrighted images directly — **link to the hosting museum/collection page** r
 
 ---
 
-## 8. PST Arcade Tickets — entry/exit "games" (`pst/games/`, planned)
+## 8. PST Arcade Tickets — entry/exit "games" (`pst/games/`, ENGINE + G5 STARTER LIVE 2026-07-10)
+
+**Built:** reusable engine `games/assets/arcade.js` + `arcade.css` — 4 formats (**mcq**=Beat the
+Clock w/ timer, **match**=Quick Match, **sort**=Sort It, **cloze**=Fill the Gap), score/streak/
+progress/stars, keyboard-operable, RTL, **nothing stored or sent**. Data-driven from
+`games/tickets.js` (`window.PST_TICKETS`); each ticket = `{id, grade, unit, unitTitle, phase, type:
+entry|exit, format, teks, strat, d, i18n:{en,…,zh}}` — 7-lang content inline, **answer indices
+(`a`, `c`) identical across langs**. Public API `window.PSTArcade.{mount,byId,tickets,fmtLabel}`.
+Hub `games/index.html` (filterable catalog + inline player; deep-link `?t=<id>` plays a ticket) and
+`games/correlation.html`, both 7-lang inline registers (`pst-games`, `pst-games-corr`). **Starter
+set = 6 tickets** for Grade 5 immigration (entry+exit × surface/deep/transfer, all 4 formats).
+Entry/exit **pills** (`.tkpill` in pst.css) wired into the immigration phase pages linking
+`../../games/index.html?t=…`; label keys `tk.entry`/`tk.exit` added to that unit's i18n-unit.js (7
+langs). Splash About-panel link `about.link.games`. `build-dashboard.js` now counts tickets from the
+registry (loads tickets.js in a Function sandbox) → 6 tickets; dashboard-data.js regenerated.
+**To add more tickets:** append objects to `games/tickets.js` (same shape, 7 langs, preserve `a`/`c`
+indices), add pills to that unit's phase pages + `tk.entry/tk.exit` keys, re-run build-dashboard.js.
+Original spec below.
+
+
 
 Lightweight, **arcade-style entry and exit tickets** for **each unit component** (the surface, deep,
 and transfer phases of every unit). They get **their own space** (`pst/games/`) with their
