@@ -86,3 +86,13 @@
 .filterbar button{font:inherit;font-weight:700;font-size:.84rem;border:2px solid var(--line);background:#fff;color:var(--ink-soft);
   border-radius:100px;padding:5px 14px;cursor:pointer}
 .filterbar button.on{border-color:var(--plum);color:var(--plum);background:#f3edfb}
+
+/* stat strip — dynamic counts under the hero */
+.statbar{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 4px}
+.statbar .stat{flex:1 1 0;min-width:92px;background:var(--card);border:1px solid var(--line);
+  border-radius:14px;padding:12px 10px;text-align:center;box-shadow:0 4px 16px rgba(43,42,108,.06)}
+.statbar .stat b{display:block;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.7rem;line-height:1;color:var(--plum)}
+.statbar .stat.entry b{color:var(--surface)} .statbar .stat.exit b{color:var(--gold-d)}
+.statbar .stat span{display:block;margin-top:6px;font-weight:700;font-size:.72rem;text-transform:uppercase;
+  letter-spacing:.04em;color:var(--ink-soft)}
+.statbar .stat small{display:block;margin-top:2px;font-weight:600;font-size:.68rem;color:var(--ink-soft);opacity:.8;text-transform:none;letter-spacing:0}
