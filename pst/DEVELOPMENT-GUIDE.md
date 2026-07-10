@@ -267,7 +267,13 @@ copyrighted images directly — **link to the hosting museum/collection page** r
 
 ---
 
-## 8. PST Arcade Tickets — entry/exit "games" (`pst/games/`, ENGINE + G5 STARTER LIVE 2026-07-10)
+## 8. PST Arcade Tickets — entry/exit "games" (`pst/games/`, COMPLETE — ALL 18 UNITS LIVE 2026-07-10)
+
+**Now 108 tickets across all 18 units** (54 entry / 54 exit; every unit × every phase × entry/exit),
+7 languages, answer indices preserved; all 54 phase pages carry pills. **Per-unit sources** live in
+`games/data/<grade>-<unit>.js`; `node pst/games/build-tickets.js` assembles them into the GENERATED
+`games/tickets.js`. To add/edit: change the data file, re-run build-tickets.js, then build-dashboard.js.
+
 
 **Built:** reusable engine `games/assets/arcade.js` + `arcade.css` — 4 formats (**mcq**=Beat the
 Clock w/ timer, **match**=Quick Match, **sort**=Sort It, **cloze**=Fill the Gap), score/streak/
