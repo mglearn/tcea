@@ -5,6 +5,7 @@
    Do not translate: URLs, TEKS codes (§113.14…), effect-size labels, proper links. */
 BreakoutI18n.register('pst-name-the-library', {
   en: {
+    "tk.entry": "🎟️ Entry ticket — 1-minute warm-up", "tk.exit": "🎫 Exit ticket — check yourself",
     "crumb.unit": "‹ Name the Library (unit home)",
     "crumb.grade": "‹ Grade 3 — Communities",
     "nav.surface": "‹ Phase 1 — Surface",
@@ -346,6 +347,7 @@ BreakoutI18n.register('pst-name-the-library', {
     "as.67": "Adapted from “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, updated 2019 (itue.udel.edu)."
   },
   es: {
+    "tk.entry": "🎟️ Boleto de entrada — repaso de 1 minuto", "tk.exit": "🎫 Boleto de salida — comprueba lo que sabes",
     "crumb.unit": "‹ Nombra la Biblioteca (inicio de la unidad)",
     "crumb.grade": "‹ Grado 3 — Comunidades",
     "nav.surface": "‹ Fase 1 — Superficie",
@@ -687,6 +689,7 @@ BreakoutI18n.register('pst-name-the-library', {
     "as.67": "Adaptado de “Rúbrica para evaluar problemas de ABP,” © ITUE Leaders 2004, actualizado en 2019 (itue.udel.edu)."
   },
   vi: {
+    "tk.entry": "🎟️ Vé vào — khởi động 1 phút", "tk.exit": "🎫 Vé ra — tự kiểm tra",
     "crumb.unit": "‹ Đặt tên Thư viện (trang chính của bài)",
     "crumb.grade": "‹ Lớp 3 — Cộng đồng",
     "nav.surface": "‹ Giai đoạn 1 — Bề mặt",
@@ -1028,6 +1031,7 @@ BreakoutI18n.register('pst-name-the-library', {
     "as.67": "Điều chỉnh từ “Thang điểm đánh giá các vấn đề PBL,” © ITUE Leaders 2004, cập nhật 2019 (itue.udel.edu)."
   },
   ar: {
+    "tk.entry": "🎟️ تذكرة الدخول — إحماء دقيقة واحدة", "tk.exit": "🎫 تذكرة الخروج — اختبر نفسك",
     "crumb.unit": "‹ سمِّ المكتبة (الصفحة الرئيسية للوحدة)",
     "crumb.grade": "‹ الصف الثالث — المجتمعات",
     "nav.surface": "‹ المرحلة 1 — السطحية",
@@ -1369,6 +1373,7 @@ BreakoutI18n.register('pst-name-the-library', {
     "as.67": "مُكيَّف عن «سلّم تقدير لتقييم مشكلات التعلُّم القائم على المشكلات»، © ITUE Leaders 2004، محدَّث 2019 (itue.udel.edu)."
   },
   hi: {
+    "tk.entry": "🎟️ प्रवेश टिकट — 1 मिनट का वार्म-अप", "tk.exit": "🎫 निकास टिकट — स्वयं जाँचें",
     "crumb.unit": "‹ पुस्तकालय का नाम रखें (इकाई का मुख पृष्ठ)",
     "crumb.grade": "‹ कक्षा 3 — समुदाय",
     "nav.surface": "‹ चरण 1 — सतही",
@@ -1710,6 +1715,7 @@ BreakoutI18n.register('pst-name-the-library', {
     "as.67": "“PBL समस्याओं के मूल्यांकन हेतु रूब्रिक” से अनुकूलित, © ITUE Leaders 2004, अद्यतन 2019 (itue.udel.edu)।"
   },
   ur: {
+    "tk.entry": "🎟️ داخلے کا ٹکٹ — 1 منٹ کی وارم اپ", "tk.exit": "🎫 اخراج کا ٹکٹ — خود کو جانچیں",
     "crumb.unit": "‹ لائبریری کا نام رکھیں (یونٹ کا مرکزی صفحہ)",
     "crumb.grade": "‹ تیسری جماعت — کمیونٹیز",
     "nav.surface": "‹ مرحلہ 1 — سطحی",
@@ -2051,6 +2057,7 @@ BreakoutI18n.register('pst-name-the-library', {
     "as.67": "”PBL مسائل کی تشخیص کے لیے روبرک“ سے موافق بنایا گیا، © ITUE Leaders 2004، اپ ڈیٹ 2019 (itue.udel.edu)۔"
   },
   zh: {
+    "tk.entry": "🎟️ 入场券 — 1 分钟热身", "tk.exit": "🎫 离场券 — 自我检查",
     "crumb.unit": "‹ 为图书馆命名（单元主页）",
     "crumb.grade": "‹ 三年级 — 社区",
     "nav.surface": "‹ 第一阶段 — 表层",

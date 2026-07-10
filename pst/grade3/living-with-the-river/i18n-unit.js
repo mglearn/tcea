@@ -5,6 +5,7 @@
    Do not translate: URLs, TEKS codes (§113.14…), effect-size labels, proper links. */
 BreakoutI18n.register('pst-living-with-the-river', {
   en: {
+    "tk.entry": "🎟️ Entry ticket — 1-minute warm-up", "tk.exit": "🎫 Exit ticket — check yourself",
     // chrome
     "crumb.unit": "‹ Living with the River (unit home)",
     "crumb.grade": "‹ Grade 3 — Communities",
@@ -332,6 +333,7 @@ BreakoutI18n.register('pst-living-with-the-river', {
     "as.68": "Adapted from “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, updated 2019 (itue.udel.edu)."
   },
   es: {
+    "tk.entry": "🎟️ Boleto de entrada — repaso de 1 minuto", "tk.exit": "🎫 Boleto de salida — comprueba lo que sabes",
     "crumb.unit": "‹ Vivir con el río (inicio de la unidad)",
     "crumb.grade": "‹ Grado 3 — Comunidades",
     "nav.prev": "‹ Atrás", "nav.next": "Siguiente ›",
@@ -652,6 +654,7 @@ BreakoutI18n.register('pst-living-with-the-river', {
     "as.68": "Adaptado de “Rúbrica para evaluar problemas de ABP,” © ITUE Leaders 2004, actualizado en 2019 (itue.udel.edu)."
   },
   vi: {
+    "tk.entry": "🎟️ Vé vào — khởi động 1 phút", "tk.exit": "🎫 Vé ra — tự kiểm tra",
     "crumb.unit": "‹ Sống chung với dòng sông (trang chính của bài học)",
     "crumb.grade": "‹ Lớp 3 — Cộng đồng",
     "nav.prev": "‹ Quay lại", "nav.next": "Tiếp theo ›",
@@ -972,6 +975,7 @@ BreakoutI18n.register('pst-living-with-the-river', {
     "as.68": "Điều chỉnh từ “Thang điểm đánh giá vấn đề PBL,” © ITUE Leaders 2004, cập nhật năm 2019 (itue.udel.edu)."
   },
   ar: {
+    "tk.entry": "🎟️ تذكرة الدخول — إحماء دقيقة واحدة", "tk.exit": "🎫 تذكرة الخروج — اختبر نفسك",
     "crumb.unit": "‹ العيش مع النهر (الصفحة الرئيسية للوحدة)",
     "crumb.grade": "‹ الصف الثالث — المجتمعات",
     "nav.prev": "‹ رجوع", "nav.next": "التالي ›",
@@ -1292,6 +1296,7 @@ BreakoutI18n.register('pst-living-with-the-river', {
     "as.68": "مُكيَّف من “سلّم تقدير مشكلات التعلّم القائم على المشكلات،” © ITUE Leaders 2004، محدَّث 2019 (itue.udel.edu)."
   },
   hi: {
+    "tk.entry": "🎟️ प्रवेश टिकट — 1 मिनट का वार्म-अप", "tk.exit": "🎫 निकास टिकट — स्वयं जाँचें",
     "crumb.unit": "‹ नदी के साथ रहना (इकाई का मुख्य पृष्ठ)",
     "crumb.grade": "‹ कक्षा 3 — समुदाय",
     "nav.prev": "‹ पीछे", "nav.next": "आगे ›",
@@ -1612,6 +1617,7 @@ BreakoutI18n.register('pst-living-with-the-river', {
     "as.68": "“PBL समस्याओं का मूल्यांकन करने के लिए रूब्रिक,” © ITUE Leaders 2004, 2019 में अद्यतन (itue.udel.edu) से अनुकूलित।"
   },
   ur: {
+    "tk.entry": "🎟️ داخلے کا ٹکٹ — 1 منٹ کی وارم اپ", "tk.exit": "🎫 اخراج کا ٹکٹ — خود کو جانچیں",
     "crumb.unit": "‹ دریا کے ساتھ رہنا (یونٹ کا مرکزی صفحہ)",
     "crumb.grade": "‹ جماعت 3 — کمیونٹیز",
     "nav.prev": "‹ واپس", "nav.next": "اگلا ›",
@@ -1932,6 +1938,7 @@ BreakoutI18n.register('pst-living-with-the-river', {
     "as.68": "“PBL مسائل کی تشخیص کے لیے روبرک،” © ITUE Leaders 2004، 2019 میں تازہ کاری (itue.udel.edu) سے مطابقت پذیر۔"
   },
   zh: {
+    "tk.entry": "🎟️ 入场券 — 1 分钟热身", "tk.exit": "🎫 离场券 — 自我检查",
     "crumb.unit": "‹ 与河共生（单元主页）",
     "crumb.grade": "‹ 三年级 — 社区",
     "nav.prev": "‹ 返回", "nav.next": "下一步 ›",

@@ -5,6 +5,7 @@
    Do not translate: URLs, TEKS codes (§113.14…), effect-size labels, proper links. */
 BreakoutI18n.register('pst-town-square', {
   en: {
+    "tk.entry": "🎟️ Entry ticket — 1-minute warm-up", "tk.exit": "🎫 Exit ticket — check yourself",
     // chrome
     "crumb.unit": "‹ The Town Square Problem (unit home)",
     "crumb.grade": "‹ Grade 3 — Communities",
@@ -267,6 +268,7 @@ BreakoutI18n.register('pst-town-square', {
     "as.46": "Adapted from “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, updated 2019 (itue.udel.edu)."
   },
   es: {
+    "tk.entry": "🎟️ Boleto de entrada — repaso de 1 minuto", "tk.exit": "🎫 Boleto de salida — comprueba lo que sabes",
     "crumb.unit": "‹ El Problema de la Plaza del Pueblo (inicio de la unidad)",
     "crumb.grade": "‹ Grado 3 — Comunidades",
     "nav.prev": "‹ Atrás", "nav.next": "Siguiente ›",
@@ -522,6 +524,7 @@ BreakoutI18n.register('pst-town-square', {
     "as.46": "Adaptado de “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, actualizado en 2019 (itue.udel.edu)."
   },
   vi: {
+    "tk.entry": "🎟️ Vé vào — khởi động 1 phút", "tk.exit": "🎫 Vé ra — tự kiểm tra",
     "crumb.unit": "‹ Bài toán Quảng trường Thị trấn (trang chính của bài học)",
     "crumb.grade": "‹ Lớp 3 — Cộng đồng",
     "nav.prev": "‹ Quay lại", "nav.next": "Tiếp theo ›",
@@ -777,6 +780,7 @@ BreakoutI18n.register('pst-town-square', {
     "as.46": "Điều chỉnh từ “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, cập nhật 2019 (itue.udel.edu)."
   },
   ar: {
+    "tk.entry": "🎟️ تذكرة الدخول — إحماء دقيقة واحدة", "tk.exit": "🎫 تذكرة الخروج — اختبر نفسك",
     "crumb.unit": "‹ مشكلة ساحة البلدة (الصفحة الرئيسية للوحدة)",
     "crumb.grade": "‹ الصف الثالث — المجتمعات",
     "nav.prev": "‹ رجوع", "nav.next": "التالي ›",
@@ -1032,6 +1036,7 @@ BreakoutI18n.register('pst-town-square', {
     "as.46": "معدّل عن “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004، محدّث 2019 (itue.udel.edu)."
   },
   hi: {
+    "tk.entry": "🎟️ प्रवेश टिकट — 1 मिनट का वार्म-अप", "tk.exit": "🎫 निकास टिकट — स्वयं जाँचें",
     "crumb.unit": "‹ टाउन स्क्वायर समस्या (इकाई का मुख पृष्ठ)",
     "crumb.grade": "‹ कक्षा 3 — समुदाय",
     "nav.prev": "‹ वापस", "nav.next": "अगला ›",
@@ -1287,6 +1292,7 @@ BreakoutI18n.register('pst-town-square', {
     "as.46": "“Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004 से अनुकूलित, 2019 में अद्यतन (itue.udel.edu)।"
   },
   ur: {
+    "tk.entry": "🎟️ داخلے کا ٹکٹ — 1 منٹ کی وارم اپ", "tk.exit": "🎫 اخراج کا ٹکٹ — خود کو جانچیں",
     // chrome
     "crumb.unit": "‹ چوک کا مسئلہ (یونٹ کا صفحۂ اول)",
     "crumb.grade": "‹ تیسری جماعت — کمیونٹیاں",
@@ -1549,6 +1555,7 @@ BreakoutI18n.register('pst-town-square', {
     "as.46": "“Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004 سے اخذ کردہ، 2019 میں تازہ کاری (itue.udel.edu)۔"
   },
   zh: {
+    "tk.entry": "🎟️ 入场券 — 1 分钟热身", "tk.exit": "🎫 离场券 — 自我检查",
     // chrome
     "crumb.unit": "‹ 城镇广场问题（单元主页）",
     "crumb.grade": "‹ 三年级 — 社区",
