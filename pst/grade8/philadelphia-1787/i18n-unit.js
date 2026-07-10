@@ -3,6 +3,7 @@
    The engine flips direction for Arabic/Urdu. */
 BreakoutI18n.register('pst-philadelphia-1787', {
   en: {
+    "tk.entry": "🎟️ Entry ticket — 1-minute warm-up", "tk.exit": "🎫 Exit ticket — check yourself",
     "crumb.unit": "‹ Philadelphia, 1787 (unit home)",
     "crumb.grade": "‹ Grade 8 — US History",
     "nav.prev": "‹ Back", "nav.next": "Next ›",
@@ -335,6 +336,7 @@ BreakoutI18n.register('pst-philadelphia-1787', {
     "as.45": "Adapted from “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, updated 2019 (itue.udel.edu)."
   },
   es: {
+    "tk.entry": "🎟️ Boleto de entrada — repaso de 1 minuto", "tk.exit": "🎫 Boleto de salida — comprueba lo que sabes",
     "crumb.unit": "‹ Filadelfia, 1787 (inicio de la unidad)",
     "crumb.grade": "‹ Grado 8 — Historia de EE. UU.",
     "nav.prev": "‹ Atrás", "nav.next": "Siguiente ›",
@@ -667,6 +669,7 @@ BreakoutI18n.register('pst-philadelphia-1787', {
     "as.45": "Adaptado de «Rúbrica para evaluar problemas de ABP», © ITUE Leaders 2004, actualizado 2019 (itue.udel.edu)."
   },
   vi: {
+    "tk.entry": "🎟️ Vé vào — khởi động 1 phút", "tk.exit": "🎫 Vé ra — tự kiểm tra",
     "crumb.unit": "‹ Philadelphia, 1787 (trang chính của bài học)",
     "crumb.grade": "‹ Lớp 8 — Lịch sử Hoa Kỳ",
     "nav.prev": "‹ Quay lại", "nav.next": "Tiếp ›",
@@ -999,6 +1002,7 @@ BreakoutI18n.register('pst-philadelphia-1787', {
     "as.45": "Điều chỉnh từ “Bảng tiêu chí Đánh giá Vấn đề PBL,” © ITUE Leaders 2004, cập nhật 2019 (itue.udel.edu)."
   },
   ar: {
+    "tk.entry": "🎟️ تذكرة الدخول — إحماء دقيقة واحدة", "tk.exit": "🎫 تذكرة الخروج — اختبر نفسك",
     "crumb.unit": "‹ فيلادلفيا، 1787 (الصفحة الرئيسية للوحدة)",
     "crumb.grade": "‹ الصف الثامن — تاريخ الولايات المتحدة",
     "nav.prev": "‹ رجوع", "nav.next": "التالي ›",
@@ -1331,6 +1335,7 @@ BreakoutI18n.register('pst-philadelphia-1787', {
     "as.45": "مُكيَّف عن «سلّم تقدير مشكلات التعلّم القائم على المشكلات»، © ITUE Leaders 2004، محدَّث 2019 (itue.udel.edu)."
   },
   hi: {
+    "tk.entry": "🎟️ प्रवेश टिकट — 1 मिनट का वार्म-अप", "tk.exit": "🎫 निकास टिकट — स्वयं जाँचें",
     "crumb.unit": "‹ फ़िलाडेल्फ़िया, 1787 (इकाई मुखपृष्ठ)",
     "crumb.grade": "‹ कक्षा 8 — अमेरिकी इतिहास",
     "nav.prev": "‹ पीछे", "nav.next": "अगला ›",
@@ -1663,6 +1668,7 @@ BreakoutI18n.register('pst-philadelphia-1787', {
     "as.45": "“PBL समस्याओं के मूल्यांकन हेतु रूब्रिक” से अनुकूलित, © ITUE Leaders 2004, अद्यतन 2019 (itue.udel.edu)।"
   },
   ur: {
+    "tk.entry": "🎟️ داخلے کا ٹکٹ — 1 منٹ کی وارم اپ", "tk.exit": "🎫 اخراج کا ٹکٹ — خود کو جانچیں",
     "crumb.unit": "‹ فلاڈیلفیا، 1787 (یونٹ کا صفحۂ اول)",
     "crumb.grade": "‹ جماعت 8 — امریکی تاریخ",
     "nav.prev": "‹ واپس", "nav.next": "اگلا ›",
@@ -1995,6 +2001,7 @@ BreakoutI18n.register('pst-philadelphia-1787', {
     "as.45": "”PBL مسائل کی تشخیص کے لیے روبرک“ سے موافق، © ITUE Leaders 2004، تازہ کاری 2019 (itue.udel.edu)۔"
   },
   zh: {
+    "tk.entry": "🎟️ 入场券 — 1 分钟热身", "tk.exit": "🎫 离场券 — 自我检查",
     "crumb.unit": "‹ 费城，1787（单元主页）",
     "crumb.grade": "‹ 八年级 — 美国历史",
     "nav.prev": "‹ 返回", "nav.next": "下一步 ›",

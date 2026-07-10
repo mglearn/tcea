@@ -6,6 +6,7 @@
    Do not translate: URLs, TEKS codes (§113.19…), effect-size labels, proper links. */
 BreakoutI18n.register('pst-statehood-1845', {
   en: {
+    "tk.entry": "🎟️ Entry ticket — 1-minute warm-up", "tk.exit": "🎫 Exit ticket — check yourself",
     // chrome
     "crumb.unit": "‹ One Star or Many? 1845 (unit home)",
     "crumb.grade": "‹ Grade 7 — Texas History",
@@ -279,6 +280,7 @@ BreakoutI18n.register('pst-statehood-1845', {
     "as.45": "Adapted from “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, updated 2019 (itue.udel.edu)."
   },
   es: {
+    "tk.entry": "🎟️ Boleto de entrada — repaso de 1 minuto", "tk.exit": "🎫 Boleto de salida — comprueba lo que sabes",
     // chrome
     "crumb.unit": "‹ ¿Una estrella o muchas? 1845 (inicio de la unidad)",
     "crumb.grade": "‹ Grado 7 — Historia de Texas",
@@ -552,6 +554,7 @@ BreakoutI18n.register('pst-statehood-1845', {
     "as.45": "Adaptado de “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, actualizado en 2019 (itue.udel.edu)."
   },
   vi: {
+    "tk.entry": "🎟️ Vé vào — khởi động 1 phút", "tk.exit": "🎫 Vé ra — tự kiểm tra",
     // chrome
     "crumb.unit": "‹ Một ngôi sao hay nhiều ngôi sao? 1845 (trang chính của bài học)",
     "crumb.grade": "‹ Lớp 7 — Lịch sử Texas",
@@ -825,6 +828,7 @@ BreakoutI18n.register('pst-statehood-1845', {
     "as.45": "Chuyển thể từ “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, cập nhật 2019 (itue.udel.edu)."
   },
   ar: {
+    "tk.entry": "🎟️ تذكرة الدخول — إحماء دقيقة واحدة", "tk.exit": "🎫 تذكرة الخروج — اختبر نفسك",
     // chrome
     "crumb.unit": "‹ نجمة واحدة أم نجوم كثيرة؟ 1845 (الصفحة الرئيسية للوحدة)",
     "crumb.grade": "‹ الصف السابع — تاريخ تكساس",
@@ -1098,6 +1102,7 @@ BreakoutI18n.register('pst-statehood-1845', {
     "as.45": "مُقتبس من “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004، مُحدَّث 2019 (itue.udel.edu)."
   },
   hi: {
+    "tk.entry": "🎟️ प्रवेश टिकट — 1 मिनट का वार्म-अप", "tk.exit": "🎫 निकास टिकट — स्वयं जाँचें",
     // chrome
     "crumb.unit": "‹ एक तारा या अनेक? 1845 (इकाई मुखपृष्ठ)",
     "crumb.grade": "‹ कक्षा 7 — टेक्सास का इतिहास",
@@ -1371,6 +1376,7 @@ BreakoutI18n.register('pst-statehood-1845', {
     "as.45": "“Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004 से अनुकूलित, 2019 में अद्यतन (itue.udel.edu)।"
   },
   ur: {
+    "tk.entry": "🎟️ داخلے کا ٹکٹ — 1 منٹ کی وارم اپ", "tk.exit": "🎫 اخراج کا ٹکٹ — خود کو جانچیں",
     // chrome
     "crumb.unit": "‹ ایک ستارہ یا کئی؟ 1845 (یونٹ کا مرکزی صفحہ)",
     "crumb.grade": "‹ جماعت 7 — ٹیکساس کی تاریخ",
@@ -1644,6 +1650,7 @@ BreakoutI18n.register('pst-statehood-1845', {
     "as.45": "“Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004 سے موافقت شدہ، 2019 میں تازہ کاری (itue.udel.edu)۔"
   },
   zh: {
+    "tk.entry": "🎟️ 入场券 — 1 分钟热身", "tk.exit": "🎫 离场券 — 自我检查",
     // chrome
     "crumb.unit": "‹ 一星还是多星？1845（单元主页）",
     "crumb.grade": "‹ 七年级 — 德克萨斯历史",

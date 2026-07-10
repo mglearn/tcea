@@ -5922,6 +5922,499 @@ window.PST_TICKETS = (window.PST_TICKETS || []).concat([
 
 ]);
 
+/* ── g7-dust-bowl.js ── */
+/* PST Arcade — ticket registry. Each ticket is retrieval practice for one unit + phase.
+   English-first; other languages carried inline per ticket (ticket.i18n[lang]). The engine
+   (arcade.js) reads window.PST_TICKETS. Nothing is stored or sent. To add tickets, append objects
+   with the same shape: {id, grade, unit, unitTitle, phase, type, format, teks, strat, d, i18n}. */
+window.PST_TICKETS = (window.PST_TICKETS || []).concat([
+
+  /* ───────── Grade 7 · Dust Bowl 1935 · SURFACE ───────── */
+  {
+    id: 'g7-dust-bowl-surface-entry', grade: 7, unit: 'dust-bowl',
+    unitTitle: "Dust and Drought, 1935 — Stay or Go?", phase: 'surface', type: 'entry',
+    format: 'mcq', teks: '§113.19(c)(11)', strat: 'Retrieval practice', d: 0.54,
+    i18n: { en: {
+      title: 'Warm-up: Dust Bowl words',
+      seconds: 45,
+      questions: [
+        { q: 'A long stretch with little or no rain, so crops and grass dry up, is a…', choices: ['drought', 'mortgage', 'migration'], a: 0 },
+        { q: 'A giant dust storm so thick it turned day to darkness was called a…', choices: ['contour plowing', 'black blizzard', 'conservation'], a: 1 },
+        { q: 'When wind or water wears away and carries off the soil, that is…', choices: ['erosion', 'foreclosure', 'drought'], a: 0 },
+        { q: 'When the bank takes the farm because the loan can’t be paid, that is…', choices: ['migration', 'conservation', 'foreclosure'], a: 2 }
+      ],
+      takeaway: 'Know these four words and you can read the rest of the unit with confidence.'
+    },
+    es: {
+      title: 'Calentamiento: palabras del Dust Bowl',
+      seconds: 45,
+      questions: [
+        { q: 'Un período largo con poca o ninguna lluvia, en el que los cultivos y el pasto se secan, es una…', choices: ['sequía', 'hipoteca', 'migración'], a: 0 },
+        { q: 'Una tormenta de polvo gigante tan densa que convertía el día en oscuridad se llamaba…', choices: ['arado en contorno', 'ventisca negra', 'conservación'], a: 1 },
+        { q: 'Cuando el viento o el agua desgasta y arrastra el suelo, eso es…', choices: ['erosión', 'ejecución hipotecaria', 'sequía'], a: 0 },
+        { q: 'Cuando el banco se queda con la granja porque no se puede pagar el préstamo, eso es…', choices: ['migración', 'conservación', 'ejecución hipotecaria'], a: 2 }
+      ],
+      takeaway: 'Domina estas cuatro palabras y podrás leer el resto de la unidad con confianza.'
+    },
+    vi: {
+      title: 'Khởi động: từ vựng về Dust Bowl',
+      seconds: 45,
+      questions: [
+        { q: 'Một giai đoạn dài có ít hoặc không có mưa, khiến mùa màng và cỏ khô héo, được gọi là…', choices: ['hạn hán', 'khoản thế chấp', 'sự di cư'], a: 0 },
+        { q: 'Một trận bão bụi khổng lồ dày đặc đến mức biến ngày thành đêm được gọi là…', choices: ['cày theo đường đồng mức', 'bão đen', 'sự bảo tồn'], a: 1 },
+        { q: 'Khi gió hoặc nước bào mòn và cuốn đi lớp đất, đó là…', choices: ['xói mòn', 'tịch biên', 'hạn hán'], a: 0 },
+        { q: 'Khi ngân hàng lấy nông trại vì khoản vay không thể trả, đó là…', choices: ['sự di cư', 'sự bảo tồn', 'tịch biên'], a: 2 }
+      ],
+      takeaway: 'Nắm được bốn từ này là bạn có thể đọc phần còn lại của đơn vị bài học một cách tự tin.'
+    },
+    ar: {
+      title: 'تهيئة: كلمات كارثة الغبار',
+      seconds: 45,
+      questions: [
+        { q: 'الفترة الطويلة التي يقلّ فيها المطر أو ينعدم، فتجفّ المحاصيل والعشب، تُسمّى…', choices: ['جفاف', 'رهن عقاري', 'هجرة'], a: 0 },
+        { q: 'العاصفة الغبارية الضخمة الكثيفة لدرجة أنها حوّلت النهار إلى ظلام كانت تُسمّى…', choices: ['حراثة كنتورية', 'عاصفة سوداء', 'حفاظ'], a: 1 },
+        { q: 'عندما تجرف الرياح أو المياه التربة وتحملها بعيدًا، فهذا…', choices: ['تعرية', 'حجز عقاري', 'جفاف'], a: 0 },
+        { q: 'عندما يأخذ البنك المزرعة لأن القرض لا يمكن سداده، فهذا…', choices: ['هجرة', 'حفاظ', 'حجز عقاري'], a: 2 }
+      ],
+      takeaway: 'أتقن هذه الكلمات الأربع وستقرأ بقية الوحدة بثقة.'
+    },
+    hi: {
+      title: 'वार्म-अप: डस्ट बाउल के शब्द',
+      seconds: 45,
+      questions: [
+        { q: 'लंबा समय जिसमें बहुत कम या बिल्कुल बारिश न हो, जिससे फसलें और घास सूख जाएँ, वह है…', choices: ['सूखा', 'बंधक', 'प्रवास'], a: 0 },
+        { q: 'इतना घना विशाल धूल भरा तूफ़ान जो दिन को अंधकार में बदल दे, उसे कहा जाता था…', choices: ['समोच्च जुताई', 'काला बवंडर', 'संरक्षण'], a: 1 },
+        { q: 'जब हवा या पानी मिट्टी को घिसकर बहा ले जाए, वह है…', choices: ['कटाव', 'ज़ब्ती', 'सूखा'], a: 0 },
+        { q: 'जब बैंक खेत ले लेता है क्योंकि क़र्ज़ नहीं चुकाया जा सका, वह है…', choices: ['प्रवास', 'संरक्षण', 'ज़ब्ती'], a: 2 }
+      ],
+      takeaway: 'इन चार शब्दों को जान लें और आप शेष इकाई आत्मविश्वास से पढ़ सकेंगे।'
+    },
+    ur: {
+      title: 'وارم اپ: ڈسٹ باؤل کے الفاظ',
+      seconds: 45,
+      questions: [
+        { q: 'ایک طویل عرصہ جس میں بہت کم یا بالکل بارش نہ ہو، جس سے فصلیں اور گھاس سوکھ جائیں، وہ ہے…', choices: ['خشک سالی', 'رہن', 'نقل مکانی'], a: 0 },
+        { q: 'اتنا گھنا بڑا گرد آلود طوفان جو دن کو اندھیرے میں بدل دے، اسے کہا جاتا تھا…', choices: ['کنٹور ہل چلانا', 'کالا طوفان', 'تحفظ'], a: 1 },
+        { q: 'جب ہوا یا پانی مٹی کو گھِس کر بہا لے جائے، وہ ہے…', choices: ['کٹاؤ', 'ضبطی', 'خشک سالی'], a: 0 },
+        { q: 'جب بینک کھیت لے لیتا ہے کیونکہ قرض ادا نہیں ہو سکا، وہ ہے…', choices: ['نقل مکانی', 'تحفظ', 'ضبطی'], a: 2 }
+      ],
+      takeaway: 'ان چار الفاظ کو جان لیں تو آپ باقی اکائی اعتماد کے ساتھ پڑھ سکیں گے۔'
+    },
+    zh: {
+      title: '热身：黑风暴词汇',
+      seconds: 45,
+      questions: [
+        { q: '长期少雨或无雨、导致庄稼和草枯死的时期，称为…', choices: ['干旱', '按揭贷款', '迁移'], a: 0 },
+        { q: '浓密到把白昼变成黑暗的巨大沙尘暴被称为…', choices: ['等高线耕作', '黑风暴', '保护'], a: 1 },
+        { q: '当风或水侵蚀并卷走土壤时，这就是…', choices: ['侵蚀', '止赎', '干旱'], a: 0 },
+        { q: '当银行因贷款无法偿还而收走农场时，这就是…', choices: ['迁移', '保护', '止赎'], a: 2 }
+      ],
+      takeaway: '掌握这四个词，你就能自信地读完本单元的其余部分。'
+    } }
+  },
+  {
+    id: 'g7-dust-bowl-surface-exit', grade: 7, unit: 'dust-bowl',
+    unitTitle: "Dust and Drought, 1935 — Stay or Go?", phase: 'surface', type: 'exit',
+    format: 'match', teks: '§113.19(c)(11)', strat: 'Vocabulary & feedback', d: 0.62,
+    i18n: { en: {
+      title: 'Exit: match the word to its meaning',
+      pairs: [
+        ['Dust Bowl', 'the 1930s Southern Plains region hit by drought and dust storms'],
+        ['erosion', 'when wind or water wears away and carries off the soil'],
+        ['foreclosure', 'when the bank takes the farm because the loan can’t be paid'],
+        ['conservation', 'protecting and caring for natural resources like soil and water'],
+        ['stakeholder', 'anyone who is affected by a decision or has something at stake']
+      ],
+      takeaway: 'If you matched all five, you are ready to go deep. If not, revisit the word bank.'
+    },
+    es: {
+      title: 'Salida: relaciona la palabra con su significado',
+      pairs: [
+        ['Dust Bowl', 'la región de las Llanuras del Sur de los años 30 golpeada por la sequía y las tormentas de polvo'],
+        ['erosión', 'cuando el viento o el agua desgasta y arrastra el suelo'],
+        ['ejecución hipotecaria', 'cuando el banco se queda con la granja porque no se puede pagar el préstamo'],
+        ['conservación', 'proteger y cuidar los recursos naturales como el suelo y el agua'],
+        ['parte interesada', 'cualquiera que se ve afectado por una decisión o tiene algo en juego']
+      ],
+      takeaway: 'Si relacionaste las cinco, estás listo para ir a lo profundo. Si no, repasa el banco de palabras.'
+    },
+    vi: {
+      title: 'Phiếu ra: ghép từ với nghĩa của nó',
+      pairs: [
+        ['Dust Bowl', 'vùng Đồng bằng phía Nam những năm 1930 bị hạn hán và bão bụi tàn phá'],
+        ['xói mòn', 'khi gió hoặc nước bào mòn và cuốn đi lớp đất'],
+        ['tịch biên', 'khi ngân hàng lấy nông trại vì khoản vay không thể trả'],
+        ['bảo tồn', 'bảo vệ và chăm sóc tài nguyên thiên nhiên như đất và nước'],
+        ['bên liên quan', 'bất kỳ ai bị ảnh hưởng bởi một quyết định hoặc có lợi ích liên quan']
+      ],
+      takeaway: 'Nếu bạn ghép đúng cả năm, bạn đã sẵn sàng học chuyên sâu. Nếu chưa, hãy xem lại kho từ vựng.'
+    },
+    ar: {
+      title: 'الخروج: طابِق الكلمة مع معناها',
+      pairs: [
+        ['كارثة الغبار', 'منطقة السهول الجنوبية في الثلاثينيات التي ضربها الجفاف والعواصف الغبارية'],
+        ['تعرية', 'عندما تجرف الرياح أو المياه التربة وتحملها بعيدًا'],
+        ['حجز عقاري', 'عندما يأخذ البنك المزرعة لأن القرض لا يمكن سداده'],
+        ['حفاظ', 'حماية الموارد الطبيعية مثل التربة والماء والعناية بها'],
+        ['صاحب مصلحة', 'كل من يتأثّر بقرار أو لديه شيء على المحكّ']
+      ],
+      takeaway: 'إذا طابقت الخمس جميعًا، فأنت مستعد للتعمّق. وإلا، فراجِع بنك الكلمات.'
+    },
+    hi: {
+      title: 'निकास: शब्द को उसके अर्थ से मिलाएँ',
+      pairs: [
+        ['डस्ट बाउल', '1930 के दशक का दक्षिणी मैदानी क्षेत्र जो सूखे और धूल भरे तूफ़ानों से प्रभावित हुआ'],
+        ['कटाव', 'जब हवा या पानी मिट्टी को घिसकर बहा ले जाए'],
+        ['ज़ब्ती', 'जब बैंक खेत ले लेता है क्योंकि क़र्ज़ नहीं चुकाया जा सका'],
+        ['संरक्षण', 'मिट्टी और पानी जैसे प्राकृतिक संसाधनों की रक्षा और देखभाल करना'],
+        ['हितधारक', 'कोई भी जो किसी निर्णय से प्रभावित होता है या जिसका कुछ दाँव पर है']
+      ],
+      takeaway: 'यदि आपने पाँचों मिला दिए, तो आप गहन में जाने के लिए तैयार हैं। यदि नहीं, तो शब्द-बैंक फिर देखें।'
+    },
+    ur: {
+      title: 'اخراج: لفظ کو اس کے مطلب سے ملائیں',
+      pairs: [
+        ['ڈسٹ باؤل', '1930 کی دہائی کا جنوبی میدانی علاقہ جو خشک سالی اور گرد آلود طوفانوں سے متاثر ہوا'],
+        ['کٹاؤ', 'جب ہوا یا پانی مٹی کو گھِس کر بہا لے جائے'],
+        ['ضبطی', 'جب بینک کھیت لے لیتا ہے کیونکہ قرض ادا نہیں ہو سکا'],
+        ['تحفظ', 'مٹی اور پانی جیسے قدرتی وسائل کی حفاظت اور دیکھ بھال کرنا'],
+        ['اسٹیک ہولڈر', 'کوئی بھی جو کسی فیصلے سے متاثر ہوتا ہے یا جس کا کچھ داؤ پر ہے']
+      ],
+      takeaway: 'اگر آپ نے پانچوں ملا دیے تو آپ گہرائی میں جانے کو تیار ہیں۔ ورنہ لفظی بینک دوبارہ دیکھیں۔'
+    },
+    zh: {
+      title: '离场：把词语与其含义配对',
+      pairs: [
+        ['黑风暴（Dust Bowl）', '20 世纪 30 年代遭受干旱与沙尘暴袭击的南部平原地区'],
+        ['侵蚀', '当风或水侵蚀并卷走土壤时'],
+        ['止赎', '当银行因贷款无法偿还而收走农场时'],
+        ['保护', '保护并爱护土壤和水等自然资源'],
+        ['利益相关者', '任何受某项决定影响或有利害关系的人']
+      ],
+      takeaway: '如果五个都配对正确，你就可以进入深层学习了。若没有，请重温词汇表。'
+    } }
+  },
+
+  /* ───────── Grade 7 · Dust Bowl 1935 · DEEP ───────── */
+  {
+    id: 'g7-dust-bowl-deep-entry', grade: 7, unit: 'dust-bowl',
+    unitTitle: "Dust and Drought, 1935 — Stay or Go?", phase: 'deep', type: 'entry',
+    format: 'cloze', teks: '§113.19(c)(9), (c)(11)', strat: 'Retrieval practice', d: 0.54,
+    i18n: { en: {
+      title: 'Warm-up: cause → effect',
+      items: [
+        { before: 'Farmers plowing up the grass for wheat left', after: 'exposed to the wind.', choices: ['bare soil', 'more rain', 'new towns'], a: 0 },
+        { before: 'Years of drought plus high wind lifted the dry soil into', after: 'that buried fields and fences.', choices: ['black blizzards', 'cover crops', 'mortgages'], a: 0 },
+        { before: 'Failing crops plus Great Depression debt meant farmers could not pay the mortgage, which led to', after: 'and families leaving west.', choices: ['conservation', 'foreclosures', 'higher rainfall'], a: 1 }
+      ],
+      takeaway: 'The Dust Bowl was a chain: human choices AND nature, each cause setting off the next.'
+    },
+    es: {
+      title: 'Calentamiento: causa → efecto',
+      items: [
+        { before: 'Los agricultores que araron el pasto para sembrar trigo dejaron', after: 'expuesto al viento.', choices: ['suelo desnudo', 'más lluvia', 'nuevos pueblos'], a: 0 },
+        { before: 'Años de sequía más viento fuerte levantaron el suelo seco formando', after: 'que enterraron campos y cercas.', choices: ['ventiscas negras', 'cultivos de cobertura', 'hipotecas'], a: 0 },
+        { before: 'Las cosechas fallidas más la deuda de la Gran Depresión hicieron que los agricultores no pudieran pagar la hipoteca, lo que provocó', after: 'y familias que se iban al oeste.', choices: ['conservación', 'ejecuciones hipotecarias', 'más lluvia'], a: 1 }
+      ],
+      takeaway: 'El Dust Bowl fue una cadena: decisiones humanas Y naturaleza, cada causa desencadenando la siguiente.'
+    },
+    vi: {
+      title: 'Khởi động: nguyên nhân → hệ quả',
+      items: [
+        { before: 'Nông dân cày xới cỏ để trồng lúa mì đã để lại', after: 'phơi ra trước gió.', choices: ['đất trơ trụi', 'nhiều mưa hơn', 'những thị trấn mới'], a: 0 },
+        { before: 'Nhiều năm hạn hán cộng với gió mạnh đã cuốn lớp đất khô thành', after: 'chôn vùi đồng ruộng và hàng rào.', choices: ['những trận bão đen', 'cây che phủ đất', 'những khoản thế chấp'], a: 0 },
+        { before: 'Mùa màng thất bát cộng với nợ nần thời Đại Khủng hoảng khiến nông dân không trả nổi khoản thế chấp, dẫn đến', after: 'và các gia đình bỏ đi về phía tây.', choices: ['sự bảo tồn', 'những vụ tịch biên', 'lượng mưa cao hơn'], a: 1 }
+      ],
+      takeaway: 'Dust Bowl là một chuỗi: lựa chọn của con người VÀ thiên nhiên, mỗi nguyên nhân châm ngòi cho cái tiếp theo.'
+    },
+    ar: {
+      title: 'تهيئة: السبب ← الأثر',
+      items: [
+        { before: 'المزارعون الذين حرثوا العشب لزراعة القمح تركوا', after: 'مكشوفة للرياح.', choices: ['تربة عارية', 'مزيدًا من المطر', 'بلدات جديدة'], a: 0 },
+        { before: 'سنوات من الجفاف مع رياح قوية رفعت التربة الجافة إلى', after: 'دفنت الحقول والأسيجة.', choices: ['عواصف سوداء', 'محاصيل غطاء', 'رهون عقارية'], a: 0 },
+        { before: 'فشل المحاصيل مع ديون الكساد الكبير يعني أن المزارعين لم يستطيعوا سداد الرهن، مما أدى إلى', after: 'ورحيل العائلات غربًا.', choices: ['حفاظ', 'حجوزات عقارية', 'أمطار أغزر'], a: 1 }
+      ],
+      takeaway: 'كانت كارثة الغبار سلسلة: خيارات بشرية وطبيعة معًا، كل سبب يُشعل الذي يليه.'
+    },
+    hi: {
+      title: 'वार्म-अप: कारण → प्रभाव',
+      items: [
+        { before: 'गेहूँ के लिए घास जोतने वाले किसानों ने छोड़ दिया', after: 'हवा के सामने खुला हुआ।', choices: ['नंगी मिट्टी', 'अधिक बारिश', 'नए कस्बे'], a: 0 },
+        { before: 'सालों के सूखे और तेज़ हवा ने सूखी मिट्टी को उठाकर बना दिया', after: 'जिसने खेतों और बाड़ों को दफ़न कर दिया।', choices: ['काले बवंडर', 'आवरण फ़सलें', 'बंधक'], a: 0 },
+        { before: 'फ़सलों की विफलता और महामंदी के क़र्ज़ का मतलब था कि किसान बंधक नहीं चुका सके, जिससे हुई', after: 'और परिवार पश्चिम की ओर चले गए।', choices: ['संरक्षण', 'ज़ब्तियाँ', 'अधिक वर्षा'], a: 1 }
+      ],
+      takeaway: 'डस्ट बाउल एक श्रृंखला थी: मानव चुनाव और प्रकृति, हर कारण अगले को जन्म देता हुआ।'
+    },
+    ur: {
+      title: 'وارم اپ: سبب ← اثر',
+      items: [
+        { before: 'گندم کے لیے گھاس ہل چلا کر کاٹنے والے کسانوں نے چھوڑ دی', after: 'ہوا کے سامنے کھلی ہوئی۔', choices: ['ننگی مٹی', 'زیادہ بارش', 'نئے قصبے'], a: 0 },
+        { before: 'برسوں کی خشک سالی اور تیز ہوا نے خشک مٹی کو اٹھا کر بنا دیا', after: 'جس نے کھیتوں اور باڑوں کو دفن کر دیا۔', choices: ['کالے طوفان', 'ڈھانپنے والی فصلیں', 'رہن'], a: 0 },
+        { before: 'فصلوں کی ناکامی اور عظیم کساد بازاری کے قرض کا مطلب تھا کہ کسان رہن ادا نہ کر سکے، جس سے ہوئیں', after: 'اور خاندان مغرب کی طرف چلے گئے۔', choices: ['تحفظ', 'ضبطیاں', 'زیادہ بارش'], a: 1 }
+      ],
+      takeaway: 'ڈسٹ باؤل ایک سلسلہ تھا: انسانی انتخاب اور فطرت، ہر سبب اگلے کو جنم دیتا ہوا۔'
+    },
+    zh: {
+      title: '热身：原因 → 结果',
+      items: [
+        { before: '农民为种小麦而翻耕草地，留下了', after: '暴露在风中。', choices: ['裸露的土壤', '更多降雨', '新的城镇'], a: 0 },
+        { before: '连年干旱加上强风把干燥的土壤卷起，形成了', after: '掩埋了田地和篱笆。', choices: ['黑风暴', '覆盖作物', '按揭贷款'], a: 0 },
+        { before: '歉收加上大萧条的债务，意味着农民无法偿还按揭，进而导致', after: '以及家庭西迁。', choices: ['保护', '止赎', '更多降雨'], a: 1 }
+      ],
+      takeaway: '黑风暴是一条链条：人的选择与自然，每个原因都引发下一个。'
+    } }
+  },
+  {
+    id: 'g7-dust-bowl-deep-exit', grade: 7, unit: 'dust-bowl',
+    unitTitle: "Dust and Drought, 1935 — Stay or Go?", phase: 'deep', type: 'exit',
+    format: 'sort', teks: '§113.19(c)(9), (c)(11)', strat: 'Concept organization', d: 0.64,
+    i18n: { en: {
+      title: 'Exit: sort by human choice or natural cause',
+      cats: ['Human choice', 'Natural cause'],
+      items: [
+        { t: 'Plowing up the grass for wheat', c: 0 },
+        { t: 'Calling in loans during the Depression', c: 0 },
+        { t: 'Deciding to migrate west to California', c: 0 },
+        { t: 'Years of drought with little rain', c: 1 },
+        { t: 'High winds sweeping the Plains', c: 1 },
+        { t: 'Soil drying out and blowing away', c: 1 }
+      ],
+      takeaway: 'The Dust Bowl took BOTH human choices and nature. Sorting them is the concept map behind your argument.'
+    },
+    es: {
+      title: 'Salida: clasifica por decisión humana o causa natural',
+      cats: ['Decisión humana', 'Causa natural'],
+      items: [
+        { t: 'Arar el pasto para sembrar trigo', c: 0 },
+        { t: 'Exigir el pago de préstamos durante la Depresión', c: 0 },
+        { t: 'Decidir migrar al oeste a California', c: 0 },
+        { t: 'Años de sequía con poca lluvia', c: 1 },
+        { t: 'Vientos fuertes barriendo las llanuras', c: 1 },
+        { t: 'El suelo secándose y volándose', c: 1 }
+      ],
+      takeaway: 'El Dust Bowl requirió AMBAS: decisiones humanas y naturaleza. Clasificarlas es el mapa conceptual detrás de tu argumento.'
+    },
+    vi: {
+      title: 'Phiếu ra: phân loại theo lựa chọn của con người hay nguyên nhân tự nhiên',
+      cats: ['Lựa chọn của con người', 'Nguyên nhân tự nhiên'],
+      items: [
+        { t: 'Cày xới cỏ để trồng lúa mì', c: 0 },
+        { t: 'Đòi trả nợ vay trong thời Đại Khủng hoảng', c: 0 },
+        { t: 'Quyết định di cư về phía tây tới California', c: 0 },
+        { t: 'Nhiều năm hạn hán với ít mưa', c: 1 },
+        { t: 'Gió mạnh quét qua vùng Đồng bằng', c: 1 },
+        { t: 'Đất khô cạn và bị thổi bay đi', c: 1 }
+      ],
+      takeaway: 'Dust Bowl cần CẢ lựa chọn của con người lẫn thiên nhiên. Phân loại chúng chính là sơ đồ khái niệm đằng sau lập luận của bạn.'
+    },
+    ar: {
+      title: 'الخروج: صنّف حسب الاختيار البشري أو السبب الطبيعي',
+      cats: ['اختيار بشري', 'سبب طبيعي'],
+      items: [
+        { t: 'حرث العشب لزراعة القمح', c: 0 },
+        { t: 'المطالبة بسداد القروض أثناء الكساد', c: 0 },
+        { t: 'قرار الهجرة غربًا إلى كاليفورنيا', c: 0 },
+        { t: 'سنوات من الجفاف بأمطار قليلة', c: 1 },
+        { t: 'رياح قوية تجتاح السهول', c: 1 },
+        { t: 'جفاف التربة وتطايرها', c: 1 }
+      ],
+      takeaway: 'تطلّبت كارثة الغبار الاختيارات البشرية والطبيعة معًا. تصنيفها هو الخريطة المفاهيمية وراء حجّتك.'
+    },
+    hi: {
+      title: 'निकास: मानव चुनाव या प्राकृतिक कारण के अनुसार छाँटें',
+      cats: ['मानव चुनाव', 'प्राकृतिक कारण'],
+      items: [
+        { t: 'गेहूँ के लिए घास जोतना', c: 0 },
+        { t: 'महामंदी के दौरान क़र्ज़ की वसूली माँगना', c: 0 },
+        { t: 'पश्चिम की ओर कैलिफ़ोर्निया प्रवास का निर्णय', c: 0 },
+        { t: 'कम बारिश वाले सूखे के साल', c: 1 },
+        { t: 'मैदानों में बहती तेज़ हवाएँ', c: 1 },
+        { t: 'मिट्टी का सूखना और उड़ जाना', c: 1 }
+      ],
+      takeaway: 'डस्ट बाउल में मानव चुनाव और प्रकृति दोनों लगे। इन्हें छाँटना ही आपके तर्क के पीछे का अवधारणा मानचित्र है।'
+    },
+    ur: {
+      title: 'اخراج: انسانی انتخاب یا قدرتی سبب کے مطابق چھانٹیں',
+      cats: ['انسانی انتخاب', 'قدرتی سبب'],
+      items: [
+        { t: 'گندم کے لیے گھاس ہل چلا کر کاٹنا', c: 0 },
+        { t: 'کساد بازاری کے دوران قرضوں کی واپسی کا مطالبہ', c: 0 },
+        { t: 'مغرب کی طرف کیلیفورنیا نقل مکانی کا فیصلہ', c: 0 },
+        { t: 'کم بارش والے خشک سالی کے سال', c: 1 },
+        { t: 'میدانوں میں چلتی تیز ہوائیں', c: 1 },
+        { t: 'مٹی کا سوکھنا اور اڑ جانا', c: 1 }
+      ],
+      takeaway: 'ڈسٹ باؤل میں انسانی انتخاب اور فطرت دونوں شامل تھے۔ انہیں چھانٹنا ہی آپ کی دلیل کے پیچھے تصوراتی نقشہ ہے۔'
+    },
+    zh: {
+      title: '离场：按人为选择或自然原因分类',
+      cats: ['人为选择', '自然原因'],
+      items: [
+        { t: '为种小麦而翻耕草地', c: 0 },
+        { t: '在大萧条期间催收贷款', c: 0 },
+        { t: '决定西迁前往加利福尼亚', c: 0 },
+        { t: '连年干旱、降雨稀少', c: 1 },
+        { t: '强风席卷平原', c: 1 },
+        { t: '土壤干裂被风吹走', c: 1 }
+      ],
+      takeaway: '黑风暴同时源于人为选择与自然。把它们分类，就是你论证背后的概念图。'
+    } }
+  },
+
+  /* ───────── Grade 7 · Dust Bowl 1935 · TRANSFER ───────── */
+  {
+    id: 'g7-dust-bowl-transfer-entry', grade: 7, unit: 'dust-bowl',
+    unitTitle: "Dust and Drought, 1935 — Stay or Go?", phase: 'transfer', type: 'entry',
+    format: 'mcq', teks: '§113.19(c)(23)(B)', strat: 'Retrieval practice', d: 0.54,
+    i18n: { en: {
+      title: 'Warm-up: the problem-solving steps',
+      seconds: 45,
+      questions: [
+        { q: 'The FIRST thing a problem-solver does is…', choices: ['pick a solution', 'define the problem', 'defend a claim'], a: 1 },
+        { q: 'Before choosing, a good problem-solver…', choices: ['gathers information & weighs options', 'guesses quickly', 'ignores other views'], a: 0 },
+        { q: 'A strong solution is backed by…', choices: ['a loud voice', 'claim + evidence', 'only feelings'], a: 1 },
+        { q: 'After choosing a solution, you should…', choices: ['forget it', 'evaluate how well it worked', 'hide the trade-offs'], a: 1 }
+      ],
+      takeaway: 'Define → gather → weigh → decide → defend → evaluate. That is the whole transfer move.'
+    },
+    es: {
+      title: 'Calentamiento: los pasos para resolver problemas',
+      seconds: 45,
+      questions: [
+        { q: 'Lo PRIMERO que hace quien resuelve problemas es…', choices: ['elegir una solución', 'definir el problema', 'defender una afirmación'], a: 1 },
+        { q: 'Antes de elegir, quien resuelve bien problemas…', choices: ['reúne información y sopesa opciones', 'adivina rápido', 'ignora otras opiniones'], a: 0 },
+        { q: 'Una solución sólida se respalda con…', choices: ['una voz fuerte', 'afirmación + evidencia', 'solo sentimientos'], a: 1 },
+        { q: 'Después de elegir una solución, deberías…', choices: ['olvidarla', 'evaluar qué tan bien funcionó', 'ocultar las concesiones'], a: 1 }
+      ],
+      takeaway: 'Definir → reunir → sopesar → decidir → defender → evaluar. Ese es todo el movimiento de transferencia.'
+    },
+    vi: {
+      title: 'Khởi động: các bước giải quyết vấn đề',
+      seconds: 45,
+      questions: [
+        { q: 'Điều ĐẦU TIÊN người giải quyết vấn đề làm là…', choices: ['chọn một giải pháp', 'xác định vấn đề', 'bảo vệ một luận điểm'], a: 1 },
+        { q: 'Trước khi chọn, người giải quyết vấn đề giỏi sẽ…', choices: ['thu thập thông tin & cân nhắc các phương án', 'đoán nhanh', 'bỏ qua quan điểm khác'], a: 0 },
+        { q: 'Một giải pháp vững chắc được củng cố bằng…', choices: ['một giọng nói to', 'luận điểm + bằng chứng', 'chỉ cảm xúc'], a: 1 },
+        { q: 'Sau khi chọn một giải pháp, bạn nên…', choices: ['quên nó đi', 'đánh giá xem nó hiệu quả ra sao', 'giấu đi các đánh đổi'], a: 1 }
+      ],
+      takeaway: 'Xác định → thu thập → cân nhắc → quyết định → bảo vệ → đánh giá. Đó chính là toàn bộ bước chuyển giao.'
+    },
+    ar: {
+      title: 'تهيئة: خطوات حل المشكلة',
+      seconds: 45,
+      questions: [
+        { q: 'أول ما يفعله حلّال المشكلات هو…', choices: ['اختيار حل', 'تحديد المشكلة', 'الدفاع عن ادعاء'], a: 1 },
+        { q: 'قبل الاختيار، يقوم حلّال المشكلات الجيد بـ…', choices: ['جمع المعلومات وموازنة الخيارات', 'التخمين بسرعة', 'تجاهل الآراء الأخرى'], a: 0 },
+        { q: 'الحل القوي يُدعم بـ…', choices: ['صوت عالٍ', 'ادعاء + دليل', 'المشاعر فقط'], a: 1 },
+        { q: 'بعد اختيار حل، ينبغي أن…', choices: ['تنساه', 'تقيّم مدى نجاحه', 'تخفي المفاضلات'], a: 1 }
+      ],
+      takeaway: 'حدِّد ← اجمع ← وازِن ← قرِّر ← دافِع ← قيِّم. تلك هي حركة النقل بأكملها.'
+    },
+    hi: {
+      title: 'वार्म-अप: समस्या-समाधान के चरण',
+      seconds: 45,
+      questions: [
+        { q: 'समस्या हल करने वाला सबसे पहले जो करता है, वह है…', choices: ['एक समाधान चुनना', 'समस्या को परिभाषित करना', 'एक दावे का बचाव करना'], a: 1 },
+        { q: 'चुनने से पहले, एक अच्छा समस्या-समाधानकर्ता…', choices: ['जानकारी जुटाता है और विकल्पों को तौलता है', 'जल्दी से अनुमान लगाता है', 'अन्य विचारों को अनदेखा करता है'], a: 0 },
+        { q: 'एक मजबूत समाधान का आधार होता है…', choices: ['एक ऊँची आवाज़', 'दावा + साक्ष्य', 'केवल भावनाएँ'], a: 1 },
+        { q: 'समाधान चुनने के बाद, आपको चाहिए…', choices: ['उसे भूल जाना', 'यह आँकना कि वह कितना अच्छा रहा', 'समझौतों को छिपाना'], a: 1 }
+      ],
+      takeaway: 'परिभाषित करें → जुटाएँ → तौलें → निर्णय लें → बचाव करें → आँकें। यही पूरी अंतरण चाल है।'
+    },
+    ur: {
+      title: 'وارم اپ: مسئلہ حل کرنے کے مراحل',
+      seconds: 45,
+      questions: [
+        { q: 'مسئلہ حل کرنے والا سب سے پہلے جو کرتا ہے، وہ ہے…', choices: ['ایک حل چننا', 'مسئلے کو متعین کرنا', 'ایک دعوے کا دفاع کرنا'], a: 1 },
+        { q: 'چننے سے پہلے، ایک اچھا مسئلہ حل کرنے والا…', choices: ['معلومات جمع کرتا اور اختیارات تولتا ہے', 'جلدی سے اندازہ لگاتا ہے', 'دوسری آراء کو نظرانداز کرتا ہے'], a: 0 },
+        { q: 'ایک مضبوط حل کی بنیاد ہوتی ہے…', choices: ['ایک بلند آواز', 'دعویٰ + ثبوت', 'صرف جذبات'], a: 1 },
+        { q: 'حل چننے کے بعد، آپ کو چاہیے…', choices: ['اسے بھول جانا', 'یہ جانچنا کہ وہ کتنا کارگر رہا', 'سمجھوتوں کو چھپانا'], a: 1 }
+      ],
+      takeaway: 'متعین کریں ← جمع کریں ← تولیں ← فیصلہ کریں ← دفاع کریں ← جانچیں۔ یہی پوری منتقلی کی چال ہے۔'
+    },
+    zh: {
+      title: '热身：解决问题的步骤',
+      seconds: 45,
+      questions: [
+        { q: '解决问题者首先要做的是…', choices: ['挑选一个方案', '界定问题', '为一个主张辩护'], a: 1 },
+        { q: '在做出选择之前，优秀的解决问题者会…', choices: ['收集信息并权衡各种方案', '快速猜测', '无视他人的观点'], a: 0 },
+        { q: '有力的解决方案背后有…', choices: ['大嗓门', '主张 + 证据', '只有感受'], a: 1 },
+        { q: '选定方案之后，你应当…', choices: ['把它忘掉', '评估它的效果如何', '隐藏其中的取舍'], a: 1 }
+      ],
+      takeaway: '界定 → 收集 → 权衡 → 决定 → 辩护 → 评估。这就是整个迁移动作。'
+    } }
+  },
+  {
+    id: 'g7-dust-bowl-transfer-exit', grade: 7, unit: 'dust-bowl',
+    unitTitle: "Dust and Drought, 1935 — Stay or Go?", phase: 'transfer', type: 'exit',
+    format: 'cloze', teks: '§113.19(c)(23)(B)', strat: 'Feedback', d: 0.62,
+    i18n: { en: {
+      title: 'Exit: claim + evidence + trade-offs',
+      items: [
+        { before: 'A stakeholder’s claim without', after: 'from the sources is just an opinion.', choices: ['evidence', 'a title', 'a map'], a: 0 },
+        { before: 'A strong recommendation names the', after: '— the advantages and disadvantages of each option.', choices: ['trade-offs', 'colors', 'vocabulary'], a: 0 },
+        { before: 'The last step of the problem-solving process is to', after: 'how well the solution actually worked.', choices: ['evaluate', 'forget', 'hide'], a: 0 }
+      ],
+      takeaway: 'Claim + evidence + trade-offs, then evaluate — thinking like a historian and a citizen.'
+    },
+    es: {
+      title: 'Salida: afirmación + evidencia + concesiones',
+      items: [
+        { before: 'La afirmación de una parte interesada sin', after: 'de las fuentes es solo una opinión.', choices: ['evidencia', 'un título', 'un mapa'], a: 0 },
+        { before: 'Una recomendación sólida nombra las', after: '— las ventajas y desventajas de cada opción.', choices: ['concesiones', 'colores', 'vocabulario'], a: 0 },
+        { before: 'El último paso del proceso de resolución de problemas es', after: 'qué tan bien funcionó realmente la solución.', choices: ['evaluar', 'olvidar', 'ocultar'], a: 0 }
+      ],
+      takeaway: 'Afirmación + evidencia + concesiones, luego evaluar — pensar como un historiador y un ciudadano.'
+    },
+    vi: {
+      title: 'Phiếu ra: luận điểm + bằng chứng + đánh đổi',
+      items: [
+        { before: 'Luận điểm của một bên liên quan mà không có', after: 'từ các nguồn thì chỉ là một ý kiến.', choices: ['bằng chứng', 'một tiêu đề', 'một tấm bản đồ'], a: 0 },
+        { before: 'Một khuyến nghị vững chắc nêu ra những', after: '— ưu điểm và nhược điểm của mỗi phương án.', choices: ['đánh đổi', 'màu sắc', 'từ vựng'], a: 0 },
+        { before: 'Bước cuối cùng của quá trình giải quyết vấn đề là', after: 'xem giải pháp thực sự hiệu quả đến đâu.', choices: ['đánh giá', 'quên đi', 'giấu đi'], a: 0 }
+      ],
+      takeaway: 'Luận điểm + bằng chứng + đánh đổi, rồi đánh giá — tư duy như một nhà sử học và một công dân.'
+    },
+    ar: {
+      title: 'الخروج: ادعاء + دليل + مفاضلات',
+      items: [
+        { before: 'ادعاء صاحب المصلحة بلا', after: 'من المصادر ما هو إلا رأي.', choices: ['دليل', 'عنوان', 'خريطة'], a: 0 },
+        { before: 'التوصية القوية تسمّي', after: '— مزايا وعيوب كل خيار.', choices: ['المفاضلات', 'الألوان', 'المفردات'], a: 0 },
+        { before: 'الخطوة الأخيرة في عملية حل المشكلة هي أن', after: 'مدى نجاح الحل فعليًا.', choices: ['تقيّم', 'تنسى', 'تخفي'], a: 0 }
+      ],
+      takeaway: 'ادعاء + دليل + مفاضلات ثم التقييم — التفكير كمؤرّخ ومواطن.'
+    },
+    hi: {
+      title: 'निकास: दावा + साक्ष्य + समझौते',
+      items: [
+        { before: 'स्रोतों से', after: 'के बिना किसी हितधारक का दावा महज़ एक राय है।', choices: ['साक्ष्य', 'एक शीर्षक', 'एक नक्शा'], a: 0 },
+        { before: 'एक मजबूत सिफ़ारिश नाम लेती है', after: '— हर विकल्प के फ़ायदे और नुक़सान।', choices: ['समझौतों का', 'रंगों का', 'शब्दावली का'], a: 0 },
+        { before: 'समस्या-समाधान प्रक्रिया का अंतिम चरण है यह', after: 'कि समाधान वास्तव में कितना अच्छा रहा।', choices: ['आँकना', 'भूलना', 'छिपाना'], a: 0 }
+      ],
+      takeaway: 'दावा + साक्ष्य + समझौते, फिर आँकें — एक इतिहासकार और एक नागरिक की तरह सोचना।'
+    },
+    ur: {
+      title: 'اخراج: دعویٰ + ثبوت + سمجھوتے',
+      items: [
+        { before: 'مآخذ سے', after: 'کے بغیر کسی اسٹیک ہولڈر کا دعویٰ محض ایک رائے ہے۔', choices: ['ثبوت', 'ایک عنوان', 'ایک نقشہ'], a: 0 },
+        { before: 'ایک مضبوط سفارش نام لیتی ہے', after: '— ہر اختیار کے فائدے اور نقصانات۔', choices: ['سمجھوتوں کا', 'رنگوں کا', 'الفاظ کا'], a: 0 },
+        { before: 'مسئلہ حل کرنے کے عمل کا آخری مرحلہ یہ ہے کہ', after: 'کہ حل واقعی کتنا کارگر رہا۔', choices: ['جانچیں', 'بھول جائیں', 'چھپائیں'], a: 0 }
+      ],
+      takeaway: 'دعویٰ + ثبوت + سمجھوتے، پھر جانچیں — ایک مؤرخ اور ایک شہری کی طرح سوچنا۔'
+    },
+    zh: {
+      title: '离场：主张 + 证据 + 取舍',
+      items: [
+        { before: '利益相关者的主张若没有来自资料的', after: '，就只是一种意见。', choices: ['证据', '一个标题', '一张地图'], a: 0 },
+        { before: '有力的建议会说出其中的', after: '——每个方案的利与弊。', choices: ['取舍', '颜色', '词汇'], a: 0 },
+        { before: '解决问题过程的最后一步，是去', after: '这个方案实际的效果如何。', choices: ['评估', '遗忘', '隐藏'], a: 0 }
+      ],
+      takeaway: '主张 + 证据 + 取舍，然后评估——像史学家和公民一样思考。'
+    } }
+  }
+
+]);
+
 /* ── g7-spindletop.js ── */
 /* PST Arcade — ticket registry. Each ticket is retrieval practice for one unit + phase.
    English-first; other languages carried inline per ticket (ticket.i18n[lang]). The engine
@@ -6410,6 +6903,993 @@ window.PST_TICKETS = (window.PST_TICKETS || []).concat([
         { before: '解决问题流程的最后一步是', after: '方案的效果如何。', choices: ['评估', '遗忘', '隐藏'], a: 0 }
       ],
       takeaway: '主张 + 证据 + 取舍，再评估——这就是像史学家和公民一样思考。'
+    } }
+  }
+
+]);
+
+/* ── g7-statehood-1845.js ── */
+/* PST Arcade — ticket registry for Grade 7 · One Star or Many? 1845 (Texas annexation).
+   English-first; other languages carried inline per ticket (ticket.i18n[lang]). The engine
+   (arcade.js) reads window.PST_TICKETS. Nothing is stored or sent. To add tickets, append objects
+   with the same shape: {id, grade, unit, unitTitle, phase, type, format, teks, strat, d, i18n}.
+   Annexation and slavery content is kept factual and respectful (TEC §28.0022). */
+window.PST_TICKETS = (window.PST_TICKETS || []).concat([
+
+  /* ───────── Grade 7 · Statehood 1845 · SURFACE ───────── */
+  {
+    id: 'g7-statehood-1845-surface-entry', grade: 7, unit: 'statehood-1845',
+    unitTitle: 'One Star or Many? 1845 — Should Texas Join the United States?', phase: 'surface', type: 'entry',
+    format: 'mcq', teks: '§113.19(c)(11), (c)(13)', strat: 'Retrieval practice', d: 0.54,
+    i18n: { en: {
+      title: 'Warm-up: annexation words',
+      seconds: 45,
+      questions: [
+        { q: 'A country run by elected leaders instead of a king is a…', choices: ['republic', 'treaty', 'tariff'], a: 0 },
+        { q: 'One country adding another’s territory to itself is called…', choices: ['sovereignty', 'annexation', 'ratification'], a: 1 },
+        { q: 'A country’s power to govern itself and make its own decisions is its…', choices: ['sovereignty', 'statehood', 'national debt'], a: 0 },
+        { q: 'The money a government owes and must pay back is its…', choices: ['tariff', 'treaty', 'national debt'], a: 2 }
+      ],
+      takeaway: 'Know these four words and you can follow the whole 1845 annexation debate.'
+    },
+    es: {
+      title: 'Calentamiento: palabras de la anexión',
+      seconds: 45,
+      questions: [
+        { q: 'Un país gobernado por líderes electos en lugar de un rey es una…', choices: ['república', 'tratado', 'arancel'], a: 0 },
+        { q: 'Que un país sume a sí mismo el territorio de otro se llama…', choices: ['soberanía', 'anexión', 'ratificación'], a: 1 },
+        { q: 'El poder de un país para gobernarse y tomar sus propias decisiones es su…', choices: ['soberanía', 'estatalidad', 'deuda nacional'], a: 0 },
+        { q: 'El dinero que un gobierno debe y tiene que devolver es su…', choices: ['arancel', 'tratado', 'deuda nacional'], a: 2 }
+      ],
+      takeaway: 'Domina estas cuatro palabras y podrás seguir todo el debate de la anexión de 1845.'
+    },
+    vi: {
+      title: 'Khởi động: từ vựng về sáp nhập',
+      seconds: 45,
+      questions: [
+        { q: 'Một quốc gia do các nhà lãnh đạo được bầu chọn cầm quyền thay vì vua là một…', choices: ['nền cộng hòa', 'hiệp ước', 'thuế quan'], a: 0 },
+        { q: 'Việc một quốc gia sáp nhập lãnh thổ của quốc gia khác vào mình được gọi là…', choices: ['chủ quyền', 'sáp nhập', 'phê chuẩn'], a: 1 },
+        { q: 'Quyền của một quốc gia tự cai trị và tự ra quyết định là…', choices: ['chủ quyền', 'tư cách tiểu bang', 'nợ quốc gia'], a: 0 },
+        { q: 'Khoản tiền mà chính phủ nợ và phải trả lại là…', choices: ['thuế quan', 'hiệp ước', 'nợ quốc gia'], a: 2 }
+      ],
+      takeaway: 'Nắm bốn từ này là bạn có thể theo dõi cả cuộc tranh luận sáp nhập năm 1845.'
+    },
+    ar: {
+      title: 'تهيئة: كلمات الضم',
+      seconds: 45,
+      questions: [
+        { q: 'البلد الذي يحكمه قادة منتخبون بدلاً من ملك هو…', choices: ['جمهورية', 'معاهدة', 'تعريفة جمركية'], a: 0 },
+        { q: 'أن يضيف بلد إليه أرض بلد آخر يُسمّى…', choices: ['السيادة', 'الضم', 'التصديق'], a: 1 },
+        { q: 'قدرة البلد على حكم نفسه واتخاذ قراراته هي…', choices: ['السيادة', 'مرتبة الولاية', 'الدين الوطني'], a: 0 },
+        { q: 'المال الذي تدين به الحكومة وعليها سداده هو…', choices: ['التعريفة الجمركية', 'المعاهدة', 'الدين الوطني'], a: 2 }
+      ],
+      takeaway: 'أتقن هذه الكلمات الأربع وستتابع كامل نقاش الضم عام 1845.'
+    },
+    hi: {
+      title: 'वार्म-अप: विलय के शब्द',
+      seconds: 45,
+      questions: [
+        { q: 'राजा के बजाय निर्वाचित नेताओं द्वारा चलाया जाने वाला देश एक है…', choices: ['गणराज्य', 'संधि', 'टैरिफ'], a: 0 },
+        { q: 'एक देश द्वारा दूसरे के क्षेत्र को अपने में मिलाना कहलाता है…', choices: ['सार्वभौमिकता', 'विलय', 'अनुसमर्थन'], a: 1 },
+        { q: 'किसी देश की खुद पर शासन करने और अपने निर्णय लेने की शक्ति उसकी…', choices: ['सार्वभौमिकता', 'राज्य-पद', 'राष्ट्रीय कर्ज़'], a: 0 },
+        { q: 'सरकार जो पैसा उधार लेती है और लौटाना होता है, वह उसका…', choices: ['टैरिफ', 'संधि', 'राष्ट्रीय कर्ज़'], a: 2 }
+      ],
+      takeaway: 'इन चार शब्दों को जान लें और आप 1845 के पूरे विलय वाद-विवाद को समझ सकेंगे।'
+    },
+    ur: {
+      title: 'وارم اپ: الحاق کے الفاظ',
+      seconds: 45,
+      questions: [
+        { q: 'وہ ملک جو بادشاہ کے بجائے منتخب رہنماؤں سے چلتا ہو، وہ…', choices: ['جمہوریہ', 'معاہدہ', 'محصول'], a: 0 },
+        { q: 'ایک ملک کا دوسرے کا علاقہ اپنے اندر شامل کرنا کہلاتا ہے…', choices: ['خودمختاری', 'الحاق', 'توثیق'], a: 1 },
+        { q: 'کسی ملک کی خود پر حکومت کرنے اور اپنے فیصلے کرنے کی طاقت اس کی…', choices: ['خودمختاری', 'ریاستی حیثیت', 'قومی قرض'], a: 0 },
+        { q: 'وہ رقم جو حکومت مقروض ہو اور واپس کرنی ہو، وہ اس کا…', choices: ['محصول', 'معاہدہ', 'قومی قرض'], a: 2 }
+      ],
+      takeaway: 'ان چار الفاظ کو جان لیں تو آپ 1845 کے پورے الحاق کے مباحثے کو سمجھ سکیں گے۔'
+    },
+    zh: {
+      title: '热身：并入词汇',
+      seconds: 45,
+      questions: [
+        { q: '由民选领导人而非国王管理的国家是一个…', choices: ['共和国', '条约', '关税'], a: 0 },
+        { q: '一个国家把另一个国家的领土并入自己，称为…', choices: ['主权', '并入', '批准'], a: 1 },
+        { q: '一个国家自我统治、自主决策的权力是它的…', choices: ['主权', '州的地位', '国家债务'], a: 0 },
+        { q: '政府欠下并必须偿还的钱是它的…', choices: ['关税', '条约', '国家债务'], a: 2 }
+      ],
+      takeaway: '掌握这四个词，你就能跟上整场 1845 年的并入辩论。'
+    } }
+  },
+  {
+    id: 'g7-statehood-1845-surface-exit', grade: 7, unit: 'statehood-1845',
+    unitTitle: 'One Star or Many? 1845 — Should Texas Join the United States?', phase: 'surface', type: 'exit',
+    format: 'match', teks: '§113.19(c)(11), (c)(13)', strat: 'Vocabulary & feedback', d: 0.62,
+    i18n: { en: {
+      title: 'Exit: match the word to its meaning',
+      pairs: [
+        ['annexation', 'one country adding another’s territory to itself'],
+        ['sovereignty', 'a country’s power to govern itself'],
+        ['treaty', 'a formal, written agreement between countries'],
+        ['tariff', 'a tax on goods coming in from another country'],
+        ['ratify', 'to formally approve an agreement so it becomes official']
+      ],
+      takeaway: 'If you matched all five, you are ready to go deep. If not, revisit the word bank.'
+    },
+    es: {
+      title: 'Salida: relaciona la palabra con su significado',
+      pairs: [
+        ['anexión', 'que un país sume a sí mismo el territorio de otro'],
+        ['soberanía', 'el poder de un país para gobernarse a sí mismo'],
+        ['tratado', 'un acuerdo formal y escrito entre países'],
+        ['arancel', 'un impuesto sobre bienes que entran de otro país'],
+        ['ratificar', 'aprobar formalmente un acuerdo para que sea oficial']
+      ],
+      takeaway: 'Si relacionaste las cinco, estás listo para ir a lo profundo. Si no, repasa el banco de palabras.'
+    },
+    vi: {
+      title: 'Phiếu ra: ghép từ với nghĩa của nó',
+      pairs: [
+        ['sáp nhập', 'một quốc gia sáp nhập lãnh thổ quốc gia khác vào mình'],
+        ['chủ quyền', 'quyền của một quốc gia tự cai trị'],
+        ['hiệp ước', 'một thỏa thuận chính thức, bằng văn bản giữa các quốc gia'],
+        ['thuế quan', 'thuế đánh vào hàng hóa nhập từ quốc gia khác'],
+        ['phê chuẩn', 'chính thức chấp thuận một thỏa thuận để nó có hiệu lực']
+      ],
+      takeaway: 'Nếu bạn ghép đúng cả năm, bạn đã sẵn sàng học chuyên sâu. Nếu chưa, hãy xem lại kho từ vựng.'
+    },
+    ar: {
+      title: 'الخروج: طابِق الكلمة مع معناها',
+      pairs: [
+        ['الضم', 'أن يضيف بلد إليه أرض بلد آخر'],
+        ['السيادة', 'قدرة البلد على حكم نفسه'],
+        ['المعاهدة', 'اتفاق رسمي مكتوب بين الدول'],
+        ['التعريفة الجمركية', 'ضريبة على البضائع الواردة من بلد آخر'],
+        ['التصديق', 'الموافقة الرسمية على اتفاق ليصبح رسمياً']
+      ],
+      takeaway: 'إذا طابقت الخمس جميعاً، فأنت مستعد للتعمّق. وإلا، فراجِع بنك الكلمات.'
+    },
+    hi: {
+      title: 'निकास: शब्द को उसके अर्थ से मिलाएँ',
+      pairs: [
+        ['विलय', 'एक देश द्वारा दूसरे का क्षेत्र अपने में मिलाना'],
+        ['सार्वभौमिकता', 'किसी देश की खुद पर शासन करने की शक्ति'],
+        ['संधि', 'देशों के बीच एक औपचारिक, लिखित समझौता'],
+        ['टैरिफ', 'दूसरे देश से आने वाले माल पर कर'],
+        ['अनुसमर्थन करना', 'एक समझौते को औपचारिक रूप से मंजूर करना ताकि वह आधिकारिक बन जाए']
+      ],
+      takeaway: 'यदि आपने पाँचों मिला दिए, तो आप गहन में जाने के लिए तैयार हैं। यदि नहीं, तो शब्द-बैंक फिर देखें।'
+    },
+    ur: {
+      title: 'اخراج: لفظ کو اس کے مطلب سے ملائیں',
+      pairs: [
+        ['الحاق', 'ایک ملک کا دوسرے کا علاقہ اپنے اندر شامل کرنا'],
+        ['خودمختاری', 'کسی ملک کی خود پر حکومت کرنے کی طاقت'],
+        ['معاہدہ', 'ممالک کے درمیان ایک رسمی، تحریری معاہدہ'],
+        ['محصول', 'دوسرے ملک سے آنے والے مال پر ٹیکس'],
+        ['توثیق کرنا', 'کسی معاہدے کو رسمی طور پر منظور کرنا تاکہ وہ سرکاری ہو جائے']
+      ],
+      takeaway: 'اگر آپ نے پانچوں ملا دیے تو آپ گہرائی میں جانے کو تیار ہیں۔ ورنہ لفظی بینک دوبارہ دیکھیں۔'
+    },
+    zh: {
+      title: '离场：把词语与其含义配对',
+      pairs: [
+        ['并入', '一个国家把另一个国家的领土并入自己'],
+        ['主权', '一个国家自我统治的权力'],
+        ['条约', '国家之间正式、书面的协议'],
+        ['关税', '对从另一个国家进口货物征收的税'],
+        ['批准', '正式批准一项协议使其生效']
+      ],
+      takeaway: '如果五个都配对正确，你就可以进入深层学习了。若没有，请重温词汇表。'
+    } }
+  },
+
+  /* ───────── Grade 7 · Statehood 1845 · DEEP ───────── */
+  {
+    id: 'g7-statehood-1845-deep-entry', grade: 7, unit: 'statehood-1845',
+    unitTitle: 'One Star or Many? 1845 — Should Texas Join the United States?', phase: 'deep', type: 'entry',
+    format: 'cloze', teks: '§113.19(c)(11), (c)(12)', strat: 'Retrieval practice', d: 0.54,
+    i18n: { en: {
+      title: 'Warm-up: costs & benefits',
+      items: [
+        { before: 'Joining the U.S. would bring the protection of the', after: 'to a republic hard to defend alone.', choices: ['U.S. Army', 'Mexican Army', 'Rio Grande'], a: 0 },
+        { before: 'Staying independent would let Texas keep its', after: 'and its own choices.', choices: ['debt', 'sovereignty', 'tariffs'], a: 1 },
+        { before: 'Because Texas allowed slavery, joining as a slave state deepened the U.S.', after: 'between North and South.', choices: ['tariff', 'treaty', 'sectional divide'], a: 2 }
+      ],
+      takeaway: 'Every option in 1845 carried a benefit AND a cost. Trace both.'
+    },
+    es: {
+      title: 'Calentamiento: costos y beneficios',
+      items: [
+        { before: 'Unirse a EE. UU. traería la protección del', after: 'a una república difícil de defender sola.', choices: ['Ejército de EE. UU.', 'Ejército mexicano', 'Río Grande'], a: 0 },
+        { before: 'Quedarse independiente permitiría a Texas conservar su', after: 'y sus propias decisiones.', choices: ['deuda', 'soberanía', 'aranceles'], a: 1 },
+        { before: 'Como Texas permitía la esclavitud, unirse como estado esclavista profundizó la', after: 'de EE. UU. entre el Norte y el Sur.', choices: ['arancel', 'tratado', 'división seccional'], a: 2 }
+      ],
+      takeaway: 'Cada opción en 1845 llevaba un beneficio Y un costo. Rastrea ambos.'
+    },
+    vi: {
+      title: 'Khởi động: chi phí & lợi ích',
+      items: [
+        { before: 'Gia nhập Hoa Kỳ sẽ mang lại sự bảo vệ của', after: 'cho một nền cộng hòa khó tự vệ một mình.', choices: ['Quân đội Hoa Kỳ', 'Quân đội Mexico', 'Sông Rio Grande'], a: 0 },
+        { before: 'Giữ độc lập sẽ cho phép Texas giữ lại', after: 'và các lựa chọn riêng của mình.', choices: ['nợ', 'chủ quyền', 'thuế quan'], a: 1 },
+        { before: 'Vì Texas cho phép chế độ nô lệ, gia nhập với tư cách bang nô lệ đã làm sâu sắc thêm', after: 'của Hoa Kỳ giữa miền Bắc và miền Nam.', choices: ['thuế quan', 'hiệp ước', 'sự chia rẽ vùng miền'], a: 2 }
+      ],
+      takeaway: 'Mọi lựa chọn năm 1845 đều mang cả lợi ích VÀ chi phí. Hãy truy cả hai.'
+    },
+    ar: {
+      title: 'تهيئة: التكاليف والمنافع',
+      items: [
+        { before: 'الانضمام إلى الولايات المتحدة سيجلب حماية', after: 'لجمهورية يصعب الدفاع عنها وحدها.', choices: ['الجيش الأمريكي', 'الجيش المكسيكي', 'نهر ريو جراندي'], a: 0 },
+        { before: 'البقاء مستقلة سيسمح لتكساس بالاحتفاظ ب', after: 'وبخياراتها الخاصة.', choices: ['الدين', 'السيادة', 'التعريفات الجمركية'], a: 1 },
+        { before: 'لأن تكساس أباحت الرق، فإن انضمامها كولاية عبودية عمّق', after: 'في الولايات المتحدة بين الشمال والجنوب.', choices: ['تعريفة جمركية', 'معاهدة', 'الانقسام الإقليمي'], a: 2 }
+      ],
+      takeaway: 'كل خيار عام 1845 حمل منفعة وتكلفة معاً. تتبّع كليهما.'
+    },
+    hi: {
+      title: 'वार्म-अप: लागत और लाभ',
+      items: [
+        { before: 'अमेरिका में शामिल होना अकेले रक्षा में कठिन एक गणराज्य को', after: 'की सुरक्षा देता।', choices: ['अमेरिकी सेना', 'मेक्सिकी सेना', 'रियो ग्रांडे'], a: 0 },
+        { before: 'स्वतंत्र रहना टेक्सास को अपनी', after: 'और अपने निर्णय रखने देता।', choices: ['कर्ज़', 'सार्वभौमिकता', 'टैरिफ'], a: 1 },
+        { before: 'चूंकि टेक्सास में दासता थी, दास-राज्य के रूप में शामिल होने से उत्तर और दक्षिण के बीच अमेरिका का', after: 'गहरा गया।', choices: ['टैरिफ', 'संधि', 'क्षेत्रीय विभाजन'], a: 2 }
+      ],
+      takeaway: '1845 का हर विकल्प एक लाभ और एक लागत दोनों लाता था। दोनों को खोजें।'
+    },
+    ur: {
+      title: 'وارم اپ: لاگت اور فوائد',
+      items: [
+        { before: 'امریکہ میں شامل ہونا اکیلے دفاع میں مشکل ایک جمہوریہ کو', after: 'کی حفاظت دیتا۔', choices: ['امریکی فوج', 'مکسیکی فوج', 'دریائے ریو گرانڈے'], a: 0 },
+        { before: 'آزاد رہنا ٹیکساس کو اپنی', after: 'اور اپنے فیصلے رکھنے دیتا۔', choices: ['قرض', 'خودمختاری', 'محصولات'], a: 1 },
+        { before: 'چونکہ ٹیکساس میں غلامی تھی، غلام ریاست کے طور پر شامل ہونے نے شمال اور جنوب کے درمیان امریکی', after: 'کو گہرا کر دیا۔', choices: ['محصول', 'معاہدہ', 'علاقائی تقسیم'], a: 2 }
+      ],
+      takeaway: '1845 کا ہر اختیار ایک فائدہ اور ایک لاگت دونوں لاتا تھا۔ دونوں کو تلاش کریں۔'
+    },
+    zh: {
+      title: '热身：成本与收益',
+      items: [
+        { before: '加入美国会为一个难以单独防守的共和国带来', after: '的保护。', choices: ['美国军队', '墨西哥军队', '格兰德河'], a: 0 },
+        { before: '保持独立会让德克萨斯保留它的', after: '以及自己的选择。', choices: ['债务', '主权', '关税'], a: 1 },
+        { before: '由于德克萨斯允许奴隶制，作为蓄奴州加入加深了美国南北方之间的', after: '。', choices: ['关税', '条约', '地区分裂'], a: 2 }
+      ],
+      takeaway: '1845 年的每个选择都兼有收益与成本。两者都要追踪。'
+    } }
+  },
+  {
+    id: 'g7-statehood-1845-deep-exit', grade: 7, unit: 'statehood-1845',
+    unitTitle: 'One Star or Many? 1845 — Should Texas Join the United States?', phase: 'deep', type: 'exit',
+    format: 'sort', teks: '§113.19(c)(11), (c)(12)', strat: 'Concept organization', d: 0.64,
+    i18n: { en: {
+      title: 'Exit: sort join vs. stay independent',
+      cats: ['Join the United States', 'Stay an independent republic'],
+      items: [
+        { t: 'Protection of the U.S. Army', c: 0 },
+        { t: 'Help paying off the national debt', c: 0 },
+        { t: 'Larger trade and U.S. markets', c: 0 },
+        { t: 'Keeps its own sovereignty and self-rule', c: 1 },
+        { t: 'No new U.S. taxes or tariffs', c: 1 },
+        { t: 'Avoids being pulled into other nations’ quarrels', c: 1 }
+      ],
+      takeaway: 'Sorting outcomes by option is the concept map behind your 1845 argument.'
+    },
+    es: {
+      title: 'Salida: clasifica unirse vs. seguir independiente',
+      cats: ['Unirse a Estados Unidos', 'Seguir siendo república independiente'],
+      items: [
+        { t: 'Protección del Ejército de EE. UU.', c: 0 },
+        { t: 'Ayuda para pagar la deuda nacional', c: 0 },
+        { t: 'Mayor comercio y mercados de EE. UU.', c: 0 },
+        { t: 'Conserva su soberanía y autogobierno', c: 1 },
+        { t: 'Sin nuevos impuestos ni aranceles de EE. UU.', c: 1 },
+        { t: 'Evita verse arrastrada a los conflictos de otras naciones', c: 1 }
+      ],
+      takeaway: 'Clasificar los resultados por opción es el mapa conceptual detrás de tu argumento de 1845.'
+    },
+    vi: {
+      title: 'Phiếu ra: phân loại gia nhập vs. giữ độc lập',
+      cats: ['Gia nhập Hoa Kỳ', 'Giữ nền cộng hòa độc lập'],
+      items: [
+        { t: 'Sự bảo vệ của Quân đội Hoa Kỳ', c: 0 },
+        { t: 'Giúp trả nợ quốc gia', c: 0 },
+        { t: 'Thương mại lớn hơn và thị trường Hoa Kỳ', c: 0 },
+        { t: 'Giữ chủ quyền và quyền tự trị', c: 1 },
+        { t: 'Không có thuế hay thuế quan mới của Hoa Kỳ', c: 1 },
+        { t: 'Tránh bị lôi kéo vào tranh chấp của các quốc gia khác', c: 1 }
+      ],
+      takeaway: 'Phân loại kết quả theo lựa chọn chính là sơ đồ khái niệm đằng sau lập luận năm 1845 của bạn.'
+    },
+    ar: {
+      title: 'الخروج: صنّف الانضمام مقابل البقاء مستقلاً',
+      cats: ['الانضمام إلى الولايات المتحدة', 'البقاء جمهورية مستقلة'],
+      items: [
+        { t: 'حماية الجيش الأمريكي', c: 0 },
+        { t: 'المساعدة في سداد الدين الوطني', c: 0 },
+        { t: 'تجارة أوسع وأسواق أمريكية', c: 0 },
+        { t: 'تحتفظ بسيادتها وحكمها الذاتي', c: 1 },
+        { t: 'لا ضرائب أو تعريفات أمريكية جديدة', c: 1 },
+        { t: 'تجنّب الانجرار إلى نزاعات الأمم الأخرى', c: 1 }
+      ],
+      takeaway: 'تصنيف النتائج حسب الخيار هو الخريطة المفاهيمية وراء حجتك لعام 1845.'
+    },
+    hi: {
+      title: 'निकास: शामिल होना बनाम स्वतंत्र रहना छाँटें',
+      cats: ['अमेरिका में शामिल होना', 'स्वतंत्र गणराज्य बने रहना'],
+      items: [
+        { t: 'अमेरिकी सेना की सुरक्षा', c: 0 },
+        { t: 'राष्ट्रीय कर्ज़ चुकाने में मदद', c: 0 },
+        { t: 'बड़ा व्यापार और अमेरिकी बाज़ार', c: 0 },
+        { t: 'अपनी सार्वभौमिकता और स्व-शासन रखता है', c: 1 },
+        { t: 'कोई नया अमेरिकी कर या टैरिफ नहीं', c: 1 },
+        { t: 'अन्य देशों के झगड़ों में खिंचने से बचता है', c: 1 }
+      ],
+      takeaway: 'परिणामों को विकल्प के अनुसार छाँटना ही 1845 के आपके तर्क के पीछे का अवधारणा मानचित्र है।'
+    },
+    ur: {
+      title: 'اخراج: شامل ہونا بمقابلہ آزاد رہنا چھانٹیں',
+      cats: ['امریکہ میں شامل ہونا', 'آزاد جمہوریہ رہنا'],
+      items: [
+        { t: 'امریکی فوج کی حفاظت', c: 0 },
+        { t: 'قومی قرض ادا کرنے میں مدد', c: 0 },
+        { t: 'بڑا تجارت اور امریکی منڈیاں', c: 0 },
+        { t: 'اپنی خودمختاری اور خودحکومی رکھتا ہے', c: 1 },
+        { t: 'کوئی نیا امریکی ٹیکس یا محصول نہیں', c: 1 },
+        { t: 'دوسری اقوام کے جھگڑوں میں گھسیٹنے سے بچتا ہے', c: 1 }
+      ],
+      takeaway: 'نتائج کو اختیار کے مطابق چھانٹنا ہی 1845 کے آپ کے دلیل کے پیچھے تصوراتی نقشہ ہے۔'
+    },
+    zh: {
+      title: '离场：把“加入”与“保持独立”分类',
+      cats: ['加入美国', '保持独立共和国'],
+      items: [
+        { t: '美国军队的保护', c: 0 },
+        { t: '帮助偿还国家债务', c: 0 },
+        { t: '更大的贸易与美国市场', c: 0 },
+        { t: '保留自己的主权与自治', c: 1 },
+        { t: '没有新的美国税或关税', c: 1 },
+        { t: '避免被卷入其他国家的纠纷', c: 1 }
+      ],
+      takeaway: '按选项对结果分类，就是你 1845 年论证背后的概念图。'
+    } }
+  },
+
+  /* ───────── Grade 7 · Statehood 1845 · TRANSFER ───────── */
+  {
+    id: 'g7-statehood-1845-transfer-entry', grade: 7, unit: 'statehood-1845',
+    unitTitle: 'One Star or Many? 1845 — Should Texas Join the United States?', phase: 'transfer', type: 'entry',
+    format: 'mcq', teks: '§113.19(c)(23)(B)', strat: 'Retrieval practice', d: 0.54,
+    i18n: { en: {
+      title: 'Warm-up: the problem-solving steps',
+      seconds: 45,
+      questions: [
+        { q: 'The FIRST move in the problem-solving process is to…', choices: ['pick a solution', 'define the problem', 'defend a claim'], a: 1 },
+        { q: 'Before choosing, a good problem-solver…', choices: ['gathers information & weighs options', 'guesses quickly', 'ignores other stakeholders'], a: 0 },
+        { q: 'A strong recommendation is backed by…', choices: ['a loud voice', 'claim + evidence', 'only feelings'], a: 1 },
+        { q: 'After choosing a solution, you should…', choices: ['forget it', 'evaluate how well it worked', 'hide the trade-offs'], a: 1 }
+      ],
+      takeaway: 'Define → gather → weigh → decide → defend → evaluate. That is §113.19(c)(23)(B).'
+    },
+    es: {
+      title: 'Calentamiento: los pasos para resolver problemas',
+      seconds: 45,
+      questions: [
+        { q: 'El PRIMER paso del proceso de resolución de problemas es…', choices: ['elegir una solución', 'definir el problema', 'defender una afirmación'], a: 1 },
+        { q: 'Antes de elegir, quien resuelve bien problemas…', choices: ['reúne información y sopesa opciones', 'adivina rápido', 'ignora a otras partes interesadas'], a: 0 },
+        { q: 'Una recomendación sólida se respalda con…', choices: ['una voz fuerte', 'afirmación + evidencia', 'solo sentimientos'], a: 1 },
+        { q: 'Después de elegir una solución, deberías…', choices: ['olvidarla', 'evaluar qué tan bien funcionó', 'ocultar las concesiones'], a: 1 }
+      ],
+      takeaway: 'Definir → reunir → sopesar → decidir → defender → evaluar. Eso es §113.19(c)(23)(B).'
+    },
+    vi: {
+      title: 'Khởi động: các bước giải quyết vấn đề',
+      seconds: 45,
+      questions: [
+        { q: 'Bước ĐẦU TIÊN của quy trình giải quyết vấn đề là…', choices: ['chọn một giải pháp', 'xác định vấn đề', 'bảo vệ một luận điểm'], a: 1 },
+        { q: 'Trước khi chọn, người giải quyết vấn đề giỏi sẽ…', choices: ['thu thập thông tin & cân nhắc các phương án', 'đoán nhanh', 'bỏ qua các bên liên quan khác'], a: 0 },
+        { q: 'Một đề xuất vững chắc được củng cố bằng…', choices: ['một giọng nói to', 'luận điểm + bằng chứng', 'chỉ cảm xúc'], a: 1 },
+        { q: 'Sau khi chọn một giải pháp, bạn nên…', choices: ['quên nó đi', 'đánh giá xem nó hiệu quả ra sao', 'giấu đi các đánh đổi'], a: 1 }
+      ],
+      takeaway: 'Xác định → thu thập → cân nhắc → quyết định → bảo vệ → đánh giá. Đó là §113.19(c)(23)(B).'
+    },
+    ar: {
+      title: 'تهيئة: خطوات حل المشكلة',
+      seconds: 45,
+      questions: [
+        { q: 'الخطوة الأولى في عملية حل المشكلة هي…', choices: ['اختيار حل', 'تحديد المشكلة', 'الدفاع عن ادعاء'], a: 1 },
+        { q: 'قبل الاختيار، يقوم حلّال المشكلات الجيد بـ…', choices: ['جمع المعلومات وموازنة الخيارات', 'التخمين بسرعة', 'تجاهل أصحاب المصلحة الآخرين'], a: 0 },
+        { q: 'التوصية القوية تُدعم بـ…', choices: ['صوت عالٍ', 'ادعاء + دليل', 'المشاعر فقط'], a: 1 },
+        { q: 'بعد اختيار حل، ينبغي أن…', choices: ['تنساه', 'تقيّم مدى نجاحه', 'تخفي المفاضلات'], a: 1 }
+      ],
+      takeaway: 'حدّد ← اجمع ← وازِن ← قرّر ← دافِع ← قيّم. تلك هي §113.19(c)(23)(B).'
+    },
+    hi: {
+      title: 'वार्म-अप: समस्या-समाधान के चरण',
+      seconds: 45,
+      questions: [
+        { q: 'समस्या-समाधान प्रक्रिया का पहला कदम है…', choices: ['एक समाधान चुनना', 'समस्या को परिभाषित करना', 'एक दावे का बचाव करना'], a: 1 },
+        { q: 'चुनने से पहले, एक अच्छा समस्या-समाधानकर्ता…', choices: ['जानकारी जुटाता है और विकल्पों को तौलता है', 'जल्दी से अनुमान लगाता है', 'अन्य हितधारकों को अनदेखा करता है'], a: 0 },
+        { q: 'एक मजबूत सिफारिश का आधार होता है…', choices: ['एक ऊंची आवाज़', 'दावा + साक्ष्य', 'केवल भावनाएँ'], a: 1 },
+        { q: 'समाधान चुनने के बाद, आपको चाहिए…', choices: ['उसे भूल जाना', 'यह आँकना कि वह कितना अच्छा रहा', 'समझौतों को छिपाना'], a: 1 }
+      ],
+      takeaway: 'परिभाषित करें → जुटाएँ → तौलें → निर्णय लें → बचाव करें → आँकें। यही §113.19(c)(23)(B) है।'
+    },
+    ur: {
+      title: 'وارم اپ: مسئلہ حل کرنے کے مراحل',
+      seconds: 45,
+      questions: [
+        { q: 'مسئلہ حل کرنے کے عمل کا پہلا قدم ہے…', choices: ['ایک حل چننا', 'مسئلے کو متعین کرنا', 'ایک دعوے کا دفاع کرنا'], a: 1 },
+        { q: 'چننے سے پہلے، ایک اچھا مسئلہ حل کرنے والا…', choices: ['معلومات جمع کرتا اور اختیارات تولتا ہے', 'جلدی سے اندازہ لگاتا ہے', 'دوسرے اسٹیک ہولڈرز کو نظرانداز کرتا ہے'], a: 0 },
+        { q: 'ایک مضبوط سفارش کی بنیاد ہوتی ہے…', choices: ['ایک بلند آواز', 'دعویٰ + ثبوت', 'صرف جذبات'], a: 1 },
+        { q: 'حل چننے کے بعد، آپ کو چاہیے…', choices: ['اسے بھول جانا', 'یہ جانچنا کہ وہ کتنا کارگر رہا', 'سمجھوتوں کو چھپانا'], a: 1 }
+      ],
+      takeaway: 'متعین کریں ← جمع کریں ← تولیں ← فیصلہ کریں ← دفاع کریں ← جانچیں۔ یہی §113.19(c)(23)(B) ہے۔'
+    },
+    zh: {
+      title: '热身：解决问题的步骤',
+      seconds: 45,
+      questions: [
+        { q: '解决问题过程的第一步是…', choices: ['挑选一个方案', '界定问题', '为一个主张辩护'], a: 1 },
+        { q: '在做出选择之前，优秀的解决问题者会…', choices: ['收集信息并权衡各种方案', '快速猜测', '无视其他利益相关者'], a: 0 },
+        { q: '有力的建议背后有…', choices: ['大嗓门', '主张 + 证据', '只有感受'], a: 1 },
+        { q: '选定方案之后，你应当…', choices: ['把它忘掉', '评估它的效果如何', '隐藏其中的取舍'], a: 1 }
+      ],
+      takeaway: '界定 → 收集 → 权衡 → 决定 → 辩护 → 评估。这就是 §113.19(c)(23)(B)。'
+    } }
+  },
+  {
+    id: 'g7-statehood-1845-transfer-exit', grade: 7, unit: 'statehood-1845',
+    unitTitle: 'One Star or Many? 1845 — Should Texas Join the United States?', phase: 'transfer', type: 'exit',
+    format: 'cloze', teks: '§113.19(c)(23)(B)', strat: 'Feedback', d: 0.62,
+    i18n: { en: {
+      title: 'Exit: claim + evidence',
+      items: [
+        { before: 'A recommendation without', after: 'is just an opinion.', choices: ['evidence', 'a title', 'a map'], a: 0 },
+        { before: 'When stakeholders disagree, each should support their view with', after: 'from the sources.', choices: ['evidence', 'volume', 'guesses'], a: 0 },
+        { before: 'Naming the', after: 'of your solution shows you weighed it honestly.', choices: ['trade-offs', 'colors', 'vocabulary'], a: 0 }
+      ],
+      takeaway: 'Claim + evidence + trade-offs = thinking like a historian and a citizen.'
+    },
+    es: {
+      title: 'Salida: afirmación + evidencia',
+      items: [
+        { before: 'Una recomendación sin', after: 'es solo una opinión.', choices: ['evidencia', 'un título', 'un mapa'], a: 0 },
+        { before: 'Cuando las partes interesadas no están de acuerdo, cada una debe respaldar su postura con', after: 'de las fuentes.', choices: ['evidencia', 'volumen', 'suposiciones'], a: 0 },
+        { before: 'Nombrar las', after: 'de tu solución muestra que la sopesaste con honestidad.', choices: ['concesiones', 'colores', 'vocabulario'], a: 0 }
+      ],
+      takeaway: 'Afirmación + evidencia + concesiones = pensar como un historiador y un ciudadano.'
+    },
+    vi: {
+      title: 'Phiếu ra: luận điểm + bằng chứng',
+      items: [
+        { before: 'Một đề xuất không có', after: 'thì chỉ là một ý kiến.', choices: ['bằng chứng', 'một tiêu đề', 'một tấm bản đồ'], a: 0 },
+        { before: 'Khi các bên liên quan bất đồng, mỗi bên nên củng cố quan điểm của mình bằng', after: 'từ các nguồn.', choices: ['bằng chứng', 'âm lượng', 'phỏng đoán'], a: 0 },
+        { before: 'Nêu ra những', after: 'của giải pháp cho thấy bạn đã cân nhắc nó một cách trung thực.', choices: ['đánh đổi', 'màu sắc', 'từ vựng'], a: 0 }
+      ],
+      takeaway: 'Luận điểm + bằng chứng + đánh đổi = tư duy như một nhà sử học và một công dân.'
+    },
+    ar: {
+      title: 'الخروج: ادعاء + دليل',
+      items: [
+        { before: 'التوصية بلا', after: 'ما هي إلا رأي.', choices: ['دليل', 'عنوان', 'خريطة'], a: 0 },
+        { before: 'عندما يختلف أصحاب المصلحة، ينبغي أن يدعم كلّ منهم رأيه بـ', after: 'من المصادر.', choices: ['أدلة', 'علوّ الصوت', 'تخمينات'], a: 0 },
+        { before: 'إن تسمية', after: 'الخاصة بحلّك تُظهر أنك وازنته بصدق.', choices: ['المفاضلات', 'الألوان', 'المفردات'], a: 0 }
+      ],
+      takeaway: 'ادعاء + دليل + مفاضلات = التفكير كمؤرّخ ومواطن.'
+    },
+    hi: {
+      title: 'निकास: दावा + साक्ष्य',
+      items: [
+        { before: 'बिना', after: 'के सिफारिश महज़ एक राय है।', choices: ['साक्ष्य', 'एक शीर्षक', 'एक नक्शा'], a: 0 },
+        { before: 'जब हितधारक असहमत हों, तो हर एक को अपने विचार का समर्थन करना चाहिए', after: 'स्रोतों से।', choices: ['साक्ष्य से', 'आवाज़ की ऊंचाई से', 'अनुमानों से'], a: 0 },
+        { before: 'अपने समाधान की', after: 'का नाम लेना दिखाता है कि आपने उसे ईमानदारी से तौला।', choices: ['समझौतों', 'रंगों', 'शब्दावली'], a: 0 }
+      ],
+      takeaway: 'दावा + साक्ष्य + समझौते = एक इतिहासकार और एक नागरिक की तरह सोचना।'
+    },
+    ur: {
+      title: 'اخراج: دعویٰ + ثبوت',
+      items: [
+        { before: 'بغیر', after: 'کے سفارش محض ایک رائے ہے۔', choices: ['ثبوت', 'ایک عنوان', 'ایک نقشہ'], a: 0 },
+        { before: 'جب اسٹیک ہولڈرز اختلاف کریں، تو ہر ایک کو اپنے نقطہ نظر کی حمایت کرنی چاہیے', after: 'مآخذ سے۔', choices: ['ثبوت سے', 'آواز کی بلندی سے', 'اندازوں سے'], a: 0 },
+        { before: 'اپنے حل کے', after: 'کا نام لینا ظاہر کرتا ہے کہ آپ نے اسے دیانتداری سے تولا۔', choices: ['سمجھوتوں', 'رنگوں', 'الفاظ'], a: 0 }
+      ],
+      takeaway: 'دعویٰ + ثبوت + سمجھوتے = ایک مؤرخ اور ایک شہری کی طرح سوچنا۔'
+    },
+    zh: {
+      title: '离场：主张 + 证据',
+      items: [
+        { before: '没有', after: '的建议只是一种意见。', choices: ['证据', '一个标题', '一张地图'], a: 0 },
+        { before: '当利益相关者意见不合时，各方都应当支撑自己的观点，用', after: '来自资料。', choices: ['证据', '音量', '猜测'], a: 0 },
+        { before: '说出你方案中的', after: '，表明你已经诚实地权衡过它。', choices: ['取舍', '颜色', '词汇'], a: 0 }
+      ],
+      takeaway: '主张 + 证据 + 取舍 = 像史学家和公民一样思考。'
+    } }
+  }
+
+]);
+
+/* ── g8-philadelphia-1787.js ── */
+/* PST Arcade — ticket registry (Grade 8 · Philadelphia, 1787). Retrieval practice for one
+   unit + phase. English-first; other languages carried inline per ticket (ticket.i18n[lang]).
+   The engine (arcade.js) reads window.PST_TICKETS. Nothing is stored or sent. Shape:
+   {id, grade, unit, unitTitle, phase, type, format, teks, strat, d, i18n}. */
+window.PST_TICKETS = (window.PST_TICKETS || []).concat([
+
+  /* ───────── Grade 8 · Philadelphia, 1787 · SURFACE ───────── */
+  {
+    id: 'g8-philadelphia-1787-surface-entry', grade: 8, unit: 'philadelphia-1787',
+    unitTitle: "Philadelphia, 1787 — Can We Build a Government That Holds?", phase: 'surface', type: 'entry',
+    format: 'mcq', teks: '§113.20(c)(3)', strat: 'Retrieval practice', d: 0.54,
+    i18n: { en: {
+      title: 'Warm-up: convention words',
+      seconds: 45,
+      questions: [
+        { q: 'The nation\'s first plan of government, a loose league of states with a weak central government, was the…', choices: ['Articles of Confederation', 'Bill of Rights', 'Virginia Plan'], a: 0 },
+        { q: 'A written plan that sets up a government and the rules it must follow is a…', choices: ['delegate', 'constitution', 'compromise'], a: 1 },
+        { q: 'To formally approve or accept — as the states had to do with the Constitution — is to…', choices: ['ratify', 'represent', 'delegate'], a: 0 },
+        { q: 'A person sent to represent a state at the Convention was a…', choices: ['republic', 'stakeholder', 'delegate'], a: 2 }
+      ],
+      takeaway: 'Know these four words and the rest of the unit reads clearly.'
+    },
+    es: {
+      title: 'Calentamiento: palabras de la convención',
+      seconds: 45,
+      questions: [
+        { q: 'El primer plan de gobierno de la nación, una liga suelta de estados con un gobierno central débil, fue…', choices: ['los Artículos de la Confederación', 'la Carta de Derechos', 'el Plan de Virginia'], a: 0 },
+        { q: 'Un plan escrito que establece un gobierno y las reglas que debe seguir es una…', choices: ['delegado', 'constitución', 'compromiso'], a: 1 },
+        { q: 'Aprobar o aceptar formalmente —como los estados debieron hacer con la Constitución— es…', choices: ['ratificar', 'representar', 'delegar'], a: 0 },
+        { q: 'Una persona enviada a representar a un estado en la Convención era un…', choices: ['república', 'parte interesada', 'delegado'], a: 2 }
+      ],
+      takeaway: 'Domina estas cuatro palabras y el resto de la unidad se lee con claridad.'
+    },
+    vi: {
+      title: 'Khởi động: từ vựng về hội nghị',
+      seconds: 45,
+      questions: [
+        { q: 'Kế hoạch chính quyền đầu tiên của quốc gia, một liên minh lỏng lẻo của các bang với chính quyền trung ương yếu, là…', choices: ['Các Điều khoản Hợp bang', 'Đạo luật Nhân quyền', 'Kế hoạch Virginia'], a: 0 },
+        { q: 'Một bản kế hoạch viết ra để thiết lập chính quyền và các quy tắc chính quyền phải tuân theo là một…', choices: ['đại biểu', 'hiến pháp', 'thỏa hiệp'], a: 1 },
+        { q: 'Chính thức phê chuẩn hoặc chấp nhận — như các bang phải làm với Hiến pháp — là…', choices: ['phê chuẩn', 'đại diện', 'ủy quyền'], a: 0 },
+        { q: 'Người được cử đi đại diện cho một bang tại Hội nghị là một…', choices: ['nền cộng hòa', 'bên liên quan', 'đại biểu'], a: 2 }
+      ],
+      takeaway: 'Nắm được bốn từ này thì phần còn lại của đơn vị bài học đọc rất rõ ràng.'
+    },
+    ar: {
+      title: 'تهيئة: كلمات المؤتمر',
+      seconds: 45,
+      questions: [
+        { q: 'كانت أول خطة حكم للأمة، وهي رابطة فضفاضة من الولايات بحكومة مركزية ضعيفة، هي…', choices: ['مواد الكونفدرالية', 'وثيقة الحقوق', 'خطة فرجينيا'], a: 0 },
+        { q: 'الخطة المكتوبة التي تُنشئ حكومة والقواعد التي يجب أن تتبعها هي…', choices: ['مندوب', 'دستور', 'تسوية'], a: 1 },
+        { q: 'الموافقة أو القبول رسميًا — كما كان على الولايات أن تفعل مع الدستور — هو…', choices: ['المصادقة', 'التمثيل', 'التفويض'], a: 0 },
+        { q: 'الشخص المُرسَل لتمثيل ولاية في المؤتمر كان…', choices: ['جمهورية', 'صاحب مصلحة', 'مندوبًا'], a: 2 }
+      ],
+      takeaway: 'أتقن هذه الكلمات الأربع وستقرأ بقية الوحدة بوضوح.'
+    },
+    hi: {
+      title: 'वार्म-अप: कन्वेंशन के शब्द',
+      seconds: 45,
+      questions: [
+        { q: 'राष्ट्र की पहली सरकारी योजना, कमज़ोर केंद्रीय सरकार वाला राज्यों का ढीला संघ, थी…', choices: ['आर्टिकल्स ऑफ कॉन्फेडरेशन', 'बिल ऑफ राइट्स', 'वर्जीनिया योजना'], a: 0 },
+        { q: 'एक लिखित योजना जो सरकार और उसके पालनीय नियमों को स्थापित करती है, वह है…', choices: ['प्रतिनिधि', 'संविधान', 'समझौता'], a: 1 },
+        { q: 'औपचारिक रूप से स्वीकृति या अनुमोदन देना — जैसा राज्यों को संविधान के साथ करना पड़ा — कहलाता है…', choices: ['अनुसमर्थन', 'प्रतिनिधित्व', 'प्रत्यायोजन'], a: 0 },
+        { q: 'कन्वेंशन में किसी राज्य का प्रतिनिधित्व करने भेजा गया व्यक्ति था एक…', choices: ['गणराज्य', 'हितधारक', 'प्रतिनिधि'], a: 2 }
+      ],
+      takeaway: 'इन चार शब्दों को जान लें और शेष इकाई स्पष्ट रूप से पढ़ी जा सकेगी।'
+    },
+    ur: {
+      title: 'وارم اپ: کنونشن کے الفاظ',
+      seconds: 45,
+      questions: [
+        { q: 'قوم کا پہلا حکومتی منصوبہ، کمزور مرکزی حکومت کے ساتھ ریاستوں کا ڈھیلا اتحاد، تھا…', choices: ['آرٹیکلز آف کنفیڈریشن', 'بل آف رائٹس', 'ورجینیا منصوبہ'], a: 0 },
+        { q: 'ایک تحریری منصوبہ جو حکومت اور اس کے قابلِ عمل قواعد قائم کرتا ہے، وہ ہے…', choices: ['مندوب', 'آئین', 'سمجھوتہ'], a: 1 },
+        { q: 'باقاعدہ طور پر منظوری یا قبولیت دینا — جیسا ریاستوں کو آئین کے ساتھ کرنا پڑا — کہلاتا ہے…', choices: ['توثیق', 'نمائندگی', 'تفویض'], a: 0 },
+        { q: 'کنونشن میں کسی ریاست کی نمائندگی کے لیے بھیجا گیا شخص تھا ایک…', choices: ['جمہوریہ', 'اسٹیک ہولڈر', 'مندوب'], a: 2 }
+      ],
+      takeaway: 'ان چار الفاظ کو جان لیں تو باقی اکائی واضح طور پر پڑھی جا سکے گی۔'
+    },
+    zh: {
+      title: '热身：制宪会议词汇',
+      seconds: 45,
+      questions: [
+        { q: '国家的第一份政府方案——由各州松散结盟、中央政府软弱——是…', choices: ['邦联条例', '权利法案', '弗吉尼亚方案'], a: 0 },
+        { q: '一份设立政府并规定其必须遵守规则的书面方案是…', choices: ['代表', '宪法', '妥协'], a: 1 },
+        { q: '正式批准或接受——正如各州对宪法所必须做的——就是…', choices: ['批准', '代表', '委托'], a: 0 },
+        { q: '被派去在制宪会议上代表某州的人是一位…', choices: ['共和国', '利益相关者', '代表'], a: 2 }
+      ],
+      takeaway: '掌握这四个词，本单元其余部分就读得清清楚楚。'
+    } }
+  },
+  {
+    id: 'g8-philadelphia-1787-surface-exit', grade: 8, unit: 'philadelphia-1787',
+    unitTitle: "Philadelphia, 1787 — Can We Build a Government That Holds?", phase: 'surface', type: 'exit',
+    format: 'match', teks: '§113.20(c)(3)', strat: 'Vocabulary & feedback', d: 0.62,
+    i18n: { en: {
+      title: 'Exit: match the word to its meaning',
+      pairs: [
+        ['federalism', 'power shared between a national government and the states'],
+        ['separation of powers', 'splitting government into legislative, executive, and judicial branches'],
+        ['checks & balances', 'each branch can limit the others so none grows too strong'],
+        ['compromise', 'a deal where each side gives up something both can accept'],
+        ['republic', 'a government where citizens elect representatives to decide for them']
+      ],
+      takeaway: 'Matched all five? You are ready to go deep. If not, revisit the word bank.'
+    },
+    es: {
+      title: 'Salida: relaciona la palabra con su significado',
+      pairs: [
+        ['federalismo', 'poder compartido entre un gobierno nacional y los estados'],
+        ['separación de poderes', 'dividir el gobierno en poderes legislativo, ejecutivo y judicial'],
+        ['pesos y contrapesos', 'cada poder puede limitar a los otros para que ninguno se vuelva demasiado fuerte'],
+        ['compromiso', 'un acuerdo en que cada lado cede algo que ambos pueden aceptar'],
+        ['república', 'un gobierno donde los ciudadanos eligen representantes para decidir por ellos']
+      ],
+      takeaway: '¿Relacionaste las cinco? Estás listo para lo profundo. Si no, repasa el banco de palabras.'
+    },
+    vi: {
+      title: 'Phiếu ra: ghép từ với nghĩa của nó',
+      pairs: [
+        ['chủ nghĩa liên bang', 'quyền lực được chia sẻ giữa chính quyền quốc gia và các bang'],
+        ['phân quyền', 'chia chính quyền thành các nhánh lập pháp, hành pháp và tư pháp'],
+        ['kiểm soát và cân bằng', 'mỗi nhánh có thể hạn chế các nhánh khác để không nhánh nào quá mạnh'],
+        ['thỏa hiệp', 'một thỏa thuận mỗi bên nhường bớt điều gì đó mà cả hai chấp nhận'],
+        ['nền cộng hòa', 'chính quyền nơi công dân bầu ra đại diện để quyết định thay họ']
+      ],
+      takeaway: 'Ghép đúng cả năm? Bạn đã sẵn sàng học chuyên sâu. Nếu chưa, hãy xem lại kho từ vựng.'
+    },
+    ar: {
+      title: 'الخروج: طابِق الكلمة مع معناها',
+      pairs: [
+        ['الفيدرالية', 'سلطة مشتركة بين حكومة وطنية والولايات'],
+        ['الفصل بين السلطات', 'تقسيم الحكومة إلى سلطات تشريعية وتنفيذية وقضائية'],
+        ['الضوابط والتوازنات', 'يمكن لكل سلطة أن تحدّ من الأخريات كي لا تقوى إحداها أكثر من اللازم'],
+        ['التسوية', 'اتفاق يتنازل فيه كل طرف عن شيء يقبله الطرفان'],
+        ['الجمهورية', 'حكومة ينتخب فيها المواطنون ممثلين ليقرروا نيابة عنهم']
+      ],
+      takeaway: 'طابقت الخمس جميعًا؟ أنت مستعد للتعمّق. وإلا، فراجِع بنك الكلمات.'
+    },
+    hi: {
+      title: 'निकास: शब्द को उसके अर्थ से मिलाएँ',
+      pairs: [
+        ['संघवाद', 'राष्ट्रीय सरकार और राज्यों के बीच साझा शक्ति'],
+        ['शक्तियों का पृथक्करण', 'सरकार को विधायी, कार्यकारी और न्यायिक शाखाओं में बाँटना'],
+        ['नियंत्रण और संतुलन', 'हर शाखा दूसरों को सीमित कर सकती है ताकि कोई बहुत शक्तिशाली न हो'],
+        ['समझौता', 'एक सौदा जिसमें हर पक्ष कुछ छोड़ता है जिसे दोनों स्वीकार कर सकें'],
+        ['गणराज्य', 'ऐसी सरकार जहाँ नागरिक अपने लिए निर्णय हेतु प्रतिनिधि चुनते हैं']
+      ],
+      takeaway: 'पाँचों मिला दिए? आप गहन में जाने को तैयार हैं। यदि नहीं, तो शब्द-बैंक फिर देखें।'
+    },
+    ur: {
+      title: 'اخراج: لفظ کو اس کے مطلب سے ملائیں',
+      pairs: [
+        ['وفاقیت', 'قومی حکومت اور ریاستوں کے درمیان مشترکہ اختیار'],
+        ['اختیارات کی علیحدگی', 'حکومت کو مقننہ، انتظامیہ اور عدلیہ کی شاخوں میں تقسیم کرنا'],
+        ['چیک اینڈ بیلنس', 'ہر شاخ دوسروں کو محدود کر سکتی ہے تاکہ کوئی حد سے زیادہ طاقتور نہ ہو'],
+        ['سمجھوتہ', 'ایک معاہدہ جس میں ہر فریق کچھ چھوڑتا ہے جسے دونوں قبول کر سکیں'],
+        ['جمہوریہ', 'ایسی حکومت جہاں شہری اپنے لیے فیصلہ کرنے کو نمائندے چنتے ہیں']
+      ],
+      takeaway: 'پانچوں ملا دیے؟ آپ گہرائی میں جانے کو تیار ہیں۔ ورنہ لفظی بینک دوبارہ دیکھیں۔'
+    },
+    zh: {
+      title: '离场：把词语与其含义配对',
+      pairs: [
+        ['联邦制', '国家政府与各州之间共享权力'],
+        ['三权分立', '把政府分为立法、行政、司法三个部门'],
+        ['制衡', '各部门可相互限制，使任何一方都不致过于强大'],
+        ['妥协', '各方各让一步、双方都能接受的协议'],
+        ['共和国', '公民选举代表替他们作出决定的政府']
+      ],
+      takeaway: '五个都配对正确了？你可以进入深层学习了。若没有，请重温词汇表。'
+    } }
+  },
+
+  /* ───────── Grade 8 · Philadelphia, 1787 · DEEP ───────── */
+  {
+    id: 'g8-philadelphia-1787-deep-entry', grade: 8, unit: 'philadelphia-1787',
+    unitTitle: "Philadelphia, 1787 — Can We Build a Government That Holds?", phase: 'deep', type: 'entry',
+    format: 'cloze', teks: '§113.20(c)(3), (c)(15)(A)', strat: 'Retrieval practice', d: 0.54,
+    i18n: { en: {
+      title: 'Warm-up: competing interests',
+      items: [
+        { before: 'Large states like Virginia backed the', after: ', wanting votes counted by population.', choices: ['New Jersey Plan', 'Virginia Plan', 'Bill of Rights'], a: 1 },
+        { before: 'Small states like Delaware backed the', after: ', wanting one vote per state.', choices: ['New Jersey Plan', 'Virginia Plan', 'Great Compromise'], a: 0 },
+        { before: 'Power shared between the nation and the states is', after: ', a core principle they debated.', choices: ['ratification', 'federalism', 'representation'], a: 1 }
+      ],
+      takeaway: 'Every tension pulls on a principle — federalism, representation, separation of powers.'
+    },
+    es: {
+      title: 'Calentamiento: intereses en pugna',
+      items: [
+        { before: 'Estados grandes como Virginia respaldaron el', after: ', queriendo votos por población.', choices: ['Plan de Nueva Jersey', 'Plan de Virginia', 'la Carta de Derechos'], a: 1 },
+        { before: 'Estados pequeños como Delaware respaldaron el', after: ', queriendo un voto por estado.', choices: ['Plan de Nueva Jersey', 'Plan de Virginia', 'el Gran Compromiso'], a: 0 },
+        { before: 'El poder compartido entre la nación y los estados es el', after: ', un principio central que debatieron.', choices: ['ratificación', 'federalismo', 'representación'], a: 1 }
+      ],
+      takeaway: 'Cada tensión tira de un principio: federalismo, representación, separación de poderes.'
+    },
+    vi: {
+      title: 'Khởi động: lợi ích xung đột',
+      items: [
+        { before: 'Các bang lớn như Virginia ủng hộ', after: ', muốn phiếu được tính theo dân số.', choices: ['Kế hoạch New Jersey', 'Kế hoạch Virginia', 'Đạo luật Nhân quyền'], a: 1 },
+        { before: 'Các bang nhỏ như Delaware ủng hộ', after: ', muốn mỗi bang một phiếu.', choices: ['Kế hoạch New Jersey', 'Kế hoạch Virginia', 'Đại Thỏa hiệp'], a: 0 },
+        { before: 'Quyền lực chia sẻ giữa quốc gia và các bang là', after: ', một nguyên tắc cốt lõi họ tranh luận.', choices: ['sự phê chuẩn', 'chủ nghĩa liên bang', 'sự đại diện'], a: 1 }
+      ],
+      takeaway: 'Mỗi căng thẳng đều tác động đến một nguyên tắc — liên bang, đại diện, phân quyền.'
+    },
+    ar: {
+      title: 'تهيئة: المصالح المتنافسة',
+      items: [
+        { before: 'أيّدت الولايات الكبيرة مثل فرجينيا', after: '، راغبةً في احتساب الأصوات حسب عدد السكان.', choices: ['خطة نيوجيرسي', 'خطة فرجينيا', 'وثيقة الحقوق'], a: 1 },
+        { before: 'أيّدت الولايات الصغيرة مثل ديلاوير', after: '، راغبةً في صوت واحد لكل ولاية.', choices: ['خطة نيوجيرسي', 'خطة فرجينيا', 'التسوية الكبرى'], a: 0 },
+        { before: 'السلطة المشتركة بين الأمة والولايات هي', after: '، وهي مبدأ أساسي تناقشوا فيه.', choices: ['المصادقة', 'الفيدرالية', 'التمثيل'], a: 1 }
+      ],
+      takeaway: 'كل توتر يشدّ على مبدأ — الفيدرالية، التمثيل، الفصل بين السلطات.'
+    },
+    hi: {
+      title: 'वार्म-अप: परस्पर विरोधी हित',
+      items: [
+        { before: 'वर्जीनिया जैसे बड़े राज्यों ने', after: 'का समर्थन किया, जो जनसंख्या के आधार पर वोट चाहते थे।', choices: ['न्यू जर्सी योजना', 'वर्जीनिया योजना', 'बिल ऑफ राइट्स'], a: 1 },
+        { before: 'डेलावेयर जैसे छोटे राज्यों ने', after: 'का समर्थन किया, जो प्रति राज्य एक वोट चाहते थे।', choices: ['न्यू जर्सी योजना', 'वर्जीनिया योजना', 'महान समझौता'], a: 0 },
+        { before: 'राष्ट्र और राज्यों के बीच साझा शक्ति', after: 'है, जिस पर उन्होंने बहस की एक मूल सिद्धांत।', choices: ['अनुसमर्थन', 'संघवाद', 'प्रतिनिधित्व'], a: 1 }
+      ],
+      takeaway: 'हर तनाव किसी सिद्धांत पर खिंचाव डालता है — संघवाद, प्रतिनिधित्व, शक्तियों का पृथक्करण।'
+    },
+    ur: {
+      title: 'وارم اپ: متصادم مفادات',
+      items: [
+        { before: 'ورجینیا جیسی بڑی ریاستوں نے', after: 'کی حمایت کی، جو آبادی کے حساب سے ووٹ چاہتی تھیں۔', choices: ['نیو جرسی منصوبہ', 'ورجینیا منصوبہ', 'بل آف رائٹس'], a: 1 },
+        { before: 'ڈیلاویئر جیسی چھوٹی ریاستوں نے', after: 'کی حمایت کی، جو فی ریاست ایک ووٹ چاہتی تھیں۔', choices: ['نیو جرسی منصوبہ', 'ورجینیا منصوبہ', 'عظیم سمجھوتہ'], a: 0 },
+        { before: 'قوم اور ریاستوں کے درمیان مشترکہ اختیار', after: 'ہے، ایک بنیادی اصول جس پر انہوں نے بحث کی۔', choices: ['توثیق', 'وفاقیت', 'نمائندگی'], a: 1 }
+      ],
+      takeaway: 'ہر کشیدگی کسی اصول پر کھنچاؤ ڈالتی ہے — وفاقیت، نمائندگی، اختیارات کی علیحدگی۔'
+    },
+    zh: {
+      title: '热身：相互竞争的利益',
+      items: [
+        { before: '弗吉尼亚等大州支持', after: '，希望按人口计票。', choices: ['新泽西方案', '弗吉尼亚方案', '权利法案'], a: 1 },
+        { before: '特拉华等小州支持', after: '，希望每州一票。', choices: ['新泽西方案', '弗吉尼亚方案', '大妥协'], a: 0 },
+        { before: '国家与各州之间共享权力就是', after: '，这是他们辩论的核心原则。', choices: ['批准', '联邦制', '代表制'], a: 1 }
+      ],
+      takeaway: '每一处张力都牵动着某一原则——联邦制、代表制、三权分立。'
+    } }
+  },
+  {
+    id: 'g8-philadelphia-1787-deep-exit', grade: 8, unit: 'philadelphia-1787',
+    unitTitle: "Philadelphia, 1787 — Can We Build a Government That Holds?", phase: 'deep', type: 'exit',
+    format: 'sort', teks: '§113.20(c)(3), (c)(21)', strat: 'Concept organization', d: 0.64,
+    i18n: { en: {
+      title: 'Exit: sort the position by side',
+      cats: ['Large states (Virginia Plan)', 'Small states (New Jersey Plan)'],
+      items: [
+        { t: 'Votes counted by population', c: 0 },
+        { t: 'More people should mean more votes', c: 0 },
+        { t: 'A strong national government', c: 0 },
+        { t: 'One vote per state', c: 1 },
+        { t: 'Fear of being outvoted by bigger states', c: 1 },
+        { t: 'Every state equal, regardless of size', c: 1 }
+      ],
+      takeaway: 'Sorting each side\'s interest is the concept map behind the Great Compromise.'
+    },
+    es: {
+      title: 'Salida: clasifica la postura por bando',
+      cats: ['Estados grandes (Plan de Virginia)', 'Estados pequeños (Plan de Nueva Jersey)'],
+      items: [
+        { t: 'Votos contados por población', c: 0 },
+        { t: 'Más gente debería significar más votos', c: 0 },
+        { t: 'Un gobierno nacional fuerte', c: 0 },
+        { t: 'Un voto por estado', c: 1 },
+        { t: 'Temor a ser superados en votos por los estados grandes', c: 1 },
+        { t: 'Cada estado igual, sin importar su tamaño', c: 1 }
+      ],
+      takeaway: 'Clasificar el interés de cada bando es el mapa conceptual detrás del Gran Compromiso.'
+    },
+    vi: {
+      title: 'Phiếu ra: phân loại lập trường theo phe',
+      cats: ['Bang lớn (Kế hoạch Virginia)', 'Bang nhỏ (Kế hoạch New Jersey)'],
+      items: [
+        { t: 'Phiếu được tính theo dân số', c: 0 },
+        { t: 'Đông dân hơn thì phải nhiều phiếu hơn', c: 0 },
+        { t: 'Một chính quyền quốc gia mạnh', c: 0 },
+        { t: 'Mỗi bang một phiếu', c: 1 },
+        { t: 'Sợ bị các bang lớn hơn áp đảo phiếu', c: 1 },
+        { t: 'Mọi bang bình đẳng, bất kể lớn nhỏ', c: 1 }
+      ],
+      takeaway: 'Phân loại lợi ích của mỗi phe chính là sơ đồ khái niệm đằng sau Đại Thỏa hiệp.'
+    },
+    ar: {
+      title: 'الخروج: صنّف الموقف حسب الجانب',
+      cats: ['الولايات الكبيرة (خطة فرجينيا)', 'الولايات الصغيرة (خطة نيوجيرسي)'],
+      items: [
+        { t: 'احتساب الأصوات حسب عدد السكان', c: 0 },
+        { t: 'المزيد من السكان يعني المزيد من الأصوات', c: 0 },
+        { t: 'حكومة وطنية قوية', c: 0 },
+        { t: 'صوت واحد لكل ولاية', c: 1 },
+        { t: 'الخوف من أن تتغلب عليها الولايات الأكبر بالأصوات', c: 1 },
+        { t: 'كل ولاية متساوية بغضّ النظر عن حجمها', c: 1 }
+      ],
+      takeaway: 'تصنيف مصلحة كل جانب هو الخريطة المفاهيمية وراء التسوية الكبرى.'
+    },
+    hi: {
+      title: 'निकास: पक्ष के अनुसार रुख को छाँटें',
+      cats: ['बड़े राज्य (वर्जीनिया योजना)', 'छोटे राज्य (न्यू जर्सी योजना)'],
+      items: [
+        { t: 'जनसंख्या के आधार पर वोट गिनना', c: 0 },
+        { t: 'अधिक लोग मतलब अधिक वोट', c: 0 },
+        { t: 'एक मज़बूत राष्ट्रीय सरकार', c: 0 },
+        { t: 'प्रति राज्य एक वोट', c: 1 },
+        { t: 'बड़े राज्यों द्वारा मतों में हार जाने का डर', c: 1 },
+        { t: 'आकार से परे, हर राज्य समान', c: 1 }
+      ],
+      takeaway: 'हर पक्ष के हित को छाँटना ही महान समझौते के पीछे का अवधारणा मानचित्र है।'
+    },
+    ur: {
+      title: 'اخراج: فریق کے مطابق مؤقف کو چھانٹیں',
+      cats: ['بڑی ریاستیں (ورجینیا منصوبہ)', 'چھوٹی ریاستیں (نیو جرسی منصوبہ)'],
+      items: [
+        { t: 'آبادی کے حساب سے ووٹ گننا', c: 0 },
+        { t: 'زیادہ لوگ یعنی زیادہ ووٹ', c: 0 },
+        { t: 'ایک مضبوط قومی حکومت', c: 0 },
+        { t: 'فی ریاست ایک ووٹ', c: 1 },
+        { t: 'بڑی ریاستوں کے ہاتھوں ووٹوں میں ہار جانے کا خوف', c: 1 },
+        { t: 'حجم سے قطع نظر، ہر ریاست برابر', c: 1 }
+      ],
+      takeaway: 'ہر فریق کے مفاد کو چھانٹنا ہی عظیم سمجھوتے کے پیچھے تصوراتی نقشہ ہے۔'
+    },
+    zh: {
+      title: '离场：按阵营给立场分类',
+      cats: ['大州（弗吉尼亚方案）', '小州（新泽西方案）'],
+      items: [
+        { t: '按人口计票', c: 0 },
+        { t: '人口越多票数应越多', c: 0 },
+        { t: '一个强有力的国家政府', c: 0 },
+        { t: '每州一票', c: 1 },
+        { t: '担心被更大的州以票数压过', c: 1 },
+        { t: '不论大小，各州平等', c: 1 }
+      ],
+      takeaway: '把每一方的利益分类，就是大妥协背后的概念图。'
+    } }
+  },
+
+  /* ───────── Grade 8 · Philadelphia, 1787 · TRANSFER ───────── */
+  {
+    id: 'g8-philadelphia-1787-transfer-entry', grade: 8, unit: 'philadelphia-1787',
+    unitTitle: "Philadelphia, 1787 — Can We Build a Government That Holds?", phase: 'transfer', type: 'entry',
+    format: 'mcq', teks: '§113.20(c)(31)(B)', strat: 'Retrieval practice', d: 0.54,
+    i18n: { en: {
+      title: 'Warm-up: the problem-solving steps',
+      seconds: 45,
+      questions: [
+        { q: 'The FIRST move in the problem-solving process is to…', choices: ['pick a solution', 'define the problem', 'declare a winner'], a: 1 },
+        { q: 'Before choosing a framework, a delegate should…', choices: ['gather information & weigh options', 'guess quickly', 'ignore other states'], a: 0 },
+        { q: 'A proposed framework is defended with…', choices: ['a louder voice', 'evidence & the compromises behind it', 'only self-interest'], a: 1 },
+        { q: 'The LAST step is to…', choices: ['forget the trade-offs', 'evaluate whether the solution would hold', 'hide who was left out'], a: 1 }
+      ],
+      takeaway: 'Define → gather → weigh → choose → defend → evaluate. That is §113.20(c)(31)(B).'
+    },
+    es: {
+      title: 'Calentamiento: los pasos para resolver problemas',
+      seconds: 45,
+      questions: [
+        { q: 'El PRIMER paso del proceso de resolución de problemas es…', choices: ['elegir una solución', 'definir el problema', 'declarar un ganador'], a: 1 },
+        { q: 'Antes de elegir un marco, un delegado debe…', choices: ['reunir información y sopesar opciones', 'adivinar rápido', 'ignorar a los demás estados'], a: 0 },
+        { q: 'Un marco propuesto se defiende con…', choices: ['una voz más fuerte', 'evidencia y las concesiones detrás de él', 'solo interés propio'], a: 1 },
+        { q: 'El ÚLTIMO paso es…', choices: ['olvidar las concesiones', 'evaluar si la solución se sostendría', 'ocultar a quién se dejó fuera'], a: 1 }
+      ],
+      takeaway: 'Definir → reunir → sopesar → elegir → defender → evaluar. Eso es §113.20(c)(31)(B).'
+    },
+    vi: {
+      title: 'Khởi động: các bước giải quyết vấn đề',
+      seconds: 45,
+      questions: [
+        { q: 'Bước ĐẦU TIÊN trong quy trình giải quyết vấn đề là…', choices: ['chọn một giải pháp', 'xác định vấn đề', 'tuyên bố người thắng'], a: 1 },
+        { q: 'Trước khi chọn một khuôn khổ, một đại biểu nên…', choices: ['thu thập thông tin & cân nhắc các phương án', 'đoán nhanh', 'bỏ qua các bang khác'], a: 0 },
+        { q: 'Một khuôn khổ được đề xuất được bảo vệ bằng…', choices: ['giọng nói to hơn', 'bằng chứng & các thỏa hiệp đằng sau nó', 'chỉ tư lợi'], a: 1 },
+        { q: 'Bước CUỐI CÙNG là…', choices: ['quên đi các đánh đổi', 'đánh giá xem giải pháp có trụ được không', 'giấu đi ai bị bỏ lại'], a: 1 }
+      ],
+      takeaway: 'Xác định → thu thập → cân nhắc → chọn → bảo vệ → đánh giá. Đó là §113.20(c)(31)(B).'
+    },
+    ar: {
+      title: 'تهيئة: خطوات حل المشكلة',
+      seconds: 45,
+      questions: [
+        { q: 'الخطوة الأولى في عملية حل المشكلة هي…', choices: ['اختيار حل', 'تحديد المشكلة', 'إعلان فائز'], a: 1 },
+        { q: 'قبل اختيار إطار، ينبغي على المندوب أن…', choices: ['يجمع المعلومات ويوازن الخيارات', 'يخمّن بسرعة', 'يتجاهل الولايات الأخرى'], a: 0 },
+        { q: 'يُدافَع عن الإطار المقترح بـ…', choices: ['صوت أعلى', 'الأدلة والتسويات التي وراءه', 'المصلحة الذاتية فقط'], a: 1 },
+        { q: 'الخطوة الأخيرة هي أن…', choices: ['تنسى المفاضلات', 'تقيّم ما إذا كان الحل سيصمد', 'تخفي مَن استُبعد'], a: 1 }
+      ],
+      takeaway: 'حدِّد ← اجمع ← وازِن ← اختر ← دافِع ← قيِّم. تلك هي §113.20(c)(31)(B).'
+    },
+    hi: {
+      title: 'वार्म-अप: समस्या-समाधान के चरण',
+      seconds: 45,
+      questions: [
+        { q: 'समस्या-समाधान प्रक्रिया का पहला कदम है…', choices: ['एक समाधान चुनना', 'समस्या को परिभाषित करना', 'एक विजेता घोषित करना'], a: 1 },
+        { q: 'एक ढाँचा चुनने से पहले, प्रतिनिधि को चाहिए…', choices: ['जानकारी जुटाना और विकल्पों को तौलना', 'जल्दी अनुमान लगाना', 'अन्य राज्यों को अनदेखा करना'], a: 0 },
+        { q: 'प्रस्तावित ढाँचे का बचाव किया जाता है…', choices: ['ऊँची आवाज़ से', 'साक्ष्य और उसके पीछे के समझौतों से', 'केवल स्वार्थ से'], a: 1 },
+        { q: 'अंतिम कदम है…', choices: ['समझौतों को भूल जाना', 'यह आँकना कि समाधान टिकेगा या नहीं', 'यह छिपाना कि किसे छोड़ा गया'], a: 1 }
+      ],
+      takeaway: 'परिभाषित करें → जुटाएँ → तौलें → चुनें → बचाव करें → आँकें। यही §113.20(c)(31)(B) है।'
+    },
+    ur: {
+      title: 'وارم اپ: مسئلہ حل کرنے کے مراحل',
+      seconds: 45,
+      questions: [
+        { q: 'مسئلہ حل کرنے کے عمل میں پہلا قدم ہے…', choices: ['ایک حل چننا', 'مسئلے کو متعین کرنا', 'ایک فاتح کا اعلان کرنا'], a: 1 },
+        { q: 'ایک ڈھانچہ چننے سے پہلے، مندوب کو چاہیے…', choices: ['معلومات جمع کرنا اور اختیارات تولنا', 'جلدی اندازہ لگانا', 'دوسری ریاستوں کو نظرانداز کرنا'], a: 0 },
+        { q: 'تجویز کردہ ڈھانچے کا دفاع کیا جاتا ہے…', choices: ['بلند آواز سے', 'ثبوت اور اس کے پیچھے سمجھوتوں سے', 'صرف ذاتی مفاد سے'], a: 1 },
+        { q: 'آخری قدم ہے…', choices: ['سمجھوتوں کو بھول جانا', 'یہ جانچنا کہ حل قائم رہے گا یا نہیں', 'یہ چھپانا کہ کسے چھوڑا گیا'], a: 1 }
+      ],
+      takeaway: 'متعین کریں ← جمع کریں ← تولیں ← چنیں ← دفاع کریں ← جانچیں۔ یہی §113.20(c)(31)(B) ہے۔'
+    },
+    zh: {
+      title: '热身：解决问题的步骤',
+      seconds: 45,
+      questions: [
+        { q: '解决问题过程的第一步是…', choices: ['挑选一个方案', '界定问题', '宣布一个赢家'], a: 1 },
+        { q: '在选择框架之前，代表应当…', choices: ['收集信息并权衡各种方案', '快速猜测', '无视其他各州'], a: 0 },
+        { q: '所提出的框架要用以下方式来辩护…', choices: ['更大的嗓门', '证据以及其背后的妥协', '只顾自身利益'], a: 1 },
+        { q: '最后一步是…', choices: ['忘掉其中的取舍', '评估该方案能否维系', '隐瞒谁被排除在外'], a: 1 }
+      ],
+      takeaway: '界定 → 收集 → 权衡 → 选择 → 辩护 → 评估。这就是 §113.20(c)(31)(B)。'
+    } }
+  },
+  {
+    id: 'g8-philadelphia-1787-transfer-exit', grade: 8, unit: 'philadelphia-1787',
+    unitTitle: "Philadelphia, 1787 — Can We Build a Government That Holds?", phase: 'transfer', type: 'exit',
+    format: 'cloze', teks: '§113.20(c)(31)(B)', strat: 'Feedback', d: 0.62,
+    i18n: { en: {
+      title: 'Exit: compromise & evidence',
+      items: [
+        { before: 'Representation was settled by the', after: ', which created a two-house Congress.', choices: ['Great Compromise', 'Bill of Rights', 'Virginia Plan'], a: 0 },
+        { before: 'A framework the states could accept was reached through', after: ', not by one side winning.', choices: ['compromise', 'guessing', 'silence'], a: 0 },
+        { before: 'A strong proposal names its', after: ' honestly instead of hiding them.', choices: ['trade-offs', 'colors', 'winners'], a: 0 }
+      ],
+      takeaway: 'Compromise + evidence + honest trade-offs = reasoning like a delegate and a citizen.'
+    },
+    es: {
+      title: 'Salida: compromiso y evidencia',
+      items: [
+        { before: 'La representación se resolvió mediante el', after: ', que creó un Congreso de dos cámaras.', choices: ['Gran Compromiso', 'la Carta de Derechos', 'Plan de Virginia'], a: 0 },
+        { before: 'Se llegó a un marco que los estados podían aceptar mediante el', after: ', no porque un lado ganara.', choices: ['compromiso', 'la adivinación', 'el silencio'], a: 0 },
+        { before: 'Una propuesta sólida nombra sus', after: ' con honestidad en vez de ocultarlas.', choices: ['concesiones', 'colores', 'ganadores'], a: 0 }
+      ],
+      takeaway: 'Compromiso + evidencia + concesiones honestas = razonar como delegado y ciudadano.'
+    },
+    vi: {
+      title: 'Phiếu ra: thỏa hiệp & bằng chứng',
+      items: [
+        { before: 'Vấn đề đại diện được giải quyết bằng', after: ', tạo ra một Quốc hội hai viện.', choices: ['Đại Thỏa hiệp', 'Đạo luật Nhân quyền', 'Kế hoạch Virginia'], a: 0 },
+        { before: 'Một khuôn khổ mà các bang có thể chấp nhận đạt được nhờ', after: ', chứ không do một bên thắng.', choices: ['thỏa hiệp', 'sự phỏng đoán', 'sự im lặng'], a: 0 },
+        { before: 'Một đề xuất vững chắc nêu rõ các', after: ' của mình một cách trung thực thay vì giấu đi.', choices: ['đánh đổi', 'màu sắc', 'người thắng'], a: 0 }
+      ],
+      takeaway: 'Thỏa hiệp + bằng chứng + đánh đổi trung thực = tư duy như một đại biểu và một công dân.'
+    },
+    ar: {
+      title: 'الخروج: التسوية والدليل',
+      items: [
+        { before: 'حُسم أمر التمثيل بـ', after: '، الذي أنشأ كونغرسًا من مجلسين.', choices: ['التسوية الكبرى', 'وثيقة الحقوق', 'خطة فرجينيا'], a: 0 },
+        { before: 'تمّ التوصل إلى إطار تقبله الولايات عبر', after: '، لا بانتصار جانب واحد.', choices: ['التسوية', 'التخمين', 'الصمت'], a: 0 },
+        { before: 'الاقتراح القوي يسمّي', after: ' الخاصة به بصدق بدل إخفائها.', choices: ['المفاضلات', 'الألوان', 'الفائزين'], a: 0 }
+      ],
+      takeaway: 'تسوية + دليل + مفاضلات صادقة = التفكير كمندوب ومواطن.'
+    },
+    hi: {
+      title: 'निकास: समझौता और साक्ष्य',
+      items: [
+        { before: 'प्रतिनिधित्व', after: 'से सुलझा, जिसने द्विसदनीय कांग्रेस बनाई।', choices: ['महान समझौते', 'बिल ऑफ राइट्स', 'वर्जीनिया योजना'], a: 0 },
+        { before: 'ऐसा ढाँचा जिसे राज्य स्वीकार कर सकें,', after: 'से पहुँचा गया, न कि किसी एक पक्ष के जीतने से।', choices: ['समझौते', 'अनुमान', 'मौन'], a: 0 },
+        { before: 'एक मज़बूत प्रस्ताव अपने', after: 'को छिपाने के बजाय ईमानदारी से नाम देता है।', choices: ['समझौतों', 'रंगों', 'विजेताओं'], a: 0 }
+      ],
+      takeaway: 'समझौता + साक्ष्य + ईमानदार समझौते = एक प्रतिनिधि और एक नागरिक की तरह तर्क करना।'
+    },
+    ur: {
+      title: 'اخراج: سمجھوتہ اور ثبوت',
+      items: [
+        { before: 'نمائندگی کا معاملہ', after: 'سے طے ہوا، جس نے دو ایوانی کانگریس بنائی۔', choices: ['عظیم سمجھوتے', 'بل آف رائٹس', 'ورجینیا منصوبہ'], a: 0 },
+        { before: 'ایسا ڈھانچہ جسے ریاستیں قبول کر سکیں،', after: 'کے ذریعے پہنچا گیا، نہ کہ کسی ایک فریق کی جیت سے۔', choices: ['سمجھوتے', 'اندازے', 'خاموشی'], a: 0 },
+        { before: 'ایک مضبوط تجویز اپنے', after: 'کو چھپانے کے بجائے دیانتداری سے بیان کرتی ہے۔', choices: ['سمجھوتوں', 'رنگوں', 'فاتحین'], a: 0 }
+      ],
+      takeaway: 'سمجھوتہ + ثبوت + دیانتدار سمجھوتے = ایک مندوب اور ایک شہری کی طرح استدلال کرنا۔'
+    },
+    zh: {
+      title: '离场：妥协与证据',
+      items: [
+        { before: '代表权问题通过', after: '得到解决，它创建了两院制国会。', choices: ['大妥协', '权利法案', '弗吉尼亚方案'], a: 0 },
+        { before: '各州都能接受的框架是通过', after: '达成的，而非某一方获胜。', choices: ['妥协', '猜测', '沉默'], a: 0 },
+        { before: '有力的提案会诚实地说出其', after: '，而不是把它们隐藏起来。', choices: ['取舍', '颜色', '赢家'], a: 0 }
+      ],
+      takeaway: '妥协 + 证据 + 诚实的取舍 = 像代表和公民一样推理。'
     } }
   }
 
