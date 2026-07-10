@@ -8,6 +8,7 @@
    labels, proper links. */
 BreakoutI18n.register('pst-head-west', {
   en: {
+    "tk.entry": "🎟️ Entry ticket — 1-minute warm-up", "tk.exit": "🎫 Exit ticket — check yourself",
     // chrome
     "crumb.unit": "‹ Head West (unit home)",
     "crumb.grade": "‹ Grade 5 — US History",
@@ -259,6 +260,7 @@ BreakoutI18n.register('pst-head-west', {
     "as.45": "Adapted from “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, updated 2019 (itue.udel.edu)."
   },
   es: {
+    "tk.entry": "🎟️ Boleto de entrada — repaso de 1 minuto", "tk.exit": "🎫 Boleto de salida — comprueba lo que sabes",
     // chrome
     "crumb.unit": "‹ Rumbo al Oeste (inicio de la unidad)",
     "crumb.grade": "‹ Grado 5 — Historia de EE. UU.",
@@ -510,6 +512,7 @@ BreakoutI18n.register('pst-head-west', {
     "as.45": "Adaptado de “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, actualizado en 2019 (itue.udel.edu)."
   },
   vi: {
+    "tk.entry": "🎟️ Vé vào — khởi động 1 phút", "tk.exit": "🎫 Vé ra — tự kiểm tra",
     // chrome
     "crumb.unit": "‹ Đi về miền Tây (trang chính của bài học)",
     "crumb.grade": "‹ Lớp 5 — Lịch sử Hoa Kỳ",
@@ -761,6 +764,7 @@ BreakoutI18n.register('pst-head-west', {
     "as.45": "Được chuyển thể từ “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, cập nhật 2019 (itue.udel.edu)."
   },
   ar: {
+    "tk.entry": "🎟️ تذكرة الدخول — إحماء دقيقة واحدة", "tk.exit": "🎫 تذكرة الخروج — اختبر نفسك",
     // chrome
     "crumb.unit": "‹ التوجه غربًا (الصفحة الرئيسية للوحدة)",
     "crumb.grade": "‹ الصف الخامس — تاريخ الولايات المتحدة",
@@ -1012,6 +1016,7 @@ BreakoutI18n.register('pst-head-west', {
     "as.45": "مُكيَّف عن “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004، مُحدَّث 2019 (itue.udel.edu)."
   },
   hi: {
+    "tk.entry": "🎟️ प्रवेश टिकट — 1 मिनट का वार्म-अप", "tk.exit": "🎫 निकास टिकट — स्वयं जाँचें",
     // chrome
     "crumb.unit": "‹ पश्चिम की ओर (इकाई का मुख्य पृष्ठ)",
     "crumb.grade": "‹ कक्षा 5 — अमेरिकी इतिहास",
@@ -1263,6 +1268,7 @@ BreakoutI18n.register('pst-head-west', {
     "as.45": "“Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, अद्यतन 2019 (itue.udel.edu) से अनुकूलित।"
   },
   ur: {
+    "tk.entry": "🎟️ داخلے کا ٹکٹ — 1 منٹ کی وارم اپ", "tk.exit": "🎫 اخراج کا ٹکٹ — خود کو جانچیں",
     // chrome
     "crumb.unit": "‹ مغرب کی طرف (یونٹ کا مرکزی صفحہ)",
     "crumb.grade": "‹ جماعت 5 — امریکی تاریخ",
@@ -1514,6 +1520,7 @@ BreakoutI18n.register('pst-head-west', {
     "as.45": "“Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004 سے موافق بنایا گیا، 2019 میں تازہ کیا گیا (itue.udel.edu)۔"
   },
   zh: {
+    "tk.entry": "🎟️ 入场券 — 1 分钟热身", "tk.exit": "🎫 离场券 — 自我检查",
     // chrome
     "crumb.unit": "‹ 西行（单元主页）",
     "crumb.grade": "‹ 五年级 — 美国历史",

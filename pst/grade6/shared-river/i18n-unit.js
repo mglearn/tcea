@@ -5,6 +5,7 @@
    Do not translate: URLs, TEKS codes (§113.18…), effect-size labels, proper links. */
 BreakoutI18n.register('pst-shared-river', {
   en: {
+    "tk.entry": "🎟️ Entry ticket — 1-minute warm-up", "tk.exit": "🎫 Exit ticket — check yourself",
     // chrome
     "crumb.unit": "‹ The Shared River (unit home)",
     "crumb.grade": "‹ Grade 6 — World Cultures",
@@ -287,6 +288,7 @@ BreakoutI18n.register('pst-shared-river', {
     "as.45": "Adapted from “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, updated 2019 (itue.udel.edu)."
   },
   es: {
+    "tk.entry": "🎟️ Boleto de entrada — repaso de 1 minuto", "tk.exit": "🎫 Boleto de salida — comprueba lo que sabes",
     "crumb.unit": "‹ El Río Compartido (inicio de la unidad)",
     "crumb.grade": "‹ Grado 6 — Culturas del Mundo",
     "nav.prev": "‹ Atrás", "nav.next": "Siguiente ›",
@@ -562,6 +564,7 @@ BreakoutI18n.register('pst-shared-river', {
     "as.45": "Adaptado de “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, actualizado en 2019 (itue.udel.edu)."
   },
   vi: {
+    "tk.entry": "🎟️ Vé vào — khởi động 1 phút", "tk.exit": "🎫 Vé ra — tự kiểm tra",
     "crumb.unit": "‹ Dòng Sông Chung (trang chính của bài học)",
     "crumb.grade": "‹ Lớp 6 — Các Nền Văn Hóa Thế Giới",
     "nav.prev": "‹ Quay lại", "nav.next": "Tiếp theo ›",
@@ -837,6 +840,7 @@ BreakoutI18n.register('pst-shared-river', {
     "as.45": "Điều chỉnh từ “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, cập nhật 2019 (itue.udel.edu)."
   },
   ar: {
+    "tk.entry": "🎟️ تذكرة الدخول — إحماء دقيقة واحدة", "tk.exit": "🎫 تذكرة الخروج — اختبر نفسك",
     "crumb.unit": "‹ النهر المشترك (صفحة الوحدة الرئيسية)",
     "crumb.grade": "‹ الصف السادس — ثقافات العالم",
     "nav.prev": "‹ رجوع", "nav.next": "التالي ›",
@@ -1112,6 +1116,7 @@ BreakoutI18n.register('pst-shared-river', {
     "as.45": "مُكيَّف من “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004، محدّث 2019 (itue.udel.edu)."
   },
   hi: {
+    "tk.entry": "🎟️ प्रवेश टिकट — 1 मिनट का वार्म-अप", "tk.exit": "🎫 निकास टिकट — स्वयं जाँचें",
     "crumb.unit": "‹ साझा नदी (इकाई मुखपृष्ठ)",
     "crumb.grade": "‹ कक्षा 6 — विश्व संस्कृतियाँ",
     "nav.prev": "‹ पीछे", "nav.next": "आगे ›",
@@ -1387,6 +1392,7 @@ BreakoutI18n.register('pst-shared-river', {
     "as.45": "“Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, 2019 में अद्यतन (itue.udel.edu) से अनुकूलित।"
   },
   ur: {
+    "tk.entry": "🎟️ داخلے کا ٹکٹ — 1 منٹ کی وارم اپ", "tk.exit": "🎫 اخراج کا ٹکٹ — خود کو جانچیں",
     "crumb.unit": "‹ مشترکہ دریا (یونٹ کا صفحہ اول)",
     "crumb.grade": "‹ گریڈ 6 — عالمی ثقافتیں",
     "nav.prev": "‹ واپس", "nav.next": "اگلا ›",
@@ -1662,6 +1668,7 @@ BreakoutI18n.register('pst-shared-river', {
     "as.45": "“Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004، 2019 میں تازہ کیا گیا (itue.udel.edu) سے ماخوذ۔"
   },
   zh: {
+    "tk.entry": "🎟️ 入场券 — 1 分钟热身", "tk.exit": "🎫 离场券 — 自我检查",
     "crumb.unit": "‹ 共享的河流（单元主页）",
     "crumb.grade": "‹ 六年级 — 世界文化",
     "nav.prev": "‹ 返回", "nav.next": "下一步 ›",
