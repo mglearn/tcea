@@ -5,6 +5,7 @@
    Do not translate: URLs, TEKS codes (§113.15…), effect-size labels, proper links. */
 BreakoutI18n.register('pst-1835', {
   en: {
+    "tk.entry": "🎟️ Entry ticket — 1-minute warm-up", "tk.exit": "🎫 Exit ticket — check yourself",
     // chrome
     "crumb.unit": "‹ 1835 (unit home)",
     "crumb.grade": "‹ Grade 4 — Texas History",
@@ -274,6 +275,7 @@ BreakoutI18n.register('pst-1835', {
     "as.45": "Adapted from “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, updated 2019 (itue.udel.edu)."
   },
   es: {
+    "tk.entry": "🎟️ Boleto de entrada — repaso de 1 minuto", "tk.exit": "🎫 Boleto de salida — comprueba lo que sabes",
     "crumb.unit": "‹ 1835 (inicio de la unidad)",
     "crumb.grade": "‹ Grado 4 — Historia de Texas",
     "nav.prev": "‹ Atrás", "nav.next": "Siguiente ›",
@@ -536,6 +538,7 @@ BreakoutI18n.register('pst-1835', {
     "as.45": "Adaptado de “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, actualizado en 2019 (itue.udel.edu)."
   },
   vi: {
+    "tk.entry": "🎟️ Vé vào — khởi động 1 phút", "tk.exit": "🎫 Vé ra — tự kiểm tra",
     "crumb.unit": "‹ 1835 (trang chính của bài học)",
     "crumb.grade": "‹ Lớp 4 — Lịch sử Texas",
     "nav.prev": "‹ Quay lại", "nav.next": "Tiếp ›",
@@ -798,6 +801,7 @@ BreakoutI18n.register('pst-1835', {
     "as.45": "Được chuyển thể từ “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, cập nhật 2019 (itue.udel.edu)."
   },
   ar: {
+    "tk.entry": "🎟️ تذكرة الدخول — إحماء دقيقة واحدة", "tk.exit": "🎫 تذكرة الخروج — اختبر نفسك",
     "crumb.unit": "‹ 1835 (الصفحة الرئيسية للوحدة)",
     "crumb.grade": "‹ الصف الرابع — تاريخ تكساس",
     "nav.prev": "‹ رجوع", "nav.next": "التالي ›",
@@ -1060,6 +1064,7 @@ BreakoutI18n.register('pst-1835', {
     "as.45": "مُكيَّف عن “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004، محدّث 2019 (itue.udel.edu)."
   },
   hi: {
+    "tk.entry": "🎟️ प्रवेश टिकट — 1 मिनट का वार्म-अप", "tk.exit": "🎫 निकास टिकट — स्वयं जाँचें",
     "crumb.unit": "‹ 1835 (इकाई का मुख्य पृष्ठ)",
     "crumb.grade": "‹ कक्षा 4 — टेक्सास का इतिहास",
     "nav.prev": "‹ पीछे", "nav.next": "आगे ›",
@@ -1322,6 +1327,7 @@ BreakoutI18n.register('pst-1835', {
     "as.45": "“Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, 2019 में अद्यतन (itue.udel.edu) से अनुकूलित।"
   },
   ur: {
+    "tk.entry": "🎟️ داخلے کا ٹکٹ — 1 منٹ کی وارم اپ", "tk.exit": "🎫 اخراج کا ٹکٹ — خود کو جانچیں",
     "crumb.unit": "‹ 1835 (یونٹ کا مرکزی صفحہ)",
     "crumb.grade": "‹ جماعت 4 — تاریخِ ٹیکساس",
     "nav.prev": "‹ واپس", "nav.next": "اگلا ›",
@@ -1584,6 +1590,7 @@ BreakoutI18n.register('pst-1835', {
     "as.45": "“Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004، 2019 میں تازہ کاری شدہ (itue.udel.edu) سے ڈھالا گیا۔"
   },
   zh: {
+    "tk.entry": "🎟️ 入场券 — 1 分钟热身", "tk.exit": "🎫 离场券 — 自我检查",
     "crumb.unit": "‹ 1835（单元主页）",
     "crumb.grade": "‹ 四年级 — 得克萨斯历史",
     "nav.prev": "‹ 返回", "nav.next": "下一步 ›",

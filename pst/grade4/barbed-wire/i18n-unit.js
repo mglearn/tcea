@@ -5,6 +5,8 @@
    Do not translate: URLs, TEKS codes (§113.15…), effect-size labels, proper links. */
 BreakoutI18n.register('pst-barbed-wire', {
   en: {
+    "tk.entry": "🎟️ Entry ticket — 1-minute warm-up",
+    "tk.exit": "🎫 Exit ticket — check yourself",
     // chrome
     "crumb.unit": "‹ Fences on the Range (unit home)",
     "crumb.grade": "‹ Grade 4 — Texas History",
@@ -265,6 +267,8 @@ BreakoutI18n.register('pst-barbed-wire', {
     "as.45": "Adapted from “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, updated 2019 (itue.udel.edu)."
   },
   es: {
+    "tk.entry": "🎟️ Boleto de entrada — repaso de 1 minuto",
+    "tk.exit": "🎫 Boleto de salida — comprueba lo que sabes",
     "crumb.unit": "‹ Cercas en la Pradera (inicio de la unidad)",
     "crumb.grade": "‹ Grado 4 — Historia de Texas",
     "nav.prev": "‹ Atrás", "nav.next": "Siguiente ›",
@@ -518,6 +522,8 @@ BreakoutI18n.register('pst-barbed-wire', {
     "as.45": "Adaptado de “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, actualizado en 2019 (itue.udel.edu)."
   },
   vi: {
+    "tk.entry": "🎟️ Vé vào — khởi động 1 phút",
+    "tk.exit": "🎫 Vé ra — tự kiểm tra",
     "crumb.unit": "‹ Hàng rào trên đồng cỏ (trang chính của bài học)",
     "crumb.grade": "‹ Lớp 4 — Lịch sử Texas",
     "nav.prev": "‹ Quay lại", "nav.next": "Tiếp theo ›",
@@ -771,6 +777,8 @@ BreakoutI18n.register('pst-barbed-wire', {
     "as.45": "Điều chỉnh từ “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, cập nhật năm 2019 (itue.udel.edu)."
   },
   ar: {
+    "tk.entry": "🎟️ تذكرة الدخول — إحماء دقيقة واحدة",
+    "tk.exit": "🎫 تذكرة الخروج — اختبر نفسك",
     "crumb.unit": "‹ أسوار على المرعى (الصفحة الرئيسية للوحدة)",
     "crumb.grade": "‹ الصف الرابع — تاريخ تكساس",
     "nav.prev": "‹ رجوع", "nav.next": "التالي ›",
@@ -1024,6 +1032,8 @@ BreakoutI18n.register('pst-barbed-wire', {
     "as.45": "مُكيَّف عن “Rubric to Evaluate PBL Problems،” © ITUE Leaders 2004، مُحدَّث 2019 (itue.udel.edu)."
   },
   hi: {
+    "tk.entry": "🎟️ प्रवेश टिकट — 1 मिनट का वार्म-अप",
+    "tk.exit": "🎫 निकास टिकट — स्वयं जाँचें",
     "crumb.unit": "‹ मैदान पर बाड़ें (इकाई का मुख्य पृष्ठ)",
     "crumb.grade": "‹ कक्षा 4 — टेक्सास इतिहास",
     "nav.prev": "‹ पीछे", "nav.next": "आगे ›",
@@ -1277,6 +1287,8 @@ BreakoutI18n.register('pst-barbed-wire', {
     "as.45": "“Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004 से अनुकूलित, 2019 में अद्यतन (itue.udel.edu)।"
   },
   ur: {
+    "tk.entry": "🎟️ داخلے کا ٹکٹ — 1 منٹ کی وارم اپ",
+    "tk.exit": "🎫 اخراج کا ٹکٹ — خود کو جانچیں",
     "crumb.unit": "‹ چراگاہ پر باڑیں (یونٹ کا مرکزی صفحہ)",
     "crumb.grade": "‹ گریڈ 4 — ٹیکساس کی تاریخ",
     "nav.prev": "‹ واپس", "nav.next": "اگلا ›",
@@ -1530,6 +1542,8 @@ BreakoutI18n.register('pst-barbed-wire', {
     "as.45": "“Rubric to Evaluate PBL Problems،” © ITUE Leaders 2004 سے ڈھالا گیا، 2019 میں تازہ کاری (itue.udel.edu)۔"
   },
   zh: {
+    "tk.entry": "🎟️ 入场券 — 1 分钟热身",
+    "tk.exit": "🎫 离场券 — 自我检查",
     "crumb.unit": "‹ 牧场上的围栏（单元主页）",
     "crumb.grade": "‹ 四年级 — 得克萨斯历史",
     "nav.prev": "‹ 返回", "nav.next": "下一步 ›",

@@ -7,6 +7,8 @@
    (§113.15…), effect-size labels, proper links. */
 BreakoutI18n.register('pst-the-mission', {
   en: {
+    "tk.entry": "🎟️ Entry ticket — 1-minute warm-up",
+    "tk.exit": "🎫 Exit ticket — check yourself",
     // chrome
     "crumb.unit": "‹ The Mission Decision (unit home)",
     "crumb.grade": "‹ Grade 4 — Texas History",
@@ -281,6 +283,8 @@ BreakoutI18n.register('pst-the-mission', {
     "as.45": "Adapted from “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, updated 2019 (itue.udel.edu)."
   },
   es: {
+    "tk.entry": "🎟️ Boleto de entrada — repaso de 1 minuto",
+    "tk.exit": "🎫 Boleto de salida — comprueba lo que sabes",
     "crumb.unit": "‹ La decisión de la misión (inicio de la unidad)",
     "crumb.grade": "‹ Grado 4 — Historia de Texas",
     "nav.prev": "‹ Atrás", "nav.next": "Siguiente ›",
@@ -548,6 +552,8 @@ BreakoutI18n.register('pst-the-mission', {
     "as.45": "Adaptado de “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, actualizado 2019 (itue.udel.edu)."
   },
   vi: {
+    "tk.entry": "🎟️ Vé vào — khởi động 1 phút",
+    "tk.exit": "🎫 Vé ra — tự kiểm tra",
     "crumb.unit": "‹ Quyết định về Khu Truyền giáo (trang chính của bài học)",
     "crumb.grade": "‹ Lớp 4 — Lịch sử Texas",
     "nav.prev": "‹ Quay lại", "nav.next": "Tiếp theo ›",
@@ -815,6 +821,8 @@ BreakoutI18n.register('pst-the-mission', {
     "as.45": "Điều chỉnh từ “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, cập nhật 2019 (itue.udel.edu)."
   },
   ar: {
+    "tk.entry": "🎟️ تذكرة الدخول — إحماء دقيقة واحدة",
+    "tk.exit": "🎫 تذكرة الخروج — اختبر نفسك",
     "crumb.unit": "‹ قرار البعثة (الصفحة الرئيسية للوحدة)",
     "crumb.grade": "‹ الصف الرابع — تاريخ تكساس",
     "nav.prev": "‹ رجوع", "nav.next": "التالي ›",
@@ -1082,6 +1090,8 @@ BreakoutI18n.register('pst-the-mission', {
     "as.45": "مُعدَّل عن “Rubric to Evaluate PBL Problems،” © ITUE Leaders 2004، محدّث 2019 (itue.udel.edu)."
   },
   hi: {
+    "tk.entry": "🎟️ प्रवेश टिकट — 1 मिनट का वार्म-अप",
+    "tk.exit": "🎫 निकास टिकट — स्वयं जाँचें",
     "crumb.unit": "‹ मिशन का निर्णय (इकाई का मुख्य पृष्ठ)",
     "crumb.grade": "‹ कक्षा 4 — टेक्सास का इतिहास",
     "nav.prev": "‹ वापस", "nav.next": "अगला ›",
@@ -1349,6 +1359,8 @@ BreakoutI18n.register('pst-the-mission', {
     "as.45": "“Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, 2019 में अद्यतन (itue.udel.edu) से अनुकूलित।"
   },
   ur: {
+    "tk.entry": "🎟️ داخلے کا ٹکٹ — 1 منٹ کی وارم اپ",
+    "tk.exit": "🎫 اخراج کا ٹکٹ — خود کو جانچیں",
     "crumb.unit": "‹ مشن کا فیصلہ (یونٹ کا مرکزی صفحہ)",
     "crumb.grade": "‹ چوتھی جماعت — ٹیکساس کی تاریخ",
     "nav.prev": "‹ واپس", "nav.next": "اگلا ›",
@@ -1616,6 +1628,8 @@ BreakoutI18n.register('pst-the-mission', {
     "as.45": "“Rubric to Evaluate PBL Problems،” © ITUE Leaders 2004، 2019 میں تازہ کاری (itue.udel.edu) سے موافق۔"
   },
   zh: {
+    "tk.entry": "🎟️ 入场券 — 1 分钟热身",
+    "tk.exit": "🎫 离场券 — 自我检查",
     "crumb.unit": "‹ 传教站的抉择（单元主页）",
     "crumb.grade": "‹ 四年级 — 得克萨斯历史",
     "nav.prev": "‹ 返回", "nav.next": "下一页 ›",
