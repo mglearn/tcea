@@ -203,7 +203,19 @@ what the pack teaches.
 
 ---
 
-## 7. ACE Image Inquiry — historical art-analysis unit (`pst/analysis/`, planned)
+## 7. ACE Image Inquiry — historical art-analysis unit (`pst/analysis/`, BUILT & LIVE 2026-07-10)
+
+**Built:** `pst/analysis/{index,gallery,facilitator-guide}.html` + `i18n-analysis.js` (137 keys ×
+7 langs). Routine hub (ACE table, step-by-step, exit ticket, rubric, "run it tomorrow"), an
+11-painting gallery (each an `.act` card with a verified museum/collection link + TEKS hook +
+`⚠️` difficult-history framing per TEC §28.0022), and a facilitator guide. All 11 external links
+verified live (Met object IDs checked via the open Met API — Benton *America Today* = 499559;
+NGA *Both Members* = artworks/30667; Rockwell *Moon* = airandspace.si.edu image-details/9817).
+Wired into the splash as an "Image Inquiry" card + About-panel quick link (`i18n-toc.js`, 7 langs,
+now 64 keys). NOT counted by `build-dashboard.js` (it is a routine, not a phase-structured PBL unit).
+Original spec below.
+
+
 
 A distinct unit type at **`pst/analysis/`**: a short (10–15 min) routine for reading
 **American history paintings as historical sources**. Audience: **grades 9–12, AP, IB, dual-credit,
