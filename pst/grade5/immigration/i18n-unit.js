@@ -5,6 +5,8 @@
    Do not translate: URLs, TEKS codes (§113.16…), effect-size labels, proper links. */
 BreakoutI18n.register('pst-immigration', {
   en: {
+    "tk.entry": "🎟️ Entry ticket — 1-minute warm-up",
+    "tk.exit": "🎫 Exit ticket — check yourself",
     // chrome
     "crumb.unit": "‹ A New Life (unit home)",
     "crumb.grade": "‹ Grade 5 — US History",
@@ -274,6 +276,8 @@ BreakoutI18n.register('pst-immigration', {
     "as.45": "Adapted from “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, updated 2019 (itue.udel.edu)."
   },
   es: {
+    "tk.entry": "🎟️ Boleto de entrada — repaso de 1 minuto",
+    "tk.exit": "🎫 Boleto de salida — comprueba lo que sabes",
     "crumb.unit": "‹ Una nueva vida (inicio de la unidad)",
     "crumb.grade": "‹ Grado 5 — Historia de EE. UU.",
     "nav.prev": "‹ Atrás", "nav.next": "Siguiente ›",
@@ -536,6 +540,8 @@ BreakoutI18n.register('pst-immigration', {
     "as.45": "Adaptado de “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, actualizado en 2019 (itue.udel.edu)."
   },
   vi: {
+    "tk.entry": "🎟️ Vé vào — khởi động 1 phút",
+    "tk.exit": "🎫 Vé ra — tự kiểm tra",
     "crumb.unit": "‹ Một cuộc đời mới (trang chính của bài học)",
     "crumb.grade": "‹ Lớp 5 — Lịch sử Hoa Kỳ",
     "nav.prev": "‹ Quay lại", "nav.next": "Tiếp ›",
@@ -798,6 +804,8 @@ BreakoutI18n.register('pst-immigration', {
     "as.45": "Được điều chỉnh từ “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, cập nhật 2019 (itue.udel.edu)."
   },
   ar: {
+    "tk.entry": "🎟️ تذكرة الدخول — إحماء دقيقة واحدة",
+    "tk.exit": "🎫 تذكرة الخروج — اختبر نفسك",
     "crumb.unit": "‹ حياة جديدة (الصفحة الرئيسية للوحدة)",
     "crumb.grade": "‹ الصف الخامس — تاريخ الولايات المتحدة",
     "nav.prev": "‹ رجوع", "nav.next": "التالي ›",
@@ -1060,6 +1068,8 @@ BreakoutI18n.register('pst-immigration', {
     "as.45": "مُكيَّف عن “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004، محدَّث 2019 (itue.udel.edu)."
   },
   hi: {
+    "tk.entry": "🎟️ प्रवेश टिकट — 1 मिनट का वार्म-अप",
+    "tk.exit": "🎫 निकास टिकट — स्वयं जाँचें",
     "crumb.unit": "‹ एक नई ज़िंदगी (इकाई का मुख पृष्ठ)",
     "crumb.grade": "‹ कक्षा 5 — अमेरिकी इतिहास",
     "nav.prev": "‹ पीछे", "nav.next": "आगे ›",
@@ -1322,6 +1332,8 @@ BreakoutI18n.register('pst-immigration', {
     "as.45": "“Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004 से अनुकूलित, 2019 में अद्यतन (itue.udel.edu)।"
   },
   ur: {
+    "tk.entry": "🎟️ داخلے کا ٹکٹ — 1 منٹ کی وارم اپ",
+    "tk.exit": "🎫 اخراج کا ٹکٹ — خود کو جانچیں",
     "crumb.unit": "‹ ایک نئی زندگی (یونٹ کا مرکزی صفحہ)",
     "crumb.grade": "‹ گریڈ 5 — امریکی تاریخ",
     "nav.prev": "‹ واپس", "nav.next": "اگلا ›",
@@ -1584,6 +1596,8 @@ BreakoutI18n.register('pst-immigration', {
     "as.45": "“Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004 سے موافق، 2019 میں تازہ کاری شدہ (itue.udel.edu)۔"
   },
   zh: {
+    "tk.entry": "🎟️ 入场券 — 1 分钟热身",
+    "tk.exit": "🎫 离场券 — 自我检查",
     "crumb.unit": "‹ 新生活（单元主页）",
     "crumb.grade": "‹ 五年级 — 美国历史",
     "nav.prev": "‹ 返回", "nav.next": "下一步 ›",

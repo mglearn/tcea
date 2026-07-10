@@ -45,16 +45,19 @@ for (const g of GRADES) {
   }
 }
 
-// entry/exit arcade tickets (games/ — 0 until that component ships)
+// entry/exit arcade tickets — counted from the ticket registry (games/tickets.js)
 const tickets = { entry: 0, exit: 0 };
-const gamesDir = path.join(ROOT, 'games');
-if (fs.existsSync(gamesDir)) {
-  const walk = d => fs.readdirSync(d, { withFileTypes: true }).forEach(e => {
-    const p = path.join(d, e.name);
-    if (e.isDirectory()) walk(p);
-    else { if (/entry/i.test(e.name)) tickets.entry++; if (/exit/i.test(e.name)) tickets.exit++; }
-  });
-  try { walk(gamesDir); } catch (_) {}
+const ticketsFile = path.join(ROOT, 'games', 'tickets.js');
+if (fs.existsSync(ticketsFile)) {
+  try {
+    const sandbox = { window: {} };
+    // tickets.js does `window.PST_TICKETS = (window.PST_TICKETS||[]).concat([...])`
+    new Function('window', fs.readFileSync(ticketsFile, 'utf8'))(sandbox.window);
+    (sandbox.window.PST_TICKETS || []).forEach(t => {
+      if (t.type === 'entry') tickets.entry++;
+      else if (t.type === 'exit') tickets.exit++;
+    });
+  } catch (_) {}
 }
 
 const strat = Object.entries(strategies)

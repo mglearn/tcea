@@ -169,3 +169,10 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,.c
   .wrap{max-width:100%;padding:0}
   .card,.act,.note,table{break-inside:avoid}
 }
+
+/* arcade entry/exit ticket pill (used on phase pages + games hub) */
+.tkpill{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;
+  border:2px solid var(--ac);color:var(--ac);background:#fff;border-radius:100px;padding:6px 15px;margin:6px 0}
+.tkpill:hover{background:var(--ac);color:#fff}
+.tkpill.surface{--ac:var(--surface)} .tkpill.deep{--ac:var(--deep)} .tkpill.transfer{--ac:var(--transfer)}
+.tkpill.exit{--ac:var(--gold-d)}

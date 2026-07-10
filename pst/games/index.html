@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>PST Arcade — entry &amp; exit tickets · Problem-Solving Teaching</title>
+<link rel="stylesheet" href="../assets/pst.css">
+<link rel="stylesheet" href="assets/arcade.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="langbar"><span class="globe" aria-hidden="true">🌐</span><div data-i18n-picker></div></div>
+  <div class="crumb"><a href="../index.html" data-i18n="crumb">‹ Problem-Solving Teaching</a></div>
+  <div class="eyebrow" data-i18n="eyebrow">Arcade tickets · retrieval practice · entry &amp; exit</div>
+  <h1 data-i18n="h1">PST Arcade</h1>
+  <p class="sub" data-i18n="sub">Quick, arcade-style entry and exit tickets for the units — a 1–2 minute retrieval-practice check before and after each learning phase. Testing yourself is high-leverage (effects of testing d ≈ 0.54–0.63; feedback d ≈ 0.62). Nothing is stored or sent — the score is just for you.</p>
+
+  <div id="player" class="arcade" hidden></div>
+
+  <div class="filterbar" id="filterGrade"></div>
+  <div class="filterbar" id="filterType"></div>
+  <div class="tkgrid" id="catalog"></div>
+
+  <p class="lead" style="margin-top:18px" data-i18n-html="more">📊 See how every ticket maps to a unit, phase, TEKS, and strategy on the <a href="correlation.html">games correlation</a>. New to the suite? Start at the <a href="../index.html">Problem-Solving Teaching hub</a>.</p>
+
+  <p class="disc" data-i18n="disc">Aligned to (not reproduced from) 19 TAC Ch.113; effect sizes from Visible Learning MetaX. Self-contained — no logins, no accounts, no data collected or sent.</p>
+  <footer data-i18n-html="footer">PST Arcade · Problem-Solving Teaching · Self-contained, no logins, no data collected. · <a href="../policy.html">Privacy &amp; compliance</a></footer>
+</div>
+
+<script src="../../breakouts/assets/i18n.js"></script>
+<script>
+BreakoutI18n.register('pst-games', { en: {
+  "crumb":"‹ Problem-Solving Teaching","eyebrow":"Arcade tickets · retrieval practice · entry & exit","h1":"PST Arcade",
+  "sub":"Quick, arcade-style entry and exit tickets for the units — a 1–2 minute retrieval-practice check before and after each learning phase. Testing yourself is high-leverage (effects of testing d ≈ 0.54–0.63; feedback d ≈ 0.62). Nothing is stored or sent — the score is just for you.",
+  "more":"📊 See how every ticket maps to a unit, phase, TEKS, and strategy on the <a href=\"correlation.html\">games correlation</a>. New to the suite? Start at the <a href=\"../index.html\">Problem-Solving Teaching hub</a>.",
+  "disc":"Aligned to (not reproduced from) 19 TAC Ch.113; effect sizes from Visible Learning MetaX. Self-contained — no logins, no accounts, no data collected or sent.",
+  "footer":"PST Arcade · Problem-Solving Teaching · Self-contained, no logins, no data collected. · <a href=\"../policy.html\">Privacy &amp; compliance</a>",
+  "f.all":"All","f.entry":"🎟️ Entry","f.exit":"🎫 Exit","f.g":"Grade {n}","play":"▶ Play","phase.surface":"① Surface","phase.deep":"② Deep","phase.transfer":"③ Transfer","empty":"No tickets match — clear the filters."
+}, es: {
+  "crumb":"‹ Enseñanza para la Resolución de Problemas","eyebrow":"Boletos de arcade · práctica de recuperación · entrada y salida","h1":"PST Arcade",
+  "sub":"Boletos de entrada y salida rápidos, estilo arcade, para las unidades: una comprobación de práctica de recuperación de 1–2 minutos antes y después de cada fase de aprendizaje. Ponerte a prueba tiene alto impacto (efectos de la evaluación d ≈ 0.54–0.63; retroalimentación d ≈ 0.62). Nada se guarda ni se envía: el puntaje es solo para ti.",
+  "more":"📊 Mira cómo cada boleto se relaciona con una unidad, fase, TEKS y estrategia en la <a href=\"correlation.html\">correlación de juegos</a>. ¿Nuevo en la suite? Comienza en el <a href=\"../index.html\">centro de Enseñanza para la Resolución de Problemas</a>.",
+  "disc":"Alineado con (no reproducido de) 19 TAC Cap.113; tamaños del efecto de Visible Learning MetaX. Independiente: sin inicios de sesión, sin cuentas, sin datos recopilados ni enviados.",
+  "footer":"PST Arcade · Enseñanza para la Resolución de Problemas · Independiente, sin inicios de sesión, sin recopilación de datos. · <a href=\"../policy.html\">Privacidad y cumplimiento</a>",
+  "f.all":"Todos","f.entry":"🎟️ Entrada","f.exit":"🎫 Salida","f.g":"Grado {n}","play":"▶ Jugar","phase.surface":"① Superficial","phase.deep":"② Profundo","phase.transfer":"③ Transferencia","empty":"Ningún boleto coincide: borra los filtros."
+}, vi: {
+  "crumb":"‹ Dạy học Giải quyết Vấn đề","eyebrow":"Phiếu arcade · luyện tập truy hồi · vào & ra","h1":"PST Arcade",
+  "sub":"Các phiếu vào và phiếu ra nhanh, kiểu arcade, cho các đơn vị bài học — một bài kiểm tra luyện tập truy hồi 1–2 phút trước và sau mỗi giai đoạn học. Tự kiểm tra bản thân có đòn bẩy cao (hiệu ứng kiểm tra d ≈ 0.54–0.63; phản hồi d ≈ 0.62). Không có gì được lưu hay gửi đi — điểm số chỉ dành cho bạn.",
+  "more":"📊 Xem mỗi phiếu được đối chiếu với một đơn vị, giai đoạn, TEKS và chiến lược ra sao trong <a href=\"correlation.html\">bảng đối chiếu trò chơi</a>. Mới với bộ tài liệu? Bắt đầu tại <a href=\"../index.html\">trung tâm Dạy học Giải quyết Vấn đề</a>.",
+  "disc":"Căn chỉnh theo (không sao chép từ) 19 TAC Ch.113; cỡ hiệu ứng lấy từ Visible Learning MetaX. Độc lập — không đăng nhập, không tài khoản, không thu thập hay gửi dữ liệu.",
+  "footer":"PST Arcade · Dạy học Giải quyết Vấn đề · Độc lập, không đăng nhập, không thu thập dữ liệu. · <a href=\"../policy.html\">Quyền riêng tư &amp; tuân thủ</a>",
+  "f.all":"Tất cả","f.entry":"🎟️ Vào","f.exit":"🎫 Ra","f.g":"Lớp {n}","play":"▶ Chơi","phase.surface":"① Bề mặt","phase.deep":"② Chuyên sâu","phase.transfer":"③ Chuyển giao","empty":"Không có phiếu nào khớp — xóa bộ lọc."
+}, ar: {
+  "crumb":"‹ التدريس القائم على حل المشكلات","eyebrow":"تذاكر أركيد · ممارسة الاسترجاع · دخول وخروج","h1":"PST Arcade",
+  "sub":"تذاكر دخول وخروج سريعة بأسلوب الأركيد للوحدات — فحص لممارسة الاسترجاع من 1–2 دقيقة قبل كل مرحلة تعلّم وبعدها. اختبار نفسك عالي الأثر (أثر الاختبار d ≈ 0.54–0.63؛ التغذية الراجعة d ≈ 0.62). لا يُخزَّن شيء ولا يُرسَل — النتيجة لك وحدك.",
+  "more":"📊 اطّلع على كيفية ربط كل تذكرة بوحدة ومرحلة ومعايير TEKS واستراتيجية في <a href=\"correlation.html\">مواءمة الألعاب</a>. جديد على المجموعة؟ ابدأ من <a href=\"../index.html\">مركز التدريس القائم على حل المشكلات</a>.",
+  "disc":"مواءَم مع (وليس منسوخًا عن) 19 TAC Ch.113؛ أحجام الأثر من Visible Learning MetaX. مكتفٍ ذاتيًا — دون تسجيل دخول ولا حسابات ولا جمع بيانات أو إرسالها.",
+  "footer":"PST Arcade · التدريس القائم على حل المشكلات · مكتفٍ ذاتيًا، دون تسجيل دخول، دون جمع بيانات. · <a href=\"../policy.html\">الخصوصية والامتثال</a>",
+  "f.all":"الكل","f.entry":"🎟️ دخول","f.exit":"🎫 خروج","f.g":"الصف {n}","play":"▶ العب","phase.surface":"① سطحي","phase.deep":"② عميق","phase.transfer":"③ نقل","empty":"لا توجد تذاكر مطابقة — امسح المرشِّحات."
+}, hi: {
+  "crumb":"‹ समस्या-समाधान शिक्षण","eyebrow":"आर्केड टिकट · पुनःप्राप्ति अभ्यास · प्रवेश और निकास","h1":"PST Arcade",
+  "sub":"इकाइयों के लिए त्वरित, आर्केड-शैली के प्रवेश और निकास टिकट — प्रत्येक अधिगम चरण से पहले और बाद में 1–2 मिनट की पुनःप्राप्ति-अभ्यास जाँच। स्वयं की परीक्षा लेना उच्च-प्रभाव वाला है (परीक्षण का प्रभाव d ≈ 0.54–0.63; प्रतिक्रिया d ≈ 0.62)। कुछ भी संग्रहीत या भेजा नहीं जाता — स्कोर सिर्फ़ आपके लिए है।",
+  "more":"📊 देखें कि हर टिकट किसी इकाई, चरण, TEKS और रणनीति से कैसे जुड़ता है, <a href=\"correlation.html\">गेम्स सहसंबंध</a> में। सुइट में नए हैं? <a href=\"../index.html\">समस्या-समाधान शिक्षण हब</a> से शुरू करें।",
+  "disc":"19 TAC Ch.113 के साथ संरेखित (उससे पुनरुत्पादित नहीं); प्रभाव आकार Visible Learning MetaX से। स्व-निहित — कोई लॉगिन नहीं, कोई खाता नहीं, कोई डेटा एकत्र या भेजा नहीं जाता।",
+  "footer":"PST Arcade · समस्या-समाधान शिक्षण · स्व-निहित, कोई लॉगिन नहीं, कोई डेटा एकत्र नहीं। · <a href=\"../policy.html\">गोपनीयता एवं अनुपालन</a>",
+  "f.all":"सभी","f.entry":"🎟️ प्रवेश","f.exit":"🎫 निकास","f.g":"कक्षा {n}","play":"▶ खेलें","phase.surface":"① सतही","phase.deep":"② गहन","phase.transfer":"③ अंतरण","empty":"कोई टिकट मेल नहीं खाता — फ़िल्टर हटाएँ।"
+}, ur: {
+  "crumb":"‹ مسئلہ حل کرنے کی تدریس","eyebrow":"آرکیڈ ٹکٹ · بازیافت مشق · داخلہ اور اخراج","h1":"PST Arcade",
+  "sub":"اکائیوں کے لیے فوری، آرکیڈ طرز کے داخلے اور اخراج کے ٹکٹ — ہر تعلمی مرحلے سے پہلے اور بعد میں 1–2 منٹ کی بازیافت مشق کی جانچ۔ خود کو آزمانا بلند اثر رکھتا ہے (آزمائش کا اثر d ≈ 0.54–0.63؛ فیڈبیک d ≈ 0.62)۔ کچھ بھی محفوظ یا بھیجا نہیں جاتا — اسکور صرف آپ کے لیے ہے۔",
+  "more":"📊 دیکھیں کہ ہر ٹکٹ کسی اکائی، مرحلے، TEKS اور حکمتِ عملی سے کیسے جُڑتا ہے، <a href=\"correlation.html\">گیمز مطابقت</a> میں۔ سوٹ میں نئے ہیں؟ <a href=\"../index.html\">مسئلہ حل کرنے کی تدریس ہب</a> سے شروع کریں۔",
+  "disc":"19 TAC Ch.113 کے ساتھ ہم آہنگ (اس سے نقل نہیں)؛ اثر کے حجم Visible Learning MetaX سے۔ خود کفیل — کوئی لاگ اِن نہیں، کوئی اکاؤنٹ نہیں، کوئی ڈیٹا جمع یا بھیجا نہیں جاتا۔",
+  "footer":"PST Arcade · مسئلہ حل کرنے کی تدریس · خود کفیل، کوئی لاگ اِن نہیں، کوئی ڈیٹا جمع نہیں۔ · <a href=\"../policy.html\">رازداری و تعمیل</a>",
+  "f.all":"سب","f.entry":"🎟️ داخلہ","f.exit":"🎫 اخراج","f.g":"جماعت {n}","play":"▶ کھیلیں","phase.surface":"① سطحی","phase.deep":"② گہرا","phase.transfer":"③ منتقلی","empty":"کوئی ٹکٹ مماثل نہیں — فلٹرز صاف کریں۔"
+}, zh: {
+  "crumb":"‹ 问题解决教学","eyebrow":"街机闯关券 · 提取练习 · 入场与离场","h1":"PST Arcade",
+  "sub":"面向各单元的快速街机式入场券与离场券——在每个学习阶段前后进行 1–2 分钟的提取练习检查。自我测验高效有力（测验效应 d ≈ 0.54–0.63；反馈 d ≈ 0.62）。不保存也不发送任何内容——分数只属于你自己。",
+  "more":"📊 在<a href=\"correlation.html\">游戏对照</a>中查看每张券如何对应到某个单元、阶段、TEKS 与策略。初次接触本套件？请从<a href=\"../index.html\">问题解决教学中心</a>开始。",
+  "disc":"对齐于（而非复制自）19 TAC 第 113 章；效应量取自 Visible Learning MetaX。独立运行——无需登录，无需账户，不收集也不发送任何数据。",
+  "footer":"PST Arcade · 问题解决教学 · 独立运行，无需登录，不收集数据。 · <a href=\"../policy.html\">隐私与合规</a>",
+  "f.all":"全部","f.entry":"🎟️ 入场","f.exit":"🎫 离场","f.g":"{n} 年级","play":"▶ 开始","phase.surface":"① 表层","phase.deep":"② 深层","phase.transfer":"③ 迁移","empty":"没有匹配的券——请清除筛选。"
+}});
+</script>
+<script src="tickets.js"></script>
+<script src="assets/arcade.js"></script>
+<script>
+(function () {
+  var T = window.PST_TICKETS || [];
+  var fGrade = 'all', fType = 'all';
+  function t(k, v) { return (window.BreakoutI18n ? BreakoutI18n.t(k, v) : k); }
+  var phaseName = { surface: 'phase.surface', deep: 'phase.deep', transfer: 'phase.transfer' };
+
+  function grades() { var s = {}; T.forEach(function (x) { s[x.grade] = 1; }); return Object.keys(s).map(Number).sort(function (a, b) { return a - b; }); }
+
+  function renderFilters() {
+    var fg = document.getElementById('filterGrade'); fg.innerHTML = '';
+    var allG = mkBtn(t('f.all'), fGrade === 'all', function () { fGrade = 'all'; draw(); });
+    fg.appendChild(allG);
+    grades().forEach(function (g) { fg.appendChild(mkBtn(t('f.g', { n: g }), fGrade === g, function () { fGrade = g; draw(); })); });
+    var ft = document.getElementById('filterType'); ft.innerHTML = '';
+    [['all', t('f.all')], ['entry', t('f.entry')], ['exit', t('f.exit')]].forEach(function (p) {
+      ft.appendChild(mkBtn(p[1], fType === p[0], function () { fType = p[0]; draw(); }));
+    });
+  }
+  function mkBtn(label, on, fn) { var b = document.createElement('button'); b.type = 'button'; b.textContent = label; if (on) b.className = 'on'; b.onclick = fn; return b; }
+
+  function draw() {
+    renderFilters();
+    var box = document.getElementById('catalog'); box.innerHTML = '';
+    var list = T.filter(function (x) { return (fGrade === 'all' || x.grade === fGrade) && (fType === 'all' || x.type === fType); });
+    if (!list.length) { box.appendChild(mkNode('p', 'sub', t('empty'))); return; }
+    list.forEach(function (x) {
+      var c = (x.i18n[BreakoutI18n.getLang()] || x.i18n.en);
+      var card = document.createElement('button'); card.type = 'button'; card.className = 'tkcard ' + x.phase;
+      var row = mkNode('div', 'row');
+      row.appendChild(mkNode('span', 'badge' + (x.type === 'exit' ? ' exit' : ''), x.type === 'exit' ? '🎫 EXIT' : '🎟️ ENTRY'));
+      row.appendChild(mkNode('span', 'fmt', PSTArcade.fmtLabel(x.format)));
+      card.appendChild(row);
+      card.appendChild(mkNode('h3', null, c.title || ''));
+      card.appendChild(mkNode('div', 'sub', t('f.g', { n: x.grade }) + ' · ' + x.unitTitle + ' · ' + t(phaseName[x.phase])));
+      card.onclick = function () { play(x.id); };
+      box.appendChild(card);
+    });
+  }
+  function mkNode(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
+
+  function play(id) {
+    var tk = PSTArcade.byId(id); if (!tk) return;
+    var p = document.getElementById('player'); p.hidden = false;
+    PSTArcade.mount(p, tk);
+    p.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  draw();
+  window.addEventListener('breakout-i18n:changed', function () { draw(); });
+  // deep link ?t=<id> plays that ticket
+  var q = (location.search.match(/[?&]t=([^&]+)/) || [])[1];
+  if (q) play(decodeURIComponent(q));
+})();
+</script>
+</body>
+</html>
