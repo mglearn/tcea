@@ -1,6 +1,62 @@
 {
-  "generated": "2026-07-08T00:37:30.709Z",
+  "generated": "2026-07-10T19:52:44.474Z",
   "items": [
+    {
+      "href": "spr/index.html",
+      "title": "Digital Capacity Matrix for the SPR Pathfinders",
+      "category": "Dashboards and Decision Tools",
+      "icon": "📊",
+      "date": "2026-07-10T19:52:43.575Z"
+    },
+    {
+      "href": "surface-deep-transfer/index.html",
+      "title": "Comprehensive High-Impact Learning Phases",
+      "category": "Instructional Strategy Guides",
+      "icon": "📘",
+      "date": "2026-07-09T11:41:50-05:00"
+    },
+    {
+      "href": "breakouts/index.html",
+      "title": "Critical Thinking Online Breakouts — Full Library",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-07-09T11:41:50-05:00"
+    },
+    {
+      "href": "sharespace/index.html",
+      "title": "Vibe Coding a Free ShareSpace",
+      "category": "Featured Vibe-Coded Solutions",
+      "icon": "⭐",
+      "date": "2026-07-07T19:43:00-05:00"
+    },
+    {
+      "href": "tools/coinflipping/index.html",
+      "title": "Classroom Coin Flipper",
+      "category": "Classroom Tools and Utilities",
+      "icon": "🧰",
+      "date": "2026-07-07T19:43:00-05:00"
+    },
+    {
+      "href": "tools/colorpop/index.html",
+      "title": "Color Pop Magic",
+      "category": "Classroom Tools and Utilities",
+      "icon": "🧰",
+      "date": "2026-07-07T19:43:00-05:00"
+    },
+    {
+      "href": "other/index.html",
+      "title": "Apps by OneScreen",
+      "category": "Games, Activities, and Specialty Builds",
+      "icon": "🎲",
+      "date": "2026-07-07T19:43:00-05:00"
+    },
+    {
+      "href": "webdecks/aidesign/index.html",
+      "title": "AI as Your Instructional Design Partner",
+      "category": "Presentations and WebDecks",
+      "icon": "🖥️",
+      "date": "2026-07-07T19:43:00-05:00"
+    },
     {
       "href": "breakouts/clear/index.html",
       "title": "Critical Thinking Breakouts",
@@ -18,13 +74,6 @@
     {
       "href": "breakouts/july5th/index.html",
       "title": "July 5 & Black Freedom Holidays Breakouts",
-      "category": "Critical Thinking Breakouts",
-      "icon": "🕵️",
-      "date": "2026-07-07T19:29:56-05:00"
-    },
-    {
-      "href": "breakouts/index.html",
-      "title": "Critical Thinking Online Breakouts — Full Library",
       "category": "Critical Thinking Breakouts",
       "icon": "🕵️",
       "date": "2026-07-07T19:29:56-05:00"
@@ -230,55 +279,6 @@
       "title": "K-12 Image Prompt Library",
       "category": "AI Prompt Libraries and Adoption",
       "icon": "🤖",
-      "date": "2026-06-19T17:49:01-05:00"
-    },
-    {
-      "href": "ai-adoption-roadmap/index.html",
-      "title": "AI Adoption Roadmap",
-      "category": "AI Prompt Libraries and Adoption",
-      "icon": "🤖",
-      "date": "2026-06-19T17:49:01-05:00"
-    },
-    {
-      "href": "ai-adoption-roadmap/long.html",
-      "title": "AI Adoption Roadmap - Extended",
-      "category": "AI Prompt Libraries and Adoption",
-      "icon": "🤖",
-      "date": "2026-06-19T17:49:01-05:00"
-    },
-    {
-      "href": "coach-tool/index.html",
-      "title": "High-Effect Strategy Coach",
-      "category": "Instructional Strategy Guides",
-      "icon": "📘",
-      "date": "2026-06-19T17:49:01-05:00"
-    },
-    {
-      "href": "hesis/index.html",
-      "title": "Matching the Strategy to the Phase of Learning",
-      "category": "Instructional Strategy Guides",
-      "icon": "📘",
-      "date": "2026-06-19T17:49:01-05:00"
-    },
-    {
-      "href": "surface-deep-transfer/index.html",
-      "title": "Comprehensive High-Impact Learning Phases",
-      "category": "Instructional Strategy Guides",
-      "icon": "📘",
-      "date": "2026-06-19T17:49:01-05:00"
-    },
-    {
-      "href": "topspreso/index.html",
-      "title": "Top Instructional Strategies",
-      "category": "Instructional Strategy Guides",
-      "icon": "📘",
-      "date": "2026-06-19T17:49:01-05:00"
-    },
-    {
-      "href": "dashboard/index.html",
-      "title": "TCEA Registration Dashboard",
-      "category": "Dashboards and Decision Tools",
-      "icon": "📊",
       "date": "2026-06-19T17:49:01-05:00"
     }
   ]

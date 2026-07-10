@@ -6,12 +6,76 @@
     <atom:link href="https://mglearn.github.io/tcea/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated HTML tools, dashboards, prompt libraries, and classroom resources from TCEA.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Jul 2026 00:37:30 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jul 2026 19:52:44 GMT</lastBuildDate>
     <image>
       <url>https://mglearn.github.io/tcea/favicon.svg</url>
       <title>TCEA Vibe-Coded Solutions — Updates</title>
       <link>https://mglearn.github.io/tcea/</link>
     </image>
+    <item>
+      <title>📊 Digital Capacity Matrix for the SPR Pathfinders</title>
+      <link>https://mglearn.github.io/tcea/spr/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/spr/index.html</guid>
+      <category>Dashboards and Decision Tools</category>
+      <pubDate>Fri, 10 Jul 2026 19:52:43 GMT</pubDate>
+      <description>A self-assessment matrix across eight capacity areas — choose the statement that best fits where you are today and get a summary with next steps.</description>
+    </item>
+    <item>
+      <title>📘 Comprehensive High-Impact Learning Phases</title>
+      <link>https://mglearn.github.io/tcea/surface-deep-transfer/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/surface-deep-transfer/index.html</guid>
+      <category>Instructional Strategy Guides</category>
+      <pubDate>Thu, 09 Jul 2026 16:41:50 GMT</pubDate>
+      <description>A visual reference for surface, deep, and transfer learning with strategy recommendations.</description>
+    </item>
+    <item>
+      <title>🕵️ Critical Thinking Online Breakouts — Full Library</title>
+      <link>https://mglearn.github.io/tcea/breakouts/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/index.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Thu, 09 Jul 2026 16:41:50 GMT</pubDate>
+      <description>A single searchable library of every TCEA Critical Thinking Online Breakout (CTOB) — 193 self-contained, browser-based reasoning escapes across five suites (CLEAR, Fourth of July, July 5 &amp; Black Freedom Holidays, Bible as Literature, and Science) in seven languages. Search by name, topic, or grade; no logins, no data collected.</description>
+    </item>
+    <item>
+      <title>⭐ Vibe Coding a Free ShareSpace</title>
+      <link>https://mglearn.github.io/tcea/sharespace/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/sharespace/index.html</guid>
+      <category>Featured Vibe-Coded Solutions</category>
+      <pubDate>Wed, 08 Jul 2026 00:43:00 GMT</pubDate>
+      <description>A slide-style walkthrough for building a free Padlet-style sharing space with a downloadable demo solution.</description>
+    </item>
+    <item>
+      <title>🧰 Classroom Coin Flipper</title>
+      <link>https://mglearn.github.io/tcea/tools/coinflipping/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/tools/coinflipping/index.html</guid>
+      <category>Classroom Tools and Utilities</category>
+      <pubDate>Wed, 08 Jul 2026 00:43:00 GMT</pubDate>
+      <description>A coin flipping utility with themes and classroom-friendly controls.</description>
+    </item>
+    <item>
+      <title>🧰 Color Pop Magic</title>
+      <link>https://mglearn.github.io/tcea/tools/colorpop/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/tools/colorpop/index.html</guid>
+      <category>Classroom Tools and Utilities</category>
+      <pubDate>Wed, 08 Jul 2026 00:43:00 GMT</pubDate>
+      <description>A scratch-canvas drawing tool for revealing hidden backgrounds with a custom cover color and pen.</description>
+    </item>
+    <item>
+      <title>🎲 Apps by OneScreen</title>
+      <link>https://mglearn.github.io/tcea/other/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/other/index.html</guid>
+      <category>Games, Activities, and Specialty Builds</category>
+      <pubDate>Wed, 08 Jul 2026 00:43:00 GMT</pubDate>
+      <description>A showcase of purpose-built classroom apps for educators tired of AI tools that miss the mark.</description>
+    </item>
+    <item>
+      <title>🖥️ AI as Your Instructional Design Partner</title>
+      <link>https://mglearn.github.io/tcea/webdecks/aidesign/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/webdecks/aidesign/index.html</guid>
+      <category>Presentations and WebDecks</category>
+      <pubDate>Wed, 08 Jul 2026 00:43:00 GMT</pubDate>
+      <description>A web-based slide deck on using AI as a partner in instructional design.</description>
+    </item>
     <item>
       <title>🕵️ Critical Thinking Breakouts</title>
       <link>https://mglearn.github.io/tcea/breakouts/clear/index.html</link>
@@ -35,14 +99,6 @@
       <category>Critical Thinking Breakouts</category>
       <pubDate>Wed, 08 Jul 2026 00:29:56 GMT</pubDate>
       <description>Twelve self-contained critical thinking breakouts across three grade bands (3-5, 6-8, 9-12) exploring the freedom days the calendar often overlooks — Frederick Douglass s July 5 address, Juneteenth, Pinkster, Watch Night, and more. Students open clues, weigh evidence, and crack four locks each. No logins, no data collected.</description>
-    </item>
-    <item>
-      <title>🕵️ Critical Thinking Online Breakouts — Full Library</title>
-      <link>https://mglearn.github.io/tcea/breakouts/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/index.html</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Wed, 08 Jul 2026 00:29:56 GMT</pubDate>
-      <description>A single searchable library of every TCEA Critical Thinking Online Breakout (CTOB) — 193 self-contained, browser-based reasoning escapes across five suites (CLEAR, Fourth of July, July 5 &amp; Black Freedom Holidays, Bible as Literature, and Science) in seven languages. Search by name, topic, or grade; no logins, no data collected.</description>
     </item>
     <item>
       <title>🕵️ Science Critical Thinking Breakouts (Grades K–8)</title>
@@ -275,62 +331,6 @@
       <category>AI Prompt Libraries and Adoption</category>
       <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
       <description>Classroom, library, and office-ready image prompts organized by task and instructional use.</description>
-    </item>
-    <item>
-      <title>🤖 AI Adoption Roadmap</title>
-      <link>https://mglearn.github.io/tcea/ai-adoption-roadmap/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/ai-adoption-roadmap/index.html</guid>
-      <category>AI Prompt Libraries and Adoption</category>
-      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
-      <description>An interactive roadmap for district and campus AI adoption stages, policies, and implementation moves.</description>
-    </item>
-    <item>
-      <title>🤖 AI Adoption Roadmap - Extended</title>
-      <link>https://mglearn.github.io/tcea/ai-adoption-roadmap/long.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/ai-adoption-roadmap/long.html</guid>
-      <category>AI Prompt Libraries and Adoption</category>
-      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
-      <description>The longer version of the AI adoption roadmap with expanded guidance and phase detail.</description>
-    </item>
-    <item>
-      <title>📘 High-Effect Strategy Coach</title>
-      <link>https://mglearn.github.io/tcea/coach-tool/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/coach-tool/index.html</guid>
-      <category>Instructional Strategy Guides</category>
-      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
-      <description>An interactive K-12 coaching tool for selecting and applying high-effect instructional strategies.</description>
-    </item>
-    <item>
-      <title>📘 Matching the Strategy to the Phase of Learning</title>
-      <link>https://mglearn.github.io/tcea/hesis/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/hesis/index.html</guid>
-      <category>Instructional Strategy Guides</category>
-      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
-      <description>A guide to aligning visible learning strategies with surface, deep, and transfer learning.</description>
-    </item>
-    <item>
-      <title>📘 Comprehensive High-Impact Learning Phases</title>
-      <link>https://mglearn.github.io/tcea/surface-deep-transfer/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/surface-deep-transfer/index.html</guid>
-      <category>Instructional Strategy Guides</category>
-      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
-      <description>A visual reference for surface, deep, and transfer learning with strategy recommendations.</description>
-    </item>
-    <item>
-      <title>📘 Top Instructional Strategies</title>
-      <link>https://mglearn.github.io/tcea/topspreso/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/topspreso/index.html</guid>
-      <category>Instructional Strategy Guides</category>
-      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
-      <description>A presentation-style guide to instructional strategies worth embracing for stronger learning outcomes.</description>
-    </item>
-    <item>
-      <title>📊 TCEA Registration Dashboard</title>
-      <link>https://mglearn.github.io/tcea/dashboard/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/dashboard/index.html</guid>
-      <category>Dashboards and Decision Tools</category>
-      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
-      <description>A course registration and revenue dashboard for tracking professional development activity.</description>
     </item>
   </channel>
 </rss>

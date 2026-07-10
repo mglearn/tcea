@@ -350,6 +350,15 @@
     "category": "dashboards",
     "featured": false,
     "external": false,
+    "href": "spr/index.html",
+    "tag": "Capacity Matrix",
+    "title": "Digital Capacity Matrix for the SPR Pathfinders",
+    "desc": "A self-assessment matrix across eight capacity areas — choose the statement that best fits where you are today and get a summary with next steps."
+  },
+  {
+    "category": "dashboards",
+    "featured": false,
+    "external": false,
     "href": "dashboard/index.html",
     "tag": "Registration",
     "title": "TCEA Registration Dashboard",

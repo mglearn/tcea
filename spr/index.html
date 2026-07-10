@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Capacity Matrix for the SPR Pathfinders</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0A3476;--navy-dark:#071f4a;--navy-mid:#12428f;--gold:#FCB040;
+  --gold-light:#fdd17a;--gold-pale:#FEF0D0;--pale-navy:#D0D8F0;--white:#fff;
+  --off-white:#f7f8fc;--text:#1a1a2e;--text-muted:#5a6680;--border:#e2e7f5;--teal:#0e6b8a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--off-white);line-height:1.55}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px 80px}
+header{background:var(--navy-dark);color:var(--white);padding:48px 20px;text-align:center;
+  background-image:radial-gradient(circle at 30% 20%,rgba(252,176,64,.14),transparent 55%)}
+header h1{font-family:'DM Serif Display',serif;font-size:2.1rem;line-height:1.2}
+header h1 em{color:var(--gold);font-style:italic}
+header p{max-width:640px;margin:14px auto 0;color:var(--pale-navy);font-size:1.02rem}
+.progress-bar{height:6px;background:rgba(255,255,255,.18);border-radius:100px;max-width:640px;margin:22px auto 0;overflow:hidden}
+.progress-fill{height:100%;width:0;background:var(--gold);transition:width .3s ease}
+.progress-label{color:var(--pale-navy);font-size:.85rem;margin-top:8px}
+.card{background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:26px 24px;margin-top:22px}
+.card h2{font-family:'DM Serif Display',serif;color:var(--navy);font-size:1.4rem;display:flex;align-items:baseline;gap:12px}
+.card h2 .num{font-size:.85rem;font-weight:700;color:var(--white);background:var(--navy);
+  border-radius:6px;padding:3px 9px;font-family:'DM Sans',sans-serif;flex:none}
+.indicators{margin:16px 0 20px;padding-left:20px;color:var(--text-muted);font-size:.94rem}
+.indicators li{margin-bottom:5px}
+.options{display:flex;flex-direction:column;gap:10px}
+.opt{display:flex;align-items:flex-start;gap:12px;border:1.5px solid var(--border);border-radius:8px;
+  padding:13px 15px;cursor:pointer;transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--pale-navy);background:var(--off-white)}
+.opt input{margin-top:3px;accent-color:var(--navy);width:17px;height:17px;flex:none}
+.opt.sel{border-color:var(--navy);background:var(--gold-pale)}
+.opt .txt{font-size:.96rem}
+.opt .lvl{display:block;font-size:.78rem;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.04em}
+.overall .options{flex-direction:row;flex-wrap:wrap;gap:10px}
+.overall .opt{flex:1;min-width:110px;flex-direction:column;align-items:center;text-align:center}
+.overall .opt .num2{font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--navy)}
+.overall .endlabel{font-size:.78rem;color:var(--text-muted);flex-basis:100%;display:flex;justify-content:space-between;margin-top:2px}
+.actions{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+button{font-family:'DM Sans',sans-serif;font-weight:700;font-size:1rem;border-radius:8px;cursor:pointer;border:none;padding:13px 26px}
+.btn-primary{background:var(--gold);color:var(--navy)}
+.btn-primary:hover{background:var(--gold-light)}
+.btn-outline{background:var(--white);color:var(--navy);border:1.5px solid var(--navy)}
+.btn-outline:hover{background:var(--off-white)}
+.err{color:#b3261e;font-size:.9rem;display:none;margin-top:6px}
+.err.show{display:block}
+/* results */
+#results{display:none}
+.result-hero{background:var(--navy);color:var(--white);border-radius:12px;padding:32px 28px;text-align:center;margin-top:22px}
+.result-hero .score{font-family:'DM Serif Display',serif;font-size:3rem;color:var(--gold);line-height:1}
+.result-hero .tier{font-family:'DM Serif Display',serif;font-size:1.5rem;margin-top:6px}
+.result-hero p{color:var(--pale-navy);max-width:560px;margin:12px auto 0}
+.domain-row{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--border)}
+.domain-row:last-child{border-bottom:none}
+.domain-row .dname{flex:1;font-weight:600}
+.meter{flex:none;width:150px;height:9px;background:var(--border);border-radius:100px;overflow:hidden}
+.meter span{display:block;height:100%;border-radius:100px}
+.badge{flex:none;font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;
+  padding:4px 9px;border-radius:100px;white-space:nowrap}
+.b0{background:#fdecea;color:#b3261e}.b1{background:var(--gold-pale);color:#8a5a00}.b2{background:#e3f2e8;color:#1b6b3a}
+.rec{margin-top:8px;font-size:.92rem;color:var(--text-muted)}
+.rec strong{color:var(--navy)}
+@media(max-width:560px){.meter{width:80px}.card{padding:22px 18px}header h1{font-size:1.7rem}}
+@media print{header{background:var(--navy-dark)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .actions,.progress-bar,.progress-label{display:none}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Digital Capacity Matrix for the <em>SPR Pathfinders</em></h1>
+  <p>Self-assess your capacity across eight areas. Choose the statement that best fits where you are today. You'll get a summary and next steps at the end.</p>
+  <div class="progress-bar"><div class="progress-fill" id="pfill"></div></div>
+  <div class="progress-label" id="plabel">0 of 9 answered</div>
+</header>
+
+<div class="wrap">
+<form id="assessment"><!-- questions injected --></form>
+
+<div class="actions" id="mainActions">
+  <button type="button" class="btn-primary" id="seeResults">See my results</button>
+  <span class="err" id="formErr">Please answer every area before viewing results.</span>
+</div>
+
+<div id="results"></div>
+</div>
+
+<script>
+const DOMAINS=[
+ {n:1,t:"Data Collection",ind:["Aware of basic methods of data collection from websites and social media","Can select appropriate tools for data collection","Familiar with sources like analytics, social insights, surveys, and educational platforms","Familiar with tools like Google Analytics, SurveyMonkey, and social analytics","Aware of data protection laws (FERPA) and ethical considerations","Can configure analytics tools and design surveys effectively"],
+  recs:["Start with one source. Set up Google Analytics on a single site and read the FERPA basics for your district.","Broaden your toolset. Pair survey design with analytics so you collect the right data, not just available data.","Coach others on tool selection and build a shared data-collection checklist for the team."]},
+ {n:2,t:"Data Analysis",ind:["Identify and use KPIs to measure success","Interpret data sets and draw meaningful conclusions","Use Excel, Google Sheets, or platforms like Tableau or SPSS","Create charts, graphs, and dashboards that communicate insights"],
+  recs:["Pick three KPIs that matter and learn PivotTables in Sheets or Excel.","Move from single charts to a dashboard view that connects metrics to decisions.","Mentor colleagues on turning raw data into clear, decision-ready visuals."]},
+ {n:3,t:"Strategic Planning",ind:["Use data to set SMART goals aligned to organizational objectives","Apply data insights to formulate strategies","Outline action plans, allocate resources, and set timelines","Adjust strategies as new data arrives"],
+  recs:["Rewrite one existing goal as a SMART goal backed by a data point.","Connect your data findings directly to a resourced action plan with timelines.","Lead planning sessions and model data-driven strategy adjustment for your team."]},
+ {n:4,t:"Communication and Storytelling",ind:["Communicate insights to diverse and non-technical audiences","Create reports and presentations that convey recommendations","Craft compelling narratives around data","Use visualization tools to strengthen reporting"],
+  recs:["Practice explaining one dataset to a non-technical colleague in plain language.","Build a short report that pairs a narrative with two or three visuals.","Coach others on data storytelling and audience-specific messaging."]},
+ {n:5,t:"Implementation",ind:["Manage projects from start to finish, aligned to strategic goals","Involve stakeholders (teachers, parents, students) in implementation","Identify and resolve issues using data","Review data to adjust the plan","Craft executive summaries, multi-page reports, and proposals","Provide video and image-rich reports via a public medium","Identify desired outcomes and what success looks like","Reflect and prepare summaries for district leadership"],
+  recs:["Map one project end to end with clear success criteria before you start.","Add a stakeholder-communication step and a mid-project data check to your process.","Run implementations others can learn from and produce leadership-ready summaries."]},
+ {n:6,t:"Monitoring and Evaluation",ind:["Develop an evaluation framework for strategies and initiatives","Gather and analyze data specifically for evaluation","Translate findings into actionable insights","Use outcomes to inform continuous improvement"],
+  recs:["Define what success looks like and how you'll measure it before launch.","Build a simple evaluation framework tied to your goals.","Design evaluation systems and guide continuous improvement across the team."]},
+ {n:7,t:"Global Learning Networks",ind:["Learn from others and explore promising tech-enabled practices","Set professional learning goals","Explore pedagogical approaches technology makes possible","Participate in local and global learning networks","Stay current with research on student outcomes","Comply with privacy laws around student and employee speech"],
+  recs:["Join one professional network and set a single learning goal.","Bring one promising practice from your network into your own work.","Contribute to networks actively and help colleagues stay research-current."]},
+ {n:8,t:"Artificial Intelligence",ind:["Explain how AI tools benefit district operations and strategic goals","Use AI for data analysis and predictive models","Use AI to create communication and marketing plans","Use AI chatbots for administrative tasks and translation","Ensure ethical use of AI in K-16 environments","Coach coworkers on effective AI use"],
+  recs:["Try one AI tool for a real task and note where it helps and where it doesn't.","Apply AI to analysis or communication work and review outputs for accuracy and ethics.","Coach your team on effective, ethical AI use and align it to strategic goals."]}
+];
+const LEVELS=[
+ {v:0,lvl:"Level 1",txt:"I have no knowledge of this area."},
+ {v:1,lvl:"Level 2",txt:"I have some experience in this area."},
+ {v:2,lvl:"Level 3",txt:"I am confident and know how to move forward in these areas."}
+];
+
+const form=document.getElementById('assessment');
+DOMAINS.forEach(d=>{
+  const card=document.createElement('div');card.className='card';
+  card.innerHTML=`<h2><span class="num">${d.n}</span>${d.t}</h2>
+    <ul class="indicators">${d.ind.map(i=>`<li>${i}</li>`).join('')}</ul>
+    <div class="options">${LEVELS.map(l=>`
+      <label class="opt"><input type="radio" name="d${d.n}" value="${l.v}">
+      <span class="txt"><span class="lvl">${l.lvl}</span>${l.txt}</span></label>`).join('')}</div>`;
+  form.appendChild(card);
+});
+// overall
+const oc=document.createElement('div');oc.className='card overall';
+oc.innerHTML=`<h2><span class="num">★</span>Give yourself an overall rating</h2>
+ <div class="options">${[1,2,3].map(n=>`
+   <label class="opt"><input type="radio" name="overall" value="${n}"><span class="num2">${n}</span></label>`).join('')}</div>
+ <div class="endlabel"><span>1 · I have no experience</span><span>3 · I can model this for others</span></div>`;
+form.appendChild(oc);
+
+const total=DOMAINS.length+1;
+function updateProgress(){
+  const answered=new Set([...form.querySelectorAll('input:checked')].map(i=>i.name)).size;
+  document.getElementById('pfill').style.width=(answered/total*100)+'%';
+  document.getElementById('plabel').textContent=`${answered} of ${total} answered`;
+}
+form.addEventListener('change',e=>{
+  const grp=e.target.closest('.options');
+  grp.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));
+  e.target.closest('.opt').classList.add('sel');
+  updateProgress();
+});
+
+document.getElementById('seeResults').addEventListener('click',()=>{
+  const scores={},names={};let allAnswered=true;
+  DOMAINS.forEach(d=>{
+    const sel=form.querySelector(`input[name="d${d.n}"]:checked`);
+    if(!sel){allAnswered=false;return;}
+    scores[d.n]=+sel.value;
+  });
+  const overallSel=form.querySelector('input[name="overall"]:checked');
+  if(!overallSel)allAnswered=false;
+  if(!allAnswered){document.getElementById('formErr').classList.add('show');
+    document.getElementById('mainActions').scrollIntoView({behavior:'smooth'});return;}
+  document.getElementById('formErr').classList.remove('show');
+  renderResults(scores,+overallSel.value);
+});
+
+function renderResults(scores,overall){
+  const vals=DOMAINS.map(d=>scores[d.n]);
+  const sum=vals.reduce((a,b)=>a+b,0);
+  const max=DOMAINS.length*2;
+  const pct=Math.round(sum/max*100);
+  let tier,blurb;
+  if(pct<34){tier="Emerging";blurb="You're building foundational awareness. Focus on one or two areas below where you rated Level 1 and pick a single concrete next step.";}
+  else if(pct<67){tier="Developing";blurb="You have working experience across several areas. Push your strongest domains toward confidence and shore up the Level 1 gaps.";}
+  else{tier="Leading";blurb="You're confident across most areas and ready to coach others. Use your stronger domains to support teammates in theirs.";}
+  const badge=v=>v===0?['b0','Level 1']:v===1?['b1','Level 2']:['b2','Level 3'];
+  const color=v=>v===0?'#b3261e':v===1?'var(--gold)':'#1b6b3a';
+  let rows=DOMAINS.map(d=>{
+    const v=scores[d.n];const[bc,bl]=badge(v);
+    return `<div class="domain-row">
+      <span class="dname">${d.n}. ${d.t}</span>
+      <span class="meter"><span style="width:${(v+1)/3*100}%;background:${color(v)}"></span></span>
+      <span class="badge ${bc}">${bl}</span></div>
+      <div class="rec"><strong>Next step:</strong> ${d.recs[v]}</div>`;
+  }).join('');
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <div class="result-hero">
+      <div class="score">${pct}%</div>
+      <div class="tier">${tier}</div>
+      <p>${blurb}</p>
+      <p style="margin-top:10px;font-size:.9rem">Your self-reported overall rating: <strong style="color:var(--gold)">${overall} of 3</strong></p>
+    </div>
+    <div class="card">
+      <h2 style="font-size:1.25rem">Your capacity by area</h2>
+      <div style="margin-top:16px">${rows}</div>
+    </div>
+    <div class="actions">
+      <button type="button" class="btn-primary" onclick="window.print()">Save or print results</button>
+      <button type="button" class="btn-outline" onclick="location.reload()">Start over</button>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('mainActions').style.display='none';
+  r.scrollIntoView({behavior:'smooth'});
+}
+updateProgress();
+</script>
+</body>
+</html>
