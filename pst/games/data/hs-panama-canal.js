@@ -10,7 +10,7 @@ window.PST_TICKETS = (window.PST_TICKETS || []).concat([
   {
     id: 'hs-panama-canal-surface-entry', grade: 11, unit: 'panama-canal',
     unitTitle: 'The Panama Canal, 1903 — a World-Power Question', phase: 'surface', type: 'entry',
-    format: 'mcq', teks: '§113.41(c)(7)(A), (c)(12)', strat: 'Retrieval practice', d: 0.54,
+    format: 'mcq', teks: '§113.41(c)(4)(A), (c)(12)', strat: 'Retrieval practice', d: 0.54,
     i18n: { en: {
       title: 'Warm-up: canal words',
       seconds: 45,
@@ -92,7 +92,7 @@ window.PST_TICKETS = (window.PST_TICKETS || []).concat([
   {
     id: 'hs-panama-canal-surface-exit', grade: 11, unit: 'panama-canal',
     unitTitle: 'The Panama Canal, 1903 — a World-Power Question', phase: 'surface', type: 'exit',
-    format: 'match', teks: '§113.41(c)(7)(A), (c)(12)', strat: 'Vocabulary & feedback', d: 0.62,
+    format: 'match', teks: '§113.41(c)(4)(A), (c)(12)', strat: 'Vocabulary & feedback', d: 0.62,
     i18n: { en: {
       title: 'Exit: match the word to its meaning',
       pairs: [
@@ -176,7 +176,7 @@ window.PST_TICKETS = (window.PST_TICKETS || []).concat([
   {
     id: 'hs-panama-canal-deep-entry', grade: 11, unit: 'panama-canal',
     unitTitle: 'The Panama Canal, 1903 — a World-Power Question', phase: 'deep', type: 'entry',
-    format: 'cloze', teks: '§113.41(c)(7)(A), (c)(12)', strat: 'Retrieval practice', d: 0.54,
+    format: 'cloze', teks: '§113.41(c)(4)(A), (c)(12)', strat: 'Retrieval practice', d: 0.54,
     i18n: { en: {
       title: 'Warm-up: the strategic case',
       items: [
@@ -244,7 +244,7 @@ window.PST_TICKETS = (window.PST_TICKETS || []).concat([
   {
     id: 'hs-panama-canal-deep-exit', grade: 11, unit: 'panama-canal',
     unitTitle: 'The Panama Canal, 1903 — a World-Power Question', phase: 'deep', type: 'exit',
-    format: 'sort', teks: '§113.41(c)(7)(A), (c)(12), (c)(29)(A)', strat: 'Concept organization', d: 0.64,
+    format: 'sort', teks: '§113.41(c)(4)(A), (c)(12), (c)(28)(A)', strat: 'Concept organization', d: 0.64,
     i18n: { en: {
       title: 'Exit: benefits vs. costs of building the canal',
       cats: ['Benefit (U.S. view)', 'Cost (others bear)'],
@@ -342,7 +342,7 @@ window.PST_TICKETS = (window.PST_TICKETS || []).concat([
   {
     id: 'hs-panama-canal-transfer-entry', grade: 11, unit: 'panama-canal',
     unitTitle: 'The Panama Canal, 1903 — a World-Power Question', phase: 'transfer', type: 'entry',
-    format: 'mcq', teks: '§113.41(c)(32)(B)', strat: 'Retrieval practice', d: 0.54,
+    format: 'mcq', teks: '§113.41(c)(31)(B)', strat: 'Retrieval practice', d: 0.54,
     i18n: { en: {
       title: 'Warm-up: the problem-solving process',
       seconds: 45,
@@ -352,7 +352,7 @@ window.PST_TICKETS = (window.PST_TICKETS || []).concat([
         { q: 'A strong recommendation is backed by…', choices: ['a loud voice', 'claim + evidence', 'only feelings'], a: 1 },
         { q: 'The LAST step is to…', choices: ['forget it', 'evaluate how well the solution worked', 'hide the trade-offs'], a: 1 }
       ],
-      takeaway: 'Identify → gather → weigh options → choose → defend → evaluate. That is §113.41(c)(32)(B).'
+      takeaway: 'Identify → gather → weigh options → choose → defend → evaluate. That is §113.41(c)(31)(B).'
     },
     es: {
       title: 'Calentamiento: el proceso de resolución de problemas',
@@ -363,7 +363,7 @@ window.PST_TICKETS = (window.PST_TICKETS || []).concat([
         { q: 'Una recomendación sólida se respalda con…', choices: ['una voz fuerte', 'afirmación + evidencia', 'solo sentimientos'], a: 1 },
         { q: 'El ÚLTIMO paso es…', choices: ['olvidarlo', 'evaluar qué tan bien funcionó la solución', 'ocultar las concesiones'], a: 1 }
       ],
-      takeaway: 'Identificar → reunir → sopesar opciones → elegir → defender → evaluar. Eso es §113.41(c)(32)(B).'
+      takeaway: 'Identificar → reunir → sopesar opciones → elegir → defender → evaluar. Eso es §113.41(c)(31)(B).'
     },
     vi: {
       title: 'Khởi động: quy trình giải quyết vấn đề',
@@ -374,7 +374,7 @@ window.PST_TICKETS = (window.PST_TICKETS || []).concat([
         { q: 'Một khuyến nghị vững chắc được củng cố bằng…', choices: ['một giọng nói to', 'luận điểm + bằng chứng', 'chỉ cảm xúc'], a: 1 },
         { q: 'Bước CUỐI CÙNG là…', choices: ['quên nó đi', 'đánh giá giải pháp hiệu quả ra sao', 'giấu đi các đánh đổi'], a: 1 }
       ],
-      takeaway: 'Xác định → thu thập → cân nhắc phương án → chọn → bảo vệ → đánh giá. Đó là §113.41(c)(32)(B).'
+      takeaway: 'Xác định → thu thập → cân nhắc phương án → chọn → bảo vệ → đánh giá. Đó là §113.41(c)(31)(B).'
     },
     ar: {
       title: 'تهيئة: عملية حل المشكلات',
@@ -385,7 +385,7 @@ window.PST_TICKETS = (window.PST_TICKETS || []).concat([
         { q: 'التوصية القوية تُدعم بـ…', choices: ['صوت عالٍ', 'ادعاء + دليل', 'المشاعر فقط'], a: 1 },
         { q: 'الخطوة الأخيرة هي…', choices: ['نسيانها', 'تقييم مدى نجاح الحل', 'إخفاء المفاضلات'], a: 1 }
       ],
-      takeaway: 'حدِّد ← اجمع ← وازِن الخيارات ← اختَر ← دافِع ← قيِّم. تلك هي §113.41(c)(32)(B).'
+      takeaway: 'حدِّد ← اجمع ← وازِن الخيارات ← اختَر ← دافِع ← قيِّم. تلك هي §113.41(c)(31)(B).'
     },
     hi: {
       title: 'वार्म-अप: समस्या-समाधान प्रक्रिया',
@@ -396,7 +396,7 @@ window.PST_TICKETS = (window.PST_TICKETS || []).concat([
         { q: 'एक मजबूत सिफारिश का आधार होता है…', choices: ['एक ऊँची आवाज़', 'दावा + साक्ष्य', 'केवल भावनाएँ'], a: 1 },
         { q: 'अंतिम कदम है…', choices: ['उसे भूल जाना', 'यह आँकना कि समाधान कितना अच्छा रहा', 'समझौतों को छिपाना'], a: 1 }
       ],
-      takeaway: 'पहचानें → जुटाएँ → विकल्प तौलें → चुनें → बचाव करें → आँकें। यही §113.41(c)(32)(B) है।'
+      takeaway: 'पहचानें → जुटाएँ → विकल्प तौलें → चुनें → बचाव करें → आँकें। यही §113.41(c)(31)(B) है।'
     },
     ur: {
       title: 'وارم اپ: مسئلہ حل کرنے کا عمل',
@@ -407,7 +407,7 @@ window.PST_TICKETS = (window.PST_TICKETS || []).concat([
         { q: 'ایک مضبوط سفارش کی بنیاد ہوتی ہے…', choices: ['ایک بلند آواز', 'دعویٰ + ثبوت', 'صرف جذبات'], a: 1 },
         { q: 'آخری قدم ہے…', choices: ['اسے بھول جانا', 'یہ جانچنا کہ حل کتنا کارگر رہا', 'سمجھوتوں کو چھپانا'], a: 1 }
       ],
-      takeaway: 'نشاندہی ← جمع ← اختیارات تولنا ← چننا ← دفاع ← جانچنا۔ یہی §113.41(c)(32)(B) ہے۔'
+      takeaway: 'نشاندہی ← جمع ← اختیارات تولنا ← چننا ← دفاع ← جانچنا۔ یہی §113.41(c)(31)(B) ہے۔'
     },
     zh: {
       title: '热身：解决问题的流程',
@@ -418,13 +418,13 @@ window.PST_TICKETS = (window.PST_TICKETS || []).concat([
         { q: '有力的建议背后有…', choices: ['大嗓门', '主张 + 证据', '只有感受'], a: 1 },
         { q: '最后一步是…', choices: ['把它忘掉', '评估方案的效果如何', '隐藏其中的取舍'], a: 1 }
       ],
-      takeaway: '界定 → 收集 → 权衡方案 → 选择 → 辩护 → 评估。这就是 §113.41(c)(32)(B)。'
+      takeaway: '界定 → 收集 → 权衡方案 → 选择 → 辩护 → 评估。这就是 §113.41(c)(31)(B)。'
     } }
   },
   {
     id: 'hs-panama-canal-transfer-exit', grade: 11, unit: 'panama-canal',
     unitTitle: 'The Panama Canal, 1903 — a World-Power Question', phase: 'transfer', type: 'exit',
-    format: 'cloze', teks: '§113.41(c)(32)(B)', strat: 'Feedback', d: 0.62,
+    format: 'cloze', teks: '§113.41(c)(31)(B)', strat: 'Feedback', d: 0.62,
     i18n: { en: {
       title: 'Exit: claim, evidence & trade-offs',
       items: [
