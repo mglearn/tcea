@@ -1,0 +1,71 @@
+{
+  "doctitle": "Guía de implementación del plan de clase — Breakouts en línea de pensamiento crítico",
+  "eyebrow": "Guía de implementación del plan de clase",
+  "h1": "Cómo construir una clase en torno a un breakout",
+  "lead": "Una estructura lista para insertar un Breakout en línea de pensamiento crítico dentro de una clase completa, siguiendo un formato estándar de plan de clase de Texas. Use el esquema siguiente tal cual, o copie la lista de campos en la plantilla de su plantel. Al final aparece un ejemplo desarrollado para esta colección.",
+  "howto": "🧑‍🏫 <b>Cómo usar esta guía:</b> un breakout funciona mejor como la fase de <b>enganche</b> o de <b>práctica colaborativa</b> de una clase, no como la clase completa. Las secciones siguientes reflejan un plan de clase estándar; cada una nombra qué decidir y cómo encaja el breakout. Combínela con las páginas de apoyos <b>UDL</b> y <b>ELPS</b> para la sección de diferenciación.",
+
+  "s1.h": "1 · Información básica",
+  "s1.p": "Registre lo esencial para que el plan sea reutilizable y revisable: <b>docente, plantel/distrito, nivel de grado, curso/materia, unidad, título de la clase, fecha, duración, entorno de instrucción</b> (grupo completo / grupo pequeño / centros / laboratorio / en línea / mixto), <b>número de estudiantes</b> y <b>habilidades previas o aprendizaje previo.</b> Un solo breakout suele encajar en un bloque de 20 a 40 minutos.",
+
+  "s2.h": "2 · Estándares y alineación",
+  "s2.p": "Nombre el estándar principal que aborda el breakout y extraiga la cita exacta de la guía de <b>correlación de estándares</b> de esta colección. Agregue los <b>ELPS</b> para sus estudiantes bilingües emergentes (escuchar, hablar, leer, escribir) y un objetivo de lenguaje. Enumere cualquier estándar de correspondencia que exija su plantel.",
+
+  "s3.h": "3 · Propósito de la clase",
+  "s3.p": "Enuncie la <b>idea central / concepto</b> que revela el breakout, una o dos <b>preguntas esenciales</b> y una breve <b>justificación</b>: por qué esto importa y cómo se conecta con la unidad o con el mundo real.",
+
+  "s4.h": "4 · Objetivos",
+  "s4.p": "Redacte objetivos medibles para el final de la clase: un <b>objetivo de contenido</b> (“Los estudiantes podrán…”), un <b>objetivo de lenguaje</b> si corresponde (“Los estudiantes usarán el lenguaje para…”) y <b>criterios de éxito</b> con los que los estudiantes puedan autoevaluarse (“Sé que tengo éxito cuando puedo…”). Abrir los cuatro candados es un indicador de éxito natural y visible.",
+
+  "s5.h": "5 · Vocabulario y lenguaje académico",
+  "s5.p": "Enseñe previamente los dos o tres términos de los que depende el breakout. Cuando la colección incluya un banco de palabras o un glosario, úselo. Ofrezca definiciones accesibles para el estudiante, un apoyo visual y <b>iniciadores de oraciones</b> para la conversación; por ejemplo, “Esta pista me indica ___, así que el candado es ___.”",
+
+  "s6.h": "6 · Materiales y recursos",
+  "s6.p": "<b>Tecnología:</b> un dispositivo por estudiante o pareja, un navegador moderno y el enlace del breakout; sin inicio de sesión y sin recopilación de datos. <b>Opcional:</b> un proyector para modelar el primer candado, audífonos para la lectura en voz alta y tarjetas de pistas impresas para los grupos sin conexión. Enumere cualquier material del docente y del estudiante que su clase agregue en torno a la actividad.",
+
+  "s7.h": "7 · Plan de evaluación",
+  "s7.p": "<b>Antes (activador):</b> una pregunta o imagen rápida para hacer aflorar los conocimientos previos y las ideas erróneas. <b>Durante (formativa):</b> circule y escuche: ¿qué pista están usando las parejas, dónde se atascan, cómo manejan el señuelo? El conteo de “candados abiertos” es una verificación del progreso en tiempo real. <b>Después (producto):</b> una tarea de salida: los estudiantes explican en una o dos oraciones cómo descifraron un candado, o responden una pregunta de transferencia.",
+
+  "s8.h": "8 · Diferenciación y apoyos UDL / ELPS",
+  "s8.p": "Planifique primero los apoyos universales: <b>enganche</b> (elección de idioma y de compañero, reintento lúdico), <b>representación</b> (siete idiomas, tarjetas de pistas fragmentadas, banco de palabras) y <b>acción &amp; expresión</b> (cuatro modos distintos de respuesta). Agregue apoyos para estudiantes bilingües emergentes y de educación especial según sea necesario. Consulte las páginas dedicadas de <b>apoyos UDL</b> y <b>apoyos ELPS</b> para acciones específicas por principio y nivel de dominio.",
+
+  "s9.h": "9 · Procedimiento",
+  "s9.intro": "Un desarrollo viable que coloca el breakout en el centro. Ajuste los tiempos a su bloque.",
+  "p1.t": "Apertura / Enganche",
+  "p1.h": "Captar el interés y fijar la meta (5 min)",
+  "p1.b": "Plantee la pregunta esencial con una imagen o una pregunta rápida. Presente el vocabulario y muestre el menú de idiomas 🌐. Nombre la meta: abrir los cuatro candados usando las pistas.",
+  "p2.t": "Instrucción directa / Modelado",
+  "p2.h": "Modelar un candado (5 min)",
+  "p2.b": "Proyecte el breakout y piense en voz alta a través de la primera pista y de un candado. Muestre cómo reabrir las pistas y cómo funciona “Empezar de nuevo”. Haga explícita la idea del señuelo: una pista puede ser verdadera y aun así no ayudar.",
+  "p3.t": "Práctica colaborativa",
+  "p3.h": "Las parejas descifran el breakout (15–20 min)",
+  "p3.b": "Dos estudiantes por dispositivo. Los compañeros leen cada pista, deciden a qué candado corresponde y justifican su elección en voz alta antes de responder. Circule y pregunte “qué pista, qué candado, por qué”. Esta es la ventana de evaluación formativa.",
+  "p4.t": "Práctica independiente",
+  "p4.h": "Aplicar y ampliar (5–10 min)",
+  "p4.b": "Los estudiantes vuelven a jugar en un segundo idioma, prueban un breakout relacionado del conjunto de conceptos o responden por su cuenta una breve pregunta de transferencia.",
+  "p5.t": "Cierre",
+  "p5.h": "Reflexionar y conectar (5 min)",
+  "p5.b": "Los estudiantes responden: ¿Qué aprendiste? ¿Cómo se conecta con lo que ya sabías? ¿En qué otro lugar podrías usar esta idea? Analicen el señuelo en grupo.",
+
+  "s10.h": "10 · Plan de preguntas",
+  "s10.list": "<ul><li><b>Recordar:</b> ¿Qué dice esta pista? ¿Con qué candado coincide?</li><li><b>Razonar:</b> ¿Por qué esta pista abre ese candado y no otro?</li><li><b>Transferir:</b> ¿En qué otro lugar sería verdadera esta idea?</li><li><b>Ideas erróneas:</b> ¿Por qué la pista señuelo es verdadera pero no útil aquí?</li></ul>",
+
+  "s11.h": "11 · Reflexión del docente",
+  "s11.list": "<ul><li>¿Qué funcionó y qué evidencia mostró que los estudiantes aprendieron?</li><li>¿Quién necesita reenseñanza y quién está listo para la ampliación?</li><li>¿Qué pista o candado provocó el esfuerzo más productivo?</li><li>¿Qué cambiarás la próxima vez?</li></ul>",
+
+  "ex.h": "Ejemplo desarrollado para esta colección",
+  "ex.lbl.bigidea": "Idea central",
+  "ex.lbl.eq": "Pregunta esencial",
+  "ex.lbl.obj": "Objetivo de contenido",
+  "ex.lbl.lang": "Objetivo de lenguaje",
+  "ex.lbl.vocab": "Vocabulario clave",
+  "ex.lbl.success": "Criterios de éxito",
+  "ex.lang": "Los estudiantes explicarán, usando un iniciador de oraciones, qué pista abrió cada candado y por qué.",
+  "ex.success": "Puedo abrir los cuatro candados y explicar el razonamiento de pista a candado en al menos dos de ellos.",
+
+  "disc": "Esta guía es una ayuda para la planificación, no un plan de clase oficial. Adáptela a la plantilla de su plantel y confirme los estándares antes de adoptarla.",
+  "footer.privacy": "Privacidad & cumplimiento",
+  "nav.udl": "Apoyos UDL →",
+  "nav.elps": "Apoyos ELPS →",
+  "nav.correlation": "Correlación de estándares →"
+}

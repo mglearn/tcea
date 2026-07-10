@@ -1,0 +1,71 @@
+{
+  "doctitle": "Hướng dẫn triển khai giáo án — Hoạt động Breakout Trực tuyến Tư duy Phản biện",
+  "eyebrow": "Hướng dẫn triển khai giáo án",
+  "h1": "Xây dựng bài học xoay quanh một hoạt động Breakout",
+  "lead": "Một cấu trúc sẵn có để lồng ghép hoạt động Breakout Trực tuyến Tư duy Phản biện vào một bài học hoàn chỉnh, theo mẫu giáo án chuẩn của bang Texas. Hãy dùng dàn ý bên dưới nguyên vẹn, hoặc sao chép danh mục các mục vào mẫu của trường bạn. Một ví dụ minh họa cụ thể cho bộ hoạt động này nằm ở cuối trang.",
+  "howto": "🧑‍🏫 <b>Cách sử dụng hướng dẫn này:</b> một hoạt động breakout phát huy hiệu quả nhất khi dùng ở giai đoạn <b>khơi gợi hứng thú</b> hoặc <b>luyện tập hợp tác</b> của bài học — chứ không phải toàn bộ bài học. Các mục bên dưới phản ánh một giáo án chuẩn; mỗi mục nêu rõ điều cần quyết định và cách hoạt động breakout gắn kết vào. Hãy kết hợp với các trang hỗ trợ <b>UDL</b> và <b>ELPS</b> cho phần phân hóa dạy học.",
+
+  "s1.h": "1 · Thông tin cơ bản",
+  "s1.p": "Ghi lại những thông tin thiết yếu để giáo án có thể tái sử dụng và rà soát được: <b>giáo viên, trường/học khu, khối lớp, môn học/khóa học, chủ đề, tên bài học, ngày, thời lượng, hình thức tổ chức dạy học</b> (cả lớp / nhóm nhỏ / góc học tập / phòng thí nghiệm / trực tuyến / kết hợp), <b>số lượng học sinh,</b> và <b>các kỹ năng tiên quyết hoặc kiến thức nền.</b> Một hoạt động breakout thường phù hợp với khối thời gian 20–40 phút.",
+
+  "s2.h": "2 · Chuẩn kiến thức và sự tương thích",
+  "s2.p": "Nêu tên chuẩn chính mà hoạt động breakout hướng đến và trích dẫn chính xác từ hướng dẫn <b>đối chiếu chuẩn kiến thức</b> của bộ hoạt động này. Bổ sung <b>ELPS</b> cho học sinh song ngữ đang phát triển (nghe, nói, đọc, viết) và một mục tiêu ngôn ngữ. Liệt kê bất kỳ chuẩn đối chiếu chéo nào mà trường bạn yêu cầu.",
+
+  "s3.h": "3 · Mục đích bài học",
+  "s3.p": "Nêu <b>ý tưởng lớn / khái niệm</b> mà hoạt động breakout hé lộ, một hoặc hai <b>câu hỏi cốt lõi,</b> và một <b>lý do ngắn gọn</b> — vì sao điều này quan trọng và nó kết nối thế nào với chủ đề hoặc thế giới thực.",
+
+  "s4.h": "4 · Mục tiêu",
+  "s4.p": "Viết các mục tiêu có thể đo lường cho phần cuối bài học: một <b>mục tiêu nội dung</b> (“Học sinh sẽ…”), một <b>mục tiêu ngôn ngữ</b> nếu phù hợp (“Học sinh sẽ sử dụng ngôn ngữ để…”), và <b>tiêu chí thành công</b> mà học sinh có thể tự đối chiếu (“Tôi biết mình thành công khi tôi có thể…”). Việc mở được cả bốn khóa là một dấu hiệu thành công tự nhiên và trực quan.",
+
+  "s5.h": "5 · Từ vựng và ngôn ngữ học thuật",
+  "s5.p": "Dạy trước hai hoặc ba thuật ngữ mà hoạt động breakout xoay quanh. Khi bộ hoạt động có sẵn ngân hàng từ vựng hoặc bảng thuật ngữ, hãy sử dụng. Cung cấp định nghĩa dễ hiểu với học sinh, một hình ảnh minh họa, và các <b>mẫu câu gợi ý</b> để thảo luận — ví dụ, “Manh mối này cho tôi biết ___, vậy khóa là ___.”",
+
+  "s6.h": "6 · Học liệu và tài nguyên",
+  "s6.p": "<b>Công nghệ:</b> mỗi học sinh hoặc mỗi cặp một thiết bị, một trình duyệt hiện đại, và đường liên kết đến hoạt động breakout — không cần đăng nhập và không thu thập dữ liệu. <b>Tùy chọn:</b> một máy chiếu để làm mẫu khóa đầu tiên, tai nghe để đọc to, và thẻ manh mối được in ra cho các nhóm hoạt động ngoại tuyến. Liệt kê bất kỳ học liệu nào của giáo viên và học sinh mà bài học của bạn bổ sung xung quanh hoạt động.",
+
+  "s7.h": "7 · Kế hoạch đánh giá",
+  "s7.p": "<b>Trước (khởi động):</b> một câu hỏi hoặc hình ảnh nhanh để khơi gợi kiến thức nền và những quan niệm sai lầm. <b>Trong khi (đánh giá quá trình):</b> đi quanh lớp và lắng nghe — các cặp đang dùng manh mối nào, chúng mắc kẹt ở đâu, chúng xử lý manh mối gây nhiễu ra sao? Số lượng “khóa đã mở” là một thước đo tiến độ trực tiếp. <b>Sau (sản phẩm):</b> một nhiệm vụ kết thúc — học sinh giải thích trong một hoặc hai câu cách chúng phá được một khóa, hoặc trả lời một câu hỏi vận dụng.",
+
+  "s8.h": "8 · Phân hóa dạy học và hỗ trợ UDL / ELPS",
+  "s8.p": "Hãy lên kế hoạch các hỗ trợ phổ quát trước: <b>sự tham gia</b> (lựa chọn ngôn ngữ và bạn đồng hành, thử lại một cách vui vẻ), <b>cách trình bày</b> (bảy ngôn ngữ, thẻ manh mối chia nhỏ, ngân hàng từ vựng), và <b>hành động &amp; biểu đạt</b> (bốn phương thức phản hồi khác nhau). Bổ sung các hỗ trợ cho học sinh song ngữ đang phát triển và giáo dục đặc biệt khi cần. Xem các trang <b>hỗ trợ UDL</b> và <b>hỗ trợ ELPS</b> chuyên biệt để biết các bước cụ thể theo từng nguyên tắc và trình độ thông thạo.",
+
+  "s9.h": "9 · Tiến trình",
+  "s9.intro": "Một trình tự khả thi đặt hoạt động breakout ở vị trí trung tâm. Điều chỉnh thời gian cho phù hợp với tiết học của bạn.",
+  "p1.t": "Mở đầu / Khơi gợi hứng thú",
+  "p1.h": "Tạo điểm nhấn và đặt mục tiêu (5 min)",
+  "p1.b": "Đặt câu hỏi cốt lõi kèm một hình ảnh hoặc câu hỏi nhanh. Giới thiệu trước từ vựng và cho học sinh thấy menu ngôn ngữ 🌐. Nêu rõ mục tiêu: mở cả bốn khóa bằng cách sử dụng các manh mối.",
+  "p2.t": "Giảng dạy trực tiếp / Làm mẫu",
+  "p2.h": "Làm mẫu một khóa (5 min)",
+  "p2.b": "Chiếu hoạt động breakout và tư duy thành lời qua manh mối đầu tiên và một khóa. Chỉ ra cách mở lại các manh mối và cách nút “Làm lại từ đầu” hoạt động. Làm rõ ý tưởng về manh mối gây nhiễu: một manh mối có thể đúng nhưng vẫn không giúp ích.",
+  "p3.t": "Luyện tập hợp tác",
+  "p3.h": "Các cặp phá giải hoạt động breakout (15–20 min)",
+  "p3.b": "Hai học sinh trên mỗi thiết bị. Các bạn đọc từng manh mối, quyết định nó phục vụ khóa nào, và biện giải lựa chọn của mình thành lời trước khi trả lời. Đi quanh lớp và hỏi “manh mối nào, khóa nào, vì sao.” Đây là khoảng thời gian đánh giá quá trình.",
+  "p4.t": "Luyện tập độc lập",
+  "p4.h": "Vận dụng và mở rộng (5–10 min)",
+  "p4.b": "Học sinh chơi lại bằng ngôn ngữ thứ hai, thử một hoạt động breakout liên quan trong bộ khái niệm, hoặc tự mình trả lời một câu hỏi vận dụng ngắn.",
+  "p5.t": "Kết thúc",
+  "p5.h": "Suy ngẫm và kết nối (5 min)",
+  "p5.b": "Học sinh trả lời: Em đã học được gì? Nó kết nối thế nào với những điều em đã biết? Em còn có thể dùng ý tưởng này ở đâu nữa? Cùng cả lớp phân tích lại manh mối gây nhiễu.",
+
+  "s10.h": "10 · Kế hoạch đặt câu hỏi",
+  "s10.list": "<ul><li><b>Ghi nhớ:</b> Manh mối này nói gì? Nó khớp với khóa nào?</li><li><b>Lập luận:</b> Vì sao manh mối này mở khóa đó mà không phải khóa khác?</li><li><b>Vận dụng:</b> Ý tưởng này còn đúng ở đâu nữa?</li><li><b>Quan niệm sai lầm:</b> Vì sao manh mối gây nhiễu đúng nhưng lại không hữu ích ở đây?</li></ul>",
+
+  "s11.h": "11 · Suy ngẫm của giáo viên",
+  "s11.list": "<ul><li>Điều gì hiệu quả, và bằng chứng nào cho thấy học sinh đã học được?</li><li>Ai cần được dạy lại, và ai đã sẵn sàng cho phần mở rộng?</li><li>Manh mối hoặc khóa nào tạo ra sự nỗ lực có ích nhất?</li><li>Bạn sẽ thay đổi điều gì cho lần sau?</li></ul>",
+
+  "ex.h": "Ví dụ minh họa cho bộ hoạt động này",
+  "ex.lbl.bigidea": "Ý tưởng lớn",
+  "ex.lbl.eq": "Câu hỏi cốt lõi",
+  "ex.lbl.obj": "Mục tiêu nội dung",
+  "ex.lbl.lang": "Mục tiêu ngôn ngữ",
+  "ex.lbl.vocab": "Từ vựng trọng tâm",
+  "ex.lbl.success": "Tiêu chí thành công",
+  "ex.lang": "Học sinh sẽ giải thích, sử dụng một mẫu câu gợi ý, manh mối nào đã mở từng khóa và vì sao.",
+  "ex.success": "Tôi có thể mở cả bốn khóa và giải thích lập luận từ manh mối đến khóa cho ít nhất hai khóa trong số đó.",
+
+  "disc": "Hướng dẫn này là một công cụ hỗ trợ lập kế hoạch, không phải một giáo án chính thức. Hãy điều chỉnh nó cho phù hợp với mẫu của trường bạn và xác nhận các chuẩn kiến thức trước khi áp dụng.",
+  "footer.privacy": "Quyền riêng tư & tuân thủ",
+  "nav.udl": "Hỗ trợ UDL →",
+  "nav.elps": "Hỗ trợ ELPS →",
+  "nav.correlation": "Đối chiếu chuẩn kiến thức →"
+}

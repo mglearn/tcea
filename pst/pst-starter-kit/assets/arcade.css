@@ -1,0 +1,88 @@
+/* PST Arcade — entry/exit ticket engine styles. Matches pst.css palette. */
+.arcade{--ac:var(--plum);margin:18px 0}
+.arcade *{box-sizing:border-box}
+
+/* ticket shell */
+.arcade .tk{background:var(--card);border:1px solid var(--line);border-radius:16px;
+  box-shadow:0 6px 22px rgba(43,42,108,.07);padding:18px 18px 20px;position:relative;overflow:hidden}
+.arcade .tk::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:var(--ac)}
+.arcade .tk.surface{--ac:var(--surface)} .arcade .tk.deep{--ac:var(--deep)} .arcade .tk.transfer{--ac:var(--transfer)}
+
+.arcade .tkhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:4px}
+.arcade .badge{font-family:'Fredoka',sans-serif;font-weight:600;font-size:.72rem;letter-spacing:.02em;
+  color:#fff;background:var(--ac);border-radius:100px;padding:2px 10px;text-transform:uppercase}
+.arcade .badge.exit{background:var(--gold-d)}
+.arcade .fmt{font-weight:700;color:var(--ink-soft);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
+.arcade .tkmeta{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 2px}
+.arcade .tkmeta .es{background:#eee7f7;color:#4a2f86;font-weight:700;font-size:.74rem;border-radius:8px;padding:2px 8px}
+.arcade .tkmeta .teks{background:#eef2ff;color:#3538a6;font-weight:700;font-size:.74rem;border-radius:8px;padding:2px 8px}
+.arcade .tk h3{font-family:'Fredoka',sans-serif;font-weight:600;color:var(--ink);margin:.35em 0 .1em;font-size:1.12rem}
+.arcade .prompt{color:var(--ink-soft);font-weight:600;margin:.2em 0 .8em}
+
+/* scoreboard */
+.arcade .board{display:flex;gap:14px;align-items:center;margin:2px 0 12px;flex-wrap:wrap}
+.arcade .chip{display:inline-flex;align-items:center;gap:6px;background:var(--paper);border:1px solid var(--line);
+  border-radius:100px;padding:3px 12px;font-weight:700;color:var(--ink);font-size:.86rem}
+.arcade .chip b{font-family:'Fredoka',sans-serif;color:var(--ac)}
+.arcade .chip.timer.low b{color:#c2410c}
+.arcade .progress{flex:1;min-width:120px;height:10px;background:#eee7f7;border-radius:100px;overflow:hidden}
+.arcade .progress i{display:block;height:100%;background:var(--ac);width:0;transition:width .25s}
+
+/* generic option buttons */
+.arcade .opts{display:flex;flex-direction:column;gap:9px}
+.arcade .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:520px){.arcade .grid2{grid-template-columns:1fr}}
+.arcade button.opt{font:inherit;text-align:start;background:#fff;border:2px solid var(--line);border-radius:12px;
+  padding:11px 14px;color:var(--ink);font-weight:600;cursor:pointer;transition:.12s;line-height:1.35}
+.arcade button.opt:hover{border-color:var(--ac);transform:translateY(-1px)}
+.arcade button.opt:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+.arcade button.opt.right{border-color:#15803d;background:#f0fdf4;color:#14532d}
+.arcade button.opt.wrong{border-color:#b91c1c;background:#fef2f2;color:#7f1d1d}
+.arcade button.opt.dim{opacity:.5}
+.arcade button.opt[disabled]{cursor:default}
+.arcade button.opt .k{font-family:'Fredoka',sans-serif;color:var(--ac);margin-inline-end:8px}
+
+/* match: two columns */
+.arcade .match{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.arcade .match .col{display:flex;flex-direction:column;gap:9px}
+.arcade .match .sel{border-color:var(--ac)!important;box-shadow:0 0 0 3px color-mix(in srgb,var(--ac) 22%,#fff)}
+
+/* sort: category columns */
+.arcade .sortbox{display:grid;grid-template-columns:1fr;gap:14px}
+.arcade .cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.arcade .cat{border:2px dashed var(--line);border-radius:12px;padding:10px;min-height:70px}
+.arcade .cat h4{font-family:'Fredoka',sans-serif;font-weight:600;margin:0 0 6px;color:var(--ac);font-size:.92rem}
+.arcade .cat.over{border-color:var(--ac);background:color-mix(in srgb,var(--ac) 7%,#fff)}
+.arcade .tokens{display:flex;flex-wrap:wrap;gap:8px}
+.arcade .token{background:#fff;border:2px solid var(--line);border-radius:100px;padding:6px 13px;font-weight:600;
+  cursor:pointer;transition:.12s}
+.arcade .token:hover{border-color:var(--ac)}
+.arcade .token.picked{border-color:var(--ac);box-shadow:0 0 0 3px color-mix(in srgb,var(--ac) 22%,#fff)}
+.arcade .token.placed{opacity:.85}
+
+/* feedback + endcard */
+.arcade .fb{margin-top:12px;font-weight:700;min-height:1.4em}
+.arcade .fb.ok{color:#15803d} .arcade .fb.no{color:#b91c1c}
+.arcade .endcard{text-align:center;padding:22px 10px}
+.arcade .endcard .score{font-family:'Fredoka',sans-serif;font-weight:700;font-size:2.6rem;color:var(--ac);line-height:1}
+.arcade .endcard .stars{font-size:1.6rem;letter-spacing:4px;margin:6px 0}
+.arcade .endcard p{color:var(--ink-soft);font-weight:600;margin:.4em 0 1em}
+.arcade .act-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+.arcade .btn{font:inherit;font-weight:700;border-radius:100px;padding:9px 18px;cursor:pointer;border:2px solid var(--ac);
+  background:var(--ac);color:#fff;text-decoration:none;display:inline-block}
+.arcade .btn.ghost{background:#fff;color:var(--ac)}
+.arcade .note-sm{font-size:.82rem;color:var(--ink-soft);margin-top:12px}
+
+/* catalog (hub) */
+.tkgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:14px}
+.tkcard{display:flex;flex-direction:column;gap:6px;background:var(--card);border:1px solid var(--line);
+  border-inline-start:5px solid var(--ac);border-radius:14px;padding:14px;cursor:pointer;transition:.14s;text-align:start;font:inherit}
+.tkcard:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(43,42,108,.1)}
+.tkcard.surface{--ac:var(--surface)} .tkcard.deep{--ac:var(--deep)} .tkcard.transfer{--ac:var(--transfer)}
+.tkcard .row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.tkcard h3{font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.02rem;color:var(--ink);margin:.2em 0 0}
+.tkcard .sub{color:var(--ink-soft);font-weight:600;font-size:.82rem}
+.filterbar{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.filterbar button{font:inherit;font-weight:700;font-size:.84rem;border:2px solid var(--line);background:#fff;color:var(--ink-soft);
+  border-radius:100px;padding:5px 14px;cursor:pointer}
+.filterbar button.on{border-color:var(--plum);color:var(--plum);background:#f3edfb}
