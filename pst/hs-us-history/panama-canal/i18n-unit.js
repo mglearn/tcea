@@ -5,6 +5,7 @@
    Do not translate: URLs, TEKS codes (§113.41…), effect-size labels, proper links. */
 BreakoutI18n.register('pst-panama-canal', {
   en: {
+    "tk.entry": "🎟️ Entry ticket — 1-minute warm-up", "tk.exit": "🎫 Exit ticket — check yourself",
     // chrome
     "crumb.unit": "‹ The Panama Canal (unit home)",
     "crumb.course": "‹ High School — US History Since 1877",
@@ -283,6 +284,7 @@ BreakoutI18n.register('pst-panama-canal', {
   },
 
   es: {
+    "tk.entry": "🎟️ Boleto de entrada — repaso de 1 minuto", "tk.exit": "🎫 Boleto de salida — comprueba lo que sabes",
     // chrome
     "crumb.unit": "‹ El Canal de Panamá (inicio de la unidad)",
     "crumb.course": "‹ Bachillerato — Historia de EE. UU. desde 1877",
@@ -561,6 +563,7 @@ BreakoutI18n.register('pst-panama-canal', {
   },
 
   vi: {
+    "tk.entry": "🎟️ Vé vào — khởi động 1 phút", "tk.exit": "🎫 Vé ra — tự kiểm tra",
     // chrome
     "crumb.unit": "‹ Kênh đào Panama (trang chủ bài học)",
     "crumb.course": "‹ Trung học phổ thông — Lịch sử Hoa Kỳ từ năm 1877",
@@ -839,6 +842,7 @@ BreakoutI18n.register('pst-panama-canal', {
   },
 
   ar: {
+    "tk.entry": "🎟️ تذكرة الدخول — إحماء دقيقة واحدة", "tk.exit": "🎫 تذكرة الخروج — اختبر نفسك",
     // chrome
     "crumb.unit": "‹ قناة بنما (الصفحة الرئيسية للوحدة)",
     "crumb.course": "‹ المرحلة الثانوية — تاريخ الولايات المتحدة منذ 1877",
@@ -1117,6 +1121,7 @@ BreakoutI18n.register('pst-panama-canal', {
   },
 
   hi: {
+    "tk.entry": "🎟️ प्रवेश टिकट — 1 मिनट का वार्म-अप", "tk.exit": "🎫 निकास टिकट — स्वयं जाँचें",
     // chrome
     "crumb.unit": "‹ पनामा नहर (इकाई मुखपृष्ठ)",
     "crumb.course": "‹ हाई स्कूल — 1877 के बाद का अमेरिकी इतिहास",
@@ -1395,6 +1400,7 @@ BreakoutI18n.register('pst-panama-canal', {
   },
 
   ur: {
+    "tk.entry": "🎟️ داخلے کا ٹکٹ — 1 منٹ کی وارم اپ", "tk.exit": "🎫 اخراج کا ٹکٹ — خود کو جانچیں",
     // chrome
     "crumb.unit": "‹ پاناما نہر (یونٹ ہوم)",
     "crumb.course": "‹ ہائی اسکول — 1877 کے بعد کی امریکی تاریخ",
@@ -1673,6 +1679,7 @@ BreakoutI18n.register('pst-panama-canal', {
   },
 
   zh: {
+    "tk.entry": "🎟️ 入场券 — 1 分钟热身", "tk.exit": "🎫 离场券 — 自我检查",
     // chrome
     "crumb.unit": "‹ 巴拿马运河（单元主页）",
     "crumb.course": "‹ 高中 — 1877年以来的美国历史",
