@@ -6,6 +6,7 @@
    effect-size labels, proper links. */
 BreakoutI18n.register('pst-crossroads', {
   en: {
+    "tk.entry": "🎟️ Entry ticket — 1-minute warm-up", "tk.exit": "🎫 Exit ticket — check yourself",
     // chrome
     "crumb.unit": "‹ A Crossroads for the Region (unit home)",
     "crumb.grade": "‹ Grade 6 — World Cultures",
@@ -278,6 +279,7 @@ BreakoutI18n.register('pst-crossroads', {
     "as.45": "Adapted from “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, updated 2019 (itue.udel.edu)."
   },
   es: {
+    "tk.entry": "🎟️ Boleto de entrada — repaso de 1 minuto", "tk.exit": "🎫 Boleto de salida — comprueba lo que sabes",
     "crumb.unit": "‹ Una encrucijada para la región (inicio de la unidad)",
     "crumb.grade": "‹ Grado 6 — Culturas del mundo",
     "nav.prev": "‹ Atrás", "nav.next": "Siguiente ›",
@@ -543,6 +545,7 @@ BreakoutI18n.register('pst-crossroads', {
     "as.45": "Adaptado de “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, actualizado en 2019 (itue.udel.edu)."
   },
   vi: {
+    "tk.entry": "🎟️ Vé vào — khởi động 1 phút", "tk.exit": "🎫 Vé ra — tự kiểm tra",
     "crumb.unit": "‹ Ngã ba đường của vùng đất (trang chủ bài học)",
     "crumb.grade": "‹ Lớp 6 — Các nền văn hóa thế giới",
     "nav.prev": "‹ Quay lại", "nav.next": "Tiếp theo ›",
@@ -808,6 +811,7 @@ BreakoutI18n.register('pst-crossroads', {
     "as.45": "Điều chỉnh từ “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, cập nhật 2019 (itue.udel.edu)."
   },
   ar: {
+    "tk.entry": "🎟️ تذكرة الدخول — إحماء دقيقة واحدة", "tk.exit": "🎫 تذكرة الخروج — اختبر نفسك",
     "crumb.unit": "‹ مفترق طرق للمنطقة (صفحة الوحدة الرئيسية)",
     "crumb.grade": "‹ الصف السادس — ثقافات العالم",
     "nav.prev": "‹ رجوع", "nav.next": "التالي ›",
@@ -1073,6 +1077,7 @@ BreakoutI18n.register('pst-crossroads', {
     "as.45": "مُكيَّف عن “Rubric to Evaluate PBL Problems،” © ITUE Leaders 2004، مُحدَّث 2019 (itue.udel.edu)."
   },
   hi: {
+    "tk.entry": "🎟️ प्रवेश टिकट — 1 मिनट का वार्म-अप", "tk.exit": "🎫 निकास टिकट — स्वयं जाँचें",
     "crumb.unit": "‹ क्षेत्र के लिए एक चौराहा (इकाई मुखपृष्ठ)",
     "crumb.grade": "‹ कक्षा 6 — विश्व संस्कृतियाँ",
     "nav.prev": "‹ पीछे", "nav.next": "आगे ›",
@@ -1338,6 +1343,7 @@ BreakoutI18n.register('pst-crossroads', {
     "as.45": "“Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, 2019 में अद्यतन (itue.udel.edu) से अनुकूलित।"
   },
   ur: {
+    "tk.entry": "🎟️ داخلے کا ٹکٹ — 1 منٹ کی وارم اپ", "tk.exit": "🎫 اخراج کا ٹکٹ — خود کو جانچیں",
     "crumb.unit": "‹ خطے کے لیے ایک دوراہا (یونٹ ہوم)",
     "crumb.grade": "‹ چھٹی جماعت — عالمی ثقافتیں",
     "nav.prev": "‹ واپس", "nav.next": "اگلا ›",
@@ -1603,6 +1609,7 @@ BreakoutI18n.register('pst-crossroads', {
     "as.45": "“Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004، 2019 میں تازہ کاری (itue.udel.edu) سے ڈھالا گیا۔"
   },
   zh: {
+    "tk.entry": "🎟️ 入场券 — 1 分钟热身", "tk.exit": "🎫 离场券 — 自我检查",
     "crumb.unit": "‹ 地区的十字路口（单元主页）",
     "crumb.grade": "‹ 六年级 — 世界文化",
     "nav.prev": "‹ 返回", "nav.next": "下一步 ›",

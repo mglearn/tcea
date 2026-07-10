@@ -5,6 +5,7 @@
    Do not translate: URLs, TEKS codes (§113.18…), effect-size labels, proper links. */
 BreakoutI18n.register('pst-who-decides', {
   en: {
+    "tk.entry": "🎟️ Entry ticket — 1-minute warm-up", "tk.exit": "🎫 Exit ticket — check yourself",
     // chrome
     "crumb.unit": "‹ Who Decides? (unit home)",
     "crumb.grade": "‹ Grade 6 — World Cultures",
@@ -311,6 +312,7 @@ BreakoutI18n.register('pst-who-decides', {
     "as.45": "Adapted from “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, updated 2019 (itue.udel.edu)."
   },
   es: {
+    "tk.entry": "🎟️ Boleto de entrada — repaso de 1 minuto", "tk.exit": "🎫 Boleto de salida — comprueba lo que sabes",
     "crumb.unit": "‹ ¿Quién decide? (inicio de la unidad)",
     "crumb.grade": "‹ Grado 6 — Culturas del Mundo",
     "nav.prev": "‹ Atrás",
@@ -648,6 +650,7 @@ BreakoutI18n.register('pst-who-decides', {
     "as.45": "Adaptado de “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, actualizado en 2019 (itue.udel.edu)."
   },
   vi: {
+    "tk.entry": "🎟️ Vé vào — khởi động 1 phút", "tk.exit": "🎫 Vé ra — tự kiểm tra",
     "crumb.unit": "‹ Ai Quyết Định? (trang chính của bài học)",
     "crumb.grade": "‹ Lớp 6 — Các Nền Văn Hóa Thế Giới",
     "nav.prev": "‹ Quay lại",
@@ -985,6 +988,7 @@ BreakoutI18n.register('pst-who-decides', {
     "as.45": "Điều chỉnh từ “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, cập nhật 2019 (itue.udel.edu)."
   },
   ar: {
+    "tk.entry": "🎟️ تذكرة الدخول — إحماء دقيقة واحدة", "tk.exit": "🎫 تذكرة الخروج — اختبر نفسك",
     "crumb.unit": "‹ مَن يُقرِّر؟ (الصفحة الرئيسية للوحدة)",
     "crumb.grade": "‹ الصف السادس — ثقافات العالم",
     "nav.prev": "‹ رجوع",
@@ -1322,6 +1326,7 @@ BreakoutI18n.register('pst-who-decides', {
     "as.45": "مُكيَّفٌ عن “Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004، محدَّثٌ 2019 (itue.udel.edu)."
   },
   hi: {
+    "tk.entry": "🎟️ प्रवेश टिकट — 1 मिनट का वार्म-अप", "tk.exit": "🎫 निकास टिकट — स्वयं जाँचें",
     "crumb.unit": "‹ कौन तय करता है? (इकाई का मुख पृष्ठ)",
     "crumb.grade": "‹ कक्षा 6 — विश्व की संस्कृतियाँ",
     "nav.prev": "‹ पीछे",
@@ -1659,6 +1664,7 @@ BreakoutI18n.register('pst-who-decides', {
     "as.45": "“Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004, 2019 में अद्यतन (itue.udel.edu) से अनुकूलित।"
   },
   ur: {
+    "tk.entry": "🎟️ داخلے کا ٹکٹ — 1 منٹ کی وارم اپ", "tk.exit": "🎫 اخراج کا ٹکٹ — خود کو جانچیں",
     "crumb.unit": "‹ کون فیصلہ کرتا ہے؟ (یونٹ کا مرکزی صفحہ)",
     "crumb.grade": "‹ جماعت 6 — عالمی ثقافتیں",
     "nav.prev": "‹ واپس",
@@ -1996,6 +2002,7 @@ BreakoutI18n.register('pst-who-decides', {
     "as.45": "“Rubric to Evaluate PBL Problems,” © ITUE Leaders 2004، 2019 میں تازہ کاری (itue.udel.edu) سے ڈھالا گیا۔"
   },
   zh: {
+    "tk.entry": "🎟️ 入场券 — 1 分钟热身", "tk.exit": "🎫 离场券 — 自我检查",
     "crumb.unit": "‹ 谁来决定？（单元主页）",
     "crumb.grade": "‹ 六年级 — 世界文化",
     "nav.prev": "‹ 返回",

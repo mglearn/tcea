@@ -4442,6 +4442,500 @@ window.PST_TICKETS = (window.PST_TICKETS || []).concat([
 
 ]);
 
+/* ── g6-crossroads.js ── */
+/* PST Arcade — ticket registry for Grade 6 · Crossroads. Each ticket is retrieval
+   practice for one unit + phase. English-first; other languages carried inline per
+   ticket (ticket.i18n[lang]). The engine (arcade.js) reads window.PST_TICKETS.
+   Nothing is stored or sent. Shape matches g5-immigration.js:
+   {id, grade, unit, unitTitle, phase, type, format, teks, strat, d, i18n}. */
+window.PST_TICKETS = (window.PST_TICKETS || []).concat([
+
+  /* ───────── Grade 6 · Crossroads · SURFACE ───────── */
+  {
+    id: 'g6-crossroads-surface-entry', grade: 6, unit: 'crossroads',
+    unitTitle: 'A Crossroads for the Region — Growth vs. Heritage', phase: 'surface', type: 'entry',
+    format: 'mcq', teks: '§113.18(c)(6), (c)(7), (c)(14)', strat: 'Retrieval practice', d: 0.54,
+    i18n: { en: {
+      title: 'Warm-up: crossroads words',
+      seconds: 45,
+      questions: [
+        { q: 'When a place grows richer and gains jobs, roads, and schools, that is…', choices: ['economic development', 'cultural heritage', 'sustainability'], a: 0 },
+        { q: 'The buildings, art, beliefs, languages, and customs a group inherits and passes on are its…', choices: ['factors of production', 'cultural heritage', 'tourism'], a: 1 },
+        { q: 'An economy based on customs and skills handed down for generations is a…', choices: ['market economy', 'command economy', 'traditional economy'], a: 2 },
+        { q: 'Anyone affected by a decision, or who has something at stake, is a…', choices: ['stakeholder', 'institution', 'entrepreneur'], a: 0 }
+      ],
+      takeaway: 'Know these four words and you can read the rest of the unit with confidence.'
+    },
+    es: {
+      title: 'Calentamiento: palabras de la encrucijada',
+      seconds: 45,
+      questions: [
+        { q: 'Cuando un lugar se enriquece y gana empleos, carreteras y escuelas, eso es…', choices: ['desarrollo económico', 'patrimonio cultural', 'sostenibilidad'], a: 0 },
+        { q: 'Los edificios, el arte, las creencias, las lenguas y las costumbres que un grupo hereda y transmite son su…', choices: ['factores de producción', 'patrimonio cultural', 'turismo'], a: 1 },
+        { q: 'Una economía basada en costumbres y destrezas transmitidas por generaciones es una…', choices: ['economía de mercado', 'economía dirigida', 'economía tradicional'], a: 2 },
+        { q: 'Cualquiera afectado por una decisión, o que tiene algo en juego, es un…', choices: ['parte interesada', 'institución', 'emprendedor'], a: 0 }
+      ],
+      takeaway: 'Domina estas cuatro palabras y podrás leer el resto de la unidad con confianza.'
+    },
+    vi: {
+      title: 'Khởi động: từ vựng ngã tư',
+      seconds: 45,
+      questions: [
+        { q: 'Khi một nơi trở nên giàu hơn và có thêm việc làm, đường sá và trường học, đó là…', choices: ['phát triển kinh tế', 'di sản văn hóa', 'sự bền vững'], a: 0 },
+        { q: 'Các công trình, nghệ thuật, tín ngưỡng, ngôn ngữ và phong tục mà một nhóm thừa hưởng và truyền lại là…', choices: ['các yếu tố sản xuất', 'di sản văn hóa', 'du lịch'], a: 1 },
+        { q: 'Một nền kinh tế dựa trên phong tục và kỹ năng truyền qua nhiều thế hệ là một…', choices: ['nền kinh tế thị trường', 'nền kinh tế chỉ huy', 'nền kinh tế truyền thống'], a: 2 },
+        { q: 'Bất kỳ ai bị ảnh hưởng bởi một quyết định, hoặc có điều gì đó liên quan, là một…', choices: ['bên liên quan', 'thể chế', 'doanh nhân'], a: 0 }
+      ],
+      takeaway: 'Nắm được bốn từ này là bạn có thể đọc phần còn lại của đơn vị bài học một cách tự tin.'
+    },
+    ar: {
+      title: 'تهيئة: كلمات مفترق الطرق',
+      seconds: 45,
+      questions: [
+        { q: 'عندما يصبح المكان أكثر ثراءً ويكسب وظائف وطرقًا ومدارس، فهذا…', choices: ['التنمية الاقتصادية', 'التراث الثقافي', 'الاستدامة'], a: 0 },
+        { q: 'المباني والفنون والمعتقدات واللغات والعادات التي ترثها الجماعة وتُورّثها هي…', choices: ['عوامل الإنتاج', 'التراث الثقافي', 'السياحة'], a: 1 },
+        { q: 'الاقتصاد القائم على عادات ومهارات متوارَثة عبر الأجيال هو…', choices: ['اقتصاد السوق', 'الاقتصاد الموجَّه', 'الاقتصاد التقليدي'], a: 2 },
+        { q: 'أي شخص يتأثر بقرار، أو لديه مصلحة معرّضة للخطر، هو…', choices: ['صاحب مصلحة', 'مؤسسة', 'رائد أعمال'], a: 0 }
+      ],
+      takeaway: 'أتقن هذه الكلمات الأربع وستقرأ بقية الوحدة بثقة.'
+    },
+    hi: {
+      title: 'वार्म-अप: चौराहे के शब्द',
+      seconds: 45,
+      questions: [
+        { q: 'जब कोई जगह अधिक समृद्ध होती है और उसे नौकरियाँ, सड़कें और स्कूल मिलते हैं, तो वह है…', choices: ['आर्थिक विकास', 'सांस्कृतिक विरासत', 'स्थिरता'], a: 0 },
+        { q: 'किसी समूह को विरासत में मिली और आगे बढ़ाई गई इमारतें, कला, मान्यताएँ, भाषाएँ और रीति-रिवाज उसकी हैं…', choices: ['उत्पादन के कारक', 'सांस्कृतिक विरासत', 'पर्यटन'], a: 1 },
+        { q: 'पीढ़ियों से चली आ रही रीति-रिवाजों और कौशलों पर आधारित अर्थव्यवस्था है एक…', choices: ['बाज़ार अर्थव्यवस्था', 'आदेश अर्थव्यवस्था', 'पारंपरिक अर्थव्यवस्था'], a: 2 },
+        { q: 'किसी निर्णय से प्रभावित होने वाला, या जिसका कुछ दाँव पर हो, वह है एक…', choices: ['हितधारक', 'संस्था', 'उद्यमी'], a: 0 }
+      ],
+      takeaway: 'इन चार शब्दों को जान लें और आप शेष इकाई आत्मविश्वास से पढ़ सकेंगे।'
+    },
+    ur: {
+      title: 'وارم اپ: چوراہے کے الفاظ',
+      seconds: 45,
+      questions: [
+        { q: 'جب کوئی جگہ زیادہ خوشحال ہوتی ہے اور اسے ملازمتیں، سڑکیں اور اسکول ملتے ہیں، تو یہ ہے…', choices: ['معاشی ترقی', 'ثقافتی ورثہ', 'پائیداری'], a: 0 },
+        { q: 'کسی گروہ کو ورثے میں ملی اور آگے منتقل کی گئی عمارتیں، فن، عقائد، زبانیں اور رسم و رواج اس کا ہیں…', choices: ['پیداوار کے عوامل', 'ثقافتی ورثہ', 'سیاحت'], a: 1 },
+        { q: 'نسلوں سے چلی آ رہی روایات اور مہارتوں پر مبنی معیشت ایک…', choices: ['منڈی کی معیشت', 'حکم کی معیشت', 'روایتی معیشت'], a: 2 },
+        { q: 'کوئی بھی جو کسی فیصلے سے متاثر ہو، یا جس کا کچھ داؤ پر ہو، وہ ہے ایک…', choices: ['اسٹیک ہولڈر', 'ادارہ', 'کاروباری'], a: 0 }
+      ],
+      takeaway: 'ان چار الفاظ کو جان لیں تو آپ باقی اکائی اعتماد کے ساتھ پڑھ سکیں گے۔'
+    },
+    zh: {
+      title: '热身：十字路口词汇',
+      seconds: 45,
+      questions: [
+        { q: '当一个地方变得更富裕，并获得就业、道路和学校时，这就是…', choices: ['经济发展', '文化遗产', '可持续性'], a: 0 },
+        { q: '一个群体继承并传承下来的建筑、艺术、信仰、语言和习俗，是它的…', choices: ['生产要素', '文化遗产', '旅游业'], a: 1 },
+        { q: '建立在世代相传的习俗与技能之上的经济，是一种…', choices: ['市场经济', '计划经济', '传统经济'], a: 2 },
+        { q: '任何受某项决定影响、或有利害关系的人，都是一位…', choices: ['利益相关者', '制度机构', '企业家'], a: 0 }
+      ],
+      takeaway: '掌握这四个词，你就能自信地读完本单元的其余部分。'
+    } }
+  },
+  {
+    id: 'g6-crossroads-surface-exit', grade: 6, unit: 'crossroads',
+    unitTitle: 'A Crossroads for the Region — Growth vs. Heritage', phase: 'surface', type: 'exit',
+    format: 'match', teks: '§113.18(c)(6), (c)(7), (c)(14)', strat: 'Vocabulary & feedback', d: 0.62,
+    i18n: { en: {
+      title: 'Exit: match the word to its meaning',
+      pairs: [
+        ['factors of production', 'natural resources, labor, capital, and entrepreneurs'],
+        ['traditional economy', 'an economy built on customs and skills handed down'],
+        ['cultural heritage', 'the art, beliefs, and customs a group passes on'],
+        ['institution', 'a lasting part of society that meets a shared need'],
+        ['sustainability', 'using something so it stays healthy for the future']
+      ],
+      takeaway: 'If you matched all five, you are ready to go deep. If not, revisit the word bank.'
+    },
+    es: {
+      title: 'Salida: relaciona la palabra con su significado',
+      pairs: [
+        ['factores de producción', 'recursos naturales, trabajo, capital y emprendedores'],
+        ['economía tradicional', 'una economía basada en costumbres y destrezas transmitidas'],
+        ['patrimonio cultural', 'el arte, las creencias y las costumbres que un grupo transmite'],
+        ['institución', 'una parte duradera de la sociedad que atiende una necesidad común'],
+        ['sostenibilidad', 'usar algo de modo que siga sano para el futuro']
+      ],
+      takeaway: 'Si relacionaste las cinco, estás listo para ir a lo profundo. Si no, repasa el banco de palabras.'
+    },
+    vi: {
+      title: 'Phiếu ra: ghép từ với nghĩa của nó',
+      pairs: [
+        ['các yếu tố sản xuất', 'tài nguyên thiên nhiên, lao động, vốn và doanh nhân'],
+        ['nền kinh tế truyền thống', 'nền kinh tế dựa trên phong tục và kỹ năng truyền lại'],
+        ['di sản văn hóa', 'nghệ thuật, tín ngưỡng và phong tục mà một nhóm truyền lại'],
+        ['thể chế', 'một phần lâu bền của xã hội đáp ứng một nhu cầu chung'],
+        ['sự bền vững', 'sử dụng thứ gì đó sao cho nó vẫn lành mạnh cho tương lai']
+      ],
+      takeaway: 'Nếu bạn ghép đúng cả năm, bạn đã sẵn sàng học chuyên sâu. Nếu chưa, hãy xem lại kho từ vựng.'
+    },
+    ar: {
+      title: 'الخروج: طابِق الكلمة مع معناها',
+      pairs: [
+        ['عوامل الإنتاج', 'الموارد الطبيعية والعمل ورأس المال ورواد الأعمال'],
+        ['الاقتصاد التقليدي', 'اقتصاد قائم على عادات ومهارات متوارَثة'],
+        ['التراث الثقافي', 'الفنون والمعتقدات والعادات التي تُورّثها الجماعة'],
+        ['المؤسسة', 'جزء دائم من المجتمع يلبّي حاجة مشتركة'],
+        ['الاستدامة', 'استخدام الشيء بحيث يبقى سليمًا للمستقبل']
+      ],
+      takeaway: 'إذا طابقت الخمس جميعًا، فأنت مستعد للتعمّق. وإلا، فراجِع بنك الكلمات.'
+    },
+    hi: {
+      title: 'निकास: शब्द को उसके अर्थ से मिलाएँ',
+      pairs: [
+        ['उत्पादन के कारक', 'प्राकृतिक संसाधन, श्रम, पूँजी और उद्यमी'],
+        ['पारंपरिक अर्थव्यवस्था', 'रीति-रिवाजों और हस्तांतरित कौशलों पर आधारित अर्थव्यवस्था'],
+        ['सांस्कृतिक विरासत', 'कला, मान्यताएँ और रीति-रिवाज जो कोई समूह आगे बढ़ाता है'],
+        ['संस्था', 'समाज का एक स्थायी हिस्सा जो एक साझा ज़रूरत पूरी करता है'],
+        ['स्थिरता', 'किसी चीज़ का इस तरह उपयोग कि वह भविष्य के लिए स्वस्थ बनी रहे']
+      ],
+      takeaway: 'यदि आपने पाँचों मिला दिए, तो आप गहन में जाने के लिए तैयार हैं। यदि नहीं, तो शब्द-बैंक फिर देखें।'
+    },
+    ur: {
+      title: 'اخراج: لفظ کو اس کے مطلب سے ملائیں',
+      pairs: [
+        ['پیداوار کے عوامل', 'قدرتی وسائل، محنت، سرمایہ اور کاروباری'],
+        ['روایتی معیشت', 'رسم و رواج اور منتقل شدہ مہارتوں پر مبنی معیشت'],
+        ['ثقافتی ورثہ', 'فن، عقائد اور رسم و رواج جو کوئی گروہ آگے منتقل کرتا ہے'],
+        ['ادارہ', 'معاشرے کا ایک پائیدار حصہ جو ایک مشترکہ ضرورت پوری کرتا ہے'],
+        ['پائیداری', 'کسی چیز کو اس طرح استعمال کرنا کہ وہ مستقبل کے لیے صحت مند رہے']
+      ],
+      takeaway: 'اگر آپ نے پانچوں ملا دیے تو آپ گہرائی میں جانے کو تیار ہیں۔ ورنہ لفظی بینک دوبارہ دیکھیں۔'
+    },
+    zh: {
+      title: '离场：把词语与其含义配对',
+      pairs: [
+        ['生产要素', '自然资源、劳动力、资本和企业家'],
+        ['传统经济', '建立在世代相传的习俗与技能之上的经济'],
+        ['文化遗产', '一个群体传承下去的艺术、信仰和习俗'],
+        ['制度机构', '社会中满足共同需求的一个持久组成部分'],
+        ['可持续性', '以让某物在未来保持健康的方式来使用它']
+      ],
+      takeaway: '如果五个都配对正确，你就可以进入深层学习了。若没有，请重温词汇表。'
+    } }
+  },
+
+  /* ───────── Grade 6 · Crossroads · DEEP ───────── */
+  {
+    id: 'g6-crossroads-deep-entry', grade: 6, unit: 'crossroads',
+    unitTitle: 'A Crossroads for the Region — Growth vs. Heritage', phase: 'deep', type: 'entry',
+    format: 'cloze', teks: '§113.18(c)(5), (c)(8), (c)(16)', strat: 'Retrieval practice', d: 0.54,
+    i18n: { en: {
+      title: 'Warm-up: benefits & costs',
+      items: [
+        { before: 'Thousands of new jobs and higher wages are a', after: 'of the development.', choices: ['cost', 'benefit', 'source'], a: 1 },
+        { before: 'A factory built next to the ancient heritage site is a', after: 'of the project.', choices: ['cost', 'benefit', 'stakeholder'], a: 0 },
+        { before: 'When a benefit for one group is a cost for another, that is a', after: 'to weigh.', choices: ['trade-off', 'quota', 'terrace'], a: 0 }
+      ],
+      takeaway: 'Every big offer has benefits AND costs. Naming both is the heart of the concept map.'
+    },
+    es: {
+      title: 'Calentamiento: beneficios y costos',
+      items: [
+        { before: 'Miles de empleos nuevos y salarios más altos son un', after: 'del desarrollo.', choices: ['costo', 'beneficio', 'fuente'], a: 1 },
+        { before: 'Una fábrica construida junto al antiguo sitio patrimonial es un', after: 'del proyecto.', choices: ['costo', 'beneficio', 'parte interesada'], a: 0 },
+        { before: 'Cuando un beneficio para un grupo es un costo para otro, eso es una', after: 'que sopesar.', choices: ['concesión', 'cuota', 'terraza'], a: 0 }
+      ],
+      takeaway: 'Toda gran oferta tiene beneficios Y costos. Nombrar ambos es el corazón del mapa conceptual.'
+    },
+    vi: {
+      title: 'Khởi động: lợi ích & chi phí',
+      items: [
+        { before: 'Hàng nghìn việc làm mới và mức lương cao hơn là một', after: 'của dự án phát triển.', choices: ['chi phí', 'lợi ích', 'nguồn'], a: 1 },
+        { before: 'Một nhà máy xây ngay cạnh di tích cổ là một', after: 'của dự án.', choices: ['chi phí', 'lợi ích', 'bên liên quan'], a: 0 },
+        { before: 'Khi lợi ích của nhóm này lại là chi phí của nhóm khác, đó là một', after: 'phải cân nhắc.', choices: ['sự đánh đổi', 'hạn ngạch', 'ruộng bậc thang'], a: 0 }
+      ],
+      takeaway: 'Mọi lời đề nghị lớn đều có lợi ích VÀ chi phí. Nêu tên cả hai chính là cốt lõi của sơ đồ khái niệm.'
+    },
+    ar: {
+      title: 'تهيئة: الفوائد والتكاليف',
+      items: [
+        { before: 'آلاف الوظائف الجديدة والأجور الأعلى هي', after: 'للمشروع التنموي.', choices: ['تكلفة', 'فائدة', 'مصدر'], a: 1 },
+        { before: 'مصنع يُبنى بجوار الموقع التراثي القديم هو', after: 'للمشروع.', choices: ['تكلفة', 'فائدة', 'صاحب مصلحة'], a: 0 },
+        { before: 'عندما تكون فائدة لجماعة تكلفةً على أخرى، فتلك', after: 'يجب موازنتها.', choices: ['مفاضلة', 'حصة', 'مدرّجة'], a: 0 }
+      ],
+      takeaway: 'كل عرض كبير له فوائد وتكاليف معًا. تسمية كليهما هي جوهر الخريطة المفاهيمية.'
+    },
+    hi: {
+      title: 'वार्म-अप: लाभ और लागत',
+      items: [
+        { before: 'हज़ारों नई नौकरियाँ और ऊँची मज़दूरी विकास का एक', after: 'हैं।', choices: ['लागत', 'लाभ', 'स्रोत'], a: 1 },
+        { before: 'प्राचीन विरासत स्थल के पास बनी फ़ैक्ट्री परियोजना की एक', after: 'है।', choices: ['लागत', 'लाभ', 'हितधारक'], a: 0 },
+        { before: 'जब एक समूह का लाभ दूसरे की लागत हो, तो वह एक', after: 'है जिसे तौलना है।', choices: ['समझौता', 'कोटा', 'सीढ़ीदार खेत'], a: 0 }
+      ],
+      takeaway: 'हर बड़े प्रस्ताव में लाभ और लागत दोनों होते हैं। दोनों का नाम लेना ही अवधारणा मानचित्र का सार है।'
+    },
+    ur: {
+      title: 'وارم اپ: فوائد اور اخراجات',
+      items: [
+        { before: 'ہزاروں نئی ملازمتیں اور زیادہ اجرت ترقی کا ایک', after: 'ہیں۔', choices: ['خرچ', 'فائدہ', 'ذریعہ'], a: 1 },
+        { before: 'قدیم ثقافتی ورثہ مقام کے پاس بنی فیکٹری منصوبے کا ایک', after: 'ہے۔', choices: ['خرچ', 'فائدہ', 'اسٹیک ہولڈر'], a: 0 },
+        { before: 'جب ایک گروہ کا فائدہ دوسرے کا خرچ ہو، تو وہ ایک', after: 'ہے جسے تولنا ہے۔', choices: ['سمجھوتہ', 'کوٹا', 'سیڑھی دار کھیت'], a: 0 }
+      ],
+      takeaway: 'ہر بڑی پیشکش میں فوائد اور اخراجات دونوں ہوتے ہیں۔ دونوں کا نام لینا ہی تصوراتی نقشے کا مرکز ہے۔'
+    },
+    zh: {
+      title: '热身：收益与代价',
+      items: [
+        { before: '数千个新岗位和更高的工资是这一开发项目的一项', after: '。', choices: ['代价', '收益', '来源'], a: 1 },
+        { before: '在古老遗产地旁边修建的工厂是这个项目的一项', after: '。', choices: ['代价', '收益', '利益相关者'], a: 0 },
+        { before: '当一个群体的收益成为另一个群体的代价时，那就是一项需要权衡的', after: '。', choices: ['取舍', '配额', '梯田'], a: 0 }
+      ],
+      takeaway: '每个重大提议都既有收益又有代价。两者都说出来，正是概念图的核心。'
+    } }
+  },
+  {
+    id: 'g6-crossroads-deep-exit', grade: 6, unit: 'crossroads',
+    unitTitle: 'A Crossroads for the Region — Growth vs. Heritage', phase: 'deep', type: 'exit',
+    format: 'sort', teks: '§113.18(c)(5), (c)(8), (c)(16)', strat: 'Concept organization', d: 0.64,
+    i18n: { en: {
+      title: 'Exit: sort benefits and costs',
+      cats: ['Benefit (what it gives)', 'Cost (what it changes or takes)'],
+      items: [
+        { t: 'Thousands of jobs and higher wages', c: 0 },
+        { t: 'Money for schools, roads, and clinics', c: 0 },
+        { t: 'Young people can stay instead of leaving', c: 0 },
+        { t: 'A factory next to the ancient heritage site', c: 1 },
+        { t: 'Strain on the land, water, and quiet', c: 1 },
+        { t: 'Loss of crafts, language, or customs', c: 1 }
+      ],
+      takeaway: 'Sorting the offer into benefits vs costs is the concept map behind your argument.'
+    },
+    es: {
+      title: 'Salida: clasifica beneficios y costos',
+      cats: ['Beneficio (lo que da)', 'Costo (lo que cambia o quita)'],
+      items: [
+        { t: 'Miles de empleos y salarios más altos', c: 0 },
+        { t: 'Dinero para escuelas, carreteras y clínicas', c: 0 },
+        { t: 'Los jóvenes pueden quedarse en vez de irse', c: 0 },
+        { t: 'Una fábrica junto al antiguo sitio patrimonial', c: 1 },
+        { t: 'Presión sobre la tierra, el agua y la calma', c: 1 },
+        { t: 'Pérdida de artesanías, lengua o costumbres', c: 1 }
+      ],
+      takeaway: 'Clasificar la oferta en beneficios vs costos es el mapa conceptual detrás de tu argumento.'
+    },
+    vi: {
+      title: 'Phiếu ra: phân loại lợi ích và chi phí',
+      cats: ['Lợi ích (điều nó mang lại)', 'Chi phí (điều nó thay đổi hoặc lấy đi)'],
+      items: [
+        { t: 'Hàng nghìn việc làm và mức lương cao hơn', c: 0 },
+        { t: 'Tiền cho trường học, đường sá và trạm y tế', c: 0 },
+        { t: 'Người trẻ có thể ở lại thay vì ra đi', c: 0 },
+        { t: 'Một nhà máy cạnh di tích cổ', c: 1 },
+        { t: 'Áp lực lên đất, nước và sự yên tĩnh', c: 1 },
+        { t: 'Mất nghề thủ công, ngôn ngữ hoặc phong tục', c: 1 }
+      ],
+      takeaway: 'Phân loại lời đề nghị thành lợi ích và chi phí chính là sơ đồ khái niệm đằng sau lập luận của bạn.'
+    },
+    ar: {
+      title: 'الخروج: صنّف الفوائد والتكاليف',
+      cats: ['فائدة (ما يقدّمه)', 'تكلفة (ما يغيّره أو يأخذه)'],
+      items: [
+        { t: 'آلاف الوظائف وأجور أعلى', c: 0 },
+        { t: 'أموال للمدارس والطرق والعيادات', c: 0 },
+        { t: 'يمكن للشباب البقاء بدل الرحيل', c: 0 },
+        { t: 'مصنع بجوار الموقع التراثي القديم', c: 1 },
+        { t: 'ضغط على الأرض والماء والهدوء', c: 1 },
+        { t: 'فقدان الحِرَف أو اللغة أو العادات', c: 1 }
+      ],
+      takeaway: 'تصنيف العرض إلى فوائد مقابل تكاليف هو الخريطة المفاهيمية وراء حجّتك.'
+    },
+    hi: {
+      title: 'निकास: लाभ और लागत को छाँटें',
+      cats: ['लाभ (जो यह देता है)', 'लागत (जो यह बदलता या छीनता है)'],
+      items: [
+        { t: 'हज़ारों नौकरियाँ और ऊँची मज़दूरी', c: 0 },
+        { t: 'स्कूलों, सड़कों और क्लीनिकों के लिए पैसा', c: 0 },
+        { t: 'युवा जाने के बजाय रुक सकते हैं', c: 0 },
+        { t: 'प्राचीन विरासत स्थल के पास एक फ़ैक्ट्री', c: 1 },
+        { t: 'भूमि, जल और शांति पर दबाव', c: 1 },
+        { t: 'शिल्प, भाषा या रीति-रिवाजों का नुकसान', c: 1 }
+      ],
+      takeaway: 'प्रस्ताव को लाभ बनाम लागत में छाँटना ही आपके तर्क के पीछे का अवधारणा मानचित्र है।'
+    },
+    ur: {
+      title: 'اخراج: فوائد اور اخراجات کو چھانٹیں',
+      cats: ['فائدہ (جو یہ دیتا ہے)', 'خرچ (جو یہ بدلتا یا لے لیتا ہے)'],
+      items: [
+        { t: 'ہزاروں ملازمتیں اور زیادہ اجرت', c: 0 },
+        { t: 'اسکولوں، سڑکوں اور کلینکوں کے لیے پیسہ', c: 0 },
+        { t: 'نوجوان جانے کے بجائے رک سکتے ہیں', c: 0 },
+        { t: 'قدیم ثقافتی ورثہ مقام کے پاس ایک فیکٹری', c: 1 },
+        { t: 'زمین، پانی اور سکون پر دباؤ', c: 1 },
+        { t: 'دستکاری، زبان یا رسم و رواج کا نقصان', c: 1 }
+      ],
+      takeaway: 'پیشکش کو فوائد بمقابلہ اخراجات میں چھانٹنا ہی آپ کی دلیل کے پیچھے تصوراتی نقشہ ہے۔'
+    },
+    zh: {
+      title: '离场：把收益和代价分类',
+      cats: ['收益（它带来的）', '代价（它改变或夺走的）'],
+      items: [
+        { t: '数千个岗位和更高的工资', c: 0 },
+        { t: '用于学校、道路和诊所的资金', c: 0 },
+        { t: '年轻人可以留下而不必离开', c: 0 },
+        { t: '古老遗产地旁边的一座工厂', c: 1 },
+        { t: '对土地、水源和宁静的压力', c: 1 },
+        { t: '手工艺、语言或习俗的流失', c: 1 }
+      ],
+      takeaway: '把这项提议分成收益与代价，就是你论证背后的概念图。'
+    } }
+  },
+
+  /* ───────── Grade 6 · Crossroads · TRANSFER ───────── */
+  {
+    id: 'g6-crossroads-transfer-entry', grade: 6, unit: 'crossroads',
+    unitTitle: 'A Crossroads for the Region — Growth vs. Heritage', phase: 'transfer', type: 'entry',
+    format: 'mcq', teks: '§113.18(c)(22)(B)', strat: 'Retrieval practice', d: 0.54,
+    i18n: { en: {
+      title: 'Warm-up: the problem-solving process',
+      seconds: 45,
+      questions: [
+        { q: 'The FIRST step of the problem-solving process is to…', choices: ['pick a solution', 'define the problem', 'defend a claim'], a: 1 },
+        { q: 'Before choosing, a good problem-solver…', choices: ['gathers information & weighs options', 'guesses quickly', 'ignores other stakeholders'], a: 0 },
+        { q: 'Reasoning "from that person’s point of view" means you…', choices: ['forget the evidence', 'argue as your stakeholder would', 'always say yes'], a: 1 },
+        { q: 'The LAST step is to…', choices: ['evaluate how well the solution worked', 'hide the trade-offs', 'start over for no reason'], a: 0 }
+      ],
+      takeaway: 'Define → gather → weigh → decide → defend → evaluate. That is §113.18(c)(22)(B).'
+    },
+    es: {
+      title: 'Calentamiento: el proceso de resolución de problemas',
+      seconds: 45,
+      questions: [
+        { q: 'El PRIMER paso del proceso de resolución de problemas es…', choices: ['elegir una solución', 'definir el problema', 'defender una afirmación'], a: 1 },
+        { q: 'Antes de elegir, quien resuelve bien problemas…', choices: ['reúne información y sopesa opciones', 'adivina rápido', 'ignora a otras partes interesadas'], a: 0 },
+        { q: 'Razonar «desde el punto de vista de esa persona» significa que…', choices: ['olvidas la evidencia', 'argumentas como lo haría tu parte interesada', 'siempre dices que sí'], a: 1 },
+        { q: 'El ÚLTIMO paso es…', choices: ['evaluar qué tan bien funcionó la solución', 'ocultar las concesiones', 'empezar de nuevo sin razón'], a: 0 }
+      ],
+      takeaway: 'Definir → reunir → sopesar → decidir → defender → evaluar. Eso es §113.18(c)(22)(B).'
+    },
+    vi: {
+      title: 'Khởi động: quy trình giải quyết vấn đề',
+      seconds: 45,
+      questions: [
+        { q: 'Bước ĐẦU TIÊN của quy trình giải quyết vấn đề là…', choices: ['chọn một giải pháp', 'xác định vấn đề', 'bảo vệ một luận điểm'], a: 1 },
+        { q: 'Trước khi chọn, người giải quyết vấn đề giỏi sẽ…', choices: ['thu thập thông tin & cân nhắc các phương án', 'đoán nhanh', 'bỏ qua các bên liên quan khác'], a: 0 },
+        { q: 'Lập luận "từ góc nhìn của người đó" nghĩa là bạn…', choices: ['quên bằng chứng', 'tranh luận như bên liên quan của bạn sẽ làm', 'luôn nói đồng ý'], a: 1 },
+        { q: 'Bước CUỐI CÙNG là…', choices: ['đánh giá xem giải pháp hiệu quả ra sao', 'giấu đi các đánh đổi', 'bắt đầu lại một cách vô cớ'], a: 0 }
+      ],
+      takeaway: 'Xác định → thu thập → cân nhắc → quyết định → bảo vệ → đánh giá. Đó là §113.18(c)(22)(B).'
+    },
+    ar: {
+      title: 'تهيئة: عملية حل المشكلة',
+      seconds: 45,
+      questions: [
+        { q: 'الخطوة الأولى في عملية حل المشكلة هي…', choices: ['اختيار حل', 'تحديد المشكلة', 'الدفاع عن ادعاء'], a: 1 },
+        { q: 'قبل الاختيار، يقوم حلّال المشكلات الجيد بـ…', choices: ['جمع المعلومات وموازنة الخيارات', 'التخمين بسرعة', 'تجاهل أصحاب المصلحة الآخرين'], a: 0 },
+        { q: 'التفكير "من وجهة نظر ذلك الشخص" يعني أنك…', choices: ['تنسى الأدلة', 'تحاجّ كما سيفعل صاحب مصلحتك', 'توافق دائمًا'], a: 1 },
+        { q: 'الخطوة الأخيرة هي…', choices: ['تقييم مدى نجاح الحل', 'إخفاء المفاضلات', 'البدء من جديد بلا سبب'], a: 0 }
+      ],
+      takeaway: 'حدِّد ← اجمع ← وازِن ← قرِّر ← دافِع ← قيِّم. تلك هي §113.18(c)(22)(B).'
+    },
+    hi: {
+      title: 'वार्म-अप: समस्या-समाधान की प्रक्रिया',
+      seconds: 45,
+      questions: [
+        { q: 'समस्या-समाधान प्रक्रिया का पहला चरण है…', choices: ['एक समाधान चुनना', 'समस्या को परिभाषित करना', 'एक दावे का बचाव करना'], a: 1 },
+        { q: 'चुनने से पहले, एक अच्छा समस्या-समाधानकर्ता…', choices: ['जानकारी जुटाता है और विकल्पों को तौलता है', 'जल्दी से अनुमान लगाता है', 'अन्य हितधारकों को अनदेखा करता है'], a: 0 },
+        { q: '"उस व्यक्ति के दृष्टिकोण से" तर्क करने का अर्थ है कि आप…', choices: ['साक्ष्य भूल जाते हैं', 'जैसे आपका हितधारक करता, वैसे तर्क करते हैं', 'हमेशा हाँ कहते हैं'], a: 1 },
+        { q: 'अंतिम चरण है…', choices: ['यह आँकना कि समाधान कितना अच्छा रहा', 'समझौतों को छिपाना', 'बिना कारण फिर से शुरू करना'], a: 0 }
+      ],
+      takeaway: 'परिभाषित करें → जुटाएँ → तौलें → निर्णय लें → बचाव करें → आँकें। यही §113.18(c)(22)(B) है।'
+    },
+    ur: {
+      title: 'وارم اپ: مسئلہ حل کرنے کا عمل',
+      seconds: 45,
+      questions: [
+        { q: 'مسئلہ حل کرنے کے عمل کا پہلا مرحلہ ہے…', choices: ['ایک حل چننا', 'مسئلے کو متعین کرنا', 'ایک دعوے کا دفاع کرنا'], a: 1 },
+        { q: 'چننے سے پہلے، ایک اچھا مسئلہ حل کرنے والا…', choices: ['معلومات جمع کرتا اور اختیارات تولتا ہے', 'جلدی سے اندازہ لگاتا ہے', 'دوسرے اسٹیک ہولڈرز کو نظرانداز کرتا ہے'], a: 0 },
+        { q: '"اس شخص کے نقطہ نظر سے" استدلال کا مطلب ہے کہ آپ…', choices: ['ثبوت بھول جاتے ہیں', 'جیسے آپ کا اسٹیک ہولڈر کرتا، ویسے دلیل دیتے ہیں', 'ہمیشہ ہاں کہتے ہیں'], a: 1 },
+        { q: 'آخری مرحلہ ہے…', choices: ['یہ جانچنا کہ حل کتنا کارگر رہا', 'سمجھوتوں کو چھپانا', 'بلا وجہ دوبارہ شروع کرنا'], a: 0 }
+      ],
+      takeaway: 'متعین کریں ← جمع کریں ← تولیں ← فیصلہ کریں ← دفاع کریں ← جانچیں۔ یہی §113.18(c)(22)(B) ہے۔'
+    },
+    zh: {
+      title: '热身：解决问题的过程',
+      seconds: 45,
+      questions: [
+        { q: '解决问题过程的第一步是…', choices: ['挑选一个方案', '界定问题', '为一个主张辩护'], a: 1 },
+        { q: '在做出选择之前，优秀的解决问题者会…', choices: ['收集信息并权衡各种方案', '快速猜测', '无视其他利益相关者'], a: 0 },
+        { q: '"从那个人的视角"推理，意味着你…', choices: ['忘掉证据', '像你的利益相关者那样论证', '总是说同意'], a: 1 },
+        { q: '最后一步是…', choices: ['评估方案的效果如何', '隐藏其中的取舍', '无缘无故地重新开始'], a: 0 }
+      ],
+      takeaway: '界定 → 收集 → 权衡 → 决定 → 辩护 → 评估。这就是 §113.18(c)(22)(B)。'
+    } }
+  },
+  {
+    id: 'g6-crossroads-transfer-exit', grade: 6, unit: 'crossroads',
+    unitTitle: 'A Crossroads for the Region — Growth vs. Heritage', phase: 'transfer', type: 'exit',
+    format: 'cloze', teks: '§113.18(c)(22)(B)', strat: 'Feedback', d: 0.62,
+    i18n: { en: {
+      title: 'Exit: defend the decision',
+      items: [
+        { before: 'A recommendation about whether the project should go ahead is stronger when it is backed by', after: 'from the sources.', choices: ['evidence', 'a louder voice', 'a map'], a: 0 },
+        { before: 'Naming the', after: 'shows you weighed what each side must give up.', choices: ['trade-offs', 'terraces', 'tourists'], a: 0 },
+        { before: 'The final step of the process is to', after: 'how well the decision worked for jobs and heritage.', choices: ['evaluate', 'forget', 'hide'], a: 0 }
+      ],
+      takeaway: 'Evidence + trade-offs + evaluation = thinking like a stakeholder and a problem-solver.'
+    },
+    es: {
+      title: 'Salida: defiende la decisión',
+      items: [
+        { before: 'Una recomendación sobre si el proyecto debe seguir adelante es más fuerte cuando se respalda con', after: 'de las fuentes.', choices: ['evidencia', 'una voz más fuerte', 'un mapa'], a: 0 },
+        { before: 'Nombrar las', after: 'muestra que sopesaste lo que cada lado debe ceder.', choices: ['concesiones', 'terrazas', 'turistas'], a: 0 },
+        { before: 'El paso final del proceso es', after: 'qué tan bien funcionó la decisión para los empleos y el patrimonio.', choices: ['evaluar', 'olvidar', 'ocultar'], a: 0 }
+      ],
+      takeaway: 'Evidencia + concesiones + evaluación = pensar como una parte interesada y como quien resuelve problemas.'
+    },
+    vi: {
+      title: 'Phiếu ra: bảo vệ quyết định',
+      items: [
+        { before: 'Một đề xuất về việc dự án có nên tiến hành hay không sẽ vững hơn khi được củng cố bằng', after: 'từ các nguồn.', choices: ['bằng chứng', 'một giọng nói to hơn', 'một tấm bản đồ'], a: 0 },
+        { before: 'Nêu ra những', after: 'cho thấy bạn đã cân nhắc điều mỗi bên phải từ bỏ.', choices: ['đánh đổi', 'ruộng bậc thang', 'khách du lịch'], a: 0 },
+        { before: 'Bước cuối cùng của quy trình là', after: 'xem quyết định hiệu quả ra sao với việc làm và di sản.', choices: ['đánh giá', 'quên đi', 'giấu đi'], a: 0 }
+      ],
+      takeaway: 'Bằng chứng + đánh đổi + đánh giá = tư duy như một bên liên quan và một người giải quyết vấn đề.'
+    },
+    ar: {
+      title: 'الخروج: دافِع عن القرار',
+      items: [
+        { before: 'التوصية بشأن ما إذا كان المشروع سيمضي قدمًا تكون أقوى عندما تُدعم بـ', after: 'من المصادر.', choices: ['أدلة', 'صوت أعلى', 'خريطة'], a: 0 },
+        { before: 'إن تسمية', after: 'تُظهر أنك وازنت ما على كل جانب أن يتنازل عنه.', choices: ['المفاضلات', 'المدرّجات', 'السياح'], a: 0 },
+        { before: 'الخطوة الأخيرة في العملية هي أن', after: 'مدى نجاح القرار للوظائف والتراث.', choices: ['تقيّم', 'تنسى', 'تخفي'], a: 0 }
+      ],
+      takeaway: 'أدلة + مفاضلات + تقييم = التفكير كصاحب مصلحة وحلّال مشكلات.'
+    },
+    hi: {
+      title: 'निकास: निर्णय का बचाव करें',
+      items: [
+        { before: 'परियोजना आगे बढ़नी चाहिए या नहीं, इस पर सिफ़ारिश तब मज़बूत होती है जब उसका आधार हो', after: 'स्रोतों से।', choices: ['साक्ष्य', 'एक ऊँची आवाज़', 'एक नक्शा'], a: 0 },
+        { before: 'अपने', after: 'का नाम लेना दिखाता है कि आपने तौला कि हर पक्ष को क्या छोड़ना होगा।', choices: ['समझौतों', 'सीढ़ीदार खेतों', 'पर्यटकों'], a: 0 },
+        { before: 'प्रक्रिया का अंतिम चरण है यह', after: 'कि निर्णय नौकरियों और विरासत के लिए कितना अच्छा रहा।', choices: ['आँकना', 'भूल जाना', 'छिपाना'], a: 0 }
+      ],
+      takeaway: 'साक्ष्य + समझौते + मूल्यांकन = एक हितधारक और एक समस्या-समाधानकर्ता की तरह सोचना।'
+    },
+    ur: {
+      title: 'اخراج: فیصلے کا دفاع کریں',
+      items: [
+        { before: 'منصوبہ آگے بڑھنا چاہیے یا نہیں، اس بارے میں سفارش تب مضبوط ہوتی ہے جب اس کی بنیاد ہو', after: 'مآخذ سے۔', choices: ['ثبوت', 'ایک بلند آواز', 'ایک نقشہ'], a: 0 },
+        { before: 'اپنے', after: 'کا نام لینا ظاہر کرتا ہے کہ آپ نے تولا کہ ہر فریق کو کیا چھوڑنا ہوگا۔', choices: ['سمجھوتوں', 'سیڑھی دار کھیتوں', 'سیاحوں'], a: 0 },
+        { before: 'عمل کا آخری مرحلہ یہ', after: 'ہے کہ فیصلہ ملازمتوں اور ورثے کے لیے کتنا کارگر رہا۔', choices: ['جانچنا', 'بھول جانا', 'چھپانا'], a: 0 }
+      ],
+      takeaway: 'ثبوت + سمجھوتے + جانچ = ایک اسٹیک ہولڈر اور ایک مسئلہ حل کرنے والے کی طرح سوچنا۔'
+    },
+    zh: {
+      title: '离场：为决定辩护',
+      items: [
+        { before: '关于项目是否应当推进的建议，当它有以下支撑时更有力：', after: '来自资料。', choices: ['证据', '更大的嗓门', '一张地图'], a: 0 },
+        { before: '说出其中的', after: '，表明你已权衡了各方必须放弃的东西。', choices: ['取舍', '梯田', '游客'], a: 0 },
+        { before: '这个过程的最后一步是', after: '这个决定对就业和遗产的效果如何。', choices: ['评估', '忘记', '隐藏'], a: 0 }
+      ],
+      takeaway: '证据 + 取舍 + 评估 = 像利益相关者和解决问题者一样思考。'
+    } }
+  }
+
+]);
+
 /* ── g6-shared-river.js ── */
 /* PST Arcade — ticket registry. Each ticket is retrieval practice for one unit + phase.
    English-first; other languages carried inline per ticket (ticket.i18n[lang]). The engine
@@ -4930,6 +5424,992 @@ window.PST_TICKETS = (window.PST_TICKETS || []).concat([
         { before: '说出每个国家必须接受的', after: '，表明你已经把它想透彻了。', choices: ['取舍', '颜色', '词汇'], a: 0 }
       ],
       takeaway: '主张 + 证据 + 取舍 = 像一个真正能被托付这条河的利益相关者一样思考。'
+    } }
+  }
+
+]);
+
+/* ── g6-who-decides.js ── */
+/* PST Arcade — ticket registry. Each ticket is retrieval practice for one unit + phase.
+   English-first; other languages carried inline per ticket (ticket.i18n[lang]). The engine
+   (arcade.js) reads window.PST_TICKETS. Nothing is stored or sent. To add tickets, append objects
+   with the same shape: {id, grade, unit, unitTitle, phase, type, format, teks, strat, d, i18n}. */
+window.PST_TICKETS = (window.PST_TICKETS || []).concat([
+
+  /* ───────── Grade 6 · Who Decides? · SURFACE ───────── */
+  {
+    id: 'g6-who-decides-surface-entry', grade: 6, unit: 'who-decides',
+    unitTitle: "Who Decides? — Building a Government from Scratch", phase: 'surface', type: 'entry',
+    format: 'mcq', teks: '§113.18(c)(9), (c)(10), (c)(12)', strat: 'Retrieval practice', d: 0.54,
+    i18n: { en: {
+      title: 'Warm-up: government words',
+      seconds: 45,
+      questions: [
+        { q: 'The system a society uses to make and enforce its rules is a…', choices: ['government', 'citizen', 'stakeholder'], a: 0 },
+        { q: 'A government whose power has real limits it must obey is a…', choices: ['unlimited government', 'limited government', 'monarchy'], a: 1 },
+        { q: 'A government in which the people hold power, usually by voting, is a…', choices: ['democracy', 'monarchy', 'oligarchy'], a: 0 },
+        { q: 'The idea that everyone, even leaders, must follow the same laws is the…', choices: ['rule of law', 'constitution', 'republic'], a: 0 }
+      ],
+      takeaway: 'Know these four words and you can reason about who holds power for the rest of the unit.'
+    },
+    es: {
+      title: 'Calentamiento: palabras de gobierno',
+      seconds: 45,
+      questions: [
+        { q: 'El sistema que una sociedad usa para crear y hacer cumplir sus reglas es un…', choices: ['gobierno', 'ciudadano', 'parte interesada'], a: 0 },
+        { q: 'Un gobierno cuyo poder tiene límites reales que debe obedecer es un…', choices: ['gobierno ilimitado', 'gobierno limitado', 'monarquía'], a: 1 },
+        { q: 'Un gobierno en el que el pueblo tiene el poder, generalmente por voto, es una…', choices: ['democracia', 'monarquía', 'oligarquía'], a: 0 },
+        { q: 'La idea de que todos, incluso los líderes, deben cumplir las mismas leyes es el…', choices: ['estado de derecho', 'constitución', 'república'], a: 0 }
+      ],
+      takeaway: 'Domina estas cuatro palabras y podrás razonar sobre quién tiene el poder durante el resto de la unidad.'
+    },
+    vi: {
+      title: 'Khởi động: từ vựng về chính quyền',
+      seconds: 45,
+      questions: [
+        { q: 'Hệ thống mà một xã hội dùng để đặt ra và thực thi các quy tắc của mình là một…', choices: ['chính quyền', 'công dân', 'bên liên quan'], a: 0 },
+        { q: 'Một chính quyền mà quyền lực có những giới hạn thực sự phải tuân theo là một…', choices: ['chính quyền không giới hạn', 'chính quyền có giới hạn', 'chế độ quân chủ'], a: 1 },
+        { q: 'Một chính quyền trong đó người dân nắm quyền, thường bằng cách bỏ phiếu, là một…', choices: ['nền dân chủ', 'chế độ quân chủ', 'chế độ đầu sỏ'], a: 0 },
+        { q: 'Ý tưởng rằng mọi người, kể cả nhà lãnh đạo, đều phải tuân theo cùng những luật lệ là…', choices: ['pháp quyền', 'hiến pháp', 'nền cộng hòa'], a: 0 }
+      ],
+      takeaway: 'Nắm được bốn từ này là bạn có thể lập luận về việc ai nắm quyền trong suốt phần còn lại của đơn vị bài học.'
+    },
+    ar: {
+      title: 'تهيئة: كلمات الحكم',
+      seconds: 45,
+      questions: [
+        { q: 'النظام الذي يستخدمه المجتمع لوضع قواعده وإنفاذها هو…', choices: ['حكومة', 'مواطن', 'صاحب مصلحة'], a: 0 },
+        { q: 'الحكومة التي لسلطتها حدود حقيقية يجب أن تلتزم بها هي…', choices: ['حكومة غير محدودة', 'حكومة محدودة', 'ملكية'], a: 1 },
+        { q: 'الحكومة التي يملك فيها الشعب السلطة، عادةً عن طريق التصويت، هي…', choices: ['ديمقراطية', 'ملكية', 'حكم القلة'], a: 0 },
+        { q: 'الفكرة القائلة بأن الجميع، حتى القادة، يجب أن يتبعوا القوانين نفسها هي…', choices: ['سيادة القانون', 'دستور', 'جمهورية'], a: 0 }
+      ],
+      takeaway: 'أتقن هذه الكلمات الأربع وستتمكن من التفكير في من يملك السلطة طوال بقية الوحدة.'
+    },
+    hi: {
+      title: 'वार्म-अप: सरकार के शब्द',
+      seconds: 45,
+      questions: [
+        { q: 'वह व्यवस्था जिसे कोई समाज अपने नियम बनाने और लागू करने के लिए उपयोग करता है, वह है…', choices: ['सरकार', 'नागरिक', 'हितधारक'], a: 0 },
+        { q: 'वह सरकार जिसकी शक्ति की वास्तविक सीमाएँ हैं जिनका उसे पालन करना पड़ता है, वह है…', choices: ['असीमित सरकार', 'सीमित सरकार', 'राजतंत्र'], a: 1 },
+        { q: 'वह सरकार जिसमें जनता के पास शक्ति होती है, आमतौर पर मतदान द्वारा, वह है…', choices: ['लोकतंत्र', 'राजतंत्र', 'कुलीनतंत्र'], a: 0 },
+        { q: 'यह विचार कि सभी, यहाँ तक कि नेता भी, समान कानूनों का पालन करें, वह है…', choices: ['कानून का शासन', 'संविधान', 'गणराज्य'], a: 0 }
+      ],
+      takeaway: 'इन चार शब्दों को जान लें और आप शेष इकाई में इस पर तर्क कर सकेंगे कि शक्ति किसके पास है।'
+    },
+    ur: {
+      title: 'وارم اپ: حکومت کے الفاظ',
+      seconds: 45,
+      questions: [
+        { q: 'وہ نظام جسے کوئی معاشرہ اپنے قواعد بنانے اور نافذ کرنے کے لیے استعمال کرتا ہے، وہ ہے…', choices: ['حکومت', 'شہری', 'اسٹیک ہولڈر'], a: 0 },
+        { q: 'وہ حکومت جس کی طاقت کی حقیقی حدود ہوں جن کی اسے پابندی کرنی پڑے، وہ ہے…', choices: ['لامحدود حکومت', 'محدود حکومت', 'بادشاہت'], a: 1 },
+        { q: 'وہ حکومت جس میں عوام کے پاس طاقت ہو، عموماً ووٹ کے ذریعے، وہ ہے…', choices: ['جمہوریت', 'بادشاہت', 'چند سری حکومت'], a: 0 },
+        { q: 'یہ خیال کہ سب، حتیٰ کہ رہنما بھی، ایک ہی قوانین کی پیروی کریں، وہ ہے…', choices: ['قانون کی حکمرانی', 'آئین', 'جمہوریہ'], a: 0 }
+      ],
+      takeaway: 'ان چار الفاظ کو جان لیں تو آپ باقی اکائی میں اس پر استدلال کر سکیں گے کہ طاقت کس کے پاس ہے۔'
+    },
+    zh: {
+      title: '热身：政府词汇',
+      seconds: 45,
+      questions: [
+        { q: '一个社会用来制定和执行规则的体系称为…', choices: ['政府', '公民', '利益相关者'], a: 0 },
+        { q: '权力有必须遵守的真实限制的政府是…', choices: ['无限政府', '有限政府', '君主制'], a: 1 },
+        { q: '人民掌握权力、通常通过投票的政府是…', choices: ['民主制', '君主制', '寡头制'], a: 0 },
+        { q: '人人（包括领导者）都必须遵守同样法律的理念是…', choices: ['法治', '宪法', '共和制'], a: 0 }
+      ],
+      takeaway: '掌握这四个词，你就能在本单元其余部分里推理谁掌握权力。'
+    } }
+  },
+  {
+    id: 'g6-who-decides-surface-exit', grade: 6, unit: 'who-decides',
+    unitTitle: "Who Decides? — Building a Government from Scratch", phase: 'surface', type: 'exit',
+    format: 'match', teks: '§113.18(c)(9), (c)(10), (c)(12)', strat: 'Vocabulary & feedback', d: 0.62,
+    i18n: { en: {
+      title: 'Exit: match the word to its meaning',
+      pairs: [
+        ['limited government', 'a government whose power has real limits'],
+        ['democracy', 'a government in which the people hold power by voting'],
+        ['monarchy', 'a government led by a king or queen'],
+        ['rule of law', 'everyone, even leaders, must follow the same laws'],
+        ['constitution', "a society's highest written plan for governing itself"]
+      ],
+      takeaway: 'If you matched all five, you are ready to go deep. If not, revisit the word bank.'
+    },
+    es: {
+      title: 'Salida: relaciona la palabra con su significado',
+      pairs: [
+        ['gobierno limitado', 'un gobierno cuyo poder tiene límites reales'],
+        ['democracia', 'un gobierno en el que el pueblo tiene el poder por voto'],
+        ['monarquía', 'un gobierno encabezado por un rey o una reina'],
+        ['estado de derecho', 'todos, incluso los líderes, deben cumplir las mismas leyes'],
+        ['constitución', 'el plan escrito supremo de una sociedad para gobernarse']
+      ],
+      takeaway: 'Si relacionaste las cinco, estás listo para ir a lo profundo. Si no, repasa el banco de palabras.'
+    },
+    vi: {
+      title: 'Phiếu ra: ghép từ với nghĩa của nó',
+      pairs: [
+        ['chính quyền có giới hạn', 'một chính quyền mà quyền lực có những giới hạn thực sự'],
+        ['nền dân chủ', 'một chính quyền trong đó người dân nắm quyền bằng bỏ phiếu'],
+        ['chế độ quân chủ', 'một chính quyền do vua hoặc nữ hoàng đứng đầu'],
+        ['pháp quyền', 'mọi người, kể cả nhà lãnh đạo, đều phải tuân theo cùng luật lệ'],
+        ['hiến pháp', 'bản kế hoạch thành văn cao nhất của một xã hội để tự quản trị']
+      ],
+      takeaway: 'Nếu bạn ghép đúng cả năm, bạn đã sẵn sàng học chuyên sâu. Nếu chưa, hãy xem lại kho từ vựng.'
+    },
+    ar: {
+      title: 'الخروج: طابِق الكلمة مع معناها',
+      pairs: [
+        ['حكومة محدودة', 'حكومة لسلطتها حدود حقيقية'],
+        ['ديمقراطية', 'حكومة يملك فيها الشعب السلطة عن طريق التصويت'],
+        ['ملكية', 'حكومة يقودها ملك أو ملكة'],
+        ['سيادة القانون', 'الجميع، حتى القادة، يجب أن يتبعوا القوانين نفسها'],
+        ['دستور', 'أعلى خطة مكتوبة لمجتمع كي يحكم نفسه']
+      ],
+      takeaway: 'إذا طابقت الخمس جميعًا، فأنت مستعد للتعمّق. وإلا، فراجِع بنك الكلمات.'
+    },
+    hi: {
+      title: 'निकास: शब्द को उसके अर्थ से मिलाएँ',
+      pairs: [
+        ['सीमित सरकार', 'एक सरकार जिसकी शक्ति की वास्तविक सीमाएँ हैं'],
+        ['लोकतंत्र', 'एक सरकार जिसमें जनता मतदान द्वारा शक्ति रखती है'],
+        ['राजतंत्र', 'एक सरकार जिसका नेतृत्व राजा या रानी करते हैं'],
+        ['कानून का शासन', 'सभी, यहाँ तक कि नेता भी, समान कानूनों का पालन करें'],
+        ['संविधान', 'खुद को शासित करने के लिए किसी समाज की सर्वोच्च लिखित योजना']
+      ],
+      takeaway: 'यदि आपने पाँचों मिला दिए, तो आप गहन में जाने के लिए तैयार हैं। यदि नहीं, तो शब्द-बैंक फिर देखें।'
+    },
+    ur: {
+      title: 'اخراج: لفظ کو اس کے مطلب سے ملائیں',
+      pairs: [
+        ['محدود حکومت', 'ایک حکومت جس کی طاقت کی حقیقی حدود ہیں'],
+        ['جمہوریت', 'ایک حکومت جس میں عوام ووٹ کے ذریعے طاقت رکھتے ہیں'],
+        ['بادشاہت', 'ایک حکومت جس کی قیادت بادشاہ یا ملکہ کرتے ہیں'],
+        ['قانون کی حکمرانی', 'سب، حتیٰ کہ رہنما بھی، ایک ہی قوانین کی پیروی کریں'],
+        ['آئین', 'خود پر حکومت کرنے کے لیے کسی معاشرے کا اعلیٰ ترین تحریری منصوبہ']
+      ],
+      takeaway: 'اگر آپ نے پانچوں ملا دیے تو آپ گہرائی میں جانے کو تیار ہیں۔ ورنہ لفظی بینک دوبارہ دیکھیں۔'
+    },
+    zh: {
+      title: '离场：把词语与其含义配对',
+      pairs: [
+        ['有限政府', '一个权力有真实限制的政府'],
+        ['民主制', '一个由人民通过投票掌权的政府'],
+        ['君主制', '一个由国王或女王领导的政府'],
+        ['法治', '人人（包括领导者）都必须遵守同样的法律'],
+        ['宪法', '一个社会用以自我治理的最高成文规划']
+      ],
+      takeaway: '如果五个都配对正确，你就可以进入深层学习了。若没有，请重温词汇表。'
+    } }
+  },
+
+  /* ───────── Grade 6 · Who Decides? · DEEP ───────── */
+  {
+    id: 'g6-who-decides-deep-entry', grade: 6, unit: 'who-decides',
+    unitTitle: "Who Decides? — Building a Government from Scratch", phase: 'deep', type: 'entry',
+    format: 'cloze', teks: '§113.18(c)(9), (c)(10), (c)(13), (c)(14)', strat: 'Retrieval practice', d: 0.54,
+    i18n: { en: {
+      title: 'Warm-up: power & trade-offs',
+      items: [
+        { before: 'A democracy gives many people a voice, but its trade-off is that decisions can be', after: '.', choices: ['fast', 'slow', 'secret'], a: 1 },
+        { before: 'When one leader holds unlimited power, orders are fast and clear, but', after: 'are easily lost.', choices: ['rights', 'roads', 'maps'], a: 0 },
+        { before: 'On the spectrum of government, a constitutional monarchy sits toward the', after: 'side because a written law limits the ruler.', choices: ['limited', 'unlimited', 'lawless'], a: 0 }
+      ],
+      takeaway: 'Every government type trades one value for another — always name what it gives AND what it costs.'
+    },
+    es: {
+      title: 'Calentamiento: poder y concesiones',
+      items: [
+        { before: 'Una democracia da voz a muchas personas, pero su concesión es que las decisiones pueden ser', after: '.', choices: ['rápidas', 'lentas', 'secretas'], a: 1 },
+        { before: 'Cuando un líder tiene poder ilimitado, las órdenes son rápidas y claras, pero los', after: 'se pierden fácilmente.', choices: ['derechos', 'caminos', 'mapas'], a: 0 },
+        { before: 'En el espectro de gobierno, una monarquía constitucional se ubica hacia el lado', after: 'porque una ley escrita limita al gobernante.', choices: ['limitado', 'ilimitado', 'sin ley'], a: 0 }
+      ],
+      takeaway: 'Todo tipo de gobierno cambia un valor por otro: nombra siempre lo que da Y lo que cuesta.'
+    },
+    vi: {
+      title: 'Khởi động: quyền lực & sự đánh đổi',
+      items: [
+        { before: 'Nền dân chủ trao tiếng nói cho nhiều người, nhưng cái giá của nó là các quyết định có thể', after: '.', choices: ['nhanh', 'chậm', 'bí mật'], a: 1 },
+        { before: 'Khi một nhà lãnh đạo nắm quyền lực không giới hạn, các mệnh lệnh nhanh và rõ ràng, nhưng', after: 'dễ bị mất.', choices: ['các quyền', 'các con đường', 'các tấm bản đồ'], a: 0 },
+        { before: 'Trên phổ chính quyền, chế độ quân chủ lập hiến nằm về phía', after: 'vì một luật thành văn giới hạn nhà cai trị.', choices: ['có giới hạn', 'không giới hạn', 'vô luật'], a: 0 }
+      ],
+      takeaway: 'Mỗi loại chính quyền đánh đổi giá trị này lấy giá trị khác — luôn nêu ra cái nó cho VÀ cái nó phải trả giá.'
+    },
+    ar: {
+      title: 'تهيئة: السلطة والمفاضلات',
+      items: [
+        { before: 'الديمقراطية تمنح صوتًا لكثير من الناس، لكن مفاضلتها أن القرارات قد تكون', after: '.', choices: ['سريعة', 'بطيئة', 'سرّية'], a: 1 },
+        { before: 'عندما يملك قائد واحد سلطة غير محدودة، تكون الأوامر سريعة وواضحة، لكن', after: 'تُفقد بسهولة.', choices: ['الحقوق', 'الطرق', 'الخرائط'], a: 0 },
+        { before: 'على طيف الحكم، تقع الملكية الدستورية نحو الجانب', after: 'لأن قانونًا مكتوبًا يقيّد الحاكم.', choices: ['المحدود', 'غير المحدود', 'الفوضوي'], a: 0 }
+      ],
+      takeaway: 'كل نوع من الحكم يقايض قيمة بأخرى — سمِّ دائمًا ما يمنحه وما يكلّفه.'
+    },
+    hi: {
+      title: 'वार्म-अप: शक्ति और समझौते',
+      items: [
+        { before: 'लोकतंत्र कई लोगों को आवाज़ देता है, लेकिन इसका समझौता यह है कि निर्णय हो सकते हैं', after: '।', choices: ['तेज़', 'धीमे', 'गुप्त'], a: 1 },
+        { before: 'जब एक नेता के पास असीमित शक्ति होती है, तो आदेश तेज़ और स्पष्ट होते हैं, लेकिन', after: 'आसानी से खो जाते हैं।', choices: ['अधिकार', 'सड़कें', 'नक्शे'], a: 0 },
+        { before: 'सरकार के स्पेक्ट्रम पर, संवैधानिक राजतंत्र', after: 'ओर स्थित है क्योंकि एक लिखित कानून शासक को सीमित करता है।', choices: ['सीमित', 'असीमित', 'कानूनहीन'], a: 0 }
+      ],
+      takeaway: 'हर सरकार का प्रकार एक मूल्य के बदले दूसरा देता है — हमेशा बताएँ कि वह क्या देती है और क्या लागत लेती है।'
+    },
+    ur: {
+      title: 'وارم اپ: طاقت اور سمجھوتے',
+      items: [
+        { before: 'جمہوریت بہت سے لوگوں کو آواز دیتی ہے، لیکن اس کا سمجھوتہ یہ ہے کہ فیصلے ہو سکتے ہیں', after: '۔', choices: ['تیز', 'سست', 'خفیہ'], a: 1 },
+        { before: 'جب ایک رہنما کے پاس لامحدود طاقت ہو، تو احکامات تیز اور واضح ہوتے ہیں، لیکن', after: 'آسانی سے کھو جاتے ہیں۔', choices: ['حقوق', 'سڑکیں', 'نقشے'], a: 0 },
+        { before: 'حکومت کے دائرے پر، آئینی بادشاہت', after: 'طرف واقع ہے کیونکہ ایک تحریری قانون حکمران کو محدود کرتا ہے۔', choices: ['محدود', 'لامحدود', 'بے قانون'], a: 0 }
+      ],
+      takeaway: 'حکومت کی ہر قسم ایک قدر کے بدلے دوسری دیتی ہے — ہمیشہ بتائیں کہ وہ کیا دیتی ہے اور کیا قیمت لیتی ہے۔'
+    },
+    zh: {
+      title: '热身：权力与取舍',
+      items: [
+        { before: '民主制让许多人有发言权，但它的取舍是决策可能', after: '。', choices: ['快', '慢', '保密'], a: 1 },
+        { before: '当一位领导者掌握无限权力时，命令快速而明确，但', after: '容易丧失。', choices: ['权利', '道路', '地图'], a: 0 },
+        { before: '在政府的谱系上，君主立宪制偏向', after: '一侧，因为一部成文法律限制着统治者。', choices: ['有限', '无限', '无法'], a: 0 }
+      ],
+      takeaway: '每种政府类型都是以一种价值换取另一种——总要说出它给予什么以及付出什么代价。'
+    } }
+  },
+  {
+    id: 'g6-who-decides-deep-exit', grade: 6, unit: 'who-decides',
+    unitTitle: "Who Decides? — Building a Government from Scratch", phase: 'deep', type: 'exit',
+    format: 'sort', teks: '§113.18(c)(9), (c)(10)', strat: 'Concept organization', d: 0.64,
+    i18n: { en: {
+      title: 'Exit: sort by how power is limited',
+      cats: ['Limited government', 'Unlimited government'],
+      items: [
+        { t: 'Leaders must obey a written constitution', c: 0 },
+        { t: 'Citizens can vote leaders out', c: 0 },
+        { t: 'Rights are protected by law', c: 0 },
+        { t: 'One leader can change the rules alone', c: 1 },
+        { t: 'No law can stop the ruler', c: 1 },
+        { t: "Citizens' rights can be taken away at will", c: 1 }
+      ],
+      takeaway: 'Sorting features into limited vs unlimited is the concept map behind judging any government.'
+    },
+    es: {
+      title: 'Salida: clasifica según cómo se limita el poder',
+      cats: ['Gobierno limitado', 'Gobierno ilimitado'],
+      items: [
+        { t: 'Los líderes deben obedecer una constitución escrita', c: 0 },
+        { t: 'Los ciudadanos pueden votar para sacar a los líderes', c: 0 },
+        { t: 'Los derechos están protegidos por la ley', c: 0 },
+        { t: 'Un solo líder puede cambiar las reglas por sí mismo', c: 1 },
+        { t: 'Ninguna ley puede detener al gobernante', c: 1 },
+        { t: 'Los derechos de los ciudadanos pueden quitarse a voluntad', c: 1 }
+      ],
+      takeaway: 'Clasificar rasgos en limitado vs ilimitado es el mapa conceptual para juzgar cualquier gobierno.'
+    },
+    vi: {
+      title: 'Phiếu ra: phân loại theo cách quyền lực bị giới hạn',
+      cats: ['Chính quyền có giới hạn', 'Chính quyền không giới hạn'],
+      items: [
+        { t: 'Nhà lãnh đạo phải tuân theo một hiến pháp thành văn', c: 0 },
+        { t: 'Công dân có thể bỏ phiếu bãi nhiệm lãnh đạo', c: 0 },
+        { t: 'Các quyền được luật pháp bảo vệ', c: 0 },
+        { t: 'Một nhà lãnh đạo có thể tự mình thay đổi luật lệ', c: 1 },
+        { t: 'Không luật nào có thể ngăn nhà cai trị', c: 1 },
+        { t: 'Quyền của công dân có thể bị tước bỏ tùy ý', c: 1 }
+      ],
+      takeaway: 'Phân loại đặc điểm thành có giới hạn và không giới hạn là sơ đồ khái niệm để đánh giá bất kỳ chính quyền nào.'
+    },
+    ar: {
+      title: 'الخروج: صنّف حسب كيفية تقييد السلطة',
+      cats: ['حكومة محدودة', 'حكومة غير محدودة'],
+      items: [
+        { t: 'يجب على القادة الالتزام بدستور مكتوب', c: 0 },
+        { t: 'يستطيع المواطنون التصويت لإقالة القادة', c: 0 },
+        { t: 'الحقوق محمية بالقانون', c: 0 },
+        { t: 'يستطيع قائد واحد تغيير القواعد بمفرده', c: 1 },
+        { t: 'لا قانون يستطيع إيقاف الحاكم', c: 1 },
+        { t: 'يمكن سلب حقوق المواطنين حسب الهوى', c: 1 }
+      ],
+      takeaway: 'تصنيف السمات إلى محدودة مقابل غير محدودة هو الخريطة المفاهيمية للحكم على أي حكومة.'
+    },
+    hi: {
+      title: 'निकास: शक्ति कैसे सीमित है, उसके अनुसार छाँटें',
+      cats: ['सीमित सरकार', 'असीमित सरकार'],
+      items: [
+        { t: 'नेताओं को एक लिखित संविधान का पालन करना चाहिए', c: 0 },
+        { t: 'नागरिक मतदान करके नेताओं को हटा सकते हैं', c: 0 },
+        { t: 'अधिकार कानून द्वारा संरक्षित हैं', c: 0 },
+        { t: 'एक अकेला नेता अकेले ही नियम बदल सकता है', c: 1 },
+        { t: 'कोई कानून शासक को रोक नहीं सकता', c: 1 },
+        { t: 'नागरिकों के अधिकार मनमर्ज़ी से छीने जा सकते हैं', c: 1 }
+      ],
+      takeaway: 'विशेषताओं को सीमित बनाम असीमित में छाँटना ही किसी भी सरकार को परखने का अवधारणा मानचित्र है।'
+    },
+    ur: {
+      title: 'اخراج: طاقت کیسے محدود ہے، اس کے مطابق چھانٹیں',
+      cats: ['محدود حکومت', 'لامحدود حکومت'],
+      items: [
+        { t: 'رہنماؤں کو ایک تحریری آئین کی پابندی کرنی چاہیے', c: 0 },
+        { t: 'شہری ووٹ دے کر رہنماؤں کو ہٹا سکتے ہیں', c: 0 },
+        { t: 'حقوق قانون کے ذریعے محفوظ ہیں', c: 0 },
+        { t: 'ایک اکیلا رہنما تنہا قواعد بدل سکتا ہے', c: 1 },
+        { t: 'کوئی قانون حکمران کو نہیں روک سکتا', c: 1 },
+        { t: 'شہریوں کے حقوق مرضی سے چھینے جا سکتے ہیں', c: 1 }
+      ],
+      takeaway: 'خصوصیات کو محدود بمقابلہ لامحدود میں چھانٹنا ہی کسی بھی حکومت کو پرکھنے کا تصوراتی نقشہ ہے۔'
+    },
+    zh: {
+      title: '离场：按权力如何被限制来分类',
+      cats: ['有限政府', '无限政府'],
+      items: [
+        { t: '领导者必须遵守一部成文宪法', c: 0 },
+        { t: '公民可以投票罢免领导者', c: 0 },
+        { t: '权利受法律保护', c: 0 },
+        { t: '一位领导者可以独自更改规则', c: 1 },
+        { t: '没有法律能约束统治者', c: 1 },
+        { t: '公民的权利可以被随意剥夺', c: 1 }
+      ],
+      takeaway: '把特征分成有限与无限，就是评判任何政府背后的概念图。'
+    } }
+  },
+
+  /* ───────── Grade 6 · Who Decides? · TRANSFER ───────── */
+  {
+    id: 'g6-who-decides-transfer-entry', grade: 6, unit: 'who-decides',
+    unitTitle: "Who Decides? — Building a Government from Scratch", phase: 'transfer', type: 'entry',
+    format: 'mcq', teks: '§113.18(c)(22)(B)', strat: 'Retrieval practice', d: 0.54,
+    i18n: { en: {
+      title: 'Warm-up: the problem-solving steps',
+      seconds: 45,
+      questions: [
+        { q: 'The FIRST thing a problem-solver does is…', choices: ['pick a solution', 'define the problem', 'defend a claim'], a: 1 },
+        { q: 'Before choosing, a good problem-solver…', choices: ['gathers valid information & weighs options', 'guesses quickly', 'ignores other views'], a: 0 },
+        { q: 'A strong recommendation for a government is backed by…', choices: ['a loud voice', 'evidence + trade-offs', 'only feelings'], a: 1 },
+        { q: 'After choosing a solution, you should…', choices: ['forget it', 'evaluate how well it worked', 'hide the trade-offs'], a: 1 }
+      ],
+      takeaway: 'Define → gather → weigh → decide → defend → evaluate. That is the whole transfer move.'
+    },
+    es: {
+      title: 'Calentamiento: los pasos para resolver problemas',
+      seconds: 45,
+      questions: [
+        { q: 'Lo PRIMERO que hace quien resuelve problemas es…', choices: ['elegir una solución', 'definir el problema', 'defender una afirmación'], a: 1 },
+        { q: 'Antes de elegir, quien resuelve bien problemas…', choices: ['reúne información válida y sopesa opciones', 'adivina rápido', 'ignora otras opiniones'], a: 0 },
+        { q: 'Una recomendación sólida de gobierno se respalda con…', choices: ['una voz fuerte', 'evidencia + concesiones', 'solo sentimientos'], a: 1 },
+        { q: 'Después de elegir una solución, deberías…', choices: ['olvidarla', 'evaluar qué tan bien funcionó', 'ocultar las concesiones'], a: 1 }
+      ],
+      takeaway: 'Definir → reunir → sopesar → decidir → defender → evaluar. Ese es todo el movimiento de transferencia.'
+    },
+    vi: {
+      title: 'Khởi động: các bước giải quyết vấn đề',
+      seconds: 45,
+      questions: [
+        { q: 'Điều ĐẦU TIÊN người giải quyết vấn đề làm là…', choices: ['chọn một giải pháp', 'xác định vấn đề', 'bảo vệ một luận điểm'], a: 1 },
+        { q: 'Trước khi chọn, người giải quyết vấn đề giỏi sẽ…', choices: ['thu thập thông tin hợp lệ & cân nhắc các phương án', 'đoán nhanh', 'bỏ qua quan điểm khác'], a: 0 },
+        { q: 'Một đề xuất vững chắc về chính quyền được củng cố bằng…', choices: ['một giọng nói to', 'bằng chứng + sự đánh đổi', 'chỉ cảm xúc'], a: 1 },
+        { q: 'Sau khi chọn một giải pháp, bạn nên…', choices: ['quên nó đi', 'đánh giá xem nó hiệu quả ra sao', 'giấu đi các đánh đổi'], a: 1 }
+      ],
+      takeaway: 'Xác định → thu thập → cân nhắc → quyết định → bảo vệ → đánh giá. Đó chính là toàn bộ bước chuyển giao.'
+    },
+    ar: {
+      title: 'تهيئة: خطوات حل المشكلة',
+      seconds: 45,
+      questions: [
+        { q: 'أول ما يفعله حلّال المشكلات هو…', choices: ['اختيار حل', 'تحديد المشكلة', 'الدفاع عن ادعاء'], a: 1 },
+        { q: 'قبل الاختيار، يقوم حلّال المشكلات الجيد بـ…', choices: ['جمع معلومات صحيحة وموازنة الخيارات', 'التخمين بسرعة', 'تجاهل الآراء الأخرى'], a: 0 },
+        { q: 'التوصية القوية بشأن الحكومة تُدعم بـ…', choices: ['صوت عالٍ', 'دليل + مفاضلات', 'المشاعر فقط'], a: 1 },
+        { q: 'بعد اختيار حل، ينبغي أن…', choices: ['تنساه', 'تقيّم مدى نجاحه', 'تخفي المفاضلات'], a: 1 }
+      ],
+      takeaway: 'حدِّد ← اجمع ← وازِن ← قرِّر ← دافِع ← قيِّم. تلك هي حركة النقل بأكملها.'
+    },
+    hi: {
+      title: 'वार्म-अप: समस्या-समाधान के चरण',
+      seconds: 45,
+      questions: [
+        { q: 'समस्या हल करने वाला सबसे पहले जो करता है, वह है…', choices: ['एक समाधान चुनना', 'समस्या को परिभाषित करना', 'एक दावे का बचाव करना'], a: 1 },
+        { q: 'चुनने से पहले, एक अच्छा समस्या-समाधानकर्ता…', choices: ['वैध जानकारी जुटाता है और विकल्पों को तौलता है', 'जल्दी से अनुमान लगाता है', 'अन्य विचारों को अनदेखा करता है'], a: 0 },
+        { q: 'सरकार के लिए एक मजबूत सिफ़ारिश का आधार होता है…', choices: ['एक ऊँची आवाज़', 'साक्ष्य + समझौते', 'केवल भावनाएँ'], a: 1 },
+        { q: 'समाधान चुनने के बाद, आपको चाहिए…', choices: ['उसे भूल जाना', 'यह आँकना कि वह कितना अच्छा रहा', 'समझौतों को छिपाना'], a: 1 }
+      ],
+      takeaway: 'परिभाषित करें → जुटाएँ → तौलें → निर्णय लें → बचाव करें → आँकें। यही पूरी अंतरण चाल है।'
+    },
+    ur: {
+      title: 'وارم اپ: مسئلہ حل کرنے کے مراحل',
+      seconds: 45,
+      questions: [
+        { q: 'مسئلہ حل کرنے والا سب سے پہلے جو کرتا ہے، وہ ہے…', choices: ['ایک حل چننا', 'مسئلے کو متعین کرنا', 'ایک دعوے کا دفاع کرنا'], a: 1 },
+        { q: 'چننے سے پہلے، ایک اچھا مسئلہ حل کرنے والا…', choices: ['درست معلومات جمع کرتا اور اختیارات تولتا ہے', 'جلدی سے اندازہ لگاتا ہے', 'دوسری آراء کو نظرانداز کرتا ہے'], a: 0 },
+        { q: 'حکومت کے لیے ایک مضبوط سفارش کی بنیاد ہوتی ہے…', choices: ['ایک بلند آواز', 'ثبوت + سمجھوتے', 'صرف جذبات'], a: 1 },
+        { q: 'حل چننے کے بعد، آپ کو چاہیے…', choices: ['اسے بھول جانا', 'یہ جانچنا کہ وہ کتنا کارگر رہا', 'سمجھوتوں کو چھپانا'], a: 1 }
+      ],
+      takeaway: 'متعین کریں ← جمع کریں ← تولیں ← فیصلہ کریں ← دفاع کریں ← جانچیں۔ یہی پوری منتقلی کی چال ہے۔'
+    },
+    zh: {
+      title: '热身：解决问题的步骤',
+      seconds: 45,
+      questions: [
+        { q: '解决问题者首先要做的是…', choices: ['挑选一个方案', '界定问题', '为一个主张辩护'], a: 1 },
+        { q: '在做出选择之前，优秀的解决问题者会…', choices: ['收集有效信息并权衡各种方案', '快速猜测', '无视他人的观点'], a: 0 },
+        { q: '一份有力的政府建议背后有…', choices: ['大嗓门', '证据 + 取舍', '只有感受'], a: 1 },
+        { q: '选定方案之后，你应当…', choices: ['把它忘掉', '评估它的效果如何', '隐藏其中的取舍'], a: 1 }
+      ],
+      takeaway: '界定 → 收集 → 权衡 → 决定 → 辩护 → 评估。这就是整个迁移动作。'
+    } }
+  },
+  {
+    id: 'g6-who-decides-transfer-exit', grade: 6, unit: 'who-decides',
+    unitTitle: "Who Decides? — Building a Government from Scratch", phase: 'transfer', type: 'exit',
+    format: 'cloze', teks: '§113.18(c)(22)(B)', strat: 'Feedback', d: 0.62,
+    i18n: { en: {
+      title: 'Exit: defend your government',
+      items: [
+        { before: 'A recommendation for who should hold power without', after: 'is just an opinion.', choices: ['evidence', 'a title', 'a map'], a: 0 },
+        { before: 'Every government structure asks a society to accept some', after: '— name them honestly.', choices: ['trade-offs', 'colors', 'holidays'], a: 0 },
+        { before: 'After the founders decide, they must', after: 'how well the government protects rights and keeps order.', choices: ['evaluate', 'forget', 'hide'], a: 0 }
+      ],
+      takeaway: 'Evidence + trade-offs + evaluation = deciding like a founder who has to live with the choice.'
+    },
+    es: {
+      title: 'Salida: defiende tu gobierno',
+      items: [
+        { before: 'Una recomendación sobre quién debe tener el poder sin', after: 'es solo una opinión.', choices: ['evidencia', 'un título', 'un mapa'], a: 0 },
+        { before: 'Toda estructura de gobierno pide a una sociedad aceptar algunas', after: '— nómbralas con honestidad.', choices: ['concesiones', 'colores', 'fiestas'], a: 0 },
+        { before: 'Después de que los fundadores deciden, deben', after: 'qué tan bien el gobierno protege los derechos y mantiene el orden.', choices: ['evaluar', 'olvidar', 'ocultar'], a: 0 }
+      ],
+      takeaway: 'Evidencia + concesiones + evaluación = decidir como un fundador que tendrá que vivir con la elección.'
+    },
+    vi: {
+      title: 'Phiếu ra: bảo vệ chính quyền của bạn',
+      items: [
+        { before: 'Một đề xuất về việc ai nên nắm quyền mà không có', after: 'thì chỉ là một ý kiến.', choices: ['bằng chứng', 'một tiêu đề', 'một tấm bản đồ'], a: 0 },
+        { before: 'Mọi cấu trúc chính quyền đều đòi hỏi một xã hội chấp nhận vài', after: '— hãy nêu chúng một cách trung thực.', choices: ['sự đánh đổi', 'màu sắc', 'ngày lễ'], a: 0 },
+        { before: 'Sau khi các nhà sáng lập quyết định, họ phải', after: 'xem chính quyền bảo vệ các quyền và giữ trật tự tốt đến đâu.', choices: ['đánh giá', 'quên đi', 'che giấu'], a: 0 }
+      ],
+      takeaway: 'Bằng chứng + sự đánh đổi + đánh giá = quyết định như một nhà sáng lập phải sống với lựa chọn của mình.'
+    },
+    ar: {
+      title: 'الخروج: دافِع عن حكومتك',
+      items: [
+        { before: 'التوصية بشأن من يملك السلطة بلا', after: 'ما هي إلا رأي.', choices: ['دليل', 'عنوان', 'خريطة'], a: 0 },
+        { before: 'كل بنية حكم تطلب من المجتمع قبول بعض', after: '— سمِّها بصدق.', choices: ['المفاضلات', 'الألوان', 'الأعياد'], a: 0 },
+        { before: 'بعد أن يقرر المؤسسون، عليهم أن', after: 'مدى نجاح الحكومة في حماية الحقوق وحفظ النظام.', choices: ['يقيّموا', 'ينسوا', 'يخفوا'], a: 0 }
+      ],
+      takeaway: 'دليل + مفاضلات + تقييم = أن تقرر كمؤسس عليه أن يعيش مع خياره.'
+    },
+    hi: {
+      title: 'निकास: अपनी सरकार का बचाव करें',
+      items: [
+        { before: 'शक्ति किसके पास हो, इसकी सिफ़ारिश बिना', after: 'के महज़ एक राय है।', choices: ['साक्ष्य', 'एक शीर्षक', 'एक नक्शा'], a: 0 },
+        { before: 'हर सरकारी ढाँचा किसी समाज से कुछ', after: 'स्वीकारने को कहता है — उन्हें ईमानदारी से बताएँ।', choices: ['समझौते', 'रंग', 'त्योहार'], a: 0 },
+        { before: 'संस्थापकों के निर्णय के बाद, उन्हें', after: 'करना होगा कि सरकार अधिकारों की रक्षा और व्यवस्था कितनी अच्छी रखती है।', choices: ['मूल्यांकन', 'भूलना', 'छिपाना'], a: 0 }
+      ],
+      takeaway: 'साक्ष्य + समझौते + मूल्यांकन = एक संस्थापक की तरह निर्णय लेना जिसे उस चुनाव के साथ जीना है।'
+    },
+    ur: {
+      title: 'اخراج: اپنی حکومت کا دفاع کریں',
+      items: [
+        { before: 'طاقت کس کے پاس ہو، اس کی سفارش بغیر', after: 'کے محض ایک رائے ہے۔', choices: ['ثبوت', 'ایک عنوان', 'ایک نقشہ'], a: 0 },
+        { before: 'حکومت کا ہر ڈھانچہ کسی معاشرے سے کچھ', after: 'قبول کرنے کو کہتا ہے — انہیں دیانتداری سے بتائیں۔', choices: ['سمجھوتے', 'رنگ', 'تہوار'], a: 0 },
+        { before: 'بانیوں کے فیصلے کے بعد، انہیں', after: 'کرنا ہوگا کہ حکومت حقوق کی حفاظت اور نظم کتنا اچھا رکھتی ہے۔', choices: ['جائزہ', 'بھولنا', 'چھپانا'], a: 0 }
+      ],
+      takeaway: 'ثبوت + سمجھوتے + جائزہ = ایک بانی کی طرح فیصلہ کرنا جسے اس انتخاب کے ساتھ جینا ہے۔'
+    },
+    zh: {
+      title: '离场：为你的政府辩护',
+      items: [
+        { before: '关于谁应掌权的建议，若没有', after: '，只是一种意见。', choices: ['证据', '一个标题', '一张地图'], a: 0 },
+        { before: '每一种政府架构都要求社会接受一些', after: '——诚实地把它们说出来。', choices: ['取舍', '颜色', '节日'], a: 0 },
+        { before: '在缔造者做出决定之后，他们必须', after: '政府在保护权利和维持秩序方面做得如何。', choices: ['评估', '遗忘', '隐藏'], a: 0 }
+      ],
+      takeaway: '证据 + 取舍 + 评估 = 像一位必须承担选择后果的缔造者那样决策。'
+    } }
+  }
+
+]);
+
+/* ── g7-spindletop.js ── */
+/* PST Arcade — ticket registry. Each ticket is retrieval practice for one unit + phase.
+   English-first; other languages carried inline per ticket (ticket.i18n[lang]). The engine
+   (arcade.js) reads window.PST_TICKETS. Nothing is stored or sent. To add tickets, append objects
+   with the same shape: {id, grade, unit, unitTitle, phase, type, format, teks, strat, d, i18n}. */
+window.PST_TICKETS = (window.PST_TICKETS || []).concat([
+
+  /* ───────── Grade 7 · Spindletop 1901 · SURFACE ───────── */
+  {
+    id: 'g7-spindletop-surface-entry', grade: 7, unit: 'spindletop',
+    unitTitle: 'Spindletop, 1901 — When Oil Changed Everything', phase: 'surface', type: 'entry',
+    format: 'mcq', teks: '§113.19(c)(11)', strat: 'Retrieval practice', d: 0.54,
+    i18n: { en: {
+      title: 'Warm-up: oil-boom words',
+      seconds: 45,
+      questions: [
+        { q: 'An economy built mainly on farming and ranching is…', choices: ['agrarian', 'industrial', 'urban'], a: 0 },
+        { q: 'A town that grows very fast because of a sudden chance to get rich is a…', choices: ['refinery', 'boomtown', 'derrick'], a: 1 },
+        { q: 'A well where oil shoots out of the ground under its own pressure is a…', choices: ['gusher', 'quota', 'stakeholder'], a: 0 },
+        { q: 'Anyone affected by a decision or with something at stake is a…', choices: ['speculator', 'refiner', 'stakeholder'], a: 2 }
+      ],
+      takeaway: 'Know these four words and the rest of the Spindletop unit reads much easier.'
+    },
+    es: {
+      title: 'Calentamiento: palabras del auge petrolero',
+      seconds: 45,
+      questions: [
+        { q: 'Una economía basada sobre todo en la agricultura y la ganadería es…', choices: ['agraria', 'industrial', 'urbana'], a: 0 },
+        { q: 'Un pueblo que crece muy rápido por una repentina oportunidad de hacerse rico es un…', choices: ['refinería', 'pueblo en auge', 'torre de perforación'], a: 1 },
+        { q: 'Un pozo donde el petróleo sale disparado del suelo por su propia presión es un…', choices: ['chorro de petróleo', 'cuota', 'parte interesada'], a: 0 },
+        { q: 'Cualquiera afectado por una decisión o con algo en juego es un…', choices: ['especulador', 'refinador', 'parte interesada'], a: 2 }
+      ],
+      takeaway: 'Domina estas cuatro palabras y el resto de la unidad de Spindletop se leerá mucho más fácil.'
+    },
+    vi: {
+      title: 'Khởi động: từ vựng về cơn sốt dầu',
+      seconds: 45,
+      questions: [
+        { q: 'Nền kinh tế chủ yếu dựa vào trồng trọt và chăn nuôi là…', choices: ['nông nghiệp', 'công nghiệp', 'đô thị'], a: 0 },
+        { q: 'Một thị trấn phát triển rất nhanh nhờ cơ hội làm giàu bất ngờ là một…', choices: ['nhà máy lọc dầu', 'thị trấn bùng nổ', 'giàn khoan'], a: 1 },
+        { q: 'Một giếng nơi dầu phun lên khỏi mặt đất nhờ áp suất của chính nó là một…', choices: ['giếng phun dầu', 'hạn ngạch', 'bên liên quan'], a: 0 },
+        { q: 'Bất kỳ ai bị ảnh hưởng bởi một quyết định hoặc có điều gì đó liên quan là một…', choices: ['nhà đầu cơ', 'người lọc dầu', 'bên liên quan'], a: 2 }
+      ],
+      takeaway: 'Nắm được bốn từ này thì phần còn lại của đơn vị Spindletop sẽ dễ đọc hơn nhiều.'
+    },
+    ar: {
+      title: 'تهيئة: كلمات طفرة النفط',
+      seconds: 45,
+      questions: [
+        { q: 'الاقتصاد القائم أساسًا على الزراعة وتربية الماشية هو اقتصاد…', choices: ['زراعي', 'صناعي', 'حضري'], a: 0 },
+        { q: 'البلدة التي تنمو بسرعة كبيرة بسبب فرصة مفاجئة للثراء هي…', choices: ['مصفاة', 'بلدة مزدهرة', 'برج حفر'], a: 1 },
+        { q: 'البئر الذي يندفع منه النفط من الأرض بضغطه الذاتي هو…', choices: ['نافورة نفط', 'حصة', 'صاحب مصلحة'], a: 0 },
+        { q: 'أي شخص يتأثر بقرار أو لديه شيء على المحك هو…', choices: ['مضارب', 'مُكرِّر', 'صاحب مصلحة'], a: 2 }
+      ],
+      takeaway: 'أتقن هذه الكلمات الأربع وستقرأ بقية وحدة سبيندلتوب بسهولة أكبر بكثير.'
+    },
+    hi: {
+      title: 'वार्म-अप: तेल-उछाल के शब्द',
+      seconds: 45,
+      questions: [
+        { q: 'मुख्य रूप से खेती और पशुपालन पर टिकी अर्थव्यवस्था है…', choices: ['कृषि-प्रधान', 'औद्योगिक', 'शहरी'], a: 0 },
+        { q: 'अमीर बनने के अचानक अवसर के कारण बहुत तेज़ी से बढ़ने वाला शहर है एक…', choices: ['रिफ़ाइनरी', 'बूमटाउन', 'डेरिक'], a: 1 },
+        { q: 'ऐसा कुआँ जहाँ तेल अपने ही दबाव से ज़मीन से बाहर फूट पड़ता है, वह है एक…', choices: ['गशर', 'कोटा', 'हितधारक'], a: 0 },
+        { q: 'किसी निर्णय से प्रभावित या जिसका कुछ दाँव पर हो, वह है एक…', choices: ['सट्टेबाज', 'रिफ़ाइनर', 'हितधारक'], a: 2 }
+      ],
+      takeaway: 'इन चार शब्दों को जान लें और स्पिंडलटॉप इकाई का बाकी हिस्सा कहीं आसानी से पढ़ा जाएगा।'
+    },
+    ur: {
+      title: 'وارم اپ: تیل کے عروج کے الفاظ',
+      seconds: 45,
+      questions: [
+        { q: 'وہ معیشت جو بنیادی طور پر کھیتی باڑی اور مویشی پالنے پر قائم ہو، وہ ہے…', choices: ['زرعی', 'صنعتی', 'شہری'], a: 0 },
+        { q: 'وہ قصبہ جو امیر بننے کے اچانک موقع کی وجہ سے بہت تیزی سے بڑھے، وہ ہے ایک…', choices: ['ریفائنری', 'بوم ٹاؤن', 'ڈیرک'], a: 1 },
+        { q: 'وہ کنواں جہاں تیل اپنے ہی دباؤ سے زمین سے پھوٹ پڑے، وہ ہے ایک…', choices: ['گشر', 'کوٹا', 'اسٹیک ہولڈر'], a: 0 },
+        { q: 'کوئی بھی جو کسی فیصلے سے متاثر ہو یا جس کا کچھ داؤ پر ہو، وہ ہے ایک…', choices: ['سٹے باز', 'ریفائنر', 'اسٹیک ہولڈر'], a: 2 }
+      ],
+      takeaway: 'ان چار الفاظ کو جان لیں تو اسپنڈل ٹاپ یونٹ کا باقی حصہ کہیں آسانی سے پڑھا جائے گا۔'
+    },
+    zh: {
+      title: '热身：石油繁荣词汇',
+      seconds: 45,
+      questions: [
+        { q: '主要建立在耕作与畜牧之上的经济是…', choices: ['农业型', '工业型', '城市型'], a: 0 },
+        { q: '因突然的致富机会而迅速壮大的城镇是一个…', choices: ['炼油厂', '繁荣城镇', '井架'], a: 1 },
+        { q: '石油靠自身压力从地下喷出的油井是一口…', choices: ['喷油井', '配额', '利益相关者'], a: 0 },
+        { q: '任何受某项决定影响或有利害关系的人是一个…', choices: ['投机者', '炼油者', '利益相关者'], a: 2 }
+      ],
+      takeaway: '掌握这四个词，斯宾德尔托普单元的其余部分就好读多了。'
+    } }
+  },
+  {
+    id: 'g7-spindletop-surface-exit', grade: 7, unit: 'spindletop',
+    unitTitle: 'Spindletop, 1901 — When Oil Changed Everything', phase: 'surface', type: 'exit',
+    format: 'match', teks: '§113.19(c)(11)', strat: 'Vocabulary & feedback', d: 0.62,
+    i18n: { en: {
+      title: 'Exit: match the word to its meaning',
+      pairs: [
+        ['gusher', 'a well where oil shoots up under its own pressure'],
+        ['derrick', 'the tall tower built over a well to drill and pump'],
+        ['refinery', 'a plant that turns crude oil into fuels and products'],
+        ['speculation', 'buying land hoping the price will jump — a gamble'],
+        ['boom & bust', 'a fast rise followed by a sharp fall']
+      ],
+      takeaway: 'If you matched all five, you are ready to go deep. If not, revisit the word bank.'
+    },
+    es: {
+      title: 'Salida: relaciona la palabra con su significado',
+      pairs: [
+        ['chorro de petróleo', 'un pozo donde el petróleo sale disparado por su propia presión'],
+        ['torre de perforación', 'la torre alta construida sobre un pozo para perforar y bombear'],
+        ['refinería', 'una planta que convierte el petróleo crudo en combustibles y productos'],
+        ['especulación', 'comprar tierra esperando que el precio suba — una apuesta'],
+        ['auge y caída', 'una subida rápida seguida de una caída brusca']
+      ],
+      takeaway: 'Si relacionaste las cinco, estás listo para ir a lo profundo. Si no, repasa el banco de palabras.'
+    },
+    vi: {
+      title: 'Phiếu ra: ghép từ với nghĩa của nó',
+      pairs: [
+        ['giếng phun dầu', 'một giếng nơi dầu phun lên nhờ áp suất của chính nó'],
+        ['giàn khoan', 'tháp cao dựng trên giếng để khoan và bơm'],
+        ['nhà máy lọc dầu', 'nhà máy biến dầu thô thành nhiên liệu và sản phẩm'],
+        ['đầu cơ', 'mua đất với hy vọng giá tăng vọt — một canh bạc'],
+        ['bùng nổ và suy thoái', 'một sự tăng nhanh theo sau là một sự sụt giảm mạnh']
+      ],
+      takeaway: 'Nếu bạn ghép đúng cả năm, bạn đã sẵn sàng học chuyên sâu. Nếu chưa, hãy xem lại kho từ vựng.'
+    },
+    ar: {
+      title: 'الخروج: طابِق الكلمة مع معناها',
+      pairs: [
+        ['نافورة نفط', 'بئر يندفع منه النفط لأعلى بضغطه الذاتي'],
+        ['برج حفر', 'البرج العالي المبني فوق البئر للحفر والضخ'],
+        ['مصفاة', 'منشأة تحوّل النفط الخام إلى وقود ومنتجات'],
+        ['مضاربة', 'شراء الأرض على أمل ارتفاع السعر — مقامرة'],
+        ['ازدهار وكساد', 'ارتفاع سريع يتبعه هبوط حاد']
+      ],
+      takeaway: 'إذا طابقت الخمس جميعًا، فأنت مستعد للتعمّق. وإلا، فراجِع بنك الكلمات.'
+    },
+    hi: {
+      title: 'निकास: शब्द को उसके अर्थ से मिलाएँ',
+      pairs: [
+        ['गशर', 'ऐसा कुआँ जहाँ तेल अपने ही दबाव से ऊपर फूट पड़ता है'],
+        ['डेरिक', 'कुएँ के ऊपर ड्रिल और पंप करने के लिए बनी ऊँची मीनार'],
+        ['रिफ़ाइनरी', 'ऐसा संयंत्र जो कच्चे तेल को ईंधन और उत्पादों में बदलता है'],
+        ['सट्टेबाज़ी', 'कीमत बढ़ने की उम्मीद में ज़मीन खरीदना — एक जुआ'],
+        ['उछाल और गिरावट', 'तेज़ी से चढ़ाव के बाद तीखी गिरावट']
+      ],
+      takeaway: 'यदि आपने पाँचों मिला दिए, तो आप गहन में जाने के लिए तैयार हैं। यदि नहीं, तो शब्द-बैंक फिर देखें।'
+    },
+    ur: {
+      title: 'اخراج: لفظ کو اس کے مطلب سے ملائیں',
+      pairs: [
+        ['گشر', 'وہ کنواں جہاں تیل اپنے ہی دباؤ سے اوپر پھوٹ پڑتا ہے'],
+        ['ڈیرک', 'کنویں کے اوپر کھدائی اور پمپ کرنے کے لیے بنی بلند مینار'],
+        ['ریفائنری', 'وہ پلانٹ جو خام تیل کو ایندھن اور مصنوعات میں بدلتا ہے'],
+        ['سٹے بازی', 'قیمت بڑھنے کی امید میں زمین خریدنا — ایک جوا'],
+        ['عروج و زوال', 'تیزی سے چڑھاؤ کے بعد تیز گراوٹ']
+      ],
+      takeaway: 'اگر آپ نے پانچوں ملا دیے تو آپ گہرائی میں جانے کو تیار ہیں۔ ورنہ لفظی بینک دوبارہ دیکھیں۔'
+    },
+    zh: {
+      title: '离场：把词语与其含义配对',
+      pairs: [
+        ['喷油井', '石油靠自身压力向上喷出的油井'],
+        ['井架', '架在油井之上用于钻探和抽油的高塔'],
+        ['炼油厂', '把原油转化为燃料和产品的工厂'],
+        ['投机', '买地指望价格暴涨——一场赌博'],
+        ['繁荣与萧条', '快速上涨之后急剧下跌']
+      ],
+      takeaway: '如果五个都配对正确，你就可以进入深层学习了。若没有，请重温词汇表。'
+    } }
+  },
+
+  /* ───────── Grade 7 · Spindletop 1901 · DEEP ───────── */
+  {
+    id: 'g7-spindletop-deep-entry', grade: 7, unit: 'spindletop',
+    unitTitle: 'Spindletop, 1901 — When Oil Changed Everything', phase: 'deep', type: 'entry',
+    format: 'cloze', teks: '§113.19(c)(9), (c)(11)', strat: 'Retrieval practice', d: 0.54,
+    i18n: { en: {
+      title: 'Warm-up: cause & effect',
+      items: [
+        { before: 'The oil strike at Spindletop caused thousands to', after: 'into Beaumont almost overnight.', choices: ['migrate', 'refine', 'irrigate'], a: 0 },
+        { before: 'Because oil was suddenly cheap and plentiful, land prices and', after: 'exploded.', choices: ['speculation', 'ranching', 'rainfall'], a: 0 },
+        { before: 'The boom sped the shift from an agrarian economy to an', after: 'one.', choices: ['industrial', 'agrarian', 'rural'], a: 0 }
+      ],
+      takeaway: 'One oil strike set off a chain — every effect became the cause of the next.'
+    },
+    es: {
+      title: 'Calentamiento: causa y efecto',
+      items: [
+        { before: 'El descubrimiento de petróleo en Spindletop hizo que miles de personas', after: 'a Beaumont casi de la noche a la mañana.', choices: ['migraran', 'refinaran', 'irrigaran'], a: 0 },
+        { before: 'Como el petróleo era de pronto barato y abundante, los precios de la tierra y la', after: 'se dispararon.', choices: ['especulación', 'ganadería', 'lluvia'], a: 0 },
+        { before: 'El auge aceleró el paso de una economía agraria a una', after: '.', choices: ['industrial', 'agraria', 'rural'], a: 0 }
+      ],
+      takeaway: 'Un solo hallazgo de petróleo desató una cadena: cada efecto se volvió la causa del siguiente.'
+    },
+    vi: {
+      title: 'Khởi động: nguyên nhân & kết quả',
+      items: [
+        { before: 'Việc trúng dầu ở Spindletop khiến hàng nghìn người', after: 'vào Beaumont gần như chỉ sau một đêm.', choices: ['di cư', 'lọc dầu', 'tưới tiêu'], a: 0 },
+        { before: 'Vì dầu bỗng trở nên rẻ và dồi dào, giá đất và hoạt động', after: 'bùng nổ.', choices: ['đầu cơ', 'chăn nuôi', 'mưa'], a: 0 },
+        { before: 'Cơn sốt đẩy nhanh sự chuyển đổi từ nền kinh tế nông nghiệp sang nền kinh tế', after: '.', choices: ['công nghiệp', 'nông nghiệp', 'nông thôn'], a: 0 }
+      ],
+      takeaway: 'Một lần trúng dầu đã khởi động cả chuỗi — mỗi kết quả lại trở thành nguyên nhân của điều tiếp theo.'
+    },
+    ar: {
+      title: 'تهيئة: السبب والنتيجة',
+      items: [
+        { before: 'أدى اكتشاف النفط في سبيندلتوب إلى أن', after: 'الآلاف إلى بومونت بين ليلة وضحاها تقريبًا.', choices: ['يهاجر', 'يُكرّر', 'يَروي'], a: 0 },
+        { before: 'ولأن النفط أصبح فجأة رخيصًا ووفيرًا، انفجرت أسعار الأرض و', after: '.', choices: ['المضاربة', 'تربية الماشية', 'الأمطار'], a: 0 },
+        { before: 'سرّعت الطفرة التحول من اقتصاد زراعي إلى اقتصاد', after: '.', choices: ['صناعي', 'زراعي', 'ريفي'], a: 0 }
+      ],
+      takeaway: 'اكتشاف نفط واحد أطلق سلسلة — كل نتيجة أصبحت سبب ما يليها.'
+    },
+    hi: {
+      title: 'वार्म-अप: कारण और प्रभाव',
+      items: [
+        { before: 'स्पिंडलटॉप में तेल मिलने से हज़ारों लोग लगभग रातों-रात बीयूमॉन्ट में', after: 'लगे।', choices: ['प्रवास करने', 'शोधन करने', 'सिंचाई करने'], a: 0 },
+        { before: 'चूँकि तेल अचानक सस्ता और भरपूर हो गया, ज़मीन की कीमतें और', after: 'बेतहाशा बढ़ गईं।', choices: ['सट्टेबाज़ी', 'पशुपालन', 'वर्षा'], a: 0 },
+        { before: 'इस उछाल ने कृषि-प्रधान अर्थव्यवस्था से', after: 'अर्थव्यवस्था की ओर बदलाव तेज़ कर दिया।', choices: ['औद्योगिक', 'कृषि-प्रधान', 'ग्रामीण'], a: 0 }
+      ],
+      takeaway: 'एक ही तेल की खोज ने एक शृंखला छेड़ दी — हर प्रभाव अगली चीज़ का कारण बन गया।'
+    },
+    ur: {
+      title: 'وارم اپ: سبب اور اثر',
+      items: [
+        { before: 'اسپنڈل ٹاپ میں تیل ملنے سے ہزاروں لوگ تقریباً راتوں رات بیومونٹ میں', after: 'لگے۔', choices: ['ہجرت کرنے', 'صاف کرنے', 'آبپاشی کرنے'], a: 0 },
+        { before: 'چونکہ تیل اچانک سستا اور وافر ہو گیا، زمین کی قیمتیں اور', after: 'بے تحاشا بڑھ گئیں۔', choices: ['سٹے بازی', 'مویشی پالنا', 'بارش'], a: 0 },
+        { before: 'اس عروج نے زرعی معیشت سے', after: 'معیشت کی طرف تبدیلی تیز کر دی۔', choices: ['صنعتی', 'زرعی', 'دیہی'], a: 0 }
+      ],
+      takeaway: 'ایک ہی تیل کی دریافت نے ایک سلسلہ چھیڑ دیا — ہر اثر اگلی چیز کا سبب بن گیا۔'
+    },
+    zh: {
+      title: '热身：因与果',
+      items: [
+        { before: '斯宾德尔托普的石油发现使成千上万人几乎一夜之间', after: '涌入博蒙特。', choices: ['迁入', '炼制', '灌溉'], a: 0 },
+        { before: '由于石油骤然又便宜又充足，地价和', after: '随之飙升。', choices: ['投机', '畜牧', '降雨'], a: 0 },
+        { before: '这场繁荣加速了从农业经济向', after: '经济的转变。', choices: ['工业', '农业', '乡村'], a: 0 }
+      ],
+      takeaway: '一次石油发现引发了一连串反应——每个结果都成了下一件事的原因。'
+    } }
+  },
+  {
+    id: 'g7-spindletop-deep-exit', grade: 7, unit: 'spindletop',
+    unitTitle: 'Spindletop, 1901 — When Oil Changed Everything', phase: 'deep', type: 'exit',
+    format: 'sort', teks: '§113.19(c)(9), (c)(11)', strat: 'Concept organization', d: 0.64,
+    i18n: { en: {
+      title: 'Exit: sort the old economy vs. the new oil economy',
+      cats: ['Old agrarian economy', 'New oil economy'],
+      items: [
+        { t: 'Cotton farming', c: 0 },
+        { t: 'Cattle ranching', c: 0 },
+        { t: 'Land measured in acres of crops', c: 0 },
+        { t: 'Refineries and derricks', c: 1 },
+        { t: 'Boomtowns and speculation', c: 1 },
+        { t: 'Factory and oil-field jobs', c: 1 }
+      ],
+      takeaway: 'Sorting old vs. new is the concept map of the agrarian-to-industrial shift.'
+    },
+    es: {
+      title: 'Salida: clasifica la economía vieja frente a la nueva economía petrolera',
+      cats: ['Vieja economía agraria', 'Nueva economía petrolera'],
+      items: [
+        { t: 'Cultivo de algodón', c: 0 },
+        { t: 'Cría de ganado', c: 0 },
+        { t: 'Tierra medida en acres de cultivos', c: 0 },
+        { t: 'Refinerías y torres de perforación', c: 1 },
+        { t: 'Pueblos en auge y especulación', c: 1 },
+        { t: 'Empleos en fábricas y campos petroleros', c: 1 }
+      ],
+      takeaway: 'Clasificar lo viejo vs lo nuevo es el mapa conceptual del paso de lo agrario a lo industrial.'
+    },
+    vi: {
+      title: 'Phiếu ra: phân loại nền kinh tế cũ và nền kinh tế dầu mỏ mới',
+      cats: ['Kinh tế nông nghiệp cũ', 'Kinh tế dầu mỏ mới'],
+      items: [
+        { t: 'Trồng bông', c: 0 },
+        { t: 'Chăn nuôi gia súc', c: 0 },
+        { t: 'Đất đo bằng mẫu cây trồng', c: 0 },
+        { t: 'Nhà máy lọc dầu và giàn khoan', c: 1 },
+        { t: 'Thị trấn bùng nổ và đầu cơ', c: 1 },
+        { t: 'Việc làm ở nhà máy và mỏ dầu', c: 1 }
+      ],
+      takeaway: 'Phân loại cũ và mới chính là sơ đồ khái niệm của bước chuyển từ nông nghiệp sang công nghiệp.'
+    },
+    ar: {
+      title: 'الخروج: صنّف الاقتصاد القديم مقابل اقتصاد النفط الجديد',
+      cats: ['الاقتصاد الزراعي القديم', 'اقتصاد النفط الجديد'],
+      items: [
+        { t: 'زراعة القطن', c: 0 },
+        { t: 'تربية الماشية', c: 0 },
+        { t: 'أرض تُقاس بأفدنة المحاصيل', c: 0 },
+        { t: 'مصافٍ وأبراج حفر', c: 1 },
+        { t: 'بلدات مزدهرة ومضاربة', c: 1 },
+        { t: 'وظائف في المصانع وحقول النفط', c: 1 }
+      ],
+      takeaway: 'تصنيف القديم مقابل الجديد هو الخريطة المفاهيمية للتحول من الزراعي إلى الصناعي.'
+    },
+    hi: {
+      title: 'निकास: पुरानी अर्थव्यवस्था बनाम नई तेल अर्थव्यवस्था को छाँटें',
+      cats: ['पुरानी कृषि अर्थव्यवस्था', 'नई तेल अर्थव्यवस्था'],
+      items: [
+        { t: 'कपास की खेती', c: 0 },
+        { t: 'पशुपालन', c: 0 },
+        { t: 'फ़सलों के एकड़ में मापी गई ज़मीन', c: 0 },
+        { t: 'रिफ़ाइनरियाँ और डेरिक', c: 1 },
+        { t: 'बूमटाउन और सट्टेबाज़ी', c: 1 },
+        { t: 'कारखानों और तेल-क्षेत्रों की नौकरियाँ', c: 1 }
+      ],
+      takeaway: 'पुराने बनाम नए को छाँटना ही कृषि-से-औद्योगिक बदलाव का अवधारणा मानचित्र है।'
+    },
+    ur: {
+      title: 'اخراج: پرانی معیشت بمقابلہ نئی تیل کی معیشت کو چھانٹیں',
+      cats: ['پرانی زرعی معیشت', 'نئی تیل کی معیشت'],
+      items: [
+        { t: 'کپاس کی کاشت', c: 0 },
+        { t: 'مویشی پالنا', c: 0 },
+        { t: 'فصلوں کے ایکڑ میں ناپی گئی زمین', c: 0 },
+        { t: 'ریفائنریاں اور ڈیرک', c: 1 },
+        { t: 'بوم ٹاؤن اور سٹے بازی', c: 1 },
+        { t: 'کارخانوں اور تیل کے میدانوں کی ملازمتیں', c: 1 }
+      ],
+      takeaway: 'پرانے بمقابلہ نئے کو چھانٹنا ہی زرعی سے صنعتی تبدیلی کا تصوراتی نقشہ ہے۔'
+    },
+    zh: {
+      title: '离场：把旧经济与新石油经济分类',
+      cats: ['旧农业经济', '新石油经济'],
+      items: [
+        { t: '棉花种植', c: 0 },
+        { t: '养牛放牧', c: 0 },
+        { t: '以作物英亩计量的土地', c: 0 },
+        { t: '炼油厂与井架', c: 1 },
+        { t: '繁荣城镇与投机', c: 1 },
+        { t: '工厂与油田的工作', c: 1 }
+      ],
+      takeaway: '把旧与新分类，就是农业向工业转变的概念图。'
+    } }
+  },
+
+  /* ───────── Grade 7 · Spindletop 1901 · TRANSFER ───────── */
+  {
+    id: 'g7-spindletop-transfer-entry', grade: 7, unit: 'spindletop',
+    unitTitle: 'Spindletop, 1901 — When Oil Changed Everything', phase: 'transfer', type: 'entry',
+    format: 'mcq', teks: '§113.19(c)(23)(B)', strat: 'Retrieval practice', d: 0.54,
+    i18n: { en: {
+      title: 'Warm-up: the problem-solving process',
+      seconds: 45,
+      questions: [
+        { q: 'The FIRST step in the problem-solving process is to…', choices: ['pick a solution', 'define the problem', 'defend a claim'], a: 1 },
+        { q: 'Before choosing, a good problem-solver…', choices: ['gathers information & weighs options', 'guesses quickly', 'ignores other views'], a: 0 },
+        { q: 'Reasoning from a stakeholder’s point of view means you…', choices: ['see only your own gain', 'consider how the decision affects that person', 'copy the mayor'], a: 1 },
+        { q: 'The LAST step after choosing a solution is to…', choices: ['forget it', 'evaluate how well it worked', 'hide the trade-offs'], a: 1 }
+      ],
+      takeaway: 'Define → gather → weigh → choose → defend → evaluate. That is §113.19(c)(23)(B).'
+    },
+    es: {
+      title: 'Calentamiento: el proceso de resolución de problemas',
+      seconds: 45,
+      questions: [
+        { q: 'El PRIMER paso del proceso de resolución de problemas es…', choices: ['elegir una solución', 'definir el problema', 'defender una afirmación'], a: 1 },
+        { q: 'Antes de elegir, quien resuelve bien problemas…', choices: ['reúne información y sopesa opciones', 'adivina rápido', 'ignora otras opiniones'], a: 0 },
+        { q: 'Razonar desde el punto de vista de una parte interesada significa que…', choices: ['ves solo tu propia ganancia', 'consideras cómo la decisión afecta a esa persona', 'copias al alcalde'], a: 1 },
+        { q: 'El ÚLTIMO paso tras elegir una solución es…', choices: ['olvidarla', 'evaluar qué tan bien funcionó', 'ocultar las concesiones'], a: 1 }
+      ],
+      takeaway: 'Definir → reunir → sopesar → elegir → defender → evaluar. Eso es §113.19(c)(23)(B).'
+    },
+    vi: {
+      title: 'Khởi động: quy trình giải quyết vấn đề',
+      seconds: 45,
+      questions: [
+        { q: 'Bước ĐẦU TIÊN trong quy trình giải quyết vấn đề là…', choices: ['chọn một giải pháp', 'xác định vấn đề', 'bảo vệ một luận điểm'], a: 1 },
+        { q: 'Trước khi chọn, người giải quyết vấn đề giỏi sẽ…', choices: ['thu thập thông tin & cân nhắc các phương án', 'đoán nhanh', 'bỏ qua quan điểm khác'], a: 0 },
+        { q: 'Lập luận từ quan điểm của một bên liên quan nghĩa là bạn…', choices: ['chỉ thấy lợi ích của riêng mình', 'cân nhắc quyết định ảnh hưởng đến người đó ra sao', 'bắt chước thị trưởng'], a: 1 },
+        { q: 'Bước CUỐI CÙNG sau khi chọn một giải pháp là…', choices: ['quên nó đi', 'đánh giá xem nó hiệu quả ra sao', 'giấu đi các đánh đổi'], a: 1 }
+      ],
+      takeaway: 'Xác định → thu thập → cân nhắc → chọn → bảo vệ → đánh giá. Đó là §113.19(c)(23)(B).'
+    },
+    ar: {
+      title: 'تهيئة: عملية حل المشكلات',
+      seconds: 45,
+      questions: [
+        { q: 'الخطوة الأولى في عملية حل المشكلات هي…', choices: ['اختيار حل', 'تحديد المشكلة', 'الدفاع عن ادعاء'], a: 1 },
+        { q: 'قبل الاختيار، يقوم حلّال المشكلات الجيد بـ…', choices: ['جمع المعلومات وموازنة الخيارات', 'التخمين بسرعة', 'تجاهل الآراء الأخرى'], a: 0 },
+        { q: 'التفكير من وجهة نظر صاحب مصلحة يعني أنك…', choices: ['ترى مكسبك أنت فقط', 'تراعي كيف يؤثر القرار في ذلك الشخص', 'تقلّد رئيس البلدية'], a: 1 },
+        { q: 'الخطوة الأخيرة بعد اختيار حل هي…', choices: ['أن تنساه', 'أن تقيّم مدى نجاحه', 'أن تخفي المفاضلات'], a: 1 }
+      ],
+      takeaway: 'حدِّد ← اجمع ← وازِن ← اختر ← دافِع ← قيِّم. تلك هي §113.19(c)(23)(B).'
+    },
+    hi: {
+      title: 'वार्म-अप: समस्या-समाधान की प्रक्रिया',
+      seconds: 45,
+      questions: [
+        { q: 'समस्या-समाधान प्रक्रिया का पहला चरण है…', choices: ['एक समाधान चुनना', 'समस्या को परिभाषित करना', 'एक दावे का बचाव करना'], a: 1 },
+        { q: 'चुनने से पहले, एक अच्छा समस्या-समाधानकर्ता…', choices: ['जानकारी जुटाता है और विकल्पों को तौलता है', 'जल्दी से अनुमान लगाता है', 'अन्य विचारों को अनदेखा करता है'], a: 0 },
+        { q: 'किसी हितधारक के दृष्टिकोण से तर्क करने का अर्थ है कि आप…', choices: ['केवल अपना लाभ देखते हैं', 'सोचते हैं कि निर्णय उस व्यक्ति को कैसे प्रभावित करता है', 'महापौर की नकल करते हैं'], a: 1 },
+        { q: 'समाधान चुनने के बाद अंतिम चरण है…', choices: ['उसे भूल जाना', 'यह आँकना कि वह कितना अच्छा रहा', 'समझौतों को छिपाना'], a: 1 }
+      ],
+      takeaway: 'परिभाषित करें → जुटाएँ → तौलें → चुनें → बचाव करें → आँकें। यही §113.19(c)(23)(B) है।'
+    },
+    ur: {
+      title: 'وارم اپ: مسئلہ حل کرنے کا عمل',
+      seconds: 45,
+      questions: [
+        { q: 'مسئلہ حل کرنے کے عمل کا پہلا قدم ہے…', choices: ['ایک حل چننا', 'مسئلے کو متعین کرنا', 'ایک دعوے کا دفاع کرنا'], a: 1 },
+        { q: 'چننے سے پہلے، ایک اچھا مسئلہ حل کرنے والا…', choices: ['معلومات جمع کرتا اور اختیارات تولتا ہے', 'جلدی سے اندازہ لگاتا ہے', 'دوسری آراء کو نظرانداز کرتا ہے'], a: 0 },
+        { q: 'کسی اسٹیک ہولڈر کے نقطہ نظر سے سوچنے کا مطلب ہے کہ آپ…', choices: ['صرف اپنا فائدہ دیکھتے ہیں', 'غور کرتے ہیں کہ فیصلہ اُس شخص کو کیسے متاثر کرتا ہے', 'میئر کی نقل کرتے ہیں'], a: 1 },
+        { q: 'حل چننے کے بعد آخری قدم ہے…', choices: ['اسے بھول جانا', 'یہ جانچنا کہ وہ کتنا کارگر رہا', 'سمجھوتوں کو چھپانا'], a: 1 }
+      ],
+      takeaway: 'متعین کریں ← جمع کریں ← تولیں ← چنیں ← دفاع کریں ← جانچیں۔ یہی §113.19(c)(23)(B) ہے۔'
+    },
+    zh: {
+      title: '热身：解决问题的流程',
+      seconds: 45,
+      questions: [
+        { q: '解决问题流程的第一步是…', choices: ['挑选一个方案', '界定问题', '为一个主张辩护'], a: 1 },
+        { q: '在做出选择之前，优秀的解决问题者会…', choices: ['收集信息并权衡各种方案', '快速猜测', '无视他人的观点'], a: 0 },
+        { q: '从利益相关者的角度进行推理，意味着你…', choices: ['只看自己的收益', '考虑这个决定如何影响那个人', '照抄市长的做法'], a: 1 },
+        { q: '选定方案之后的最后一步是…', choices: ['把它忘掉', '评估它的效果如何', '隐藏其中的取舍'], a: 1 }
+      ],
+      takeaway: '界定 → 收集 → 权衡 → 选择 → 辩护 → 评估。这就是 §113.19(c)(23)(B)。'
+    } }
+  },
+  {
+    id: 'g7-spindletop-transfer-exit', grade: 7, unit: 'spindletop',
+    unitTitle: 'Spindletop, 1901 — When Oil Changed Everything', phase: 'transfer', type: 'exit',
+    format: 'cloze', teks: '§113.19(c)(23)(B)', strat: 'Feedback', d: 0.62,
+    i18n: { en: {
+      title: 'Exit: claim, evidence & trade-offs',
+      items: [
+        { before: 'A recommendation for the boom town is only strong when it is backed by', after: 'from the sources.', choices: ['evidence', 'volume', 'guesses'], a: 0 },
+        { before: 'Naming the', after: 'of your solution shows you weighed its costs as well as its gains.', choices: ['trade-offs', 'colors', 'vocabulary'], a: 0 },
+        { before: 'The final move of the problem-solving process is to', after: 'how well the solution worked.', choices: ['evaluate', 'forget', 'hide'], a: 0 }
+      ],
+      takeaway: 'Claim + evidence + trade-offs, then evaluate — that is thinking like a historian and a citizen.'
+    },
+    es: {
+      title: 'Salida: afirmación, evidencia y concesiones',
+      items: [
+        { before: 'Una recomendación para el pueblo en auge solo es sólida cuando se respalda con', after: 'de las fuentes.', choices: ['evidencia', 'volumen', 'suposiciones'], a: 0 },
+        { before: 'Nombrar las', after: 'de tu solución muestra que sopesaste sus costos y sus beneficios.', choices: ['concesiones', 'colores', 'vocabulario'], a: 0 },
+        { before: 'El paso final del proceso de resolución de problemas es', after: 'qué tan bien funcionó la solución.', choices: ['evaluar', 'olvidar', 'ocultar'], a: 0 }
+      ],
+      takeaway: 'Afirmación + evidencia + concesiones, luego evaluar: eso es pensar como historiador y ciudadano.'
+    },
+    vi: {
+      title: 'Phiếu ra: luận điểm, bằng chứng & đánh đổi',
+      items: [
+        { before: 'Một đề xuất cho thị trấn bùng nổ chỉ vững chắc khi được củng cố bằng', after: 'từ các nguồn.', choices: ['bằng chứng', 'âm lượng', 'phỏng đoán'], a: 0 },
+        { before: 'Nêu ra những', after: 'của giải pháp cho thấy bạn đã cân nhắc cả chi phí lẫn lợi ích.', choices: ['đánh đổi', 'màu sắc', 'từ vựng'], a: 0 },
+        { before: 'Bước cuối cùng của quy trình giải quyết vấn đề là', after: 'xem giải pháp hiệu quả ra sao.', choices: ['đánh giá', 'quên', 'giấu'], a: 0 }
+      ],
+      takeaway: 'Luận điểm + bằng chứng + đánh đổi, rồi đánh giá — đó là tư duy như một nhà sử học và một công dân.'
+    },
+    ar: {
+      title: 'الخروج: ادعاء ودليل ومفاضلات',
+      items: [
+        { before: 'التوصية للبلدة المزدهرة لا تكون قوية إلا حين تُدعم بـ', after: 'من المصادر.', choices: ['أدلة', 'علوّ الصوت', 'تخمينات'], a: 0 },
+        { before: 'إن تسمية', after: 'الخاصة بحلّك تُظهر أنك وازنت تكاليفه ومكاسبه.', choices: ['المفاضلات', 'الألوان', 'المفردات'], a: 0 },
+        { before: 'الخطوة الأخيرة في عملية حل المشكلات هي أن', after: 'مدى نجاح الحل.', choices: ['تقيّم', 'تنسى', 'تخفي'], a: 0 }
+      ],
+      takeaway: 'ادعاء + دليل + مفاضلات، ثم التقييم — ذلك هو التفكير كمؤرّخ ومواطن.'
+    },
+    hi: {
+      title: 'निकास: दावा, साक्ष्य और समझौते',
+      items: [
+        { before: 'बूमटाउन के लिए कोई सिफ़ारिश तभी मज़बूत होती है जब उसका आधार हो', after: 'स्रोतों से।', choices: ['साक्ष्य', 'आवाज़ की ऊँचाई', 'अनुमान'], a: 0 },
+        { before: 'अपने समाधान की', after: 'का नाम लेना दिखाता है कि आपने उसके लाभ के साथ-साथ लागत भी तौली।', choices: ['समझौतों', 'रंगों', 'शब्दावली'], a: 0 },
+        { before: 'समस्या-समाधान प्रक्रिया की अंतिम चाल है यह', after: 'कि समाधान कितना अच्छा रहा।', choices: ['आँकना', 'भूलना', 'छिपाना'], a: 0 }
+      ],
+      takeaway: 'दावा + साक्ष्य + समझौते, फिर आँकना — यही एक इतिहासकार और एक नागरिक की तरह सोचना है।'
+    },
+    ur: {
+      title: 'اخراج: دعویٰ، ثبوت اور سمجھوتے',
+      items: [
+        { before: 'بوم ٹاؤن کے لیے کوئی سفارش تبھی مضبوط ہوتی ہے جب اس کی بنیاد ہو', after: 'مآخذ سے۔', choices: ['ثبوت', 'آواز کی بلندی', 'اندازے'], a: 0 },
+        { before: 'اپنے حل کے', after: 'کا نام لینا ظاہر کرتا ہے کہ آپ نے اس کے فائدے کے ساتھ ساتھ لاگت بھی تولی۔', choices: ['سمجھوتوں', 'رنگوں', 'الفاظ'], a: 0 },
+        { before: 'مسئلہ حل کرنے کے عمل کی آخری چال یہ', after: 'ہے کہ حل کتنا کارگر رہا۔', choices: ['جانچنا', 'بھولنا', 'چھپانا'], a: 0 }
+      ],
+      takeaway: 'دعویٰ + ثبوت + سمجھوتے، پھر جانچنا — یہی ایک مؤرخ اور ایک شہری کی طرح سوچنا ہے۔'
+    },
+    zh: {
+      title: '离场：主张、证据与取舍',
+      items: [
+        { before: '对繁荣城镇的建议只有在有', after: '来自资料的支撑时才有力。', choices: ['证据', '音量', '猜测'], a: 0 },
+        { before: '说出你方案中的', after: '，表明你既权衡了它的代价，也权衡了它的收益。', choices: ['取舍', '颜色', '词汇'], a: 0 },
+        { before: '解决问题流程的最后一步是', after: '方案的效果如何。', choices: ['评估', '遗忘', '隐藏'], a: 0 }
+      ],
+      takeaway: '主张 + 证据 + 取舍，再评估——这就是像史学家和公民一样思考。'
     } }
   }
 
