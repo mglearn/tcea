@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turn Assessment Data Into Action — Session Resources</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0A3476;
+  --navy-dark: #071f4a;
+  --navy-mid: #12428f;
+  --gold: #FCB040;
+  --gold-light: #fdd17a;
+  --gold-pale: #FEF0D0;
+  --pale-navy: #D0D8F0;
+  --white: #ffffff;
+  --off-white: #f7f8fc;
+  --text: #1a1a2e;
+  --text-muted: #5a6680;
+  --border: #e2e7f5;
+  --teal: #0e6b8a;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  background: var(--off-white);
+  line-height: 1.6;
+}
+h1, h2, h3 { font-family: 'DM Serif Display', serif; color: var(--navy); font-weight: 400; }
+a { color: var(--navy-mid); text-decoration: none; border-bottom: 1.5px solid var(--gold); transition: color .15s, background .15s; }
+a:hover { color: var(--navy-dark); background: var(--gold-pale); }
+
+/* HERO */
+.hero {
+  background: var(--navy-dark);
+  background-image: radial-gradient(circle at 20% 20%, rgba(252,176,64,0.12), transparent 55%);
+  color: var(--white);
+  padding: 68px 24px 60px;
+  text-align: center;
+}
+.hero .kicker {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy-dark);
+  background: var(--gold);
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.hero h1 { color: var(--white); font-size: 2.9rem; line-height: 1.12; max-width: 780px; margin: 0 auto 16px; }
+.hero h1 em { color: var(--gold-light); font-style: italic; }
+.hero p.sub { color: var(--pale-navy); font-size: 1.12rem; max-width: 640px; margin: 0 auto 24px; }
+.hero .facilitators {
+  font-size: 0.95rem;
+  color: var(--white);
+}
+.hero .facilitators span { color: var(--gold-light); font-weight: 600; }
+
+/* NAV */
+.subnav {
+  position: sticky; top: 0; z-index: 20;
+  background: var(--white);
+  border-bottom: 1.5px solid var(--border);
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 4px;
+  padding: 10px 16px;
+}
+.subnav a {
+  border: none; font-size: 0.9rem; font-weight: 500; color: var(--navy);
+  padding: 6px 14px; border-radius: 100px;
+}
+.subnav a:hover { background: var(--pale-navy); color: var(--navy-dark); }
+
+/* LAYOUT */
+.wrap { max-width: 940px; margin: 0 auto; padding: 0 24px; }
+section { padding: 54px 0 8px; }
+section > .wrap > h2 {
+  font-size: 2rem; margin-bottom: 6px;
+  display: inline-block; position: relative; padding-left: 16px;
+}
+section > .wrap > h2::before {
+  content: ""; position: absolute; left: 0; top: 8px; bottom: 8px;
+  width: 5px; background: var(--gold); border-radius: 4px;
+}
+.section-intro { color: var(--text-muted); margin-bottom: 28px; max-width: 680px; }
+
+/* CARDS */
+.card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin-bottom: 18px;
+}
+.card h3 { font-size: 1.3rem; margin-bottom: 4px; }
+.card .meta { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+.card p { margin-bottom: 10px; }
+
+/* TOOL GRID */
+.tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+.tool {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+.tool a.tool-name {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700; font-size: 1.02rem; color: var(--navy);
+  border-bottom: 2px solid var(--gold);
+}
+.tool a.tool-name:hover { background: var(--gold-pale); color: var(--navy-dark); }
+.tool p { font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; }
+.tool .cat {
+  display: inline-block; font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  color: var(--navy); background: var(--pale-navy);
+  padding: 3px 8px; border-radius: 4px; margin-top: 10px;
+}
+.tool .cat.free { color: var(--navy-dark); background: var(--gold-pale); }
+
+.group-label {
+  font-family: 'DM Serif Display', serif; color: var(--navy);
+  font-size: 1.15rem; margin: 26px 0 12px;
+}
+
+/* AGENDA */
+.block {
+  border-left: 4px solid var(--gold);
+  background: var(--white);
+  border-radius: 0 10px 10px 0;
+  border-top: 1.5px solid var(--border);
+  border-right: 1.5px solid var(--border);
+  border-bottom: 1.5px solid var(--border);
+  padding: 18px 22px; margin-bottom: 14px;
+}
+.block .time { font-size: 0.82rem; font-weight: 600; color: var(--teal); letter-spacing: 0.04em; }
+.block h3 { font-size: 1.22rem; margin: 2px 0 8px; }
+.block .who {
+  display: inline-block; font-size: 0.72rem; font-weight: 600;
+  color: var(--navy-dark); background: var(--gold);
+  padding: 2px 9px; border-radius: 100px; margin-left: 8px; vertical-align: middle;
+  letter-spacing: 0.03em;
+}
+.block ul { margin: 4px 0 0 18px; }
+.block ul li { margin-bottom: 4px; font-size: 0.95rem; }
+.block .transition {
+  margin-top: 10px; font-size: 0.9rem; color: var(--text-muted);
+  background: var(--off-white); border-radius: 8px; padding: 10px 14px;
+}
+.block .transition strong { color: var(--navy); }
+.ticket {
+  background: var(--navy); color: var(--white);
+  border-radius: 10px; padding: 16px 22px; margin-bottom: 14px;
+}
+.ticket .time { color: var(--gold-light); font-weight: 600; font-size: 0.82rem; }
+.ticket h3 { color: var(--white); font-size: 1.15rem; margin: 2px 0 6px; }
+.ticket p { font-size: 0.92rem; color: var(--pale-navy); }
+.break-row {
+  text-align: center; color: var(--text-muted); font-weight: 600;
+  font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 12px; margin-bottom: 14px;
+}
+
+/* RESOURCE LIST */
+.res-list { list-style: none; }
+.res-list li {
+  background: var(--white); border: 1.5px solid var(--border);
+  border-radius: 10px; padding: 16px 20px; margin-bottom: 12px;
+}
+.res-list li a { font-weight: 600; font-size: 1.05rem; }
+.res-list li p { font-size: 0.88rem; color: var(--text-muted); margin-top: 4px; }
+
+/* FOOTER */
+footer {
+  background: var(--navy-dark); color: var(--pale-navy);
+  text-align: center; padding: 36px 24px; margin-top: 50px;
+}
+footer strong { color: var(--white); }
+footer a { color: var(--gold-light); border-bottom-color: var(--gold); }
+
+@media (max-width: 560px) {
+  .hero h1 { font-size: 2.1rem; }
+  section > .wrap > h2 { font-size: 1.6rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">Session Resources</div>
+  <h1>Turn Assessment Data <em>Into Action</em></h1>
+  <p class="sub">From quick formative checks to Gen AI–powered item analysis that tells you where every student really is.</p>
+  <p class="facilitators">Facilitators: <span>Diana Benner</span> &amp; <span>Miguel Guhlin</span></p>
+</header>
+
+<nav class="subnav">
+  <a href="#about">About</a>
+  <a href="#agenda">Agenda</a>
+  <a href="#tools">Tools</a>
+  <a href="#reading">Reading</a>
+</nav>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About This Session</h2>
+    <p class="section-intro">Formative assessment can double student learning gains, but only if the data actually changes what you do next.</p>
+    <div class="card">
+      <p>In this hands-on, three-hour workshop, you'll build engaging low-stakes assessments using both no-tech and digital tools, compare AI tools for generating quality assessment items, and turn ticket data into action by grouping students by phase of learning (surface, deep, transfer).</p>
+      <p>Results map to the <strong>SOLO Taxonomy</strong> and match to concrete next steps with the <strong>ACE Framework</strong> (Articulate, Connect, Extend). You'll leave with ready-to-use templates, a prompt library, a repeatable workflow, and the confidence to move from raw data to targeted instruction by Monday morning.</p>
+      <p style="margin-bottom:0; color:var(--text-muted); font-size:0.9rem;"><strong>Best for:</strong> K–12 teachers, instructional coaches, and campus leaders.</p>
+    </div>
+  </div>
+</section>
+
+<section id="agenda">
+  <div class="wrap">
+    <h2>Agenda</h2>
+    <p class="section-intro">Three hours, four blocks, bookended by entry and exit tickets that model the workflow being taught.</p>
+
+    <div class="ticket">
+      <div class="time">0:00–0:05 · Entry Ticket</div>
+      <h3>Set the baseline</h3>
+      <p>A one-question <a href="https://www.mentimeter.com/" target="_blank" rel="noopener">Mentimeter</a> poll: "How confident are you turning assessment data into next-day instruction?" Live results frame the day.</p>
+    </div>
+
+    <div class="block">
+      <div class="time">0:05–0:38</div>
+      <h3>Foundations: What &amp; When <span class="who">Guhlin</span></h3>
+      <ul>
+        <li>Welcome, goals, norms</li>
+        <li>Why formative assessment doubles learning gains; the learning gap</li>
+        <li>Phases of learning mapped to the SOLO Taxonomy; shared vocabulary</li>
+      </ul>
+      <div class="transition"><strong>Transition:</strong> Turn-and-talk in pairs — "Name one thing you currently assess that's really just surface-level." A few share out.</div>
+    </div>
+
+    <div class="block">
+      <div class="time">0:38–1:15</div>
+      <h3>Building the Assessment <span class="who">Benner</span></h3>
+      <ul>
+        <li>Checks for understanding: TAPPLE, the four feedback questions</li>
+        <li>Human Bingo as a live formative check; play, then redesign squares by learning phase</li>
+        <li>Debrief: what the activity reveals about students</li>
+      </ul>
+      <div class="transition"><strong>Transition:</strong> Quick thumbs vote — "Could you run Human Bingo Monday? Up / sideways / down." Signals readiness and cues the break.</div>
+    </div>
+
+    <div class="break-row">— Break · 1:15–1:25 —</div>
+
+    <div class="block">
+      <div class="time">1:25–2:08</div>
+      <h3>Digital &amp; AI Tools <span class="who">Benner</span></h3>
+      <ul>
+        <li>Digital tools tour: Mentimeter, Plickers, Socrative, Poll Everywhere, Google Forms</li>
+        <li>AI item generation: Conker, QuestionWell, MagicSchool, Quizizz AI, chatbots</li>
+        <li>Guardrails: quality-checking AI output, avoiding invented content</li>
+      </ul>
+      <div class="transition"><strong>Transition:</strong> "Tool speed-date" — each participant posts a one-line "why I'd use this" to a shared board before moving on.</div>
+    </div>
+
+    <div class="block">
+      <div class="time">2:08–2:55</div>
+      <h3>From Data to Action: Smart Item Analysis <span class="who">Guhlin</span></h3>
+      <ul>
+        <li>Model the water-cycle entry ticket; item types mapped to phases</li>
+        <li>Live item analysis demo: reading percentages, grouping by phase, generating ACE next steps</li>
+        <li>Hands-on, two paths: Gen AI–assisted vs. the free browser tool (no data leaves the device); run sample CSV</li>
+      </ul>
+    </div>
+
+    <div class="ticket">
+      <div class="time">2:55–3:00 · Exit Ticket</div>
+      <h3>Commit &amp; capture</h3>
+      <p>A two-question <a href="https://docs.google.com/forms/" target="_blank" rel="noopener">Google Forms</a> exit ticket: "What's the first thing you'll try, and what's one question you still have?" Responses model the workflow and give facilitators follow-up data.</p>
+    </div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="wrap">
+    <h2>Tools We'll Use</h2>
+    <p class="section-intro">Every tool linked here is either free or offers a free plan. Click any name to open it in a new tab.</p>
+
+    <div class="group-label">Live Checks &amp; Student Response</div>
+    <div class="tool-grid">
+      <div class="tool">
+        <a class="tool-name" href="https://www.mentimeter.com/" target="_blank" rel="noopener">Mentimeter</a>
+        <p>Live polls and open-ended word clouds.</p>
+        <span class="cat free">Free plan</span>
+      </div>
+      <div class="tool">
+        <a class="tool-name" href="https://get.plickers.com/" target="_blank" rel="noopener">Plickers</a>
+        <p>Printed cards scanned by the teacher's phone. No student devices.</p>
+        <span class="cat free">Free</span>
+      </div>
+      <div class="tool">
+        <a class="tool-name" href="https://www.socrative.com/" target="_blank" rel="noopener">Socrative</a>
+        <p>Multiple choice, true/false, and short answer with a live dashboard.</p>
+        <span class="cat free">Free plan</span>
+      </div>
+      <div class="tool">
+        <a class="tool-name" href="https://www.polleverywhere.com/k12-student-response-system" target="_blank" rel="noopener">Poll Everywhere</a>
+        <p>Simple polling students join from any device.</p>
+        <span class="cat free">Free plan</span>
+      </div>
+      <div class="tool">
+        <a class="tool-name" href="https://docs.google.com/forms/" target="_blank" rel="noopener">Google Forms</a>
+        <p>Quizzes, exit tickets, and CSV export for item analysis.</p>
+        <span class="cat free">Free</span>
+      </div>
+      <div class="tool">
+        <a class="tool-name" href="https://www.baamboozle.com/games" target="_blank" rel="noopener">Baamboozle</a>
+        <p>Fast, game-based checks for understanding.</p>
+        <span class="cat free">Free plan</span>
+      </div>
+    </div>
+
+    <div class="group-label">AI Item Generation</div>
+    <div class="tool-grid">
+      <div class="tool">
+        <a class="tool-name" href="https://www.conker.ai/" target="_blank" rel="noopener">Conker</a>
+        <p>Differentiated quizzes; exports to Google Forms.</p>
+        <span class="cat free">Free plan</span>
+      </div>
+      <div class="tool">
+        <a class="tool-name" href="https://www.questionwell.org/" target="_blank" rel="noopener">QuestionWell</a>
+        <p>Generates aligned questions from text, URL, or video.</p>
+        <span class="cat free">Free plan</span>
+      </div>
+      <div class="tool">
+        <a class="tool-name" href="https://www.magicschool.ai/" target="_blank" rel="noopener">MagicSchool AI</a>
+        <p>Quiz builder, reflection prompts, and response analysis.</p>
+        <span class="cat free">Free plan</span>
+      </div>
+      <div class="tool">
+        <a class="tool-name" href="https://quizizz.com/home/quizizz-ai" target="_blank" rel="noopener">Quizizz AI</a>
+        <p>Auto-generates multiple-choice sets from any content.</p>
+        <span class="cat free">Free plan</span>
+      </div>
+      <div class="tool">
+        <a class="tool-name" href="https://www.getquizwizard.com/" target="_blank" rel="noopener">Quiz Wizard</a>
+        <p>Questions and flashcards from topics, docs, or media.</p>
+        <span class="cat free">Free plan</span>
+      </div>
+      <div class="tool">
+        <a class="tool-name" href="https://chat.openai.com/" target="_blank" rel="noopener">ChatGPT</a>
+        <p>Any chatbot can draft items; prompt for thinking, not recall.</p>
+        <span class="cat">Free / paid</span>
+      </div>
+    </div>
+
+    <div class="group-label">Item Analysis</div>
+    <div class="tool-grid">
+      <div class="tool">
+        <a class="tool-name" href="https://mglearn.github.io/tcea/sia/itema.html" target="_blank" rel="noopener">Smart Item Analysis Tool</a>
+        <p>Free, browser-based analysis. No data leaves your device. Accepts CSV.</p>
+        <span class="cat free">Free · Private</span>
+      </div>
+      <div class="tool">
+        <a class="tool-name" href="https://go.mgpd.org/aid" target="_blank" rel="noopener">AI Design Companion</a>
+        <p>Strategy reference, TEKS-aligned prompt library, and RAG source files.</p>
+        <span class="cat free">Free</span>
+      </div>
+      <div class="tool">
+        <a class="tool-name" href="https://www.canva.com/templates/?query=human-bingo" target="_blank" rel="noopener">Human Bingo Templates</a>
+        <p>Canva templates to adapt for a formative Bingo board.</p>
+        <span class="cat free">Free plan</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reading">
+  <div class="wrap">
+    <h2>Background Reading</h2>
+    <p class="section-intro">The TCEA TechNotes posts this session is built on.</p>
+    <ul class="res-list">
+      <li>
+        <a href="https://blog.tcea.org/turn-entry-tickets-into-smart-item-analysis/" target="_blank" rel="noopener">Turn Entry Tickets Into Smart Item Analysis</a>
+        <p>The full workflow: ALDO, SOLO, ACE, and Gen AI–powered item analysis.</p>
+      </li>
+      <li>
+        <a href="https://blog.tcea.org/using-human-bingo-for-formative-assessment/" target="_blank" rel="noopener">Using Human Bingo for Formative Assessment</a>
+        <p>Redesign a classic icebreaker into a live check for understanding.</p>
+      </li>
+      <li>
+        <a href="https://blog.tcea.org/formative-assessments-ai-tools/" target="_blank" rel="noopener">Revolutionize Formative Assessments with AI-Powered Tools</a>
+        <p>Six AI tools for generating formative assessment items.</p>
+      </li>
+      <li>
+        <a href="https://blog.tcea.org/digital-tools-formative-assessment/" target="_blank" rel="noopener">Powerful and Easy Digital Tools for Formative Assessment</a>
+        <p>TAPPLE, feedback strategies, and a tour of digital response tools.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Turn Assessment Data Into Action</strong></p>
+  <p>Facilitated by Diana Benner &amp; Miguel Guhlin · <a href="https://blog.tcea.org/" target="_blank" rel="noopener">TCEA TechNotes</a></p>
+</footer>
+
+</body>
+</html>
