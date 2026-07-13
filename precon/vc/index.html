@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vibe-Code Your Own Classroom Tools — TCEA Session</title>
+<style>
+:root{
+  color-scheme:light;
+  --ink:#17352d;
+  --muted:#526b62;
+  --page:#f4fbf6;
+  --panel:#ffffff;
+  --line:#d8ebe1;
+  --green:#2f8f5b;
+  --green-dark:#1f6c45;
+  --coral:#dd5f50;
+  --coral-dark:#b8473d;
+  --blue:#287bd8;
+  --blue-dark:#1f5fa5;
+  --amber:#f68b1f;
+  --amber-dark:#c85f10;
+  --plum:#76327d;
+  --shadow:0 18px 42px rgba(31,108,69,0.14);
+  --shadow-sm:0 8px 20px rgba(31,108,69,0.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;min-height:100vh;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at top left,rgba(47,143,91,0.18),transparent 34rem),
+    radial-gradient(circle at 90% 8%,rgba(221,95,80,0.10),transparent 26rem),
+    linear-gradient(135deg,var(--page),#ffffff 62%);
+}
+main{width:min(1100px,calc(100% - 32px));margin:0 auto;padding:48px 0}
+
+/* ---------- Hero ---------- */
+.hero{display:grid;gap:16px;margin-bottom:26px}
+.eyebrow{margin:0;color:var(--green-dark);font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+h1{max-width:820px;margin:0;font-size:clamp(2.25rem,5.4vw,4.6rem);line-height:0.96}
+.intro{max-width:680px;margin:0;color:var(--muted);font-size:1.12rem;line-height:1.65}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:#e9f7ef;color:var(--green-dark);
+  border:1px solid var(--line);border-radius:999px;padding:7px 15px;font-size:.85rem;font-weight:700}
+.chip.coral{background:#fdeeec;color:var(--coral-dark);border-color:#f6d6d1}
+
+/* ---------- Sub-nav ---------- */
+.subnav{position:sticky;top:0;z-index:20;margin:0 0 30px;
+  background:rgba(244,251,246,.86);backdrop-filter:blur(8px);
+  border:1px solid var(--line);border-radius:999px;box-shadow:var(--shadow-sm)}
+.subnav ul{list-style:none;display:flex;flex-wrap:wrap;gap:4px;margin:0;padding:6px;justify-content:center}
+.subnav a{text-decoration:none;color:var(--green-dark);font-weight:700;font-size:.9rem;
+  padding:9px 16px;border-radius:999px;transition:background .15s,color .15s}
+.subnav a:hover{background:#e9f7ef}
+
+/* ---------- Section ---------- */
+section{margin-bottom:42px}
+.section-eyebrow{margin:0 0 8px;color:var(--green-dark);font-size:.76rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+h2{margin:0 0 14px;font-size:clamp(1.7rem,3.6vw,2.6rem);line-height:1.02}
+section > p{max-width:70ch;margin:0 0 12px;color:var(--muted);font-size:1.04rem;line-height:1.62}
+.lead{color:var(--ink);font-size:1.12rem}
+
+/* ---------- About cards ---------- */
+.info-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:22px}
+.info-card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:22px;box-shadow:var(--shadow-sm)}
+.info-card h3{margin:0 0 8px;font-size:1.2rem;line-height:1.1}
+.info-card p{margin:0;color:var(--muted);font-size:.97rem;line-height:1.55}
+.info-card .icon{font-size:1.5rem;display:block;margin-bottom:10px}
+
+/* ---------- Agenda ---------- */
+.blocks{display:grid;gap:16px}
+.block{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:24px;box-shadow:var(--shadow-sm);
+  border-left:6px solid var(--green)}
+.block.b1{border-left-color:var(--green)}
+.block.b2{border-left-color:var(--coral)}
+.block.b3{border-left-color:var(--blue)}
+.block.b4{border-left-color:var(--amber)}
+.block-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:10px}
+.block-head h3{margin:0;font-size:1.4rem;line-height:1.05;flex:1 1 auto}
+.time{font-weight:800;font-size:.78rem;color:var(--green-dark);background:#e9f7ef;border-radius:999px;padding:5px 13px;white-space:nowrap}
+.who{font-weight:800;font-size:.78rem;color:#fff;background:var(--green);border-radius:999px;padding:5px 13px;white-space:nowrap}
+.b2 .who{background:var(--coral)}
+.b3 .who{background:var(--blue)}
+.b4 .who{background:var(--amber)}
+.block p{margin:0 0 12px;color:var(--ink);font-size:1rem;line-height:1.58}
+.transition{background:#fff7ec;border:1px solid #f6e6c9;border-radius:8px;padding:11px 15px;font-size:.94rem;color:#7a4f14;line-height:1.5}
+.transition strong{color:var(--amber-dark)}
+
+/* Ticket cards */
+.ticket{background:linear-gradient(135deg,var(--green-dark),var(--green));color:#fff;
+  border:none;border-radius:8px;padding:22px 24px;box-shadow:var(--shadow)}
+.ticket .block-head h3{color:#fff}
+.ticket .time{background:rgba(255,255,255,.2);color:#fff}
+.ticket .who{background:rgba(255,255,255,.22);color:#fff}
+.ticket p{color:#eafaf0}
+
+/* ---------- Activity gallery (matches Peggy's page) ---------- */
+.menu{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin-top:4px}
+.activity-card{display:grid;grid-template-rows:150px 1fr;overflow:hidden;color:inherit;text-decoration:none;
+  background:var(--panel);border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow);transition:transform .15s}
+.activity-card:hover{transform:translateY(-3px)}
+.activity-media{display:grid;place-items:center;padding:14px;font-size:3.4rem}
+.groupup-media{background:#fff6df}
+.fruit-media{background:#fff7ec}
+.slurpee-media{background:#eaf7ff}
+.breakout-media{background:#f8efdc}
+.activity-copy{display:grid;align-content:space-between;gap:16px;padding:22px}
+.activity-copy h4{margin:0 0 8px;font-size:1.4rem;line-height:1.05}
+.activity-copy p{margin:0;color:var(--muted);font-size:.96rem;line-height:1.5}
+.open-link{display:inline-flex;align-items:center;justify-content:center;justify-self:start;min-height:42px;
+  padding:0 18px;color:#fff;background:var(--green);border-radius:999px;font-weight:800;font-size:.92rem}
+.groupup-card .open-link{background:var(--amber)}
+.groupup-card:hover .open-link{background:var(--amber-dark)}
+.fruit-card .open-link{background:var(--coral)}
+.fruit-card:hover .open-link{background:var(--coral-dark)}
+.slurpee-card .open-link{background:var(--blue)}
+.slurpee-card:hover .open-link{background:var(--blue-dark)}
+.breakout-card .open-link{background:var(--plum)}
+.breakout-card:hover .open-link{background:#532057}
+
+/* ---------- Tools ---------- */
+.toolgroup{margin-bottom:24px}
+.toolgroup h3{margin:0 0 12px;font-size:1.15rem;color:var(--green-dark)}
+.tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:14px}
+.tool{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px 18px;box-shadow:var(--shadow-sm);transition:transform .15s,border-color .15s}
+.tool:hover{transform:translateY(-2px);border-color:var(--green)}
+.tool a{font-weight:800;text-decoration:none;color:var(--green-dark)}
+.tool a:hover{text-decoration:underline}
+.tool .desc{display:block;color:var(--muted);font-size:.86rem;margin-top:6px;line-height:1.45}
+.tag{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;border-radius:999px;padding:3px 11px;margin-top:10px}
+.tag.free{background:#e9f7ef;color:var(--green-dark)}
+.tag.paid{background:#fdeeec;color:var(--coral-dark)}
+
+/* ---------- Reading ---------- */
+.reading{list-style:none;padding:0;margin:0;display:grid;gap:11px}
+.reading li{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:15px 18px;box-shadow:var(--shadow-sm)}
+.reading a{font-weight:800;text-decoration:none;color:var(--green-dark)}
+.reading a:hover{text-decoration:underline}
+.reading .desc{display:block;color:var(--muted);font-size:.9rem;margin-top:4px;line-height:1.45}
+
+footer{margin-top:38px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:.94rem;line-height:1.6}
+footer strong{color:var(--green-dark)}
+footer a{color:var(--green-dark);font-weight:700}
+
+@media(max-width:980px){
+  .info-grid{grid-template-columns:1fr}
+  .menu{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:760px){
+  main{width:min(100% - 24px,560px);padding:32px 0}
+  .menu{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<main>
+
+  <section class="hero" aria-labelledby="page-title">
+    <p class="eyebrow">TCEA Hands-On Session · 3 Hours</p>
+    <h1 id="page-title">Vibe-Code Your Own Classroom Tools.</h1>
+    <p class="intro">Tell a friendly AI chatbot what you want, keep tweaking until it works, and walk out with a real classroom tool you built yourself. No coding needed, and nothing to buy.</p>
+    <div class="hero-meta">
+      <span class="chip">🍎 For elementary &amp; middle school teachers</span>
+      <span class="chip coral">✨ Build it · Host it · Own it</span>
+    </div>
+    <p class="intro" style="font-size:.98rem;margin-top:2px">Facilitators: Miguel Guhlin &amp; Peggy Reimers</p>
+  </section>
+
+  <nav class="subnav" aria-label="Section menu">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#agenda">Agenda</a></li>
+      <li><a href="#gallery">See It in Action</a></li>
+      <li><a href="#tools">Tools</a></li>
+      <li><a href="#reading">Read More</a></li>
+    </ul>
+  </nav>
+
+  <section id="about">
+    <p class="section-eyebrow">About This Session</p>
+    <h2>Build the tool you keep wishing you had.</h2>
+    <p class="lead">You know that game, quiz, or center activity you always wanted but could never find (or afford)? Now you can just make it. You describe what you want in plain words, the AI writes the code, and you spend your time trying it out and telling it what to fix.</p>
+    <p>In three hands-on hours you will go from an idea to a working web activity your students can open on any device. It lives in tools you already have, like Google Sheets and free GitHub Pages, so there is no subscription and no student data leaving your school. You will build something real, learn where to host it, and pick up a few simple habits for keeping it safe.</p>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <span class="icon">🧑‍🏫</span>
+        <h3>Who it's for</h3>
+        <p>Elementary and middle school teachers, plus coaches and librarians who work with them. No tech background required.</p>
+      </div>
+      <div class="info-card">
+        <span class="icon">🎒</span>
+        <h3>What to bring</h3>
+        <p>A laptop, a Google account, and a free AI chatbot login (ChatGPT, Claude, or Gemini). A free plan is enough to follow along.</p>
+      </div>
+      <div class="info-card">
+        <span class="icon">🎁</span>
+        <h3>What you'll leave with</h3>
+        <p>A live link to an activity you built during the session and a simple plan for using it with students next week.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="agenda">
+    <p class="section-eyebrow">Agenda</p>
+    <h2>Four build blocks, start to finish.</h2>
+    <p>We open and close with a quick ticket, and every block ends with a short activity to keep the room moving from idea to working tool.</p>
+
+    <div class="blocks">
+
+      <div class="block ticket">
+        <div class="block-head"><h3>Entry Ticket</h3><span class="time">0–10 min</span><span class="who">Reimers</span></div>
+        <p>On our WonderWall question wall, drop one classroom task you wish had a better tool (a warm-up, a review game, a way to collect answers). Your ideas become the things we build together today.</p>
+      </div>
+
+      <div class="block b1">
+        <div class="block-head"><h3>Block 1 · What Is Vibe-Coding?</h3><span class="time">10–50 min</span><span class="who">Guhlin</span></div>
+        <p>See how it works: you describe the tool, the AI writes it, you test and fix. We walk the friendly VIBES steps (Vision, Instruct, Build, Evaluate, Ship) and practice the most important one, the Vision sentence: "This is for ___ so they can ___." Watch a tool get built live from a plain-language prompt.</p>
+        <div class="transition"><strong>Quick move:</strong> Write your own Vision sentence and share it with a neighbor.</div>
+      </div>
+
+      <div class="block b2">
+        <div class="block-head"><h3>Block 2 · Build Your First Tool</h3><span class="time">50–105 min</span><span class="who">Reimers · Guhlin floating</span></div>
+        <p>Hands on the keyboard. Pick a starter using Peggy's ready-to-play activities as models (a grouping game, an idiom picker, a match-up, or a digital breakout), then build your own version from a copy-and-paste prompt. Connect it to your own Google Sheet so answers save automatically. Add one thing at a time so you can see what changes. Goal: a working tool before the block ends.</p>
+        <div class="transition"><strong>Quick move:</strong> Gallery walk. Post your live link on the shared board and try two classmates' tools.</div>
+      </div>
+
+      <div class="block b3">
+        <div class="block-head"><h3>Block 3 · Get It to Your Students</h3><span class="time">105–140 min</span><span class="who">Reimers</span></div>
+        <p>Now put it where kids can reach it: free GitHub Pages, a Google Sites page, an email link, or your learning platform. We cover the one hosting trap that trips people up and the easy fix. Then the student-safety basics: make names optional, skip email, use a simple code instead, and check your district's rules first.</p>
+        <div class="transition"><strong>Quick move:</strong> Vote on the hosting option that fits your school and name one thing that might get in the way.</div>
+      </div>
+
+      <div class="block b4">
+        <div class="block-head"><h3>Block 4 · Keep It Safe</h3><span class="time">140–170 min</span><span class="who">Guhlin</span></div>
+        <p>A friendly look at doing this responsibly. Ask the one question that sorts every tool fast: does this touch student data? Walk a short safety checklist you can run with the AI itself, then the three questions to answer before any tool goes live, including who keeps it running if you move classrooms.</p>
+        <div class="transition"><strong>Quick move:</strong> Ask the AI to review your tool for safety and note one thing it flags.</div>
+      </div>
+
+      <div class="block ticket">
+        <div class="block-head"><h3>Exit Ticket</h3><span class="time">170–180 min</span><span class="who">Guhlin</span></div>
+        <p>Back on WonderWall, post the tool you built, where you put it, and the next one you want to make. You leave with a live link in hand.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="gallery">
+    <p class="section-eyebrow">See It in Action</p>
+    <h2>Play the finished examples.</h2>
+    <p>These are real, ready-to-use activities built the same way you will build yours, created by Peggy Reimers. Open one, play it like a student would, then borrow the idea for your own classroom.</p>
+
+    <nav class="menu" aria-label="Example activities">
+      <a class="activity-card groupup-card" href="https://tceapr.github.io/tcea/groupup/" target="_blank" rel="noopener">
+        <span class="activity-media groupup-media">🧩</span>
+        <span class="activity-copy">
+          <span><h4>Peggy's GroupUp</h4><p>Pick a game, share a student link, or play the four-item grouping challenge.</p></span>
+          <span class="open-link">Open GroupUp</span>
+        </span>
+      </a>
+      <a class="activity-card fruit-card" href="https://tceapr.github.io/tcea/fruitidioms/" target="_blank" rel="noopener">
+        <span class="activity-media fruit-media">🍓</span>
+        <span class="activity-copy">
+          <span><h4>Fruit Idiom Sentence Pick</h4><p>Read each idiom, choose the sentence that uses it correctly, and watch fruit fall.</p></span>
+          <span class="open-link">Open Fruit Idioms</span>
+        </span>
+      </a>
+      <a class="activity-card slurpee-card" href="https://tceapr.github.io/tcea/slurpee/" target="_blank" rel="noopener">
+        <span class="activity-media slurpee-media">🥤</span>
+        <span class="activity-copy">
+          <span><h4>Frozen Favorite Match-Up</h4><p>Match each business with its frozen treat and fill the frosty progress bar.</p></span>
+          <span class="open-link">Open Slurpee Activity</span>
+        </span>
+      </a>
+      <a class="activity-card breakout-card" href="https://tceapr.github.io/tcea/breakouts/" target="_blank" rel="noopener">
+        <span class="activity-media breakout-media">🔓</span>
+        <span class="activity-copy">
+          <span><h4>Digital Breakouts</h4><p>Pick a breakout path by level, including seasonal puzzles, PB&amp;J, and more.</p></span>
+          <span class="open-link">Open Breakouts</span>
+        </span>
+      </a>
+    </nav>
+  </section>
+
+  <section id="tools">
+    <p class="section-eyebrow">Tools</p>
+    <h2>Everything you need, mostly free.</h2>
+    <p>These are the tools we use in the session. Links open in a new tab.</p>
+
+    <div class="toolgroup">
+      <h3>AI Chatbots for Building</h3>
+      <div class="tools">
+        <div class="tool"><a href="https://chatgpt.com/" target="_blank" rel="noopener">ChatGPT</a><span class="desc">Describe your idea, it writes the tool.</span><br><span class="tag free">Free tier</span></div>
+        <div class="tool"><a href="https://claude.ai/" target="_blank" rel="noopener">Claude</a><span class="desc">Great for clean, single-page tools.</span><br><span class="tag free">Free tier</span></div>
+        <div class="tool"><a href="https://gemini.google.com/" target="_blank" rel="noopener">Google Gemini</a><span class="desc">Google-friendly chatbot.</span><br><span class="tag free">Free tier</span></div>
+        <div class="tool"><a href="https://boodle.cello.so/vFr0d8nfKmL" target="_blank" rel="noopener">BoodleBox</a><span class="desc">Many models in one place. Code MGFREE123 for two months free.</span><br><span class="tag paid">Paid</span></div>
+      </div>
+    </div>
+
+    <div class="toolgroup">
+      <h3>Hosting &amp; Saving Answers (free)</h3>
+      <div class="tools">
+        <div class="tool"><a href="https://sites.google.com/" target="_blank" rel="noopener">Google Sites</a><span class="desc">Drop your tool onto a class page.</span><br><span class="tag free">Free</span></div>
+        <div class="tool"><a href="https://workspace.google.com/products/sheets/" target="_blank" rel="noopener">Google Sheets + Apps Script</a><span class="desc">Save answers in your own Drive, no server.</span><br><span class="tag free">Free</span></div>
+        <div class="tool"><a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a><span class="desc">Free, permanent link you can reuse.</span><br><span class="tag free">Free</span></div>
+        <div class="tool"><a href="https://htmlpreview.github.io/" target="_blank" rel="noopener">HTMLPreview</a><span class="desc">Open a Drive-hosted page in the browser.</span><br><span class="tag free">Free</span></div>
+      </div>
+    </div>
+
+    <div class="toolgroup">
+      <h3>Guides &amp; Starter Prompts</h3>
+      <div class="tools">
+        <div class="tool"><a href="https://tceapr.github.io/tcea/" target="_blank" rel="noopener">TCEA Activities Gallery</a><span class="desc">Play the finished examples. By Peggy Reimers.</span><br><span class="tag free">Free</span></div>
+        <div class="tool"><a href="https://mglearn.github.io/tcea" target="_blank" rel="noopener">Vibe-Coded Solutions Directory</a><span class="desc">Searchable launch page of tools and downloads.</span><br><span class="tag free">Free</span></div>
+        <div class="tool"><a href="https://mglearn.github.io/tcea/vcl/libvibes-vibes.html" target="_blank" rel="noopener">VIBES Framework</a><span class="desc">The five friendly build steps, explained.</span><br><span class="tag free">Free</span></div>
+        <div class="tool"><a href="https://mglearn.github.io/tcea/vcl/libvibes.html" target="_blank" rel="noopener">Starter Prompt Collection</a><span class="desc">Copy-and-paste prompts to build from.</span><br><span class="tag free">Free</span></div>
+        <div class="tool"><a href="https://mglearn.github.io/tcea/ddp/" target="_blank" rel="noopener">Data Display Patterns</a><span class="desc">Ways to show class data, with prompts.</span><br><span class="tag free">Free</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reading">
+    <p class="section-eyebrow">Read More</p>
+    <h2>Want to go deeper?</h2>
+    <ul class="reading">
+      <li><a href="https://blog.tcea.org/vibe-coded-solutions/" target="_blank" rel="noopener">Vibe-Coded Solutions for Educators</a><span class="desc">Four ready-to-run tools you own, with the data in your own Drive.</span></li>
+      <li><a href="https://blog.tcea.org/vibe-coding-an-oreo-personality-quiz/" target="_blank" rel="noopener">Vibe-Coding an Oreo Personality Quiz</a><span class="desc">A step-by-step build of a fun quiz that saves to Google Sheets.</span></li>
+      <li><a href="https://blog.tcea.org/drop-the-subscriptions-vibe-code-your-own-library-tools/" target="_blank" rel="noopener">Drop the Subscriptions: Vibe-Code Your Own Tools</a><span class="desc">The VIBES steps plus starter prompts you can adapt.</span></li>
+      <li><a href="https://blog.tcea.org/make-data-displays-without-writing-code/" target="_blank" rel="noopener">Make Data Displays Without Writing Code</a><span class="desc">Turn class numbers into simple, shareable displays.</span></li>
+      <li><a href="https://blog.tcea.org/tcea-responds-when-staff-build-their-own-ai-apps/" target="_blank" rel="noopener">When Staff Build Their Own AI Apps</a><span class="desc">The simple safety habits behind Block 4.</span></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p><strong>Vibe-Code Your Own Classroom Tools</strong> · A TCEA hands-on session for elementary &amp; middle school teachers</p>
+    <p>Facilitated by Miguel Guhlin &amp; Peggy Reimers · Explore more at <a href="https://tceapr.github.io/tcea/" target="_blank" rel="noopener">tceapr.github.io/tcea</a>, <a href="https://mglearn.github.io/tcea" target="_blank" rel="noopener">mglearn.github.io/tcea</a>, and <a href="https://blog.tcea.org/" target="_blank" rel="noopener">blog.tcea.org</a></p>
+  </footer>
+
+</main>
+</body>
+</html>
