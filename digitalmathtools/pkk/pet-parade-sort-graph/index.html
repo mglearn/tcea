@@ -798,18 +798,30 @@ function setLang(code){
 /* ---------------- Speech ---------------- */
 const SPEECH_OK = ('speechSynthesis' in window) && ('SpeechSynthesisUtterance' in window);
 if(SPEECH_OK){ try{ speechSynthesis.onvoiceschanged = function(){}; }catch(e){} }
+// Prefer warm, natural voices for young learners; avoid harsh robotic engines.
+function warmScore(v, code){
+  const lc=(v.lang||'').toLowerCase().replace('_','-'), want=code.toLowerCase(), two=want.slice(0,2);
+  if(lc!==want && lc.slice(0,2)!==two) return -1;
+  let s=(lc===want?100:60); const n=(v.name||'').toLowerCase();
+  if(/google|natural|neural|online|premium|enhanced|siri/.test(n)) s+=40;
+  if(/female|woman|samantha|karen|tessa|moira|fiona|serena|victoria|allison|ava|susan|zoe|amelie|amélie|paulina|monica|mónica|zira|hazel|catherine|linda|kanya|lekha|ting-ting|mei-jia|sin-ji|yu-shu|huihui|xiaoxiao/.test(n)) s+=18;
+  if(/espeak|compact|festival|pico|robot|eloquence/.test(n)) s-=60;
+  if(v.localService===false) s+=8;
+  if(v.default) s+=2;
+  return s;
+}
 function pickVoice(lang){
   const vs = (SPEECH_OK ? speechSynthesis.getVoices() : []) || [];
-  const base = lang.split('-')[0].toLowerCase();
-  return vs.find(v=>v.lang && v.lang.toLowerCase()===lang.toLowerCase())
-      || vs.find(v=>v.lang && v.lang.toLowerCase().replace('_','-').startsWith(base)) || null;
+  let best=null, bs=-1;
+  for(const v of vs){ const sc=warmScore(v,lang); if(sc>bs){ bs=sc; best=v; } }
+  return bs>=0?best:null;
 }
 function speak(text){
   if(!SPEECH_OK || !text) return;
   try{
     speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(text);
-    u.lang = SPEECH_LANG[L] || 'en-US'; u.rate = 0.95; u.pitch = 1.05;
+    u.lang = SPEECH_LANG[L] || 'en-US'; u.rate = 0.86; u.pitch = 1.15;
     const v = pickVoice(u.lang); if(v) u.voice = v;
     speechSynthesis.speak(u);
   }catch(e){}

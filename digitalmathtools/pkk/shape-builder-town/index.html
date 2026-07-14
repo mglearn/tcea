@@ -764,17 +764,33 @@ const SOLID_OBJECTS = {cube:["block","dice"],sphere:["ball","globe"],cylinder:["
 /* ---------- Speech ---------- */
 const speechOK = ("speechSynthesis" in window);
 function bcpFor(l){ const m=LANGS.find(x=>x.code===l); return m?m.bcp:"en-US"; }
+// Prefer warm, natural voices for young learners; avoid harsh robotic engines.
+function pickWarmVoice(code){
+  const vs = speechSynthesis.getVoices()||[];
+  const want=code.toLowerCase(), two=want.slice(0,2);
+  let best=null, bs=-1;
+  for(const v of vs){
+    const lc=(v.lang||'').toLowerCase().replace('_','-');
+    if(lc!==want && lc.slice(0,2)!==two) continue;
+    let s=(lc===want?100:60); const n=(v.name||'').toLowerCase();
+    if(/google|natural|neural|online|premium|enhanced|siri/.test(n)) s+=40;
+    if(/female|woman|samantha|karen|tessa|moira|fiona|serena|victoria|allison|ava|susan|zoe|amelie|amélie|paulina|monica|mónica|zira|hazel|catherine|linda|kanya|lekha|ting-ting|mei-jia|sin-ji|yu-shu|huihui|xiaoxiao/.test(n)) s+=18;
+    if(/espeak|compact|festival|pico|robot|eloquence/.test(n)) s-=60;
+    if(v.localService===false) s+=8;
+    if(v.default) s+=2;
+    if(s>bs){ bs=s; best=v; }
+  }
+  return best;
+}
 function speak(text){
   if(!speechOK || !text) return;
   try{
     speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(text);
     u.lang = bcpFor(lang);
-    const voices = speechSynthesis.getVoices();
-    const v = voices.find(vv=>vv.lang && vv.lang.toLowerCase().startsWith(lang)) ||
-              voices.find(vv=>vv.lang && vv.lang.toLowerCase().startsWith(u.lang.toLowerCase()));
+    const v = pickWarmVoice(u.lang);
     if(v) u.voice=v;
-    u.rate=0.92; u.pitch=1.05;
+    u.rate=0.9; u.pitch=1.15;
     speechSynthesis.speak(u);
   }catch(e){}
 }

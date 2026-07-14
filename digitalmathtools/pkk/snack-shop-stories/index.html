@@ -691,10 +691,21 @@ function renderStaticUI(){
 /* ===== Speech ===== */
 var speechOK=('speechSynthesis' in window)&&('SpeechSynthesisUtterance' in window);
 if(!speechOK){ g('speechWarn').style.display='block'; }
+// Prefer warm, natural voices for young learners; avoid harsh robotic engines.
 function bestVoice(bcp){
-  try{ var vs=window.speechSynthesis.getVoices()||[]; var pre=bcp.split('-')[0];
-    for(var i=0;i<vs.length;i++){ if(vs[i].lang && vs[i].lang.toLowerCase()===bcp.toLowerCase()) return vs[i]; }
-    for(var j=0;j<vs.length;j++){ if(vs[j].lang && vs[j].lang.toLowerCase().indexOf(pre)===0) return vs[j]; }
+  try{ var vs=window.speechSynthesis.getVoices()||[]; var want=bcp.toLowerCase(), two=want.slice(0,2);
+    var best=null, bs=-1;
+    for(var i=0;i<vs.length;i++){ var v=vs[i], lc=(v.lang||'').toLowerCase().replace('_','-');
+      if(lc!==want && lc.slice(0,2)!==two) continue;
+      var s=(lc===want?100:60), n=(v.name||'').toLowerCase();
+      if(/google|natural|neural|online|premium|enhanced|siri/.test(n)) s+=40;
+      if(/female|woman|samantha|karen|tessa|moira|fiona|serena|victoria|allison|ava|susan|zoe|amelie|amélie|paulina|monica|mónica|zira|hazel|catherine|linda|kanya|lekha|ting-ting|mei-jia|sin-ji|yu-shu|huihui|xiaoxiao/.test(n)) s+=18;
+      if(/espeak|compact|festival|pico|robot|eloquence/.test(n)) s-=60;
+      if(v.localService===false) s+=8;
+      if(v.default) s+=2;
+      if(s>bs){ bs=s; best=v; }
+    }
+    return best;
   }catch(e){}
   return null;
 }
@@ -703,7 +714,7 @@ function speak(text){
   try{
     window.speechSynthesis.cancel();
     var u=new SpeechSynthesisUtterance(text);
-    u.lang=L().bcp; u.rate=0.92; u.pitch=1.05;
+    u.lang=L().bcp; u.rate=0.86; u.pitch=1.15;
     var v=bestVoice(L().bcp); if(v) u.voice=v;
     window.speechSynthesis.speak(u);
   }catch(e){}

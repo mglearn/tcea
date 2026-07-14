@@ -794,14 +794,23 @@
     loadVoices();
     try{ window.speechSynthesis.onvoiceschanged = loadVoices; }catch(e){}
   }
+  // Prefer warm, natural voices for young learners; avoid harsh robotic engines.
+  function warmScore(v, code){
+    var lc=(v.lang||"").toLowerCase().replace("_","-"), want=code.toLowerCase(), two=want.slice(0,2);
+    if(lc!==want && lc.slice(0,2)!==two) return -1;
+    var s=(lc===want?100:60), n=(v.name||"").toLowerCase();
+    if(/google|natural|neural|online|premium|enhanced|siri/.test(n)) s+=40;
+    if(/female|woman|samantha|karen|tessa|moira|fiona|serena|victoria|allison|ava|susan|zoe|amelie|amélie|paulina|monica|mónica|zira|hazel|catherine|linda|kanya|lekha|ting-ting|mei-jia|sin-ji|yu-shu|huihui|xiaoxiao/.test(n)) s+=18;
+    if(/espeak|compact|festival|pico|robot|eloquence/.test(n)) s-=60;
+    if(v.localService===false) s+=8;
+    if(v.default) s+=2;
+    return s;
+  }
   function pickVoice(code){
     if(!voices.length) loadVoices();
-    var pre = code.toLowerCase();
-    var two = pre.slice(0,2);
-    var v = null;
-    for(var i=0;i<voices.length;i++){ if((voices[i].lang||"").toLowerCase()===pre){ v=voices[i]; break; } }
-    if(!v){ for(var j=0;j<voices.length;j++){ if((voices[j].lang||"").toLowerCase().slice(0,2)===two){ v=voices[j]; break; } } }
-    return v;
+    var best=null, bs=-1;
+    for(var i=0;i<voices.length;i++){ var sc=warmScore(voices[i],code); if(sc>bs){ bs=sc; best=voices[i]; } }
+    return bs>=0?best:null;
   }
   function say(text){
     if(!settings.audio || !speechOK || !text) return;
@@ -812,7 +821,7 @@
       u.lang = code;
       var v = pickVoice(code);
       if(v) u.voice = v;
-      u.rate = 0.92; u.pitch = 1.05;
+      u.rate = 0.86; u.pitch = 1.15;
       window.speechSynthesis.speak(u);
     }catch(e){}
   }
