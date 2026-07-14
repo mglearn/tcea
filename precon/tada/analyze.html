@@ -1,0 +1,250 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"><style>
+:root{--navy:#0A3476;--navy-dark:#071f4a;--gold:#FCB040;--gold-light:#fdd17a;--gold-pale:#FEF0D0;--pale-navy:#D0D8F0;--white:#fff;--off-white:#f7f8fc;--text:#1a1a2e;--muted:#5a6680;--border:#e2e7f5;--teal:#0e6b8a;--s-bg:#EAF0FB;--t-bg:#E1F0EC}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--off-white);line-height:1.65}
+h1,h2,h3,h4{font-family:'DM Serif Display',serif;color:var(--navy);font-weight:400}
+a{color:var(--navy);border-bottom:1.5px solid var(--gold)}a:hover{background:var(--gold-pale)}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px}
+.topnav{position:sticky;top:0;z-index:30;background:var(--navy-dark);display:flex;flex-wrap:wrap;gap:4px;padding:11px 24px;align-items:center}
+.topnav .brand{font-family:'DM Serif Display',serif;color:#fff;font-size:1.02rem;margin-right:auto}
+.topnav .brand span{color:var(--gold-light);font-style:italic}
+.topnav a{color:var(--pale-navy);font-size:.88rem;font-weight:500;padding:6px 12px;border-radius:100px;border:none}
+.topnav a:hover{background:rgba(255,255,255,.1);color:#fff}
+.hero{background:var(--navy-dark);background-image:radial-gradient(circle at 18% 20%,rgba(252,176,64,.13),transparent 55%);color:#fff;padding:56px 24px 50px;text-align:center}
+.hero .kicker{display:inline-block;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-dark);background:var(--gold);padding:6px 14px;border-radius:100px;font-weight:600;margin-bottom:18px}
+.hero h1{color:#fff;font-size:2.6rem;line-height:1.12;max-width:720px;margin:0 auto 14px}
+.hero h1 em{color:var(--gold-light);font-style:italic}
+.hero p.sub{color:var(--pale-navy);font-size:1.08rem;max-width:620px;margin:0 auto 22px}
+.hero .fac{font-size:.9rem}.hero .fac span{color:var(--gold-light);font-weight:600}
+.btn{display:inline-block;background:var(--gold);color:var(--navy-dark);font-weight:600;padding:12px 22px;border-radius:8px;font-size:.96rem;border:none;cursor:pointer}
+.btn:hover{background:var(--gold-light);color:var(--navy-dark)}
+.btn.outline{background:transparent;border:1.5px solid var(--pale-navy);color:#fff}.btn.outline:hover{background:rgba(255,255,255,.1)}
+.btn-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:6px}
+section{padding:46px 0 6px}
+section>.wrap>h2{font-size:1.85rem;margin-bottom:6px;position:relative;padding-left:16px;display:inline-block}
+section>.wrap>h2::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:5px;background:var(--gold);border-radius:4px}
+.intro{color:var(--muted);max-width:680px;margin-bottom:24px}
+.step{display:flex;gap:16px;background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:18px 22px;margin-bottom:12px;align-items:flex-start}
+.step .num{flex:none;width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;font-family:'DM Serif Display',serif;font-size:1.1rem;display:flex;align-items:center;justify-content:center}
+.step .body h3{font-size:1.12rem;margin-bottom:2px}.step .body p{font-size:.95rem;color:var(--muted)}
+.dl{display:flex;align-items:center;gap:16px;background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:16px 20px;margin-bottom:12px}
+.dl .ic{flex:none;width:46px;height:46px;border-radius:8px;background:var(--pale-navy);color:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'Courier New',monospace;font-weight:700;font-size:.72rem}
+.dl .meta{flex:1}.dl .meta strong{display:block;color:var(--navy);font-size:1.04rem}.dl .meta span{font-size:.87rem;color:var(--muted)}
+.dl a.get{flex:none;background:var(--navy);color:#fff;font-weight:600;font-size:.85rem;padding:9px 17px;border-radius:6px;border:none}.dl a.get:hover{background:#12428f;color:#fff}
+.note{background:#fff;border-left:4px solid var(--teal);border-radius:0 8px 8px 0;padding:14px 18px;margin:16px 0;font-size:.92rem;color:var(--muted)}.note strong{color:var(--navy)}
+.pill{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--navy);background:var(--pale-navy);padding:3px 9px;border-radius:4px}
+/* scenario cards */
+.scn{background:#fff;border:1.5px solid var(--border);border-radius:12px;margin-bottom:16px;overflow:hidden}
+.scn>summary{cursor:pointer;list-style:none;padding:18px 22px;display:flex;align-items:center;gap:12px}
+.scn>summary::-webkit-details-marker{display:none}
+.scn>summary .n{flex:none;width:38px;height:38px;border-radius:8px;background:var(--navy);color:#fff;font-family:'DM Serif Display',serif;font-size:1.1rem;display:flex;align-items:center;justify-content:center}
+.scn>summary .ti{flex:1}.scn>summary .ti strong{display:block;color:var(--navy);font-size:1.1rem}
+.scn>summary .ti .mix{font-size:.8rem;color:var(--muted)}
+.scn>summary .chev{color:var(--muted);font-size:.8rem}
+.scn[open]>summary{border-bottom:1.5px solid var(--border);background:var(--off-white)}
+.scn .inner{padding:20px 22px}
+.scn .ctx{background:var(--off-white);border-radius:8px;padding:14px 16px;font-size:.95rem;margin-bottom:16px}
+.scn .ctx b{color:var(--navy)}
+.qh{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--navy);margin:14px 0 8px}
+.q{border-left:3px solid var(--border);padding:6px 0 6px 14px;margin-bottom:10px}
+.q .tag{display:inline-block;font-size:.68rem;font-weight:600;text-transform:uppercase;padding:2px 7px;border-radius:4px;margin-right:6px}
+.tag.surface{background:var(--s-bg);color:var(--navy)}.tag.deep{background:var(--gold-pale);color:#7a4d00}.tag.transfer{background:var(--t-bg);color:#0e6b8a}
+.q .qt{font-weight:600;font-size:.96rem}.q .ck{font-size:.86rem;color:var(--muted);margin-top:3px}.q .ck em{color:var(--navy);font-style:normal;font-weight:600}
+table.ans{width:100%;border-collapse:collapse;margin-top:8px;font-size:.86rem}
+table.ans th{background:var(--navy);color:#fff;text-align:left;padding:8px 10px;font-weight:600;font-size:.8rem}
+table.ans td{padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+table.ans td.sid{font-weight:700;color:var(--navy);white-space:nowrap}
+table.ans tr:last-child td{border-bottom:none}
+footer{background:var(--navy-dark);color:var(--pale-navy);text-align:center;padding:32px 24px;margin-top:44px;font-size:.9rem}
+footer strong{color:#fff}footer a{color:var(--gold-light);border:none}
+@media(max-width:600px){.hero h1{font-size:2rem}section>.wrap>h2{font-size:1.5rem}.dl{flex-wrap:wrap}table.ans{display:block;overflow-x:auto}}
+
+.drop{border:2px dashed var(--pale-navy);border-radius:12px;background:#fff;padding:34px 24px;text-align:center;cursor:pointer;transition:border-color .15s,background .15s}
+.drop:hover,.drop.drag{border-color:var(--gold);background:var(--gold-pale)}
+.drop .big{font-family:'DM Serif Display',serif;color:var(--navy);font-size:1.3rem;margin-bottom:6px}
+.drop .sm{color:var(--muted);font-size:.9rem}
+.drop input{display:none}
+.privacy{background:var(--t-bg);border-left:4px solid var(--teal);border-radius:0 8px 8px 0;padding:12px 16px;margin:14px 0;font-size:.9rem;color:#0e5a73}
+.privacy strong{color:var(--navy)}
+.results{margin-top:8px}
+.rblock{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:20px 22px;margin-bottom:16px}
+.rblock h3{font-size:1.25rem;margin-bottom:10px}
+table.rt{width:100%;border-collapse:collapse;font-size:.9rem}
+table.rt th{background:var(--navy);color:#fff;text-align:left;padding:9px 11px;font-weight:600;font-size:.82rem}
+table.rt td{padding:8px 11px;border-bottom:1px solid var(--border)}
+table.rt tr:last-child td{border-bottom:none}
+.bar{height:20px;border-radius:4px;background:var(--gold);display:inline-block;vertical-align:middle;min-width:2px}
+.gap{color:#a32d2d;font-weight:600}
+.phase-pill{display:inline-block;font-size:.72rem;font-weight:600;padding:2px 9px;border-radius:100px;text-transform:uppercase}
+.p-surface{background:var(--s-bg);color:var(--navy)}
+.p-deep{background:var(--gold-pale);color:#7a4d00}
+.p-transfer{background:var(--t-bg);color:#0e6b8a}
+.p-emerging{background:#f3f0e8;color:#5f5e5a}
+.distrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.distcard{flex:1;min-width:120px;background:var(--off-white);border:1.5px solid var(--border);border-radius:10px;padding:14px;text-align:center}
+.distcard .cnt{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--navy)}
+.distcard .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.err{background:#fcebeb;border-left:4px solid #a32d2d;border-radius:0 8px 8px 0;padding:12px 16px;color:#791f1f;font-size:.9rem;margin-top:10px}
+.samplebtn{background:none;border:1.5px solid var(--pale-navy);color:var(--navy);font-weight:500;font-size:.85rem;padding:8px 14px;border-radius:6px;cursor:pointer;margin-top:12px}
+.samplebtn:hover{background:var(--pale-navy)}
+</style><title>No-AI Analyzer — Turn Assessment Data Into Action</title></head><body>
+<nav class="topnav"><span class="brand">Turn Assessment Data <span>Into Action</span></span><a href="index.html">Home</a><a href="index.html#downloads">Downloads</a><a href="index.html#scenarios">Scenarios</a><a href="analyze.html">No-AI Analyzer</a></nav>
+
+<header class="hero"><div class="kicker">No-AI Item Analyzer</div>
+<h1>Analyze your CSV <em>right here</em></h1>
+<p class="sub">Drop in a CSV and get item percentages, each student's phase of learning, and grouped next steps. Nothing is uploaded &mdash; the analysis runs entirely in your browser.</p></header>
+
+<section><div class="wrap">
+<div class="privacy"><strong>Private by design.</strong> Your file never leaves your device. This page does all the math locally in your browser, so it's safe for real student data. (Still, use student IDs, not names, as a good habit.)</div>
+
+<div id="drop" class="drop"><div class="big">Drop a CSV here, or click to choose</div><div class="sm">Exported from the scoring spreadsheet, or any CSV with a student_id column and question columns ending in _surface, _deep, or _transfer.</div><input type="file" id="file" accept=".csv,text/csv"></div>
+<div style="text-align:center"><button id="sample" class="samplebtn">Try it with sample data</button></div>
+
+<div id="results" class="results"></div>
+</div></section>
+
+<section><div class="wrap">
+<h2>How it decides a phase</h2>
+<p class="intro">Same rules as the chatbot pack, applied consistently:</p>
+<table class="rt"><tr><th>Phase</th><th>The student&hellip;</th></tr>
+<tr><td><span class="phase-pill p-surface">surface</span></td><td>is secure on the surface items but not yet the deep or transfer ones.</td></tr>
+<tr><td><span class="phase-pill p-deep">deep</span></td><td>is secure on surface AND deep items.</td></tr>
+<tr><td><span class="phase-pill p-transfer">transfer</span></td><td>is secure across surface, deep, AND the transfer item.</td></tr>
+<tr><td><span class="phase-pill p-emerging">emerging</span></td><td>hasn't secured the surface items yet &mdash; needs foundational support first.</td></tr>
+</table>
+<div class="note" style="margin-top:16px"><strong>This is a starting point, not a verdict.</strong> The estimate comes from the score pattern; your professional judgment decides the final phase, especially on mixed results. For a richer written report and follow-up prompts, use the <a href="index.html#downloads">chatbot pack</a> instead.</div>
+</div></section>
+
+<footer><p><strong>Turn Assessment Data Into Action</strong></p><p>Diana Benner &amp; Miguel Guhlin</p></footer>
+<script>
+const ACE = {
+  surface:{step:'Articulate It', strat:'Vocabulary Programs (0.62) or Jigsaw (0.92, expert phase)', move:'Solidify facts and vocabulary; have students state ideas in their own words before connecting them.'},
+  deep:{step:'Connect It', strat:'Concept Mapping (0.66), Reciprocal Teaching (0.74), or Argumentation (0.86)', move:'Push students to link ideas and explain relationships, not just list facts.'},
+  transfer:{step:'Extend It', strat:'Problem-Solving Teaching (0.61) or Critical Thinking (0.79)', move:'Give a novel problem that applies the learning to an unfamiliar situation.'},
+  emerging:{step:'Build foundations', strat:'Direct Instruction (0.59) and Vocabulary Programs (0.62)', move:'Re-teach core facts and skills with more examples before moving on.'}
+};
+
+function parseCSV(text){
+  const lines=text.replace(/\r/g,'').split('\n').filter(l=>l.trim().length);
+  if(lines.length<2) throw new Error('The file needs a header row and at least one student row.');
+  const headers=lines[0].split(',').map(h=>h.trim());
+  if(headers[0].toLowerCase()!=='student_id') throw new Error('The first column must be named student_id.');
+  const qcols=headers.slice(1);
+  if(!qcols.length) throw new Error('No question columns found after student_id.');
+  const rows=[];
+  for(let i=1;i<lines.length;i++){
+    const cells=lines[i].split(',').map(c=>c.trim());
+    if(cells.every(c=>c==='')) continue;
+    const id=cells[0]||('S'+i);
+    const vals=qcols.map((_,j)=>{const v=cells[j+1]; return v===''||v===undefined?null:Number(v);});
+    rows.push({id,vals});
+  }
+  if(!rows.length) throw new Error('No student data rows found.');
+  return {qcols,rows};
+}
+
+function phaseOf(col){
+  const c=col.toLowerCase();
+  if(c.includes('transfer')) return 'transfer';
+  if(c.includes('deep')) return 'deep';
+  if(c.includes('surface')) return 'surface';
+  return 'unknown';
+}
+
+function analyze(data){
+  const {qcols,rows}=data;
+  const phases=qcols.map(phaseOf);
+  const unknown=qcols.filter((c,i)=>phases[i]==='unknown');
+  // item percentages
+  const items=qcols.map((c,j)=>{
+    let ok=0,n=0;
+    rows.forEach(r=>{if(r.vals[j]!==null&&!isNaN(r.vals[j])){n++; if(r.vals[j]>=1)ok++;}});
+    return {col:c,phase:phases[j],pct:n?Math.round(100*ok/n):null};
+  });
+  // per-student phase
+  const idxByPhase=p=>qcols.map((c,j)=>j).filter(j=>phases[j]===p);
+  const sIdx=idxByPhase('surface'), dIdx=idxByPhase('deep'), tIdx=idxByPhase('transfer');
+  const students=rows.map(r=>{
+    const got=idxs=>idxs.reduce((a,j)=>a+((r.vals[j]>=1)?1:0),0);
+    const ns=sIdx.length, nd=dIdx.length, nt=tIdx.length;
+    const sMast = ns? got(sIdx)>=Math.max(1,ns-1) : true;
+    const dMast = nd? got(dIdx)>=nd : true;
+    const tMast = nt? got(tIdx)>=nt : false;
+    let phase;
+    if(sMast&&dMast&&tMast) phase='transfer';
+    else if(sMast&&dMast) phase='deep';
+    else if(sMast) phase='surface';
+    else phase='emerging';
+    return {id:r.id,phase};
+  });
+  const dist={surface:0,deep:0,transfer:0,emerging:0};
+  students.forEach(s=>dist[s.phase]++);
+  return {items,students,dist,unknown};
+}
+
+function render(res){
+  const el=document.getElementById('results');
+  let h='';
+  if(res.unknown.length){
+    h+=`<div class="err">These columns don't say which phase they measure, so they were treated as ungrouped: ${res.unknown.join(', ')}. Name columns with _surface, _deep, or _transfer for best results.</div>`;
+  }
+  // item analysis
+  h+='<div class="rblock"><h3>Item analysis</h3><table class="rt"><tr><th>Question</th><th>Phase</th><th>% correct</th><th></th></tr>';
+  res.items.forEach(it=>{
+    const pct=it.pct===null?'&mdash;':it.pct+'%';
+    const gap=(it.pct!==null&&it.pct<50)?' <span class="gap">gap</span>':'';
+    const w=it.pct===null?0:Math.round(it.pct*1.4);
+    h+=`<tr><td>${it.col}</td><td><span class="phase-pill p-${it.phase==='unknown'?'emerging':it.phase}">${it.phase}</span></td><td>${pct}${gap}</td><td><span class="bar" style="width:${w}px"></span></td></tr>`;
+  });
+  h+='</table></div>';
+  // class at a glance
+  h+='<div class="rblock"><h3>The class at a glance</h3><div class="distrow">';
+  [['surface','Surface'],['deep','Deep'],['transfer','Transfer'],['emerging','Emerging']].forEach(([k,l])=>{
+    h+=`<div class="distcard"><div class="cnt">${res.dist[k]}</div><div class="lbl">${l}</div></div>`;
+  });
+  h+='</div></div>';
+  // per student
+  h+='<div class="rblock"><h3>Where each student is</h3><table class="rt"><tr><th>Student</th><th>Phase of learning</th></tr>';
+  res.students.forEach(s=>{h+=`<tr><td>${s.id}</td><td><span class="phase-pill p-${s.phase}">${s.phase}</span></td></tr>`;});
+  h+='</table></div>';
+  // next steps for present groups
+  h+='<div class="rblock"><h3>What to do next</h3><table class="rt"><tr><th>Phase group</th><th>ACE next step</th><th>Try this strategy</th><th>In the next lesson</th></tr>';
+  ['surface','deep','transfer','emerging'].forEach(p=>{
+    if(res.dist[p]>0){const a=ACE[p];h+=`<tr><td><span class="phase-pill p-${p}">${p}</span> (${res.dist[p]})</td><td>${a.step}</td><td>${a.strat}</td><td>${a.move}</td></tr>`;}
+  });
+  h+='</table></div>';
+  el.innerHTML=h;
+  el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function handleText(text){
+  const el=document.getElementById('results');
+  try{ const data=parseCSV(text); const res=analyze(data); render(res); }
+  catch(e){ el.innerHTML=`<div class="err">${e.message}</div>`; }
+}
+
+function wire(){
+  const drop=document.getElementById('drop'), input=document.getElementById('file');
+  drop.addEventListener('click',()=>input.click());
+  input.addEventListener('change',e=>{const f=e.target.files[0]; if(f){const r=new FileReader(); r.onload=ev=>handleText(ev.target.result); r.readAsText(f);}});
+  ;['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('drag');}));
+  ;['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove('drag');}));
+  drop.addEventListener('drop',e=>{const f=e.dataTransfer.files[0]; if(f){const r=new FileReader(); r.onload=ev=>handleText(ev.target.result); r.readAsText(f);}});
+  document.getElementById('sample').addEventListener('click',()=>{
+    const s=`student_id,Q1_surface,Q2_surface,Q3_deep,Q4_surface,Q5_transfer
+S01,1,1,0,1,0
+S02,1,0,0,1,0
+S03,1,1,1,1,1
+S04,0,1,0,1,0
+S05,1,1,1,1,0
+S06,0,0,0,1,0
+S07,1,1,1,1,1
+S08,1,0,0,1,0
+S09,0,1,1,1,0
+S10,1,1,0,1,0`;
+    handleText(s);
+  });
+}
+document.addEventListener('DOMContentLoaded',wire);
+</script>
+</body></html>
