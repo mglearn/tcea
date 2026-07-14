@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Snack Shop Stories</title>
+<style>
+  :root{
+    --bg:#fff7ec;--panel:#ffffff;--ink:#2b2118;--ink-soft:#5a4a38;--line:#e6d4b8;
+    --accent:#c25a1a;--accent-d:#9c4310;--green:#2f7d32;--green-d:#1f5c22;--blue:#1d5fa8;
+    --pink:#b83a6e;--mat:#fffdf7;--focus:#0b57d0;--ok:#1f7a34;--tap:64px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.4;-webkit-text-size-adjust:100%}
+  h1,h2,h3{margin:0}
+  button{font-family:inherit}
+  a{color:var(--accent-d)}
+  .topbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:var(--accent);color:#fff;padding:10px 14px;box-shadow:0 2px 0 rgba(0,0,0,.15)}
+  .topbar h1{font-size:1.35rem;letter-spacing:.3px;display:flex;align-items:center;gap:8px}
+  .topbar .spacer{flex:1}
+  .langbox{display:flex;align-items:center;gap:6px}
+  #langSel{min-height:44px;font-size:1rem;font-weight:700;border-radius:12px;border:3px solid rgba(255,255,255,.6);background:#fff;color:var(--accent-d);padding:6px 10px}
+  #langSel:focus-visible{outline:4px solid #fff;outline-offset:2px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:10px 16px;border-radius:14px;border:3px solid transparent;font-size:1rem;font-weight:700;cursor:pointer;background:#fff;color:var(--accent-d);line-height:1.1;text-decoration:none}
+  .btn:focus-visible{outline:4px solid var(--focus);outline-offset:2px}
+  .btn.ghost{background:rgba(255,255,255,.16);color:#fff;border-color:rgba(255,255,255,.55)}
+  .btn.ghost:hover{background:rgba(255,255,255,.28)}
+  .btn.big{min-height:var(--tap);font-size:1.15rem;padding:12px 22px}
+  .btn.primary{background:var(--green);color:#fff}
+  .btn.primary:hover{background:var(--green-d)}
+  .btn.warm{background:var(--accent-d);color:#fff}
+  .btn:disabled{opacity:.45;cursor:not-allowed}
+  .wrap{max-width:1000px;margin:0 auto;padding:14px}
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;padding:12px 14px 0;max-width:1000px;margin:0 auto}
+  .tab{min-height:52px;padding:8px 16px;border-radius:14px 14px 0 0;border:3px solid var(--line);border-bottom:none;background:#f2e2c8;color:var(--ink);font-weight:800;font-size:1.02rem;cursor:pointer;display:flex;align-items:center;gap:8px}
+  .tab[aria-selected="true"]{background:var(--panel);color:var(--accent-d);border-color:var(--accent)}
+  .tab:focus-visible{outline:4px solid var(--focus);outline-offset:2px}
+  .card{background:var(--panel);border:3px solid var(--line);border-radius:18px;padding:16px;margin-bottom:14px;box-shadow:0 3px 0 var(--line)}
+  .levelnote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-weight:700;color:var(--ink-soft)}
+  .pill{background:#f0e6d3;border:2px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.95rem}
+  .storyrow{display:flex;align-items:flex-start;gap:12px}
+  .story{font-size:1.3rem;font-weight:700;flex:1}
+  .speaker{flex:none;min-width:56px;min-height:56px;border-radius:50%;background:var(--blue);color:#fff;border:3px solid #14497f;font-size:1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .speaker:focus-visible{outline:4px solid var(--focus);outline-offset:2px}
+  .speaker.sm{min-width:44px;min-height:44px;font-size:1.15rem}
+  .scenehead{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-weight:800;color:var(--ink-soft)}
+  .mat-area{display:flex;flex-direction:column;gap:12px}
+  .mat{position:relative;min-height:150px;border-radius:20px;background:var(--mat);border:4px dashed #d9b98a;padding:14px;display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start}
+  .mat.picnic{background:#eef7e6;border-color:#8bc06a}
+  .mat.tray{background:#e9f1fb;border-color:#7fabde}
+  .mat.bakery{background:#fdeef2;border-color:#e79ab6}
+  .mat.animal{background:#f6efe1;border-color:#cbab77}
+  .mat .hint{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#a08a68;font-size:1.05rem;font-weight:700;pointer-events:none;text-align:center;padding:12px}
+  .zones{display:flex;gap:12px;flex-wrap:wrap}
+  .zone{flex:1;min-width:260px}
+  .zone .zhead{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px;font-weight:800}
+  .zone .zcount{background:#f0e6d3;border:2px solid var(--line);border-radius:999px;padding:2px 12px;font-weight:800}
+  .token{width:74px;height:74px;padding:4px;border:3px solid transparent;border-radius:16px;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .token svg{width:100%;height:100%;display:block;pointer-events:none}
+  .token.removable{background:#fff;border-color:var(--line)}
+  .token.removable:hover{border-color:var(--accent)}
+  .token:focus-visible{outline:4px solid var(--focus);outline-offset:2px}
+  @keyframes pop{from{transform:scale(.4);opacity:0}to{transform:scale(1);opacity:1}}
+  .token.pop{animation:pop .25s ease-out}
+  .supply{margin-top:4px;border-top:3px dashed var(--line);padding-top:12px}
+  .supply .slabel{font-weight:800;color:var(--ink-soft);margin-bottom:8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .supplytokens{display:flex;gap:10px;flex-wrap:wrap}
+  .supplytokens .token{background:#fff;border-color:var(--line);box-shadow:0 3px 0 var(--line)}
+  .supplytokens .token:active{transform:translateY(2px);box-shadow:none}
+  .seg{display:inline-flex;border:3px solid var(--line);border-radius:12px;overflow:hidden}
+  .seg button{min-height:44px;padding:6px 14px;border:none;background:#fff;font-weight:800;cursor:pointer;color:var(--ink)}
+  .seg button[aria-pressed="true"]{background:var(--green);color:#fff}
+  .seg button:focus-visible{outline:4px solid var(--focus);outline-offset:-2px}
+  .steprow{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .instruction{font-size:1.15rem;font-weight:800;flex:1;min-width:220px}
+  .count-badge{background:var(--accent);color:#fff;border-radius:14px;padding:8px 16px;font-size:1.15rem;font-weight:800;direction:ltr}
+  .choices{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+  .numbtn{min-width:var(--tap);min-height:var(--tap);font-size:1.7rem;font-weight:900;border-radius:16px;border:3px solid var(--accent);background:#fff;color:var(--accent-d);cursor:pointer;padding:6px 18px}
+  .numbtn:hover{background:#fdeede}
+  .numbtn:focus-visible{outline:4px solid var(--focus);outline-offset:2px}
+  .numbtn.wrong{border-color:#b23;background:#fbe7ea;color:#8a1420}
+  .numbtn.right{border-color:var(--ok);background:#e6f4e9;color:var(--green-d)}
+  .storybtns{display:flex;gap:12px;flex-wrap:wrap}
+  .choicebig{flex:1;min-width:220px;min-height:78px;border-radius:18px;border:4px solid var(--blue);background:#fff;color:var(--ink);font-size:1.2rem;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;padding:12px}
+  .choicebig:hover{background:#eef4fc}
+  .choicebig:focus-visible{outline:4px solid var(--focus);outline-offset:2px}
+  .feedback{display:none;border-radius:16px;padding:14px 16px;font-size:1.2rem;font-weight:800;align-items:center;gap:12px}
+  .feedback.show{display:flex}
+  .feedback.good{background:#e6f4e9;border:3px solid var(--ok);color:var(--green-d)}
+  .feedback.retry{background:#fff4e0;border:3px solid #d99a2b;color:#7a4f0c}
+  .equation{font-size:1.5rem;font-weight:900;letter-spacing:1px;margin-top:8px;color:var(--accent-d);direction:ltr;text-align:center}
+  .controls{display:flex;gap:12px;flex-wrap:wrap;margin-top:4px}
+  .overlay{position:fixed;inset:0;background:rgba(40,25,10,.55);display:none;align-items:center;justify-content:center;padding:16px;z-index:50}
+  .overlay.show{display:flex}
+  .modal{background:var(--panel);border-radius:20px;border:4px solid var(--accent);max-width:560px;width:100%;max-height:90vh;overflow:auto;padding:20px}
+  .modal h2{color:var(--accent-d);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+  .field{margin:14px 0}
+  .field > label{display:block;font-weight:800;margin-bottom:8px}
+  .optionrow{display:flex;gap:10px;flex-wrap:wrap}
+  .opt{border:3px solid var(--line);border-radius:14px;background:#fff;padding:10px 14px;min-height:52px;font-weight:800;cursor:pointer;display:flex;align-items:center;gap:8px;color:var(--ink)}
+  .opt[aria-pressed="true"]{border-color:var(--green);background:#e9f6ec;color:var(--green-d)}
+  .opt:focus-visible{outline:4px solid var(--focus);outline-offset:2px}
+  .switch{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  input[type="number"]{font-size:1.3rem;padding:8px;width:90px;border:3px solid var(--line);border-radius:10px;text-align:center}
+  .modal-actions{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;margin-top:16px}
+  .objgrid{display:flex;gap:10px;flex-wrap:wrap}
+  .objpick{width:70px;height:70px;padding:6px;border:3px solid var(--line);border-radius:14px;background:#fff;cursor:pointer}
+  .objpick svg{width:100%;height:100%}
+  .objpick[aria-pressed="true"]{border-color:var(--green);background:#e9f6ec}
+  .objpick:focus-visible{outline:4px solid var(--focus);outline-offset:2px}
+  .standards{font-size:.92rem;color:var(--ink-soft)}
+  details summary{cursor:pointer;font-weight:800;color:var(--accent-d);padding:6px 0}
+  footer{text-align:center;padding:20px 14px 30px;color:var(--ink-soft);font-weight:600}
+  footer a{margin:0 8px}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+  .warn{background:#fff4e0;border:3px solid #d99a2b;color:#7a4f0c;border-radius:12px;padding:8px 12px;font-weight:700;margin-top:8px;display:none}
+  @media (prefers-reduced-motion: reduce){.token.pop{animation:none}*{scroll-behavior:auto !important}.anim{transition:none !important}}
+  @media (max-width:560px){.story{font-size:1.15rem}.token{width:60px;height:60px}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1><span aria-hidden="true">🥪</span> <span data-i18n="title">Snack Shop Stories</span></h1>
+  <div class="spacer"></div>
+  <div class="langbox">
+    <span aria-hidden="true" style="font-size:1.3rem">🌐</span>
+    <label class="sr-only" for="langSel" data-i18n="language">Language</label>
+    <select id="langSel">
+      <option value="en">English</option>
+      <option value="es">Español</option>
+      <option value="vi">Tiếng Việt</option>
+      <option value="ar">العربية</option>
+      <option value="hi">हिन्दी</option>
+      <option value="ur">اردو</option>
+      <option value="zh">中文</option>
+    </select>
+  </div>
+  <a class="btn" href="../../index.html"><span aria-hidden="true">🏠</span> <span data-i18n="home">Home</span></a>
+  <button class="btn ghost" id="teacherBtn" aria-haspopup="dialog"><span aria-hidden="true">⚙️</span> <span data-i18n="teacher">Teacher</span></button>
+</div>
+
+<div class="tabs" role="tablist" aria-label="mode">
+  <button class="tab" role="tab" data-mode="join" aria-selected="true"><span aria-hidden="true">➕</span> <span data-i18n="tab_join">Join</span></button>
+  <button class="tab" role="tab" data-mode="separate" aria-selected="false"><span aria-hidden="true">➖</span> <span data-i18n="tab_separate">Separate</span></button>
+  <button class="tab" role="tab" data-mode="make" aria-selected="false"><span aria-hidden="true">🎯</span> <span data-i18n="tab_make">Make the Number</span></button>
+  <button class="tab" role="tab" data-mode="story" aria-selected="false"><span aria-hidden="true">👀</span> <span data-i18n="tab_story">Tell the Story</span></button>
+  <button class="tab" role="tab" data-mode="own" aria-selected="false"><span aria-hidden="true">✏️</span> <span data-i18n="tab_own">Make My Own</span></button>
+</div>
+
+<div class="wrap">
+  <div class="card levelnote" aria-live="polite">
+    <span class="pill" id="levelPill">Kindergarten</span>
+    <span id="levelDesc">Sums and differences within 10</span>
+  </div>
+
+  <div id="playArea">
+    <div class="card">
+      <div class="storyrow">
+        <div class="story" id="storyText" aria-live="polite">…</div>
+        <button class="speaker" id="speakStory" data-i18n-aria="readStory" aria-label="Read the story aloud" title="Read aloud">🔊</button>
+      </div>
+      <div class="warn" id="speechWarn" data-i18n="speechWarn">This device cannot read aloud. The story is shown above.</div>
+    </div>
+
+    <div class="card">
+      <div class="scenehead"><span id="sceneIcon" aria-hidden="true">🧺</span><span id="sceneLabel">Picnic table</span></div>
+      <div class="mat-area">
+        <div id="matWrap"></div>
+        <div class="supply" id="supplyBox">
+          <div class="slabel">
+            <span id="supplyLabel" data-i18n="snacksToUse">Snacks to use:</span>
+            <span id="segWrap" style="display:none">
+              <span class="seg" role="group" data-i18n-aria="segChoose" aria-label="Choose which group">
+                <button id="segG1" aria-pressed="true">Group 1</button>
+                <button id="segG2" aria-pressed="false">Group 2</button>
+              </span>
+            </span>
+          </div>
+          <div class="supplytokens" id="supplyTokens"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="steprow">
+        <div class="instruction" id="instruction" aria-live="polite">…</div>
+        <span class="count-badge" id="countBadge" aria-live="polite">0</span>
+        <button class="btn primary big" id="stepBtn" disabled><span data-i18n="step">That's right</span></button>
+        <button class="btn primary big" id="checkBtn" style="display:none"><span data-i18n="check">Check my number</span></button>
+      </div>
+      <div class="choices" id="choices" style="display:none" role="group" aria-label="numbers"></div>
+      <div class="storybtns" id="storyChoices" style="display:none"></div>
+      <div class="feedback" id="feedback" aria-live="assertive">
+        <span id="feedbackText"></span>
+        <button class="speaker sm" id="speakFeedback" data-i18n-aria="readFeedback" aria-label="Read feedback aloud">🔊</button>
+      </div>
+      <div class="equation" id="equation" style="display:none"></div>
+    </div>
+
+    <div class="controls">
+      <button class="btn warm big" id="replayBtn"><span aria-hidden="true">🔁</span> <span data-i18n="replay">Replay Story</span></button>
+      <button class="btn big" id="startOverBtn"><span aria-hidden="true">↺</span> <span data-i18n="startOver">Start Over</span></button>
+      <button class="btn primary big" id="nextBtn" disabled><span data-i18n="next">Next Story</span></button>
+    </div>
+  </div>
+
+  <div id="ownArea" class="card" style="display:none">
+    <h2 style="color:var(--accent-d);margin-bottom:6px" data-i18n="ownTitle">Make My Own Story</h2>
+    <p class="standards" data-i18n="ownDesc">Teacher: pick a snack and two small amounts. No student information is collected or saved.</p>
+    <div class="field">
+      <label data-i18n="ownPick">Pick a snack</label>
+      <div class="objgrid" id="ownObjGrid" role="group" aria-label="snacks"></div>
+    </div>
+    <div class="field">
+      <label data-i18n="ownActionLabel">What happens in the story?</label>
+      <div class="optionrow" role="group" aria-label="action">
+        <button class="opt" id="ownJoin" aria-pressed="true"><span aria-hidden="true">➕</span> <span data-i18n="ownJoinOpt">They join together</span></button>
+        <button class="opt" id="ownSep" aria-pressed="false"><span aria-hidden="true">➖</span> <span data-i18n="ownSepOpt">Some are taken away</span></button>
+      </div>
+    </div>
+    <div class="field">
+      <div class="optionrow">
+        <div>
+          <label for="ownA" data-i18n="ownStartAmt">Starting amount</label>
+          <input type="number" id="ownA" min="1" max="9" value="2" inputmode="numeric">
+        </div>
+        <div>
+          <label for="ownB" id="ownBlabel" data-i18n="ownAddAmt">Amount to add</label>
+          <input type="number" id="ownB" min="1" max="9" value="3" inputmode="numeric">
+        </div>
+      </div>
+      <div class="warn" id="ownWarn"></div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn primary big" id="ownStart"><span aria-hidden="true">▶</span> <span data-i18n="ownStartBtn">Start This Story</span></button>
+    </div>
+  </div>
+
+  <details class="card">
+    <summary data-i18n="stdSummary">Aligned standards</summary>
+    <div class="standards">
+      <p data-i18n="stdP1"></p>
+      <p data-i18n="stdP2"></p>
+      <p data-i18n="stdP3"></p>
+    </div>
+  </details>
+</div>
+
+<div class="overlay" id="teacherOverlay" role="dialog" aria-modal="true" aria-labelledby="teacherTitle">
+  <div class="modal">
+    <h2 id="teacherTitle"><span aria-hidden="true">⚙️</span> <span data-i18n="teacherTitle">Teacher Settings</span></h2>
+    <div class="field">
+      <label data-i18n="numLevel">Number level</label>
+      <div class="optionrow" id="levelOpts" role="group" aria-label="level">
+        <button class="opt" data-level="prek3" data-i18n="optPrek3">PreK 3 · to 3</button>
+        <button class="opt" data-level="prek4" data-i18n="optPrek4">PreK 4 · to 5</button>
+        <button class="opt" data-level="k" data-i18n="optK">Kindergarten · to 10</button>
+        <button class="opt" data-level="kchallenge" data-i18n="optKC">K Challenge · make 10</button>
+      </div>
+    </div>
+    <div class="field">
+      <label data-i18n="practiceLabel">Practice type for Join / Separate tabs</label>
+      <div class="optionrow" id="practiceOpts" role="group" aria-label="practice">
+        <button class="opt" data-practice="follow" data-i18n="practiceFollow">Follow the tab</button>
+        <button class="opt" data-practice="mixed" data-i18n="practiceMixed">Mixed</button>
+      </div>
+    </div>
+    <div class="field">
+      <div class="switch">
+        <button class="opt" id="eqToggle" aria-pressed="true"><span aria-hidden="true">🧮</span> <span data-i18n="showEq">Show number sentences</span></button>
+        <span class="standards" data-i18n="showEqNote">Equations appear only after the child solves the story (Kindergarten).</span>
+      </div>
+    </div>
+    <div class="field">
+      <div class="switch">
+        <button class="opt" id="narrToggle" aria-pressed="true"><span aria-hidden="true">🔊</span> <span data-i18n="narr">Read each new story aloud automatically</span></button>
+      </div>
+    </div>
+    <p class="standards" data-i18n="savedNote">Settings are saved only on this device. No student information is stored.</p>
+    <div class="modal-actions">
+      <button class="btn primary big" id="teacherDone" data-i18n="done">Done</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div data-i18n="footerLine">No accounts · No data collected · Works offline</div>
+  <div style="margin-top:6px">
+    <a href="../../index.html" data-i18n="homeLink">Home</a> ·
+    <a href="../../policy.html" data-i18n="privacyLink">Privacy</a>
+  </div>
+</footer>
+
+<script>
+"use strict";
+function g(id){ return document.getElementById(id); }
+function cap(s){ return s.charAt(0).toUpperCase()+s.slice(1); }
+function rand(a,b){ return Math.floor(Math.random()*(b-a+1))+a; }
+function pick(a){ return a[Math.floor(Math.random()*a.length)]; }
+function shuffle(a){ a=a.slice(); for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;} return a; }
+
+/* ===== Snack SVG art (original) ===== */
+var ART={
+  apple:'<svg viewBox="0 0 64 64" role="img" aria-label="apple"><rect x="30" y="9" width="4" height="12" rx="2" fill="#7a4a1e"/><path d="M34 15 q11 -7 17 1 q-11 5 -17 -1 z" fill="#4a9e3f"/><path d="M32 21 C21 16 10 25 12 40 C14 55 25 59 32 53 C39 59 50 55 52 40 C54 25 43 16 32 21 Z" fill="#e23b3b"/><path d="M24 28 q6 -5 12 -1" fill="none" stroke="#ffb3b3" stroke-width="3" stroke-linecap="round" opacity=".7"/></svg>',
+  cookie:'<svg viewBox="0 0 64 64" role="img" aria-label="cookie"><circle cx="32" cy="34" r="23" fill="#d9a35b" stroke="#b57e3a" stroke-width="2"/><circle cx="24" cy="26" r="3.4" fill="#5a3210"/><circle cx="40" cy="24" r="3" fill="#5a3210"/><circle cx="34" cy="38" r="3.4" fill="#5a3210"/><circle cx="22" cy="42" r="3" fill="#5a3210"/><circle cx="44" cy="40" r="3" fill="#5a3210"/><circle cx="31" cy="30" r="2.4" fill="#5a3210"/></svg>',
+  orange:'<svg viewBox="0 0 64 64" role="img" aria-label="orange"><path d="M32 12 q7 -3 10 3 q-6 3 -10 -1 z" fill="#4a9e3f"/><circle cx="32" cy="36" r="22" fill="#ff9b2f" stroke="#e07d13" stroke-width="2"/><circle cx="24" cy="30" r="2" fill="#e07d13"/><circle cx="40" cy="32" r="2" fill="#e07d13"/><circle cx="32" cy="44" r="2" fill="#e07d13"/></svg>',
+  muffin:'<svg viewBox="0 0 64 64" role="img" aria-label="muffin"><path d="M18 34 h28 l-4 22 h-20 z" fill="#e8b06a" stroke="#c98f45" stroke-width="2"/><path d="M22 40 h20 M25 48 h14" stroke="#c98f45" stroke-width="2"/><path d="M14 34 q4 -20 18 -20 q14 0 18 20 q-18 6 -36 0 z" fill="#8a5a30"/><circle cx="26" cy="24" r="2.4" fill="#4a2f16"/><circle cx="36" cy="26" r="2.4" fill="#4a2f16"/><circle cx="31" cy="19" r="2.2" fill="#4a2f16"/></svg>',
+  fish:'<svg viewBox="0 0 64 64" role="img" aria-label="fish cracker"><path d="M12 32 C16 20 40 20 46 32 C40 44 16 44 12 32 Z" fill="#ffab2e" stroke="#e08a10" stroke-width="2"/><path d="M46 32 l12 -8 v16 z" fill="#ffab2e" stroke="#e08a10" stroke-width="2"/><circle cx="20" cy="29" r="2.4" fill="#4a2f16"/></svg>',
+  banana:'<svg viewBox="0 0 64 64" role="img" aria-label="banana"><path d="M14 20 q4 30 34 34 q6 -1 8 -6 q-24 0 -34 -30 q-2 -1 -8 2 z" fill="#f6d63b" stroke="#d9b21f" stroke-width="2"/><path d="M50 48 q4 0 6 -3" stroke="#8a6a12" stroke-width="3" fill="none" stroke-linecap="round"/></svg>',
+  grapes:'<svg viewBox="0 0 64 64" role="img" aria-label="grapes"><rect x="31" y="8" width="3" height="8" fill="#6a4a1e"/><g fill="#7d4bc4" stroke="#5c3597" stroke-width="1.5"><circle cx="32" cy="20" r="6"/><circle cx="24" cy="26" r="6"/><circle cx="40" cy="26" r="6"/><circle cx="30" cy="33" r="6"/><circle cx="38" cy="34" r="6"/><circle cx="33" cy="44" r="6"/></g></svg>',
+  pretzel:'<svg viewBox="0 0 64 64" role="img" aria-label="pretzel"><path d="M20 46 C6 34 18 16 32 26 C46 16 58 34 44 46 M24 30 L44 48 M40 30 L20 48" fill="none" stroke="#b5772e" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+};
+var SNACK_KEYS=Object.keys(ART);
+var SCENES=[{id:'picnic',icon:'🧺'},{id:'tray',icon:'🍱'},{id:'bakery',icon:'🧁'},{id:'animal',icon:'🐿️'}];
+var LEVELS={prek3:{max:3},prek4:{max:5},k:{max:10},kchallenge:{max:10}};
+
+/* ===== i18n dictionary (all seven languages inline) ===== */
+var I18N={};
+/* English */
+I18N.en={
+  code:'en',dir:'ltr',bcp:'en-US',
+  words:['zero','one','two','three','four','five','six','seven','eight','nine','ten'],
+  snacks:{apple:{s:'apple',p:'apples'},cookie:{s:'cookie',p:'cookies'},orange:{s:'orange',p:'oranges'},muffin:{s:'muffin',p:'muffins'},fish:{s:'fish cracker',p:'fish crackers'},banana:{s:'banana',p:'bananas'},grapes:{s:'bunch of grapes',p:'bunches of grapes'},pretzel:{s:'pretzel',p:'pretzels'}},
+  scenes:{picnic:'the picnic table',tray:'the lunch tray',bakery:'the bakery counter',animal:'the animal snack area'},
+  ui:{title:'Snack Shop Stories',home:'Home',teacher:'Teacher',language:'Language',
+    tab_join:'Join',tab_separate:'Separate',tab_make:'Make the Number',tab_story:'Tell the Story',tab_own:'Make My Own',
+    speechWarn:'This device cannot read aloud. The story is shown above.',
+    snacksToUse:'Snacks to use:',onMat:'On mat',total:'Total',
+    step:"That's right",replay:'Replay Story',startOver:'Start Over',next:'Next Story',check:'Check my number',tryAnother:'Try another way',
+    levPrek3:'PreK 3',levPrek4:'PreK 4',levK:'Kindergarten',levKC:'Kindergarten Challenge',
+    descPrek3:'Totals up to 3',descPrek4:'Joining up to 5 and separating from sets up to 5',descK:'Sums and differences within 10',descKC:'Make 10 in different ways',
+    stdSummary:'Aligned standards',
+    stdP1:'Texas Prekindergarten Guidelines: PK3.V.B.1–2 and PK4.V.B.1–2 (joining and separating small sets).',
+    stdP2:'Texas Essential Knowledge and Skills — Kindergarten: K.3(A) model joining and separating; K.3(B) solve word problems within 10; K.3(C) explain strategies.',
+    stdP3:'Common Core — Kindergarten: K.OA.1–5 (represent, solve, and decompose within 10).',
+    footerLine:'No accounts · No data collected · Works offline',homeLink:'Home',privacyLink:'Privacy',
+    teacherTitle:'Teacher Settings',numLevel:'Number level',optPrek3:'PreK 3 · to 3',optPrek4:'PreK 4 · to 5',optK:'Kindergarten · to 10',optKC:'K Challenge · make 10',
+    practiceLabel:'Practice type for Join / Separate tabs',practiceFollow:'Follow the tab',practiceMixed:'Mixed (add & subtract)',
+    showEq:'Show number sentences',showEqNote:'Equations appear only after the child solves the story (Kindergarten).',narr:'Read each new story aloud automatically',savedNote:'Settings are saved only on this device. No student information is stored.',done:'Done',
+    ownTitle:'Make My Own Story',ownDesc:'Teacher: pick a snack and two small amounts. No student information is collected or saved.',ownPick:'Pick a snack',ownActionLabel:'What happens in the story?',ownJoinOpt:'They join together',ownSepOpt:'Some are taken away',ownStartAmt:'Starting amount',ownAddAmt:'Amount to add',ownTakeAmt:'Amount to take away',ownStartBtn:'Start This Story',
+    ownWarnAmt:'Please enter amounts of 1 or more.',ownWarnSep:'For a take-away story, take away fewer than the starting amount.',ownWarnTotal:'Please keep the total small (20 or less).',
+    group1:'Group 1',group2:'Group 2',plate:'Plate',segChoose:'Choose which group to add snacks to',
+    hintMain:'Tap or drag snacks from below.',hintMake:'Tap snacks below to add here.',
+    readStory:'Read the story aloud',readFeedback:'Read the feedback aloud',addOne:'Add one snack',tapRemove:'tap to remove',choose:'Choose',
+    storyJoinOpt:'They joined together',storySepOpt:'Some went away'},
+  story:function(Q,p){var w=function(n){return Q.words[n]},sp=Q.snacks[p.snack],pl=Q.scenes[p.scene.id],nf=function(n){return n===1?sp.s:sp.p};
+    if(p.op==='join')return cap(w(p.a))+' '+nf(p.a)+' '+(p.a===1?'is':'are')+' on '+pl+'. '+cap(w(p.b))+' more '+nf(p.b)+' '+(p.b===1?'arrives':'arrive')+'. How many '+sp.p+' are there now?';
+    if(p.op==='separate')return cap(w(p.a))+' '+nf(p.a)+' '+(p.a===1?'is':'are')+' on '+pl+'. '+cap(w(p.b))+' '+nf(p.b)+' '+(p.b===1?'is':'are')+' eaten. How many '+sp.p+' are left?';
+    if(p.op==='make')return 'Make '+w(p.answer)+'! Put '+sp.p+' on the two plates so together they make '+w(p.answer)+' '+sp.p+'.';
+    return 'Watch the '+sp.p+'. Did they join together, or did some go away?';},
+  instr:function(Q,p){var w=function(n){return Q.words[n]},sp=Q.snacks[p.snack],pl=Q.scenes[p.scene.id],nf=function(n){return n===1?sp.s:sp.p};
+    if(p.op==='join'){if(p.phase==='start')return 'Step 1: Put '+w(p.a)+' '+nf(p.a)+' on '+pl+'.';if(p.phase==='change')return 'Step 2: '+cap(w(p.b))+' more '+(p.b===1?'arrives':'arrive')+'. Add '+w(p.b)+' more.';return 'Step 3: Count them all. How many '+sp.p+' now?';}
+    if(p.op==='separate'){if(p.phase==='start')return 'Step 1: Put '+w(p.a)+' '+nf(p.a)+' on '+pl+'.';if(p.phase==='change')return 'Step 2: '+cap(w(p.b))+' '+(p.b===1?'is':'are')+' eaten. Tap '+w(p.b)+' to take '+(p.b===1?'it':'them')+' away.';return 'Step 3: Count what is left. How many '+sp.p+'?';}
+    if(p.op==='make')return 'Fill both plates so together they make '+w(p.answer)+' '+sp.p+'. Use both plates!';
+    if(p.phase==='watch')return 'Watch the snacks. Press Replay Story to see it again.';return 'Did they join together, or did some go away?';},
+  win:function(Q,p){var w=function(n){return Q.words[n]},sp=Q.snacks[p.snack];
+    if(p.op==='join')return cap(w(p.a))+' joined '+w(p.b)+'. '+(p.answer===1?'Now there is '+w(1)+' '+sp.s+'.':'Now there are '+w(p.answer)+' '+sp.p+'.');
+    return 'You took away '+w(p.b)+'. '+(p.answer===1?cap(w(1))+' '+sp.s+' is left.':cap(w(p.answer))+' '+sp.p+' are left.');},
+  makeWin:function(Q,a,b,ans){var w=function(n){return Q.words[n]};return cap(w(a))+' and '+w(b)+' make '+w(ans)+'. You made '+w(ans)+' in two groups!';},
+  makeRetry:function(Q,tot,ans,both){var w=function(n){return Q.words[n]};if(tot<ans)return 'You have '+w(tot)+'. Add more to make '+w(ans)+'.';if(tot>ans)return 'You have '+w(tot)+'. That is too many. Take some away to make '+w(ans)+'.';return 'Use BOTH plates. Put some snacks on each plate to make '+w(ans)+' in two groups.';},
+  numRetry:function(Q,p){var sp=Q.snacks[p.snack];return 'That does not match the story yet. Count the '+sp.p+' again to see how many.';},
+  storyWin:function(Q,op){return op==='join'?'Yes! The snacks came together. That is joining — it makes more.':'Yes! Some snacks went away. That is separating — it makes fewer.';},
+  storyRetry:function(Q,op){return op==='join'?'Not quite. Look again — the two groups moved closer and became one bigger group. Press Replay Story.':'Not quite. Look again — some snacks moved away and were gone. Press Replay Story.';}
+};
+
+/* Spanish */
+I18N.es={
+  code:'es',dir:'ltr',bcp:'es-ES',
+  words:['cero','uno','dos','tres','cuatro','cinco','seis','siete','ocho','nueve','diez'],
+  snacks:{apple:{s:'manzana',p:'manzanas',g:'f'},cookie:{s:'galleta',p:'galletas',g:'f'},orange:{s:'naranja',p:'naranjas',g:'f'},muffin:{s:'magdalena',p:'magdalenas',g:'f'},fish:{s:'galleta de pez',p:'galletas de pez',g:'f'},banana:{s:'plátano',p:'plátanos',g:'m'},grapes:{s:'racimo de uvas',p:'racimos de uvas',g:'m'},pretzel:{s:'pretzel',p:'pretzels',g:'m'}},
+  scenes:{picnic:'la mesa de picnic',tray:'la bandeja del almuerzo',bakery:'el mostrador de la panadería',animal:'la zona de meriendas'},
+  ui:{title:'Cuentos de la Tienda de Snacks',home:'Inicio',teacher:'Maestro',language:'Idioma',
+    tab_join:'Unir',tab_separate:'Separar',tab_make:'Forma el Número',tab_story:'Cuenta la Historia',tab_own:'Crea el Tuyo',
+    speechWarn:'Este dispositivo no puede leer en voz alta. El cuento se muestra arriba.',
+    snacksToUse:'Snacks para usar:',onMat:'En el tapete',total:'Total',
+    step:'Así es',replay:'Repetir cuento',startOver:'Empezar de nuevo',next:'Siguiente cuento',check:'Revisar mi número',tryAnother:'Prueba de otra forma',
+    levPrek3:'PreK 3',levPrek4:'PreK 4',levK:'Kínder',levKC:'Kínder Desafío',
+    descPrek3:'Totales hasta 3',descPrek4:'Unir hasta 5 y separar de conjuntos hasta 5',descK:'Sumas y restas hasta 10',descKC:'Formar 10 de diferentes maneras',
+    stdSummary:'Estándares alineados',
+    stdP1:'Guías de Prekínder de Texas: PK3.V.B.1–2 y PK4.V.B.1–2 (unir y separar conjuntos pequeños).',
+    stdP2:'TEKS — Kínder: K.3(A) modelar unir y separar; K.3(B) resolver problemas hasta 10; K.3(C) explicar estrategias.',
+    stdP3:'Common Core — Kínder: K.OA.1–5 (representar, resolver y descomponer hasta 10).',
+    footerLine:'Sin cuentas · Sin datos · Funciona sin conexión',homeLink:'Inicio',privacyLink:'Privacidad',
+    teacherTitle:'Ajustes del maestro',numLevel:'Nivel numérico',optPrek3:'PreK 3 · hasta 3',optPrek4:'PreK 4 · hasta 5',optK:'Kínder · hasta 10',optKC:'Kínder Desafío · formar 10',
+    practiceLabel:'Tipo de práctica para Unir / Separar',practiceFollow:'Seguir la pestaña',practiceMixed:'Mixto (sumar y restar)',
+    showEq:'Mostrar oraciones numéricas',showEqNote:'Las ecuaciones aparecen solo después de resolver el cuento (Kínder).',narr:'Leer cada cuento nuevo en voz alta',savedNote:'Los ajustes se guardan solo en este dispositivo. No se guarda información de estudiantes.',done:'Listo',
+    ownTitle:'Crea tu propio cuento',ownDesc:'Maestro: elige un snack y dos cantidades pequeñas. No se recopila información de estudiantes.',ownPick:'Elige un snack',ownActionLabel:'¿Qué pasa en el cuento?',ownJoinOpt:'Se unen',ownSepOpt:'Se quitan algunos',ownStartAmt:'Cantidad inicial',ownAddAmt:'Cantidad para agregar',ownTakeAmt:'Cantidad para quitar',ownStartBtn:'Comenzar este cuento',
+    ownWarnAmt:'Escribe cantidades de 1 o más.',ownWarnSep:'Para un cuento de quitar, quita menos que la cantidad inicial.',ownWarnTotal:'Mantén el total pequeño (20 o menos).',
+    group1:'Grupo 1',group2:'Grupo 2',plate:'Plato',segChoose:'Elige a qué grupo agregar snacks',
+    hintMain:'Toca o arrastra snacks desde abajo.',hintMake:'Toca los snacks de abajo para agregarlos aquí.',
+    readStory:'Leer el cuento en voz alta',readFeedback:'Leer la respuesta en voz alta',addOne:'Agregar un snack',tapRemove:'toca para quitar',choose:'Elige',
+    storyJoinOpt:'Se unieron',storySepOpt:'Algunos se fueron'},
+  story:function(Q,p){var sp=Q.snacks[p.snack],pl=Q.scenes[p.scene.id];var w=function(n){return Q.words[n]};var c=function(n){return n===1?(sp.g==='f'?'una':'un'):w(n)};var cu=sp.g==='f'?'Cuántas':'Cuántos';var nf=function(n){return n===1?sp.s:sp.p};
+    if(p.op==='join')return 'Hay '+c(p.a)+' '+nf(p.a)+' en '+pl+'. Llega'+(p.b===1?'':'n')+' '+c(p.b)+' '+nf(p.b)+' más. ¿'+cu+' '+sp.p+' hay ahora?';
+    if(p.op==='separate')return 'Hay '+c(p.a)+' '+nf(p.a)+' en '+pl+'. Se come'+(p.b===1?'':'n')+' '+c(p.b)+' '+nf(p.b)+'. ¿'+cu+' '+sp.p+' quedan?';
+    if(p.op==='make')return '¡Forma '+w(p.answer)+'! Pon '+sp.p+' en los dos platos para que juntos formen '+w(p.answer)+' '+sp.p+'.';
+    return 'Observa '+sp.p+'. ¿Se unieron o se fueron algunos?';},
+  instr:function(Q,p){var sp=Q.snacks[p.snack],pl=Q.scenes[p.scene.id];var w=function(n){return Q.words[n]};var c=function(n){return n===1?(sp.g==='f'?'una':'un'):w(n)};var cu=sp.g==='f'?'Cuántas':'Cuántos';var nf=function(n){return n===1?sp.s:sp.p};
+    if(p.op==='join'){if(p.phase==='start')return 'Paso 1: Pon '+c(p.a)+' '+nf(p.a)+' en '+pl+'.';if(p.phase==='change')return 'Paso 2: Llega'+(p.b===1?'':'n')+' '+c(p.b)+' más. Agrega '+c(p.b)+' más.';return 'Paso 3: Cuenta todos. ¿'+cu+' '+sp.p+' hay ahora?';}
+    if(p.op==='separate'){if(p.phase==='start')return 'Paso 1: Pon '+c(p.a)+' '+nf(p.a)+' en '+pl+'.';if(p.phase==='change')return 'Paso 2: Se come'+(p.b===1?'':'n')+' '+c(p.b)+'. Toca '+c(p.b)+' para quitar'+(p.b===1?'lo':'los')+'.';return 'Paso 3: Cuenta lo que queda. ¿'+cu+' '+sp.p+'?';}
+    if(p.op==='make')return 'Llena los dos platos para que juntos formen '+w(p.answer)+' '+sp.p+'. ¡Usa los dos platos!';
+    if(p.phase==='watch')return 'Observa los snacks. Pulsa Repetir cuento para verlo otra vez.';return '¿Se unieron o se fueron algunos?';},
+  win:function(Q,p){var w=function(n){return Q.words[n]};
+    if(p.op==='join')return cap(w(p.a))+' se '+(p.a===1?'unió':'unieron')+' a '+w(p.b)+'. Ahora hay '+w(p.answer)+'.';
+    return 'Quitaste '+w(p.b)+'. Queda'+(p.answer===1?'':'n')+' '+w(p.answer)+'.';},
+  makeWin:function(Q,a,b,ans){var w=function(n){return Q.words[n]};return cap(w(a))+' y '+w(b)+' forman '+w(ans)+'. ¡Formaste '+w(ans)+' en dos grupos!';},
+  makeRetry:function(Q,tot,ans,both){var w=function(n){return Q.words[n]};if(tot<ans)return 'Tienes '+w(tot)+'. Agrega más para formar '+w(ans)+'.';if(tot>ans)return 'Tienes '+w(tot)+'. Son demasiados. Quita algunos para formar '+w(ans)+'.';return 'Usa los DOS platos. Pon algunos snacks en cada plato para formar '+w(ans)+' en dos grupos.';},
+  numRetry:function(Q,p){var sp=Q.snacks[p.snack];return 'Eso todavía no coincide con el cuento. Cuenta '+sp.p+' otra vez para ver cuántos hay.';},
+  storyWin:function(Q,op){return op==='join'?'¡Sí! Los snacks se juntaron. Eso es unir: hay más.':'¡Sí! Algunos snacks se fueron. Eso es separar: hay menos.';},
+  storyRetry:function(Q,op){return op==='join'?'Casi. Mira otra vez: los dos grupos se acercaron y formaron uno más grande. Pulsa Repetir cuento.':'Casi. Mira otra vez: algunos snacks se alejaron y desaparecieron. Pulsa Repetir cuento.';}
+};
+
+/* Vietnamese */
+I18N.vi={
+  code:'vi',dir:'ltr',bcp:'vi-VN',
+  words:['không','một','hai','ba','bốn','năm','sáu','bảy','tám','chín','mười'],
+  snacks:{apple:{s:'táo',p:'táo'},cookie:{s:'bánh quy',p:'bánh quy'},orange:{s:'cam',p:'cam'},muffin:{s:'bánh nướng',p:'bánh nướng'},fish:{s:'bánh cá',p:'bánh cá'},banana:{s:'chuối',p:'chuối'},grapes:{s:'chùm nho',p:'chùm nho'},pretzel:{s:'bánh quy xoắn',p:'bánh quy xoắn'}},
+  scenes:{picnic:'bàn dã ngoại',tray:'khay ăn trưa',bakery:'quầy bánh',animal:'khu ăn vặt của thú'},
+  ui:{title:'Chuyện Cửa Hàng Đồ Ăn Vặt',home:'Trang chủ',teacher:'Giáo viên',language:'Ngôn ngữ',
+    tab_join:'Gộp lại',tab_separate:'Tách ra',tab_make:'Tạo Số',tab_story:'Kể Chuyện',tab_own:'Tự Tạo',
+    speechWarn:'Thiết bị này không đọc thành tiếng được. Câu chuyện hiển thị ở trên.',
+    snacksToUse:'Món ăn để dùng:',onMat:'Trên khay',total:'Tổng',
+    step:'Đúng rồi',replay:'Kể lại',startOver:'Bắt đầu lại',next:'Chuyện tiếp',check:'Kiểm tra số của tôi',tryAnother:'Thử cách khác',
+    levPrek3:'Mầm non 3',levPrek4:'Mầm non 4',levK:'Mẫu giáo',levKC:'Mẫu giáo Thử thách',
+    descPrek3:'Tổng đến 3',descPrek4:'Gộp đến 5 và tách từ nhóm đến 5',descK:'Cộng và trừ trong phạm vi 10',descKC:'Tạo số 10 theo nhiều cách',
+    stdSummary:'Tiêu chuẩn liên quan',
+    stdP1:'Hướng dẫn Mầm non Texas: PK3.V.B.1–2 và PK4.V.B.1–2 (gộp và tách nhóm nhỏ).',
+    stdP2:'TEKS — Mẫu giáo: K.3(A) mô hình gộp và tách; K.3(B) giải toán đố trong phạm vi 10; K.3(C) giải thích cách làm.',
+    stdP3:'Common Core — Mẫu giáo: K.OA.1–5 (biểu diễn, giải và phân tách trong phạm vi 10).',
+    footerLine:'Không tài khoản · Không thu thập dữ liệu · Dùng ngoại tuyến',homeLink:'Trang chủ',privacyLink:'Quyền riêng tư',
+    teacherTitle:'Cài đặt cho giáo viên',numLevel:'Mức số',optPrek3:'Mầm non 3 · đến 3',optPrek4:'Mầm non 4 · đến 5',optK:'Mẫu giáo · đến 10',optKC:'Thử thách · tạo 10',
+    practiceLabel:'Kiểu luyện cho thẻ Gộp / Tách',practiceFollow:'Theo thẻ',practiceMixed:'Hỗn hợp (cộng và trừ)',
+    showEq:'Hiện phép tính',showEqNote:'Phép tính chỉ hiện sau khi trẻ giải xong (Mẫu giáo).',narr:'Tự đọc to mỗi câu chuyện mới',savedNote:'Cài đặt chỉ lưu trên thiết bị này. Không lưu thông tin học sinh.',done:'Xong',
+    ownTitle:'Tự tạo câu chuyện',ownDesc:'Giáo viên: chọn món ăn và hai số nhỏ. Không thu thập thông tin học sinh.',ownPick:'Chọn món ăn',ownActionLabel:'Điều gì xảy ra trong chuyện?',ownJoinOpt:'Chúng gộp lại',ownSepOpt:'Một số bị lấy đi',ownStartAmt:'Số ban đầu',ownAddAmt:'Số thêm vào',ownTakeAmt:'Số lấy đi',ownStartBtn:'Bắt đầu chuyện này',
+    ownWarnAmt:'Hãy nhập số từ 1 trở lên.',ownWarnSep:'Với chuyện lấy đi, hãy lấy ít hơn số ban đầu.',ownWarnTotal:'Giữ tổng nhỏ (20 trở xuống).',
+    group1:'Nhóm 1',group2:'Nhóm 2',plate:'Đĩa',segChoose:'Chọn nhóm để thêm món ăn',
+    hintMain:'Chạm hoặc kéo món ăn từ bên dưới.',hintMake:'Chạm món ăn bên dưới để thêm vào đây.',
+    readStory:'Đọc to câu chuyện',readFeedback:'Đọc to phản hồi',addOne:'Thêm một món',tapRemove:'chạm để bỏ',choose:'Chọn',
+    storyJoinOpt:'Chúng gộp lại',storySepOpt:'Một số rời đi'},
+  story:function(Q,p){var w=function(n){return Q.words[n]},sp=Q.snacks[p.snack],pl=Q.scenes[p.scene.id];
+    if(p.op==='join')return 'Có '+w(p.a)+' '+sp.p+' trên '+pl+'. '+cap(w(p.b))+' '+sp.p+' nữa đến. Bây giờ có bao nhiêu '+sp.p+'?';
+    if(p.op==='separate')return 'Có '+w(p.a)+' '+sp.p+' trên '+pl+'. '+cap(w(p.b))+' '+sp.p+' bị ăn mất. Còn lại bao nhiêu '+sp.p+'?';
+    if(p.op==='make')return 'Hãy tạo số '+w(p.answer)+'! Đặt '+sp.p+' vào hai đĩa sao cho tổng cộng là '+w(p.answer)+' '+sp.p+'.';
+    return 'Xem '+sp.p+' nhé. Chúng gộp lại hay có vài cái rời đi?';},
+  instr:function(Q,p){var w=function(n){return Q.words[n]},sp=Q.snacks[p.snack],pl=Q.scenes[p.scene.id];
+    if(p.op==='join'){if(p.phase==='start')return 'Bước 1: Đặt '+w(p.a)+' '+sp.p+' lên '+pl+'.';if(p.phase==='change')return 'Bước 2: '+cap(w(p.b))+' cái nữa đến. Thêm '+w(p.b)+' cái nữa.';return 'Bước 3: Đếm tất cả. Bây giờ có bao nhiêu '+sp.p+'?';}
+    if(p.op==='separate'){if(p.phase==='start')return 'Bước 1: Đặt '+w(p.a)+' '+sp.p+' lên '+pl+'.';if(p.phase==='change')return 'Bước 2: '+cap(w(p.b))+' cái bị ăn mất. Chạm '+w(p.b)+' cái để lấy đi.';return 'Bước 3: Đếm phần còn lại. Có bao nhiêu '+sp.p+'?';}
+    if(p.op==='make')return 'Đổ đầy hai đĩa sao cho tổng cộng là '+w(p.answer)+' '+sp.p+'. Dùng cả hai đĩa!';
+    if(p.phase==='watch')return 'Xem các món ăn. Nhấn Kể lại để xem lần nữa.';return 'Chúng gộp lại hay có vài cái rời đi?';},
+  win:function(Q,p){var w=function(n){return Q.words[n]};
+    if(p.op==='join')return cap(w(p.a))+' hợp với '+w(p.b)+'. Bây giờ có '+w(p.answer)+'.';
+    return 'Bạn lấy đi '+w(p.b)+'. Còn lại '+w(p.answer)+'.';},
+  makeWin:function(Q,a,b,ans){var w=function(n){return Q.words[n]};return cap(w(a))+' và '+w(b)+' tạo thành '+w(ans)+'. Bạn đã tạo '+w(ans)+' bằng hai nhóm!';},
+  makeRetry:function(Q,tot,ans,both){var w=function(n){return Q.words[n]};if(tot<ans)return 'Bạn có '+w(tot)+'. Thêm nữa để tạo '+w(ans)+'.';if(tot>ans)return 'Bạn có '+w(tot)+'. Nhiều quá. Bớt đi để tạo '+w(ans)+'.';return 'Dùng CẢ HAI đĩa. Đặt món ăn vào mỗi đĩa để tạo '+w(ans)+' bằng hai nhóm.';},
+  numRetry:function(Q,p){var sp=Q.snacks[p.snack];return 'Vẫn chưa khớp với câu chuyện. Hãy đếm lại '+sp.p+' để xem có bao nhiêu.';},
+  storyWin:function(Q,op){return op==='join'?'Đúng rồi! Các món ăn gộp lại. Đó là phép cộng — nhiều hơn.':'Đúng rồi! Vài món ăn rời đi. Đó là phép trừ — ít hơn.';},
+  storyRetry:function(Q,op){return op==='join'?'Chưa đúng. Nhìn lại nhé — hai nhóm lại gần và thành một nhóm lớn hơn. Nhấn Kể lại.':'Chưa đúng. Nhìn lại nhé — vài món ăn rời đi và biến mất. Nhấn Kể lại.';}
+};
+
+/* Arabic (RTL) */
+I18N.ar={
+  code:'ar',dir:'rtl',bcp:'ar-SA',
+  words:['صفر','واحد','اثنان','ثلاثة','أربعة','خمسة','ستة','سبعة','ثمانية','تسعة','عشرة'],
+  snacks:{apple:{s:'تفاحة',p:'تفاحات'},cookie:{s:'بسكويتة',p:'بسكويت'},orange:{s:'برتقالة',p:'برتقالات'},muffin:{s:'كعكة',p:'كعكات'},fish:{s:'بسكويت السمك',p:'بسكويت السمك'},banana:{s:'موزة',p:'موزات'},grapes:{s:'عنقود عنب',p:'عناقيد عنب'},pretzel:{s:'بريتزل',p:'بريتزل'}},
+  scenes:{picnic:'طاولة النزهة',tray:'صينية الغداء',bakery:'طاولة المخبز',animal:'ركن وجبات الحيوانات'},
+  ui:{title:'قصص متجر الوجبات',home:'الرئيسية',teacher:'المعلّم',language:'اللغة',
+    tab_join:'الجمع',tab_separate:'الطرح',tab_make:'كوّن العدد',tab_story:'احكِ القصة',tab_own:'أنشئ قصتك',
+    speechWarn:'هذا الجهاز لا يستطيع القراءة بصوت عالٍ. القصة معروضة في الأعلى.',
+    snacksToUse:'وجبات للاستخدام:',onMat:'على البساط',total:'المجموع',
+    step:'أحسنت',replay:'أعد القصة',startOver:'ابدأ من جديد',next:'القصة التالية',check:'تحقق من عددي',tryAnother:'جرّب طريقة أخرى',
+    levPrek3:'روضة 3',levPrek4:'روضة 4',levK:'الروضة',levKC:'الروضة تحدٍّ',
+    descPrek3:'مجاميع حتى 3',descPrek4:'الجمع حتى 5 والطرح من مجموعات حتى 5',descK:'الجمع والطرح ضمن 10',descKC:'تكوين 10 بطرق مختلفة',
+    stdSummary:'المعايير المرتبطة',
+    stdP1:'إرشادات ما قبل الروضة في تكساس: PK3.V.B.1–2 وPK4.V.B.1–2 (جمع وفصل مجموعات صغيرة).',
+    stdP2:'TEKS — الروضة: K.3(A) تمثيل الجمع والفصل؛ K.3(B) حل المسائل ضمن 10؛ K.3(C) شرح الاستراتيجيات.',
+    stdP3:'Common Core — الروضة: K.OA.1–5 (التمثيل والحل والتحليل ضمن 10).',
+    footerLine:'بلا حسابات · بلا جمع بيانات · يعمل دون اتصال',homeLink:'الرئيسية',privacyLink:'الخصوصية',
+    teacherTitle:'إعدادات المعلّم',numLevel:'مستوى الأعداد',optPrek3:'روضة 3 · حتى 3',optPrek4:'روضة 4 · حتى 5',optK:'الروضة · حتى 10',optKC:'تحدٍّ · تكوين 10',
+    practiceLabel:'نوع التمرين لتبويبَي الجمع / الطرح',practiceFollow:'اتبع التبويب',practiceMixed:'مختلط (جمع وطرح)',
+    showEq:'إظهار الجملة العددية',showEqNote:'تظهر المعادلات فقط بعد حل الطفل للقصة (الروضة).',narr:'اقرأ كل قصة جديدة بصوت عالٍ تلقائياً',savedNote:'تُحفظ الإعدادات على هذا الجهاز فقط. لا تُخزَّن معلومات الطلاب.',done:'تم',
+    ownTitle:'أنشئ قصتك',ownDesc:'المعلّم: اختر وجبة وعددين صغيرين. لا تُجمع معلومات الطلاب.',ownPick:'اختر وجبة',ownActionLabel:'ماذا يحدث في القصة؟',ownJoinOpt:'تجتمع معاً',ownSepOpt:'يؤخذ بعضها',ownStartAmt:'العدد الأول',ownAddAmt:'العدد المُضاف',ownTakeAmt:'العدد المأخوذ',ownStartBtn:'ابدأ هذه القصة',
+    ownWarnAmt:'أدخل أعداداً من 1 فأكثر.',ownWarnSep:'لقصة الأخذ، خذ أقل من العدد الأول.',ownWarnTotal:'أبقِ المجموع صغيراً (20 أو أقل).',
+    group1:'المجموعة 1',group2:'المجموعة 2',plate:'الطبق',segChoose:'اختر المجموعة لإضافة الوجبات',
+    hintMain:'انقر أو اسحب الوجبات من الأسفل.',hintMake:'انقر الوجبات في الأسفل لإضافتها هنا.',
+    readStory:'اقرأ القصة بصوت عالٍ',readFeedback:'اقرأ الملاحظة بصوت عالٍ',addOne:'أضف وجبة',tapRemove:'انقر للإزالة',choose:'اختر',
+    storyJoinOpt:'اجتمعت معاً',storySepOpt:'ذهب بعضها'},
+  story:function(Q,p){var w=function(n){return Q.words[n]},sp=Q.snacks[p.snack],pl=Q.scenes[p.scene.id];
+    if(p.op==='join')return 'يوجد '+w(p.a)+' '+sp.p+' على '+pl+'. يصل '+w(p.b)+' '+sp.p+' أخرى. كم عدد '+sp.p+' الآن؟';
+    if(p.op==='separate')return 'يوجد '+w(p.a)+' '+sp.p+' على '+pl+'. أُكل '+w(p.b)+' '+sp.p+'. كم عدد '+sp.p+' المتبقي؟';
+    if(p.op==='make')return 'كوّن العدد '+w(p.answer)+'! ضع '+sp.p+' في الطبقين ليصبح المجموع '+w(p.answer)+' '+sp.p+'.';
+    return 'شاهد '+sp.p+'. هل اجتمعت أم ذهب بعضها؟';},
+  instr:function(Q,p){var w=function(n){return Q.words[n]},sp=Q.snacks[p.snack],pl=Q.scenes[p.scene.id];
+    if(p.op==='join'){if(p.phase==='start')return 'الخطوة 1: ضع '+w(p.a)+' '+sp.p+' على '+pl+'.';if(p.phase==='change')return 'الخطوة 2: يصل '+w(p.b)+' أخرى. أضف '+w(p.b)+' أخرى.';return 'الخطوة 3: عُدّها كلها. كم عدد '+sp.p+' الآن؟';}
+    if(p.op==='separate'){if(p.phase==='start')return 'الخطوة 1: ضع '+w(p.a)+' '+sp.p+' على '+pl+'.';if(p.phase==='change')return 'الخطوة 2: أُكل '+w(p.b)+'. انقر '+w(p.b)+' لأخذها.';return 'الخطوة 3: عُدّ ما تبقّى. كم عدد '+sp.p+'؟';}
+    if(p.op==='make')return 'املأ الطبقين ليصبح المجموع '+w(p.answer)+' '+sp.p+'. استخدم كلا الطبقين!';
+    if(p.phase==='watch')return 'شاهد الوجبات. اضغط أعد القصة لمشاهدتها ثانية.';return 'هل اجتمعت أم ذهب بعضها؟';},
+  win:function(Q,p){var w=function(n){return Q.words[n]};
+    if(p.op==='join')return w(p.a)+' انضمّت إلى '+w(p.b)+'. الآن يوجد '+w(p.answer)+'.';
+    return 'أخذت '+w(p.b)+'. بقي '+w(p.answer)+'.';},
+  makeWin:function(Q,a,b,ans){var w=function(n){return Q.words[n]};return w(a)+' و'+w(b)+' يكوّنان '+w(ans)+'. لقد كوّنت '+w(ans)+' في مجموعتين!';},
+  makeRetry:function(Q,tot,ans,both){var w=function(n){return Q.words[n]};if(tot<ans)return 'لديك '+w(tot)+'. أضف المزيد لتكوين '+w(ans)+'.';if(tot>ans)return 'لديك '+w(tot)+'. هذا كثير. خذ بعضها لتكوين '+w(ans)+'.';return 'استخدم كلا الطبقين. ضع وجبات في كل طبق لتكوين '+w(ans)+' في مجموعتين.';},
+  numRetry:function(Q,p){var sp=Q.snacks[p.snack];return 'هذا لا يطابق القصة بعد. عُدّ '+sp.p+' مرة أخرى لترى كم العدد.';},
+  storyWin:function(Q,op){return op==='join'?'نعم! اجتمعت الوجبات. هذا هو الجمع — يصبح أكثر.':'نعم! ذهبت بعض الوجبات. هذا هو الطرح — يصبح أقل.';},
+  storyRetry:function(Q,op){return op==='join'?'ليس تماماً. انظر ثانية — اقترب الفريقان وصارا مجموعة أكبر. اضغط أعد القصة.':'ليس تماماً. انظر ثانية — ابتعدت بعض الوجبات واختفت. اضغط أعد القصة.';}
+};
+
+/* Hindi */
+I18N.hi={
+  code:'hi',dir:'ltr',bcp:'hi-IN',
+  words:['शून्य','एक','दो','तीन','चार','पाँच','छह','सात','आठ','नौ','दस'],
+  snacks:{apple:{s:'सेब',p:'सेब'},cookie:{s:'बिस्किट',p:'बिस्किट'},orange:{s:'संतरा',p:'संतरे'},muffin:{s:'मफिन',p:'मफिन'},fish:{s:'मछली बिस्किट',p:'मछली बिस्किट'},banana:{s:'केला',p:'केले'},grapes:{s:'अंगूर का गुच्छा',p:'अंगूर के गुच्छे'},pretzel:{s:'प्रेट्ज़ेल',p:'प्रेट्ज़ेल'}},
+  scenes:{picnic:'पिकनिक मेज़',tray:'लंच ट्रे',bakery:'बेकरी काउंटर',animal:'जानवरों का नाश्ता क्षेत्र'},
+  ui:{title:'स्नैक शॉप कहानियाँ',home:'होम',teacher:'शिक्षक',language:'भाषा',
+    tab_join:'जोड़ना',tab_separate:'अलग करना',tab_make:'संख्या बनाओ',tab_story:'कहानी बताओ',tab_own:'अपनी बनाओ',
+    speechWarn:'यह डिवाइस ज़ोर से नहीं पढ़ सकता। कहानी ऊपर दिखाई गई है।',
+    snacksToUse:'उपयोग के लिए नाश्ते:',onMat:'मैट पर',total:'कुल',
+    step:'सही है',replay:'कहानी दोहराओ',startOver:'फिर से शुरू',next:'अगली कहानी',check:'मेरी संख्या जाँचो',tryAnother:'दूसरा तरीका आज़माओ',
+    levPrek3:'प्री-के 3',levPrek4:'प्री-के 4',levK:'किंडरगार्टन',levKC:'किंडरगार्टन चुनौती',
+    descPrek3:'योग 3 तक',descPrek4:'5 तक जोड़ना और 5 तक के समूह से घटाना',descK:'10 के भीतर जोड़ और घटाव',descKC:'10 को अलग-अलग तरीकों से बनाना',
+    stdSummary:'संरेखित मानक',
+    stdP1:'टेक्सास प्री-किंडरगार्टन दिशानिर्देश: PK3.V.B.1–2 और PK4.V.B.1–2 (छोटे समूह जोड़ना और अलग करना)।',
+    stdP2:'TEKS — किंडरगार्टन: K.3(A) जोड़ना-अलग करना मॉडल; K.3(B) 10 के भीतर शब्द-समस्याएँ; K.3(C) रणनीति समझाना।',
+    stdP3:'Common Core — किंडरगार्टन: K.OA.1–5 (10 के भीतर दर्शाना, हल करना और विभाजित करना)।',
+    footerLine:'कोई खाता नहीं · कोई डेटा नहीं · ऑफ़लाइन काम करता है',homeLink:'होम',privacyLink:'गोपनीयता',
+    teacherTitle:'शिक्षक सेटिंग्स',numLevel:'संख्या स्तर',optPrek3:'प्री-के 3 · 3 तक',optPrek4:'प्री-के 4 · 5 तक',optK:'किंडरगार्टन · 10 तक',optKC:'चुनौती · 10 बनाओ',
+    practiceLabel:'जोड़ना / अलग करना टैब के लिए अभ्यास प्रकार',practiceFollow:'टैब के अनुसार',practiceMixed:'मिश्रित (जोड़ और घटाव)',
+    showEq:'संख्या वाक्य दिखाओ',showEqNote:'समीकरण केवल बच्चे के हल करने के बाद दिखते हैं (किंडरगार्टन)।',narr:'हर नई कहानी अपने आप ज़ोर से पढ़ो',savedNote:'सेटिंग्स केवल इसी डिवाइस पर सहेजी जाती हैं। छात्र की जानकारी नहीं रखी जाती।',done:'हो गया',
+    ownTitle:'अपनी कहानी बनाओ',ownDesc:'शिक्षक: एक नाश्ता और दो छोटी मात्राएँ चुनें। छात्र की कोई जानकारी नहीं ली जाती।',ownPick:'नाश्ता चुनो',ownActionLabel:'कहानी में क्या होता है?',ownJoinOpt:'वे जुड़ते हैं',ownSepOpt:'कुछ हटा दिए जाते हैं',ownStartAmt:'शुरुआती मात्रा',ownAddAmt:'जोड़ने की मात्रा',ownTakeAmt:'हटाने की मात्रा',ownStartBtn:'यह कहानी शुरू करो',
+    ownWarnAmt:'1 या अधिक मात्राएँ भरें।',ownWarnSep:'हटाने वाली कहानी में शुरुआती मात्रा से कम हटाएँ।',ownWarnTotal:'कुल छोटा रखें (20 या कम)।',
+    group1:'समूह 1',group2:'समूह 2',plate:'प्लेट',segChoose:'नाश्ता जोड़ने के लिए समूह चुनो',
+    hintMain:'नीचे से नाश्ते टैप या खींचो।',hintMake:'यहाँ जोड़ने के लिए नीचे के नाश्ते टैप करो।',
+    readStory:'कहानी ज़ोर से पढ़ो',readFeedback:'प्रतिक्रिया ज़ोर से पढ़ो',addOne:'एक नाश्ता जोड़ो',tapRemove:'हटाने के लिए टैप',choose:'चुनो',
+    storyJoinOpt:'वे जुड़ गए',storySepOpt:'कुछ चले गए'},
+  story:function(Q,p){var w=function(n){return Q.words[n]},sp=Q.snacks[p.snack],pl=Q.scenes[p.scene.id];
+    if(p.op==='join')return pl+' पर '+w(p.a)+' '+sp.p+' हैं। '+w(p.b)+' और '+sp.p+' आते हैं। अब कितने '+sp.p+' हैं?';
+    if(p.op==='separate')return pl+' पर '+w(p.a)+' '+sp.p+' हैं। '+w(p.b)+' '+sp.p+' खा लिए जाते हैं। अब कितने '+sp.p+' बचे हैं?';
+    if(p.op==='make')return w(p.answer)+' बनाओ! दोनों प्लेटों में '+sp.p+' रखो ताकि मिलाकर '+w(p.answer)+' '+sp.p+' हो जाएँ।';
+    return sp.p+' को देखो। क्या वे जुड़ गए या कुछ चले गए?';},
+  instr:function(Q,p){var w=function(n){return Q.words[n]},sp=Q.snacks[p.snack],pl=Q.scenes[p.scene.id];
+    if(p.op==='join'){if(p.phase==='start')return 'चरण 1: '+pl+' पर '+w(p.a)+' '+sp.p+' रखो।';if(p.phase==='change')return 'चरण 2: '+w(p.b)+' और आते हैं। '+w(p.b)+' और जोड़ो।';return 'चरण 3: सब गिनो। अब कितने '+sp.p+' हैं?';}
+    if(p.op==='separate'){if(p.phase==='start')return 'चरण 1: '+pl+' पर '+w(p.a)+' '+sp.p+' रखो।';if(p.phase==='change')return 'चरण 2: '+w(p.b)+' खा लिए जाते हैं। हटाने के लिए '+w(p.b)+' टैप करो।';return 'चरण 3: बचे हुए गिनो। कितने '+sp.p+' हैं?';}
+    if(p.op==='make')return 'दोनों प्लेटें भरो ताकि मिलाकर '+w(p.answer)+' '+sp.p+' हों। दोनों प्लेटें उपयोग करो!';
+    if(p.phase==='watch')return 'नाश्तों को देखो। फिर देखने के लिए कहानी दोहराओ दबाओ।';return 'क्या वे जुड़ गए या कुछ चले गए?';},
+  win:function(Q,p){var w=function(n){return Q.words[n]};
+    if(p.op==='join')return w(p.a)+' और '+w(p.b)+' जुड़ गए। अब '+w(p.answer)+' हैं।';
+    return 'तुमने '+w(p.b)+' हटाए। '+w(p.answer)+' बचे हैं।';},
+  makeWin:function(Q,a,b,ans){var w=function(n){return Q.words[n]};return w(a)+' और '+w(b)+' मिलकर '+w(ans)+' बनते हैं। तुमने दो समूहों में '+w(ans)+' बनाया!';},
+  makeRetry:function(Q,tot,ans,both){var w=function(n){return Q.words[n]};if(tot<ans)return 'तुम्हारे पास '+w(tot)+' हैं। '+w(ans)+' बनाने के लिए और जोड़ो।';if(tot>ans)return 'तुम्हारे पास '+w(tot)+' हैं। बहुत ज़्यादा हैं। '+w(ans)+' बनाने के लिए कुछ हटाओ।';return 'दोनों प्लेटें उपयोग करो। हर प्लेट में कुछ नाश्ते रखकर दो समूहों में '+w(ans)+' बनाओ।';},
+  numRetry:function(Q,p){var sp=Q.snacks[p.snack];return 'यह अभी कहानी से मेल नहीं खाता। कितने हैं यह देखने के लिए '+sp.p+' फिर से गिनो।';},
+  storyWin:function(Q,op){return op==='join'?'हाँ! नाश्ते एक साथ आ गए। यह जोड़ है — ज़्यादा हो जाते हैं।':'हाँ! कुछ नाश्ते चले गए। यह घटाव है — कम हो जाते हैं।';},
+  storyRetry:function(Q,op){return op==='join'?'बिलकुल नहीं। फिर देखो — दोनों समूह पास आकर एक बड़ा समूह बने। कहानी दोहराओ दबाओ।':'बिलकुल नहीं। फिर देखो — कुछ नाश्ते दूर चले गए और गायब हो गए। कहानी दोहराओ दबाओ।';}
+};
+
+/* Urdu (RTL) */
+I18N.ur={
+  code:'ur',dir:'rtl',bcp:'ur-PK',
+  words:['صفر','ایک','دو','تین','چار','پانچ','چھ','سات','آٹھ','نو','دس'],
+  snacks:{apple:{s:'سیب',p:'سیب'},cookie:{s:'بسکٹ',p:'بسکٹ'},orange:{s:'نارنگی',p:'نارنگیاں'},muffin:{s:'مفن',p:'مفن'},fish:{s:'مچھلی بسکٹ',p:'مچھلی بسکٹ'},banana:{s:'کیلا',p:'کیلے'},grapes:{s:'انگور کا گچھا',p:'انگور کے گچھے'},pretzel:{s:'پریٹزل',p:'پریٹزل'}},
+  scenes:{picnic:'پکنک میز',tray:'لنچ ٹرے',bakery:'بیکری کاؤنٹر',animal:'جانوروں کا ناشتہ علاقہ'},
+  ui:{title:'اسنیک شاپ کہانیاں',home:'ہوم',teacher:'استاد',language:'زبان',
+    tab_join:'جوڑنا',tab_separate:'الگ کرنا',tab_make:'عدد بناؤ',tab_story:'کہانی بتاؤ',tab_own:'اپنی بناؤ',
+    speechWarn:'یہ آلہ بلند آواز میں نہیں پڑھ سکتا۔ کہانی اوپر دکھائی گئی ہے۔',
+    snacksToUse:'استعمال کے لیے ناشتے:',onMat:'میٹ پر',total:'کل',
+    step:'درست ہے',replay:'کہانی دہراؤ',startOver:'دوبارہ شروع',next:'اگلی کہانی',check:'میرا عدد جانچو',tryAnother:'دوسرا طریقہ آزماؤ',
+    levPrek3:'پری-کے 3',levPrek4:'پری-کے 4',levK:'کنڈرگارٹن',levKC:'کنڈرگارٹن چیلنج',
+    descPrek3:'مجموعے 3 تک',descPrek4:'5 تک جوڑنا اور 5 تک کے مجموعوں سے گھٹانا',descK:'10 کے اندر جمع اور تفریق',descKC:'10 کو مختلف طریقوں سے بنانا',
+    stdSummary:'ہم آہنگ معیارات',
+    stdP1:'ٹیکساس پری-کنڈرگارٹن رہنما اصول: PK3.V.B.1–2 اور PK4.V.B.1–2 (چھوٹے مجموعے جوڑنا اور الگ کرنا)۔',
+    stdP2:'TEKS — کنڈرگارٹن: K.3(A) جوڑنا اور الگ کرنا؛ K.3(B) 10 کے اندر مسائل حل کرنا؛ K.3(C) طریقے سمجھانا۔',
+    stdP3:'Common Core — کنڈرگارٹن: K.OA.1–5 (10 کے اندر ظاہر کرنا، حل کرنا اور تقسیم کرنا)۔',
+    footerLine:'کوئی اکاؤنٹ نہیں · کوئی ڈیٹا نہیں · آف لائن چلتا ہے',homeLink:'ہوم',privacyLink:'رازداری',
+    teacherTitle:'استاد کی ترتیبات',numLevel:'عدد کی سطح',optPrek3:'پری-کے 3 · 3 تک',optPrek4:'پری-کے 4 · 5 تک',optK:'کنڈرگارٹن · 10 تک',optKC:'چیلنج · 10 بناؤ',
+    practiceLabel:'جوڑنا / الگ کرنا ٹیب کے لیے مشق کی قسم',practiceFollow:'ٹیب کے مطابق',practiceMixed:'ملا جلا (جمع اور تفریق)',
+    showEq:'عددی جملہ دکھاؤ',showEqNote:'مساوات صرف بچے کے حل کرنے کے بعد ظاہر ہوتی ہیں (کنڈرگارٹن)۔',narr:'ہر نئی کہانی خودبخود بلند آواز میں پڑھو',savedNote:'ترتیبات صرف اسی آلے پر محفوظ ہوتی ہیں۔ طالب علم کی معلومات محفوظ نہیں ہوتیں۔',done:'ہو گیا',
+    ownTitle:'اپنی کہانی بناؤ',ownDesc:'استاد: ایک ناشتہ اور دو چھوٹی مقداریں چنیں۔ طالب علم کی کوئی معلومات نہیں لی جاتیں۔',ownPick:'ناشتہ چنو',ownActionLabel:'کہانی میں کیا ہوتا ہے؟',ownJoinOpt:'وہ مل جاتے ہیں',ownSepOpt:'کچھ ہٹا دیے جاتے ہیں',ownStartAmt:'شروعاتی مقدار',ownAddAmt:'جوڑنے کی مقدار',ownTakeAmt:'ہٹانے کی مقدار',ownStartBtn:'یہ کہانی شروع کرو',
+    ownWarnAmt:'1 یا زیادہ مقداریں بھریں۔',ownWarnSep:'ہٹانے والی کہانی میں شروعاتی مقدار سے کم ہٹائیں۔',ownWarnTotal:'کل چھوٹا رکھیں (20 یا کم)۔',
+    group1:'گروہ 1',group2:'گروہ 2',plate:'پلیٹ',segChoose:'ناشتہ جوڑنے کے لیے گروہ چنو',
+    hintMain:'نیچے سے ناشتے ٹیپ یا کھینچو۔',hintMake:'یہاں جوڑنے کے لیے نیچے کے ناشتے ٹیپ کرو۔',
+    readStory:'کہانی بلند آواز میں پڑھو',readFeedback:'جواب بلند آواز میں پڑھو',addOne:'ایک ناشتہ جوڑو',tapRemove:'ہٹانے کے لیے ٹیپ',choose:'چنو',
+    storyJoinOpt:'وہ مل گئے',storySepOpt:'کچھ چلے گئے'},
+  story:function(Q,p){var w=function(n){return Q.words[n]},sp=Q.snacks[p.snack],pl=Q.scenes[p.scene.id];
+    if(p.op==='join')return pl+' پر '+w(p.a)+' '+sp.p+' ہیں۔ '+w(p.b)+' اور '+sp.p+' آتے ہیں۔ اب کتنے '+sp.p+' ہیں؟';
+    if(p.op==='separate')return pl+' پر '+w(p.a)+' '+sp.p+' ہیں۔ '+w(p.b)+' '+sp.p+' کھا لیے جاتے ہیں۔ اب کتنے '+sp.p+' بچے ہیں؟';
+    if(p.op==='make')return w(p.answer)+' بناؤ! دونوں پلیٹوں میں '+sp.p+' رکھو تاکہ مل کر '+w(p.answer)+' '+sp.p+' ہو جائیں۔';
+    return sp.p+' کو دیکھو۔ کیا وہ مل گئے یا کچھ چلے گئے؟';},
+  instr:function(Q,p){var w=function(n){return Q.words[n]},sp=Q.snacks[p.snack],pl=Q.scenes[p.scene.id];
+    if(p.op==='join'){if(p.phase==='start')return 'مرحلہ 1: '+pl+' پر '+w(p.a)+' '+sp.p+' رکھو۔';if(p.phase==='change')return 'مرحلہ 2: '+w(p.b)+' اور آتے ہیں۔ '+w(p.b)+' اور جوڑو۔';return 'مرحلہ 3: سب گنو۔ اب کتنے '+sp.p+' ہیں؟';}
+    if(p.op==='separate'){if(p.phase==='start')return 'مرحلہ 1: '+pl+' پر '+w(p.a)+' '+sp.p+' رکھو۔';if(p.phase==='change')return 'مرحلہ 2: '+w(p.b)+' کھا لیے جاتے ہیں۔ ہٹانے کے لیے '+w(p.b)+' ٹیپ کرو۔';return 'مرحلہ 3: بچے ہوئے گنو۔ کتنے '+sp.p+' ہیں؟';}
+    if(p.op==='make')return 'دونوں پلیٹیں بھرو تاکہ مل کر '+w(p.answer)+' '+sp.p+' ہوں۔ دونوں پلیٹیں استعمال کرو!';
+    if(p.phase==='watch')return 'ناشتوں کو دیکھو۔ دوبارہ دیکھنے کے لیے کہانی دہراؤ دبائیں۔';return 'کیا وہ مل گئے یا کچھ چلے گئے؟';},
+  win:function(Q,p){var w=function(n){return Q.words[n]};
+    if(p.op==='join')return w(p.a)+' اور '+w(p.b)+' مل گئے۔ اب '+w(p.answer)+' ہیں۔';
+    return 'تم نے '+w(p.b)+' ہٹائے۔ '+w(p.answer)+' بچے ہیں۔';},
+  makeWin:function(Q,a,b,ans){var w=function(n){return Q.words[n]};return w(a)+' اور '+w(b)+' مل کر '+w(ans)+' بنتے ہیں۔ تم نے دو گروہوں میں '+w(ans)+' بنایا!';},
+  makeRetry:function(Q,tot,ans,both){var w=function(n){return Q.words[n]};if(tot<ans)return 'تمہارے پاس '+w(tot)+' ہیں۔ '+w(ans)+' بنانے کے لیے اور جوڑو۔';if(tot>ans)return 'تمہارے پاس '+w(tot)+' ہیں۔ بہت زیادہ ہیں۔ '+w(ans)+' بنانے کے لیے کچھ ہٹاؤ۔';return 'دونوں پلیٹیں استعمال کرو۔ ہر پلیٹ میں کچھ ناشتے رکھ کر دو گروہوں میں '+w(ans)+' بناؤ۔';},
+  numRetry:function(Q,p){var sp=Q.snacks[p.snack];return 'یہ ابھی کہانی سے میل نہیں کھاتا۔ کتنے ہیں یہ دیکھنے کے لیے '+sp.p+' دوبارہ گنو۔';},
+  storyWin:function(Q,op){return op==='join'?'ہاں! ناشتے ایک ساتھ آ گئے۔ یہ جمع ہے — زیادہ ہو جاتے ہیں۔':'ہاں! کچھ ناشتے چلے گئے۔ یہ تفریق ہے — کم ہو جاتے ہیں۔';},
+  storyRetry:function(Q,op){return op==='join'?'بالکل نہیں۔ دوبارہ دیکھو — دونوں گروہ پاس آ کر ایک بڑا گروہ بنے۔ کہانی دہراؤ دبائیں۔':'بالکل نہیں۔ دوبارہ دیکھو — کچھ ناشتے دور چلے گئے اور غائب ہو گئے۔ کہانی دہراؤ دبائیں۔';}
+};
+
+/* Chinese */
+I18N.zh={
+  code:'zh',dir:'ltr',bcp:'zh-CN',
+  words:['零','一','二','三','四','五','六','七','八','九','十'],
+  cw:['零','一','两','三','四','五','六','七','八','九','十'],
+  snacks:{apple:{s:'苹果',p:'苹果'},cookie:{s:'饼干',p:'饼干'},orange:{s:'橙子',p:'橙子'},muffin:{s:'松饼',p:'松饼'},fish:{s:'鱼饼干',p:'鱼饼干'},banana:{s:'香蕉',p:'香蕉'},grapes:{s:'葡萄',p:'葡萄'},pretzel:{s:'椒盐卷饼',p:'椒盐卷饼'}},
+  scenes:{picnic:'野餐桌',tray:'午餐盘',bakery:'面包柜台',animal:'动物零食区'},
+  ui:{title:'零食店故事',home:'首页',teacher:'老师',language:'语言',
+    tab_join:'合并',tab_separate:'分开',tab_make:'凑数',tab_story:'讲故事',tab_own:'自己出题',
+    speechWarn:'此设备无法朗读。故事显示在上方。',
+    snacksToUse:'可用的零食：',onMat:'垫子上',total:'总共',
+    step:'对了',replay:'重播故事',startOver:'重新开始',next:'下一个故事',check:'检查我的数',tryAnother:'换个方法试试',
+    levPrek3:'幼儿园小班',levPrek4:'幼儿园中班',levK:'幼儿园大班',levKC:'大班挑战',
+    descPrek3:'总数不超过 3',descPrek4:'合并到 5，从不超过 5 的组里分开',descK:'10 以内的加减法',descKC:'用不同方法凑成 10',
+    stdSummary:'对应标准',
+    stdP1:'德州学前指南：PK3.V.B.1–2 和 PK4.V.B.1–2（合并与分开小的集合）。',
+    stdP2:'TEKS — 幼儿园：K.3(A) 建立合并与分开模型；K.3(B) 解决 10 以内应用题；K.3(C) 说明策略。',
+    stdP3:'共同核心 — 幼儿园：K.OA.1–5（在 10 以内表示、求解与分解）。',
+    footerLine:'无账户 · 不收集数据 · 可离线使用',homeLink:'首页',privacyLink:'隐私',
+    teacherTitle:'老师设置',numLevel:'数字级别',optPrek3:'小班 · 到 3',optPrek4:'中班 · 到 5',optK:'大班 · 到 10',optKC:'挑战 · 凑 10',
+    practiceLabel:'合并/分开标签的练习类型',practiceFollow:'跟随标签',practiceMixed:'混合（加与减）',
+    showEq:'显示算式',showEqNote:'算式只在孩子解出故事后显示（幼儿园）。',narr:'自动朗读每个新故事',savedNote:'设置只保存在本设备上。不保存学生信息。',done:'完成',
+    ownTitle:'自己出故事',ownDesc:'老师：选一种零食和两个小数字。不收集学生信息。',ownPick:'选一种零食',ownActionLabel:'故事里发生了什么？',ownJoinOpt:'它们合在一起',ownSepOpt:'拿走一些',ownStartAmt:'开始的数量',ownAddAmt:'要加的数量',ownTakeAmt:'要拿走的数量',ownStartBtn:'开始这个故事',
+    ownWarnAmt:'请输入 1 或更多。',ownWarnSep:'拿走的故事里，拿走的要少于开始的数量。',ownWarnTotal:'请让总数小一些（20 以内）。',
+    group1:'第 1 组',group2:'第 2 组',plate:'盘子',segChoose:'选择把零食加到哪一组',
+    hintMain:'点击或拖动下面的零食。',hintMake:'点击下面的零食加到这里。',
+    readStory:'朗读故事',readFeedback:'朗读反馈',addOne:'加一个零食',tapRemove:'点击移除',choose:'选择',
+    storyJoinOpt:'它们合在一起了',storySepOpt:'一些离开了'},
+  story:function(Q,p){var w=function(n){return Q.words[n]},c=function(n){return Q.cw[n]},sp=Q.snacks[p.snack],pl=Q.scenes[p.scene.id];
+    if(p.op==='join')return pl+'上有'+c(p.a)+'个'+sp.p+'。又来了'+c(p.b)+'个'+sp.p+'。现在一共有几个'+sp.p+'？';
+    if(p.op==='separate')return pl+'上有'+c(p.a)+'个'+sp.p+'。'+c(p.b)+'个'+sp.p+'被吃掉了。还剩几个'+sp.p+'？';
+    if(p.op==='make')return '凑出'+w(p.answer)+'！把'+sp.p+'放到两个盘子里，让它们合起来是'+c(p.answer)+'个'+sp.p+'。';
+    return '看看这些'+sp.p+'。它们是合在一起了，还是有一些离开了？';},
+  instr:function(Q,p){var w=function(n){return Q.words[n]},c=function(n){return Q.cw[n]},sp=Q.snacks[p.snack],pl=Q.scenes[p.scene.id];
+    if(p.op==='join'){if(p.phase==='start')return '第一步：在'+pl+'上放'+c(p.a)+'个'+sp.p+'。';if(p.phase==='change')return '第二步：又来了'+c(p.b)+'个。再加'+c(p.b)+'个。';return '第三步：全部数一数。现在有几个'+sp.p+'？';}
+    if(p.op==='separate'){if(p.phase==='start')return '第一步：在'+pl+'上放'+c(p.a)+'个'+sp.p+'。';if(p.phase==='change')return '第二步：'+c(p.b)+'个被吃掉了。点击'+c(p.b)+'个把它们拿走。';return '第三步：数一数剩下的。有几个'+sp.p+'？';}
+    if(p.op==='make')return '把两个盘子装满，让它们合起来是'+c(p.answer)+'个'+sp.p+'。两个盘子都要用！';
+    if(p.phase==='watch')return '看看这些零食。按重播故事再看一次。';return '它们是合在一起了，还是有一些离开了？';},
+  win:function(Q,p){var c=function(n){return Q.cw[n]};
+    if(p.op==='join')return c(p.a)+'和'+c(p.b)+'合在一起。现在有'+c(p.answer)+'个。';
+    return '你拿走了'+c(p.b)+'个。还剩'+c(p.answer)+'个。';},
+  makeWin:function(Q,a,b,ans){var c=function(n){return Q.cw[n]},w=function(n){return Q.words[n]};return c(a)+'和'+c(b)+'凑成'+w(ans)+'。你用两组做出了'+w(ans)+'！';},
+  makeRetry:function(Q,tot,ans,both){var w=function(n){return Q.words[n]};if(tot<ans)return '你有'+w(tot)+'。再加一些凑成'+w(ans)+'。';if(tot>ans)return '你有'+w(tot)+'。太多了。拿走一些凑成'+w(ans)+'。';return '两个盘子都要用。每个盘子里放一些，用两组凑成'+w(ans)+'。';},
+  numRetry:function(Q,p){var sp=Q.snacks[p.snack];return '这还不符合故事。再数一数'+sp.p+'看看有几个。';},
+  storyWin:function(Q,op){return op==='join'?'对了！零食合在一起了。这是加法——变多了。':'对了！有些零食离开了。这是减法——变少了。';},
+  storyRetry:function(Q,op){return op==='join'?'还不对。再看看——两组靠近合成了一个更大的组。按重播故事。':'还不对。再看看——有些零食走开不见了。按重播故事。';}
+};
+
+/* ===== Language engine ===== */
+var LANGS=['en','es','vi','ar','hi','ur','zh'];
+var curLang='en';
+function L(){ return I18N[curLang]; }
+function T(k){ return L().ui[k]; }
+function resolveLang(){
+  try{ var q=new URLSearchParams(location.search).get('lang'); if(q&&LANGS.indexOf(q)>=0) return q; }catch(e){}
+  try{ var s=localStorage.getItem('tcea.mathtools.lang'); if(s&&LANGS.indexOf(s)>=0) return s; }catch(e){}
+  var nav=(navigator.language||'en').toLowerCase();
+  for(var i=0;i<LANGS.length;i++){ if(nav.indexOf(LANGS[i])===0) return LANGS[i]; }
+  return 'en';
+}
+function applyLang(code){
+  if(LANGS.indexOf(code)<0) code='en';
+  curLang=code;
+  document.documentElement.lang=code;
+  document.documentElement.dir=L().dir;
+  try{ localStorage.setItem('tcea.mathtools.lang',code); }catch(e){}
+  g('langSel').value=code;
+  renderStaticUI();
+  updateLevelNote();
+  syncTeacherUI();
+  applyOwnLabels();
+  if(mode==='own'){ /* stays */ }
+  else if(P){ loadProblem(makeProblem()); }
+}
+function renderStaticUI(){
+  var ui=L().ui;
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var k=el.getAttribute('data-i18n'); if(ui[k]!=null) el.textContent=ui[k];
+  });
+  document.querySelectorAll('[data-i18n-aria]').forEach(function(el){
+    var k=el.getAttribute('data-i18n-aria'); if(ui[k]!=null) el.setAttribute('aria-label',ui[k]);
+  });
+  g('segG1').textContent=ui.group1;
+  g('segG2').textContent=ui.group2;
+  var cb=g('checkBtn').querySelector('[data-i18n]'); if(cb) cb.textContent=ui.check;
+}
+
+/* ===== Speech ===== */
+var speechOK=('speechSynthesis' in window)&&('SpeechSynthesisUtterance' in window);
+if(!speechOK){ g('speechWarn').style.display='block'; }
+function bestVoice(bcp){
+  try{ var vs=window.speechSynthesis.getVoices()||[]; var pre=bcp.split('-')[0];
+    for(var i=0;i<vs.length;i++){ if(vs[i].lang && vs[i].lang.toLowerCase()===bcp.toLowerCase()) return vs[i]; }
+    for(var j=0;j<vs.length;j++){ if(vs[j].lang && vs[j].lang.toLowerCase().indexOf(pre)===0) return vs[j]; }
+  }catch(e){}
+  return null;
+}
+function speak(text){
+  if(!speechOK||!text) return;
+  try{
+    window.speechSynthesis.cancel();
+    var u=new SpeechSynthesisUtterance(text);
+    u.lang=L().bcp; u.rate=0.92; u.pitch=1.05;
+    var v=bestVoice(L().bcp); if(v) u.voice=v;
+    window.speechSynthesis.speak(u);
+  }catch(e){}
+}
+if(speechOK && window.speechSynthesis.onvoiceschanged!==undefined){ window.speechSynthesis.onvoiceschanged=function(){}; }
+
+/* ===== Settings ===== */
+var settings={level:'k',practice:'follow',equations:true,narration:true};
+try{ var sv=localStorage.getItem('snackShopSettings'); if(sv){ var o=JSON.parse(sv); for(var k in settings){ if(k in o) settings[k]=o[k]; } } }catch(e){}
+function saveSettings(){ try{ localStorage.setItem('snackShopSettings',JSON.stringify(settings)); }catch(e){} }
+
+/* ===== State ===== */
+var mode='join', P=null;
+var els={storyText:g('storyText'),instruction:g('instruction'),countBadge:g('countBadge'),stepBtn:g('stepBtn'),choices:g('choices'),storyChoices:g('storyChoices'),feedback:g('feedback'),feedbackText:g('feedbackText'),equation:g('equation'),nextBtn:g('nextBtn'),matWrap:g('matWrap'),supplyBox:g('supplyBox'),supplyTokens:g('supplyTokens'),segWrap:g('segWrap'),sceneLabel:g('sceneLabel'),sceneIcon:g('sceneIcon'),checkBtn:g('checkBtn')};
+
+/* ===== Problem generation ===== */
+function makeProblem(){
+  var max=LEVELS[settings.level].max;
+  var scene=pick(SCENES);
+  var snack=pick(SNACK_KEYS);
+  if(scene.id==='animal'&&Math.random()<0.6) snack='fish';
+  var op;
+  if(mode==='make') op='make';
+  else if(mode==='story') op=Math.random()<0.5?'join':'separate';
+  else{ op=(mode==='separate')?'separate':'join'; if(settings.practice==='mixed'&&(mode==='join'||mode==='separate')) op=Math.random()<0.5?'join':'separate'; }
+  var a=null,b=null,answer,total=null;
+  if(op==='join'){ total=rand(2,Math.max(2,max)); a=rand(1,total-1); b=total-a; answer=total; }
+  else if(op==='separate'){ a=rand(2,Math.max(2,max)); b=rand(1,a-1); answer=a-b; }
+  else{ total=rand(2,Math.max(2,max)); answer=total; }
+  return {op:op,snack:snack,scene:scene,max:max,a:a,b:b,answer:answer,total:total,
+    phase:(op==='make'?'build':(mode==='story'?'watch':'start')),
+    zones:(op==='make'?{g1:[],g2:[]}:{main:[]}),activeZone:'g1',solved:false};
+}
+function ownProblem(snack,op,a,b){
+  var scene=pick(SCENES);
+  var answer=op==='join'?a+b:a-b;
+  return {op:op,snack:snack,scene:scene,max:Math.max(a+b,10),a:a,b:b,answer:answer,total:(op==='join'?a+b:null),phase:'start',zones:{main:[]},activeZone:'g1',solved:false,custom:true};
+}
+
+/* ===== Rendering ===== */
+function buildPhaseCanRemove(){ return P&&(P.phase==='start'||P.phase==='change'||P.phase==='build'); }
+function makeToken(zoneKey,index,removable){
+  var b=document.createElement('button');
+  b.className='token pop'+(removable?' removable':'');
+  b.innerHTML=ART[P.snack];
+  var sp=L().snacks[P.snack];
+  if(removable){ b.setAttribute('aria-label',sp.s+', '+T('tapRemove')); b.addEventListener('click',function(){ removeToken(zoneKey,index); }); }
+  else{ b.setAttribute('aria-label',sp.s); b.setAttribute('tabindex','-1'); }
+  return b;
+}
+function renderMat(){
+  var wrap=els.matWrap; wrap.innerHTML='';
+  var removable=buildPhaseCanRemove();
+  if(P.op==='make'){
+    var zones=document.createElement('div'); zones.className='zones';
+    ['g1','g2'].forEach(function(zk,i){
+      var z=document.createElement('div'); z.className='zone';
+      var head=document.createElement('div'); head.className='zhead';
+      var name=document.createElement('span'); name.textContent=T('plate')+' '+(i+1);
+      var cnt=document.createElement('span'); cnt.className='zcount'; cnt.textContent=P.zones[zk].length;
+      head.appendChild(name); head.appendChild(cnt);
+      var mat=document.createElement('div'); mat.className='mat '+P.scene.id; mat.setAttribute('data-zone',zk);
+      if(P.zones[zk].length===0){ var h=document.createElement('div'); h.className='hint'; h.textContent=T('hintMake'); mat.appendChild(h); }
+      P.zones[zk].forEach(function(_,idx){ mat.appendChild(makeToken(zk,idx,removable)); });
+      z.appendChild(head); z.appendChild(mat); zones.appendChild(z);
+    });
+    wrap.appendChild(zones);
+  } else {
+    var mat=document.createElement('div'); mat.className='mat '+P.scene.id; mat.setAttribute('data-zone','main');
+    if(P.zones.main.length===0&&P.phase==='start'){ var hint=document.createElement('div'); hint.className='hint'; hint.textContent=T('hintMain'); mat.appendChild(hint); }
+    P.zones.main.forEach(function(_,idx){ mat.appendChild(makeToken('main',idx,removable)); });
+    wrap.appendChild(mat);
+  }
+  updateCounts();
+}
+function updateCounts(){
+  if(!P) return;
+  if(P.op==='make'){ els.countBadge.textContent=T('total')+': '+(P.zones.g1.length+P.zones.g2.length);
+    var m=els.matWrap.querySelectorAll('.zcount'); if(m.length===2){ m[0].textContent=P.zones.g1.length; m[1].textContent=P.zones.g2.length; } }
+  else els.countBadge.textContent=T('onMat')+': '+P.zones.main.length;
+  refreshStepBtn();
+}
+function renderSupply(){
+  var sc=els.supplyTokens; sc.innerHTML='';
+  var show=(P.op==='make'&&P.phase==='build')||(P.op==='join'&&(P.phase==='start'||P.phase==='change'))||(P.op==='separate'&&P.phase==='start');
+  els.supplyBox.style.display=show?'block':'none';
+  els.segWrap.style.display=(P.op==='make'&&P.phase==='build')?'inline':'none';
+  if(!show) return;
+  var count=Math.min(6,Math.max(3,P.max));
+  for(var i=0;i<count;i++){
+    var t=document.createElement('button'); t.className='token'; t.innerHTML=ART[P.snack];
+    t.setAttribute('aria-label',T('addOne'));
+    t.addEventListener('click',function(){ addOne(); });
+    enableDrag(t); sc.appendChild(t);
+  }
+}
+function activeAddZone(){ return P.op==='make'?P.activeZone:'main'; }
+function addOne(){ if(P.solved) return; P.zones[activeAddZone()].push({}); renderMat(); renderSupply(); }
+function removeToken(zk,idx){ if(P.solved) return; P.zones[zk].splice(idx,1); renderMat(); renderSupply(); }
+
+var dragGhost=null;
+function enableDrag(el){
+  el.addEventListener('pointerdown',function(ev){
+    if(ev.pointerType==='mouse'&&ev.button!==0) return;
+    var started=false,sx=ev.clientX,sy=ev.clientY;
+    function move(e){
+      if(!started){ if(Math.abs(e.clientX-sx)<6&&Math.abs(e.clientY-sy)<6) return; started=true;
+        dragGhost=el.cloneNode(true); dragGhost.style.cssText='position:fixed;z-index:999;pointer-events:none;width:74px;height:74px;opacity:.9'; document.body.appendChild(dragGhost); }
+      dragGhost.style.left=(e.clientX-37)+'px'; dragGhost.style.top=(e.clientY-37)+'px';
+    }
+    function up(e){
+      document.removeEventListener('pointermove',move); document.removeEventListener('pointerup',up);
+      if(dragGhost){ dragGhost.remove(); dragGhost=null; }
+      if(started){ var tg=document.elementFromPoint(e.clientX,e.clientY); var mat=tg&&tg.closest?tg.closest('.mat'):null;
+        if(mat){ var zk=mat.getAttribute('data-zone'); if(zk){ if(P.op==='make') P.activeZone=zk; addOne(); } } }
+    }
+    document.addEventListener('pointermove',move); document.addEventListener('pointerup',up);
+  });
+}
+
+/* ===== Steps ===== */
+function neededForStep(){
+  if(!P) return null;
+  if(P.op==='join'){ if(P.phase==='start') return P.a; if(P.phase==='change') return P.a+P.b; }
+  else if(P.op==='separate'){ if(P.phase==='start') return P.a; if(P.phase==='change') return P.a-P.b; }
+  return null;
+}
+function refreshStepBtn(){
+  if(!P){ els.stepBtn.disabled=true; return; }
+  if(P.op==='make'){ els.stepBtn.style.display='none'; els.checkBtn.style.display=P.solved?'none':''; return; }
+  els.checkBtn.style.display='none';
+  if(P.op==='story'){ els.stepBtn.style.display='none'; return; }
+  if(P.phase==='answer'||P.phase==='done'){ els.stepBtn.style.display='none'; return; }
+  els.stepBtn.style.display=''; els.stepBtn.disabled=(P.zones.main.length!==neededForStep());
+}
+function setInstruction(){ els.instruction.textContent=L().instr(L(),P); }
+function onStep(){
+  if(P.op==='join'||P.op==='separate'){
+    if(P.phase==='start'){ P.phase='change'; renderMat(); renderSupply(); setInstruction(); refreshStepBtn(); }
+    else if(P.phase==='change'){ P.phase='answer'; renderMat(); renderSupply(); setInstruction(); showChoices(); refreshStepBtn(); }
+  }
+}
+
+/* ===== Numeral choices ===== */
+function showChoices(){
+  var box=els.choices; box.style.display='flex'; box.innerHTML='';
+  var ans=P.answer,max=P.max,set={}; set[ans]=true;
+  var cands=[ans-1,ans+1,ans-2,ans+2,ans+3];
+  for(var i=0;i<cands.length;i++){ var v=cands[i]; if(v>=0&&v<=Math.max(max,ans+1)) set[v]=true; if(Object.keys(set).length>=4) break; }
+  var vals=shuffle(Object.keys(set).map(Number));
+  vals.forEach(function(v){
+    var b=document.createElement('button'); b.className='numbtn'; b.textContent=v;
+    b.setAttribute('aria-label',T('choose')+' '+L().words[v]);
+    b.addEventListener('click',function(){ chooseNumber(v,b); }); box.appendChild(b);
+  });
+}
+function chooseNumber(v,btn){
+  if(P.solved) return;
+  if(v===P.answer){ btn.classList.add('right'); P.solved=true; P.phase='done'; disableChoices(); winFeedback(); }
+  else{ btn.classList.add('wrong'); btn.disabled=true; showFeedback(L().numRetry(L(),P),'retry'); }
+}
+function disableChoices(){ els.choices.querySelectorAll('.numbtn').forEach(function(b){ b.disabled=true; }); }
+
+/* ===== Make the Number ===== */
+function checkMake(){
+  var g1=P.zones.g1.length,g2=P.zones.g2.length,tot=g1+g2;
+  if(tot!==P.answer||g1===0||g2===0){ showFeedback(L().makeRetry(L(),tot,P.answer,g1>0&&g2>0),'retry'); return; }
+  P.solved=true; P.phase='done';
+  showFeedback(L().makeWin(L(),g1,g2,P.answer),'good');
+  if(settings.equations&&(settings.level==='k'||settings.level==='kchallenge')){ els.equation.style.display='block'; els.equation.textContent=g1+' + '+g2+' = '+P.answer; }
+  renderMat(); renderSupply(); finishSolved(); addTryAnother();
+}
+function addTryAnother(){
+  if(g('tryAnother')) return;
+  var b=document.createElement('button'); b.className='btn big'; b.id='tryAnother'; b.textContent='🔄 '+T('tryAnother');
+  b.addEventListener('click',function(){ P.zones={g1:[],g2:[]}; P.solved=false; P.phase='build'; els.feedback.classList.remove('show'); els.equation.style.display='none'; b.remove(); els.nextBtn.disabled=true; renderMat(); renderSupply(); setInstruction(); });
+  els.feedback.parentNode.insertBefore(b,els.equation.nextSibling);
+}
+
+/* ===== Tell the Story ===== */
+function renderStoryAnim(){
+  els.matWrap.innerHTML='';
+  var mat=document.createElement('div'); mat.className='mat '+P.scene.id; mat.style.minHeight='170px'; mat.style.position='relative'; mat.style.overflow='hidden';
+  var leftN,rightN;
+  if(P.op==='join'){ leftN=rand(1,3); rightN=rand(1,3); } else { leftN=rand(2,4); rightN=0; }
+  var gL=document.createElement('div'); gL.className='anim'; gL.style.cssText='position:absolute;top:40px;display:flex;gap:8px;transition:left .9s ease;left:6%';
+  var gR=document.createElement('div'); gR.className='anim'; gR.style.cssText='position:absolute;top:40px;display:flex;gap:8px;transition:left .9s ease,opacity .9s ease;';
+  if(P.op==='join'){ gR.style.left='62%'; for(var i=0;i<leftN;i++) gL.appendChild(mkStatic()); for(var j=0;j<rightN;j++) gR.appendChild(mkStatic()); }
+  else{ gL.style.left='6%'; var leaveN=rand(1,Math.max(1,leftN-1)); for(var a=0;a<leftN-leaveN;a++) gL.appendChild(mkStatic()); for(var b2=0;b2<leaveN;b2++) gR.appendChild(mkStatic()); gR.style.left='30%'; }
+  mat.appendChild(gL); mat.appendChild(gR); els.matWrap.appendChild(mat);
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  window.requestAnimationFrame(function(){ setTimeout(function(){ if(P.op==='join') gR.style.left='30%'; else { gR.style.left='104%'; gR.style.opacity='0'; } }, reduce?0:400); });
+}
+function mkStatic(){ var d=document.createElement('div'); d.style.width='60px'; d.style.height='60px'; d.innerHTML=ART[P.snack]; return d; }
+function showStoryChoices(){
+  els.storyChoices.style.display='flex'; els.storyChoices.innerHTML='';
+  var opts=[{k:'join',t:'➕ '+T('storyJoinOpt')},{k:'separate',t:'➖ '+T('storySepOpt')}];
+  shuffle(opts).forEach(function(o){ var b=document.createElement('button'); b.className='choicebig'; b.textContent=o.t; b.addEventListener('click',function(){ chooseStory(o.k,b); }); els.storyChoices.appendChild(b); });
+}
+function chooseStory(k,btn){
+  if(P.solved) return;
+  if(k===P.op){ P.solved=true; btn.style.borderColor='var(--ok)'; btn.style.background='#e6f4e9'; showFeedback(L().storyWin(L(),P.op),'good'); finishSolved(); }
+  else{ btn.style.borderColor='#b23'; btn.style.background='#fbe7ea'; showFeedback(L().storyRetry(L(),P.op),'retry'); }
+}
+
+/* ===== Feedback ===== */
+function showFeedback(text,kind){ els.feedback.className='feedback show '+(kind==='good'?'good':'retry'); els.feedbackText.textContent=text; if(settings.narration||kind==='good') speak(text); }
+function winFeedback(){
+  showFeedback(L().win(L(),P),'good');
+  if(settings.equations&&(settings.level==='k'||settings.level==='kchallenge')){ els.equation.style.display='block'; els.equation.textContent=P.op==='join'?(P.a+' + '+P.b+' = '+P.answer):(P.a+' − '+P.b+' = '+P.answer); }
+  finishSolved();
+}
+function finishSolved(){ els.nextBtn.disabled=false; els.nextBtn.focus(); }
+
+/* ===== Load ===== */
+function loadProblem(p){
+  P=p;
+  var t=g('tryAnother'); if(t) t.remove();
+  els.feedback.classList.remove('show'); els.equation.style.display='none';
+  els.choices.style.display='none'; els.choices.innerHTML='';
+  els.storyChoices.style.display='none'; els.storyChoices.innerHTML='';
+  els.nextBtn.disabled=true;
+  els.sceneLabel.textContent=L().scenes[P.scene.id]; els.sceneIcon.textContent=P.scene.icon;
+  var story=L().story(L(),P); els.storyText.textContent=story; setInstruction();
+  if(P.op==='story'){ els.supplyBox.style.display='none'; els.stepBtn.style.display='none'; els.checkBtn.style.display='none'; els.countBadge.style.display='none'; renderStoryAnim(); P.phase='watch'; setTimeout(function(){ P.phase='answer'; setInstruction(); showStoryChoices(); },1600); }
+  else{ els.countBadge.style.display=''; renderMat(); renderSupply(); refreshStepBtn(); }
+  if(settings.narration) speak(story);
+}
+
+/* ===== Modes ===== */
+function setMode(m){
+  mode=m;
+  document.querySelectorAll('.tab').forEach(function(t){ t.setAttribute('aria-selected',t.getAttribute('data-mode')===m?'true':'false'); });
+  if(m==='own'){ g('playArea').style.display='none'; g('ownArea').style.display='block'; return; }
+  g('ownArea').style.display='none'; g('playArea').style.display='block'; loadProblem(makeProblem());
+}
+
+/* ===== Wiring ===== */
+document.querySelectorAll('.tab').forEach(function(t){ t.addEventListener('click',function(){ setMode(t.getAttribute('data-mode')); }); });
+els.stepBtn.addEventListener('click',onStep);
+els.checkBtn.addEventListener('click',checkMake);
+els.nextBtn.addEventListener('click',function(){ if(mode==='own') return; loadProblem(makeProblem()); });
+g('startOverBtn').addEventListener('click',function(){
+  if(!P) return;
+  if(P.custom){ loadProblem(ownProblem(P.snack,P.op,P.a,P.b)); return; }
+  P.zones=(P.op==='make')?{g1:[],g2:[]}:{main:[]}; P.solved=false; P.phase=(P.op==='make')?'build':(mode==='story'?'watch':'start');
+  els.feedback.classList.remove('show'); els.equation.style.display='none'; els.choices.style.display='none'; els.storyChoices.style.display='none'; els.nextBtn.disabled=true;
+  var t=g('tryAnother'); if(t) t.remove(); setInstruction();
+  if(P.op==='story'){ renderStoryAnim(); setTimeout(function(){ P.phase='answer'; setInstruction(); showStoryChoices(); },1600); }
+  else{ renderMat(); renderSupply(); refreshStepBtn(); }
+});
+g('replayBtn').addEventListener('click',function(){ if(!P) return; speak(L().story(L(),P)); if(P.op==='story') renderStoryAnim(); });
+g('speakStory').addEventListener('click',function(){ if(P) speak(L().story(L(),P)); });
+g('speakFeedback').addEventListener('click',function(){ speak(els.feedbackText.textContent); });
+g('segG1').addEventListener('click',function(){ P.activeZone='g1'; this.setAttribute('aria-pressed','true'); g('segG2').setAttribute('aria-pressed','false'); });
+g('segG2').addEventListener('click',function(){ P.activeZone='g2'; this.setAttribute('aria-pressed','true'); g('segG1').setAttribute('aria-pressed','false'); });
+g('langSel').addEventListener('change',function(){ applyLang(this.value); });
+
+/* ===== Teacher ===== */
+var teacherOverlay=g('teacherOverlay');
+function openTeacher(){ syncTeacherUI(); teacherOverlay.classList.add('show'); g('teacherDone').focus(); }
+function closeTeacher(){ teacherOverlay.classList.remove('show'); g('teacherBtn').focus(); }
+g('teacherBtn').addEventListener('click',openTeacher);
+g('teacherDone').addEventListener('click',function(){ saveSettings(); closeTeacher(); updateLevelNote(); if(mode!=='own') loadProblem(makeProblem()); });
+teacherOverlay.addEventListener('click',function(e){ if(e.target===teacherOverlay) closeTeacher(); });
+document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&teacherOverlay.classList.contains('show')) closeTeacher(); });
+document.querySelectorAll('#levelOpts .opt').forEach(function(b){ b.addEventListener('click',function(){ settings.level=b.getAttribute('data-level'); syncTeacherUI(); }); });
+document.querySelectorAll('#practiceOpts .opt').forEach(function(b){ b.addEventListener('click',function(){ settings.practice=b.getAttribute('data-practice'); syncTeacherUI(); }); });
+g('eqToggle').addEventListener('click',function(){ settings.equations=!settings.equations; syncTeacherUI(); });
+g('narrToggle').addEventListener('click',function(){ settings.narration=!settings.narration; syncTeacherUI(); });
+function syncTeacherUI(){
+  document.querySelectorAll('#levelOpts .opt').forEach(function(b){ b.setAttribute('aria-pressed',b.getAttribute('data-level')===settings.level?'true':'false'); });
+  document.querySelectorAll('#practiceOpts .opt').forEach(function(b){ b.setAttribute('aria-pressed',b.getAttribute('data-practice')===settings.practice?'true':'false'); });
+  g('eqToggle').setAttribute('aria-pressed',settings.equations?'true':'false');
+  g('narrToggle').setAttribute('aria-pressed',settings.narration?'true':'false');
+}
+function updateLevelNote(){
+  var ui=L().ui, m={prek3:['levPrek3','descPrek3'],prek4:['levPrek4','descPrek4'],k:['levK','descK'],kchallenge:['levKC','descKC']}[settings.level];
+  g('levelPill').textContent=ui[m[0]]; g('levelDesc').textContent=ui[m[1]];
+}
+
+/* ===== Make My Own ===== */
+var ownChosen='apple', ownOp='join';
+function applyOwnLabels(){
+  g('ownBlabel').textContent = ownOp==='join'?T('ownAddAmt'):T('ownTakeAmt');
+}
+(function initOwn(){
+  var grid=g('ownObjGrid');
+  SNACK_KEYS.forEach(function(k){
+    var b=document.createElement('button'); b.className='objpick'; b.innerHTML=ART[k]; b.setAttribute('data-snack',k);
+    b.setAttribute('aria-pressed',k===ownChosen?'true':'false');
+    b.addEventListener('click',function(){ ownChosen=k; grid.querySelectorAll('.objpick').forEach(function(x){ x.setAttribute('aria-pressed','false'); }); b.setAttribute('aria-pressed','true'); });
+    grid.appendChild(b);
+  });
+  function setOp(o){ ownOp=o; g('ownJoin').setAttribute('aria-pressed',o==='join'?'true':'false'); g('ownSep').setAttribute('aria-pressed',o==='separate'?'true':'false'); applyOwnLabels(); }
+  g('ownJoin').addEventListener('click',function(){ setOp('join'); });
+  g('ownSep').addEventListener('click',function(){ setOp('separate'); });
+  g('ownStart').addEventListener('click',function(){
+    var a=parseInt(g('ownA').value,10),b=parseInt(g('ownB').value,10),warn=g('ownWarn');
+    if(isNaN(a)||isNaN(b)||a<1||b<1){ warn.textContent=T('ownWarnAmt'); warn.style.display='block'; return; }
+    if(ownOp==='separate'&&b>=a){ warn.textContent=T('ownWarnSep'); warn.style.display='block'; return; }
+    if(ownOp==='join'&&(a+b)>20){ warn.textContent=T('ownWarnTotal'); warn.style.display='block'; return; }
+    warn.style.display='none';
+    document.querySelectorAll('.tab').forEach(function(t){ t.setAttribute('aria-selected','false'); });
+    document.querySelector('.tab[data-mode="'+(ownOp==='join'?'join':'separate')+'"]').setAttribute('aria-selected','true');
+    mode=ownOp; g('ownArea').style.display='none'; g('playArea').style.display='block'; loadProblem(ownProblem(ownChosen,ownOp,a,b));
+  });
+})();
+
+/* ===== Boot ===== */
+applyLang(resolveLang());
+setMode('join');
+</script>
+</body>
+</html>

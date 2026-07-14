@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Count the Critters - a free, offline early-math counting game for PreK and Kindergarten. No accounts, no data collected.">
+<title>Count the Critters</title>
+<style>
+  :root{
+    --bg:#f3f7fb;
+    --panel:#ffffff;
+    --ink:#16324f;
+    --muted:#4a6274;
+    --accent:#1668b0;
+    --accent-dark:#0f4e86;
+    --good:#1f7a3d;
+    --good-bg:#e3f6e8;
+    --warn:#8a4b00;
+    --warn-bg:#fff2dd;
+    --line:#cdddea;
+    --bowl:#d9822b;
+    --focus:#0b62c9;
+    --shadow:0 4px 14px rgba(16,50,79,.12);
+    --radius:16px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.4;
+    -webkit-text-size-adjust:100%;
+  }
+  button{font-family:inherit;}
+  h1,h2,h3{margin:0 0 .3em;}
+  a:focus-visible,button:focus-visible,select:focus-visible,[tabindex]:focus-visible,.chip:focus-visible{
+    outline:4px solid var(--focus);
+    outline-offset:2px;
+  }
+  .topbar{
+    display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;
+    background:var(--accent-dark);color:#fff;
+    padding:.5rem .8rem;
+  }
+  .topbar .brand{font-weight:800;font-size:1.15rem;letter-spacing:.2px;display:flex;align-items:center;gap:.45rem;}
+  .topbar .brand.name{margin-inline-end:auto;}
+  .topbar .brand svg{width:30px;height:30px;}
+  .langpick{display:inline-flex;align-items:center;gap:.35rem;background:rgba(255,255,255,.14);border:2px solid rgba(255,255,255,.5);border-radius:12px;padding:.25rem .5rem;min-height:48px;color:#fff;font-weight:700;}
+  .langpick span{font-size:1.3rem;}
+  .langpick select{
+    background:#fff;color:var(--accent-dark);border:none;border-radius:8px;
+    font-size:1rem;font-weight:700;padding:.4rem .5rem;min-height:40px;cursor:pointer;font-family:inherit;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:.4rem;justify-content:center;
+    border:3px solid transparent;border-radius:12px;
+    background:#fff;color:var(--accent-dark);
+    font-weight:700;font-size:1rem;cursor:pointer;
+    padding:.55rem .9rem;min-height:48px;
+    box-shadow:var(--shadow);text-decoration:none;
+  }
+  .btn:hover{background:#eef6ff;}
+  .btn.ghost{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.5);box-shadow:none;}
+  .btn.ghost:hover{background:rgba(255,255,255,.28);}
+  .btn.primary{background:var(--accent);color:#fff;border-color:var(--accent-dark);}
+  .btn.primary:hover{background:var(--accent-dark);}
+  .btn.big{font-size:1.25rem;padding:.8rem 1.4rem;min-height:60px;}
+  .btn:disabled{opacity:.45;cursor:not-allowed;}
+  .speaker{
+    background:#fff;border:3px solid var(--accent);border-radius:50%;
+    width:52px;height:52px;min-width:52px;font-size:1.5rem;line-height:1;
+    display:inline-flex;align-items:center;justify-content:center;cursor:pointer;color:var(--accent-dark);
+  }
+  .speaker:hover{background:#eaf3fc;}
+
+  .wrap{max-width:1000px;margin:0 auto;padding:1rem;}
+
+  .direction{
+    display:flex;align-items:center;gap:.7rem;
+    background:var(--panel);border:2px solid var(--line);border-radius:var(--radius);
+    padding:.7rem 1rem;box-shadow:var(--shadow);margin-bottom:1rem;
+  }
+  .direction .txt{font-size:1.4rem;font-weight:700;}
+  .direction .txt small{display:block;font-size:.95rem;font-weight:500;color:var(--muted);}
+
+  .grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));}
+  .card{
+    background:var(--panel);border:3px solid var(--line);border-radius:var(--radius);
+    padding:1.1rem;box-shadow:var(--shadow);cursor:pointer;text-align:start;
+    display:flex;flex-direction:column;gap:.5rem;color:var(--ink);
+  }
+  .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+  .card h3{font-size:1.4rem;display:flex;align-items:center;gap:.5rem;}
+  .card p{margin:0;color:var(--muted);font-size:1rem;}
+  .card .ico{width:64px;height:64px;}
+
+  .panel{
+    background:var(--panel);border:2px solid var(--line);border-radius:var(--radius);
+    padding:1rem;box-shadow:var(--shadow);margin-bottom:1rem;
+  }
+  .stage{
+    background:var(--panel);border:3px solid var(--line);border-radius:var(--radius);
+    padding:1rem;box-shadow:var(--shadow);min-height:300px;position:relative;
+  }
+
+  .choices{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;margin-top:1rem;}
+  .chip{
+    background:#fff;border:4px solid var(--accent);border-radius:16px;
+    min-width:78px;min-height:78px;font-size:2.1rem;font-weight:800;color:var(--accent-dark);
+    display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:.2rem .6rem;
+  }
+  .chip:hover{background:#eaf3fc;}
+  .chip.correct{background:var(--good-bg);border-color:var(--good);color:var(--good);}
+  .chip.wrong{background:var(--warn-bg);border-color:var(--warn);color:var(--warn);}
+  .chip:disabled{cursor:default;}
+
+  .feedback{
+    display:none;align-items:center;gap:.6rem;
+    border-radius:14px;padding:.7rem 1rem;margin-top:1rem;font-size:1.2rem;font-weight:700;
+    border:3px solid;
+  }
+  .feedback.show{display:flex;}
+  .feedback.good{background:var(--good-bg);border-color:var(--good);color:var(--good);}
+  .feedback.hint{background:var(--warn-bg);border-color:var(--warn);color:var(--warn);}
+  .feedback .fico{font-size:1.6rem;}
+
+  .feedscene{display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-end;justify-content:center;margin-bottom:.5rem;}
+  .hero{width:150px;height:150px;flex:0 0 auto;}
+  .bowl-target{text-align:center;}
+  .bowl-target .cap{font-size:1rem;color:var(--muted);font-weight:700;}
+  .bowl-target .num{
+    font-size:3rem;font-weight:900;color:var(--accent-dark);
+    background:#fff;border:5px solid var(--accent);border-radius:18px;
+    min-width:90px;display:inline-block;padding:.1rem .4rem;
+  }
+  .bowl{position:relative;width:230px;height:150px;flex:0 0 auto;}
+  .bowl .bowlsvg{width:100%;height:100%;}
+  .bowl .slots{
+    position:absolute;left:12%;top:16%;width:76%;height:58%;
+    display:flex;flex-wrap:wrap;align-content:flex-start;gap:4px;padding:4px;overflow:hidden;
+  }
+  .tray{
+    display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;
+    background:#eef4f9;border:2px dashed var(--line);border-radius:14px;padding:.8rem;margin:.6rem 0;
+    min-height:90px;
+  }
+  .food{
+    width:56px;height:56px;cursor:grab;touch-action:none;user-select:none;
+    display:inline-flex;align-items:center;justify-content:center;
+    background:#fff;border:2px solid var(--line);border-radius:12px;
+  }
+  .food svg{width:44px;height:44px;pointer-events:none;}
+  .food.inbowl{width:34px;height:34px;border:none;background:transparent;}
+  .food.inbowl svg{width:32px;height:32px;}
+  .food.dragging{opacity:.4;}
+  .bowl.over{filter:drop-shadow(0 0 6px var(--accent));}
+  .float-food{
+    position:fixed;width:56px;height:56px;pointer-events:none;z-index:9999;
+    display:inline-flex;align-items:center;justify-content:center;
+    background:#fff;border:2px solid var(--accent);border-radius:12px;box-shadow:var(--shadow);
+  }
+  .float-food svg{width:44px;height:44px;}
+  .feedcount{font-size:1.2rem;font-weight:700;text-align:center;margin:.4rem 0;color:var(--muted);}
+  .feedcount b{color:var(--accent-dark);font-size:1.4rem;}
+
+  .objgroup{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;min-height:150px;padding:.5rem;}
+  .obj{width:56px;height:56px;flex:0 0 auto;position:relative;}
+  .obj.tapped::after{
+    content:"✓";position:absolute;inset-inline-end:-4px;top:-8px;font-size:1rem;font-weight:900;color:#fff;
+    background:var(--good);border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;
+  }
+  .obj svg{width:100%;height:100%;}
+  .obj.countable{cursor:pointer;border-radius:10px;}
+  .obj.countable:hover{background:#eaf3fc;}
+  .tenframe{display:inline-grid;grid-template-columns:repeat(5,1fr);gap:6px;background:#0f4e86;padding:6px;border-radius:12px;}
+  .tf-cell{width:56px;height:56px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;}
+  .tf-cell .obj{width:46px;height:46px;}
+  .scatterbox{position:relative;width:100%;max-width:560px;height:280px;margin:0 auto;}
+  .scatterbox .obj{position:absolute;}
+
+  .compare{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;align-items:stretch;}
+  .compare .side{
+    flex:1 1 240px;min-width:240px;background:#eef4f9;border:3px solid var(--line);border-radius:16px;
+    padding:.8rem;cursor:pointer;display:flex;flex-direction:column;
+  }
+  .compare .side:hover{border-color:var(--accent);}
+  .compare .side.pick-correct{border-color:var(--good);background:var(--good-bg);}
+  .compare .side.pick-wrong{border-color:var(--warn);background:var(--warn-bg);}
+  .compare .side .label{font-weight:800;text-align:center;font-size:1.1rem;margin-bottom:.4rem;}
+  .compare .side .box{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-content:center;min-height:150px;}
+  .compare .side .bignum{text-align:center;font-weight:800;font-size:1.4rem;color:#0f4e86;margin-top:.4rem;}
+  .same-btn-row{text-align:center;margin-top:1rem;}
+
+  .flashbox{min-height:280px;display:flex;align-items:center;justify-content:center;position:relative;}
+  .flash-cover{
+    position:absolute;inset:0;background:#0f4e86;border-radius:14px;color:#fff;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:1.6rem;font-weight:800;gap:.5rem;text-align:center;padding:1rem;
+  }
+  .flash-cover .eye{font-size:3rem;}
+
+  .celebrate{position:fixed;inset:0;pointer-events:none;z-index:9998;overflow:hidden;}
+  .confetti{position:absolute;width:12px;height:12px;top:-20px;border-radius:2px;}
+  @keyframes fall{to{transform:translateY(110vh) rotate(540deg);}}
+  @keyframes pop{0%{transform:scale(.6);}60%{transform:scale(1.15);}100%{transform:scale(1);}}
+  .pop{animation:pop .5s ease;}
+
+  .setrow{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin:.6rem 0;}
+  .setrow .lbl{font-weight:700;min-width:150px;}
+  .seg{display:inline-flex;flex-wrap:wrap;gap:.4rem;}
+  .seg button, .themebtn{
+    border:3px solid var(--line);background:#fff;border-radius:12px;padding:.5rem .8rem;min-height:46px;
+    font-weight:700;cursor:pointer;color:var(--ink);font-size:1rem;
+  }
+  .seg button[aria-pressed="true"], .themebtn[aria-pressed="true"]{
+    background:var(--accent);color:#fff;border-color:var(--accent-dark);
+  }
+  .toggle{display:inline-flex;align-items:center;gap:.5rem;border:3px solid var(--line);border-radius:12px;padding:.4rem .7rem;min-height:46px;cursor:pointer;background:#fff;font-weight:600;}
+  .toggle input{width:22px;height:22px;}
+  .themebtn{display:inline-flex;align-items:center;gap:.4rem;}
+  .themebtn .sw{width:26px;height:26px;display:inline-flex;}
+  .themebtn .sw svg{width:26px;height:26px;}
+
+  details.info{margin-top:1rem;}
+  details.info summary{cursor:pointer;font-weight:700;color:var(--accent-dark);padding:.4rem;}
+  .standards{font-size:.92rem;color:var(--muted);}
+  .standards code{background:#eef4f9;padding:.05rem .3rem;border-radius:6px;}
+
+  footer{text-align:center;color:var(--muted);font-size:.95rem;padding:1.4rem 1rem 2rem;}
+  footer a{color:var(--accent-dark);font-weight:700;}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
+  .row-actions{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-top:1rem;}
+
+  @media (prefers-reduced-motion: reduce){ *{animation:none !important;transition:none !important;} }
+  @media (max-width:520px){
+    .direction .txt{font-size:1.15rem;}
+    .hero{width:110px;height:110px;}
+    .bowl{width:180px;height:120px;}
+  }
+</style>
+</head>
+<body>
+<a class="sr-only" href="#main" data-i18n="skip">Skip to activity</a>
+
+<div class="topbar">
+  <span class="brand" aria-hidden="true">
+    <svg viewBox="0 0 100 100"><circle cx="50" cy="55" r="34" fill="#ffd15c"/><circle cx="38" cy="50" r="6" fill="#16324f"/><circle cx="62" cy="50" r="6" fill="#16324f"/><path d="M35 68 Q50 82 65 68" stroke="#16324f" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="30" cy="24" r="8" fill="#ff8a5c"/><circle cx="50" cy="18" r="8" fill="#5cb8ff"/><circle cx="70" cy="24" r="8" fill="#7ed957"/></svg>
+  </span>
+  <span class="brand name" data-i18n="brand">Count the Critters</span>
+  <label class="langpick"><span aria-hidden="true">🌐</span>
+    <span class="sr-only" data-i18n="lang_label">Language</span>
+    <select id="langSel" aria-label="Language">
+      <option value="en">English</option>
+      <option value="es">Español</option>
+      <option value="vi">Tiếng Việt</option>
+      <option value="ar">العربية</option>
+      <option value="hi">हिन्दी</option>
+      <option value="ur">اردو</option>
+      <option value="zh">中文</option>
+    </select>
+  </label>
+  <a class="btn ghost" href="../../index.html">🏠 <span data-i18n="nav_home">Home</span></a>
+  <button class="btn ghost" id="btnSettings" type="button">⚙️ <span data-i18n="nav_settings">Settings</span></button>
+  <button class="btn ghost" id="btnMenu" type="button" hidden>☰ <span data-i18n="nav_menu">Menu</span></button>
+</div>
+
+<div class="wrap" id="main">
+
+  <!-- MAIN MENU -->
+  <section id="menu">
+    <div class="direction">
+      <button class="speaker" type="button" data-saykey="menu_welcome" aria-label="Read directions aloud">🔊</button>
+      <div class="txt"><span data-i18n="menu_title">Pick a game!</span>
+        <small data-i18n="menu_sub">Tap a card to play. Tap the speaker to hear the words.</small>
+      </div>
+    </div>
+
+    <div class="grid" role="list">
+      <button class="card" role="listitem" type="button" data-mode="feed">
+        <svg class="ico" viewBox="0 0 100 100" aria-hidden="true"><rect x="15" y="55" width="70" height="30" rx="12" fill="#d9822b"/><rect x="10" y="52" width="80" height="12" rx="6" fill="#b96a1c"/><circle cx="35" cy="45" r="7" fill="#7ed957"/><circle cx="52" cy="42" r="7" fill="#ff8a5c"/><circle cx="66" cy="47" r="7" fill="#5cb8ff"/></svg>
+        <h3 data-i18n="mode_feed_t">Count &amp; Feed</h3>
+        <p data-i18n="mode_feed_d">Drag exactly the right number of treats into the bowl.</p>
+      </button>
+      <button class="card" role="listitem" type="button" data-mode="howmany">
+        <svg class="ico" viewBox="0 0 100 100" aria-hidden="true"><g fill="#1668b0"><circle cx="30" cy="30" r="9"/><circle cx="55" cy="30" r="9"/><circle cx="80" cy="30" r="9"/><circle cx="42" cy="58" r="9"/><circle cx="67" cy="58" r="9"/></g><text x="50" y="90" font-size="20" font-weight="800" text-anchor="middle" fill="#0f4e86">5</text></svg>
+        <h3 data-i18n="mode_howmany_t">How Many?</h3>
+        <p data-i18n="mode_howmany_d">Count the objects and pick the number.</p>
+      </button>
+      <button class="card" role="listitem" type="button" data-mode="quick">
+        <svg class="ico" viewBox="0 0 100 100" aria-hidden="true"><rect x="8" y="18" width="84" height="64" rx="10" fill="#0f4e86"/><circle cx="50" cy="50" r="20" fill="#ffd15c"/><circle cx="50" cy="50" r="9" fill="#16324f"/></svg>
+        <h3 data-i18n="mode_quick_t">Quick Look</h3>
+        <p data-i18n="mode_quick_d">See the group for a moment, then pick how many.</p>
+      </button>
+      <button class="card" role="listitem" type="button" data-mode="compare">
+        <svg class="ico" viewBox="0 0 100 100" aria-hidden="true"><g fill="#1668b0"><circle cx="24" cy="40" r="8"/><circle cx="24" cy="62" r="8"/></g><g fill="#7ed957"><circle cx="66" cy="30" r="8"/><circle cx="80" cy="46" r="8"/><circle cx="66" cy="62" r="8"/><circle cx="80" cy="74" r="8"/></g><text x="46" y="56" font-size="22" font-weight="800" fill="#0f4e86">?</text></svg>
+        <h3 data-i18n="mode_compare_t">More, Fewer, or Same</h3>
+        <p data-i18n="mode_compare_d">Compare two groups of critters.</p>
+      </button>
+    </div>
+
+    <details class="info">
+      <summary data-i18n="info_summary">ℹ️ For teachers · Aligned standards</summary>
+      <div class="standards">
+        <p><b data-i18n="info_skills_l">Skills:</b> <span data-i18n="info_skills">one-to-one correspondence, cardinality, numeral recognition, subitizing, comparing quantities.</span></p>
+        <p><b data-i18n="info_tx_l">Texas Prekindergarten Guidelines:</b> <code>PK3.V.A.2–6</code>, <code>PK4.V.A.2–6</code>, <code>PK4.V.A.8</code>.</p>
+        <p><b data-i18n="info_teks_l">Kindergarten TEKS:</b> <code>K.2(B–H)</code>.</p>
+        <p><b data-i18n="info_cc_l">Common Core (K):</b> <code>K.CC.4</code>, <code>K.CC.5</code>, <code>K.CC.6</code>, <code>K.CC.7</code>.</p>
+        <p data-i18n="info_use">Use the ⚙️ Settings to pick a level, theme, and turn features on or off.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- SETTINGS -->
+  <section id="settings" hidden>
+    <div class="direction">
+      <button class="speaker" type="button" data-saykey="set_spoken" aria-label="Read directions aloud">🔊</button>
+      <div class="txt"><span data-i18n="set_title">Teacher Settings</span>
+        <small data-i18n="set_sub">Changes are saved on this device only. No student data is stored.</small>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="setrow">
+        <span class="lbl" data-i18n="set_level">Level</span>
+        <div class="seg" id="segLevel" role="group" aria-label="Level">
+          <button type="button" data-level="prek3"><span data-i18n="lvl_prek3">PreK 3</span> <small>(0–5)</small></button>
+          <button type="button" data-level="prek4"><span data-i18n="lvl_prek4">PreK 4</span> <small>(0–10)</small></button>
+          <button type="button" data-level="k"><span data-i18n="lvl_k">Kindergarten</span> <small>(0–20)</small></button>
+        </div>
+      </div>
+
+      <div class="setrow">
+        <span class="lbl" data-i18n="set_theme">Theme</span>
+        <div class="seg" id="segTheme" role="group" aria-label="Theme"></div>
+      </div>
+
+      <div class="setrow">
+        <span class="lbl" data-i18n="set_features">Features</span>
+        <div class="seg">
+          <label class="toggle"><input type="checkbox" id="tglAudio"> 🔊 <span data-i18n="feat_audio">Audio directions</span></label>
+          <label class="toggle"><input type="checkbox" id="tglTen"> ▦ <span data-i18n="feat_ten">Ten-frames</span></label>
+          <label class="toggle"><input type="checkbox" id="tglScatter"> ✷ <span data-i18n="feat_scatter">Scattered groups</span></label>
+          <label class="toggle"><input type="checkbox" id="tglNumerals"> 1️⃣ <span data-i18n="feat_numerals">Show numerals</span></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row-actions">
+      <button class="btn primary big" type="button" id="settingsDone">✔ <span data-i18n="set_done">Done</span></button>
+    </div>
+
+    <details class="info">
+      <summary data-i18n="info_summary2">ℹ️ Aligned standards</summary>
+      <div class="standards">
+        <p>Texas PreK <code>PK3.V.A.2–6</code>, <code>PK4.V.A.2–6</code>, <code>PK4.V.A.8</code>; Kindergarten TEKS <code>K.2(B–H)</code>; Common Core <code>K.CC.4–7</code>.</p>
+        <p data-i18n="set_levels_note">PreK 3: quantities 0–5, subitizing 1–3. PreK 4: 0–10, subitizing 1–6. Kindergarten: 0–20, comparisons to 20.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ACTIVITY -->
+  <section id="activity" hidden>
+    <div class="direction">
+      <button class="speaker" type="button" id="dirSpeaker" aria-label="Read directions aloud">🔊</button>
+      <div class="txt" id="dirText">Directions</div>
+    </div>
+
+    <div class="stage" id="stage"></div>
+
+    <div class="feedback" id="feedback" role="status" aria-live="polite">
+      <span class="fico" id="fbIco">🎉</span>
+      <span id="fbText"></span>
+    </div>
+
+    <div class="row-actions">
+      <button class="btn" type="button" id="btnNext"><span data-i18n="act_next">Next</span> ▶</button>
+      <button class="btn" type="button" id="btnReplay">🔁 <span id="replayLabel" data-i18n="act_replay">Try Again</span></button>
+      <button class="btn" type="button" id="btnBackMenu">☰ <span data-i18n="act_back">Back to Games</span></button>
+    </div>
+  </section>
+
+</div>
+
+<div class="celebrate" id="celebrate" aria-hidden="true"></div>
+
+<footer>
+  <p data-i18n="footer_line">No accounts · No data collected · Works offline</p>
+  <p><a href="../../index.html" data-i18n="footer_home">Home</a> · <a href="../../policy.html" data-i18n="footer_privacy">Privacy</a></p>
+</footer>
+
+<script>
+"use strict";
+(function(){
+  /* ================= i18n DATA ================= */
+  var LANGS = ["en","es","vi","ar","hi","ur","zh"];
+  var RTL = {ar:true, ur:true};
+  var BCP47 = {en:"en-US", es:"es-ES", vi:"vi-VN", ar:"ar-SA", hi:"hi-IN", ur:"ur-PK", zh:"zh-CN"};
+
+  var NUMWORDS = {
+    en:["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen","twenty"],
+    es:["cero","uno","dos","tres","cuatro","cinco","seis","siete","ocho","nueve","diez","once","doce","trece","catorce","quince","dieciséis","diecisiete","dieciocho","diecinueve","veinte"],
+    vi:["không","một","hai","ba","bốn","năm","sáu","bảy","tám","chín","mười","mười một","mười hai","mười ba","mười bốn","mười lăm","mười sáu","mười bảy","mười tám","mười chín","hai mươi"],
+    ar:["صفر","واحد","اثنان","ثلاثة","أربعة","خمسة","ستة","سبعة","ثمانية","تسعة","عشرة","أحد عشر","اثنا عشر","ثلاثة عشر","أربعة عشر","خمسة عشر","ستة عشر","سبعة عشر","ثمانية عشر","تسعة عشر","عشرون"],
+    hi:["शून्य","एक","दो","तीन","चार","पाँच","छह","सात","आठ","नौ","दस","ग्यारह","बारह","तेरह","चौदह","पंद्रह","सोलह","सत्रह","अठारह","उन्नीस","बीस"],
+    ur:["صفر","ایک","دو","تین","چار","پانچ","چھ","سات","آٹھ","نو","دس","گیارہ","بارہ","تیرہ","چودہ","پندرہ","سولہ","سترہ","اٹھارہ","انیس","بیس"],
+    zh:["零","一","二","三","四","五","六","七","八","九","十","十一","十二","十三","十四","十五","十六","十七","十八","十九","二十"]
+  };
+
+  // Theme item words (plural / general form)
+  var ITEMWORDS = {
+    en:{farm:"chicks", sea:"fish", insects:"ladybugs", dinosaurs:"eggs", classroom:"crayons", seasonal:"stars"},
+    es:{farm:"pollitos", sea:"peces", insects:"mariquitas", dinosaurs:"huevos", classroom:"crayones", seasonal:"estrellas"},
+    vi:{farm:"gà con", sea:"con cá", insects:"bọ rùa", dinosaurs:"quả trứng", classroom:"bút màu", seasonal:"ngôi sao"},
+    ar:{farm:"كتاكيت", sea:"أسماك", insects:"دعسوقات", dinosaurs:"بيضات", classroom:"أقلام تلوين", seasonal:"نجوم"},
+    hi:{farm:"चूज़े", sea:"मछलियाँ", insects:"गुबरैले", dinosaurs:"अंडे", classroom:"क्रेयॉन", seasonal:"तारे"},
+    ur:{farm:"چوزے", sea:"مچھلیاں", insects:"لیڈی برڈز", dinosaurs:"انڈے", classroom:"کریون", seasonal:"ستارے"},
+    zh:{farm:"小鸡", sea:"小鱼", insects:"瓢虫", dinosaurs:"蛋", classroom:"蜡笔", seasonal:"星星"}
+  };
+  var THEMENAMES = {
+    en:{farm:"Farm animals", sea:"Sea animals", insects:"Insects", dinosaurs:"Dinosaurs", classroom:"Classroom objects", seasonal:"Seasonal"},
+    es:{farm:"Animales de granja", sea:"Animales marinos", insects:"Insectos", dinosaurs:"Dinosaurios", classroom:"Objetos del aula", seasonal:"De temporada"},
+    vi:{farm:"Động vật nông trại", sea:"Động vật biển", insects:"Côn trùng", dinosaurs:"Khủng long", classroom:"Đồ dùng lớp học", seasonal:"Theo mùa"},
+    ar:{farm:"حيوانات المزرعة", sea:"حيوانات البحر", insects:"حشرات", dinosaurs:"ديناصورات", classroom:"أدوات الصف", seasonal:"موسمية"},
+    hi:{farm:"खेत के जानवर", sea:"समुद्री जानवर", insects:"कीड़े", dinosaurs:"डायनासोर", classroom:"कक्षा की वस्तुएँ", seasonal:"मौसमी"},
+    ur:{farm:"کھیت کے جانور", sea:"سمندری جانور", insects:"کیڑے", dinosaurs:"ڈائناسور", classroom:"کلاس کی اشیاء", seasonal:"موسمی"},
+    zh:{farm:"农场动物", sea:"海洋动物", insects:"昆虫", dinosaurs:"恐龙", classroom:"课堂物品", seasonal:"季节"}
+  };
+
+  var T = {
+    en:{
+      skip:"Skip to activity", brand:"Count the Critters", lang_label:"Language",
+      nav_home:"Home", nav_settings:"Settings", nav_menu:"Menu",
+      menu_title:"Pick a game!", menu_sub:"Tap a card to play. Tap the speaker to hear the words.",
+      menu_welcome:"Welcome! Pick a game to play. Count and Feed, How Many, Quick Look, or More, Fewer, or Same.",
+      mode_feed_t:"Count & Feed", mode_feed_d:"Drag exactly the right number of treats into the bowl.",
+      mode_howmany_t:"How Many?", mode_howmany_d:"Count the objects and pick the number.",
+      mode_quick_t:"Quick Look", mode_quick_d:"See the group for a moment, then pick how many.",
+      mode_compare_t:"More, Fewer, or Same", mode_compare_d:"Compare two groups of critters.",
+      info_summary:"ℹ️ For teachers · Aligned standards", info_summary2:"ℹ️ Aligned standards",
+      info_skills_l:"Skills:", info_skills:"one-to-one correspondence, cardinality, numeral recognition, subitizing, comparing quantities.",
+      info_tx_l:"Texas Prekindergarten Guidelines:", info_teks_l:"Kindergarten TEKS:", info_cc_l:"Common Core (K):",
+      info_use:"Use the ⚙️ Settings to pick a level, theme, and turn features on or off.",
+      set_title:"Teacher Settings", set_sub:"Changes are saved on this device only. No student data is stored.",
+      set_spoken:"Teacher settings. Choose a level, a theme, and turn features on or off.",
+      set_level:"Level", lvl_prek3:"PreK 3", lvl_prek4:"PreK 4", lvl_k:"Kindergarten",
+      set_theme:"Theme", set_features:"Features",
+      feat_audio:"Audio directions", feat_ten:"Ten-frames", feat_scatter:"Scattered groups", feat_numerals:"Show numerals",
+      set_done:"Done", set_levels_note:"PreK 3: quantities 0–5, subitizing 1–3. PreK 4: 0–10, subitizing 1–6. Kindergarten: 0–20, comparisons to 20.",
+      act_next:"Next", act_replay:"Try Again", act_back:"Back to Games",
+      rp_bowl:"New Bowl", rp_group:"New Group", rp_flash:"New Flash", rp_pair:"New Pair",
+      footer_line:"No accounts · No data collected · Works offline", footer_home:"Home", footer_privacy:"Privacy",
+      feed_cap:"Feed the friend", feed_check:"Check the bowl", feed_incount:"In the bowl:",
+      q_show:"Show me", q_ready:"Ready…", q_getready:"Get ready…", q_look:"Look!", q_saw:"How many did you see?", q_peekhint:"Look again — press Show me.",
+      cmp_groupA:"Group A", cmp_groupB:"Group B", cmp_same:"They are the Same", none:"none!", empty:"(empty — zero!)",
+      dir_feed:"Drag {n} {items} into the bowl. Count as you go!",
+      fb_feed_ok:"You counted {w}. The last number tells how many. You fed exactly {w}!",
+      fb_feed_low:"Let's touch each one once. You have {w}. Add more to reach {t}.",
+      fb_feed_high:"Let's touch each one once. That is {w}, which is more than {t}. Take some out.",
+      dir_howmany:"How many {items}? Touch each one, then pick the number.",
+      fb_howmany_ok:"Yes! You counted {w}. The last number tells how many.",
+      fb_howmany_hint:"Let's touch each one once, then count again. Try another number.",
+      dir_quick:"Quick Look! Watch the {items}, then pick how many you saw.",
+      fb_quick_ok:"Great looking! You saw {w} at a glance.",
+      fb_quick_hint:"Let's look again and count carefully. Press Show me to peek.",
+      dir_cmp_same:"Do the groups have the same number? If they match, press Same!",
+      dir_cmp_more:"Which group has MORE {items}? Touch the group.",
+      dir_cmp_fewer:"Which group has FEWER {items}? Touch the group.",
+      fb_cmp_same_ok:"Yes! Both groups have {w}. They are the same.",
+      fb_cmp_more_ok:"Yes! This group has more. {a} is more than {b}.",
+      fb_cmp_fewer_ok:"Yes! This group has fewer. {a} is fewer than {b}.",
+      fb_cmp_hint:"Let's touch each one once and count both groups. Try the other group.",
+      fb_cmp_notsame:"Let's touch each one once in both groups. These are not the same. One has more.",
+      pick_menu:"Pick a game.", settings_open:"Teacher settings."
+    },
+    es:{
+      skip:"Saltar a la actividad", brand:"Cuenta los Bichitos", lang_label:"Idioma",
+      nav_home:"Inicio", nav_settings:"Ajustes", nav_menu:"Menú",
+      menu_title:"¡Elige un juego!", menu_sub:"Toca una tarjeta para jugar. Toca el altavoz para oír las palabras.",
+      menu_welcome:"¡Bienvenido! Elige un juego. Cuenta y Alimenta, Cuántos Hay, Mira Rápido, o Más, Menos o Igual.",
+      mode_feed_t:"Cuenta y Alimenta", mode_feed_d:"Arrastra exactamente la cantidad correcta de golosinas al tazón.",
+      mode_howmany_t:"¿Cuántos Hay?", mode_howmany_d:"Cuenta los objetos y elige el número.",
+      mode_quick_t:"Mira Rápido", mode_quick_d:"Mira el grupo un momento y elige cuántos hay.",
+      mode_compare_t:"Más, Menos o Igual", mode_compare_d:"Compara dos grupos de bichitos.",
+      info_summary:"ℹ️ Para maestros · Estándares alineados", info_summary2:"ℹ️ Estándares alineados",
+      info_skills_l:"Habilidades:", info_skills:"correspondencia uno a uno, cardinalidad, reconocimiento de números, subitización, comparar cantidades.",
+      info_tx_l:"Guías de Prekínder de Texas:", info_teks_l:"TEKS de Kínder:", info_cc_l:"Estándares comunes (K):",
+      info_use:"Usa ⚙️ Ajustes para elegir nivel, tema y activar o desactivar funciones.",
+      set_title:"Ajustes del maestro", set_sub:"Los cambios se guardan solo en este dispositivo. No se guardan datos del estudiante.",
+      set_spoken:"Ajustes del maestro. Elige un nivel, un tema, y activa o desactiva las funciones.",
+      set_level:"Nivel", lvl_prek3:"PreK 3", lvl_prek4:"PreK 4", lvl_k:"Kínder",
+      set_theme:"Tema", set_features:"Funciones",
+      feat_audio:"Instrucciones habladas", feat_ten:"Marcos de diez", feat_scatter:"Grupos dispersos", feat_numerals:"Mostrar números",
+      set_done:"Listo", set_levels_note:"PreK 3: cantidades 0–5, subitización 1–3. PreK 4: 0–10, subitización 1–6. Kínder: 0–20, comparaciones hasta 20.",
+      act_next:"Siguiente", act_replay:"Intentar de nuevo", act_back:"Volver a los juegos",
+      rp_bowl:"Nuevo tazón", rp_group:"Nuevo grupo", rp_flash:"Nuevo destello", rp_pair:"Nuevo par",
+      footer_line:"Sin cuentas · No se recopilan datos · Funciona sin conexión", footer_home:"Inicio", footer_privacy:"Privacidad",
+      feed_cap:"Alimenta al amigo", feed_check:"Revisar el tazón", feed_incount:"En el tazón:",
+      q_show:"Muéstrame", q_ready:"Listo…", q_getready:"Prepárate…", q_look:"¡Mira!", q_saw:"¿Cuántos viste?", q_peekhint:"Mira otra vez — presiona Muéstrame.",
+      cmp_groupA:"Grupo A", cmp_groupB:"Grupo B", cmp_same:"Son iguales", none:"¡ninguno!", empty:"(vacío — ¡cero!)",
+      dir_feed:"Arrastra {n} {items} al tazón. ¡Cuenta mientras lo haces!",
+      fb_feed_ok:"Contaste {w}. El último número dice cuántos hay. ¡Diste de comer exactamente {w}!",
+      fb_feed_low:"Toquemos cada uno una vez. Tienes {w}. Agrega más para llegar a {t}.",
+      fb_feed_high:"Toquemos cada uno una vez. Eso es {w}, que es más que {t}. Saca algunos.",
+      dir_howmany:"¿Cuántos {items} hay? Toca cada uno y elige el número.",
+      fb_howmany_ok:"¡Sí! Contaste {w}. El último número dice cuántos hay.",
+      fb_howmany_hint:"Toquemos cada uno una vez y contemos de nuevo. Prueba otro número.",
+      dir_quick:"¡Mira Rápido! Observa los {items} y elige cuántos viste.",
+      fb_quick_ok:"¡Buena mirada! Viste {w} de un vistazo.",
+      fb_quick_hint:"Miremos otra vez y contemos con cuidado. Presiona Muéstrame para asomarte.",
+      dir_cmp_same:"¿Los grupos tienen el mismo número? Si coinciden, ¡presiona Iguales!",
+      dir_cmp_more:"¿Qué grupo tiene MÁS {items}? Toca el grupo.",
+      dir_cmp_fewer:"¿Qué grupo tiene MENOS {items}? Toca el grupo.",
+      fb_cmp_same_ok:"¡Sí! Ambos grupos tienen {w}. Son iguales.",
+      fb_cmp_more_ok:"¡Sí! Este grupo tiene más. {a} es más que {b}.",
+      fb_cmp_fewer_ok:"¡Sí! Este grupo tiene menos. {a} es menos que {b}.",
+      fb_cmp_hint:"Toquemos cada uno una vez y contemos los dos grupos. Prueba el otro grupo.",
+      fb_cmp_notsame:"Toquemos cada uno una vez en los dos grupos. No son iguales. Uno tiene más.",
+      pick_menu:"Elige un juego.", settings_open:"Ajustes del maestro."
+    },
+    vi:{
+      skip:"Bỏ qua đến hoạt động", brand:"Đếm Các Con Vật", lang_label:"Ngôn ngữ",
+      nav_home:"Trang chủ", nav_settings:"Cài đặt", nav_menu:"Menu",
+      menu_title:"Chọn một trò chơi!", menu_sub:"Chạm vào thẻ để chơi. Chạm loa để nghe lời.",
+      menu_welcome:"Chào mừng! Hãy chọn một trò chơi. Đếm và Cho Ăn, Bao Nhiêu, Nhìn Nhanh, hoặc Nhiều, Ít hay Bằng nhau.",
+      mode_feed_t:"Đếm và Cho Ăn", mode_feed_d:"Kéo đúng số món ăn vào bát.",
+      mode_howmany_t:"Bao Nhiêu?", mode_howmany_d:"Đếm các vật và chọn con số.",
+      mode_quick_t:"Nhìn Nhanh", mode_quick_d:"Nhìn nhóm trong giây lát, rồi chọn bao nhiêu.",
+      mode_compare_t:"Nhiều, Ít hay Bằng nhau", mode_compare_d:"So sánh hai nhóm con vật.",
+      info_summary:"ℹ️ Dành cho giáo viên · Chuẩn phù hợp", info_summary2:"ℹ️ Chuẩn phù hợp",
+      info_skills_l:"Kỹ năng:", info_skills:"tương ứng một-một, số lượng, nhận biết chữ số, ước lượng nhanh, so sánh số lượng.",
+      info_tx_l:"Hướng dẫn Mầm non Texas:", info_teks_l:"TEKS Mẫu giáo:", info_cc_l:"Chuẩn chung (K):",
+      info_use:"Dùng ⚙️ Cài đặt để chọn cấp độ, chủ đề và bật hoặc tắt tính năng.",
+      set_title:"Cài đặt của giáo viên", set_sub:"Thay đổi chỉ lưu trên thiết bị này. Không lưu dữ liệu học sinh.",
+      set_spoken:"Cài đặt của giáo viên. Chọn cấp độ, chủ đề và bật hoặc tắt tính năng.",
+      set_level:"Cấp độ", lvl_prek3:"Mầm 3", lvl_prek4:"Mầm 4", lvl_k:"Mẫu giáo",
+      set_theme:"Chủ đề", set_features:"Tính năng",
+      feat_audio:"Hướng dẫn bằng âm thanh", feat_ten:"Khung mười", feat_scatter:"Nhóm rải rác", feat_numerals:"Hiện chữ số",
+      set_done:"Xong", set_levels_note:"Mầm 3: số lượng 0–5, ước lượng 1–3. Mầm 4: 0–10, ước lượng 1–6. Mẫu giáo: 0–20, so sánh tới 20.",
+      act_next:"Tiếp theo", act_replay:"Thử lại", act_back:"Về các trò chơi",
+      rp_bowl:"Bát mới", rp_group:"Nhóm mới", rp_flash:"Lượt mới", rp_pair:"Cặp mới",
+      footer_line:"Không tài khoản · Không thu thập dữ liệu · Hoạt động ngoại tuyến", footer_home:"Trang chủ", footer_privacy:"Quyền riêng tư",
+      feed_cap:"Cho bạn ăn", feed_check:"Kiểm tra bát", feed_incount:"Trong bát:",
+      q_show:"Cho tôi xem", q_ready:"Sẵn sàng…", q_getready:"Chuẩn bị…", q_look:"Nhìn nào!", q_saw:"Bạn thấy bao nhiêu?", q_peekhint:"Nhìn lại — bấm Cho tôi xem.",
+      cmp_groupA:"Nhóm A", cmp_groupB:"Nhóm B", cmp_same:"Chúng bằng nhau", none:"không có!", empty:"(trống — không!)",
+      dir_feed:"Kéo {n} {items} vào bát. Vừa làm vừa đếm nhé!",
+      fb_feed_ok:"Bạn đã đếm {w}. Con số cuối cho biết có bao nhiêu. Bạn đã cho ăn đúng {w}!",
+      fb_feed_low:"Hãy chạm từng cái một lần. Bạn có {w}. Thêm nữa để đủ {t}.",
+      fb_feed_high:"Hãy chạm từng cái một lần. Đó là {w}, nhiều hơn {t}. Bớt ra một ít.",
+      dir_howmany:"Có bao nhiêu {items}? Chạm từng cái rồi chọn con số.",
+      fb_howmany_ok:"Đúng rồi! Bạn đã đếm {w}. Con số cuối cho biết có bao nhiêu.",
+      fb_howmany_hint:"Hãy chạm từng cái một lần rồi đếm lại. Thử con số khác.",
+      dir_quick:"Nhìn Nhanh! Xem các {items} rồi chọn bạn thấy bao nhiêu.",
+      fb_quick_ok:"Nhìn giỏi lắm! Bạn thấy {w} chỉ trong một cái nhìn.",
+      fb_quick_hint:"Hãy nhìn lại và đếm cẩn thận. Bấm Cho tôi xem để nhìn.",
+      dir_cmp_same:"Hai nhóm có cùng số không? Nếu bằng nhau, bấm Bằng nhau!",
+      dir_cmp_more:"Nhóm nào có NHIỀU {items} hơn? Chạm vào nhóm đó.",
+      dir_cmp_fewer:"Nhóm nào có ÍT {items} hơn? Chạm vào nhóm đó.",
+      fb_cmp_same_ok:"Đúng rồi! Cả hai nhóm đều có {w}. Chúng bằng nhau.",
+      fb_cmp_more_ok:"Đúng rồi! Nhóm này nhiều hơn. {a} nhiều hơn {b}.",
+      fb_cmp_fewer_ok:"Đúng rồi! Nhóm này ít hơn. {a} ít hơn {b}.",
+      fb_cmp_hint:"Hãy chạm từng cái một lần và đếm cả hai nhóm. Thử nhóm kia.",
+      fb_cmp_notsame:"Hãy chạm từng cái một lần ở cả hai nhóm. Chúng không bằng nhau. Một nhóm nhiều hơn.",
+      pick_menu:"Chọn một trò chơi.", settings_open:"Cài đặt của giáo viên."
+    },
+    ar:{
+      skip:"تخطَّ إلى النشاط", brand:"عُدّ المخلوقات", lang_label:"اللغة",
+      nav_home:"الرئيسية", nav_settings:"الإعدادات", nav_menu:"القائمة",
+      menu_title:"اختر لعبة!", menu_sub:"المس بطاقة للعب. المس السماعة لسماع الكلمات.",
+      menu_welcome:"أهلاً! اختر لعبة. عُدّ وأطعم، أو كم العدد، أو نظرة سريعة، أو أكثر أو أقل أو نفس العدد.",
+      mode_feed_t:"عُدّ وأطعم", mode_feed_d:"اسحب العدد الصحيح تماماً من الطعام إلى الوعاء.",
+      mode_howmany_t:"كم العدد؟", mode_howmany_d:"عُدّ الأشياء واختر الرقم.",
+      mode_quick_t:"نظرة سريعة", mode_quick_d:"انظر إلى المجموعة للحظة ثم اختر العدد.",
+      mode_compare_t:"أكثر أو أقل أو نفس العدد", mode_compare_d:"قارن بين مجموعتين من المخلوقات.",
+      info_summary:"ℹ️ للمعلمين · المعايير المتوافقة", info_summary2:"ℹ️ المعايير المتوافقة",
+      info_skills_l:"المهارات:", info_skills:"التطابق واحد لواحد، والعدّية، وتمييز الأرقام، والعدّ السريع، ومقارنة الكميات.",
+      info_tx_l:"إرشادات ما قبل الروضة في تكساس:", info_teks_l:"معايير الروضة TEKS:", info_cc_l:"المعايير المشتركة (روضة):",
+      info_use:"استخدم ⚙️ الإعدادات لاختيار المستوى والموضوع وتشغيل الميزات أو إيقافها.",
+      set_title:"إعدادات المعلم", set_sub:"تُحفظ التغييرات على هذا الجهاز فقط. لا تُخزَّن بيانات الطلاب.",
+      set_spoken:"إعدادات المعلم. اختر مستوى وموضوعاً وشغّل الميزات أو أوقفها.",
+      set_level:"المستوى", lvl_prek3:"تمهيدي ٣", lvl_prek4:"تمهيدي ٤", lvl_k:"الروضة",
+      set_theme:"الموضوع", set_features:"الميزات",
+      feat_audio:"التعليمات الصوتية", feat_ten:"إطارات العشرة", feat_scatter:"مجموعات متناثرة", feat_numerals:"إظهار الأرقام",
+      set_done:"تم", set_levels_note:"تمهيدي ٣: كميات ٠–٥، عدّ سريع ١–٣. تمهيدي ٤: ٠–١٠، عدّ سريع ١–٦. الروضة: ٠–٢٠، مقارنات حتى ٢٠.",
+      act_next:"التالي", act_replay:"حاول مرة أخرى", act_back:"العودة إلى الألعاب",
+      rp_bowl:"وعاء جديد", rp_group:"مجموعة جديدة", rp_flash:"عرض جديد", rp_pair:"زوج جديد",
+      footer_line:"لا حسابات · لا تُجمع بيانات · يعمل دون اتصال", footer_home:"الرئيسية", footer_privacy:"الخصوصية",
+      feed_cap:"أطعم الصديق", feed_check:"تحقق من الوعاء", feed_incount:"في الوعاء:",
+      q_show:"أرِني", q_ready:"استعد…", q_getready:"استعد…", q_look:"انظر!", q_saw:"كم رأيت؟", q_peekhint:"انظر مرة أخرى — اضغط أرِني.",
+      cmp_groupA:"المجموعة أ", cmp_groupB:"المجموعة ب", cmp_same:"إنهما متساويتان", none:"لا شيء!", empty:"(فارغ — صفر!)",
+      dir_feed:"اسحب {n} {items} إلى الوعاء. عُدّ أثناء ذلك!",
+      fb_feed_ok:"لقد عددت {w}. الرقم الأخير يدل على العدد. أطعمت {w} بالضبط!",
+      fb_feed_low:"لنلمس كل واحدة مرة واحدة. لديك {w}. أضف المزيد للوصول إلى {t}.",
+      fb_feed_high:"لنلمس كل واحدة مرة واحدة. هذا {w}، وهو أكثر من {t}. أخرِج بعضها.",
+      dir_howmany:"كم عدد {items}؟ المس كل واحدة ثم اختر الرقم.",
+      fb_howmany_ok:"نعم! لقد عددت {w}. الرقم الأخير يدل على العدد.",
+      fb_howmany_hint:"لنلمس كل واحدة مرة واحدة ثم نعدّ من جديد. جرّب رقماً آخر.",
+      dir_quick:"نظرة سريعة! راقب {items} ثم اختر كم رأيت.",
+      fb_quick_ok:"نظرة رائعة! رأيت {w} بلمحة واحدة.",
+      fb_quick_hint:"لننظر مرة أخرى ونعدّ بعناية. اضغط أرِني لإلقاء نظرة.",
+      dir_cmp_same:"هل للمجموعتين العدد نفسه؟ إذا تطابقتا، اضغط متساويتان!",
+      dir_cmp_more:"أي مجموعة فيها {items} أكثر؟ المس المجموعة.",
+      dir_cmp_fewer:"أي مجموعة فيها {items} أقل؟ المس المجموعة.",
+      fb_cmp_same_ok:"نعم! المجموعتان فيهما {w}. إنهما متساويتان.",
+      fb_cmp_more_ok:"نعم! هذه المجموعة أكثر. {a} أكثر من {b}.",
+      fb_cmp_fewer_ok:"نعم! هذه المجموعة أقل. {a} أقل من {b}.",
+      fb_cmp_hint:"لنلمس كل واحدة مرة واحدة ونعدّ المجموعتين. جرّب المجموعة الأخرى.",
+      fb_cmp_notsame:"لنلمس كل واحدة مرة واحدة في المجموعتين. إنهما غير متساويتين. واحدة فيها أكثر.",
+      pick_menu:"اختر لعبة.", settings_open:"إعدادات المعلم."
+    },
+    hi:{
+      skip:"गतिविधि पर जाएँ", brand:"जीवों को गिनो", lang_label:"भाषा",
+      nav_home:"होम", nav_settings:"सेटिंग", nav_menu:"मेन्यू",
+      menu_title:"एक खेल चुनो!", menu_sub:"खेलने के लिए कार्ड छुओ। शब्द सुनने के लिए स्पीकर छुओ।",
+      menu_welcome:"स्वागत है! एक खेल चुनो। गिनो और खिलाओ, कितने हैं, झटपट देखो, या ज़्यादा, कम या बराबर।",
+      mode_feed_t:"गिनो और खिलाओ", mode_feed_d:"कटोरे में बिल्कुल सही संख्या में दाने खींचो।",
+      mode_howmany_t:"कितने हैं?", mode_howmany_d:"वस्तुओं को गिनो और संख्या चुनो।",
+      mode_quick_t:"झटपट देखो", mode_quick_d:"समूह को एक पल देखो, फिर चुनो कितने थे।",
+      mode_compare_t:"ज़्यादा, कम या बराबर", mode_compare_d:"जीवों के दो समूहों की तुलना करो।",
+      info_summary:"ℹ️ शिक्षकों के लिए · संरेखित मानक", info_summary2:"ℹ️ संरेखित मानक",
+      info_skills_l:"कौशल:", info_skills:"एक-से-एक संगति, गणनसंख्या, अंक पहचान, झटपट गिनती, मात्राओं की तुलना।",
+      info_tx_l:"टेक्सास प्री-किंडरगार्टन दिशानिर्देश:", info_teks_l:"किंडरगार्टन TEKS:", info_cc_l:"कॉमन कोर (K):",
+      info_use:"स्तर, थीम चुनने और सुविधाएँ चालू/बंद करने के लिए ⚙️ सेटिंग का उपयोग करें।",
+      set_title:"शिक्षक सेटिंग", set_sub:"बदलाव केवल इसी डिवाइस पर सहेजे जाते हैं। कोई छात्र डेटा संग्रहीत नहीं होता।",
+      set_spoken:"शिक्षक सेटिंग। एक स्तर, एक थीम चुनें और सुविधाएँ चालू या बंद करें।",
+      set_level:"स्तर", lvl_prek3:"प्री-के 3", lvl_prek4:"प्री-के 4", lvl_k:"किंडरगार्टन",
+      set_theme:"थीम", set_features:"सुविधाएँ",
+      feat_audio:"बोली गई निर्देश", feat_ten:"दस-खाने", feat_scatter:"बिखरे समूह", feat_numerals:"अंक दिखाएँ",
+      set_done:"हो गया", set_levels_note:"प्री-के 3: मात्राएँ 0–5, झटपट गिनती 1–3। प्री-के 4: 0–10, झटपट गिनती 1–6। किंडरगार्टन: 0–20, 20 तक तुलना।",
+      act_next:"अगला", act_replay:"फिर कोशिश करो", act_back:"खेलों पर लौटें",
+      rp_bowl:"नया कटोरा", rp_group:"नया समूह", rp_flash:"नई झलक", rp_pair:"नई जोड़ी",
+      footer_line:"कोई खाता नहीं · कोई डेटा नहीं · ऑफ़लाइन काम करता है", footer_home:"होम", footer_privacy:"गोपनीयता",
+      feed_cap:"दोस्त को खिलाओ", feed_check:"कटोरा जाँचो", feed_incount:"कटोरे में:",
+      q_show:"मुझे दिखाओ", q_ready:"तैयार…", q_getready:"तैयार हो जाओ…", q_look:"देखो!", q_saw:"तुमने कितने देखे?", q_peekhint:"फिर देखो — मुझे दिखाओ दबाओ।",
+      cmp_groupA:"समूह अ", cmp_groupB:"समूह ब", cmp_same:"ये बराबर हैं", none:"कोई नहीं!", empty:"(खाली — शून्य!)",
+      dir_feed:"{n} {items} कटोरे में खींचो। खींचते हुए गिनो!",
+      fb_feed_ok:"तुमने {w} गिने। आख़िरी संख्या बताती है कि कितने हैं। तुमने ठीक {w} खिलाए!",
+      fb_feed_low:"हर एक को एक बार छूएँ। तुम्हारे पास {w} हैं। {t} तक पहुँचने के लिए और जोड़ो।",
+      fb_feed_high:"हर एक को एक बार छूएँ। यह {w} है, जो {t} से ज़्यादा है। कुछ निकालो।",
+      dir_howmany:"कितने {items} हैं? हर एक को छुओ, फिर संख्या चुनो।",
+      fb_howmany_ok:"हाँ! तुमने {w} गिने। आख़िरी संख्या बताती है कि कितने हैं।",
+      fb_howmany_hint:"हर एक को एक बार छूएँ, फिर दोबारा गिनो। दूसरी संख्या आज़माओ।",
+      dir_quick:"झटपट देखो! {items} को देखो, फिर चुनो तुमने कितने देखे।",
+      fb_quick_ok:"बहुत बढ़िया! तुमने एक झलक में {w} देखे।",
+      fb_quick_hint:"फिर से देखें और ध्यान से गिनें। झलक के लिए मुझे दिखाओ दबाओ।",
+      dir_cmp_same:"क्या दोनों समूहों में समान संख्या है? अगर बराबर हैं, तो बराबर दबाओ!",
+      dir_cmp_more:"किस समूह में ज़्यादा {items} हैं? समूह को छुओ।",
+      dir_cmp_fewer:"किस समूह में कम {items} हैं? समूह को छुओ।",
+      fb_cmp_same_ok:"हाँ! दोनों समूहों में {w} हैं। ये बराबर हैं।",
+      fb_cmp_more_ok:"हाँ! इस समूह में ज़्यादा हैं। {a}, {b} से ज़्यादा है।",
+      fb_cmp_fewer_ok:"हाँ! इस समूह में कम हैं। {a}, {b} से कम है।",
+      fb_cmp_hint:"हर एक को एक बार छूएँ और दोनों समूह गिनें। दूसरा समूह आज़माओ।",
+      fb_cmp_notsame:"दोनों समूहों में हर एक को एक बार छूएँ। ये बराबर नहीं हैं। एक में ज़्यादा हैं।",
+      pick_menu:"एक खेल चुनो।", settings_open:"शिक्षक सेटिंग।"
+    },
+    ur:{
+      skip:"سرگرمی پر جائیں", brand:"مخلوقات گنیں", lang_label:"زبان",
+      nav_home:"ہوم", nav_settings:"ترتیبات", nav_menu:"مینو",
+      menu_title:"ایک کھیل چنیں!", menu_sub:"کھیلنے کے لیے کارڈ چھوئیں۔ الفاظ سننے کے لیے اسپیکر چھوئیں۔",
+      menu_welcome:"خوش آمدید! ایک کھیل چنیں۔ گنیں اور کھلائیں، کتنے ہیں، جھٹ سے دیکھیں، یا زیادہ، کم یا برابر۔",
+      mode_feed_t:"گنیں اور کھلائیں", mode_feed_d:"پیالے میں بالکل درست تعداد میں کھانا کھینچیں۔",
+      mode_howmany_t:"کتنے ہیں؟", mode_howmany_d:"چیزوں کو گنیں اور نمبر چنیں۔",
+      mode_quick_t:"جھٹ سے دیکھیں", mode_quick_d:"گروپ کو ایک لمحہ دیکھیں، پھر چنیں کتنے تھے۔",
+      mode_compare_t:"زیادہ، کم یا برابر", mode_compare_d:"مخلوقات کے دو گروپوں کا موازنہ کریں۔",
+      info_summary:"ℹ️ اساتذہ کے لیے · ہم آہنگ معیار", info_summary2:"ℹ️ ہم آہنگ معیار",
+      info_skills_l:"مہارتیں:", info_skills:"ایک بہ ایک مطابقت، مجموعیت، ہندسوں کی پہچان، فوری گنتی، مقداروں کا موازنہ۔",
+      info_tx_l:"ٹیکساس پری کنڈرگارٹن رہنما اصول:", info_teks_l:"کنڈرگارٹن TEKS:", info_cc_l:"کامن کور (K):",
+      info_use:"سطح، تھیم چننے اور خصوصیات آن/آف کرنے کے لیے ⚙️ ترتیبات استعمال کریں۔",
+      set_title:"استاد کی ترتیبات", set_sub:"تبدیلیاں صرف اسی آلے پر محفوظ ہوتی ہیں۔ طالبعلم کا کوئی ڈیٹا محفوظ نہیں ہوتا۔",
+      set_spoken:"استاد کی ترتیبات۔ ایک سطح، ایک تھیم چنیں اور خصوصیات آن یا آف کریں۔",
+      set_level:"سطح", lvl_prek3:"پری کے 3", lvl_prek4:"پری کے 4", lvl_k:"کنڈرگارٹن",
+      set_theme:"تھیم", set_features:"خصوصیات",
+      feat_audio:"بولی گئی ہدایات", feat_ten:"دس کے خانے", feat_scatter:"بکھرے گروپ", feat_numerals:"ہندسے دکھائیں",
+      set_done:"ہو گیا", set_levels_note:"پری کے 3: مقداریں 0–5، فوری گنتی 1–3۔ پری کے 4: 0–10، فوری گنتی 1–6۔ کنڈرگارٹن: 0–20، 20 تک موازنہ۔",
+      act_next:"اگلا", act_replay:"دوبارہ کوشش کریں", act_back:"کھیلوں پر واپس",
+      rp_bowl:"نیا پیالہ", rp_group:"نیا گروپ", rp_flash:"نئی جھلک", rp_pair:"نیا جوڑا",
+      footer_line:"کوئی اکاؤنٹ نہیں · کوئی ڈیٹا جمع نہیں · آف لائن کام کرتا ہے", footer_home:"ہوم", footer_privacy:"رازداری",
+      feed_cap:"دوست کو کھلائیں", feed_check:"پیالہ جانچیں", feed_incount:"پیالے میں:",
+      q_show:"مجھے دکھائیں", q_ready:"تیار…", q_getready:"تیار ہو جائیں…", q_look:"دیکھو!", q_saw:"تم نے کتنے دیکھے؟", q_peekhint:"دوبارہ دیکھیں — مجھے دکھائیں دبائیں۔",
+      cmp_groupA:"گروپ الف", cmp_groupB:"گروپ ب", cmp_same:"یہ برابر ہیں", none:"کوئی نہیں!", empty:"(خالی — صفر!)",
+      dir_feed:"{n} {items} پیالے میں کھینچیں۔ کھینچتے ہوئے گنیں!",
+      fb_feed_ok:"تم نے {w} گنے۔ آخری عدد بتاتا ہے کہ کتنے ہیں۔ تم نے بالکل {w} کھلائے!",
+      fb_feed_low:"ہر ایک کو ایک بار چھوئیں۔ تمہارے پاس {w} ہیں۔ {t} تک پہنچنے کے لیے مزید شامل کریں۔",
+      fb_feed_high:"ہر ایک کو ایک بار چھوئیں۔ یہ {w} ہے، جو {t} سے زیادہ ہے۔ کچھ نکالیں۔",
+      dir_howmany:"کتنے {items} ہیں؟ ہر ایک کو چھوئیں، پھر نمبر چنیں۔",
+      fb_howmany_ok:"جی ہاں! تم نے {w} گنے۔ آخری عدد بتاتا ہے کہ کتنے ہیں۔",
+      fb_howmany_hint:"ہر ایک کو ایک بار چھوئیں، پھر دوبارہ گنیں۔ دوسرا نمبر آزمائیں۔",
+      dir_quick:"جھٹ سے دیکھیں! {items} کو دیکھیں، پھر چنیں کتنے دیکھے۔",
+      fb_quick_ok:"بہت خوب! تم نے ایک نظر میں {w} دیکھے۔",
+      fb_quick_hint:"دوبارہ دیکھیں اور غور سے گنیں۔ جھلک کے لیے مجھے دکھائیں دبائیں۔",
+      dir_cmp_same:"کیا دونوں گروپوں میں برابر تعداد ہے؟ اگر برابر ہیں تو برابر دبائیں!",
+      dir_cmp_more:"کس گروپ میں زیادہ {items} ہیں؟ گروپ کو چھوئیں۔",
+      dir_cmp_fewer:"کس گروپ میں کم {items} ہیں؟ گروپ کو چھوئیں۔",
+      fb_cmp_same_ok:"جی ہاں! دونوں گروپوں میں {w} ہیں۔ یہ برابر ہیں۔",
+      fb_cmp_more_ok:"جی ہاں! اس گروپ میں زیادہ ہیں۔ {a}، {b} سے زیادہ ہے۔",
+      fb_cmp_fewer_ok:"جی ہاں! اس گروپ میں کم ہیں۔ {a}، {b} سے کم ہے۔",
+      fb_cmp_hint:"ہر ایک کو ایک بار چھوئیں اور دونوں گروپ گنیں۔ دوسرا گروپ آزمائیں۔",
+      fb_cmp_notsame:"دونوں گروپوں میں ہر ایک کو ایک بار چھوئیں۔ یہ برابر نہیں ہیں۔ ایک میں زیادہ ہیں۔",
+      pick_menu:"ایک کھیل چنیں۔", settings_open:"استاد کی ترتیبات۔"
+    },
+    zh:{
+      skip:"跳到活动", brand:"数小动物", lang_label:"语言",
+      nav_home:"首页", nav_settings:"设置", nav_menu:"菜单",
+      menu_title:"选一个游戏！", menu_sub:"点卡片开始玩。点喇叭听说明。",
+      menu_welcome:"欢迎！选一个游戏。数一数喂一喂、有几个、快看一眼，或者更多、更少还是一样。",
+      mode_feed_t:"数一数喂一喂", mode_feed_d:"把正好这么多的食物拖进碗里。",
+      mode_howmany_t:"有几个？", mode_howmany_d:"数一数物品，选出数字。",
+      mode_quick_t:"快看一眼", mode_quick_d:"看一下这组，然后选出有几个。",
+      mode_compare_t:"更多、更少还是一样", mode_compare_d:"比较两组小动物。",
+      info_summary:"ℹ️ 给老师 · 对应标准", info_summary2:"ℹ️ 对应标准",
+      info_skills_l:"技能：", info_skills:"一一对应、基数、数字辨识、快速估数、比较数量。",
+      info_tx_l:"德州学前指南：", info_teks_l:"幼儿园 TEKS：", info_cc_l:"共同核心（K）：",
+      info_use:"用 ⚙️ 设置来选择级别、主题，并打开或关闭功能。",
+      set_title:"教师设置", set_sub:"更改仅保存在本设备上。不存储任何学生数据。",
+      set_spoken:"教师设置。选择级别、主题，并打开或关闭功能。",
+      set_level:"级别", lvl_prek3:"学前3", lvl_prek4:"学前4", lvl_k:"幼儿园",
+      set_theme:"主题", set_features:"功能",
+      feat_audio:"语音说明", feat_ten:"十格框", feat_scatter:"散乱排列", feat_numerals:"显示数字",
+      set_done:"完成", set_levels_note:"学前3：数量0–5，估数1–3。学前4：0–10，估数1–6。幼儿园：0–20，比较到20。",
+      act_next:"下一个", act_replay:"再试一次", act_back:"返回游戏",
+      rp_bowl:"新的碗", rp_group:"新的一组", rp_flash:"新的一闪", rp_pair:"新的一对",
+      footer_line:"无账户 · 不收集数据 · 离线可用", footer_home:"首页", footer_privacy:"隐私",
+      feed_cap:"喂朋友", feed_check:"检查碗", feed_incount:"碗里有：",
+      q_show:"给我看", q_ready:"准备…", q_getready:"准备好…", q_look:"看！", q_saw:"你看到几个？", q_peekhint:"再看一眼——按给我看。",
+      cmp_groupA:"第一组", cmp_groupB:"第二组", cmp_same:"它们一样多", none:"没有！", empty:"（空的——零！）",
+      dir_feed:"把 {n} 个{items}拖进碗里。边拖边数！",
+      fb_feed_ok:"你数了 {w}。最后一个数字告诉我们有几个。你正好喂了 {w}！",
+      fb_feed_low:"我们一个一个点一下。你有 {w}。再加一些，到 {t}。",
+      fb_feed_high:"我们一个一个点一下。这是 {w}，比 {t} 多。拿出一些。",
+      dir_howmany:"有几个{items}？点一下每一个，然后选出数字。",
+      fb_howmany_ok:"对了！你数了 {w}。最后一个数字告诉我们有几个。",
+      fb_howmany_hint:"我们一个一个点一下，再数一次。换一个数字试试。",
+      dir_quick:"快看一眼！看这些{items}，然后选出你看到几个。",
+      fb_quick_ok:"看得真好！你一眼就看出 {w}。",
+      fb_quick_hint:"我们再看一眼，仔细数一数。按给我看来看一眼。",
+      dir_cmp_same:"两组的数量一样吗？如果一样，就按一样多！",
+      dir_cmp_more:"哪一组的{items}更多？点那一组。",
+      dir_cmp_fewer:"哪一组的{items}更少？点那一组。",
+      fb_cmp_same_ok:"对了！两组都有 {w}。它们一样多。",
+      fb_cmp_more_ok:"对了！这一组更多。{a} 比 {b} 多。",
+      fb_cmp_fewer_ok:"对了！这一组更少。{a} 比 {b} 少。",
+      fb_cmp_hint:"我们一个一个点一下，两组都数一数。试试另一组。",
+      fb_cmp_notsame:"两组都一个一个点一下。它们不一样多。有一组更多。",
+      pick_menu:"选一个游戏。", settings_open:"教师设置。"
+    }
+  };
+
+  /* ================= Settings & language ================= */
+  var SKEY = "ctc_settings_v1";
+  var LKEY = "tcea.mathtools.lang";
+  var settings = { level:"prek4", theme:"farm", audio:true, tenframes:true, scattered:true, numerals:true };
+  try{
+    var saved = JSON.parse(localStorage.getItem(SKEY) || "null");
+    if(saved && typeof saved==="object"){ for(var k in settings){ if(k in saved) settings[k]=saved[k]; } }
+  }catch(e){}
+  function persist(){ try{ localStorage.setItem(SKEY, JSON.stringify(settings)); }catch(e){} }
+
+  function resolveLang(){
+    try{
+      var q = new URLSearchParams(location.search).get("lang");
+      if(q && LANGS.indexOf(q)!==-1) return q;
+    }catch(e){}
+    try{ var ls = localStorage.getItem(LKEY); if(ls && LANGS.indexOf(ls)!==-1) return ls; }catch(e){}
+    var nav = (navigator.language||"en").slice(0,2).toLowerCase();
+    if(LANGS.indexOf(nav)!==-1) return nav;
+    return "en";
+  }
+  var lang = resolveLang();
+
+  function t(key, params){
+    var s = (T[lang] && T[lang][key]!=null) ? T[lang][key] : (T.en[key]!=null?T.en[key]:key);
+    if(params){ for(var p in params){ s = s.split("{"+p+"}").join(params[p]); } }
+    return s;
+  }
+  function word(n){
+    var a = NUMWORDS[lang] || NUMWORDS.en;
+    return (a[n]!=null) ? a[n] : String(n);
+  }
+  function itemWord(){ return (ITEMWORDS[lang]||ITEMWORDS.en)[settings.theme]; }
+  function themeName(id){ return (THEMENAMES[lang]||THEMENAMES.en)[id]; }
+
+  var LEVELS = {
+    prek3:{maxQty:5, subMax:3, minQty:1, cmpMax:5},
+    prek4:{maxQty:10, subMax:6, minQty:1, cmpMax:10},
+    k:{maxQty:20, subMax:6, minQty:1, cmpMax:20}
+  };
+  function L(){ return LEVELS[settings.level]; }
+
+  /* ================= Speech ================= */
+  var speechOK = ("speechSynthesis" in window) && ("SpeechSynthesisUtterance" in window);
+  var voices = [];
+  function loadVoices(){ if(speechOK){ try{ voices = window.speechSynthesis.getVoices()||[]; }catch(e){ voices=[]; } } }
+  if(speechOK){
+    loadVoices();
+    try{ window.speechSynthesis.onvoiceschanged = loadVoices; }catch(e){}
+  }
+  function pickVoice(code){
+    if(!voices.length) loadVoices();
+    var pre = code.toLowerCase();
+    var two = pre.slice(0,2);
+    var v = null;
+    for(var i=0;i<voices.length;i++){ if((voices[i].lang||"").toLowerCase()===pre){ v=voices[i]; break; } }
+    if(!v){ for(var j=0;j<voices.length;j++){ if((voices[j].lang||"").toLowerCase().slice(0,2)===two){ v=voices[j]; break; } } }
+    return v;
+  }
+  function say(text){
+    if(!settings.audio || !speechOK || !text) return;
+    try{
+      window.speechSynthesis.cancel();
+      var u = new SpeechSynthesisUtterance(text);
+      var code = BCP47[lang] || "en-US";
+      u.lang = code;
+      var v = pickVoice(code);
+      if(v) u.voice = v;
+      u.rate = 0.92; u.pitch = 1.05;
+      window.speechSynthesis.speak(u);
+    }catch(e){}
+  }
+  function stopSpeech(){ if(speechOK){ try{ window.speechSynthesis.cancel(); }catch(e){} } }
+
+  /* ================= SVG art ================= */
+  var ITEMS = {
+    farm:function(){ return '<svg viewBox="0 0 100 100" aria-hidden="true"><ellipse cx="50" cy="62" rx="28" ry="26" fill="#ffd15c"/><circle cx="50" cy="40" r="20" fill="#ffdf7a"/><circle cx="44" cy="38" r="3.5" fill="#3a2a10"/><circle cx="56" cy="38" r="3.5" fill="#3a2a10"/><path d="M46 45 l8 0 l-4 6 z" fill="#ff8a3c"/><path d="M28 66 q-8 4 -2 10" stroke="#e6a800" stroke-width="4" fill="none" stroke-linecap="round"/></svg>'; },
+    sea:function(){ return '<svg viewBox="0 0 100 100" aria-hidden="true"><ellipse cx="46" cy="52" rx="30" ry="20" fill="#39a0e0"/><path d="M74 52 l18 -14 l0 28 z" fill="#2b7fb8"/><circle cx="36" cy="46" r="4.5" fill="#fff"/><circle cx="35" cy="46" r="2.3" fill="#16324f"/><path d="M20 52 q10 -6 20 0" stroke="#1c6fa0" stroke-width="3" fill="none"/><path d="M46 34 q6 6 12 0" stroke="#2b7fb8" stroke-width="4" fill="none"/></svg>'; },
+    insects:function(){ return '<svg viewBox="0 0 100 100" aria-hidden="true"><ellipse cx="50" cy="55" rx="28" ry="26" fill="#e23b3b"/><path d="M50 29 v52" stroke="#2a0f0f" stroke-width="3"/><circle cx="50" cy="30" r="10" fill="#2a0f0f"/><circle cx="38" cy="48" r="4" fill="#2a0f0f"/><circle cx="62" cy="48" r="4" fill="#2a0f0f"/><circle cx="40" cy="66" r="4" fill="#2a0f0f"/><circle cx="60" cy="66" r="4" fill="#2a0f0f"/><circle cx="46" cy="28" r="2" fill="#fff"/><circle cx="54" cy="28" r="2" fill="#fff"/></svg>'; },
+    dinosaurs:function(){ return '<svg viewBox="0 0 100 100" aria-hidden="true"><ellipse cx="50" cy="56" rx="26" ry="34" fill="#bfe6c9"/><path d="M28 52 l10 8 l8 -8 l8 8 l8 -8 l8 8" stroke="#5aa06e" stroke-width="4" fill="none"/><circle cx="40" cy="40" r="4" fill="#7ec48f"/><circle cx="58" cy="66" r="5" fill="#7ec48f"/></svg>'; },
+    classroom:function(){ return '<svg viewBox="0 0 100 100" aria-hidden="true"><rect x="38" y="24" width="24" height="60" rx="5" fill="#1668b0"/><path d="M38 24 l12 -14 l12 14 z" fill="#f4c430"/><rect x="38" y="70" width="24" height="8" fill="#0f4e86"/><rect x="42" y="34" width="16" height="5" rx="2" fill="#cfe3f5"/></svg>'; },
+    seasonal:function(){ return '<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 12 l11 24 l26 3 l-19 18 l5 26 l-23 -13 l-23 13 l5 -26 l-19 -18 l26 -3 z" fill="#ffcf3f" stroke="#e0a800" stroke-width="3"/></svg>'; }
+  };
+  var HEROES = {
+    farm:'<svg viewBox="0 0 100 100" aria-hidden="true"><ellipse cx="50" cy="60" rx="34" ry="28" fill="#fff"/><ellipse cx="50" cy="70" rx="20" ry="14" fill="#f6c6cf"/><circle cx="41" cy="70" r="3" fill="#c98894"/><circle cx="59" cy="70" r="3" fill="#c98894"/><circle cx="34" cy="40" r="10" fill="#3a3a3a"/><circle cx="66" cy="40" r="9" fill="#3a3a3a"/><circle cx="40" cy="50" r="4.5" fill="#16324f"/><circle cx="60" cy="50" r="4.5" fill="#16324f"/><path d="M24 34 q-8 -8 -2 -16" stroke="#fff" stroke-width="8" fill="none" stroke-linecap="round"/><path d="M76 34 q8 -8 2 -16" stroke="#fff" stroke-width="8" fill="none" stroke-linecap="round"/></svg>',
+    sea:'<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M14 55 q6 -30 42 -30 q30 0 32 26 l10 -8 l-2 20 l-10 -6 q-8 20 -34 20 q-32 0 -38 -22 z" fill="#4aa8e0"/><circle cx="40" cy="46" r="5" fill="#fff"/><circle cx="41" cy="46" r="2.5" fill="#16324f"/><path d="M30 62 q10 6 22 0" stroke="#2b7fb8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M50 24 q6 -8 2 -14 q-6 6 -2 14" fill="#9fd3f2"/></svg>',
+    insects:'<svg viewBox="0 0 100 100" aria-hidden="true"><ellipse cx="50" cy="58" rx="20" ry="26" fill="#ffd15c"/><path d="M50 40 v34" stroke="#3a2a10" stroke-width="3"/><path d="M50 32 v-8 M50 24 l-6 -6 M50 24 l6 -6" stroke="#3a2a10" stroke-width="3" fill="none"/><rect x="30" y="46" width="8" height="6" fill="#3a2a10"/><rect x="30" y="58" width="8" height="6" fill="#3a2a10"/><rect x="62" y="46" width="8" height="6" fill="#3a2a10"/><rect x="62" y="58" width="8" height="6" fill="#3a2a10"/><ellipse cx="34" cy="40" rx="14" ry="10" fill="#cfe3f5" opacity=".8"/><ellipse cx="66" cy="40" rx="14" ry="10" fill="#cfe3f5" opacity=".8"/><circle cx="45" cy="36" r="3" fill="#16324f"/><circle cx="55" cy="36" r="3" fill="#16324f"/></svg>',
+    dinosaurs:'<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M20 78 q-6 -34 26 -40 q28 -4 34 18 q10 2 12 14 q-2 8 -12 6 q-6 12 -22 12 q4 6 -2 8 q-8 0 -8 -8 q-16 0 -22 -8 q-8 2 -6 -2 z" fill="#7ec48f"/><circle cx="66" cy="46" r="4" fill="#16324f"/><path d="M38 44 l6 -8 l6 8 l6 -8 l6 8" stroke="#4f8f63" stroke-width="4" fill="none"/></svg>',
+    classroom:'<svg viewBox="0 0 100 100" aria-hidden="true"><rect x="30" y="20" width="40" height="60" rx="8" fill="#f4c430"/><rect x="30" y="20" width="14" height="60" rx="6" fill="#e0a800"/><circle cx="52" cy="42" r="4" fill="#16324f"/><circle cx="64" cy="42" r="4" fill="#16324f"/><path d="M50 56 q7 6 16 0" stroke="#16324f" stroke-width="3" fill="none" stroke-linecap="round"/><rect x="34" y="80" width="32" height="8" rx="3" fill="#c98a12"/></svg>',
+    seasonal:'<svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="70" r="22" fill="#fff" stroke="#cdddea" stroke-width="2"/><circle cx="50" cy="40" r="16" fill="#fff" stroke="#cdddea" stroke-width="2"/><circle cx="45" cy="38" r="2.5" fill="#16324f"/><circle cx="55" cy="38" r="2.5" fill="#16324f"/><path d="M50 44 l8 3 l-8 2 z" fill="#ff8a3c"/><circle cx="44" cy="66" r="2.5" fill="#16324f"/><circle cx="50" cy="72" r="2.5" fill="#16324f"/><circle cx="56" cy="66" r="2.5" fill="#16324f"/></svg>'
+  };
+  var THEME_IDS = ["farm","sea","insects","dinosaurs","classroom","seasonal"];
+  function itemSVG(){ return (ITEMS[settings.theme]||ITEMS.farm)(); }
+  function heroSVG(){ return HEROES[settings.theme]||HEROES.farm; }
+
+  /* ================= Utilities ================= */
+  function rint(a,b){ return Math.floor(Math.random()*(b-a+1))+a; }
+  function shuffle(arr){ for(var i=arr.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var x=arr[i];arr[i]=arr[j];arr[j]=x; } return arr; }
+  function el(tag, cls, html){ var e=document.createElement(tag); if(cls) e.className=cls; if(html!=null) e.innerHTML=html; return e; }
+
+  /* ================= Screens ================= */
+  var screens = { menu:document.getElementById("menu"), settings:document.getElementById("settings"), activity:document.getElementById("activity") };
+  var currentScreen="menu";
+  function show(name){
+    currentScreen=name;
+    for(var k in screens){ screens[k].hidden=(k!==name); }
+    document.getElementById("btnMenu").hidden=(name!=="activity");
+    document.getElementById("btnSettings").hidden=(name==="settings");
+    stopSpeech();
+  }
+
+  /* ================= Feedback ================= */
+  var feedback=document.getElementById("feedback");
+  var fbIco=document.getElementById("fbIco");
+  var fbText=document.getElementById("fbText");
+  function showFeedback(kind, ico, text, speak){
+    feedback.className="feedback show "+(kind==="good"?"good":"hint");
+    fbIco.textContent=ico; fbText.textContent=text;
+    if(speak) say(text);
+  }
+  function clearFeedback(){ feedback.className="feedback"; fbText.textContent=""; }
+  function celebrate(){
+    if(matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var box=document.getElementById("celebrate"); box.innerHTML="";
+    var colors=["#ffd15c","#7ed957","#5cb8ff","#ff8a5c","#c58cff","#1668b0"];
+    for(var i=0;i<40;i++){
+      var c=el("div","confetti");
+      c.style.left=(Math.random()*100)+"%"; c.style.background=colors[i%colors.length];
+      c.style.animation="fall "+(1+Math.random()*1.2)+"s linear forwards";
+      c.style.animationDelay=(Math.random()*0.3)+"s";
+      box.appendChild(c);
+    }
+    setTimeout(function(){ box.innerHTML=""; }, 2600);
+  }
+
+  /* ================= Directions bar ================= */
+  var dirText=document.getElementById("dirText");
+  var dirSpeaker=document.getElementById("dirSpeaker");
+  var currentDirection="";
+  function setDirection(text){ currentDirection=text; dirText.textContent=text; }
+  dirSpeaker.addEventListener("click", function(){ say(currentDirection); });
+
+  var stage=document.getElementById("stage");
+  var btnNext=document.getElementById("btnNext");
+  var btnReplay=document.getElementById("btnReplay");
+  var replayLabel=document.getElementById("replayLabel");
+
+  /* ================= Mode engine ================= */
+  var currentMode=null;
+  var roundState=null; // holds generated values so a language switch can re-render the SAME round
+
+  function startMode(mode){ currentMode=mode; roundState=null; show("activity"); nextRound(); }
+  function nextRound(){
+    clearFeedback(); stopSpeech();
+    generateRound();
+    renderRound();
+    setTimeout(function(){ say(currentDirection); }, 250);
+  }
+  function generateRound(){
+    var lv=L();
+    if(currentMode==="feed"){
+      var target = settings.level==="prek3" ? rint(1,5) : rint(Math.max(1,lv.minQty), lv.maxQty);
+      var supply = Math.min(target + rint(1,3), target+5);
+      roundState={mode:"feed", target:target, supply:supply};
+    }else if(currentMode==="howmany"){
+      var n=rint(0, lv.maxQty);
+      roundState={mode:"howmany", n:n, arr:pickArrangement(n), opts:buildOpts(n,0,lv.maxQty,Math.min(4,lv.maxQty+1))};
+    }else if(currentMode==="quick"){
+      var qn=rint(1, lv.subMax);
+      var organized = Math.random()<0.6 || !settings.scattered;
+      var useTen = organized && settings.tenframes && Math.random()<0.5;
+      roundState={mode:"quick", n:qn, organized:organized, useTen:useTen, opts:buildOpts(qn,1,lv.subMax,Math.min(4,lv.subMax+1))};
+    }else if(currentMode==="compare"){
+      var max=lv.cmpMax;
+      var a=rint(0,max), b=rint(0,max), qtype;
+      if(a===b) qtype="same"; else qtype = Math.random()<0.5?"more":"fewer";
+      if(Math.random()<0.18){ b=a; qtype="same"; }
+      roundState={mode:"compare", a:a, b:b, qtype:qtype};
+    }
+  }
+  function pickArrangement(n){
+    if(n===0) return {kind:"empty"};
+    var kinds=["line","circle"];
+    if(settings.tenframes && n<=20) kinds.push("ten");
+    if(settings.scattered) kinds.push("scatter");
+    return {kind:kinds[rint(0,kinds.length-1)], seed: buildScatter(n)};
+  }
+  function buildScatter(n){
+    var placed=[], W=520,H=260,size=56;
+    for(var i=0;i<n;i++){
+      var x,y,ok,tr=0;
+      do{ ok=true; tr++; x=rint(4,W-size-4); y=rint(4,H-size-4);
+        for(var p=0;p<placed.length;p++){ var dx=x-placed[p].x, dy=y-placed[p].y; if(Math.sqrt(dx*dx+dy*dy)<size*0.9){ ok=false; break; } }
+      }while(!ok && tr<80);
+      placed.push({x:x,y:y});
+    }
+    return placed;
+  }
+  function buildOpts(answer, min, max, count){
+    var opts=[answer], guard=0;
+    while(opts.length<count && guard<300){ guard++; var c=rint(min,max); if(opts.indexOf(c)===-1) opts.push(c); }
+    return shuffle(opts);
+  }
+
+  function renderRound(){
+    stage.innerHTML="";
+    if(!roundState) return;
+    if(roundState.mode==="feed"){ replayLabel.textContent=t("rp_bowl"); renderFeed(); }
+    else if(roundState.mode==="howmany"){ replayLabel.textContent=t("rp_group"); renderHowMany(); }
+    else if(roundState.mode==="quick"){ replayLabel.textContent=t("rp_flash"); renderQuick(); }
+    else if(roundState.mode==="compare"){ replayLabel.textContent=t("rp_pair"); renderCompare(); }
+  }
+
+  btnNext.addEventListener("click", nextRound);
+  btnReplay.addEventListener("click", nextRound);
+  document.getElementById("btnBackMenu").addEventListener("click", function(){ show("menu"); say(t("pick_menu")); });
+
+  /* ---- arrangement DOM builders ---- */
+  function makeObj(countable){
+    var o=el("div","obj"+(countable?" countable":""), itemSVG());
+    if(countable){ o.setAttribute("role","button"); o.setAttribute("tabindex","0"); o.setAttribute("aria-label", itemWord()); }
+    return o;
+  }
+  function renderLine(container,n,countable){ var box=el("div","objgroup"); for(var i=0;i<n;i++) box.appendChild(makeObj(countable)); container.appendChild(box); }
+  function renderCircle(container,n,countable){
+    var box=el("div"); box.style.position="relative"; box.style.width="260px"; box.style.height="260px"; box.style.margin="0 auto";
+    var R=100, cx=130, cy=130;
+    for(var i=0;i<n;i++){
+      var ang=(i/n)*Math.PI*2 - Math.PI/2; var o=makeObj(countable);
+      o.style.position="absolute"; o.style.left=(cx+R*Math.cos(ang)-28)+"px"; o.style.top=(cy+R*Math.sin(ang)-28)+"px";
+      box.appendChild(o);
+    }
+    var wrap=el("div","objgroup"); wrap.appendChild(box); container.appendChild(wrap);
+  }
+  function renderTenFrame(container,n,countable){
+    var wrap=el("div","objgroup"); var tf=el("div","tenframe");
+    for(var i=0;i<10;i++){ var cell=el("div","tf-cell"); if(i<n) cell.appendChild(makeObj(countable)); tf.appendChild(cell); }
+    wrap.appendChild(tf);
+    if(n>10){ var tf2=el("div","tenframe"); for(var j=0;j<10;j++){ var c2=el("div","tf-cell"); if(j<(n-10)) c2.appendChild(makeObj(countable)); tf2.appendChild(c2); } wrap.appendChild(tf2); }
+    container.appendChild(wrap);
+  }
+  function renderScatter(container,n,countable,seed){
+    var wrap=el("div","objgroup"); var box=el("div","scatterbox");
+    for(var i=0;i<n;i++){ var o=makeObj(countable); var pos=seed&&seed[i]?seed[i]:{x:rint(4,460),y:rint(4,220)}; o.style.left=pos.x+"px"; o.style.top=pos.y+"px"; box.appendChild(o); }
+    wrap.appendChild(box); container.appendChild(wrap);
+  }
+  function renderArrangement(container,n,countable,arr){
+    if(!arr || arr.kind==="empty"){ container.appendChild(el("div","objgroup",'<span style="font-size:1.3rem;color:var(--muted)">'+t("empty")+'</span>')); return; }
+    if(arr.kind==="line") renderLine(container,n,countable);
+    else if(arr.kind==="circle") renderCircle(container,n,countable);
+    else if(arr.kind==="ten") renderTenFrame(container,n,countable);
+    else renderScatter(container,n,countable,arr.seed);
+  }
+  function renderCompact(container,n){
+    var box=el("div","box");
+    if(n===0){ box.innerHTML='<span style="color:var(--muted);font-weight:700">'+t("none")+'</span>'; }
+    else for(var i=0;i<n;i++) box.appendChild(makeObj(false));
+    container.appendChild(box); return box;
+  }
+  function enableTapCount(){
+    stage.querySelectorAll(".obj.countable").forEach(function(o){
+      function tog(){ o.classList.toggle("tapped"); }
+      o.addEventListener("click", tog);
+      o.addEventListener("keydown", function(ev){ if(ev.key===" "||ev.key==="Enter"){ ev.preventDefault(); tog(); } });
+    });
+  }
+  function makeChoiceRow(opts, onPick){
+    var row=el("div","choices");
+    opts.forEach(function(v){
+      var b=el("button","chip", settings.numerals?String(v):dotsFor(v));
+      b.type="button"; b.setAttribute("aria-label", word(v));
+      b.addEventListener("click", function(){ onPick(v,b,row); });
+      row.appendChild(b);
+    });
+    return row;
+  }
+  function dotsFor(v){
+    if(v===0) return "0";
+    var s='<svg viewBox="0 0 60 60" width="46" height="46" aria-hidden="true">';
+    for(var i=0;i<v;i++){ var ang=(i/Math.max(1,v))*Math.PI*2; var cx=30+(v>1?14*Math.cos(ang):0); var cy=30+(v>1?14*Math.sin(ang):0); s+='<circle cx="'+cx+'" cy="'+cy+'" r="4.2" fill="#0f4e86"/>'; }
+    return s+'</svg>';
+  }
+
+  /* ================= MODE 1: COUNT & FEED ================= */
+  function renderFeed(){
+    var target=roundState.target, supply=roundState.supply;
+    setDirection(t("dir_feed", {n:target, items:itemWord()}));
+
+    var scene=el("div","feedscene");
+    var hero=el("div","hero", heroSVG());
+    var mid=el("div","bowl-target");
+    mid.innerHTML='<div class="cap">'+t("feed_cap")+'</div><div class="num">'+(settings.numerals?target:'?')+'</div>';
+    var bowl=el("div","bowl");
+    bowl.innerHTML='<svg class="bowlsvg" viewBox="0 0 230 150" aria-hidden="true"><ellipse cx="115" cy="120" rx="95" ry="22" fill="#b96a1c"/><path d="M25 78 Q115 150 205 78 Q205 108 115 130 Q25 108 25 78 Z" fill="#d9822b"/><ellipse cx="115" cy="78" rx="90" ry="24" fill="#e79a4b"/><ellipse cx="115" cy="78" rx="72" ry="17" fill="#f6b877"/></svg><div class="slots"></div>';
+    scene.appendChild(hero); scene.appendChild(mid); scene.appendChild(bowl);
+    stage.appendChild(scene);
+
+    var count=el("div","feedcount"); count.innerHTML=t("feed_incount")+' <b class="fedNum">0</b>'; stage.appendChild(count);
+    var tray=el("div","tray"); stage.appendChild(tray);
+    var actions=el("div","row-actions"); var feedBtn=el("button","btn primary big","🍽️ "+t("feed_check")); feedBtn.type="button"; actions.appendChild(feedBtn); stage.appendChild(actions);
+
+    var slots=bowl.querySelector(".slots"); var fedNumEl=count.querySelector(".fedNum"); var fedCount=0;
+    function updateCount(){ fedCount=slots.children.length; fedNumEl.textContent=fedCount; }
+    function sendToBowl(f){ if(f.parentNode===slots) return; f.classList.add("inbowl"); slots.appendChild(f); updateCount(); }
+    function sendToTray(f){ if(f.parentNode===tray) return; f.classList.remove("inbowl"); tray.appendChild(f); updateCount(); }
+    function attach(f){
+      var startX,startY,moved,floatEl,pid;
+      function down(ev){ ev.preventDefault(); pid=ev.pointerId; startX=ev.clientX; startY=ev.clientY; moved=false;
+        try{ f.setPointerCapture(pid); }catch(e){} f.classList.add("dragging");
+        document.addEventListener("pointermove", move); document.addEventListener("pointerup", up); document.addEventListener("pointercancel", up);
+      }
+      function ensureFloat(ev){ if(!floatEl){ floatEl=el("div","float-food", itemSVG()); document.body.appendChild(floatEl); } floatEl.style.left=(ev.clientX-28)+"px"; floatEl.style.top=(ev.clientY-28)+"px"; }
+      function overBowl(ev){ var r=bowl.getBoundingClientRect(); return ev.clientX>=r.left&&ev.clientX<=r.right&&ev.clientY>=r.top&&ev.clientY<=r.bottom; }
+      function move(ev){ if(ev.pointerId!==pid) return; var dx=ev.clientX-startX, dy=ev.clientY-startY; if(Math.abs(dx)>6||Math.abs(dy)>6) moved=true; if(moved){ ensureFloat(ev); bowl.classList.toggle("over", overBowl(ev)); } }
+      function up(ev){ if(ev.pointerId!==pid) return;
+        document.removeEventListener("pointermove", move); document.removeEventListener("pointerup", up); document.removeEventListener("pointercancel", up);
+        f.classList.remove("dragging"); bowl.classList.remove("over"); if(floatEl){ floatEl.remove(); floatEl=null; }
+        if(!moved){ if(f.parentNode===slots) sendToTray(f); else sendToBowl(f); }
+        else{ if(overBowl(ev)) sendToBowl(f); else sendToTray(f); }
+      }
+      f.addEventListener("pointerdown", down);
+      f.addEventListener("keydown", function(ev){ if(ev.key===" "||ev.key==="Enter"){ ev.preventDefault(); if(f.parentNode===slots) sendToTray(f); else sendToBowl(f); } });
+    }
+    function makeFood(){ var f=el("div","food", itemSVG()); f.setAttribute("role","button"); f.setAttribute("tabindex","0"); f.setAttribute("aria-label", itemWord()); attach(f); return f; }
+    for(var i=0;i<supply;i++) tray.appendChild(makeFood());
+
+    feedBtn.addEventListener("click", function(){
+      updateCount();
+      if(fedCount===target){
+        showFeedback("good","🎉", t("fb_feed_ok",{w:word(target)}), true); celebrate(); scene.classList.add("pop"); feedBtn.disabled=true;
+      }else if(fedCount<target){
+        showFeedback("hint","🖐️", t("fb_feed_low",{w:word(fedCount), t:word(target)}), true);
+      }else{
+        showFeedback("hint","🖐️", t("fb_feed_high",{w:word(fedCount), t:word(target)}), true);
+      }
+    });
+  }
+
+  /* ================= MODE 2: HOW MANY ================= */
+  function renderHowMany(){
+    var n=roundState.n;
+    setDirection(t("dir_howmany",{items:itemWord()}));
+    renderArrangement(stage, n, true, roundState.arr);
+    enableTapCount();
+    var row=makeChoiceRow(roundState.opts, function(v,b,rw){
+      if(v===n){ rw.querySelectorAll(".chip").forEach(function(c){ c.disabled=true; }); b.classList.add("correct");
+        showFeedback("good","🎉", t("fb_howmany_ok",{w:word(n)}), true); celebrate();
+      }else{ b.classList.add("wrong"); b.disabled=true; showFeedback("hint","🖐️", t("fb_howmany_hint"), true); }
+    });
+    stage.appendChild(row);
+  }
+
+  /* ================= MODE 3: QUICK LOOK ================= */
+  function renderQuick(){
+    var n=roundState.n;
+    setDirection(t("dir_quick",{items:itemWord()}));
+    var flash=el("div","flashbox"); stage.appendChild(flash);
+    var inner=el("div"); inner.style.width="100%";
+    if(roundState.organized){ if(roundState.useTen) renderTenFrame(inner,n,false); else renderLine(inner,n,false); }
+    else renderScatter(inner,n,false, buildScatter(n));
+    flash.appendChild(inner);
+    var cover=el("div","flash-cover"); cover.innerHTML='<span class="eye">👀</span><span>'+t("q_getready")+'</span>'; flash.appendChild(cover);
+
+    var startBtn=el("button","btn primary big","👁️ "+t("q_show")); startBtn.type="button";
+    var actions=el("div","row-actions"); actions.appendChild(startBtn); stage.appendChild(actions);
+    var choicesHolder=el("div"); stage.appendChild(choicesHolder);
+
+    function showChoices(){
+      choicesHolder.innerHTML="";
+      var row=makeChoiceRow(roundState.opts, function(v,b,rw){
+        if(v===n){ rw.querySelectorAll(".chip").forEach(function(c){ c.disabled=true; }); b.classList.add("correct");
+          showFeedback("good","🎉", t("fb_quick_ok",{w:word(n)}), true); celebrate();
+        }else{ b.classList.add("wrong"); b.disabled=true; showFeedback("hint","👀", t("fb_quick_hint"), true); }
+      });
+      choicesHolder.appendChild(row);
+    }
+    function reveal(){
+      cover.style.display="none"; say(t("q_look"));
+      setTimeout(function(){ cover.style.display="flex"; cover.innerHTML='<span class="eye">🙈</span><span>'+t("q_saw")+'</span>'; showChoices(); }, 2000);
+    }
+    startBtn.addEventListener("click", function(){ cover.innerHTML='<span class="eye">👀</span><span>'+t("q_ready")+'</span>'; cover.style.display="flex"; setTimeout(reveal, 600); });
+  }
+
+  /* ================= MODE 4: MORE / FEWER / SAME ================= */
+  function renderCompare(){
+    var a=roundState.a, b=roundState.b, qtype=roundState.qtype;
+    if(qtype==="same") setDirection(t("dir_cmp_same"));
+    else setDirection(t(qtype==="more"?"dir_cmp_more":"dir_cmp_fewer",{items:itemWord()}));
+
+    var wrap=el("div","compare");
+    var sideA=el("div","side"), sideB=el("div","side");
+    sideA.appendChild(el("div","label", t("cmp_groupA")));
+    sideB.appendChild(el("div","label", t("cmp_groupB")));
+    renderCompact(sideA,a); renderCompact(sideB,b);
+    if(settings.numerals){ sideA.appendChild(el("div","bignum", String(a))); sideB.appendChild(el("div","bignum", String(b))); }
+    sideA.setAttribute("role","button"); sideA.setAttribute("tabindex","0");
+    sideB.setAttribute("role","button"); sideB.setAttribute("tabindex","0");
+    wrap.appendChild(sideA); wrap.appendChild(sideB); stage.appendChild(wrap);
+
+    var sameRow=el("div","same-btn-row"); var sameBtn=el("button","btn primary big","🟰 "+t("cmp_same")); sameBtn.type="button"; sameRow.appendChild(sameBtn); stage.appendChild(sameRow);
+
+    var done=false;
+    function correctSide(){ if(qtype==="more") return a>b?sideA:sideB; if(qtype==="fewer") return a<b?sideA:sideB; return null; }
+    function finishGood(msg){ done=true; showFeedback("good","🎉",msg,true); celebrate(); sideA.style.cursor="default"; sideB.style.cursor="default"; }
+    function pickSide(side){
+      if(done) return;
+      if(qtype==="same"){ side.classList.add("pick-wrong"); showFeedback("hint","🖐️", t("fb_cmp_notsame"), true); setTimeout(function(){ side.classList.remove("pick-wrong"); },1200); return; }
+      var cs=correctSide();
+      if(side===cs){
+        var cnt=(side===sideA)?a:b, oth=(side===sideA)?b:a;
+        finishGood(t(qtype==="more"?"fb_cmp_more_ok":"fb_cmp_fewer_ok",{a:word(cnt), b:word(oth)}));
+      }else{ side.classList.add("pick-wrong"); showFeedback("hint","🖐️", t("fb_cmp_hint"), true); setTimeout(function(){ side.classList.remove("pick-wrong"); },1200); }
+    }
+    sideA.addEventListener("click", function(){ pickSide(sideA); });
+    sideB.addEventListener("click", function(){ pickSide(sideB); });
+    sideA.addEventListener("keydown", function(e){ if(e.key===" "||e.key==="Enter"){ e.preventDefault(); pickSide(sideA);} });
+    sideB.addEventListener("keydown", function(e){ if(e.key===" "||e.key==="Enter"){ e.preventDefault(); pickSide(sideB);} });
+    sameBtn.addEventListener("click", function(){
+      if(done) return;
+      if(qtype==="same" || a===b){ sideA.classList.add("pick-correct"); sideB.classList.add("pick-correct"); finishGood(t("fb_cmp_same_ok",{w:word(a)})); }
+      else{ showFeedback("hint","🖐️", t("fb_cmp_notsame"), true); }
+    });
+  }
+
+  /* ================= i18n apply / re-render ================= */
+  function applyI18n(){
+    document.documentElement.lang=lang;
+    document.documentElement.dir = RTL[lang] ? "rtl" : "ltr";
+    document.querySelectorAll("[data-i18n]").forEach(function(node){
+      node.textContent = t(node.getAttribute("data-i18n"));
+    });
+    // theme button labels
+    document.querySelectorAll(".themebtn").forEach(function(b){
+      var id=b.getAttribute("data-theme"); var lbl=b.querySelector(".lbl"); if(lbl) lbl.textContent=themeName(id);
+    });
+    var sel=document.getElementById("langSel"); if(sel.value!==lang) sel.value=lang;
+    // update currently-shown activity round in the new language
+    if(currentScreen==="activity" && roundState){ clearFeedback(); renderRound(); }
+  }
+  function setLang(newLang){
+    if(LANGS.indexOf(newLang)===-1) newLang="en";
+    lang=newLang;
+    try{ localStorage.setItem(LKEY, lang); }catch(e){}
+    stopSpeech();
+    applyI18n();
+  }
+
+  /* ================= Wiring ================= */
+  document.querySelectorAll(".card[data-mode]").forEach(function(c){ c.addEventListener("click", function(){ startMode(c.getAttribute("data-mode")); }); });
+  document.getElementById("btnMenu").addEventListener("click", function(){ show("menu"); });
+  document.querySelectorAll(".speaker[data-saykey]").forEach(function(b){ b.addEventListener("click", function(){ say(t(b.getAttribute("data-saykey"))); }); });
+
+  var langSel=document.getElementById("langSel");
+  langSel.value=lang;
+  langSel.addEventListener("change", function(){ setLang(langSel.value); });
+
+  // Settings
+  var segLevel=document.getElementById("segLevel"), segTheme=document.getElementById("segTheme");
+  var tglAudio=document.getElementById("tglAudio"), tglTen=document.getElementById("tglTen"), tglScatter=document.getElementById("tglScatter"), tglNumerals=document.getElementById("tglNumerals");
+  THEME_IDS.forEach(function(id){
+    var b=el("button","themebtn"); b.type="button"; b.setAttribute("data-theme", id);
+    b.innerHTML='<span class="sw">'+(ITEMS[id])()+'</span><span class="lbl">'+themeName(id)+'</span>';
+    b.addEventListener("click", function(){ settings.theme=id; persist(); syncSettingsUI(); });
+    segTheme.appendChild(b);
+  });
+  segLevel.querySelectorAll("button").forEach(function(b){ b.addEventListener("click", function(){ settings.level=b.getAttribute("data-level"); persist(); syncSettingsUI(); }); });
+  function bindToggle(elm,key){ elm.addEventListener("change", function(){ settings[key]=elm.checked; persist(); if(key==="audio"&&!elm.checked) stopSpeech(); }); }
+  bindToggle(tglAudio,"audio"); bindToggle(tglTen,"tenframes"); bindToggle(tglScatter,"scattered"); bindToggle(tglNumerals,"numerals");
+  function syncSettingsUI(){
+    segLevel.querySelectorAll("button").forEach(function(b){ b.setAttribute("aria-pressed", b.getAttribute("data-level")===settings.level?"true":"false"); });
+    segTheme.querySelectorAll("button").forEach(function(b){ b.setAttribute("aria-pressed", b.getAttribute("data-theme")===settings.theme?"true":"false"); });
+    tglAudio.checked=settings.audio; tglTen.checked=settings.tenframes; tglScatter.checked=settings.scattered; tglNumerals.checked=settings.numerals;
+    if(!speechOK) tglAudio.disabled=true;
+  }
+  document.getElementById("btnSettings").addEventListener("click", function(){ syncSettingsUI(); show("settings"); say(t("settings_open")); });
+  document.getElementById("settingsDone").addEventListener("click", function(){ show("menu"); });
+
+  /* ================= Init ================= */
+  if(!speechOK) settings.audio=false;
+  applyI18n();
+  syncSettingsUI();
+  show("menu");
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Pet Parade Sort and Graph — PreK &amp; Kindergarten</title>
+<meta name="description" content="Sort friendly pets by color, type, size, or habitat, explain the rule, count groups, build a picture graph, and answer questions about the data. No accounts, no data collected, works offline.">
+<style>
+  :root{
+    --grape:#5b3fa5;--grape-d:#3f2a78;--sun:#ffcb3d;--sun-d:#e0a400;
+    --paper:#f6f4fc;--ink:#1c1730;--ink-soft:#5b5470;--card:#fff;--line:#e2dcf1;
+    --ok:#2f8f4e;--ok-bg:#e5f6ea;--warn:#c85a12;--warn-bg:#fdeede;--sky:#dfeafd;
+    --focus:#0b6bcb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%}
+  body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:var(--ink);
+    background:radial-gradient(ellipse 60% 45% at 88% -5%,rgba(255,203,61,.18)0,transparent 60%),
+    radial-gradient(ellipse 55% 45% at 0% 100%,rgba(91,63,165,.12)0,transparent 60%),var(--paper);
+    min-height:100vh;line-height:1.5;overflow-x:hidden}
+  a{color:var(--grape-d)}
+  button{font-family:inherit}
+  :focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:6px}
+
+  .topbar{position:sticky;top:0;z-index:40;background:var(--grape);color:#fff;
+    display:flex;align-items:center;gap:10px;padding:10px 14px;flex-wrap:wrap;
+    box-shadow:0 3px 12px rgba(30,23,48,.18)}
+  .topbar .brand{font-weight:800;font-size:1.05rem;display:flex;align-items:center;gap:8px;margin-inline-end:auto}
+  .topbar .brand .logo{font-size:1.4rem}
+  .tbtn{background:rgba(255,255,255,.14);color:#fff;border:2px solid rgba(255,255,255,.35);
+    border-radius:10px;padding:9px 14px;font-weight:800;font-size:.9rem;cursor:pointer;
+    text-decoration:none;display:inline-flex;align-items:center;gap:7px;min-height:44px}
+  .tbtn:hover{background:rgba(255,255,255,.26)}
+  .tbtn.sun{background:var(--sun);color:var(--grape-d);border-color:var(--sun-d)}
+  .tbtn.sun:hover{background:var(--sun-d);color:#fff}
+  .langwrap{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.14);
+    border:2px solid rgba(255,255,255,.35);border-radius:10px;padding:2px 8px;min-height:44px}
+  .langwrap .glb{font-size:1.1rem}
+  #langSel{background:transparent;color:#fff;border:none;font-family:inherit;font-weight:800;
+    font-size:.9rem;padding:6px 2px;cursor:pointer;min-height:36px}
+  #langSel option{color:#1c1730;background:#fff}
+
+  .wrap{max-width:1060px;margin:0 auto;padding:20px 16px 40px}
+
+  .direction{display:flex;align-items:center;gap:12px;background:#fff;border:2px solid var(--line);
+    border-inline-start:8px solid var(--sun);border-radius:14px;padding:12px 14px;margin:0 0 18px;
+    box-shadow:0 3px 10px rgba(30,23,48,.06)}
+  .direction .dtxt{font-weight:700;font-size:1.05rem;color:var(--ink)}
+  .speaker{flex:none;background:var(--grape);color:#fff;border:none;border-radius:50%;
+    width:48px;height:48px;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .speaker:hover{background:var(--grape-d)}
+  .speaker[hidden]{display:none}
+
+  h1{font-weight:800;font-size:clamp(1.8rem,5vw,2.7rem);color:var(--grape);line-height:1.05}
+  .lede{color:var(--ink-soft);font-weight:600;max-width:640px;margin:10px 0 0}
+
+  h2.sec{color:var(--grape);font-size:1.15rem;font-weight:800;margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+  h2.sec::after{content:"";flex:1;height:2px;background:var(--line)}
+
+  .modegrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+  .modecard{display:flex;flex-direction:column;align-items:flex-start;text-align:start;background:var(--card);
+    border:2px solid var(--line);border-top:6px solid var(--accent,var(--grape));border-radius:16px;
+    padding:18px;cursor:pointer;transition:transform .16s,box-shadow .2s,border-color .16s;
+    box-shadow:0 3px 10px rgba(30,23,48,.05);min-height:150px}
+  .modecard:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(30,23,48,.12)}
+  .modecard .ico{font-size:2.2rem;line-height:1;margin-bottom:8px}
+  .modecard h3{color:var(--grape);font-size:1.2rem;margin-bottom:6px}
+  .modecard p{font-weight:600;color:var(--ink-soft);font-size:.9rem}
+
+  .btn{background:var(--grape);color:#fff;border:2px solid var(--grape-d);border-radius:12px;
+    padding:12px 18px;font-weight:800;font-size:1rem;cursor:pointer;min-height:48px;
+    display:inline-flex;align-items:center;gap:8px}
+  .btn:hover{background:var(--grape-d)}
+  .btn.sun{background:var(--sun);color:var(--grape-d);border-color:var(--sun-d)}
+  .btn.ghost{background:#fff;color:var(--grape);border-color:var(--line)}
+  .btn.ghost:hover{background:#f0ebfb}
+  .btn:disabled{opacity:.45;cursor:not-allowed}
+  .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+
+  .panel{background:#fff;border:2px solid var(--line);border-radius:16px;padding:18px;
+    box-shadow:0 3px 10px rgba(30,23,48,.05);margin-bottom:16px}
+
+  .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+  .chip{display:inline-flex;flex-direction:column;align-items:center;gap:4px;background:#fff;
+    border:2px solid var(--line);border-radius:14px;padding:12px 16px;cursor:pointer;font-weight:800;
+    color:var(--ink);min-width:96px;min-height:76px;justify-content:center}
+  .chip .ci{font-size:1.6rem;line-height:1}
+  .chip:hover{border-color:var(--grape)}
+  .chip[aria-pressed="true"]{background:var(--grape);color:#fff;border-color:var(--grape-d)}
+
+  .tray{display:flex;flex-wrap:wrap;gap:12px;background:var(--sky);border:2px dashed #a9c1ef;
+    border-radius:16px;padding:14px;min-height:120px;align-content:flex-start;margin-bottom:16px}
+  .tray .trayhint{align-self:center;color:#4a5f86;font-weight:700;margin:auto}
+  .bins{display:grid;gap:14px}
+  .bins.n2{grid-template-columns:repeat(2,1fr)}
+  .bins.n3{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:620px){.bins.n3,.bins.n2{grid-template-columns:1fr}}
+  .bin{background:#fff;border:3px solid var(--line);border-radius:16px;padding:12px;display:flex;
+    flex-direction:column;min-height:150px;transition:border-color .12s,background .12s}
+  .bin.over{border-color:var(--grape);background:#f2ecfd}
+  .bin .binhead{display:flex;align-items:center;gap:9px;font-weight:800;font-size:1.05rem;
+    padding-bottom:10px;margin-bottom:8px;border-bottom:2px solid var(--line)}
+  .bin .binhead .swatch{width:26px;height:26px;border-radius:7px;border:2px solid rgba(0,0,0,.2);flex:none}
+  .bin .binhead .bi{font-size:1.5rem;line-height:1}
+  .bin-items{display:flex;flex-wrap:wrap;gap:10px;flex:1;align-content:flex-start}
+  .bin-count{margin-top:8px;font-weight:800;color:var(--grape);font-size:.95rem;text-align:center;
+    background:#f0ebfb;border-radius:9px;padding:5px}
+
+  .piece{position:relative;width:84px;height:96px;background:#fff;border:2px solid var(--line);
+    border-radius:14px;cursor:grab;touch-action:none;display:flex;flex-direction:column;align-items:center;
+    padding:4px;transition:transform .12s,box-shadow .12s,border-color .12s;box-shadow:0 2px 6px rgba(30,23,48,.08)}
+  .piece:hover{box-shadow:0 6px 14px rgba(30,23,48,.16)}
+  .piece.dragging{cursor:grabbing;box-shadow:0 16px 34px rgba(30,23,48,.3);transform:scale(1.06)}
+  .piece svg{width:100%;height:64px;flex:none}
+  .piece .cap{font-size:.66rem;font-weight:800;color:var(--ink-soft);text-align:center;line-height:1.05}
+  .piece.right{border-color:var(--ok);background:var(--ok-bg)}
+  .piece.wrong{border-color:var(--warn);background:var(--warn-bg);animation:jiggle .4s}
+  @keyframes jiggle{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+  .piece .badge{position:absolute;top:-9px;inset-inline-end:-9px;width:24px;height:24px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:900;color:#fff}
+  .piece.right .badge{background:var(--ok)}
+  .piece.wrong .badge{background:var(--warn)}
+
+  .feedback{display:flex;align-items:flex-start;gap:12px;border-radius:14px;padding:14px;margin:16px 0 0;
+    font-weight:700;border:2px solid var(--line);background:#fff}
+  .feedback .fico{font-size:1.5rem;flex:none;line-height:1.2}
+  .feedback.ok{background:var(--ok-bg);border-color:#a8dcb8;color:#1f6b3a}
+  .feedback.tip{background:var(--warn-bg);border-color:#f0c99a;color:#8a4210}
+  .feedback[hidden]{display:none}
+  .feedback .speaker{width:40px;height:40px;font-size:1.1rem}
+
+  .choices{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+  .choice{background:#fff;border:2px solid var(--line);border-radius:14px;padding:14px 18px;font-weight:800;
+    font-size:1.05rem;cursor:pointer;min-height:56px;display:inline-flex;align-items:center;gap:10px;color:var(--ink)}
+  .choice:hover{border-color:var(--grape)}
+  .choice .cico{font-size:1.4rem}
+  .choice.correct{background:var(--ok-bg);border-color:var(--ok);color:#1f6b3a}
+  .choice.incorrect{background:var(--warn-bg);border-color:var(--warn);color:#8a4210}
+  .choice:disabled{cursor:default}
+
+  .graph{background:#fff;border:2px solid var(--line);border-radius:16px;padding:16px;overflow-x:auto}
+  .grow{display:grid;grid-template-columns:130px 1fr 54px;align-items:center;gap:10px;padding:8px 0;
+    border-bottom:2px dashed var(--line)}
+  .grow:last-child{border-bottom:none}
+  .glabel{display:flex;align-items:center;gap:8px;font-weight:800;font-size:.98rem}
+  .glabel .swatch{width:22px;height:22px;border-radius:6px;border:2px solid rgba(0,0,0,.2);flex:none}
+  .glabel .gi{font-size:1.4rem;line-height:1}
+  .gtrack{display:flex;flex-wrap:wrap;gap:6px;min-height:44px;align-content:center}
+  .gcell{width:40px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:9px;
+    background:#f6f4fc;border:2px solid var(--line);opacity:.28;transition:opacity .2s,transform .2s}
+  .gcell svg{width:34px;height:34px}
+  .gcell .emo{font-size:1.5rem}
+  .gcell.on{opacity:1}
+  .gcell.pop{animation:pop .35s}
+  @keyframes pop{0%{transform:scale(.4)}60%{transform:scale(1.2)}100%{transform:scale(1)}}
+  .gtotal{font-weight:900;font-size:1.3rem;color:var(--grape);text-align:center;background:#f0ebfb;
+    border-radius:9px;padding:4px}
+
+  .field{margin-bottom:16px}
+  .field>label.flabel{display:block;font-weight:800;margin-bottom:8px;color:var(--grape-d)}
+  .segrow{display:flex;gap:8px;flex-wrap:wrap}
+  .seg{background:#fff;border:2px solid var(--line);border-radius:12px;padding:10px 16px;font-weight:800;
+    cursor:pointer;color:var(--ink);min-height:46px}
+  .seg[aria-pressed="true"]{background:var(--grape);color:#fff;border-color:var(--grape-d)}
+  .switch{display:inline-flex;align-items:center;gap:10px;font-weight:800;cursor:pointer}
+  .switch input{width:22px;height:22px}
+  input[type=text],input[type=number]{font-family:inherit;font-weight:700;font-size:1rem;padding:10px 12px;
+    border:2px solid var(--line);border-radius:10px;color:var(--ink);background:#fff}
+  input:focus{outline:none;border-color:var(--grape)}
+
+  .catrow{display:grid;grid-template-columns:64px 1fr 110px auto;gap:10px;align-items:center;margin-bottom:10px}
+  .catrow .emopick{font-size:1.8rem;text-align:center;border:2px solid var(--line);border-radius:12px;
+    background:#fff;padding:6px;cursor:pointer;min-height:52px}
+  @media(max-width:560px){.catrow{grid-template-columns:56px 1fr;grid-auto-rows:auto}}
+
+  footer{border-top:2px solid var(--line);margin-top:36px;padding:20px 16px;text-align:center;
+    color:var(--ink-soft);font-weight:700;font-size:.9rem}
+  footer a{color:var(--grape);font-weight:800}
+  footer .dot{margin:0 8px;color:var(--line)}
+
+  .standards{background:#fff;border:2px solid var(--line);border-radius:14px;padding:14px 16px;margin-top:8px}
+  .standards summary{font-weight:800;color:var(--grape);cursor:pointer}
+  .standards p{font-weight:600;color:var(--ink-soft);font-size:.86rem;margin-top:8px}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms!important;transition-duration:.001ms!important}
+  }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <span class="brand"><span class="logo" aria-hidden="true">🐾</span> <span id="brandTxt"></span></span>
+  <label class="langwrap"><span class="glb" aria-hidden="true">🌐</span>
+    <select id="langSel" aria-label="Language / Idioma / 语言"></select></label>
+  <button class="tbtn" id="menuBtn" type="button"></button>
+  <button class="tbtn" id="settingsBtn" type="button"></button>
+  <a class="tbtn sun" id="homeLink" href="../../index.html"></a>
+</div>
+
+<main class="wrap" id="app"></main>
+
+<footer>
+  <span id="footTag"></span>
+  <div style="margin-top:6px">
+    <a href="../../index.html" id="footHome"></a><span class="dot">•</span><a href="../../policy.html" id="footPriv"></a>
+  </div>
+</footer>
+
+<script>
+"use strict";
+/* ============================================================
+   Pet Parade Sort and Graph — single-file early-math app
+   PreK & Kindergarten · data + classification · 7 languages
+   ============================================================ */
+
+/* ---------------- i18n dictionary ---------------- */
+const LANGS = [
+  {code:'en', name:'English'},
+  {code:'es', name:'Español'},
+  {code:'vi', name:'Tiếng Việt'},
+  {code:'ar', name:'العربية'},
+  {code:'hi', name:'हिन्दी'},
+  {code:'ur', name:'اردو'},
+  {code:'zh', name:'中文'},
+];
+const SPEECH_LANG = {en:'en-US',es:'es-ES',vi:'vi-VN',ar:'ar-SA',hi:'hi-IN',ur:'ur-PK',zh:'zh-CN'};
+
+const I18N = {
+ en:{
+  brand:"Pet Parade Sort & Graph",
+  'nav.modes':"Modes",'nav.teacher':"Teacher",'nav.home':"Home",
+  'menu.title':"Welcome to the Pet Parade!",
+  'menu.lede':"Sort friendly pets by what you see — color, kind, size, or home. Count each group and build a picture graph.",
+  'mode.sort.title':"Sort My Way",'mode.sort.desc':"Pick a rule, then drag each pet into the right group.",
+  'mode.guess.title':"Guess My Rule",'mode.guess.desc':"The pets are already sorted. Can you name the rule?",
+  'mode.fix.title':"Fix the Sort",'mode.fix.desc':"One pet is in the wrong group. Find it and move it.",
+  'mode.build.title':"Build a Graph",'mode.build.desc':"Sort the pets, then turn the groups into a picture graph.",
+  'mode.read.title':"Read the Graph",'mode.read.desc':"Look at a graph and answer: more, fewer, equal, how many?",
+  'mode.class.title':"Class Question",'mode.class.desc':"Teacher enters group totals to make a class picture graph.",
+  'std.summary':"Aligned standards",
+  'std.body':"<b>Texas Prekindergarten Guidelines:</b> PK3.V.E.1–2 &amp; PK4.V.E.1–2 (sort, classify, and compare objects; create and describe groups).<br><b>Kindergarten TEKS:</b> K.8(A) collect, sort, and organize data into two or three categories; K.8(B) use data to create picture graphs; K.8(C) draw conclusions from graphs.<br><b>Common Core:</b> K.MD.3 — classify objects into categories, count, and sort by count.",
+  'footer.tag':"No accounts · No data collected · Works offline",'footer.home':"Home",'footer.privacy':"Privacy",
+  'dir.sort':"Pick a rule. Then drag each pet into the group where it belongs.",
+  'dir.guess':"The pets are already sorted into groups. Look closely. What rule was used?",
+  'dir.fix':"One pet is in the wrong group. Find it and drag it to the group where it belongs.",
+  'dir.build':"Sort the pets into groups. Then press Make Graph to turn your groups into a picture graph.",
+  'dir.read':"Look at the picture graph. Then answer the question about the groups.",
+  'dir.class':"Teacher: type an anonymous total for each group. No names — just the numbers. Then make a class graph.",
+  'dir.settings':"Teacher settings. Choose the pets, the rule, and how many pets. Settings stay on this device only.",
+  'attr.color':"Color",'attr.type':"Kind",'attr.size':"Size",'attr.habitat':"Home",
+  'color.red':"Red",'color.blue':"Blue",'color.green':"Green",'color.yellow':"Yellow",'color.purple':"Purple",'color.orange':"Orange",
+  'size.small':"Small",'size.big':"Big",'habitat.land':"Land",'habitat.water':"Water",
+  'animal.cat':"Cat",'animal.dog':"Dog",'animal.rabbit':"Rabbit",'animal.bird':"Bird",'animal.fish':"Fish",'animal.turtle':"Turtle",'animal.frog':"Frog",
+  'toy.ball':"Ball",'toy.book':"Book",'toy.crayon':"Crayon",'toy.block':"Block",'toy.star':"Star",'toy.apple':"Apple",
+  'bin.petOne':"1 pet",'bin.petMany':"{n} pets",
+  'sort.choose':"Choose your sorting rule:",'sort.allSorted':"All pets sorted! 🎉",'sort.new':"New pets",
+  'sort.belongs':"Yes! This {animal} belongs in the {group} group.",
+  'sort.great':"Great sorting! You grouped every pet by {attr}.",
+  'sort.pickup':"Pick up a pet and drop it in a group.",
+  'explain.prompt':"How did you sort? Tap the sentence that tells your rule:",
+  'explain.option':"I sorted by {attr}.",
+  'explain.correctSpoken':"That is right. You sorted by {attr}.",
+  'explain.perfect':"Perfect — every pet in a group shares the same {attr}.",
+  'explain.wrongSpoken':"Look again. Each group is the same {attr}, so you sorted by {attr}.",
+  'explain.qSpoken':"You did it! Which sentence tells how you sorted?",
+  'clue.color':"Look at the color. This {animal} is {color}, so it goes in the {group} group.",
+  'clue.type':"Look at the kind of pet. This is a {animal}, so it goes in the {group} group.",
+  'clue.size':"Look at the size. This one is {size}, so it goes in the {group} group.",
+  'clue.habitat':"Look at the sorting rule. Does this animal live on {habitat}? It belongs in the {group} group.",
+  'clue.default':"Look at the sorting rule and try another group.",
+  'guess.q':"What is the sorting rule? Tap your answer:",'guess.option':"Sorted by {attr}",
+  'guess.correct':"Yes! Every group is the same {attr}. The rule is {attr}.",
+  'guess.wrong':"Look again. The pets in each group are not always the same {wrong}, but they ARE the same {attr}.",
+  'guess.new':"New puzzle",'guess.spoken':"Look at the groups. What rule was used to sort them?",
+  'fix.rule':"The rule is {attr}. Each group should match its label. Something is out of place!",
+  'fix.new':"New sort to fix",'fix.fixed':"Fixed it! Now every group matches its {attr} label.",
+  'fix.spoken':"One pet does not match its group. Which one looks different? Drag it to the right place.",
+  'build.sortBy':"Sort by:",'build.make':"Make Graph",'build.new':"New pets",
+  'build.allSorted':"All sorted! Now press Make Graph.",'build.spoken':"Sort every pet into a group. Then make your graph.",
+  'graph.title':"Our Picture Graph",'graph.counting':"Counting the {group} group.",
+  'gq.more.q':"Which group has more?",'gq.more.say':"Which group has the most pets?",
+  'gq.fewer.q':"Which group has fewer?",'gq.fewer.say':"Which group has the fewest pets?",
+  'gq.howmany.q':"How many are in the {group} group?",'gq.howmany.say':"How many pets are in the {group} group?",
+  'gq.equal.q':"Are any groups equal?",'gq.equal.say':"Do any groups have the same number of pets?",
+  'gq.onemore.q':"What if one more joined the {group} group?",'gq.onemore.say':"If one more pet joined the {group} group, how many would there be?",
+  'answer.yes':"Yes",'answer.no':"No",
+  'gq.correct':"Correct! {why}",'gq.answerIs':"The answer is {a}. {why}",
+  'why.more':"{group} has {n}, which is the most.",'why.fewer':"{group} has {n}, which is the fewest.",
+  'why.howmany':"Count them: the {group} group has {n}.",
+  'why.equalYes':"Two groups have the same number.",'why.equalNo':"Every group has a different number.",
+  'why.onemore':"{n} and 1 more makes {n1}.",'gq.another':"Another question",'read.new':"New graph",
+  'class.pick':"Pick a question or write your own:",'class.titleLabel':"Question title",
+  'class.titlePh':"e.g. Favorite Fruit",'class.groupPh':"Group name",'class.changePic':"Tap to change picture",
+  'class.add':"Add group",'class.make':"Make Class Graph",'class.remove':"Remove group",
+  'tmpl.fruit.title':"Favorite Fruit",'tmpl.fruit.a':"Apple",'tmpl.fruit.b':"Banana",'tmpl.fruit.c':"Grapes",
+  'tmpl.school.title':"How We Get to School",'tmpl.school.a':"Bus",'tmpl.school.b':"Car",'tmpl.school.c':"Walk",
+  'tmpl.center.title':"Favorite Center",'tmpl.center.a':"Blocks",'tmpl.center.b':"Books",'tmpl.center.c':"Art",
+  'set.objectSet':"Object set",'set.animals':"Animals",'set.toys':"Classroom objects",
+  'set.numGroups':"Number of groups",'set.2groups':"2 groups",'set.3groups':"3 groups",
+  'set.ruleDefault':"Sorting rule (default)",'set.maxPets':"Most pets per group",'set.upto':"Up to {n}",
+  'set.graphQ':"Show graph questions (more / fewer / equal / how many)",
+  'set.privacyTitle':"Privacy:",'set.privacyBody':"These settings are stored only in this browser. No student names, no accounts, no tracking, and nothing leaves this device. Class Question mode uses anonymous totals only.",
+  'set.reset':"Reset to defaults",'set.back':"Back to modes",'aria.read':"Read out loud",
+ },
+ es:{
+  brand:"Clasifica y Grafica el Desfile de Mascotas",
+  'nav.modes':"Modos",'nav.teacher':"Maestro",'nav.home':"Inicio",
+  'menu.title':"¡Bienvenido al Desfile de Mascotas!",
+  'menu.lede':"Clasifica mascotas por lo que ves: color, tipo, tamaño u hogar. Cuenta cada grupo y crea una gráfica con dibujos.",
+  'mode.sort.title':"Clasifico a mi manera",'mode.sort.desc':"Elige una regla y arrastra cada mascota al grupo correcto.",
+  'mode.guess.title':"Adivina mi regla",'mode.guess.desc':"Las mascotas ya están clasificadas. ¿Puedes decir la regla?",
+  'mode.fix.title':"Arregla la clasificación",'mode.fix.desc':"Una mascota está en el grupo equivocado. Encuéntrala y muévela.",
+  'mode.build.title':"Crea una gráfica",'mode.build.desc':"Clasifica las mascotas y convierte los grupos en una gráfica con dibujos.",
+  'mode.read.title':"Lee la gráfica",'mode.read.desc':"Mira una gráfica y responde: ¿más, menos, iguales, cuántas?",
+  'mode.class.title':"Pregunta de la clase",'mode.class.desc':"El maestro escribe los totales para crear una gráfica de la clase.",
+  'std.summary':"Estándares alineados",
+  'std.body':"<b>Guías de Prekínder de Texas:</b> PK3.V.E.1–2 y PK4.V.E.1–2 (ordenar, clasificar y comparar objetos; crear y describir grupos).<br><b>TEKS de Kínder:</b> K.8(A) recopilar, ordenar y organizar datos en dos o tres categorías; K.8(B) usar datos para crear gráficas con dibujos; K.8(C) sacar conclusiones de las gráficas.<br><b>Common Core:</b> K.MD.3 — clasificar objetos en categorías, contar y ordenar por cantidad.",
+  'footer.tag':"Sin cuentas · No se recopilan datos · Funciona sin conexión",'footer.home':"Inicio",'footer.privacy':"Privacidad",
+  'dir.sort':"Elige una regla. Luego arrastra cada mascota al grupo al que pertenece.",
+  'dir.guess':"Las mascotas ya están agrupadas. Observa con atención. ¿Qué regla se usó?",
+  'dir.fix':"Una mascota está en el grupo equivocado. Encuéntrala y arrástrala al grupo correcto.",
+  'dir.build':"Clasifica las mascotas en grupos. Luego presiona Crear gráfica para convertir tus grupos en una gráfica con dibujos.",
+  'dir.read':"Mira la gráfica con dibujos. Luego responde la pregunta sobre los grupos.",
+  'dir.class':"Maestro: escriba un total anónimo para cada grupo. Sin nombres, solo los números. Luego cree una gráfica de la clase.",
+  'dir.settings':"Ajustes del maestro. Elija las mascotas, la regla y cuántas mascotas. Los ajustes se guardan solo en este dispositivo.",
+  'attr.color':"Color",'attr.type':"Tipo",'attr.size':"Tamaño",'attr.habitat':"Hogar",
+  'color.red':"Rojo",'color.blue':"Azul",'color.green':"Verde",'color.yellow':"Amarillo",'color.purple':"Morado",'color.orange':"Naranja",
+  'size.small':"Pequeño",'size.big':"Grande",'habitat.land':"Tierra",'habitat.water':"Agua",
+  'animal.cat':"Gato",'animal.dog':"Perro",'animal.rabbit':"Conejo",'animal.bird':"Pájaro",'animal.fish':"Pez",'animal.turtle':"Tortuga",'animal.frog':"Rana",
+  'toy.ball':"Pelota",'toy.book':"Libro",'toy.crayon':"Crayón",'toy.block':"Bloque",'toy.star':"Estrella",'toy.apple':"Manzana",
+  'bin.petOne':"1 mascota",'bin.petMany':"{n} mascotas",
+  'sort.choose':"Elige tu regla para clasificar:",'sort.allSorted':"¡Todas las mascotas clasificadas! 🎉",'sort.new':"Nuevas mascotas",
+  'sort.belongs':"¡Sí! Este {animal} pertenece al grupo {group}.",
+  'sort.great':"¡Buena clasificación! Agrupaste cada mascota por {attr}.",
+  'sort.pickup':"Toma una mascota y suéltala en un grupo.",
+  'explain.prompt':"¿Cómo clasificaste? Toca la frase que dice tu regla:",
+  'explain.option':"Clasifiqué por {attr}.",
+  'explain.correctSpoken':"Correcto. Clasificaste por {attr}.",
+  'explain.perfect':"¡Perfecto! Cada mascota de un grupo comparte el mismo {attr}.",
+  'explain.wrongSpoken':"Mira otra vez. Cada grupo tiene el mismo {attr}, así que clasificaste por {attr}.",
+  'explain.qSpoken':"¡Lo lograste! ¿Qué frase dice cómo clasificaste?",
+  'clue.color':"Mira el color. Este {animal} es {color}, así que va en el grupo {group}.",
+  'clue.type':"Mira el tipo de mascota. Es un {animal}, así que va en el grupo {group}.",
+  'clue.size':"Mira el tamaño. Este es {size}, así que va en el grupo {group}.",
+  'clue.habitat':"Mira la regla. ¿Este animal vive en {habitat}? Pertenece al grupo {group}.",
+  'clue.default':"Mira la regla e intenta otro grupo.",
+  'guess.q':"¿Cuál es la regla? Toca tu respuesta:",'guess.option':"Clasificado por {attr}",
+  'guess.correct':"¡Sí! Cada grupo tiene el mismo {attr}. La regla es {attr}.",
+  'guess.wrong':"Mira otra vez. Las mascotas de cada grupo no siempre tienen el mismo {wrong}, pero SÍ tienen el mismo {attr}.",
+  'guess.new':"Nuevo rompecabezas",'guess.spoken':"Mira los grupos. ¿Qué regla se usó para clasificarlos?",
+  'fix.rule':"La regla es {attr}. Cada grupo debe coincidir con su etiqueta. ¡Algo está fuera de lugar!",
+  'fix.new':"Nueva clasificación para arreglar",'fix.fixed':"¡Arreglado! Ahora cada grupo coincide con su etiqueta de {attr}.",
+  'fix.spoken':"Una mascota no coincide con su grupo. ¿Cuál se ve diferente? Arrástrala al lugar correcto.",
+  'build.sortBy':"Clasificar por:",'build.make':"Crear gráfica",'build.new':"Nuevas mascotas",
+  'build.allSorted':"¡Todo clasificado! Ahora presiona Crear gráfica.",'build.spoken':"Clasifica cada mascota en un grupo. Luego crea tu gráfica.",
+  'graph.title':"Nuestra gráfica con dibujos",'graph.counting':"Contando el grupo {group}.",
+  'gq.more.q':"¿Qué grupo tiene más?",'gq.more.say':"¿Qué grupo tiene más mascotas?",
+  'gq.fewer.q':"¿Qué grupo tiene menos?",'gq.fewer.say':"¿Qué grupo tiene menos mascotas?",
+  'gq.howmany.q':"¿Cuántas hay en el grupo {group}?",'gq.howmany.say':"¿Cuántas mascotas hay en el grupo {group}?",
+  'gq.equal.q':"¿Hay grupos iguales?",'gq.equal.say':"¿Algún grupo tiene el mismo número de mascotas?",
+  'gq.onemore.q':"¿Y si una más se une al grupo {group}?",'gq.onemore.say':"Si una mascota más se une al grupo {group}, ¿cuántas habría?",
+  'answer.yes':"Sí",'answer.no':"No",
+  'gq.correct':"¡Correcto! {why}",'gq.answerIs':"La respuesta es {a}. {why}",
+  'why.more':"{group} tiene {n}, que es la mayor cantidad.",'why.fewer':"{group} tiene {n}, que es la menor cantidad.",
+  'why.howmany':"Cuéntalas: el grupo {group} tiene {n}.",
+  'why.equalYes':"Dos grupos tienen el mismo número.",'why.equalNo':"Cada grupo tiene un número diferente.",
+  'why.onemore':"{n} y 1 más son {n1}.",'gq.another':"Otra pregunta",'read.new':"Nueva gráfica",
+  'class.pick':"Elige una pregunta o escribe la tuya:",'class.titleLabel':"Título de la pregunta",
+  'class.titlePh':"p. ej. Fruta favorita",'class.groupPh':"Nombre del grupo",'class.changePic':"Toca para cambiar el dibujo",
+  'class.add':"Agregar grupo",'class.make':"Crear gráfica de la clase",'class.remove':"Quitar grupo",
+  'tmpl.fruit.title':"Fruta favorita",'tmpl.fruit.a':"Manzana",'tmpl.fruit.b':"Plátano",'tmpl.fruit.c':"Uvas",
+  'tmpl.school.title':"Cómo llegamos a la escuela",'tmpl.school.a':"Autobús",'tmpl.school.b':"Carro",'tmpl.school.c':"Caminar",
+  'tmpl.center.title':"Centro favorito",'tmpl.center.a':"Bloques",'tmpl.center.b':"Libros",'tmpl.center.c':"Arte",
+  'set.objectSet':"Conjunto de objetos",'set.animals':"Animales",'set.toys':"Objetos del salón",
+  'set.numGroups':"Número de grupos",'set.2groups':"2 grupos",'set.3groups':"3 grupos",
+  'set.ruleDefault':"Regla de clasificación (predeterminada)",'set.maxPets':"Máximo de mascotas por grupo",'set.upto':"Hasta {n}",
+  'set.graphQ':"Mostrar preguntas de la gráfica (más / menos / iguales / cuántas)",
+  'set.privacyTitle':"Privacidad:",'set.privacyBody':"Estos ajustes se guardan solo en este navegador. Sin nombres de estudiantes, sin cuentas, sin rastreo, y nada sale de este dispositivo. El modo Pregunta de la clase usa solo totales anónimos.",
+  'set.reset':"Restablecer valores",'set.back':"Volver a los modos",'aria.read':"Leer en voz alta",
+ },
+ vi:{
+  brand:"Phân loại & Vẽ biểu đồ Diễu hành Thú cưng",
+  'nav.modes':"Chế độ",'nav.teacher':"Giáo viên",'nav.home':"Trang chủ",
+  'menu.title':"Chào mừng đến Cuộc diễu hành Thú cưng!",
+  'menu.lede':"Phân loại thú cưng theo điều em thấy: màu sắc, loại, kích thước hoặc nơi ở. Đếm mỗi nhóm và tạo biểu đồ tranh.",
+  'mode.sort.title':"Phân loại theo cách của em",'mode.sort.desc':"Chọn một quy tắc, rồi kéo mỗi thú cưng vào đúng nhóm.",
+  'mode.guess.title':"Đoán quy tắc",'mode.guess.desc':"Thú cưng đã được phân loại. Em có đoán được quy tắc không?",
+  'mode.fix.title':"Sửa cách phân loại",'mode.fix.desc':"Một thú cưng ở sai nhóm. Hãy tìm và di chuyển nó.",
+  'mode.build.title':"Tạo biểu đồ",'mode.build.desc':"Phân loại thú cưng, rồi biến các nhóm thành biểu đồ tranh.",
+  'mode.read.title':"Đọc biểu đồ",'mode.read.desc':"Nhìn biểu đồ và trả lời: nhiều hơn, ít hơn, bằng nhau, bao nhiêu?",
+  'mode.class.title':"Câu hỏi của lớp",'mode.class.desc':"Giáo viên nhập tổng số mỗi nhóm để tạo biểu đồ tranh của lớp.",
+  'std.summary':"Tiêu chuẩn phù hợp",
+  'std.body':"<b>Hướng dẫn Mầm non Texas:</b> PK3.V.E.1–2 và PK4.V.E.1–2 (sắp xếp, phân loại và so sánh đồ vật; tạo và mô tả các nhóm).<br><b>TEKS Mẫu giáo:</b> K.8(A) thu thập, sắp xếp và tổ chức dữ liệu thành hai hoặc ba nhóm; K.8(B) dùng dữ liệu để tạo biểu đồ tranh; K.8(C) rút ra kết luận từ biểu đồ.<br><b>Common Core:</b> K.MD.3 — phân loại đồ vật vào các nhóm, đếm và sắp xếp theo số lượng.",
+  'footer.tag':"Không tài khoản · Không thu thập dữ liệu · Hoạt động ngoại tuyến",'footer.home':"Trang chủ",'footer.privacy':"Quyền riêng tư",
+  'dir.sort':"Chọn một quy tắc. Rồi kéo mỗi thú cưng vào nhóm phù hợp.",
+  'dir.guess':"Thú cưng đã được xếp thành các nhóm. Hãy nhìn kỹ. Quy tắc nào đã được dùng?",
+  'dir.fix':"Một thú cưng ở sai nhóm. Hãy tìm và kéo nó vào nhóm đúng.",
+  'dir.build':"Phân loại thú cưng thành các nhóm. Rồi nhấn Tạo biểu đồ để biến các nhóm thành biểu đồ tranh.",
+  'dir.read':"Nhìn biểu đồ tranh. Rồi trả lời câu hỏi về các nhóm.",
+  'dir.class':"Giáo viên: nhập tổng số ẩn danh cho mỗi nhóm. Không tên — chỉ con số. Rồi tạo biểu đồ của lớp.",
+  'dir.settings':"Cài đặt giáo viên. Chọn thú cưng, quy tắc và số lượng thú cưng. Cài đặt chỉ lưu trên thiết bị này.",
+  'attr.color':"Màu sắc",'attr.type':"Loại",'attr.size':"Kích thước",'attr.habitat':"Nơi ở",
+  'color.red':"Đỏ",'color.blue':"Xanh dương",'color.green':"Xanh lá",'color.yellow':"Vàng",'color.purple':"Tím",'color.orange':"Cam",
+  'size.small':"Nhỏ",'size.big':"To",'habitat.land':"Trên cạn",'habitat.water':"Dưới nước",
+  'animal.cat':"Mèo",'animal.dog':"Chó",'animal.rabbit':"Thỏ",'animal.bird':"Chim",'animal.fish':"Cá",'animal.turtle':"Rùa",'animal.frog':"Ếch",
+  'toy.ball':"Bóng",'toy.book':"Sách",'toy.crayon':"Bút sáp",'toy.block':"Khối",'toy.star':"Ngôi sao",'toy.apple':"Táo",
+  'bin.petOne':"1 con",'bin.petMany':"{n} con",
+  'sort.choose':"Chọn quy tắc phân loại của em:",'sort.allSorted':"Đã phân loại hết thú cưng! 🎉",'sort.new':"Thú cưng mới",
+  'sort.belongs':"Đúng rồi! {animal} này thuộc nhóm {group}.",
+  'sort.great':"Phân loại giỏi lắm! Em đã nhóm mọi thú cưng theo {attr}.",
+  'sort.pickup':"Nhấc một thú cưng và thả vào một nhóm.",
+  'explain.prompt':"Em đã phân loại thế nào? Chạm vào câu nói đúng quy tắc:",
+  'explain.option':"Em phân loại theo {attr}.",
+  'explain.correctSpoken':"Đúng rồi. Em đã phân loại theo {attr}.",
+  'explain.perfect':"Tuyệt vời — mọi thú cưng trong một nhóm có cùng {attr}.",
+  'explain.wrongSpoken':"Nhìn lại nhé. Mỗi nhóm có cùng {attr}, nên em đã phân loại theo {attr}.",
+  'explain.qSpoken':"Em làm được rồi! Câu nào nói cách em phân loại?",
+  'clue.color':"Nhìn màu sắc. {animal} này màu {color}, nên vào nhóm {group}.",
+  'clue.type':"Nhìn loại thú cưng. Đây là {animal}, nên vào nhóm {group}.",
+  'clue.size':"Nhìn kích thước. Con này {size}, nên vào nhóm {group}.",
+  'clue.habitat':"Nhìn quy tắc. Con vật này sống ở {habitat} phải không? Nó thuộc nhóm {group}.",
+  'clue.default':"Nhìn quy tắc và thử nhóm khác.",
+  'guess.q':"Quy tắc là gì? Chạm vào câu trả lời:",'guess.option':"Phân loại theo {attr}",
+  'guess.correct':"Đúng! Mỗi nhóm có cùng {attr}. Quy tắc là {attr}.",
+  'guess.wrong':"Nhìn lại nhé. Thú cưng trong mỗi nhóm không phải lúc nào cũng cùng {wrong}, nhưng chúng CÓ cùng {attr}.",
+  'guess.new':"Câu đố mới",'guess.spoken':"Nhìn các nhóm. Quy tắc nào đã dùng để phân loại?",
+  'fix.rule':"Quy tắc là {attr}. Mỗi nhóm phải khớp với nhãn của nó. Có gì đó sai chỗ!",
+  'fix.new':"Bài phân loại mới để sửa",'fix.fixed':"Sửa xong! Giờ mỗi nhóm khớp với nhãn {attr} của nó.",
+  'fix.spoken':"Một thú cưng không khớp với nhóm của nó. Con nào trông khác? Hãy kéo nó về đúng chỗ.",
+  'build.sortBy':"Phân loại theo:",'build.make':"Tạo biểu đồ",'build.new':"Thú cưng mới",
+  'build.allSorted':"Đã phân loại hết! Giờ nhấn Tạo biểu đồ.",'build.spoken':"Phân loại mỗi thú cưng vào một nhóm. Rồi tạo biểu đồ.",
+  'graph.title':"Biểu đồ tranh của chúng ta",'graph.counting':"Đang đếm nhóm {group}.",
+  'gq.more.q':"Nhóm nào nhiều hơn?",'gq.more.say':"Nhóm nào có nhiều thú cưng nhất?",
+  'gq.fewer.q':"Nhóm nào ít hơn?",'gq.fewer.say':"Nhóm nào có ít thú cưng nhất?",
+  'gq.howmany.q':"Nhóm {group} có bao nhiêu con?",'gq.howmany.say':"Nhóm {group} có bao nhiêu thú cưng?",
+  'gq.equal.q':"Có nhóm nào bằng nhau không?",'gq.equal.say':"Có nhóm nào có cùng số thú cưng không?",
+  'gq.onemore.q':"Nếu thêm một con vào nhóm {group} thì sao?",'gq.onemore.say':"Nếu thêm một thú cưng vào nhóm {group}, sẽ có bao nhiêu?",
+  'answer.yes':"Có",'answer.no':"Không",
+  'gq.correct':"Chính xác! {why}",'gq.answerIs':"Câu trả lời là {a}. {why}",
+  'why.more':"{group} có {n}, nhiều nhất.",'why.fewer':"{group} có {n}, ít nhất.",
+  'why.howmany':"Hãy đếm: nhóm {group} có {n}.",
+  'why.equalYes':"Hai nhóm có cùng số lượng.",'why.equalNo':"Mỗi nhóm có số lượng khác nhau.",
+  'why.onemore':"{n} thêm 1 là {n1}.",'gq.another':"Câu hỏi khác",'read.new':"Biểu đồ mới",
+  'class.pick':"Chọn một câu hỏi hoặc tự viết:",'class.titleLabel':"Tiêu đề câu hỏi",
+  'class.titlePh':"ví dụ: Trái cây yêu thích",'class.groupPh':"Tên nhóm",'class.changePic':"Chạm để đổi hình",
+  'class.add':"Thêm nhóm",'class.make':"Tạo biểu đồ của lớp",'class.remove':"Xóa nhóm",
+  'tmpl.fruit.title':"Trái cây yêu thích",'tmpl.fruit.a':"Táo",'tmpl.fruit.b':"Chuối",'tmpl.fruit.c':"Nho",
+  'tmpl.school.title':"Cách chúng em đến trường",'tmpl.school.a':"Xe buýt",'tmpl.school.b':"Ô tô",'tmpl.school.c':"Đi bộ",
+  'tmpl.center.title':"Góc yêu thích",'tmpl.center.a':"Khối xếp",'tmpl.center.b':"Sách",'tmpl.center.c':"Nghệ thuật",
+  'set.objectSet':"Bộ đồ vật",'set.animals':"Động vật",'set.toys':"Đồ vật trong lớp",
+  'set.numGroups':"Số nhóm",'set.2groups':"2 nhóm",'set.3groups':"3 nhóm",
+  'set.ruleDefault':"Quy tắc phân loại (mặc định)",'set.maxPets':"Số thú cưng tối đa mỗi nhóm",'set.upto':"Tối đa {n}",
+  'set.graphQ':"Hiển thị câu hỏi biểu đồ (nhiều hơn / ít hơn / bằng nhau / bao nhiêu)",
+  'set.privacyTitle':"Quyền riêng tư:",'set.privacyBody':"Các cài đặt này chỉ lưu trong trình duyệt này. Không tên học sinh, không tài khoản, không theo dõi, và không có gì rời khỏi thiết bị này. Chế độ Câu hỏi của lớp chỉ dùng tổng số ẩn danh.",
+  'set.reset':"Đặt lại mặc định",'set.back':"Quay lại các chế độ",'aria.read':"Đọc to",
+ },
+ ar:{
+  brand:"تصنيف ورسم موكب الحيوانات الأليفة",
+  'nav.modes':"الأنماط",'nav.teacher':"المعلّم",'nav.home':"الرئيسية",
+  'menu.title':"أهلاً بك في موكب الحيوانات الأليفة!",
+  'menu.lede':"صنِّف الحيوانات الأليفة حسب ما تراه: اللون أو النوع أو الحجم أو المكان. عُدّ كل مجموعة وأنشئ رسمًا بالصور.",
+  'mode.sort.title':"أصنّف بطريقتي",'mode.sort.desc':"اختر قاعدة، ثم اسحب كل حيوان إلى المجموعة الصحيحة.",
+  'mode.guess.title':"خمّن قاعدتي",'mode.guess.desc':"الحيوانات مصنّفة بالفعل. هل تعرف القاعدة؟",
+  'mode.fix.title':"أصلح التصنيف",'mode.fix.desc':"حيوان واحد في المجموعة الخطأ. اعثر عليه وحرّكه.",
+  'mode.build.title':"أنشئ رسمًا بيانيًا",'mode.build.desc':"صنّف الحيوانات، ثم حوّل المجموعات إلى رسم بالصور.",
+  'mode.read.title':"اقرأ الرسم البياني",'mode.read.desc':"انظر إلى الرسم وأجب: أكثر، أقل، متساوٍ، كم العدد؟",
+  'mode.class.title':"سؤال الصف",'mode.class.desc':"يُدخل المعلّم مجاميع كل مجموعة لإنشاء رسم بالصور للصف.",
+  'std.summary':"المعايير المتوافقة",
+  'std.body':"<b>إرشادات ما قبل الروضة في تكساس:</b> PK3.V.E.1–2 وPK4.V.E.1–2 (ترتيب الأشياء وتصنيفها ومقارنتها؛ إنشاء المجموعات ووصفها).<br><b>معايير الروضة TEKS:</b> K.8(A) جمع البيانات وترتيبها وتنظيمها في مجموعتين أو ثلاث؛ K.8(B) استخدام البيانات لإنشاء رسوم بالصور؛ K.8(C) استخلاص النتائج من الرسوم.<br><b>Common Core:</b> K.MD.3 — تصنيف الأشياء في فئات والعدّ والترتيب حسب العدد.",
+  'footer.tag':"بدون حسابات · لا يتم جمع بيانات · يعمل دون اتصال",'footer.home':"الرئيسية",'footer.privacy':"الخصوصية",
+  'dir.sort':"اختر قاعدة. ثم اسحب كل حيوان إلى المجموعة التي ينتمي إليها.",
+  'dir.guess':"الحيوانات مرتبة في مجموعات. انظر بعناية. ما القاعدة المستخدمة؟",
+  'dir.fix':"حيوان واحد في المجموعة الخطأ. اعثر عليه واسحبه إلى المجموعة الصحيحة.",
+  'dir.build':"صنّف الحيوانات في مجموعات. ثم اضغط أنشئ الرسم لتحويل مجموعاتك إلى رسم بالصور.",
+  'dir.read':"انظر إلى الرسم بالصور. ثم أجب عن السؤال حول المجموعات.",
+  'dir.class':"المعلّم: اكتب مجموعًا مجهول الهوية لكل مجموعة. بلا أسماء — أرقام فقط. ثم أنشئ رسم الصف.",
+  'dir.settings':"إعدادات المعلّم. اختر الحيوانات والقاعدة وعددها. تُحفظ الإعدادات على هذا الجهاز فقط.",
+  'attr.color':"اللون",'attr.type':"النوع",'attr.size':"الحجم",'attr.habitat':"المكان",
+  'color.red':"أحمر",'color.blue':"أزرق",'color.green':"أخضر",'color.yellow':"أصفر",'color.purple':"بنفسجي",'color.orange':"برتقالي",
+  'size.small':"صغير",'size.big':"كبير",'habitat.land':"اليابسة",'habitat.water':"الماء",
+  'animal.cat':"قطة",'animal.dog':"كلب",'animal.rabbit':"أرنب",'animal.bird':"طائر",'animal.fish':"سمكة",'animal.turtle':"سلحفاة",'animal.frog':"ضفدع",
+  'toy.ball':"كرة",'toy.book':"كتاب",'toy.crayon':"قلم تلوين",'toy.block':"مكعّب",'toy.star':"نجمة",'toy.apple':"تفاحة",
+  'bin.petOne':"حيوان واحد",'bin.petMany':"{n} حيوانات",
+  'sort.choose':"اختر قاعدة التصنيف:",'sort.allSorted':"تم تصنيف كل الحيوانات! 🎉",'sort.new':"حيوانات جديدة",
+  'sort.belongs':"نعم! هذا الـ{animal} ينتمي إلى مجموعة {group}.",
+  'sort.great':"تصنيف رائع! جمعت كل حيوان حسب {attr}.",
+  'sort.pickup':"التقط حيوانًا وأفلته في مجموعة.",
+  'explain.prompt':"كيف صنّفت؟ المس الجملة التي تصف قاعدتك:",
+  'explain.option':"صنّفت حسب {attr}.",
+  'explain.correctSpoken':"صحيح. صنّفت حسب {attr}.",
+  'explain.perfect':"ممتاز — كل حيوان في المجموعة يشترك في نفس {attr}.",
+  'explain.wrongSpoken':"انظر مرة أخرى. كل مجموعة لها نفس {attr}، إذن صنّفت حسب {attr}.",
+  'explain.qSpoken':"أحسنت! أي جملة تصف كيف صنّفت؟",
+  'clue.color':"انظر إلى اللون. هذا الـ{animal} لونه {color}، لذا يذهب إلى مجموعة {group}.",
+  'clue.type':"انظر إلى نوع الحيوان. هذا {animal}، لذا يذهب إلى مجموعة {group}.",
+  'clue.size':"انظر إلى الحجم. هذا {size}، لذا يذهب إلى مجموعة {group}.",
+  'clue.habitat':"انظر إلى القاعدة. هل يعيش هذا الحيوان في {habitat}؟ إنه ينتمي إلى مجموعة {group}.",
+  'clue.default':"انظر إلى القاعدة وجرّب مجموعة أخرى.",
+  'guess.q':"ما هي قاعدة التصنيف؟ المس إجابتك:",'guess.option':"مصنّف حسب {attr}",
+  'guess.correct':"نعم! كل مجموعة لها نفس {attr}. القاعدة هي {attr}.",
+  'guess.wrong':"انظر مرة أخرى. الحيوانات في كل مجموعة ليست دائمًا نفس {wrong}، لكنها تشترك في نفس {attr}.",
+  'guess.new':"لغز جديد",'guess.spoken':"انظر إلى المجموعات. ما القاعدة التي استُخدمت لتصنيفها؟",
+  'fix.rule':"القاعدة هي {attr}. يجب أن تطابق كل مجموعة عنوانها. هناك شيء في غير مكانه!",
+  'fix.new':"تصنيف جديد لإصلاحه",'fix.fixed':"أصلحته! الآن كل مجموعة تطابق عنوان {attr}.",
+  'fix.spoken':"حيوان واحد لا يطابق مجموعته. أيها يبدو مختلفًا؟ اسحبه إلى المكان الصحيح.",
+  'build.sortBy':"صنّف حسب:",'build.make':"أنشئ الرسم",'build.new':"حيوانات جديدة",
+  'build.allSorted':"تم التصنيف! الآن اضغط أنشئ الرسم.",'build.spoken':"صنّف كل حيوان في مجموعة. ثم أنشئ رسمك.",
+  'graph.title':"رسمنا بالصور",'graph.counting':"نعدّ مجموعة {group}.",
+  'gq.more.q':"أي مجموعة أكثر؟",'gq.more.say':"أي مجموعة بها أكثر عدد من الحيوانات؟",
+  'gq.fewer.q':"أي مجموعة أقل؟",'gq.fewer.say':"أي مجموعة بها أقل عدد من الحيوانات؟",
+  'gq.howmany.q':"كم عدد الحيوانات في مجموعة {group}؟",'gq.howmany.say':"كم عدد الحيوانات في مجموعة {group}؟",
+  'gq.equal.q':"هل توجد مجموعات متساوية؟",'gq.equal.say':"هل لأي مجموعتين نفس عدد الحيوانات؟",
+  'gq.onemore.q':"ماذا لو انضم حيوان آخر إلى مجموعة {group}؟",'gq.onemore.say':"إذا انضم حيوان آخر إلى مجموعة {group}، فكم سيصبح العدد؟",
+  'answer.yes':"نعم",'answer.no':"لا",
+  'gq.correct':"صحيح! {why}",'gq.answerIs':"الإجابة هي {a}. {why}",
+  'why.more':"{group} بها {n}، وهي الأكثر.",'why.fewer':"{group} بها {n}، وهي الأقل.",
+  'why.howmany':"عُدّها: مجموعة {group} بها {n}.",
+  'why.equalYes':"مجموعتان بهما نفس العدد.",'why.equalNo':"كل مجموعة بها عدد مختلف.",
+  'why.onemore':"{n} وواحد آخر يصبح {n1}.",'gq.another':"سؤال آخر",'read.new':"رسم جديد",
+  'class.pick':"اختر سؤالًا أو اكتب سؤالك:",'class.titleLabel':"عنوان السؤال",
+  'class.titlePh':"مثال: الفاكهة المفضلة",'class.groupPh':"اسم المجموعة",'class.changePic':"المس لتغيير الصورة",
+  'class.add':"أضف مجموعة",'class.make':"أنشئ رسم الصف",'class.remove':"أزل المجموعة",
+  'tmpl.fruit.title':"الفاكهة المفضلة",'tmpl.fruit.a':"تفاحة",'tmpl.fruit.b':"موز",'tmpl.fruit.c':"عنب",
+  'tmpl.school.title':"كيف نصل إلى المدرسة",'tmpl.school.a':"حافلة",'tmpl.school.b':"سيارة",'tmpl.school.c':"المشي",
+  'tmpl.center.title':"الركن المفضل",'tmpl.center.a':"مكعّبات",'tmpl.center.b':"كتب",'tmpl.center.c':"فن",
+  'set.objectSet':"مجموعة الأشياء",'set.animals':"حيوانات",'set.toys':"أدوات الصف",
+  'set.numGroups':"عدد المجموعات",'set.2groups':"مجموعتان",'set.3groups':"٣ مجموعات",
+  'set.ruleDefault':"قاعدة التصنيف (الافتراضية)",'set.maxPets':"أقصى عدد حيوانات لكل مجموعة",'set.upto':"حتى {n}",
+  'set.graphQ':"إظهار أسئلة الرسم (أكثر / أقل / متساوٍ / كم)",
+  'set.privacyTitle':"الخصوصية:",'set.privacyBody':"تُحفظ هذه الإعدادات في هذا المتصفح فقط. لا أسماء طلاب، لا حسابات، لا تتبع، ولا شيء يغادر هذا الجهاز. يستخدم نمط سؤال الصف مجاميع مجهولة فقط.",
+  'set.reset':"إعادة التعيين للافتراضي",'set.back':"العودة إلى الأنماط",'aria.read':"اقرأ بصوت عالٍ",
+ },
+ hi:{
+  brand:"पेट परेड छँटाई और ग्राफ",
+  'nav.modes':"मोड",'nav.teacher':"शिक्षक",'nav.home':"होम",
+  'menu.title':"पेट परेड में आपका स्वागत है!",
+  'menu.lede':"पालतू जानवरों को जो आप देखते हैं उसके अनुसार छाँटें: रंग, प्रकार, आकार या घर। हर समूह को गिनें और चित्र ग्राफ बनाएँ।",
+  'mode.sort.title':"मैं अपने तरीके से छाँटूँ",'mode.sort.desc':"एक नियम चुनें, फिर हर पालतू को सही समूह में खींचें।",
+  'mode.guess.title':"मेरा नियम पहचानो",'mode.guess.desc':"पालतू पहले से छँटे हैं। क्या आप नियम बता सकते हैं?",
+  'mode.fix.title':"छँटाई ठीक करो",'mode.fix.desc':"एक पालतू गलत समूह में है। उसे ढूँढ़कर हटाएँ।",
+  'mode.build.title':"ग्राफ बनाओ",'mode.build.desc':"पालतू छाँटें, फिर समूहों को चित्र ग्राफ में बदलें।",
+  'mode.read.title':"ग्राफ पढ़ो",'mode.read.desc':"ग्राफ देखें और उत्तर दें: अधिक, कम, बराबर, कितने?",
+  'mode.class.title':"कक्षा का प्रश्न",'mode.class.desc':"शिक्षक हर समूह का कुल भरते हैं ताकि कक्षा का चित्र ग्राफ बने।",
+  'std.summary':"संरेखित मानक",
+  'std.body':"<b>टेक्सास प्री-किंडरगार्टन दिशानिर्देश:</b> PK3.V.E.1–2 और PK4.V.E.1–2 (वस्तुओं को क्रमबद्ध, वर्गीकृत और तुलना करना; समूह बनाना और वर्णन करना)।<br><b>किंडरगार्टन TEKS:</b> K.8(A) डेटा को दो या तीन श्रेणियों में एकत्र, क्रमबद्ध और व्यवस्थित करना; K.8(B) डेटा से चित्र ग्राफ बनाना; K.8(C) ग्राफ से निष्कर्ष निकालना।<br><b>Common Core:</b> K.MD.3 — वस्तुओं को श्रेणियों में वर्गीकृत करना, गिनना और संख्या के अनुसार क्रमबद्ध करना।",
+  'footer.tag':"कोई खाता नहीं · कोई डेटा एकत्र नहीं · ऑफ़लाइन काम करता है",'footer.home':"होम",'footer.privacy':"गोपनीयता",
+  'dir.sort':"एक नियम चुनें। फिर हर पालतू को उसके सही समूह में खींचें।",
+  'dir.guess':"पालतू समूहों में छँटे हैं। ध्यान से देखें। कौन सा नियम इस्तेमाल हुआ?",
+  'dir.fix':"एक पालतू गलत समूह में है। उसे ढूँढ़कर सही समूह में खींचें।",
+  'dir.build':"पालतू को समूहों में छाँटें। फिर ग्राफ बनाओ दबाएँ ताकि समूह चित्र ग्राफ बनें।",
+  'dir.read':"चित्र ग्राफ देखें। फिर समूहों के बारे में प्रश्न का उत्तर दें।",
+  'dir.class':"शिक्षक: हर समूह के लिए गुमनाम कुल लिखें। कोई नाम नहीं — केवल संख्याएँ। फिर कक्षा का ग्राफ बनाएँ।",
+  'dir.settings':"शिक्षक सेटिंग्स। पालतू, नियम और संख्या चुनें। सेटिंग्स केवल इसी डिवाइस पर रहती हैं।",
+  'attr.color':"रंग",'attr.type':"प्रकार",'attr.size':"आकार",'attr.habitat':"घर",
+  'color.red':"लाल",'color.blue':"नीला",'color.green':"हरा",'color.yellow':"पीला",'color.purple':"बैंगनी",'color.orange':"नारंगी",
+  'size.small':"छोटा",'size.big':"बड़ा",'habitat.land':"ज़मीन",'habitat.water':"पानी",
+  'animal.cat':"बिल्ली",'animal.dog':"कुत्ता",'animal.rabbit':"खरगोश",'animal.bird':"चिड़िया",'animal.fish':"मछली",'animal.turtle':"कछुआ",'animal.frog':"मेंढक",
+  'toy.ball':"गेंद",'toy.book':"किताब",'toy.crayon':"क्रेयॉन",'toy.block':"ब्लॉक",'toy.star':"तारा",'toy.apple':"सेब",
+  'bin.petOne':"1 पालतू",'bin.petMany':"{n} पालतू",
+  'sort.choose':"अपना छाँटने का नियम चुनें:",'sort.allSorted':"सभी पालतू छँट गए! 🎉",'sort.new':"नए पालतू",
+  'sort.belongs':"हाँ! यह {animal} {group} समूह में आता है।",
+  'sort.great':"बढ़िया छँटाई! आपने हर पालतू को {attr} के अनुसार समूह में रखा।",
+  'sort.pickup':"एक पालतू उठाएँ और समूह में छोड़ें।",
+  'explain.prompt':"आपने कैसे छाँटा? वह वाक्य छुएँ जो आपका नियम बताता है:",
+  'explain.option':"मैंने {attr} के अनुसार छाँटा।",
+  'explain.correctSpoken':"सही है। आपने {attr} के अनुसार छाँटा।",
+  'explain.perfect':"बहुत बढ़िया — एक समूह के हर पालतू का {attr} एक जैसा है।",
+  'explain.wrongSpoken':"फिर से देखें। हर समूह का {attr} एक जैसा है, इसलिए आपने {attr} के अनुसार छाँटा।",
+  'explain.qSpoken':"आपने कर दिखाया! कौन सा वाक्य बताता है कि आपने कैसे छाँटा?",
+  'clue.color':"रंग देखें। यह {animal} {color} है, इसलिए यह {group} समूह में जाता है।",
+  'clue.type':"पालतू का प्रकार देखें। यह {animal} है, इसलिए यह {group} समूह में जाता है।",
+  'clue.size':"आकार देखें। यह {size} है, इसलिए यह {group} समूह में जाता है।",
+  'clue.habitat':"नियम देखें। क्या यह जानवर {habitat} पर रहता है? यह {group} समूह में आता है।",
+  'clue.default':"नियम देखें और दूसरा समूह आज़माएँ।",
+  'guess.q':"छाँटने का नियम क्या है? अपना उत्तर छुएँ:",'guess.option':"{attr} के अनुसार छँटा",
+  'guess.correct':"हाँ! हर समूह का {attr} एक जैसा है। नियम {attr} है।",
+  'guess.wrong':"फिर से देखें। हर समूह के पालतू का {wrong} हमेशा एक जैसा नहीं है, पर उनका {attr} एक जैसा है।",
+  'guess.new':"नई पहेली",'guess.spoken':"समूहों को देखें। इन्हें छाँटने के लिए कौन सा नियम इस्तेमाल हुआ?",
+  'fix.rule':"नियम {attr} है। हर समूह अपने लेबल से मेल खाना चाहिए। कुछ गलत जगह पर है!",
+  'fix.new':"ठीक करने के लिए नई छँटाई",'fix.fixed':"ठीक हो गया! अब हर समूह अपने {attr} लेबल से मेल खाता है।",
+  'fix.spoken':"एक पालतू अपने समूह से मेल नहीं खाता। कौन सा अलग दिखता है? उसे सही जगह खींचें।",
+  'build.sortBy':"इसके अनुसार छाँटें:",'build.make':"ग्राफ बनाओ",'build.new':"नए पालतू",
+  'build.allSorted':"सब छँट गया! अब ग्राफ बनाओ दबाएँ।",'build.spoken':"हर पालतू को एक समूह में छाँटें। फिर अपना ग्राफ बनाएँ।",
+  'graph.title':"हमारा चित्र ग्राफ",'graph.counting':"{group} समूह गिन रहे हैं।",
+  'gq.more.q':"किस समूह में अधिक हैं?",'gq.more.say':"किस समूह में सबसे अधिक पालतू हैं?",
+  'gq.fewer.q':"किस समूह में कम हैं?",'gq.fewer.say':"किस समूह में सबसे कम पालतू हैं?",
+  'gq.howmany.q':"{group} समूह में कितने हैं?",'gq.howmany.say':"{group} समूह में कितने पालतू हैं?",
+  'gq.equal.q':"क्या कोई समूह बराबर हैं?",'gq.equal.say':"क्या किन्हीं समूहों में पालतू की संख्या समान है?",
+  'gq.onemore.q':"यदि {group} समूह में एक और जुड़ जाए तो?",'gq.onemore.say':"यदि {group} समूह में एक और पालतू जुड़े, तो कितने होंगे?",
+  'answer.yes':"हाँ",'answer.no':"नहीं",
+  'gq.correct':"सही! {why}",'gq.answerIs':"उत्तर {a} है। {why}",
+  'why.more':"{group} में {n} हैं, जो सबसे अधिक है।",'why.fewer':"{group} में {n} हैं, जो सबसे कम है।",
+  'why.howmany':"गिनें: {group} समूह में {n} हैं।",
+  'why.equalYes':"दो समूहों में समान संख्या है।",'why.equalNo':"हर समूह में अलग संख्या है।",
+  'why.onemore':"{n} और 1 मिलाकर {n1} होते हैं।",'gq.another':"एक और प्रश्न",'read.new':"नया ग्राफ",
+  'class.pick':"एक प्रश्न चुनें या अपना लिखें:",'class.titleLabel':"प्रश्न का शीर्षक",
+  'class.titlePh':"जैसे पसंदीदा फल",'class.groupPh':"समूह का नाम",'class.changePic':"चित्र बदलने के लिए छुएँ",
+  'class.add':"समूह जोड़ें",'class.make':"कक्षा का ग्राफ बनाएँ",'class.remove':"समूह हटाएँ",
+  'tmpl.fruit.title':"पसंदीदा फल",'tmpl.fruit.a':"सेब",'tmpl.fruit.b':"केला",'tmpl.fruit.c':"अंगूर",
+  'tmpl.school.title':"हम स्कूल कैसे जाते हैं",'tmpl.school.a':"बस",'tmpl.school.b':"कार",'tmpl.school.c':"पैदल",
+  'tmpl.center.title':"पसंदीदा केंद्र",'tmpl.center.a':"ब्लॉक",'tmpl.center.b':"किताबें",'tmpl.center.c':"कला",
+  'set.objectSet':"वस्तु सेट",'set.animals':"जानवर",'set.toys':"कक्षा की वस्तुएँ",
+  'set.numGroups':"समूहों की संख्या",'set.2groups':"2 समूह",'set.3groups':"3 समूह",
+  'set.ruleDefault':"छाँटने का नियम (डिफ़ॉल्ट)",'set.maxPets':"प्रति समूह अधिकतम पालतू",'set.upto':"{n} तक",
+  'set.graphQ':"ग्राफ प्रश्न दिखाएँ (अधिक / कम / बराबर / कितने)",
+  'set.privacyTitle':"गोपनीयता:",'set.privacyBody':"ये सेटिंग्स केवल इसी ब्राउज़र में सहेजी जाती हैं। कोई छात्र नाम नहीं, कोई खाता नहीं, कोई ट्रैकिंग नहीं, और कुछ भी इस डिवाइस से बाहर नहीं जाता। कक्षा प्रश्न मोड केवल गुमनाम कुल का उपयोग करता है।",
+  'set.reset':"डिफ़ॉल्ट पर रीसेट करें",'set.back':"मोड पर वापस जाएँ",'aria.read':"ज़ोर से पढ़ें",
+ },
+ ur:{
+  brand:"پیٹ پریڈ چھانٹ اور گراف",
+  'nav.modes':"طریقے",'nav.teacher':"استاد",'nav.home':"ہوم",
+  'menu.title':"پیٹ پریڈ میں خوش آمدید!",
+  'menu.lede':"پالتو جانوروں کو جو آپ دیکھتے ہیں اس کے مطابق چھانٹیں: رنگ، قسم، سائز یا گھر۔ ہر گروہ کو گنیں اور تصویری گراف بنائیں۔",
+  'mode.sort.title':"میں اپنے طریقے سے چھانٹوں",'mode.sort.desc':"ایک اصول چنیں، پھر ہر پالتو کو صحیح گروہ میں کھینچیں۔",
+  'mode.guess.title':"میرا اصول پہچانو",'mode.guess.desc':"پالتو پہلے سے چھنٹے ہوئے ہیں۔ کیا آپ اصول بتا سکتے ہیں؟",
+  'mode.fix.title':"چھانٹ درست کرو",'mode.fix.desc':"ایک پالتو غلط گروہ میں ہے۔ اسے ڈھونڈ کر ہٹائیں۔",
+  'mode.build.title':"گراف بناؤ",'mode.build.desc':"پالتو چھانٹیں، پھر گروہوں کو تصویری گراف میں بدلیں۔",
+  'mode.read.title':"گراف پڑھو",'mode.read.desc':"گراف دیکھیں اور جواب دیں: زیادہ، کم، برابر، کتنے؟",
+  'mode.class.title':"کلاس کا سوال",'mode.class.desc':"استاد ہر گروہ کا کل لکھتے ہیں تاکہ کلاس کا تصویری گراف بنے۔",
+  'std.summary':"ہم آہنگ معیارات",
+  'std.body':"<b>ٹیکساس پری کنڈرگارٹن ہدایات:</b> PK3.V.E.1–2 اور PK4.V.E.1–2 (اشیاء کو ترتیب دینا، درجہ بندی کرنا اور موازنہ کرنا؛ گروہ بنانا اور بیان کرنا)۔<br><b>کنڈرگارٹن TEKS:</b> K.8(A) ڈیٹا کو دو یا تین اقسام میں جمع، ترتیب اور منظم کرنا؛ K.8(B) ڈیٹا سے تصویری گراف بنانا؛ K.8(C) گراف سے نتائج اخذ کرنا۔<br><b>Common Core:</b> K.MD.3 — اشیاء کو اقسام میں تقسیم کرنا، گننا اور تعداد کے مطابق ترتیب دینا۔",
+  'footer.tag':"کوئی اکاؤنٹ نہیں · کوئی ڈیٹا جمع نہیں · آف لائن کام کرتا ہے",'footer.home':"ہوم",'footer.privacy':"رازداری",
+  'dir.sort':"ایک اصول چنیں۔ پھر ہر پالتو کو اس کے صحیح گروہ میں کھینچیں۔",
+  'dir.guess':"پالتو گروہوں میں ترتیب دیے گئے ہیں۔ غور سے دیکھیں۔ کون سا اصول استعمال ہوا؟",
+  'dir.fix':"ایک پالتو غلط گروہ میں ہے۔ اسے ڈھونڈ کر صحیح گروہ میں کھینچیں۔",
+  'dir.build':"پالتو کو گروہوں میں چھانٹیں۔ پھر گراف بناؤ دبائیں تاکہ گروہ تصویری گراف بن جائیں۔",
+  'dir.read':"تصویری گراف دیکھیں۔ پھر گروہوں کے بارے میں سوال کا جواب دیں۔",
+  'dir.class':"استاد: ہر گروہ کے لیے گمنام کل لکھیں۔ کوئی نام نہیں — صرف اعداد۔ پھر کلاس کا گراف بنائیں۔",
+  'dir.settings':"استاد کی ترتیبات۔ پالتو، اصول اور تعداد چنیں۔ ترتیبات صرف اسی ڈیوائس پر رہتی ہیں۔",
+  'attr.color':"رنگ",'attr.type':"قسم",'attr.size':"سائز",'attr.habitat':"گھر",
+  'color.red':"سرخ",'color.blue':"نیلا",'color.green':"سبز",'color.yellow':"پیلا",'color.purple':"جامنی",'color.orange':"نارنجی",
+  'size.small':"چھوٹا",'size.big':"بڑا",'habitat.land':"زمین",'habitat.water':"پانی",
+  'animal.cat':"بلی",'animal.dog':"کتا",'animal.rabbit':"خرگوش",'animal.bird':"پرندہ",'animal.fish':"مچھلی",'animal.turtle':"کچھوا",'animal.frog':"مینڈک",
+  'toy.ball':"گیند",'toy.book':"کتاب",'toy.crayon':"کریون",'toy.block':"بلاک",'toy.star':"ستارہ",'toy.apple':"سیب",
+  'bin.petOne':"1 پالتو",'bin.petMany':"{n} پالتو",
+  'sort.choose':"چھانٹنے کا اپنا اصول چنیں:",'sort.allSorted':"تمام پالتو چھنٹ گئے! 🎉",'sort.new':"نئے پالتو",
+  'sort.belongs':"ہاں! یہ {animal} {group} گروہ میں آتا ہے۔",
+  'sort.great':"بہت خوب چھانٹا! آپ نے ہر پالتو کو {attr} کے مطابق گروہ میں رکھا۔",
+  'sort.pickup':"ایک پالتو اٹھائیں اور گروہ میں چھوڑیں۔",
+  'explain.prompt':"آپ نے کیسے چھانٹا؟ وہ جملہ چھوئیں جو آپ کا اصول بتاتا ہے:",
+  'explain.option':"میں نے {attr} کے مطابق چھانٹا۔",
+  'explain.correctSpoken':"درست ہے۔ آپ نے {attr} کے مطابق چھانٹا۔",
+  'explain.perfect':"بہت اچھا — ایک گروہ کے ہر پالتو کا {attr} ایک جیسا ہے۔",
+  'explain.wrongSpoken':"دوبارہ دیکھیں۔ ہر گروہ کا {attr} ایک جیسا ہے، اس لیے آپ نے {attr} کے مطابق چھانٹا۔",
+  'explain.qSpoken':"آپ نے کر دکھایا! کون سا جملہ بتاتا ہے کہ آپ نے کیسے چھانٹا؟",
+  'clue.color':"رنگ دیکھیں۔ یہ {animal} {color} ہے، اس لیے یہ {group} گروہ میں جاتا ہے۔",
+  'clue.type':"پالتو کی قسم دیکھیں۔ یہ {animal} ہے، اس لیے یہ {group} گروہ میں جاتا ہے۔",
+  'clue.size':"سائز دیکھیں۔ یہ {size} ہے، اس لیے یہ {group} گروہ میں جاتا ہے۔",
+  'clue.habitat':"اصول دیکھیں۔ کیا یہ جانور {habitat} پر رہتا ہے؟ یہ {group} گروہ میں آتا ہے۔",
+  'clue.default':"اصول دیکھیں اور دوسرا گروہ آزمائیں۔",
+  'guess.q':"چھانٹنے کا اصول کیا ہے؟ اپنا جواب چھوئیں:",'guess.option':"{attr} کے مطابق چھانٹا گیا",
+  'guess.correct':"ہاں! ہر گروہ کا {attr} ایک جیسا ہے۔ اصول {attr} ہے۔",
+  'guess.wrong':"دوبارہ دیکھیں۔ ہر گروہ کے پالتو کا {wrong} ہمیشہ ایک جیسا نہیں، مگر ان کا {attr} ایک جیسا ہے۔",
+  'guess.new':"نئی پہیلی",'guess.spoken':"گروہوں کو دیکھیں۔ انہیں چھانٹنے کے لیے کون سا اصول استعمال ہوا؟",
+  'fix.rule':"اصول {attr} ہے۔ ہر گروہ کو اپنے لیبل سے ملنا چاہیے۔ کچھ غلط جگہ پر ہے!",
+  'fix.new':"درست کرنے کے لیے نئی چھانٹ",'fix.fixed':"درست ہو گیا! اب ہر گروہ اپنے {attr} لیبل سے ملتا ہے۔",
+  'fix.spoken':"ایک پالتو اپنے گروہ سے نہیں ملتا۔ کون سا مختلف لگتا ہے؟ اسے صحیح جگہ کھینچیں۔",
+  'build.sortBy':"اس کے مطابق چھانٹیں:",'build.make':"گراف بناؤ",'build.new':"نئے پالتو",
+  'build.allSorted':"سب چھنٹ گیا! اب گراف بناؤ دبائیں۔",'build.spoken':"ہر پالتو کو ایک گروہ میں چھانٹیں۔ پھر اپنا گراف بنائیں۔",
+  'graph.title':"ہمارا تصویری گراف",'graph.counting':"{group} گروہ گن رہے ہیں۔",
+  'gq.more.q':"کس گروہ میں زیادہ ہیں؟",'gq.more.say':"کس گروہ میں سب سے زیادہ پالتو ہیں؟",
+  'gq.fewer.q':"کس گروہ میں کم ہیں؟",'gq.fewer.say':"کس گروہ میں سب سے کم پالتو ہیں؟",
+  'gq.howmany.q':"{group} گروہ میں کتنے ہیں؟",'gq.howmany.say':"{group} گروہ میں کتنے پالتو ہیں؟",
+  'gq.equal.q':"کیا کوئی گروہ برابر ہیں؟",'gq.equal.say':"کیا کسی گروہ میں پالتو کی تعداد برابر ہے؟",
+  'gq.onemore.q':"اگر {group} گروہ میں ایک اور شامل ہو جائے تو؟",'gq.onemore.say':"اگر {group} گروہ میں ایک اور پالتو شامل ہو، تو کتنے ہوں گے؟",
+  'answer.yes':"ہاں",'answer.no':"نہیں",
+  'gq.correct':"درست! {why}",'gq.answerIs':"جواب {a} ہے۔ {why}",
+  'why.more':"{group} میں {n} ہیں، جو سب سے زیادہ ہیں۔",'why.fewer':"{group} میں {n} ہیں، جو سب سے کم ہیں۔",
+  'why.howmany':"گنیں: {group} گروہ میں {n} ہیں۔",
+  'why.equalYes':"دو گروہوں میں برابر تعداد ہے۔",'why.equalNo':"ہر گروہ میں مختلف تعداد ہے۔",
+  'why.onemore':"{n} اور 1 ملا کر {n1} ہوتے ہیں۔",'gq.another':"ایک اور سوال",'read.new':"نیا گراف",
+  'class.pick':"ایک سوال چنیں یا اپنا لکھیں:",'class.titleLabel':"سوال کا عنوان",
+  'class.titlePh':"مثلاً پسندیدہ پھل",'class.groupPh':"گروہ کا نام",'class.changePic':"تصویر بدلنے کے لیے چھوئیں",
+  'class.add':"گروہ شامل کریں",'class.make':"کلاس کا گراف بنائیں",'class.remove':"گروہ ہٹائیں",
+  'tmpl.fruit.title':"پسندیدہ پھل",'tmpl.fruit.a':"سیب",'tmpl.fruit.b':"کیلا",'tmpl.fruit.c':"انگور",
+  'tmpl.school.title':"ہم اسکول کیسے جاتے ہیں",'tmpl.school.a':"بس",'tmpl.school.b':"گاڑی",'tmpl.school.c':"پیدل",
+  'tmpl.center.title':"پسندیدہ مرکز",'tmpl.center.a':"بلاکس",'tmpl.center.b':"کتابیں",'tmpl.center.c':"آرٹ",
+  'set.objectSet':"اشیاء کا سیٹ",'set.animals':"جانور",'set.toys':"کلاس کی اشیاء",
+  'set.numGroups':"گروہوں کی تعداد",'set.2groups':"2 گروہ",'set.3groups':"3 گروہ",
+  'set.ruleDefault':"چھانٹنے کا اصول (طے شدہ)",'set.maxPets':"فی گروہ زیادہ سے زیادہ پالتو",'set.upto':"{n} تک",
+  'set.graphQ':"گراف کے سوالات دکھائیں (زیادہ / کم / برابر / کتنے)",
+  'set.privacyTitle':"رازداری:",'set.privacyBody':"یہ ترتیبات صرف اسی براؤزر میں محفوظ ہوتی ہیں۔ کوئی طالب علم کا نام نہیں، کوئی اکاؤنٹ نہیں، کوئی ٹریکنگ نہیں، اور کچھ بھی اس ڈیوائس سے باہر نہیں جاتا۔ کلاس سوال موڈ صرف گمنام کل استعمال کرتا ہے۔",
+  'set.reset':"طے شدہ پر ری سیٹ کریں",'set.back':"طریقوں پر واپس جائیں",'aria.read':"بلند آواز میں پڑھیں",
+ },
+ zh:{
+  brand:"宠物游行分类与统计图",
+  'nav.modes':"模式",'nav.teacher':"老师",'nav.home':"主页",
+  'menu.title':"欢迎来到宠物游行！",
+  'menu.lede':"按你看到的特征给宠物分类：颜色、种类、大小或住处。数一数每一组，再制作图画统计图。",
+  'mode.sort.title':"我来分类",'mode.sort.desc':"选一个规则，然后把每只宠物拖到正确的组。",
+  'mode.guess.title':"猜猜规则",'mode.guess.desc':"宠物已经分好类了。你能说出规则吗？",
+  'mode.fix.title':"改正分类",'mode.fix.desc':"有一只宠物放错了组。找到它并移走。",
+  'mode.build.title':"制作统计图",'mode.build.desc':"把宠物分类，再把每组变成图画统计图。",
+  'mode.read.title':"看统计图",'mode.read.desc':"看统计图并回答：更多、更少、相等、有几个？",
+  'mode.class.title':"全班问题",'mode.class.desc':"老师输入每组的总数，制作全班的图画统计图。",
+  'std.summary':"对应标准",
+  'std.body':"<b>德州学前指南：</b>PK3.V.E.1–2 和 PK4.V.E.1–2（排序、分类和比较物品；创建并描述分组）。<br><b>幼儿园 TEKS：</b>K.8(A) 把数据收集、排序并整理成两到三类；K.8(B) 用数据制作图画统计图；K.8(C) 从统计图得出结论。<br><b>Common Core：</b>K.MD.3 —— 将物品分类、计数并按数量排序。",
+  'footer.tag':"无需账号 · 不收集数据 · 离线可用",'footer.home':"主页",'footer.privacy':"隐私",
+  'dir.sort':"选一个规则。然后把每只宠物拖到它所属的组。",
+  'dir.guess':"宠物已经分成几组了。仔细看。用的是什么规则？",
+  'dir.fix':"有一只宠物放错了组。找到它并拖到正确的组。",
+  'dir.build':"把宠物分成几组。然后按“制作统计图”，把你的分组变成图画统计图。",
+  'dir.read':"看图画统计图。然后回答关于各组的问题。",
+  'dir.class':"老师：为每组输入匿名的总数。不要名字——只要数字。然后制作全班统计图。",
+  'dir.settings':"老师设置。选择宠物、规则和数量。设置只保存在本设备上。",
+  'attr.color':"颜色",'attr.type':"种类",'attr.size':"大小",'attr.habitat':"住处",
+  'color.red':"红色",'color.blue':"蓝色",'color.green':"绿色",'color.yellow':"黄色",'color.purple':"紫色",'color.orange':"橙色",
+  'size.small':"小",'size.big':"大",'habitat.land':"陆地",'habitat.water':"水里",
+  'animal.cat':"猫",'animal.dog':"狗",'animal.rabbit':"兔子",'animal.bird':"鸟",'animal.fish':"鱼",'animal.turtle':"乌龟",'animal.frog':"青蛙",
+  'toy.ball':"球",'toy.book':"书",'toy.crayon':"蜡笔",'toy.block':"积木",'toy.star':"星星",'toy.apple':"苹果",
+  'bin.petOne':"1 只",'bin.petMany':"{n} 只",
+  'sort.choose':"选择你的分类规则：",'sort.allSorted':"所有宠物都分好了！🎉",'sort.new':"换一批宠物",
+  'sort.belongs':"对！这只{animal}属于{group}组。",
+  'sort.great':"分得真好！你按{attr}把每只宠物分了组。",
+  'sort.pickup':"拿起一只宠物，放进一个组里。",
+  'explain.prompt':"你是怎么分类的？点一点说出你规则的句子：",
+  'explain.option':"我按{attr}分类。",
+  'explain.correctSpoken':"对了。你按{attr}分类。",
+  'explain.perfect':"太棒了——同一组里的每只宠物都有一样的{attr}。",
+  'explain.wrongSpoken':"再看看。每一组的{attr}都一样，所以你是按{attr}分类的。",
+  'explain.qSpoken':"你做到了！哪句话说出了你是怎么分类的？",
+  'clue.color':"看颜色。这只{animal}是{color}的，所以放进{group}组。",
+  'clue.type':"看宠物的种类。这是{animal}，所以放进{group}组。",
+  'clue.size':"看大小。这只是{size}，所以放进{group}组。",
+  'clue.habitat':"看规则。这只动物住在{habitat}吗？它属于{group}组。",
+  'clue.default':"看看规则，试试另一组。",
+  'guess.q':"分类规则是什么？点一点你的答案：",'guess.option':"按{attr}分类",
+  'guess.correct':"对！每一组的{attr}都一样。规则是{attr}。",
+  'guess.wrong':"再看看。每组宠物的{wrong}不总是一样，但它们的{attr}都一样。",
+  'guess.new':"新谜题",'guess.spoken':"看看这些组。用的是什么规则来分类？",
+  'fix.rule':"规则是{attr}。每一组都要和它的标签相符。有个东西放错了！",
+  'fix.new':"换一个要改的分类",'fix.fixed':"改好了！现在每一组都和它的{attr}标签相符。",
+  'fix.spoken':"有一只宠物和它的组不相符。哪只看起来不一样？把它拖到正确的地方。",
+  'build.sortBy':"按此分类：",'build.make':"制作统计图",'build.new':"换一批宠物",
+  'build.allSorted':"都分好了！现在按制作统计图。",'build.spoken':"把每只宠物分到一个组里。然后制作你的统计图。",
+  'graph.title':"我们的图画统计图",'graph.counting':"正在数{group}组。",
+  'gq.more.q':"哪一组更多？",'gq.more.say':"哪一组的宠物最多？",
+  'gq.fewer.q':"哪一组更少？",'gq.fewer.say':"哪一组的宠物最少？",
+  'gq.howmany.q':"{group}组里有几只？",'gq.howmany.say':"{group}组里有几只宠物？",
+  'gq.equal.q':"有哪几组相等吗？",'gq.equal.say':"有没有几组的宠物数量一样？",
+  'gq.onemore.q':"如果再有一只加入{group}组会怎样？",'gq.onemore.say':"如果再有一只宠物加入{group}组，会有几只？",
+  'answer.yes':"有",'answer.no':"没有",
+  'gq.correct':"正确！{why}",'gq.answerIs':"答案是{a}。{why}",
+  'why.more':"{group}有{n}只，是最多的。",'why.fewer':"{group}有{n}只，是最少的。",
+  'why.howmany':"数一数：{group}组有{n}只。",
+  'why.equalYes':"有两组数量一样。",'why.equalNo':"每一组的数量都不同。",
+  'why.onemore':"{n}再加1就是{n1}。",'gq.another':"再来一题",'read.new':"新统计图",
+  'class.pick':"选一个问题，或自己写一个：",'class.titleLabel':"问题标题",
+  'class.titlePh':"例如 最喜欢的水果",'class.groupPh':"组名",'class.changePic':"点一点换图片",
+  'class.add':"添加一组",'class.make':"制作全班统计图",'class.remove':"删除这组",
+  'tmpl.fruit.title':"最喜欢的水果",'tmpl.fruit.a':"苹果",'tmpl.fruit.b':"香蕉",'tmpl.fruit.c':"葡萄",
+  'tmpl.school.title':"我们怎样上学",'tmpl.school.a':"公交车",'tmpl.school.b':"汽车",'tmpl.school.c':"步行",
+  'tmpl.center.title':"最喜欢的活动区",'tmpl.center.a':"积木",'tmpl.center.b':"图书",'tmpl.center.c':"美术",
+  'set.objectSet':"物品组",'set.animals':"动物",'set.toys':"教室物品",
+  'set.numGroups':"组的数量",'set.2groups':"2 组",'set.3groups':"3 组",
+  'set.ruleDefault':"分类规则（默认）",'set.maxPets':"每组最多宠物",'set.upto':"最多 {n}",
+  'set.graphQ':"显示统计图问题（更多 / 更少 / 相等 / 几个）",
+  'set.privacyTitle':"隐私：",'set.privacyBody':"这些设置只保存在本浏览器中。没有学生姓名、没有账号、没有跟踪，任何信息都不会离开本设备。全班问题模式只使用匿名总数。",
+  'set.reset':"恢复默认",'set.back':"返回模式",'aria.read':"朗读",
+ },
+};
+
+/* ---------------- Language engine ---------------- */
+let L = 'en';
+function safeGet(k){ try{return localStorage.getItem(k);}catch(e){return null;} }
+function safeSet(k,v){ try{localStorage.setItem(k,v);}catch(e){} }
+function t(key, p){
+  let s = (I18N[L] && I18N[L][key]!=null) ? I18N[L][key] : (I18N.en[key]!=null?I18N.en[key]:key);
+  if(p) for(const k in p) s = s.split('{'+k+'}').join(p[k]);
+  return s;
+}
+function initLang(){
+  const q = new URLSearchParams(location.search).get('lang');
+  let l = q || safeGet('tcea.mathtools.lang') || (navigator.language||'en').slice(0,2).toLowerCase();
+  if(!I18N[l]) l = 'en';
+  L = l;
+}
+function applyLang(){
+  document.documentElement.lang = L;
+  document.documentElement.dir = (L==='ar'||L==='ur') ? 'rtl' : 'ltr';
+  const sel = document.getElementById('langSel'); if(sel) sel.value = L;
+  document.getElementById('brandTxt').textContent = t('brand');
+  document.getElementById('menuBtn').textContent = '⬅️ ' + t('nav.modes');
+  document.getElementById('settingsBtn').textContent = '⚙️ ' + t('nav.teacher');
+  document.getElementById('homeLink').textContent = '🏠 ' + t('nav.home');
+  document.getElementById('footTag').textContent = t('footer.tag');
+  document.getElementById('footHome').textContent = t('footer.home');
+  document.getElementById('footPriv').textContent = t('footer.privacy');
+}
+let CURRENT = null;
+function setLang(code){
+  L = code; safeSet('tcea.mathtools.lang', code);
+  applyLang();
+  if(CURRENT) CURRENT();
+}
+
+/* ---------------- Speech ---------------- */
+const SPEECH_OK = ('speechSynthesis' in window) && ('SpeechSynthesisUtterance' in window);
+if(SPEECH_OK){ try{ speechSynthesis.onvoiceschanged = function(){}; }catch(e){} }
+function pickVoice(lang){
+  const vs = (SPEECH_OK ? speechSynthesis.getVoices() : []) || [];
+  const base = lang.split('-')[0].toLowerCase();
+  return vs.find(v=>v.lang && v.lang.toLowerCase()===lang.toLowerCase())
+      || vs.find(v=>v.lang && v.lang.toLowerCase().replace('_','-').startsWith(base)) || null;
+}
+function speak(text){
+  if(!SPEECH_OK || !text) return;
+  try{
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = SPEECH_LANG[L] || 'en-US'; u.rate = 0.95; u.pitch = 1.05;
+    const v = pickVoice(u.lang); if(v) u.voice = v;
+    speechSynthesis.speak(u);
+  }catch(e){}
+}
+function speakerBtn(getText){
+  const b = document.createElement('button');
+  b.className = 'speaker'; b.type = 'button';
+  b.setAttribute('aria-label', t('aria.read')); b.textContent = '🔊';
+  if(!SPEECH_OK) b.hidden = true;
+  b.addEventListener('click', ()=> speak(typeof getText==='function'?getText():getText));
+  return b;
+}
+
+/* ---------------- Color helpers ---------------- */
+function darken(hex, amt){
+  const n = parseInt(hex.slice(1),16);
+  let r=(n>>16)&255, g=(n>>8)&255, b=n&255;
+  r=Math.max(0,Math.round(r*(1-amt))); g=Math.max(0,Math.round(g*(1-amt))); b=Math.max(0,Math.round(b*(1-amt)));
+  return '#'+((1<<24)+(r<<16)+(g<<8)+b).toString(16).slice(1);
+}
+
+/* ---------------- Attribute vocab ---------------- */
+const COLORS = {
+  red:{hex:'#e5484d'}, blue:{hex:'#3e63dd'}, green:{hex:'#46a758'},
+  yellow:{hex:'#f2c200'}, purple:{hex:'#8e4ec6'}, orange:{hex:'#f76b15'},
+};
+const SIZES = { small:{icon:'🔹'}, big:{icon:'🔷'} };
+const HABITATS = { land:{icon:'🌳'}, water:{icon:'💧'} };
+const ANIMALS = {
+  cat:{habitat:'land'}, dog:{habitat:'land'}, rabbit:{habitat:'land'}, bird:{habitat:'land'},
+  fish:{habitat:'water'}, turtle:{habitat:'water'}, frog:{habitat:'water'},
+};
+const TOYS = { ball:1, book:1, crayon:1, block:1, star:1, apple:1 };
+
+function colorLabel(k){ return t('color.'+k); }
+function sizeLabel(k){ return t('size.'+k); }
+function habitatLabel(k){ return t('habitat.'+k); }
+function attrLabel(a){ return t('attr.'+a); }
+function typeLabel(k){ return SET.objectSet==='toys' ? t('toy.'+k) : t('animal.'+k); }
+
+/* ---------------- SVG artwork ---------------- */
+function svgWrap(inner){ return `<svg viewBox="0 0 100 100" role="img" aria-hidden="true" focusable="false">${inner}</svg>`; }
+function eyes(cx1,cx2,cy){
+  return `<circle cx="${cx1}" cy="${cy}" r="6" fill="#fff"/><circle cx="${cx2}" cy="${cy}" r="6" fill="#fff"/>
+          <circle cx="${cx1+1}" cy="${cy+1}" r="3" fill="#22203a"/><circle cx="${cx2+1}" cy="${cy+1}" r="3" fill="#22203a"/>`;
+}
+const ART = {
+  cat:(c,d)=>svgWrap(`
+    <polygon points="24,40 30,12 48,32" fill="${c}" stroke="${d}" stroke-width="2"/>
+    <polygon points="76,40 70,12 52,32" fill="${c}" stroke="${d}" stroke-width="2"/>
+    <polygon points="30,32 32,20 40,30" fill="${d}"/><polygon points="70,32 68,20 60,30" fill="${d}"/>
+    <ellipse cx="50" cy="58" rx="30" ry="28" fill="${c}" stroke="${d}" stroke-width="2"/>
+    ${eyes(40,60,54)}
+    <polygon points="50,60 45,66 55,66" fill="${d}"/>
+    <path d="M50 66 q0 6 -7 6 M50 66 q0 6 7 6" fill="none" stroke="${d}" stroke-width="2"/>
+    <path d="M20 56 h-12 M20 62 h-13 M80 56 h12 M80 62 h13" stroke="${d}" stroke-width="2"/>`),
+  dog:(c,d)=>svgWrap(`
+    <ellipse cx="24" cy="44" rx="11" ry="20" fill="${d}"/><ellipse cx="76" cy="44" rx="11" ry="20" fill="${d}"/>
+    <ellipse cx="50" cy="56" rx="30" ry="28" fill="${c}" stroke="${d}" stroke-width="2"/>
+    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" stroke="${d}" stroke-width="2"/>
+    ${eyes(40,60,50)}
+    <ellipse cx="50" cy="66" rx="6" ry="4.5" fill="#22203a"/>
+    <path d="M50 70 v6 M50 76 q-6 0 -8 -3 M50 76 q6 0 8 -3" fill="none" stroke="${d}" stroke-width="2"/>`),
+  rabbit:(c,d)=>svgWrap(`
+    <ellipse cx="38" cy="26" rx="9" ry="24" fill="${c}" stroke="${d}" stroke-width="2"/>
+    <ellipse cx="62" cy="26" rx="9" ry="24" fill="${c}" stroke="${d}" stroke-width="2"/>
+    <ellipse cx="38" cy="28" rx="4" ry="16" fill="#ffd9e0"/><ellipse cx="62" cy="28" rx="4" ry="16" fill="#ffd9e0"/>
+    <ellipse cx="50" cy="64" rx="27" ry="26" fill="${c}" stroke="${d}" stroke-width="2"/>
+    ${eyes(41,59,60)}
+    <ellipse cx="50" cy="70" rx="5" ry="4" fill="#e26a8a"/>
+    <path d="M50 74 q-5 4 -10 2 M50 74 q5 4 10 2" fill="none" stroke="${d}" stroke-width="2"/>`),
+  bird:(c,d)=>svgWrap(`
+    <ellipse cx="50" cy="58" rx="27" ry="26" fill="${c}" stroke="${d}" stroke-width="2"/>
+    <circle cx="50" cy="30" r="16" fill="${c}" stroke="${d}" stroke-width="2"/>
+    <path d="M35 62 q-16 4 -22 16 q16 2 26 -6 z" fill="${d}"/>
+    ${eyes(44,56,28)}
+    <polygon points="50,32 40,38 50,44" fill="#f7a41d" stroke="${d}" stroke-width="1"/>
+    <path d="M42 84 v8 M58 84 v8" stroke="#f7a41d" stroke-width="3"/>`),
+  fish:(c,d)=>svgWrap(`
+    <polygon points="70,50 94,32 92,68" fill="${d}"/>
+    <ellipse cx="46" cy="52" rx="34" ry="24" fill="${c}" stroke="${d}" stroke-width="2"/>
+    <path d="M40 30 q6 -10 16 -6 q-4 8 -12 10 z" fill="${d}"/>
+    <circle cx="30" cy="48" r="7" fill="#fff"/><circle cx="29" cy="49" r="3.5" fill="#22203a"/>
+    <path d="M22 60 q4 4 10 3" fill="none" stroke="${d}" stroke-width="2"/>
+    <path d="M48 40 v24 M60 44 v18" stroke="${d}" stroke-width="2" opacity=".5"/>`),
+  turtle:(c,d)=>svgWrap(`
+    <ellipse cx="18" cy="60" rx="7" ry="9" fill="${d}"/><ellipse cx="82" cy="60" rx="7" ry="9" fill="${d}"/>
+    <ellipse cx="34" cy="76" rx="7" ry="8" fill="${d}"/><ellipse cx="66" cy="76" rx="7" ry="8" fill="${d}"/>
+    <circle cx="80" cy="42" r="12" fill="#7bbf5a"/><circle cx="84" cy="40" r="2.5" fill="#22203a"/>
+    <ellipse cx="48" cy="52" rx="36" ry="26" fill="${c}" stroke="${d}" stroke-width="3"/>
+    <path d="M48 26 v52 M12 52 h72 M22 34 l52 36 M22 70 l52 -36" stroke="${d}" stroke-width="2" opacity=".55" fill="none"/>`),
+  frog:(c,d)=>svgWrap(`
+    <circle cx="32" cy="30" r="14" fill="${c}" stroke="${d}" stroke-width="2"/>
+    <circle cx="68" cy="30" r="14" fill="${c}" stroke="${d}" stroke-width="2"/>
+    <circle cx="32" cy="30" r="6" fill="#fff"/><circle cx="68" cy="30" r="6" fill="#fff"/>
+    <circle cx="32" cy="31" r="3" fill="#22203a"/><circle cx="68" cy="31" r="3" fill="#22203a"/>
+    <ellipse cx="50" cy="58" rx="32" ry="26" fill="${c}" stroke="${d}" stroke-width="2"/>
+    <path d="M34 62 q16 14 32 0" fill="none" stroke="${d}" stroke-width="3" stroke-linecap="round"/>
+    <path d="M22 78 q-6 6 -2 10 M78 78 q6 6 2 10" stroke="${d}" stroke-width="3" fill="none"/>`),
+  ball:(c,d)=>svgWrap(`
+    <circle cx="50" cy="52" r="34" fill="${c}" stroke="${d}" stroke-width="2"/>
+    <path d="M16 52 h68 M50 18 v68" stroke="${d}" stroke-width="3"/>
+    <path d="M24 30 q26 22 52 0 M24 74 q26 -22 52 0" fill="none" stroke="${d}" stroke-width="3"/>`),
+  book:(c,d)=>svgWrap(`
+    <rect x="20" y="22" width="60" height="58" rx="5" fill="${c}" stroke="${d}" stroke-width="2"/>
+    <rect x="20" y="22" width="14" height="58" rx="5" fill="${d}"/>
+    <path d="M42 34 h30 M42 46 h30 M42 58 h24" stroke="#fff" stroke-width="3" stroke-linecap="round"/>`),
+  crayon:(c,d)=>svgWrap(`
+    <rect x="38" y="26" width="24" height="56" rx="4" fill="${c}" stroke="${d}" stroke-width="2"/>
+    <polygon points="38,26 62,26 50,8" fill="${d}"/>
+    <path d="M40 42 h20 M40 54 h20" stroke="#fff" stroke-width="3"/>`),
+  block:(c,d)=>svgWrap(`
+    <rect x="24" y="26" width="52" height="52" rx="8" fill="${c}" stroke="${d}" stroke-width="3"/>
+    <text x="50" y="66" font-size="34" font-weight="900" text-anchor="middle" fill="#fff" font-family="system-ui">A</text>`),
+  star:(c,d)=>svgWrap(`
+    <polygon points="50,12 61,40 92,40 67,58 76,88 50,70 24,88 33,58 8,40 39,40"
+      fill="${c}" stroke="${d}" stroke-width="3" stroke-linejoin="round"/>`),
+  apple:(c,d)=>svgWrap(`
+    <path d="M50 30 q-24 -6 -28 18 q-4 26 20 36 q8 4 8 4 q0 0 8 -4 q24 -10 20 -36 q-4 -24 -28 -18 z"
+      fill="${c}" stroke="${d}" stroke-width="2"/>
+    <path d="M50 30 q2 -12 12 -16" fill="none" stroke="#7a4a1e" stroke-width="4" stroke-linecap="round"/>
+    <ellipse cx="50" cy="52" rx="6" ry="10" fill="#fff" opacity=".35"/>`),
+};
+function artFor(item){
+  const fn = ART[item.type];
+  const c = COLORS[item.color].hex, d = darken(COLORS[item.color].hex, 0.4);
+  return fn ? fn(c,d) : '';
+}
+
+/* ---------------- Teacher settings ---------------- */
+const DEFAULTS = { objectSet:'animals', numCats:2, attr:'color', maxPer:6, graphQ:true };
+let SET = loadSet();
+function loadSet(){
+  try{ return Object.assign({}, DEFAULTS, JSON.parse(safeGet('petParade.settings')||'{}')); }
+  catch(e){ return Object.assign({}, DEFAULTS); }
+}
+function saveSettings(){ safeSet('petParade.settings', JSON.stringify(SET)); }
+function typeMap(){ return SET.objectSet==='toys' ? TOYS : ANIMALS; }
+function availableAttrs(){ return SET.objectSet==='toys' ? ['color','type','size'] : ['color','type','size','habitat']; }
+
+/* ---------------- Item / rule model ---------------- */
+let uid = 0;
+function makeItem(type,color,size){
+  const habitat = (typeMap()===ANIMALS) ? ANIMALS[type].habitat : null;
+  return { id:'i'+(uid++), type, color, size, habitat };
+}
+function categoryOf(item, attr){
+  if(attr==='color') return item.color;
+  if(attr==='type') return item.type;
+  if(attr==='size') return item.size;
+  if(attr==='habitat') return item.habitat;
+  return null;
+}
+function attrIcon(attr){ return {color:'🎨',type:'🐾',size:'📏',habitat:'🏡'}[attr]; }
+function catInfo(attr, val){
+  if(attr==='color') return {label:colorLabel(val), swatch:COLORS[val].hex};
+  if(attr==='size')  return {label:sizeLabel(val), emoji:SIZES[val].icon};
+  if(attr==='habitat')return {label:habitatLabel(val), emoji:HABITATS[val].icon};
+  if(attr==='type')  return {label:typeLabel(val), art:val};
+  return {label:val};
+}
+function rnd(a){ return a[Math.floor(Math.random()*a.length)]; }
+function shuffle(a){ for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; }
+function uniq(a){ return [...new Set(a)]; }
+function valuesFor(attr){
+  if(attr==='color') return Object.keys(COLORS);
+  if(attr==='size')  return ['small','big'];
+  if(attr==='habitat') return ['land','water'];
+  if(attr==='type')  return Object.keys(typeMap());
+  return [];
+}
+function catCountFor(attr){ return (attr==='size'||attr==='habitat') ? 2 : SET.numCats; }
+function buildInstance(attr){
+  const tm = typeMap();
+  const nCats = catCountFor(attr);
+  const cats = shuffle(valuesFor(attr).slice()).slice(0, nCats);
+  const items = [];
+  const maxPer = Math.max(2, Math.min(SET.maxPer, 10));
+  cats.forEach(cv=>{
+    const n = 2 + Math.floor(Math.random()*(maxPer-1));
+    for(let k=0;k<n;k++){
+      let type,color,size;
+      if(attr==='type'){ type=cv; color=rnd(Object.keys(COLORS)); size=rnd(['small','big']); }
+      else if(attr==='color'){ type=rnd(Object.keys(tm)); color=cv; size=rnd(['small','big']); }
+      else if(attr==='size'){ type=rnd(Object.keys(tm)); color=rnd(Object.keys(COLORS)); size=cv; }
+      else if(attr==='habitat'){ type=rnd(Object.keys(ANIMALS).filter(x=>ANIMALS[x].habitat===cv)); color=rnd(Object.keys(COLORS)); size=rnd(['small','big']); }
+      items.push(makeItem(type,color,size));
+    }
+  });
+  return { attr, cats, items:shuffle(items) };
+}
+
+/* ---------------- App shell ---------------- */
+const APP = document.getElementById('app');
+let currentDirection = '';
+function setDirection(host, text){
+  currentDirection = text;
+  const bar = document.createElement('div'); bar.className='direction';
+  const tx = document.createElement('div'); tx.className='dtxt'; tx.textContent = text;
+  bar.appendChild(speakerBtn(()=>currentDirection));
+  bar.appendChild(tx); host.appendChild(bar);
+}
+function clearApp(){ if(SPEECH_OK){try{speechSynthesis.cancel();}catch(e){}} APP.innerHTML=''; }
+
+/* ---------------- Menu ---------------- */
+const MODES = [
+  {key:'sort',  ico:'🧩', color:'#5b3fa5'},
+  {key:'guess', ico:'🕵️', color:'#3e63dd'},
+  {key:'fix',   ico:'🔧', color:'#f76b15'},
+  {key:'build', ico:'📊', color:'#46a758'},
+  {key:'read',  ico:'🔎', color:'#8e4ec6'},
+  {key:'class', ico:'🙋', color:'#e0a400'},
+];
+function showMenu(){
+  CURRENT = showMenu; clearApp();
+  const h = document.createElement('div');
+  const h1=document.createElement('h1'); h1.textContent='🐾 '+t('menu.title');
+  const p=document.createElement('p'); p.className='lede'; p.textContent=t('menu.lede');
+  h.append(h1,p); APP.appendChild(h);
+  const grid=document.createElement('div'); grid.className='modegrid';
+  MODES.forEach(m=>{
+    const c=document.createElement('button'); c.className='modecard'; c.type='button'; c.style.setProperty('--accent',m.color);
+    c.innerHTML=`<span class="ico">${m.ico}</span><h3>${t('mode.'+m.key+'.title')}</h3><p>${t('mode.'+m.key+'.desc')}</p>`;
+    c.addEventListener('click',()=>startMode(m.key)); grid.appendChild(c);
+  });
+  APP.appendChild(grid);
+  const std=document.createElement('details'); std.className='standards';
+  std.innerHTML = `<summary>${t('std.summary')}</summary><p>${t('std.body')}</p>`;
+  APP.appendChild(std);
+}
+function startMode(key){
+  ({sort:modeSort,guess:modeGuess,fix:modeFix,build:modeBuild,read:modeRead,class:modeClass})[key]();
+}
+
+/* ---------------- Shared UI ---------------- */
+function pieceEl(item, opts){
+  opts=opts||{};
+  const el=document.createElement('div');
+  el.className='piece'; el.tabIndex=0; el.__item=item; el.setAttribute('role','button');
+  el.setAttribute('aria-label', colorLabel(item.color)+' '+typeLabel(item.type));
+  el.innerHTML = artFor(item)+`<span class="cap">${colorLabel(item.color)}<br>${typeLabel(item.type)}</span>`;
+  const badge=document.createElement('span'); badge.className='badge'; badge.setAttribute('aria-hidden','true'); el.appendChild(badge);
+  if(opts.draggable!==false){ makeDraggable(el); enablePieceKeys(el); } else el.style.cursor='default';
+  return el;
+}
+function binEl(attr, val){
+  const el=document.createElement('div'); el.className='bin'; el.__cat=val; el.__attr=attr;
+  const info=catInfo(attr,val);
+  const head=document.createElement('div'); head.className='binhead';
+  if(info.swatch){ const sw=document.createElement('span'); sw.className='swatch'; sw.style.background=info.swatch; head.appendChild(sw); }
+  else if(info.emoji){ const ic=document.createElement('span'); ic.className='bi'; ic.textContent=info.emoji; head.appendChild(ic); }
+  else if(info.art){ const ic=document.createElement('span'); ic.className='bi'; ic.style.width='30px'; ic.style.height='30px'; ic.innerHTML=ART[info.art](COLORS.purple.hex,darken(COLORS.purple.hex,.4)); head.appendChild(ic); }
+  const lab=document.createElement('span'); lab.textContent=info.label; head.appendChild(lab);
+  el.appendChild(head);
+  const items=document.createElement('div'); items.className='bin-items'; el.appendChild(items);
+  const cnt=document.createElement('div'); cnt.className='bin-count'; el.appendChild(cnt);
+  el.__itemsBox=items; el.__count=cnt;
+  return el;
+}
+function updateBinCount(bin){
+  const n=bin.__itemsBox.children.length;
+  bin.__count.textContent = n===1 ? t('bin.petOne') : t('bin.petMany',{n});
+}
+function feedbackBox(){
+  const f=document.createElement('div'); f.className='feedback'; f.hidden=true;
+  const ico=document.createElement('span'); ico.className='fico'; ico.setAttribute('aria-hidden','true');
+  const txt=document.createElement('div'); txt.style.flex='1';
+  const spk=speakerBtn(()=>txt.textContent);
+  f.append(ico,txt,spk); f.__txt=txt;
+  f.show=(kind,icon,msg,say)=>{ f.hidden=false; f.className='feedback '+(kind||''); ico.textContent=icon; txt.textContent=msg; if(say!==false) speak(msg); };
+  f.hide=()=>{ f.hidden=true; };
+  return f;
+}
+
+/* ---------------- Drag engine ---------------- */
+let drag=null, lastOverBin=null;
+function makeDraggable(el){ el.addEventListener('pointerdown', pdown); }
+function pdown(e){
+  if(e.pointerType==='mouse' && e.button!==0) return;
+  const el=e.currentTarget; e.preventDefault();
+  const r=el.getBoundingClientRect();
+  drag={el, offX:e.clientX-r.left, offY:e.clientY-r.top, home:el.parentNode, next:el.nextSibling};
+  try{ el.setPointerCapture(e.pointerId); }catch(_){}
+  el.classList.add('dragging');
+  el.style.width=r.width+'px'; el.style.height=r.height+'px';
+  el.style.position='fixed'; el.style.margin='0'; el.style.zIndex='9999'; el.style.pointerEvents='none';
+  document.body.appendChild(el); pmoveTo(e.clientX,e.clientY);
+  el.addEventListener('pointermove', pmove);
+  el.addEventListener('pointerup', pup);
+  el.addEventListener('pointercancel', pup);
+}
+function pmoveTo(x,y){ drag.el.style.left=(x-drag.offX)+'px'; drag.el.style.top=(y-drag.offY)+'px'; }
+function binAt(x,y){ const el=document.elementFromPoint(x,y); return el?el.closest('.bin'):null; }
+function pmove(e){
+  if(!drag)return; pmoveTo(e.clientX,e.clientY);
+  const b=binAt(e.clientX,e.clientY);
+  if(b!==lastOverBin){ if(lastOverBin)lastOverBin.classList.remove('over'); if(b)b.classList.add('over'); lastOverBin=b; }
+}
+function pup(e){
+  if(!drag)return; const el=drag.el; const b=binAt(e.clientX,e.clientY);
+  if(lastOverBin){ lastOverBin.classList.remove('over'); lastOverBin=null; }
+  el.removeEventListener('pointermove',pmove); el.removeEventListener('pointerup',pup); el.removeEventListener('pointercancel',pup);
+  el.style.position=''; el.style.left=''; el.style.top=''; el.style.width=''; el.style.height=''; el.style.margin=''; el.style.zIndex=''; el.style.pointerEvents='';
+  el.classList.remove('dragging');
+  if(b && b.__itemsBox){ b.__itemsBox.appendChild(el); onDrop(el,b); }
+  else if(drag.home){ drag.home.insertBefore(el, drag.next); onDrop(el, drag.home.closest('.bin')); }
+  drag=null;
+}
+function enablePieceKeys(el){
+  el.addEventListener('keydown', ev=>{
+    if(!ACTIVE || !ACTIVE.bins) return;
+    if(/^[1-9]$/.test(ev.key)){
+      const b=ACTIVE.bins[parseInt(ev.key,10)-1];
+      if(b){ ev.preventDefault(); b.__itemsBox.appendChild(el); onDrop(el,b); el.focus(); }
+    } else if(ev.key==='0' || ev.key==='Home'){
+      if(ACTIVE.tray){ ev.preventDefault(); ACTIVE.tray.appendChild(el); onDrop(el,null); el.focus(); }
+    }
+  });
+}
+let ACTIVE=null;
+function onDrop(el,bin){ if(ACTIVE && ACTIVE.onDrop) ACTIVE.onDrop(el,bin); }
+
+/* ---------------- Clue helper ---------------- */
+function clueFor(attr, item, binCat){
+  if(attr==='color') return t('clue.color',{animal:typeLabel(item.type), color:colorLabel(item.color), group:colorLabel(item.color)});
+  if(attr==='type')  return t('clue.type',{animal:typeLabel(item.type), group:typeLabel(item.type)});
+  if(attr==='size')  return t('clue.size',{size:sizeLabel(item.size), group:sizeLabel(item.size)});
+  if(attr==='habitat')return t('clue.habitat',{habitat:habitatLabel(item.habitat), group:habitatLabel(item.habitat)});
+  return t('clue.default');
+}
+
+/* ---------------- MODE 1: Sort My Way ---------------- */
+function modeSort(){
+  CURRENT=modeSort; clearApp(); ACTIVE=null;
+  setDirection(APP, t('dir.sort'));
+  const attrs=availableAttrs();
+  const wrap=document.createElement('div'); wrap.className='panel';
+  const b=document.createElement('b'); b.textContent=t('sort.choose'); wrap.appendChild(b);
+  const chips=document.createElement('div'); chips.className='chips';
+  attrs.forEach(a=>{
+    const c=document.createElement('button'); c.className='chip'; c.type='button'; c.setAttribute('aria-pressed','false');
+    c.innerHTML=`<span class="ci">${attrIcon(a)}</span>${attrLabel(a)}`;
+    c.addEventListener('click',()=>{ chips.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed','false')); c.setAttribute('aria-pressed','true'); startSort(a); });
+    chips.appendChild(c);
+  });
+  wrap.appendChild(chips); APP.appendChild(wrap);
+  const host=document.createElement('div'); host.id='sortHost'; APP.appendChild(host);
+  const def=attrs.includes(SET.attr)?SET.attr:attrs[0];
+  const dc=[...chips.children][attrs.indexOf(def)]; if(dc){ dc.setAttribute('aria-pressed','true'); startSort(def); }
+}
+function startSort(attr){
+  const host=document.getElementById('sortHost'); host.innerHTML='';
+  const inst=buildInstance(attr);
+  const tray=document.createElement('div'); tray.className='tray';
+  const hint=document.createElement('div'); hint.className='trayhint'; hint.textContent=t('sort.allSorted'); hint.style.display='none'; tray.appendChild(hint);
+  inst.items.forEach(it=>tray.appendChild(pieceEl(it))); host.appendChild(tray);
+  const bins=document.createElement('div'); bins.className='bins n'+inst.cats.length;
+  const binList=inst.cats.map(cv=>{ const b=binEl(attr,cv); bins.appendChild(b); return b; }); host.appendChild(bins);
+  const fb=feedbackBox(); host.appendChild(fb);
+  const explainBox=document.createElement('div'); explainBox.className='panel'; explainBox.style.display='none'; host.appendChild(explainBox);
+  const controls=document.createElement('div'); controls.className='btnrow';
+  const again=document.createElement('button'); again.className='btn ghost'; again.type='button'; again.textContent='🔁 '+t('sort.new');
+  again.addEventListener('click',()=>startSort(attr)); controls.appendChild(again); host.appendChild(controls);
+
+  ACTIVE={ bins:binList, tray, attr,
+    onDrop:(el,bin)=>{
+      binList.forEach(updateBinCount);
+      el.classList.remove('right','wrong'); el.querySelector('.badge').textContent='';
+      if(!bin) return;
+      if(categoryOf(el.__item,attr)===bin.__cat){
+        el.classList.add('right'); el.querySelector('.badge').textContent='✓';
+        fb.show('ok','✅', t('sort.belongs',{animal:typeLabel(el.__item.type), group:catInfo(attr,bin.__cat).label}));
+      } else {
+        el.classList.add('wrong'); el.querySelector('.badge').textContent='!';
+        fb.show('tip','💡', clueFor(attr, el.__item, bin.__cat));
+      }
+      binList.forEach(updateBinCount); checkDone();
+    }
+  };
+  function checkDone(){
+    const placed=tray.querySelectorAll('.piece').length===0;
+    const allRight=binList.every(b=>[...b.__itemsBox.children].every(p=>categoryOf(p.__item,attr)===b.__cat));
+    if(placed&&allRight){ hint.style.display=''; fb.show('ok','🎉', t('sort.great',{attr:attrLabel(attr)})); showExplain(); }
+  }
+  function showExplain(){
+    explainBox.style.display='';
+    explainBox.innerHTML='<b>'+t('explain.prompt')+'</b>';
+    const opts=shuffle([attr, ...availableAttrs().filter(a=>a!==attr)].slice(0,3));
+    const row=document.createElement('div'); row.className='choices';
+    opts.forEach(a=>{
+      const bt=document.createElement('button'); bt.className='choice'; bt.type='button';
+      bt.innerHTML=`<span class="cico">${attrIcon(a)}</span> ${t('explain.option',{attr:attrLabel(a)})}`;
+      bt.addEventListener('click',()=>{
+        row.querySelectorAll('.choice').forEach(x=>x.disabled=true);
+        if(a===attr){ bt.classList.add('correct'); speak(t('explain.correctSpoken',{attr:attrLabel(attr)}));
+          const done=document.createElement('div'); done.className='feedback ok'; done.style.marginTop='12px';
+          done.innerHTML=`<span class="fico">🌟</span><div>${t('explain.perfect',{attr:attrLabel(attr)})}</div>`;
+          done.appendChild(speakerBtn(t('explain.perfect',{attr:attrLabel(attr)}))); explainBox.appendChild(done);
+        } else { bt.classList.add('incorrect'); [...row.children][opts.indexOf(attr)].classList.add('correct');
+          speak(t('explain.wrongSpoken',{attr:attrLabel(attr)})); }
+      });
+      row.appendChild(bt);
+    });
+    explainBox.appendChild(row); speak(t('explain.qSpoken'));
+  }
+  binList.forEach(updateBinCount); speak(t('sort.pickup'));
+}
+
+/* ---------------- MODE 2: Guess My Rule ---------------- */
+function ruleSeparates(inst, attr){
+  const binOf={}; inst.cats.forEach((c,i)=>binOf[c]=i);
+  const groups=inst.cats.map(()=>[]);
+  inst.items.forEach(it=>groups[binOf[categoryOf(it,inst.attr)]].push(it));
+  const seen=new Set();
+  for(const g of groups){
+    if(!g.length) return false;
+    const v=categoryOf(g[0],attr);
+    if(v==null) return false;
+    if(!g.every(it=>categoryOf(it,attr)===v)) return false;
+    if(seen.has(v)) return false; seen.add(v);
+  }
+  return true;
+}
+function uniqueRuleInstance(){
+  const candidates=availableAttrs();
+  for(let tries=0; tries<200; tries++){
+    const target=rnd(candidates);
+    const inst=buildInstance(target);
+    const perfect=candidates.filter(a=>ruleSeparates(inst,a));
+    if(perfect.length===1 && perfect[0]===target) return inst;
+  }
+  return buildInstance('color');
+}
+function modeGuess(){
+  CURRENT=modeGuess; clearApp(); ACTIVE=null;
+  setDirection(APP, t('dir.guess'));
+  const host=document.createElement('div'); APP.appendChild(host); newGuess(host);
+}
+function newGuess(host){
+  host.innerHTML='';
+  const inst=uniqueRuleInstance();
+  const binOf={}; inst.cats.forEach((c,i)=>binOf[c]=i);
+  const bins=document.createElement('div'); bins.className='bins n'+inst.cats.length;
+  const binList=inst.cats.map(cv=>{ const b=binEl(inst.attr,cv); bins.appendChild(b); return b; });
+  inst.items.forEach(it=>binList[binOf[categoryOf(it,inst.attr)]].__itemsBox.appendChild(pieceEl(it,{draggable:false})));
+  binList.forEach(updateBinCount); host.appendChild(bins);
+  const q=document.createElement('div'); q.className='panel'; q.innerHTML='<b>'+t('guess.q')+'</b>';
+  const choices=document.createElement('div'); choices.className='choices';
+  let opts=shuffle([inst.attr, ...availableAttrs().filter(a=>a!==inst.attr)]).slice(0,3);
+  if(!opts.includes(inst.attr)){ opts[0]=inst.attr; shuffle(opts); }
+  const fb=feedbackBox();
+  opts.forEach(a=>{
+    const b=document.createElement('button'); b.className='choice'; b.type='button';
+    b.innerHTML=`<span class="cico">${attrIcon(a)}</span> ${t('guess.option',{attr:attrLabel(a)})}`;
+    b.addEventListener('click',()=>{
+      choices.querySelectorAll('.choice').forEach(x=>x.disabled=true);
+      if(a===inst.attr){ b.classList.add('correct'); fb.show('ok','🎉', t('guess.correct',{attr:attrLabel(inst.attr)})); }
+      else { b.classList.add('incorrect'); [...choices.children][opts.indexOf(inst.attr)].classList.add('correct');
+        fb.show('tip','💡', t('guess.wrong',{wrong:attrLabel(a), attr:attrLabel(inst.attr)})); }
+    });
+    choices.appendChild(b);
+  });
+  q.appendChild(choices); host.appendChild(q); host.appendChild(fb);
+  const row=document.createElement('div'); row.className='btnrow';
+  const nb=document.createElement('button'); nb.className='btn ghost'; nb.type='button'; nb.textContent='🔁 '+t('guess.new');
+  nb.addEventListener('click',()=>newGuess(host)); row.appendChild(nb); host.appendChild(row);
+  speak(t('guess.spoken'));
+}
+
+/* ---------------- MODE 3: Fix the Sort ---------------- */
+function modeFix(){
+  CURRENT=modeFix; clearApp(); ACTIVE=null;
+  setDirection(APP, t('dir.fix'));
+  const host=document.createElement('div'); APP.appendChild(host); newFix(host);
+}
+function newFix(host){
+  host.innerHTML='';
+  const inst=uniqueRuleInstance(); const attr=inst.attr;
+  const binOf={}; inst.cats.forEach((c,i)=>binOf[c]=i);
+  const groups=inst.cats.map(()=>[]);
+  inst.items.forEach(it=>groups[binOf[categoryOf(it,attr)]].push(it));
+  const srcIdx=rnd(groups.map((g,i)=>g.length?i:-1).filter(i=>i>=0));
+  const moved=groups[srcIdx][Math.floor(Math.random()*groups[srcIdx].length)];
+  const wrongIdx=rnd(inst.cats.map((c,i)=>i).filter(i=>i!==srcIdx));
+
+  const info=document.createElement('div'); info.className='panel';
+  info.innerHTML='<b>'+t('fix.rule',{attr:attrLabel(attr)})+' '+attrIcon(attr)+'</b>';
+  host.appendChild(info);
+  const bins=document.createElement('div'); bins.className='bins n'+inst.cats.length;
+  const binList=inst.cats.map(cv=>{ const b=binEl(attr,cv); bins.appendChild(b); return b; });
+  inst.items.forEach(it=>{ let target=binOf[categoryOf(it,attr)]; if(it===moved) target=wrongIdx; binList[target].__itemsBox.appendChild(pieceEl(it)); });
+  host.appendChild(bins); binList.forEach(updateBinCount);
+  const fb=feedbackBox(); host.appendChild(fb);
+  const row=document.createElement('div'); row.className='btnrow';
+  const nb=document.createElement('button'); nb.className='btn ghost'; nb.type='button'; nb.textContent='🔁 '+t('fix.new');
+  nb.addEventListener('click',()=>newFix(host)); row.appendChild(nb); host.appendChild(row);
+
+  ACTIVE={ bins:binList, tray:null, attr,
+    onDrop:(el,bin)=>{
+      binList.forEach(updateBinCount);
+      el.classList.remove('right','wrong'); el.querySelector('.badge').textContent='';
+      if(!bin) return;
+      if(categoryOf(el.__item,attr)!==bin.__cat){ el.classList.add('wrong'); el.querySelector('.badge').textContent='!'; fb.show('tip','💡', clueFor(attr,el.__item,bin.__cat)); return; }
+      const allRight=binList.every(b=>[...b.__itemsBox.children].every(p=>categoryOf(p.__item,attr)===b.__cat));
+      binList.forEach(b=>[...b.__itemsBox.children].forEach(p=>{ if(categoryOf(p.__item,attr)===b.__cat){p.classList.add('right');p.querySelector('.badge').textContent='✓';} }));
+      if(allRight) fb.show('ok','🎉', t('fix.fixed',{attr:attrLabel(attr)}));
+    }
+  };
+  speak(t('fix.spoken'));
+}
+
+/* ---------------- MODE 4: Build a Graph ---------------- */
+function modeBuild(){
+  CURRENT=modeBuild; clearApp(); ACTIVE=null;
+  setDirection(APP, t('dir.build'));
+  const attrRow=document.createElement('div'); attrRow.className='panel';
+  attrRow.innerHTML='<b>'+t('build.sortBy')+'</b>';
+  const chips=document.createElement('div'); chips.className='chips'; const attrs=availableAttrs();
+  attrs.forEach(a=>{ const c=document.createElement('button'); c.className='chip'; c.type='button'; c.setAttribute('aria-pressed','false');
+    c.innerHTML=`<span class="ci">${attrIcon(a)}</span>${attrLabel(a)}`;
+    c.addEventListener('click',()=>{ chips.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed','false')); c.setAttribute('aria-pressed','true'); startBuild(a); });
+    chips.appendChild(c); });
+  attrRow.appendChild(chips); APP.appendChild(attrRow);
+  const host=document.createElement('div'); host.id='buildHost'; APP.appendChild(host);
+  const def=attrs.includes(SET.attr)?SET.attr:attrs[0];
+  const dc=[...chips.children][attrs.indexOf(def)]; if(dc){ dc.setAttribute('aria-pressed','true'); startBuild(def); }
+}
+function startBuild(attr){
+  const host=document.getElementById('buildHost'); host.innerHTML='';
+  const savedMax=SET.maxPer; SET.maxPer=Math.min(SET.maxPer,10);
+  const inst=buildInstance(attr); SET.maxPer=savedMax;
+  const binOf={}; inst.cats.forEach((c,i)=>binOf[c]=i);
+  const tray=document.createElement('div'); tray.className='tray';
+  inst.items.forEach(it=>tray.appendChild(pieceEl(it))); host.appendChild(tray);
+  const bins=document.createElement('div'); bins.className='bins n'+inst.cats.length;
+  const binList=inst.cats.map(cv=>{ const b=binEl(attr,cv); bins.appendChild(b); return b; });
+  host.appendChild(bins); binList.forEach(updateBinCount);
+  const fb=feedbackBox(); host.appendChild(fb);
+  const row=document.createElement('div'); row.className='btnrow';
+  const mk=document.createElement('button'); mk.className='btn'; mk.type='button'; mk.textContent='📊 '+t('build.make'); mk.disabled=true;
+  const nb=document.createElement('button'); nb.className='btn ghost'; nb.type='button'; nb.textContent='🔁 '+t('build.new');
+  nb.addEventListener('click',()=>startBuild(attr)); row.append(mk,nb); host.appendChild(row);
+  const graphHost=document.createElement('div'); host.appendChild(graphHost);
+
+  ACTIVE={ bins:binList, tray, attr,
+    onDrop:(el,bin)=>{
+      binList.forEach(updateBinCount);
+      el.classList.remove('right','wrong'); el.querySelector('.badge').textContent='';
+      if(bin){ if(categoryOf(el.__item,attr)===bin.__cat){ el.classList.add('right'); el.querySelector('.badge').textContent='✓'; fb.hide(); }
+        else { el.classList.add('wrong'); el.querySelector('.badge').textContent='!'; fb.show('tip','💡', clueFor(attr,el.__item,bin.__cat)); } }
+      binList.forEach(updateBinCount);
+      const placed=tray.querySelectorAll('.piece').length===0;
+      const allRight=binList.every(b=>[...b.__itemsBox.children].every(p=>categoryOf(p.__item,attr)===b.__cat));
+      mk.disabled=!(placed&&allRight);
+      if(placed&&allRight) fb.show('ok','✅', t('build.allSorted'));
+    }
+  };
+  mk.addEventListener('click',()=>{
+    const cats=inst.cats.map(cv=>({attr, val:cv, items:[...binList[binOf[cv]].__itemsBox.children].map(p=>p.__item)}));
+    buildGraphView(graphHost, attr, cats, true);
+    graphHost.scrollIntoView({behavior:'smooth',block:'nearest'});
+  });
+  speak(t('build.spoken'));
+}
+
+/* ---------------- Picture graph ---------------- */
+function buildGraphView(host, attr, cats, animate){
+  host.innerHTML='';
+  const title=document.createElement('h2'); title.className='sec'; title.textContent=t('graph.title'); host.appendChild(title);
+  const g=document.createElement('div'); g.className='graph';
+  cats.forEach(cat=>{
+    const info=cat.info || catInfo(attr,cat.val);
+    const count=cat.items?cat.items.length:cat.count;
+    const grow=document.createElement('div'); grow.className='grow';
+    const lab=document.createElement('div'); lab.className='glabel';
+    if(info.swatch){ const s=document.createElement('span'); s.className='swatch'; s.style.background=info.swatch; lab.appendChild(s); }
+    else if(info.emoji){ const s=document.createElement('span'); s.className='gi'; s.textContent=info.emoji; lab.appendChild(s); }
+    else if(info.art){ const s=document.createElement('span'); s.className='gi'; s.style.width='28px'; s.style.height='28px'; s.innerHTML=ART[info.art](COLORS.purple.hex,darken(COLORS.purple.hex,.4)); lab.appendChild(s); }
+    const ln=document.createElement('span'); ln.textContent=info.label; lab.appendChild(ln);
+    const track=document.createElement('div'); track.className='gtrack';
+    for(let k=0;k<count;k++){
+      const cell=document.createElement('div'); cell.className='gcell'+(animate?'':' on');
+      if(cat.items){ cell.innerHTML=artFor(cat.items[k]); }
+      else { const e=document.createElement('span'); e.className='emo'; e.textContent=cat.emoji||info.emoji||'⭐'; cell.appendChild(e); }
+      track.appendChild(cell);
+    }
+    const tot=document.createElement('div'); tot.className='gtotal'; tot.textContent=animate?'0':count;
+    grow.append(lab,track,tot); g.appendChild(grow);
+    grow.__tot=tot; grow.__count=count; grow.__cells=[...track.children]; grow.__label=info.label;
+  });
+  host.appendChild(g);
+  if(animate){
+    const rows=[...g.querySelectorAll('.grow')]; let ri=0;
+    const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    (function doRow(){
+      if(ri>=rows.length){ afterGraph(host,attr,cats); return; }
+      const r=rows[ri]; let ci=0; speak(t('graph.counting',{group:r.__label}));
+      (function step(){
+        if(ci>=r.__cells.length){ r.__tot.textContent=r.__count; ri++; setTimeout(doRow, reduce?10:350); return; }
+        r.__cells[ci].classList.add('on','pop'); ci++; r.__tot.textContent=ci; setTimeout(step, reduce?10:400);
+      })();
+    })();
+  } else { afterGraph(host,attr,cats); }
+}
+function afterGraph(host, attr, cats){
+  if(!SET.graphQ) return;
+  if(host.querySelector('.gq')) return;
+  const box=document.createElement('div'); box.className='panel gq'; box.style.marginTop='16px'; host.appendChild(box);
+  askGraphQuestion(box, attr, cats);
+}
+function numChoices(n){
+  const set=new Set([n]);
+  while(set.size<3){ const d=n+(Math.random()<.5?-1:1)*(1+Math.floor(Math.random()*2)); if(d>=0) set.add(d); if(n<2&&set.size<3) set.add(n+set.size); }
+  return [...set].map(String);
+}
+function askGraphQuestion(box, attr, cats){
+  box.innerHTML='';
+  const data=cats.map(c=>({ label:(c.info||catInfo(attr,c.val)).label, count:c.items?c.items.length:c.count }));
+  const counts=data.map(d=>d.count); const max=Math.max(...counts), min=Math.min(...counts);
+  const maxes=data.filter(d=>d.count===max), mins=data.filter(d=>d.count===min);
+  const anyEqual=new Set(counts).size < counts.length;
+  const qs=[];
+  if(maxes.length===1) qs.push({ q:t('gq.more.q'), say:t('gq.more.say'), correct:maxes[0].label, choices:data.map(d=>d.label), why:()=>t('why.more',{group:maxes[0].label,n:max}) });
+  if(mins.length===1 && counts.length>1) qs.push({ q:t('gq.fewer.q'), say:t('gq.fewer.say'), correct:mins[0].label, choices:data.map(d=>d.label), why:()=>t('why.fewer',{group:mins[0].label,n:min}) });
+  const pick=rnd(data);
+  qs.push({ q:t('gq.howmany.q',{group:pick.label}), say:t('gq.howmany.say',{group:pick.label}), correct:String(pick.count), choices:numChoices(pick.count), why:()=>t('why.howmany',{group:pick.label,n:pick.count}) });
+  qs.push({ q:t('gq.equal.q'), say:t('gq.equal.say'), correct:anyEqual?t('answer.yes'):t('answer.no'), choices:[t('answer.yes'),t('answer.no')], why:()=> anyEqual?t('why.equalYes'):t('why.equalNo') });
+  qs.push({ q:t('gq.onemore.q',{group:pick.label}), say:t('gq.onemore.say',{group:pick.label}), correct:String(pick.count+1), choices:numChoices(pick.count+1), why:()=>t('why.onemore',{n:pick.count,n1:pick.count+1}) });
+  const chosen=rnd(qs);
+  const h=document.createElement('div'); h.style.display='flex'; h.style.alignItems='center'; h.style.gap='10px';
+  h.appendChild(speakerBtn(()=>chosen.say));
+  const qt=document.createElement('b'); qt.style.fontSize='1.1rem'; qt.textContent=chosen.q; h.appendChild(qt); box.appendChild(h);
+  const ch=document.createElement('div'); ch.className='choices'; box.appendChild(ch);
+  const fb=feedbackBox(); box.appendChild(fb);
+  shuffle(uniq(chosen.choices)).forEach(opt=>{
+    const b=document.createElement('button'); b.className='choice'; b.type='button'; b.textContent=opt;
+    b.addEventListener('click',()=>{
+      ch.querySelectorAll('.choice').forEach(x=>x.disabled=true);
+      if(opt===chosen.correct){ b.classList.add('correct'); fb.show('ok','✅', t('gq.correct',{why:chosen.why()})); }
+      else { b.classList.add('incorrect'); const cc=[...ch.children].find(x=>x.textContent===chosen.correct); if(cc) cc.classList.add('correct');
+        fb.show('tip','💡', t('gq.answerIs',{a:chosen.correct, why:chosen.why()})); }
+    });
+    ch.appendChild(b);
+  });
+  const nq=document.createElement('button'); nq.className='btn ghost'; nq.type='button'; nq.textContent='❓ '+t('gq.another'); nq.style.marginTop='14px';
+  nq.addEventListener('click',()=>askGraphQuestion(box,attr,cats)); box.appendChild(nq);
+  speak(chosen.say);
+}
+
+/* ---------------- MODE 5: Read the Graph ---------------- */
+function modeRead(){
+  CURRENT=modeRead; clearApp(); ACTIVE=null;
+  setDirection(APP, t('dir.read'));
+  const host=document.createElement('div'); APP.appendChild(host); newRead(host);
+}
+function newRead(host){
+  host.innerHTML='';
+  const attr=rnd(availableAttrs()); const nCats=catCountFor(attr);
+  const cats=shuffle(valuesFor(attr).slice()).slice(0,nCats).map(v=>{
+    const count=1+Math.floor(Math.random()*Math.min(10,Math.max(3,SET.maxPer)));
+    const items=[];
+    for(let k=0;k<count;k++){
+      let type,color,size;
+      if(attr==='type'){ type=v; color=rnd(Object.keys(COLORS)); size='big'; }
+      else if(attr==='color'){ type=rnd(Object.keys(typeMap())); color=v; size='big'; }
+      else if(attr==='size'){ type=rnd(Object.keys(typeMap())); color=rnd(Object.keys(COLORS)); size=v; }
+      else { type=rnd(Object.keys(ANIMALS).filter(x=>ANIMALS[x].habitat===v)); color=rnd(Object.keys(COLORS)); size='big'; }
+      items.push(makeItem(type,color,size));
+    }
+    return {attr, val:v, items};
+  });
+  const graphHost=document.createElement('div'); host.appendChild(graphHost);
+  buildGraphView(graphHost, attr, cats, false);
+  if(!graphHost.querySelector('.gq')){ const box=document.createElement('div'); box.className='panel gq'; box.style.marginTop='16px'; graphHost.appendChild(box); askGraphQuestion(box, attr, cats); }
+  const row=document.createElement('div'); row.className='btnrow';
+  const nb=document.createElement('button'); nb.className='btn ghost'; nb.type='button'; nb.textContent='🔁 '+t('read.new');
+  nb.addEventListener('click',()=>newRead(host)); row.appendChild(nb); host.appendChild(row);
+}
+
+/* ---------------- Class Question ---------------- */
+const CLASS_TEMPLATES={
+  fruit:{key:'fruit', emojis:['🍎','🍌','🍇']},
+  school:{key:'school', emojis:['🚌','🚗','🚶']},
+  center:{key:'center', emojis:['🧱','📚','🎨']},
+};
+function modeClass(){
+  CURRENT=modeClass; clearApp(); ACTIVE=null;
+  setDirection(APP, t('dir.class'));
+  const p=document.createElement('div'); p.className='panel'; p.innerHTML='<b>'+t('class.pick')+'</b>';
+  const chips=document.createElement('div'); chips.className='chips';
+  Object.keys(CLASS_TEMPLATES).forEach(k=>{
+    const tpl=CLASS_TEMPLATES[k];
+    const c=document.createElement('button'); c.className='chip'; c.type='button';
+    c.innerHTML=`<span class="ci">${tpl.emojis[0]}</span>${t('tmpl.'+k+'.title')}`;
+    c.addEventListener('click',()=>fillTemplate(k)); chips.appendChild(c);
+  });
+  p.appendChild(chips); APP.appendChild(p);
+
+  const form=document.createElement('div'); form.className='panel';
+  const f1=document.createElement('div'); f1.className='field';
+  const lbl=document.createElement('label'); lbl.className='flabel'; lbl.setAttribute('for','cqTitle'); lbl.textContent=t('class.titleLabel');
+  const ti=document.createElement('input'); ti.type='text'; ti.id='cqTitle'; ti.style.width='100%'; ti.style.maxWidth='420px'; ti.placeholder=t('class.titlePh'); ti.value=t('tmpl.fruit.title');
+  f1.append(lbl,ti); form.appendChild(f1);
+  const rowsHost=document.createElement('div'); form.appendChild(rowsHost); APP.appendChild(form);
+
+  const EMOJIS=['⭐','🍎','🍌','🍇','🚌','🚗','🚶','🚲','🧱','📚','🎨','🐱','🐶','🐟','🌟','❤️','🔵','🟢'];
+  function rowFor(label,emoji,count){
+    const r=document.createElement('div'); r.className='catrow';
+    const em=document.createElement('button'); em.type='button'; em.className='emopick'; em.textContent=emoji||'⭐'; em.title=t('class.changePic'); em.setAttribute('aria-label',t('class.changePic'));
+    em.addEventListener('click',()=>{ let i=EMOJIS.indexOf(em.textContent); em.textContent=EMOJIS[(i+1)%EMOJIS.length]; });
+    const name=document.createElement('input'); name.type='text'; name.placeholder=t('class.groupPh'); name.value=label||''; name.style.width='100%';
+    const num=document.createElement('input'); num.type='number'; num.min='0'; num.max='30'; num.value=(count!=null?count:0);
+    const del=document.createElement('button'); del.type='button'; del.className='btn ghost'; del.textContent='✕'; del.setAttribute('aria-label',t('class.remove'));
+    del.addEventListener('click',()=>{ if(rowsHost.children.length>2) r.remove(); });
+    r.append(em,name,num,del);
+    r.__get=()=>({label:name.value.trim()||t('class.groupPh'), emoji:em.textContent, count:Math.max(0,Math.min(30,parseInt(num.value||'0',10)))});
+    return r;
+  }
+  function setRows(cats){ rowsHost.innerHTML=''; cats.forEach(c=>rowsHost.appendChild(rowFor(c.label,c.emoji,c.count))); }
+  function fillTemplate(k){ const tpl=CLASS_TEMPLATES[k]; ti.value=t('tmpl.'+k+'.title');
+    setRows(['a','b','c'].map((s,i)=>({label:t('tmpl.'+k+'.'+s), emoji:tpl.emojis[i], count:0}))); }
+  setRows(['a','b','c'].map((s,i)=>({label:t('tmpl.fruit.'+s), emoji:CLASS_TEMPLATES.fruit.emojis[i], count:0})));
+
+  const controls=document.createElement('div'); controls.className='btnrow';
+  const add=document.createElement('button'); add.className='btn ghost'; add.type='button'; add.textContent='➕ '+t('class.add');
+  add.addEventListener('click',()=>{ if(rowsHost.children.length<6) rowsHost.appendChild(rowFor('','⭐',0)); });
+  const go=document.createElement('button'); go.className='btn'; go.type='button'; go.textContent='📊 '+t('class.make');
+  controls.append(add,go); form.appendChild(controls);
+
+  const out=document.createElement('div'); APP.appendChild(out);
+  go.addEventListener('click',()=>{
+    const cats=[...rowsHost.children].map(r=>r.__get());
+    const title=ti.value||t('class.titleLabel');
+    out.innerHTML='';
+    const h=document.createElement('h2'); h.className='sec'; h.textContent=title; out.appendChild(h);
+    const data=cats.map(c=>({ info:{label:c.label,emoji:c.emoji}, emoji:c.emoji, count:c.count, val:c.label }));
+    buildGraphView(out, 'class', data, true);
+    out.scrollIntoView({behavior:'smooth',block:'nearest'});
+  });
+}
+
+/* ---------------- Teacher Settings ---------------- */
+function showSettings(){
+  CURRENT=showSettings; clearApp(); ACTIVE=null;
+  setDirection(APP, t('dir.settings'));
+  const p=document.createElement('div'); p.className='panel';
+  function segGroup(labelText, options, current, onPick){
+    const f=document.createElement('div'); f.className='field';
+    const l=document.createElement('label'); l.className='flabel'; l.textContent=labelText; f.appendChild(l);
+    const row=document.createElement('div'); row.className='segrow';
+    options.forEach(o=>{ const b=document.createElement('button'); b.className='seg'; b.type='button'; b.textContent=o.label; b.setAttribute('aria-pressed',String(o.val===current));
+      b.addEventListener('click',()=>{ row.querySelectorAll('.seg').forEach(x=>x.setAttribute('aria-pressed','false')); b.setAttribute('aria-pressed','true'); onPick(o.val); });
+      row.appendChild(b); });
+    f.appendChild(row); return f;
+  }
+  p.appendChild(segGroup(t('set.objectSet'), [{val:'animals',label:'🐾 '+t('set.animals')},{val:'toys',label:'🧸 '+t('set.toys')}], SET.objectSet, v=>{ SET.objectSet=v; if(!availableAttrs().includes(SET.attr)) SET.attr='color'; saveSettings(); showSettings(); }));
+  p.appendChild(segGroup(t('set.numGroups'), [{val:2,label:t('set.2groups')},{val:3,label:t('set.3groups')}], SET.numCats, v=>{ SET.numCats=v; saveSettings(); }));
+  p.appendChild(segGroup(t('set.ruleDefault'), availableAttrs().map(a=>({val:a,label:attrIcon(a)+' '+attrLabel(a)})), SET.attr, v=>{ SET.attr=v; saveSettings(); }));
+  p.appendChild(segGroup(t('set.maxPets'), [{val:4,label:t('set.upto',{n:4})},{val:6,label:t('set.upto',{n:6})},{val:10,label:t('set.upto',{n:10})}], SET.maxPer, v=>{ SET.maxPer=v; saveSettings(); }));
+  const gf=document.createElement('div'); gf.className='field';
+  const gl=document.createElement('label'); gl.className='switch';
+  const cb=document.createElement('input'); cb.type='checkbox'; cb.checked=SET.graphQ; cb.addEventListener('change',()=>{ SET.graphQ=cb.checked; saveSettings(); });
+  gl.append(cb, document.createTextNode(t('set.graphQ'))); gf.appendChild(gl); p.appendChild(gf);
+  APP.appendChild(p);
+  const note=document.createElement('div'); note.className='panel';
+  note.innerHTML='<b>'+t('set.privacyTitle')+'</b> '+t('set.privacyBody'); APP.appendChild(note);
+  const row=document.createElement('div'); row.className='btnrow';
+  const reset=document.createElement('button'); reset.className='btn ghost'; reset.type='button'; reset.textContent='↩️ '+t('set.reset');
+  reset.addEventListener('click',()=>{ SET=Object.assign({},DEFAULTS); saveSettings(); showSettings(); });
+  const done=document.createElement('button'); done.className='btn'; done.type='button'; done.textContent='✅ '+t('set.back');
+  done.addEventListener('click', showMenu);
+  row.append(done,reset); APP.appendChild(row);
+}
+
+/* ---------------- Boot ---------------- */
+(function boot(){
+  initLang();
+  const sel=document.getElementById('langSel');
+  LANGS.forEach(l=>{ const o=document.createElement('option'); o.value=l.code; o.textContent=l.name; sel.appendChild(o); });
+  sel.addEventListener('change', ()=> setLang(sel.value));
+  document.getElementById('menuBtn').addEventListener('click', showMenu);
+  document.getElementById('settingsBtn').addEventListener('click', showSettings);
+  applyLang();
+  showMenu();
+})();
+</script>
+</body>
+</html>
