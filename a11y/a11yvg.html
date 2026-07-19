@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A11Y Vendor Contracting Checklist for School Districts</title>
+<style>
+  :root {
+    --tcea-navy: #0A3476;
+    --tcea-gold: #FCB040;
+    --page-bg: #f4f7fb;
+    --card-bg: #ffffff;
+    --border: #d9e2ef;
+    --text: #1f2937;
+    --muted: #526173;
+    --focus: #7c3aed;
+    --radius: 12px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    margin: 0;
+    background: var(--page-bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.55;
+  }
+
+  .a11y-checklist {
+    width: min(100%, 1100px);
+    margin: 0 auto;
+    padding: 24px;
+  }
+
+  .a11y-checklist h1 {
+    margin: 0 0 10px;
+    color: var(--tcea-navy);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    line-height: 1.15;
+  }
+
+  .intro {
+    margin: 0 0 22px;
+    color: var(--muted);
+    font-size: 1rem;
+  }
+
+  details {
+    margin: 0 0 12px;
+    overflow: clip;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 8px rgba(10, 52, 118, 0.06);
+  }
+
+  summary {
+    position: relative;
+    padding: 18px 58px 18px 20px;
+    color: var(--tcea-navy);
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.3;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary::marker {
+    content: "";
+  }
+
+  summary::after {
+    content: "+";
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: var(--tcea-gold);
+    color: var(--tcea-navy);
+    font-size: 1.45rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  details[open] summary::after {
+    content: "−";
+  }
+
+  summary:hover {
+    background: #f8fbff;
+  }
+
+  summary:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: -3px;
+  }
+
+  .details-body {
+    padding: 0 20px 20px;
+    border-top: 1px solid var(--border);
+  }
+
+  .section-note {
+    margin: 16px 0 10px;
+    padding: 12px 14px;
+    border-left: 5px solid var(--tcea-gold);
+    background: #fff8e8;
+    color: #4b3a10;
+    font-weight: 600;
+  }
+
+  .checklist {
+    margin: 16px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .checklist li {
+    display: grid;
+    grid-template-columns: 1.25rem 1fr;
+    gap: 10px;
+    align-items: start;
+    padding: 9px 0;
+    border-bottom: 1px solid #edf1f6;
+  }
+
+  .checklist li:last-child {
+    border-bottom: 0;
+  }
+
+  .checklist input[type="checkbox"] {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin: 0.2rem 0 0;
+    accent-color: var(--tcea-navy);
+  }
+
+  .checklist input[type="checkbox"]:focus-visible {
+    outline: 3px solid var(--tcea-gold);
+    outline-offset: 2px;
+  }
+
+  .checklist label {
+    cursor: pointer;
+  }
+
+  .checklist input[type="checkbox"]:checked + label {
+    color: var(--muted);
+    text-decoration: line-through;
+    text-decoration-thickness: 1.5px;
+  }
+
+  .key-rule {
+    margin: 22px 0 0;
+    padding: 18px 20px;
+    border: 2px solid var(--tcea-gold);
+    border-radius: var(--radius);
+    background: var(--tcea-navy);
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  @media (max-width: 640px) {
+    .a11y-checklist {
+      padding: 14px;
+    }
+
+    summary {
+      padding: 16px 54px 16px 16px;
+      font-size: 1rem;
+    }
+
+    .details-body {
+      padding: 0 16px 16px;
+    }
+  }
+
+  @media print {
+    body {
+      background: #ffffff;
+    }
+
+    .a11y-checklist {
+      width: 100%;
+      max-width: none;
+      padding: 0;
+    }
+
+    details {
+      break-inside: avoid;
+      box-shadow: none;
+    }
+
+    details:not([open]) > .details-body {
+      display: block;
+    }
+
+    summary::after {
+      display: none;
+    }
+  }
+</style>
+</head>
+<body>
+<main class="a11y-checklist">
+  <h1>A11Y Vendor Contracting Checklist for School Districts</h1>
+  <p class="intro">Open each section to review the district’s responsibilities before purchasing, renewing, or deploying a third-party digital product.</p>
+
+  <details open>
+          <summary>District Ownership and Governance</summary>
+          <div class="details-body">
+            
+            <ul class="checklist">
+              <li>
+                <input type="checkbox" id="check-1">
+                <label for="check-1">Name a district accessibility owner with authority to coordinate the work</label>
+              </li><li>
+                <input type="checkbox" id="check-2">
+                <label for="check-2">Identify representatives from technology, curriculum, communications, procurement, special education, human resources, and legal services</label>
+              </li><li>
+                <input type="checkbox" id="check-3">
+                <label for="check-3">Define who approves new digital products</label>
+              </li><li>
+                <input type="checkbox" id="check-4">
+                <label for="check-4">Define who monitors vendor accessibility after purchase</label>
+              </li><li>
+                <input type="checkbox" id="check-5">
+                <label for="check-5">Establish an escalation path for unresolved barriers</label>
+              </li><li>
+                <input type="checkbox" id="check-6">
+                <label for="check-6">Report accessibility status and risks to district leadership</label>
+              </li>
+            </ul>
+          </div>
+        </details><details>
+          <summary>Digital Content and Product Inventory</summary>
+          <div class="details-body">
+            
+            <ul class="checklist">
+              <li>
+                <input type="checkbox" id="check-7">
+                <label for="check-7">Maintain an inventory of district websites, portals, apps, forms, documents, videos, LMS platforms, and vendor-hosted services</label>
+              </li><li>
+                <input type="checkbox" id="check-8">
+                <label for="check-8">Record the owner and vendor for each resource</label>
+              </li><li>
+                <input type="checkbox" id="check-9">
+                <label for="check-9">Identify the students, families, employees, and community members who use it</label>
+              </li><li>
+                <input type="checkbox" id="check-10">
+                <label for="check-10">List the essential tasks users must complete</label>
+              </li><li>
+                <input type="checkbox" id="check-11">
+                <label for="check-11">Record contract, renewal, and product review dates</label>
+              </li><li>
+                <input type="checkbox" id="check-12">
+                <label for="check-12">Identify high-risk services such as enrollment, employment, payments, assessments, emergency information, and required instruction</label>
+              </li>
+            </ul>
+          </div>
+        </details><details>
+          <summary>Before Contacting Vendors</summary>
+          <div class="details-body">
+            
+            <ul class="checklist">
+              <li>
+                <input type="checkbox" id="check-13">
+                <label for="check-13">Define the product’s essential user tasks</label>
+              </li><li>
+                <input type="checkbox" id="check-14">
+                <label for="check-14">Document the district’s accessibility requirements</label>
+              </li><li>
+                <input type="checkbox" id="check-15">
+                <label for="check-15">Require alignment with WCAG 2.1 Level A and Level AA</label>
+              </li><li>
+                <input type="checkbox" id="check-16">
+                <label for="check-16">Include accessibility in the request for proposals, scoring rubric, demonstrations, and contract</label>
+              </li><li>
+                <input type="checkbox" id="check-17">
+                <label for="check-17">Identify required browsers, devices, operating systems, and assistive technologies</label>
+              </li><li>
+                <input type="checkbox" id="check-18">
+                <label for="check-18">Decide what evidence vendors must provide</label>
+              </li><li>
+                <input type="checkbox" id="check-19">
+                <label for="check-19">Involve accessibility reviewers before selecting a finalist</label>
+              </li>
+            </ul>
+          </div>
+        </details><details>
+          <summary>Evidence to Request</summary>
+          <div class="details-body">
+            <p class="section-note">A VPAT is a reporting template. The completed report is an Accessibility Conformance Report. Neither one is proof that the product is fully accessible.</p>
+            <ul class="checklist">
+              <li>
+                <input type="checkbox" id="check-20">
+                <label for="check-20">Current Accessibility Conformance Report based on the appropriate VPAT edition</label>
+              </li><li>
+                <input type="checkbox" id="check-21">
+                <label for="check-21">Exact product name and version covered by the report</label>
+              </li><li>
+                <input type="checkbox" id="check-22">
+                <label for="check-22">Date of the most recent accessibility evaluation</label>
+              </li><li>
+                <input type="checkbox" id="check-23">
+                <label for="check-23">Testing methods used</label>
+              </li><li>
+                <input type="checkbox" id="check-24">
+                <label for="check-24">Assistive technologies used during testing</label>
+              </li><li>
+                <input type="checkbox" id="check-25">
+                <label for="check-25">Independent audit results, when available</label>
+              </li><li>
+                <input type="checkbox" id="check-26">
+                <label for="check-26">List of known accessibility barriers</label>
+              </li><li>
+                <input type="checkbox" id="check-27">
+                <label for="check-27">Accessibility roadmap with target correction dates</label>
+              </li><li>
+                <input type="checkbox" id="check-28">
+                <label for="check-28">Product accessibility documentation</label>
+              </li><li>
+                <input type="checkbox" id="check-29">
+                <label for="check-29">Accessibility support contact</label>
+              </li><li>
+                <input type="checkbox" id="check-30">
+                <label for="check-30">Sample remediation report or issue-resolution record</label>
+              </li>
+            </ul>
+          </div>
+        </details><details>
+          <summary>Questions for the Vendor</summary>
+          <div class="details-body">
+            
+            <ul class="checklist">
+              <li>
+                <input type="checkbox" id="check-31">
+                <label for="check-31">Can every essential task be completed using only a keyboard?</label>
+              </li><li>
+                <input type="checkbox" id="check-32">
+                <label for="check-32">Has the entire workflow been tested with screen readers?</label>
+              </li><li>
+                <input type="checkbox" id="check-33">
+                <label for="check-33">Are forms, errors, confirmations, and authentication accessible?</label>
+              </li><li>
+                <input type="checkbox" id="check-34">
+                <label for="check-34">Does the product support browser zoom, text resizing, reflow, and mobile access?</label>
+              </li><li>
+                <input type="checkbox" id="check-35">
+                <label for="check-35">Are videos accurately captioned?</label>
+              </li><li>
+                <input type="checkbox" id="check-36">
+                <label for="check-36">Are documents and reports generated in accessible formats?</label>
+              </li><li>
+                <input type="checkbox" id="check-37">
+                <label for="check-37">Are charts and dashboards understandable without relying only on color or visual position?</label>
+              </li><li>
+                <input type="checkbox" id="check-38">
+                <label for="check-38">Are drag-and-drop activities provided with accessible alternatives?</label>
+              </li><li>
+                <input type="checkbox" id="check-39">
+                <label for="check-39">Are mobile apps tested with VoiceOver and TalkBack?</label>
+              </li><li>
+                <input type="checkbox" id="check-40">
+                <label for="check-40">Are third-party integrations included in the accessibility evaluation?</label>
+              </li><li>
+                <input type="checkbox" id="check-41">
+                <label for="check-41">Can district staff create accessible content without custom code?</label>
+              </li><li>
+                <input type="checkbox" id="check-42">
+                <label for="check-42">How are accessibility regressions prevented during product updates?</label>
+              </li><li>
+                <input type="checkbox" id="check-43">
+                <label for="check-43">How quickly are critical accessibility barriers corrected?</label>
+              </li><li>
+                <input type="checkbox" id="check-44">
+                <label for="check-44">How will the vendor communicate accessibility changes to the district?</label>
+              </li>
+            </ul>
+          </div>
+        </details><details>
+          <summary>District Testing Before Purchase</summary>
+          <div class="details-body">
+            
+            <ul class="checklist">
+              <li>
+                <input type="checkbox" id="check-45">
+                <label for="check-45">Test the live product rather than relying only on a demonstration</label>
+              </li><li>
+                <input type="checkbox" id="check-46">
+                <label for="check-46">Complete essential tasks using only a keyboard</label>
+              </li><li>
+                <input type="checkbox" id="check-47">
+                <label for="check-47">Check visible keyboard focus and logical focus order</label>
+              </li><li>
+                <input type="checkbox" id="check-48">
+                <label for="check-48">Test representative workflows with a screen reader</label>
+              </li><li>
+                <input type="checkbox" id="check-49">
+                <label for="check-49">Test forms, validation messages, and confirmation screens</label>
+              </li><li>
+                <input type="checkbox" id="check-50">
+                <label for="check-50">Test at 200 percent text size and 400 percent browser zoom</label>
+              </li><li>
+                <input type="checkbox" id="check-51">
+                <label for="check-51">Review mobile and narrow-screen behavior</label>
+              </li><li>
+                <input type="checkbox" id="check-52">
+                <label for="check-52">Inspect sample PDFs, reports, presentations, and exports</label>
+              </li><li>
+                <input type="checkbox" id="check-53">
+                <label for="check-53">Review captions and transcripts</label>
+              </li><li>
+                <input type="checkbox" id="check-54">
+                <label for="check-54">Include users with disabilities when practical</label>
+              </li><li>
+                <input type="checkbox" id="check-55">
+                <label for="check-55">Document findings and compare them with the vendor’s claims</label>
+              </li>
+            </ul>
+          </div>
+        </details><details>
+          <summary>Contract Requirements</summary>
+          <div class="details-body">
+            
+            <ul class="checklist">
+              <li>
+                <input type="checkbox" id="check-56">
+                <label for="check-56">State the required WCAG standard and conformance level</label>
+              </li><li>
+                <input type="checkbox" id="check-57">
+                <label for="check-57">Require the vendor to maintain accessibility throughout the contract</label>
+              </li><li>
+                <input type="checkbox" id="check-58">
+                <label for="check-58">Require disclosure of known barriers before purchase</label>
+              </li><li>
+                <input type="checkbox" id="check-59">
+                <label for="check-59">Require timely correction of critical barriers</label>
+              </li><li>
+                <input type="checkbox" id="check-60">
+                <label for="check-60">Set remediation deadlines by severity</label>
+              </li><li>
+                <input type="checkbox" id="check-61">
+                <label for="check-61">Require accessibility testing after major updates</label>
+              </li><li>
+                <input type="checkbox" id="check-62">
+                <label for="check-62">Require an updated ACR after material product changes</label>
+              </li><li>
+                <input type="checkbox" id="check-63">
+                <label for="check-63">Require advance notice of changes that may affect accessibility</label>
+              </li><li>
+                <input type="checkbox" id="check-64">
+                <label for="check-64">Give the district the right to conduct independent testing</label>
+              </li><li>
+                <input type="checkbox" id="check-65">
+                <label for="check-65">Require vendor cooperation with district accessibility reviews</label>
+              </li><li>
+                <input type="checkbox" id="check-66">
+                <label for="check-66">Require accessible training, documentation, and support</label>
+              </li><li>
+                <input type="checkbox" id="check-67">
+                <label for="check-67">Define consequences when accessibility obligations are not met</label>
+              </li><li>
+                <input type="checkbox" id="check-68">
+                <label for="check-68">Preserve termination or non-renewal options for unresolved barriers</label>
+              </li>
+            </ul>
+          </div>
+        </details><details>
+          <summary>Staff Training and Support</summary>
+          <div class="details-body">
+            
+            <ul class="checklist">
+              <li>
+                <input type="checkbox" id="check-69">
+                <label for="check-69">Train procurement staff to evaluate vendor accessibility claims</label>
+              </li><li>
+                <input type="checkbox" id="check-70">
+                <label for="check-70">Train technology staff to test products and integrations</label>
+              </li><li>
+                <input type="checkbox" id="check-71">
+                <label for="check-71">Train content creators to produce accessible materials</label>
+              </li><li>
+                <input type="checkbox" id="check-72">
+                <label for="check-72">Train LMS administrators and course designers</label>
+              </li><li>
+                <input type="checkbox" id="check-73">
+                <label for="check-73">Provide accessible templates and publishing guidance</label>
+              </li><li>
+                <input type="checkbox" id="check-74">
+                <label for="check-74">Tell staff where to report product barriers</label>
+              </li><li>
+                <input type="checkbox" id="check-75">
+                <label for="check-75">Include accessibility expectations in onboarding and annual training</label>
+              </li>
+            </ul>
+          </div>
+        </details><details>
+          <summary>Barrier Reporting</summary>
+          <div class="details-body">
+            
+            <ul class="checklist">
+              <li>
+                <input type="checkbox" id="check-76">
+                <label for="check-76">Publish an accessible barrier-reporting method</label>
+              </li><li>
+                <input type="checkbox" id="check-77">
+                <label for="check-77">Offer more than one contact method</label>
+              </li><li>
+                <input type="checkbox" id="check-78">
+                <label for="check-78">Identify who receives reports</label>
+              </li><li>
+                <input type="checkbox" id="check-79">
+                <label for="check-79">Confirm receipt of each report</label>
+              </li><li>
+                <input type="checkbox" id="check-80">
+                <label for="check-80">Record the affected product, task, and user impact</label>
+              </li><li>
+                <input type="checkbox" id="check-81">
+                <label for="check-81">Assign an owner and priority</label>
+              </li><li>
+                <input type="checkbox" id="check-82">
+                <label for="check-82">Provide interim access when immediate correction is unavailable</label>
+              </li><li>
+                <input type="checkbox" id="check-83">
+                <label for="check-83">Protect the privacy of the person reporting the barrier</label>
+              </li><li>
+                <input type="checkbox" id="check-84">
+                <label for="check-84">Communicate progress and resolution</label>
+              </li><li>
+                <input type="checkbox" id="check-85">
+                <label for="check-85">Retest before closing the issue</label>
+              </li>
+            </ul>
+          </div>
+        </details><details>
+          <summary>Written Remediation Plan</summary>
+          <div class="details-body">
+            
+            <ul class="checklist">
+              <li>
+                <input type="checkbox" id="check-86">
+                <label for="check-86">Record each confirmed barrier</label>
+              </li><li>
+                <input type="checkbox" id="check-87">
+                <label for="check-87">Identify the affected users and essential tasks</label>
+              </li><li>
+                <input type="checkbox" id="check-88">
+                <label for="check-88">Assign severity and priority</label>
+              </li><li>
+                <input type="checkbox" id="check-89">
+                <label for="check-89">Name the district and vendor owners</label>
+              </li><li>
+                <input type="checkbox" id="check-90">
+                <label for="check-90">Identify the required correction</label>
+              </li><li>
+                <input type="checkbox" id="check-91">
+                <label for="check-91">Set a target completion date</label>
+              </li><li>
+                <input type="checkbox" id="check-92">
+                <label for="check-92">Document any temporary access method</label>
+              </li><li>
+                <input type="checkbox" id="check-93">
+                <label for="check-93">Record vendor commitments</label>
+              </li><li>
+                <input type="checkbox" id="check-94">
+                <label for="check-94">Retest corrected features</label>
+              </li><li>
+                <input type="checkbox" id="check-95">
+                <label for="check-95">Maintain evidence of closure</label>
+              </li><li>
+                <input type="checkbox" id="check-96">
+                <label for="check-96">Escalate missed deadlines</label>
+              </li><li>
+                <input type="checkbox" id="check-97">
+                <label for="check-97">Include unresolved issues in renewal decisions</label>
+              </li>
+            </ul>
+          </div>
+        </details><details>
+          <summary>Ongoing Monitoring</summary>
+          <div class="details-body">
+            
+            <ul class="checklist">
+              <li>
+                <input type="checkbox" id="check-98">
+                <label for="check-98">Review accessibility at least annually</label>
+              </li><li>
+                <input type="checkbox" id="check-99">
+                <label for="check-99">Retest after major releases or redesigns</label>
+              </li><li>
+                <input type="checkbox" id="check-100">
+                <label for="check-100">Monitor vendor release notes</label>
+              </li><li>
+                <input type="checkbox" id="check-101">
+                <label for="check-101">Track recurring barriers</label>
+              </li><li>
+                <input type="checkbox" id="check-102">
+                <label for="check-102">Review new documents, videos, and integrations</label>
+              </li><li>
+                <input type="checkbox" id="check-103">
+                <label for="check-103">Update the district inventory</label>
+              </li><li>
+                <input type="checkbox" id="check-104">
+                <label for="check-104">Review contracts before renewal</label>
+              </li><li>
+                <input type="checkbox" id="check-105">
+                <label for="check-105">Request updated accessibility evidence</label>
+              </li><li>
+                <input type="checkbox" id="check-106">
+                <label for="check-106">Gather feedback from users with disabilities</label>
+              </li><li>
+                <input type="checkbox" id="check-107">
+                <label for="check-107">Report progress, risks, and overdue remediation to leadership</label>
+              </li>
+            </ul>
+          </div>
+        </details><details>
+          <summary>Stop-Sign Conditions</summary>
+          <div class="details-body">
+            <p class="section-note">Do not approve or renew a product without further review when:</p>
+            <ul class="checklist">
+              <li>
+                <input type="checkbox" id="check-108">
+                <label for="check-108">The vendor refuses to provide accessibility evidence</label>
+              </li><li>
+                <input type="checkbox" id="check-109">
+                <label for="check-109">The ACR does not cover the product version being purchased</label>
+              </li><li>
+                <input type="checkbox" id="check-110">
+                <label for="check-110">Essential tasks cannot be completed by keyboard</label>
+              </li><li>
+                <input type="checkbox" id="check-111">
+                <label for="check-111">Authentication blocks assistive-technology users</label>
+              </li><li>
+                <input type="checkbox" id="check-112">
+                <label for="check-112">Required forms cannot be completed or submitted</label>
+              </li><li>
+                <input type="checkbox" id="check-113">
+                <label for="check-113">Required videos lack accurate captions</label>
+              </li><li>
+                <input type="checkbox" id="check-114">
+                <label for="check-114">Required documents are image-only or otherwise inaccessible</label>
+              </li><li>
+                <input type="checkbox" id="check-115">
+                <label for="check-115">The vendor has no remediation process</label>
+              </li><li>
+                <input type="checkbox" id="check-116">
+                <label for="check-116">Critical barriers have no correction date</label>
+              </li><li>
+                <input type="checkbox" id="check-117">
+                <label for="check-117">The contract places all remediation responsibility on the district</label>
+              </li><li>
+                <input type="checkbox" id="check-118">
+                <label for="check-118">Vendor claims conflict with district testing</label>
+              </li><li>
+                <input type="checkbox" id="check-119">
+                <label for="check-119">The vendor treats accessibility as an optional future feature</label>
+              </li>
+            </ul>
+          </div>
+        </details><details>
+          <summary>Final Approval</summary>
+          <div class="details-body">
+            
+            <ul class="checklist">
+              <li>
+                <input type="checkbox" id="check-120">
+                <label for="check-120">Accessibility evidence reviewed</label>
+              </li><li>
+                <input type="checkbox" id="check-121">
+                <label for="check-121">Essential workflows tested</label>
+              </li><li>
+                <input type="checkbox" id="check-122">
+                <label for="check-122">Known barriers documented</label>
+              </li><li>
+                <input type="checkbox" id="check-123">
+                <label for="check-123">Remediation commitments included in the contract</label>
+              </li><li>
+                <input type="checkbox" id="check-124">
+                <label for="check-124">District accessibility owner approves</label>
+              </li><li>
+                <input type="checkbox" id="check-125">
+                <label for="check-125">Procurement approves</label>
+              </li><li>
+                <input type="checkbox" id="check-126">
+                <label for="check-126">Technology approves</label>
+              </li><li>
+                <input type="checkbox" id="check-127">
+                <label for="check-127">Program or curriculum owner approves</label>
+              </li><li>
+                <input type="checkbox" id="check-128">
+                <label for="check-128">Legal review completed when required</label>
+              </li><li>
+                <input type="checkbox" id="check-129">
+                <label for="check-129">Monitoring and renewal dates scheduled</label>
+              </li>
+            </ul>
+          </div>
+        </details>
+
+  <p class="key-rule">
+    Key rule: Accessibility must be a shared district process with named owners, written requirements, documented evidence, and follow-through. It should never depend on one person remembering to check.
+  </p>
+</main>
+</body>
+</html>
