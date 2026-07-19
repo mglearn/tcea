@@ -1,0 +1,1284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TCEA Digital Accessibility Readiness Assessment — July 19, 2026</title>
+<style>
+:root {
+  --navy:#0A3476;
+  --navy-dark:#062653;
+  --gold:#FCB040;
+  --teal:#075E68;
+  --ink:#172033;
+  --muted:#536174;
+  --paper:#FFFFFF;
+  --wash:#F3F6FA;
+  --line:#C9D4E2;
+  --red:#8C1D18;
+  --amber:#7A4A00;
+  --green:#1B5E20;
+  --gray:#5F6875;
+  --bluegray:#3E5870;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--wash);color:var(--ink);font:17px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:var(--navy);text-decoration-thickness:.12em;text-underline-offset:.18em}
+a:hover{text-decoration-thickness:.18em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;padding:.7rem 1rem;z-index:10}
+.skip:focus{left:1rem;top:1rem}
+header.hero{background:linear-gradient(135deg,var(--navy-dark),var(--navy));color:#fff;border-bottom:8px solid var(--gold)}
+.wrap{width:min(1180px,calc(100% - 2rem));margin:auto}
+.hero .wrap{padding:2.3rem 0 2rem}
+.eyebrow{margin:0 0 .5rem;color:#FFE2A3;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.82rem}
+h1{font-size:clamp(2rem,5vw,3.9rem);line-height:1.03;margin:.2rem 0 .9rem;max-width:18ch}
+.hero p{max-width:78ch;margin:.45rem 0;color:#EAF2FF}
+.meta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.8rem;margin-top:1.4rem}
+.meta-card{border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);padding:.85rem 1rem;border-radius:.45rem}
+.meta-card b{display:block;color:#FFE2A3;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em}
+nav.toc{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+nav.toc ul{display:flex;gap:.45rem;overflow:auto;list-style:none;margin:0;padding:.65rem 0}
+nav.toc a{display:block;white-space:nowrap;padding:.45rem .65rem;border-radius:.3rem;text-decoration:none;font-weight:700}
+nav.toc a:hover,nav.toc a:focus-visible{background:#E8EFF9}
+main{padding:1.4rem 0 4rem}
+section{background:var(--paper);border:1px solid var(--line);border-radius:.6rem;margin:1rem 0;padding:clamp(1rem,3vw,2rem);box-shadow:0 2px 10px rgba(10,52,118,.05)}
+h2{font-size:clamp(1.55rem,3vw,2.2rem);line-height:1.15;color:var(--navy-dark);margin:.1rem 0 1rem}
+h3{font-size:1.18rem;line-height:1.25;color:var(--navy);margin:0 0 .6rem}
+.notice{border-left:7px solid var(--navy);background:#EAF1FB;padding:1rem 1.1rem;margin:1rem 0}
+.score-layout{display:grid;grid-template-columns:minmax(250px,.8fr) minmax(300px,1.2fr);gap:1rem;align-items:stretch}
+@media(max-width:780px){.score-layout{grid-template-columns:1fr}}
+.score-card{background:var(--navy-dark);color:#fff;border-radius:.55rem;padding:1.4rem}
+.score-card .label{font-weight:800;color:#FFE2A3;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem}
+.score-card .insufficient{font-size:clamp(1.75rem,4vw,2.8rem);font-weight:900;line-height:1.05;margin:.5rem 0}
+.provisional{background:#fff;color:var(--navy-dark);border-radius:.4rem;padding:1rem;margin-top:1rem}
+.provisional .pct{font-size:2.5rem;font-weight:900;line-height:1}
+.status-banner{padding:1rem 1.2rem;border:3px solid var(--green);background:#EAF6EC;color:#123C17;font-weight:900;border-radius:.45rem;margin:1rem 0}
+.risk-banner{padding:.85rem 1rem;border-left:7px solid var(--red);background:#FBECEB;color:#5F1210;margin:1rem 0}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:.75rem}
+.stat{background:#fff;border:1px solid var(--line);padding:.9rem;border-radius:.45rem;text-align:center}
+.stat strong{display:block;font-size:1.8rem;color:var(--navy-dark)}
+.bar-row{display:grid;grid-template-columns:minmax(220px,1.1fr) minmax(150px,2fr) 64px;gap:.8rem;align-items:center;margin:.75rem 0}
+.bar-track{height:1.1rem;border:1px solid #8091A5;background:#EEF2F7;border-radius:999px;overflow:hidden}
+.bar-track span{display:block;height:100%;background:var(--teal)}
+.bar-value{font-weight:900;text-align:right}
+.not-scored{grid-column:2/4;border:1px dashed var(--gray);padding:.2rem .55rem;color:var(--gray);width:max-content}
+@media(max-width:650px){.bar-row{grid-template-columns:1fr 55px}.bar-label{grid-column:1/3}.bar-track{grid-column:1/2}}
+.chart-description{color:var(--muted);margin-top:0}
+table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.95rem}
+caption{text-align:left;font-weight:800;color:var(--navy);padding:.4rem 0}
+th,td{border:1px solid var(--line);padding:.65rem .7rem;text-align:left;vertical-align:top}
+thead th{background:var(--navy);color:#fff}
+tbody th{background:#F4F7FB}
+.severity-row{display:grid;grid-template-columns:125px 1fr 36px;gap:.7rem;align-items:center;margin:.6rem 0}
+.severity-track{height:1rem;background:#EEF2F7;border:1px solid #8796A8;border-radius:999px;overflow:hidden}
+.severity-track span{display:block;height:100%}
+.sev-critical,.sev-high{background:var(--red)}.sev-moderate{background:var(--amber)}.sev-low{background:var(--teal)}.sev-advisory{background:var(--bluegray)}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+@media(max-width:780px){.grid-2{grid-template-columns:1fr}}
+.finding-card{border:1px solid var(--line);border-left:7px solid var(--red);border-radius:.4rem;padding:1rem;background:#fff}
+.finding-card p{margin:.35rem 0}
+.finding-kicker{font-weight:900;color:var(--red);text-transform:uppercase;letter-spacing:.04em;font-size:.82rem}
+.strengths{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.75rem}
+.strength{border:1px solid #8CB797;background:#F0F8F2;border-radius:.4rem;padding:1rem}
+.priority-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+@media(max-width:900px){.priority-grid{grid-template-columns:1fr}}
+.priority{border-top:7px solid var(--navy);background:#F6F8FC;padding:1rem;border-radius:.4rem}
+.priority.now{border-color:var(--red)}.priority.next{border-color:var(--amber)}.priority.practice{border-color:var(--teal)}
+.detail{border:1px solid var(--line);border-left:8px solid var(--gray);border-radius:.45rem;padding:1.15rem;margin:1rem 0;background:#fff}
+.finding-high{border-left-color:var(--red)}.finding-moderate{border-left-color:var(--amber)}.finding-advisory{border-left-color:var(--bluegray)}
+.finding-grid{display:grid;grid-template-columns:minmax(150px,220px) 1fr;gap:0;border:1px solid var(--line)}
+.finding-grid dt,.finding-grid dd{margin:0;padding:.6rem .7rem;border-bottom:1px solid var(--line)}
+.finding-grid dt{font-weight:900;background:#F4F7FB}
+.finding-grid dd{overflow-wrap:anywhere}
+@media(max-width:650px){.finding-grid{grid-template-columns:1fr}.finding-grid dt{border-bottom:0}}
+code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#101C2F;color:#F5F7FB;padding:1rem;border-radius:.4rem;font-size:.82rem}
+.small{font-size:.9rem;color:var(--muted)}
+.source-list li{margin:.45rem 0}
+.closing{background:var(--navy-dark);color:#fff;border-radius:.5rem;padding:1.2rem}
+@media print{
+  nav.toc{display:none}
+  body{background:#fff;font-size:11pt}
+  section{box-shadow:none;break-inside:avoid}
+  .detail{break-inside:auto}
+  a{color:#000}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to report</a>
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Digital Accessibility Report Card · Standard Review</p>
+    <h1>TCEA.org Accessibility Readiness Assessment</h1>
+    <p>This is a readiness assessment based on the documented scope. It is not a legal certification or a complete WCAG conformance determination.</p>
+    <div class="meta-grid">
+      <div class="meta-card"><b>Website</b>https://tcea.org/</div>
+      <div class="meta-card"><b>Organization</b>TCEA</div>
+      <div class="meta-card"><b>Review date</b>July 19, 2026</div>
+      <div class="meta-card"><b>Baseline</b>WCAG 2.1 Level A and AA</div>
+      <div class="meta-card"><b>Pages and documents</b>12 sampled resources</div>
+      <div class="meta-card"><b>Assessment confidence</b>Low</div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Report sections">
+  <div class="wrap">
+    <ul>
+      <li><a href="#report-card">Report card</a></li>
+      <li><a href="#executive">Executive summary</a></li>
+      <li><a href="#scope">Scope</a></li>
+      <li><a href="#scorecard">Scorecard</a></li>
+      <li><a href="#findings">Findings</a></li>
+      <li><a href="#human-testing">Human testing</a></li>
+      <li><a href="#remediation">Remediation</a></li>
+      <li><a href="#appendix">Appendix</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main" class="wrap">
+<section id="report-card" aria-labelledby="report-card-title">
+  <p class="eyebrow" style="color:var(--navy)">Part One</p>
+  <h2 id="report-card-title">Digital Accessibility Report Card</h2>
+
+  <div class="notice">
+    <strong>Legal context:</strong> TCEA describes itself as a global nonprofit, member-based organization. This review does not assign TCEA a Title II public-entity compliance deadline. WCAG 2.1 AA is used as a technical readiness baseline and as a relevant requirement when TCEA services are contracted to deliver programs for state or local public entities.
+  </div>
+
+  <div class="score-layout">
+    <div class="score-card">
+      <div class="label">Overall readiness</div>
+      <div class="insufficient">INSUFFICIENT EVIDENCE FOR AN OVERALL SCORE</div>
+      <p>Only 11 of 25 criteria received evidence-based numeric ratings. The minimum required for a definitive score is 12.</p>
+      <div class="provisional">
+        <div class="pct">34%</div>
+        <strong>Provisional score based on 11 of 25 criteria</strong>
+        <p>15 of 44 available points for rated criteria. This provisional result indicates high-risk conditions but must not be treated as a complete conformance result.</p>
+      </div>
+    </div>
+    <div>
+      <div class="stat-grid" aria-label="Assessment totals">
+        <div class="stat"><strong>11</strong>Criteria rated</div>
+        <div class="stat"><strong>6</strong>Not Tested</div>
+        <div class="stat"><strong>1</strong>Not Applicable</div>
+        <div class="stat"><strong>7</strong>Unknown</div>
+        <div class="stat"><strong>0</strong>Critical findings</div>
+        <div class="stat"><strong>Low</strong>Confidence</div>
+      </div>
+      <div class="status-banner">NO CRITICAL BARRIERS IDENTIFIED IN THE TESTED SCOPE</div>
+      <div class="risk-banner"><strong>High-risk indicators remain:</strong> four high-severity findings, untested transactional workflows, and seven governance or vendor criteria that are unknown from public evidence.</div>
+    </div>
+  </div>
+
+  <h3>Domain readiness</h3>
+  <p class="chart-description">Horizontal bars compare the evidence-based percentages for rated criteria in rubric order. Untested and unknown criteria are excluded rather than counted as passing.</p>
+  <div role="img" aria-label="Domain readiness: Equal Access and Interaction 25 percent; Structure, Meaning, and Visual Design 50 percent; Forms, Authentication, and Errors 38 percent; Documents, Multimedia, and Specialized Content 25 percent; Mobile and Third-Party Platforms 25 percent; Governance and Continuous Improvement not scored.">
+    <div class="bar-row">
+      <div class="bar-label">Equal Access and Interaction</div>
+      <div class="bar-track" aria-hidden="true"><span style="width:25%"></span></div>
+      <div class="bar-value">25%</div>
+    </div>
+<div class="bar-row">
+      <div class="bar-label">Structure, Meaning, and Visual Design</div>
+      <div class="bar-track" aria-hidden="true"><span style="width:50%"></span></div>
+      <div class="bar-value">50%</div>
+    </div>
+<div class="bar-row">
+      <div class="bar-label">Forms, Authentication, and Errors</div>
+      <div class="bar-track" aria-hidden="true"><span style="width:38%"></span></div>
+      <div class="bar-value">38%</div>
+    </div>
+<div class="bar-row">
+      <div class="bar-label">Documents, Multimedia, and Specialized Content</div>
+      <div class="bar-track" aria-hidden="true"><span style="width:25%"></span></div>
+      <div class="bar-value">25%</div>
+    </div>
+<div class="bar-row">
+      <div class="bar-label">Mobile and Third-Party Platforms</div>
+      <div class="bar-track" aria-hidden="true"><span style="width:25%"></span></div>
+      <div class="bar-value">25%</div>
+    </div>
+<div class="bar-row"><div class="bar-label">Governance and Continuous Improvement</div><div class="not-scored">Not scored</div></div>
+  </div>
+  <table>
+    <caption>Text equivalent for domain readiness chart</caption>
+    <thead><tr><th scope="col">Domain</th><th scope="col">Percentage</th></tr></thead>
+    <tbody><tr><th scope='row'>Equal Access and Interaction</th><td>25%</td></tr>
+<tr><th scope='row'>Structure, Meaning, and Visual Design</th><td>50%</td></tr>
+<tr><th scope='row'>Forms, Authentication, and Errors</th><td>38%</td></tr>
+<tr><th scope='row'>Documents, Multimedia, and Specialized Content</th><td>25%</td></tr>
+<tr><th scope='row'>Mobile and Third-Party Platforms</th><td>25%</td></tr>
+<tr><th scope='row'>Governance and Continuous Improvement</th><td>Not scored</td></tr></tbody>
+  </table>
+
+  <div class="grid-2">
+    <div>
+      <h3>Open findings by severity</h3>
+      <p class="chart-description">The review documented ten findings and recommendations. No critical barrier was confirmed.</p>
+      <div role="img" aria-label="Open findings: zero critical, four high, four moderate, zero low, and two advisory.">
+        <div class="severity-row"><span>⛔ Critical</span>
+    <div class="severity-track" aria-hidden="true"><span class="sev-critical" style="width:0%"></span></div>
+    <strong>0</strong></div>
+<div class="severity-row"><span>▲ High</span>
+    <div class="severity-track" aria-hidden="true"><span class="sev-high" style="width:80%"></span></div>
+    <strong>4</strong></div>
+<div class="severity-row"><span>◆ Moderate</span>
+    <div class="severity-track" aria-hidden="true"><span class="sev-moderate" style="width:80%"></span></div>
+    <strong>4</strong></div>
+<div class="severity-row"><span>● Low</span>
+    <div class="severity-track" aria-hidden="true"><span class="sev-low" style="width:0%"></span></div>
+    <strong>0</strong></div>
+<div class="severity-row"><span>○ Advisory</span>
+    <div class="severity-track" aria-hidden="true"><span class="sev-advisory" style="width:40%"></span></div>
+    <strong>2</strong></div>
+      </div>
+      <table>
+        <caption>Text equivalent for finding-severity chart</caption>
+        <thead><tr><th scope="col">Severity</th><th scope="col">Open findings</th></tr></thead>
+        <tbody><tr><th scope='row'>⛔ Critical</th><td>0</td></tr>
+<tr><th scope='row'>▲ High</th><td>4</td></tr>
+<tr><th scope='row'>◆ Moderate</th><td>4</td></tr>
+<tr><th scope='row'>● Low</th><td>0</td></tr>
+<tr><th scope='row'>○ Advisory</th><td>2</td></tr></tbody>
+      </table>
+    </div>
+    <div>
+      <h3>Testing coverage</h3>
+      <table>
+        <caption>Completed and outstanding testing</caption>
+        <tbody>
+          <tr><th scope="row">Criteria rated</th><td>11 of 25</td></tr>
+          <tr><th scope="row">Pages and documents sampled</th><td>12</td></tr>
+          <tr><th scope="row">Core workflows reviewed</th><td>6; 2 completed at information-retrieval level</td></tr>
+          <tr><th scope="row">Forms reviewed</th><td>1 visible form; no submission or error-state test</td></tr>
+          <tr><th scope="row">Documents inspected</th><td>2 PDFs</td></tr>
+          <tr><th scope="row">Videos checked</th><td>0; not applicable to this main-site sample</td></tr>
+          <tr><th scope="row">Third-party platforms encountered</th><td>7; none fully tested</td></tr>
+          <tr><th scope="row">Screen-reader testing</th><td>Not completed</td></tr>
+          <tr><th scope="row">Keyboard testing</th><td>Not completed</td></tr>
+          <tr><th scope="row">Responsive and zoom testing</th><td>Not completed</td></tr>
+          <tr><th scope="row">Automated accessibility scan</th><td>Not completed</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <h3>Page and workflow risk heatmap</h3>
+  <table>
+    <caption>Risk assignments for sampled resources</caption>
+    <thead><tr><th scope="col">Page or workflow</th><th scope="col">Reason selected</th><th scope="col">Risk level</th><th scope="col">Tested status</th></tr></thead>
+    <tbody><tr><th scope='row'><a href='https://tcea.org/'>Homepage</a></th><td>Homepage and event widgets</td><td>High</td><td>Partially tested</td></tr>
+<tr><th scope='row'><a href='https://tcea.org/contact/'>Contact Us</a></th><td>Contact and complaint information</td><td>Moderate</td><td>Partially tested</td></tr>
+<tr><th scope='row'><a href='https://tcea.org/courses/'>Courses</a></th><td>Course catalog and filtering</td><td>High</td><td>Partially tested</td></tr>
+<tr><th scope='row'><a href='https://tcea.org/events/'>Events</a></th><td>Event discovery and calendar</td><td>High</td><td>Partially tested</td></tr>
+<tr><th scope='row'><a href='https://tcea.org/membership/'>Membership</a></th><td>Membership information and join path</td><td>High</td><td>Partially tested; external join flow untested</td></tr>
+<tr><th scope='row'><a href='https://tcea.org/pd/'>Professional Learning</a></th><td>Major landing-page template</td><td>Moderate</td><td>Partially tested</td></tr>
+<tr><th scope='row'><a href='https://tcea.org/pd/resources/'>Resources</a></th><td>Resource access and external community path</td><td>High</td><td>Partially tested</td></tr>
+<tr><th scope='row'><a href='https://tcea.org/pd/services/'>PD Services Inquiry</a></th><td>Public form</td><td>High</td><td>Visual/text review only</td></tr>
+<tr><th scope='row'><a href='https://tcea.org/payment/'>Payment Policy</a></th><td>Long policy content and external payment form</td><td>Moderate</td><td>Partially tested</td></tr>
+<tr><th scope='row'><a href='https://convention.tcea.org/about/accessibility-information/'>Convention Accessibility</a></th><td>Accommodation request information</td><td>High</td><td>Partially tested</td></tr>
+<tr><th scope='row'><a href='https://tcea.org/documents/pd/TCEA-AI-in-Education-Journey-Flyer-01-2025.pdf'>AI Journey PDF</a></th><td>Complex PDF flyer</td><td>Moderate</td><td>Document and screenshot inspection</td></tr>
+<tr><th scope='row'><a href='https://convention.tcea.org/documents/2024/TCEA-Convention-2024-Group-Registration-Form.pdf'>2024 Registration PDF</a></th><td>Visual form PDF</td><td>Moderate</td><td>Document and screenshot inspection</td></tr></tbody>
+  </table>
+
+  <h3>Top five barriers and risks</h3>
+  <div class="grid-2"><article class="finding-card">
+      <div class="finding-kicker">TCEA-001 · High</div>
+      <h3>Shared navigation creates a noisy, confusing semantic outline</h3>
+      <p><strong>Page or workflow:</strong> Shared header on sampled tcea.org pages</p>
+      <p><strong>User impact:</strong> Screen-reader users who navigate by heading may encounter a long, misleading outline before reaching the page. Decorative glyphs may be announced as meaningless characters.</p>
+      <p><strong>WCAG:</strong> 1.3.1 Info and Relationships; 2.4.6 Headings and Labels; 4.1.2 Name, Role, Value</p>
+      <p><strong>Next action:</strong> Use semantic navigation lists and links rather than heading elements for every menu item. Keep a logical page outline, add a main landmark and working skip link, and hide decorative icons with aria-hidden=&quot;true&quot; or CSS-generated content. Give icon-only controls explicit accessible names.</p>
+    </article>
+<article class="finding-card">
+      <div class="finding-kicker">TCEA-002 · High</div>
+      <h3>No sitewide digital accessibility statement or barrier-reporting route was located</h3>
+      <p><strong>Page or workflow:</strong> Contact page and shared footer</p>
+      <p><strong>User impact:</strong> A person who encounters a digital barrier may not know how to request an accessible alternative or how quickly the organization will respond.</p>
+      <p><strong>WCAG:</strong> Governance control supporting conformance; no single WCAG success criterion</p>
+      <p><strong>Next action:</strong> Publish a clearly linked accessibility page identifying WCAG 2.1 AA as the target, a monitored contact method, an alternate-format request process, response expectations, the last review date, and known limitations. Add “Report an accessibility barrier” to the footer and relevant transactional pages.</p>
+    </article>
+<article class="finding-card">
+      <div class="finding-kicker">TCEA-003 · High</div>
+      <h3>Convention accommodation instructions contain an outdated interpreter deadline</h3>
+      <p><strong>Page or workflow:</strong> Accessibility and Accommodations</p>
+      <p><strong>User impact:</strong> Deaf and hard-of-hearing participants may receive incorrect instructions and could miss the actual accommodation-request window.</p>
+      <p><strong>WCAG:</strong> 3.3.2 Labels or Instructions</p>
+      <p><strong>Next action:</strong> Replace the stale deadline with the verified 2027 deadline or a current, non-expiring instruction. Add a content owner, automated annual review, and pre-event date check for all accommodation pages and registration forms.</p>
+    </article>
+<article class="finding-card">
+      <div class="finding-kicker">TCEA-004 · High</div>
+      <h3>Core user journeys depend on unverified third-party platforms</h3>
+      <p><strong>Page or workflow:</strong> Membership, event registration, community, chat, payment, and email links</p>
+      <p><strong>User impact:</strong> A barrier in any vendor workflow can block a core transaction even when the public marketing page is usable.</p>
+      <p><strong>WCAG:</strong> WCAG 2.1 Level A and AA across the complete process</p>
+      <p><strong>Next action:</strong> Create a vendor inventory, obtain current ACRs tied to deployed versions, test representative complete processes, require remediation owners and dates, and add accessible alternatives for any blocked task.</p>
+    </article>
+<article class="finding-card">
+      <div class="finding-kicker">TCEA-005 · Moderate</div>
+      <h3>Prominent homepage graphics contain text but expose generic image names</h3>
+      <p><strong>Page or workflow:</strong> Homepage</p>
+      <p><strong>User impact:</strong> Screen-reader users may miss the purpose and details of prominent promotions, and users who enlarge text cannot resize wording embedded in images.</p>
+      <p><strong>WCAG:</strong> 1.1.1 Non-text Content; 1.4.5 Images of Text</p>
+      <p><strong>Next action:</strong> Use real HTML text for promotional wording and calls to action. Where an image remains informative, provide concise purpose-based alt text. Use alt=&quot;&quot; only when nearby text supplies the full equivalent.</p>
+    </article></div>
+
+  <h3>Documented strengths</h3>
+  <div class="strengths">
+    <div class="strength"><strong>Descriptive page titles</strong><br>No barrier was identified in the sampled pages for browser-title relevance.</div>
+    <div class="strength"><strong>Page-level headings on most pages</strong><br>Most content pages expose a clear H1 even though shared navigation weakens the outline.</div>
+    <div class="strength"><strong>Useful image names in several collections</strong><br>Course and staff images frequently expose names that match their visible subjects.</div>
+    <div class="strength"><strong>Visible labels on the inquiry form</strong><br>Every sampled field had visible label text in the retrieved page representation.</div>
+    <div class="strength"><strong>Accommodation information exists</strong><br>The convention page addresses interpreter requests, mobility equipment, emergency services, and assistance contacts, although one deadline is stale.</div>
+    <div class="strength"><strong>Sampled PDFs contain searchable text</strong><br>Neither sampled PDF appeared to be image-only.</div>
+  </div>
+
+  <h3>Quick wins</h3>
+  <table>
+    <caption>High-impact corrections that appear relatively contained</caption>
+    <thead><tr><th scope="col">Quick win</th><th scope="col">Expected impact</th><th scope="col">Likely owner</th><th scope="col">Verification</th></tr></thead>
+    <tbody>
+      <tr><td>Correct the 2027 interpreter-request deadline</td><td>High</td><td>Events and communications</td><td>Content review and registration cross-check</td></tr>
+      <tr><td>Hide decorative icon-font characters and simplify navigation headings</td><td>High</td><td>Web developer</td><td>Accessibility-tree, heading, and keyboard review</td></tr>
+      <tr><td>Add text equivalents for homepage promotional graphics</td><td>High</td><td>Communications and web developer</td><td>Image-alt and links-out-of-context review</td></tr>
+      <tr><td>Add a required-field explanation to the inquiry form</td><td>Moderate</td><td>Web developer</td><td>Keyboard and screen-reader form test</td></tr>
+      <tr><td>Add a visible H1 and readable dates to the event calendar</td><td>Moderate</td><td>Web developer and events</td><td>Heading and calendar review</td></tr>
+      <tr><td>Add “Report an accessibility barrier” to the footer</td><td>High</td><td>Communications and accessibility owner</td><td>Submit and route a test report</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Recommended next steps</h3>
+  <div class="priority-grid">
+    <div class="priority now"><h3>Act Now</h3><ul>
+      <li>Correct the stale accommodation deadline</li>
+      <li>Create a monitored digital-barrier reporting route</li>
+      <li>Audit shared navigation semantics and decorative icons</li>
+      <li>Test membership and registration workflows with assistive technology</li>
+    </ul></div>
+    <div class="priority next"><h3>Act Next</h3><ul>
+      <li>Replace text-heavy promotional images with real text</li>
+      <li>Remediate form instructions and error handling</li>
+      <li>Repair event-calendar headings and date presentation</li>
+      <li>Audit and remediate current PDFs</li>
+      <li>Run automated scans across shared templates</li>
+    </ul></div>
+    <div class="priority practice"><h3>Build Into Practice</h3><ul>
+      <li>Maintain a digital inventory and owner list</li>
+      <li>Require current vendor accessibility evidence</li>
+      <li>Train content owners and provide accessible templates</li>
+      <li>Combine automated, keyboard, screen-reader, and user testing</li>
+      <li>Track findings through correction and retesting</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="executive" aria-labelledby="executive-title">
+  <p class="eyebrow" style="color:var(--navy)">Part Two</p>
+  <h2 id="executive-title">Executive Summary</h2>
+  <p><strong>Website reviewed:</strong> TCEA.org and selected TCEA-controlled or linked resources. <strong>Assessment mode:</strong> Standard review. <strong>Technical baseline:</strong> WCAG 2.1 Level A and Level AA.</p>
+  <p>TCEA’s public site provides extensive educational content, events, professional learning, membership information, contact details, policy pages, downloadable documents, and links to member and registration systems. TCEA identifies itself as a nonprofit member-based organization, so this report does not assign a federal Title II public-entity compliance date. The Title II technical standard remains relevant to public-school customers and to any TCEA service delivered on behalf of a state or local public entity.</p>
+  <p>The review found strengths in descriptive page titles, visible page headings on most pages, many meaningful image names, visible form labels, searchable PDF text, and a dedicated convention accommodations page. The largest risks are the shared navigation outline and decorative glyph exposure, the missing sitewide digital-accessibility support route, an outdated interpreter deadline, and critical dependence on untested third-party platforms.</p>
+  <p><strong>Overall result:</strong> insufficient evidence for a definitive percentage. The provisional result is 34 percent based on 11 rated criteria, with low confidence. No critical barrier was confirmed, but the site carries high-risk indicators and requires live browser and assistive-technology testing.</p>
+</section>
+
+<section id="scope" aria-labelledby="scope-title">
+  <p class="eyebrow" style="color:var(--navy)">Part Three</p>
+  <h2 id="scope-title">Scope and Sampling</h2>
+  <table>
+    <caption>Representative sample</caption>
+    <thead><tr><th scope="col">Page or workflow</th><th scope="col">Reason selected</th><th scope="col">Risk level</th><th scope="col">Tested status</th></tr></thead>
+    <tbody><tr><th scope='row'><a href='https://tcea.org/'>Homepage</a></th><td>Homepage and event widgets</td><td>High</td><td>Partially tested</td></tr>
+<tr><th scope='row'><a href='https://tcea.org/contact/'>Contact Us</a></th><td>Contact and complaint information</td><td>Moderate</td><td>Partially tested</td></tr>
+<tr><th scope='row'><a href='https://tcea.org/courses/'>Courses</a></th><td>Course catalog and filtering</td><td>High</td><td>Partially tested</td></tr>
+<tr><th scope='row'><a href='https://tcea.org/events/'>Events</a></th><td>Event discovery and calendar</td><td>High</td><td>Partially tested</td></tr>
+<tr><th scope='row'><a href='https://tcea.org/membership/'>Membership</a></th><td>Membership information and join path</td><td>High</td><td>Partially tested; external join flow untested</td></tr>
+<tr><th scope='row'><a href='https://tcea.org/pd/'>Professional Learning</a></th><td>Major landing-page template</td><td>Moderate</td><td>Partially tested</td></tr>
+<tr><th scope='row'><a href='https://tcea.org/pd/resources/'>Resources</a></th><td>Resource access and external community path</td><td>High</td><td>Partially tested</td></tr>
+<tr><th scope='row'><a href='https://tcea.org/pd/services/'>PD Services Inquiry</a></th><td>Public form</td><td>High</td><td>Visual/text review only</td></tr>
+<tr><th scope='row'><a href='https://tcea.org/payment/'>Payment Policy</a></th><td>Long policy content and external payment form</td><td>Moderate</td><td>Partially tested</td></tr>
+<tr><th scope='row'><a href='https://convention.tcea.org/about/accessibility-information/'>Convention Accessibility</a></th><td>Accommodation request information</td><td>High</td><td>Partially tested</td></tr>
+<tr><th scope='row'><a href='https://tcea.org/documents/pd/TCEA-AI-in-Education-Journey-Flyer-01-2025.pdf'>AI Journey PDF</a></th><td>Complex PDF flyer</td><td>Moderate</td><td>Document and screenshot inspection</td></tr>
+<tr><th scope='row'><a href='https://convention.tcea.org/documents/2024/TCEA-Convention-2024-Group-Registration-Form.pdf'>2024 Registration PDF</a></th><td>Visual form PDF</td><td>Moderate</td><td>Document and screenshot inspection</td></tr></tbody>
+  </table>
+  <h3>Workflows reviewed</h3>
+  <ul>
+    <li>Locate contact and complaint information</li>
+    <li>Browse courses and professional-learning options</li>
+    <li>Find an event and follow the registration path</li>
+    <li>Review membership and follow the join path</li>
+    <li>Review and attempt to understand the professional-learning inquiry form</li>
+    <li>Locate convention accommodation information</li>
+  </ul>
+  <h3>Third-party and vendor services encountered</h3>
+  <table>
+    <caption>External services in the accessibility risk environment</caption>
+    <thead><tr><th scope="col">Service</th><th scope="col">Purpose</th><th scope="col">Risk</th><th scope="col">Tested status</th></tr></thead>
+    <tbody><tr><th scope='row'>membership.tcea.org</th><td>Membership and event registration</td><td>Core transactional path</td><td>Not tested; no retrievable public content</td></tr>
+<tr><th scope='row'>tcea.mobilize.io</th><td>Member community and resource library</td><td>Authenticated member resource</td><td>Not tested; authentication/external platform</td></tr>
+<tr><th scope='row'>help.tcea.org</th><td>Live chat</td><td>Assistance and support</td><td>Not tested</td></tr>
+<tr><th scope='row'>fs21.formsite.com</th><td>Credit-card authorization form</td><td>Payment workflow</td><td>Not tested</td></tr>
+<tr><th scope='row'>eepurl.com / Mailchimp</th><td>Email subscription</td><td>Marketing subscription form</td><td>Not tested</td></tr>
+<tr><th scope='row'>blog.tcea.org</th><td>TechNotes content</td><td>Related publishing platform</td><td>Encountered; not included in scored main-site scope</td></tr>
+<tr><th scope='row'>convention.tcea.org</th><td>Convention information</td><td>Related TCEA subdomain</td><td>One accessibility page sampled</td></tr></tbody>
+  </table>
+  <h3>Capabilities used</h3>
+  <ul>
+    <li>Web search and direct page retrieval</li>
+    <li>Review of retrieved document headings, links, image names, and visible form text</li>
+    <li>PDF text extraction</li>
+    <li>PDF page screenshot inspection</li>
+    <li>Link tracing to related and third-party services</li>
+  </ul>
+  <h3>Tests not performed</h3>
+  <ul>
+    <li>Live browser rendering and source-code inspection</li>
+    <li>Keyboard simulation and focus testing</li>
+    <li>Screen-reader testing</li>
+    <li>Automated axe, Lighthouse, WAVE, Pa11y, or Accessibility Insights scans</li>
+    <li>Contrast-ratio measurement</li>
+    <li>Responsive viewport, orientation, browser zoom, text resize, and text-spacing tests</li>
+    <li>Form submission, validation, status-message, and confirmation testing</li>
+    <li>Authenticated membership, community, course, registration, and payment workflows</li>
+    <li>Native mobile-app testing</li>
+  </ul>
+</section>
+
+<section id="scorecard" aria-labelledby="scorecard-title">
+  <p class="eyebrow" style="color:var(--navy)">Part Four</p>
+  <h2 id="scorecard-title">Readiness Scorecard</h2>
+  <table>
+    <caption>All 25 readiness criteria</caption>
+    <thead><tr><th scope="col">Criterion</th><th scope="col">Score</th><th scope="col">Confidence</th><th scope="col">Evidence summary</th><th scope="col">Status</th></tr></thead>
+    <tbody><tr>
+      <th scope="row">A1: Core tasks can be completed independently</th>
+      <td>1</td>
+      <td>Low</td>
+      <td>Public information can be located, but joining, registration, community access, and authenticated resources depend on external services that were not testable.</td>
+      <td>Partial support</td>
+    </tr>
+<tr>
+      <th scope="row">A2: All functions work with a keyboard</th>
+      <td>NT</td>
+      <td>Untested</td>
+      <td>No live keyboard-interaction environment was available.</td>
+      <td>Not Tested</td>
+    </tr>
+<tr>
+      <th scope="row">A3: Focus is visible and follows a logical order</th>
+      <td>1</td>
+      <td>Moderate</td>
+      <td>The retrieved reading order places a large heading-heavy mega-menu and exposed icon-font characters before page content. Visible focus itself was not tested.</td>
+      <td>Barrier identified</td>
+    </tr>
+<tr>
+      <th scope="row">A4: Pages reflow and remain usable when enlarged</th>
+      <td>NT</td>
+      <td>Untested</td>
+      <td>No 200 percent text-resize, 400 percent zoom, 320 CSS-pixel, or text-spacing test was available.</td>
+      <td>Not Tested</td>
+    </tr>
+<tr>
+      <th scope="row">B1: Pages use meaningful titles, headings, landmarks, lists, and tables</th>
+      <td>2</td>
+      <td>Moderate</td>
+      <td>Sampled pages generally have descriptive browser titles and most have one page-level heading, but the shared menu uses many H4 headings before the H1 and the events page did not expose a clear H1.</td>
+      <td>Partial support</td>
+    </tr>
+<tr>
+      <th scope="row">B2: Images and visual content have appropriate text alternatives</th>
+      <td>2</td>
+      <td>Moderate</td>
+      <td>Many course and staff images expose useful names, but several prominent homepage promotional graphics were exposed only as “Image” even though they contain essential text.</td>
+      <td>Partial support</td>
+    </tr>
+<tr>
+      <th scope="row">B3: Color and contrast meet accessibility requirements</th>
+      <td>NT</td>
+      <td>Untested</td>
+      <td>Exact foreground, background, non-text contrast, and focus-indicator ratios were not measured.</td>
+      <td>Not Tested</td>
+    </tr>
+<tr>
+      <th scope="row">B4: Links and controls have descriptive names</th>
+      <td>2</td>
+      <td>Moderate</td>
+      <td>Most text links are understandable in context, but generic image names and exposed decorative icon characters reduce clarity.</td>
+      <td>Partial support</td>
+    </tr>
+<tr>
+      <th scope="row">C1: Every field has a visible, programmatically connected label</th>
+      <td>2</td>
+      <td>Moderate</td>
+      <td>The public professional-learning inquiry form presents visible labels, but programmatic association was not inspectable and external registration forms were unavailable.</td>
+      <td>Partial support</td>
+    </tr>
+<tr>
+      <th scope="row">C2: Instructions, required fields, and formats are clear</th>
+      <td>1</td>
+      <td>Moderate</td>
+      <td>Required fields are marked with asterisks, but the sampled form does not visibly explain the symbol or provide detailed format and submission guidance.</td>
+      <td>Barrier identified</td>
+    </tr>
+<tr>
+      <th scope="row">C3: Errors are identified, associated with fields, and correctable</th>
+      <td>NT</td>
+      <td>Untested</td>
+      <td>No form was submitted and no validation state was triggered.</td>
+      <td>Not Tested</td>
+    </tr>
+<tr>
+      <th scope="row">C4: Authentication and security steps are accessible</th>
+      <td>NT</td>
+      <td>Untested</td>
+      <td>Membership, registration, community login, password reset, and multifactor flows were unavailable.</td>
+      <td>Not Tested</td>
+    </tr>
+<tr>
+      <th scope="row">D1: PDFs and downloadable documents use accessible structure</th>
+      <td>1</td>
+      <td>Moderate</td>
+      <td>Two PDFs were visually and textually sampled. They are searchable, but tags, document title, language, form-field semantics, alternative text, and logical reading order were not established; extraction suggests possible reading-order problems.</td>
+      <td>Barrier identified</td>
+    </tr>
+<tr>
+      <th scope="row">D2: Videos have accurate synchronized captions</th>
+      <td>NA</td>
+      <td>Not applicable</td>
+      <td>No public video was included in this representative main-site sample.</td>
+      <td>Not Applicable</td>
+    </tr>
+<tr>
+      <th scope="row">D3: Audio and visual information has equivalent alternatives</th>
+      <td>1</td>
+      <td>Moderate</td>
+      <td>Promotional graphics containing dates, prices, and calls to action were exposed without meaningful text alternatives in the retrieved representation.</td>
+      <td>Barrier identified</td>
+    </tr>
+<tr>
+      <th scope="row">D4: Media players and specialized content are operable</th>
+      <td>1</td>
+      <td>Low</td>
+      <td>Event-calendar and directions components produced dense or duplicated text in retrieval, while keyboard operation and status announcements could not be tested.</td>
+      <td>Partial support</td>
+    </tr>
+<tr>
+      <th scope="row">E1: Mobile and responsive views preserve access</th>
+      <td>NT</td>
+      <td>Untested</td>
+      <td>No narrow-viewport, orientation, touch-target, or mobile assistive-technology test was available.</td>
+      <td>Not Tested</td>
+    </tr>
+<tr>
+      <th scope="row">E2: Embedded and vendor-hosted components are tested</th>
+      <td>1</td>
+      <td>High</td>
+      <td>Core membership, registration, community, chat, email-subscription, and payment functions rely on external services; none could be fully tested in this review.</td>
+      <td>Third-party dependency</td>
+    </tr>
+<tr>
+      <th scope="row">E3: Vendor accessibility evidence is current and specific</th>
+      <td>U</td>
+      <td>Unknown</td>
+      <td>No current, product-specific ACR, VPAT, or equivalent accessibility evidence was located for the sampled vendor workflows.</td>
+      <td>Unknown from public evidence</td>
+    </tr>
+<tr>
+      <th scope="row">E4: Known vendor barriers have owners and remediation dates</th>
+      <td>U</td>
+      <td>Unknown</td>
+      <td>Ownership and remediation tracking for vendor barriers could not be verified publicly.</td>
+      <td>Unknown from public evidence</td>
+    </tr>
+<tr>
+      <th scope="row">F1: The organization maintains a digital inventory</th>
+      <td>U</td>
+      <td>Unknown</td>
+      <td>Internal inventory practices are not verifiable from the public website.</td>
+      <td>Unknown from public evidence</td>
+    </tr>
+<tr>
+      <th scope="row">F2: Accessibility requirements appear in purchasing and contracts</th>
+      <td>U</td>
+      <td>Unknown</td>
+      <td>Procurement and contract accessibility requirements were not publicly available.</td>
+      <td>Unknown from public evidence</td>
+    </tr>
+<tr>
+      <th scope="row">F3: Content creators receive training and accessible templates</th>
+      <td>U</td>
+      <td>Unknown</td>
+      <td>TCEA publishes accessibility guidance, but internal training and template controls could not be verified.</td>
+      <td>Unknown from public evidence</td>
+    </tr>
+<tr>
+      <th scope="row">F4: Testing combines automated and human methods</th>
+      <td>U</td>
+      <td>Unknown</td>
+      <td>No public testing methodology, cadence, or conformance report was located.</td>
+      <td>Unknown from public evidence</td>
+    </tr>
+<tr>
+      <th scope="row">F5: Findings are tracked through correction and retesting</th>
+      <td>U</td>
+      <td>Unknown</td>
+      <td>Internal issue tracking and retesting practices were not publicly verifiable.</td>
+      <td>Unknown from public evidence</td>
+    </tr></tbody>
+  </table>
+  <p class="small"><strong>Score key:</strong> 0 Not present; 1 Beginning; 2 Developing; 3 Meets baseline; 4 Strong practice; NT Not Tested; NA Not Applicable; U Unknown from public evidence.</p>
+</section>
+
+<section id="findings" aria-labelledby="findings-title">
+  <p class="eyebrow" style="color:var(--navy)">Part Five</p>
+  <h2 id="findings-title">Detailed Findings</h2>
+  <article class="detail finding-high">
+      <header>
+        <p class="finding-kicker">TCEA-001 · High · Open</p>
+        <h3>Shared navigation creates a noisy, confusing semantic outline</h3>
+      </header>
+      <dl class="finding-grid">
+        <dt>Page</dt><dd>Shared header on sampled tcea.org pages</dd>
+        <dt>URL</dt><dd><a href="https://tcea.org/">https://tcea.org/</a></dd>
+        <dt>Component</dt><dd>Mega-menu, breadcrumbs, and icon-font labels</dd>
+        <dt>Description</dt><dd>The retrieved document order repeatedly presents dozens of H4 menu headings and private-use icon characters before the page H1. Courses and resources breadcrumbs also expose isolated characters such as “E” and “5.”</dd>
+        <dt>User impact</dt><dd>Screen-reader users who navigate by heading may encounter a long, misleading outline before reaching the page. Decorative glyphs may be announced as meaningless characters.</dd>
+        <dt>Affected users</dt><dd>Blind and low-vision users, screen-reader users, voice-control users, and users with cognitive disabilities</dd>
+        <dt>Blocked or affected task</dt><dd>Navigate to the page’s main content and understand the site structure</dd>
+        <dt>WCAG criterion</dt><dd>1.3.1 Info and Relationships; 2.4.6 Headings and Labels; 4.1.2 Name, Role, Value</dd>
+        <dt>WCAG level</dt><dd>A / AA</dd>
+        <dt>Evidence source</dt><dd>Direct web retrieval of the shared page structure</dd>
+        <dt>Confidence</dt><dd>Moderate</dd>
+        <dt>Recommended correction</dt><dd>Use semantic navigation lists and links rather than heading elements for every menu item. Keep a logical page outline, add a main landmark and working skip link, and hide decorative icons with aria-hidden=&quot;true&quot; or CSS-generated content. Give icon-only controls explicit accessible names.</dd>
+        <dt>Verification method</dt><dd>Inspect the DOM and accessibility tree; navigate headings and landmarks with NVDA and Firefox; complete a keyboard-only menu review.</dd>
+      </dl>
+    </article>
+<article class="detail finding-high">
+      <header>
+        <p class="finding-kicker">TCEA-002 · High · Open</p>
+        <h3>No sitewide digital accessibility statement or barrier-reporting route was located</h3>
+      </header>
+      <dl class="finding-grid">
+        <dt>Page</dt><dd>Contact page and shared footer</dd>
+        <dt>URL</dt><dd><a href="https://tcea.org/contact/">https://tcea.org/contact/</a></dd>
+        <dt>Component</dt><dd>Accessibility support and governance</dd>
+        <dt>Description</dt><dd>The shared footer lists privacy, payment, event, email, and contact links. The contact page provides a general complaint process, but no digital-accessibility standard, barrier-reporting process, alternate-format request route, response expectation, known limitations, or accessibility owner was located.</dd>
+        <dt>User impact</dt><dd>A person who encounters a digital barrier may not know how to request an accessible alternative or how quickly the organization will respond.</dd>
+        <dt>Affected users</dt><dd>All users with disabilities, especially users blocked by a form, document, registration service, or event platform</dd>
+        <dt>Blocked or affected task</dt><dd>Report an accessibility barrier or request an accessible alternative</dd>
+        <dt>WCAG criterion</dt><dd>Governance control supporting conformance; no single WCAG success criterion</dd>
+        <dt>WCAG level</dt><dd>Readiness / effective communication</dd>
+        <dt>Evidence source</dt><dd>Direct review of public navigation, footer, contact page, and site search results</dd>
+        <dt>Confidence</dt><dd>High</dd>
+        <dt>Recommended correction</dt><dd>Publish a clearly linked accessibility page identifying WCAG 2.1 AA as the target, a monitored contact method, an alternate-format request process, response expectations, the last review date, and known limitations. Add “Report an accessibility barrier” to the footer and relevant transactional pages.</dd>
+        <dt>Verification method</dt><dd>Submit a test barrier report, confirm receipt and routing, and review the page with keyboard and screen-reader users.</dd>
+      </dl>
+    </article>
+<article class="detail finding-high">
+      <header>
+        <p class="finding-kicker">TCEA-003 · High · Open</p>
+        <h3>Convention accommodation instructions contain an outdated interpreter deadline</h3>
+      </header>
+      <dl class="finding-grid">
+        <dt>Page</dt><dd>Accessibility and Accommodations</dd>
+        <dt>URL</dt><dd><a href="https://convention.tcea.org/about/accessibility-information/">https://convention.tcea.org/about/accessibility-information/</a></dd>
+        <dt>Component</dt><dd>Interpreter request instructions</dd>
+        <dt>Description</dt><dd>The page identifies the convention as Jan. 31–Feb. 3, 2027, but instructs participants to request interpreter accommodations before Jan. 9, 2026.</dd>
+        <dt>User impact</dt><dd>Deaf and hard-of-hearing participants may receive incorrect instructions and could miss the actual accommodation-request window.</dd>
+        <dt>Affected users</dt><dd>Deaf and hard-of-hearing participants and people arranging communication access</dd>
+        <dt>Blocked or affected task</dt><dd>Request an interpreter or other event accommodation</dd>
+        <dt>WCAG criterion</dt><dd>3.3.2 Labels or Instructions</dd>
+        <dt>WCAG level</dt><dd>A</dd>
+        <dt>Evidence source</dt><dd>Direct observation of conflicting dates on the same page</dd>
+        <dt>Confidence</dt><dd>High</dd>
+        <dt>Recommended correction</dt><dd>Replace the stale deadline with the verified 2027 deadline or a current, non-expiring instruction. Add a content owner, automated annual review, and pre-event date check for all accommodation pages and registration forms.</dd>
+        <dt>Verification method</dt><dd>Confirm the deadline with event operations, then review the page and registration workflow end to end.</dd>
+      </dl>
+    </article>
+<article class="detail finding-high">
+      <header>
+        <p class="finding-kicker">TCEA-004 · High · Open — third-party dependency</p>
+        <h3>Core user journeys depend on unverified third-party platforms</h3>
+      </header>
+      <dl class="finding-grid">
+        <dt>Page</dt><dd>Membership, event registration, community, chat, payment, and email links</dd>
+        <dt>URL</dt><dd><a href="https://membership.tcea.org/welcome">https://membership.tcea.org/welcome</a></dd>
+        <dt>Component</dt><dd>Vendor-hosted workflows</dd>
+        <dt>Description</dt><dd>Joining TCEA, registering for events, accessing member resources, using the community, chatting for help, authorizing payment, and subscribing to email move users to external services. The membership and community pages returned no inspectable public content in this review, and no current product-specific accessibility evidence was located.</dd>
+        <dt>User impact</dt><dd>A barrier in any vendor workflow can block a core transaction even when the public marketing page is usable.</dd>
+        <dt>Affected users</dt><dd>Keyboard users, screen-reader users, users with low vision, users with cognitive disabilities, and mobile assistive-technology users</dd>
+        <dt>Blocked or affected task</dt><dd>Join, register, pay, sign in, access resources, or request help</dd>
+        <dt>WCAG criterion</dt><dd>WCAG 2.1 Level A and AA across the complete process</dd>
+        <dt>WCAG level</dt><dd>A / AA</dd>
+        <dt>Evidence source</dt><dd>Direct link tracing; authentication and retrieval limitations</dd>
+        <dt>Confidence</dt><dd>High for the dependency; Untested for actual conformance</dd>
+        <dt>Recommended correction</dt><dd>Create a vendor inventory, obtain current ACRs tied to deployed versions, test representative complete processes, require remediation owners and dates, and add accessible alternatives for any blocked task.</dd>
+        <dt>Verification method</dt><dd>Run keyboard, NVDA/Firefox, JAWS/Chrome or Edge, VoiceOver/Safari, 400 percent zoom, and mobile tests through each complete workflow.</dd>
+      </dl>
+    </article>
+<article class="detail finding-moderate">
+      <header>
+        <p class="finding-kicker">TCEA-005 · Moderate · Open</p>
+        <h3>Prominent homepage graphics contain text but expose generic image names</h3>
+      </header>
+      <dl class="finding-grid">
+        <dt>Page</dt><dd>Homepage</dd>
+        <dt>URL</dt><dd><a href="https://tcea.org/">https://tcea.org/</a></dd>
+        <dt>Component</dt><dd>Promotional carousel and campaign graphics</dd>
+        <dt>Description</dt><dd>Several homepage images were exposed only as “Image.” Opening the assets shows text-heavy promotions for the Librarian Conference, AI for Educators Conference, and self-paced courses, including dates, pricing, and calls to action.</dd>
+        <dt>User impact</dt><dd>Screen-reader users may miss the purpose and details of prominent promotions, and users who enlarge text cannot resize wording embedded in images.</dd>
+        <dt>Affected users</dt><dd>Blind and low-vision users, screen-reader users, and users who enlarge text</dd>
+        <dt>Blocked or affected task</dt><dd>Discover and act on current conferences and courses</dd>
+        <dt>WCAG criterion</dt><dd>1.1.1 Non-text Content; 1.4.5 Images of Text</dd>
+        <dt>WCAG level</dt><dd>A / AA</dd>
+        <dt>Evidence source</dt><dd>Direct retrieval plus image inspection</dd>
+        <dt>Confidence</dt><dd>Moderate</dd>
+        <dt>Recommended correction</dt><dd>Use real HTML text for promotional wording and calls to action. Where an image remains informative, provide concise purpose-based alt text. Use alt=&quot;&quot; only when nearby text supplies the full equivalent.</dd>
+        <dt>Verification method</dt><dd>Review the accessibility tree and links-out-of-context list; compare each image’s message with its text equivalent.</dd>
+      </dl>
+    </article>
+<article class="detail finding-moderate">
+      <header>
+        <p class="finding-kicker">TCEA-006 · Moderate · Open</p>
+        <h3>Inquiry form instructions are incomplete and validation remains unverified</h3>
+      </header>
+      <dl class="finding-grid">
+        <dt>Page</dt><dd>Campus and District-Level Learning by TCEA</dd>
+        <dt>URL</dt><dd><a href="https://tcea.org/pd/services/">https://tcea.org/pd/services/</a></dd>
+        <dt>Component</dt><dd>Professional-learning inquiry form</dd>
+        <dt>Description</dt><dd>The form exposes visible field labels and marks several labels with an asterisk, but no visible legend explains that the asterisk means required. Input formats, error behavior, error association, and submission confirmation were not testable.</dd>
+        <dt>User impact</dt><dd>Users may not know which fields are required or how to recover from errors, especially when using a screen reader or voice input.</dd>
+        <dt>Affected users</dt><dd>Screen-reader users, users with cognitive disabilities, voice-control users, and users with limited dexterity</dd>
+        <dt>Blocked or affected task</dt><dd>Request professional-learning information</dd>
+        <dt>WCAG criterion</dt><dd>3.3.2 Labels or Instructions; 3.3.1 Error Identification and 3.3.3 Error Suggestion require testing</dd>
+        <dt>WCAG level</dt><dd>A / AA</dd>
+        <dt>Evidence source</dt><dd>Direct review of visible form text; no submission test</dd>
+        <dt>Confidence</dt><dd>Moderate</dd>
+        <dt>Recommended correction</dt><dd>Add a visible “Fields marked * are required” instruction, use native labels and required attributes, identify errors in text, connect errors to fields, move focus to an error summary, and announce status messages.</dd>
+        <dt>Verification method</dt><dd>Submit empty, malformed, and valid forms using keyboard, NVDA, and 400 percent zoom.</dd>
+      </dl>
+    </article>
+<article class="detail finding-moderate">
+      <header>
+        <p class="finding-kicker">TCEA-007 · Moderate · Open</p>
+        <h3>Event calendar structure and date presentation are difficult to parse</h3>
+      </header>
+      <dl class="finding-grid">
+        <dt>Page</dt><dd>Calendar of Events</dd>
+        <dt>URL</dt><dd><a href="https://tcea.org/events/">https://tcea.org/events/</a></dd>
+        <dt>Component</dt><dd>Event calendar</dd>
+        <dt>Description</dt><dd>The retrieved main content did not expose a clear page-level H1. Event links combine multiple dates and times into dense strings, and the multi-day convention appears under both January and February.</dd>
+        <dt>User impact</dt><dd>Users navigating by heading or listening linearly may have difficulty identifying the page and understanding start and end dates.</dd>
+        <dt>Affected users</dt><dd>Screen-reader users, users with cognitive disabilities, and users with low vision</dd>
+        <dt>Blocked or affected task</dt><dd>Find an event and understand when it occurs</dd>
+        <dt>WCAG criterion</dt><dd>1.3.1 Info and Relationships; 2.4.6 Headings and Labels</dd>
+        <dt>WCAG level</dt><dd>A / AA</dd>
+        <dt>Evidence source</dt><dd>Direct retrieval of event page content</dd>
+        <dt>Confidence</dt><dd>Moderate</dd>
+        <dt>Recommended correction</dt><dd>Add a visible H1 such as “Events Calendar,” use semantic time markup and readable date ranges, label multi-day events once or clearly indicate continuation, and ensure calendar controls have accessible names and states.</dd>
+        <dt>Verification method</dt><dd>Test the calendar with keyboard, NVDA, VoiceOver, 400 percent zoom, and a narrow viewport.</dd>
+      </dl>
+    </article>
+<article class="detail finding-moderate">
+      <header>
+        <p class="finding-kicker">TCEA-008 · Moderate · Open</p>
+        <h3>Sampled PDFs are searchable but not proven structurally accessible</h3>
+      </header>
+      <dl class="finding-grid">
+        <dt>Page</dt><dd>AI in Education Journey flyer and 2024 Group Registration Form</dd>
+        <dt>URL</dt><dd><a href="https://tcea.org/documents/pd/TCEA-AI-in-Education-Journey-Flyer-01-2025.pdf">https://tcea.org/documents/pd/TCEA-AI-in-Education-Journey-Flyer-01-2025.pdf</a></dd>
+        <dt>Component</dt><dd>Downloadable PDF documents</dd>
+        <dt>Description</dt><dd>Both PDFs contain selectable text. The flyer uses dense multi-column layouts and a large table-like design. The extracted page-two order begins with action text before stage headings, suggesting possible reading-order problems. The registration document is a visual paper form and is outdated.</dd>
+        <dt>User impact</dt><dd>Screen-reader and keyboard users may encounter illogical reading order, untagged tables or form fields, missing document metadata, or an unusable form.</dd>
+        <dt>Affected users</dt><dd>Blind and low-vision users, keyboard users, and users with cognitive disabilities</dd>
+        <dt>Blocked or affected task</dt><dd>Understand a service flyer or complete registration information</dd>
+        <dt>WCAG criterion</dt><dd>1.3.1 Info and Relationships; 1.3.2 Meaningful Sequence; 2.4.2 Page Titled; 3.3.2 Labels or Instructions</dd>
+        <dt>WCAG level</dt><dd>A</dd>
+        <dt>Evidence source</dt><dd>PDF text extraction and visual page screenshots; tag tree unavailable</dd>
+        <dt>Confidence</dt><dd>Moderate</dd>
+        <dt>Recommended correction</dt><dd>Audit tags, reading order, headings, lists, table headers, links, language, title metadata, and form fields in Acrobat or PAC. Provide a semantic HTML alternative for current service information and remove or clearly archive stale forms.</dd>
+        <dt>Verification method</dt><dd>Run PAC or Acrobat Accessibility Checker, inspect the tag tree manually, and read the document with NVDA or JAWS.</dd>
+      </dl>
+    </article>
+<article class="detail finding-advisory">
+      <header>
+        <p class="finding-kicker">TCEA-009 · Advisory · Recommended</p>
+        <h3>Establish release testing for contrast, zoom, reflow, motion, and focus</h3>
+      </header>
+      <dl class="finding-grid">
+        <dt>Page</dt><dd>All templates</dd>
+        <dt>URL</dt><dd><a href="https://tcea.org/">https://tcea.org/</a></dd>
+        <dt>Component</dt><dd>Visual and responsive quality assurance</dd>
+        <dt>Description</dt><dd>Exact contrast, 200 percent text resize, 400 percent zoom, 320 CSS-pixel reflow, text spacing, reduced motion, and focus visibility were outside this review’s capabilities.</dd>
+        <dt>User impact</dt><dd>Unmeasured visual and responsive barriers can remain undetected after content fixes.</dd>
+        <dt>Affected users</dt><dd>Low-vision users, keyboard users, users with vestibular disabilities, and mobile users</dd>
+        <dt>Blocked or affected task</dt><dd>Read and operate the site across devices and magnification levels</dd>
+        <dt>WCAG criterion</dt><dd>1.4.3, 1.4.4, 1.4.10, 1.4.11, 1.4.12, 2.3.3, 2.4.7</dd>
+        <dt>WCAG level</dt><dd>AA / advisory</dd>
+        <dt>Evidence source</dt><dd>Testing limitation</dd>
+        <dt>Confidence</dt><dd>Untested</dd>
+        <dt>Recommended correction</dt><dd>Add these checks to pre-release and regression testing for every shared template and critical workflow.</dd>
+        <dt>Verification method</dt><dd>Use browser zoom, text-spacing overrides, contrast tools, reduced-motion settings, and a keyboard-only review.</dd>
+      </dl>
+    </article>
+<article class="detail finding-advisory">
+      <header>
+        <p class="finding-kicker">TCEA-010 · Advisory · Recommended</p>
+        <h3>Adopt WCAG 2.2 improvements during remediation</h3>
+      </header>
+      <dl class="finding-grid">
+        <dt>Page</dt><dd>Transactional and interactive services</dd>
+        <dt>URL</dt><dd><a href="https://tcea.org/">https://tcea.org/</a></dd>
+        <dt>Component</dt><dd>Forward-looking design requirements</dd>
+        <dt>Description</dt><dd>WCAG 2.1 AA is the assessment baseline. WCAG 2.2 adds useful protections for focus not obscured, target size, redundant entry, consistent help, and accessible authentication.</dd>
+        <dt>User impact</dt><dd>Including these criteria now reduces rework and improves usability for mobile, motor, cognitive, and low-vision users.</dd>
+        <dt>Affected users</dt><dd>Keyboard, mobile, motor, cognitive, and low-vision users</dd>
+        <dt>Blocked or affected task</dt><dd>Complete forms, authentication, and interactive workflows</dd>
+        <dt>WCAG criterion</dt><dd>WCAG 2.2: 2.4.11, 2.5.8, 3.2.6, 3.3.7, 3.3.8</dd>
+        <dt>WCAG level</dt><dd>Forward-looking advisory</dd>
+        <dt>Evidence source</dt><dd>Standards recommendation</dd>
+        <dt>Confidence</dt><dd>High</dd>
+        <dt>Recommended correction</dt><dd>Add WCAG 2.2 AA criteria to new-development acceptance tests while maintaining WCAG 2.1 AA as the present federal Title II baseline.</dd>
+        <dt>Verification method</dt><dd>Include the criteria in design review, automated rules where available, and manual acceptance testing.</dd>
+      </dl>
+    </article>
+</section>
+
+<section aria-labelledby="page-results-title">
+  <p class="eyebrow" style="color:var(--navy)">Part Six</p>
+  <h2 id="page-results-title">Page and Workflow Results</h2>
+  <table>
+    <caption>Results and limitations by sampled resource</caption>
+    <thead><tr><th scope="col">Page or workflow</th><th scope="col">Result</th><th scope="col">Key barriers or risks</th><th scope="col">Testing limitations</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Homepage</th><td>High risk</td><td>Generic image alternatives, text in images, shared navigation semantics, duplicated event-widget content</td><td>No keyboard, responsive, or automated test</td></tr>
+      <tr><th scope="row">Contact and complaint information</th><td>Moderate risk</td><td>No digital-accessibility-specific reporting route</td><td>Contact actions not submitted</td></tr>
+      <tr><th scope="row">Courses</th><td>High risk</td><td>Shared navigation outline and untested course-purchase path</td><td>Filtering and purchase interactions not tested</td></tr>
+      <tr><th scope="row">Events</th><td>High risk</td><td>Weak page heading, dense dates, duplicate multi-month event representation, external registration</td><td>Calendar controls not operated</td></tr>
+      <tr><th scope="row">Membership and community</th><td>High risk</td><td>Core workflow on unavailable third-party services</td><td>Authentication required or content not retrievable</td></tr>
+      <tr><th scope="row">Professional-learning inquiry</th><td>High risk</td><td>Required-field explanation incomplete; error handling unknown</td><td>No submission or error-state test</td></tr>
+      <tr><th scope="row">Payment policy</th><td>Moderate risk</td><td>External Formsite payment authorization remains untested</td><td>No transactional test</td></tr>
+      <tr><th scope="row">Convention accommodations</th><td>High risk</td><td>Interpreter deadline conflicts with current event year</td><td>Registration accommodation request not submitted</td></tr>
+      <tr><th scope="row">Sample PDFs</th><td>Moderate risk</td><td>Tagging, reading order, form semantics, and metadata unverified</td><td>No tag-tree or assistive-technology inspection</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section aria-labelledby="automated-title">
+  <p class="eyebrow" style="color:var(--navy)">Part Seven</p>
+  <h2 id="automated-title">Automated Findings</h2>
+  <p><strong>No automated accessibility engine was available for this review.</strong> No axe-core, Lighthouse, WAVE, Pa11y, Accessibility Insights, HTML validation, link validation, or automated contrast result is claimed.</p>
+  <blockquote class="notice">Automated testing detects only part of WCAG. A clean automated result does not establish accessibility or conformance.</blockquote>
+  <p>Recommended next automated pass: scan every shared template, the inquiry form, the events calendar, and each public step before a third-party handoff. Consolidate repeated failures by shared header, footer, component, template, and vendor.</p>
+</section>
+
+<section id="human-testing" aria-labelledby="human-title">
+  <p class="eyebrow" style="color:var(--navy)">Part Eight</p>
+  <h2 id="human-title">Human Testing Still Required</h2>
+  <table>
+    <caption>Outstanding manual and assistive-technology tests</caption>
+    <thead><tr><th scope="col">What to test</th><th scope="col">Page or workflow</th><th scope="col">Recommended environment</th><th scope="col">Expected result</th><th scope="col">Likely team</th></tr></thead>
+    <tbody>
+      <tr><td>Keyboard-only navigation, menus, calendar, form, dialogs, and focus return</td><td>All templates; events; inquiry form</td><td>Chrome and Firefox; Tab, Shift+Tab, Enter, Space, arrows, Escape</td><td>Every function is reachable, operable, visibly focused, and free of traps</td><td>Web developer and accessibility tester</td></tr>
+      <tr><td>Screen-reader heading, landmark, link, image, and form review</td><td>Homepage, courses, events, PD services</td><td>NVDA with Firefox</td><td>Logical outline, named controls, meaningful images, and concise reading order</td><td>Accessibility tester</td></tr>
+      <tr><td>Transactional workflow</td><td>Membership and event registration</td><td>JAWS with Chrome or Edge</td><td>Join, register, review, correct, pay, and confirm without assistance</td><td>Vendor and TCEA owner</td></tr>
+      <tr><td>macOS and iOS access</td><td>Membership, community, chat, and email signup</td><td>VoiceOver with Safari; VoiceOver on iOS</td><td>Complete processes with correct labels, focus, and status announcements</td><td>Vendor and accessibility tester</td></tr>
+      <tr><td>Android access</td><td>Events and registration</td><td>TalkBack on Android</td><td>Readable dates, usable controls, and complete registration</td><td>Vendor and accessibility tester</td></tr>
+      <tr><td>Zoom and reflow</td><td>All shared templates and third-party workflows</td><td>400 percent browser zoom and 320 CSS-pixel viewport</td><td>No two-dimensional scrolling except permitted content; no clipping or overlays</td><td>Web developer</td></tr>
+      <tr><td>Text resize and spacing</td><td>Homepage, policy pages, form, PDFs where applicable</td><td>200 percent text size and WCAG text-spacing override</td><td>No loss of content, overlap, or hidden controls</td><td>Web developer and communications</td></tr>
+      <tr><td>Contrast and focus indication</td><td>All templates and interactive states</td><td>Contrast analyzer plus keyboard</td><td>Text, controls, icons, and focus indicators meet applicable ratios</td><td>Designer and web developer</td></tr>
+      <tr><td>Form validation and recovery</td><td>PD inquiry, membership, registration, payment</td><td>Keyboard and screen reader</td><td>Errors are identified, associated, announced, and correctable</td><td>Web developer and vendors</td></tr>
+      <tr><td>PDF tags and reading order</td><td>Current flyers, policies, forms, and eBooks</td><td>PAC or Acrobat plus NVDA/JAWS</td><td>Correct title, language, tags, headings, lists, tables, links, and form fields</td><td>Communications and document remediator</td></tr>
+      <tr><td>User testing</td><td>Highest-use public and member workflows</td><td>Participants with varied disabilities and assistive technologies</td><td>Users can complete important tasks independently and report barriers</td><td>Accessibility owner and product owners</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="remediation" aria-labelledby="remediation-title">
+  <p class="eyebrow" style="color:var(--navy)">Part Nine</p>
+  <h2 id="remediation-title">Prioritized Remediation Plan</h2>
+  <table>
+    <caption>Remediation priorities and ownership</caption>
+    <thead><tr><th scope="col">Priority</th><th scope="col">Finding</th><th scope="col">Recommended action</th><th scope="col">Likely owner</th><th scope="col">Verification</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>TCEA-003</td><td>Correct and govern event-accommodation dates</td><td>Events and communications</td><td>Content and registration cross-check</td></tr>
+      <tr><td>2</td><td>TCEA-002</td><td>Publish an accessibility statement and monitored barrier-reporting route</td><td>Accessibility coordinator, communications, and legal/compliance</td><td>Submit and route a test report</td></tr>
+      <tr><td>3</td><td>TCEA-001</td><td>Repair shared navigation semantics, icon exposure, headings, landmarks, and skip navigation</td><td>Web developer</td><td>DOM, accessibility tree, keyboard, and screen-reader retest</td></tr>
+      <tr><td>4</td><td>TCEA-004</td><td>Test and govern membership, registration, community, chat, payment, and email vendors</td><td>Technology, procurement, product owners, and vendors</td><td>Complete-process assistive-technology testing</td></tr>
+      <tr><td>5</td><td>TCEA-005</td><td>Convert promotional text to HTML and provide purposeful alternatives</td><td>Communications and web developer</td><td>Alt-text and text-resize review</td></tr>
+      <tr><td>6</td><td>TCEA-006</td><td>Add form instructions, programmatic requirements, accessible errors, and status messages</td><td>Web developer</td><td>Invalid and valid submission tests</td></tr>
+      <tr><td>7</td><td>TCEA-007</td><td>Repair event-calendar heading, dates, duplicate representation, and control names</td><td>Web developer and events</td><td>Keyboard, screen-reader, zoom, and mobile tests</td></tr>
+      <tr><td>8</td><td>TCEA-008</td><td>Audit current PDFs and provide semantic HTML alternatives</td><td>Communications and content owners</td><td>PAC, tag-tree, and screen-reader review</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section aria-labelledby="controls-title">
+  <p class="eyebrow" style="color:var(--navy)">Part Ten</p>
+  <h2 id="controls-title">Long-Term Controls</h2>
+  <ul>
+    <li><strong>Accessibility ownership:</strong> name an accountable owner and page-level content owners</li>
+    <li><strong>Digital inventory:</strong> track websites, subdomains, apps, forms, documents, media, embeds, and vendor platforms</li>
+    <li><strong>Procurement:</strong> require current ACRs, deployed-version evidence, warranties, remediation obligations, and retesting rights</li>
+    <li><strong>Accessible templates:</strong> lock in headings, landmarks, form patterns, focus styles, error summaries, and image guidance</li>
+    <li><strong>Staff training:</strong> train communications, event, marketing, course, document, and procurement staff</li>
+    <li><strong>Prepublication checks:</strong> require image, heading, link, table, document, caption, and contrast checks before release</li>
+    <li><strong>Recurring testing:</strong> combine automated scans, keyboard tests, screen readers, zoom/reflow, and user testing</li>
+    <li><strong>Barrier reporting:</strong> provide a monitored route, confirmation, escalation, and alternate-format response</li>
+    <li><strong>Remediation tracking:</strong> record severity, owner, due date, workaround, retest evidence, and closure</li>
+    <li><strong>Release governance:</strong> retest shared templates and vendor workflows after updates</li>
+    <li><strong>Documentation retention:</strong> retain scan results, manual test scripts, ACRs, contracts, remediation records, and user feedback</li>
+  </ul>
+</section>
+
+<section id="appendix" aria-labelledby="appendix-title">
+  <p class="eyebrow" style="color:var(--navy)">Part Eleven</p>
+  <h2 id="appendix-title">Assessment Data Appendix</h2>
+  <h3>Structured data</h3>
+  <pre>{
+  &quot;assessment&quot;: {
+    &quot;website&quot;: &quot;https://tcea.org/&quot;,
+    &quot;review_date&quot;: &quot;2026-07-19&quot;,
+    &quot;mode&quot;: &quot;Standard review&quot;,
+    &quot;baseline&quot;: &quot;WCAG 2.1 Level A and Level AA&quot;,
+    &quot;overall_score&quot;: null,
+    &quot;provisional_percentage&quot;: 34,
+    &quot;points_earned&quot;: 15,
+    &quot;maximum_points_for_scored_criteria&quot;: 44,
+    &quot;criteria_scored&quot;: 11,
+    &quot;not_tested&quot;: 6,
+    &quot;not_applicable&quot;: 1,
+    &quot;unknown&quot;: 7,
+    &quot;confidence&quot;: &quot;Low&quot;,
+    &quot;critical_barriers&quot;: 0
+  },
+  &quot;domain_percentages&quot;: {
+    &quot;Equal Access and Interaction&quot;: 25,
+    &quot;Structure, Meaning, and Visual Design&quot;: 50,
+    &quot;Forms, Authentication, and Errors&quot;: 38,
+    &quot;Documents, Multimedia, and Specialized Content&quot;: 25,
+    &quot;Mobile and Third-Party Platforms&quot;: 25,
+    &quot;Governance and Continuous Improvement&quot;: null
+  },
+  &quot;severity_counts&quot;: {
+    &quot;Critical&quot;: 0,
+    &quot;High&quot;: 4,
+    &quot;Moderate&quot;: 4,
+    &quot;Low&quot;: 0,
+    &quot;Advisory&quot;: 2
+  },
+  &quot;criteria&quot;: [
+    {
+      &quot;id&quot;: &quot;A1&quot;,
+      &quot;domain&quot;: &quot;Equal Access and Interaction&quot;,
+      &quot;criterion&quot;: &quot;Core tasks can be completed independently&quot;,
+      &quot;score&quot;: 1,
+      &quot;confidence&quot;: &quot;Low&quot;,
+      &quot;status&quot;: &quot;Partial support&quot;,
+      &quot;evidence&quot;: &quot;Public information can be located, but joining, registration, community access, and authenticated resources depend on external services that were not testable.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;A2&quot;,
+      &quot;domain&quot;: &quot;Equal Access and Interaction&quot;,
+      &quot;criterion&quot;: &quot;All functions work with a keyboard&quot;,
+      &quot;score&quot;: &quot;NT&quot;,
+      &quot;confidence&quot;: &quot;Untested&quot;,
+      &quot;status&quot;: &quot;Not Tested&quot;,
+      &quot;evidence&quot;: &quot;No live keyboard-interaction environment was available.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;A3&quot;,
+      &quot;domain&quot;: &quot;Equal Access and Interaction&quot;,
+      &quot;criterion&quot;: &quot;Focus is visible and follows a logical order&quot;,
+      &quot;score&quot;: 1,
+      &quot;confidence&quot;: &quot;Moderate&quot;,
+      &quot;status&quot;: &quot;Barrier identified&quot;,
+      &quot;evidence&quot;: &quot;The retrieved reading order places a large heading-heavy mega-menu and exposed icon-font characters before page content. Visible focus itself was not tested.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;A4&quot;,
+      &quot;domain&quot;: &quot;Equal Access and Interaction&quot;,
+      &quot;criterion&quot;: &quot;Pages reflow and remain usable when enlarged&quot;,
+      &quot;score&quot;: &quot;NT&quot;,
+      &quot;confidence&quot;: &quot;Untested&quot;,
+      &quot;status&quot;: &quot;Not Tested&quot;,
+      &quot;evidence&quot;: &quot;No 200 percent text-resize, 400 percent zoom, 320 CSS-pixel, or text-spacing test was available.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;B1&quot;,
+      &quot;domain&quot;: &quot;Structure, Meaning, and Visual Design&quot;,
+      &quot;criterion&quot;: &quot;Pages use meaningful titles, headings, landmarks, lists, and tables&quot;,
+      &quot;score&quot;: 2,
+      &quot;confidence&quot;: &quot;Moderate&quot;,
+      &quot;status&quot;: &quot;Partial support&quot;,
+      &quot;evidence&quot;: &quot;Sampled pages generally have descriptive browser titles and most have one page-level heading, but the shared menu uses many H4 headings before the H1 and the events page did not expose a clear H1.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;B2&quot;,
+      &quot;domain&quot;: &quot;Structure, Meaning, and Visual Design&quot;,
+      &quot;criterion&quot;: &quot;Images and visual content have appropriate text alternatives&quot;,
+      &quot;score&quot;: 2,
+      &quot;confidence&quot;: &quot;Moderate&quot;,
+      &quot;status&quot;: &quot;Partial support&quot;,
+      &quot;evidence&quot;: &quot;Many course and staff images expose useful names, but several prominent homepage promotional graphics were exposed only as “Image” even though they contain essential text.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;B3&quot;,
+      &quot;domain&quot;: &quot;Structure, Meaning, and Visual Design&quot;,
+      &quot;criterion&quot;: &quot;Color and contrast meet accessibility requirements&quot;,
+      &quot;score&quot;: &quot;NT&quot;,
+      &quot;confidence&quot;: &quot;Untested&quot;,
+      &quot;status&quot;: &quot;Not Tested&quot;,
+      &quot;evidence&quot;: &quot;Exact foreground, background, non-text contrast, and focus-indicator ratios were not measured.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;B4&quot;,
+      &quot;domain&quot;: &quot;Structure, Meaning, and Visual Design&quot;,
+      &quot;criterion&quot;: &quot;Links and controls have descriptive names&quot;,
+      &quot;score&quot;: 2,
+      &quot;confidence&quot;: &quot;Moderate&quot;,
+      &quot;status&quot;: &quot;Partial support&quot;,
+      &quot;evidence&quot;: &quot;Most text links are understandable in context, but generic image names and exposed decorative icon characters reduce clarity.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;C1&quot;,
+      &quot;domain&quot;: &quot;Forms, Authentication, and Errors&quot;,
+      &quot;criterion&quot;: &quot;Every field has a visible, programmatically connected label&quot;,
+      &quot;score&quot;: 2,
+      &quot;confidence&quot;: &quot;Moderate&quot;,
+      &quot;status&quot;: &quot;Partial support&quot;,
+      &quot;evidence&quot;: &quot;The public professional-learning inquiry form presents visible labels, but programmatic association was not inspectable and external registration forms were unavailable.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;C2&quot;,
+      &quot;domain&quot;: &quot;Forms, Authentication, and Errors&quot;,
+      &quot;criterion&quot;: &quot;Instructions, required fields, and formats are clear&quot;,
+      &quot;score&quot;: 1,
+      &quot;confidence&quot;: &quot;Moderate&quot;,
+      &quot;status&quot;: &quot;Barrier identified&quot;,
+      &quot;evidence&quot;: &quot;Required fields are marked with asterisks, but the sampled form does not visibly explain the symbol or provide detailed format and submission guidance.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;C3&quot;,
+      &quot;domain&quot;: &quot;Forms, Authentication, and Errors&quot;,
+      &quot;criterion&quot;: &quot;Errors are identified, associated with fields, and correctable&quot;,
+      &quot;score&quot;: &quot;NT&quot;,
+      &quot;confidence&quot;: &quot;Untested&quot;,
+      &quot;status&quot;: &quot;Not Tested&quot;,
+      &quot;evidence&quot;: &quot;No form was submitted and no validation state was triggered.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;C4&quot;,
+      &quot;domain&quot;: &quot;Forms, Authentication, and Errors&quot;,
+      &quot;criterion&quot;: &quot;Authentication and security steps are accessible&quot;,
+      &quot;score&quot;: &quot;NT&quot;,
+      &quot;confidence&quot;: &quot;Untested&quot;,
+      &quot;status&quot;: &quot;Not Tested&quot;,
+      &quot;evidence&quot;: &quot;Membership, registration, community login, password reset, and multifactor flows were unavailable.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;D1&quot;,
+      &quot;domain&quot;: &quot;Documents, Multimedia, and Specialized Content&quot;,
+      &quot;criterion&quot;: &quot;PDFs and downloadable documents use accessible structure&quot;,
+      &quot;score&quot;: 1,
+      &quot;confidence&quot;: &quot;Moderate&quot;,
+      &quot;status&quot;: &quot;Barrier identified&quot;,
+      &quot;evidence&quot;: &quot;Two PDFs were visually and textually sampled. They are searchable, but tags, document title, language, form-field semantics, alternative text, and logical reading order were not established; extraction suggests possible reading-order problems.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;D2&quot;,
+      &quot;domain&quot;: &quot;Documents, Multimedia, and Specialized Content&quot;,
+      &quot;criterion&quot;: &quot;Videos have accurate synchronized captions&quot;,
+      &quot;score&quot;: &quot;NA&quot;,
+      &quot;confidence&quot;: &quot;Not applicable&quot;,
+      &quot;status&quot;: &quot;Not Applicable&quot;,
+      &quot;evidence&quot;: &quot;No public video was included in this representative main-site sample.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;D3&quot;,
+      &quot;domain&quot;: &quot;Documents, Multimedia, and Specialized Content&quot;,
+      &quot;criterion&quot;: &quot;Audio and visual information has equivalent alternatives&quot;,
+      &quot;score&quot;: 1,
+      &quot;confidence&quot;: &quot;Moderate&quot;,
+      &quot;status&quot;: &quot;Barrier identified&quot;,
+      &quot;evidence&quot;: &quot;Promotional graphics containing dates, prices, and calls to action were exposed without meaningful text alternatives in the retrieved representation.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;D4&quot;,
+      &quot;domain&quot;: &quot;Documents, Multimedia, and Specialized Content&quot;,
+      &quot;criterion&quot;: &quot;Media players and specialized content are operable&quot;,
+      &quot;score&quot;: 1,
+      &quot;confidence&quot;: &quot;Low&quot;,
+      &quot;status&quot;: &quot;Partial support&quot;,
+      &quot;evidence&quot;: &quot;Event-calendar and directions components produced dense or duplicated text in retrieval, while keyboard operation and status announcements could not be tested.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;E1&quot;,
+      &quot;domain&quot;: &quot;Mobile and Third-Party Platforms&quot;,
+      &quot;criterion&quot;: &quot;Mobile and responsive views preserve access&quot;,
+      &quot;score&quot;: &quot;NT&quot;,
+      &quot;confidence&quot;: &quot;Untested&quot;,
+      &quot;status&quot;: &quot;Not Tested&quot;,
+      &quot;evidence&quot;: &quot;No narrow-viewport, orientation, touch-target, or mobile assistive-technology test was available.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;E2&quot;,
+      &quot;domain&quot;: &quot;Mobile and Third-Party Platforms&quot;,
+      &quot;criterion&quot;: &quot;Embedded and vendor-hosted components are tested&quot;,
+      &quot;score&quot;: 1,
+      &quot;confidence&quot;: &quot;High&quot;,
+      &quot;status&quot;: &quot;Third-party dependency&quot;,
+      &quot;evidence&quot;: &quot;Core membership, registration, community, chat, email-subscription, and payment functions rely on external services; none could be fully tested in this review.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;E3&quot;,
+      &quot;domain&quot;: &quot;Mobile and Third-Party Platforms&quot;,
+      &quot;criterion&quot;: &quot;Vendor accessibility evidence is current and specific&quot;,
+      &quot;score&quot;: &quot;U&quot;,
+      &quot;confidence&quot;: &quot;Unknown&quot;,
+      &quot;status&quot;: &quot;Unknown from public evidence&quot;,
+      &quot;evidence&quot;: &quot;No current, product-specific ACR, VPAT, or equivalent accessibility evidence was located for the sampled vendor workflows.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;E4&quot;,
+      &quot;domain&quot;: &quot;Mobile and Third-Party Platforms&quot;,
+      &quot;criterion&quot;: &quot;Known vendor barriers have owners and remediation dates&quot;,
+      &quot;score&quot;: &quot;U&quot;,
+      &quot;confidence&quot;: &quot;Unknown&quot;,
+      &quot;status&quot;: &quot;Unknown from public evidence&quot;,
+      &quot;evidence&quot;: &quot;Ownership and remediation tracking for vendor barriers could not be verified publicly.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;F1&quot;,
+      &quot;domain&quot;: &quot;Governance and Continuous Improvement&quot;,
+      &quot;criterion&quot;: &quot;The organization maintains a digital inventory&quot;,
+      &quot;score&quot;: &quot;U&quot;,
+      &quot;confidence&quot;: &quot;Unknown&quot;,
+      &quot;status&quot;: &quot;Unknown from public evidence&quot;,
+      &quot;evidence&quot;: &quot;Internal inventory practices are not verifiable from the public website.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;F2&quot;,
+      &quot;domain&quot;: &quot;Governance and Continuous Improvement&quot;,
+      &quot;criterion&quot;: &quot;Accessibility requirements appear in purchasing and contracts&quot;,
+      &quot;score&quot;: &quot;U&quot;,
+      &quot;confidence&quot;: &quot;Unknown&quot;,
+      &quot;status&quot;: &quot;Unknown from public evidence&quot;,
+      &quot;evidence&quot;: &quot;Procurement and contract accessibility requirements were not publicly available.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;F3&quot;,
+      &quot;domain&quot;: &quot;Governance and Continuous Improvement&quot;,
+      &quot;criterion&quot;: &quot;Content creators receive training and accessible templates&quot;,
+      &quot;score&quot;: &quot;U&quot;,
+      &quot;confidence&quot;: &quot;Unknown&quot;,
+      &quot;status&quot;: &quot;Unknown from public evidence&quot;,
+      &quot;evidence&quot;: &quot;TCEA publishes accessibility guidance, but internal training and template controls could not be verified.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;F4&quot;,
+      &quot;domain&quot;: &quot;Governance and Continuous Improvement&quot;,
+      &quot;criterion&quot;: &quot;Testing combines automated and human methods&quot;,
+      &quot;score&quot;: &quot;U&quot;,
+      &quot;confidence&quot;: &quot;Unknown&quot;,
+      &quot;status&quot;: &quot;Unknown from public evidence&quot;,
+      &quot;evidence&quot;: &quot;No public testing methodology, cadence, or conformance report was located.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;F5&quot;,
+      &quot;domain&quot;: &quot;Governance and Continuous Improvement&quot;,
+      &quot;criterion&quot;: &quot;Findings are tracked through correction and retesting&quot;,
+      &quot;score&quot;: &quot;U&quot;,
+      &quot;confidence&quot;: &quot;Unknown&quot;,
+      &quot;status&quot;: &quot;Unknown from public evidence&quot;,
+      &quot;evidence&quot;: &quot;Internal issue tracking and retesting practices were not publicly verifiable.&quot;
+    }
+  ],
+  &quot;findings&quot;: [
+    {
+      &quot;id&quot;: &quot;TCEA-001&quot;,
+      &quot;severity&quot;: &quot;High&quot;,
+      &quot;title&quot;: &quot;Shared navigation creates a noisy, confusing semantic outline&quot;,
+      &quot;status&quot;: &quot;Open&quot;
+    },
+    {
+      &quot;id&quot;: &quot;TCEA-002&quot;,
+      &quot;severity&quot;: &quot;High&quot;,
+      &quot;title&quot;: &quot;No sitewide digital accessibility statement or barrier-reporting route was located&quot;,
+      &quot;status&quot;: &quot;Open&quot;
+    },
+    {
+      &quot;id&quot;: &quot;TCEA-003&quot;,
+      &quot;severity&quot;: &quot;High&quot;,
+      &quot;title&quot;: &quot;Convention accommodation instructions contain an outdated interpreter deadline&quot;,
+      &quot;status&quot;: &quot;Open&quot;
+    },
+    {
+      &quot;id&quot;: &quot;TCEA-004&quot;,
+      &quot;severity&quot;: &quot;High&quot;,
+      &quot;title&quot;: &quot;Core user journeys depend on unverified third-party platforms&quot;,
+      &quot;status&quot;: &quot;Open — third-party dependency&quot;
+    },
+    {
+      &quot;id&quot;: &quot;TCEA-005&quot;,
+      &quot;severity&quot;: &quot;Moderate&quot;,
+      &quot;title&quot;: &quot;Prominent homepage graphics contain text but expose generic image names&quot;,
+      &quot;status&quot;: &quot;Open&quot;
+    },
+    {
+      &quot;id&quot;: &quot;TCEA-006&quot;,
+      &quot;severity&quot;: &quot;Moderate&quot;,
+      &quot;title&quot;: &quot;Inquiry form instructions are incomplete and validation remains unverified&quot;,
+      &quot;status&quot;: &quot;Open&quot;
+    },
+    {
+      &quot;id&quot;: &quot;TCEA-007&quot;,
+      &quot;severity&quot;: &quot;Moderate&quot;,
+      &quot;title&quot;: &quot;Event calendar structure and date presentation are difficult to parse&quot;,
+      &quot;status&quot;: &quot;Open&quot;
+    },
+    {
+      &quot;id&quot;: &quot;TCEA-008&quot;,
+      &quot;severity&quot;: &quot;Moderate&quot;,
+      &quot;title&quot;: &quot;Sampled PDFs are searchable but not proven structurally accessible&quot;,
+      &quot;status&quot;: &quot;Open&quot;
+    },
+    {
+      &quot;id&quot;: &quot;TCEA-009&quot;,
+      &quot;severity&quot;: &quot;Advisory&quot;,
+      &quot;title&quot;: &quot;Establish release testing for contrast, zoom, reflow, motion, and focus&quot;,
+      &quot;status&quot;: &quot;Recommended&quot;
+    },
+    {
+      &quot;id&quot;: &quot;TCEA-010&quot;,
+      &quot;severity&quot;: &quot;Advisory&quot;,
+      &quot;title&quot;: &quot;Adopt WCAG 2.2 improvements during remediation&quot;,
+      &quot;status&quot;: &quot;Recommended&quot;
+    }
+  ]
+}</pre>
+
+  <h3>Primary sources</h3>
+  <ul class="source-list">
+    <li><a href="https://www.ada.gov/resources/2024-03-08-web-rule/">U.S. Department of Justice: Title II web and mobile app fact sheet</a></li>
+    <li><a href="https://www.ada.gov/resources/web-rule-first-steps/">U.S. Department of Justice: First Steps Toward Compliance</a></li>
+    <li><a href="https://www.w3.org/TR/WCAG21/">W3C: Web Content Accessibility Guidelines 2.1</a></li>
+    <li><a href="https://www.w3.org/WAI/test-evaluate/conformance/wcag-em/">W3C: WCAG-EM Overview</a></li>
+    <li><a href="https://tcea.org/">TCEA homepage</a></li>
+    <li><a href="https://tcea.org/contact/">TCEA contact page</a></li>
+    <li><a href="https://tcea.org/courses/">TCEA courses</a></li>
+    <li><a href="https://tcea.org/events/">TCEA events</a></li>
+    <li><a href="https://tcea.org/pd/services/">TCEA professional-learning services and inquiry form</a></li>
+    <li><a href="https://convention.tcea.org/about/accessibility-information/">TCEA Convention accessibility and accommodations</a></li>
+    <li><a href="https://tcea.org/documents/pd/TCEA-AI-in-Education-Journey-Flyer-01-2025.pdf">AI in Education Journey PDF</a></li>
+    <li><a href="https://convention.tcea.org/documents/2024/TCEA-Convention-2024-Group-Registration-Form.pdf">2024 Group Registration Form PDF</a></li>
+  </ul>
+</section>
+
+<p class="closing">Within the documented scope, this review identified observable accessibility barriers and areas requiring additional human verification against WCAG 2.1 Level A and Level AA. The visual report card summarizes the underlying assessment data but does not replace the detailed findings. These results should guide remediation and further testing. They do not constitute legal certification or a complete conformance determination.</p>
+</main>
+</body>
+</html>
