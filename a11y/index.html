@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Digital Accessibility Readiness Assessment</title>
+<style>
+:root{
+  --navy:#0A3476; --navy2:#062653; --gold:#FCB040; --teal:#087E8B;
+  --ink:#172033; --muted:#526079; --bg:#F3F6FA; --card:#FFFFFF;
+  --line:#D8E0EA; --focus:#8A2BE2; --good:#176B3A; --warn:#8A4B00; --bad:#A52422;
+  --radius:14px; --shadow:0 8px 28px rgba(10,52,118,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+a{color:var(--navy);font-weight:650}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:8px;background:#fff;padding:.7rem 1rem;z-index:1000}
+.skip:focus{left:8px}
+header{background:linear-gradient(135deg,var(--navy2),var(--navy));color:white;padding:2.2rem 1rem 2.6rem}
+.wrap{max-width:1180px;margin:auto}
+.eyebrow{font-size:.8rem;text-transform:uppercase;letter-spacing:.14em;color:#DCE8FF;font-weight:750}
+h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.05;margin:.35rem 0 .8rem;max-width:18ch}
+header p{max-width:72ch;font-size:1.08rem;color:#EDF3FF;margin:.5rem 0}
+.badges{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:1.1rem}
+.badge{border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:.35rem .7rem;font-size:.85rem;background:rgba(255,255,255,.08)}
+main{padding:1.25rem 1rem 3rem}
+.notice,.panel,.question,.summary-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.notice{padding:1rem 1.2rem;border-left:6px solid var(--gold);margin-top:-1.5rem;position:relative}
+.notice strong{color:var(--navy)}
+.toolbar{display:flex;gap:.65rem;flex-wrap:wrap;align-items:center;margin:1rem 0}
+button,.file-label{font:inherit;border-radius:10px;border:1px solid var(--navy);padding:.68rem .9rem;background:var(--navy);color:white;font-weight:720;cursor:pointer}
+button.secondary,.file-label.secondary{background:white;color:var(--navy)}
+button.danger{background:white;color:var(--bad);border-color:var(--bad)}
+button:hover,.file-label:hover{filter:brightness(.96)}
+input[type=file]{position:absolute;left:-9999px}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem;margin:1rem 0}
+.meta label{display:block;font-weight:700;font-size:.9rem}
+.meta input,.meta select{width:100%;margin-top:.35rem;border:1px solid #AEBBCD;border-radius:9px;padding:.7rem;background:white;color:var(--ink)}
+.progress-panel{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center;padding:1rem 1.2rem;margin:1rem 0}
+.progress-track{height:14px;background:#E7ECF3;border-radius:999px;overflow:hidden}
+.progress-bar{height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--navy));transition:width .25s ease}
+.progress-text{font-weight:800;color:var(--navy)}
+nav.sections{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}
+nav.sections a{text-decoration:none;border:1px solid var(--line);background:white;border-radius:999px;padding:.45rem .75rem;font-size:.9rem}
+.section{margin:1.4rem 0}
+.section-head{display:flex;justify-content:space-between;gap:1rem;align-items:end;margin-bottom:.65rem}
+.section h2{margin:0;color:var(--navy);font-size:1.55rem}
+.section p{margin:.15rem 0;color:var(--muted)}
+.question{padding:1rem 1.1rem;margin:.7rem 0}
+.question-top{display:flex;gap:.75rem;align-items:flex-start}
+.qid{background:var(--navy);color:white;border-radius:8px;padding:.2rem .48rem;font-size:.8rem;font-weight:800;min-width:3.2rem;text-align:center}
+.question h3{font-size:1.05rem;margin:0}
+.question .help{margin:.35rem 0 .75rem;color:var(--muted);font-size:.94rem}
+.critical{display:inline-block;color:var(--bad);font-size:.8rem;font-weight:800;margin-left:.45rem}
+.rating{display:grid;grid-template-columns:repeat(5,1fr);gap:.45rem}
+.rating label{border:1px solid #B7C3D2;border-radius:9px;padding:.55rem .4rem;text-align:center;cursor:pointer;background:#FAFCFF;font-size:.83rem}
+.rating input{display:block;margin:.05rem auto .25rem}
+.notes label{font-weight:700;font-size:.86rem}
+.notes textarea{width:100%;margin-top:.35rem;border:1px solid #B7C3D2;border-radius:9px;padding:.65rem;min-height:66px;resize:vertical}
+.results{margin-top:1.6rem}
+.results-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem}
+.summary-card{padding:1rem}
+.summary-card .num{font-size:2rem;font-weight:850;color:var(--navy)}
+.summary-card .label{font-size:.88rem;color:var(--muted)}
+.status{font-weight:850}
+.status.good{color:var(--good)} .status.warn{color:var(--warn)} .status.bad{color:var(--bad)}
+.priority{background:white;border:1px solid var(--line);border-radius:12px;padding:.8rem 1rem;margin:.55rem 0}
+.priority h3{font-size:1rem;margin:0 0 .25rem}
+.priority p{margin:.15rem 0;color:var(--muted)}
+.sources{padding:1rem 1.2rem;margin-top:1.2rem}
+.sources h2{color:var(--navy)}
+.small{font-size:.86rem;color:var(--muted)}
+footer{padding:1.5rem 1rem 2.5rem;color:var(--muted);text-align:center}
+@media(max-width:850px){
+  .meta,.results-grid{grid-template-columns:1fr 1fr}
+  .rating{grid-template-columns:1fr}
+  .rating label{display:flex;align-items:center;gap:.55rem;text-align:left}
+  .rating input{margin:0}
+}
+@media(max-width:520px){.meta,.results-grid{grid-template-columns:1fr}.toolbar>*{width:100%}}
+@media print{
+  body{background:white}
+  header{background:white!important;color:black;padding:0 0 1rem}
+  header p,.eyebrow,.badges{color:black}
+  .toolbar,.skip,nav.sections{display:none!important}
+  .notice{margin:0}
+  .question,.panel,.notice,.summary-card{box-shadow:none}
+  .section{break-inside:avoid}
+  textarea{border:0!important;min-height:auto}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#assessment">Skip to assessment</a>
+<header>
+  <div class="wrap">
+    <div class="eyebrow">School and District Self-Assessment</div>
+    <h1>Digital Accessibility Readiness Assessment</h1>
+    <p>Evaluate a website, LMS, form, document collection, mobile app, or vendor-hosted service against the ADA Title II technical baseline and practical accessibility controls.</p>
+    <div class="badges">
+      <span class="badge">WCAG 2.1 Level A and AA</span>
+      <span class="badge">No accounts</span>
+      <span class="badge">No data collection</span>
+      <span class="badge">Runs entirely in your browser</span>
+    </div>
+  </div>
+</header>
+
+<main id="assessment" class="wrap">
+  <section class="notice" aria-label="Important notice">
+    <strong>Use this as a readiness and remediation tool, not a legal certification.</strong>
+    Automated and self-assessment results do not prove full ADA or WCAG conformance. Core workflows still need manual keyboard, screen-reader, zoom, reflow, document, multimedia, and user testing.
+  </section>
+
+  <div class="toolbar" aria-label="Assessment actions">
+    <button type="button" id="calculateBtn">Calculate Results</button>
+    <button type="button" class="secondary" id="printBtn">Print or Save PDF</button>
+    <button type="button" class="secondary" id="exportBtn">Export JSON</button>
+    <label class="file-label secondary" for="importFile">Import JSON</label>
+    <input id="importFile" type="file" accept="application/json">
+    <button type="button" class="danger" id="resetBtn">Reset Assessment</button>
+  </div>
+
+  <section class="meta panel" aria-label="Assessment details">
+    <label>Resource name<input id="resourceName" type="text" placeholder="District website or LMS"></label>
+    <label>Organization<input id="organizationName" type="text" placeholder="School or district"></label>
+    <label>Resource type
+      <select id="resourceType">
+        <option>Website</option><option>LMS or online course</option><option>Online form</option>
+        <option>PDF or document collection</option><option>Mobile app</option>
+        <option>Vendor-hosted service</option><option>Mixed digital resource</option>
+      </select>
+    </label>
+    <label>Reviewer<input id="reviewerName" type="text" placeholder="Name or team"></label>
+  </section>
+
+  <section class="progress-panel panel" aria-label="Assessment progress">
+    <div>
+      <div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>
+      <div class="small" id="progressDescription">0 of 25 criteria rated</div>
+    </div>
+    <div class="progress-text" id="progressText">0%</div>
+  </section>
+
+  <nav class="sections" aria-label="Jump to assessment section">
+    <a href="#access">Access</a><a href="#content">Content</a><a href="#forms">Forms</a>
+    <a href="#media">Documents and media</a><a href="#platform">Platforms</a>
+    <a href="#governance">Governance</a><a href="#results">Results</a>
+  </nav>
+
+  <div id="questions"></div>
+
+  <section id="results" class="results" aria-live="polite">
+    <h2>Assessment Results</h2>
+    <div class="results-grid">
+      <div class="summary-card"><div class="num" id="scoreValue">0%</div><div class="label">Overall readiness</div></div>
+      <div class="summary-card"><div class="num" id="ratedValue">0/25</div><div class="label">Criteria rated</div></div>
+      <div class="summary-card"><div class="num" id="criticalValue">0</div><div class="label">Critical barriers</div></div>
+      <div class="summary-card"><div class="status bad" id="statusValue">Not yet assessed</div><div class="label">Readiness level</div></div>
+    </div>
+    <h2>Priority Actions</h2>
+    <div id="priorities"><p class="small">Complete the assessment and select Calculate Results.</p></div>
+  </section>
+
+  <section class="sources panel">
+    <h2>Authoritative References</h2>
+    <p><a href="https://www.ada.gov/resources/2024-03-08-web-rule/" target="_blank" rel="noopener">DOJ Title II Web and Mobile App Fact Sheet</a></p>
+    <p><a href="https://www.ada.gov/resources/web-rule-first-steps/" target="_blank" rel="noopener">DOJ First Steps Toward Compliance</a></p>
+    <p><a href="https://www.w3.org/TR/WCAG21/" target="_blank" rel="noopener">WCAG 2.1</a></p>
+    <p><a href="https://www.w3.org/WAI/WCAG21/quickref/" target="_blank" rel="noopener">How to Meet WCAG 2.1 Quick Reference</a></p>
+    <p class="small">Current federal technical baseline: WCAG 2.1 Level A and AA. Recheck DOJ sources before publishing compliance dates or legal interpretations.</p>
+  </section>
+</main>
+
+<footer>Digital Accessibility Readiness Assessment • Client-side only • No information is transmitted</footer>
+
+<script>
+const sections = [
+  {id:"access", title:"1. Equal Access and Interaction", description:"Can people with disabilities complete the same essential tasks?", items:[
+    ["A1","Core tasks can be completed independently","Test enrollment, login, applications, course access, payment, submission, and help workflows from start to finish.",true],
+    ["A2","All functions work with a keyboard","Every control is reachable and operable without a mouse; no keyboard traps exist.",true],
+    ["A3","Focus is visible and follows a logical order","Users can see where they are and move through controls in a meaningful sequence.",false],
+    ["A4","Pages reflow and remain usable when enlarged","Text resizes to 200 percent and content remains usable at 400 percent zoom or narrow widths.",true]
+  ]},
+  {id:"content", title:"2. Structure, Meaning, and Visual Design", description:"Is information perceivable and understandable?", items:[
+    ["B1","Pages use meaningful titles, headings, landmarks, lists, and tables","Structure is programmatically available and preserves reading order.",false],
+    ["B2","Images and visual content have appropriate text alternatives","Decorative images are ignored; charts and diagrams have extended descriptions or equivalent data.",true],
+    ["B3","Color and contrast meet accessibility requirements","Color is not the only cue; text and interface components have sufficient contrast.",false],
+    ["B4","Links and controls have descriptive names","Users can understand each link, button, icon, and control out of context.",false]
+  ]},
+  {id:"forms", title:"3. Forms, Authentication, and Errors", description:"Can users enter information, recover from mistakes, and submit successfully?", items:[
+    ["C1","Every field has a visible, programmatically connected label","Placeholder text is not the only label.",true],
+    ["C2","Instructions, required fields, and formats are clear","Users know what is expected before they submit.",false],
+    ["C3","Errors are identified, associated with fields, and correctable","Error messages are announced and provide useful correction guidance.",true],
+    ["C4","Authentication and security steps are accessible","Login, password recovery, multifactor authentication, CAPTCHA, and timeouts do not block assistive technology.",true]
+  ]},
+  {id:"media", title:"4. Documents, Multimedia, and Specialized Content", description:"Are linked and embedded resources accessible?", items:[
+    ["D1","PDFs and downloadable documents use accessible source structure","Headings, reading order, tags, table headers, links, language, and alternative text are present.",true],
+    ["D2","Videos have accurate synchronized captions","Machine-generated captions are reviewed by a person.",true],
+    ["D3","Audio and visual information has an equivalent alternative","Transcripts, audio description, or equivalent descriptions are available when needed.",false],
+    ["D4","Media players and specialized content are operable","Players, math, charts, maps, simulations, and assessments work with keyboard and assistive technology.",true]
+  ]},
+  {id:"platform", title:"5. Responsive, Mobile, and Third-Party Platforms", description:"Does the complete delivery system remain accessible?", items:[
+    ["E1","Mobile and responsive views preserve access","Orientation, text scaling, touch alternatives, screen-reader order, and core tasks work on mobile.",false],
+    ["E2","Embedded and vendor-hosted components are tested","Payment, chat, calendar, video, library, authentication, and other services are included in workflow testing.",true],
+    ["E3","Vendor accessibility evidence is current and specific","A current ACR covers the exact product version and includes meaningful test methods and remarks.",false],
+    ["E4","Known vendor barriers have owners and remediation dates","Roadmap promises alone are not treated as resolution.",true]
+  ]},
+  {id:"governance", title:"6. Governance, Procurement, and Continuous Improvement", description:"Can the organization keep resources accessible over time?", items:[
+    ["F1","The organization maintains a complete digital inventory","Websites, apps, portals, forms, documents, media, and vendor services have named owners.",false],
+    ["F2","Accessibility requirements appear in purchasing and contracts","WCAG 2.1 Level A and AA, testing rights, support, disclosure, and remediation expectations are documented.",false],
+    ["F3","Content creators receive role-specific training and templates","Web authors, teachers, communications staff, HR, and procurement staff know their responsibilities.",false],
+    ["F4","Testing combines automated and human methods","Keyboard, screen reader, zoom, reflow, mobile, document, media, and user testing are scheduled and documented.",true],
+    ["F5","Findings are tracked through correction and retesting","Each issue has severity, owner, due date, evidence, and closure verification.",false]
+  ]}
+];
+
+const ratingLabels = [
+  ["0","Not present"],["1","Beginning"],["2","Developing"],["3","Meets baseline"],["4","Strong practice"]
+];
+
+const questionsRoot = document.getElementById("questions");
+
+function renderQuestions(){
+  questionsRoot.innerHTML = sections.map(section => `
+    <section class="section" id="${section.id}">
+      <div class="section-head"><div><h2>${section.title}</h2><p>${section.description}</p></div></div>
+      ${section.items.map(([id,title,help,critical]) => `
+        <article class="question" data-id="${id}" data-title="${escapeHtml(title)}" data-critical="${critical}">
+          <div class="question-top">
+            <span class="qid">${id}</span>
+            <div><h3>${escapeHtml(title)}${critical?'<span class="critical">Critical if failed</span>':''}</h3>
+            <p class="help">${escapeHtml(help)}</p></div>
+          </div>
+          <fieldset class="rating">
+            <legend class="small">Rate this criterion</legend>
+            ${ratingLabels.map(([value,label])=>`
+              <label><input type="radio" name="${id}" value="${value}"><span>${value} — ${label}</span></label>
+            `).join("")}
+          </fieldset>
+          <div class="notes"><label for="note-${id}">Evidence or notes</label><textarea id="note-${id}" placeholder="Record pages tested, evidence, barriers, owners, or next steps."></textarea></div>
+        </article>
+      `).join("")}
+    </section>
+  `).join("");
+}
+function escapeHtml(value){return String(value).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[c]))}
+renderQuestions();
+
+const totalCriteria = sections.reduce((n,s)=>n+s.items.length,0);
+
+function getAssessment(){
+  const answers = {};
+  document.querySelectorAll(".question").forEach(q=>{
+    const id=q.dataset.id;
+    const selected=q.querySelector(`input[name="${id}"]:checked`);
+    answers[id]={score:selected?Number(selected.value):null,note:q.querySelector("textarea").value};
+  });
+  return {
+    version:1,
+    exported:new Date().toISOString(),
+    resourceName:document.getElementById("resourceName").value,
+    organizationName:document.getElementById("organizationName").value,
+    resourceType:document.getElementById("resourceType").value,
+    reviewerName:document.getElementById("reviewerName").value,
+    answers
+  };
+}
+
+function updateProgress(){
+  const rated=document.querySelectorAll('.question input[type="radio"]:checked').length;
+  const pct=Math.round(rated/totalCriteria*100);
+  document.getElementById("progressBar").style.width=pct+"%";
+  document.getElementById("progressText").textContent=pct+"%";
+  document.getElementById("progressDescription").textContent=`${rated} of ${totalCriteria} criteria rated`;
+}
+document.addEventListener("change",e=>{if(e.target.matches('input[type="radio"]')) updateProgress()});
+
+function calculate(){
+  const qs=[...document.querySelectorAll(".question")];
+  let points=0,rated=0,critical=0;
+  const issues=[];
+  qs.forEach(q=>{
+    const checked=q.querySelector('input[type="radio"]:checked');
+    if(!checked) return;
+    const score=Number(checked.value); rated++; points+=score;
+    if(q.dataset.critical==="true" && score<3) critical++;
+    if(score<3) issues.push({id:q.dataset.id,title:q.dataset.title,score,critical:q.dataset.critical==="true",note:q.querySelector("textarea").value});
+  });
+  const pct=rated?Math.round(points/(rated*4)*100):0;
+  let label="Not yet assessed",cls="bad";
+  if(rated){
+    if(critical>0){label="High risk: critical barriers remain";cls="bad";}
+    else if(pct>=90){label="Strong evidence of readiness";cls="good";}
+    else if(pct>=75){label="Substantial readiness";cls="good";}
+    else if(pct>=60){label="Developing";cls="warn";}
+    else{label="High risk";cls="bad";}
+  }
+  document.getElementById("scoreValue").textContent=pct+"%";
+  document.getElementById("ratedValue").textContent=`${rated}/${totalCriteria}`;
+  document.getElementById("criticalValue").textContent=critical;
+  const status=document.getElementById("statusValue");
+  status.textContent=label;status.className="status "+cls;
+  const priorities=document.getElementById("priorities");
+  if(!issues.length){
+    priorities.innerHTML=rated===totalCriteria
+      ? '<div class="priority"><h3>No scored barriers below baseline</h3><p>Complete human verification, document scope and limitations, and retest after material changes.</p></div>'
+      : '<div class="priority"><h3>Complete the remaining criteria</h3><p>Unrated items cannot be treated as passing.</p></div>';
+  } else {
+    issues.sort((a,b)=>(Number(b.critical)-Number(a.critical))||(a.score-b.score));
+    priorities.innerHTML=issues.map(i=>`
+      <div class="priority">
+        <h3>${i.critical?"Critical: ":""}${escapeHtml(i.id+" — "+i.title)}</h3>
+        <p>Current score: ${i.score}/4. ${i.score===0?"Requirement is absent or blocks access.":i.score===1?"Major barriers remain.":"Meaningful gaps remain before baseline is met."}</p>
+        ${i.note?`<p><strong>Notes:</strong> ${escapeHtml(i.note)}</p>`:""}
+      </div>`).join("");
+  }
+  document.getElementById("results").scrollIntoView({behavior:"smooth"});
+}
+
+function exportJson(){
+  const data=JSON.stringify(getAssessment(),null,2);
+  const blob=new Blob([data],{type:"application/json"});
+  const a=document.createElement("a");
+  const name=(document.getElementById("resourceName").value||"accessibility-assessment").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+  a.href=URL.createObjectURL(blob);a.download=name+".json";a.click();URL.revokeObjectURL(a.href);
+}
+function importJson(file){
+  const reader=new FileReader();
+  reader.onload=()=>{
+    try{
+      const data=JSON.parse(reader.result);
+      ["resourceName","organizationName","resourceType","reviewerName"].forEach(id=>{
+        if(data[id]!=null) document.getElementById(id).value=data[id];
+      });
+      Object.entries(data.answers||{}).forEach(([id,val])=>{
+        if(val.score!==null && val.score!==undefined){
+          const radio=document.querySelector(`input[name="${CSS.escape(id)}"][value="${val.score}"]`);
+          if(radio) radio.checked=true;
+        }
+        const note=document.getElementById("note-"+id); if(note) note.value=val.note||"";
+      });
+      updateProgress();calculate();
+    }catch(err){alert("The selected file is not a valid assessment JSON file.");}
+  };
+  reader.readAsText(file);
+}
+function resetAll(){
+  if(!confirm("Clear all ratings, notes, and resource details?")) return;
+  document.querySelectorAll('input[type="radio"]').forEach(i=>i.checked=false);
+  document.querySelectorAll("textarea").forEach(t=>t.value="");
+  ["resourceName","organizationName","reviewerName"].forEach(id=>document.getElementById(id).value="");
+  document.getElementById("resourceType").selectedIndex=0;
+  updateProgress();
+  document.getElementById("scoreValue").textContent="0%";
+  document.getElementById("ratedValue").textContent=`0/${totalCriteria}`;
+  document.getElementById("criticalValue").textContent="0";
+  const s=document.getElementById("statusValue");s.textContent="Not yet assessed";s.className="status bad";
+  document.getElementById("priorities").innerHTML='<p class="small">Complete the assessment and select Calculate Results.</p>';
+}
+document.getElementById("calculateBtn").addEventListener("click",calculate);
+document.getElementById("printBtn").addEventListener("click",()=>{calculate();window.print()});
+document.getElementById("exportBtn").addEventListener("click",exportJson);
+document.getElementById("importFile").addEventListener("change",e=>{if(e.target.files[0]) importJson(e.target.files[0]);e.target.value=""});
+document.getElementById("resetBtn").addEventListener("click",resetAll);
+updateProgress();
+</script>
+</body>
+</html>
