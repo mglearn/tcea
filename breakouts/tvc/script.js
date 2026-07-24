@@ -480,7 +480,7 @@ function renderExhibitGrid() {
   exhibits().forEach((exhibit, index) => {
     const record = getRecord(exhibit.id);
     const button = document.createElement("button");
-    button.className = "tombstone-card";
+    button.className = "tombstone-card tomb-v" + (index + 1);
     button.type = "button";
     button.innerHTML = `
       <span class="tomb-rip" aria-hidden="true">R·I·P</span>
