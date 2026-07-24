@@ -179,6 +179,15 @@
     "category": "ai",
     "featured": false,
     "external": false,
+    "href": "byh/index.html",
+    "tag": "AI Comparison",
+    "title": "Build Your Handbook: Claude vs. ChatGPT",
+    "desc": "One staff-handbook PDF, rebuilt as an accessible web page by two AI assistants — Claude and ChatGPT. Open each version side by side and compare the layout, navigation, and reading experience against the original source PDF."
+  },
+  {
+    "category": "ai",
+    "featured": false,
+    "external": false,
     "href": "custom-instructions-library/index.html",
     "tag": "AI Library",
     "title": "TCEA AI Custom Instructions Library",

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build Your Handbook · Claude vs. ChatGPT · TCEA</title>
+<meta name="description" content="Two AI-built web versions of the Ardent Elementary Staff Handbook 2026–2027 — one made with Claude, one with ChatGPT — plus the source PDF. Compare them side by side.">
+<link rel="icon" href="../favicon.svg">
+<style>
+  :root{
+    --navy:#0A3476;
+    --navy-dark:#071F4A;
+    --gold:#FCB040;
+    --gold-light:#FDD17A;
+    --gray-bg:#F4F5F7;
+    --gray-line:#D8DCE2;
+    --text:#1E2530;
+    --text-soft:#4A5563;
+    --white:#ffffff;
+    --claude:#D97757;
+    --claude-bg:#FBF1EC;
+    --chatgpt:#10A37F;
+    --chatgpt-bg:#E9F7F2;
+    --focus:#0A3476;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--gray-bg);
+    color:var(--text);
+    line-height:1.55;
+    font-size:17px;
+  }
+  a{color:var(--navy);}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--focus);outline-offset:2px;}
+  .skip-link{
+    position:absolute;left:-999px;top:0;background:var(--navy);color:#fff;
+    padding:10px 16px;z-index:2000;border-radius:0 0 6px 0;
+  }
+  .skip-link:focus{left:0;}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px;}
+
+  header.site{background:var(--navy);color:#fff;padding:40px 0 34px;}
+  header.site .eyebrow{
+    font-weight:800;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--gold-light);font-size:.82rem;margin:0 0 8px;
+  }
+  header.site h1{margin:0 0 10px;font-size:2rem;line-height:1.18;}
+  header.site p.lede{margin:0;color:#dfe6f2;font-size:1.06rem;max-width:64ch;}
+
+  main{padding:36px 0 60px;}
+
+  .intro{
+    background:#fff;border:1px solid var(--gray-line);border-left:5px solid var(--gold);
+    border-radius:10px;padding:18px 20px;margin:0 0 32px;color:var(--text-soft);
+    font-size:.98rem;
+  }
+  .intro strong{color:var(--text);}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  @media (max-width:720px){.grid{grid-template-columns:1fr;}}
+
+  .card{
+    background:#fff;border:1px solid var(--gray-line);border-radius:14px;
+    padding:24px 22px 22px;display:flex;flex-direction:column;
+    box-shadow:0 2px 10px rgba(10,52,118,.05);
+  }
+  .card .badge{
+    display:inline-flex;align-items:center;gap:8px;align-self:flex-start;
+    font-weight:800;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;
+    padding:6px 12px;border-radius:999px;margin-bottom:14px;
+  }
+  .card.claude .badge{background:var(--claude-bg);color:#8a3f22;}
+  .card.chatgpt .badge{background:var(--chatgpt-bg);color:#0a6b52;}
+  .card.claude{border-top:5px solid var(--claude);}
+  .card.chatgpt{border-top:5px solid var(--chatgpt);}
+  .dot{width:10px;height:10px;border-radius:50%;display:inline-block;}
+  .card.claude .dot{background:var(--claude);}
+  .card.chatgpt .dot{background:var(--chatgpt);}
+
+  .card h2{margin:0 0 6px;font-size:1.28rem;line-height:1.25;}
+  .card .by{margin:0 0 14px;color:var(--text-soft);font-size:.92rem;}
+  .card ul{margin:0 0 20px;padding-left:1.1rem;color:var(--text-soft);font-size:.95rem;}
+  .card ul li{margin-bottom:5px;}
+  .card .spacer{flex:1;}
+
+  .btn{
+    display:inline-block;text-align:center;background:var(--navy);color:#fff;
+    font-weight:700;padding:12px 18px;border-radius:8px;text-decoration:none;
+    font-size:.98rem;transition:background .15s;
+  }
+  .btn:hover{background:var(--navy-dark);}
+  .card.claude .btn{background:var(--claude);}
+  .card.claude .btn:hover{background:#c0623f;}
+  .card.chatgpt .btn{background:var(--chatgpt);}
+  .card.chatgpt .btn:hover{background:#0c8568;}
+
+  .source{
+    margin-top:32px;background:var(--navy-dark);color:#eef2f8;border-radius:14px;
+    padding:24px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px;
+    justify-content:space-between;
+  }
+  .source h2{margin:0 0 4px;font-size:1.15rem;color:#fff;}
+  .source p{margin:0;font-size:.94rem;color:#c9d5ea;max-width:52ch;}
+  .source .pdf-btn{
+    background:var(--gold);color:var(--navy-dark);font-weight:800;
+    padding:12px 20px;border-radius:8px;text-decoration:none;white-space:nowrap;
+  }
+  .source .pdf-btn:hover{background:var(--gold-light);}
+
+  footer{border-top:1px solid var(--gray-line);padding:26px 0;color:var(--text-soft);font-size:.9rem;}
+  footer a{font-weight:600;}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site">
+  <div class="wrap">
+    <p class="eyebrow">Build Your Handbook</p>
+    <h1>One PDF, Two AI Assistants</h1>
+    <p class="lede">The same source document — the <em>Ardent Elementary Staff Handbook 2026–2027</em> — rebuilt as an accessible, navigable web page by two different AI tools. Open each and compare.</p>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <div class="intro">
+      <strong>The experiment:</strong> a single PDF staff handbook was handed to two AI assistants with the same goal — turn it into a clean, searchable, mobile-friendly web version. Below are the results. See which layout, navigation, and reading experience you prefer, then check them against the original PDF.
+    </div>
+
+    <div class="grid">
+      <section class="card claude">
+        <span class="badge"><span class="dot"></span>Made with Claude</span>
+        <h2>Claude's Handbook</h2>
+        <p class="by">Anthropic&nbsp;· Claude</p>
+        <ul>
+          <li>Navy &amp; gold navigation-aid layout</li>
+          <li>Sticky jump-to-section menu</li>
+          <li>Accessibility-first: skip links, focus styles</li>
+        </ul>
+        <div class="spacer"></div>
+        <a class="btn" href="ardent-claude.html">Open Claude version →</a>
+      </section>
+
+      <section class="card chatgpt">
+        <span class="badge"><span class="dot"></span>Made with ChatGPT</span>
+        <h2>ChatGPT's Handbook</h2>
+        <p class="by">OpenAI&nbsp;· ChatGPT</p>
+        <ul>
+          <li>Card-based sections with review flags</li>
+          <li>Sticky header with scroll offset</li>
+          <li>Accessibility-first: skip links, focus styles</li>
+        </ul>
+        <div class="spacer"></div>
+        <a class="btn" href="ardent-chatgpt.html">Open ChatGPT version →</a>
+      </section>
+    </div>
+
+    <div class="source">
+      <div>
+        <h2>The source document</h2>
+        <p>Both web versions were built from this original PDF. Use it to verify accuracy.</p>
+      </div>
+      <a class="pdf-btn" href="Ardent_Elementary_Staff_Handbook_2026-2027.pdf">Open source PDF ↓</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    A <a href="https://tcea.org">TCEA</a> "Build Your Handbook" demo · comparing AI-assisted document conversion. The Ardent Elementary handbook is used here as a sample document.
+  </div>
+</footer>
+</body>
+</html>

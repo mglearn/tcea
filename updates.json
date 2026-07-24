@@ -1,12 +1,19 @@
 {
-  "generated": "2026-07-10T19:52:44.474Z",
+  "generated": "2026-07-24T16:22:44.134Z",
   "items": [
+    {
+      "href": "byh/index.html",
+      "title": "Build Your Handbook: Claude vs. ChatGPT",
+      "category": "AI Prompt Libraries and Adoption",
+      "icon": "🤖",
+      "date": "2026-07-24T16:22:42.949Z"
+    },
     {
       "href": "spr/index.html",
       "title": "Digital Capacity Matrix for the SPR Pathfinders",
       "category": "Dashboards and Decision Tools",
       "icon": "📊",
-      "date": "2026-07-10T19:52:43.575Z"
+      "date": "2026-07-10T14:53:19-05:00"
     },
     {
       "href": "surface-deep-transfer/index.html",
@@ -270,13 +277,6 @@
     {
       "href": "ai-essentials-prompt-library/index.html",
       "title": "AI Essentials Prompt Library of 100",
-      "category": "AI Prompt Libraries and Adoption",
-      "icon": "🤖",
-      "date": "2026-06-19T17:49:01-05:00"
-    },
-    {
-      "href": "k12-image-prompt-library/index.html",
-      "title": "K-12 Image Prompt Library",
       "category": "AI Prompt Libraries and Adoption",
       "icon": "🤖",
       "date": "2026-06-19T17:49:01-05:00"

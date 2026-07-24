@@ -6,18 +6,26 @@
     <atom:link href="https://mglearn.github.io/tcea/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated HTML tools, dashboards, prompt libraries, and classroom resources from TCEA.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Jul 2026 19:52:44 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2026 16:22:44 GMT</lastBuildDate>
     <image>
       <url>https://mglearn.github.io/tcea/favicon.svg</url>
       <title>TCEA Vibe-Coded Solutions — Updates</title>
       <link>https://mglearn.github.io/tcea/</link>
     </image>
     <item>
+      <title>🤖 Build Your Handbook: Claude vs. ChatGPT</title>
+      <link>https://mglearn.github.io/tcea/byh/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/byh/index.html</guid>
+      <category>AI Prompt Libraries and Adoption</category>
+      <pubDate>Fri, 24 Jul 2026 16:22:42 GMT</pubDate>
+      <description>One staff-handbook PDF, rebuilt as an accessible web page by two AI assistants — Claude and ChatGPT. Open each version side by side and compare the layout, navigation, and reading experience against the original source PDF.</description>
+    </item>
+    <item>
       <title>📊 Digital Capacity Matrix for the SPR Pathfinders</title>
       <link>https://mglearn.github.io/tcea/spr/index.html</link>
       <guid isPermaLink="true">https://mglearn.github.io/tcea/spr/index.html</guid>
       <category>Dashboards and Decision Tools</category>
-      <pubDate>Fri, 10 Jul 2026 19:52:43 GMT</pubDate>
+      <pubDate>Fri, 10 Jul 2026 19:53:19 GMT</pubDate>
       <description>A self-assessment matrix across eight capacity areas — choose the statement that best fits where you are today and get a summary with next steps.</description>
     </item>
     <item>
@@ -323,14 +331,6 @@
       <category>AI Prompt Libraries and Adoption</category>
       <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
       <description>A searchable set of educator prompts for AI Essentials training and classroom support.</description>
-    </item>
-    <item>
-      <title>🤖 K-12 Image Prompt Library</title>
-      <link>https://mglearn.github.io/tcea/k12-image-prompt-library/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/k12-image-prompt-library/index.html</guid>
-      <category>AI Prompt Libraries and Adoption</category>
-      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
-      <description>Classroom, library, and office-ready image prompts organized by task and instructional use.</description>
     </item>
   </channel>
 </rss>

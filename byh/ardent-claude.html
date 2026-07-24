@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ardent Elementary Staff Handbook 2026-2027 | Navigation Aid</title>
+<style>
+  :root{
+    --navy:#0A3476;
+    --navy-dark:#071F4A;
+    --gold:#FCB040;
+    --gold-light:#FDD17A;
+    --gray-bg:#F4F5F7;
+    --gray-line:#D8DCE2;
+    --text:#1E2530;
+    --text-soft:#4A5563;
+    --white:#ffffff;
+    --focus:#0A3476;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;}}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--gray-bg);
+    color:var(--text);
+    line-height:1.55;
+    font-size:17px;
+  }
+  a{color:var(--navy);}
+  a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{
+    outline:3px solid var(--focus);
+    outline-offset:2px;
+  }
+  .skip-link{
+    position:absolute;left:-999px;top:0;background:var(--navy);color:#fff;
+    padding:10px 16px;z-index:2000;border-radius:0 0 6px 0;
+  }
+  .skip-link:focus{left:0;}
+
+  /* ---------- Header ---------- */
+  header.site{
+    background:var(--navy);
+    color:#fff;
+    padding:24px 20px 20px;
+  }
+  .wrap{max-width:1000px;margin:0 auto;padding:0 18px;}
+  header.site h1{margin:0 0 4px;font-size:1.7rem;line-height:1.2;}
+  header.site .year{font-weight:700;color:var(--gold-light);font-size:1.05rem;}
+  header.site .district{margin:2px 0 12px;font-size:1rem;color:#dfe6f2;}
+  .notice{
+    background:var(--navy-dark);
+    border-left:5px solid var(--gold);
+    padding:12px 16px;border-radius:6px;font-size:.95rem;color:#eef2f8;
+    margin-top:8px;
+  }
+  .notice a{color:var(--gold-light);font-weight:600;}
+  .pdf-link{
+    display:inline-block;margin-top:12px;background:var(--gold);color:var(--navy-dark);
+    font-weight:700;padding:9px 16px;border-radius:6px;text-decoration:none;font-size:.95rem;
+  }
+  .pdf-link:hover{background:var(--gold-light);}
+
+  /* ---------- Sticky nav ---------- */
+  nav.jump{
+    position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid var(--gray-line);
+    box-shadow:0 1px 4px rgba(0,0,0,.06);
+  }
+  nav.jump .wrap{display:flex;flex-wrap:wrap;gap:4px;padding:8px 18px;align-items:center;}
+  nav.jump a{
+    text-decoration:none;color:var(--navy);font-weight:600;font-size:.86rem;
+    padding:6px 10px;border-radius:6px;white-space:nowrap;
+  }
+  nav.jump a:hover{background:var(--gray-bg);}
+
+  main{max-width:1000px;margin:0 auto;padding:24px 18px 60px;}
+  section{margin-bottom:40px;scroll-margin-top:70px;}
+  h2.sec{
+    color:var(--navy);font-size:1.5rem;border-bottom:3px solid var(--gold);
+    padding-bottom:6px;margin:0 0 6px;display:flex;align-items:center;gap:10px;
+  }
+  .sec-tools{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 18px;}
+  .sec-tools button,.copylink{
+    background:#fff;border:1px solid var(--gray-line);color:var(--navy);
+    padding:6px 12px;border-radius:6px;font-size:.85rem;cursor:pointer;font-weight:600;
+  }
+  .sec-tools button:hover,.copylink:hover{background:var(--gray-bg);}
+
+  .card{
+    background:#fff;border:1px solid var(--gray-line);border-radius:10px;
+    padding:18px 20px;margin-bottom:14px;
+  }
+  .src{
+    display:inline-block;background:#EEF2F9;color:var(--navy-dark);
+    font-size:.8rem;font-weight:700;padding:2px 9px;border-radius:20px;margin-top:6px;
+    border:1px solid #cdd8ec;
+  }
+  .needs-review{
+    background:#FFF6E6;border:1px solid var(--gold);color:#6b4b00;
+    font-size:.8rem;font-weight:700;padding:2px 9px;border-radius:20px;margin-left:6px;
+  }
+  .official{
+    background:#F7F9FC;border-left:4px solid var(--navy);
+    padding:10px 14px;margin:10px 0;border-radius:0 6px 6px 0;font-size:.95rem;
+  }
+  .official .lbl{
+    display:block;font-size:.72rem;font-weight:800;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--navy);margin-bottom:4px;
+  }
+  .new-badge{
+    display:inline-block;background:var(--gold);color:var(--navy-dark);
+    font-size:.68rem;font-weight:800;padding:1px 7px;border-radius:4px;
+    letter-spacing:.04em;vertical-align:middle;margin-left:6px;
+  }
+
+  /* ---------- Search ---------- */
+  .search-wrap{background:#fff;border:1px solid var(--gray-line);border-radius:10px;padding:16px 18px;}
+  label.search-label{display:block;font-weight:700;color:var(--navy);margin-bottom:8px;font-size:1.05rem;}
+  .search-row{display:flex;gap:8px;flex-wrap:wrap;}
+  #searchInput{
+    flex:1 1 260px;font-size:1.05rem;padding:12px 14px;border:2px solid var(--navy);
+    border-radius:8px;min-width:0;
+  }
+  #resetBtn{
+    background:var(--navy);color:#fff;border:none;border-radius:8px;
+    padding:0 20px;font-weight:700;cursor:pointer;font-size:1rem;
+  }
+  #resetBtn:hover{background:var(--navy-dark);}
+  #searchStatus{margin-top:10px;font-weight:600;color:var(--text-soft);font-size:.95rem;}
+  #searchResults{margin-top:14px;}
+  .result-item{
+    border:1px solid var(--gray-line);border-left:4px solid var(--gold);
+    background:#fff;border-radius:8px;padding:12px 14px;margin-bottom:10px;
+  }
+  .result-item h4{margin:0 0 4px;font-size:1.05rem;}
+  .result-item a{font-weight:700;text-decoration:none;}
+  .result-item a:hover{text-decoration:underline;}
+  .result-snippet{font-size:.92rem;color:var(--text-soft);margin:4px 0 0;}
+  mark{background:var(--gold-light);color:#000;padding:0 2px;border-radius:2px;}
+  .no-results{padding:14px;background:#FFF6E6;border:1px solid var(--gold);border-radius:8px;font-weight:600;}
+
+  /* ---------- Quick answers ---------- */
+  details.qa,details.topic,details.scenario{
+    background:#fff;border:1px solid var(--gray-line);border-radius:10px;margin-bottom:12px;overflow:hidden;
+  }
+  details summary{
+    cursor:pointer;padding:14px 18px;font-weight:700;color:var(--navy);font-size:1.05rem;
+    list-style:none;position:relative;padding-right:44px;
+  }
+  details summary::-webkit-details-marker{display:none;}
+  details summary::after{
+    content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);
+    font-size:1.4rem;font-weight:700;color:var(--gold);
+  }
+  details[open] summary::after{content:"\2212";}
+  details summary:hover{background:var(--gray-bg);}
+  .details-body{padding:0 18px 16px;}
+  .details-body p{margin:8px 0;}
+  .details-body ul,.details-body ol{margin:8px 0;padding-left:22px;}
+  .details-body li{margin:5px 0;}
+  .jump-full{
+    display:inline-block;margin-top:8px;background:var(--navy);color:#fff;
+    padding:6px 12px;border-radius:6px;text-decoration:none;font-size:.85rem;font-weight:600;
+  }
+  .jump-full:hover{background:var(--navy-dark);}
+
+  /* scenario grid */
+  .scenario .details-body dl{margin:6px 0;}
+  .scenario dt{font-weight:800;color:var(--navy);margin-top:8px;font-size:.9rem;text-transform:uppercase;letter-spacing:.03em;}
+  .scenario dd{margin:2px 0 0;}
+  .reminder{font-style:italic;color:var(--text-soft);font-size:.9rem;margin-top:10px;border-top:1px dashed var(--gray-line);padding-top:8px;}
+
+  /* tables */
+  table{border-collapse:collapse;width:100%;margin:10px 0;font-size:.95rem;background:#fff;}
+  caption{text-align:left;font-weight:700;color:var(--navy);padding:6px 0;}
+  th,td{border:1px solid var(--gray-line);padding:8px 10px;text-align:left;vertical-align:top;}
+  thead th{background:var(--navy);color:#fff;}
+  tbody tr:nth-child(even){background:var(--gray-bg);}
+
+  /* full handbook */
+  .fh-group{background:#fff;border:1px solid var(--gray-line);border-radius:10px;margin-bottom:12px;}
+  .fh-group>summary{font-size:1.15rem;}
+  .fh-item{border-top:1px solid var(--gray-line);padding:14px 18px;}
+  .fh-item h4{margin:0 0 4px;color:var(--navy-dark);font-size:1.05rem;}
+  .fh-item h4 .src{margin-left:8px;}
+
+  /* back to top */
+  .to-top{
+    position:fixed;right:16px;bottom:16px;background:var(--navy);color:#fff;border:none;
+    width:48px;height:48px;border-radius:50%;font-size:1.3rem;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);display:none;z-index:900;
+  }
+  .to-top:hover{background:var(--navy-dark);}
+
+  .toast{
+    position:fixed;left:50%;bottom:24px;transform:translateX(-50%);
+    background:var(--navy-dark);color:#fff;padding:10px 18px;border-radius:8px;
+    font-size:.9rem;z-index:1500;opacity:0;transition:opacity .2s;pointer-events:none;
+  }
+  @media (prefers-reduced-motion: reduce){.toast{transition:none;}}
+  .toast.show{opacity:1;}
+
+  .checklist-note{font-size:.9rem;color:var(--text-soft);}
+  .checklist-note li{margin:6px 0;}
+
+  footer.site{background:var(--navy-dark);color:#dfe6f2;padding:24px 18px;font-size:.9rem;}
+  footer.site .wrap{max-width:1000px;}
+  footer.site a{color:var(--gold-light);}
+
+  @media (max-width:600px){
+    body{font-size:16px;}
+    header.site h1{font-size:1.4rem;}
+    h2.sec{font-size:1.25rem;}
+    #resetBtn{padding:10px 16px;flex:1 1 100%;}
+  }
+
+  /* Print */
+  @media print{
+    nav.jump,.sec-tools,.search-wrap,.to-top,#searchResults,.jump-full,.pdf-link,.skip-link,.copylink{display:none !important;}
+    header.site,footer.site{background:#fff;color:#000;}
+    header.site .year,header.site .district{color:#000;}
+    details{border:1px solid #999;}
+    details:not([open])>*{display:block !important;}
+    details .details-body,details[open] .details-body{display:block !important;}
+    details summary::after{display:none;}
+    .card,details.qa,details.topic,details.scenario,.fh-group{break-inside:avoid;}
+    body{background:#fff;}
+    a[href^="#"]::after{content:"";}
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site">
+  <div class="wrap">
+    <h1>Ardent Elementary School Staff Handbook</h1>
+    <div class="year">2026&ndash;2027 School Year</div>
+    <div class="district">Ardent Independent School District</div>
+    <div class="notice">
+      This webpage is a <strong>navigation aid</strong> to help staff find information quickly. The
+      <strong>original PDF handbook is the official source</strong>. If anything here differs from the PDF,
+      Board policy, or the Texas Education Code, those authorities control. Review the official wording
+      before acting on any policy.
+    </div>
+    <a class="pdf-link" href="Ardent_Elementary_Staff_Handbook_2026-2027.pdf">
+      Open the official PDF handbook
+    </a>
+    <p style="font-size:.8rem;color:#c3cee0;margin:6px 0 0;">
+      Placeholder link. Update the file path if the PDF is stored elsewhere.
+    </p>
+  </div>
+</header>
+
+<nav class="jump" aria-label="Section navigation">
+  <div class="wrap">
+    <a href="#search">Search</a>
+    <a href="#quick">Quick Answers</a>
+    <a href="#topics">Browse Topics</a>
+    <a href="#scenarios">What Should I Do If&hellip;?</a>
+    <a href="#procedures">Procedures</a>
+    <a href="#contacts">Contacts</a>
+    <a href="#dates">Dates &amp; Deadlines</a>
+    <a href="#forms">Forms &amp; Resources</a>
+    <a href="#full">Full Handbook</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- =================== SEARCH =================== -->
+<section id="search" aria-labelledby="search-h">
+  <h2 class="sec" id="search-h">Search the Handbook</h2>
+  <div class="search-wrap">
+    <label class="search-label" for="searchInput">Type a word or question</label>
+    <div class="search-row">
+      <input type="search" id="searchInput" placeholder="e.g. absent, cell phone, bullying, field trip"
+             autocomplete="off" aria-describedby="searchStatus">
+      <button id="resetBtn" type="button">Clear</button>
+    </div>
+    <div id="searchStatus" role="status" aria-live="polite">Start typing to search headings, answers, and page numbers.</div>
+    <div id="searchResults"></div>
+  </div>
+</section>
+
+<!-- =================== QUICK ANSWERS =================== -->
+<section id="quick" aria-labelledby="quick-h">
+  <h2 class="sec" id="quick-h">Most Asked Questions</h2>
+  <div class="sec-tools">
+    <button type="button" class="expand-all" data-scope="quick">Expand all</button>
+    <button type="button" class="collapse-all" data-scope="quick">Collapse all</button>
+    <button type="button" class="copylink" data-target="quick">Copy link to this section</button>
+  </div>
+
+  <details class="qa" open>
+    <summary>Who do I contact when I am going to be absent, late, or leaving early?</summary>
+    <div class="details-body">
+      <p>Complete the district's Absence Request form and speak with the principal. Only the principal can approve an absence or give permission to leave campus. Call Ms. Reyna Caldwell first, then contact Ms. Trina Holloway, who requests the substitute.</p>
+      <div class="official"><span class="lbl">Official wording</span>
+        "Contact Ms. Reyna Caldwell first at (210) 555-4821 by phone. After informing Ms. Caldwell, immediately contact Ms. Trina Holloway at (210) 555-6390. Ms. Holloway will request the substitute."</div>
+      <span class="src">Source: Handbook, page 3</span>
+      <br><a class="jump-full" href="#fh-attendance-emp">Open full section</a>
+    </div>
+  </details>
+
+  <details class="qa">
+    <summary>How many absences are considered excessive?</summary>
+    <div class="details-body">
+      <p>The District considers all absences beyond 10 days in a school year as excessive. The campus principal must notify Human Resources if this happens. Unapproved leave results in the teacher being docked.</p>
+      <span class="src">Source: Handbook, pages 2&ndash;3</span>
+      <br><a class="jump-full" href="#fh-attendance-emp">Open full section</a>
+    </div>
+  </details>
+
+  <details class="qa">
+    <summary>Can scholars use cell phones or personal devices during the day?</summary>
+    <div class="details-body">
+      <p>No. Under House Bill 1481, scholars may not use a personal wireless device (cell phones, smartwatches, personal tablets) during the instructional day. Devices must be silenced and stored out of view. Exceptions apply for a device required by an IEP, Section 504 plan, or individual health plan, or as directed by a licensed provider. <span class="new-badge">NEW 2026&ndash;2027</span></p>
+      <span class="src">Source: Handbook, page 3</span>
+      <br><a class="jump-full" href="#fh-scholar-devices">Open full section</a>
+    </div>
+  </details>
+
+  <details class="qa">
+    <summary>What are the staff arrival and departure times?</summary>
+    <div class="details-body">
+      <p>Staff sign in on entry and are at their places by 7:30 a.m. (7:15 for Educational Associates). The typical workday is 7:25 a.m. to 4:00 p.m. (7:15 to 3:45 for Educational Associates). Staff work until the day's work is complete, including meetings and events. Leaving before 4:00 p.m. requires principal approval and signing out.</p>
+      <span class="src">Source: Handbook, page 4</span>
+      <br><a class="jump-full" href="#fh-arrival">Open full section</a>
+    </div>
+  </details>
+
+  <details class="qa">
+    <summary>What should I do if I suspect child abuse or neglect?</summary>
+    <div class="details-body">
+      <p>Report suspected abuse, neglect, or trafficking no later than 48 hours after you first suspect it. Call the 24-hour Child Abuse Hotline at 1-800-252-5400 or report online. You cannot delegate this duty. Failure to report is a crime. If unsure what counts, consult the counselor. <span class="new-badge">UPDATED</span></p>
+      <div class="official"><span class="lbl">Official wording</span>
+        "A report must be made no later than 48 hours after the employee first suspects abuse or neglect. &hellip; An employee may not delegate this duty to another person and may not rely on the campus to make the report on the employee's behalf."</div>
+      <span class="src">Source: Handbook, page 7</span>
+      <br><a class="jump-full" href="#fh-childabuse">Open full section</a>
+    </div>
+  </details>
+
+  <details class="qa">
+    <summary>What do I do if a scholar becomes ill or is injured?</summary>
+    <div class="details-body">
+      <p>Give the scholar a clinic pass with the time they leave. The school nurse is the only person who can send a scholar home for illness, and only the nurse gives permission to call parents for illness. For serious injury, notify the principal and nurse. In a life-threatening emergency with no time to consult, the responsible employee uses judgment on emergency assistance and still notifies the nurse and administrator.</p>
+      <span class="src">Source: Handbook, page 8</span>
+      <br><a class="jump-full" href="#fh-nurse">Open full section</a>
+    </div>
+  </details>
+
+  <details class="qa">
+    <summary>How do I report bullying that I witness?</summary>
+    <div class="details-body">
+      <p>Teachers who witness or believe they witnessed bullying must report it to the principal immediately. The administration investigates all reported allegations. Parents of an alleged victim are notified within three business days. Retaliation against a scholar who reports is prohibited.</p>
+      <span class="src">Source: Handbook, pages 5&ndash;6</span>
+      <br><a class="jump-full" href="#fh-bullying">Open full section</a>
+    </div>
+  </details>
+
+  <details class="qa">
+    <summary>What approvals do I need for a field trip?</summary>
+    <div class="details-body">
+      <p>All off-campus field trips need principal approval in advance. Submit the field-trip request form at least one month in advance. No scholar leaves campus without a signed permission slip. Trips depart no earlier than 8:45 a.m. and return no later than 2:00 p.m. Adults who attend must complete the online volunteer application and pass the background check.</p>
+      <span class="src">Source: Handbook, page 12</span>
+      <br><a class="jump-full" href="#fh-fieldtrips">Open full section</a>
+    </div>
+  </details>
+
+  <details class="qa">
+    <summary>How many grades must I record each six weeks?</summary>
+    <div class="details-body">
+      <p>Collect at least two daily (formative) grades per week, totaling 12 per six-week period (35% weight), and three major (summative) grades per six-week period (65% weight).</p>
+      <span class="src">Source: Handbook, pages 12&ndash;13</span>
+      <br><a class="jump-full" href="#fh-grading">Open full section</a>
+    </div>
+  </details>
+
+  <details class="qa">
+    <summary>What happens when a scholar receives a failing grade?</summary>
+    <div class="details-body">
+      <p>Within 10 days of a failing grade, the scholar receives intervention and a chance to redo or complete an alternate assignment. The new grade is the average of the original and the redo. Teachers have five days from entering the failing grade to submit the Assignment Redo Request Form. Parents must be notified of failing grades, and a conference is required.</p>
+      <span class="src">Source: Handbook, page 13</span>
+      <br><a class="jump-full" href="#fh-grading">Open full section</a>
+    </div>
+  </details>
+
+  <details class="qa">
+    <summary>Can I use AI tools for my work?</summary>
+    <div class="details-body">
+      <p>Staff may use district-approved generative AI tools for planning, communication, and administrative tasks. Do not enter confidential scholar data or personally identifiable information into any tool that is not district-approved. Review AI-generated content used with scholars for accuracy and age-appropriateness. When in doubt, contact the technology department. <span class="new-badge">NEW 2026&ndash;2027</span></p>
+      <span class="src">Source: Handbook, page 3</span>
+      <br><a class="jump-full" href="#fh-aup">Open full section</a>
+    </div>
+  </details>
+
+  <details class="qa">
+    <summary>How do I get reimbursed for supplies I bought?</summary>
+    <div class="details-body">
+      <p>Get prior approval before buying materials with your own money. The district reimburses up to $100. A receipt is required, and sales tax is not reimbursed.</p>
+      <span class="src">Source: Handbook, page 20</span>
+      <br><a class="jump-full" href="#fh-supplies">Open full section</a>
+    </div>
+  </details>
+
+  <details class="qa">
+    <summary>What is the dress expectation for staff?</summary>
+    <div class="details-body">
+      <p>Maintain professional dress and behavior. Jeans are only allowed on Friday or other days as specified by administrators.</p>
+      <div class="official"><span class="lbl">Official wording</span>
+        "Maintain professional dress and behavior. (Jeans are only allowed on Friday or other days as specified by administrators)"</div>
+      <span class="src">Source: Handbook, page 18</span>
+      <br><a class="jump-full" href="#fh-allstaff">Open full section</a>
+    </div>
+  </details>
+
+  <details class="qa">
+    <summary>When are lesson plans due?</summary>
+    <div class="details-body">
+      <p>Lesson plans are due weekly on Fridays by 3:45 p.m. in your teacher folder for the following week.</p>
+      <span class="src">Source: Handbook, page 15</span>
+      <br><a class="jump-full" href="#fh-lessonplans">Open full section</a>
+    </div>
+  </details>
+
+  <details class="qa">
+    <summary>What do I do if I have a work-related accident or injury?</summary>
+    <div class="details-body">
+      <p>Report accidents within 24 hours. Inform Ms. Caldwell or a leadership team member. Report all work-related accidents or injuries to the supervisor first, then the Business Manager. Employees unable to work from a work-related injury are notified of their rights under the Texas Labor Code.</p>
+      <span class="src">Source: Handbook, page 3</span>
+      <br><a class="jump-full" href="#fh-accident">Open full section</a>
+    </div>
+  </details>
+
+  <details class="qa">
+    <summary>Where should collected money be kept?</summary>
+    <div class="details-body">
+      <p>Money is not to be kept in your room. Turn all money in to the office each day. Get principal permission before any money agreement with a vendor.</p>
+      <span class="src">Source: Handbook, page 8</span>
+      <br><a class="jump-full" href="#fh-money">Open full section</a>
+    </div>
+  </details>
+
+  <details class="qa">
+    <summary>What is the campus failure-rate expectation?</summary>
+    <div class="details-body">
+      <p>The campus must not exceed a 10% failure rate. Teacher intervention matters; suggestions include documenting parent contact, small-group rotations, RTI monitoring, an administrative contract, and small-group counseling.</p>
+      <span class="src">Source: Handbook, page 17</span>
+      <br><a class="jump-full" href="#fh-reportcards">Open full section</a>
+    </div>
+  </details>
+
+</section>
+
+<!-- =================== BROWSE BY TOPIC =================== -->
+<section id="topics" aria-labelledby="topics-h">
+  <h2 class="sec" id="topics-h">Browse by Topic</h2>
+  <div class="sec-tools">
+    <button type="button" class="expand-all" data-scope="topics">Expand all</button>
+    <button type="button" class="collapse-all" data-scope="topics">Collapse all</button>
+    <button type="button" class="copylink" data-target="topics">Copy link to this section</button>
+  </div>
+
+  <details class="topic" open>
+    <summary>Attendance and Work Hours</summary>
+    <div class="details-body">
+      <ul>
+        <li>Employee attendance, absences, arriving late, leaving early &mdash; <span class="src">pages 2&ndash;3</span></li>
+        <li>Arrival and departure for staff (sign-in, 7:30 a.m., workday to 4:00 p.m.) &mdash; <span class="src">page 4</span></li>
+        <li>Scholar attendance (taken at 8:45 a.m.) &mdash; <span class="src">page 4</span></li>
+        <li>Faculty meetings and trainings (90% attendance requirement) &mdash; <span class="src">page 12</span></li>
+      </ul>
+      <a class="jump-full" href="#fh-attendance-emp">Open in full handbook</a>
+    </div>
+  </details>
+
+  <details class="topic">
+    <summary>Professional Conduct and Responsibilities</summary>
+    <div class="details-body">
+      <ul>
+        <li>Responsibilities of all teachers and staff (includes dress) &mdash; <span class="src">page 18</span></li>
+        <li>Responsibilities of grade-level chair / team leader &mdash; <span class="src">page 18</span></li>
+        <li>Confidentiality &mdash; FERPA &mdash; <span class="src">page 8</span></li>
+        <li>Sexual harassment (Policy DHC/DIA) &mdash; <span class="src">page 19</span></li>
+        <li>Cell phones, email, text, phone calls (staff) &mdash; <span class="src">page 7</span></li>
+      </ul>
+      <a class="jump-full" href="#fh-allstaff">Open in full handbook</a>
+    </div>
+  </details>
+
+  <details class="topic">
+    <summary>Technology Use</summary>
+    <div class="details-body">
+      <ul>
+        <li>Acceptable Use Policy (Policy DH) &mdash; <span class="src">page 3</span></li>
+        <li>Artificial Intelligence acceptable use <span class="new-badge">NEW</span> &mdash; <span class="src">page 3</span></li>
+        <li>Scholar personal communication devices (H.B. 1481) <span class="new-badge">NEW</span> &mdash; <span class="src">page 3</span></li>
+        <li>Technology procedures and expectations &mdash; <span class="src">page 20</span></li>
+        <li>Websites (weekly updates) &mdash; <span class="src">page 20</span></li>
+      </ul>
+      <a class="jump-full" href="#fh-aup">Open in full handbook</a>
+    </div>
+  </details>
+
+  <details class="topic">
+    <summary>Communication</summary>
+    <div class="details-body">
+      <ul>
+        <li>Announcements, pledges, and reflection &mdash; <span class="src">pages 3&ndash;4</span></li>
+        <li>Correspondence (leadership approval) &mdash; <span class="src">page 9</span></li>
+        <li>Newsletters and webpage &mdash; <span class="src">page 16</span></li>
+        <li>Progress reports (24-hour contact) &mdash; <span class="src">page 17</span></li>
+        <li>Parent Night &mdash; <span class="src">page 16</span></li>
+        <li>News media (refer to Communications Office) &mdash; <span class="src">page 16</span></li>
+        <li>Mailboxes and master calendar &mdash; <span class="src">pages 15, 6</span></li>
+      </ul>
+      <a class="jump-full" href="#fh-correspondence">Open in full handbook</a>
+    </div>
+  </details>
+
+  <details class="topic">
+    <summary>Student Safety and Health</summary>
+    <div class="details-body">
+      <ul>
+        <li>Bullying prevention and intervention (Policy FFI) &mdash; <span class="src">pages 5&ndash;6</span></li>
+        <li>Reporting child abuse of all types <span class="new-badge">UPDATED</span> &mdash; <span class="src">page 7</span></li>
+        <li>Nurse clinic procedures &mdash; <span class="src">page 8</span></li>
+        <li>Health and medicine at school &mdash; <span class="src">pages 13, 16</span></li>
+        <li>Crisis management plan and safety <span class="new-badge">UPDATED</span> &mdash; <span class="src">pages 9, 19</span></li>
+        <li>Defibrillator &mdash; <span class="src">page 10</span></li>
+      </ul>
+      <a class="jump-full" href="#fh-bullying">Open in full handbook</a>
+    </div>
+  </details>
+
+  <details class="topic">
+    <summary>Discipline and Behavior</summary>
+    <div class="details-body">
+      <ul>
+        <li>Discipline philosophy (PRIDE) and campus procedure &mdash; <span class="src">page 10</span></li>
+        <li>In-school suspension &mdash; <span class="src">pages 10&ndash;11</span></li>
+        <li>Classroom, playground, cafeteria, and lunch-supervision rules &mdash; <span class="src">page 11</span></li>
+        <li>Positive Behavior Interventions and Supports (PBIS) &mdash; <span class="src">page 17</span></li>
+      </ul>
+      <a class="jump-full" href="#fh-discipline">Open in full handbook</a>
+    </div>
+  </details>
+
+  <details class="topic">
+    <summary>Instruction, Grading, and Assessment</summary>
+    <div class="details-body">
+      <ul>
+        <li>Grading requirements and weights &mdash; <span class="src">pages 12&ndash;13</span></li>
+        <li>Lesson plans (due Fridays 3:45 p.m.) &mdash; <span class="src">pages 11, 15</span></li>
+        <li>Emergency lesson plans &mdash; <span class="src">page 11</span></li>
+        <li>Benchmark assessment (CBA/CFA) &mdash; <span class="src">page 5</span></li>
+        <li>Homework and recommended study times &mdash; <span class="src">page 14</span></li>
+        <li>Progress reports, report cards, promotion/retention &mdash; <span class="src">page 17</span></li>
+        <li>Response to Intervention (RTI) &mdash; <span class="src">pages 18&ndash;19</span></li>
+        <li>Grade Placement Committee &mdash; <span class="src">page 13</span></li>
+        <li>Selecting appropriate enrichment materials &mdash; <span class="src">page 19</span></li>
+      </ul>
+      <a class="jump-full" href="#fh-grading">Open in full handbook</a>
+    </div>
+  </details>
+
+  <details class="topic">
+    <summary>Travel, Purchasing, and Facilities</summary>
+    <div class="details-body">
+      <ul>
+        <li>Field trips (one-month approval) &mdash; <span class="src">page 12</span></li>
+        <li>Supplies and materials (up to $100 reimbursed) &mdash; <span class="src">page 20</span></li>
+        <li>Collection of money, deposits, disbursement &mdash; <span class="src">page 8</span></li>
+        <li>Building care and building/classroom damage &mdash; <span class="src">page 5</span></li>
+        <li>Copier and copy paper &mdash; <span class="src">page 9</span></li>
+        <li>Keys and proxy cards &mdash; <span class="src">page 14</span></li>
+        <li>Custodians &mdash; <span class="src">page 9</span></li>
+      </ul>
+      <a class="jump-full" href="#fh-fieldtrips">Open in full handbook</a>
+    </div>
+  </details>
+
+  <details class="topic">
+    <summary>School Life and Programs</summary>
+    <div class="details-body">
+      <ul>
+        <li>Awards and other classroom awards &mdash; <span class="src">pages 4&ndash;5</span></li>
+        <li>Cafeteria (Dillo Den) &mdash; <span class="src">pages 6, 11</span></li>
+        <li>Classroom celebrations &mdash; <span class="src">page 8</span></li>
+        <li>Child nutrition policy &mdash; <span class="src">pages 7&ndash;8</span></li>
+        <li>Campus committees and extracurricular activities &mdash; <span class="src">pages 7, 11</span></li>
+        <li>Library and lounge &mdash; <span class="src">page 15</span></li>
+        <li>Playground / recess <span class="new-badge">UPDATED</span> &mdash; <span class="src">page 16</span></li>
+        <li>Wellness program (CATCH) &mdash; <span class="src">page 21</span></li>
+        <li>Volunteers in Public Schools (VIPS) &mdash; <span class="src">page 20</span></li>
+      </ul>
+      <a class="jump-full" href="#fh-awards">Open in full handbook</a>
+    </div>
+  </details>
+
+  <details class="topic">
+    <summary>Committees and Planning</summary>
+    <div class="details-body">
+      <ul>
+        <li>Campus Advisory Team (CAT) &mdash; <span class="src">page 7</span></li>
+        <li>Campus Improvement Plan (CIP) &mdash; <span class="src">page 7</span></li>
+        <li>Grade-level meetings and PLCs &mdash; <span class="src">pages 13, 17</span></li>
+        <li>Daily schedules &mdash; <span class="src">pages 9&ndash;10</span></li>
+      </ul>
+      <a class="jump-full" href="#fh-cat">Open in full handbook</a>
+    </div>
+  </details>
+
+  <details class="topic">
+    <summary>Substitutes and Coverage</summary>
+    <div class="details-body">
+      <ul>
+        <li>Substitute folder (due by end of third week) &mdash; <span class="src">page 20</span></li>
+        <li>Emergency lesson plans (three days on file) &mdash; <span class="src">page 11</span></li>
+        <li>Split class lists &mdash; <span class="src">page 20</span></li>
+      </ul>
+      <a class="jump-full" href="#fh-subfolder">Open in full handbook</a>
+    </div>
+  </details>
+
+</section>
+
+<!-- =================== SCENARIOS =================== -->
+<section id="scenarios" aria-labelledby="scenarios-h">
+  <h2 class="sec" id="scenarios-h">What Should I Do If&hellip;?</h2>
+  <div class="sec-tools">
+    <button type="button" class="expand-all" data-scope="scenarios">Expand all</button>
+    <button type="button" class="collapse-all" data-scope="scenarios">Collapse all</button>
+    <button type="button" class="copylink" data-target="scenarios">Copy link to this section</button>
+  </div>
+
+  <details class="scenario" open>
+    <summary>I wake up sick and cannot come in</summary>
+    <div class="details-body">
+      <dl>
+        <dt>Situation</dt><dd>You are ill and will be absent.</dd>
+        <dt>Immediate action</dt><dd>Complete the district's Absence Request form and speak with the principal. Only the principal can approve an absence.</dd>
+        <dt>Who to contact</dt><dd>Call Ms. Reyna Caldwell first at (210) 555-4821, then contact Ms. Trina Holloway at (210) 555-6390, who requests the substitute.</dd>
+        <dt>Limits / deadlines</dt><dd>Absences beyond 10 days per year are excessive and reported to Human Resources. Unapproved leave is docked.</dd>
+        <dt>Policy section</dt><dd>Employee Attendance</dd>
+      </dl>
+      <span class="src">Source: Handbook, pages 2&ndash;3</span>
+      <p class="reminder">Review the official wording in the PDF before acting.</p>
+    </div>
+  </details>
+
+  <details class="scenario">
+    <summary>I need to leave early or leave campus during the day</summary>
+    <div class="details-body">
+      <dl>
+        <dt>Situation</dt><dd>You must leave before 4:00 p.m. or step off campus during lunch or conference.</dd>
+        <dt>Immediate action</dt><dd>Get principal approval to leave before 4:00 p.m. Sign out in the front office. If leaving during lunch or conference, sign out in the front office.</dd>
+        <dt>Who to contact</dt><dd>The principal (only the principal can give permission to leave campus).</dd>
+        <dt>Limits / deadlines</dt><dd>Staff are on duty all day and should leave only in case of necessity with administration approval.</dd>
+        <dt>Policy section</dt><dd>Arrival and Departure (Staff)</dd>
+      </dl>
+      <span class="src">Source: Handbook, page 4</span>
+      <p class="reminder">Review the official wording in the PDF before acting.</p>
+    </div>
+  </details>
+
+  <details class="scenario">
+    <summary>I am running late for arrival</summary>
+    <div class="details-body">
+      <dl>
+        <dt>Situation</dt><dd>You will not be at your place by the required time.</dd>
+        <dt>Immediate action</dt><dd>Follow the Absence Request procedure for arriving late and speak with the principal.</dd>
+        <dt>Who to contact</dt><dd>Call Ms. Reyna Caldwell first at (210) 555-4821, then Ms. Trina Holloway at (210) 555-6390.</dd>
+        <dt>Limits / deadlines</dt><dd>Staff sign in on entry and are at their places by 7:30 a.m. (7:15 for Educational Associates).</dd>
+        <dt>Policy section</dt><dd>Employee Attendance; Arrival and Departure</dd>
+      </dl>
+      <span class="src">Source: Handbook, pages 3&ndash;4</span>
+      <p class="reminder">Review the official wording in the PDF before acting.</p>
+    </div>
+  </details>
+
+  <details class="scenario">
+    <summary>A scholar tells me they are being bullied, or I witness bullying</summary>
+    <div class="details-body">
+      <dl>
+        <dt>Situation</dt><dd>You witness bullying or a scholar or parent reports it.</dd>
+        <dt>Immediate action</dt><dd>Report the incident to the principal immediately. The administration will investigate all reported allegations.</dd>
+        <dt>Who to contact</dt><dd>The principal. A scholar or parent may also notify a teacher, counselor, or another district employee.</dd>
+        <dt>Limits / deadlines</dt><dd>The parent of an alleged victim is notified within three business days. Retaliation against a reporter is prohibited.</dd>
+        <dt>Policy section</dt><dd>Bullying Prevention and Intervention (Policy FFI)</dd>
+      </dl>
+      <span class="src">Source: Handbook, pages 5&ndash;6</span>
+      <p class="reminder">Review the official wording in the PDF before acting.</p>
+    </div>
+  </details>
+
+  <details class="scenario">
+    <summary>I suspect a child is being abused, neglected, or trafficked</summary>
+    <div class="details-body">
+      <dl>
+        <dt>Situation</dt><dd>You suspect abuse, neglect, or trafficking of a child.</dd>
+        <dt>Immediate action</dt><dd>Make the report yourself. Call the 24-hour Child Abuse Hotline at 1-800-252-5400 or report online at the Texas Abuse Hotline website.</dd>
+        <dt>Who to contact</dt><dd>The proper authorities directly. Consult the counselor if unsure what constitutes abuse, neglect, or trafficking.</dd>
+        <dt>Limits / deadlines</dt><dd>Report no later than 48 hours after you first suspect it. You cannot delegate this duty. Failure to report is a crime.</dd>
+        <dt>Policy section</dt><dd>Reporting Child Abuse of All Types</dd>
+      </dl>
+      <span class="src">Source: Handbook, page 7</span>
+      <p class="reminder">Review the official wording in the PDF before acting.</p>
+    </div>
+  </details>
+
+  <details class="scenario">
+    <summary>A scholar becomes ill or is seriously injured</summary>
+    <div class="details-body">
+      <dl>
+        <dt>Situation</dt><dd>A scholar is ill or injured in your care.</dd>
+        <dt>Immediate action</dt><dd>For illness or minor injury, give a clinic pass and send the scholar to the nurse. For serious injury where movement may aggravate it, do not move the child; notify the office by intercom, radio, or scholar messenger.</dd>
+        <dt>Who to contact</dt><dd>The school nurse and, for serious cases, the principal. Only the nurse can send a scholar home or approve calling parents for illness.</dd>
+        <dt>Limits / deadlines</dt><dd>In a life-threatening emergency with no time to consult, use judgment on emergency assistance, then notify the nurse and administrator.</dd>
+        <dt>Policy section</dt><dd>Nurse Clinic Procedures; Health</dd>
+      </dl>
+      <span class="src">Source: Handbook, pages 8, 13</span>
+      <p class="reminder">Review the official wording in the PDF before acting.</p>
+    </div>
+  </details>
+
+  <details class="scenario">
+    <summary>I have a work-related accident or injury</summary>
+    <div class="details-body">
+      <dl>
+        <dt>Situation</dt><dd>You are hurt in or around the school.</dd>
+        <dt>Immediate action</dt><dd>Report the accident within 24 hours. Report work-related injuries to your supervisor first, then the Business Manager.</dd>
+        <dt>Who to contact</dt><dd>Ms. Caldwell or a member of the leadership team; then the Business Manager.</dd>
+        <dt>Limits / deadlines</dt><dd>Report within 24 hours. Employees unable to work from a work-related injury are notified of rights under the Texas Labor Code.</dd>
+        <dt>Policy section</dt><dd>Accident Reporting</dd>
+      </dl>
+      <span class="src">Source: Handbook, page 3</span>
+      <p class="reminder">Review the official wording in the PDF before acting.</p>
+    </div>
+  </details>
+
+  <details class="scenario">
+    <summary>I want to take my class on a field trip</summary>
+    <div class="details-body">
+      <dl>
+        <dt>Situation</dt><dd>You are planning an off-campus, curriculum-tied trip.</dd>
+        <dt>Immediate action</dt><dd>Get the field-trip request form from the office and submit it to the principal for approval at least one month in advance. Prepare an itinerary and permission forms.</dd>
+        <dt>Who to contact</dt><dd>The principal for approval; the Director of Transportation determines bus availability.</dd>
+        <dt>Limits / deadlines</dt><dd>Submit at least one month ahead. Depart no earlier than 8:45 a.m., return no later than 2:00 p.m. No scholar leaves without a signed permission slip. Attending adults complete the online volunteer application and pass a background check.</dd>
+        <dt>Policy section</dt><dd>Field Trips</dd>
+      </dl>
+      <span class="src">Source: Handbook, page 12</span>
+      <p class="reminder">Review the official wording in the PDF before acting.</p>
+    </div>
+  </details>
+
+  <details class="scenario">
+    <summary>I bought supplies and want to be reimbursed</summary>
+    <div class="details-body">
+      <dl>
+        <dt>Situation</dt><dd>You need materials or already paid out of pocket.</dd>
+        <dt>Immediate action</dt><dd>Submit a supply request to the campus secretary at least one week before the date needed. Get prior approval before buying with your own money.</dd>
+        <dt>Who to contact</dt><dd>The campus secretary.</dd>
+        <dt>Limits / deadlines</dt><dd>The district reimburses up to $100. A receipt is required. Sales tax is not reimbursed.</dd>
+        <dt>Policy section</dt><dd>Supplies and Materials</dd>
+      </dl>
+      <span class="src">Source: Handbook, page 20</span>
+      <p class="reminder">Review the official wording in the PDF before acting.</p>
+    </div>
+  </details>
+
+  <details class="scenario">
+    <summary>The news media contacts me about a school matter</summary>
+    <div class="details-body">
+      <dl>
+        <dt>Situation</dt><dd>A reporter asks you for information, especially something controversial.</dd>
+        <dt>Immediate action</dt><dd>Refer the inquiry to the district Communications Office. Do not release negative or controversial information on your own.</dd>
+        <dt>Who to contact</dt><dd>The Communications Office. Consent of Superintendent Dr. Marcus Vance or Assistant Superintendent Ms. Priscilla Marsh is required to release such information.</dd>
+        <dt>Limits / deadlines</dt><dd>No administrator or employee may contact the news media on their own to release negative or controversial information without that consent.</dd>
+        <dt>Policy section</dt><dd>News Media</dd>
+      </dl>
+      <span class="src">Source: Handbook, page 16</span>
+      <p class="reminder">Review the official wording in the PDF before acting.</p>
+    </div>
+  </details>
+
+  <details class="scenario">
+    <summary>I feel I have been harassed at work</summary>
+    <div class="details-body">
+      <dl>
+        <dt>Situation</dt><dd>You believe you experienced harassment.</dd>
+        <dt>Immediate action</dt><dd>Confer with a school administrator immediately.</dd>
+        <dt>Who to contact</dt><dd>A school administrator. District policies are on the Ardent ISD website (Policy DHC Legal/Local).</dd>
+        <dt>Limits / deadlines</dt><dd>Sexual harassment will not be tolerated. <span class="needs-review">Needs review: the handbook does not list a specific reporting deadline or grievance-form step for harassment.</span></dd>
+        <dt>Policy section</dt><dd>Sexual Harassment</dd>
+      </dl>
+      <span class="src">Source: Handbook, page 19</span>
+      <p class="reminder">Review the official wording in the PDF before acting.</p>
+    </div>
+  </details>
+
+  <details class="scenario">
+    <summary>There is a fire, tornado, or lockdown situation</summary>
+    <div class="details-body">
+      <dl>
+        <dt>Situation</dt><dd>An emergency drill or real event occurs.</dd>
+        <dt>Immediate action</dt><dd>On the evacuation signal, leave immediately, close the classroom door, and follow the route on the evacuation diagram. Take the emergency bag and roll sheet. Move to the safe zone, face the building, and wait for the all-clear.</dd>
+        <dt>Who to contact</dt><dd>Follow the Standard Response Protocol. Anyone may institute a lockdown if they believe a dangerous situation will ensue.</dd>
+        <dt>Limits / deadlines</dt><dd>The fire alarm sounds for fire drills; tornado and lockdown drills are announced over the intercom, though a lockdown may occur without warning.</dd>
+        <dt>Policy section</dt><dd>Crisis Management Plan</dd>
+      </dl>
+      <span class="src">Source: Handbook, page 9</span>
+      <p class="reminder">Review the official wording in the PDF before acting.</p>
+    </div>
+  </details>
+
+</section>
+
+<!-- =================== PROCEDURES =================== -->
+<section id="procedures" aria-labelledby="procedures-h">
+  <h2 class="sec" id="procedures-h">Step-by-Step Procedures</h2>
+  <div class="sec-tools">
+    <button type="button" class="copylink" data-target="procedures">Copy link to this section</button>
+  </div>
+
+  <div class="card">
+    <h3>Reporting an absence, late arrival, or early departure</h3>
+    <ol>
+      <li>Complete the district's Absence Request form.</li>
+      <li>Speak with the principal. Only the principal can approve an absence or permission to leave campus.</li>
+      <li>Call Ms. Reyna Caldwell first at (210) 555-4821.</li>
+      <li>After informing Ms. Caldwell, contact Ms. Trina Holloway at (210) 555-6390.</li>
+      <li>Ms. Holloway requests the substitute.</li>
+      <li>If you will be absent more than three days, personally complete the necessary form and confer with the principal and senior administrative assistant.</li>
+    </ol>
+    <span class="src">Source: Handbook, pages 2&ndash;3</span>
+  </div>
+
+  <div class="card">
+    <h3>Reporting suspected child abuse, neglect, or trafficking</h3>
+    <ol>
+      <li>Make the report yourself &mdash; you cannot delegate it.</li>
+      <li>Call the 24-hour Child Abuse Hotline at 1-800-252-5400, or report online at the Texas Abuse Hotline website.</li>
+      <li>Report no later than 48 hours after you first suspect abuse or neglect.</li>
+      <li>If unsure what constitutes abuse, neglect, or trafficking, consult the counselor.</li>
+    </ol>
+    <span class="src">Source: Handbook, page 7</span>
+  </div>
+
+  <div class="card">
+    <h3>Reporting a work-related accident or injury</h3>
+    <ol>
+      <li>Report the accident within 24 hours.</li>
+      <li>Inform Ms. Caldwell or a member of the leadership team.</li>
+      <li>Report to your supervisor first, then to the Business Manager.</li>
+      <li>If unable to work from the injury, you will be notified of rights under the Texas Labor Code.</li>
+    </ol>
+    <span class="src">Source: Handbook, page 3</span>
+  </div>
+
+  <div class="card">
+    <h3>Requesting a field trip</h3>
+    <ol>
+      <li>Confirm the trip is educational and tied to the curriculum.</li>
+      <li>Get the field-trip request form from the office.</li>
+      <li>Submit it to the principal for approval at least one month in advance.</li>
+      <li>The Director of Transportation determines bus availability.</li>
+      <li>Send an itinerary and permission form home; no scholar leaves without a signed permission slip.</li>
+      <li>Attending adults complete the online volunteer application and pass the background check.</li>
+    </ol>
+    <span class="src">Source: Handbook, page 12</span>
+  </div>
+
+  <div class="card">
+    <h3>Requesting supplies or reimbursement</h3>
+    <ol>
+      <li>Submit a supply request to the campus secretary at least one week before the date needed.</li>
+      <li>For personal purchases, get prior approval before buying.</li>
+      <li>Keep the receipt (sales tax is not reimbursed).</li>
+      <li>The district reimburses up to $100.</li>
+    </ol>
+    <span class="src">Source: Handbook, page 20</span>
+  </div>
+
+  <div class="card">
+    <h3>Handling a failing grade and redo</h3>
+    <ol>
+      <li>Within 10 days of the failing grade, provide intervention and offer a redo or alternate assignment.</li>
+      <li>Submit the Assignment Redo Request Form within five days of entering the failing grade.</li>
+      <li>Average the original grade and the redo grade for the new grade.</li>
+      <li>Notify parents of the failing grade and document contact.</li>
+      <li>Schedule a conference with the parent or guardian.</li>
+    </ol>
+    <span class="src">Source: Handbook, page 13</span>
+  </div>
+
+  <div class="card">
+    <h3>Responding to an evacuation or lockdown</h3>
+    <ol>
+      <li>On the evacuation signal, leave the room immediately and close the classroom door.</li>
+      <li>Follow the route on the evacuation diagram.</li>
+      <li>Take the emergency bag and roll sheet.</li>
+      <li>Move to the safe zone, turn to face the building, and keep scholars in line (quick walk, no talk).</li>
+      <li>Wait for the all-clear signal before returning.</li>
+      <li>For a lockdown, follow the Standard Response Protocol; anyone may institute a lockdown if a dangerous situation will ensue.</li>
+    </ol>
+    <span class="src">Source: Handbook, page 9</span>
+  </div>
+
+  <div class="card">
+    <h3>Preparing a substitute folder</h3>
+    <ol>
+      <li>Create a clearly labeled folder and turn it in to the office by the end of the third week of school.</li>
+      <li>Include the daily instructional schedule and special pullout times (library, computer lab).</li>
+      <li>Include schedules for special scholars (resource, speech), and modifications for special needs.</li>
+      <li>Include lunch and duty schedules, discipline plan and forms, and a calendar of special activities.</li>
+      <li>Include supplementary activities and pertinent scholar information such as food allergies.</li>
+      <li>Update the plans periodically.</li>
+    </ol>
+    <span class="src">Source: Handbook, page 20</span>
+  </div>
+
+  <div class="card">
+    <h3>Filing emergency lesson plans</h3>
+    <ol>
+      <li>Prepare three days of emergency lesson plans.</li>
+      <li>File them with the office clerk by the Friday before Labor Day.</li>
+      <li>Include the daily schedule, duty assignments, morning routine, bell schedule, building map, seating chart, dismissal plan, early-finisher activities, emergency exit procedures, and two reliable scholars plus a nearby staff contact.</li>
+    </ol>
+    <span class="src">Source: Handbook, page 11</span>
+  </div>
+
+</section>
+
+<!-- =================== CONTACTS =================== -->
+<section id="contacts" aria-labelledby="contacts-h">
+  <h2 class="sec" id="contacts-h">Key Contacts</h2>
+  <div class="sec-tools">
+    <button type="button" class="copylink" data-target="contacts">Copy link to this section</button>
+  </div>
+  <div class="card">
+    <table>
+      <caption>Contacts named in the handbook</caption>
+      <thead>
+        <tr><th scope="col">Role / Contact</th><th scope="col">Name</th><th scope="col">Phone / Where</th><th scope="col">Source</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>First absence contact</td><td>Ms. Reyna Caldwell</td><td>(210) 555-4821</td><td>page 3</td></tr>
+        <tr><td>Substitute request / work orders / calendar</td><td>Ms. Trina Holloway</td><td>(210) 555-6390</td><td>pages 3, 5, 6, 9</td></tr>
+        <tr><td>Superintendent</td><td>Dr. Marcus Vance</td><td>District office</td><td>page 16</td></tr>
+        <tr><td>Assistant Superintendent</td><td>Ms. Priscilla Marsh</td><td>District office</td><td>page 16</td></tr>
+        <tr><td>Child Abuse Hotline (24-hour)</td><td>Texas Abuse Hotline</td><td>1-800-252-5400 (or online)</td><td>page 7</td></tr>
+        <tr><td>Principal</td><td>Role only</td><td>Approves absences and leaving campus</td><td>pages 3&ndash;4</td></tr>
+        <tr><td>Business Manager</td><td>Role only</td><td>Work-related injury reporting</td><td>page 3</td></tr>
+        <tr><td>School Nurse</td><td>Role only</td><td>Clinic; illness and medication</td><td>pages 8, 16</td></tr>
+        <tr><td>Counselor</td><td>Role only</td><td>Questions about abuse; scholar concerns</td><td>pages 7, 8</td></tr>
+        <tr><td>Communications Office</td><td>Role only</td><td>All news-media inquiries</td><td>page 16</td></tr>
+        <tr><td>Director of Transportation</td><td>Role only</td><td>Field-trip bus availability</td><td>page 12</td></tr>
+        <tr><td>Campus secretary</td><td>Role only</td><td>Supply requests; master calendar</td><td>pages 20, 6</td></tr>
+        <tr><td>Librarian</td><td>Role only</td><td>Library and computer schedule</td><td>pages 15, 20</td></tr>
+        <tr><td>Technology department</td><td>Role only</td><td>AI tool approval questions</td><td>page 3</td></tr>
+        <tr><td>District website</td><td>&mdash;</td><td>www.ardentisd.net</td><td>pages 2, 7</td></tr>
+      </tbody>
+    </table>
+    <p class="checklist-note"><strong>Needs review:</strong> Email addresses, direct office extensions, and the names behind role-only contacts are not provided in the handbook.</p>
+  </div>
+</section>
+
+<!-- =================== DATES =================== -->
+<section id="dates" aria-labelledby="dates-h">
+  <h2 class="sec" id="dates-h">Important Dates and Deadlines</h2>
+  <div class="sec-tools">
+    <button type="button" class="copylink" data-target="dates">Copy link to this section</button>
+  </div>
+  <div class="card">
+    <table>
+      <caption>Deadlines and reporting windows in the handbook</caption>
+      <thead>
+        <tr><th scope="col">Item</th><th scope="col">Deadline / Window</th><th scope="col">Source</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Effective period</td><td>2026&ndash;2027 school year</td><td>cover, page 2</td></tr>
+        <tr><td>Emergency lesson plans on file</td><td>By the Friday before Labor Day</td><td>page 11</td></tr>
+        <tr><td>Substitute folder to office</td><td>By the end of the third week of school</td><td>page 20</td></tr>
+        <tr><td>Lesson plans due</td><td>Weekly, Fridays by 3:45 p.m.</td><td>page 15</td></tr>
+        <tr><td>Report suspected child abuse</td><td>No later than 48 hours after first suspicion</td><td>page 7</td></tr>
+        <tr><td>Report work-related accident</td><td>Within 24 hours</td><td>page 3</td></tr>
+        <tr><td>Bullying &mdash; notify victim's parent</td><td>Within three business days</td><td>pages 5&ndash;6</td></tr>
+        <tr><td>Progress-report / failing-grade parent contact</td><td>Within 24 hours</td><td>page 17</td></tr>
+        <tr><td>Assignment Redo Request Form</td><td>Within 5 days of entering the failing grade</td><td>page 13</td></tr>
+        <tr><td>Intervention after failing grade</td><td>Within 10 days of the failing grade</td><td>page 13</td></tr>
+        <tr><td>Absences considered excessive</td><td>Beyond 10 days in a school year</td><td>pages 2&ndash;3</td></tr>
+        <tr><td>Field-trip request to principal</td><td>At least one month in advance</td><td>page 12</td></tr>
+        <tr><td>Master-calendar submissions</td><td>Two weeks prior to the event</td><td>page 6</td></tr>
+        <tr><td>Cafeteria change notice</td><td>Two weeks in advance</td><td>page 6</td></tr>
+        <tr><td>Supply requests</td><td>At least one week before needed</td><td>page 20</td></tr>
+        <tr><td>Video/enrichment approval</td><td>At least one week prior to showing</td><td>page 19</td></tr>
+        <tr><td>Make-up work after absence</td><td>Three days for each day of absence</td><td>page 13</td></tr>
+        <tr><td>Progress reports sent</td><td>End of the third week of each reporting period</td><td>page 17</td></tr>
+        <tr><td>Report cards issued</td><td>Every six weeks</td><td>page 17</td></tr>
+        <tr><td>RTI meetings</td><td>Every three weeks</td><td>page 19</td></tr>
+        <tr><td>Grade-level meetings / PLCs</td><td>Weekly</td><td>pages 13, 17</td></tr>
+        <tr><td>Fire drills</td><td>Minimum one per month</td><td>page 9</td></tr>
+        <tr><td>Faculty-meeting attendance requirement</td><td>90% (or unsatisfactory summative rating)</td><td>page 12</td></tr>
+        <tr><td>Grade Placement Committee</td><td>Meets in April and May</td><td>page 13</td></tr>
+        <tr><td>Principal's Breakfast</td><td>Held in May</td><td>page 5</td></tr>
+      </tbody>
+    </table>
+    <p class="checklist-note"><strong>Needs review:</strong> Specific calendar dates (first day of school, STAAR windows, six-week reporting dates) are not printed in this handbook; it refers to the District Calendar. Confirm exact dates there.</p>
+  </div>
+</section>
+
+<!-- =================== FORMS =================== -->
+<section id="forms" aria-labelledby="forms-h">
+  <h2 class="sec" id="forms-h">Forms and Resources</h2>
+  <div class="sec-tools">
+    <button type="button" class="copylink" data-target="forms">Copy link to this section</button>
+  </div>
+  <div class="card">
+    <table>
+      <caption>Forms, portals, and documents mentioned in the handbook</caption>
+      <thead>
+        <tr><th scope="col">Resource</th><th scope="col">Purpose</th><th scope="col">Where found / link</th><th scope="col">Source</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Absence Request form</td><td>Report late arrival, absence, or early departure</td><td>District (through the office / principal)</td><td>pages 2&ndash;3</td></tr>
+        <tr><td>Assignment Redo Request Form</td><td>Allow a redo in place of a failing grade</td><td>Submitted to administration</td><td>page 13</td></tr>
+        <tr><td>Accident Report Form</td><td>Document an accident needing medical attention</td><td>Completed by the nurse</td><td>pages 3, 14</td></tr>
+        <tr><td>Field-trip request form</td><td>Request approval for an off-campus trip</td><td>Office</td><td>page 12</td></tr>
+        <tr><td>Online volunteer application</td><td>Clear adults for trips and volunteering (with background check)</td><td>District online</td><td>pages 12, 20</td></tr>
+        <tr><td>Permission slip / signed note</td><td>Authorize a scholar to leave campus for a trip</td><td>Sent home to parents</td><td>page 12</td></tr>
+        <tr><td>Substitute folder</td><td>Guide a substitute in your absence</td><td>Turned in to the office</td><td>page 20</td></tr>
+        <tr><td>Emergency lesson plans</td><td>Three days of plans for unexpected absence</td><td>Filed with the office clerk</td><td>page 11</td></tr>
+        <tr><td>Split class list</td><td>Placement of scholars when no sub is available</td><td>Kept near desk; copies to front office</td><td>page 20</td></tr>
+        <tr><td>Scholar Data Notebook</td><td>Log assessment results to guide instruction</td><td>Classroom</td><td>page 5</td></tr>
+        <tr><td>Consent form (prayer/reading period)</td><td>Opt in to the voluntary period of prayer or reading</td><td>Front office <span class="new-badge">NEW</span></td><td>page 4</td></tr>
+        <tr><td>Scholar Code of Conduct</td><td>Discipline and device violations reference</td><td>District document</td><td>pages 3, 14, 16</td></tr>
+        <tr><td>District Employee Handbook</td><td>Governs policies not in this campus handbook</td><td>District (online)</td><td>pages 2, 21</td></tr>
+        <tr><td>Campus Improvement Plan (CIP)</td><td>Guides campus decision-making</td><td>www.ardentisd.net</td><td>page 7</td></tr>
+        <tr><td>Board Policies (FERPA, EFE, DH, DHC, FFI)</td><td>Legal and local policy references</td><td>www.ardentisd.net</td><td>pages 3, 8, 19</td></tr>
+        <tr><td>District website</td><td>Policies, CIP, RTI protocols</td><td>www.ardentisd.net</td><td>pages 2, 7, 19</td></tr>
+      </tbody>
+    </table>
+    <p class="checklist-note"><strong>Needs review:</strong> The handbook names these forms and portals but does not include direct clickable URLs (except the district website). Add the district's actual form links before publishing.</p>
+  </div>
+</section>
+
+<!-- =================== FULL HANDBOOK =================== -->
+<section id="full" aria-labelledby="full-h">
+  <h2 class="sec" id="full-h">Full Handbook View</h2>
+  <div class="sec-tools">
+    <button type="button" class="expand-all" data-scope="full">Expand all</button>
+    <button type="button" class="collapse-all" data-scope="full">Collapse all</button>
+    <button type="button" class="copylink" data-target="full">Copy link to this section</button>
+    <button type="button" id="printBtn">Print</button>
+  </div>
+  <p style="color:var(--text-soft);font-size:.95rem;">
+    This is a structured version of the handbook content for reference. The
+    <a href="Ardent_Elementary_Staff_Handbook_2026-2027.pdf">official PDF</a> remains authoritative.
+  </p>
+
+  <details class="fh-group" open>
+    <summary>Introduction and District Information</summary>
+    <div class="fh-item">
+      <h4>Introduction <span class="src">page 2</span></h4>
+      <p>This handbook provides information to help staff succeed. Not all district policies are included; those that are have been summarized. It is neither a contract nor a substitute for the official district policy manual, and it does not alter the at-will status of non-contract employees. Policies can change at any time, and those changes supersede any conflicting handbook provision. District policies are online at www.ardentisd.net. This campus handbook supplements, and does not replace, the Ardent ISD Employee Handbook.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Mission statement (Policy AE) <span class="src">page 2</span></h4>
+      <p>The mission of Ardent ISD is to provide an educational environment that enables all students to develop essential academic skills for a lifetime of learning and to prepare them to be responsible, contributing citizens in a diverse and changing world. The motto is "Attitude is a Choice."</p>
+    </div>
+    <div class="fh-item">
+      <h4>New for 2026&ndash;2027 <span class="new-badge">NEW</span> <span class="src">page 2</span></h4>
+      <p>New or updated items reflect recent Texas legislation and Board policy: statewide student cell-phone restrictions (H.B. 1481), a display and a daily prayer or reflection period (S.B. 10 and S.B. 11), armed-intruder response and mental-health training requirements, uniform grade-reporting and parental-notification expectations, artificial-intelligence acceptable use, and updated child-abuse and human-trafficking reporting duties. Where any handbook provision conflicts with state law or Board policy, state law and Board policy control.</p>
+    </div>
+  </details>
+
+  <details class="fh-group" id="fh-attendance-emp">
+    <summary>Attendance and Work Hours</summary>
+    <div class="fh-item">
+      <h4>Employee attendance &mdash; absences, arriving late, leaving early <span class="src">pages 2&ndash;3</span></h4>
+      <p>Every employee provides the best possible education for every scholar every day. Complete the Absence Request form and follow procedures. Personal (discretionary) leave may not be approved during critical events such as the first day of school, days before and during STAAR testing, the day before or after a holiday, the last day of school, and special school-wide events. For absences of more than three days, personally complete the necessary form and confer with the principal and senior administrative assistant. Absences beyond 10 days per year are excessive and reported to Human Resources. Unapproved leave is docked.</p>
+      <div class="official"><span class="lbl">Official wording</span>
+        "Contact Ms. Reyna Caldwell first at (210) 555-4821 by phone. After informing Ms. Caldwell, immediately contact Ms. Trina Holloway at (210) 555-6390. Ms. Holloway will request the substitute."</div>
+    </div>
+    <div class="fh-item" id="fh-arrival">
+      <h4>Arrival and departure (staff) <span class="src">page 4</span></h4>
+      <p>Staff sign in on entry and are at their places by 7:30 a.m. (7:15 for Educational Associates). The typical workday is 7:25 a.m. to 4:00 p.m. (7:15 to 3:45 for Educational Associates). Staff work until the day's work is complete, including meetings and events. Leaving before 4:00 p.m. requires principal approval and signing out. Sign out in the front office when leaving during lunch or conference.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Attendance (scholar) <span class="src">page 4</span></h4>
+      <p>The teacher takes attendance, monitored daily by the campus secretary. Take attendance at 8:45 a.m. If not taken by then, the attendance clerk notifies the teacher to take it immediately. A daily report documents the times attendance is or is not taken.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Faculty meetings and trainings <span class="src">page 12</span></h4>
+      <p>Attendance at faculty meetings, team meetings, and planning is required. Sign-in sheets are distributed at every meeting. Failure to attend 90% of faculty meetings and trainings results in an unsatisfactory rating on the summative evaluation, with written notice before the summative conference.</p>
+    </div>
+  </details>
+
+  <details class="fh-group" id="fh-aup">
+    <summary>Technology Use</summary>
+    <div class="fh-item">
+      <h4>Acceptable Use Policy &mdash; personal use of electronic media (Policy DH) <span class="src">page 3</span></h4>
+      <p>Ardent ISD technology resources are used only for learning, teaching, and administrative purposes. Users sign the acceptable use policies yearly. Access is a privilege, not a right. Noncompliance may result in suspension of access or termination of privileges and other discipline. Knowingly bringing prohibited material into the school's electronic environment is subject to disciplinary action under district, state, and federal policy.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Artificial Intelligence (AI) acceptable use <span class="new-badge">NEW</span> <span class="src">page 3</span></h4>
+      <p>Staff may use district-approved generative AI tools for planning, communication, and administrative tasks. Do not enter confidential scholar data or personally identifiable information into any tool that is not district-approved. Review AI-generated content used with scholars for accuracy and age-appropriateness. Scholar use follows the Scholar Code of Conduct. When unsure whether a tool is approved, contact the technology department first.</p>
+    </div>
+    <div class="fh-item" id="fh-scholar-devices">
+      <h4>Scholar personal communication devices (Policy FNCE / H.B. 1481) <span class="new-badge">NEW</span> <span class="src">page 3</span></h4>
+      <p>Under H.B. 1481, scholars may not use a personal wireless device (cell phones, smartwatches, personal tablets) during the instructional day. Devices are silenced and stored out of view in a designated location. Staff collect or direct storage at the start of the day and return them at dismissal. Exceptions apply for a device required by an IEP, Section 504 plan, or individual health plan, or as directed by a licensed provider. Report repeated violations to the office rather than confiscating devices for extended periods. Staff model the expectation by keeping personal devices stored during instruction.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Cell phones, emails, text messaging, phone calls (staff) <span class="src">page 7</span></h4>
+      <p>Barring extenuating circumstances, staff should not be on cell phones or other electronic devices during the work day. Classroom phones stay at low volume. Check your mailbox twice a day. The Ardent ISD email system is for District use only. If electronic-media use interferes with job duties, the employee is subject to discipline, up to termination.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Technology procedures and expectations <span class="src">page 20</span></h4>
+      <p>Classroom tablets and laptops are for instructional purposes, and may be used for administrative tasks. Do not load anything without proper licensure. Additional computers are in the library on the librarian's schedule. Teachers implement technology to enhance instruction and may request campus training.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Websites <span class="src">page 20</span></h4>
+      <p>Class websites include the schedule, assignments and major projects, classroom rules, conference period, and other helpful information. Photos and postings follow District policy, and staff photos are dignified. Teachers update websites each week.</p>
+    </div>
+  </details>
+
+  <details class="fh-group" id="fh-bullying">
+    <summary>Student Safety and Health</summary>
+    <div class="fh-item">
+      <h4>Bullying prevention and intervention (Policy FFI) <span class="src">pages 5&ndash;6</span></h4>
+      <p>Bullying is written or verbal expression, expression through electronic means, or physical conduct on or delivered to school property, at a school activity, or in a District vehicle, that harms or threatens a student or is severe, persistent, and pervasive enough to create an intimidating, threatening, or abusive environment. It includes cyberbullying, including off-campus conduct that disrupts the campus. Teachers who witness or believe they witnessed bullying must report to the principal immediately. The administration investigates all allegations. Parents of an alleged victim are notified within three business days; parents of the alleged aggressor within a reasonable time. Anonymous reporting is available and retaliation is prohibited.</p>
+    </div>
+    <div class="fh-item" id="fh-childabuse">
+      <h4>Reporting child abuse of all types <span class="new-badge">UPDATED</span> <span class="src">page 7</span></h4>
+      <p>Campus personnel must report suspected abuse, neglect, or trafficking no later than 48 hours after first suspicion. Call 1-800-252-5400 or report online. The duty cannot be delegated and cannot be left to the campus. Failure to report is a crime. Consult the counselor if unsure what constitutes abuse, neglect, or trafficking.</p>
+    </div>
+    <div class="fh-item" id="fh-nurse">
+      <h4>Nurse clinic procedures <span class="src">page 8</span></h4>
+      <p>For illness, give a clinic pass with the time the scholar leaves. The nurse is the only person who can send a scholar home for illness, and only the nurse gives permission to call parents for illness. For sudden illness or serious injury, notify the principal and nurse. In a life-threatening emergency with no time to consult, the responsible employee uses judgment on emergency assistance and still notifies the nurse and administrator.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Health <span class="src">page 13</span></h4>
+      <p>Non-serious injuries (cut, scrape, bloody nose) go to the clinic. For serious injury where movement may aggravate it, do not move the child; notify the office. An Accident Report Form is completed by the nurse when medical attention or parent pickup is needed. Scholars need a health slip except in an immediate emergency. Medicine requires medical forms on file; authorized medications are kept and given in the clinic per doctor's orders.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Medicine at school <span class="src">page 16</span></h4>
+      <p>All medication is delivered to the nurse on arrival. Scholars may not carry any medication. A signed parent release must include the scholar's name, date, drug name, time, and dosage. Scholars with asthma or anaphylaxis may carry and use prescribed medication only with written authorization from a parent and provider on file, and after demonstrating proper use to the provider and nurse.</p>
+    </div>
+    <div class="fh-item" id="fh-crisis">
+      <h4>Crisis management plan (Policy CKC) <span class="src">page 9</span></h4>
+      <p>Drills follow District policy; Ardent ISD uses the Standard Response Protocol. There is a minimum of one fire drill per month. The fire alarm sounds for fire drills; tornado and lockdown drills are announced over the intercom, though a lockdown may occur without warning. Anyone may institute a lockdown if a dangerous situation will ensue. On evacuation, leave immediately, close the door, follow the diagram, take the emergency bag and roll sheet, move to the safe zone, and wait for the all-clear.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Safety and security <span class="new-badge">UPDATED</span> <span class="src">page 19</span></h4>
+      <p>Visitors report to the office and obtain a picture-ID sticker. All visitors, contractors, and volunteers are screened through the visitor-management system, including a sex-offender registry check, before a badge is issued. Exterior doors stay locked during the instructional day; staff must not prop open or bypass them and must challenge or report anyone without a visible badge. The Standard Response Protocol is posted in every classroom.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Defibrillator <span class="src">page 10</span></h4>
+      <p>Every school has an accessible defibrillator on the wall by the cafeteria doors. The Medical Emergency Team and nurse are trained in its use.</p>
+    </div>
+  </details>
+
+  <details class="fh-group" id="fh-discipline">
+    <summary>Discipline and Behavior</summary>
+    <div class="fh-item">
+      <h4>Discipline philosophy and campus procedure <span class="src">page 10</span></h4>
+      <p>Discipline is enforced consistently but flexibly. The plan follows PRIDE: persevere, relate, influence, determine, engage. Steps: hold a one-on-one restorative conference; if no change, restate the problem and assign a consequence; contact the parent; refer to the office. Parents should not first hear of difficulty from the office. Refer immediately to the office for physical altercations, threats of severe harm, dangerous objects, or possession of drugs, alcohol, tobacco, or weapons.</p>
+    </div>
+    <div class="fh-item">
+      <h4>In-school suspension <span class="src">pages 10&ndash;11</span></h4>
+      <p>ISS is social isolation used in severe or recurring cases. Teachers do not assign ISS. Scholars complete a social-emotional lesson. There is no academic penalty: the administrator places the scholar, grade-level material is provided, the homeroom teacher gathers assignments at the next break, and the teacher collects and grades the work afterward.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Classroom, playground, cafeteria, and lunch-supervision rules <span class="src">page 11</span></h4>
+      <p>Post classroom rules and communicate them to parents; group punishment and humiliation are prohibited. Playground: monitor all areas, no throwing objects, no organized running on pavement, use equipment as designed, no games out of an adult's view. Cafeteria: walk to assigned tables, use Level 1 voices, raise hands to leave seats, keep areas clean. Lunch supervision includes an attention signal, dismissing one class at a time, and focused supervision.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Positive Behavior Interventions and Supports (PBIS) <span class="src">page 17</span></h4>
+      <p>PBIS builds a positive school culture and shared responsibility. One scholar per homeroom is recognized each week during Dynamic Dillo Fridays. Expectation posters are placed in common areas.</p>
+    </div>
+  </details>
+
+  <details class="fh-group" id="fh-grading">
+    <summary>Instruction, Grading, and Assessment</summary>
+    <div class="fh-item">
+      <h4>Grading requirements <span class="src">pages 12&ndash;13</span></h4>
+      <p>Daily (formative) grades: at least two per week, 12 per six-week period, weighted 35%. Major (summative) grades: three per six-week period, weighted 65%. Unit assessments replace CBAs. Language Arts: grades 1&ndash;2 reading is 75% (writing/oral 25%, spelling 5%); grades 3&ndash;4 reading is 50% (writing/oral 50%, spelling 5%). Within 10 days of a failing grade, provide intervention and a redo or alternate assignment; the new grade is the average of the original and redo. Submit the Assignment Redo Request Form within five days of entering the failing grade. Notify parents and hold a conference for failing scholars. Make-up work: three days for each day of absence; corrections are done at school after re-teaching.</p>
+      <table>
+        <caption>Elementary grading weights (page 12)</caption>
+        <thead><tr><th scope="col">Grade type</th><th scope="col">Weight</th><th scope="col">Frequency</th></tr></thead>
+        <tbody>
+          <tr><td>Daily (formative)</td><td>35% of six-weeks grade</td><td>2 per week, 12 per six-week period</td></tr>
+          <tr><td>Major (summative)</td><td>65% of six-weeks grade</td><td>3 per six-week period</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="fh-item" id="fh-lessonplans">
+      <h4>Lesson plans <span class="src">pages 11, 15</span></h4>
+      <p>Lesson plans are due weekly on Fridays by 3:45 p.m. in the teacher folder for the following week. Plans include the lesson frame ("I will, we will"), gradual-release model, recognize-and-reinforce opportunities, and formal and informal assessment. Long-range plans cover a week to a year; daily plans move step by step from what scholars know. The planning process runs from diagnose, task-analyze, set the daily objective, check independent practice, plan practice, to distribute practice.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Emergency lesson plans <span class="src">page 11</span></h4>
+      <p>File three days of emergency lesson plans with the office clerk by the Friday before Labor Day, including the daily schedule, duty assignments, morning routine, bell schedule, building map, seating chart, dismissal plan, early-finisher activities, exit procedures, and two reliable scholars plus a nearby staff contact.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Benchmark assessment (CBA/CFA) <span class="src">page 5</span></h4>
+      <p>Periodic benchmarks in reading, writing, science, and math assess TEKS mastery and guide intervention. STAAR is given in the spring in reading, mathematics, and writing. Results are logged in the Scholar's Data Notebook.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Homework <span class="src">page 14</span></h4>
+      <p>Homework is independent practice previously modeled by the teacher, with clear purpose, and something parents can help with. Regularly assigned Monday through Thursday, with STAAR practice for grades 3&ndash;4.</p>
+      <table>
+        <caption>Recommended study times (page 14)</caption>
+        <thead><tr><th scope="col">Grade</th><th scope="col">Time</th><th scope="col">Days</th></tr></thead>
+        <tbody>
+          <tr><td>Kindergarten</td><td>15&ndash;20 minutes</td><td>Mon, Wed, Thu</td></tr>
+          <tr><td>Grade 1</td><td>20&ndash;25 minutes</td><td>Mon&ndash;Thu</td></tr>
+          <tr><td>Grades 2&ndash;3</td><td>35&ndash;45 minutes</td><td>Mon&ndash;Thu, incl. study/test prep</td></tr>
+          <tr><td>Grade 4</td><td>45&ndash;60 minutes</td><td>Mon&ndash;Thu, incl. study/test prep</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="fh-item" id="fh-reportcards">
+      <h4>Progress reports, report cards, promotion/retention <span class="src">page 17</span></h4>
+      <p>Progress reports go to all parents at the end of the third week of each reporting period. A parent-teacher conference is required after the first report card and each six weeks for failing scholars or those in danger of retention. Contact parents within 24 hours and document it; include behavioral information. Report cards are issued every six weeks. The campus must not exceed a 10% failure rate. Promotion and retention follow district policy.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Response to Intervention (RTI) <span class="src">pages 18&ndash;19</span></h4>
+      <p>RTI is a tiered, data-based framework using research-based instruction, progress monitoring, and data for educational decisions, including special-education eligibility. RTI meetings are every three weeks. Protocols are on the district webpage.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Grade Placement Committee <span class="src">page 13</span></h4>
+      <p>The GPC meets in April and May to decide each scholar's best interest, including summer school for promotion, retention, or placement. Members: administrator, counselor, intervention teacher, homeroom teacher, and parent.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Selecting appropriate enrichment materials <span class="src">page 19</span></h4>
+      <p>Use "G"-rated materials; provide an alternate assignment if a parent does not grant permission. "PG-13," "R," and "X" materials are never used. Follow Board Policy EFE (Local) on copyright. Videos are cleared through the office and approved by the principal at least one week before showing; lesson plans reflect how enrichment materials teach the objectives and TEKS.</p>
+    </div>
+  </details>
+
+  <details class="fh-group" id="fh-correspondence">
+    <summary>Communication</summary>
+    <div class="fh-item">
+      <h4>Announcements, pledges, and reflection (S.B. 11) <span class="new-badge">NEW</span> <span class="src">pages 3&ndash;4</span></h4>
+      <p>Mornings begin with the Pledge of Allegiance, Texas Pledge, and a moment of reflection. Scholars and staff stand at attention; scholars who do not say the pledge sit or stand quietly. A designated, voluntary period of prayer or reading is offered for those with a signed consent form on file. Staff must not encourage, discourage, or comment on participation and supervise all scholars equally.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Correspondence <span class="src">page 9</span></h4>
+      <p>Correspondence distributed to staff or scholars is provided to a leadership team member for review and approval. Weekly or monthly newsletters are expected. Daily notes to parents do not need approval unless sensitive; grade-level notes require principal review with a copy for the file.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Newsletters and webpage <span class="src">page 16</span></h4>
+      <p>Grade levels create a monthly newsletter. Send written communication home in the Thursday folder. Topics include upcoming units, literacy and math tips, ESL vocabulary, calendars, upcoming assessments, and recognitions.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Parent Night <span class="src">page 16</span></h4>
+      <p>Parent Night presents end-of-grade-level expectations, grading criteria, home practice, and the discipline-management system, plus a handout of the child's daily schedule.</p>
+    </div>
+    <div class="fh-item">
+      <h4>News media <span class="src">page 16</span></h4>
+      <p>The Communications Office handles all news-media inquiries, especially controversial ones. No administrator or employee contacts the media on their own to release negative or controversial information without the consent of Superintendent Dr. Marcus Vance or Assistant Superintendent Ms. Priscilla Marsh.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Mailboxes and master calendar <span class="src">pages 15, 6</span></h4>
+      <p>Check faculty mailboxes at least three times daily; scholars are not sent to check mailboxes and are not allowed in the workroom. Formal written communication in mailboxes is first approved by an administrator. The single master calendar is kept by the school secretary; submit requests two weeks before the event.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Confidentiality &mdash; FERPA <span class="src">page 8</span></h4>
+      <p>Keep scholar information confidential; only staff with a legitimate educational interest discuss individual scholar data. FERPA protects the privacy of educational records. Do not berate scholars or share personal opinions about them; see the counselor to discuss scholar concerns.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Sexual harassment (Policy DHC) <span class="src">page 19</span></h4>
+      <p>Sexual harassment will not be tolerated. Laws protect employees and scholars from harassment. If you feel harassed, confer with a school administrator immediately. District policies are on the Ardent ISD website.</p>
+    </div>
+  </details>
+
+  <details class="fh-group" id="fh-fieldtrips">
+    <summary>Travel, Purchasing, and Facilities</summary>
+    <div class="fh-item">
+      <h4>Field trips <span class="src">page 12</span></h4>
+      <p>Off-campus trips need principal approval in advance and must be educational and curriculum-tied. Submit the request form at least one month ahead; the Director of Transportation determines bus availability. No scholar leaves without a signed permission slip. Trips depart no earlier than 8:45 a.m. and return no later than 2:00 p.m. Attending adults complete the online volunteer application and pass a background check; siblings may not ride the bus; no adult is left alone with uncleared scholars; no cursing, smoking, vaping, or alcohol.</p>
+    </div>
+    <div class="fh-item" id="fh-supplies">
+      <h4>Supplies and materials <span class="src">page 20</span></h4>
+      <p>Submit supply requests to the campus secretary at least one week before needed. Get prior approval for personal purchases. The district reimburses up to $100; a receipt is required and sales tax is not reimbursed.</p>
+    </div>
+    <div class="fh-item" id="fh-money">
+      <h4>Collection of money, deposits, disbursement <span class="src">page 8</span></h4>
+      <p>Money is not kept in the classroom; turn all money in to the office each day. Get principal permission before any money agreement with a vendor.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Building care and damage <span class="src">page 5</span></h4>
+      <p>The building is everyone's responsibility. Guidelines include approved hallway displays, covering no more than 25% of hallway walls (fire code), sealed food containers, and no open flames. Report damage to Ms. Holloway, who completes a work order. Teachers keep classrooms properly ventilated and lighted and enter maintenance requests as work orders.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Copier, keys, custodians <span class="src">pages 9, 14</span></h4>
+      <p>Each person is authorized to use the workroom copier; ask office staff for help. The secretary provides keys and proxy cards, which cannot be duplicated and must be returned at checkout; scholars may not use proxy cards, and lost keys or cards may be charged. Custodians handle cleaning; maintenance items go through a work order by Ms. Holloway.</p>
+    </div>
+  </details>
+
+  <details class="fh-group" id="fh-awards">
+    <summary>School Life and Programs</summary>
+    <div class="fh-item">
+      <h4>Awards <span class="src">pages 4&ndash;5</span></h4>
+      <p>Awards are based on achievement and attendance. Recognitions include Armadillo of the Year, Dynamic Dillo of the Week, Perfect and Outstanding Attendance, and Gold, Silver, and Bronze Honor Roll (grades 1&ndash;4). A Principal's Breakfast is held in May for A Honor Roll all year. Only listed awards are given at the ceremony; other classroom awards are the teacher's own. Scholars receive incentives and certificates each six weeks with the report card.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Cafeteria (Dillo Den) <span class="src">pages 6, 11</span></h4>
+      <p>Breakfast is served 7:30&ndash;8:00 a.m. (PreK and K may differ). Follow the strict lunch schedule; give two weeks' notice to skip the cafeteria. Teachers escort scholars and do not leave them unattended. Scholars with excessive charges receive an alternate lunch. Eating in the classroom requires the teacher to stay, waiving the duty-free lunch.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Classroom celebrations <span class="src">page 8</span></h4>
+      <p>Up to three classroom parties per year without prior approval. Foods of minimal nutritional value are not allowed in reimbursable-meal areas. Treats must be store-bought and served in the last few minutes of the day. Special deliveries (balloons, flowers, candy) stay in the office. Notify parents of non-curriculum celebrations and provide an alternative activity.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Child nutrition policy <span class="src">pages 7&ndash;8</span></h4>
+      <p>State FMNV guidelines do not allow candy or non-juice drinks during the school day, and current guidance prohibits competing with the federal feeding program.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Campus committees and extracurricular activities <span class="src">pages 7, 11</span></h4>
+      <p>Committees include a spirit committee, events, CATCH, Dillo Choir, beautification, incentives, Student Council, Safety Patrol, Dillo Daughters, Dillo Dudes, Horticulture, and Art. After-school activities include Chess, Robotics, Art, Choir, Student Council, and Coding. Staff are encouraged to sponsor a club.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Library and lounge <span class="src">page 15</span></h4>
+      <p>Teachers remain with scholars during the library period on the librarian's schedule. The employee lounge is off-limits to children; keep it clean and do not buy sodas for scholars.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Playground / recess <span class="new-badge">UPDATED</span> <span class="src">page 16</span></h4>
+      <p>Scholars in full-day programs receive daily unstructured recess with time for travel and restroom breaks. Teachers monitor with full visibility and circulate; recess is not a break time for staff. Follow campus playground rules and the master schedule.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Wellness program and VIPS <span class="src">pages 21, 20</span></h4>
+      <p>A wellness program serves employees and scholars through the coach and CATCH committee. Volunteers (VIPS) are vital; all volunteers complete the online application and pass the required background check before working with scholars.</p>
+    </div>
+  </details>
+
+  <details class="fh-group" id="fh-cat">
+    <summary>Committees, Planning, and Schedules</summary>
+    <div class="fh-item">
+      <h4>Campus Advisory Team (CAT) <span class="src">page 7</span></h4>
+      <p>The CAT includes grade-level, special-education, and special-areas representatives, parents, community and business members, and a Central Office representative. It researches campus issues and is essential to the Campus Improvement Plan. Minutes are on file and open to the public.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Campus Improvement Plan (CIP) <span class="src">page 7</span></h4>
+      <p>The CIP guides campus decision-making and is discussed quarterly during staff meetings. It is available at www.ardentisd.net.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Grade-level meetings and PLCs <span class="src">pages 13, 17</span></h4>
+      <p>Grade-level teams meet weekly for coordination and uniformity; minutes go to the principal. PLCs meet weekly with the instructional leadership team to analyze data, review data notebooks, choose standards to monitor, and plan intervention. PLCs do not replace grade-level planning.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Daily schedules <span class="src">pages 9&ndash;10</span></h4>
+      <p>Daily schedules help office staff locate teachers and scholars and let administrators schedule walkthroughs. Teams follow a consistent schedule, posted outside every classroom, with a copy to Ms. Holloway. Schedules are not changed without administration approval, since changes affect special-education teachers and specialists.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Science lab / classrooms <span class="src">page 19</span></h4>
+      <p>Safety and security procedures, supervision, lab-safety contracts, orientation, and posted guidelines are essential. Grade-level leads report depleted items to the principal.</p>
+    </div>
+  </details>
+
+  <details class="fh-group" id="fh-allstaff">
+    <summary>Staff Responsibilities and Coverage</summary>
+    <div class="fh-item">
+      <h4>Responsibilities of all teachers and staff <span class="src">page 18</span></h4>
+      <p>Turn in lesson plans, stay current on research, follow all IEP modifications, keep classroom materials organized, plan as a team weekly, keep grades current (two per week per content), maintain records, be punctual, check email frequently, and participate in campus events. Maintain professional dress and behavior; jeans are only allowed on Friday or other days specified by administrators. Provide a caring, positive climate.</p>
+    </div>
+    <div class="fh-item">
+      <h4>Responsibilities of grade-level chair / team leader <span class="src">page 18</span></h4>
+      <p>Represent the grade level at leadership meetings, take and share notes, schedule weekly grade-level meetings, order and inventory materials, inform the office of special activities, act as textbook coordinator, set the team agenda, arrange field trips, and provide the librarian with audio/visual needs.</p>
+    </div>
+    <div class="fh-item" id="fh-subfolder">
+      <h4>Substitute folder and split class lists <span class="src">page 20</span></h4>
+      <p>Turn in a labeled substitute folder by the end of the third week with the daily schedule, special-scholar schedules, modifications, lunch and duty schedules, discipline plan and forms, a calendar of activities, supplementary activities, and pertinent scholar information such as food allergies. Keep a split class list near your desk, updated as the roster changes, with copies to the front office.</p>
+    </div>
+    <div class="fh-item" id="fh-accident">
+      <h4>Accident reporting <span class="src">page 3</span></h4>
+      <p>Report accidents within 24 hours to Ms. Caldwell or a leadership team member. Report work-related injuries to the supervisor first, then the Business Manager. Employees unable to work from a work-related injury are notified of rights under the Texas Labor Code.</p>
+    </div>
+    <div class="fh-item" id="fh-leaving">
+      <h4>Leaving school during the day (scholars) <span class="src">page 14</span></h4>
+      <p>Scholars who leave for any reason sign out in the office and may not leave without written parent permission. Only in emergencies will the school phone parents for permission. Leaving without permission or signing out is an unexcused absence subject to discipline per the Scholar Code of Conduct.</p>
+    </div>
+  </details>
+
+</section>
+
+<!-- =================== QC CHECKLIST =================== -->
+<section id="qc" aria-labelledby="qc-h">
+  <h2 class="sec" id="qc-h">Content Review Checklist</h2>
+  <details class="topic">
+    <summary>Open the content review checklist (for editors)</summary>
+    <div class="details-body checklist-note">
+      <p>Items an editor should verify against the official PDF before publishing:</p>
+      <ul>
+        <li><strong>Policies that may need human review:</strong> The "NEW 2026&ndash;2027" items (H.B. 1481 devices, S.B. 10/S.B. 11 prayer and reflection, AI acceptable use, updated safety, updated child-abuse timeline) summarize legislation. Confirm each against current statute, TASB updates, and Board policy.</li>
+        <li><strong>Harassment reporting:</strong> The handbook does not list a specific deadline or grievance-form step for harassment. Marked "Needs review" in the scenario.</li>
+        <li><strong>Missing page numbers:</strong> None &mdash; every summary, scenario, and answer includes a page reference.</li>
+        <li><strong>Broken or incomplete links:</strong> The PDF link is a placeholder path; update it to the published location. Form links (Absence Request, redo form, volunteer application) are named but not linked in the source; add district URLs.</li>
+        <li><strong>Conflicting wording:</strong> None identified. Where the summary and PDF might differ, the "official wording" boxes and page references let editors verify.</li>
+        <li><strong>Missing contact information:</strong> Email addresses and extensions are not in the handbook. Several contacts are role-only (principal, nurse, counselor, Business Manager, Communications Office, Director of Transportation, campus secretary, librarian).</li>
+        <li><strong>Dates that may be outdated:</strong> Specific calendar dates (first day, STAAR windows, six-week reporting dates) are not printed; the handbook points to the District Calendar. Verify there.</li>
+        <li><strong>Sections that could not be confidently categorized:</strong> None. All sections were placed under a topic; a few (science lab, daily schedules) sit under Committees/Planning for grouping.</li>
+        <li><strong>Scanned-text issues:</strong> None &mdash; this page was built from the generated digital PDF, not a scan.</li>
+        <li><strong>Benefits, insurance, pay, and evaluation details:</strong> This campus handbook does not contain benefits, insurance, salary, or full evaluation policies; those live in the District Employee Handbook (pages 2, 21). No such section was invented.</li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><strong>Ardent Elementary School Staff Campus Handbook 2026&ndash;2027.</strong> This webpage is a navigation aid only. The
+    <a href="Ardent_Elementary_Staff_Handbook_2026-2027.pdf">official PDF handbook</a> and the District Employee Handbook remain the authoritative sources. Where this page conflicts with the Texas Education Code, federal law, or Board policy, those authorities control.</p>
+    <p>No accounts, no tracking, no analytics. Works offline in your browser.</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">&uarr;</button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  // ---------- Build a search index from page content ----------
+  var index = [];
+  function addIndex(el){
+    // Each searchable unit: a details/summary block or a card
+    var title = "";
+    var summary = el.querySelector("summary");
+    var h = el.querySelector("h3,h4");
+    if(summary){ title = summary.textContent.trim(); }
+    else if(h){ title = h.textContent.trim(); }
+    if(!title) return;
+    var text = el.textContent.replace(/\s+/g," ").trim();
+    // find nearest id to link to
+    var id = el.id;
+    if(!id){
+      // give it one
+      id = "sx-" + index.length;
+      el.id = id;
+    }
+    index.push({title:title, text:text, id:id, el:el});
+  }
+  document.querySelectorAll("details.qa, details.scenario, .card, .fh-item, details.topic").forEach(addIndex);
+
+  // ---------- Synonyms (do not change policy meaning) ----------
+  var synonyms = {
+    "sick":["ill","illness","unwell","sick day","sick days","sick leave"],
+    "absent":["absence","away","out","attendance","miss work","not coming in"],
+    "late":["tardy","running late","arrive late","arriving late"],
+    "leave early":["leaving early","leave campus","go home early"],
+    "personal day":["personal leave","personal days","discretionary leave"],
+    "cell phone":["mobile phone","phone","device","smartphone","smartwatch","cellphone"],
+    "device":["cell phone","phone","tablet","smartwatch","electronics"],
+    "discipline":["consequences","behavior","misbehavior","violation","referral"],
+    "harassment":["misconduct","harassed","sexual harassment"],
+    "complaint":["grievance","concern","report a problem"],
+    "benefits":["insurance","coverage","workers compensation","workers comp"],
+    "pay":["salary","compensation","paycheck","docked"],
+    "abuse":["neglect","trafficking","child abuse","cps"],
+    "field trip":["trip","excursion","off campus","off-campus"],
+    "reimburse":["reimbursement","refund","pay back","supplies money"],
+    "sub":["substitute","substitute teacher","coverage"],
+    "grades":["grading","gradebook","marks","report card","progress report"],
+    "recess":["playground","play time","break"],
+    "ai":["artificial intelligence","chatbot","generative ai"],
+    "medicine":["medication","medications","meds","prescription"],
+    "bully":["bullying","cyberbullying","harass"],
+    "emergency":["lockdown","evacuation","fire drill","tornado","crisis","drill"],
+    "dress":["dress code","attire","clothing","jeans"],
+    "contact":["who do i call","who to contact","phone number"]
+  };
+  function expandQuery(q){
+    var terms = new Set();
+    var qLower = q.toLowerCase();
+    terms.add(qLower);
+    // split into words too
+    qLower.split(/\s+/).forEach(function(w){ if(w) terms.add(w); });
+    Object.keys(synonyms).forEach(function(key){
+      var group = synonyms[key].concat([key]);
+      var hit = group.some(function(s){ return qLower.indexOf(s) !== -1; });
+      if(hit){ group.forEach(function(s){ terms.add(s); }); }
+    });
+    return Array.from(terms).filter(function(t){return t.length>=2;});
+  }
+
+  function escapeRegExp(s){ return s.replace(/[.*+?^${}()|[\]\\]/g,"\\$&"); }
+  function escapeHtml(s){ return s.replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
+
+  var input = document.getElementById("searchInput");
+  var status = document.getElementById("searchStatus");
+  var resultsBox = document.getElementById("searchResults");
+  var resetBtn = document.getElementById("resetBtn");
+
+  function makeSnippet(text, terms){
+    var lower = text.toLowerCase();
+    var pos = -1, matchLen = 0;
+    for(var i=0;i<terms.length;i++){
+      var p = lower.indexOf(terms[i]);
+      if(p!==-1 && (pos===-1 || p<pos)){ pos=p; matchLen=terms[i].length; }
+    }
+    if(pos===-1) pos=0;
+    var start = Math.max(0,pos-60);
+    var end = Math.min(text.length,pos+120);
+    var snip = (start>0?"\u2026":"") + text.slice(start,end) + (end<text.length?"\u2026":"");
+    snip = escapeHtml(snip);
+    // highlight
+    terms.forEach(function(t){
+      if(t.length<2) return;
+      var re = new RegExp("("+escapeRegExp(t)+")","ig");
+      snip = snip.replace(re,"<mark>$1</mark>");
+    });
+    return snip;
+  }
+
+  function runSearch(){
+    var q = input.value.trim();
+    resultsBox.innerHTML = "";
+    if(q.length===0){
+      status.textContent = "Start typing to search headings, answers, and page numbers.";
+      return;
+    }
+    var terms = expandQuery(q);
+    var matches = [];
+    index.forEach(function(item){
+      var hay = (item.title + " " + item.text).toLowerCase();
+      var score = 0;
+      terms.forEach(function(t){
+        if(hay.indexOf(t)!==-1){ score += (item.title.toLowerCase().indexOf(t)!==-1?3:1); }
+      });
+      if(score>0){ matches.push({item:item,score:score}); }
+    });
+    matches.sort(function(a,b){return b.score-a.score;});
+
+    if(matches.length===0){
+      status.textContent = "No results found for \u201C"+q+"\u201D.";
+      resultsBox.innerHTML = '<div class="no-results">No results found. Try a different word, or check the Browse by Topic and Full Handbook sections.</div>';
+      return;
+    }
+    var shown = Math.min(matches.length,40);
+    status.textContent = matches.length + (matches.length===1?" match":" matches") + " found" +
+      (matches.length>shown ? " (showing first "+shown+")" : "") + ".";
+    var frag = document.createDocumentFragment();
+    matches.slice(0,40).forEach(function(m){
+      var div = document.createElement("div");
+      div.className = "result-item";
+      var pageRef = "";
+      var pm = m.item.text.match(/page[s]?\s+[\d,&;\u2013\s-]+/i);
+      if(pm){ pageRef = " <span class='src'>Source: Handbook, "+escapeHtml(pm[0].trim())+"</span>"; }
+      div.innerHTML = '<h4><a href="#'+m.item.id+'">'+escapeHtml(m.item.title)+'</a></h4>'+
+                      '<p class="result-snippet">'+makeSnippet(m.item.text,terms)+'</p>'+pageRef;
+      frag.appendChild(div);
+    });
+    resultsBox.appendChild(frag);
+  }
+
+  // When a result link is clicked, open its details ancestors
+  resultsBox.addEventListener("click",function(e){
+    var a = e.target.closest("a");
+    if(!a) return;
+    var id = a.getAttribute("href").slice(1);
+    openAncestors(document.getElementById(id));
+  });
+
+  function openAncestors(el){
+    if(!el) return;
+    var node = el;
+    while(node){
+      if(node.tagName && node.tagName.toLowerCase()==="details"){ node.open = true; }
+      node = node.parentElement;
+    }
+  }
+  // Open target details when navigating via any in-page anchor
+  document.addEventListener("click",function(e){
+    var a = e.target.closest('a[href^="#"]');
+    if(!a) return;
+    var id = a.getAttribute("href").slice(1);
+    if(!id) return;
+    var target = document.getElementById(id);
+    if(target){ openAncestors(target); }
+  });
+  window.addEventListener("hashchange",function(){
+    var id = location.hash.slice(1);
+    if(id) openAncestors(document.getElementById(id));
+  });
+  if(location.hash){ openAncestors(document.getElementById(location.hash.slice(1))); }
+
+  var t=null;
+  input.addEventListener("input",function(){
+    if(t) clearTimeout(t);
+    t = setTimeout(runSearch,120);
+  });
+  resetBtn.addEventListener("click",function(){
+    input.value="";
+    runSearch();
+    input.focus();
+  });
+
+  // ---------- Expand / collapse all ----------
+  document.querySelectorAll(".expand-all,.collapse-all").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      var scope = btn.getAttribute("data-scope");
+      var container = document.getElementById(scope);
+      if(!container) return;
+      var open = btn.classList.contains("expand-all");
+      container.querySelectorAll("details").forEach(function(d){ d.open = open; });
+    });
+  });
+
+  // ---------- Copy link buttons ----------
+  var toast = document.getElementById("toast");
+  var toastTimer=null;
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add("show");
+    if(toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove("show"); },1800);
+  }
+  document.querySelectorAll(".copylink").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      var id = btn.getAttribute("data-target");
+      var url = location.href.split("#")[0] + "#" + id;
+      var done = function(){ showToast("Link copied"); };
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(url).then(done,function(){ fallbackCopy(url); done(); });
+      } else { fallbackCopy(url); done(); }
+    });
+  });
+  function fallbackCopy(text){
+    var ta=document.createElement("textarea");
+    ta.value=text; ta.style.position="fixed"; ta.style.left="-9999px";
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand("copy"); }catch(e){}
+    document.body.removeChild(ta);
+  }
+
+  // ---------- Print ----------
+  var printBtn=document.getElementById("printBtn");
+  if(printBtn){ printBtn.addEventListener("click",function(){ window.print(); }); }
+
+  // ---------- Back to top ----------
+  var toTop=document.getElementById("toTop");
+  window.addEventListener("scroll",function(){
+    toTop.style.display = window.scrollY>500 ? "block":"none";
+  });
+  toTop.addEventListener("click",function(){
+    window.scrollTo({top:0,behavior:(window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth")});
+    document.getElementById("main").focus();
+  });
+
+})();
+</script>
+</body>
+</html>
