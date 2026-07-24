@@ -437,7 +437,10 @@ p {
   align-items: center;
   width: 100%;
   aspect-ratio: 1111 / 1065;
-  padding: 15% 15% 9%;
+  /* aspect-ratio sets the default proportion; if bigger text or a longer
+     translation needs more room the card grows and the stone stretches a
+     little rather than the text overflowing off the stone. */
+  padding: 12% 11% 8%;
   color: #2c2620;
   /* real limestone headstone (transparent PNG) used for every stone */
   background: url("images/tombstone.png") center / 100% 100% no-repeat;
@@ -494,7 +497,7 @@ p {
 .tomb-v9 { --tilt: -0.4deg; }
 
 .tombstone-card .tomb-rip {
-  font-size: 0.82rem;
+  font-size: 0.96rem;
   font-weight: 700;
   letter-spacing: 0.3em;
   text-indent: 0.3em;
@@ -514,7 +517,7 @@ p {
 .tombstone-card .tomb-ex {
   margin-top: 12px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.7rem;
+  font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -523,36 +526,37 @@ p {
 
 .tombstone-card .tomb-name {
   display: block;
-  margin: 6px 4px 6px;
-  font-size: 1.34rem;
-  line-height: 1.16;
+  margin: 7px 2px 7px;
+  font-size: 1.52rem;
+  line-height: 1.14;
   font-weight: 700;
   color: #2b2430;
+  overflow-wrap: break-word;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
 }
 
 .tombstone-card .tomb-dates {
   font-style: italic;
-  font-size: 1rem;
+  font-size: 1.14rem;
   letter-spacing: 0.01em;
   color: #574d55;
 }
 
 .tombstone-card .tomb-status {
-  margin-top: 4px;
+  margin-top: 5px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.98rem;
   color: #6a5f66;
 }
 
 .status-pill {
   margin-top: auto;
-  padding: 8px 14px;
+  padding: 9px 17px;
   color: #241044;
   background: #ffd98a;
   border-radius: 999px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.9rem;
+  font-size: 1.02rem;
   font-weight: 900;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
 }
