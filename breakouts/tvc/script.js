@@ -13,6 +13,21 @@ const POINTS_PER_EXHIBIT = 3;
 const EXHIBIT_COUNT = 9;
 const TOTAL_POINTS = EXHIBIT_COUNT * POINTS_PER_EXHIBIT;
 
+/* Approximate era of common classroom use -> decline, engraved on each
+   tombstone like birth-death dates. Language-independent (numerals + "c." for
+   circa); kept identical across languages. */
+const ERAS = {
+  slate: "c. 1800 – 1930s",
+  hornbook: "c. 1450 – 1800",
+  recitation: "c. 1600s – 1920s",
+  dunce: "c. 1840s – 1950s",
+  blab: "c. 1790s – 1860s",
+  copybook: "c. 1840s – 1920s",
+  rod: "c. 1700s – 1980s",
+  monitorial: "c. 1798 – 1840s",
+  oneroom: "c. 1700s – 1950s"
+};
+
 /* ---------------------------------------------------------------------------
    UI chrome dictionary (BreakoutI18n). English is the source language.
    The es/vi/ar/hi/ur/zh packs are merged in from lang-packs below.
@@ -449,9 +464,11 @@ function renderExhibitGrid() {
     button.className = "tombstone-card";
     button.type = "button";
     button.innerHTML = `
-      <span>${t("exhibit.label", { n: index + 1 })}</span>
-      <strong>${record.completed ? escapeHTML(exhibit.relic) : t("exhibit.mystery")}</strong>
-      <span>${record.completed ? t("reveal.points", { points: record.points, max: POINTS_PER_EXHIBIT }) : t("card.needs")}</span>
+      <span class="tomb-rip" aria-hidden="true">R·I·P</span>
+      <span class="tomb-ex">${t("exhibit.label", { n: index + 1 })}</span>
+      <strong class="tomb-name">${record.completed ? escapeHTML(exhibit.relic) : t("exhibit.mystery")}</strong>
+      <span class="tomb-dates">${ERAS[exhibit.id] || ""}</span>
+      <span class="tomb-status">${record.completed ? t("reveal.points", { points: record.points, max: POINTS_PER_EXHIBIT }) : t("card.needs")}</span>
       <span class="status-pill">${record.completed ? t("card.review") : t("card.investigate")}</span>
     `;
     button.addEventListener("click", () => openExhibit(index));
