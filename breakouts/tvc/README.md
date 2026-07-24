@@ -45,8 +45,11 @@ never disturbs a student's score or saved progress.
 
 ## How it works
 
-- No server, login, analytics, or external libraries. Progress is saved to
-  `localStorage` (`tceaVanishedClassroomV1`); **Reset Activity** clears it.
+- No server, login, analytics, or external libraries — and **no external
+  requests at all** (system fonts, local assets only). Progress is saved to
+  `localStorage` (`tceaVanishedClassroomV1`); **Reset Activity** clears it. See
+  [`policy.html`](policy.html) for the full Privacy &amp; Compliance mapping
+  (Texas DPA, FERPA, COPPA, Texas SCOPE Act, GDPR, CIPA, PPRA).
 - Correct answers are authored first in each choices array and shuffled for
   display; scoring checks the original index, so it is language-independent.
 - Accessibility: skip link, focus management on screen changes, `<fieldset>`

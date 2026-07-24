@@ -81,7 +81,9 @@ window.__TVC_LANG_PACKS__.ur = {
     "reflection.futureLabel": "آج کلاس روم میں استعمال ہونے والا ایک طریقہ جو میرے خیال میں کسی دن غائب ہو سکتا ہے",
     "reflection.back": "اسکور کی طرف واپس",
     "reflection.print": "میری تحقیقات پرنٹ کریں",
-    "print.scoreLine": "اسکور: {total} میں سے {score} پوائنٹس - {level}"
+    "print.scoreLine": "اسکور: {total} میں سے {score} پوائنٹس - {level}",
+    "footer.tagline": "کوئی لاگ اِن نہیں · کوئی اکاؤنٹ نہیں · کوئی ڈیٹا جمع نہیں · مکمل طور پر آپ کے براؤزر میں چلتا ہے۔",
+    "footer.privacy": "رازداری اور تعمیل"
   },
   exhibits: [
     {

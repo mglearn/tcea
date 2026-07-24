@@ -99,7 +99,9 @@ const UI = {
     "reflection.futureLabel": "One practice used in classrooms today that I think may disappear someday",
     "reflection.back": "Back to Score",
     "reflection.print": "Print My Investigation",
-    "print.scoreLine": "Score: {score} of {total} points - {level}"
+    "print.scoreLine": "Score: {score} of {total} points - {level}",
+    "footer.tagline": "No logins · no accounts · no data collected · runs entirely in your browser.",
+    "footer.privacy": "Privacy & compliance"
   }
 };
 

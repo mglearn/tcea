@@ -81,7 +81,9 @@ window.__TVC_LANG_PACKS__.vi = {
     "reflection.futureLabel": "Một cách làm được dùng trong lớp học ngày nay mà tôi nghĩ một ngày nào đó có thể biến mất",
     "reflection.back": "Quay lại điểm số",
     "reflection.print": "In bài điều tra của tôi",
-    "print.scoreLine": "Điểm số: {score} trên {total} điểm - {level}"
+    "print.scoreLine": "Điểm số: {score} trên {total} điểm - {level}",
+    "footer.tagline": "Không đăng nhập · không tài khoản · không thu thập dữ liệu · chạy hoàn toàn trong trình duyệt của bạn.",
+    "footer.privacy": "Quyền riêng tư & tuân thủ"
   },
   exhibits: [
     {

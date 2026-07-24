@@ -81,7 +81,9 @@ window.__TVC_LANG_PACKS__.ar = {
     "reflection.futureLabel": "ممارسة تُستخدم في الفصول الدراسية اليوم أعتقد أنها قد تختفي يومًا ما",
     "reflection.back": "العودة إلى النتيجة",
     "reflection.print": "اطبع تحقيقي",
-    "print.scoreLine": "النتيجة: {score} من أصل {total} نقاط - {level}"
+    "print.scoreLine": "النتيجة: {score} من أصل {total} نقاط - {level}",
+    "footer.tagline": "بدون تسجيل دخول · بدون حسابات · لا يتم جمع أي بيانات · يعمل بالكامل داخل متصفحك.",
+    "footer.privacy": "الخصوصية والامتثال"
   },
   exhibits: [
     {

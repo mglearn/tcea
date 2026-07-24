@@ -81,7 +81,9 @@ window.__TVC_LANG_PACKS__.es = {
     "reflection.futureLabel": "Una práctica que se usa hoy en las aulas y que creo que podría desaparecer algún día",
     "reflection.back": "Volver a la puntuación",
     "reflection.print": "Imprimir mi investigación",
-    "print.scoreLine": "Puntuación: {score} de {total} puntos - {level}"
+    "print.scoreLine": "Puntuación: {score} de {total} puntos - {level}",
+    "footer.tagline": "Sin inicios de sesión · sin cuentas · sin recopilación de datos · funciona por completo en tu navegador.",
+    "footer.privacy": "Privacidad y cumplimiento"
   },
   exhibits: [
     {

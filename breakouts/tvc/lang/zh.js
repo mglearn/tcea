@@ -81,7 +81,9 @@ window.__TVC_LANG_PACKS__.zh = {
     "reflection.futureLabel": "如今教室里使用、但我认为有朝一日可能会消失的一种做法",
     "reflection.back": "返回得分",
     "reflection.print": "打印我的调查",
-    "print.scoreLine": "得分：{score} 分（满分 {total} 分）- {level}"
+    "print.scoreLine": "得分：{score} 分（满分 {total} 分）- {level}",
+    "footer.tagline": "无需登录 · 无需账户 · 不收集任何数据 · 完全在您的浏览器中运行。",
+    "footer.privacy": "隐私与合规"
   },
   exhibits: [
     {

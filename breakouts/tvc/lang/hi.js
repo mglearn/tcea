@@ -81,7 +81,9 @@ window.__TVC_LANG_PACKS__.hi = {
     "reflection.futureLabel": "आज की कक्षाओं में उपयोग होने वाली एक प्रथा जो मुझे लगता है किसी दिन गायब हो सकती है",
     "reflection.back": "स्कोर पर वापस जाएँ",
     "reflection.print": "मेरी जाँच प्रिंट करें",
-    "print.scoreLine": "स्कोर: {total} में से {score} अंक - {level}"
+    "print.scoreLine": "स्कोर: {total} में से {score} अंक - {level}",
+    "footer.tagline": "कोई लॉगिन नहीं · कोई खाता नहीं · कोई डेटा एकत्र नहीं · पूरी तरह आपके ब्राउज़र में चलता है।",
+    "footer.privacy": "गोपनीयता और अनुपालन"
   },
   exhibits: [
     {

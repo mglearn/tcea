@@ -706,6 +706,27 @@ p {
   display: none;
 }
 
+.site-footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  align-items: center;
+  justify-content: center;
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 18px 0 40px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.site-footer a {
+  color: var(--gold-light, #ffd98a);
+  font-weight: 800;
+}
+
 [dir="rtl"] .choice {
   grid-template-columns: 1fr auto;
 }
@@ -819,6 +840,7 @@ p {
   body::before,
   body::after,
   .topbar,
+  .site-footer,
   main {
     display: none !important;
   }
