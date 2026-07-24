@@ -773,10 +773,19 @@
     "category": "activities",
     "featured": false,
     "external": false,
+    "href": "relic-rooms/index.html",
+    "tag": "Activity Series",
+    "title": "Relic Rooms",
+    "desc": "A series of self-contained, seven-language investigation activities: students examine nine illustrated mystery exhibits in three steps &mdash; identify it, understand its purpose, and connect it to what came next. Aligned to the Texas Essential Knowledge and Skills across science, social studies, technology applications, and career. Starts with The Vanished Classroom."
+  },
+  {
+    "category": "activities",
+    "featured": false,
+    "external": false,
     "href": "tvc/index.html",
     "tag": "Investigation Activity",
     "title": "The Vanished Classroom",
-    "desc": "A standalone investigation activity (grades 4-8) about instructional practices from the 1800s that classrooms no longer use. Students examine nine teaching relics &mdash; slate, hornbook, recitation, the dunce cap, and more &mdash; and uncover each one's purpose, limitation, and modern replacement. Seven languages, with a score and printable reflection."
+    "desc": "A standalone investigation activity (grades 4-8) about instructional practices from the 1800s that classrooms no longer use. Students examine nine teaching relics &mdash; slate, hornbook, recitation, the dunce cap, and more &mdash; and uncover each one's purpose, limitation, and modern replacement. Seven languages, with a score and printable reflection. Part of the Relic Rooms series."
   },
   {
     "category": "breakouts",

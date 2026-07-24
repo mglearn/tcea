@@ -1,0 +1,47 @@
+/* Shared styling for Relic Room policy + correlation pages (dusk/stone theme). */
+:root{
+  --ink:#fff8e8; --muted:#eadcbf; --gold:#f7bd4a; --gold-light:#ffd98a;
+  --panel:#2a2013; --panel-2:#221a10; --line:rgba(247,189,74,.28);
+  --sky-top:#14110b; --sky-low:#3a2f1e;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0; color:var(--ink); font:17px/1.6 Arial, Helvetica, sans-serif;
+  background:linear-gradient(180deg,var(--sky-top),#231b10 60%,var(--sky-low));
+  min-height:100vh;
+}
+.wrap{max-width:860px; margin:0 auto; padding:clamp(24px,5vw,56px) 20px 72px;}
+a{color:var(--gold-light);}
+.crumb{margin-bottom:18px; font-weight:800;}
+.crumb a{text-decoration:none;}
+.crumb a:hover{text-decoration:underline;}
+h1{font-size:clamp(1.9rem,5vw,2.7rem); margin:0 0 10px; text-shadow:0 0 22px rgba(247,189,74,.18);}
+.lead{font-size:1.12rem; color:var(--gold-light); font-weight:700; margin:0 0 24px;}
+.card{
+  background:var(--panel); border:1px solid var(--line); border-top:6px solid var(--gold);
+  border-radius:12px; padding:clamp(20px,4vw,34px); box-shadow:0 22px 52px rgba(0,0,0,.34);
+}
+h2{font-size:1.28rem; margin:26px 0 8px; color:var(--gold-light);}
+h2:first-of-type{margin-top:0;}
+p{margin:0 0 12px;}
+ul{margin:0 0 12px; padding-left:22px;}
+li{margin-bottom:8px;}
+code{background:var(--panel-2); border:1px solid var(--line); border-radius:5px; padding:1px 6px; font-size:.92em; color:var(--gold-light);}
+.rules dt{font-weight:800; color:var(--gold-light); margin-top:12px;}
+.rules dd{margin:2px 0 0; color:var(--muted);}
+table{width:100%; border-collapse:collapse; margin:8px 0 4px; font-size:.96rem;}
+caption{text-align:left; color:var(--muted); font-size:.9rem; margin-bottom:8px;}
+th,td{border:1px solid var(--line); padding:9px 11px; vertical-align:top; text-align:left;}
+th{background:var(--panel-2); color:var(--gold-light); font-size:.82rem; text-transform:uppercase; letter-spacing:.05em;}
+tbody td:first-child, td:first-child{white-space:nowrap; font-weight:700; color:var(--gold-light);}
+footer{margin-top:26px; color:var(--muted); font-size:.9rem; text-align:center;}
+:focus-visible{outline:3px solid var(--gold-light); outline-offset:3px;}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+@media print{
+  body{background:#fff; color:#111; font:12pt Georgia,"Times New Roman",serif;}
+  .card{background:#fff; border-color:#999; box-shadow:none;}
+  h1,.lead,h2,a,.rules dt{color:#111 !important; text-shadow:none;}
+  code{background:#eee; color:#111; border-color:#ccc;}
+  th{background:#eee; color:#111;} th,td{border-color:#999;}
+}

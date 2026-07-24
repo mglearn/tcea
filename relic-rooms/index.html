@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Relic Rooms — TCEA</title>
+<meta name="description" content="Relic Rooms: self-contained, seven-language investigation activities where students examine nine mystery exhibits in three steps — identify, understand, connect. Aligned to the Texas Essential Knowledge and Skills.">
+<link rel="icon" href="../favicon.svg">
+<style>
+  :root{
+    --ink:#fff8e8; --muted:#eadcbf; --gold:#f7bd4a; --gold-light:#ffd98a;
+    --panel:#2a2013; --panel-2:#221a10; --line:rgba(247,189,74,.26);
+    --sky-top:#14110b; --sky-low:#3a2f1e;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+  body{
+    margin:0; color:var(--ink); font:17px/1.6 Arial, Helvetica, sans-serif;
+    background:
+      radial-gradient(circle at 18% 12%, rgba(247,189,74,.14), transparent 20rem),
+      linear-gradient(180deg, var(--sky-top), #231b10 58%, var(--sky-low));
+    min-height:100vh;
+  }
+  a{color:var(--gold-light);}
+  .skip-link{position:absolute;left:-999px;top:0;background:var(--gold);color:#241044;padding:10px 16px;font-weight:800;border-radius:0 0 6px 0;}
+  .skip-link:focus{left:0;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+  header.hero{padding:56px 0 26px;}
+  .eyebrow{margin:0 0 8px;color:var(--gold);font-weight:900;letter-spacing:.14em;text-transform:uppercase;font-size:.82rem;}
+  h1{margin:0 0 12px;font-size:clamp(2.4rem,6vw,3.9rem);line-height:1.02;text-shadow:0 0 24px rgba(247,189,74,.2);}
+  .lede{margin:0;max-width:66ch;color:#efe4cd;font-size:clamp(1.06rem,2.4vw,1.24rem);}
+  .how{display:flex;flex-wrap:wrap;gap:10px 22px;margin:22px 0 6px;color:var(--muted);font-weight:700;font-size:.98rem;}
+  .how b{color:var(--gold-light);}
+  main{padding:22px 0 70px;}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  @media(max-width:860px){.grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr;}}
+  .room{
+    position:relative;display:flex;flex-direction:column;
+    background:var(--panel);border:1px solid var(--line);border-top:6px solid var(--accent,#f7bd4a);
+    border-radius:14px;padding:20px 20px 18px;box-shadow:0 10px 26px rgba(0,0,0,.28);
+    color:inherit;text-decoration:none;transition:transform .16s ease,box-shadow .2s ease,border-color .2s ease;
+  }
+  a.room:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(0,0,0,.36);}
+  .room .tags{display:flex;flex-wrap:wrap;gap:6px 10px;margin-bottom:10px;font-size:.74rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#cbb78c;}
+  .room h2{margin:0 0 6px;font-size:1.3rem;line-height:1.15;}
+  .room p{margin:0 0 14px;color:var(--muted);font-size:.95rem;flex-grow:1;}
+  .room .foot{display:flex;align-items:center;justify-content:space-between;gap:10px;}
+  .badge{font-size:.72rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;}
+  .badge.live{background:var(--accent,#f7bd4a);color:#201608;}
+  .badge.planned{background:rgba(255,248,232,.12);color:#e7d9bd;border:1px solid var(--line);}
+  .go{font-weight:900;color:var(--gold-light);}
+  .room.soon{opacity:.9;}
+  .note{margin:30px 0 0;color:var(--muted);font-size:.92rem;}
+  footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:.9rem;}
+  footer a{font-weight:700;}
+</style>
+</head>
+<body>
+<a href="#rooms" class="skip-link">Skip to the rooms</a>
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">A TCEA activity series</p>
+    <h1>Relic Rooms</h1>
+    <p class="lede">Step into a room of nine mystery exhibits and investigate each one in three steps — <b>identify&nbsp;it</b>, understand <b>what it was for</b>, and connect it to <b>what came next</b>. Self-contained, seven languages, no logins, no data collected, and aligned to the Texas Essential Knowledge and Skills.</p>
+    <p class="how"><span>🔎 <b>Identify</b></span><span>🧭 <b>Understand its purpose</b></span><span>🔗 <b>Connect to today</b></span></p>
+  </div>
+</header>
+
+<main id="rooms">
+  <div class="wrap">
+    <div class="grid" id="grid"></div>
+    <p class="note" id="note"></p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    A <a href="https://tcea.org">TCEA</a> activity series · built from a shared, open template (<a href="starter-kit/BUILD-GUIDE.md">Build Guide</a>). Each room is aligned to, not reproduced from, the Texas Essential Knowledge and Skills.
+  </div>
+</footer>
+
+<script src="rooms.js"></script>
+<script>
+  (function(){
+    var rooms = window.RELIC_ROOMS || [];
+    var esc = function(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); };
+    function card(r){
+      var live = r.status === "live" && r.href;
+      var inner =
+        '<div class="tags"><span>'+esc(r.subject)+'</span><span>Gr '+esc(r.grades)+'</span><span>'+esc(r.teks)+'</span></div>'+
+        '<h2>'+esc(r.title)+'</h2>'+
+        '<p>'+esc(r.desc)+'</p>'+
+        '<div class="foot"><span class="badge '+(live?'live':'planned')+'">'+(live?'Open':'Coming soon')+'</span>'+
+        (live?'<span class="go">Enter ▶</span>':'')+'</div>';
+      if (live) {
+        var a = document.createElement("a");
+        a.className = "room"; a.href = r.href; a.style.setProperty("--accent", r.accent||"#f7bd4a");
+        a.setAttribute("aria-label", r.title + " — open"); a.innerHTML = inner; return a;
+      }
+      var d = document.createElement("div");
+      d.className = "room soon"; d.style.setProperty("--accent", r.accent||"#f7bd4a"); d.innerHTML = inner; return d;
+    }
+    var grid = document.getElementById("grid");
+    rooms.forEach(function(r){ grid.appendChild(card(r)); });
+    var liveN = rooms.filter(function(r){return r.status==="live";}).length;
+    document.getElementById("note").textContent =
+      liveN + " of " + rooms.length + " rooms are live — the rest are in production.";
+  })();
+</script>
+</body>
+</html>

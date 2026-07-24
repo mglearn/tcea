@@ -1,0 +1,163 @@
+{
+  "id": "CHANGE-ME (short unique folder acronym, e.g. ec)",
+  "brand": "XX",
+  "accent": "#4e6b39",
+  "hero": "hero.png",
+  "title": "Room Title",
+  "desc": "One-sentence meta description of the activity.",
+  "grades": "3-7",
+  "teks": "Science, 19 TAC Ch. 112",
+  "themeNote": "Optional note for the policy page's Standards & framing paragraph.",
+  "ground": [
+    "grass",
+    "rubble",
+    "grass",
+    "both",
+    "none",
+    "rubble",
+    "both",
+    "grass",
+    "rubble"
+  ],
+  "ui": {
+    "skip": "Skip to activity",
+    "progress.title": "Investigation Progress",
+    "progress.completed": "of {total} exhibits completed",
+    "progress.points": "/ {total} points",
+    "reset": "Reset Activity",
+    "reset.confirm": "Reset the activity and clear saved progress on this device?",
+    "welcome.eyebrow": "Upper Elementary & Middle School Investigation",
+    "welcome.title": "The Vanished Classroom",
+    "welcome.subtitle": "Can you uncover the classroom practices that time left behind?",
+    "welcome.body": "Classrooms have changed enormously over the last two hundred years. Some practices that once seemed normal have disappeared from schools completely. Step inside the vanished classroom to investigate nine teaching relics from the 1800s and discover what eventually replaced them.",
+    "welcome.enter": "Enter the Schoolhouse",
+    "directions.eyebrow": "Student Directions",
+    "directions.title": "How to investigate each exhibit",
+    "directions.body1": "Visit each exhibit and study the image and clues. First, identify the classroom practice or tool. Next, decide what problem it was meant to solve. Finally, choose the practice or technology that eventually replaced it.",
+    "directions.body2": "You may revisit exhibits before submitting your final answers.",
+    "directions.step1title": "Identify it",
+    "directions.step1body": "Use the clues and image area to decide what the practice or tool is.",
+    "directions.step2title": "Find its purpose",
+    "directions.step2body": "Choose the problem this practice was meant to solve.",
+    "directions.step3title": "Track its replacement",
+    "directions.step3body": "Select what classrooms use today in its place.",
+    "directions.start": "Start Investigating",
+    "list.eyebrow": "Nine Classroom Relics",
+    "list.title": "Choose an exhibit to investigate",
+    "list.body": "Each desk opens a three-part investigation. Finished exhibits stay available for review.",
+    "list.finish": "See My Final Score",
+    "exhibit.back": "Back to Exhibits",
+    "exhibit.label": "Exhibit {n}",
+    "exhibit.mystery": "Mystery Practice",
+    "exhibit.check": "Check My Investigation",
+    "exhibit.tryagain": "Try One More Time",
+    "exhibit.continue": "Continue",
+    "placeholder.label": "Image Placeholder: Exhibit {n}",
+    "placeholder.add": "Add image: {path}",
+    "placeholder.alt": "Image for Exhibit {n}. If no custom image appears, use the clues and add a file at {path}.",
+    "questions.identify": "What classroom practice or tool is this?",
+    "questions.purpose": "What problem was it meant to solve?",
+    "questions.replacement": "What replaced it in classrooms today?",
+    "label.identify": "Identification",
+    "label.purpose": "Purpose",
+    "label.replacement": "Replacement",
+    "feedback.notice": "Notice:",
+    "feedback.answerAll": "Answer all three questions before checking this exhibit.",
+    "feedback.correct": "Correct:",
+    "feedback.needs": "Needs another look:",
+    "feedback.recorded": "Investigation recorded. You earned {points} of {max} points for this exhibit.",
+    "feedback.attempt": "Attempt {n} recorded. Check the items marked “Needs another look” and try once more.",
+    "reveal.title": "Exhibit Reveal",
+    "reveal.relic": "Practice",
+    "reveal.purpose": "Original purpose",
+    "reveal.limitation": "Major limitation",
+    "reveal.replacement": "Modern replacement",
+    "reveal.era": "Era of common use",
+    "reveal.sources": "Learn more",
+    "reveal.score": "Score",
+    "reveal.points": "{points} of {max} points",
+    "card.needs": "Needs investigation",
+    "card.review": "Review Reveal",
+    "card.investigate": "Investigate",
+    "score.eyebrow": "Final Score",
+    "score.title": "Your Vanished Classroom Result",
+    "score.review": "Review Exhibits",
+    "score.reflection": "History Detective Reflection",
+    "score.tryagain": "Try Again",
+    "level.1": "History Time Traveler",
+    "level.2": "Classroom Historian",
+    "level.3": "Schoolhouse Detective",
+    "level.4": "History Apprentice in Training",
+    "level.msg1": "You tracked these classroom relics across time with expert-level accuracy.",
+    "level.msg2": "You uncovered strong evidence about how old practices shaped today's classrooms.",
+    "level.msg3": "You spotted many important clues and connected several relics to their replacements.",
+    "level.msg4": "You are building your investigation skills. Review the exhibits and look closely at the clues.",
+    "reflection.eyebrow": "History Detective Reflection",
+    "reflection.title": "Explain what you discovered",
+    "reflection.relicLabel": "The classroom practice I chose",
+    "reflection.relicChoose": "Choose a practice",
+    "reflection.purposeLabel": "The problem it was meant to solve",
+    "reflection.limitationLabel": "One limitation it had",
+    "reflection.replacementLabel": "The practice or tool that replaced it",
+    "reflection.futureLabel": "One practice used in classrooms today that I think may disappear someday",
+    "reflection.back": "Back to Score",
+    "reflection.print": "Print My Investigation",
+    "print.scoreLine": "Score: {score} of {total} points - {level}",
+    "footer.tagline": "No logins · no accounts · no data collected · runs entirely in your browser.",
+    "footer.privacy": "Privacy & compliance"
+  },
+  "correlation": [
+    {
+      "code": "§112.x(b)(#)(#)",
+      "expectation": "Paraphrased Student Expectation.",
+      "alignment": "How this room's exhibits practice it."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "slate",
+      "image": "images/slate.png",
+      "relic": "Slate and slate pencil",
+      "clues": [
+        "Each student wrote on me instead of using paper.",
+        "I was a thin sheet of gray stone in a wooden frame.",
+        "Students wiped me clean with a cloth after each lesson.",
+        "A squeaky pencil made of slate or chalk wrote on my surface."
+      ],
+      "purpose": "Giving each student a reusable surface to practice writing and arithmetic",
+      "limitation": "Work was erased after each lesson and could never be saved or reviewed",
+      "replacement": "Paper notebooks, dry-erase whiteboards, and digital tablets",
+      "choices": {
+        "identify": [
+          "Slate and slate pencil",
+          "Chalkboard eraser",
+          "Wax writing tablet",
+          "Sandbox tray"
+        ],
+        "purpose": [
+          "Giving each student a reusable surface to practice writing and arithmetic",
+          "Punishing students who misbehaved",
+          "Decorating the classroom walls",
+          "Keeping the room warm in winter"
+        ],
+        "replacement": [
+          "Paper notebooks, dry-erase whiteboards, and digital tablets",
+          "Printed textbooks and readers",
+          "Loudspeakers and microphones",
+          "Wood stoves and lanterns"
+        ]
+      }
+    }
+  ],
+  "eras": {
+    "slate": "c. 1800 – 1930s"
+  },
+  "sources": {
+    "slate": [
+      {
+        "label": "Wikipedia: Slate (writing)",
+        "url": "https://en.wikipedia.org/wiki/Slate_(writing)"
+      }
+    ]
+  }
+}

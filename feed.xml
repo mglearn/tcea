@@ -6,19 +6,27 @@
     <atom:link href="https://mglearn.github.io/tcea/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated HTML tools, dashboards, prompt libraries, and classroom resources from TCEA.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Jul 2026 18:08:25 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2026 23:57:20 GMT</lastBuildDate>
     <image>
       <url>https://mglearn.github.io/tcea/favicon.svg</url>
       <title>TCEA Vibe-Coded Solutions — Updates</title>
       <link>https://mglearn.github.io/tcea/</link>
     </image>
     <item>
+      <title>🎲 Relic Rooms</title>
+      <link>https://mglearn.github.io/tcea/relic-rooms/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/relic-rooms/index.html</guid>
+      <category>Games, Activities, and Specialty Builds</category>
+      <pubDate>Fri, 24 Jul 2026 23:57:19 GMT</pubDate>
+      <description>A series of self-contained, seven-language investigation activities: students examine nine illustrated mystery exhibits in three steps — identify it, understand its purpose, and connect it to what came next. Aligned to the Texas Essential Knowledge and Skills across science, social studies, technology applications, and career. Starts with The Vanished Classroom.</description>
+    </item>
+    <item>
       <title>🎲 The Vanished Classroom</title>
       <link>https://mglearn.github.io/tcea/tvc/index.html</link>
       <guid isPermaLink="true">https://mglearn.github.io/tcea/tvc/index.html</guid>
       <category>Games, Activities, and Specialty Builds</category>
-      <pubDate>Fri, 24 Jul 2026 18:08:24 GMT</pubDate>
-      <description>A standalone investigation activity (grades 4-8) about instructional practices from the 1800s that classrooms no longer use. Students examine nine teaching relics — slate, hornbook, recitation, the dunce cap, and more — and uncover each one's purpose, limitation, and modern replacement. Seven languages, with a score and printable reflection.</description>
+      <pubDate>Fri, 24 Jul 2026 18:22:29 GMT</pubDate>
+      <description>A standalone investigation activity (grades 4-8) about instructional practices from the 1800s that classrooms no longer use. Students examine nine teaching relics — slate, hornbook, recitation, the dunce cap, and more — and uncover each one's purpose, limitation, and modern replacement. Seven languages, with a score and printable reflection. Part of the Relic Rooms series.</description>
     </item>
     <item>
       <title>🤖 Build Your Handbook: Claude vs. ChatGPT</title>
@@ -323,14 +331,6 @@
       <category>Games, Activities, and Specialty Builds</category>
       <pubDate>Sat, 20 Jun 2026 17:49:04 GMT</pubDate>
       <description>The session companion site with library use cases, starter prompts, and downloadable tools for vibe-coding free alternatives to Padlet, Slido, and FigJam.</description>
-    </item>
-    <item>
-      <title>⭐ Vibe-Coding for Librarians</title>
-      <link>https://mglearn.github.io/tcea/vcl/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/vcl/index.html</guid>
-      <category>Featured Vibe-Coded Solutions</category>
-      <pubDate>Sat, 20 Jun 2026 03:30:40 GMT</pubDate>
-      <description>A companion website with librarian-focused tools, use cases, prompts, and downloadable vibe-coding resources.</description>
     </item>
   </channel>
 </rss>

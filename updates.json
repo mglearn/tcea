@@ -1,12 +1,19 @@
 {
-  "generated": "2026-07-24T18:08:25.113Z",
+  "generated": "2026-07-24T23:57:20.140Z",
   "items": [
+    {
+      "href": "relic-rooms/index.html",
+      "title": "Relic Rooms",
+      "category": "Games, Activities, and Specialty Builds",
+      "icon": "🎲",
+      "date": "2026-07-24T23:57:19.857Z"
+    },
     {
       "href": "tvc/index.html",
       "title": "The Vanished Classroom",
       "category": "Games, Activities, and Specialty Builds",
       "icon": "🎲",
-      "date": "2026-07-24T18:08:24.830Z"
+      "date": "2026-07-24T13:22:29-05:00"
     },
     {
       "href": "byh/index.html",
@@ -273,13 +280,6 @@
       "category": "Games, Activities, and Specialty Builds",
       "icon": "🎲",
       "date": "2026-06-20T12:49:04-05:00"
-    },
-    {
-      "href": "vcl/index.html",
-      "title": "Vibe-Coding for Librarians",
-      "category": "Featured Vibe-Coded Solutions",
-      "icon": "⭐",
-      "date": "2026-06-19T22:30:40-05:00"
     }
   ]
 }
