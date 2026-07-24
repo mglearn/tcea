@@ -7,7 +7,8 @@ replaced it), earn points, and finish with a score screen and a printable
 reflection.
 
 The first build of this pattern was **The Technology Graveyard** (outdated
-technology). The second, **The Vanished Classroom** (`breakouts/tvc/`), reused
+technology). The second, **The Vanished Classroom** (top-level `tvc/`, a
+self-contained activity that bundles its own i18n engine), reused
 this guide for *instructional practices from the 1800s* and added the shared
 language switcher. Follow the steps below to make another one on any topic.
 
@@ -90,7 +91,9 @@ display but tracks the original index, so:
 
 ## 3. Steps to build a new one
 
-1. **Copy `breakouts/tvc/` to `breakouts/<new-acronym>/`.** Pick a short, unique
+1. **Copy `tvc/` to `breakouts/<new-acronym>/`.** (For a breakout under
+   `breakouts/`, load the shared `../assets/i18n.js` instead of bundling a local
+   `i18n.js` as `tvc/` does.) Pick a short, unique
    folder acronym (existing ones: `tvc`, plus `july4`, `july5th`, `idioms`, …).
 2. **Rewrite the exhibits** in `script.js` (`EXHIBITS.en`) for your topic — 9
    exhibits, correct-first, per the model above.

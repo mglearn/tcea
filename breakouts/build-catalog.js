@@ -220,9 +220,6 @@ const SUITES = [
   { id: 'pst', name: 'Problem-Solving Teaching (PBL Units, Grades 3–8)', accent: '#4f3a8c',
     desc: 'Problem-Based Learning units for the Texas history and social-studies classroom — real, ill-structured problems students work as stakeholders, built deliberately from surface to deep to transfer learning. Not breakouts (no locks). Aligned to the social studies TEKS (19 TAC Ch.113). Seven languages.',
     landing: '../pst/index.html', correlation: '../pst/correlation.html', activity: true },
-  { id: 'tvc', name: 'The Vanished Classroom (Grades 4–8)', accent: '#a86a1e',
-    desc: 'A standalone investigation breakout: students examine nine teaching relics from the 1800s — slate, hornbook, rote recitation, the dunce cap, blab school, and more — and uncover each one’s purpose, limitation, and modern replacement. Earns a score and a printable reflection. Seven languages.',
-    landing: 'tvc/index.html', activity: true },
 ];
 
 const breakouts = [...clearMeta(), ...localeMeta('july4'), ...localeMeta('july5th'), ...bibleMeta(), ...scienceMeta(), ...idiomsMeta()];

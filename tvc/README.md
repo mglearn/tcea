@@ -1,14 +1,15 @@
 # The Vanished Classroom (`tvc`)
 
-A single-page **investigation breakout** about **instructional practices from the
+A single-page **investigation activity** about **instructional practices from the
 1800s that classrooms no longer use**. Students explore nine "relics," and for
 each one answer three questions — *Identify it → What problem did it solve? → What
 replaced it?* — earning up to **27 points**, then finish with a score level and a
 printable **History Detective Reflection**.
 
 Built from the reusable pattern documented in
-[`../GRAVEYARD-STYLE-BREAKOUT-GUIDE.md`](../GRAVEYARD-STYLE-BREAKOUT-GUIDE.md),
-modeled on *The Technology Graveyard*.
+[`../breakouts/GRAVEYARD-STYLE-BREAKOUT-GUIDE.md`](../breakouts/GRAVEYARD-STYLE-BREAKOUT-GUIDE.md),
+modeled on *The Technology Graveyard*. It is a self-contained, top-level activity
+(bundles its own copy of the i18n engine) — no longer part of the breakouts suite.
 
 ## The nine exhibits
 
@@ -30,6 +31,7 @@ replacement**.
 | File | Purpose |
 |------|---------|
 | `index.html` | Structure + six screens, marked up for i18n; loads the switcher, language packs, then the engine. |
+| `i18n.js` | Bundled copy of the shared language-switcher engine (makes the activity self-contained). |
 | `styles.css` | Dusk/schoolhouse theme; responsive, RTL-aware, print + reduced-motion styles. |
 | `script.js` | English UI + exhibit data and the whole engine (render, score, save, reflect, print). |
 | `lang/*.js` | Translation packs: `es`, `vi`, `ar`, `hi`, `ur`, `zh`. |
@@ -37,8 +39,8 @@ replacement**.
 
 ## Languages
 
-The 🌐 switcher in the top bar offers seven languages via the shared engine
-(`../assets/i18n.js`): English, Español, Tiếng Việt, العربية, हिन्दी, اردو, 中文.
+The 🌐 switcher in the top bar offers seven languages via the bundled engine
+(`i18n.js`): English, Español, Tiếng Việt, العربية, हिन्दी, اردو, 中文.
 The choice is remembered per device and can be shared with `?lang=es` (etc.).
 Because answers are stored by choice **index**, switching language mid-activity
 never disturbs a student's score or saved progress.

@@ -6,19 +6,19 @@
     <atom:link href="https://mglearn.github.io/tcea/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated HTML tools, dashboards, prompt libraries, and classroom resources from TCEA.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Jul 2026 17:16:56 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2026 18:08:25 GMT</lastBuildDate>
     <image>
       <url>https://mglearn.github.io/tcea/favicon.svg</url>
       <title>TCEA Vibe-Coded Solutions — Updates</title>
       <link>https://mglearn.github.io/tcea/</link>
     </image>
     <item>
-      <title>🕵️ The Vanished Classroom</title>
-      <link>https://mglearn.github.io/tcea/breakouts/tvc/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/tvc/index.html</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Fri, 24 Jul 2026 17:16:56 GMT</pubDate>
-      <description>A standalone investigation breakout (grades 4-8) about instructional practices from the 1800s that classrooms no longer use. Students examine nine teaching relics — slate, hornbook, recitation, the dunce cap, and more — and uncover each one's purpose, limitation, and modern replacement. Seven languages, with a score and printable reflection.</description>
+      <title>🎲 The Vanished Classroom</title>
+      <link>https://mglearn.github.io/tcea/tvc/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/tvc/index.html</guid>
+      <category>Games, Activities, and Specialty Builds</category>
+      <pubDate>Fri, 24 Jul 2026 18:08:24 GMT</pubDate>
+      <description>A standalone investigation activity (grades 4-8) about instructional practices from the 1800s that classrooms no longer use. Students examine nine teaching relics — slate, hornbook, recitation, the dunce cap, and more — and uncover each one's purpose, limitation, and modern replacement. Seven languages, with a score and printable reflection.</description>
     </item>
     <item>
       <title>🤖 Build Your Handbook: Claude vs. ChatGPT</title>

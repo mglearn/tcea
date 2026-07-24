@@ -770,13 +770,13 @@
     "desc": "Grade-band breakout activities (3-5, 6-8, 9-12) across ELA, science, and social studies that teach evidence-based reasoning, available in seven languages."
   },
   {
-    "category": "breakouts",
+    "category": "activities",
     "featured": false,
     "external": false,
-    "href": "breakouts/tvc/index.html",
-    "tag": "Investigation Breakout",
+    "href": "tvc/index.html",
+    "tag": "Investigation Activity",
     "title": "The Vanished Classroom",
-    "desc": "A standalone investigation breakout (grades 4-8) about instructional practices from the 1800s that classrooms no longer use. Students examine nine teaching relics &mdash; slate, hornbook, recitation, the dunce cap, and more &mdash; and uncover each one's purpose, limitation, and modern replacement. Seven languages, with a score and printable reflection."
+    "desc": "A standalone investigation activity (grades 4-8) about instructional practices from the 1800s that classrooms no longer use. Students examine nine teaching relics &mdash; slate, hornbook, recitation, the dunce cap, and more &mdash; and uncover each one's purpose, limitation, and modern replacement. Seven languages, with a score and printable reflection."
   },
   {
     "category": "breakouts",
