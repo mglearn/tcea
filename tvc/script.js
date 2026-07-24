@@ -45,6 +45,43 @@ const SOURCES = {
   oneroom: [{ label: "Wikipedia: One-room school", url: "https://en.wikipedia.org/wiki/One-room_school" }]
 };
 
+/* Ground clutter drawn at the foot of each tombstone so no two look alike and
+   the cemetery feels weathered: tufts of grass and broken rubble. Inline SVG
+   (no URL-encoding needed). Per-exhibit kind keeps each stone consistent. */
+const TOMB_GRASS =
+  '<g fill="none" stroke-linecap="round">' +
+  '<path d="M16 44 C14 33 13 27 10 17" stroke="#4e6b39" stroke-width="3.2"/>' +
+  '<path d="M22 44 C22 31 23 25 26 15" stroke="#5f7d47" stroke-width="3"/>' +
+  '<path d="M28 44 C29 34 31 29 35 21" stroke="#6f8f52" stroke-width="2.6"/>' +
+  '<path d="M34 44 C36 35 39 31 45 25" stroke="#557143" stroke-width="2.4"/>' +
+  '<path d="M116 44 C114 32 113 26 111 18" stroke="#4e6b39" stroke-width="3"/>' +
+  '<path d="M122 44 C122 30 123 24 125 15" stroke="#6f8f52" stroke-width="2.8"/>' +
+  '<path d="M128 44 C130 33 133 28 138 22" stroke="#5f7d47" stroke-width="2.5"/>' +
+  '<path d="M206 44 C205 33 205 27 203 19" stroke="#557143" stroke-width="2.8"/>' +
+  '<path d="M212 44 C212 31 213 25 216 16" stroke="#5f7d47" stroke-width="3"/>' +
+  '<path d="M218 44 C220 34 223 30 229 23" stroke="#6f8f52" stroke-width="2.5"/>' +
+  '</g>';
+const TOMB_RUBBLE =
+  '<g>' +
+  '<polygon points="24,44 35,29 50,32 57,44" fill="#9a94a0"/>' +
+  '<polygon points="50,44 59,33 70,37 74,44" fill="#8b8491"/>' +
+  '<polygon points="14,44 22,37 31,39 33,44" fill="#b3adb6"/>' +
+  '<polygon points="197,44 204,25 214,27 213,44" fill="#a29ba6"/>' +
+  '<polygon points="211,44 216,34 225,38 228,44" fill="#8b8491"/>' +
+  '<polygon points="186,44 192,38 200,40 201,44" fill="#b3adb6"/>' +
+  '</g>';
+// kinds by exhibit index: mix of grass, rubble, both, and one clean stone
+const TOMB_GROUND = ["grass", "rubble", "grass", "both", "none", "rubble", "both", "grass", "rubble"];
+function groundSVG(index) {
+  const kind = TOMB_GROUND[index] || "none";
+  if (kind === "none") return "";
+  const inner = kind === "grass" ? TOMB_GRASS
+    : kind === "rubble" ? TOMB_RUBBLE
+    : TOMB_RUBBLE + TOMB_GRASS; // rubble behind, grass in front
+  return '<span class="tomb-base" aria-hidden="true"><svg viewBox="0 0 240 44" ' +
+    'preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">' + inner + '</svg></span>';
+}
+
 /* ---------------------------------------------------------------------------
    UI chrome dictionary (BreakoutI18n). English is the source language.
    The es/vi/ar/hi/ur/zh packs are merged in from lang-packs below.
@@ -489,6 +526,7 @@ function renderExhibitGrid() {
       <span class="tomb-dates">${ERAS[exhibit.id] || ""}</span>
       <span class="tomb-status">${record.completed ? t("reveal.points", { points: record.points, max: POINTS_PER_EXHIBIT }) : t("card.needs")}</span>
       <span class="status-pill">${record.completed ? t("card.review") : t("card.investigate")}</span>
+      ${groundSVG(index)}
     `;
     button.addEventListener("click", () => openExhibit(index));
     elements.grid.append(button);
