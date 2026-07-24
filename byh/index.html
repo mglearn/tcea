@@ -111,6 +111,34 @@
   }
   .source .pdf-btn:hover{background:var(--gold-light);}
 
+  .prompt-block{
+    margin-top:32px;background:#fff;border:1px solid var(--gray-line);
+    border-radius:14px;padding:24px 22px;box-shadow:0 2px 10px rgba(10,52,118,.05);
+  }
+  .prompt-block h2{margin:0 0 6px;font-size:1.15rem;}
+  .prompt-lede{margin:0 0 16px;color:var(--text-soft);font-size:.95rem;max-width:62ch;}
+  .prompt-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px;}
+  .btn-copy{
+    background:var(--navy);color:#fff;font-weight:700;font-size:.95rem;border:none;
+    padding:11px 18px;border-radius:8px;cursor:pointer;transition:background .15s;
+  }
+  .btn-copy:hover{background:var(--navy-dark);}
+  .btn-copy.copied{background:var(--chatgpt);}
+  .btn-md{
+    display:inline-block;font-weight:700;font-size:.95rem;color:var(--navy);
+    text-decoration:none;padding:11px 16px;border:1px solid var(--gray-line);border-radius:8px;
+  }
+  .btn-md:hover{background:var(--gray-bg);}
+  .prompt-details summary{
+    cursor:pointer;font-weight:600;color:var(--navy);font-size:.95rem;padding:6px 0;
+  }
+  .prompt-pre{
+    margin:12px 0 0;background:var(--navy-dark);color:#eef2f8;border-radius:10px;
+    padding:18px;overflow:auto;max-height:460px;font-size:.82rem;line-height:1.5;
+    white-space:pre-wrap;word-wrap:break-word;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+
   footer{border-top:1px solid var(--gray-line);padding:26px 0;color:var(--text-soft);font-size:.9rem;}
   footer a{font-weight:600;}
 </style>
@@ -167,6 +195,19 @@
       </div>
       <a class="pdf-btn" href="Ardent_Elementary_Staff_Handbook_2026-2027.pdf">Open source PDF ↓</a>
     </div>
+
+    <section class="prompt-block" aria-labelledby="prompt-h">
+      <h2 id="prompt-h">The prompt behind both versions</h2>
+      <p class="prompt-lede">Claude and ChatGPT were each given the <em>same</em> instructions below, along with the PDF. Copy it to run the experiment yourself.</p>
+      <div class="prompt-actions">
+        <button type="button" id="copyPrompt" class="btn-copy">Copy prompt</button>
+        <a class="btn-md" href="prompt.md">Open as Markdown ↗</a>
+      </div>
+      <details class="prompt-details">
+        <summary>Show the full prompt</summary>
+        <pre id="promptView" class="prompt-pre" tabindex="0">Loading…</pre>
+      </details>
+    </section>
   </div>
 </main>
 
@@ -175,5 +216,390 @@
     A <a href="https://tcea.org">TCEA</a> "Build Your Handbook" demo · comparing AI-assisted document conversion. The Ardent Elementary handbook is used here as a sample document.
   </div>
 </footer>
+
+<script type="text/plain" id="promptSrc">You are an experienced web developer, information architect, accessibility specialist, and school communications editor.
+
+Convert the attached PDF handbook into a single, standalone HTML webpage that is easier to search, read, and use than the original PDF.
+
+## Primary Goal
+
+Create a practical handbook webpage that helps users quickly answer common questions without scrolling through the entire document.
+
+The webpage must preserve the meaning of the original handbook. Do not invent, reinterpret, simplify away, or change any policy.
+
+## Source Rules
+
+Use only information found in the attached PDF.
+
+For every policy, answer, scenario, or summary:
+
+* Preserve the original meaning
+* Include the handbook page number
+* Include a short source reference such as "Source: Handbook, page 18"
+* Clearly mark anything unclear or missing as "Needs review"
+* Do not guess
+* Do not add legal advice
+* Do not rewrite mandatory language in a way that changes its meaning
+
+When exact wording matters, quote the relevant sentence or display it in a clearly labeled "Official wording" section.
+
+## Output Format
+
+Create one complete, self-contained HTML file.
+
+The file must:
+
+* Include all HTML, CSS, and JavaScript in one file
+* Work when opened locally in a browser
+* Require no server
+* Require no login
+* Collect no user data
+* Use no analytics
+* Use no external JavaScript libraries
+* Use no Gen AI service at runtime
+* Work on phones, tablets, Chromebooks, and desktop computers
+* Be suitable for GitHub Pages or a district website
+
+Return only the complete HTML file inside one code block.
+
+## Page Structure
+
+Include these sections.
+
+### 1. Header
+
+Include:
+
+* Handbook title
+* Organization or district name, when available
+* Handbook year or effective date
+* A short statement explaining that the webpage is a navigation aid and that the original handbook remains the official source
+* A link or clearly marked placeholder for the original PDF
+
+### 2. Search
+
+Add a large search box near the top.
+
+Search must:
+
+* Search headings, questions, answers, keywords, scenarios, and page references
+* Filter results as the user types
+* Highlight matching terms
+* Display the number of matches
+* Show a clear "No results found" message
+* Include a reset button
+* Support common synonyms
+
+Create a synonym list based on likely user language. Examples:
+
+* Sick leave, sick days, illness
+* Personal leave, personal days
+* Absence, absent, attendance
+* Dress code, clothing, attire
+* Cell phone, mobile phone, device
+* Discipline, consequences, violation
+* Benefits, insurance, coverage
+* Pay, salary, compensation
+* Complaint, grievance, concern
+
+Do not add synonyms that could change the policy meaning.
+
+### 3. Quick Answers
+
+Create a "Most Asked Questions" section with approximately ten to twenty common questions, based on the handbook content.
+
+Examples may include:
+
+* How many personal days are available?
+* Who should I contact when I am absent?
+* What is the dress code?
+* What happens if I arrive late?
+* What is the procedure for reporting a concern?
+* When can personal devices be used?
+* What approvals are required for travel?
+* Where can I find benefits information?
+
+Only include questions supported by the handbook.
+
+Each answer must include:
+
+* A concise plain-language summary
+* Official wording when necessary
+* Page number
+* A button or link that opens the full related section
+
+### 4. Browse by Topic
+
+Organize the handbook into clear topic sections.
+
+Possible categories include:
+
+* Attendance and Work Hours
+* Leave and Absences
+* Professional Conduct
+* Dress and Appearance
+* Technology Use
+* Communication
+* Student Safety
+* Employee Responsibilities
+* Benefits and Compensation
+* Evaluations
+* Complaints and Grievances
+* Emergency Procedures
+* Travel and Purchasing
+* Forms and Contacts
+
+Use only categories that fit the attached handbook.
+
+Display topics as accessible accordions using native HTML <details> and <summary> elements.
+
+The first section may be open by default.
+
+### 5. Scenario Finder
+
+Create a section called "What Should I Do If...?"
+
+Turn applicable handbook policies into realistic workplace scenarios.
+
+Examples:
+
+* I wake up sick before work
+* I need to leave early
+* I am running late
+* A parent contacts me with a complaint
+* I see a possible safety concern
+* I want to use a personal device for work
+* I need approval for a purchase
+* I have a question about leave
+* I disagree with a decision
+* I need to report harassment or misconduct
+
+For each scenario, include:
+
+* Situation
+* Immediate action
+* Who to contact
+* Important limits or deadlines
+* Relevant policy section
+* Handbook page number
+* A reminder to review the official wording before taking action
+
+Do not create a scenario unless the handbook supports the response.
+
+### 6. Step-by-Step Procedures
+
+Where the handbook describes a process, convert it into numbered steps.
+
+Examples:
+
+* Reporting an absence
+* Requesting leave
+* Filing a complaint
+* Reporting an accident
+* Requesting reimbursement
+* Responding to an emergency
+* Submitting a purchase request
+* Reporting suspected misconduct
+
+Keep each step short and accurate.
+
+Include page references.
+
+### 7. Key Contacts
+
+Extract relevant roles, departments, phone numbers, email addresses, office names, and websites.
+
+Do not invent missing contact information.
+
+When a contact is described only by role, list the role rather than guessing a person's name.
+
+### 8. Important Dates and Deadlines
+
+Extract:
+
+* Effective dates
+* Submission deadlines
+* Renewal dates
+* Reporting windows
+* Notification requirements
+* Appeal deadlines
+* Training deadlines
+
+Display them in a simple table.
+
+If the handbook contains no dates or deadlines, omit this section.
+
+### 9. Forms and Resources
+
+Create a list of forms, portals, websites, appendices, and related documents mentioned in the handbook.
+
+Include:
+
+* Resource name
+* Purpose
+* Where it is found
+* Handbook page number
+* Link, when a valid link appears in the PDF
+
+### 10. Full Handbook View
+
+Include a complete structured version of the handbook content.
+
+Break long sections into readable subsections.
+
+Preserve:
+
+* Heading hierarchy
+* Numbered procedures
+* Lists
+* Tables
+* Warnings
+* Definitions
+* Exceptions
+* Required language
+
+Do not omit policies merely because they are not common questions.
+
+## Navigation Features
+
+Include:
+
+* Sticky top navigation
+* Jump links to major sections
+* Back-to-top buttons
+* Expand all and collapse all controls
+* Print button
+* Clear-search button
+* Copy-link buttons for major sections
+* URL anchors so each section can be linked directly
+
+## Design Requirements
+
+Use a clean, professional education design.
+
+Color palette:
+
+* Navy: #0A3476
+* Gold: #FCB040
+* White
+* Light gray
+* Dark readable text
+
+Use:
+
+* Large readable headings
+* Generous spacing
+* White content cards
+* Light borders
+* Clear buttons
+* Simple icons made with text or inline SVG
+* No decorative clutter
+* No background animations
+
+Do not use stylized or distorted lettering.
+
+## Accessibility Requirements
+
+Follow WCAG 2.1 AA practices.
+
+Include:
+
+* Semantic HTML
+* Correct heading order
+* Keyboard-accessible controls
+* Visible focus indicators
+* Descriptive link text
+* Form labels
+* ARIA only when native HTML is insufficient
+* Adequate color contrast
+* Responsive reflow
+* Support for browser zoom
+* Reduced-motion support
+* Print-friendly styling
+* No information communicated through color alone
+
+Any tables must include proper headers.
+
+Any icons must include accessible labels or be marked decorative.
+
+## Reading and Writing Style
+
+Write summaries at approximately a grade seven to eight reading level.
+
+Use:
+
+* Short paragraphs
+* Direct wording
+* Plain language
+* Clear labels
+* Short questions
+* Short procedural steps
+
+Do not:
+
+* Use promotional language
+* Use vague summaries
+* Add commentary
+* Add legal interpretations
+* Replace precise policy terms with casual wording when precision matters
+
+## Quality-Control Section
+
+At the bottom of the webpage, include a hidden or collapsible "Content Review Checklist."
+
+List:
+
+* Policies that may need human review
+* Unclear scanned text
+* Missing page numbers
+* Broken or incomplete links
+* Conflicting wording
+* Missing contact information
+* Dates that may be outdated
+* Sections that could not be confidently categorized
+
+## Final Validation
+
+Before returning the HTML:
+
+1. Confirm every answer is grounded in the PDF
+2. Confirm every scenario includes a page reference
+3. Confirm no policy was invented
+4. Confirm the search works
+5. Confirm accordions work without JavaScript
+6. Confirm JavaScript is used only for enhancements such as search, filtering, highlighting, printing, and copying links
+7. Confirm the page works without external files
+8. Confirm it is usable on a phone
+9. Confirm all visible text is free of typos
+10. Confirm the original handbook is identified as the official source
+
+Return the finished result as one complete HTML file inside one code block. Do not provide an outline, explanation, or partial sample.</script>
+
+<script>
+  (function(){
+    var src = document.getElementById('promptSrc');
+    var view = document.getElementById('promptView');
+    var btn = document.getElementById('copyPrompt');
+    if(!src || !view || !btn) return;
+    var text = src.textContent.replace(/^\n/, '');
+    view.textContent = text;
+    btn.addEventListener('click', function(){
+      var done = function(){
+        btn.textContent = 'Copied ✓';
+        btn.classList.add('copied');
+        setTimeout(function(){ btn.textContent = 'Copy prompt'; btn.classList.remove('copied'); }, 2000);
+      };
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done, function(){ fallback(); });
+      } else { fallback(); }
+      function fallback(){
+        var r = document.createRange(); r.selectNodeContents(view);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        try { document.execCommand('copy'); done(); } catch(e){}
+        s.removeAllRanges();
+      }
+    });
+  })();
+</script>
 </body>
 </html>
