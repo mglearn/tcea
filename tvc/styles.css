@@ -430,46 +430,28 @@ p {
 }
 
 .tombstone-card {
-  --stone-a: #e3ded3;
-  --stone-b: #cbc5b9;
-  --stone-c: #ada4aa;
-  --moss: none;
-  --radius: 46% 46% 10px 10px / 30% 30% 10px 10px;
-  --radius-inner: 44% 44% 8px 8px / 28% 28% 8px 8px;
   --tilt: 0deg;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 284px;
-  padding: 26px 22px 20px;
-  color: #322a24;
-  background:
-    radial-gradient(circle at 50% 8%, rgba(255, 255, 255, 0.5), transparent 26%),
-    var(--moss),
-    repeating-linear-gradient(92deg, rgba(120, 110, 120, 0.05) 0 3px, transparent 3px 7px),
-    repeating-linear-gradient(6deg, rgba(90, 80, 90, 0.04) 0 5px, transparent 5px 11px),
-    linear-gradient(180deg, var(--stone-a) 0%, var(--stone-b) 54%, var(--stone-c) 100%);
+  width: 100%;
+  aspect-ratio: 1111 / 1065;
+  padding: 15% 15% 9%;
+  color: #2c2620;
+  /* real limestone headstone (transparent PNG) used for every stone */
+  background: url("images/tombstone.png") center / 100% 100% no-repeat;
   border: 0;
-  border-radius: var(--radius);
-  box-shadow:
-    inset 0 10px 16px rgba(255, 255, 255, 0.32),
-    inset 0 -20px 28px rgba(66, 56, 66, 0.26),
-    0 16px 30px rgba(0, 0, 0, 0.3);
   font-family: Georgia, "Times New Roman", serif;
   text-align: center;
   transform: rotate(var(--tilt));
   transform-origin: bottom center;
+  filter: drop-shadow(0 6px 5px rgba(0, 0, 0, 0.32));
 }
 
-/* engraved inner border that follows the headstone's shape */
+/* the real stone already has its own carved edge — no drawn border needed */
 .tombstone-card::before {
-  content: "";
-  position: absolute;
-  inset: 12px 14px 14px;
-  border: 2px solid rgba(84, 72, 82, 0.32);
-  border-radius: var(--radius-inner);
-  pointer-events: none;
+  content: none;
 }
 
 .tombstone-card > * {
@@ -499,49 +481,17 @@ p {
   transform: translateY(-4px) rotate(var(--tilt));
 }
 
-/* --- Cemetery variation: each stone its own shape, stone, weathering, lean.
-   Shapes: round tablet, gothic pointed arch, rounded shoulders, flat slab, oval.
-   Bottoms sit on a common ground line (grid align-items:end); heights vary. --- */
-.tomb-v1 { /* slate — pale limestone, round, leaning left, moss at base */
-  --stone-a: #e7e2d7; --stone-b: #d0cabe; --stone-c: #b2a9af; --tilt: -1.2deg; min-height: 292px;
-  --moss: radial-gradient(58% 40% at 16% 92%, rgba(96, 120, 74, 0.26), transparent 62%);
-}
-.tomb-v2 { /* hornbook — grey granite, gothic pointed arch, slight right */
-  --stone-a: #d5d4d7; --stone-b: #bbb9be; --stone-c: #95929c; --tilt: 0.9deg; min-height: 306px; max-width: 92%; margin-inline: auto;
-  --radius: 50% 50% 8px 8px / 82% 82% 8px 8px; --radius-inner: 50% 50% 6px 6px / 76% 76% 6px 6px;
-}
-.tomb-v3 { /* recitation — sandstone tan, rounded shoulders, upright, short, mossy */
-  --stone-a: #e5d9c3; --stone-b: #cdbca1; --stone-c: #ac9c91; --tilt: 0deg; min-height: 262px;
-  --radius: 34% 34% 10px 10px / 20% 20% 10px 10px; --radius-inner: 32% 32% 8px 8px / 18% 18% 8px 8px;
-  --moss: radial-gradient(50% 34% at 84% 90%, rgba(104, 122, 82, 0.22), transparent 60%);
-}
-.tomb-v4 { /* dunce — weathered green-grey, flat slab, leaning right */
-  --stone-a: #d4d7ca; --stone-b: #b5baa8; --stone-c: #909686; --tilt: 1.5deg; min-height: 266px;
-  --radius: 10px; --radius-inner: 6px;
-}
-.tomb-v5 { /* blab — pale limestone, oval top, slight left */
-  --stone-a: #e7e3d9; --stone-b: #d1cbc0; --stone-c: #b4abb1; --tilt: -0.6deg; min-height: 296px;
-  --radius: 50% 50% 44% 44% / 42% 42% 32% 32%; --radius-inner: 46% 46% 40% 40% / 38% 38% 28% 28%;
-}
-.tomb-v6 { /* copybook — dark slate granite, round tablet, slight right */
-  --stone-a: #c8c5cb; --stone-b: #aaa7b1; --stone-c: #85808e; --tilt: 0.5deg; min-height: 280px;
-}
-.tomb-v7 { /* rod — mossy green-grey, narrow gothic, leaning most (neglected) */
-  --stone-a: #cdd0c3; --stone-b: #aeb3a1; --stone-c: #888e7d; --tilt: -1.8deg; min-height: 300px; max-width: 76%; margin-inline: auto;
-  --radius: 50% 50% 8px 8px / 84% 84% 8px 8px; --radius-inner: 50% 50% 6px 6px / 78% 78% 6px 6px;
-  --moss:
-    radial-gradient(60% 42% at 15% 90%, rgba(92, 118, 70, 0.32), transparent 60%),
-    radial-gradient(32% 24% at 82% 12%, rgba(110, 122, 88, 0.24), transparent 60%);
-}
-.tomb-v8 { /* monitorial — sandstone, wide flat slab, tiny tilt, short */
-  --stone-a: #e3d7c1; --stone-b: #cbba9f; --stone-c: #aa9b90; --tilt: 0.3deg; min-height: 268px;
-  --radius: 12px; --radius-inner: 7px;
-}
-.tomb-v9 { /* oneroom — limestone, rounded shoulders, slight left, moss */
-  --stone-a: #e6e1d6; --stone-b: #cfc9bd; --stone-c: #b1a8ae; --tilt: -0.4deg; min-height: 288px;
-  --radius: 34% 34% 10px 10px / 20% 20% 10px 10px; --radius-inner: 32% 32% 8px 8px / 18% 18% 8px 8px;
-  --moss: radial-gradient(54% 36% at 18% 92%, rgba(96, 120, 74, 0.24), transparent 62%);
-}
+/* --- One real stone for all nine, kept from looking mechanical by a subtle
+   per-stone lean and a couple of smaller (further-worn) stones. --- */
+.tomb-v1 { --tilt: -1.2deg; }
+.tomb-v2 { --tilt: 0.9deg; max-width: 92%; margin-inline: auto; }
+.tomb-v3 { --tilt: 0deg; }
+.tomb-v4 { --tilt: 1.4deg; }
+.tomb-v5 { --tilt: -0.6deg; }
+.tomb-v6 { --tilt: 0.5deg; }
+.tomb-v7 { --tilt: -1.8deg; max-width: 82%; margin-inline: auto; }
+.tomb-v8 { --tilt: 0.3deg; }
+.tomb-v9 { --tilt: -0.4deg; }
 
 .tombstone-card .tomb-rip {
   font-size: 0.82rem;
