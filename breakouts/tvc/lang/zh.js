@@ -53,6 +53,8 @@ window.__TVC_LANG_PACKS__.zh = {
     "reveal.purpose": "最初的用途",
     "reveal.limitation": "主要局限",
     "reveal.replacement": "现代的取代物",
+    "reveal.era": "常见使用年代",
+    "reveal.sources": "了解更多",
     "reveal.score": "得分",
     "reveal.points": "{points} 分（满分 {max} 分）",
     "card.needs": "有待调查",

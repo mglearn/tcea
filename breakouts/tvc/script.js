@@ -28,6 +28,23 @@ const ERAS = {
   oneroom: "c. 1700s – 1950s"
 };
 
+/* Verifiable reference links per exhibit (checked to resolve). English
+   Wikipedia is used as a stable, cited starting point across all languages. */
+const SOURCES = {
+  slate: [{ label: "Wikipedia: Slate (writing)", url: "https://en.wikipedia.org/wiki/Slate_(writing)" }],
+  hornbook: [{ label: "Wikipedia: Hornbook", url: "https://en.wikipedia.org/wiki/Hornbook" }],
+  recitation: [{ label: "Wikipedia: Rote learning", url: "https://en.wikipedia.org/wiki/Rote_learning" }],
+  dunce: [{ label: "Wikipedia: Dunce", url: "https://en.wikipedia.org/wiki/Dunce" }],
+  blab: [{ label: "Wikipedia: Blab school", url: "https://en.wikipedia.org/wiki/Blab_school" }],
+  copybook: [
+    { label: "Wikipedia: Penmanship", url: "https://en.wikipedia.org/wiki/Penmanship" },
+    { label: "Wikipedia: Spencerian script", url: "https://en.wikipedia.org/wiki/Spencerian_script" }
+  ],
+  rod: [{ label: "Wikipedia: School corporal punishment", url: "https://en.wikipedia.org/wiki/School_corporal_punishment" }],
+  monitorial: [{ label: "Wikipedia: Monitorial System", url: "https://en.wikipedia.org/wiki/Monitorial_System" }],
+  oneroom: [{ label: "Wikipedia: One-room school", url: "https://en.wikipedia.org/wiki/One-room_school" }]
+};
+
 /* ---------------------------------------------------------------------------
    UI chrome dictionary (BreakoutI18n). English is the source language.
    The es/vi/ar/hi/ur/zh packs are merged in from lang-packs below.
@@ -86,6 +103,8 @@ const UI = {
     "reveal.purpose": "Original purpose",
     "reveal.limitation": "Major limitation",
     "reveal.replacement": "Modern replacement",
+    "reveal.era": "Era of common use",
+    "reveal.sources": "Learn more",
     "reveal.score": "Score",
     "reveal.points": "{points} of {max} points",
     "card.needs": "Needs investigation",
@@ -637,15 +656,21 @@ function showFeedback(result, completed, attempt) {
 
 function showCompletedReveal(exhibit, record) {
   elements.exhibitTitle.textContent = exhibit.relic;
+  const era = ERAS[exhibit.id] || "";
+  const links = (SOURCES[exhibit.id] || [])
+    .map((s) => `<a href="${s.url}" target="_blank" rel="noopener noreferrer">${escapeHTML(s.label)}</a>`)
+    .join(" · ");
   elements.reveal.innerHTML = `
     <h3>${t("reveal.title")}</h3>
     <dl>
       <dt>${t("reveal.relic")}</dt><dd>${escapeHTML(exhibit.relic)}</dd>
+      ${era ? `<dt>${t("reveal.era")}</dt><dd>${escapeHTML(era)}</dd>` : ""}
       <dt>${t("reveal.purpose")}</dt><dd>${escapeHTML(exhibit.purpose)}</dd>
       <dt>${t("reveal.limitation")}</dt><dd>${escapeHTML(exhibit.limitation)}</dd>
       <dt>${t("reveal.replacement")}</dt><dd>${escapeHTML(exhibit.replacement)}</dd>
       <dt>${t("reveal.score")}</dt><dd>${t("reveal.points", { points: record.points, max: POINTS_PER_EXHIBIT })}</dd>
     </dl>
+    ${links ? `<p class="reveal-sources"><strong>${t("reveal.sources")}:</strong> ${links}</p>` : ""}
   `;
   elements.reveal.classList.add("active");
   elements.checkButton.classList.add("hidden");

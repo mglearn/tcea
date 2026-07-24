@@ -53,6 +53,8 @@ window.__TVC_LANG_PACKS__.hi = {
     "reveal.purpose": "मूल उद्देश्य",
     "reveal.limitation": "बड़ी सीमा",
     "reveal.replacement": "आधुनिक प्रतिस्थापन",
+    "reveal.era": "आम उपयोग का युग",
+    "reveal.sources": "अधिक जानें",
     "reveal.score": "स्कोर",
     "reveal.points": "{max} में से {points} अंक",
     "card.needs": "जाँच बाकी है",

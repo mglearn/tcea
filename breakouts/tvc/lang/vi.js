@@ -53,6 +53,8 @@ window.__TVC_LANG_PACKS__.vi = {
     "reveal.purpose": "Mục đích ban đầu",
     "reveal.limitation": "Hạn chế lớn",
     "reveal.replacement": "Thứ thay thế hiện đại",
+    "reveal.era": "Thời kỳ sử dụng phổ biến",
+    "reveal.sources": "Tìm hiểu thêm",
     "reveal.score": "Điểm số",
     "reveal.points": "{points} trên {max} điểm",
     "card.needs": "Cần điều tra",

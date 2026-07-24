@@ -53,6 +53,8 @@ window.__TVC_LANG_PACKS__.ur = {
     "reveal.purpose": "اصل مقصد",
     "reveal.limitation": "بڑی حد یا خامی",
     "reveal.replacement": "جدید متبادل",
+    "reveal.era": "عام استعمال کا دور",
+    "reveal.sources": "مزید جانیں",
     "reveal.score": "اسکور",
     "reveal.points": "{max} میں سے {points} پوائنٹس",
     "card.needs": "تحقیق درکار ہے",

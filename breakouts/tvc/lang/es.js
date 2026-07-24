@@ -53,6 +53,8 @@ window.__TVC_LANG_PACKS__.es = {
     "reveal.purpose": "Propósito original",
     "reveal.limitation": "Limitación principal",
     "reveal.replacement": "Reemplazo moderno",
+    "reveal.era": "Época de uso común",
+    "reveal.sources": "Más información",
     "reveal.score": "Puntuación",
     "reveal.points": "{points} de {max} puntos",
     "card.needs": "Necesita investigación",

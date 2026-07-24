@@ -710,6 +710,17 @@ p {
   margin: 0;
 }
 
+.reveal-sources {
+  margin: 14px 0 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.reveal-sources a {
+  color: var(--gold-light, #ffd98a);
+  font-weight: 700;
+}
+
 .action-row,
 .score-actions {
   display: flex;

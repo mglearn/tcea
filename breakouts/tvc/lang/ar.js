@@ -53,6 +53,8 @@ window.__TVC_LANG_PACKS__.ar = {
     "reveal.purpose": "الغرض الأصلي",
     "reveal.limitation": "العيب الرئيسي",
     "reveal.replacement": "البديل الحديث",
+    "reveal.era": "فترة الاستخدام الشائع",
+    "reveal.sources": "مزيد من المعلومات",
     "reveal.score": "النتيجة",
     "reveal.points": "{points} من أصل {max} نقاط",
     "card.needs": "بحاجة إلى تحقيق",
