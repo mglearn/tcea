@@ -1,12 +1,19 @@
 {
-  "generated": "2026-07-24T16:22:44.134Z",
+  "generated": "2026-07-24T17:16:56.487Z",
   "items": [
+    {
+      "href": "breakouts/tvc/index.html",
+      "title": "The Vanished Classroom",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-07-24T17:16:56.227Z"
+    },
     {
       "href": "byh/index.html",
       "title": "Build Your Handbook: Claude vs. ChatGPT",
       "category": "AI Prompt Libraries and Adoption",
       "icon": "🤖",
-      "date": "2026-07-24T16:22:42.949Z"
+      "date": "2026-07-24T11:27:54-05:00"
     },
     {
       "href": "spr/index.html",
@@ -273,13 +280,6 @@
       "category": "Featured Vibe-Coded Solutions",
       "icon": "⭐",
       "date": "2026-06-19T22:30:40-05:00"
-    },
-    {
-      "href": "ai-essentials-prompt-library/index.html",
-      "title": "AI Essentials Prompt Library of 100",
-      "category": "AI Prompt Libraries and Adoption",
-      "icon": "🤖",
-      "date": "2026-06-19T17:49:01-05:00"
     }
   ]
 }

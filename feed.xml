@@ -6,18 +6,26 @@
     <atom:link href="https://mglearn.github.io/tcea/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated HTML tools, dashboards, prompt libraries, and classroom resources from TCEA.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Jul 2026 16:22:44 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2026 17:16:56 GMT</lastBuildDate>
     <image>
       <url>https://mglearn.github.io/tcea/favicon.svg</url>
       <title>TCEA Vibe-Coded Solutions — Updates</title>
       <link>https://mglearn.github.io/tcea/</link>
     </image>
     <item>
+      <title>🕵️ The Vanished Classroom</title>
+      <link>https://mglearn.github.io/tcea/breakouts/tvc/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/breakouts/tvc/index.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Fri, 24 Jul 2026 17:16:56 GMT</pubDate>
+      <description>A standalone investigation breakout (grades 4-8) about instructional practices from the 1800s that classrooms no longer use. Students examine nine teaching relics — slate, hornbook, recitation, the dunce cap, and more — and uncover each one's purpose, limitation, and modern replacement. Seven languages, with a score and printable reflection.</description>
+    </item>
+    <item>
       <title>🤖 Build Your Handbook: Claude vs. ChatGPT</title>
       <link>https://mglearn.github.io/tcea/byh/index.html</link>
       <guid isPermaLink="true">https://mglearn.github.io/tcea/byh/index.html</guid>
       <category>AI Prompt Libraries and Adoption</category>
-      <pubDate>Fri, 24 Jul 2026 16:22:42 GMT</pubDate>
+      <pubDate>Fri, 24 Jul 2026 16:27:54 GMT</pubDate>
       <description>One staff-handbook PDF, rebuilt as an accessible web page by two AI assistants — Claude and ChatGPT. Open each version side by side and compare the layout, navigation, and reading experience against the original source PDF.</description>
     </item>
     <item>
@@ -323,14 +331,6 @@
       <category>Featured Vibe-Coded Solutions</category>
       <pubDate>Sat, 20 Jun 2026 03:30:40 GMT</pubDate>
       <description>A companion website with librarian-focused tools, use cases, prompts, and downloadable vibe-coding resources.</description>
-    </item>
-    <item>
-      <title>🤖 AI Essentials Prompt Library of 100</title>
-      <link>https://mglearn.github.io/tcea/ai-essentials-prompt-library/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/ai-essentials-prompt-library/index.html</guid>
-      <category>AI Prompt Libraries and Adoption</category>
-      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
-      <description>A searchable set of educator prompts for AI Essentials training and classroom support.</description>
     </item>
   </channel>
 </rss>

@@ -773,6 +773,15 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
+    "href": "breakouts/tvc/index.html",
+    "tag": "Investigation Breakout",
+    "title": "The Vanished Classroom",
+    "desc": "A standalone investigation breakout (grades 4-8) about instructional practices from the 1800s that classrooms no longer use. Students examine nine teaching relics &mdash; slate, hornbook, recitation, the dunce cap, and more &mdash; and uncover each one's purpose, limitation, and modern replacement. Seven languages, with a score and printable reflection."
+  },
+  {
+    "category": "breakouts",
+    "featured": false,
+    "external": false,
     "href": "breakouts/clear/correlation.html",
     "tag": "Alignment",
     "title": "Breakouts Correlation Guide",
