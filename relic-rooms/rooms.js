@@ -35,6 +35,6 @@ window.RELIC_ROOMS = [
     desc: "Specimens from the earth — identify each mineral, a key property, and how people use it." },
 
   { id: "clouds", title: "Cloud Detective", grades: "3–5", subject: "Science",
-    teks: "19 TAC Ch. 112", accent: "#4d7ba0", href: "clouds/", status: "planned",
+    teks: "19 TAC Ch. 112", accent: "#6fb3d6", href: "clouds/", status: "live",
     desc: "Read the sky — identify each cloud, how it forms, and the weather it signals." },
 ];

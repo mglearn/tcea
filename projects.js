@@ -827,6 +827,15 @@
     "category": "activities",
     "featured": false,
     "external": false,
+    "href": "relic-rooms/clouds/index.html",
+    "tag": "Investigation Activity",
+    "title": "Cloud Detective (Relic Room)",
+    "desc": "A grades 3-5 science investigation (Relic Rooms series) about clouds &mdash; cumulus, cumulonimbus, stratus, cirrus, nimbostratus, and more. Students identify each cloud, describe what it is like, and predict the weather it signals. Seven languages, aligned to the Texas science TEKS (19 TAC Ch. 112)."
+  },
+  {
+    "category": "activities",
+    "featured": false,
+    "external": false,
     "href": "tvc/index.html",
     "tag": "Investigation Activity",
     "title": "The Vanished Classroom",
