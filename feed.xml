@@ -6,12 +6,28 @@
     <atom:link href="https://mglearn.github.io/tcea/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated HTML tools, dashboards, prompt libraries, and classroom resources from TCEA.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Jul 2026 02:01:37 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jul 2026 02:10:49 GMT</lastBuildDate>
     <image>
       <url>https://mglearn.github.io/tcea/favicon.svg</url>
       <title>TCEA Vibe-Coded Solutions — Updates</title>
       <link>https://mglearn.github.io/tcea/</link>
     </image>
+    <item>
+      <title>🎲 Endangered Today (Relic Room)</title>
+      <link>https://mglearn.github.io/tcea/relic-rooms/et/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/relic-rooms/et/index.html</guid>
+      <category>Games, Activities, and Specialty Builds</category>
+      <pubDate>Sat, 25 Jul 2026 02:10:48 GMT</pubDate>
+      <description>A grades 6-8 technology and economics investigation (Relic Rooms series) about everyday things fading now — cursive, cash, car keys, landlines, paper maps, newspapers, DVDs, checks, and passwords. Students identify each, how it is used today, and what is likely to replace it. Seven languages, aligned to the Texas Technology Applications TEKS (19 TAC Ch. 126).</description>
+    </item>
+    <item>
+      <title>🎲 Hall of Inventions (Relic Room)</title>
+      <link>https://mglearn.github.io/tcea/relic-rooms/hoi/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/relic-rooms/hoi/index.html</guid>
+      <category>Games, Activities, and Specialty Builds</category>
+      <pubDate>Sat, 25 Jul 2026 02:10:48 GMT</pubDate>
+      <description>A grades 4-8 investigation (Relic Rooms series) about world-changing inventions — the printing press, light bulb, telephone, steam engine, vaccine, wheel, compass, airplane, and transistor. Students identify each, the problem it solved, and what it made possible. Seven languages, aligned to the Texas TEKS (19 TAC Ch. 113 + Ch. 126).</description>
+    </item>
     <item>
       <title>🎲 Cloud Detective (Relic Room)</title>
       <link>https://mglearn.github.io/tcea/relic-rooms/clouds/index.html</link>
@@ -315,22 +331,6 @@
       <category>Dashboards and Decision Tools</category>
       <pubDate>Wed, 01 Jul 2026 16:10:19 GMT</pubDate>
       <description>A TCEA field guide to choosing the right chart and data-display pattern for dashboards and reports.</description>
-    </item>
-    <item>
-      <title>📊 Assessment System RFP Scoring Tool</title>
-      <link>https://mglearn.github.io/tcea/blog/dats/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/blog/dats/index.html</guid>
-      <category>Dashboards and Decision Tools</category>
-      <pubDate>Wed, 01 Jul 2026 15:41:19 GMT</pubDate>
-      <description>A weighted rubric for comparing district assessment systems, with non-negotiable gate checks and a side-by-side vendor comparison you can export to CSV.</description>
-    </item>
-    <item>
-      <title>🕵️ The CLEAR Crew — Detective Thinking Game</title>
-      <link>https://mglearn.github.io/tcea/clear/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/clear/index.html</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Mon, 29 Jun 2026 16:07:24 GMT</pubDate>
-      <description>Crack the case one clue at a time with the CLEAR thinking process — a critical-thinking checklist for young detectives.</description>
     </item>
   </channel>
 </rss>

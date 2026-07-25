@@ -836,6 +836,24 @@
     "category": "activities",
     "featured": false,
     "external": false,
+    "href": "relic-rooms/hoi/index.html",
+    "tag": "Investigation Activity",
+    "title": "Hall of Inventions (Relic Room)",
+    "desc": "A grades 4-8 investigation (Relic Rooms series) about world-changing inventions &mdash; the printing press, light bulb, telephone, steam engine, vaccine, wheel, compass, airplane, and transistor. Students identify each, the problem it solved, and what it made possible. Seven languages, aligned to the Texas TEKS (19 TAC Ch. 113 + Ch. 126)."
+  },
+  {
+    "category": "activities",
+    "featured": false,
+    "external": false,
+    "href": "relic-rooms/et/index.html",
+    "tag": "Investigation Activity",
+    "title": "Endangered Today (Relic Room)",
+    "desc": "A grades 6-8 technology and economics investigation (Relic Rooms series) about everyday things fading now &mdash; cursive, cash, car keys, landlines, paper maps, newspapers, DVDs, checks, and passwords. Students identify each, how it is used today, and what is likely to replace it. Seven languages, aligned to the Texas Technology Applications TEKS (19 TAC Ch. 126)."
+  },
+  {
+    "category": "activities",
+    "featured": false,
+    "external": false,
     "href": "tvc/index.html",
     "tag": "Investigation Activity",
     "title": "The Vanished Classroom",

@@ -1,12 +1,26 @@
 {
-  "generated": "2026-07-25T02:01:37.817Z",
+  "generated": "2026-07-25T02:10:49.264Z",
   "items": [
+    {
+      "href": "relic-rooms/et/index.html",
+      "title": "Endangered Today (Relic Room)",
+      "category": "Games, Activities, and Specialty Builds",
+      "icon": "🎲",
+      "date": "2026-07-25T02:10:48.972Z"
+    },
+    {
+      "href": "relic-rooms/hoi/index.html",
+      "title": "Hall of Inventions (Relic Room)",
+      "category": "Games, Activities, and Specialty Builds",
+      "icon": "🎲",
+      "date": "2026-07-25T02:10:48.953Z"
+    },
     {
       "href": "relic-rooms/clouds/index.html",
       "title": "Cloud Detective (Relic Room)",
       "category": "Games, Activities, and Specialty Builds",
       "icon": "🎲",
-      "date": "2026-07-25T02:01:37.522Z"
+      "date": "2026-07-24T21:01:37-05:00"
     },
     {
       "href": "relic-rooms/mm/index.html",
@@ -266,20 +280,6 @@
       "category": "Dashboards and Decision Tools",
       "icon": "📊",
       "date": "2026-07-01T11:10:19-05:00"
-    },
-    {
-      "href": "blog/dats/index.html",
-      "title": "Assessment System RFP Scoring Tool",
-      "category": "Dashboards and Decision Tools",
-      "icon": "📊",
-      "date": "2026-07-01T10:41:19-05:00"
-    },
-    {
-      "href": "clear/index.html",
-      "title": "The CLEAR Crew — Detective Thinking Game",
-      "category": "Critical Thinking Breakouts",
-      "icon": "🕵️",
-      "date": "2026-06-29T11:07:24-05:00"
     }
   ]
 }

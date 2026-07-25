@@ -23,11 +23,11 @@ window.RELIC_ROOMS = [
     desc: "How we used to reach each other — telegraph, pneumatic tubes, the party line — and the modern equivalent." },
 
   { id: "hoi", title: "Hall of Inventions", grades: "4–8", subject: "Social Studies · Tech Apps",
-    teks: "19 TAC Ch. 113 + Ch. 126", accent: "#9b6a3c", href: "hoi/", status: "planned",
+    teks: "19 TAC Ch. 113 + Ch. 126", accent: "#e0a94a", href: "hoi/", status: "live",
     desc: "Breakthroughs that changed daily life — the problem each solved and what it made possible." },
 
   { id: "et", title: "Endangered Today", grades: "6–8 / HS", subject: "Tech Apps · Economics",
-    teks: "19 TAC Ch. 126", accent: "#6f8f52", href: "et/", status: "planned",
+    teks: "19 TAC Ch. 126", accent: "#6fb26a", href: "et/", status: "live",
     desc: "Things predicted to disappear — cursive, cash, physical keys — their current use and likely successor." },
 
   { id: "mm", title: "Mystery Minerals", grades: "5–8", subject: "Science",
