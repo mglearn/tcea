@@ -1,12 +1,19 @@
 {
-  "generated": "2026-07-25T00:08:29.859Z",
+  "generated": "2026-07-25T00:19:56.968Z",
   "items": [
+    {
+      "href": "relic-rooms/vt/index.html",
+      "title": "Vanished Trades (Relic Room)",
+      "category": "Games, Activities, and Specialty Builds",
+      "icon": "🎲",
+      "date": "2026-07-25T00:19:56.685Z"
+    },
     {
       "href": "relic-rooms/ec/index.html",
       "title": "Extinct Creatures (Relic Room)",
       "category": "Games, Activities, and Specialty Builds",
       "icon": "🎲",
-      "date": "2026-07-25T00:08:29.577Z"
+      "date": "2026-07-24T19:08:29-05:00"
     },
     {
       "href": "relic-rooms/index.html",
@@ -273,13 +280,6 @@
       "category": "Featured Vibe-Coded Solutions",
       "icon": "⭐",
       "date": "2026-06-20T15:16:40-05:00"
-    },
-    {
-      "href": "tools/shapespinner/index.html",
-      "title": "Classroom Shape Spinner",
-      "category": "Classroom Tools and Utilities",
-      "icon": "🧰",
-      "date": "2026-06-20T15:03:34-05:00"
     }
   ]
 }

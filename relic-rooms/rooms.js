@@ -11,7 +11,7 @@ window.RELIC_ROOMS = [
     desc: "Creatures lost to time — identify each, its niche and adaptation, and its closest living relative today." },
 
   { id: "vt", title: "Vanished Trades", grades: "5–8 / HS", subject: "Social Studies · Career",
-    teks: "19 TAC Ch. 113 + Ch. 127", accent: "#8a5a2b", href: "vt/", status: "planned",
+    teks: "19 TAC Ch. 113 + Ch. 127", accent: "#8a5a2b", href: "vt/", status: "live",
     desc: "Jobs that disappeared — lamplighter, switchboard operator, ice cutter — what they did and what replaced them." },
 
   { id: "tg", title: "The Transportation Graveyard", grades: "3–6", subject: "Social Studies",

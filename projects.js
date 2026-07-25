@@ -791,6 +791,15 @@
     "category": "activities",
     "featured": false,
     "external": false,
+    "href": "relic-rooms/vt/index.html",
+    "tag": "Investigation Activity",
+    "title": "Vanished Trades (Relic Room)",
+    "desc": "A grades 5-8 social studies and career investigation (Relic Rooms series) about jobs the modern world left behind &mdash; lamplighter, switchboard operator, iceman, human computer, and more. Students identify each trade, what the worker did, and what replaced the job. Seven languages, aligned to the Texas TEKS (19 TAC Ch. 113 + Ch. 127)."
+  },
+  {
+    "category": "activities",
+    "featured": false,
+    "external": false,
     "href": "tvc/index.html",
     "tag": "Investigation Activity",
     "title": "The Vanished Classroom",

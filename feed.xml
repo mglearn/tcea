@@ -6,12 +6,20 @@
     <atom:link href="https://mglearn.github.io/tcea/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated HTML tools, dashboards, prompt libraries, and classroom resources from TCEA.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Jul 2026 00:08:29 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jul 2026 00:19:56 GMT</lastBuildDate>
     <image>
       <url>https://mglearn.github.io/tcea/favicon.svg</url>
       <title>TCEA Vibe-Coded Solutions — Updates</title>
       <link>https://mglearn.github.io/tcea/</link>
     </image>
+    <item>
+      <title>🎲 Vanished Trades (Relic Room)</title>
+      <link>https://mglearn.github.io/tcea/relic-rooms/vt/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/relic-rooms/vt/index.html</guid>
+      <category>Games, Activities, and Specialty Builds</category>
+      <pubDate>Sat, 25 Jul 2026 00:19:56 GMT</pubDate>
+      <description>A grades 5-8 social studies and career investigation (Relic Rooms series) about jobs the modern world left behind — lamplighter, switchboard operator, iceman, human computer, and more. Students identify each trade, what the worker did, and what replaced the job. Seven languages, aligned to the Texas TEKS (19 TAC Ch. 113 + Ch. 127).</description>
+    </item>
     <item>
       <title>🎲 Extinct Creatures (Relic Room)</title>
       <link>https://mglearn.github.io/tcea/relic-rooms/ec/index.html</link>
@@ -323,14 +331,6 @@
       <category>Featured Vibe-Coded Solutions</category>
       <pubDate>Sat, 20 Jun 2026 20:16:40 GMT</pubDate>
       <description>The launch menu for classroom utilities including spinners, dice, word search, drawing, puzzles, and fortune tools.</description>
-    </item>
-    <item>
-      <title>🧰 Classroom Shape Spinner</title>
-      <link>https://mglearn.github.io/tcea/tools/shapespinner/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/tools/shapespinner/index.html</guid>
-      <category>Classroom Tools and Utilities</category>
-      <pubDate>Sat, 20 Jun 2026 20:03:34 GMT</pubDate>
-      <description>A shape spinner for math, discussion, selection, and quick classroom activities.</description>
     </item>
   </channel>
 </rss>
