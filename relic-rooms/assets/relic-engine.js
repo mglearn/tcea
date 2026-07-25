@@ -239,6 +239,21 @@ function renderExhibitGrid() {
 }
 
 /* --- exhibit view --------------------------------------------------------- */
+// The picture would give the identification away, so it stays hidden while the
+// student investigates and is revealed only when they solve the exhibit.
+const MYSTERY_PROMPT = {
+  en: "The picture is hidden — use the clues to identify it.",
+  es: "La imagen está oculta: usa las pistas para identificarla.",
+  vi: "Hình ảnh đang được ẩn — hãy dùng các manh mối để nhận ra nó.",
+  ar: "الصورة مخفية — استخدم الأدلة للتعرّف عليها.",
+  hi: "तस्वीर छिपी हुई है — इसे पहचानने के लिए संकेतों का उपयोग करें।",
+  ur: "تصویر چھپی ہوئی ہے — اسے پہچاننے کے لیے اشاروں کا استعمال کریں۔",
+  zh: "图片已隐藏——请根据线索来辨认它。",
+};
+function mysteryPrompt() {
+  return MYSTERY_PROMPT[currentLang()] || MYSTERY_PROMPT.en;
+}
+
 function openExhibit(index) {
   activeExhibitIndex = index;
   const exhibit = exhibits()[index];
@@ -248,10 +263,18 @@ function openExhibit(index) {
   elements.exhibitNumber.textContent = t("exhibit.label", { n: index + 1 });
   elements.exhibitTitle.textContent = record.completed ? exhibit.relic : t("exhibit.mystery");
   elements.clueList.innerHTML = exhibit.clues.map((clue) => `<li>${escapeHTML(clue)}</li>`).join("");
-  elements.placeholderLabel.textContent = t("placeholder.label", { n: index + 1 });
-  elements.placeholderPath.textContent = t("placeholder.add", { path: exhibit.image });
-  elements.relicImage.alt = t("placeholder.alt", { n: index + 1, path: exhibit.image });
-  elements.relicImage.src = exhibit.image;
+  if (record.completed) {
+    elements.placeholderLabel.textContent = t("placeholder.label", { n: index + 1 });
+    elements.placeholderPath.textContent = "";
+    elements.relicImage.alt = escapeHTML(exhibit.relic);
+    elements.relicImage.src = exhibit.image;
+  } else {
+    // hide the image; it is part of the reveal
+    elements.relicImage.removeAttribute("src");
+    elements.relicImage.alt = "";
+    elements.placeholderLabel.textContent = mysteryPrompt();
+    elements.placeholderPath.textContent = "";
+  }
   elements.imageFrame.classList.remove("has-image");
   elements.feedback.classList.remove("active");
   elements.feedback.innerHTML = "";
@@ -398,6 +421,9 @@ function showFeedback(result, completed, attempt) {
 
 function showCompletedReveal(exhibit, record) {
   elements.exhibitTitle.textContent = exhibit.relic;
+  // reveal the picture now that the exhibit is solved
+  elements.relicImage.alt = exhibit.relic;
+  elements.relicImage.src = exhibit.image;
   const era = ERAS[exhibit.id] || "";
   const links = (SOURCES[exhibit.id] || [])
     .map((s) => `<a href="${s.url}" target="_blank" rel="noopener noreferrer">${escapeHTML(s.label)}</a>`)
