@@ -1,7 +1,7 @@
 {
   "id": "vt",
   "brand": "VT",
-  "accent": "#8a5a2b",
+  "accent": "#cf9a4a",
   "hero": "hero.png",
   "title": "Vanished Trades",
   "desc": "A grades 5-8 investigation about jobs the modern world left behind: identify each trade, what the worker did, and what replaced the job.",
@@ -502,5 +502,6 @@
       "expectation": "Students sequence and describe changes across time periods.",
       "alignment": "Each reveal gives the era a trade was common and what came after."
     }
-  ]
+  ],
+  "bg": "#241a0f"
 }

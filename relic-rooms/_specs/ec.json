@@ -1,7 +1,7 @@
 {
   "id": "ec",
   "brand": "EC",
-  "accent": "#3f6f5a",
+  "accent": "#54b28c",
   "hero": "hero.png",
   "title": "Extinct Creatures",
   "desc": "An elementary and middle school science investigation about extinct animals: identify each creature, its role or adaptation, and its closest living relative today.",
@@ -502,5 +502,6 @@
       "expectation": "Students analyze causes of change in populations and environments.",
       "alignment": "Each reveal explains why the species vanished (climate change, overhunting, habitat loss, mass extinction)."
     }
-  ]
+  ],
+  "bg": "#122a20"
 }

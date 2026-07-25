@@ -1,22 +1,30 @@
 :root {
   color-scheme: dark;
-  --sky-top: #14110b;
-  --sky-mid: #2a2013;
-  --sky-low: #3a2f1e;
+  /* Per-room palette — a room overrides these three inline (see room template).
+     Everything else is derived so each Relic Room gets its own color scheme. */
+  --accent: #f7bd4a;
+  --accent-rgb: 247, 189, 74;
+  --bg: #2a2013;
+
+  --gold: var(--accent);
+  --gold-light: color-mix(in srgb, var(--accent) 58%, white);
+  --orange: color-mix(in srgb, var(--accent) 62%, #c0470f);
+  --sky-top: color-mix(in srgb, var(--bg) 72%, black);
+  --sky-mid: var(--bg);
+  --sky-low: color-mix(in srgb, var(--bg) 66%, #241c10);
+  --focus: color-mix(in srgb, var(--accent) 55%, white);
+  --panel: color-mix(in srgb, var(--bg) 84%, transparent);
+  --panel-strong: color-mix(in srgb, var(--bg) 93%, black);
+
   --ink: #fff8e8;
-  --muted: #eadcbf;
+  --muted: color-mix(in srgb, var(--accent) 20%, #efe6d2);
   --stone: #d9d2c4;
   --stone-dark: #7c7180;
   --stone-ink: #271f35;
-  --gold: #f7bd4a;
-  --orange: #e87d2d;
   --leaf: #b94e28;
   --moss: #6fb77a;
   --correct: #66d58c;
   --wrong: #ffb07a;
-  --focus: #ffe18a;
-  --panel: rgba(42, 32, 19, 0.88);
-  --panel-strong: rgba(20, 17, 11, 0.94);
   --shadow: 0 22px 52px rgba(0, 0, 0, 0.34);
 }
 
@@ -35,8 +43,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
   background:
-    radial-gradient(circle at 18% 18%, rgba(247, 189, 74, 0.18), transparent 18rem),
-    radial-gradient(circle at 82% 12%, rgba(232, 125, 45, 0.16), transparent 17rem),
+    radial-gradient(circle at 18% 18%, rgba(var(--accent-rgb), 0.18), transparent 18rem),
+    radial-gradient(circle at 82% 12%, rgba(var(--accent-rgb), 0.16), transparent 17rem),
     linear-gradient(180deg, var(--sky-top), var(--sky-mid) 58%, var(--sky-low));
 }
 
@@ -52,7 +60,7 @@ body::after {
 body::before {
   background:
     radial-gradient(80% 90% at 12% 100%, rgba(111, 183, 122, 0.14), transparent 54%),
-    radial-gradient(80% 90% at 88% 100%, rgba(247, 189, 74, 0.13), transparent 54%),
+    radial-gradient(80% 90% at 88% 100%, rgba(var(--accent-rgb), 0.13), transparent 54%),
     linear-gradient(180deg, transparent, rgba(11, 9, 6, 0.6));
 }
 
@@ -110,7 +118,7 @@ button:disabled {
   align-items: center;
   padding: 14px clamp(14px, 3vw, 36px);
   background: rgba(20, 17, 11, 0.92);
-  border-bottom: 1px solid rgba(247, 189, 74, 0.34);
+  border-bottom: 1px solid rgba(var(--accent-rgb), 0.34);
   backdrop-filter: blur(14px);
 }
 
@@ -120,10 +128,10 @@ button:disabled {
   width: 48px;
   height: 48px;
   color: #271f35;
-  background: linear-gradient(135deg, var(--gold), #ffd98a);
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
   border-radius: 50%;
   font-weight: 900;
-  box-shadow: 0 0 22px rgba(247, 189, 74, 0.36);
+  box-shadow: 0 0 22px rgba(var(--accent-rgb), 0.36);
 }
 
 .progress-wrap {
@@ -183,7 +191,7 @@ button:disabled {
   padding: 8px 12px;
   color: var(--ink);
   background: rgba(255, 248, 232, 0.1);
-  border: 1px solid rgba(247, 189, 74, 0.46);
+  border: 1px solid rgba(var(--accent-rgb), 0.46);
   border-radius: 6px;
   font-weight: 800;
 }
@@ -217,10 +225,10 @@ main {
   background:
     linear-gradient(90deg, rgba(20, 17, 11, 0.9), rgba(20, 17, 11, 0.74) 46%, rgba(20, 17, 11, 0.28)),
     var(--hero, radial-gradient(circle at 70% 40%, rgba(247,189,74,.12), transparent 60%)),
-    radial-gradient(circle at 72% 22%, rgba(247, 189, 74, 0.2), transparent 11rem);
+    radial-gradient(circle at 72% 22%, rgba(var(--accent-rgb), 0.2), transparent 11rem);
   background-position: center;
   background-size: cover;
-  border: 1px solid rgba(247, 189, 74, 0.26);
+  border: 1px solid rgba(var(--accent-rgb), 0.26);
   border-radius: 8px;
   box-shadow: var(--shadow);
 }
@@ -241,7 +249,7 @@ main {
   border-radius: 8px 8px 8px 8px;
   box-shadow:
     inset 0 8px 0 rgba(255, 255, 255, 0.28),
-    0 0 26px rgba(247, 189, 74, 0.2);
+    0 0 26px rgba(var(--accent-rgb), 0.2);
   opacity: 0.14;
 }
 
@@ -260,7 +268,7 @@ main {
   inset: 20% 10% auto auto;
   width: 180px;
   height: 180px;
-  background: radial-gradient(circle, rgba(247, 189, 74, 0.34), transparent 66%);
+  background: radial-gradient(circle, rgba(var(--accent-rgb), 0.34), transparent 66%);
 }
 
 .leaf,
@@ -318,7 +326,7 @@ h1 {
   margin: 12px 0;
   font-size: clamp(3rem, 9vw, 6.7rem);
   line-height: 0.96;
-  text-shadow: 0 0 24px rgba(247, 189, 74, 0.22);
+  text-shadow: 0 0 24px rgba(var(--accent-rgb), 0.22);
 }
 
 h2 {
@@ -339,7 +347,7 @@ p {
 .subtitle {
   max-width: 720px;
   margin: 0 0 18px;
-  color: #ffd98a;
+  color: var(--gold-light);
   font-size: clamp(1.35rem, 3.5vw, 2rem);
   font-weight: 800;
   line-height: 1.2;
@@ -364,8 +372,8 @@ p {
 
 .primary-button {
   color: #241044;
-  background: linear-gradient(135deg, var(--gold), #ffd98a);
-  box-shadow: 0 0 24px rgba(247, 189, 74, 0.28);
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  box-shadow: 0 0 24px rgba(var(--accent-rgb), 0.28);
 }
 
 .secondary-button {
@@ -378,7 +386,7 @@ p {
 .back-button {
   color: var(--ink);
   background: transparent;
-  border: 1px solid rgba(247, 189, 74, 0.46);
+  border: 1px solid rgba(var(--accent-rgb), 0.46);
 }
 
 .content-panel {
@@ -386,7 +394,7 @@ p {
   margin: 0 auto;
   padding: clamp(24px, 5vw, 50px);
   background: var(--panel);
-  border: 1px solid rgba(247, 189, 74, 0.28);
+  border: 1px solid rgba(var(--accent-rgb), 0.28);
   border-radius: 8px;
   box-shadow: var(--shadow);
 }
@@ -501,7 +509,7 @@ p {
   font-weight: 700;
   letter-spacing: 0.3em;
   text-indent: 0.3em;
-  color: #5f5560;
+  color: #4c4450;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
@@ -521,7 +529,7 @@ p {
   font-weight: 900;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #574d55;
+  color: #47404a;
 }
 
 .tombstone-card .tomb-name {
@@ -539,21 +547,23 @@ p {
   font-style: italic;
   font-size: 1.14rem;
   letter-spacing: 0.01em;
-  color: #574d55;
+  color: #443b44;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .tombstone-card .tomb-status {
   margin-top: 5px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.98rem;
-  color: #6a5f66;
+  color: #423a43;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.38);
 }
 
 .status-pill {
   margin-top: auto;
   padding: 9px 17px;
   color: #241044;
-  background: #ffd98a;
+  background: var(--gold-light);
   border-radius: 999px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.02rem;
@@ -581,7 +591,7 @@ p {
 .relic-visual,
 .question-panel {
   background: var(--panel);
-  border: 1px solid rgba(247, 189, 74, 0.28);
+  border: 1px solid rgba(var(--accent-rgb), 0.28);
   border-radius: 8px;
   box-shadow: var(--shadow);
 }
@@ -597,7 +607,7 @@ p {
   place-items: center;
   padding: 22px;
   background:
-    linear-gradient(135deg, rgba(247, 189, 74, 0.15), rgba(255, 255, 255, 0.04)),
+    linear-gradient(135deg, rgba(var(--accent-rgb), 0.15), rgba(255, 255, 255, 0.04)),
     rgba(255, 248, 232, 0.08);
 }
 
@@ -665,7 +675,7 @@ p {
 
 .question-group legend {
   margin-bottom: 12px;
-  color: #ffd98a;
+  color: var(--gold-light);
   font-size: 1.16rem;
   font-weight: 900;
 }
@@ -735,7 +745,7 @@ p {
 }
 
 .reveal-box dt {
-  color: #ffd98a;
+  color: var(--gold-light);
   font-weight: 900;
 }
 
@@ -750,7 +760,7 @@ p {
 }
 
 .reveal-sources a {
-  color: var(--gold-light, #ffd98a);
+  color: var(--gold-light, var(--gold-light));
   font-weight: 700;
 }
 
@@ -777,7 +787,7 @@ p {
   margin: 18px 0 8px;
   padding: 24px;
   color: #241044;
-  background: linear-gradient(135deg, var(--gold), #ffd98a);
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
   border-radius: 8px;
   font-size: clamp(1.6rem, 5vw, 3rem);
   font-weight: 900;
@@ -793,7 +803,7 @@ p {
 #reflection-form label {
   display: grid;
   gap: 8px;
-  color: #ffd98a;
+  color: var(--gold-light);
   font-weight: 900;
 }
 
@@ -830,7 +840,7 @@ p {
 }
 
 .site-footer a {
-  color: var(--gold-light, #ffd98a);
+  color: var(--gold-light, var(--gold-light));
   font-weight: 800;
 }
 

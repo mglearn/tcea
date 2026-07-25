@@ -74,6 +74,8 @@ tpl = tpl
   .replace(/{{DESC}}/g, esc(spec.desc || spec.title))
   .replace(/{{BRAND}}/g, esc(spec.brand || spec.id.toUpperCase()))
   .replace(/{{ACCENT}}/g, spec.accent || "#f7bd4a")
+  .replace(/{{ACCENT_RGB}}/g, hexToRgb(spec.accent || "#f7bd4a"))
+  .replace(/{{BG}}/g, spec.bg || "#2a2013")
   .replace(/{{HERO}}/g, spec.hero || "hero.png")
   .replace(/{{LANG_SCRIPTS}}/g, langTags);
 fs.writeFileSync(path.join(out, "index.html"), tpl);
@@ -106,4 +108,10 @@ console.log(`  next: add images/${spec.hero || "hero.png"} + images/<exhibit>.pn
 function esc(s) {
   return String(s == null ? "" : s)
     .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+function hexToRgb(h) {
+  h = String(h).replace("#", "");
+  if (h.length === 3) h = h.split("").map((x) => x + x).join("");
+  const n = parseInt(h, 16);
+  return [(n >> 16) & 255, (n >> 8) & 255, n & 255].join(", ");
 }

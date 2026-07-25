@@ -7,11 +7,11 @@ window.RELIC_ROOMS = [
     desc: "Instructional practices from the 1800s that classrooms no longer use — slate, hornbook, the dunce cap, and more." },
 
   { id: "ec", title: "Extinct Creatures", grades: "3–7", subject: "Science",
-    teks: "19 TAC Ch. 112", accent: "#3f6f5a", href: "ec/", status: "live",
+    teks: "19 TAC Ch. 112", accent: "#54b28c", href: "ec/", status: "live",
     desc: "Creatures lost to time — identify each, its niche and adaptation, and its closest living relative today." },
 
   { id: "vt", title: "Vanished Trades", grades: "5–8 / HS", subject: "Social Studies · Career",
-    teks: "19 TAC Ch. 113 + Ch. 127", accent: "#8a5a2b", href: "vt/", status: "live",
+    teks: "19 TAC Ch. 113 + Ch. 127", accent: "#cf9a4a", href: "vt/", status: "live",
     desc: "Jobs that disappeared — lamplighter, switchboard operator, ice cutter — what they did and what replaced them." },
 
   { id: "tg", title: "The Transportation Graveyard", grades: "3–6", subject: "Social Studies",
