@@ -19,7 +19,7 @@ window.RELIC_ROOMS = [
     desc: "Ways we used to get around — penny-farthing, steam locomotive, zeppelin — their job and their successor." },
 
   { id: "dc", title: "Dead Communications", grades: "4–8", subject: "Technology Applications",
-    teks: "19 TAC Ch. 126", accent: "#7a5c8c", href: "dc/", status: "planned",
+    teks: "19 TAC Ch. 126", accent: "#7a5c8c", href: "dc/", status: "live",
     desc: "How we used to reach each other — telegraph, pneumatic tubes, the party line — and the modern equivalent." },
 
   { id: "hoi", title: "Hall of Inventions", grades: "4–8", subject: "Social Studies · Tech Apps",

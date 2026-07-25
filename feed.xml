@@ -6,12 +6,20 @@
     <atom:link href="https://mglearn.github.io/tcea/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated HTML tools, dashboards, prompt libraries, and classroom resources from TCEA.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Jul 2026 01:32:55 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jul 2026 01:41:43 GMT</lastBuildDate>
     <image>
       <url>https://mglearn.github.io/tcea/favicon.svg</url>
       <title>TCEA Vibe-Coded Solutions — Updates</title>
       <link>https://mglearn.github.io/tcea/</link>
     </image>
+    <item>
+      <title>🎲 Dead Communications (Relic Room)</title>
+      <link>https://mglearn.github.io/tcea/relic-rooms/dc/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/relic-rooms/dc/index.html</guid>
+      <category>Games, Activities, and Specialty Builds</category>
+      <pubDate>Sat, 25 Jul 2026 01:41:43 GMT</pubDate>
+      <description>A grades 4-8 technology investigation (Relic Rooms series) about old ways people sent messages — telegraph, telegram, carrier pigeon, pneumatic tube, party line, pay phone, fax, pager, and answering machine. Students identify each tool, what it was used for, and the modern equivalent. Seven languages, aligned to the Texas Technology Applications TEKS (19 TAC Ch. 126).</description>
+    </item>
     <item>
       <title>🎲 The Transportation Graveyard (Relic Room)</title>
       <link>https://mglearn.github.io/tcea/relic-rooms/tg/index.html</link>
@@ -323,14 +331,6 @@
       <category>AI Prompt Libraries and Adoption</category>
       <pubDate>Mon, 22 Jun 2026 13:40:41 GMT</pubDate>
       <description>Nineteen library-focused vibe-coding starter prompts, each with a VIBES game plan and its own linkable page, all nineteen built and playable.</description>
-    </item>
-    <item>
-      <title>⭐ Codex Project Organizer</title>
-      <link>https://mglearn.github.io/tcea/vpo/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/vpo/index.html</guid>
-      <category>Featured Vibe-Coded Solutions</category>
-      <pubDate>Sun, 21 Jun 2026 18:03:07 GMT</pubDate>
-      <description>A beginner-friendly brief builder that turns a project idea into a structured Markdown prompt for AI-assisted coding, with a modular version for defining inputs, outputs, and tests.</description>
     </item>
   </channel>
 </rss>

@@ -1,12 +1,19 @@
 {
-  "generated": "2026-07-25T01:32:55.512Z",
+  "generated": "2026-07-25T01:41:43.658Z",
   "items": [
+    {
+      "href": "relic-rooms/dc/index.html",
+      "title": "Dead Communications (Relic Room)",
+      "category": "Games, Activities, and Specialty Builds",
+      "icon": "🎲",
+      "date": "2026-07-25T01:41:43.365Z"
+    },
     {
       "href": "relic-rooms/tg/index.html",
       "title": "The Transportation Graveyard (Relic Room)",
       "category": "Games, Activities, and Specialty Builds",
       "icon": "🎲",
-      "date": "2026-07-25T01:32:55.230Z"
+      "date": "2026-07-24T20:32:55-05:00"
     },
     {
       "href": "relic-rooms/index.html",
@@ -273,13 +280,6 @@
       "category": "AI Prompt Libraries and Adoption",
       "icon": "🤖",
       "date": "2026-06-22T08:40:41-05:00"
-    },
-    {
-      "href": "vpo/index.html",
-      "title": "Codex Project Organizer",
-      "category": "Featured Vibe-Coded Solutions",
-      "icon": "⭐",
-      "date": "2026-06-21T13:03:07-05:00"
     }
   ]
 }

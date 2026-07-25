@@ -809,6 +809,15 @@
     "category": "activities",
     "featured": false,
     "external": false,
+    "href": "relic-rooms/dc/index.html",
+    "tag": "Investigation Activity",
+    "title": "Dead Communications (Relic Room)",
+    "desc": "A grades 4-8 technology investigation (Relic Rooms series) about old ways people sent messages &mdash; telegraph, telegram, carrier pigeon, pneumatic tube, party line, pay phone, fax, pager, and answering machine. Students identify each tool, what it was used for, and the modern equivalent. Seven languages, aligned to the Texas Technology Applications TEKS (19 TAC Ch. 126)."
+  },
+  {
+    "category": "activities",
+    "featured": false,
+    "external": false,
     "href": "tvc/index.html",
     "tag": "Investigation Activity",
     "title": "The Vanished Classroom",
