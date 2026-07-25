@@ -85,7 +85,31 @@ window.__ROOM_LANGS__.vi = {
     "reflection.print": "In Cuộc điều tra của tôi",
     "print.scoreLine": "Điểm: {score} trên {total} điểm - {level}",
     "footer.tagline": "Không đăng nhập · không tài khoản · không thu thập dữ liệu · chạy hoàn toàn trong trình duyệt của bạn.",
-    "footer.privacy": "Quyền riêng tư & tuân thủ"
+    "footer.privacy": "Quyền riêng tư & tuân thủ",
+    "ace.eyebrow": "Khung tư duy ACE",
+    "ace.title": "Suy luận thấu đáo với ACE",
+    "ace.intro": "ACE giúp em chuyển từ việc phát hiện từng manh mối riêng lẻ sang giải thích và kiểm chứng một kết luận — Diễn đạt, Kết nối và Mở rộng.",
+    "ace.a.title": "A — Diễn đạt",
+    "ace.a.q": "Các manh mối cho em biết điều gì? Hãy giải thích bằng lời của chính em.",
+    "ace.c.title": "C — Kết nối",
+    "ace.c.q": "Các manh mối kết nối như thế nào với điều em đã biết?",
+    "ace.e.title": "E — Mở rộng",
+    "ace.e.q": "Hãy kiểm chứng kết luận của em. Còn điều gì khác phải đúng nếu câu trả lời của em chính xác?",
+    "ace.example.eyebrow": "Ví dụ mẫu",
+    "ace.example.clues": "Manh mối trưng bày",
+    "ace.example.answer": "Đáp án bí ẩn",
+    "ace.card.title": "Thẻ ACE sẵn dùng trong lớp học",
+    "ace.card.h1": "Bước ACE",
+    "ace.card.h2": "Câu hỏi cho học sinh",
+    "ace.card.a": "Diễn đạt",
+    "ace.card.aq": "Các manh mối nói gì, bằng lời của chính em?",
+    "ace.card.c": "Kết nối",
+    "ace.card.cq": "Các manh mối khớp với nhau như thế nào?",
+    "ace.card.e": "Mở rộng",
+    "ace.card.eq": "Dự đoán nào có thể chứng minh đúng hoặc sai câu trả lời của em?",
+    "ace.why.label": "Vì sao ACE hiệu quả:",
+    "ace.why.body": "Học sinh gọi tên những gì mình quan sát được, giải thích cách các manh mối ủng hộ một kết luận, và kiểm chứng xem kết luận đó có vững vàng hay không.",
+    "ace.more": "Về Khung tư duy ACE"
   },
   "exhibits": [
     {
@@ -394,5 +418,19 @@ window.__ROOM_LANGS__.vi = {
       "purpose": "Chở nhiều hành khách trong thành phố trên đường ray phố",
       "replacement": "Xe điện và xe buýt chạy điện"
     }
-  ]
+  ],
+  "ace": {
+    "title": "Chiếc Xe Hai Bánh Bí Ẩn",
+    "answer": "Chiến xa (chariot) — một loại xe cổ do ngựa kéo dùng để đua và chiến đấu",
+    "clues": [
+      "Một sàn xe mở nhẹ chỉ có hai bánh",
+      "Được kéo bởi một hoặc nhiều con ngựa",
+      "Có chỗ cho người điều khiển đứng chứ không ngồi",
+      "Được dùng trong các cuộc đua và trong chiến trận từ xa xưa",
+      "Không có động cơ, không có ghế ngồi, không có mái che"
+    ],
+    "articulate": "Các manh mối mô tả một chiếc xe hai bánh nhẹ do ngựa kéo, được điều khiển bởi một người đứng, và được chế tạo để chạy nhanh trong các cuộc đua và chiến tranh.",
+    "connect": "Điều này khiến em nghĩ đến một chiếc xe đua hoặc xe hơi cá nhân. Nó là một trong những phương tiện cá nhân tốc độ cao sớm nhất — dùng sức cơ bắp thay vì động cơ.",
+    "extend": "Nếu ngựa cung cấp sức kéo, thì nó cần đường hoặc đường đua bằng phẳng và có động vật để kéo, và nó sẽ bị thay thế ngay khi động cơ có thể làm quay bánh xe mà không cần ngựa."
+  }
 };

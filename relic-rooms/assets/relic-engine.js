@@ -62,6 +62,9 @@ function groundSVG(index) {
 
 const UI = { en: R.ui || {} };
 const EXHIBITS = { en: R.exhibits || [] };
+// ACE Framework worked example (Articulate · Connect · Extend). Per-room content,
+// authored in English on R.ace and translated in each lang pack (packs[code].ace).
+const ACE = { en: R.ace || null };
 
 const screens = {
   welcome: document.querySelector("#welcome-screen"),
@@ -131,6 +134,7 @@ function interpolate(str, vars) {
   Object.keys(packs).forEach((code) => {
     if (packs[code].ui) UI[code] = packs[code].ui;
     if (packs[code].exhibits) EXHIBITS[code] = packs[code].exhibits;
+    if (packs[code].ace) ACE[code] = packs[code].ace;
   });
 
   if (window.BreakoutI18n) {
@@ -141,6 +145,7 @@ function interpolate(str, vars) {
   wireEvents();
   renderReflectionChoices();
   renderExhibitGrid();
+  renderAce();
   refreshChrome();
   updateProgress();
   showScreen(state.screen === "exhibit" ? "list" : state.screen || "welcome");
@@ -151,6 +156,7 @@ function onLanguageChange() {
   refreshChrome();
   renderReflectionChoices();
   renderExhibitGrid();
+  renderAce();
   updateProgress();
   if (state.screen === "exhibit") {
     openExhibit(activeExhibitIndex);
@@ -236,6 +242,64 @@ function renderExhibitGrid() {
     elements.grid.append(button);
   });
   elements.finishButton.disabled = completedCount() !== EXHIBIT_COUNT;
+}
+
+/* --- ACE Framework panel (directions screen) ------------------------------ */
+function aceData() {
+  return ACE[currentLang()] || ACE.en;
+}
+function renderAce() {
+  const host = document.querySelector("#ace-panel");
+  if (!host) return;
+  const a = aceData();
+  if (!a) { host.innerHTML = ""; host.hidden = true; return; }
+  host.hidden = false;
+  const clues = (a.clues || []).map((c) => `<li>${escapeHTML(c)}</li>`).join("");
+  host.innerHTML = `
+    <div class="ace-head">
+      <p class="eyebrow">${escapeHTML(t("ace.eyebrow"))}</p>
+      <h3>${escapeHTML(t("ace.title"))}</h3>
+      <p class="ace-intro">${escapeHTML(t("ace.intro"))}</p>
+    </div>
+    <div class="ace-example">
+      <p class="ace-example-eyebrow">${escapeHTML(t("ace.example.eyebrow"))}: <strong>${escapeHTML(a.title)}</strong></p>
+      <div class="ace-example-grid">
+        <div class="ace-clues">
+          <h4>${escapeHTML(t("ace.example.clues"))}</h4>
+          <ul>${clues}</ul>
+          <p class="ace-answer"><span>${escapeHTML(t("ace.example.answer"))}:</span> ${escapeHTML(a.answer)}</p>
+        </div>
+        <div class="ace-steps">
+          <div class="ace-step ace-a">
+            <h4>${escapeHTML(t("ace.a.title"))}</h4>
+            <p class="ace-q">${escapeHTML(t("ace.a.q"))}</p>
+            <p>${escapeHTML(a.articulate)}</p>
+          </div>
+          <div class="ace-step ace-c">
+            <h4>${escapeHTML(t("ace.c.title"))}</h4>
+            <p class="ace-q">${escapeHTML(t("ace.c.q"))}</p>
+            <p>${escapeHTML(a.connect)}</p>
+          </div>
+          <div class="ace-step ace-e">
+            <h4>${escapeHTML(t("ace.e.title"))}</h4>
+            <p class="ace-q">${escapeHTML(t("ace.e.q"))}</p>
+            <p>${escapeHTML(a.extend)}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <table class="ace-card">
+      <caption>${escapeHTML(t("ace.card.title"))}</caption>
+      <thead><tr><th scope="col">${escapeHTML(t("ace.card.h1"))}</th><th scope="col">${escapeHTML(t("ace.card.h2"))}</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">${escapeHTML(t("ace.card.a"))}</th><td>${escapeHTML(t("ace.card.aq"))}</td></tr>
+        <tr><th scope="row">${escapeHTML(t("ace.card.c"))}</th><td>${escapeHTML(t("ace.card.cq"))}</td></tr>
+        <tr><th scope="row">${escapeHTML(t("ace.card.e"))}</th><td>${escapeHTML(t("ace.card.eq"))}</td></tr>
+      </tbody>
+    </table>
+    <p class="ace-why"><strong>${escapeHTML(t("ace.why.label"))}</strong> ${escapeHTML(t("ace.why.body"))}</p>
+    <p class="ace-more"><a href="../../ace/">${escapeHTML(t("ace.more"))} &rarr;</a></p>
+  `;
 }
 
 /* --- exhibit view --------------------------------------------------------- */

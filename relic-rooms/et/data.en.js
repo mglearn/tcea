@@ -86,7 +86,31 @@ window.__ROOM__ = {
     "reflection.print": "Print My Investigation",
     "print.scoreLine": "Score: {score} of {total} points - {level}",
     "footer.tagline": "No logins · no accounts · no data collected · runs entirely in your browser.",
-    "footer.privacy": "Privacy & compliance"
+    "footer.privacy": "Privacy & compliance",
+    "ace.eyebrow": "ACE Framework",
+    "ace.title": "Think it through with ACE",
+    "ace.intro": "ACE moves you from spotting individual clues to explaining and testing a conclusion — Articulate, Connect, and Extend.",
+    "ace.a.title": "A — Articulate It",
+    "ace.a.q": "What do the clues tell you? Explain them in your own words.",
+    "ace.c.title": "C — Connect It",
+    "ace.c.q": "How do the clues connect to something you already know?",
+    "ace.e.title": "E — Extend It",
+    "ace.e.q": "Test your conclusion. What else should be true if your answer is correct?",
+    "ace.example.eyebrow": "Worked example",
+    "ace.example.clues": "Exhibit clues",
+    "ace.example.answer": "Mystery answer",
+    "ace.card.title": "Classroom-Ready ACE Card",
+    "ace.card.h1": "ACE step",
+    "ace.card.h2": "Student question",
+    "ace.card.a": "Articulate",
+    "ace.card.aq": "What do the clues say in your own words?",
+    "ace.card.c": "Connect",
+    "ace.card.cq": "How do the clues fit together?",
+    "ace.card.e": "Extend",
+    "ace.card.eq": "What prediction could prove or disprove your answer?",
+    "ace.why.label": "Why ACE works:",
+    "ace.why.body": "Students name what they notice, explain how the clues support a conclusion, and test whether that conclusion holds up.",
+    "ace.more": "About the ACE Framework"
   },
   "exhibits": [
     {
@@ -473,5 +497,19 @@ window.__ROOM__ = {
     "both",
     "grass",
     "rubble"
-  ]
+  ],
+  "ace": {
+    "title": "The Mystery Bedside Machine",
+    "answer": "A standalone alarm clock — a single-purpose device that wakes you at a set time",
+    "clues": [
+      "A small box kept on a bedside table",
+      "It only tells the time and rings an alarm",
+      "Bells or a loud buzzer wake the sleeper",
+      "Set by hand each night with a dial or knob",
+      "Needs winding or its own batteries or plug"
+    ],
+    "articulate": "The clues describe a small bedside device whose only jobs are showing the time and sounding an alarm to wake someone up.",
+    "connect": "It reminds me of the clock and alarm app on a smartphone. A phone already keeps time and rings alarms, so it does this device's whole job.",
+    "extend": "If a phone can wake you, families would stop buying a separate clock — so it is fading today. It may survive only as a backup for when a phone is dead or for people avoiding screens at bedtime."
+  }
 };

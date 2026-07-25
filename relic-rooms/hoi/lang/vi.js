@@ -85,7 +85,31 @@ window.__ROOM_LANGS__.vi = {
     "reflection.print": "In cuộc điều tra của tôi",
     "print.scoreLine": "Điểm số: {score} trong số {total} điểm - {level}",
     "footer.tagline": "Không đăng nhập · không tài khoản · không thu thập dữ liệu · chạy hoàn toàn trong trình duyệt của bạn.",
-    "footer.privacy": "Quyền riêng tư & tuân thủ"
+    "footer.privacy": "Quyền riêng tư & tuân thủ",
+    "ace.eyebrow": "Khung tư duy ACE",
+    "ace.title": "Suy luận thấu đáo với ACE",
+    "ace.intro": "ACE giúp em chuyển từ việc phát hiện từng manh mối riêng lẻ sang giải thích và kiểm chứng một kết luận — Diễn đạt, Kết nối và Mở rộng.",
+    "ace.a.title": "A — Diễn đạt",
+    "ace.a.q": "Các manh mối cho em biết điều gì? Hãy giải thích bằng lời của chính em.",
+    "ace.c.title": "C — Kết nối",
+    "ace.c.q": "Các manh mối kết nối như thế nào với điều em đã biết?",
+    "ace.e.title": "E — Mở rộng",
+    "ace.e.q": "Hãy kiểm chứng kết luận của em. Còn điều gì khác phải đúng nếu câu trả lời của em chính xác?",
+    "ace.example.eyebrow": "Ví dụ mẫu",
+    "ace.example.clues": "Manh mối trưng bày",
+    "ace.example.answer": "Đáp án bí ẩn",
+    "ace.card.title": "Thẻ ACE sẵn dùng trong lớp học",
+    "ace.card.h1": "Bước ACE",
+    "ace.card.h2": "Câu hỏi cho học sinh",
+    "ace.card.a": "Diễn đạt",
+    "ace.card.aq": "Các manh mối nói gì, bằng lời của chính em?",
+    "ace.card.c": "Kết nối",
+    "ace.card.cq": "Các manh mối khớp với nhau như thế nào?",
+    "ace.card.e": "Mở rộng",
+    "ace.card.eq": "Dự đoán nào có thể chứng minh đúng hoặc sai câu trả lời của em?",
+    "ace.why.label": "Vì sao ACE hiệu quả:",
+    "ace.why.body": "Học sinh gọi tên những gì mình quan sát được, giải thích cách các manh mối ủng hộ một kết luận, và kiểm chứng xem kết luận đó có vững vàng hay không.",
+    "ace.more": "Về Khung tư duy ACE"
   },
   "exhibits": [
     {
@@ -394,5 +418,19 @@ window.__ROOM_LANGS__.vi = {
       "purpose": "Đồ điện tử thời đầu sử dụng những ống chân không cồng kềnh, nóng và dễ vỡ",
       "replacement": "Đồ điện tử tí hon — máy tính, điện thoại và internet"
     }
-  ]
+  ],
+  "ace": {
+    "title": "Thiết Bị Tháp Có Bánh Răng Bí Ẩn",
+    "answer": "Đồng hồ cơ — một cỗ máy có bánh răng dùng để đo và điểm chuông báo giờ",
+    "clues": [
+      "Một chiếc hộp chứa đầy bánh răng bằng đồng đang quay",
+      "Một quả lắc đung đưa hoặc các quả nặng rơi xuống làm nó chạy",
+      "Một mặt đồng hồ với những chiếc kim chuyển động",
+      "Nó reo chuông vào mỗi giờ tròn",
+      "Những phiên bản lớn đứng trong các tháp giữa thị trấn"
+    ],
+    "articulate": "Các manh mối mô tả một cỗ máy có bánh răng, được vận hành bởi quả lắc hoặc quả nặng, theo dõi thời gian trên mặt số và điểm chuông báo giờ cho cả một thị trấn.",
+    "connect": "Điều này khiến em nghĩ đến đồng hồ trên điện thoại và thời gian chung mà tàu hỏa, trường học và nơi làm việc dựa vào để hoạt động. Nó giúp cuộc sống được phối hợp nhịp nhàng theo từng giờ tròn trở nên khả thi.",
+    "extend": "Nếu bánh răng và quả lắc giữ nhịp, thì nó cần được lên dây cót đều đặn và điều chỉnh cẩn thận — nên về sau nó sẽ bị thay thế bởi đồng hồ thạch anh và đồng hồ điện tử vốn giữ giờ bằng một tinh thể dao động."
+  }
 };

@@ -86,7 +86,31 @@ window.__ROOM__ = {
     "reflection.print": "Print My Investigation",
     "print.scoreLine": "Score: {score} of {total} points - {level}",
     "footer.tagline": "No logins · no accounts · no data collected · runs entirely in your browser.",
-    "footer.privacy": "Privacy & compliance"
+    "footer.privacy": "Privacy & compliance",
+    "ace.eyebrow": "ACE Framework",
+    "ace.title": "Think it through with ACE",
+    "ace.intro": "ACE moves you from spotting individual clues to explaining and testing a conclusion — Articulate, Connect, and Extend.",
+    "ace.a.title": "A — Articulate It",
+    "ace.a.q": "What do the clues tell you? Explain them in your own words.",
+    "ace.c.title": "C — Connect It",
+    "ace.c.q": "How do the clues connect to something you already know?",
+    "ace.e.title": "E — Extend It",
+    "ace.e.q": "Test your conclusion. What else should be true if your answer is correct?",
+    "ace.example.eyebrow": "Worked example",
+    "ace.example.clues": "Exhibit clues",
+    "ace.example.answer": "Mystery answer",
+    "ace.card.title": "Classroom-Ready ACE Card",
+    "ace.card.h1": "ACE step",
+    "ace.card.h2": "Student question",
+    "ace.card.a": "Articulate",
+    "ace.card.aq": "What do the clues say in your own words?",
+    "ace.card.c": "Connect",
+    "ace.card.cq": "How do the clues fit together?",
+    "ace.card.e": "Extend",
+    "ace.card.eq": "What prediction could prove or disprove your answer?",
+    "ace.why.label": "Why ACE works:",
+    "ace.why.body": "Students name what they notice, explain how the clues support a conclusion, and test whether that conclusion holds up.",
+    "ace.more": "About the ACE Framework"
   },
   "exhibits": [
     {
@@ -464,5 +488,19 @@ window.__ROOM__ = {
     ]
   },
   "noGround": true,
-  "cardStyle": "plaque"
+  "cardStyle": "plaque",
+  "ace": {
+    "title": "The Mystery Sky Line",
+    "answer": "A contrail — a condensation trail of ice crystals left behind a jet",
+    "clues": [
+      "A long, straight, white line high in the sky",
+      "It forms right behind a passing airplane",
+      "Made of tiny ice crystals, not smoke",
+      "It slowly widens and fades or spreads out",
+      "Only appears where jets fly, not lower down"
+    ],
+    "articulate": "The clues describe a straight white line made of ice crystals that forms behind a high-flying jet and then spreads or fades.",
+    "connect": "It reminds me of your breath fogging on a cold day. Warm, moist jet exhaust freezes into ice crystals in the cold air high above, making a cloud in a line.",
+    "extend": "If it comes from aircraft, it should appear only along flight paths, form best in cold, humid air, and last longer or spread wider when the upper air is moist — behaving like a human-made cloud."
+  }
 };

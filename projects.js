@@ -779,6 +779,15 @@
     "desc": "A series of self-contained, seven-language investigation activities: students examine nine illustrated mystery exhibits in three steps &mdash; identify it, understand its purpose, and connect it to what came next. Aligned to the Texas Essential Knowledge and Skills across science, social studies, technology applications, and career. Starts with The Vanished Classroom."
   },
   {
+    "category": "instruction",
+    "featured": false,
+    "external": false,
+    "href": "ace/index.html",
+    "tag": "Teaching Framework",
+    "title": "The ACE Framework",
+    "desc": "A seven-language teaching companion for the Relic Rooms series. ACE &mdash; Articulate, Connect, Extend &mdash; is a simple thinking routine that moves students from spotting clues to explaining and testing a conclusion. Includes the three moves, a worked example, and a classroom-ready ACE card; every Relic Room now embeds a worked ACE example on its directions screen."
+  },
+  {
     "category": "activities",
     "featured": false,
     "external": false,

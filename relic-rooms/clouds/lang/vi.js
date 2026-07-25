@@ -85,7 +85,31 @@ window.__ROOM_LANGS__.vi = {
     "reflection.print": "In Cuộc điều tra của Tôi",
     "print.scoreLine": "Điểm: {score} trên {total} điểm - {level}",
     "footer.tagline": "Không đăng nhập · không tài khoản · không thu thập dữ liệu · chạy hoàn toàn trong trình duyệt của bạn.",
-    "footer.privacy": "Quyền riêng tư & tuân thủ"
+    "footer.privacy": "Quyền riêng tư & tuân thủ",
+    "ace.eyebrow": "Khung tư duy ACE",
+    "ace.title": "Suy luận thấu đáo với ACE",
+    "ace.intro": "ACE giúp em chuyển từ việc phát hiện từng manh mối riêng lẻ sang giải thích và kiểm chứng một kết luận — Diễn đạt, Kết nối và Mở rộng.",
+    "ace.a.title": "A — Diễn đạt",
+    "ace.a.q": "Các manh mối cho em biết điều gì? Hãy giải thích bằng lời của chính em.",
+    "ace.c.title": "C — Kết nối",
+    "ace.c.q": "Các manh mối kết nối như thế nào với điều em đã biết?",
+    "ace.e.title": "E — Mở rộng",
+    "ace.e.q": "Hãy kiểm chứng kết luận của em. Còn điều gì khác phải đúng nếu câu trả lời của em chính xác?",
+    "ace.example.eyebrow": "Ví dụ mẫu",
+    "ace.example.clues": "Manh mối trưng bày",
+    "ace.example.answer": "Đáp án bí ẩn",
+    "ace.card.title": "Thẻ ACE sẵn dùng trong lớp học",
+    "ace.card.h1": "Bước ACE",
+    "ace.card.h2": "Câu hỏi cho học sinh",
+    "ace.card.a": "Diễn đạt",
+    "ace.card.aq": "Các manh mối nói gì, bằng lời của chính em?",
+    "ace.card.c": "Kết nối",
+    "ace.card.cq": "Các manh mối khớp với nhau như thế nào?",
+    "ace.card.e": "Mở rộng",
+    "ace.card.eq": "Dự đoán nào có thể chứng minh đúng hoặc sai câu trả lời của em?",
+    "ace.why.label": "Vì sao ACE hiệu quả:",
+    "ace.why.body": "Học sinh gọi tên những gì mình quan sát được, giải thích cách các manh mối ủng hộ một kết luận, và kiểm chứng xem kết luận đó có vững vàng hay không.",
+    "ace.more": "Về Khung tư duy ACE"
   },
   "exhibits": [
     {
@@ -394,5 +418,19 @@ window.__ROOM_LANGS__.vi = {
       "purpose": "Một đám mây hình thành ngay tại mặt đất",
       "replacement": "Tầm nhìn thấp cho đến khi nó tan đi"
     }
-  ]
+  ],
+  "ace": {
+    "title": "Vệt Trắng Bí Ẩn Trên Bầu Trời",
+    "answer": "Vệt khói máy bay (contrail) — một vệt ngưng tụ gồm các tinh thể băng để lại phía sau máy bay phản lực",
+    "clues": [
+      "Một vệt trắng dài, thẳng, ở tít trên cao trên bầu trời",
+      "Nó hình thành ngay phía sau một chiếc máy bay đang bay qua",
+      "Được tạo từ những tinh thể băng nhỏ li ti, chứ không phải khói",
+      "Nó từ từ nở rộng ra rồi mờ dần hoặc tản ra",
+      "Chỉ xuất hiện ở nơi máy bay phản lực bay, chứ không phải ở tầng thấp hơn"
+    ],
+    "articulate": "Các manh mối mô tả một vệt trắng thẳng làm từ tinh thể băng, hình thành phía sau một chiếc máy bay phản lực bay cao rồi tản ra hoặc mờ dần.",
+    "connect": "Điều này khiến em nghĩ đến hơi thở tạo thành làn sương mờ vào ngày trời lạnh. Khí thải nóng và ẩm của máy bay phản lực đóng băng thành các tinh thể băng trong không khí lạnh trên cao, tạo thành một đám mây hình vệt dài.",
+    "extend": "Nếu nó đến từ máy bay, thì nó chỉ nên xuất hiện dọc theo các đường bay, hình thành rõ nhất trong không khí lạnh và ẩm, và tồn tại lâu hơn hoặc lan rộng hơn khi không khí trên cao ẩm ướt — giống như một đám mây do con người tạo ra."
+  }
 };

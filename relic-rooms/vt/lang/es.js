@@ -85,7 +85,31 @@ window.__ROOM_LANGS__.es = {
     "reflection.print": "Imprimir mi investigación",
     "print.scoreLine": "Puntuación: {score} de {total} puntos - {level}",
     "footer.tagline": "Sin inicios de sesión · sin cuentas · sin recopilación de datos · funciona completamente en tu navegador.",
-    "footer.privacy": "Privacidad y cumplimiento"
+    "footer.privacy": "Privacidad y cumplimiento",
+    "ace.eyebrow": "Marco ACE",
+    "ace.title": "Piénsalo bien con ACE",
+    "ace.intro": "ACE te lleva de detectar pistas individuales a explicar y comprobar una conclusión — Articúlalo, Conéctalo y Amplíalo.",
+    "ace.a.title": "A — Articúlalo",
+    "ace.a.q": "¿Qué te dicen las pistas? Explícalas con tus propias palabras.",
+    "ace.c.title": "C — Conéctalo",
+    "ace.c.q": "¿Cómo se conectan las pistas con algo que ya sabes?",
+    "ace.e.title": "E — Amplíalo",
+    "ace.e.q": "Comprueba tu conclusión. ¿Qué más debería ser cierto si tu respuesta es correcta?",
+    "ace.example.eyebrow": "Ejemplo resuelto",
+    "ace.example.clues": "Pistas de la exhibición",
+    "ace.example.answer": "Respuesta del misterio",
+    "ace.card.title": "Tarjeta ACE lista para el aula",
+    "ace.card.h1": "Paso ACE",
+    "ace.card.h2": "Pregunta para el estudiante",
+    "ace.card.a": "Articular",
+    "ace.card.aq": "¿Qué dicen las pistas con tus propias palabras?",
+    "ace.card.c": "Conectar",
+    "ace.card.cq": "¿Cómo encajan las pistas entre sí?",
+    "ace.card.e": "Ampliar",
+    "ace.card.eq": "¿Qué predicción podría probar o refutar tu respuesta?",
+    "ace.why.label": "Por qué funciona ACE:",
+    "ace.why.body": "Los estudiantes nombran lo que observan, explican cómo las pistas respaldan una conclusión y comprueban si esa conclusión se sostiene.",
+    "ace.more": "Acerca del Marco ACE"
   },
   "exhibits": [
     {
@@ -394,5 +418,19 @@ window.__ROOM_LANGS__.es = {
       "purpose": "Recolocaba los bolos y devolvía las bolas a mano en una bolera",
       "replacement": "La máquina automática para colocar bolos"
     }
-  ]
+  ],
+  "ace": {
+    "title": "Las misteriosas botellas en la puerta",
+    "answer": "El lechero — un trabajador que entregaba leche fresca en las casas cada mañana",
+    "clues": [
+      "Un carro o furgoneta pequeña que salía antes del amanecer",
+      "Botellas de vidrio dejadas en las puertas de las casas",
+      "Botellas vacías que se recogían para lavarlas y reutilizarlas",
+      "Un recorrido diario por un mismo vecindario",
+      "Una rejilla de metal que tintinea al llevarla"
+    ],
+    "articulate": "Las pistas describen a un trabajador que llevaba leche fresca en botellas de vidrio a cada casa muy temprano y recogía las vacías para volver a usarlas.",
+    "connect": "Me recuerda a las aplicaciones de entrega de comestibles y a la sección refrigerada de lácteos de un supermercado. Ambas son formas de conseguir leche sin tener una vaca.",
+    "extend": "Si los refrigeradores en casa y los supermercados se generalizaron, las familias podían guardar su propia leche, así que la entrega diaria de puerta en puerta desaparecería. Las botellas vacías devueltas también muestran un sistema de envases reutilizables antes de los cartones."
+  }
 };

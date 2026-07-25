@@ -105,7 +105,31 @@
     "reflection.print": "Print My Investigation",
     "print.scoreLine": "Score: {score} of {total} points - {level}",
     "footer.tagline": "No logins · no accounts · no data collected · runs entirely in your browser.",
-    "footer.privacy": "Privacy & compliance"
+    "footer.privacy": "Privacy & compliance",
+    "ace.eyebrow": "ACE Framework",
+    "ace.title": "Think it through with ACE",
+    "ace.intro": "ACE moves you from spotting individual clues to explaining and testing a conclusion — Articulate, Connect, and Extend.",
+    "ace.a.title": "A — Articulate It",
+    "ace.a.q": "What do the clues tell you? Explain them in your own words.",
+    "ace.c.title": "C — Connect It",
+    "ace.c.q": "How do the clues connect to something you already know?",
+    "ace.e.title": "E — Extend It",
+    "ace.e.q": "Test your conclusion. What else should be true if your answer is correct?",
+    "ace.example.eyebrow": "Worked example",
+    "ace.example.clues": "Exhibit clues",
+    "ace.example.answer": "Mystery answer",
+    "ace.card.title": "Classroom-Ready ACE Card",
+    "ace.card.h1": "ACE step",
+    "ace.card.h2": "Student question",
+    "ace.card.a": "Articulate",
+    "ace.card.aq": "What do the clues say in your own words?",
+    "ace.card.c": "Connect",
+    "ace.card.cq": "How do the clues fit together?",
+    "ace.card.e": "Extend",
+    "ace.card.eq": "What prediction could prove or disprove your answer?",
+    "ace.why.label": "Why ACE works:",
+    "ace.why.body": "Students name what they notice, explain how the clues support a conclusion, and test whether that conclusion holds up.",
+    "ace.more": "About the ACE Framework"
   },
   "exhibits": [
     {
@@ -503,5 +527,19 @@
       "expectation": "Students explain how new technologies change the cost and speed of moving goods and people.",
       "alignment": "Reveals note drawbacks (slow, costly, dirty) that newer transport overcame."
     }
-  ]
+  ],
+  "ace": {
+    "title": "The Mystery Two-Wheeled Cart",
+    "answer": "A chariot — an ancient horse-drawn racing and battle vehicle",
+    "clues": [
+      "A light open platform on just two wheels",
+      "Pulled by one or more horses",
+      "Room for a driver who stands rather than sits",
+      "Used in races and in battle long ago",
+      "No engine, no seat, no roof"
+    ],
+    "articulate": "The clues describe a light two-wheeled cart pulled by horses, driven by someone standing, and built for speed in races and war.",
+    "connect": "It reminds me of a race car or a personal car. It was one of the earliest fast personal vehicles — muscle power instead of an engine.",
+    "extend": "If horses provide the power, it needs flat roads or tracks and animals to pull it, and it would be replaced once engines could turn wheels without a horse."
+  }
 }

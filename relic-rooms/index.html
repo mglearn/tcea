@@ -24,8 +24,11 @@
     min-height:100vh;
   }
   a{color:var(--gold-light);}
-  .skip-link{position:absolute;left:-999px;top:0;background:var(--gold);color:#241044;padding:10px 16px;font-weight:800;border-radius:0 0 6px 0;}
-  .skip-link:focus{left:0;}
+  .skip-link{position:fixed;z-index:30;top:12px;inset-inline-start:12px;transform:translateY(-150%);background:var(--gold);color:#241044;padding:10px 16px;font-weight:800;border-radius:6px;}
+  .skip-link:focus{transform:translateY(0);}
+  .topbar-hub{display:flex;align-items:center;justify-content:flex-end;gap:8px;max-width:1080px;margin:0 auto;padding:12px 20px 0;}
+  .topbar-hub .globe{font-size:1.1rem;}
+  .topbar-hub select{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font:inherit;}
   .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
   header.hero{padding:34px 0 8px;}
   .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}
@@ -54,57 +57,95 @@
   footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:.9rem;}
   footer a{font-weight:700;}
 </style>
+<script src="assets/i18n.js" defer></script>
+<script src="hub-i18n.js" defer></script>
 </head>
 <body>
 <a href="#rooms" class="skip-link">Skip to the rooms</a>
+<div class="topbar-hub">
+  <span class="globe" aria-hidden="true">🌐</span>
+  <div data-i18n-picker></div>
+</div>
 <header class="hero">
   <div class="wrap">
     <h1 class="visually-hidden">Relic Rooms — a TCEA activity series</h1>
-    <img class="hero-banner" src="hero.jpg" width="1280" height="853"
+    <img class="hero-banner" src="hero.jpg" width="1280" height="853" data-i18n-alt="hero.alt"
       alt="Relic Rooms — a TCEA activity series. Step into a room of nine mystery exhibits and investigate each one in three steps: identify it, understand what it was for, and connect it to what came next. Self-contained, seven languages, no logins, no data collected, and aligned to the Texas Essential Knowledge and Skills.">
   </div>
 </header>
 
 <main id="rooms">
   <div class="wrap">
+    <a class="ace-callout" href="../ace/"
+       style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin:0 0 22px;padding:16px 20px;
+              text-decoration:none;color:var(--ink);background:var(--panel);border:1px solid var(--line);
+              border-inline-start:6px solid var(--gold);border-radius:14px;box-shadow:0 10px 26px rgba(0,0,0,.26);">
+      <strong style="color:var(--gold-light);white-space:nowrap;" data-i18n="callout.badge">Teaching companion</strong>
+      <span style="flex:1 1 16rem;min-width:14rem;color:var(--muted);" data-i18n-html="callout.body">The <strong style="color:var(--ink);">ACE Framework</strong> &mdash; a simple <em>Articulate &middot; Connect &middot; Extend</em> routine your students can use to investigate every Relic Room.</span>
+      <span style="white-space:nowrap;font-weight:800;color:var(--gold-light);" data-i18n="callout.cta">Learn ACE &rarr;</span>
+    </a>
     <div class="grid" id="grid"></div>
     <p class="note" id="note"></p>
   </div>
 </main>
 
 <footer>
-  <div class="wrap">
+  <div class="wrap" data-i18n-html="footer.html">
     A <a href="https://tcea.org">TCEA</a> activity series · built from a shared, open template (<a href="starter-kit/BUILD-GUIDE.md">Build Guide</a>). Each room is aligned to, not reproduced from, the Texas Essential Knowledge and Skills.
   </div>
 </footer>
 
-<script src="rooms.js"></script>
+<script src="rooms.js" defer></script>
 <script>
-  (function(){
+  // The grid renders from rooms.js (English base). Translations for chrome and for
+  // each card's title/subject/desc live in hub-i18n.js and are applied per language;
+  // the grid re-renders on language change so the whole hub is switchable.
+  document.addEventListener("DOMContentLoaded", function(){
+    var I = window.BreakoutI18n;
+    var EN = (window.__RELIC_HUB_DICT__ && window.__RELIC_HUB_DICT__.en) || {};
+    var ROOM_TR = window.__RELIC_HUB_ROOMS__ || {};
     var rooms = window.RELIC_ROOMS || [];
-    var esc = function(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); };
+    var grid = document.getElementById("grid");
+    var noteEl = document.getElementById("note");
+
+    function esc(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+    function lang(){ return I ? I.getLang() : "en"; }
+    function t(k, vars){
+      var s = I ? I.t(k, vars) : (EN[k]!==undefined ? EN[k] : k);
+      if (vars && typeof s === "string") s = s.replace(/\{([^}]+)\}/g, function(m,p){ return vars[p]!==undefined ? vars[p] : m; });
+      return s;
+    }
+    function field(r, key){
+      var pack = ROOM_TR[lang()];
+      var tr = pack && pack[r.id];
+      return (tr && tr[key]) || r[key];
+    }
     function card(r){
       var live = r.status === "live" && r.href;
+      var title = field(r, "title");
       var inner =
-        '<div class="tags"><span>'+esc(r.subject)+'</span><span>Gr '+esc(r.grades)+'</span><span>'+esc(r.teks)+'</span></div>'+
-        '<h2>'+esc(r.title)+'</h2>'+
-        '<p>'+esc(r.desc)+'</p>'+
-        '<div class="foot"><span class="badge '+(live?'live':'planned')+'">'+(live?'Open':'Coming soon')+'</span>'+
-        (live?'<span class="go">Enter ▶</span>':'')+'</div>';
+        '<div class="tags"><span>'+esc(field(r,"subject"))+'</span><span>'+esc(t("tag.grades",{g:r.grades}))+'</span><span>'+esc(r.teks)+'</span></div>'+
+        '<h2>'+esc(title)+'</h2>'+
+        '<p>'+esc(field(r,"desc"))+'</p>'+
+        '<div class="foot"><span class="badge '+(live?'live':'planned')+'">'+esc(live?t("badge.open"):t("badge.soon"))+'</span>'+
+        (live?'<span class="go">'+esc(t("go.enter"))+'</span>':'')+'</div>';
       if (live) {
         var a = document.createElement("a");
         a.className = "room"; a.href = r.href; a.style.setProperty("--accent", r.accent||"#f7bd4a");
-        a.setAttribute("aria-label", r.title + " — open"); a.innerHTML = inner; return a;
+        a.setAttribute("aria-label", title + " — open"); a.innerHTML = inner; return a;
       }
       var d = document.createElement("div");
       d.className = "room soon"; d.style.setProperty("--accent", r.accent||"#f7bd4a"); d.innerHTML = inner; return d;
     }
-    var grid = document.getElementById("grid");
-    rooms.forEach(function(r){ grid.appendChild(card(r)); });
-    var liveN = rooms.filter(function(r){return r.status==="live";}).length;
-    document.getElementById("note").textContent =
-      liveN + " of " + rooms.length + " rooms are live — the rest are in production.";
-  })();
+    function render(){
+      grid.innerHTML = "";
+      rooms.forEach(function(r){ grid.appendChild(card(r)); });
+      var liveN = rooms.filter(function(r){return r.status==="live";}).length;
+      noteEl.textContent = t("note", { live: liveN, total: rooms.length });
+    }
+    render();
+    window.addEventListener("breakout-i18n:changed", render);
+  });
 </script>
 </body>
 </html>

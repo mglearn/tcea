@@ -85,7 +85,31 @@ window.__ROOM_LANGS__.zh = {
     "reflection.print": "打印我的调查",
     "print.scoreLine": "得分：{total} 分中的 {score} 分 - {level}",
     "footer.tagline": "无需登录 · 无账户 · 不收集数据 · 完全在你的浏览器中运行。",
-    "footer.privacy": "隐私与合规"
+    "footer.privacy": "隐私与合规",
+    "ace.eyebrow": "ACE 框架",
+    "ace.title": "用 ACE 想清楚",
+    "ace.intro": "ACE 帮你从发现单个线索，进阶到解释并检验一个结论——阐述（Articulate）、联系（Connect）、延伸（Extend）。",
+    "ace.a.title": "A — 阐述它",
+    "ace.a.q": "这些线索告诉了你什么？用你自己的话解释它们。",
+    "ace.c.title": "C — 联系它",
+    "ace.c.q": "这些线索和你已经知道的东西有什么联系？",
+    "ace.e.title": "E — 延伸它",
+    "ace.e.q": "检验你的结论。如果你的答案正确，还应该有什么也是真的？",
+    "ace.example.eyebrow": "范例",
+    "ace.example.clues": "展品线索",
+    "ace.example.answer": "谜题答案",
+    "ace.card.title": "课堂即用 ACE 卡片",
+    "ace.card.h1": "ACE 步骤",
+    "ace.card.h2": "学生提问",
+    "ace.card.a": "阐述",
+    "ace.card.aq": "用你自己的话说，这些线索说了什么？",
+    "ace.card.c": "联系",
+    "ace.card.cq": "这些线索是如何拼合在一起的？",
+    "ace.card.e": "延伸",
+    "ace.card.eq": "什么样的预测能够证明或推翻你的答案？",
+    "ace.why.label": "ACE 为什么有效：",
+    "ace.why.body": "学生说出他们注意到的东西，解释线索如何支撑一个结论，并检验那个结论是否站得住脚。",
+    "ace.more": "关于 ACE 框架"
   },
   "exhibits": [
     {
@@ -394,5 +418,19 @@ window.__ROOM_LANGS__.zh = {
         ]
       }
     }
-  ]
+  ],
+  "ace": {
+    "title": "神秘的盘旋贝壳",
+    "answer": "菊石——一种已灭绝的有壳海洋动物，与今天的鱿鱼和章鱼有亲缘关系",
+    "clues": [
+      "一个紧密盘旋、分成许多腔室的螺旋形壳",
+      "在古老的海洋岩层中被发现",
+      "壳面上有一道道棱纹、肋纹的图案",
+      "今天没有任何活着的动物拥有这样的壳",
+      "大小从一枚硬币到一个汽车轮胎不等"
+    ],
+    "articulate": "这个物体是一个分成许多腔室的螺旋形壳，从古老的海底岩石中取出。它曾经容纳着一种如今已不存在的柔软海洋动物。",
+    "connect": "它让我想起今天生活在海洋里的鹦鹉螺。两者都造出盘旋、分腔的壳，所以它们很可能是亲戚。",
+    "extend": "如果它是一种有壳的海洋动物，我就应该能在许多岩层和海洋沉积物中找到它的壳，而且它现存最近的亲戚应该是鹦鹉螺、鱿鱼、章鱼这类头足类动物。"
+  }
 };

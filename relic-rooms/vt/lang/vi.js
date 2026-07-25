@@ -85,7 +85,31 @@ window.__ROOM_LANGS__.vi = {
     "reflection.print": "In cuộc điều tra của tôi",
     "print.scoreLine": "Điểm: {score} trong số {total} điểm - {level}",
     "footer.tagline": "Không đăng nhập · không tài khoản · không thu thập dữ liệu · chạy hoàn toàn trong trình duyệt của bạn.",
-    "footer.privacy": "Quyền riêng tư & tuân thủ"
+    "footer.privacy": "Quyền riêng tư & tuân thủ",
+    "ace.eyebrow": "Khung tư duy ACE",
+    "ace.title": "Suy luận thấu đáo với ACE",
+    "ace.intro": "ACE giúp em chuyển từ việc phát hiện từng manh mối riêng lẻ sang giải thích và kiểm chứng một kết luận — Diễn đạt, Kết nối và Mở rộng.",
+    "ace.a.title": "A — Diễn đạt",
+    "ace.a.q": "Các manh mối cho em biết điều gì? Hãy giải thích bằng lời của chính em.",
+    "ace.c.title": "C — Kết nối",
+    "ace.c.q": "Các manh mối kết nối như thế nào với điều em đã biết?",
+    "ace.e.title": "E — Mở rộng",
+    "ace.e.q": "Hãy kiểm chứng kết luận của em. Còn điều gì khác phải đúng nếu câu trả lời của em chính xác?",
+    "ace.example.eyebrow": "Ví dụ mẫu",
+    "ace.example.clues": "Manh mối trưng bày",
+    "ace.example.answer": "Đáp án bí ẩn",
+    "ace.card.title": "Thẻ ACE sẵn dùng trong lớp học",
+    "ace.card.h1": "Bước ACE",
+    "ace.card.h2": "Câu hỏi cho học sinh",
+    "ace.card.a": "Diễn đạt",
+    "ace.card.aq": "Các manh mối nói gì, bằng lời của chính em?",
+    "ace.card.c": "Kết nối",
+    "ace.card.cq": "Các manh mối khớp với nhau như thế nào?",
+    "ace.card.e": "Mở rộng",
+    "ace.card.eq": "Dự đoán nào có thể chứng minh đúng hoặc sai câu trả lời của em?",
+    "ace.why.label": "Vì sao ACE hiệu quả:",
+    "ace.why.body": "Học sinh gọi tên những gì mình quan sát được, giải thích cách các manh mối ủng hộ một kết luận, và kiểm chứng xem kết luận đó có vững vàng hay không.",
+    "ace.more": "Về Khung tư duy ACE"
   },
   "exhibits": [
     {
@@ -394,5 +418,19 @@ window.__ROOM_LANGS__.vi = {
       "purpose": "Dựng lại các cây ky và trả bóng bằng tay ở sân bowling",
       "replacement": "Máy dựng ky tự động"
     }
-  ]
+  ],
+  "ace": {
+    "title": "Những Chai Sữa Bí Ẩn Trước Cửa Nhà",
+    "answer": "Người giao sữa (milkman) — một người lao động giao sữa tươi đến từng nhà vào mỗi buổi sáng",
+    "clues": [
+      "Một chiếc xe đẩy hoặc xe tải nhỏ đi ra ngoài trước lúc bình minh",
+      "Những chai thủy tinh được đặt trước bậc cửa nhà",
+      "Những chai rỗng được thu lại để rửa sạch và tái sử dụng",
+      "Một lộ trình hằng ngày đi qua một khu phố",
+      "Một giá đỡ bằng kim loại kêu leng keng khi được mang đi"
+    ],
+    "articulate": "Các manh mối mô tả một người lao động mang sữa tươi trong chai thủy tinh đến từng nhà từ rất sớm và thu lại những chai rỗng để dùng lại.",
+    "connect": "Điều này khiến em nghĩ đến các ứng dụng giao hàng tạp hóa và tủ mát đựng sữa trong siêu thị. Cả hai đều là những cách để có sữa mà không cần nuôi bò.",
+    "extend": "Nếu tủ lạnh gia đình và siêu thị trở nên phổ biến, các gia đình có thể tự trữ sữa, nên việc giao tận cửa hằng ngày sẽ dần biến mất. Những chai rỗng được trả lại cũng cho thấy một hệ thống bao bì tái sử dụng có từ trước khi có hộp giấy đựng sữa."
+  }
 };

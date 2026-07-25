@@ -1,6 +1,6 @@
 window.__ROOM_LANGS__ = window.__ROOM_LANGS__ || {};
 window.__ROOM_LANGS__.es = {
-  ui: {
+  "ui": {
     "skip": "Saltar a la actividad",
     "progress.title": "Progreso de la investigación",
     "progress.completed": "de {total} exhibiciones completadas",
@@ -85,9 +85,33 @@ window.__ROOM_LANGS__.es = {
     "reflection.print": "Imprimir mi investigación",
     "print.scoreLine": "Puntuación: {score} de {total} puntos - {level}",
     "footer.tagline": "Sin inicios de sesión · sin cuentas · sin recopilación de datos · se ejecuta completamente en tu navegador.",
-    "footer.privacy": "Privacidad y cumplimiento"
+    "footer.privacy": "Privacidad y cumplimiento",
+    "ace.eyebrow": "Marco ACE",
+    "ace.title": "Piénsalo bien con ACE",
+    "ace.intro": "ACE te lleva de detectar pistas individuales a explicar y comprobar una conclusión — Articúlalo, Conéctalo y Amplíalo.",
+    "ace.a.title": "A — Articúlalo",
+    "ace.a.q": "¿Qué te dicen las pistas? Explícalas con tus propias palabras.",
+    "ace.c.title": "C — Conéctalo",
+    "ace.c.q": "¿Cómo se conectan las pistas con algo que ya sabes?",
+    "ace.e.title": "E — Amplíalo",
+    "ace.e.q": "Comprueba tu conclusión. ¿Qué más debería ser cierto si tu respuesta es correcta?",
+    "ace.example.eyebrow": "Ejemplo resuelto",
+    "ace.example.clues": "Pistas de la exhibición",
+    "ace.example.answer": "Respuesta del misterio",
+    "ace.card.title": "Tarjeta ACE lista para el aula",
+    "ace.card.h1": "Paso ACE",
+    "ace.card.h2": "Pregunta para el estudiante",
+    "ace.card.a": "Articular",
+    "ace.card.aq": "¿Qué dicen las pistas con tus propias palabras?",
+    "ace.card.c": "Conectar",
+    "ace.card.cq": "¿Cómo encajan las pistas entre sí?",
+    "ace.card.e": "Ampliar",
+    "ace.card.eq": "¿Qué predicción podría probar o refutar tu respuesta?",
+    "ace.why.label": "Por qué funciona ACE:",
+    "ace.why.body": "Los estudiantes nombran lo que observan, explican cómo las pistas respaldan una conclusión y comprueban si esa conclusión se sostiene.",
+    "ace.more": "Acerca del Marco ACE"
   },
-  exhibits: [
+  "exhibits": [
     {
       "id": "dodo",
       "image": "images/dodo.png",
@@ -394,5 +418,19 @@ window.__ROOM_LANGS__.es = {
         ]
       }
     }
-  ]
+  ],
+  "ace": {
+    "title": "El misterioso caparazón enrollado",
+    "answer": "Un amonites — un animal marino extinto con caparazón, emparentado con el calamar y el pulpo actuales",
+    "clues": [
+      "Un caparazón en espiral muy enrollado y dividido en muchas cámaras",
+      "Encontrado en capas de roca oceánica antigua",
+      "Un patrón de crestas y costillas por todo el caparazón",
+      "Ningún caparazón como este pertenece a un animal vivo hoy",
+      "Los tamaños van desde una moneda hasta un neumático de coche"
+    ],
+    "articulate": "El objeto es un caparazón en espiral dividido en cámaras, extraído de roca antigua del fondo marino. Antes albergaba a un animal marino de cuerpo blando que ya no existe.",
+    "connect": "Me recuerda al nautilo, que vive hoy en el océano. Ambos construyen un caparazón enrollado y con cámaras, así que probablemente son parientes.",
+    "extend": "Si es un animal marino con caparazón, debería encontrar sus caparazones en muchas capas de roca y en sedimentos marinos, y sus parientes vivos más cercanos deberían ser cefalópodos como el nautilo, el calamar y el pulpo."
+  }
 };

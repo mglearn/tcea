@@ -85,7 +85,31 @@ window.__ROOM_LANGS__.es = {
     "reflection.print": "Imprimir mi investigación",
     "print.scoreLine": "Puntaje: {score} de {total} puntos - {level}",
     "footer.tagline": "Sin inicios de sesión · sin cuentas · sin recopilación de datos · funciona por completo en tu navegador.",
-    "footer.privacy": "Privacidad y cumplimiento"
+    "footer.privacy": "Privacidad y cumplimiento",
+    "ace.eyebrow": "Marco ACE",
+    "ace.title": "Piénsalo bien con ACE",
+    "ace.intro": "ACE te lleva de detectar pistas individuales a explicar y comprobar una conclusión — Articúlalo, Conéctalo y Amplíalo.",
+    "ace.a.title": "A — Articúlalo",
+    "ace.a.q": "¿Qué te dicen las pistas? Explícalas con tus propias palabras.",
+    "ace.c.title": "C — Conéctalo",
+    "ace.c.q": "¿Cómo se conectan las pistas con algo que ya sabes?",
+    "ace.e.title": "E — Amplíalo",
+    "ace.e.q": "Comprueba tu conclusión. ¿Qué más debería ser cierto si tu respuesta es correcta?",
+    "ace.example.eyebrow": "Ejemplo resuelto",
+    "ace.example.clues": "Pistas de la exhibición",
+    "ace.example.answer": "Respuesta del misterio",
+    "ace.card.title": "Tarjeta ACE lista para el aula",
+    "ace.card.h1": "Paso ACE",
+    "ace.card.h2": "Pregunta para el estudiante",
+    "ace.card.a": "Articular",
+    "ace.card.aq": "¿Qué dicen las pistas con tus propias palabras?",
+    "ace.card.c": "Conectar",
+    "ace.card.cq": "¿Cómo encajan las pistas entre sí?",
+    "ace.card.e": "Ampliar",
+    "ace.card.eq": "¿Qué predicción podría probar o refutar tu respuesta?",
+    "ace.why.label": "Por qué funciona ACE:",
+    "ace.why.body": "Los estudiantes nombran lo que observan, explican cómo las pistas respaldan una conclusión y comprueban si esa conclusión se sostiene.",
+    "ace.more": "Acerca del Marco ACE"
   },
   "exhibits": [
     {
@@ -394,5 +418,19 @@ window.__ROOM_LANGS__.es = {
       "purpose": "Soy rico en hierro y dejo una raya marrón rojiza",
       "replacement": "Fabricar hierro, acero y pigmento rojo"
     }
-  ]
+  ],
+  "ace": {
+    "title": "Los misteriosos cubos dorados",
+    "answer": "Pirita — el 'oro de los tontos', un mineral de hierro que a menudo se confunde con oro verdadero",
+    "clues": [
+      "Un color metálico brillante, dorado como el latón",
+      "Crece en formas de cubo casi perfectas",
+      "Produce chispas al golpearla con acero",
+      "Más ligera y dura que el oro verdadero",
+      "Se agrieta y se rompe en lugar de doblarse"
+    ],
+    "articulate": "Las pistas describen un mineral metálico brillante de color latón que forma cubos, produce chispas al golpearlo y es quebradizo en lugar de blando.",
+    "connect": "Me recuerda al oro verdadero por el color y el brillo, por lo que los mineros lo apodaron 'oro de los tontos'.",
+    "extend": "Si es pirita (sulfuro de hierro) y no oro, sus cristales deberían ser cúbicos, debería ser mucho menos densa que el oro, y debería ser quebradiza y despedir un olor a azufre al golpearla — nada de lo cual es cierto para el oro verdadero."
+  }
 };

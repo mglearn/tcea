@@ -1,6 +1,6 @@
 window.__TVC_LANG_PACKS__ = window.__TVC_LANG_PACKS__ || {};
 window.__TVC_LANG_PACKS__.vi = {
-  ui: {
+  "ui": {
     "skip": "Chuyển đến hoạt động",
     "progress.title": "Tiến độ điều tra",
     "progress.completed": "trong số {total} hiện vật đã hoàn thành",
@@ -85,179 +85,352 @@ window.__TVC_LANG_PACKS__.vi = {
     "reflection.print": "In bài điều tra của tôi",
     "print.scoreLine": "Điểm số: {score} trên {total} điểm - {level}",
     "footer.tagline": "Không đăng nhập · không tài khoản · không thu thập dữ liệu · chạy hoàn toàn trong trình duyệt của bạn.",
-    "footer.privacy": "Quyền riêng tư & tuân thủ"
+    "footer.privacy": "Quyền riêng tư & tuân thủ",
+    "ace.eyebrow": "Khung tư duy ACE",
+    "ace.title": "Suy luận thấu đáo với ACE",
+    "ace.intro": "ACE giúp em chuyển từ việc phát hiện từng manh mối riêng lẻ sang giải thích và kiểm chứng một kết luận — Diễn đạt, Kết nối và Mở rộng.",
+    "ace.a.title": "A — Diễn đạt",
+    "ace.a.q": "Các manh mối cho em biết điều gì? Hãy giải thích bằng lời của chính em.",
+    "ace.c.title": "C — Kết nối",
+    "ace.c.q": "Các manh mối kết nối như thế nào với điều em đã biết?",
+    "ace.e.title": "E — Mở rộng",
+    "ace.e.q": "Hãy kiểm chứng kết luận của em. Còn điều gì khác phải đúng nếu câu trả lời của em chính xác?",
+    "ace.example.eyebrow": "Ví dụ mẫu",
+    "ace.example.clues": "Manh mối trưng bày",
+    "ace.example.answer": "Đáp án bí ẩn",
+    "ace.card.title": "Thẻ ACE sẵn dùng trong lớp học",
+    "ace.card.h1": "Bước ACE",
+    "ace.card.h2": "Câu hỏi cho học sinh",
+    "ace.card.a": "Diễn đạt",
+    "ace.card.aq": "Các manh mối nói gì, bằng lời của chính em?",
+    "ace.card.c": "Kết nối",
+    "ace.card.cq": "Các manh mối khớp với nhau như thế nào?",
+    "ace.card.e": "Mở rộng",
+    "ace.card.eq": "Dự đoán nào có thể chứng minh đúng hoặc sai câu trả lời của em?",
+    "ace.why.label": "Vì sao ACE hiệu quả:",
+    "ace.why.body": "Học sinh gọi tên những gì mình quan sát được, giải thích cách các manh mối ủng hộ một kết luận, và kiểm chứng xem kết luận đó có vững vàng hay không.",
+    "ace.more": "Về Khung tư duy ACE"
   },
-  exhibits: [
+  "exhibits": [
     {
-      id: "slate",
-      image: "images/slate.png",
-      relic: "Bảng đá và bút đá",
-      clues: [
+      "id": "slate",
+      "image": "images/slate.png",
+      "relic": "Bảng đá và bút đá",
+      "clues": [
         "Mỗi học sinh viết lên tôi thay vì dùng giấy.",
         "Tôi là một tấm đá xám mỏng đặt trong khung gỗ.",
         "Học sinh lau sạch tôi bằng một mảnh vải sau mỗi bài học.",
         "Một cây bút kêu ken két làm bằng đá phiến hoặc phấn viết lên bề mặt của tôi."
       ],
-      purpose: "Cung cấp cho mỗi học sinh một bề mặt tái sử dụng để luyện viết và làm toán",
-      limitation: "Bài làm bị xóa sau mỗi bài học và không bao giờ có thể lưu lại hay xem lại",
-      replacement: "Vở giấy, bảng trắng lau khô và máy tính bảng kỹ thuật số",
-      choices: {
-        identify: ["Bảng đá và bút đá", "Cục lau bảng đen", "Bảng viết bằng sáp", "Khay cát"],
-        purpose: ["Cung cấp cho mỗi học sinh một bề mặt tái sử dụng để luyện viết và làm toán", "Trừng phạt học sinh hư hỏng", "Trang trí tường lớp học", "Giữ ấm phòng học vào mùa đông"],
-        replacement: ["Vở giấy, bảng trắng lau khô và máy tính bảng kỹ thuật số", "Sách giáo khoa và sách tập đọc in", "Loa phóng thanh và micrô", "Bếp củi và đèn lồng"]
+      "purpose": "Cung cấp cho mỗi học sinh một bề mặt tái sử dụng để luyện viết và làm toán",
+      "limitation": "Bài làm bị xóa sau mỗi bài học và không bao giờ có thể lưu lại hay xem lại",
+      "replacement": "Vở giấy, bảng trắng lau khô và máy tính bảng kỹ thuật số",
+      "choices": {
+        "identify": [
+          "Bảng đá và bút đá",
+          "Cục lau bảng đen",
+          "Bảng viết bằng sáp",
+          "Khay cát"
+        ],
+        "purpose": [
+          "Cung cấp cho mỗi học sinh một bề mặt tái sử dụng để luyện viết và làm toán",
+          "Trừng phạt học sinh hư hỏng",
+          "Trang trí tường lớp học",
+          "Giữ ấm phòng học vào mùa đông"
+        ],
+        "replacement": [
+          "Vở giấy, bảng trắng lau khô và máy tính bảng kỹ thuật số",
+          "Sách giáo khoa và sách tập đọc in",
+          "Loa phóng thanh và micrô",
+          "Bếp củi và đèn lồng"
+        ]
       }
     },
     {
-      id: "hornbook",
-      image: "images/hornbook.png",
-      relic: "Bảng vỡ lòng bọc sừng (hornbook)",
-      clues: [
+      "id": "hornbook",
+      "image": "images/hornbook.png",
+      "relic": "Bảng vỡ lòng bọc sừng (hornbook)",
+      "clues": [
         "Những học sinh nhỏ tuổi nhất cầm tôi bằng chiếc tay cầm bằng gỗ.",
         "Tôi trông giống một chiếc mái chèo nhỏ hoặc một cái muỗng.",
         "Một tấm sừng động vật mỏng, trong suốt bảo vệ trang giấy của tôi.",
         "Trang giấy duy nhất của tôi hiển thị bảng chữ cái, các âm tiết và một lời cầu nguyện ngắn."
       ],
-      purpose: "Dạy bảng chữ cái và những bài đọc đầu tiên cho học sinh mới bắt đầu",
-      limitation: "Tôi chỉ có thể hiển thị một lượng chữ rất nhỏ trên một trang giấy nhỏ",
-      replacement: "Sách vỡ lòng in, sách tập đọc theo cấp độ và ứng dụng tập đọc",
-      choices: {
-        identify: ["Bảng vỡ lòng bọc sừng (hornbook)", "Thước kẻ bằng gỗ", "Gương cầm tay", "Thớt cắt"],
-        purpose: ["Dạy bảng chữ cái và những bài đọc đầu tiên cho học sinh mới bắt đầu", "Giữ cho học sinh im lặng trong giờ học", "Đo dòng kẻ để tập viết chữ", "Quạt mát lớp học khi trời nóng"],
-        replacement: ["Sách vỡ lòng in, sách tập đọc theo cấp độ và ứng dụng tập đọc", "Bảng đá và phấn", "Các cuộc thi đánh vần", "Chương trình phát thanh"]
+      "purpose": "Dạy bảng chữ cái và những bài đọc đầu tiên cho học sinh mới bắt đầu",
+      "limitation": "Tôi chỉ có thể hiển thị một lượng chữ rất nhỏ trên một trang giấy nhỏ",
+      "replacement": "Sách vỡ lòng in, sách tập đọc theo cấp độ và ứng dụng tập đọc",
+      "choices": {
+        "identify": [
+          "Bảng vỡ lòng bọc sừng (hornbook)",
+          "Thước kẻ bằng gỗ",
+          "Gương cầm tay",
+          "Thớt cắt"
+        ],
+        "purpose": [
+          "Dạy bảng chữ cái và những bài đọc đầu tiên cho học sinh mới bắt đầu",
+          "Giữ cho học sinh im lặng trong giờ học",
+          "Đo dòng kẻ để tập viết chữ",
+          "Quạt mát lớp học khi trời nóng"
+        ],
+        "replacement": [
+          "Sách vỡ lòng in, sách tập đọc theo cấp độ và ứng dụng tập đọc",
+          "Bảng đá và phấn",
+          "Các cuộc thi đánh vần",
+          "Chương trình phát thanh"
+        ]
       }
     },
     {
-      id: "recitation",
-      image: "images/recitation.png",
-      relic: "Đọc thuộc lòng máy móc",
-      clues: [
+      "id": "recitation",
+      "image": "images/recitation.png",
+      "relic": "Đọc thuộc lòng máy móc",
+      "clues": [
         "Học sinh đứng bên bàn giáo viên để đọc to bài học của mình.",
         "Học tập nghĩa là ghi nhớ từng từ một cách chính xác.",
         "Học sinh nào đọc sót một từ thường phải lui về cuối hàng.",
         "Hiểu ý nghĩa ít quan trọng hơn việc lặp lại nó một cách hoàn hảo."
       ],
-      purpose: "Khắc ghi các sự kiện và đoạn văn vào trí nhớ thông qua sự lặp lại liên tục",
-      limitation: "Học sinh thường ghi nhớ những từ mà họ không thực sự hiểu",
-      replacement: "Thảo luận, đặt câu hỏi và học tập dựa trên sự thấu hiểu",
-      choices: {
-        identify: ["Đọc thuộc lòng máy móc", "Giờ đọc thầm", "Buổi thí nghiệm khoa học nhóm", "Tranh luận cả lớp"],
-        purpose: ["Khắc ghi các sự kiện và đoạn văn vào trí nhớ thông qua sự lặp lại liên tục", "Cho học sinh tự chọn sách của mình", "Dạy tinh thần làm việc nhóm và hợp tác", "Kiểm tra học sinh bằng bài luận viết"],
-        replacement: ["Thảo luận, đặt câu hỏi và học tập dựa trên sự thấu hiểu", "Bảng đen lớn hơn", "Ngày học dài hơn", "Chép tay nhiều hơn"]
+      "purpose": "Khắc ghi các sự kiện và đoạn văn vào trí nhớ thông qua sự lặp lại liên tục",
+      "limitation": "Học sinh thường ghi nhớ những từ mà họ không thực sự hiểu",
+      "replacement": "Thảo luận, đặt câu hỏi và học tập dựa trên sự thấu hiểu",
+      "choices": {
+        "identify": [
+          "Đọc thuộc lòng máy móc",
+          "Giờ đọc thầm",
+          "Buổi thí nghiệm khoa học nhóm",
+          "Tranh luận cả lớp"
+        ],
+        "purpose": [
+          "Khắc ghi các sự kiện và đoạn văn vào trí nhớ thông qua sự lặp lại liên tục",
+          "Cho học sinh tự chọn sách của mình",
+          "Dạy tinh thần làm việc nhóm và hợp tác",
+          "Kiểm tra học sinh bằng bài luận viết"
+        ],
+        "replacement": [
+          "Thảo luận, đặt câu hỏi và học tập dựa trên sự thấu hiểu",
+          "Bảng đen lớn hơn",
+          "Ngày học dài hơn",
+          "Chép tay nhiều hơn"
+        ]
       }
     },
     {
-      id: "dunce",
-      image: "images/dunce.png",
-      relic: "Mũ đội đầu kẻ ngốc (dunce cap)",
-      clues: [
+      "id": "dunce",
+      "image": "images/dunce.png",
+      "relic": "Mũ đội đầu kẻ ngốc (dunce cap)",
+      "clues": [
         "Một học sinh gặp khó khăn đôi khi bị bắt phải đội tôi.",
         "Tôi là một chiếc mũ giấy cao, hình nón.",
         "Học sinh đội tôi thường phải ngồi một mình trên một chiếc ghế đẩu.",
         "Tôi được dùng để làm nhục một người học trước cả lớp."
       ],
-      purpose: "Làm nhục học sinh trước công chúng để ép họ học hành tốt hơn",
-      limitation: "Sự xấu hổ khiến người học nản lòng thay vì giúp họ tiến bộ",
-      replacement: "Sự động viên, hỗ trợ thêm và các hệ thống hành vi tích cực",
-      choices: {
-        identify: ["Mũ đội đầu kẻ ngốc (dunce cap)", "Mũ tốt nghiệp", "Mũ mùa đông", "Vương miện giấy"],
-        purpose: ["Làm nhục học sinh trước công chúng để ép họ học hành tốt hơn", "Khen thưởng học sinh giỏi nhất lớp", "Che nắng khỏi mắt học sinh", "Đánh dấu ai sẽ đọc bài tiếp theo"],
-        replacement: ["Sự động viên, hỗ trợ thêm và các hệ thống hành vi tích cực", "Ngày học dài hơn", "Từ đánh vần khó hơn", "Sơ đồ chỗ ngồi được sắp xếp"]
+      "purpose": "Làm nhục học sinh trước công chúng để ép họ học hành tốt hơn",
+      "limitation": "Sự xấu hổ khiến người học nản lòng thay vì giúp họ tiến bộ",
+      "replacement": "Sự động viên, hỗ trợ thêm và các hệ thống hành vi tích cực",
+      "choices": {
+        "identify": [
+          "Mũ đội đầu kẻ ngốc (dunce cap)",
+          "Mũ tốt nghiệp",
+          "Mũ mùa đông",
+          "Vương miện giấy"
+        ],
+        "purpose": [
+          "Làm nhục học sinh trước công chúng để ép họ học hành tốt hơn",
+          "Khen thưởng học sinh giỏi nhất lớp",
+          "Che nắng khỏi mắt học sinh",
+          "Đánh dấu ai sẽ đọc bài tiếp theo"
+        ],
+        "replacement": [
+          "Sự động viên, hỗ trợ thêm và các hệ thống hành vi tích cực",
+          "Ngày học dài hơn",
+          "Từ đánh vần khó hơn",
+          "Sơ đồ chỗ ngồi được sắp xếp"
+        ]
       }
     },
     {
-      id: "blab",
-      image: "images/blab.png",
-      relic: "Trường học đọc oang oang (blab school)",
-      clues: [
+      "id": "blab",
+      "image": "images/blab.png",
+      "relic": "Trường học đọc oang oang (blab school)",
+      "clues": [
         "Cả phòng học cùng đọc to bài của mình một lúc.",
         "Học sinh lặp lại bài học của mình trong một tiếng rì rầm đều đều của nhiều giọng nói.",
         "Giáo viên lắng nghe xem có ai im bặt không.",
         "Tên của tôi bắt nguồn từ tiếng 'oang oang' không ngừng của nhiều giọng nói cùng lúc."
       ],
-      purpose: "Để giáo viên nghe được rằng mọi học sinh đều đang học cùng một lúc",
-      limitation: "Tiếng ồn khiến khó suy nghĩ hoặc nghe rõ bất kỳ học sinh nào",
-      replacement: "Học độc lập trong yên tĩnh và giảng dạy theo nhóm nhỏ",
-      choices: {
-        identify: ["Trường học đọc oang oang (blab school)", "Phòng tự học", "Lớp âm nhạc", "Thư viện im lặng"],
-        purpose: ["Để giáo viên nghe được rằng mọi học sinh đều đang học cùng một lúc", "Dạy học sinh hát thánh ca", "Tập luyện cho một vở kịch của lớp", "Giúp học sinh bình tĩnh trước bài kiểm tra"],
-        replacement: ["Học độc lập trong yên tĩnh và giảng dạy theo nhóm nhỏ", "Lớp học đông hơn", "Đọc thuộc lòng dài hơn", "Ghi nhớ nhiều hơn"]
+      "purpose": "Để giáo viên nghe được rằng mọi học sinh đều đang học cùng một lúc",
+      "limitation": "Tiếng ồn khiến khó suy nghĩ hoặc nghe rõ bất kỳ học sinh nào",
+      "replacement": "Học độc lập trong yên tĩnh và giảng dạy theo nhóm nhỏ",
+      "choices": {
+        "identify": [
+          "Trường học đọc oang oang (blab school)",
+          "Phòng tự học",
+          "Lớp âm nhạc",
+          "Thư viện im lặng"
+        ],
+        "purpose": [
+          "Để giáo viên nghe được rằng mọi học sinh đều đang học cùng một lúc",
+          "Dạy học sinh hát thánh ca",
+          "Tập luyện cho một vở kịch của lớp",
+          "Giúp học sinh bình tĩnh trước bài kiểm tra"
+        ],
+        "replacement": [
+          "Học độc lập trong yên tĩnh và giảng dạy theo nhóm nhỏ",
+          "Lớp học đông hơn",
+          "Đọc thuộc lòng dài hơn",
+          "Ghi nhớ nhiều hơn"
+        ]
       }
     },
     {
-      id: "copybook",
-      image: "images/copybook.png",
-      relic: "Bài luyện viết chữ đẹp trong vở tập viết",
-      clues: [
+      "id": "copybook",
+      "image": "images/copybook.png",
+      "relic": "Bài luyện viết chữ đẹp trong vở tập viết",
+      "clues": [
         "Học sinh chép đi chép lại cùng một dòng chữ hoàn hảo.",
         "Chữ viết tay đẹp, uyển chuyển là mục tiêu của mỗi bài học.",
         "Một mẫu chữ in nằm ở đầu mỗi trang để bắt chước.",
         "Sự gọn gàng và hình dạng chữ cái chính xác được chấm điểm kỹ lưỡng."
       ],
-      purpose: "Rèn luyện học sinh viết một kiểu chữ tay đồng đều, thanh lịch",
-      limitation: "Nhiều giờ chép chữ để lại ít thời gian cho ý tưởng hay bài viết sáng tạo",
-      replacement: "Gõ bàn phím, đánh máy và xử lý văn bản",
-      choices: {
-        identify: ["Bài luyện viết chữ đẹp trong vở tập viết", "Vở phác họa mỹ thuật", "Vở bài tập toán", "Nhật ký đọc sách"],
-        purpose: ["Rèn luyện học sinh viết một kiểu chữ tay đồng đều, thanh lịch", "Dạy học sinh vẽ bản đồ", "Ghi lại điểm danh hằng ngày", "Luyện bảng cửu chương"],
-        replacement: ["Gõ bàn phím, đánh máy và xử lý văn bản", "Bút chì màu và bút lông", "Vở lớn hơn", "Bút máy"]
+      "purpose": "Rèn luyện học sinh viết một kiểu chữ tay đồng đều, thanh lịch",
+      "limitation": "Nhiều giờ chép chữ để lại ít thời gian cho ý tưởng hay bài viết sáng tạo",
+      "replacement": "Gõ bàn phím, đánh máy và xử lý văn bản",
+      "choices": {
+        "identify": [
+          "Bài luyện viết chữ đẹp trong vở tập viết",
+          "Vở phác họa mỹ thuật",
+          "Vở bài tập toán",
+          "Nhật ký đọc sách"
+        ],
+        "purpose": [
+          "Rèn luyện học sinh viết một kiểu chữ tay đồng đều, thanh lịch",
+          "Dạy học sinh vẽ bản đồ",
+          "Ghi lại điểm danh hằng ngày",
+          "Luyện bảng cửu chương"
+        ],
+        "replacement": [
+          "Gõ bàn phím, đánh máy và xử lý văn bản",
+          "Bút chì màu và bút lông",
+          "Vở lớn hơn",
+          "Bút máy"
+        ]
       }
     },
     {
-      id: "rod",
-      image: "images/rod.png",
-      relic: "Chiếc roi (hình phạt thể xác)",
-      clues: [
+      "id": "rod",
+      "image": "images/rod.png",
+      "relic": "Chiếc roi (hình phạt thể xác)",
+      "clues": [
         "Giáo viên từng để tôi ở góc phòng như một lời cảnh cáo.",
         "Tôi là một cây roi, cây gậy hoặc chiếc bảng bằng gỗ.",
         "Một câu nói xưa về việc 'tha' roi và làm 'hư' đứa trẻ đã mô tả tôi.",
         "Tôi được dùng để đánh những học sinh phạm luật."
       ],
-      purpose: "Cưỡng ép sự vâng lời và kỷ luật thông qua trừng phạt thể xác",
-      limitation: "Sự sợ hãi và đau đớn làm hại học sinh và không xây dựng được việc học thực sự",
-      replacement: "Kỳ vọng rõ ràng, thực hành phục hồi và tư vấn tâm lý",
-      choices: {
-        identify: ["Chiếc roi (hình phạt thể xác)", "Que chỉ bản đồ", "Cần câu cá", "Gậy chống đi bộ"],
-        purpose: ["Cưỡng ép sự vâng lời và kỷ luật thông qua trừng phạt thể xác", "Chỉ vào các từ trên bảng đen", "Đo chiều cao của học sinh", "Với tới những kệ cao trong phòng"],
-        replacement: ["Kỳ vọng rõ ràng, thực hành phục hồi và tư vấn tâm lý", "Chuông kêu to hơn", "Phạt ở lại lâu hơn", "Quy định trang phục nghiêm ngặt hơn"]
+      "purpose": "Cưỡng ép sự vâng lời và kỷ luật thông qua trừng phạt thể xác",
+      "limitation": "Sự sợ hãi và đau đớn làm hại học sinh và không xây dựng được việc học thực sự",
+      "replacement": "Kỳ vọng rõ ràng, thực hành phục hồi và tư vấn tâm lý",
+      "choices": {
+        "identify": [
+          "Chiếc roi (hình phạt thể xác)",
+          "Que chỉ bản đồ",
+          "Cần câu cá",
+          "Gậy chống đi bộ"
+        ],
+        "purpose": [
+          "Cưỡng ép sự vâng lời và kỷ luật thông qua trừng phạt thể xác",
+          "Chỉ vào các từ trên bảng đen",
+          "Đo chiều cao của học sinh",
+          "Với tới những kệ cao trong phòng"
+        ],
+        "replacement": [
+          "Kỳ vọng rõ ràng, thực hành phục hồi và tư vấn tâm lý",
+          "Chuông kêu to hơn",
+          "Phạt ở lại lâu hơn",
+          "Quy định trang phục nghiêm ngặt hơn"
+        ]
       }
     },
     {
-      id: "monitorial",
-      image: "images/monitorial.png",
-      relic: "Hệ thống giám sát viên (Lancaster)",
-      clues: [
+      "id": "monitorial",
+      "image": "images/monitorial.png",
+      "relic": "Hệ thống giám sát viên (Lancaster)",
+      "clues": [
         "Một giáo viên có thể điều hành một trường học hàng trăm em nhỏ với tôi.",
         "Những học sinh lớn tuổi hơn, giỏi hơn được chọn làm 'giám sát viên'.",
         "Mỗi giám sát viên dạy một nhóm nhỏ một bài học duy nhất.",
         "Kiến thức được truyền dọc theo các hàng từ học sinh này sang học sinh khác, chứ không phải từ một giáo viên."
       ],
-      purpose: "Dạy những nhóm rất đông một cách rẻ tiền bằng cách để học trò dạy học trò",
-      limitation: "Các giám sát viên trẻ tuổi có thể truyền lại những sai lầm và kiến thức hời hợt",
-      replacement: "Giáo viên được đào tạo dẫn dắt các lớp nhỏ hơn, chia theo khối lớp",
-      choices: {
-        identify: ["Hệ thống giám sát viên (Lancaster)", "Cuộc thi đánh vần", "Chuyến tham quan dã ngoại", "Chương trình phụ huynh tình nguyện"],
-        purpose: ["Dạy những nhóm rất đông một cách rẻ tiền bằng cách để học trò dạy học trò", "Chọn lớp trưởng", "Tổ chức thể thao ngoài giờ", "Chỉ nhóm học sinh theo độ tuổi"],
-        replacement: ["Giáo viên được đào tạo dẫn dắt các lớp nhỏ hơn, chia theo khối lớp", "Một giảng đường khổng lồ", "Năm học dài hơn", "Nhiều sách giáo khoa hơn cho mỗi học sinh"]
+      "purpose": "Dạy những nhóm rất đông một cách rẻ tiền bằng cách để học trò dạy học trò",
+      "limitation": "Các giám sát viên trẻ tuổi có thể truyền lại những sai lầm và kiến thức hời hợt",
+      "replacement": "Giáo viên được đào tạo dẫn dắt các lớp nhỏ hơn, chia theo khối lớp",
+      "choices": {
+        "identify": [
+          "Hệ thống giám sát viên (Lancaster)",
+          "Cuộc thi đánh vần",
+          "Chuyến tham quan dã ngoại",
+          "Chương trình phụ huynh tình nguyện"
+        ],
+        "purpose": [
+          "Dạy những nhóm rất đông một cách rẻ tiền bằng cách để học trò dạy học trò",
+          "Chọn lớp trưởng",
+          "Tổ chức thể thao ngoài giờ",
+          "Chỉ nhóm học sinh theo độ tuổi"
+        ],
+        "replacement": [
+          "Giáo viên được đào tạo dẫn dắt các lớp nhỏ hơn, chia theo khối lớp",
+          "Một giảng đường khổng lồ",
+          "Năm học dài hơn",
+          "Nhiều sách giáo khoa hơn cho mỗi học sinh"
+        ]
       }
     },
     {
-      id: "oneroom",
-      image: "images/oneroom.png",
-      relic: "Trường học một phòng",
-      clues: [
+      "id": "oneroom",
+      "image": "images/oneroom.png",
+      "relic": "Trường học một phòng",
+      "clues": [
         "Trẻ em ở mọi lứa tuổi cùng học trong một căn phòng duy nhất.",
         "Một giáo viên dạy trẻ sáu tuổi và thiếu niên cùng một lúc.",
         "Một chiếc bếp củi ở giữa phòng sưởi ấm cho cả lớp.",
         "Học sinh được xếp nhóm theo trình độ đọc, chứ không theo số khối lớp."
       ],
-      purpose: "Giáo dục trẻ em ở mọi lứa tuổi cùng nhau ở những nơi có ít giáo viên",
-      limitation: "Một giáo viên có thể dành rất ít thời gian cho mỗi độ tuổi và trình độ",
-      replacement: "Các khối lớp dựa theo độ tuổi với một giáo viên cho mỗi khối lớp",
-      choices: {
-        identify: ["Trường học một phòng", "Trường trung học hiện đại", "Trung tâm mẫu giáo", "Khuôn viên đại học"],
-        purpose: ["Giáo dục trẻ em ở mọi lứa tuổi cùng nhau ở những nơi có ít giáo viên", "Tách học sinh theo môn học", "Chỉ dạy đọc và viết", "Đào tạo giáo viên tương lai"],
-        replacement: ["Các khối lớp dựa theo độ tuổi với một giáo viên cho mỗi khối lớp", "Những phòng đơn lớn hơn", "Lớp một phòng học quanh năm", "Nhiều bếp củi hơn"]
+      "purpose": "Giáo dục trẻ em ở mọi lứa tuổi cùng nhau ở những nơi có ít giáo viên",
+      "limitation": "Một giáo viên có thể dành rất ít thời gian cho mỗi độ tuổi và trình độ",
+      "replacement": "Các khối lớp dựa theo độ tuổi với một giáo viên cho mỗi khối lớp",
+      "choices": {
+        "identify": [
+          "Trường học một phòng",
+          "Trường trung học hiện đại",
+          "Trung tâm mẫu giáo",
+          "Khuôn viên đại học"
+        ],
+        "purpose": [
+          "Giáo dục trẻ em ở mọi lứa tuổi cùng nhau ở những nơi có ít giáo viên",
+          "Tách học sinh theo môn học",
+          "Chỉ dạy đọc và viết",
+          "Đào tạo giáo viên tương lai"
+        ],
+        "replacement": [
+          "Các khối lớp dựa theo độ tuổi với một giáo viên cho mỗi khối lớp",
+          "Những phòng đơn lớn hơn",
+          "Lớp một phòng học quanh năm",
+          "Nhiều bếp củi hơn"
+        ]
       }
     }
-  ]
+  ],
+  "ace": {
+    "title": "Chiếc Hộp Chiếu Bí Ẩn",
+    "answer": "Đèn chiếu ma thuật (magic lantern) — một loại máy chiếu hình ảnh thời kỳ đầu",
+    "clues": [
+      "Một chiếc hộp gỗ có một thấu kính bằng thủy tinh ở mặt trước",
+      "Một chiếc đèn nhỏ bên trong hộp",
+      "Những bức tranh được vẽ trên các tấm kính hẹp",
+      "Một bức tường trắng dùng làm bề mặt để chiếu lên",
+      "Một bức tranh có thể được trình chiếu cho cả lớp cùng xem"
+    ],
+    "articulate": "Vật thể này là một chiếc hộp sử dụng ánh sáng, một thấu kính và tấm kính có vẽ hình. Nó dường như làm cho một bức tranh nhỏ hiện ra lớn hơn để cả nhóm có thể cùng xem.",
+    "connect": "Điều này khiến em nghĩ đến một chiếc máy chiếu trong lớp học. Cả hai đều dùng ánh sáng và thấu kính để đặt một hình ảnh lớn hơn lên tường hoặc màn chiếu. Tấm kính có lẽ hoạt động giống như một tấm phim đèn chiếu hoặc một tập tin ảnh kỹ thuật số.",
+    "extend": "Nếu đây là một máy chiếu thời kỳ đầu, thì việc đổi tấm kính sẽ làm thay đổi bức tranh trên tường. Căn phòng cần phải tối, và chiếc đèn sẽ nằm phía sau tấm kính có hình. Một chiếc máy chiếu hiện đại thay thế chiếc đèn và tấm kính vẽ tay bằng ánh sáng điện và hình ảnh kỹ thuật số."
+  }
 };

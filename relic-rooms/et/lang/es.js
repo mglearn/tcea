@@ -85,7 +85,31 @@ window.__ROOM_LANGS__.es = {
     "reflection.print": "Imprimir mi investigación",
     "print.scoreLine": "Puntaje: {score} de {total} puntos - {level}",
     "footer.tagline": "Sin inicios de sesión · sin cuentas · sin recopilación de datos · funciona por completo en tu navegador.",
-    "footer.privacy": "Privacidad y cumplimiento"
+    "footer.privacy": "Privacidad y cumplimiento",
+    "ace.eyebrow": "Marco ACE",
+    "ace.title": "Piénsalo bien con ACE",
+    "ace.intro": "ACE te lleva de detectar pistas individuales a explicar y comprobar una conclusión — Articúlalo, Conéctalo y Amplíalo.",
+    "ace.a.title": "A — Articúlalo",
+    "ace.a.q": "¿Qué te dicen las pistas? Explícalas con tus propias palabras.",
+    "ace.c.title": "C — Conéctalo",
+    "ace.c.q": "¿Cómo se conectan las pistas con algo que ya sabes?",
+    "ace.e.title": "E — Amplíalo",
+    "ace.e.q": "Comprueba tu conclusión. ¿Qué más debería ser cierto si tu respuesta es correcta?",
+    "ace.example.eyebrow": "Ejemplo resuelto",
+    "ace.example.clues": "Pistas de la exhibición",
+    "ace.example.answer": "Respuesta del misterio",
+    "ace.card.title": "Tarjeta ACE lista para el aula",
+    "ace.card.h1": "Paso ACE",
+    "ace.card.h2": "Pregunta para el estudiante",
+    "ace.card.a": "Articular",
+    "ace.card.aq": "¿Qué dicen las pistas con tus propias palabras?",
+    "ace.card.c": "Conectar",
+    "ace.card.cq": "¿Cómo encajan las pistas entre sí?",
+    "ace.card.e": "Ampliar",
+    "ace.card.eq": "¿Qué predicción podría probar o refutar tu respuesta?",
+    "ace.why.label": "Por qué funciona ACE:",
+    "ace.why.body": "Los estudiantes nombran lo que observan, explican cómo las pistas respaldan una conclusión y comprueban si esa conclusión se sostiene.",
+    "ace.more": "Acerca del Marco ACE"
   },
   "exhibits": [
     {
@@ -394,5 +418,19 @@ window.__ROOM_LANGS__.es = {
       "purpose": "Una palabra secreta escrita que se usa para probar quién eres en línea",
       "replacement": "La biometría (escaneos de huella y de rostro)"
     }
-  ]
+  ],
+  "ace": {
+    "title": "La misteriosa máquina de mesita de noche",
+    "answer": "Un despertador independiente — un aparato de un solo uso que te despierta a una hora fijada",
+    "clues": [
+      "Una caja pequeña que se guarda en la mesita de noche",
+      "Solo da la hora y hace sonar una alarma",
+      "Campanas o un zumbador ruidoso despiertan a quien duerme",
+      "Se ajusta a mano cada noche con una esfera o una perilla",
+      "Necesita cuerda, sus propias pilas o un enchufe"
+    ],
+    "articulate": "Las pistas describen un pequeño aparato de mesita de noche cuyas únicas funciones son mostrar la hora y hacer sonar una alarma para despertar a alguien.",
+    "connect": "Me recuerda a la aplicación de reloj y alarma de un teléfono inteligente. Un teléfono ya da la hora y hace sonar alarmas, así que cumple toda la función de este aparato.",
+    "extend": "Si un teléfono puede despertarte, las familias dejarían de comprar un reloj aparte — por eso está desapareciendo hoy. Puede que sobreviva solo como respaldo para cuando el teléfono está sin batería o para quienes evitan las pantallas a la hora de dormir."
+  }
 };

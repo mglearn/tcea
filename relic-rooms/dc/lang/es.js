@@ -1,6 +1,6 @@
 window.__ROOM_LANGS__ = window.__ROOM_LANGS__ || {};
 window.__ROOM_LANGS__.es = {
-  ui: {
+  "ui": {
     "skip": "Saltar a la actividad",
     "progress.title": "Progreso de la investigación",
     "progress.completed": "de {total} exhibiciones completadas",
@@ -85,9 +85,33 @@ window.__ROOM_LANGS__.es = {
     "reflection.print": "Imprimir mi investigación",
     "print.scoreLine": "Puntuación: {score} de {total} puntos - {level}",
     "footer.tagline": "Sin inicios de sesión · sin cuentas · sin recolección de datos · funciona completamente en tu navegador.",
-    "footer.privacy": "Privacidad y cumplimiento"
+    "footer.privacy": "Privacidad y cumplimiento",
+    "ace.eyebrow": "Marco ACE",
+    "ace.title": "Piénsalo bien con ACE",
+    "ace.intro": "ACE te lleva de detectar pistas individuales a explicar y comprobar una conclusión — Articúlalo, Conéctalo y Amplíalo.",
+    "ace.a.title": "A — Articúlalo",
+    "ace.a.q": "¿Qué te dicen las pistas? Explícalas con tus propias palabras.",
+    "ace.c.title": "C — Conéctalo",
+    "ace.c.q": "¿Cómo se conectan las pistas con algo que ya sabes?",
+    "ace.e.title": "E — Amplíalo",
+    "ace.e.q": "Comprueba tu conclusión. ¿Qué más debería ser cierto si tu respuesta es correcta?",
+    "ace.example.eyebrow": "Ejemplo resuelto",
+    "ace.example.clues": "Pistas de la exhibición",
+    "ace.example.answer": "Respuesta del misterio",
+    "ace.card.title": "Tarjeta ACE lista para el aula",
+    "ace.card.h1": "Paso ACE",
+    "ace.card.h2": "Pregunta para el estudiante",
+    "ace.card.a": "Articular",
+    "ace.card.aq": "¿Qué dicen las pistas con tus propias palabras?",
+    "ace.card.c": "Conectar",
+    "ace.card.cq": "¿Cómo encajan las pistas entre sí?",
+    "ace.card.e": "Ampliar",
+    "ace.card.eq": "¿Qué predicción podría probar o refutar tu respuesta?",
+    "ace.why.label": "Por qué funciona ACE:",
+    "ace.why.body": "Los estudiantes nombran lo que observan, explican cómo las pistas respaldan una conclusión y comprueban si esa conclusión se sostiene.",
+    "ace.more": "Acerca del Marco ACE"
   },
-  exhibits: [
+  "exhibits": [
     {
       "id": "telegraph",
       "image": "images/telegraph.png",
@@ -394,5 +418,19 @@ window.__ROOM_LANGS__.es = {
       "purpose": "Grabar mensajes telefónicos cuando nadie podía contestar",
       "replacement": "Buzón de voz integrado en los teléfonos"
     }
-  ]
+  ],
+  "ace": {
+    "title": "Las misteriosas torres de señales",
+    "answer": "Una línea de semáforo óptico — un telégrafo óptico que transmitía mensajes de torre en torre",
+    "clues": [
+      "Torres altas construidas en línea a lo largo de las cumbres",
+      "Grandes brazos móviles en lo alto de cada torre",
+      "Operadores que vigilaban la siguiente torre con telescopios",
+      "Cada posición del brazo representaba una letra o una palabra",
+      "Solo funcionaba con luz de día y buen tiempo"
+    ],
+    "articulate": "Las pistas describen una cadena de torres en las cumbres cuyos brazos móviles deletreaban mensajes que los operadores leían y transmitían a la siguiente torre.",
+    "connect": "Me recuerda a transmitir un mensaje por una fila de personas, o a los repetidores de señal que pasan un mensaje de estación en estación hasta que llega.",
+    "extend": "Si depende de ver la siguiente torre, debería fallar de noche, con niebla o cuando una torre está bloqueada — que es exactamente por lo que el telégrafo eléctrico, que funciona por cables, lo reemplazó."
+  }
 };

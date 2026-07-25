@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>The ACE Framework — Relic Rooms · TCEA</title>
+  <meta name="description" content="The ACE Framework — Articulate, Connect, Extend — a simple thinking routine that helps students investigate the mystery exhibits in every Relic Room, moving from clues to a tested conclusion.">
+  <link rel="icon" href="../favicon.svg">
+  <style>
+    :root{
+      --accent:#f7bd4a; --accent-rgb:247,189,74; --bg:#2a2013;
+      --ink:#fff8e8; --muted:#eadcbf; --gold:#f7bd4a; --gold-light:#ffd98a;
+      --panel:rgba(42,32,19,.86); --panel-strong:rgba(20,17,11,.94);
+      --line:rgba(247,189,74,.26);
+      --sky-top:#14110b; --sky-low:#3a2f1e;
+    }
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+    body{
+      margin:0; color:var(--ink); font:18px/1.65 Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(var(--accent-rgb),.14), transparent 20rem),
+        radial-gradient(circle at 84% 8%, rgba(var(--accent-rgb),.12), transparent 18rem),
+        linear-gradient(180deg, var(--sky-top), #231b10 58%, var(--sky-low));
+      min-height:100vh;
+    }
+    a{color:var(--gold-light);}
+    .skip-link{position:fixed;z-index:20;top:12px;inset-inline-start:12px;transform:translateY(-150%);background:var(--gold);color:#241044;padding:10px 16px;font-weight:800;border-radius:6px;}
+    .skip-link:focus{transform:translateY(0);}
+    .wrap{max-width:1000px;margin:0 auto;padding:0 20px;}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;
+      padding:16px 20px;border-bottom:1px solid var(--line);flex-wrap:wrap;
+      background:linear-gradient(180deg, rgba(20,17,11,.6), transparent);}
+    .topbar a.back{color:var(--gold-light);text-decoration:none;font-weight:700;}
+    .langbar{display:flex;align-items:center;gap:8px;}
+    .langbar select{background:var(--panel-strong);color:var(--ink);border:1px solid var(--line);
+      border-radius:8px;padding:6px 10px;font:inherit;}
+    header.hero{padding:40px 0 8px;text-align:center;}
+    .eyebrow{margin:0;color:var(--gold-light);letter-spacing:.16em;text-transform:uppercase;font-size:.82rem;font-weight:800;}
+    h1{margin:.2em 0 .3em;font-size:clamp(2rem,1.3rem+2.6vw,3.1rem);line-height:1.1;}
+    .subtitle{margin:0 auto;max-width:60ch;color:var(--muted);font-size:1.12rem;}
+    main{padding:14px 0 60px;}
+    section.block{margin:30px 0;padding:24px;background:var(--panel);border:1px solid var(--line);
+      border-top:4px solid var(--accent);border-radius:16px;box-shadow:0 14px 34px rgba(0,0,0,.28);}
+    section.block h2{margin:0 0 .5em;font-size:clamp(1.4rem,1.1rem+1.2vw,1.9rem);color:var(--gold-light);}
+    section.block p{margin:0 0 1em;}
+    section.block p:last-child{margin-bottom:0;}
+    figure{margin:0;}
+    figure img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);
+      box-shadow:0 16px 40px rgba(0,0,0,.4);}
+    figcaption{margin-top:10px;color:var(--muted);font-size:.96rem;text-align:center;}
+    .moves{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:6px;}
+    @media(max-width:760px){.moves{grid-template-columns:1fr;}}
+    .move{padding:18px;border-radius:12px;background:color-mix(in srgb, var(--bg) 90%, black);
+      border:1px solid var(--line);border-top:4px solid var(--accent);}
+    .move h3{margin:0 0 .4em;color:var(--gold-light);font-size:1.15rem;}
+    .move .stem{margin:.6em 0 0;font-style:italic;color:var(--muted);}
+    table.ace-card{width:100%;border-collapse:collapse;margin-top:12px;font-size:1rem;}
+    table.ace-card caption{caption-side:top;text-align:left;padding-bottom:10px;font-weight:800;color:var(--gold-light);}
+    table.ace-card th,table.ace-card td{padding:11px 14px;border:1px solid var(--line);text-align:left;vertical-align:top;}
+    table.ace-card thead th{background:rgba(var(--accent-rgb),.16);}
+    table.ace-card tbody th{width:9rem;color:var(--gold-light);background:rgba(0,0,0,.2);}
+    .rooms-cta{display:inline-block;margin-top:6px;padding:13px 22px;border-radius:10px;
+      background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#241044;
+      font-weight:800;text-decoration:none;box-shadow:0 10px 24px rgba(0,0,0,.3);}
+    footer.site-footer{border-top:1px solid var(--line);padding:22px 0;text-align:center;color:var(--muted);}
+    footer.site-footer a{margin-left:10px;}
+    [dir="rtl"] table.ace-card th,[dir="rtl"] table.ace-card td,
+    [dir="rtl"] table.ace-card caption{text-align:right;}
+  </style>
+  <script src="../relic-rooms/assets/i18n.js" defer></script>
+  <script src="i18n-data.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+  <div class="topbar">
+    <a class="back" href="../relic-rooms/" data-i18n="nav.back">← Relic Rooms</a>
+    <div class="langbar">
+      <span aria-hidden="true">🌐</span>
+      <div data-i18n-picker></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <header class="hero">
+      <p class="eyebrow" data-i18n="page.eyebrow">A thinking routine for Relic Rooms</p>
+      <h1 data-i18n="page.title">The ACE Framework</h1>
+      <p class="subtitle" data-i18n="page.subtitle">Articulate · Connect · Extend — how students move from spotting clues to explaining and testing a conclusion.</p>
+    </header>
+
+    <main id="main">
+      <section class="block">
+        <h2 data-i18n="intro.h">What is ACE?</h2>
+        <p data-i18n-html="intro.1"></p>
+        <p data-i18n="intro.2"></p>
+      </section>
+
+      <section class="block">
+        <figure>
+          <img src="images/ace-any-relic-room.png" alt="ACE Framework for Any Relic Room poster: Articulate It, Connect It, and Extend It, with a museum scene and a past-to-present pathway." data-i18n-alt="fig1.caption">
+          <figcaption data-i18n="fig1.caption"></figcaption>
+        </figure>
+      </section>
+
+      <section class="block">
+        <h2 data-i18n="moves.h">The three moves</h2>
+        <div class="moves">
+          <div class="move">
+            <h3 data-i18n="a.h">A — Articulate It</h3>
+            <p data-i18n="a.d"></p>
+            <p class="stem" data-i18n="a.stem"></p>
+          </div>
+          <div class="move">
+            <h3 data-i18n="c.h">C — Connect It</h3>
+            <p data-i18n="c.d"></p>
+            <p class="stem" data-i18n="c.stem"></p>
+          </div>
+          <div class="move">
+            <h3 data-i18n="e.h">E — Extend It</h3>
+            <p data-i18n="e.d"></p>
+            <p class="stem" data-i18n="e.stem"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2 data-i18n="apply.h">How ACE applies to a Relic Room</h2>
+        <p data-i18n-html="apply.1"></p>
+        <p data-i18n-html="apply.2"></p>
+        <p data-i18n="apply.3"></p>
+      </section>
+
+      <section class="block">
+        <figure>
+          <img src="images/ace-mystery-exhibit.png" alt="A worked ACE example for a mystery exhibit: exhibit clues point to a magic lantern, with Articulate, Connect, and Extend shown on three headstones." data-i18n-alt="fig2.caption">
+          <figcaption data-i18n="fig2.caption"></figcaption>
+        </figure>
+      </section>
+
+      <section class="block">
+        <table class="ace-card">
+          <caption data-i18n="card.h">Classroom-Ready ACE Card</caption>
+          <thead><tr><th scope="col" data-i18n="card.col1">ACE step</th><th scope="col" data-i18n="card.col2">Student question</th></tr></thead>
+          <tbody>
+            <tr><th scope="row" data-i18n="card.a">Articulate</th><td data-i18n="card.aq">What do the clues say in your own words?</td></tr>
+            <tr><th scope="row" data-i18n="card.c">Connect</th><td data-i18n="card.cq">How do the clues fit together?</td></tr>
+            <tr><th scope="row" data-i18n="card.e">Extend</th><td data-i18n="card.eq">What prediction could prove or disprove your answer?</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="block">
+        <h2 data-i18n="why.h">Why ACE works</h2>
+        <p data-i18n="why.body"></p>
+      </section>
+
+      <section class="block">
+        <h2 data-i18n="rooms.h">Try it in a Relic Room</h2>
+        <p data-i18n="rooms.body"></p>
+        <a class="rooms-cta" href="../relic-rooms/" data-i18n="rooms.cta">Explore the Relic Rooms →</a>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <span data-i18n="footer.tagline">No logins · no accounts · no data collected · runs entirely in your browser.</span>
+    <a href="../relic-rooms/" data-i18n="footer.back">Relic Rooms hub</a>
+  </footer>
+</body>
+</html>

@@ -85,7 +85,31 @@ window.__ROOM_LANGS__.zh = {
     "reflection.print": "打印我的调查",
     "print.scoreLine": "得分：{score} 分，共 {total} 分 - {level}",
     "footer.tagline": "无需登录 · 无需账户 · 不收集数据 · 完全在你的浏览器中运行。",
-    "footer.privacy": "隐私与合规"
+    "footer.privacy": "隐私与合规",
+    "ace.eyebrow": "ACE 框架",
+    "ace.title": "用 ACE 想清楚",
+    "ace.intro": "ACE 帮你从发现单个线索，进阶到解释并检验一个结论——阐述（Articulate）、联系（Connect）、延伸（Extend）。",
+    "ace.a.title": "A — 阐述它",
+    "ace.a.q": "这些线索告诉了你什么？用你自己的话解释它们。",
+    "ace.c.title": "C — 联系它",
+    "ace.c.q": "这些线索和你已经知道的东西有什么联系？",
+    "ace.e.title": "E — 延伸它",
+    "ace.e.q": "检验你的结论。如果你的答案正确，还应该有什么也是真的？",
+    "ace.example.eyebrow": "范例",
+    "ace.example.clues": "展品线索",
+    "ace.example.answer": "谜题答案",
+    "ace.card.title": "课堂即用 ACE 卡片",
+    "ace.card.h1": "ACE 步骤",
+    "ace.card.h2": "学生提问",
+    "ace.card.a": "阐述",
+    "ace.card.aq": "用你自己的话说，这些线索说了什么？",
+    "ace.card.c": "联系",
+    "ace.card.cq": "这些线索是如何拼合在一起的？",
+    "ace.card.e": "延伸",
+    "ace.card.eq": "什么样的预测能够证明或推翻你的答案？",
+    "ace.why.label": "ACE 为什么有效：",
+    "ace.why.body": "学生说出他们注意到的东西，解释线索如何支撑一个结论，并检验那个结论是否站得住脚。",
+    "ace.more": "关于 ACE 框架"
   },
   "exhibits": [
     {
@@ -394,5 +418,19 @@ window.__ROOM_LANGS__.zh = {
       "purpose": "沿街道轨道载运许多城市乘客",
       "replacement": "有轨电车和公共汽车"
     }
-  ]
+  ],
+  "ace": {
+    "title": "神秘的双轮车",
+    "answer": "战车——一种古代由马拉动、用于赛跑和作战的车辆",
+    "clues": [
+      "一个只有两个轮子的轻便敞开式平台",
+      "由一匹或多匹马拉动",
+      "有站着而非坐着的驭手的位置",
+      "很久以前用于赛跑和作战",
+      "没有引擎、没有座位、没有车顶"
+    ],
+    "articulate": "这些线索描述的是一辆由马拉动的轻便双轮车，由站立的人驾驭，为在赛跑和战争中追求速度而造。",
+    "connect": "它让我想起赛车或私家车。它是最早的快速个人交通工具之一——靠的是畜力而不是引擎。",
+    "extend": "如果动力由马提供，它就需要平坦的道路或跑道以及拉车的牲畜，而一旦引擎能够不靠马就转动车轮，它就会被取代。"
+  }
 };

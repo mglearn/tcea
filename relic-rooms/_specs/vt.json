@@ -104,7 +104,31 @@
     "reflection.print": "Print My Investigation",
     "print.scoreLine": "Score: {score} of {total} points - {level}",
     "footer.tagline": "No logins · no accounts · no data collected · runs entirely in your browser.",
-    "footer.privacy": "Privacy & compliance"
+    "footer.privacy": "Privacy & compliance",
+    "ace.eyebrow": "ACE Framework",
+    "ace.title": "Think it through with ACE",
+    "ace.intro": "ACE moves you from spotting individual clues to explaining and testing a conclusion — Articulate, Connect, and Extend.",
+    "ace.a.title": "A — Articulate It",
+    "ace.a.q": "What do the clues tell you? Explain them in your own words.",
+    "ace.c.title": "C — Connect It",
+    "ace.c.q": "How do the clues connect to something you already know?",
+    "ace.e.title": "E — Extend It",
+    "ace.e.q": "Test your conclusion. What else should be true if your answer is correct?",
+    "ace.example.eyebrow": "Worked example",
+    "ace.example.clues": "Exhibit clues",
+    "ace.example.answer": "Mystery answer",
+    "ace.card.title": "Classroom-Ready ACE Card",
+    "ace.card.h1": "ACE step",
+    "ace.card.h2": "Student question",
+    "ace.card.a": "Articulate",
+    "ace.card.aq": "What do the clues say in your own words?",
+    "ace.card.c": "Connect",
+    "ace.card.cq": "How do the clues fit together?",
+    "ace.card.e": "Extend",
+    "ace.card.eq": "What prediction could prove or disprove your answer?",
+    "ace.why.label": "Why ACE works:",
+    "ace.why.body": "Students name what they notice, explain how the clues support a conclusion, and test whether that conclusion holds up.",
+    "ace.more": "About the ACE Framework"
   },
   "exhibits": [
     {
@@ -503,5 +527,19 @@
       "alignment": "Each reveal gives the era a trade was common and what came after."
     }
   ],
-  "bg": "#241a0f"
+  "bg": "#241a0f",
+  "ace": {
+    "title": "The Mystery Doorstep Bottles",
+    "answer": "The milkman — a worker who delivered fresh milk to homes each morning",
+    "clues": [
+      "A small cart or van out before dawn",
+      "Glass bottles left on doorsteps",
+      "Empty bottles collected to be washed and reused",
+      "A daily route through one neighborhood",
+      "A metal rack that clinks as it is carried"
+    ],
+    "articulate": "The clues describe a worker who brought fresh milk in glass bottles to each home very early and picked up the empties to use again.",
+    "connect": "It reminds me of grocery-delivery apps and the refrigerated dairy case at a supermarket. Both are ways to get milk without keeping a cow.",
+    "extend": "If home refrigerators and supermarkets spread, families could store their own milk, so daily door-to-door delivery would fade. The returned empties also show a reusable-packaging system before cartons."
+  }
 }

@@ -105,7 +105,31 @@
     "reflection.print": "Print My Investigation",
     "print.scoreLine": "Score: {score} of {total} points - {level}",
     "footer.tagline": "No logins · no accounts · no data collected · runs entirely in your browser.",
-    "footer.privacy": "Privacy & compliance"
+    "footer.privacy": "Privacy & compliance",
+    "ace.eyebrow": "ACE Framework",
+    "ace.title": "Think it through with ACE",
+    "ace.intro": "ACE moves you from spotting individual clues to explaining and testing a conclusion — Articulate, Connect, and Extend.",
+    "ace.a.title": "A — Articulate It",
+    "ace.a.q": "What do the clues tell you? Explain them in your own words.",
+    "ace.c.title": "C — Connect It",
+    "ace.c.q": "How do the clues connect to something you already know?",
+    "ace.e.title": "E — Extend It",
+    "ace.e.q": "Test your conclusion. What else should be true if your answer is correct?",
+    "ace.example.eyebrow": "Worked example",
+    "ace.example.clues": "Exhibit clues",
+    "ace.example.answer": "Mystery answer",
+    "ace.card.title": "Classroom-Ready ACE Card",
+    "ace.card.h1": "ACE step",
+    "ace.card.h2": "Student question",
+    "ace.card.a": "Articulate",
+    "ace.card.aq": "What do the clues say in your own words?",
+    "ace.card.c": "Connect",
+    "ace.card.cq": "How do the clues fit together?",
+    "ace.card.e": "Extend",
+    "ace.card.eq": "What prediction could prove or disprove your answer?",
+    "ace.why.label": "Why ACE works:",
+    "ace.why.body": "Students name what they notice, explain how the clues support a conclusion, and test whether that conclusion holds up.",
+    "ace.more": "About the ACE Framework"
   },
   "exhibits": [
     {
@@ -503,5 +527,19 @@
       "expectation": "Students sequence changes across time.",
       "alignment": "Each reveal gives the era a tool was common and what came next."
     }
-  ]
+  ],
+  "ace": {
+    "title": "The Mystery Signal Towers",
+    "answer": "A semaphore line — an optical telegraph that relayed messages tower to tower",
+    "clues": [
+      "Tall towers built in a line across hilltops",
+      "Large movable arms on top of each tower",
+      "Operators watching the next tower through telescopes",
+      "Each arm position stood for a letter or word",
+      "Only worked in daylight and clear weather"
+    ],
+    "articulate": "The clues describe a chain of hilltop towers whose movable arms spelled out messages that operators read and passed along to the next tower.",
+    "connect": "It reminds me of relaying a text down a line of people, or of signal repeaters that pass a message from station to station until it arrives.",
+    "extend": "If it relies on seeing the next tower, it should fail at night, in fog, or when a tower is blocked — which is exactly why the electric telegraph, working through wires, replaced it."
+  }
 }

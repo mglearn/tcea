@@ -85,7 +85,31 @@ window.__ROOM_LANGS__.zh = {
     "reflection.print": "打印我的调查",
     "print.scoreLine": "得分：{total} 分中的 {score} 分 - {level}",
     "footer.tagline": "无需登录 · 无账户 · 不收集数据 · 完全在你的浏览器中运行。",
-    "footer.privacy": "隐私与合规"
+    "footer.privacy": "隐私与合规",
+    "ace.eyebrow": "ACE 框架",
+    "ace.title": "用 ACE 想清楚",
+    "ace.intro": "ACE 帮你从发现单个线索，进阶到解释并检验一个结论——阐述（Articulate）、联系（Connect）、延伸（Extend）。",
+    "ace.a.title": "A — 阐述它",
+    "ace.a.q": "这些线索告诉了你什么？用你自己的话解释它们。",
+    "ace.c.title": "C — 联系它",
+    "ace.c.q": "这些线索和你已经知道的东西有什么联系？",
+    "ace.e.title": "E — 延伸它",
+    "ace.e.q": "检验你的结论。如果你的答案正确，还应该有什么也是真的？",
+    "ace.example.eyebrow": "范例",
+    "ace.example.clues": "展品线索",
+    "ace.example.answer": "谜题答案",
+    "ace.card.title": "课堂即用 ACE 卡片",
+    "ace.card.h1": "ACE 步骤",
+    "ace.card.h2": "学生提问",
+    "ace.card.a": "阐述",
+    "ace.card.aq": "用你自己的话说，这些线索说了什么？",
+    "ace.card.c": "联系",
+    "ace.card.cq": "这些线索是如何拼合在一起的？",
+    "ace.card.e": "延伸",
+    "ace.card.eq": "什么样的预测能够证明或推翻你的答案？",
+    "ace.why.label": "ACE 为什么有效：",
+    "ace.why.body": "学生说出他们注意到的东西，解释线索如何支撑一个结论，并检验那个结论是否站得住脚。",
+    "ace.more": "关于 ACE 框架"
   },
   "exhibits": [
     {
@@ -394,5 +418,19 @@ window.__ROOM_LANGS__.zh = {
       "purpose": "在没人能接电话时录下电话留言",
       "replacement": "内置于电话的语音信箱"
     }
-  ]
+  ],
+  "ace": {
+    "title": "神秘的信号塔",
+    "answer": "视觉电报线——一种把信息从一座塔传到下一座塔的光学电报",
+    "clues": [
+      "一排建在山顶上的高塔",
+      "每座塔顶都有可以活动的大臂",
+      "操作员透过望远镜注视着下一座塔",
+      "每种臂的位置代表一个字母或单词",
+      "只能在白天和晴朗的天气里工作"
+    ],
+    "articulate": "这些线索描述的是一连串山顶上的塔，它们可活动的臂拼出信息，操作员读出信息后再传给下一座塔。",
+    "connect": "它让我想起沿着一排人把一条短信传下去，或者信号中继器把信息从一站传到一站，直到送达。",
+    "extend": "如果它依赖看到下一座塔，那么它在夜间、雾天，或某座塔被遮挡时就应该失效——这正是通过电线传输的电报取代它的原因。"
+  }
 };

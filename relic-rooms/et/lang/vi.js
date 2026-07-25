@@ -85,7 +85,31 @@ window.__ROOM_LANGS__.vi = {
     "reflection.print": "In cuộc điều tra của tôi",
     "print.scoreLine": "Điểm: {score} trong tổng số {total} điểm - {level}",
     "footer.tagline": "Không đăng nhập · không tài khoản · không thu thập dữ liệu · chạy hoàn toàn trong trình duyệt của bạn.",
-    "footer.privacy": "Quyền riêng tư và tuân thủ"
+    "footer.privacy": "Quyền riêng tư và tuân thủ",
+    "ace.eyebrow": "Khung tư duy ACE",
+    "ace.title": "Suy luận thấu đáo với ACE",
+    "ace.intro": "ACE giúp em chuyển từ việc phát hiện từng manh mối riêng lẻ sang giải thích và kiểm chứng một kết luận — Diễn đạt, Kết nối và Mở rộng.",
+    "ace.a.title": "A — Diễn đạt",
+    "ace.a.q": "Các manh mối cho em biết điều gì? Hãy giải thích bằng lời của chính em.",
+    "ace.c.title": "C — Kết nối",
+    "ace.c.q": "Các manh mối kết nối như thế nào với điều em đã biết?",
+    "ace.e.title": "E — Mở rộng",
+    "ace.e.q": "Hãy kiểm chứng kết luận của em. Còn điều gì khác phải đúng nếu câu trả lời của em chính xác?",
+    "ace.example.eyebrow": "Ví dụ mẫu",
+    "ace.example.clues": "Manh mối trưng bày",
+    "ace.example.answer": "Đáp án bí ẩn",
+    "ace.card.title": "Thẻ ACE sẵn dùng trong lớp học",
+    "ace.card.h1": "Bước ACE",
+    "ace.card.h2": "Câu hỏi cho học sinh",
+    "ace.card.a": "Diễn đạt",
+    "ace.card.aq": "Các manh mối nói gì, bằng lời của chính em?",
+    "ace.card.c": "Kết nối",
+    "ace.card.cq": "Các manh mối khớp với nhau như thế nào?",
+    "ace.card.e": "Mở rộng",
+    "ace.card.eq": "Dự đoán nào có thể chứng minh đúng hoặc sai câu trả lời của em?",
+    "ace.why.label": "Vì sao ACE hiệu quả:",
+    "ace.why.body": "Học sinh gọi tên những gì mình quan sát được, giải thích cách các manh mối ủng hộ một kết luận, và kiểm chứng xem kết luận đó có vững vàng hay không.",
+    "ace.more": "Về Khung tư duy ACE"
   },
   "exhibits": [
     {
@@ -394,5 +418,19 @@ window.__ROOM_LANGS__.vi = {
       "purpose": "Một từ bí mật được gõ vào để chứng minh bạn là ai trên mạng",
       "replacement": "Sinh trắc học (quét vân tay và khuôn mặt)"
     }
-  ]
+  ],
+  "ace": {
+    "title": "Cỗ Máy Bí Ẩn Đầu Giường",
+    "answer": "Đồng hồ báo thức rời — một thiết bị chỉ có một công dụng là đánh thức em vào giờ đã đặt",
+    "clues": [
+      "Một chiếc hộp nhỏ để trên bàn cạnh giường",
+      "Nó chỉ báo giờ và reo chuông báo thức",
+      "Chuông hoặc còi kêu to đánh thức người đang ngủ",
+      "Đặt bằng tay mỗi tối bằng một mặt số hoặc núm vặn",
+      "Cần lên dây cót, hoặc chạy bằng pin riêng hay cắm điện"
+    ],
+    "articulate": "Các manh mối mô tả một thiết bị nhỏ đặt cạnh giường mà công việc duy nhất là hiển thị giờ và reo chuông báo thức để đánh thức ai đó.",
+    "connect": "Điều này khiến em nghĩ đến ứng dụng đồng hồ và báo thức trên điện thoại thông minh. Điện thoại đã có sẵn chức năng xem giờ và reo báo thức, nên nó làm được trọn vẹn công việc của thiết bị này.",
+    "extend": "Nếu điện thoại có thể đánh thức em, các gia đình sẽ ngừng mua một chiếc đồng hồ riêng — nên nó đang dần biến mất ngày nay. Nó có thể chỉ còn tồn tại như một thiết bị dự phòng khi điện thoại hết pin, hoặc dành cho những người tránh xa màn hình trước khi ngủ."
+  }
 };

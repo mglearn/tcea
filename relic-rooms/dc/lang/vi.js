@@ -85,7 +85,31 @@ window.__ROOM_LANGS__.vi = {
     "reflection.print": "In cuộc điều tra của tôi",
     "print.scoreLine": "Điểm: {score} trên {total} điểm - {level}",
     "footer.tagline": "Không đăng nhập · không tài khoản · không thu thập dữ liệu · chạy hoàn toàn trong trình duyệt của bạn.",
-    "footer.privacy": "Quyền riêng tư và tuân thủ"
+    "footer.privacy": "Quyền riêng tư và tuân thủ",
+    "ace.eyebrow": "Khung tư duy ACE",
+    "ace.title": "Suy luận thấu đáo với ACE",
+    "ace.intro": "ACE giúp em chuyển từ việc phát hiện từng manh mối riêng lẻ sang giải thích và kiểm chứng một kết luận — Diễn đạt, Kết nối và Mở rộng.",
+    "ace.a.title": "A — Diễn đạt",
+    "ace.a.q": "Các manh mối cho em biết điều gì? Hãy giải thích bằng lời của chính em.",
+    "ace.c.title": "C — Kết nối",
+    "ace.c.q": "Các manh mối kết nối như thế nào với điều em đã biết?",
+    "ace.e.title": "E — Mở rộng",
+    "ace.e.q": "Hãy kiểm chứng kết luận của em. Còn điều gì khác phải đúng nếu câu trả lời của em chính xác?",
+    "ace.example.eyebrow": "Ví dụ mẫu",
+    "ace.example.clues": "Manh mối trưng bày",
+    "ace.example.answer": "Đáp án bí ẩn",
+    "ace.card.title": "Thẻ ACE sẵn dùng trong lớp học",
+    "ace.card.h1": "Bước ACE",
+    "ace.card.h2": "Câu hỏi cho học sinh",
+    "ace.card.a": "Diễn đạt",
+    "ace.card.aq": "Các manh mối nói gì, bằng lời của chính em?",
+    "ace.card.c": "Kết nối",
+    "ace.card.cq": "Các manh mối khớp với nhau như thế nào?",
+    "ace.card.e": "Mở rộng",
+    "ace.card.eq": "Dự đoán nào có thể chứng minh đúng hoặc sai câu trả lời của em?",
+    "ace.why.label": "Vì sao ACE hiệu quả:",
+    "ace.why.body": "Học sinh gọi tên những gì mình quan sát được, giải thích cách các manh mối ủng hộ một kết luận, và kiểm chứng xem kết luận đó có vững vàng hay không.",
+    "ace.more": "Về Khung tư duy ACE"
   },
   "exhibits": [
     {
@@ -394,5 +418,19 @@ window.__ROOM_LANGS__.vi = {
       "purpose": "Ghi lại tin nhắn điện thoại khi không có ai trả lời được",
       "replacement": "Hộp thư thoại tích hợp trong điện thoại"
     }
-  ]
+  ],
+  "ace": {
+    "title": "Những Tháp Tín Hiệu Bí Ẩn",
+    "answer": "Đường điện báo quang học (semaphore) — một hệ thống điện báo dùng tín hiệu để chuyển tiếp tin nhắn từ tháp này sang tháp khác",
+    "clues": [
+      "Những tháp cao được dựng thành một hàng trên các đỉnh đồi",
+      "Những cánh tay lớn có thể chuyển động trên đỉnh mỗi tháp",
+      "Những người vận hành quan sát tháp kế tiếp qua kính viễn vọng",
+      "Mỗi vị trí của cánh tay đại diện cho một chữ cái hoặc một từ",
+      "Chỉ hoạt động được vào ban ngày và khi thời tiết quang đãng"
+    ],
+    "articulate": "Các manh mối mô tả một chuỗi tháp trên đỉnh đồi có những cánh tay chuyển động ghép thành các tin nhắn, được người vận hành đọc và truyền tiếp sang tháp kế tiếp.",
+    "connect": "Điều này khiến em nghĩ đến việc chuyền một tin nhắn dọc theo một hàng người, hoặc các trạm tiếp sức chuyển tin từ trạm này sang trạm khác cho đến khi tin đến nơi.",
+    "extend": "Nếu nó dựa vào việc nhìn thấy tháp kế tiếp, thì nó sẽ không hoạt động vào ban đêm, khi có sương mù, hoặc khi một tháp bị che khuất — đó chính là lý do vì sao điện báo bằng dây điện đã thay thế nó."
+  }
 };

@@ -6,18 +6,26 @@
     <atom:link href="https://mglearn.github.io/tcea/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated HTML tools, dashboards, prompt libraries, and classroom resources from TCEA.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Jul 2026 18:03:47 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jul 2026 18:40:37 GMT</lastBuildDate>
     <image>
       <url>https://mglearn.github.io/tcea/favicon.svg</url>
       <title>TCEA Vibe-Coded Solutions — Updates</title>
       <link>https://mglearn.github.io/tcea/</link>
     </image>
     <item>
+      <title>📘 The ACE Framework</title>
+      <link>https://mglearn.github.io/tcea/ace/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/ace/index.html</guid>
+      <category>Instructional Strategy Guides</category>
+      <pubDate>Sat, 25 Jul 2026 18:40:36 GMT</pubDate>
+      <description>A seven-language teaching companion for the Relic Rooms series. ACE — Articulate, Connect, Extend — is a simple thinking routine that moves students from spotting clues to explaining and testing a conclusion. Includes the three moves, a worked example, and a classroom-ready ACE card; every Relic Room now embeds a worked ACE example on its directions screen.</description>
+    </item>
+    <item>
       <title>🎲 The Vanished Classroom</title>
       <link>https://mglearn.github.io/tcea/relic-rooms/tvc/index.html</link>
       <guid isPermaLink="true">https://mglearn.github.io/tcea/relic-rooms/tvc/index.html</guid>
       <category>Games, Activities, and Specialty Builds</category>
-      <pubDate>Sat, 25 Jul 2026 18:03:47 GMT</pubDate>
+      <pubDate>Sat, 25 Jul 2026 18:05:10 GMT</pubDate>
       <description>A standalone investigation activity (grades 4-8) about instructional practices from the 1800s that classrooms no longer use. Students examine nine teaching relics — slate, hornbook, recitation, the dunce cap, and more — and uncover each one's purpose, limitation, and modern replacement. Seven languages, with a score and printable reflection. Part of the Relic Rooms series.</description>
     </item>
     <item>
@@ -323,14 +331,6 @@
       <category>Critical Thinking Breakouts</category>
       <pubDate>Thu, 02 Jul 2026 21:20:15 GMT</pubDate>
       <description>The facilitator answer key and recording sheet for running the Critical Thinking Breakouts activities.</description>
-    </item>
-    <item>
-      <title>📊 Data Display Patterns</title>
-      <link>https://mglearn.github.io/tcea/ddp/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/ddp/index.html</guid>
-      <category>Dashboards and Decision Tools</category>
-      <pubDate>Wed, 01 Jul 2026 16:10:19 GMT</pubDate>
-      <description>A TCEA field guide to choosing the right chart and data-display pattern for dashboards and reports.</description>
     </item>
   </channel>
 </rss>

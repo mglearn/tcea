@@ -85,7 +85,31 @@ window.__ROOM_LANGS__.es = {
     "reflection.print": "Imprimir mi investigación",
     "print.scoreLine": "Puntuación: {score} de {total} puntos - {level}",
     "footer.tagline": "Sin inicios de sesión · sin cuentas · sin recopilación de datos · funciona por completo en tu navegador.",
-    "footer.privacy": "Privacidad y cumplimiento"
+    "footer.privacy": "Privacidad y cumplimiento",
+    "ace.eyebrow": "Marco ACE",
+    "ace.title": "Piénsalo bien con ACE",
+    "ace.intro": "ACE te lleva de detectar pistas individuales a explicar y comprobar una conclusión — Articúlalo, Conéctalo y Amplíalo.",
+    "ace.a.title": "A — Articúlalo",
+    "ace.a.q": "¿Qué te dicen las pistas? Explícalas con tus propias palabras.",
+    "ace.c.title": "C — Conéctalo",
+    "ace.c.q": "¿Cómo se conectan las pistas con algo que ya sabes?",
+    "ace.e.title": "E — Amplíalo",
+    "ace.e.q": "Comprueba tu conclusión. ¿Qué más debería ser cierto si tu respuesta es correcta?",
+    "ace.example.eyebrow": "Ejemplo resuelto",
+    "ace.example.clues": "Pistas de la exhibición",
+    "ace.example.answer": "Respuesta del misterio",
+    "ace.card.title": "Tarjeta ACE lista para el aula",
+    "ace.card.h1": "Paso ACE",
+    "ace.card.h2": "Pregunta para el estudiante",
+    "ace.card.a": "Articular",
+    "ace.card.aq": "¿Qué dicen las pistas con tus propias palabras?",
+    "ace.card.c": "Conectar",
+    "ace.card.cq": "¿Cómo encajan las pistas entre sí?",
+    "ace.card.e": "Ampliar",
+    "ace.card.eq": "¿Qué predicción podría probar o refutar tu respuesta?",
+    "ace.why.label": "Por qué funciona ACE:",
+    "ace.why.body": "Los estudiantes nombran lo que observan, explican cómo las pistas respaldan una conclusión y comprueban si esa conclusión se sostiene.",
+    "ace.more": "Acerca del Marco ACE"
   },
   "exhibits": [
     {
@@ -394,5 +418,19 @@ window.__ROOM_LANGS__.es = {
       "purpose": "Llevar a muchos pasajeros de la ciudad por rieles en las calles",
       "replacement": "Tranvías eléctricos y autobuses"
     }
-  ]
+  ],
+  "ace": {
+    "title": "El misterioso carro de dos ruedas",
+    "answer": "Un carro — un antiguo vehículo de carreras y de batalla tirado por caballos",
+    "clues": [
+      "Una plataforma ligera y abierta sobre solo dos ruedas",
+      "Tirado por uno o más caballos",
+      "Espacio para un conductor que va de pie en vez de sentado",
+      "Se usaba en carreras y en la batalla hace mucho tiempo",
+      "Sin motor, sin asiento, sin techo"
+    ],
+    "articulate": "Las pistas describen un carro ligero de dos ruedas tirado por caballos, conducido por alguien de pie y construido para la velocidad en carreras y en la guerra.",
+    "connect": "Me recuerda a un coche de carreras o a un coche particular. Fue uno de los primeros vehículos personales rápidos — con fuerza muscular en lugar de un motor.",
+    "extend": "Si los caballos proporcionan la fuerza, necesita caminos o pistas planas y animales que lo tiren, y sería reemplazado en cuanto los motores pudieran hacer girar las ruedas sin un caballo."
+  }
 };

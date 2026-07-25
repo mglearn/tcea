@@ -1,12 +1,19 @@
 {
-  "generated": "2026-07-25T18:03:47.760Z",
+  "generated": "2026-07-25T18:40:37.079Z",
   "items": [
+    {
+      "href": "ace/index.html",
+      "title": "The ACE Framework",
+      "category": "Instructional Strategy Guides",
+      "icon": "📘",
+      "date": "2026-07-25T18:40:36.703Z"
+    },
     {
       "href": "relic-rooms/tvc/index.html",
       "title": "The Vanished Classroom",
       "category": "Games, Activities, and Specialty Builds",
       "icon": "🎲",
-      "date": "2026-07-25T18:03:47.453Z"
+      "date": "2026-07-25T13:05:10-05:00"
     },
     {
       "href": "relic-rooms/hoi/index.html",
@@ -273,13 +280,6 @@
       "category": "Critical Thinking Breakouts",
       "icon": "🕵️",
       "date": "2026-07-02T16:20:15-05:00"
-    },
-    {
-      "href": "ddp/index.html",
-      "title": "Data Display Patterns",
-      "category": "Dashboards and Decision Tools",
-      "icon": "📊",
-      "date": "2026-07-01T11:10:19-05:00"
     }
   ]
 }

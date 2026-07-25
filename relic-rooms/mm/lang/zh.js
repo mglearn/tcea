@@ -85,7 +85,31 @@ window.__ROOM_LANGS__.zh = {
     "reflection.print": "打印我的探究",
     "print.scoreLine": "得分：{score} 分（满分 {total} 分）- {level}",
     "footer.tagline": "无需登录 · 无需账户 · 不收集数据 · 完全在你的浏览器中运行。",
-    "footer.privacy": "隐私与合规"
+    "footer.privacy": "隐私与合规",
+    "ace.eyebrow": "ACE 框架",
+    "ace.title": "用 ACE 想清楚",
+    "ace.intro": "ACE 帮你从发现单个线索，进阶到解释并检验一个结论——阐述（Articulate）、联系（Connect）、延伸（Extend）。",
+    "ace.a.title": "A — 阐述它",
+    "ace.a.q": "这些线索告诉了你什么？用你自己的话解释它们。",
+    "ace.c.title": "C — 联系它",
+    "ace.c.q": "这些线索和你已经知道的东西有什么联系？",
+    "ace.e.title": "E — 延伸它",
+    "ace.e.q": "检验你的结论。如果你的答案正确，还应该有什么也是真的？",
+    "ace.example.eyebrow": "范例",
+    "ace.example.clues": "展品线索",
+    "ace.example.answer": "谜题答案",
+    "ace.card.title": "课堂即用 ACE 卡片",
+    "ace.card.h1": "ACE 步骤",
+    "ace.card.h2": "学生提问",
+    "ace.card.a": "阐述",
+    "ace.card.aq": "用你自己的话说，这些线索说了什么？",
+    "ace.card.c": "联系",
+    "ace.card.cq": "这些线索是如何拼合在一起的？",
+    "ace.card.e": "延伸",
+    "ace.card.eq": "什么样的预测能够证明或推翻你的答案？",
+    "ace.why.label": "ACE 为什么有效：",
+    "ace.why.body": "学生说出他们注意到的东西，解释线索如何支撑一个结论，并检验那个结论是否站得住脚。",
+    "ace.more": "关于 ACE 框架"
   },
   "exhibits": [
     {
@@ -394,5 +418,19 @@ window.__ROOM_LANGS__.zh = {
       "purpose": "我富含铁，会留下红棕色的条痕",
       "replacement": "炼制铁、钢和制造红色颜料"
     }
-  ]
+  ],
+  "ace": {
+    "title": "神秘的黄铜立方体",
+    "answer": "黄铁矿——“愚人金”，一种常被误认为真金的铁矿物",
+    "clues": [
+      "一种发亮的黄铜金色金属色泽",
+      "长成近乎完美的立方体形状",
+      "用钢敲击时会溅出火花",
+      "比真金更轻、更硬",
+      "会开裂碎裂，而不是弯曲"
+    ],
+    "articulate": "这些线索描述的是一种发亮的黄铜色金属矿物，它长成立方体，敲击时溅出火花，并且是脆的而不是软的。",
+    "connect": "它的颜色和光泽让我想起真金，这正是矿工给它起绰号叫“愚人金”的原因。",
+    "extend": "如果它是黄铁矿（硫化铁）而不是金，那么它的晶体应该是立方体的，密度应该比金小得多，而且应该是脆的、敲击时会散发出硫磺味——这些真金都不具备。"
+  }
 };

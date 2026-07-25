@@ -85,7 +85,31 @@ window.__ROOM_LANGS__.zh = {
     "reflection.print": "打印我的探究",
     "print.scoreLine": "得分：{total} 分中的 {score} 分 - {level}",
     "footer.tagline": "无需登录 · 无账户 · 不收集数据 · 完全在你的浏览器中运行。",
-    "footer.privacy": "隐私与合规"
+    "footer.privacy": "隐私与合规",
+    "ace.eyebrow": "ACE 框架",
+    "ace.title": "用 ACE 想清楚",
+    "ace.intro": "ACE 帮你从发现单个线索，进阶到解释并检验一个结论——阐述（Articulate）、联系（Connect）、延伸（Extend）。",
+    "ace.a.title": "A — 阐述它",
+    "ace.a.q": "这些线索告诉了你什么？用你自己的话解释它们。",
+    "ace.c.title": "C — 联系它",
+    "ace.c.q": "这些线索和你已经知道的东西有什么联系？",
+    "ace.e.title": "E — 延伸它",
+    "ace.e.q": "检验你的结论。如果你的答案正确，还应该有什么也是真的？",
+    "ace.example.eyebrow": "范例",
+    "ace.example.clues": "展品线索",
+    "ace.example.answer": "谜题答案",
+    "ace.card.title": "课堂即用 ACE 卡片",
+    "ace.card.h1": "ACE 步骤",
+    "ace.card.h2": "学生提问",
+    "ace.card.a": "阐述",
+    "ace.card.aq": "用你自己的话说，这些线索说了什么？",
+    "ace.card.c": "联系",
+    "ace.card.cq": "这些线索是如何拼合在一起的？",
+    "ace.card.e": "延伸",
+    "ace.card.eq": "什么样的预测能够证明或推翻你的答案？",
+    "ace.why.label": "ACE 为什么有效：",
+    "ace.why.body": "学生说出他们注意到的东西，解释线索如何支撑一个结论，并检验那个结论是否站得住脚。",
+    "ace.more": "关于 ACE 框架"
   },
   "exhibits": [
     {
@@ -394,5 +418,19 @@ window.__ROOM_LANGS__.zh = {
       "purpose": "一个用来在网上证明你身份的、输入的秘密单词",
       "replacement": "生物识别（指纹和面部扫描）"
     }
-  ]
+  ],
+  "ace": {
+    "title": "神秘的床头机器",
+    "answer": "独立式闹钟——一种在设定时间叫醒你的单一用途设备",
+    "clues": [
+      "一个放在床头柜上的小盒子",
+      "它只显示时间并响起闹铃",
+      "用铃声或响亮的蜂鸣器把睡觉的人叫醒",
+      "每晚用表盘或旋钮手动设定",
+      "需要上发条，或需要自带电池或插电"
+    ],
+    "articulate": "这些线索描述的是一个床头的小设备，它唯一的工作就是显示时间，并响起闹铃把人叫醒。",
+    "connect": "它让我想起智能手机上的时钟和闹钟应用。手机本来就能显示时间、响起闹铃，所以它做了这个设备的全部工作。",
+    "extend": "如果手机能把你叫醒，家庭就不会再买一台单独的钟——所以它今天正在淡出。它可能只作为备用而存留，用于手机没电时，或供那些睡前避免使用屏幕的人使用。"
+  }
 };

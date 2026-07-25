@@ -85,7 +85,31 @@ window.__ROOM_LANGS__.es = {
     "reflection.print": "Imprimir mi investigación",
     "print.scoreLine": "Puntaje: {score} de {total} puntos - {level}",
     "footer.tagline": "Sin inicios de sesión · sin cuentas · sin recopilación de datos · funciona por completo en tu navegador.",
-    "footer.privacy": "Privacidad y cumplimiento"
+    "footer.privacy": "Privacidad y cumplimiento",
+    "ace.eyebrow": "Marco ACE",
+    "ace.title": "Piénsalo bien con ACE",
+    "ace.intro": "ACE te lleva de detectar pistas individuales a explicar y comprobar una conclusión — Articúlalo, Conéctalo y Amplíalo.",
+    "ace.a.title": "A — Articúlalo",
+    "ace.a.q": "¿Qué te dicen las pistas? Explícalas con tus propias palabras.",
+    "ace.c.title": "C — Conéctalo",
+    "ace.c.q": "¿Cómo se conectan las pistas con algo que ya sabes?",
+    "ace.e.title": "E — Amplíalo",
+    "ace.e.q": "Comprueba tu conclusión. ¿Qué más debería ser cierto si tu respuesta es correcta?",
+    "ace.example.eyebrow": "Ejemplo resuelto",
+    "ace.example.clues": "Pistas de la exhibición",
+    "ace.example.answer": "Respuesta del misterio",
+    "ace.card.title": "Tarjeta ACE lista para el aula",
+    "ace.card.h1": "Paso ACE",
+    "ace.card.h2": "Pregunta para el estudiante",
+    "ace.card.a": "Articular",
+    "ace.card.aq": "¿Qué dicen las pistas con tus propias palabras?",
+    "ace.card.c": "Conectar",
+    "ace.card.cq": "¿Cómo encajan las pistas entre sí?",
+    "ace.card.e": "Ampliar",
+    "ace.card.eq": "¿Qué predicción podría probar o refutar tu respuesta?",
+    "ace.why.label": "Por qué funciona ACE:",
+    "ace.why.body": "Los estudiantes nombran lo que observan, explican cómo las pistas respaldan una conclusión y comprueban si esa conclusión se sostiene.",
+    "ace.more": "Acerca del Marco ACE"
   },
   "exhibits": [
     {
@@ -394,5 +418,19 @@ window.__ROOM_LANGS__.es = {
       "purpose": "Una nube que se forma justo a nivel del suelo",
       "replacement": "Poca visibilidad hasta que se despeja"
     }
-  ]
+  ],
+  "ace": {
+    "title": "La misteriosa línea en el cielo",
+    "answer": "Una estela de condensación — un rastro de cristales de hielo que deja un avión a reacción",
+    "clues": [
+      "Una línea blanca larga y recta muy alta en el cielo",
+      "Se forma justo detrás de un avión que pasa",
+      "Está hecha de diminutos cristales de hielo, no de humo",
+      "Se ensancha lentamente y se desvanece o se dispersa",
+      "Solo aparece donde vuelan los aviones a reacción, no más abajo"
+    ],
+    "articulate": "Las pistas describen una línea blanca y recta hecha de cristales de hielo que se forma detrás de un avión a reacción que vuela alto y que luego se dispersa o se desvanece.",
+    "connect": "Me recuerda al vaho de tu aliento en un día frío. Los gases cálidos y húmedos del avión se congelan en cristales de hielo en el aire frío de las alturas, formando una nube en forma de línea.",
+    "extend": "Si proviene de los aviones, debería aparecer solo a lo largo de las rutas de vuelo, formarse mejor en aire frío y húmedo, y durar más o extenderse más cuando el aire de las alturas está húmedo — comportándose como una nube hecha por el ser humano."
+  }
 };

@@ -985,3 +985,39 @@ p {
     white-space: pre-wrap;
   }
 }
+
+/* --- ACE Framework panel (directions screen) ------------------------------ */
+.ace-panel {
+  margin: 26px 0 6px;
+  padding: 22px 22px 20px;
+  border: 1px solid rgba(247, 189, 74, 0.32);
+  border-top: 4px solid var(--gold);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(247, 189, 74, 0.06), transparent 60%), var(--panel-strong);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.26);
+}
+.ace-panel .ace-head h3 { margin: 4px 0 8px; font-size: clamp(1.3rem, 1rem + 1.2vw, 1.7rem); color: #ffd98a; }
+.ace-panel .ace-intro { margin: 0 0 16px; color: var(--muted); max-width: 62ch; }
+.ace-example { padding: 16px; border: 1px solid rgba(247, 189, 74, 0.24); border-radius: 12px; background: rgba(0, 0, 0, 0.16); }
+.ace-example-eyebrow { margin: 0 0 12px; font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.ace-example-eyebrow strong { color: var(--ink); letter-spacing: normal; text-transform: none; font-size: 1.05rem; }
+.ace-example-grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 2fr); gap: 18px; align-items: start; }
+@media (max-width: 720px) { .ace-example-grid { grid-template-columns: 1fr; } }
+.ace-clues h4, .ace-step h4 { margin: 0 0 8px; color: #ffd98a; font-size: 1.02rem; }
+.ace-clues ul { margin: 0 0 12px; padding-inline-start: 1.1em; }
+.ace-clues li { margin-bottom: 4px; }
+.ace-answer { margin: 0; padding: 10px 12px; border-radius: 8px; background: rgba(247, 189, 74, 0.16); border: 1px solid rgba(247, 189, 74, 0.4); font-weight: 700; }
+.ace-answer span { display: block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+.ace-steps { display: grid; gap: 12px; }
+.ace-step { padding: 12px 14px; border-radius: 10px; background: rgba(20, 17, 11, 0.6); border: 1px solid rgba(247, 189, 74, 0.22); border-inline-start: 4px solid var(--gold); }
+.ace-step .ace-q { margin: 0 0 6px; font-style: italic; color: var(--muted); }
+.ace-step p:last-child { margin: 0; }
+.ace-card { width: 100%; margin: 18px 0 6px; border-collapse: collapse; font-size: 0.98rem; }
+.ace-card caption { caption-side: top; text-align: start; padding-bottom: 8px; font-weight: 800; color: #ffd98a; }
+.ace-card th, .ace-card td { padding: 9px 12px; border: 1px solid rgba(247, 189, 74, 0.28); text-align: start; vertical-align: top; }
+.ace-card thead th { background: rgba(247, 189, 74, 0.16); color: var(--ink); }
+.ace-card tbody th { width: 8.5rem; color: #ffd98a; background: rgba(0, 0, 0, 0.18); }
+.ace-why { margin: 14px 0 2px; color: var(--muted); }
+.ace-why strong { color: #ffd98a; }
+.ace-more { margin: 6px 0 0; }
+.ace-more a { font-weight: 700; }

@@ -85,7 +85,31 @@ window.__ROOM_LANGS__.vi = {
     "reflection.print": "In bài khám phá của tôi",
     "print.scoreLine": "Điểm số: {score} trên {total} điểm - {level}",
     "footer.tagline": "Không đăng nhập · không tài khoản · không thu thập dữ liệu · chạy hoàn toàn trong trình duyệt của bạn.",
-    "footer.privacy": "Quyền riêng tư & tuân thủ"
+    "footer.privacy": "Quyền riêng tư & tuân thủ",
+    "ace.eyebrow": "Khung tư duy ACE",
+    "ace.title": "Suy luận thấu đáo với ACE",
+    "ace.intro": "ACE giúp em chuyển từ việc phát hiện từng manh mối riêng lẻ sang giải thích và kiểm chứng một kết luận — Diễn đạt, Kết nối và Mở rộng.",
+    "ace.a.title": "A — Diễn đạt",
+    "ace.a.q": "Các manh mối cho em biết điều gì? Hãy giải thích bằng lời của chính em.",
+    "ace.c.title": "C — Kết nối",
+    "ace.c.q": "Các manh mối kết nối như thế nào với điều em đã biết?",
+    "ace.e.title": "E — Mở rộng",
+    "ace.e.q": "Hãy kiểm chứng kết luận của em. Còn điều gì khác phải đúng nếu câu trả lời của em chính xác?",
+    "ace.example.eyebrow": "Ví dụ mẫu",
+    "ace.example.clues": "Manh mối trưng bày",
+    "ace.example.answer": "Đáp án bí ẩn",
+    "ace.card.title": "Thẻ ACE sẵn dùng trong lớp học",
+    "ace.card.h1": "Bước ACE",
+    "ace.card.h2": "Câu hỏi cho học sinh",
+    "ace.card.a": "Diễn đạt",
+    "ace.card.aq": "Các manh mối nói gì, bằng lời của chính em?",
+    "ace.card.c": "Kết nối",
+    "ace.card.cq": "Các manh mối khớp với nhau như thế nào?",
+    "ace.card.e": "Mở rộng",
+    "ace.card.eq": "Dự đoán nào có thể chứng minh đúng hoặc sai câu trả lời của em?",
+    "ace.why.label": "Vì sao ACE hiệu quả:",
+    "ace.why.body": "Học sinh gọi tên những gì mình quan sát được, giải thích cách các manh mối ủng hộ một kết luận, và kiểm chứng xem kết luận đó có vững vàng hay không.",
+    "ace.more": "Về Khung tư duy ACE"
   },
   "exhibits": [
     {
@@ -394,5 +418,19 @@ window.__ROOM_LANGS__.vi = {
       "purpose": "Tôi giàu sắt và để lại vệt màu nâu đỏ",
       "replacement": "Làm sắt, thép và bột màu đỏ"
     }
-  ]
+  ],
+  "ace": {
+    "title": "Những Khối Lập Phương Ánh Đồng Bí Ẩn",
+    "answer": "Pyrit (pyrite) — 'vàng của kẻ khờ', một khoáng vật sắt thường bị nhầm với vàng thật",
+    "clues": [
+      "Một màu kim loại vàng ánh đồng bóng loáng",
+      "Mọc thành những khối lập phương gần như hoàn hảo",
+      "Bắn ra tia lửa khi va vào thép",
+      "Nhẹ hơn và cứng hơn vàng thật",
+      "Bị nứt và vỡ vụn thay vì uốn cong"
+    ],
+    "articulate": "Các manh mối mô tả một khoáng vật kim loại màu đồng bóng loáng, tạo thành những khối lập phương, bắn tia lửa khi va đập, và giòn chứ không mềm dẻo.",
+    "connect": "Điều này khiến em nghĩ đến vàng thật vì màu sắc và độ bóng của nó, đó là lý do vì sao thợ mỏ đặt cho nó biệt danh là 'vàng của kẻ khờ.'",
+    "extend": "Nếu đó là pyrit (sắt sunfua) chứ không phải vàng, thì tinh thể của nó phải có dạng khối lập phương, khối lượng riêng phải nhỏ hơn nhiều so với vàng, và nó phải giòn cùng tỏa ra mùi lưu huỳnh khi va đập — không đặc điểm nào trong số đó đúng với vàng thật."
+  }
 };

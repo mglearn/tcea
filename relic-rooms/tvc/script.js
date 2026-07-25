@@ -110,6 +110,30 @@ const UI = {
     "directions.step3title": "Track its replacement",
     "directions.step3body": "Select what classrooms use today in its place.",
     "directions.start": "Start Investigating",
+    "ace.eyebrow": "ACE Framework",
+    "ace.title": "Think it through with ACE",
+    "ace.intro": "ACE moves you from spotting individual clues to explaining and testing a conclusion — Articulate, Connect, and Extend.",
+    "ace.a.title": "A — Articulate It",
+    "ace.a.q": "What do the clues tell you? Explain them in your own words.",
+    "ace.c.title": "C — Connect It",
+    "ace.c.q": "How do the clues connect to something you already know?",
+    "ace.e.title": "E — Extend It",
+    "ace.e.q": "Test your conclusion. What else should be true if your answer is correct?",
+    "ace.example.eyebrow": "Worked example",
+    "ace.example.clues": "Exhibit clues",
+    "ace.example.answer": "Mystery answer",
+    "ace.card.title": "Classroom-Ready ACE Card",
+    "ace.card.h1": "ACE step",
+    "ace.card.h2": "Student question",
+    "ace.card.a": "Articulate",
+    "ace.card.aq": "What do the clues say in your own words?",
+    "ace.card.c": "Connect",
+    "ace.card.cq": "How do the clues fit together?",
+    "ace.card.e": "Extend",
+    "ace.card.eq": "What prediction could prove or disprove your answer?",
+    "ace.why.label": "Why ACE works:",
+    "ace.why.body": "Students name what they notice, explain how the clues support a conclusion, and test whether that conclusion holds up.",
+    "ace.more": "About the ACE Framework",
     "list.eyebrow": "Nine Classroom Relics",
     "list.title": "Choose an exhibit to investigate",
     "list.body": "Each desk opens a three-part investigation. Finished exhibits stay available for review.",
@@ -362,6 +386,25 @@ window.__TVC_LANG_PACKS__ = window.__TVC_LANG_PACKS__ || {};
 /* ===========================================================================
    Engine
 =========================================================================== */
+/* ACE Framework worked example (Articulate · Connect · Extend). English source;
+   es/vi/ar/hi/ur/zh merged in from the lang packs below (packs[code].ace). */
+const ACE = {
+  en: {
+    title: "The Mystery Projection Box",
+    answer: "A magic lantern — an early image projector",
+    clues: [
+      "A wooden box with a glass lens on the front",
+      "A small lamp inside the box",
+      "Painted pictures on narrow glass plates",
+      "A white wall used as a viewing surface",
+      "One picture could be shown to an entire class"
+    ],
+    articulate: "The object is a box that uses light, a lens, and painted glass. It seems to make a small picture appear larger so a group can see it.",
+    connect: "This reminds me of a classroom projector. Both use light and a lens to place a larger image on a wall or screen. The glass plate probably worked like a slide or a digital image file.",
+    extend: "If this was an early projector, changing the glass plate should change the picture on the wall. The room would need to be dark, and the lamp would sit behind the glass image. A modern projector replaces the lamp and painted plate with an electric light and digital images."
+  }
+};
+
 const screens = {
   welcome: document.querySelector("#welcome-screen"),
   directions: document.querySelector("#directions-screen"),
@@ -427,6 +470,7 @@ function interpolate(str, vars) {
   Object.keys(packs).forEach((code) => {
     if (packs[code].ui) UI[code] = packs[code].ui;
     if (packs[code].exhibits) EXHIBITS[code] = packs[code].exhibits;
+    if (packs[code].ace) ACE[code] = packs[code].ace;
   });
 
   if (window.BreakoutI18n) {
@@ -437,6 +481,7 @@ function interpolate(str, vars) {
   wireEvents();
   renderReflectionChoices();
   renderExhibitGrid();
+  renderAce();
   refreshChrome();
   updateProgress();
   showScreen(state.screen === "exhibit" ? "list" : state.screen || "welcome");
@@ -447,6 +492,7 @@ function onLanguageChange() {
   refreshChrome();
   renderReflectionChoices();
   renderExhibitGrid();
+  renderAce();
   updateProgress();
   if (state.screen === "exhibit") {
     openExhibit(activeExhibitIndex);
@@ -509,6 +555,64 @@ function showScreen(name) {
     heading.setAttribute("tabindex", "-1");
     heading.focus({ preventScroll: false });
   }
+}
+
+/* --- ACE Framework panel (directions screen) ------------------------------ */
+function aceData() {
+  return ACE[currentLang()] || ACE.en;
+}
+function renderAce() {
+  const host = document.querySelector("#ace-panel");
+  if (!host) return;
+  const a = aceData();
+  if (!a) { host.innerHTML = ""; host.hidden = true; return; }
+  host.hidden = false;
+  const clues = (a.clues || []).map((c) => `<li>${escapeHTML(c)}</li>`).join("");
+  host.innerHTML = `
+    <div class="ace-head">
+      <p class="eyebrow">${escapeHTML(t("ace.eyebrow"))}</p>
+      <h3>${escapeHTML(t("ace.title"))}</h3>
+      <p class="ace-intro">${escapeHTML(t("ace.intro"))}</p>
+    </div>
+    <div class="ace-example">
+      <p class="ace-example-eyebrow">${escapeHTML(t("ace.example.eyebrow"))}: <strong>${escapeHTML(a.title)}</strong></p>
+      <div class="ace-example-grid">
+        <div class="ace-clues">
+          <h4>${escapeHTML(t("ace.example.clues"))}</h4>
+          <ul>${clues}</ul>
+          <p class="ace-answer"><span>${escapeHTML(t("ace.example.answer"))}:</span> ${escapeHTML(a.answer)}</p>
+        </div>
+        <div class="ace-steps">
+          <div class="ace-step ace-a">
+            <h4>${escapeHTML(t("ace.a.title"))}</h4>
+            <p class="ace-q">${escapeHTML(t("ace.a.q"))}</p>
+            <p>${escapeHTML(a.articulate)}</p>
+          </div>
+          <div class="ace-step ace-c">
+            <h4>${escapeHTML(t("ace.c.title"))}</h4>
+            <p class="ace-q">${escapeHTML(t("ace.c.q"))}</p>
+            <p>${escapeHTML(a.connect)}</p>
+          </div>
+          <div class="ace-step ace-e">
+            <h4>${escapeHTML(t("ace.e.title"))}</h4>
+            <p class="ace-q">${escapeHTML(t("ace.e.q"))}</p>
+            <p>${escapeHTML(a.extend)}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <table class="ace-card">
+      <caption>${escapeHTML(t("ace.card.title"))}</caption>
+      <thead><tr><th scope="col">${escapeHTML(t("ace.card.h1"))}</th><th scope="col">${escapeHTML(t("ace.card.h2"))}</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">${escapeHTML(t("ace.card.a"))}</th><td>${escapeHTML(t("ace.card.aq"))}</td></tr>
+        <tr><th scope="row">${escapeHTML(t("ace.card.c"))}</th><td>${escapeHTML(t("ace.card.cq"))}</td></tr>
+        <tr><th scope="row">${escapeHTML(t("ace.card.e"))}</th><td>${escapeHTML(t("ace.card.eq"))}</td></tr>
+      </tbody>
+    </table>
+    <p class="ace-why"><strong>${escapeHTML(t("ace.why.label"))}</strong> ${escapeHTML(t("ace.why.body"))}</p>
+    <p class="ace-more"><a href="../../ace/">${escapeHTML(t("ace.more"))} &rarr;</a></p>
+  `;
 }
 
 /* --- exhibit list --------------------------------------------------------- */

@@ -85,7 +85,31 @@ window.__ROOM_LANGS__.es = {
     "reflection.print": "Imprimir mi investigación",
     "print.scoreLine": "Puntuación: {score} de {total} puntos - {level}",
     "footer.tagline": "Sin inicios de sesión · sin cuentas · sin recolección de datos · funciona por completo en tu navegador.",
-    "footer.privacy": "Privacidad y cumplimiento"
+    "footer.privacy": "Privacidad y cumplimiento",
+    "ace.eyebrow": "Marco ACE",
+    "ace.title": "Piénsalo bien con ACE",
+    "ace.intro": "ACE te lleva de detectar pistas individuales a explicar y comprobar una conclusión — Articúlalo, Conéctalo y Amplíalo.",
+    "ace.a.title": "A — Articúlalo",
+    "ace.a.q": "¿Qué te dicen las pistas? Explícalas con tus propias palabras.",
+    "ace.c.title": "C — Conéctalo",
+    "ace.c.q": "¿Cómo se conectan las pistas con algo que ya sabes?",
+    "ace.e.title": "E — Amplíalo",
+    "ace.e.q": "Comprueba tu conclusión. ¿Qué más debería ser cierto si tu respuesta es correcta?",
+    "ace.example.eyebrow": "Ejemplo resuelto",
+    "ace.example.clues": "Pistas de la exhibición",
+    "ace.example.answer": "Respuesta del misterio",
+    "ace.card.title": "Tarjeta ACE lista para el aula",
+    "ace.card.h1": "Paso ACE",
+    "ace.card.h2": "Pregunta para el estudiante",
+    "ace.card.a": "Articular",
+    "ace.card.aq": "¿Qué dicen las pistas con tus propias palabras?",
+    "ace.card.c": "Conectar",
+    "ace.card.cq": "¿Cómo encajan las pistas entre sí?",
+    "ace.card.e": "Ampliar",
+    "ace.card.eq": "¿Qué predicción podría probar o refutar tu respuesta?",
+    "ace.why.label": "Por qué funciona ACE:",
+    "ace.why.body": "Los estudiantes nombran lo que observan, explican cómo las pistas respaldan una conclusión y comprueban si esa conclusión se sostiene.",
+    "ace.more": "Acerca del Marco ACE"
   },
   "exhibits": [
     {
@@ -385,5 +409,19 @@ window.__ROOM_LANGS__.es = {
       "purpose": "La electrónica temprana usaba tubos de vacío voluminosos, calientes y frágiles",
       "replacement": "Electrónica diminuta: computadoras, teléfonos e internet"
     }
-  ]
+  ],
+  "ace": {
+    "title": "El misterioso aparato de engranajes en la torre",
+    "answer": "Un reloj mecánico — una máquina de engranajes que mide y da las horas",
+    "clues": [
+      "Una caja llena de engranajes de latón que giran",
+      "Un péndulo que oscila o pesas que caen lo impulsan",
+      "Una esfera con manecillas en movimiento",
+      "Toca una campana a cada hora",
+      "Las versiones grandes estaban en las torres de los pueblos"
+    ],
+    "articulate": "Las pistas describen una máquina de engranajes, impulsada por un péndulo o por pesas, que marca la hora en una esfera y toca la hora para todo un pueblo.",
+    "connect": "Me recuerda al reloj del teléfono y a la hora compartida con la que funcionan los trenes, las escuelas y los lugares de trabajo. Hizo posible una vida coordinada y puntual.",
+    "extend": "Si los engranajes y el péndulo marcan el ritmo, necesita que se le dé cuerda con regularidad y un ajuste cuidadoso — por eso más tarde sería reemplazado por relojes de cuarzo y digitales que dan la hora con un cristal que vibra."
+  }
 };
