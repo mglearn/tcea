@@ -1,198 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="referrer" content="no-referrer">
-    <title>The Vanished Classroom</title>
-    <meta
-      name="description"
-      content="An upper-elementary and middle school investigation activity about instructional practices from the 1800s that classrooms no longer use, their purpose, limitations, and what replaced them."
-    >
-    <link rel="stylesheet" href="styles.css">
-    <script src="i18n.js" defer></script>
-    <script src="lang/es.js" defer></script>
-    <script src="lang/vi.js" defer></script>
-    <script src="lang/ar.js" defer></script>
-    <script src="lang/hi.js" defer></script>
-    <script src="lang/ur.js" defer></script>
-    <script src="lang/zh.js" defer></script>
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <a class="skip-link" href="#main-content" data-i18n="skip">Skip to activity</a>
-
-    <header class="topbar" aria-label="Activity progress">
-      <div class="brand-mark" aria-hidden="true">VC</div>
-      <div class="progress-wrap">
-        <p class="progress-title" data-i18n="progress.title">Investigation Progress</p>
-        <div class="progress-stats" aria-live="polite">
-          <span><strong id="completed-count">0</strong> <span id="completed-label">of 9 exhibits completed</span></span>
-          <span><strong id="score-count">0</strong> <span id="points-label">/ 27 points</span></span>
-        </div>
-        <div class="meter" aria-hidden="true">
-          <span id="progress-meter"></span>
-        </div>
-      </div>
-      <div class="langbar">
-        <span class="globe" aria-hidden="true">🌐</span>
-        <div data-i18n-picker></div>
-      </div>
-      <button class="ghost-button" id="reset-button" type="button" data-i18n="reset">Reset Activity</button>
-    </header>
-
-    <main id="main-content">
-      <section class="screen welcome-screen active" id="welcome-screen" aria-labelledby="welcome-title">
-        <div class="sky-glow" aria-hidden="true"></div>
-        <div class="leaf leaf-one" aria-hidden="true"></div>
-        <div class="leaf leaf-two" aria-hidden="true"></div>
-        <div class="welcome-copy">
-          <p class="eyebrow" data-i18n="welcome.eyebrow">Upper Elementary &amp; Middle School Investigation</p>
-          <h1 id="welcome-title" data-i18n="welcome.title">The Vanished Classroom</h1>
-          <p class="subtitle" data-i18n="welcome.subtitle">Can you uncover the classroom practices that time left behind?</p>
-          <p class="welcome-body" data-i18n="welcome.body">
-            Classrooms have changed enormously over the last two hundred years. Some practices that
-            once seemed normal have disappeared from schools completely. Step inside the vanished
-            classroom to investigate nine teaching relics from the 1800s and discover what eventually
-            replaced them.
-          </p>
-          <button class="primary-button" id="enter-button" type="button" data-i18n="welcome.enter">Enter the Schoolhouse</button>
-        </div>
-      </section>
-
-      <section class="screen directions-screen" id="directions-screen" aria-labelledby="directions-title">
-        <div class="content-panel">
-          <p class="eyebrow" data-i18n="directions.eyebrow">Student Directions</p>
-          <h2 id="directions-title" data-i18n="directions.title">How to investigate each exhibit</h2>
-          <p data-i18n="directions.body1">
-            Visit each exhibit and study the image and clues. First, identify the classroom practice
-            or tool. Next, decide what problem it was meant to solve. Finally, choose the practice or
-            technology that eventually replaced it.
-          </p>
-          <p data-i18n="directions.body2">You may revisit exhibits before submitting your final answers.</p>
-          <div class="direction-grid" aria-label="Investigation steps">
-            <div>
-              <span class="step-number">1</span>
-              <h3 data-i18n="directions.step1title">Identify it</h3>
-              <p data-i18n="directions.step1body">Use the clues and image area to decide what the practice or tool is.</p>
-            </div>
-            <div>
-              <span class="step-number">2</span>
-              <h3 data-i18n="directions.step2title">Find its purpose</h3>
-              <p data-i18n="directions.step2body">Choose the problem this practice was meant to solve.</p>
-            </div>
-            <div>
-              <span class="step-number">3</span>
-              <h3 data-i18n="directions.step3title">Track its replacement</h3>
-              <p data-i18n="directions.step3body">Select what classrooms use today in its place.</p>
-            </div>
-          </div>
-          <button class="primary-button" id="start-exhibits-button" type="button" data-i18n="directions.start">Start Investigating</button>
-        </div>
-      </section>
-
-      <section class="screen exhibit-list-screen" id="exhibit-list-screen" aria-labelledby="exhibit-list-title">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="list.eyebrow">Nine Classroom Relics</p>
-          <h2 id="exhibit-list-title" data-i18n="list.title">Choose an exhibit to investigate</h2>
-          <p data-i18n="list.body">Each desk opens a three-part investigation. Finished exhibits stay available for review.</p>
-        </div>
-        <div class="graveyard-grid" id="exhibit-grid"></div>
-        <div class="finish-row">
-          <button class="primary-button" id="finish-button" type="button" disabled data-i18n="list.finish">See My Final Score</button>
-        </div>
-      </section>
-
-      <section class="screen exhibit-screen" id="exhibit-screen" aria-labelledby="exhibit-title">
-        <button class="back-button" id="back-to-list-button" type="button" data-i18n="exhibit.back">Back to Exhibits</button>
-        <article class="exhibit-layout">
-          <div class="relic-visual">
-            <div class="image-frame">
-              <img id="relic-image" src="" alt="">
-              <div class="image-placeholder" id="image-placeholder">
-                <span id="placeholder-label">Image Placeholder</span>
-                <small id="placeholder-path"></small>
-              </div>
-            </div>
-            <div class="clue-box">
-              <p class="eyebrow" id="exhibit-number-label">Exhibit</p>
-              <h2 id="exhibit-title">Mystery Practice</h2>
-              <ul id="clue-list"></ul>
-            </div>
-          </div>
-
-          <form class="question-panel" id="investigation-form">
-            <div id="question-list"></div>
-            <div class="feedback-box" id="feedback-box" aria-live="polite"></div>
-            <div class="reveal-box" id="reveal-box"></div>
-            <div class="action-row">
-              <button class="primary-button" id="check-button" type="submit" data-i18n="exhibit.check">Check My Investigation</button>
-              <button class="secondary-button hidden" id="continue-button" type="button" data-i18n="exhibit.continue">Continue</button>
-            </div>
-          </form>
-        </article>
-      </section>
-
-      <section class="screen score-screen" id="score-screen" aria-labelledby="score-title">
-        <div class="content-panel score-panel">
-          <p class="eyebrow" data-i18n="score.eyebrow">Final Score</p>
-          <h2 id="score-title" data-i18n="score.title">Your Vanished Classroom Result</h2>
-          <div class="score-badge" id="score-badge" aria-live="polite"></div>
-          <p id="score-message"></p>
-          <div class="score-actions">
-            <button class="secondary-button" id="review-button" type="button" data-i18n="score.review">Review Exhibits</button>
-            <button class="primary-button" id="reflection-button" type="button" data-i18n="score.reflection">History Detective Reflection</button>
-            <button class="ghost-button" id="try-again-button" type="button" data-i18n="score.tryagain">Try Again</button>
-          </div>
-        </div>
-      </section>
-
-      <section class="screen reflection-screen" id="reflection-screen" aria-labelledby="reflection-title">
-        <div class="content-panel reflection-panel">
-          <p class="eyebrow" data-i18n="reflection.eyebrow">History Detective Reflection</p>
-          <h2 id="reflection-title" data-i18n="reflection.title">Explain what you discovered</h2>
-          <form id="reflection-form">
-            <label>
-              <span data-i18n="reflection.relicLabel">The classroom practice I chose</span>
-              <select id="reflection-relic" name="reflectionRelic"></select>
-            </label>
-            <label>
-              <span data-i18n="reflection.purposeLabel">The problem it was meant to solve</span>
-              <textarea id="reflection-purpose" name="reflectionPurpose" rows="3"></textarea>
-            </label>
-            <label>
-              <span data-i18n="reflection.limitationLabel">One limitation it had</span>
-              <textarea id="reflection-limitation" name="reflectionLimitation" rows="3"></textarea>
-            </label>
-            <label>
-              <span data-i18n="reflection.replacementLabel">The practice or tool that replaced it</span>
-              <textarea id="reflection-replacement" name="reflectionReplacement" rows="3"></textarea>
-            </label>
-            <label>
-              <span data-i18n="reflection.futureLabel">One practice used in classrooms today that I think may disappear someday</span>
-              <textarea id="reflection-future" name="reflectionFuture" rows="3"></textarea>
-            </label>
-            <div class="score-actions">
-              <button class="secondary-button" id="back-to-score-button" type="button" data-i18n="reflection.back">Back to Score</button>
-              <button class="primary-button" id="print-button" type="button" data-i18n="reflection.print">Print My Investigation</button>
-            </div>
-          </form>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <span data-i18n="footer.tagline">No logins · no accounts · no data collected · runs entirely in your browser.</span>
-      <a href="policy.html" data-i18n="footer.privacy">Privacy &amp; compliance</a>
-    </footer>
-
-    <template id="print-template">
-      <section class="print-page">
-        <h1></h1>
-        <p class="print-score"></p>
-        <h2></h2>
-        <dl></dl>
-      </section>
-    </template>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moved — Relic Rooms</title>
+  <link rel="canonical" href="https://mglearn.github.io/tcea/relic-rooms/">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="refresh" content="0; url=../relic-rooms/">
+  <script>
+    location.replace("../relic-rooms/");
+  </script>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+           background: #2a2013; color: #f4ecdd; margin: 0;
+           display: grid; place-items: center; min-height: 100vh; text-align: center; }
+    .card { max-width: 32rem; padding: 2rem; }
+    a { color: #f7bd4a; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>This activity has moved</h1>
+    <p><strong>The Vanished Classroom</strong> is now part of the
+       <strong>Relic Rooms</strong> series.</p>
+    <p><a href="../relic-rooms/">Go to the Relic Rooms hub →</a></p>
+  </div>
+</body>
 </html>

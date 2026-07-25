@@ -7,7 +7,7 @@ replaced it), earn points, and finish with a score screen and a printable
 reflection.
 
 The first build of this pattern was **The Technology Graveyard** (outdated
-technology). The second, **The Vanished Classroom** (top-level `tvc/`, a
+technology). The second, **The Vanished Classroom** (`relic-rooms/tvc/`, a
 self-contained activity that bundles its own i18n engine), reused
 this guide for *instructional practices from the 1800s* and added the shared
 language switcher. Follow the steps below to make another one on any topic.
@@ -91,10 +91,10 @@ display but tracks the original index, so:
 
 ## 3. Steps to build a new one
 
-1. **Copy `tvc/` to `breakouts/<new-acronym>/`.** (For a breakout under
+1. **Copy `relic-rooms/tvc/` to your new activity folder.** (For a breakout under
    `breakouts/`, load the shared `../assets/i18n.js` instead of bundling a local
-   `i18n.js` as `tvc/` does.) Pick a short, unique
-   folder acronym (existing ones: `tvc`, plus `july4`, `july5th`, `idioms`, …).
+   `i18n.js` as `relic-rooms/tvc/` does.) Pick a short, unique
+   folder acronym (existing ones: `relic-rooms/tvc`, plus `july4`, `july5th`, `idioms`, …).
 2. **Rewrite the exhibits** in `script.js` (`EXHIBITS.en`) for your topic — 9
    exhibits, correct-first, per the model above.
 3. **Update the UI strings** in `script.js` (`UI.en`): title, subtitle, welcome
@@ -118,7 +118,7 @@ Every breakout in `breakouts/` shares one small i18n engine at
 `localStorage` (`tcea.breakouts.lang`), supports `?lang=` share links, sets
 `dir="rtl"` for Arabic/Urdu, and fires a `breakout-i18n:changed` event.
 
-**Four wiring points** (all already present in `tvc/`):
+**Four wiring points** (all already present in `relic-rooms/tvc/`):
 
 1. **Load the engine before your script** (order matters — packs, then engine
    consumer):
@@ -193,7 +193,7 @@ languages mid-activity and their score, saved answers, and reveal stay correct.
 ## 6. Validate before shipping
 
 Run a structural check that confirms each language pack matches English and that
-the correct answer is authored first. See `tvc/`'s process:
+the correct answer is authored first. See `relic-rooms/tvc/`'s process:
 
 ```bash
 # syntax-check everything

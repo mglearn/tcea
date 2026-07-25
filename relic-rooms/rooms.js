@@ -3,7 +3,7 @@
    Flip a room to live + set href when it ships. */
 window.RELIC_ROOMS = [
   { id: "tvc", title: "The Vanished Classroom", grades: "4–8", subject: "Social Studies",
-    teks: "19 TAC Ch. 113", accent: "#a86a1e", href: "../tvc/", status: "live",
+    teks: "19 TAC Ch. 113", accent: "#a86a1e", href: "tvc/", status: "live",
     desc: "Instructional practices from the 1800s that classrooms no longer use — slate, hornbook, the dunce cap, and more." },
 
   { id: "ec", title: "Extinct Creatures", grades: "3–7", subject: "Science",

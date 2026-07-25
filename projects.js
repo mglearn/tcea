@@ -854,7 +854,7 @@
     "category": "activities",
     "featured": false,
     "external": false,
-    "href": "tvc/index.html",
+    "href": "relic-rooms/tvc/index.html",
     "tag": "Investigation Activity",
     "title": "The Vanished Classroom",
     "desc": "A standalone investigation activity (grades 4-8) about instructional practices from the 1800s that classrooms no longer use. Students examine nine teaching relics &mdash; slate, hornbook, recitation, the dunce cap, and more &mdash; and uncover each one's purpose, limitation, and modern replacement. Seven languages, with a score and printable reflection. Part of the Relic Rooms series."

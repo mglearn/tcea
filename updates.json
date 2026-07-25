@@ -1,19 +1,26 @@
 {
-  "generated": "2026-07-25T02:10:49.264Z",
+  "generated": "2026-07-25T18:03:47.760Z",
   "items": [
     {
-      "href": "relic-rooms/et/index.html",
-      "title": "Endangered Today (Relic Room)",
+      "href": "relic-rooms/tvc/index.html",
+      "title": "The Vanished Classroom",
       "category": "Games, Activities, and Specialty Builds",
       "icon": "🎲",
-      "date": "2026-07-25T02:10:48.972Z"
+      "date": "2026-07-25T18:03:47.453Z"
     },
     {
       "href": "relic-rooms/hoi/index.html",
       "title": "Hall of Inventions (Relic Room)",
       "category": "Games, Activities, and Specialty Builds",
       "icon": "🎲",
-      "date": "2026-07-25T02:10:48.953Z"
+      "date": "2026-07-24T21:10:49-05:00"
+    },
+    {
+      "href": "relic-rooms/et/index.html",
+      "title": "Endangered Today (Relic Room)",
+      "category": "Games, Activities, and Specialty Builds",
+      "icon": "🎲",
+      "date": "2026-07-24T21:10:49-05:00"
     },
     {
       "href": "relic-rooms/clouds/index.html",
@@ -63,13 +70,6 @@
       "category": "Games, Activities, and Specialty Builds",
       "icon": "🎲",
       "date": "2026-07-24T20:24:24-05:00"
-    },
-    {
-      "href": "tvc/index.html",
-      "title": "The Vanished Classroom",
-      "category": "Games, Activities, and Specialty Builds",
-      "icon": "🎲",
-      "date": "2026-07-24T13:22:29-05:00"
     },
     {
       "href": "byh/index.html",

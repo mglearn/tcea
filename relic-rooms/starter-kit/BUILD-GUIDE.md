@@ -3,7 +3,7 @@
 A **Relic Room** is a self-contained, 7-language investigation activity: nine
 illustrated "mystery exhibits," each answered in three steps — **identify →
 understand → connect** — with scoring, a printable reflection, and a TEKS
-correlation page. First room: *The Vanished Classroom* (`/tvc/`).
+correlation page. First room: *The Vanished Classroom* (`/relic-rooms/tvc/`).
 
 Everything shared lives in `relic-rooms/assets/` (the engine, CSS, stone image,
 i18n switcher). A room is just its **content** (a spec + images + translations).

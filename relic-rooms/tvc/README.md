@@ -7,7 +7,7 @@ replaced it?* — earning up to **27 points**, then finish with a score level an
 printable **History Detective Reflection**.
 
 Built from the reusable pattern documented in
-[`../breakouts/GRAVEYARD-STYLE-BREAKOUT-GUIDE.md`](../breakouts/GRAVEYARD-STYLE-BREAKOUT-GUIDE.md),
+[`../../breakouts/GRAVEYARD-STYLE-BREAKOUT-GUIDE.md`](../../breakouts/GRAVEYARD-STYLE-BREAKOUT-GUIDE.md),
 modeled on *The Technology Graveyard*. It is a self-contained, top-level activity
 (bundles its own copy of the i18n engine) — no longer part of the breakouts suite.
 
