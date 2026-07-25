@@ -15,7 +15,7 @@ window.RELIC_ROOMS = [
     desc: "Jobs that disappeared — lamplighter, switchboard operator, ice cutter — what they did and what replaced them." },
 
   { id: "tg", title: "The Transportation Graveyard", grades: "3–6", subject: "Social Studies",
-    teks: "19 TAC Ch. 113", accent: "#5b6b8c", href: "tg/", status: "planned",
+    teks: "19 TAC Ch. 113", accent: "#5b6b8c", href: "tg/", status: "live",
     desc: "Ways we used to get around — penny-farthing, steam locomotive, zeppelin — their job and their successor." },
 
   { id: "dc", title: "Dead Communications", grades: "4–8", subject: "Technology Applications",
