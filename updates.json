@@ -1,12 +1,19 @@
 {
-  "generated": "2026-07-24T23:57:20.140Z",
+  "generated": "2026-07-25T00:08:29.859Z",
   "items": [
+    {
+      "href": "relic-rooms/ec/index.html",
+      "title": "Extinct Creatures (Relic Room)",
+      "category": "Games, Activities, and Specialty Builds",
+      "icon": "🎲",
+      "date": "2026-07-25T00:08:29.577Z"
+    },
     {
       "href": "relic-rooms/index.html",
       "title": "Relic Rooms",
       "category": "Games, Activities, and Specialty Builds",
       "icon": "🎲",
-      "date": "2026-07-24T23:57:19.857Z"
+      "date": "2026-07-24T18:57:20-05:00"
     },
     {
       "href": "tvc/index.html",
@@ -273,13 +280,6 @@
       "category": "Classroom Tools and Utilities",
       "icon": "🧰",
       "date": "2026-06-20T15:03:34-05:00"
-    },
-    {
-      "href": "vcll/index.html",
-      "title": "Vibe Coding Projects for Librarians",
-      "category": "Games, Activities, and Specialty Builds",
-      "icon": "🎲",
-      "date": "2026-06-20T12:49:04-05:00"
     }
   ]
 }

@@ -782,6 +782,15 @@
     "category": "activities",
     "featured": false,
     "external": false,
+    "href": "relic-rooms/ec/index.html",
+    "tag": "Investigation Activity",
+    "title": "Extinct Creatures (Relic Room)",
+    "desc": "A grades 3-7 science investigation (Relic Rooms series) about nine extinct animals &mdash; dodo, woolly mammoth, T. rex, megalodon, and more. Students identify each creature, its role or adaptation, and its closest living relative today. Seven languages, aligned to the Texas science TEKS (19 TAC Ch. 112)."
+  },
+  {
+    "category": "activities",
+    "featured": false,
+    "external": false,
     "href": "tvc/index.html",
     "tag": "Investigation Activity",
     "title": "The Vanished Classroom",

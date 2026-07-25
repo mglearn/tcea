@@ -7,8 +7,8 @@ window.RELIC_ROOMS = [
     desc: "Instructional practices from the 1800s that classrooms no longer use — slate, hornbook, the dunce cap, and more." },
 
   { id: "ec", title: "Extinct Creatures", grades: "3–7", subject: "Science",
-    teks: "19 TAC Ch. 112", accent: "#3f6f5a", href: "ec/", status: "planned",
-    desc: "Creatures lost to time — identify each, its niche and adaptation, and why it vanished or its closest living relative." },
+    teks: "19 TAC Ch. 112", accent: "#3f6f5a", href: "ec/", status: "live",
+    desc: "Creatures lost to time — identify each, its niche and adaptation, and its closest living relative today." },
 
   { id: "vt", title: "Vanished Trades", grades: "5–8 / HS", subject: "Social Studies · Career",
     teks: "19 TAC Ch. 113 + Ch. 127", accent: "#8a5a2b", href: "vt/", status: "planned",

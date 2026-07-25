@@ -6,18 +6,26 @@
     <atom:link href="https://mglearn.github.io/tcea/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated HTML tools, dashboards, prompt libraries, and classroom resources from TCEA.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Jul 2026 23:57:20 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jul 2026 00:08:29 GMT</lastBuildDate>
     <image>
       <url>https://mglearn.github.io/tcea/favicon.svg</url>
       <title>TCEA Vibe-Coded Solutions — Updates</title>
       <link>https://mglearn.github.io/tcea/</link>
     </image>
     <item>
+      <title>🎲 Extinct Creatures (Relic Room)</title>
+      <link>https://mglearn.github.io/tcea/relic-rooms/ec/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/relic-rooms/ec/index.html</guid>
+      <category>Games, Activities, and Specialty Builds</category>
+      <pubDate>Sat, 25 Jul 2026 00:08:29 GMT</pubDate>
+      <description>A grades 3-7 science investigation (Relic Rooms series) about nine extinct animals — dodo, woolly mammoth, T. rex, megalodon, and more. Students identify each creature, its role or adaptation, and its closest living relative today. Seven languages, aligned to the Texas science TEKS (19 TAC Ch. 112).</description>
+    </item>
+    <item>
       <title>🎲 Relic Rooms</title>
       <link>https://mglearn.github.io/tcea/relic-rooms/index.html</link>
       <guid isPermaLink="true">https://mglearn.github.io/tcea/relic-rooms/index.html</guid>
       <category>Games, Activities, and Specialty Builds</category>
-      <pubDate>Fri, 24 Jul 2026 23:57:19 GMT</pubDate>
+      <pubDate>Fri, 24 Jul 2026 23:57:20 GMT</pubDate>
       <description>A series of self-contained, seven-language investigation activities: students examine nine illustrated mystery exhibits in three steps — identify it, understand its purpose, and connect it to what came next. Aligned to the Texas Essential Knowledge and Skills across science, social studies, technology applications, and career. Starts with The Vanished Classroom.</description>
     </item>
     <item>
@@ -323,14 +331,6 @@
       <category>Classroom Tools and Utilities</category>
       <pubDate>Sat, 20 Jun 2026 20:03:34 GMT</pubDate>
       <description>A shape spinner for math, discussion, selection, and quick classroom activities.</description>
-    </item>
-    <item>
-      <title>🎲 Vibe Coding Projects for Librarians</title>
-      <link>https://mglearn.github.io/tcea/vcll/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/vcll/index.html</guid>
-      <category>Games, Activities, and Specialty Builds</category>
-      <pubDate>Sat, 20 Jun 2026 17:49:04 GMT</pubDate>
-      <description>The session companion site with library use cases, starter prompts, and downloadable tools for vibe-coding free alternatives to Padlet, Slido, and FigJam.</description>
     </item>
   </channel>
 </rss>
