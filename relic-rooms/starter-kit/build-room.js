@@ -61,6 +61,7 @@ const room = {
 };
 if (spec.ground) room.ground = spec.ground;
 if (spec.noGround) room.noGround = true;
+if (spec.cardStyle) room.cardStyle = spec.cardStyle;
 fs.writeFileSync(path.join(out, "data.en.js"),
   "window.__ROOM__ = " + JSON.stringify(room, null, 2) + ";\n");
 

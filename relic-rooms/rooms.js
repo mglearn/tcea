@@ -31,7 +31,7 @@ window.RELIC_ROOMS = [
     desc: "Things predicted to disappear — cursive, cash, physical keys — their current use and likely successor." },
 
   { id: "mm", title: "Mystery Minerals", grades: "5–8", subject: "Science",
-    teks: "19 TAC Ch. 112", accent: "#4a6b8a", href: "mm/", status: "planned",
+    teks: "19 TAC Ch. 112", accent: "#8f86d6", href: "mm/", status: "live",
     desc: "Specimens from the earth — identify each mineral, a key property, and how people use it." },
 
   { id: "clouds", title: "Cloud Detective", grades: "3–5", subject: "Science",

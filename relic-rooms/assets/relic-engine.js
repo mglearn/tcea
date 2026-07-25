@@ -123,6 +123,9 @@ function interpolate(str, vars) {
 
 /* --- registration + boot -------------------------------------------------- */
 (function boot() {
+  // Card style: "headstone" (default) or "plaque" (museum/specimen look).
+  if (R.cardStyle && document.body) document.body.classList.add("room-" + R.cardStyle);
+
   // Fold translated packs (added at the bottom of this file) into UI + EXHIBITS.
   const packs = window.__ROOM_LANGS__ || {};
   Object.keys(packs).forEach((code) => {

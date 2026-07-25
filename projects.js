@@ -818,6 +818,15 @@
     "category": "activities",
     "featured": false,
     "external": false,
+    "href": "relic-rooms/mm/index.html",
+    "tag": "Investigation Activity",
+    "title": "Mystery Minerals (Relic Room)",
+    "desc": "A grades 5-8 science investigation (Relic Rooms series) about minerals &mdash; quartz, halite, graphite, talc, magnetite, gold, diamond, calcite, and hematite. Students identify each specimen, a key property (hardness, streak, magnetism, reaction to acid), and how people use it. Seven languages, aligned to the Texas science TEKS (19 TAC Ch. 112)."
+  },
+  {
+    "category": "activities",
+    "featured": false,
+    "external": false,
     "href": "tvc/index.html",
     "tag": "Investigation Activity",
     "title": "The Vanished Classroom",

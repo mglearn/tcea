@@ -6,12 +6,20 @@
     <atom:link href="https://mglearn.github.io/tcea/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated HTML tools, dashboards, prompt libraries, and classroom resources from TCEA.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Jul 2026 01:41:43 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jul 2026 01:55:19 GMT</lastBuildDate>
     <image>
       <url>https://mglearn.github.io/tcea/favicon.svg</url>
       <title>TCEA Vibe-Coded Solutions — Updates</title>
       <link>https://mglearn.github.io/tcea/</link>
     </image>
+    <item>
+      <title>🎲 Mystery Minerals (Relic Room)</title>
+      <link>https://mglearn.github.io/tcea/relic-rooms/mm/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/relic-rooms/mm/index.html</guid>
+      <category>Games, Activities, and Specialty Builds</category>
+      <pubDate>Sat, 25 Jul 2026 01:55:18 GMT</pubDate>
+      <description>A grades 5-8 science investigation (Relic Rooms series) about minerals — quartz, halite, graphite, talc, magnetite, gold, diamond, calcite, and hematite. Students identify each specimen, a key property (hardness, streak, magnetism, reaction to acid), and how people use it. Seven languages, aligned to the Texas science TEKS (19 TAC Ch. 112).</description>
+    </item>
     <item>
       <title>🎲 Dead Communications (Relic Room)</title>
       <link>https://mglearn.github.io/tcea/relic-rooms/dc/index.html</link>
@@ -323,14 +331,6 @@
       <category>Dashboards and Decision Tools</category>
       <pubDate>Fri, 26 Jun 2026 14:17:14 GMT</pubDate>
       <description>A teacher and staff app intake form for submitting apps for district review, with an optional Google Sheets backend for collecting requests.</description>
-    </item>
-    <item>
-      <title>🤖 LibVibes Prompt Library</title>
-      <link>https://mglearn.github.io/tcea/vcl/libvibes.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/vcl/libvibes.html</guid>
-      <category>AI Prompt Libraries and Adoption</category>
-      <pubDate>Mon, 22 Jun 2026 13:40:41 GMT</pubDate>
-      <description>Nineteen library-focused vibe-coding starter prompts, each with a VIBES game plan and its own linkable page, all nineteen built and playable.</description>
     </item>
   </channel>
 </rss>
