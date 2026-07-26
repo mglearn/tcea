@@ -413,6 +413,15 @@
     "category": "dashboards",
     "featured": false,
     "external": false,
+    "href": "observe/index.html",
+    "tag": "Vendor Comparison",
+    "title": "Teacher Observation and Coaching Platforms",
+    "desc": "A slide-by-slide vendor comparison of teacher observation and coaching platforms, separating formal evaluation workflow tools from coaching, reflection, and teacher-preparation products."
+  },
+  {
+    "category": "dashboards",
+    "featured": false,
+    "external": false,
     "href": "privacy-audit/index.html",
     "tag": "Family Privacy",
     "title": "Family App Privacy Audit",

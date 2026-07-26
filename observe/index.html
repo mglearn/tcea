@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Observation and Coaching Platforms</title>
+<style>
+  :root {
+    --tcea-navy: #0A3476;
+    --tcea-navy-dark: #06275a;
+    --tcea-gold: #FCB040;
+    --tcea-gold-light: #ffe1ad;
+    --ink: #213047;
+    --muted: #607086;
+    --surface: #ffffff;
+    --page: #eef3f9;
+    --line: #d7e0eb;
+    --focus: #2d78d2;
+    --shadow: 0 18px 46px rgba(10, 52, 118, 0.16);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    margin: 0;
+    min-width: 280px;
+    background:
+      radial-gradient(circle at top left, rgba(252, 176, 64, 0.16), transparent 30rem),
+      var(--page);
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+  }
+
+  button,
+  input {
+    font: inherit;
+  }
+
+  .app {
+    width: min(1120px, calc(100% - 28px));
+    margin: 0 auto;
+    padding: 28px 0 34px;
+  }
+
+  .intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 24px;
+    align-items: end;
+    margin-bottom: 20px;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 8px;
+    color: var(--tcea-navy);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 34px;
+    height: 4px;
+    border-radius: 999px;
+    background: var(--tcea-gold);
+  }
+
+  h1 {
+    margin: 0;
+    color: var(--tcea-navy);
+    font-size: clamp(1.85rem, 4vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+  }
+
+  .intro-text {
+    max-width: 760px;
+    margin: 11px 0 0;
+    color: var(--muted);
+    font-size: 1rem;
+  }
+
+  .auto-control {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    padding: 9px 13px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--tcea-navy);
+    font-size: 0.9rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .auto-control input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--tcea-navy);
+  }
+
+  .carousel {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(10, 52, 118, 0.12);
+    border-radius: 22px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+  }
+
+  .viewport {
+    overflow: hidden;
+  }
+
+  .track {
+    display: flex;
+    width: 100%;
+    transition: transform 560ms cubic-bezier(0.22, 0.75, 0.24, 1);
+    will-change: transform;
+  }
+
+  .slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+    min-height: 470px;
+    padding: clamp(26px, 5vw, 58px);
+    display: grid;
+    grid-template-columns: minmax(0, 1.28fr) minmax(260px, 0.72fr);
+    gap: clamp(28px, 5vw, 68px);
+    align-items: center;
+  }
+
+  .slide-main {
+    min-width: 0;
+  }
+
+  .vendor-number {
+    display: inline-grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 18px;
+    border-radius: 50%;
+    background: var(--tcea-gold);
+    color: var(--tcea-navy);
+    font-weight: 900;
+  }
+
+  .category {
+    display: inline-block;
+    margin: 0 0 10px;
+    color: var(--tcea-navy);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .vendor-name {
+    margin: 0;
+    color: var(--tcea-navy);
+    font-size: clamp(2rem, 5vw, 3.65rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .summary {
+    max-width: 700px;
+    margin: 18px 0 0;
+    color: var(--ink);
+    font-size: clamp(1.05rem, 2.1vw, 1.35rem);
+    line-height: 1.55;
+  }
+
+  .source-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+    color: var(--tcea-navy);
+    font-weight: 800;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+
+  .source-link:hover {
+    color: var(--tcea-navy-dark);
+  }
+
+  .fit-panel {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 28px;
+    border-radius: 18px;
+    background: var(--tcea-navy);
+    color: #ffffff;
+  }
+
+  .fit-label {
+    margin: 0 0 8px;
+    color: var(--tcea-gold);
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .fit-title {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.45rem;
+    line-height: 1.2;
+  }
+
+  .fit-text {
+    margin: 12px 0 0;
+    color: #e1eaf6;
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+
+  .verify {
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.24);
+  }
+
+  .verify strong {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--tcea-gold);
+  }
+
+  .controls {
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr) 52px;
+    gap: 14px;
+    align-items: center;
+    padding: 17px 18px 19px;
+    border-top: 1px solid var(--line);
+    background: #f9fbfd;
+  }
+
+  .arrow {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--tcea-navy);
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1.8rem;
+    line-height: 1;
+    box-shadow: 0 6px 16px rgba(10, 52, 118, 0.2);
+  }
+
+  .arrow:hover {
+    background: var(--tcea-navy-dark);
+  }
+
+  .arrow:active {
+    transform: translateY(1px);
+  }
+
+  .dots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border: 2px solid var(--tcea-navy);
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    transition: transform 160ms ease, background-color 160ms ease;
+  }
+
+  .dot:hover {
+    transform: scale(1.18);
+  }
+
+  .dot[aria-current="true"] {
+    border-color: var(--tcea-gold);
+    background: var(--tcea-gold);
+    transform: scale(1.2);
+  }
+
+  .status {
+    margin: 12px 0 0;
+    color: var(--muted);
+    text-align: center;
+    font-size: 0.88rem;
+  }
+
+  .sr-only {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 820px) {
+    .intro {
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
+
+    .auto-control {
+      justify-self: start;
+    }
+
+    .slide {
+      min-height: 610px;
+      grid-template-columns: 1fr;
+      align-content: center;
+    }
+
+    .fit-panel {
+      align-self: auto;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .app {
+      width: min(100% - 18px, 1120px);
+      padding-top: 18px;
+    }
+
+    .slide {
+      min-height: 650px;
+      padding: 25px 20px;
+    }
+
+    .fit-panel {
+      padding: 22px;
+    }
+
+    .controls {
+      grid-template-columns: 46px minmax(0, 1fr) 46px;
+      gap: 8px;
+      padding-inline: 10px;
+    }
+
+    .arrow {
+      width: 44px;
+      height: 44px;
+    }
+
+    .dots {
+      gap: 7px;
+    }
+
+    .dot {
+      width: 11px;
+      height: 11px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .track,
+    .dot {
+      transition: none;
+    }
+  }
+</style>
+</head>
+<body>
+<main class="app">
+  <header class="intro">
+    <div>
+      <p class="eyebrow">Vendor comparison</p>
+      <h1>Teacher Observation and Coaching Platforms</h1>
+      <p class="intro-text">
+        Review one platform at a time. The slides distinguish formal evaluation workflow tools
+        from coaching, reflection, and teacher-preparation products.
+      </p>
+    </div>
+
+    <label class="auto-control">
+      <input id="autoAdvance" type="checkbox">
+      Auto-advance every 8 seconds
+    </label>
+  </header>
+
+  <section
+    id="carousel"
+    class="carousel"
+    aria-roledescription="carousel"
+    aria-label="Teacher observation and coaching platform comparison"
+  >
+    <div class="viewport">
+      <div id="track" class="track">
+
+        <article class="slide" aria-label="Slide 1 of 10: Sibme">
+          <div class="slide-main">
+            <span class="vendor-number">1</span>
+            <p class="category">Observation workflow and video coaching</p>
+            <h2 class="vendor-name">Sibme</h2>
+            <p class="summary">
+              Combines recorded lessons, synced notes, transcripts, artifacts, rubric alignment,
+              and AI-assisted analysis. Sibme specifically markets support for T-TESS and
+              customizable district observation frameworks.
+            </p>
+            <a class="source-link" href="https://www.sibme.com/" target="_blank" rel="noopener noreferrer">
+              Visit Sibme <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <aside class="fit-panel">
+            <p class="fit-label">Best fit</p>
+            <h3 class="fit-title">A connected formal observation and coaching process</h3>
+            <p class="fit-text">
+              Strong candidate when a district wants evidence capture, feedback, video coaching,
+              and framework-aligned documentation in one system.
+            </p>
+            <p class="fit-text verify">
+              <strong>Verify before purchase</strong>
+              Confirm the exact T-TESS configuration, evaluator controls, AI evidence citations,
+              retention rules, and whether coaching records can remain separate from appraisal records.
+            </p>
+          </aside>
+        </article>
+
+        <article class="slide" aria-label="Slide 2 of 10: Edthena Observation Copilot">
+          <div class="slide-main">
+            <span class="vendor-number">2</span>
+            <p class="category">AI-assisted feedback drafting</p>
+            <h2 class="vendor-name">Edthena Observation Copilot</h2>
+            <p class="summary">
+              Turns an administrator's walkthrough or observation notes into editable,
+              framework-aligned feedback, including suggested strengths, questions, and next steps.
+            </p>
+            <a class="source-link" href="https://www.edthena.com/" target="_blank" rel="noopener noreferrer">
+              Visit Edthena <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <aside class="fit-panel">
+            <p class="fit-label">Best fit</p>
+            <h3 class="fit-title">Reducing post-observation writing time</h3>
+            <p class="fit-text">
+              Useful when observers already collect solid evidence but lose time organizing notes
+              and composing feedback afterward.
+            </p>
+            <p class="fit-text verify">
+              <strong>Verify before purchase</strong>
+              Test whether generated comments accurately distinguish evidence from interpretation
+              and match your district's T-TESS language without overstating performance.
+            </p>
+          </aside>
+        </article>
+
+        <article class="slide" aria-label="Slide 3 of 10: Edthena VC3">
+          <div class="slide-main">
+            <span class="vendor-number">3</span>
+            <p class="category">Collaborative video coaching</p>
+            <h2 class="vendor-name">Edthena VC3</h2>
+            <p class="summary">
+              Teachers record or upload lessons, share them securely, and receive timestamped feedback.
+              Built-in insights can summarize lessons, surface coaching questions, and show
+              student-to-teacher talk-time balance.
+            </p>
+            <a class="source-link" href="https://www.edthena.com/video-coaching-for-teachers/" target="_blank" rel="noopener noreferrer">
+              Explore VC3 <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <aside class="fit-panel">
+            <p class="fit-label">Best fit</p>
+            <h3 class="fit-title">Instructional coaching, induction, and peer observation</h3>
+            <p class="fit-text">
+              Better suited to developmental coaching and collaborative reflection than to managing
+              an entire formal T-TESS appraisal cycle.
+            </p>
+            <p class="fit-text verify">
+              <strong>Verify before purchase</strong>
+              Decide who controls video sharing, how long recordings remain available, and whether
+              formal evaluators can access coaching-only conversations.
+            </p>
+          </aside>
+        </article>
+
+        <article class="slide" aria-label="Slide 4 of 10: Edthena AI Coach">
+          <div class="slide-main">
+            <span class="vendor-number">4</span>
+            <p class="category">Self-guided professional learning</p>
+            <h2 class="vendor-name">Edthena AI Coach</h2>
+            <p class="summary">
+              Guides teachers through private self-observation, goal setting, reflection, and
+              action planning. It is designed to extend coaching capacity between human coaching sessions.
+            </p>
+            <a class="source-link" href="https://www.edthena.com/" target="_blank" rel="noopener noreferrer">
+              Explore AI Coach <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <aside class="fit-panel">
+            <p class="fit-label">Best fit</p>
+            <h3 class="fit-title">Low-stakes teacher reflection and individual growth</h3>
+            <p class="fit-text">
+              Useful as a professional learning support where teachers need frequent reflection
+              opportunities without waiting for an administrator or coach.
+            </p>
+            <p class="fit-text verify">
+              <strong>Verify before purchase</strong>
+              Keep self-guided coaching data separate from high-stakes evaluation unless district
+              policy, contracts, and staff expectations explicitly allow that use.
+            </p>
+          </aside>
+        </article>
+
+        <article class="slide" aria-label="Slide 5 of 10: Vosaic">
+          <div class="slide-main">
+            <span class="vendor-number">5</span>
+            <p class="category">AI-supported video feedback</p>
+            <h2 class="vendor-name">Vosaic</h2>
+            <p class="summary">
+              Provides browser-based lesson recording, video tagging, clip-based comments,
+              automated transcription, talk-time analysis, highlight reels, and AI-assisted feedback.
+            </p>
+            <a class="source-link" href="https://vosaic.com/" target="_blank" rel="noopener noreferrer">
+              Visit Vosaic <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <aside class="fit-panel">
+            <p class="fit-label">Best fit</p>
+            <h3 class="fit-title">Evidence-rich coaching and remote observation</h3>
+            <p class="fit-text">
+              Strong for reflective coaching, educator preparation, and programs that need precise
+              comments tied to recorded classroom moments.
+            </p>
+            <p class="fit-text verify">
+              <strong>Verify before purchase</strong>
+              Confirm how district rubrics are configured and whether the platform can manage every
+              required step of a formal T-TESS process, not only video review.
+            </p>
+          </aside>
+        </article>
+
+        <article class="slide" aria-label="Slide 6 of 10: Frontline Professional Growth">
+          <div class="slide-main">
+            <span class="vendor-number">6</span>
+            <p class="category">Districtwide evaluation management</p>
+            <h2 class="vendor-name">Frontline Professional Growth</h2>
+            <p class="summary">
+              Manages configurable rubrics, evaluation forms, observations, goals, student learning
+              objectives, reports, professional learning, and records for teachers and other employee groups.
+            </p>
+            <a class="source-link" href="https://www.frontlineeducation.com/school-hcm-software/professional-growth/teacher-employee-performance-evaluation/" target="_blank" rel="noopener noreferrer">
+              Visit Frontline <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <aside class="fit-panel">
+            <p class="fit-label">Best fit</p>
+            <h3 class="fit-title">Managing the complete district evaluation workflow</h3>
+            <p class="fit-text">
+              Strong option when HR, professional learning, evaluation forms, approvals, and records
+              must live in one district system.
+            </p>
+            <p class="fit-text verify">
+              <strong>Verify before purchase</strong>
+              Its public materials emphasize workflow management more than AI analysis of classroom
+              video. Confirm any Gen AI features needed for evidence analysis or feedback drafting.
+            </p>
+          </aside>
+        </article>
+
+        <article class="slide" aria-label="Slide 7 of 10: TeachFX">
+          <div class="slide-main">
+            <span class="vendor-number">7</span>
+            <p class="category">Private instructional audio analysis</p>
+            <h2 class="vendor-name">TeachFX</h2>
+            <p class="summary">
+              Records classroom audio and gives teachers private feedback on talk ratio,
+              questioning, student participation, and instructional patterns. TeachFX states that
+              the product is designed to support teachers, not evaluate them.
+            </p>
+            <a class="source-link" href="https://teachfx.com/" target="_blank" rel="noopener noreferrer">
+              Visit TeachFX <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <aside class="fit-panel">
+            <p class="fit-label">Best fit</p>
+            <h3 class="fit-title">Student-talk goals and frequent private reflection</h3>
+            <p class="fit-text">
+              Useful for coaching around discussion, wait time, questioning, and student voice,
+              especially when video is unnecessary.
+            </p>
+            <p class="fit-text verify">
+              <strong>Verify before purchase</strong>
+              Do not assume teacher-level audio analytics belong in formal appraisal. Establish clear
+              boundaries around privacy, access, aggregation, and evaluator use.
+            </p>
+          </aside>
+        </article>
+
+        <article class="slide" aria-label="Slide 8 of 10: TORSH Talent">
+          <div class="slide-main">
+            <span class="vendor-number">8</span>
+            <p class="category">Structured coaching cycles</p>
+            <h2 class="vendor-name">TORSH Talent</h2>
+            <p class="summary">
+              Organizes observations, goals, comments, video feedback, professional learning resources,
+              and data dashboards. Talent-Ed AI adds video auto-tagging, observation summaries,
+              coaching insights, and enhanced search.
+            </p>
+            <a class="source-link" href="https://www.torsh.co/" target="_blank" rel="noopener noreferrer">
+              Visit TORSH <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <aside class="fit-panel">
+            <p class="fit-label">Best fit</p>
+            <h3 class="fit-title">Scaling coaching across schools, regions, or programs</h3>
+            <p class="fit-text">
+              Strong for districts, service centers, universities, and programs that need consistent
+              observation, feedback, reflection, and growth tracking.
+            </p>
+            <p class="fit-text verify">
+              <strong>Verify before purchase</strong>
+              Ask for a live demonstration using your T-TESS rubric and required forms. Coaching
+              functionality does not automatically equal full state appraisal compliance.
+            </p>
+          </aside>
+        </article>
+
+        <article class="slide" aria-label="Slide 9 of 10: GoReact">
+          <div class="slide-main">
+            <span class="vendor-number">9</span>
+            <p class="category">Teacher preparation and video assessment</p>
+            <h2 class="vendor-name">GoReact</h2>
+            <p class="summary">
+              Supports recorded or live observations, time-coded text, audio, and video feedback,
+              peer review, rubrics, searchable transcripts, and AI-assisted initial insights.
+            </p>
+            <a class="source-link" href="https://get.goreact.com/for-teacher-education/" target="_blank" rel="noopener noreferrer">
+              Visit GoReact <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <aside class="fit-panel">
+            <p class="fit-label">Best fit</p>
+            <h3 class="fit-title">Teacher candidates, induction, and skills-based feedback</h3>
+            <p class="fit-text">
+              Particularly useful in educator preparation, field supervision, and induction programs
+              where remote observation can reduce travel and scheduling problems.
+            </p>
+            <p class="fit-text verify">
+              <strong>Verify before purchase</strong>
+              Confirm whether district appraisal records, signatures, summative forms, and T-TESS
+              reporting can be managed without a second evaluation system.
+            </p>
+          </aside>
+        </article>
+
+        <article class="slide" aria-label="Slide 10 of 10: SchoolMint Grow">
+          <div class="slide-main">
+            <span class="vendor-number">10</span>
+            <p class="category">Classroom observation and coaching management</p>
+            <h2 class="vendor-name">SchoolMint Grow</h2>
+            <p class="summary">
+              Brings together classroom observations, real-time and timestamped feedback, action steps,
+              meetings, lesson plans, forms, rubrics, video sharing, and observation scheduling.
+            </p>
+            <a class="source-link" href="https://schoolmint.com/schoolmint-grow/" target="_blank" rel="noopener noreferrer">
+              Visit SchoolMint <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <aside class="fit-panel">
+            <p class="fit-label">Best fit</p>
+            <h3 class="fit-title">A customizable coaching and observation workspace</h3>
+            <p class="fit-text">
+              Worth comparing when a district wants observation forms, feedback, action steps,
+              calendars, and video coaching in a shared system.
+            </p>
+            <p class="fit-text verify">
+              <strong>Verify before purchase</strong>
+              Request the current product demonstration and documentation. Confirm AI capabilities,
+              T-TESS alignment, formal appraisal records, data exports, and contract terms.
+            </p>
+          </aside>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="previousButton" class="arrow" type="button" aria-label="Previous platform">
+        <span aria-hidden="true">‹</span>
+      </button>
+
+      <div id="dots" class="dots" aria-label="Choose a platform slide"></div>
+
+      <button id="nextButton" class="arrow" type="button" aria-label="Next platform">
+        <span aria-hidden="true">›</span>
+      </button>
+    </div>
+
+    <p id="liveStatus" class="sr-only" aria-live="polite" aria-atomic="true"></p>
+  </section>
+
+  <p id="visibleStatus" class="status">Platform 1 of 10: Sibme</p>
+</main>
+
+<script>
+(function () {
+  "use strict";
+
+  const carousel = document.getElementById("carousel");
+  const track = document.getElementById("track");
+  const slides = Array.from(track.querySelectorAll(".slide"));
+  const dotsContainer = document.getElementById("dots");
+  const previousButton = document.getElementById("previousButton");
+  const nextButton = document.getElementById("nextButton");
+  const autoAdvanceCheckbox = document.getElementById("autoAdvance");
+  const liveStatus = document.getElementById("liveStatus");
+  const visibleStatus = document.getElementById("visibleStatus");
+
+  const slideNames = [
+    "Sibme",
+    "Edthena Observation Copilot",
+    "Edthena VC3",
+    "Edthena AI Coach",
+    "Vosaic",
+    "Frontline Professional Growth",
+    "TeachFX",
+    "TORSH Talent",
+    "GoReact",
+    "SchoolMint Grow"
+  ];
+
+  const AUTO_ADVANCE_MS = 8000;
+  let currentIndex = 0;
+  let timerId = null;
+  let isPaused = false;
+
+  function createDots() {
+    slides.forEach(function (_, index) {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "dot";
+      dot.setAttribute("aria-label", "Show " + slideNames[index]);
+      dot.addEventListener("click", function () {
+        showSlide(index, true);
+      });
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  function updateDots() {
+    Array.from(dotsContainer.children).forEach(function (dot, index) {
+      dot.setAttribute("aria-current", index === currentIndex ? "true" : "false");
+    });
+  }
+
+  function updateSlideAccessibility() {
+    slides.forEach(function (slide, index) {
+      const isCurrent = index === currentIndex;
+      slide.setAttribute("aria-hidden", isCurrent ? "false" : "true");
+
+      Array.from(slide.querySelectorAll("a, button, input, select, textarea")).forEach(function (element) {
+        element.tabIndex = isCurrent ? 0 : -1;
+      });
+    });
+  }
+
+  function announceSlide() {
+    const message = "Platform " + (currentIndex + 1) + " of " + slides.length + ": " + slideNames[currentIndex];
+    visibleStatus.textContent = message;
+    liveStatus.textContent = message;
+  }
+
+  function showSlide(index, restartTimer) {
+    currentIndex = (index + slides.length) % slides.length;
+    track.style.transform = "translateX(-" + (currentIndex * 100) + "%)";
+    updateDots();
+    updateSlideAccessibility();
+    announceSlide();
+
+    if (restartTimer) {
+      restartAutoAdvance();
+    }
+  }
+
+  function showNext() {
+    showSlide(currentIndex + 1, true);
+  }
+
+  function showPrevious() {
+    showSlide(currentIndex - 1, true);
+  }
+
+  function stopAutoAdvance() {
+    if (timerId !== null) {
+      window.clearInterval(timerId);
+      timerId = null;
+    }
+  }
+
+  function startAutoAdvance() {
+    stopAutoAdvance();
+
+    if (!autoAdvanceCheckbox.checked || isPaused) {
+      return;
+    }
+
+    timerId = window.setInterval(function () {
+      showSlide(currentIndex + 1, false);
+    }, AUTO_ADVANCE_MS);
+  }
+
+  function restartAutoAdvance() {
+    if (autoAdvanceCheckbox.checked) {
+      startAutoAdvance();
+    }
+  }
+
+  function pauseAutoAdvance() {
+    isPaused = true;
+    stopAutoAdvance();
+  }
+
+  function resumeAutoAdvance() {
+    isPaused = false;
+    startAutoAdvance();
+  }
+
+  previousButton.addEventListener("click", showPrevious);
+  nextButton.addEventListener("click", showNext);
+  autoAdvanceCheckbox.addEventListener("change", startAutoAdvance);
+
+  carousel.addEventListener("mouseenter", pauseAutoAdvance);
+  carousel.addEventListener("mouseleave", resumeAutoAdvance);
+  carousel.addEventListener("focusin", pauseAutoAdvance);
+  carousel.addEventListener("focusout", function (event) {
+    if (!carousel.contains(event.relatedTarget)) {
+      resumeAutoAdvance();
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "ArrowRight") {
+      showNext();
+    } else if (event.key === "ArrowLeft") {
+      showPrevious();
+    } else if (event.key === "Home") {
+      showSlide(0, true);
+    } else if (event.key === "End") {
+      showSlide(slides.length - 1, true);
+    }
+  });
+
+  createDots();
+  showSlide(0, false);
+})();
+</script>
+</body>
+</html>
