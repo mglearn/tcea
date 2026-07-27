@@ -9,8 +9,8 @@ Fifteen minutes, start to finish. You need a Google account and a GitHub repo. Y
 | File | Where it goes | What it does |
 | --- | --- | --- |
 | `Code.gs` | script.google.com, standalone project | Creates the Google Sheet, stores answers, serves them back |
-| `showcase-poll.html` | GitHub Pages | The public poll |
-| `showcase-report.html` | GitHub Pages | The password protected results dashboard |
+| `index.html` | GitHub Pages | The public poll |
+| `results.html` | GitHub Pages | The password protected results dashboard |
 
 ---
 
@@ -54,7 +54,7 @@ You never touch the spreadsheet structure again. If you delete it by accident, r
 
 Already done for the current deployment — both files point at the live `/exec` URL. You only need this step if you redeploy in a way that mints a new URL.
 
-Open `showcase-poll.html` and `showcase-report.html` in any editor. Near the top of the script block in each file you will find this line.
+Open `index.html` and `results.html` in any editor. Near the top of the script block in each file you will find this line.
 
 ```js
 const ENDPOINT = "https://script.google.com/macros/s/.../exec";
@@ -66,10 +66,12 @@ Set it to your `/exec` URL, keeping the quotation marks, in **both** files. It m
 
 ## Step five, publish to GitHub Pages
 
-Put both HTML files in your repo, for example `mglearn.github.io/tcea/showcase/`. Commit and push.
+Both HTML files live in `pspoll/` in the repo. Commit and push, and the Pages workflow publishes them.
 
-- Poll: `https://mglearn.github.io/tcea/showcase/showcase-poll.html`
-- Report: `https://mglearn.github.io/tcea/showcase/showcase-report.html`
+- Poll: `https://mglearn.github.io/tcea/pspoll/`
+- Report: `https://mglearn.github.io/tcea/pspoll/results.html`
+
+The poll is named `index.html`, so the bare directory link above serves it. That is the shorter link to hand out.
 
 Shorten the poll link with `go.mgpd.org` before you send it anywhere. Keep the report link inside the PD team.
 
@@ -127,11 +129,11 @@ Your `/exec` URL stays the same, so the HTML files need no changes.
 
 ## Editing the questions
 
-Every question lives in the `BLOCKS` array in `showcase-poll.html`. Add, cut, or reword freely. Three rules keep the pieces in sync.
+Every question lives in the `BLOCKS` array in `index.html`. Add, cut, or reword freely. Three rules keep the pieces in sync.
 
 1. If you add a question, add its `id` to `FIELDS` in `Code.gs`, add a matching label to `HEADERS`, then deploy a new version.
 2. If you rename an existing question id, the spreadsheet column order shifts. Run `clearResponses` first or start a new sheet, since old rows will no longer line up.
-3. If you reword an answer option, update `ORDER`, `TOPIC_META`, and `shortLabel` in `showcase-report.html`. Those match on exact strings.
+3. If you reword an answer option, update `ORDER`, `TOPIC_META`, and `shortLabel` in `results.html`. Those match on exact strings.
 
 The poll shows shortened session titles for scanning. The report expands them through `TOPIC_META`.
 

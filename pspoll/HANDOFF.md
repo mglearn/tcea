@@ -22,8 +22,8 @@ Proposed pricing under test: ninety nine dollars for TCEA members, one hundred t
 
 | File | Purpose | Status |
 | --- | --- | --- |
-| `showcase-poll.html` | Public poll, single file, vanilla JS | Complete, QA passed |
-| `showcase-report.html` | Password protected dashboard | Complete, QA passed |
+| `index.html` | Public poll, single file, vanilla JS | Complete, QA passed |
+| `results.html` | Password protected dashboard | Complete, QA passed |
 | `Code.gs` | Standalone Apps Script backend | Complete, not yet deployed by the user |
 | `SETUP.md` | Step by step deployment guide | Complete |
 | `qa/mock.json` | Forty seven synthetic responses | For local testing only |
@@ -36,8 +36,8 @@ Both HTML files have `ENDPOINT` wired to the deployed `/exec` URL. If you redepl
 ## Architecture
 
 ```
-showcase-poll.html  ──POST JSON──►  Apps Script doPost  ──►  Google Sheet
-showcase-report.html ──GET ?key=── ►  Apps Script doGet   ──►  JSON rows
+index.html  ──POST JSON──►  Apps Script doPost  ──►  Google Sheet
+results.html ──GET ?key=── ►  Apps Script doGet   ──►  JSON rows
 ```
 
 The Apps Script project is **standalone**, not bound to a spreadsheet. On first call, `getSheet_()` creates the spreadsheet, stores the ID in script properties, names the tab `Responses`, and writes a formatted header row. The user runs `setup()` once from the editor to trigger this and log the URL.
@@ -110,8 +110,8 @@ python3 qa/run.py
 It starts a local server on 8099, drives both pages with Playwright at 1100px and 390px, prints computed insights and cross tabs, captures screenshots, and reports console errors. It expects `qa/report.html` and `qa/poll.html`, which are copies of the real files with `ENDPOINT` pointed at `qa/mock.json`. Regenerate those copies after any edit:
 
 ```bash
-cp showcase-poll.html qa/poll.html
-cp showcase-report.html qa/report.html
+cp index.html qa/poll.html
+cp results.html qa/report.html
 sed -i 's|^const ENDPOINT = ".*";|const ENDPOINT = "mock.json";|' qa/report.html
 ```
 

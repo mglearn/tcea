@@ -14,8 +14,8 @@
  * 4. Deploy > New deployment > Web app
  *      Execute as: Me
  *      Who has access: Anyone
- * 5. Copy the /exec URL. Paste it into ENDPOINT in showcase-poll.html
- *    and into ENDPOINT in showcase-report.html.
+ * 5. Copy the /exec URL. Paste it into ENDPOINT in index.html
+ *    and into ENDPOINT in results.html.
  *
  * Every later edit to this file needs Deploy > New deployment, or
  * Manage deployments > edit > New version. Saving alone does nothing.
@@ -27,7 +27,7 @@ var SHEET_TITLE = 'Pedagogy Showcase Poll Responses';
 var TAB_NAME    = 'Responses';
 var REPORT_KEY  = 'CHANGE-ME';
 
-// Column order. These ids must match the question ids in showcase-poll.html.
+// Column order. These ids must match the question ids in index.html.
 var FIELDS = [
   'role', 'grades', 'content', 'years', 'setting', 'member',
   'saturday', 'alt_times', 'length', 'format',
@@ -136,7 +136,7 @@ function json_(obj) {
 
 /* ---------------- web app endpoints ---------------- */
 
-/** Receives one poll submission from showcase-poll.html. */
+/** Receives one poll submission from index.html. */
 function doPost(e) {
   var lock = LockService.getScriptLock();
   try {
@@ -161,7 +161,7 @@ function doPost(e) {
   }
 }
 
-/** Serves the response set to showcase-report.html, password required. */
+/** Serves the response set to results.html, password required. */
 function doGet(e) {
   var key = (e && e.parameter) ? e.parameter.key : '';
   if (key !== REPORT_KEY) {
