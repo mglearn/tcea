@@ -11,6 +11,7 @@ Fifteen minutes, start to finish. You need a Google account and a GitHub repo. Y
 | `Code.gs` | script.google.com, standalone project | Creates the Google Sheet, stores answers, serves them back |
 | `index.html` | GitHub Pages | The public poll |
 | `results.html` | GitHub Pages | The password protected results dashboard |
+| `results2.html` | GitHub Pages | A preview of that dashboard filled with invented data, no password, for showing people what they will get |
 
 ---
 

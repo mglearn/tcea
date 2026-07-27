@@ -24,6 +24,7 @@ Proposed pricing under test: ninety nine dollars for TCEA members, one hundred t
 | --- | --- | --- |
 | `index.html` | Public poll, single file, vanilla JS | Complete, QA passed |
 | `results.html` | Password protected dashboard | Complete, QA passed |
+| `results2.html` | Sample data preview of the dashboard, no password, no endpoint | Twenty invented respondents embedded as `SAMPLE_ROWS` |
 | `Code.gs` | Standalone Apps Script backend | Complete, not yet deployed by the user |
 | `SETUP.md` | Step by step deployment guide | Complete |
 | `qa/mock.json` | Forty seven synthetic responses | For local testing only |

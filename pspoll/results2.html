@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Pedagogy Showcase Poll Report, Sample Data</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0A3476; --navy-dark:#071f4a; --navy-mid:#12428f;
+  --gold:#FCB040; --gold-light:#fdd17a; --gold-pale:#FEF0D0;
+  --pale-navy:#D0D8F0; --white:#ffffff; --off-white:#f7f8fc;
+  --text:#1a1a2e; --text-muted:#5a6680; --border:#e2e7f5; --teal:#0e6b8a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--off-white);line-height:1.6;font-size:16px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.25rem}
+header.top{
+  background:var(--navy-dark);
+  background-image:radial-gradient(circle at 15% 15%, rgba(252,176,64,.14), transparent 55%);
+  color:var(--white);padding:2rem 0
+}
+.eyebrow{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+header.top h1{font-family:'DM Serif Display',serif;font-size:2rem;font-weight:400;margin-top:.4rem}
+header.top p{color:var(--pale-navy);margin-top:.5rem;font-size:.95rem}
+
+/* gate */
+#gate{max-width:420px;margin:5rem auto;background:var(--white);border:1.5px solid var(--border);
+  border-radius:12px;padding:2rem 1.75rem;text-align:center}
+#gate h2{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--navy);font-weight:400}
+#gate p{font-size:.9rem;color:var(--text-muted);margin-top:.5rem}
+#gate input{width:100%;font-family:inherit;font-size:1rem;padding:.7rem .8rem;margin-top:1.2rem;
+  border:1.5px solid var(--border);border-radius:8px}
+#gate input:focus{outline:none;border-color:var(--navy)}
+#gate button{width:100%;margin-top:.8rem;font-family:inherit;font-size:1rem;font-weight:700;
+  color:var(--navy);background:var(--gold);border:none;border-radius:8px;padding:.75rem;cursor:pointer}
+#gate button:hover{background:var(--gold-light)}
+#gateMsg{color:#a32020;font-size:.87rem;font-weight:600;margin-top:.7rem;min-height:1.2rem}
+
+#report{padding-bottom:4rem}
+
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:1.75rem 0}
+.kpi{background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:1.1rem 1.2rem;
+  border-left:5px solid var(--gold)}
+.kpi .n{font-family:'DM Serif Display',serif;font-size:2.1rem;color:var(--navy);line-height:1.1}
+.kpi .l{font-size:.82rem;color:var(--text-muted);font-weight:600;margin-top:.25rem}
+
+section.card{background:var(--white);border:1.5px solid var(--border);border-radius:12px;
+  padding:1.5rem 1.4rem;margin-bottom:1.5rem}
+section.card > h2{font-family:'DM Serif Display',serif;font-size:1.45rem;color:var(--navy);font-weight:400;
+  padding-left:.7rem;border-left:4px solid var(--gold);line-height:1.2}
+section.card > .sub{font-size:.88rem;color:var(--text-muted);margin:.55rem 0 1.1rem;padding-left:.85rem}
+h3.mini{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+  color:var(--text-muted);margin:1.5rem 0 .7rem}
+h3.mini:first-of-type{margin-top:.3rem}
+
+.bar-row{margin-bottom:.65rem}
+.bar-head{display:flex;justify-content:space-between;gap:1rem;font-size:.9rem;margin-bottom:.22rem}
+.bar-head .lab{font-weight:500}
+.bar-head .val{font-weight:700;color:var(--navy);white-space:nowrap;font-variant-numeric:tabular-nums}
+.bar-track{height:14px;background:var(--off-white);border:1px solid var(--border);border-radius:100px;overflow:hidden}
+.bar-fill{height:100%;background:var(--navy-mid);border-radius:100px;transition:width .5s ease}
+.bar-row.top .bar-fill{background:var(--gold)}
+.bar-row.neg .bar-fill{background:var(--teal)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:1.75rem}
+
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:.5rem}
+table.matrix{width:100%;min-width:480px;border-collapse:collapse;font-size:.9rem}
+table.matrix th,table.matrix td{padding:.55rem .6rem;text-align:left;border-bottom:1px solid var(--border)}
+table.matrix th{background:var(--navy);color:var(--white);font-weight:600;font-size:.82rem}
+table.matrix td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+table.matrix tr.win td{background:var(--gold-pale)}
+.badge{display:inline-block;background:var(--gold);color:var(--navy);font-size:.7rem;font-weight:700;
+  padding:.1rem .5rem;border-radius:100px;margin-left:.4rem;vertical-align:middle}
+
+ul.insights{list-style:none;display:flex;flex-direction:column;gap:.7rem}
+ul.insights li{padding-left:1.5rem;position:relative;font-size:.97rem}
+ul.insights li:before{content:"";position:absolute;left:0;top:.55rem;width:9px;height:9px;
+  border-radius:50%;background:var(--gold)}
+
+.quote{border-left:3px solid var(--pale-navy);padding:.35rem 0 .35rem .85rem;margin-bottom:.75rem;
+  font-size:.93rem;color:var(--text)}
+.muted{color:var(--text-muted);font-size:.88rem}
+.suppressed{background:var(--gold-pale);border-radius:8px;padding:.7rem .9rem;font-size:.86rem;margin-top:.7rem}
+.toolbar{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.25rem}
+.toolbar button{font-family:inherit;font-size:.85rem;font-weight:600;color:var(--navy);background:var(--white);
+  border:1.5px solid var(--border);border-radius:8px;padding:.5rem 1rem;cursor:pointer}
+.toolbar button:hover{border-color:var(--navy)}
+footer{background:var(--navy);color:var(--pale-navy);padding:1.3rem 0;font-size:.84rem;text-align:center}
+@media print{
+  body{background:var(--white)}
+  .toolbar,footer,header.top{display:none}
+  section.card{break-inside:avoid;border:1px solid var(--border)}
+}
+@media (max-width:520px){
+  header.top h1{font-size:1.6rem}
+  section.card{padding:1.2rem 1rem}
+}
+
+/* sample data banner */
+.mock{background:var(--gold-pale);border:1.5px solid var(--gold);border-left:5px solid var(--gold);
+  border-radius:12px;padding:1.15rem 1.25rem;margin:1.75rem 0 0}
+.mock .tag{display:inline-block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:700;color:var(--navy);background:var(--gold);border-radius:999px;padding:.22rem .65rem}
+.mock h2{font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--navy);font-weight:400;
+  margin-top:.6rem;line-height:1.25}
+.mock p{font-size:.92rem;color:var(--text);margin-top:.5rem}
+.mock a{color:var(--navy-mid);font-weight:600}
+</style>
+</head>
+<body>
+
+<div id="report">
+  <header class="top">
+    <div class="wrap">
+      <div class="eyebrow">TCEA Professional Development</div>
+      <h1>Pedagogy Showcase poll results, sample data</h1>
+      <p id="stamp"></p>
+    </div>
+  </header>
+
+  <div class="wrap">
+
+    <div class="mock">
+      <span class="tag">Sample data</span>
+      <h2>Nobody answered this poll</h2>
+      <p>Every number, chart, and quote below comes from twenty invented respondents. We wrote them to show
+      how this report reads once real answers arrive. Do not cite any of it.</p>
+      <p>Two of the five role groups here are large enough to appear in the cross tabs. The other three stay
+      hidden, which is the privacy floor working as intended. You will see the same behavior with real data
+      until each group reaches five responses.</p>
+      <p>The live poll is at <a href="./">mglearn.github.io/tcea/pspoll/</a>, and the real report,
+      which does need the password, is at <a href="results.html">results.html</a>.</p>
+    </div>
+
+    <div class="kpis" id="kpis"></div>
+
+    <div class="toolbar">
+      <button id="refresh">Rebuild the sample view</button>
+      <button id="printBtn">Print or save as PDF</button>
+      <button id="csvBtn">Download summary CSV</button>
+      <button id="sheetBtn" style="display:none">Open the raw Google Sheet</button>
+    </div>
+
+    <section class="card">
+      <h2>What the data says</h2>
+      <p class="sub">Written automatically from the current response set. Read it as a starting point, not a verdict.</p>
+      <ul class="insights" id="insights"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Presenter matchups</h2>
+      <p class="sub">Each presenter offered two session options. The stronger option in each pair carries the higher first choice count.</p>
+      <div id="matchups"></div>
+    </section>
+
+    <section class="card">
+      <h2>Session demand across all eight options</h2>
+      <p class="sub">Top three picks show breadth of interest. First choice shows what people would actually register for.</p>
+      <div class="grid2">
+        <div><h3 class="mini">Named in the top three</h3><div id="c-topics3"></div></div>
+        <div><h3 class="mini">Chosen as the single must attend</h3><div id="c-topic1"></div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Scheduling</h2>
+      <p class="sub">The Saturday question and every backup window respondents offered.</p>
+      <div class="grid2">
+        <div>
+          <h3 class="mini">Would attend on a Saturday</h3><div id="c-sat"></div>
+          <h3 class="mini">Preferred length</h3><div id="c-len"></div>
+        </div>
+        <div>
+          <h3 class="mini">Backup windows that work</h3><div id="c-alt"></div>
+          <h3 class="mini">Live or recorded</h3><div id="c-fmt"></div>
+        </div>
+      </div>
+      <h3 class="mini">Saturday willingness by role</h3>
+      <div id="x-satrole"></div>
+    </section>
+
+    <section class="card">
+      <h2>Who responded</h2>
+      <p class="sub">Group totals only. No name, email, campus, or district is ever collected.</p>
+      <div class="grid2">
+        <div>
+          <h3 class="mini">Role</h3><div id="c-role"></div>
+          <h3 class="mini">Years in education</h3><div id="c-years"></div>
+          <h3 class="mini">TCEA membership</h3><div id="c-member"></div>
+        </div>
+        <div>
+          <h3 class="mini">Grade bands served</h3><div id="c-grades"></div>
+          <h3 class="mini">Setting</h3><div id="c-setting"></div>
+          <h3 class="mini">Content areas supported</h3><div id="c-content"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Price and payer</h2>
+      <p class="sub">Compare these against the proposed member price of ninety nine dollars.</p>
+      <div class="grid2">
+        <div><h3 class="mini">Fair price for a half day</h3><div id="c-price"></div></div>
+        <div><h3 class="mini">Who pays</h3><div id="c-payer"></div></div>
+      </div>
+      <h3 class="mini">Price expectation by payer</h3>
+      <div id="x-pricepayer"></div>
+    </section>
+
+    <section class="card">
+      <h2>Topics people asked for</h2>
+      <p class="sub">Open responses. Anything that looked like an email address, phone number, or web address was stripped before display.</p>
+      <div id="freetext"></div>
+    </section>
+  </div>
+
+  <footer><div class="wrap">Internal report. Do not share this link or password outside the TCEA PD team.</div></footer>
+</div>
+
+<script>
+/* Minimum group size before a breakdown is shown. */
+const MIN_CELL = 5;
+
+const TOPIC_META = {
+  "Feedback Loops":        {presenter:"Bruce",  option:1, title:"Mastering the Feedback Loop"},
+  "Peer Review":           {presenter:"Bruce",  option:2, title:"Quality Peer Review"},
+  "Prior Knowledge":       {presenter:"Diana",  option:1, title:"Strategies to Assess Prior Knowledge"},
+  "English Learners":      {presenter:"Diana",  option:2, title:"Strategies for English Language Learners"},
+  "Exit Tickets":          {presenter:"Peggy",  option:1, title:"Exit Tickets That Spark Next Steps"},
+  "Vocabulary":            {presenter:"Peggy",  option:2, title:"Vocabulary That Sticks"},
+  "PBL Critical Thinking": {presenter:"Miguel", option:1, title:"PBL for Critical Thinking in the AI Era"},
+  "Concept Maps":          {presenter:"Miguel", option:2, title:"Concept Maps and Organizers"}
+};
+const PRESENTERS = ["Bruce","Diana","Peggy","Miguel"];
+
+const ORDER = {
+  years:["Three years or fewer","Four to ten years","Eleven to twenty years","More than twenty years"],
+  saturday:["Yes, a Saturday works","Maybe, it depends on the date","No, I will not attend on a Saturday"],
+  price:["Forty nine dollars or less","Fifty to seventy nine dollars","Eighty to ninety nine dollars",
+         "One hundred to one hundred twenty nine dollars","More than one hundred twenty nine dollars","Price is not my decision"],
+  member:["Yes","No","Not sure"]
+};
+
+let ROWS = [], KEY = "", SHEET_URL = "";
+
+/* ---------- helpers ---------- */
+function splitMulti(s){ return String(s||"").split("|").map(function(x){return x.trim();}).filter(Boolean); }
+
+function countSingle(rows, field){
+  const m = {};
+  rows.forEach(function(r){ const v=(r[field]||"").trim(); if(v) m[v]=(m[v]||0)+1; });
+  return m;
+}
+function countMulti(rows, field){
+  const m = {};
+  rows.forEach(function(r){ splitMulti(r[field]).forEach(function(v){ m[v]=(m[v]||0)+1; }); });
+  return m;
+}
+function sortEntries(m, order){
+  const e = Object.keys(m).map(function(k){return [k,m[k]];});
+  if(order){
+    e.sort(function(a,b){
+      const ia=order.indexOf(a[0]), ib=order.indexOf(b[0]);
+      return (ia<0?99:ia)-(ib<0?99:ib);
+    });
+  } else {
+    e.sort(function(a,b){return b[1]-a[1];});
+  }
+  return e;
+}
+function pct(n,d){ return d ? Math.round(n/d*100) : 0; }
+
+function bars(elId, counts, denom, opts){
+  opts = opts || {};
+  const el = document.getElementById(elId);
+  const entries = sortEntries(counts, opts.order);
+  if(!entries.length){ el.innerHTML = '<p class="muted">No answers yet.</p>'; return; }
+  const maxVal = Math.max.apply(null, entries.map(function(e){return e[1];}));
+  const topVal = opts.order ? -1 : maxVal;
+  el.innerHTML = entries.map(function(e){
+    const cls = e[1] === topVal ? "bar-row top" : "bar-row";
+    const w = maxVal ? Math.max(2, Math.round(e[1]/maxVal*100)) : 0;
+    return '<div class="'+cls+'"><div class="bar-head"><span class="lab">'+esc(e[0])+
+      '</span><span class="val">'+e[1]+'  ('+pct(e[1],denom)+'%)</span></div>'+
+      '<div class="bar-track"><div class="bar-fill" style="width:'+w+'%"></div></div></div>';
+  }).join("");
+}
+function esc(s){
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+function scrub(s){
+  return String(s)
+    .replace(/[\w.\-+]+@[\w.\-]+\.\w+/g," [removed] ")
+    .replace(/https?:\/\/\S+/gi," [removed] ")
+    .replace(/\b\d{3}[.\-\s]?\d{3}[.\-\s]?\d{4}\b/g," [removed] ");
+}
+
+/* ---------- sample data ---------- */
+/* Twenty invented respondents, shaped exactly like the rows doGet returns.
+   Nothing here came from a real person. Every value is a real poll option,
+   so this renders through the same code path as the live report. */
+const SAMPLE_ROWS = [
+  {
+    "timestamp": "2026-07-20T13:04:00.000Z",
+    "role": "Classroom teacher",
+    "grades": "PK to 2",
+    "content": "ELA and reading",
+    "years": "Four to ten years",
+    "setting": "Suburban",
+    "member": "Yes",
+    "saturday": "Yes, a Saturday works",
+    "alt_times": "Weekday, right after school from four to six",
+    "length": "Half day, about three hours",
+    "format": "Live if I can, plus the recording",
+    "topics_top3": "Exit Tickets | Vocabulary | Feedback Loops",
+    "topic_first": "Exit Tickets",
+    "price": "Eighty to ninety nine dollars",
+    "payer": "My campus budget",
+    "topic_missing": "Small group reading rotations that actually hold up when you have thirty kids and one aide.",
+    "screen": "1512x982"
+  },
+  {
+    "timestamp": "2026-07-20T15:41:00.000Z",
+    "role": "Classroom teacher",
+    "grades": "3 to 5",
+    "content": "Mathematics | Science",
+    "years": "Eleven to twenty years",
+    "setting": "Rural or small town",
+    "member": "Yes",
+    "saturday": "Maybe, it depends on the date",
+    "alt_times": "A summer weekday | A district holiday or staff development day",
+    "length": "Half day, about three hours",
+    "format": "Live, so I can ask questions",
+    "topics_top3": "Feedback Loops | Concept Maps | Prior Knowledge",
+    "topic_first": "Feedback Loops",
+    "price": "Fifty to seventy nine dollars",
+    "payer": "My district budget",
+    "topic_missing": "",
+    "screen": "390x844"
+  },
+  {
+    "timestamp": "2026-07-20T19:22:00.000Z",
+    "role": "Classroom teacher",
+    "grades": "6 to 8",
+    "content": "ELA and reading",
+    "years": "Three years or fewer",
+    "setting": "Urban",
+    "member": "No",
+    "saturday": "Yes, a Saturday works",
+    "alt_times": "Weekday evening, after six",
+    "length": "Three or four short sessions, about two hours total",
+    "format": "Live if I can, plus the recording",
+    "topics_top3": "Vocabulary | Exit Tickets | English Learners",
+    "topic_first": "Vocabulary",
+    "price": "Forty nine dollars or less",
+    "payer": "I pay out of pocket",
+    "topic_missing": "Classroom management for first year teachers. Reach me at jsmith@example.org if you build it.",
+    "screen": "1920x1080"
+  },
+  {
+    "timestamp": "2026-07-21T12:15:00.000Z",
+    "role": "Classroom teacher",
+    "grades": "9 to 12",
+    "content": "Social studies",
+    "years": "More than twenty years",
+    "setting": "Suburban",
+    "member": "Yes",
+    "saturday": "No, I will not attend on a Saturday",
+    "alt_times": "Weekday, during the school day with release time | A district holiday or staff development day",
+    "length": "Half day, about three hours",
+    "format": "Recording only, on my own schedule",
+    "topics_top3": "PBL Critical Thinking | Concept Maps | Feedback Loops",
+    "topic_first": "PBL Critical Thinking",
+    "price": "One hundred to one hundred twenty nine dollars",
+    "payer": "My district budget",
+    "topic_missing": "Teaching source credibility when students arrive already using chatbots for research.",
+    "screen": "1440x900"
+  },
+  {
+    "timestamp": "2026-07-21T14:03:00.000Z",
+    "role": "Classroom teacher",
+    "grades": "3 to 5",
+    "content": "Bilingual or ESL",
+    "years": "Four to ten years",
+    "setting": "Urban",
+    "member": "Yes",
+    "saturday": "Yes, a Saturday works",
+    "alt_times": "Sunday afternoon",
+    "length": "Half day, about three hours",
+    "format": "Live, so I can ask questions",
+    "topics_top3": "English Learners | Vocabulary | Exit Tickets",
+    "topic_first": "English Learners",
+    "price": "Eighty to ninety nine dollars",
+    "payer": "My campus budget",
+    "topic_missing": "Newcomer supports for students who arrive in the middle of the spring semester.",
+    "screen": "1280x800"
+  },
+  {
+    "timestamp": "2026-07-21T18:47:00.000Z",
+    "role": "Classroom teacher",
+    "grades": "PK to 2",
+    "content": "Special education",
+    "years": "Eleven to twenty years",
+    "setting": "Rural or small town",
+    "member": "Not sure",
+    "saturday": "Maybe, it depends on the date",
+    "alt_times": "Weekday, right after school from four to six | A summer weekday",
+    "length": "Three or four short sessions, about two hours total",
+    "format": "Live if I can, plus the recording",
+    "topics_top3": "Exit Tickets | Feedback Loops | Vocabulary",
+    "topic_first": "Exit Tickets",
+    "price": "Fifty to seventy nine dollars",
+    "payer": "My campus budget",
+    "topic_missing": "",
+    "screen": "1512x982"
+  },
+  {
+    "timestamp": "2026-07-22T11:29:00.000Z",
+    "role": "Classroom teacher",
+    "grades": "9 to 12",
+    "content": "CTE",
+    "years": "Four to ten years",
+    "setting": "Charter",
+    "member": "No",
+    "saturday": "No, I will not attend on a Saturday",
+    "alt_times": "Weekday evening, after six | Sunday afternoon",
+    "length": "One session at a time, spread across several weeks",
+    "format": "Recording only, on my own schedule",
+    "topics_top3": "PBL Critical Thinking | Peer Review | Concept Maps",
+    "topic_first": "Peer Review",
+    "price": "Forty nine dollars or less",
+    "payer": "I pay out of pocket",
+    "topic_missing": "Industry certification prep that does not eat the whole semester.",
+    "screen": "390x844"
+  },
+  {
+    "timestamp": "2026-07-22T13:58:00.000Z",
+    "role": "Instructional coach or specialist",
+    "grades": "District wide, all grades",
+    "content": "All or multiple areas",
+    "years": "More than twenty years",
+    "setting": "Suburban",
+    "member": "Yes",
+    "saturday": "Yes, a Saturday works",
+    "alt_times": "Weekday, during the school day with release time",
+    "length": "Half day, about three hours",
+    "format": "Live if I can, plus the recording",
+    "topics_top3": "Feedback Loops | PBL Critical Thinking | Concept Maps",
+    "topic_first": "Feedback Loops",
+    "price": "One hundred to one hundred twenty nine dollars",
+    "payer": "My district budget",
+    "topic_missing": "Coaching cycles that survive a principal transition.",
+    "screen": "1920x1080"
+  },
+  {
+    "timestamp": "2026-07-22T16:12:00.000Z",
+    "role": "Instructional coach or specialist",
+    "grades": "6 to 8 | 9 to 12",
+    "content": "Mathematics",
+    "years": "Eleven to twenty years",
+    "setting": "Urban",
+    "member": "Yes",
+    "saturday": "Yes, a Saturday works",
+    "alt_times": "A district holiday or staff development day",
+    "length": "Half day, about three hours",
+    "format": "Live, so I can ask questions",
+    "topics_top3": "Concept Maps | Feedback Loops | Exit Tickets",
+    "topic_first": "Concept Maps",
+    "price": "Eighty to ninety nine dollars",
+    "payer": "My district budget",
+    "topic_missing": "",
+    "screen": "1440x900"
+  },
+  {
+    "timestamp": "2026-07-23T12:44:00.000Z",
+    "role": "Instructional coach or specialist",
+    "grades": "3 to 5 | 6 to 8",
+    "content": "ELA and reading | Bilingual or ESL",
+    "years": "Four to ten years",
+    "setting": "Urban",
+    "member": "Yes",
+    "saturday": "Maybe, it depends on the date",
+    "alt_times": "Weekday, right after school from four to six | A summer weekday",
+    "length": "Three or four short sessions, about two hours total",
+    "format": "Live if I can, plus the recording",
+    "topics_top3": "English Learners | Vocabulary | Feedback Loops",
+    "topic_first": "English Learners",
+    "price": "Eighty to ninety nine dollars",
+    "payer": "My district budget",
+    "topic_missing": "Co teaching models for language support that do not pull students out of core content.",
+    "screen": "1280x800"
+  },
+  {
+    "timestamp": "2026-07-23T15:07:00.000Z",
+    "role": "Instructional coach or specialist",
+    "grades": "District wide, all grades",
+    "content": "Science",
+    "years": "Four to ten years",
+    "setting": "Rural or small town",
+    "member": "Not sure",
+    "saturday": "Maybe, it depends on the date",
+    "alt_times": "A summer weekday",
+    "length": "Half day, about three hours",
+    "format": "Live if I can, plus the recording",
+    "topics_top3": "PBL Critical Thinking | Prior Knowledge | Concept Maps",
+    "topic_first": "PBL Critical Thinking",
+    "price": "Fifty to seventy nine dollars",
+    "payer": "My campus budget",
+    "topic_missing": "Phenomenon based science units built for a one section campus.",
+    "screen": "1512x982"
+  },
+  {
+    "timestamp": "2026-07-23T20:31:00.000Z",
+    "role": "Instructional coach or specialist",
+    "grades": "PK to 2 | 3 to 5",
+    "content": "All or multiple areas",
+    "years": "Eleven to twenty years",
+    "setting": "Suburban",
+    "member": "Yes",
+    "saturday": "No, I will not attend on a Saturday",
+    "alt_times": "Weekday, during the school day with release time | A district holiday or staff development day",
+    "length": "Full day",
+    "format": "Recording only, on my own schedule",
+    "topics_top3": "Prior Knowledge | Exit Tickets | Vocabulary",
+    "topic_first": "Prior Knowledge",
+    "price": "Price is not my decision",
+    "payer": "My district budget",
+    "topic_missing": "Please post the slides afterward. Our team watches together on Tuesdays.",
+    "screen": "390x844"
+  },
+  {
+    "timestamp": "2026-07-24T11:06:00.000Z",
+    "role": "Instructional coach or specialist",
+    "grades": "9 to 12",
+    "content": "Fine arts",
+    "years": "Three years or fewer",
+    "setting": "Private or independent",
+    "member": "No",
+    "saturday": "Yes, a Saturday works",
+    "alt_times": "Weekday evening, after six",
+    "length": "Half day, about three hours",
+    "format": "Live, so I can ask questions",
+    "topics_top3": "Vocabulary | Peer Review | Feedback Loops",
+    "topic_first": "Vocabulary",
+    "price": "Forty nine dollars or less",
+    "payer": "I pay out of pocket",
+    "topic_missing": "",
+    "screen": "1920x1080"
+  },
+  {
+    "timestamp": "2026-07-24T14:52:00.000Z",
+    "role": "Librarian or media specialist",
+    "grades": "District wide, all grades",
+    "content": "Library and media",
+    "years": "More than twenty years",
+    "setting": "Suburban",
+    "member": "Yes",
+    "saturday": "Maybe, it depends on the date",
+    "alt_times": "A district holiday or staff development day",
+    "length": "Half day, about three hours",
+    "format": "Live if I can, plus the recording",
+    "topics_top3": "Concept Maps | Vocabulary | Feedback Loops",
+    "topic_first": "Concept Maps",
+    "price": "Eighty to ninety nine dollars",
+    "payer": "My campus budget",
+    "topic_missing": "Collaboration planning time with classroom teachers. Details at https://example.org/our-model",
+    "screen": "1440x900"
+  },
+  {
+    "timestamp": "2026-07-24T17:19:00.000Z",
+    "role": "Librarian or media specialist",
+    "grades": "6 to 8",
+    "content": "Library and media | ELA and reading",
+    "years": "Four to ten years",
+    "setting": "Rural or small town",
+    "member": "Yes",
+    "saturday": "Yes, a Saturday works",
+    "alt_times": "A summer weekday",
+    "length": "Three or four short sessions, about two hours total",
+    "format": "Live, so I can ask questions",
+    "topics_top3": "Vocabulary | Exit Tickets | Peer Review",
+    "topic_first": "Exit Tickets",
+    "price": "Fifty to seventy nine dollars",
+    "payer": "My campus budget",
+    "topic_missing": "",
+    "screen": "1280x800"
+  },
+  {
+    "timestamp": "2026-07-25T12:33:00.000Z",
+    "role": "Librarian or media specialist",
+    "grades": "9 to 12",
+    "content": "Library and media",
+    "years": "Eleven to twenty years",
+    "setting": "Urban",
+    "member": "Not sure",
+    "saturday": "No, I will not attend on a Saturday",
+    "alt_times": "Weekday, during the school day with release time",
+    "length": "Half day, about three hours",
+    "format": "Recording only, on my own schedule",
+    "topics_top3": "Feedback Loops | PBL Critical Thinking | Concept Maps",
+    "topic_first": "Feedback Loops",
+    "price": "One hundred to one hundred twenty nine dollars",
+    "payer": "Grant or federal program funds",
+    "topic_missing": "Weeding a collection nobody has audited since 2014.",
+    "screen": "1512x982"
+  },
+  {
+    "timestamp": "2026-07-25T16:48:00.000Z",
+    "role": "Campus administrator",
+    "grades": "District wide, all grades",
+    "content": "All or multiple areas",
+    "years": "More than twenty years",
+    "setting": "Suburban",
+    "member": "Yes",
+    "saturday": "Maybe, it depends on the date",
+    "alt_times": "A district holiday or staff development day | Weekday, during the school day with release time",
+    "length": "Half day, about three hours",
+    "format": "Live if I can, plus the recording",
+    "topics_top3": "Feedback Loops | Prior Knowledge | PBL Critical Thinking",
+    "topic_first": "Feedback Loops",
+    "price": "More than one hundred twenty nine dollars",
+    "payer": "Grant or federal program funds",
+    "topic_missing": "Walkthrough feedback that teachers do not dread.",
+    "screen": "390x844"
+  },
+  {
+    "timestamp": "2026-07-26T13:11:00.000Z",
+    "role": "Campus administrator",
+    "grades": "PK to 2 | 3 to 5",
+    "content": "All or multiple areas",
+    "years": "Eleven to twenty years",
+    "setting": "Rural or small town",
+    "member": "Yes",
+    "saturday": "Yes, a Saturday works",
+    "alt_times": "Weekday, during the school day with release time",
+    "length": "Full day",
+    "format": "Live if I can, plus the recording",
+    "topics_top3": "PBL Critical Thinking | English Learners | Concept Maps",
+    "topic_first": "PBL Critical Thinking",
+    "price": "Eighty to ninety nine dollars",
+    "payer": "I pay out of pocket",
+    "topic_missing": "Call me at 512.555.0134 and I will send our schedule.",
+    "screen": "1920x1080"
+  },
+  {
+    "timestamp": "2026-07-26T15:26:00.000Z",
+    "role": "Technology or IT staff",
+    "grades": "District wide, all grades",
+    "content": "All or multiple areas",
+    "years": "Four to ten years",
+    "setting": "Urban",
+    "member": "Yes",
+    "saturday": "Maybe, it depends on the date",
+    "alt_times": "Weekday evening, after six | A summer weekday",
+    "length": "Three or four short sessions, about two hours total",
+    "format": "Recording only, on my own schedule",
+    "topics_top3": "English Learners | Vocabulary | Exit Tickets",
+    "topic_first": "English Learners",
+    "price": "Fifty to seventy nine dollars",
+    "payer": "Not sure",
+    "topic_missing": "Rolling out AI tools without creating a student data problem.",
+    "screen": "1440x900"
+  },
+  {
+    "timestamp": "2026-07-26T18:09:00.000Z",
+    "role": "Technology or IT staff",
+    "grades": "District wide, all grades",
+    "content": "All or multiple areas",
+    "years": "More than twenty years",
+    "setting": "Not campus based",
+    "member": "Yes",
+    "saturday": "No, I will not attend on a Saturday",
+    "alt_times": "Weekday, during the school day with release time",
+    "length": "Half day, about three hours",
+    "format": "Live if I can, plus the recording",
+    "topics_top3": "Feedback Loops | Prior Knowledge | Exit Tickets",
+    "topic_first": "Feedback Loops",
+    "price": "One hundred to one hundred twenty nine dollars",
+    "payer": "My district budget",
+    "topic_missing": "Helping teachers read their own assessment data without needing us to build the report.",
+    "screen": "1280x800"
+  }
+];
+
+/* Stands in for the network call. No endpoint, no password. */
+function load(){
+  ROWS = SAMPLE_ROWS.slice();
+  SHEET_URL = "";
+  return Promise.resolve(true);
+}
+
+document.getElementById("printBtn").addEventListener("click", function(){ window.print(); });
+document.getElementById("refresh").addEventListener("click", function(){
+  const b = this;
+  load().then(function(){ build(); b.textContent = "Rebuilt";
+    setTimeout(function(){ b.textContent = "Rebuild the sample view"; }, 1400); });
+});
+
+/* ---------- build ---------- */
+function build(){
+  const n = ROWS.length;
+  document.getElementById("sheetBtn").style.display = SHEET_URL ? "inline-block" : "none";
+  const stamps = ROWS.map(function(r){return r.timestamp;}).filter(Boolean).sort();
+  document.getElementById("stamp").textContent =
+    n ? (n + " responses, first on " + fdate(stamps[0]) + ", most recent on " + fdate(stamps[stamps.length-1]))
+      : "No responses yet.";
+
+  if(!n){
+    document.getElementById("kpis").innerHTML = '<div class="kpi"><div class="n">0</div><div class="l">Responses so far</div></div>';
+    document.getElementById("insights").innerHTML = '<li>Nothing to report until responses arrive.</li>';
+    return;
+  }
+
+  const sat = countSingle(ROWS,"saturday");
+  const satYes = (sat["Yes, a Saturday works"]||0);
+  const satMaybe = (sat["Maybe, it depends on the date"]||0);
+  const first = countSingle(ROWS,"topic_first");
+  const topTopic = sortEntries(first)[0];
+  const price = countSingle(ROWS,"price");
+  const priceOk = (price["Eighty to ninety nine dollars"]||0) +
+                  (price["One hundred to one hundred twenty nine dollars"]||0) +
+                  (price["More than one hundred twenty nine dollars"]||0);
+  const member = countSingle(ROWS,"member");
+
+  document.getElementById("kpis").innerHTML = [
+    kpi(n,"Responses so far"),
+    kpi(pct(satYes+satMaybe,n)+"%","Open to a Saturday"),
+    kpi(topTopic ? topTopic[0] : "None","Most requested session"),
+    kpi(pct(priceOk,n)+"%","Would pay eighty dollars or more"),
+    kpi(pct(member["Yes"]||0,n)+"%","TCEA members")
+  ].join("");
+
+  /* matchups */
+  const three = countMulti(ROWS,"topics_top3");
+  let rowsHtml = '<div class="tscroll"><table class="matrix"><thead><tr><th>Presenter</th><th>Session option</th>'+
+    '<th class="num">First choice</th><th class="num">Top three</th></tr></thead><tbody>';
+  PRESENTERS.forEach(function(p){
+    const opts = Object.keys(TOPIC_META).filter(function(k){return TOPIC_META[k].presenter===p;});
+    const scores = opts.map(function(k){return {k:k, f:(first[k]||0), t:(three[k]||0)};});
+    const win = scores.slice().sort(function(a,b){ return (b.f-a.f) || (b.t-a.t); })[0];
+    scores.forEach(function(s){
+      const isWin = s.k===win.k && (win.f>0 || win.t>0) && !(scores[0].f===scores[1].f && scores[0].t===scores[1].t);
+      rowsHtml += '<tr class="'+(isWin?"win":"")+'"><td>'+p+'</td><td>'+esc(TOPIC_META[s.k].title)+
+        (isWin?'<span class="badge">Stronger</span>':'')+'</td>'+
+        '<td class="num">'+s.f+' ('+pct(s.f,n)+'%)</td><td class="num">'+s.t+' ('+pct(s.t,n)+'%)</td></tr>';
+    });
+  });
+  rowsHtml += '</tbody></table></div>';
+  document.getElementById("matchups").innerHTML = rowsHtml;
+
+  /* charts */
+  Object.keys(TOPIC_META).forEach(function(k){
+    if(!(k in three)) three[k]=0;
+    if(!(k in first)) first[k]=0;
+  });
+  bars("c-topics3", three, n);
+  bars("c-topic1", first, n);
+  bars("c-sat", sat, n, {order:ORDER.saturday});
+  bars("c-alt", countMulti(ROWS,"alt_times"), n);
+  bars("c-len", countSingle(ROWS,"length"), n);
+  bars("c-fmt", countSingle(ROWS,"format"), n);
+  bars("c-role", countSingle(ROWS,"role"), n);
+  bars("c-years", countSingle(ROWS,"years"), n, {order:ORDER.years});
+  bars("c-member", countSingle(ROWS,"member"), n, {order:ORDER.member});
+  bars("c-grades", countMulti(ROWS,"grades"), n);
+  bars("c-setting", countSingle(ROWS,"setting"), n);
+  bars("c-content", countMulti(ROWS,"content"), n);
+  bars("c-price", countSingle(ROWS,"price"), n, {order:ORDER.price});
+  bars("c-payer", countSingle(ROWS,"payer"), n);
+
+  crosstab("x-satrole","role","saturday",ORDER.saturday);
+  crosstab("x-pricepayer","payer","price",ORDER.price);
+
+  /* free text */
+  const notes = ROWS.map(function(r){return (r.topic_missing||"").trim();})
+                    .filter(function(t){return t.length>2;});
+  document.getElementById("freetext").innerHTML = notes.length
+    ? notes.map(function(t){return '<div class="quote">'+esc(scrub(t))+'</div>';}).join("")
+    : '<p class="muted">No one has written in a topic yet.</p>';
+
+  buildInsights(n, sat, first, three, price, member);
+}
+
+function kpi(v,l){ return '<div class="kpi"><div class="n">'+esc(v)+'</div><div class="l">'+l+'</div></div>'; }
+function fdate(iso){
+  const d = new Date(iso);
+  return isNaN(d) ? "unknown" : d.toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"});
+}
+
+function crosstab(elId, rowField, colField, colOrder){
+  const el = document.getElementById(elId);
+  const groups = {};
+  ROWS.forEach(function(r){
+    const g=(r[rowField]||"").trim(), c=(r[colField]||"").trim();
+    if(!g||!c) return;
+    if(!groups[g]) groups[g]={};
+    groups[g][c]=(groups[g][c]||0)+1;
+  });
+  const names = Object.keys(groups).sort(function(a,b){
+    return total(groups[b])-total(groups[a]);
+  });
+  const shown = names.filter(function(g){ return total(groups[g])>=MIN_CELL; });
+  const hidden = names.length - shown.length;
+  if(!shown.length){
+    el.innerHTML = '<div class="suppressed">Not enough responses yet to break this out. Groups appear once they reach '+MIN_CELL+' responses.</div>';
+    return;
+  }
+  let h = '<div class="tscroll"><table class="matrix"><thead><tr><th>'+cap(rowField)+'</th>'+
+    colOrder.map(function(c){return '<th class="num">'+esc(shortLabel(c))+'</th>';}).join("")+
+    '<th class="num">Total</th></tr></thead><tbody>';
+  shown.forEach(function(g){
+    const t = total(groups[g]);
+    h += '<tr><td>'+esc(g)+'</td>'+colOrder.map(function(c){
+      const v = groups[g][c]||0;
+      return '<td class="num">'+v+' ('+pct(v,t)+'%)</td>';
+    }).join("")+'<td class="num">'+t+'</td></tr>';
+  });
+  h += '</tbody></table></div>';
+  if(hidden) h += '<div class="suppressed">'+hidden+' group'+(hidden>1?"s":"")+
+    ' hidden because fewer than '+MIN_CELL+' people answered. Small groups are suppressed so no one can be identified.</div>';
+  el.innerHTML = h;
+}
+function total(o){ return Object.keys(o).reduce(function(s,k){return s+o[k];},0); }
+function cap(s){ return s.charAt(0).toUpperCase()+s.slice(1); }
+function shortLabel(c){
+  if(c.indexOf("Yes, a Saturday")===0) return "Yes";
+  if(c.indexOf("Maybe")===0) return "Maybe";
+  if(c.indexOf("No, I will not")===0) return "No";
+  if(c==="Forty nine dollars or less") return "$49 or less";
+  if(c==="Fifty to seventy nine dollars") return "$50 to $79";
+  if(c==="Eighty to ninety nine dollars") return "$80 to $99";
+  if(c==="One hundred to one hundred twenty nine dollars") return "$100 to $129";
+  if(c==="More than one hundred twenty nine dollars") return "Over $129";
+  if(c==="Price is not my decision") return "Not my call";
+  return c;
+}
+
+function buildInsights(n, sat, first, three, price, member){
+  const out = [];
+  const yes = sat["Yes, a Saturday works"]||0;
+  const maybe = sat["Maybe, it depends on the date"]||0;
+  const no = sat["No, I will not attend on a Saturday"]||0;
+
+  if(yes+maybe >= no){
+    out.push("A Saturday clears the bar. "+pct(yes,n)+" percent say yes outright and another "+pct(maybe,n)+
+      " percent say maybe, so roughly "+pct(yes+maybe,n)+" percent are reachable on a weekend date.");
+  } else {
+    out.push("A Saturday is a problem. "+pct(no,n)+" percent rule it out, which is more than the "+pct(yes,n)+
+      " percent who commit to it. Look hard at the backup windows below before you lock a date.");
+  }
+
+  const alt = sortEntries(countMulti(ROWS,"alt_times"));
+  if(alt.length){
+    out.push("The strongest backup window is this one, "+alt[0][0]+", chosen by "+pct(alt[0][1],n)+
+      " percent"+(alt[1] ? ". Next comes "+alt[1][0]+" at "+pct(alt[1][1],n)+" percent." : "."));
+  }
+
+  const f = sortEntries(first);
+  if(f.length){
+    out.push("If people could attend only one session, "+f[0][0]+" wins with "+pct(f[0][1],n)+
+      " percent of first choices"+(f[1] ? ", ahead of "+f[1][0]+" at "+pct(f[1][1],n)+" percent." : "."));
+  }
+  const t3 = sortEntries(three);
+  if(t3.length && f.length && t3[0][0] !== f[0][0]){
+    out.push(t3[0][0]+" draws the broadest interest at "+pct(t3[0][1],n)+
+      " percent of top three picks even though it is not the top first choice. That combination usually means a good opener rather than a headliner.");
+  }
+  if(f.length > 2){
+    const weak = f[f.length-1];
+    out.push("The weakest option is "+weak[0]+" at "+pct(weak[1],n)+
+      " percent of first choices. Consider cutting it or folding it into another session.");
+  }
+
+  const willPay = (price["Eighty to ninety nine dollars"]||0)+
+                  (price["One hundred to one hundred twenty nine dollars"]||0)+
+                  (price["More than one hundred twenty nine dollars"]||0);
+  const under = (price["Forty nine dollars or less"]||0)+(price["Fifty to seventy nine dollars"]||0);
+  if(willPay >= under){
+    out.push("Pricing holds. "+pct(willPay,n)+" percent put fair value at eighty dollars or more, which supports the ninety nine dollar member rate.");
+  } else {
+    out.push("Pricing is a risk. "+pct(under,n)+" percent put fair value below eighty dollars, so the ninety nine dollar member rate may need a bundle, an early rate, or added value to hold.");
+  }
+
+  const payer = sortEntries(countSingle(ROWS,"payer"));
+  if(payer.length && payer[0][0].indexOf("out of pocket") > -1){
+    out.push("Most respondents expect to pay out of pocket, so price sensitivity here is real rather than budgetary.");
+  } else if(payer.length){
+    out.push("The most common funding source is this one, "+payer[0][0]+", at "+pct(payer[0][1],n)+
+      " percent, which means purchase orders and district invoicing need to work smoothly at checkout.");
+  }
+
+  const nonMember = member["No"]||0;
+  if(nonMember >= n*0.3){
+    out.push(pct(nonMember,n)+" percent are not TCEA members, so the showcase doubles as a membership funnel. Price the member discount to make joining the cheaper path.");
+  }
+
+  const fmt = sortEntries(countSingle(ROWS,"format"));
+  if(fmt.length){
+    out.push("On format, the leading answer at "+pct(fmt[0][1],n)+" percent is this one, "+fmt[0][0]+
+      ". That shapes how much you invest in live facilitation versus the LearnDash on demand version.");
+  }
+
+  document.getElementById("insights").innerHTML = out.map(function(x){return "<li>"+esc(x)+"</li>";}).join("");
+}
+
+/* ---------- CSV of aggregates ---------- */
+document.getElementById("csvBtn").addEventListener("click", function(){
+  const n = ROWS.length;
+  const lines = [["question","answer","count","percent"]];
+  const singles = ["role","years","setting","member","saturday","length","format","topic_first","price","payer"];
+  const multis = ["grades","content","alt_times","topics_top3"];
+  singles.forEach(function(f){
+    sortEntries(countSingle(ROWS,f), ORDER[f]).forEach(function(e){
+      lines.push([f,e[0],e[1],pct(e[1],n)+"%"]);
+    });
+  });
+  multis.forEach(function(f){
+    sortEntries(countMulti(ROWS,f)).forEach(function(e){
+      lines.push([f,e[0],e[1],pct(e[1],n)+"%"]);
+    });
+  });
+  const csv = lines.map(function(r){
+    return r.map(function(c){return '"'+String(c).replace(/"/g,'""')+'"';}).join(",");
+  }).join("\n");
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([csv],{type:"text/csv"}));
+  a.download = "pedagogy-showcase-SAMPLE-summary.csv";
+  a.click();
+});
+
+/* ---------- start ---------- */
+load().then(build);
+</script>
+</body>
+</html>
