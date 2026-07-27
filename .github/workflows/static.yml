@@ -42,6 +42,33 @@ jobs:
         run: node build-feed.js
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      # Strip paths listed in .pagesignore from this throwaway checkout so they
+      # never reach the published site. The files stay in git, so cloning and
+      # pulling still bring them down. See .pagesignore for the caveat: this
+      # hides them from the website, not from a public repo on github.com.
+      - name: Withhold private paths from the site artifact
+        run: |
+          set -euo pipefail
+          if [ ! -f .pagesignore ]; then
+            echo "No .pagesignore, publishing everything."
+            exit 0
+          fi
+          while IFS= read -r line || [ -n "$line" ]; do
+            path="${line%%#*}"
+            path="$(printf '%s' "$path" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
+            [ -z "$path" ] && continue
+            case "$path" in
+              /*|*..*) echo "Refusing unsafe .pagesignore entry: $path" >&2; exit 1 ;;
+            esac
+            if [ -e "$path" ]; then
+              rm -rf -- "$path"
+              echo "withheld: $path"
+            else
+              echo "not present, nothing to withhold: $path"
+            fi
+          done < .pagesignore
+          # The list itself is guidance for maintainers, not site content.
+          rm -f .pagesignore
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

@@ -9,9 +9,12 @@ Fifteen minutes, start to finish. You need a Google account and a GitHub repo. Y
 | File | Where it goes | What it does |
 | --- | --- | --- |
 | `Code.gs` | script.google.com, standalone project | Creates the Google Sheet, stores answers, serves them back |
-| `index.html` | GitHub Pages | The public poll |
-| `results.html` | GitHub Pages | The password protected results dashboard |
-| `results2.html` | GitHub Pages | A preview of that dashboard filled with invented data, no password, for showing people what they will get |
+| `index.html` | GitHub Pages, `pspoll/` | The public poll |
+| `results.html` | GitHub Pages, `pspoll/` | The password protected results dashboard |
+| `results2.html` | GitHub Pages, `pspoll/` | A preview of that dashboard filled with invented data, no password, for showing people what they will get |
+| `SETUP.md`, `HANDOFF.md`, `Code.gs`, the zip | `pspoll/internal/`, kept out of the website | Reference material for whoever runs the system |
+
+The three HTML files are published. Everything else sits in `pspoll/internal/`, which the deploy workflow withholds from the site. Read the section on the internal folder near the end before you assume that means private.
 
 ---
 
@@ -53,7 +56,7 @@ You never touch the spreadsheet structure again. If you delete it by accident, r
 
 ## Step four, wire the two HTML files
 
-Already done for the current deployment — both files point at the live `/exec` URL. You only need this step if you redeploy in a way that mints a new URL.
+Already done for the current deployment. Both files point at the live `/exec` URL. You only need this step if you redeploy in a way that mints a new URL.
 
 Open `index.html` and `results.html` in any editor. Near the top of the script block in each file you will find this line.
 
@@ -61,20 +64,31 @@ Open `index.html` and `results.html` in any editor. Near the top of the script b
 const ENDPOINT = "https://script.google.com/macros/s/.../exec";
 ```
 
-Set it to your `/exec` URL, keeping the quotation marks, in **both** files. It must end in `/exec` with no trailing slash and no query string — the report page appends `?key=...` to it directly.
+Set it to your `/exec` URL, keeping the quotation marks, in **both** files. It must end in `/exec` with no trailing slash and no query string, because the report page appends `?key=...` to it directly.
 
 ---
 
 ## Step five, publish to GitHub Pages
 
-Both HTML files live in `pspoll/` in the repo. Commit and push, and the Pages workflow publishes them.
+The three HTML files live in `pspoll/` in the repo. Commit and push, and the Pages workflow publishes them within a couple of minutes.
 
 - Poll: `https://mglearn.github.io/tcea/pspoll/`
 - Report: `https://mglearn.github.io/tcea/pspoll/results.html`
+- Sample preview: `https://mglearn.github.io/tcea/pspoll/results2.html`
 
 The poll is named `index.html`, so the bare directory link above serves it. That is the shorter link to hand out.
 
-Shorten the poll link with `go.mgpd.org` before you send it anywhere. Keep the report link inside the PD team.
+Shorten the poll link with `go.mgpd.org` before you send it anywhere. Keep the report link inside the PD team. The sample preview is safe to share with anyone, since it holds no real responses.
+
+---
+
+## The sample preview
+
+`results2.html` is the same dashboard as `results.html`, filled with twenty invented respondents and no password. Use it when you want to show somebody what the poll produces before real answers exist.
+
+Everything on that page is fiction, and a banner at the top says so. Nobody filled out the poll to make those numbers. Do not quote them.
+
+It needs no setup at all. The data is embedded in the file, so the page works even before you deploy the Apps Script.
 
 ---
 
@@ -124,7 +138,23 @@ Your `/exec` URL stays the same, so the HTML files need no changes.
 - The report shows group totals only.
 - Cross tabs hide any group with fewer than five responses. Raise or lower that floor with `MIN_CELL` at the top of the report script.
 - Open text answers pass through a scrubber that strips anything shaped like an email address, a phone number, or a web address before it reaches the screen.
-- The report page carries a `noindex` tag, so search engines skip it.
+- The report page carries a `noindex` tag, so search engines skip it. So does the sample preview.
+
+---
+
+## The internal folder, and what it actually protects
+
+This file, `HANDOFF.md`, `Code.gs`, and the zip all live in `pspoll/internal/`. The three published HTML files live one level up in `pspoll/`.
+
+That split exists so the deploy workflow can keep the internal files off the website. It reads `.pagesignore` at the root of the repo, and just before uploading the site it deletes every path listed there from its temporary copy. Nothing happens to the repository itself, so `git clone` and `git pull` still bring these files down on any machine. They simply never appear at `mglearn.github.io`.
+
+To withhold another folder later, add one line to `.pagesignore`. You do not need to touch the workflow.
+
+**Now the part that matters.** This hides files from the website. It does not hide them from GitHub. The repository is public, so anyone can still read everything in `pspoll/internal/` by browsing github.com/mglearn/tcea or by fetching a raw file URL. Search engines can index those pages too.
+
+So treat the internal folder as tidiness, not security. Never put a real password, key, or anything confidential in it. That is exactly why `REPORT_KEY` in `Code.gs` reads `CHANGE-ME` and the real password lives only in the Apps Script editor, which nobody but you can open.
+
+If you need these files genuinely private while still getting them on clone, you have two real options. Make the repository private, which on some plans turns GitHub Pages off, so check before you switch. Or move the internal files into a separate private repository and clone it alongside this one.
 
 ---
 

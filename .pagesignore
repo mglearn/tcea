@@ -1,0 +1,17 @@
+# Paths kept in git but NOT published to GitHub Pages.
+#
+# The deploy workflow (.github/workflows/static.yml) deletes these from its
+# throwaway checkout right before uploading the site artifact. The files stay
+# in the repository, so `git clone` and `git pull` still bring them down. They
+# simply never reach mglearn.github.io.
+#
+# IMPORTANT, and worth saying plainly: this hides files from the *website*, not
+# from GitHub. This repository is public, so anything listed here is still
+# readable by anyone at github.com/mglearn/tcea and through raw.githubusercontent
+# URLs. Do not treat this as a place for secrets. The only ways to get real
+# privacy are to make the repository private or to keep the files out of it.
+#
+# One path per line. Blank lines and lines starting with # are ignored.
+# Paths are relative to the repository root. No absolute paths, no "..".
+
+pspoll/internal
