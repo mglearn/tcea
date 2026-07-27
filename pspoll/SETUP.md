@@ -52,13 +52,15 @@ You never touch the spreadsheet structure again. If you delete it by accident, r
 
 ## Step four, wire the two HTML files
 
+Already done for the current deployment — both files point at the live `/exec` URL. You only need this step if you redeploy in a way that mints a new URL.
+
 Open `showcase-poll.html` and `showcase-report.html` in any editor. Near the top of the script block in each file you will find this line.
 
 ```js
-const ENDPOINT = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+const ENDPOINT = "https://script.google.com/macros/s/.../exec";
 ```
 
-Replace the placeholder with your `/exec` URL. Keep the quotation marks. Do this in **both** files.
+Set it to your `/exec` URL, keeping the quotation marks, in **both** files. It must end in `/exec` with no trailing slash and no query string — the report page appends `?key=...` to it directly.
 
 ---
 

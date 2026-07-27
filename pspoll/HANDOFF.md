@@ -29,7 +29,7 @@ Proposed pricing under test: ninety nine dollars for TCEA members, one hundred t
 | `qa/mock.json` | Forty seven synthetic responses | For local testing only |
 | `qa/run.py` | Playwright QA harness | Serves the files on port 8099 and screenshots both pages |
 
-Both HTML files contain the placeholder `PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE`. The user replaces it after deploying.
+Both HTML files have `ENDPOINT` wired to the deployed `/exec` URL. If you redeploy in a way that mints a new URL, update that one constant in each file.
 
 ---
 
@@ -112,7 +112,7 @@ It starts a local server on 8099, drives both pages with Playwright at 1100px an
 ```bash
 cp showcase-poll.html qa/poll.html
 cp showcase-report.html qa/report.html
-sed -i 's|"PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE"|"mock.json"|' qa/report.html
+sed -i 's|^const ENDPOINT = ".*";|const ENDPOINT = "mock.json";|' qa/report.html
 ```
 
 Last run: no console errors, forty seven mock responses, all charts and cross tabs rendering, suppression notice firing correctly for groups under five.
