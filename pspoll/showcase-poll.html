@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pedagogy Showcase Interest Poll</title>
+<meta name="description" content="Tell TCEA which pedagogy sessions you want and when you would attend.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0A3476; --navy-dark:#071f4a; --navy-mid:#12428f;
+  --gold:#FCB040; --gold-light:#fdd17a; --gold-pale:#FEF0D0;
+  --pale-navy:#D0D8F0; --white:#ffffff; --off-white:#f7f8fc;
+  --text:#1a1a2e; --text-muted:#5a6680; --border:#e2e7f5; --teal:#0e6b8a;
+  --radius:12px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'DM Sans',sans-serif; color:var(--text);
+  background:var(--off-white); line-height:1.6; font-size:16px;
+}
+.hero{
+  background:var(--navy-dark);
+  background-image:radial-gradient(circle at 20% 10%, rgba(252,176,64,.14), transparent 55%);
+  color:var(--white); padding:2.6rem 1.25rem 2.2rem;
+}
+.wrap{max-width:760px;margin:0 auto}
+.eyebrow{
+  font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:700;color:var(--gold);margin-bottom:.5rem
+}
+h1{font-family:'DM Serif Display',serif;font-size:2.1rem;line-height:1.15;font-weight:400}
+h1 em{color:var(--gold-light)}
+.hero p{color:var(--pale-navy);margin-top:.8rem;font-size:1.02rem}
+.meta-pills{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem}
+.pill{
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);
+  color:var(--white);font-size:.78rem;font-weight:500;
+  padding:.28rem .7rem;border-radius:100px
+}
+main{max-width:760px;margin:0 auto;padding:1.5rem 1.25rem 4rem}
+.progress-shell{
+  position:sticky;top:0;z-index:20;background:var(--off-white);
+  padding:.85rem 0 .6rem;border-bottom:1px solid var(--border);margin-bottom:1.5rem
+}
+.progress-track{height:8px;background:var(--border);border-radius:100px;overflow:hidden}
+.progress-fill{height:100%;width:0;background:var(--gold);transition:width .25s ease}
+.progress-label{font-size:.78rem;color:var(--text-muted);margin-top:.4rem;font-weight:500}
+section.block{
+  background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);
+  padding:1.5rem 1.35rem;margin-bottom:1.4rem
+}
+section.block > h2{
+  font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--navy);
+  font-weight:400;padding-left:.7rem;border-left:4px solid var(--gold);line-height:1.2
+}
+section.block > .block-note{font-size:.9rem;color:var(--text-muted);margin:.6rem 0 .3rem;padding-left:.85rem}
+.q{padding:1.25rem 0;border-top:1px solid var(--border);margin-top:1.1rem}
+.q:first-of-type{border-top:none;margin-top:.4rem}
+.q-label{font-weight:600;font-size:1.02rem;color:var(--navy);display:block}
+.q-req{color:var(--teal);font-weight:700;margin-left:.25rem}
+.q-help{font-size:.86rem;color:var(--text-muted);margin-top:.25rem}
+.opts{margin-top:.8rem;display:grid;gap:.45rem}
+.opts.two{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+label.opt{
+  display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;
+  border:1.5px solid var(--border);border-radius:8px;padding:.6rem .75rem;
+  background:var(--white);transition:border-color .15s,background .15s;font-size:.95rem
+}
+label.opt:hover{border-color:var(--navy-mid);background:var(--off-white)}
+label.opt.checked{border-color:var(--navy);background:var(--gold-pale)}
+label.opt.disabled{opacity:.45;cursor:not-allowed}
+label.opt input{margin-top:.28rem;accent-color:var(--navy);flex-shrink:0}
+.opt-text strong{display:block;font-weight:600}
+.opt-text span{display:block;font-size:.83rem;color:var(--text-muted);margin-top:.1rem}
+textarea,input[type=text]{
+  width:100%;font-family:inherit;font-size:.95rem;color:var(--text);
+  border:1.5px solid var(--border);border-radius:8px;padding:.65rem .75rem;margin-top:.7rem;
+  background:var(--white);resize:vertical
+}
+textarea:focus,input[type=text]:focus{outline:none;border-color:var(--navy)}
+.counter{font-size:.78rem;color:var(--text-muted);margin-top:.35rem;font-weight:600}
+.counter.max{color:var(--teal)}
+.err{
+  display:none;font-size:.85rem;color:#a32020;font-weight:600;margin-top:.55rem
+}
+.q.invalid .err{display:block}
+.q.invalid .q-label{color:#a32020}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.actions{margin-top:1.6rem;text-align:center}
+button.submit{
+  font-family:inherit;font-size:1.02rem;font-weight:700;color:var(--navy);
+  background:var(--gold);border:none;border-radius:8px;padding:.9rem 2.2rem;cursor:pointer;
+  transition:background .15s,transform .1s
+}
+button.submit:hover{background:var(--gold-light)}
+button.submit:active{transform:translateY(1px)}
+button.submit[disabled]{opacity:.55;cursor:wait}
+.form-msg{margin-top:.9rem;font-size:.9rem;font-weight:600;min-height:1.2rem}
+.form-msg.bad{color:#a32020}
+.privacy{
+  background:var(--gold-pale);border-radius:8px;padding:.9rem 1rem;
+  font-size:.86rem;color:var(--text);margin-bottom:1.4rem;border-left:4px solid var(--gold)
+}
+#thanks{display:none;text-align:center;padding:3rem 1rem}
+#thanks h2{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--navy);font-weight:400}
+#thanks p{color:var(--text-muted);margin-top:.8rem}
+footer{
+  background:var(--navy);color:var(--pale-navy);padding:1.4rem 1.25rem;font-size:.85rem;text-align:center
+}
+footer a{color:var(--gold-light)}
+@media (max-width:520px){
+  h1{font-size:1.65rem}
+  section.block{padding:1.2rem 1rem}
+  main{padding:1.2rem 1rem 3rem}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">TCEA Professional Development</div>
+    <h1>Help us shape the <em>Pedagogy Showcase</em></h1>
+    <p>Answer twelve quick questions and tell us which sessions you want, when you would show up, and what a seat is worth. Your answers decide the final lineup.</p>
+    <div class="meta-pills">
+      <span class="pill">About two minutes</span>
+      <span class="pill">No name or email collected</span>
+      <span class="pill">Results shape the schedule</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div id="form-area">
+    <div class="progress-shell">
+      <div class="progress-track"><div class="progress-fill" id="pfill"></div></div>
+      <div class="progress-label" id="plabel">0 of 12 answered</div>
+    </div>
+
+    <div class="privacy">
+      <strong>Your privacy.</strong> We never ask for your name, email, campus, or district. Everything you share is reported as a group total, so no single answer can be traced back to you.
+    </div>
+
+    <div id="questions"></div>
+
+    <div class="hp"><label>Leave this blank <input type="text" id="hp-field" tabindex="-1" autocomplete="off"></label></div>
+
+    <div class="actions">
+      <button class="submit" id="submitBtn" type="button">Send my answers</button>
+      <div class="form-msg" id="formMsg"></div>
+    </div>
+  </div>
+
+  <div id="thanks">
+    <h2>Thank you</h2>
+    <p>Your answers are in. We use them to pick the final session lineup, the date, and the price for the Pedagogy Showcase.</p>
+    <p style="margin-top:1.2rem"><a href="https://tcea.org" style="color:var(--navy);font-weight:600">Return to TCEA</a></p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Pedagogy Showcase interest poll, TCEA Professional Development. Questions? Write <a href="mailto:mguhlin@tcea.org">mguhlin@tcea.org</a>.</div>
+</footer>
+
+<script>
+/* ============================================================
+   1. SET THIS to your Apps Script Web App URL after deploying.
+   ============================================================ */
+const ENDPOINT = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+
+/* ============================================================
+   2. Questions. Edit freely. Keep each id short and unique,
+      and keep the ids in sync with Code.gs FIELDS.
+   ============================================================ */
+const TOPICS = [
+  {v:"Feedback Loops",        t:"Feedback Loops with Strategies, Tools, and AI", s:"Teacher and peer feedback that does not add grading time"},
+  {v:"Peer Review",           t:"Quality Peer Review", s:"Rubric guided peer feedback that shifts the workload to students"},
+  {v:"Prior Knowledge",       t:"Strategies to Assess Prior Knowledge", s:"Find out what students know before you teach the new content"},
+  {v:"English Learners",      t:"Instructional Strategies for English Language Learners", s:"Practical approaches and tools for language support"},
+  {v:"Exit Tickets",          t:"Exit Tickets That Spark Next Steps", s:"Quick checks for understanding that shape tomorrow's lesson"},
+  {v:"Vocabulary",            t:"Vocabulary That Sticks", s:"Move past definitions so students use words with purpose"},
+  {v:"PBL Critical Thinking", t:"PBL for Critical Thinking in the AI Era", s:"Four phase project design that AI shortcuts cannot fake"},
+  {v:"Concept Maps",          t:"Concept Maps and Organizers", s:"Six ways to make student thinking visible and catch misconceptions"}
+];
+const topicOpts = TOPICS.map(function(x){return {v:x.v,t:x.t,s:x.s};});
+
+const BLOCKS = [
+  {
+    title:"About your work",
+    note:"Six quick questions. Nothing here identifies you.",
+    questions:[
+      {id:"role", type:"single", req:true, label:"Which role fits you best right now?",
+       opts:["Classroom teacher","Instructional coach or specialist","Librarian or media specialist","Campus administrator","District administrator or director","Technology or IT staff","Higher education or preservice","Other"]},
+      {id:"grades", type:"multi", req:true, label:"Which grade bands do you serve?", help:"Choose every band that applies.",
+       opts:["PK to 2","3 to 5","6 to 8","9 to 12","Higher education","District wide, all grades"]},
+      {id:"content", type:"multi", req:false, label:"Which content areas do you support?", help:"Optional. Choose every area that applies.",
+       opts:["ELA and reading","Mathematics","Science","Social studies","Bilingual or ESL","Special education","CTE","Fine arts","Library and media","All or multiple areas"]},
+      {id:"years", type:"single", req:true, label:"How long have you worked in education?",
+       opts:["Three years or fewer","Four to ten years","Eleven to twenty years","More than twenty years"]},
+      {id:"setting", type:"single", req:true, label:"Which setting describes your school or district?",
+       opts:["Urban","Suburban","Rural or small town","Charter","Private or independent","Not campus based"]},
+      {id:"member", type:"single", req:true, label:"Are you a TCEA member?",
+       opts:["Yes","No","Not sure"]}
+    ]
+  },
+  {
+    title:"When you would attend",
+    note:"We are testing a Saturday date. Tell us if that works.",
+    questions:[
+      {id:"saturday", type:"single", req:true, label:"Would you attend a half day online showcase on a Saturday?",
+       opts:[
+         {v:"Yes, a Saturday works",s:"Sign me up"},
+         {v:"Maybe, it depends on the date",s:"Fall or spring Saturdays are different for me"},
+         {v:"No, I will not attend on a Saturday",s:"Weekends are off limits"}
+       ]},
+      {id:"alt_times", type:"multi", req:false, label:"When would you attend instead?", help:"Choose every window that works. Answer even if a Saturday works, so we know your backup.",
+       opts:["Weekday, during the school day with release time","Weekday, right after school from four to six","Weekday evening, after six","Sunday afternoon","A summer weekday","A district holiday or staff development day"]},
+      {id:"length", type:"single", req:true, label:"How long should the whole event run?",
+       opts:["Three or four short sessions, about two hours total","Half day, about three hours","Full day","One session at a time, spread across several weeks"]},
+      {id:"format", type:"single", req:true, label:"How do you want to take part?",
+       opts:["Live, so I can ask questions","Live if I can, plus the recording","Recording only, on my own schedule"]}
+    ]
+  },
+  {
+    title:"What you would attend",
+    note:"Every session runs thirty minutes. Pick the ones you would actually join.",
+    questions:[
+      {id:"topics_top3", type:"multi", req:true, max:3, label:"Which three sessions interest you most?", help:"Choose up to three. Pick a fourth and your first pick drops off.",
+       opts:topicOpts},
+      {id:"topic_first", type:"single", req:true, label:"If you could only attend one, which would it be?",
+       opts:TOPICS.map(function(x){return {v:x.v,t:x.t};})},
+      {id:"topic_missing", type:"text", req:false, label:"What topic is missing that you would sign up for tomorrow?", help:"Optional. One or two sentences. Please leave out any names, campuses, or contact details.", rows:3}
+    ]
+  },
+  {
+    title:"What a seat is worth",
+    note:"Two last questions about cost.",
+    questions:[
+      {id:"price", type:"single", req:true, label:"What is a fair price for a half day online showcase that includes the recordings and resources?",
+       opts:["Forty nine dollars or less","Fifty to seventy nine dollars","Eighty to ninety nine dollars","One hundred to one hundred twenty nine dollars","More than one hundred twenty nine dollars","Price is not my decision"]},
+      {id:"payer", type:"single", req:true, label:"Who would pay for your seat?",
+       opts:["I pay out of pocket","My campus budget","My district budget","Grant or federal program funds","Not sure"]}
+    ]
+  }
+];
+
+/* ---------- render ---------- */
+const state = {};
+const allQs = [];
+BLOCKS.forEach(function(b){ b.questions.forEach(function(q){ allQs.push(q); }); });
+const requiredIds = allQs.filter(function(q){return q.req;}).map(function(q){return q.id;});
+
+function norm(o){
+  if(typeof o === "string") return {v:o,t:o,s:null};
+  return {v:o.v, t:o.t || o.v, s:o.s || null};
+}
+
+function render(){
+  const host = document.getElementById("questions");
+  let html = "";
+  BLOCKS.forEach(function(b){
+    html += '<section class="block"><h2>'+b.title+'</h2>';
+    if(b.note) html += '<p class="block-note">'+b.note+'</p>';
+    b.questions.forEach(function(q){
+      html += '<div class="q" id="q-'+q.id+'" data-id="'+q.id+'">';
+      html += '<span class="q-label">'+q.label+(q.req?'<span class="q-req">*</span>':'')+'</span>';
+      if(q.help) html += '<div class="q-help">'+q.help+'</div>';
+      if(q.type === "text"){
+        html += '<textarea id="in-'+q.id+'" rows="'+(q.rows||3)+'" maxlength="400" placeholder="Type here"></textarea>';
+      } else {
+        const two = q.opts.length > 4 ? " two" : "";
+        html += '<div class="opts'+two+'">';
+        q.opts.map(norm).forEach(function(o,i){
+          const type = q.type === "multi" ? "checkbox" : "radio";
+          html += '<label class="opt" data-v="'+o.v.replace(/"/g,"&quot;")+'">'
+               +  '<input type="'+type+'" name="'+q.id+'" value="'+o.v.replace(/"/g,"&quot;")+'">'
+               +  '<span class="opt-text"><strong>'+o.t+'</strong>'+(o.s?'<span>'+o.s+'</span>':'')+'</span></label>';
+        });
+        html += '</div>';
+        if(q.max) html += '<div class="counter" id="cnt-'+q.id+'">0 of '+q.max+' chosen</div>';
+      }
+      html += '<div class="err">Please answer this one before you send.</div></div>';
+    });
+    html += '</section>';
+  });
+  host.innerHTML = html;
+}
+render();
+
+/* ---------- interaction ---------- */
+document.getElementById("questions").addEventListener("change", function(e){
+  const input = e.target;
+  if(!input.name && input.tagName !== "TEXTAREA") return;
+  const qId = input.name || input.id.replace("in-","");
+  const q = allQs.filter(function(x){return x.id===qId;})[0];
+  if(!q) return;
+
+  if(q.type === "single"){
+    state[qId] = input.value;
+  } else if(q.type === "multi"){
+    const boxes = Array.prototype.slice.call(document.querySelectorAll('input[name="'+qId+'"]'));
+    let chosen = Array.isArray(state[qId]) ? state[qId].slice() : [];
+    if(input.checked){
+      if(chosen.indexOf(input.value) < 0) chosen.push(input.value);
+      // At the limit, the newest pick replaces the oldest one.
+      while(q.max && chosen.length > q.max){
+        const dropped = chosen.shift();
+        boxes.forEach(function(b){ if(b.value === dropped) b.checked = false; });
+      }
+    } else {
+      chosen = chosen.filter(function(v){return v !== input.value;});
+    }
+    state[qId] = chosen;
+    if(q.max){
+      const cnt = document.getElementById("cnt-"+qId);
+      cnt.textContent = chosen.length+" of "+q.max+" chosen";
+      cnt.className = chosen.length >= q.max ? "counter max" : "counter";
+    }
+  }
+  document.querySelectorAll('input[name="'+qId+'"]').forEach(function(b){
+    b.parentElement.classList.toggle("checked", b.checked);
+  });
+  document.getElementById("q-"+qId).classList.remove("invalid");
+  updateProgress();
+});
+
+document.getElementById("questions").addEventListener("input", function(e){
+  if(e.target.tagName !== "TEXTAREA") return;
+  state[e.target.id.replace("in-","")] = e.target.value;
+});
+
+function answered(id){
+  const v = state[id];
+  if(Array.isArray(v)) return v.length > 0;
+  return typeof v === "string" && v.trim() !== "";
+}
+
+function updateProgress(){
+  const done = requiredIds.filter(answered).length;
+  const pct = Math.round(done / requiredIds.length * 100);
+  document.getElementById("pfill").style.width = pct+"%";
+  document.getElementById("plabel").textContent = done+" of "+requiredIds.length+" answered";
+}
+updateProgress();
+
+/* ---------- submit ---------- */
+document.getElementById("submitBtn").addEventListener("click", function(){
+  const btn = this;
+  const msg = document.getElementById("formMsg");
+  msg.className = "form-msg";
+  msg.textContent = "";
+
+  const missing = requiredIds.filter(function(id){return !answered(id);});
+  document.querySelectorAll(".q").forEach(function(el){el.classList.remove("invalid");});
+  if(missing.length){
+    missing.forEach(function(id){document.getElementById("q-"+id).classList.add("invalid");});
+    msg.className = "form-msg bad";
+    msg.textContent = "You have "+missing.length+" question"+(missing.length>1?"s":"")+" left. They are marked in red.";
+    document.getElementById("q-"+missing[0]).scrollIntoView({behavior:"smooth",block:"center"});
+    return;
+  }
+
+  if(document.getElementById("hp-field").value){ finish(); return; }
+
+  const payload = {};
+  allQs.forEach(function(q){
+    const v = state[q.id];
+    payload[q.id] = Array.isArray(v) ? v.join(" | ") : (v || "");
+  });
+  payload.screen = window.innerWidth + "x" + window.innerHeight;
+
+  btn.disabled = true;
+  btn.textContent = "Sending";
+
+  fetch(ENDPOINT, {
+    method:"POST",
+    headers:{"Content-Type":"text/plain;charset=utf-8"},
+    body:JSON.stringify(payload)
+  }).then(function(r){return r.json();})
+    .then(function(d){
+      if(d && d.ok){ finish(); }
+      else { fail(btn,msg,"Something went wrong on our end. Please try again."); }
+    })
+    .catch(function(){ fail(btn,msg,"We could not reach the server. Check your connection and try again."); });
+});
+
+function fail(btn,msg,text){
+  btn.disabled = false;
+  btn.textContent = "Send my answers";
+  msg.className = "form-msg bad";
+  msg.textContent = text;
+}
+function finish(){
+  document.getElementById("form-area").style.display = "none";
+  document.getElementById("thanks").style.display = "block";
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+</script>
+</body>
+</html>
