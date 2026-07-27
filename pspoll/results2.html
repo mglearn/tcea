@@ -25,18 +25,8 @@ header.top{
 header.top h1{font-family:'DM Serif Display',serif;font-size:2rem;font-weight:400;margin-top:.4rem}
 header.top p{color:var(--pale-navy);margin-top:.5rem;font-size:.95rem}
 
-/* gate */
-#gate{max-width:420px;margin:5rem auto;background:var(--white);border:1.5px solid var(--border);
-  border-radius:12px;padding:2rem 1.75rem;text-align:center}
-#gate h2{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--navy);font-weight:400}
-#gate p{font-size:.9rem;color:var(--text-muted);margin-top:.5rem}
-#gate input{width:100%;font-family:inherit;font-size:1rem;padding:.7rem .8rem;margin-top:1.2rem;
-  border:1.5px solid var(--border);border-radius:8px}
-#gate input:focus{outline:none;border-color:var(--navy)}
-#gate button{width:100%;margin-top:.8rem;font-family:inherit;font-size:1rem;font-weight:700;
-  color:var(--navy);background:var(--gold);border:none;border-radius:8px;padding:.75rem;cursor:pointer}
-#gate button:hover{background:var(--gold-light)}
-#gateMsg{color:#a32020;font-size:.87rem;font-weight:600;margin-top:.7rem;min-height:1.2rem}
+/* No gate styles here on purpose. This page has no password, so the #gate
+   panel that results.html defines was removed rather than left dead. */
 
 #report{padding-bottom:4rem}
 
@@ -217,7 +207,7 @@ footer{background:var(--navy);color:var(--pale-navy);padding:1.3rem 0;font-size:
     </section>
   </div>
 
-  <footer><div class="wrap">Internal report. Do not share this link or password outside the TCEA PD team.</div></footer>
+  <footer><div class="wrap">Sample data. Every response above was invented, so share this page freely and cite none of it. The real report lives at results.html and does need the password.</div></footer>
 </div>
 
 <script>
@@ -244,7 +234,7 @@ const ORDER = {
   member:["Yes","No","Not sure"]
 };
 
-let ROWS = [], KEY = "", SHEET_URL = "";
+let ROWS = [], SHEET_URL = "";
 
 /* ---------- helpers ---------- */
 function splitMulti(s){ return String(s||"").split("|").map(function(x){return x.trim();}).filter(Boolean); }
@@ -335,7 +325,7 @@ const SAMPLE_ROWS = [
     "length": "Half day, about three hours",
     "format": "Live, so I can ask questions",
     "topics_top3": "Feedback Loops | Concept Maps | Prior Knowledge",
-    "topic_first": "Feedback Loops",
+    "topic_first": "Prior Knowledge",
     "price": "Fifty to seventy nine dollars",
     "payer": "My district budget",
     "topic_missing": "",
@@ -909,17 +899,24 @@ function buildInsights(n, sat, first, three, price, member){
 /* ---------- CSV of aggregates ---------- */
 document.getElementById("csvBtn").addEventListener("click", function(){
   const n = ROWS.length;
-  const lines = [["question","answer","count","percent"]];
+  /* The marker row and the source column both travel with the data. A reader
+     who renames the file, or pastes a handful of rows into a deck, still sees
+     that these are invented numbers. */
+  const MARK = "SAMPLE";
+  const lines = [
+    ["SAMPLE DATA, NOT REAL RESPONSES","Twenty invented respondents. Do not cite these figures.","",""," "],
+    ["question","answer","count","percent","source"]
+  ];
   const singles = ["role","years","setting","member","saturday","length","format","topic_first","price","payer"];
   const multis = ["grades","content","alt_times","topics_top3"];
   singles.forEach(function(f){
     sortEntries(countSingle(ROWS,f), ORDER[f]).forEach(function(e){
-      lines.push([f,e[0],e[1],pct(e[1],n)+"%"]);
+      lines.push([f,e[0],e[1],pct(e[1],n)+"%",MARK]);
     });
   });
   multis.forEach(function(f){
     sortEntries(countMulti(ROWS,f)).forEach(function(e){
-      lines.push([f,e[0],e[1],pct(e[1],n)+"%"]);
+      lines.push([f,e[0],e[1],pct(e[1],n)+"%",MARK]);
     });
   });
   const csv = lines.map(function(r){

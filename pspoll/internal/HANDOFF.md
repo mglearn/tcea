@@ -29,6 +29,7 @@ Proposed pricing under test: ninety nine dollars for TCEA members, one hundred t
 | `SETUP.md` | `pspoll/internal/` | Step by step deployment guide | Complete |
 | `HANDOFF.md` | `pspoll/internal/` | This file | Complete |
 | `pedagogy-showcase-poll.zip` | `pspoll/internal/` | Standalone bundle of everything, flat layout | Rebuilt whenever a source file changes |
+| `README.md` | zip only | One page orientation, the first thing to read in the bundle | Complete |
 | `qa/mock.json` | zip only | Forty seven synthetic responses | For local testing only |
 | `qa/run.py` | zip only | Playwright QA harness | Serves the files on port 8099 and screenshots both pages |
 
@@ -70,7 +71,7 @@ POST uses `Content-Type: text/plain;charset=utf-8` deliberately. That avoids a C
 
 ## Design decisions worth preserving
 
-**Question set.** Twelve required questions plus one optional multi select and one optional open text. Four blocks: About your work, When you would attend, What you would attend, What a seat is worth. Target completion time is two minutes.
+**Question set.** Fifteen questions. Twelve required, plus two optional multi selects, `content` and `alt_times`, and one optional open text, `topic_missing`. Four blocks: About your work, When you would attend, What you would attend, What a seat is worth. Target completion time is two minutes.
 
 **Everyone answers the backup windows question**, including people who said Saturday works. That gives a fallback ranking rather than a partial one.
 
@@ -166,7 +167,7 @@ Run these from the unzipped bundle, where everything is flat:
 ```bash
 cp index.html qa/poll.html
 cp results.html qa/report.html
-sed -i 's|^const ENDPOINT = ".*";|const ENDPOINT = "mock.json";|' qa/report.html
+sed -i 's|^const ENDPOINT = ".*";|const ENDPOINT = "mock.json";|' qa/poll.html qa/report.html
 ```
 
 Working in the repo instead, the published pages are one level up from this file:
@@ -174,10 +175,12 @@ Working in the repo instead, the published pages are one level up from this file
 ```bash
 cp ../index.html qa/poll.html
 cp ../results.html qa/report.html
-sed -i 's|^const ENDPOINT = ".*";|const ENDPOINT = "mock.json";|' qa/report.html
+sed -i 's|^const ENDPOINT = ".*";|const ENDPOINT = "mock.json";|' qa/poll.html qa/report.html
 ```
 
-The `sed` matches on the `ENDPOINT` constant rather than on a specific URL, so it keeps working after a redeploy changes the `/exec` address. An earlier version matched the placeholder text by value and silently did nothing once the real URL was wired in, which pointed the QA report at live data.
+The `sed` runs against **both** copies. An earlier version of these instructions pointed only `qa/report.html` at the mock, which left `qa/poll.html` holding the live `/exec` URL. The harness never completes a submission, so nothing reached the sheet, but one stray click during manual poking would have posted a junk row to production.
+
+The `sed` also matches on the `ENDPOINT` constant rather than on a specific URL, so it keeps working after a redeploy changes the `/exec` address. An even earlier version matched the placeholder text by value and silently did nothing once the real URL was wired in.
 
 `results2.html` needs none of this. It already carries its own data, so serve it and load it directly.
 
