@@ -142,17 +142,14 @@ footer{background:var(--navy);color:var(--pale-navy);padding:1.3rem 0;font-size:
 
     <section class="card">
       <h2>Presenter matchups</h2>
-      <p class="sub">Each presenter offered two session options. The stronger option in each pair carries the higher first choice count.</p>
+      <p class="sub">Each presenter offered two session options. The stronger option in each pair is the one more respondents named among their top three.</p>
       <div id="matchups"></div>
     </section>
 
     <section class="card">
       <h2>Session demand across all eight options</h2>
-      <p class="sub">Top three picks show breadth of interest. First choice shows what people would actually register for.</p>
-      <div class="grid2">
-        <div><h3 class="mini">Named in the top three</h3><div id="c-topics3"></div></div>
-        <div><h3 class="mini">Chosen as the single must attend</h3><div id="c-topic1"></div></div>
-      </div>
+      <p class="sub">How many respondents named each session among their top three. The poll no longer asks for a single must attend pick, so breadth of interest is the ranking signal.</p>
+      <div><h3 class="mini">Named in the top three</h3><div id="c-topics3"></div></div>
     </section>
 
     <section class="card">
@@ -164,7 +161,8 @@ footer{background:var(--navy);color:var(--pale-navy);padding:1.3rem 0;font-size:
           <h3 class="mini">Preferred length</h3><div id="c-len"></div>
         </div>
         <div>
-          <h3 class="mini">Backup windows that work</h3><div id="c-alt"></div>
+          <h3 class="mini">Backup windows that work</h3>
+          <p class="muted" id="alt-note"></p><div id="c-alt"></div>
           <h3 class="mini">Live or recorded</h3><div id="c-fmt"></div>
         </div>
       </div>
@@ -179,25 +177,20 @@ footer{background:var(--navy);color:var(--pale-navy);padding:1.3rem 0;font-size:
         <div>
           <h3 class="mini">Role</h3><div id="c-role"></div>
           <h3 class="mini">Years in education</h3><div id="c-years"></div>
-          <h3 class="mini">TCEA membership</h3><div id="c-member"></div>
         </div>
         <div>
           <h3 class="mini">Grade bands served</h3><div id="c-grades"></div>
-          <h3 class="mini">Setting</h3><div id="c-setting"></div>
           <h3 class="mini">Content areas supported</h3><div id="c-content"></div>
         </div>
       </div>
     </section>
 
     <section class="card">
-      <h2>Price and payer</h2>
-      <p class="sub">Compare these against the proposed member price of ninety nine dollars.</p>
-      <div class="grid2">
-        <div><h3 class="mini">Fair price for a half day</h3><div id="c-price"></div></div>
-        <div><h3 class="mini">Who pays</h3><div id="c-payer"></div></div>
-      </div>
-      <h3 class="mini">Price expectation by payer</h3>
-      <div id="x-pricepayer"></div>
+      <h2>Who pays</h2>
+      <p class="sub">The poll now states the planned prices rather than asking what a seat is worth, so what is left to learn is where the money would come from.</p>
+      <div><h3 class="mini">Who pays</h3><div id="c-payer"></div></div>
+      <h3 class="mini">Funding source by role</h3>
+      <div id="x-rolepayer"></div>
     </section>
 
     <section class="card">
@@ -229,10 +222,12 @@ const PRESENTERS = ["Bruce","Diana","Peggy","Miguel"];
 const ORDER = {
   years:["Three years or fewer","Four to ten years","Eleven to twenty years","More than twenty years"],
   saturday:["Yes, a Saturday works","Maybe, it depends on the date","No, I will not attend on a Saturday"],
-  price:["Forty nine dollars or less","Fifty to seventy nine dollars","Eighty to ninety nine dollars",
-         "One hundred to one hundred twenty nine dollars","More than one hundred twenty nine dollars","Price is not my decision"],
-  member:["Yes","No","Not sure"]
+  payer:["I pay out of pocket","My campus budget","My district budget","Grant or federal program funds","Not sure"]
 };
+
+/* Only people who ruled out a Saturday are asked for backup windows, so those
+   percentages run against that group rather than against everybody. */
+const SAT_NO = "No, I will not attend on a Saturday";
 
 let ROWS = [], SHEET_URL = "";
 
@@ -299,17 +294,13 @@ const SAMPLE_ROWS = [
     "grades": "PK to 2",
     "content": "ELA and reading",
     "years": "Four to ten years",
-    "setting": "Suburban",
-    "member": "Yes",
     "saturday": "Yes, a Saturday works",
-    "alt_times": "Weekday, right after school from four to six",
+    "alt_times": "",
     "length": "Half day, about three hours",
     "format": "Live if I can, plus the recording",
     "topics_top3": "Exit Tickets | Vocabulary | Feedback Loops",
-    "topic_first": "Exit Tickets",
-    "price": "Eighty to ninety nine dollars",
-    "payer": "My campus budget",
     "topic_missing": "Small group reading rotations that actually hold up when you have thirty kids and one aide.",
+    "payer": "My campus budget",
     "screen": "1512x982"
   },
   {
@@ -318,17 +309,13 @@ const SAMPLE_ROWS = [
     "grades": "3 to 5",
     "content": "Mathematics | Science",
     "years": "Eleven to twenty years",
-    "setting": "Rural or small town",
-    "member": "Yes",
     "saturday": "Maybe, it depends on the date",
-    "alt_times": "A summer weekday | A district holiday or staff development day",
+    "alt_times": "",
     "length": "Half day, about three hours",
     "format": "Live, so I can ask questions",
     "topics_top3": "Feedback Loops | Concept Maps | Prior Knowledge",
-    "topic_first": "Prior Knowledge",
-    "price": "Fifty to seventy nine dollars",
-    "payer": "My district budget",
     "topic_missing": "",
+    "payer": "My district budget",
     "screen": "390x844"
   },
   {
@@ -337,17 +324,13 @@ const SAMPLE_ROWS = [
     "grades": "6 to 8",
     "content": "ELA and reading",
     "years": "Three years or fewer",
-    "setting": "Urban",
-    "member": "No",
     "saturday": "Yes, a Saturday works",
-    "alt_times": "Weekday evening, after six",
+    "alt_times": "",
     "length": "Three or four short sessions, about two hours total",
     "format": "Live if I can, plus the recording",
     "topics_top3": "Vocabulary | Exit Tickets | English Learners",
-    "topic_first": "Vocabulary",
-    "price": "Forty nine dollars or less",
-    "payer": "I pay out of pocket",
     "topic_missing": "Classroom management for first year teachers. Reach me at jsmith@example.org if you build it.",
+    "payer": "I pay out of pocket",
     "screen": "1920x1080"
   },
   {
@@ -356,17 +339,13 @@ const SAMPLE_ROWS = [
     "grades": "9 to 12",
     "content": "Social studies",
     "years": "More than twenty years",
-    "setting": "Suburban",
-    "member": "Yes",
     "saturday": "No, I will not attend on a Saturday",
     "alt_times": "Weekday, during the school day with release time | A district holiday or staff development day",
     "length": "Half day, about three hours",
     "format": "Recording only, on my own schedule",
     "topics_top3": "PBL Critical Thinking | Concept Maps | Feedback Loops",
-    "topic_first": "PBL Critical Thinking",
-    "price": "One hundred to one hundred twenty nine dollars",
-    "payer": "My district budget",
     "topic_missing": "Teaching source credibility when students arrive already using chatbots for research.",
+    "payer": "My district budget",
     "screen": "1440x900"
   },
   {
@@ -375,17 +354,13 @@ const SAMPLE_ROWS = [
     "grades": "3 to 5",
     "content": "Bilingual or ESL",
     "years": "Four to ten years",
-    "setting": "Urban",
-    "member": "Yes",
     "saturday": "Yes, a Saturday works",
-    "alt_times": "Sunday afternoon",
+    "alt_times": "",
     "length": "Half day, about three hours",
     "format": "Live, so I can ask questions",
     "topics_top3": "English Learners | Vocabulary | Exit Tickets",
-    "topic_first": "English Learners",
-    "price": "Eighty to ninety nine dollars",
-    "payer": "My campus budget",
     "topic_missing": "Newcomer supports for students who arrive in the middle of the spring semester.",
+    "payer": "My campus budget",
     "screen": "1280x800"
   },
   {
@@ -394,17 +369,13 @@ const SAMPLE_ROWS = [
     "grades": "PK to 2",
     "content": "Special education",
     "years": "Eleven to twenty years",
-    "setting": "Rural or small town",
-    "member": "Not sure",
     "saturday": "Maybe, it depends on the date",
-    "alt_times": "Weekday, right after school from four to six | A summer weekday",
+    "alt_times": "",
     "length": "Three or four short sessions, about two hours total",
     "format": "Live if I can, plus the recording",
     "topics_top3": "Exit Tickets | Feedback Loops | Vocabulary",
-    "topic_first": "Exit Tickets",
-    "price": "Fifty to seventy nine dollars",
-    "payer": "My campus budget",
     "topic_missing": "",
+    "payer": "My campus budget",
     "screen": "1512x982"
   },
   {
@@ -413,17 +384,13 @@ const SAMPLE_ROWS = [
     "grades": "9 to 12",
     "content": "CTE",
     "years": "Four to ten years",
-    "setting": "Charter",
-    "member": "No",
     "saturday": "No, I will not attend on a Saturday",
     "alt_times": "Weekday evening, after six | Sunday afternoon",
     "length": "One session at a time, spread across several weeks",
     "format": "Recording only, on my own schedule",
     "topics_top3": "PBL Critical Thinking | Peer Review | Concept Maps",
-    "topic_first": "Peer Review",
-    "price": "Forty nine dollars or less",
-    "payer": "I pay out of pocket",
     "topic_missing": "Industry certification prep that does not eat the whole semester.",
+    "payer": "I pay out of pocket",
     "screen": "390x844"
   },
   {
@@ -432,17 +399,13 @@ const SAMPLE_ROWS = [
     "grades": "District wide, all grades",
     "content": "All or multiple areas",
     "years": "More than twenty years",
-    "setting": "Suburban",
-    "member": "Yes",
     "saturday": "Yes, a Saturday works",
-    "alt_times": "Weekday, during the school day with release time",
+    "alt_times": "",
     "length": "Half day, about three hours",
     "format": "Live if I can, plus the recording",
     "topics_top3": "Feedback Loops | PBL Critical Thinking | Concept Maps",
-    "topic_first": "Feedback Loops",
-    "price": "One hundred to one hundred twenty nine dollars",
-    "payer": "My district budget",
     "topic_missing": "Coaching cycles that survive a principal transition.",
+    "payer": "My district budget",
     "screen": "1920x1080"
   },
   {
@@ -451,17 +414,13 @@ const SAMPLE_ROWS = [
     "grades": "6 to 8 | 9 to 12",
     "content": "Mathematics",
     "years": "Eleven to twenty years",
-    "setting": "Urban",
-    "member": "Yes",
     "saturday": "Yes, a Saturday works",
-    "alt_times": "A district holiday or staff development day",
+    "alt_times": "",
     "length": "Half day, about three hours",
     "format": "Live, so I can ask questions",
     "topics_top3": "Concept Maps | Feedback Loops | Exit Tickets",
-    "topic_first": "Concept Maps",
-    "price": "Eighty to ninety nine dollars",
-    "payer": "My district budget",
     "topic_missing": "",
+    "payer": "My district budget",
     "screen": "1440x900"
   },
   {
@@ -470,17 +429,13 @@ const SAMPLE_ROWS = [
     "grades": "3 to 5 | 6 to 8",
     "content": "ELA and reading | Bilingual or ESL",
     "years": "Four to ten years",
-    "setting": "Urban",
-    "member": "Yes",
     "saturday": "Maybe, it depends on the date",
-    "alt_times": "Weekday, right after school from four to six | A summer weekday",
+    "alt_times": "",
     "length": "Three or four short sessions, about two hours total",
     "format": "Live if I can, plus the recording",
     "topics_top3": "English Learners | Vocabulary | Feedback Loops",
-    "topic_first": "English Learners",
-    "price": "Eighty to ninety nine dollars",
-    "payer": "My district budget",
     "topic_missing": "Co teaching models for language support that do not pull students out of core content.",
+    "payer": "My district budget",
     "screen": "1280x800"
   },
   {
@@ -489,17 +444,13 @@ const SAMPLE_ROWS = [
     "grades": "District wide, all grades",
     "content": "Science",
     "years": "Four to ten years",
-    "setting": "Rural or small town",
-    "member": "Not sure",
     "saturday": "Maybe, it depends on the date",
-    "alt_times": "A summer weekday",
+    "alt_times": "",
     "length": "Half day, about three hours",
     "format": "Live if I can, plus the recording",
     "topics_top3": "PBL Critical Thinking | Prior Knowledge | Concept Maps",
-    "topic_first": "PBL Critical Thinking",
-    "price": "Fifty to seventy nine dollars",
-    "payer": "My campus budget",
     "topic_missing": "Phenomenon based science units built for a one section campus.",
+    "payer": "My campus budget",
     "screen": "1512x982"
   },
   {
@@ -508,17 +459,13 @@ const SAMPLE_ROWS = [
     "grades": "PK to 2 | 3 to 5",
     "content": "All or multiple areas",
     "years": "Eleven to twenty years",
-    "setting": "Suburban",
-    "member": "Yes",
     "saturday": "No, I will not attend on a Saturday",
     "alt_times": "Weekday, during the school day with release time | A district holiday or staff development day",
     "length": "Full day",
     "format": "Recording only, on my own schedule",
-    "topics_top3": "Prior Knowledge | Exit Tickets | Vocabulary",
-    "topic_first": "Prior Knowledge",
-    "price": "Price is not my decision",
-    "payer": "My district budget",
+    "topics_top3": "English Learners | Exit Tickets | Vocabulary",
     "topic_missing": "Please post the slides afterward. Our team watches together on Tuesdays.",
+    "payer": "My district budget",
     "screen": "390x844"
   },
   {
@@ -527,17 +474,13 @@ const SAMPLE_ROWS = [
     "grades": "9 to 12",
     "content": "Fine arts",
     "years": "Three years or fewer",
-    "setting": "Private or independent",
-    "member": "No",
     "saturday": "Yes, a Saturday works",
-    "alt_times": "Weekday evening, after six",
+    "alt_times": "",
     "length": "Half day, about three hours",
     "format": "Live, so I can ask questions",
     "topics_top3": "Vocabulary | Peer Review | Feedback Loops",
-    "topic_first": "Vocabulary",
-    "price": "Forty nine dollars or less",
-    "payer": "I pay out of pocket",
     "topic_missing": "",
+    "payer": "I pay out of pocket",
     "screen": "1920x1080"
   },
   {
@@ -546,17 +489,13 @@ const SAMPLE_ROWS = [
     "grades": "District wide, all grades",
     "content": "Library and media",
     "years": "More than twenty years",
-    "setting": "Suburban",
-    "member": "Yes",
     "saturday": "Maybe, it depends on the date",
-    "alt_times": "A district holiday or staff development day",
+    "alt_times": "",
     "length": "Half day, about three hours",
     "format": "Live if I can, plus the recording",
     "topics_top3": "Concept Maps | Vocabulary | Feedback Loops",
-    "topic_first": "Concept Maps",
-    "price": "Eighty to ninety nine dollars",
-    "payer": "My campus budget",
     "topic_missing": "Collaboration planning time with classroom teachers. Details at https://example.org/our-model",
+    "payer": "My campus budget",
     "screen": "1440x900"
   },
   {
@@ -565,17 +504,13 @@ const SAMPLE_ROWS = [
     "grades": "6 to 8",
     "content": "Library and media | ELA and reading",
     "years": "Four to ten years",
-    "setting": "Rural or small town",
-    "member": "Yes",
     "saturday": "Yes, a Saturday works",
-    "alt_times": "A summer weekday",
+    "alt_times": "",
     "length": "Three or four short sessions, about two hours total",
     "format": "Live, so I can ask questions",
     "topics_top3": "Vocabulary | Exit Tickets | Peer Review",
-    "topic_first": "Exit Tickets",
-    "price": "Fifty to seventy nine dollars",
-    "payer": "My campus budget",
     "topic_missing": "",
+    "payer": "My campus budget",
     "screen": "1280x800"
   },
   {
@@ -584,17 +519,13 @@ const SAMPLE_ROWS = [
     "grades": "9 to 12",
     "content": "Library and media",
     "years": "Eleven to twenty years",
-    "setting": "Urban",
-    "member": "Not sure",
     "saturday": "No, I will not attend on a Saturday",
     "alt_times": "Weekday, during the school day with release time",
     "length": "Half day, about three hours",
     "format": "Recording only, on my own schedule",
     "topics_top3": "Feedback Loops | PBL Critical Thinking | Concept Maps",
-    "topic_first": "Feedback Loops",
-    "price": "One hundred to one hundred twenty nine dollars",
-    "payer": "Grant or federal program funds",
     "topic_missing": "Weeding a collection nobody has audited since 2014.",
+    "payer": "Grant or federal program funds",
     "screen": "1512x982"
   },
   {
@@ -603,17 +534,13 @@ const SAMPLE_ROWS = [
     "grades": "District wide, all grades",
     "content": "All or multiple areas",
     "years": "More than twenty years",
-    "setting": "Suburban",
-    "member": "Yes",
     "saturday": "Maybe, it depends on the date",
-    "alt_times": "A district holiday or staff development day | Weekday, during the school day with release time",
+    "alt_times": "",
     "length": "Half day, about three hours",
     "format": "Live if I can, plus the recording",
     "topics_top3": "Feedback Loops | Prior Knowledge | PBL Critical Thinking",
-    "topic_first": "Feedback Loops",
-    "price": "More than one hundred twenty nine dollars",
-    "payer": "Grant or federal program funds",
     "topic_missing": "Walkthrough feedback that teachers do not dread.",
+    "payer": "Grant or federal program funds",
     "screen": "390x844"
   },
   {
@@ -622,17 +549,13 @@ const SAMPLE_ROWS = [
     "grades": "PK to 2 | 3 to 5",
     "content": "All or multiple areas",
     "years": "Eleven to twenty years",
-    "setting": "Rural or small town",
-    "member": "Yes",
     "saturday": "Yes, a Saturday works",
-    "alt_times": "Weekday, during the school day with release time",
+    "alt_times": "",
     "length": "Full day",
     "format": "Live if I can, plus the recording",
     "topics_top3": "PBL Critical Thinking | English Learners | Concept Maps",
-    "topic_first": "PBL Critical Thinking",
-    "price": "Eighty to ninety nine dollars",
-    "payer": "I pay out of pocket",
     "topic_missing": "Call me at 512.555.0134 and I will send our schedule.",
+    "payer": "I pay out of pocket",
     "screen": "1920x1080"
   },
   {
@@ -641,17 +564,13 @@ const SAMPLE_ROWS = [
     "grades": "District wide, all grades",
     "content": "All or multiple areas",
     "years": "Four to ten years",
-    "setting": "Urban",
-    "member": "Yes",
     "saturday": "Maybe, it depends on the date",
-    "alt_times": "Weekday evening, after six | A summer weekday",
+    "alt_times": "",
     "length": "Three or four short sessions, about two hours total",
     "format": "Recording only, on my own schedule",
     "topics_top3": "English Learners | Vocabulary | Exit Tickets",
-    "topic_first": "English Learners",
-    "price": "Fifty to seventy nine dollars",
-    "payer": "Not sure",
     "topic_missing": "Rolling out AI tools without creating a student data problem.",
+    "payer": "Not sure",
     "screen": "1440x900"
   },
   {
@@ -660,17 +579,13 @@ const SAMPLE_ROWS = [
     "grades": "District wide, all grades",
     "content": "All or multiple areas",
     "years": "More than twenty years",
-    "setting": "Not campus based",
-    "member": "Yes",
     "saturday": "No, I will not attend on a Saturday",
     "alt_times": "Weekday, during the school day with release time",
     "length": "Half day, about three hours",
     "format": "Live if I can, plus the recording",
     "topics_top3": "Feedback Loops | Prior Knowledge | Exit Tickets",
-    "topic_first": "Feedback Loops",
-    "price": "One hundred to one hundred twenty nine dollars",
-    "payer": "My district budget",
     "topic_missing": "Helping teachers read their own assessment data without needing us to build the report.",
+    "payer": "My district budget",
     "screen": "1280x800"
   }
 ];
@@ -707,35 +622,36 @@ function build(){
   const sat = countSingle(ROWS,"saturday");
   const satYes = (sat["Yes, a Saturday works"]||0);
   const satMaybe = (sat["Maybe, it depends on the date"]||0);
-  const first = countSingle(ROWS,"topic_first");
-  const topTopic = sortEntries(first)[0];
-  const price = countSingle(ROWS,"price");
-  const priceOk = (price["Eighty to ninety nine dollars"]||0) +
-                  (price["One hundred to one hundred twenty nine dollars"]||0) +
-                  (price["More than one hundred twenty nine dollars"]||0);
-  const member = countSingle(ROWS,"member");
+  const satNo = (sat[SAT_NO]||0);
+  const three = countMulti(ROWS,"topics_top3");
+  const topTopic = sortEntries(three)[0];
+  const fmt = countSingle(ROWS,"format");
+  const wantsLive = (fmt["Live, so I can ask questions"]||0) +
+                    (fmt["Live if I can, plus the recording"]||0);
+  const payer = countSingle(ROWS,"payer");
+  const funded = (payer["My campus budget"]||0) + (payer["My district budget"]||0);
 
   document.getElementById("kpis").innerHTML = [
     kpi(n,"Responses so far"),
     kpi(pct(satYes+satMaybe,n)+"%","Open to a Saturday"),
     kpi(topTopic ? topTopic[0] : "None","Most requested session"),
-    kpi(pct(priceOk,n)+"%","Would pay eighty dollars or more"),
-    kpi(pct(member["Yes"]||0,n)+"%","TCEA members")
+    kpi(pct(wantsLive,n)+"%","Want a live session"),
+    kpi(pct(funded,n)+"%","Campus or district funded")
   ].join("");
 
-  /* matchups */
-  const three = countMulti(ROWS,"topics_top3");
+  /* matchups, ranked on top three breadth now that first choice is gone */
   let rowsHtml = '<div class="tscroll"><table class="matrix"><thead><tr><th>Presenter</th><th>Session option</th>'+
-    '<th class="num">First choice</th><th class="num">Top three</th></tr></thead><tbody>';
+    '<th class="num">Named in top three</th></tr></thead><tbody>';
   PRESENTERS.forEach(function(p){
     const opts = Object.keys(TOPIC_META).filter(function(k){return TOPIC_META[k].presenter===p;});
-    const scores = opts.map(function(k){return {k:k, f:(first[k]||0), t:(three[k]||0)};});
-    const win = scores.slice().sort(function(a,b){ return (b.f-a.f) || (b.t-a.t); })[0];
+    const scores = opts.map(function(k){return {k:k, t:(three[k]||0)};});
+    const win = scores.slice().sort(function(a,b){ return b.t-a.t; })[0];
+    const tied = scores.length > 1 && scores[0].t === scores[1].t;
     scores.forEach(function(s){
-      const isWin = s.k===win.k && (win.f>0 || win.t>0) && !(scores[0].f===scores[1].f && scores[0].t===scores[1].t);
+      const isWin = s.k===win.k && win.t>0 && !tied;
       rowsHtml += '<tr class="'+(isWin?"win":"")+'"><td>'+p+'</td><td>'+esc(TOPIC_META[s.k].title)+
         (isWin?'<span class="badge">Stronger</span>':'')+'</td>'+
-        '<td class="num">'+s.f+' ('+pct(s.f,n)+'%)</td><td class="num">'+s.t+' ('+pct(s.t,n)+'%)</td></tr>';
+        '<td class="num">'+s.t+' ('+pct(s.t,n)+'%)</td></tr>';
     });
   });
   rowsHtml += '</tbody></table></div>';
@@ -744,25 +660,26 @@ function build(){
   /* charts */
   Object.keys(TOPIC_META).forEach(function(k){
     if(!(k in three)) three[k]=0;
-    if(!(k in first)) first[k]=0;
   });
   bars("c-topics3", three, n);
-  bars("c-topic1", first, n);
   bars("c-sat", sat, n, {order:ORDER.saturday});
-  bars("c-alt", countMulti(ROWS,"alt_times"), n);
+  /* Backup windows were shown only to the people who ruled out a Saturday,
+     so they are the denominator. Using n would understate every window. */
+  document.getElementById("alt-note").textContent = satNo
+    ? "Asked only of the " + satNo + " " + (satNo === 1 ? "person" : "people") +
+      " who ruled out a Saturday. Percentages below are of that group."
+    : "Nobody has ruled out a Saturday yet, so this question has not been shown.";
+  bars("c-alt", countMulti(ROWS,"alt_times"), satNo);
   bars("c-len", countSingle(ROWS,"length"), n);
-  bars("c-fmt", countSingle(ROWS,"format"), n);
+  bars("c-fmt", fmt, n);
   bars("c-role", countSingle(ROWS,"role"), n);
   bars("c-years", countSingle(ROWS,"years"), n, {order:ORDER.years});
-  bars("c-member", countSingle(ROWS,"member"), n, {order:ORDER.member});
   bars("c-grades", countMulti(ROWS,"grades"), n);
-  bars("c-setting", countSingle(ROWS,"setting"), n);
   bars("c-content", countMulti(ROWS,"content"), n);
-  bars("c-price", countSingle(ROWS,"price"), n, {order:ORDER.price});
-  bars("c-payer", countSingle(ROWS,"payer"), n);
+  bars("c-payer", payer, n, {order:ORDER.payer});
 
   crosstab("x-satrole","role","saturday",ORDER.saturday);
-  crosstab("x-pricepayer","payer","price",ORDER.price);
+  crosstab("x-rolepayer","role","payer",ORDER.payer);
 
   /* free text */
   const notes = ROWS.map(function(r){return (r.topic_missing||"").trim();})
@@ -771,7 +688,7 @@ function build(){
     ? notes.map(function(t){return '<div class="quote">'+esc(scrub(t))+'</div>';}).join("")
     : '<p class="muted">No one has written in a topic yet.</p>';
 
-  buildInsights(n, sat, first, three, price, member);
+  buildInsights(n, sat, three, satNo);
 }
 
 function kpi(v,l){ return '<div class="kpi"><div class="n">'+esc(v)+'</div><div class="l">'+l+'</div></div>'; }
@@ -819,20 +736,18 @@ function shortLabel(c){
   if(c.indexOf("Yes, a Saturday")===0) return "Yes";
   if(c.indexOf("Maybe")===0) return "Maybe";
   if(c.indexOf("No, I will not")===0) return "No";
-  if(c==="Forty nine dollars or less") return "$49 or less";
-  if(c==="Fifty to seventy nine dollars") return "$50 to $79";
-  if(c==="Eighty to ninety nine dollars") return "$80 to $99";
-  if(c==="One hundred to one hundred twenty nine dollars") return "$100 to $129";
-  if(c==="More than one hundred twenty nine dollars") return "Over $129";
-  if(c==="Price is not my decision") return "Not my call";
+  if(c==="I pay out of pocket") return "Out of pocket";
+  if(c==="My campus budget") return "Campus";
+  if(c==="My district budget") return "District";
+  if(c==="Grant or federal program funds") return "Grant";
   return c;
 }
 
-function buildInsights(n, sat, first, three, price, member){
+function buildInsights(n, sat, three, satNo){
   const out = [];
   const yes = sat["Yes, a Saturday works"]||0;
   const maybe = sat["Maybe, it depends on the date"]||0;
-  const no = sat["No, I will not attend on a Saturday"]||0;
+  const no = sat[SAT_NO]||0;
 
   if(yes+maybe >= no){
     out.push("A Saturday clears the bar. "+pct(yes,n)+" percent say yes outright and another "+pct(maybe,n)+
@@ -842,60 +757,45 @@ function buildInsights(n, sat, first, three, price, member){
       " percent who commit to it. Look hard at the backup windows below before you lock a date.");
   }
 
+  /* Only the people who ruled out a Saturday were asked, so satNo is the
+     denominator here rather than n. */
   const alt = sortEntries(countMulti(ROWS,"alt_times"));
-  if(alt.length){
-    out.push("The strongest backup window is this one, "+alt[0][0]+", chosen by "+pct(alt[0][1],n)+
-      " percent"+(alt[1] ? ". Next comes "+alt[1][0]+" at "+pct(alt[1][1],n)+" percent." : "."));
+  if(alt.length && satNo){
+    out.push("Among the "+satNo+" who ruled out a Saturday, the strongest backup window is "+alt[0][0]+
+      ", chosen by "+pct(alt[0][1],satNo)+" percent"+
+      (alt[1] ? ". Next comes "+alt[1][0]+" at "+pct(alt[1][1],satNo)+" percent." : "."));
   }
 
-  const f = sortEntries(first);
-  if(f.length){
-    out.push("If people could attend only one session, "+f[0][0]+" wins with "+pct(f[0][1],n)+
-      " percent of first choices"+(f[1] ? ", ahead of "+f[1][0]+" at "+pct(f[1][1],n)+" percent." : "."));
-  }
   const t3 = sortEntries(three);
-  if(t3.length && f.length && t3[0][0] !== f[0][0]){
-    out.push(t3[0][0]+" draws the broadest interest at "+pct(t3[0][1],n)+
-      " percent of top three picks even though it is not the top first choice. That combination usually means a good opener rather than a headliner.");
+  if(t3.length){
+    out.push("The broadest interest goes to "+t3[0][0]+", named in the top three by "+pct(t3[0][1],n)+
+      " percent"+(t3[1] ? ", ahead of "+t3[1][0]+" at "+pct(t3[1][1],n)+" percent." : "."));
   }
-  if(f.length > 2){
-    const weak = f[f.length-1];
-    out.push("The weakest option is "+weak[0]+" at "+pct(weak[1],n)+
-      " percent of first choices. Consider cutting it or folding it into another session.");
-  }
-
-  const willPay = (price["Eighty to ninety nine dollars"]||0)+
-                  (price["One hundred to one hundred twenty nine dollars"]||0)+
-                  (price["More than one hundred twenty nine dollars"]||0);
-  const under = (price["Forty nine dollars or less"]||0)+(price["Fifty to seventy nine dollars"]||0);
-  if(willPay >= under){
-    out.push("Pricing holds. "+pct(willPay,n)+" percent put fair value at eighty dollars or more, which supports the ninety nine dollar member rate.");
-  } else {
-    out.push("Pricing is a risk. "+pct(under,n)+" percent put fair value below eighty dollars, so the ninety nine dollar member rate may need a bundle, an early rate, or added value to hold.");
+  if(t3.length > 2){
+    const weak = t3[t3.length-1];
+    const tiedAtBottom = t3.length > 1 && t3[t3.length-2][1] === weak[1];
+    if(!tiedAtBottom){
+      out.push("The weakest option is "+weak[0]+" at "+pct(weak[1],n)+
+        " percent of top three picks. Consider cutting it or folding it into another session.");
+    }
   }
 
-  const payer = sortEntries(countSingle(ROWS,"payer"));
-  if(payer.length && payer[0][0].indexOf("out of pocket") > -1){
-    out.push("Most respondents expect to pay out of pocket, so price sensitivity here is real rather than budgetary.");
-  } else if(payer.length){
-    out.push("The most common funding source is this one, "+payer[0][0]+", at "+pct(payer[0][1],n)+
+  const payerRank = sortEntries(countSingle(ROWS,"payer"));
+  if(payerRank.length && payerRank[0][0].indexOf("out of pocket") > -1){
+    out.push("Most respondents expect to pay out of pocket, so the published member rate carries more weight than any district discount.");
+  } else if(payerRank.length){
+    out.push("The most common funding source is "+payerRank[0][0]+", at "+pct(payerRank[0][1],n)+
       " percent, which means purchase orders and district invoicing need to work smoothly at checkout.");
   }
 
-  const nonMember = member["No"]||0;
-  if(nonMember >= n*0.3){
-    out.push(pct(nonMember,n)+" percent are not TCEA members, so the showcase doubles as a membership funnel. Price the member discount to make joining the cheaper path.");
-  }
-
-  const fmt = sortEntries(countSingle(ROWS,"format"));
-  if(fmt.length){
-    out.push("On format, the leading answer at "+pct(fmt[0][1],n)+" percent is this one, "+fmt[0][0]+
-      ". That shapes how much you invest in live facilitation versus the LearnDash on demand version.");
+  const fmtRank = sortEntries(countSingle(ROWS,"format"));
+  if(fmtRank.length){
+    out.push("On format, the leading answer at "+pct(fmtRank[0][1],n)+" percent is "+fmtRank[0][0]+
+      ". That shapes how much you invest in live facilitation versus the on demand version.");
   }
 
   document.getElementById("insights").innerHTML = out.map(function(x){return "<li>"+esc(x)+"</li>";}).join("");
 }
-
 /* ---------- CSV of aggregates ---------- */
 document.getElementById("csvBtn").addEventListener("click", function(){
   const n = ROWS.length;
@@ -907,7 +807,7 @@ document.getElementById("csvBtn").addEventListener("click", function(){
     ["SAMPLE DATA, NOT REAL RESPONSES","Twenty invented respondents. Do not cite these figures.","",""," "],
     ["question","answer","count","percent","source"]
   ];
-  const singles = ["role","years","setting","member","saturday","length","format","topic_first","price","payer"];
+  const singles = ["role","years","saturday","length","format","payer"];
   const multis = ["grades","content","alt_times","topics_top3"];
   singles.forEach(function(f){
     sortEntries(countSingle(ROWS,f), ORDER[f]).forEach(function(e){

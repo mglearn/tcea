@@ -71,15 +71,21 @@ POST uses `Content-Type: text/plain;charset=utf-8` deliberately. That avoids a C
 
 ## Design decisions worth preserving
 
-**Question set.** Fifteen questions. Twelve required, plus two optional multi selects, `content` and `alt_times`, and one optional open text, `topic_missing`. Four blocks: About your work, When you would attend, What you would attend, What a seat is worth. Target completion time is two minutes.
+**Question set.** Eleven questions. Eight required, plus two optional multi selects, `content` and `alt_times`, and one optional open text, `topic_missing`. Four blocks: About your work, When you would attend, What you would attend, Paying for your seat. Most respondents see ten, because `alt_times` appears only for people who rule out a Saturday. Target completion time is under two minutes.
 
-**Everyone answers the backup windows question**, including people who said Saturday works. That gives a fallback ranking rather than a partial one.
+**Only Saturday decliners answer the backup windows question.** It carries `showIf:{field:"saturday", equals:["No, I will not attend on a Saturday"]}`. An earlier version asked everybody, on the reasoning that a fallback ranking beats a partial one. That was reversed deliberately, to keep the form short for the people who already said yes.
 
-**Two topic questions, not one.** `topics_top3` measures breadth of interest. `topic_first` measures registration intent. The gap between them is the analytically interesting part. A session high on breadth and low on first choice is an opener, not a headliner, and the report says so.
+The consequence matters when you read the report. Backup window percentages run against the decliners, not the whole sample, and the report labels them that way. Using the full count would understate every window.
+
+**One topic question, not two.** `topics_top3` measures breadth of interest, and it is now the only session signal. An earlier version added `topic_first` to capture registration intent, so the report could show the gap between breadth and intent. That question was cut.
+
+What this costs you: presenter matchups now rank on breadth alone. The report can still say which of a presenter's two options draws more interest, but it can no longer distinguish a session everybody would happily attend from one people would actually register for. If that distinction matters for the final lineup, put `topic_first` back, add it to `FIELDS` in `Code.gs`, and restore the first choice column in both report files.
 
 **Top three picker swaps rather than blocks.** Selecting a fourth option silently drops the earliest pick. An earlier version disabled the remaining checkboxes at the limit, which forced users to uncheck before changing their mind. Do not revert to disabling.
 
-**Price framing.** Answer bands are anchored around the proposed ninety nine dollar member rate, and a separate question asks who pays. Out of pocket price sensitivity and district budget price sensitivity are different problems and need to be separable.
+**Prices are stated, not tested.** The poll used to ask what a fair price would be, in bands anchored around the ninety nine dollar member rate. That question was cut, and the planned prices now appear as help text under the payer question: ninety nine dollars for members, one hundred twenty nine for non members, eighty nine for groups of ten or more.
+
+So the poll no longer measures price sensitivity at all. `payer` still tells you where the money comes from, which is what the report shows. If you want willingness to pay back, restore the `price` question and its analysis in both report files.
 
 **Privacy floor.** Cross tabs suppress any group under `MIN_CELL`, currently five. Free text runs through `scrub()` which strips email addresses, phone numbers, and URLs before rendering. Neither is optional. If you add breakdowns, route them through `crosstab()` so suppression applies automatically.
 
@@ -99,9 +105,11 @@ How it differs from the real report:
 - `MIN_CELL` stays at five on purpose. Of the five role groups, two clear the floor and three are suppressed, so the privacy behavior is visible rather than hypothetical.
 - Three of the free text answers carry a planted email address, phone number, and URL so `scrub()` can be seen working.
 
-If you regenerate the data, two rules keep it valid. Every value must be an exact option string from `BLOCKS` in `index.html`, because the report matches on exact text and a near miss silently counts as zero. And each respondent's `topic_first` must appear in its own `topics_top3`, since the poll enforces that.
+If you regenerate the data, three rules keep it valid. Every value must be an exact option string from `BLOCKS` in `index.html`, because the report matches on exact text and a near miss silently counts as zero. Each respondent picks exactly three topics. And `alt_times` must be empty for anybody who did not answer `No, I will not attend on a Saturday`, since the live poll clears that field when it hides the question.
 
-Avoid ties at the top of `topic_first`. `buildInsights()` has no tie handling, so two sessions level on first choices produce the sentence "wins with 20 percent of first choices, ahead of X at 20 percent," which reads as broken. That gap is worth fixing in `buildInsights()` if real responses ever land on a tie.
+Avoid ties at the top of `topics_top3`, and avoid a tie for last place. `buildInsights()` has no tie handling, so two sessions level at the top produce "the broadest interest goes to A, ahead of B at the same percent," which reads as broken. The bottom is guarded in code now, since the weakest option line is skipped when the last two are level, but the top is not. Keep one clear leader.
+
+Also keep each presenter pair unequal on breadth, or that pair shows no Stronger badge and the matchup table looks unfinished.
 
 ---
 
@@ -138,17 +146,17 @@ The banned word list has one exception already in the files. Original session ti
 These ids appear in three places and must stay identical across all of them: question `id` in `BLOCKS` (poll), `FIELDS` array (Code.gs), and the keys read in `build()` (report).
 
 ```
-role, grades, content, years, setting, member,
+role, grades, content, years,
 saturday, alt_times, length, format,
-topics_top3, topic_first, topic_missing,
-price, payer, screen
+topics_top3, topic_missing,
+payer, screen
 ```
 
 Multi select values are stored as a single string joined with ` | `. The report splits on `|` and trims.
 
 The report also matches on exact option text in three objects. Change an option label in the poll and you must change it here too.
 
-- `ORDER` fixes display order for ordinal fields, years, saturday, price, member.
+- `ORDER` fixes display order for ordinal fields, years, saturday, payer.
 - `TOPIC_META` maps the eight short topic values to presenter, option number, and full title.
 - `shortLabel()` abbreviates long option text for cross tab column headers.
 
@@ -193,7 +201,7 @@ Last run of the Playwright harness: no console errors, forty seven mock response
 ## Known gaps and reasonable next work
 
 - **No duplicate submission guard.** Someone can submit twice. A per browser flag would help but is defeatable, so it was left out rather than implying protection that does not exist.
-- **No conditional question logic.** The backup windows question shows for everyone by design, but if the question set grows, a `showIf` mechanism in the render loop would be the clean addition.
+- **Conditional logic exists but is minimal.** `showIf` supports one field matched against a list of accepted answers, evaluated in `visible()`. It handles hiding, clearing the hidden answer, renumbering, and excluding hidden questions from the required set. It does not support multiple conditions, negation, or nesting. Add those only if a second conditional question actually needs them.
 - **The report loads every row on each refresh.** Fine at a few thousand responses. Past that, move aggregation into `doGet` and return counts instead of rows.
 - **No thank you page redirect.** Submission swaps to an inline confirmation. If the team wants a discount code delivered on completion, that is where it goes.
 - **Insights are template driven,** not statistical. They restate the largest numbers with a recommendation attached. If the team wants confidence intervals or significance testing on the presenter matchups, that work does not exist yet.

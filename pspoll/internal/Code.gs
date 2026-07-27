@@ -28,19 +28,21 @@ var TAB_NAME    = 'Responses';
 var REPORT_KEY  = 'CHANGE-ME';
 
 // Column order. These ids must match the question ids in index.html.
+// Changing this list shifts every column, so run clearResponses or start a
+// fresh sheet rather than mixing old rows with new ones.
 var FIELDS = [
-  'role', 'grades', 'content', 'years', 'setting', 'member',
+  'role', 'grades', 'content', 'years',
   'saturday', 'alt_times', 'length', 'format',
-  'topics_top3', 'topic_first', 'topic_missing',
-  'price', 'payer', 'screen'
+  'topics_top3', 'topic_missing',
+  'payer', 'screen'
 ];
 
 // Friendly header labels, same order as FIELDS.
 var HEADERS = [
-  'Role', 'Grade bands', 'Content areas', 'Years in education', 'Setting', 'TCEA member',
+  'Role', 'Grade bands', 'Content areas', 'Years in education',
   'Saturday', 'Backup windows', 'Preferred length', 'Live or recorded',
-  'Top three sessions', 'First choice session', 'Topic requested',
-  'Fair price', 'Who pays', 'Screen size'
+  'Top three sessions', 'Topic requested',
+  'Who pays', 'Screen size'
 ];
 
 /* ---------------- run these by hand ---------------- */

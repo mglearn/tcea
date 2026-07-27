@@ -130,6 +130,8 @@ Saving the script does nothing to the live URL. Every time you edit `Code.gs`:
 
 Your `/exec` URL stays the same, so the HTML files need no changes.
 
+**If you changed `FIELDS`, clear the sheet first.** `FIELDS` sets the column order. Adding, cutting, or reordering an entry shifts every column after it, and old rows keep the old layout, so a sheet holding both is unreadable. Run `clearResponses` from the editor, or run `setup` against a fresh spreadsheet, then deploy a new version. This applies to the current file: four questions were cut, so any responses gathered before that change will not line up.
+
 ---
 
 ## Privacy protections already built in
@@ -164,7 +166,8 @@ Every question lives in the `BLOCKS` array in `index.html`. Add, cut, or reword 
 
 1. If you add a question, add its `id` to `FIELDS` in `Code.gs`, add a matching label to `HEADERS`, then deploy a new version.
 2. If you rename an existing question id, the spreadsheet column order shifts. Run `clearResponses` first or start a new sheet, since old rows will no longer line up.
-3. If you reword an answer option, update `ORDER`, `TOPIC_META`, and `shortLabel` in `results.html`. Those match on exact strings.
+3. If you reword an answer option, update `ORDER`, `TOPIC_META`, and `shortLabel` in **both** `results.html` and `results2.html`. Those match on exact strings, and a near miss silently counts as zero rather than raising an error.
+4. To show a question only for certain answers, give it `showIf:{field:"<other id>", equals:["<answer>", ...]}`. The backup windows question uses this. Hidden questions are cleared, skipped when checking required answers, and left out of the numbering.
 
 The poll shows shortened session titles for scanning. The report expands them through `TOPIC_META`.
 
@@ -172,10 +175,10 @@ The poll shows shortened session titles for scanning. The report expands them th
 
 ## What the report gives you
 
-- **Presenter matchups.** For each of the four presenters, which of the two options pulls more first choice votes. That is the decision the showcase planning doc asks for.
-- **Session demand.** All eight options ranked by breadth and by must attend interest. High breadth with low first choice means a good opener, not a headliner.
-- **Scheduling.** Whether Saturday clears the bar, the strongest backup windows, and Saturday willingness broken out by role.
-- **Price.** How the room reacts to the ninety nine dollar member rate, split by who actually pays.
+- **Presenter matchups.** For each of the four presenters, which of the two options more respondents named among their top three. That is the decision the showcase planning doc asks for. Note that it now rests on breadth of interest, since the single must attend question was cut.
+- **Session demand.** All eight options ranked by how many people put them in their top three.
+- **Scheduling.** Whether Saturday clears the bar, the strongest backup windows among the people who ruled Saturday out, and Saturday willingness broken out by role.
+- **Funding.** Where the money would come from, and how that splits by role. The poll states the planned prices rather than asking what a seat is worth, so it no longer measures willingness to pay.
 - **Written requests.** Topics people asked for that nobody proposed.
 
 Buttons across the top refresh the data, print to PDF, download a summary CSV for board reports, and open the raw spreadsheet.

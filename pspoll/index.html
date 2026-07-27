@@ -59,6 +59,7 @@ section.block > .block-note{font-size:.9rem;color:var(--text-muted);margin:.6rem
 .q:first-of-type{border-top:none;margin-top:.4rem}
 .q-label{font-weight:600;font-size:1.02rem;color:var(--navy);display:block}
 .q-req{color:var(--teal);font-weight:700;margin-left:.25rem}
+.q-num{color:var(--text-muted);font-weight:700;font-variant-numeric:tabular-nums}
 .q-help{font-size:.86rem;color:var(--text-muted);margin-top:.25rem}
 .opts{margin-top:.8rem;display:grid;gap:.45rem}
 .opts.two{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
@@ -122,7 +123,7 @@ footer a{color:var(--gold-light)}
   <div class="wrap">
     <div class="eyebrow">TCEA Professional Development</div>
     <h1>Help us shape the <em>Pedagogy Showcase</em></h1>
-    <p>Answer twelve quick questions and tell us which sessions you want, when you would show up, and what a seat is worth. Your answers decide the final lineup.</p>
+    <p>Please take a moment to answer 11 brief questions and let us know which sessions interest you most, when you would be available to attend, and how a seat would be paid for. Your feedback will directly help shape the final event lineup.</p>
     <div class="meta-pills">
       <span class="pill">About two minutes</span>
       <span class="pill">No name or email collected</span>
@@ -135,7 +136,7 @@ footer a{color:var(--gold-light)}
   <div id="form-area">
     <div class="progress-shell">
       <div class="progress-track"><div class="progress-fill" id="pfill"></div></div>
-      <div class="progress-label" id="plabel">0 of 12 answered</div>
+      <div class="progress-label" id="plabel">0 of 8 answered</div>
     </div>
 
     <div class="privacy">
@@ -154,7 +155,7 @@ footer a{color:var(--gold-light)}
 
   <div id="thanks">
     <h2>Thank you</h2>
-    <p>Your answers are in. We use them to pick the final session lineup, the date, and the price for the Pedagogy Showcase.</p>
+    <p>Your answers are in. We use them to pick the final session lineup and the date for the Pedagogy Showcase.</p>
     <p style="margin-top:1.2rem"><a href="https://tcea.org" style="color:var(--navy);font-weight:600">Return to TCEA</a></p>
   </div>
 </main>
@@ -188,7 +189,7 @@ const topicOpts = TOPICS.map(function(x){return {v:x.v,t:x.t,s:x.s};});
 const BLOCKS = [
   {
     title:"About your work",
-    note:"Six quick questions. Nothing here identifies you.",
+    note:"Four quick questions. Nothing here identifies you.",
     questions:[
       {id:"role", type:"single", req:true, label:"Which role fits you best right now?",
        opts:["Classroom teacher","Instructional coach or specialist","Librarian or media specialist","Campus administrator","District administrator or director","Technology or IT staff","Higher education or preservice","Other"]},
@@ -197,11 +198,7 @@ const BLOCKS = [
       {id:"content", type:"multi", req:false, label:"Which content areas do you support?", help:"Optional. Choose every area that applies.",
        opts:["ELA and reading","Mathematics","Science","Social studies","Bilingual or ESL","Special education","CTE","Fine arts","Library and media","All or multiple areas"]},
       {id:"years", type:"single", req:true, label:"How long have you worked in education?",
-       opts:["Three years or fewer","Four to ten years","Eleven to twenty years","More than twenty years"]},
-      {id:"setting", type:"single", req:true, label:"Which setting describes your school or district?",
-       opts:["Urban","Suburban","Rural or small town","Charter","Private or independent","Not campus based"]},
-      {id:"member", type:"single", req:true, label:"Are you a TCEA member?",
-       opts:["Yes","No","Not sure"]}
+       opts:["Three years or fewer","Four to ten years","Eleven to twenty years","More than twenty years"]}
     ]
   },
   {
@@ -214,7 +211,9 @@ const BLOCKS = [
          {v:"Maybe, it depends on the date",s:"Fall or spring Saturdays are different for me"},
          {v:"No, I will not attend on a Saturday",s:"Weekends are off limits"}
        ]},
-      {id:"alt_times", type:"multi", req:false, label:"When would you attend instead?", help:"Choose every window that works. Answer even if a Saturday works, so we know your backup.",
+      {id:"alt_times", type:"multi", req:false, label:"When would you attend instead?",
+       help:"Choose every window that works for you.",
+       showIf:{field:"saturday", equals:["No, I will not attend on a Saturday"]},
        opts:["Weekday, during the school day with release time","Weekday, right after school from four to six","Weekday evening, after six","Sunday afternoon","A summer weekday","A district holiday or staff development day"]},
       {id:"length", type:"single", req:true, label:"How long should the whole event run?",
        opts:["Three or four short sessions, about two hours total","Half day, about three hours","Full day","One session at a time, spread across several weeks"]},
@@ -228,18 +227,15 @@ const BLOCKS = [
     questions:[
       {id:"topics_top3", type:"multi", req:true, max:3, label:"Which three sessions interest you most?", help:"Choose up to three. Pick a fourth and your first pick drops off.",
        opts:topicOpts},
-      {id:"topic_first", type:"single", req:true, label:"If you could only attend one, which would it be?",
-       opts:TOPICS.map(function(x){return {v:x.v,t:x.t};})},
       {id:"topic_missing", type:"text", req:false, label:"What topic is missing that you would sign up for tomorrow?", help:"Optional. One or two sentences. Please leave out any names, campuses, or contact details.", rows:3}
     ]
   },
   {
-    title:"What a seat is worth",
-    note:"Two last questions about cost.",
+    title:"Paying for your seat",
+    note:"One last question about cost.",
     questions:[
-      {id:"price", type:"single", req:true, label:"What is a fair price for a half day online showcase that includes the recordings and resources?",
-       opts:["Forty nine dollars or less","Fifty to seventy nine dollars","Eighty to ninety nine dollars","One hundred to one hundred twenty nine dollars","More than one hundred twenty nine dollars","Price is not my decision"]},
       {id:"payer", type:"single", req:true, label:"Who would pay for your seat?",
+       help:"Planned pricing: TCEA Member Price, $99. TCEA Non-Member Price, $129. Discount price for 10 or more participants, $89.",
        opts:["I pay out of pocket","My campus budget","My district budget","Grant or federal program funds","Not sure"]}
     ]
   }
@@ -249,7 +245,21 @@ const BLOCKS = [
 const state = {};
 const allQs = [];
 BLOCKS.forEach(function(b){ b.questions.forEach(function(q){ allQs.push(q); }); });
-const requiredIds = allQs.filter(function(q){return q.req;}).map(function(q){return q.id;});
+const NUMWORDS = ["zero","one","two","three","four","five","six","seven","eight","nine","ten"];
+function numWord(n){ return n <= 10 ? NUMWORDS[n] : String(n); }
+
+/* A question with showIf appears only when the named field holds one of the
+   listed answers. Everything else is always visible. */
+function visible(q){
+  if(!q.showIf) return true;
+  return q.showIf.equals.indexOf(state[q.showIf.field]) >= 0;
+}
+
+/* Required questions currently on screen. Hidden ones must never block the
+   send button. */
+function requiredVisibleIds(){
+  return allQs.filter(function(q){ return q.req && visible(q); }).map(function(q){ return q.id; });
+}
 
 function norm(o){
   if(typeof o === "string") return {v:o,t:o,s:null};
@@ -264,7 +274,7 @@ function render(){
     if(b.note) html += '<p class="block-note">'+b.note+'</p>';
     b.questions.forEach(function(q){
       html += '<div class="q" id="q-'+q.id+'" data-id="'+q.id+'">';
-      html += '<span class="q-label">'+q.label+(q.req?'<span class="q-req">*</span>':'')+'</span>';
+      html += '<span class="q-label"><span class="q-num"></span>'+q.label+(q.req?'<span class="q-req">*</span>':'')+'</span>';
       if(q.help) html += '<div class="q-help">'+q.help+'</div>';
       if(q.type === "text"){
         html += '<textarea id="in-'+q.id+'" rows="'+(q.rows||3)+'" maxlength="400" placeholder="Type here"></textarea>';
@@ -287,6 +297,51 @@ function render(){
   host.innerHTML = html;
 }
 render();
+
+/* Shows or hides every conditional question, and clears the answer to any
+   question it hides. Without that clear, somebody who rules out Saturday,
+   picks backup windows, then changes to "Yes" would still submit windows
+   they never meant to send. */
+function applyVisibility(){
+  allQs.forEach(function(q){
+    if(!q.showIf) return;
+    const el = document.getElementById("q-"+q.id);
+    if(!el) return;
+    const show = visible(q);
+    el.style.display = show ? "" : "none";
+    if(!show){
+      delete state[q.id];
+      document.querySelectorAll('input[name="'+q.id+'"]').forEach(function(b){
+        b.checked = false;
+        b.parentElement.classList.remove("checked");
+      });
+      const ta = document.getElementById("in-"+q.id);
+      if(ta) ta.value = "";
+      if(q.max){
+        const cnt = document.getElementById("cnt-"+q.id);
+        if(cnt){ cnt.textContent = "0 of "+q.max+" chosen"; cnt.className = "counter"; }
+      }
+      el.classList.remove("invalid");
+    }
+  });
+  renumber();
+}
+
+/* Numbering follows what the respondent can actually see, so a hidden
+   question never leaves a gap in the sequence. */
+function renumber(){
+  let n = 0;
+  allQs.forEach(function(q){
+    const el = document.getElementById("q-"+q.id);
+    if(!el) return;
+    const tag = el.querySelector(".q-num");
+    if(!tag) return;
+    if(el.style.display === "none"){ tag.textContent = ""; return; }
+    n += 1;
+    tag.textContent = n + ". ";
+  });
+}
+applyVisibility();
 
 /* ---------- interaction ---------- */
 document.getElementById("questions").addEventListener("change", function(e){
@@ -322,6 +377,7 @@ document.getElementById("questions").addEventListener("change", function(e){
     b.parentElement.classList.toggle("checked", b.checked);
   });
   document.getElementById("q-"+qId).classList.remove("invalid");
+  applyVisibility();
   updateProgress();
 });
 
@@ -337,10 +393,11 @@ function answered(id){
 }
 
 function updateProgress(){
-  const done = requiredIds.filter(answered).length;
-  const pct = Math.round(done / requiredIds.length * 100);
+  const req = requiredVisibleIds();
+  const done = req.filter(answered).length;
+  const pct = req.length ? Math.round(done / req.length * 100) : 0;
   document.getElementById("pfill").style.width = pct+"%";
-  document.getElementById("plabel").textContent = done+" of "+requiredIds.length+" answered";
+  document.getElementById("plabel").textContent = done+" of "+req.length+" answered";
 }
 updateProgress();
 
@@ -351,12 +408,14 @@ document.getElementById("submitBtn").addEventListener("click", function(){
   msg.className = "form-msg";
   msg.textContent = "";
 
-  const missing = requiredIds.filter(function(id){return !answered(id);});
+  const missing = requiredVisibleIds().filter(function(id){return !answered(id);});
   document.querySelectorAll(".q").forEach(function(el){el.classList.remove("invalid");});
   if(missing.length){
     missing.forEach(function(id){document.getElementById("q-"+id).classList.add("invalid");});
     msg.className = "form-msg bad";
-    msg.textContent = "You have "+missing.length+" question"+(missing.length>1?"s":"")+" left. They are marked in red.";
+    msg.textContent = missing.length > 1
+      ? "You have "+numWord(missing.length)+" questions left. They are marked in red."
+      : "You have one question left. It is marked in red.";
     document.getElementById("q-"+missing[0]).scrollIntoView({behavior:"smooth",block:"center"});
     return;
   }
@@ -365,7 +424,7 @@ document.getElementById("submitBtn").addEventListener("click", function(){
 
   const payload = {};
   allQs.forEach(function(q){
-    const v = state[q.id];
+    const v = visible(q) ? state[q.id] : "";
     payload[q.id] = Array.isArray(v) ? v.join(" | ") : (v || "");
   });
   payload.screen = window.innerWidth + "x" + window.innerHeight;
