@@ -115,7 +115,12 @@
         var focus = (T.focus[subj] && T.focus[subj][s.grade]) || '';
         var tr = document.createElement('tr');
         var td1 = document.createElement('td'); td1.className = 'teks-grade';
-        td1.innerHTML = '<strong>' + t('grade.' + s.grade) + '</strong><br><span class="band-tag">' + t('band.' + s.band) + '</span>';
+        var gradeLabel = t('grade.' + s.grade);
+        var bandLabel = t('band.' + s.band);
+        // Band-level sheets (6-8, 9-12) use the band as their grade, so the tag
+        // would just repeat the label — only show it for per-grade bands.
+        td1.innerHTML = '<strong>' + gradeLabel + '</strong>' +
+          (gradeLabel === bandLabel ? '' : '<br><span class="band-tag">' + bandLabel + '</span>');
         var td2 = document.createElement('td'); td2.textContent = focus;
         tr.appendChild(td1); tr.appendChild(td2); tbody.appendChild(tr);
       });
