@@ -98,6 +98,44 @@ a { color: var(--brand); }
   margin: 0; color: var(--brand-dark); letter-spacing: -0.01em;
   font-size: clamp(1.5rem, 3.6vw, 2.4rem); line-height: 1.1; max-width: 24ch;
 }
+.research-hero {
+  width: 100%; max-width: 1120px; height: auto; margin: .3rem 0 1.2rem;
+  border-radius: 16px; box-shadow: var(--shadow); border: 1px solid var(--line);
+}
+.back-cta { display: flex; gap: .6rem; flex-wrap: wrap; justify-content: center; }
+
+/* --- Notice / disclaimer --- */
+.notice {
+  background: var(--accent-soft); border: 1px solid #f3c9a9; border-radius: var(--radius);
+  padding: 1rem 1.2rem; margin-bottom: 1.4rem;
+}
+.notice p { margin: .3rem 0; max-width: none; }
+.notice .notice-sub { font-size: .88rem; color: var(--ink-soft); }
+
+/* --- TEKS correlation --- */
+.teks-subject {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow-sm); padding: clamp(1.1rem, 3vw, 1.8rem); margin-bottom: 1.4rem;
+}
+.teks-subject h3 { margin: 0 0 .3rem; color: var(--brand-dark); font-size: 1.3rem; }
+.teks-subject .lbl { font-weight: 800; color: var(--ink-soft); font-size: .82rem; text-transform: uppercase; letter-spacing: .04em; }
+.teks-chapter { margin: .2rem 0 .7rem; font-size: .92rem; }
+.teks-strands { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; margin: .4rem 0 .8rem; }
+.teks-strands .chip {
+  font-size: .8rem; font-weight: 700; color: var(--brand-dark);
+  background: #eef4fb; border: 1px solid #d6e4f2; border-radius: 999px; padding: .25rem .6rem;
+}
+.teks-align { margin: .3rem 0 1rem; color: var(--ink); font-size: .95rem; }
+.teks-align .lbl { display: inline; }
+.teks-table { width: 100%; border-collapse: collapse; font-size: .93rem; }
+.teks-table th {
+  text-align: left; padding: .5rem .6rem; border-bottom: 2px solid var(--accent-soft);
+  color: var(--ink-soft); font-size: .78rem; text-transform: uppercase; letter-spacing: .04em;
+}
+.teks-table td { padding: .6rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+.teks-table tr:last-child td { border-bottom: 0; }
+.teks-grade { white-space: nowrap; width: 1%; }
+.teks-grade .band-tag { font-size: .74rem; font-weight: 700; color: var(--accent); }
 
 /* Call-to-action links between the two pages */
 .research-cta { margin: 2.4rem 0 0; text-align: center; }

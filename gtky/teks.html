@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="teks.title">TEKS Alignment</title>
+  <meta name="description" content="Thematic correlation of the Getting to Know You interest-inventory worksheets to the Texas Essential Knowledge and Skills (TEKS) strands, K–12.">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/i18n.js" defer></script>
+  <script src="assets/gtky-i18n.js" defer></script>
+  <script src="assets/gtky-manifest.js" defer></script>
+  <script src="assets/gtky-teks-data.js" defer></script>
+  <script src="assets/gtky-teks-app.js" defer></script>
+</head>
+<body>
+
+  <div class="langbar">
+    <span class="globe" aria-hidden="true">🌐</span>
+    <span class="lang-label" data-i18n="lang.label">Language</span>
+    <div data-i18n-picker></div>
+  </div>
+
+  <header class="subhero">
+    <div class="subhero-inner">
+      <a class="back-link" href="index.html">← <span data-i18n="nav.gallery">Worksheets</span></a>
+      <h1 data-i18n="teks.title">TEKS Alignment</h1>
+      <p class="subhero-intro" data-i18n="teks.intro"></p>
+    </div>
+  </header>
+
+  <main>
+    <div class="notice" role="note">
+      <p data-i18n-html="teks.disclaimer"></p>
+      <p class="notice-sub" data-i18n="teks.contentNote"></p>
+    </div>
+
+    <div class="filters" role="group" aria-label="Filter">
+      <div class="field">
+        <label for="filter-band" data-i18n="filter.band">Grade band</label>
+        <select id="filter-band"></select>
+      </div>
+      <div class="field">
+        <label for="filter-subject" data-i18n="filter.subject">Subject</label>
+        <select id="filter-subject"></select>
+      </div>
+      <button id="filter-reset" data-i18n="filter.reset">Reset filters</button>
+      <div class="spacer"></div>
+      <div class="count" id="teks-count">—</div>
+    </div>
+
+    <div id="teks"></div>
+
+    <section class="research" style="margin-top:2.5rem">
+      <h3 data-i18n="teks.sourcesLabel">Standards references</h3>
+      <ul class="sources">
+        <li><a href="https://tea.texas.gov/academics/curriculum-standards/teks/texas-essential-knowledge-and-skills" target="_blank" rel="noopener">Texas Education Agency — Texas Essential Knowledge and Skills (TEKS)</a></li>
+        <li>19 TAC §110 (ELAR) · §111 (Mathematics) · §112 (Science) · §113 (Social Studies) · §117 (Fine Arts)</li>
+      </ul>
+      <p class="back-cta"><a href="index.html">← <span data-i18n="nav.gallery">Worksheets</span></a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p class="built" data-i18n="footer.built">Interest inventories for Grades K–12 · English · Español · Tiếng Việt</p>
+    <p data-i18n="footer.license">Worksheets © Miguel Guhlin, licensed CC BY-SA. Site for TCEA.</p>
+  </footer>
+
+</body>
+</html>
