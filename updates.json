@@ -1,110 +1,12 @@
 {
-  "generated": "2026-07-29T20:52:18.459Z",
+  "generated": "2026-07-29T22:16:51.067Z",
   "items": [
     {
-      "href": "activities/idioms/correlation.html",
-      "title": "Idioms & Sayings Standards Alignment (ELPS / TEKS)",
-      "category": "Critical Thinking Breakouts",
-      "icon": "🕵️",
-      "date": "2026-07-29T20:52:18.412Z"
-    },
-    {
-      "href": "activities/idioms/index.html#arcade",
-      "title": "Idiom Arcade — 3 Idiom Games",
-      "category": "Critical Thinking Breakouts",
-      "icon": "🕵️",
-      "date": "2026-07-29T20:52:18.405Z"
-    },
-    {
-      "href": "activities/idioms/index.html",
-      "title": "Idioms & Sayings for Multilingual Learners",
-      "category": "Critical Thinking Breakouts",
-      "icon": "🕵️",
-      "date": "2026-07-29T20:52:18.398Z"
-    },
-    {
-      "href": "activities/science/correlation.html",
-      "title": "Science Breakouts Correlation Guide",
-      "category": "Critical Thinking Breakouts",
-      "icon": "🕵️",
-      "date": "2026-07-29T20:52:18.392Z"
-    },
-    {
-      "href": "activities/science/index.html",
-      "title": "Science Critical Thinking Breakouts (Grades K–8)",
-      "category": "Critical Thinking Breakouts",
-      "icon": "🕵️",
-      "date": "2026-07-29T20:52:18.386Z"
-    },
-    {
-      "href": "activities/bible/correlation.html",
-      "title": "Bible as Literature Breakouts Correlation Guide",
-      "category": "Critical Thinking Breakouts",
-      "icon": "🕵️",
-      "date": "2026-07-29T20:52:18.380Z"
-    },
-    {
-      "href": "activities/bible/index.html",
-      "title": "Bible as Literature Breakouts",
-      "category": "Critical Thinking Breakouts",
-      "icon": "🕵️",
-      "date": "2026-07-29T20:52:18.374Z"
-    },
-    {
-      "href": "activities/index.html",
-      "title": "Critical Thinking Online Breakouts — Full Library",
-      "category": "Critical Thinking Breakouts",
-      "icon": "🕵️",
-      "date": "2026-07-29T20:52:18.367Z"
-    },
-    {
-      "href": "activities/july5th/correlation.html",
-      "title": "Black Freedom Holidays Breakouts Correlation Guide",
-      "category": "Critical Thinking Breakouts",
-      "icon": "🕵️",
-      "date": "2026-07-29T20:52:18.361Z"
-    },
-    {
-      "href": "activities/july5th/index.html",
-      "title": "July 5 & Black Freedom Holidays Breakouts",
-      "category": "Critical Thinking Breakouts",
-      "icon": "🕵️",
-      "date": "2026-07-29T20:52:18.353Z"
-    },
-    {
-      "href": "activities/july4/correlation.html",
-      "title": "Fourth of July Breakouts Correlation Guide",
-      "category": "Critical Thinking Breakouts",
-      "icon": "🕵️",
-      "date": "2026-07-29T20:52:18.347Z"
-    },
-    {
-      "href": "activities/july4/index.html",
-      "title": "Fourth of July Critical Thinking Breakouts",
-      "category": "Critical Thinking Breakouts",
-      "icon": "🕵️",
-      "date": "2026-07-29T20:52:18.341Z"
-    },
-    {
-      "href": "activities/clear/answer-key.html",
-      "title": "Breakouts Answer Key",
-      "category": "Critical Thinking Breakouts",
-      "icon": "🕵️",
-      "date": "2026-07-29T20:52:18.335Z"
-    },
-    {
-      "href": "activities/clear/correlation.html",
-      "title": "Breakouts Correlation Guide",
-      "category": "Critical Thinking Breakouts",
-      "icon": "🕵️",
-      "date": "2026-07-29T20:52:18.329Z"
-    },
-    {
-      "href": "activities/clear/index.html",
-      "title": "Critical Thinking Breakouts",
-      "category": "Critical Thinking Breakouts",
-      "icon": "🕵️",
-      "date": "2026-07-29T20:52:18.269Z"
+      "href": "ace/index.html",
+      "title": "The ACE Framework",
+      "category": "Instructional Strategy Guides",
+      "icon": "📘",
+      "date": "2026-07-29T16:48:55-05:00"
     },
     {
       "href": "vpo/index.html",
@@ -219,67 +121,165 @@
       "date": "2026-07-26T18:00:49-05:00"
     },
     {
-      "href": "relic-rooms/index.html",
-      "title": "Relic Rooms",
-      "category": "Games, Activities, and Specialty Builds",
-      "icon": "🎲",
-      "date": "2026-07-25T13:41:11-05:00"
+      "href": "byh/index.html",
+      "title": "Build Your Handbook: Claude vs. ChatGPT",
+      "category": "AI Prompt Libraries and Adoption",
+      "icon": "🤖",
+      "date": "2026-07-24T11:27:54-05:00"
     },
     {
-      "href": "ace/index.html",
-      "title": "The ACE Framework",
+      "href": "spr/index.html",
+      "title": "Digital Capacity Matrix for the SPR Pathfinders",
+      "category": "Dashboards and Decision Tools",
+      "icon": "📊",
+      "date": "2026-07-10T14:53:19-05:00"
+    },
+    {
+      "href": "sharespace/index.html",
+      "title": "Vibe Coding a Free ShareSpace",
+      "category": "Featured Vibe-Coded Solutions",
+      "icon": "⭐",
+      "date": "2026-07-07T19:43:00-05:00"
+    },
+    {
+      "href": "tools/coinflipping/index.html",
+      "title": "Classroom Coin Flipper",
+      "category": "Classroom Tools and Utilities",
+      "icon": "🧰",
+      "date": "2026-07-07T19:43:00-05:00"
+    },
+    {
+      "href": "tools/colorpop/index.html",
+      "title": "Color Pop Magic",
+      "category": "Classroom Tools and Utilities",
+      "icon": "🧰",
+      "date": "2026-07-07T19:43:00-05:00"
+    },
+    {
+      "href": "other/index.html",
+      "title": "Apps by OneScreen",
+      "category": "Games, Activities, and Specialty Builds",
+      "icon": "🎲",
+      "date": "2026-07-07T19:43:00-05:00"
+    },
+    {
+      "href": "webdecks/aidesign/index.html",
+      "title": "AI as Your Instructional Design Partner",
+      "category": "Presentations and WebDecks",
+      "icon": "🖥️",
+      "date": "2026-07-07T19:43:00-05:00"
+    },
+    {
+      "href": "ai-adoption-checklist/index.html",
+      "title": "Generative AI Adoption Checklist",
+      "category": "AI Prompt Libraries and Adoption",
+      "icon": "🤖",
+      "date": "2026-07-07T19:26:23-05:00"
+    },
+    {
+      "href": "checklist/index.html",
+      "title": "Generative AI Adoption Checklist Folder Version",
+      "category": "AI Prompt Libraries and Adoption",
+      "icon": "🤖",
+      "date": "2026-07-07T19:26:23-05:00"
+    },
+    {
+      "href": "blog/dats/index.html",
+      "title": "Assessment System RFP Scoring Tool",
+      "category": "Dashboards and Decision Tools",
+      "icon": "📊",
+      "date": "2026-07-01T10:41:19-05:00"
+    },
+    {
+      "href": "clear/index.html",
+      "title": "The CLEAR Crew — Detective Thinking Game",
+      "category": "Critical Thinking Breakouts",
+      "icon": "🕵️",
+      "date": "2026-06-29T11:07:24-05:00"
+    },
+    {
+      "href": "vibe_app_intake_package/index.html",
+      "title": "School District App Intake Form",
+      "category": "Dashboards and Decision Tools",
+      "icon": "📊",
+      "date": "2026-06-26T09:17:14-05:00"
+    },
+    {
+      "href": "vcl/libvibes.html",
+      "title": "LibVibes Prompt Library",
+      "category": "AI Prompt Libraries and Adoption",
+      "icon": "🤖",
+      "date": "2026-06-22T08:40:41-05:00"
+    },
+    {
+      "href": "tools/index.html",
+      "title": "TCEA Tools Menu",
+      "category": "Featured Vibe-Coded Solutions",
+      "icon": "⭐",
+      "date": "2026-06-20T15:16:40-05:00"
+    },
+    {
+      "href": "tools/shapespinner/index.html",
+      "title": "Classroom Shape Spinner",
+      "category": "Classroom Tools and Utilities",
+      "icon": "🧰",
+      "date": "2026-06-20T15:03:34-05:00"
+    },
+    {
+      "href": "vcll/index.html",
+      "title": "Vibe Coding Projects for Librarians",
+      "category": "Games, Activities, and Specialty Builds",
+      "icon": "🎲",
+      "date": "2026-06-20T12:49:04-05:00"
+    },
+    {
+      "href": "vcl/index.html",
+      "title": "Vibe-Coding for Librarians",
+      "category": "Featured Vibe-Coded Solutions",
+      "icon": "⭐",
+      "date": "2026-06-19T22:30:40-05:00"
+    },
+    {
+      "href": "ai-essentials-prompt-library/index.html",
+      "title": "AI Essentials Prompt Library of 100",
+      "category": "AI Prompt Libraries and Adoption",
+      "icon": "🤖",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "ai-adoption-roadmap/index.html",
+      "title": "AI Adoption Roadmap",
+      "category": "AI Prompt Libraries and Adoption",
+      "icon": "🤖",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "ai-adoption-roadmap/long.html",
+      "title": "AI Adoption Roadmap - Extended",
+      "category": "AI Prompt Libraries and Adoption",
+      "icon": "🤖",
+      "date": "2026-06-19T17:49:01-05:00"
+    },
+    {
+      "href": "topspreso/index.html",
+      "title": "Top Instructional Strategies",
       "category": "Instructional Strategy Guides",
       "icon": "📘",
-      "date": "2026-07-25T13:41:11-05:00"
+      "date": "2026-06-19T17:49:01-05:00"
     },
     {
-      "href": "relic-rooms/ec/index.html",
-      "title": "Extinct Creatures (Relic Room)",
-      "category": "Games, Activities, and Specialty Builds",
-      "icon": "🎲",
-      "date": "2026-07-25T13:41:11-05:00"
+      "href": "dashboard/index.html",
+      "title": "TCEA Registration Dashboard",
+      "category": "Dashboards and Decision Tools",
+      "icon": "📊",
+      "date": "2026-06-19T17:49:01-05:00"
     },
     {
-      "href": "relic-rooms/vt/index.html",
-      "title": "Vanished Trades (Relic Room)",
-      "category": "Games, Activities, and Specialty Builds",
-      "icon": "🎲",
-      "date": "2026-07-25T13:41:11-05:00"
-    },
-    {
-      "href": "relic-rooms/tg/index.html",
-      "title": "The Transportation Graveyard (Relic Room)",
-      "category": "Games, Activities, and Specialty Builds",
-      "icon": "🎲",
-      "date": "2026-07-25T13:41:11-05:00"
-    },
-    {
-      "href": "relic-rooms/dc/index.html",
-      "title": "Dead Communications (Relic Room)",
-      "category": "Games, Activities, and Specialty Builds",
-      "icon": "🎲",
-      "date": "2026-07-25T13:41:11-05:00"
-    },
-    {
-      "href": "relic-rooms/mm/index.html",
-      "title": "Mystery Minerals (Relic Room)",
-      "category": "Games, Activities, and Specialty Builds",
-      "icon": "🎲",
-      "date": "2026-07-25T13:41:11-05:00"
-    },
-    {
-      "href": "relic-rooms/clouds/index.html",
-      "title": "Cloud Detective (Relic Room)",
-      "category": "Games, Activities, and Specialty Builds",
-      "icon": "🎲",
-      "date": "2026-07-25T13:41:11-05:00"
-    },
-    {
-      "href": "relic-rooms/hoi/index.html",
-      "title": "Hall of Inventions (Relic Room)",
-      "category": "Games, Activities, and Specialty Builds",
-      "icon": "🎲",
-      "date": "2026-07-25T13:41:11-05:00"
+      "href": "buyback/index.html",
+      "title": "Buyback Technology Vendor Assessment Tool",
+      "category": "Dashboards and Decision Tools",
+      "icon": "📊",
+      "date": "2026-06-19T17:49:01-05:00"
     }
   ]
 }

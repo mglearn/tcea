@@ -773,7 +773,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "activities/clear/index.html",
+    "href": "/activities/ctobs/clear/index.html",
     "tag": "Breakout Library",
     "title": "Critical Thinking Breakouts",
     "desc": "Grade-band breakout activities (3-5, 6-8, 9-12) across ELA, science, and social studies that teach evidence-based reasoning, available in seven languages."
@@ -782,7 +782,7 @@
     "category": "activities",
     "featured": false,
     "external": false,
-    "href": "relic-rooms/index.html",
+    "href": "/activities/relic-rooms/index.html",
     "tag": "Activity Series",
     "title": "Relic Rooms",
     "desc": "A series of self-contained, seven-language investigation activities: students examine nine illustrated mystery exhibits in three steps &mdash; identify it, understand its purpose, and connect it to what came next. Aligned to the Texas Essential Knowledge and Skills across science, social studies, technology applications, and career. Starts with The Vanished Classroom."
@@ -800,7 +800,7 @@
     "category": "activities",
     "featured": false,
     "external": false,
-    "href": "relic-rooms/ec/index.html",
+    "href": "/activities/relic-rooms/ec/index.html",
     "tag": "Investigation Activity",
     "title": "Extinct Creatures (Relic Room)",
     "desc": "A grades 3-7 science investigation (Relic Rooms series) about nine extinct animals &mdash; dodo, woolly mammoth, T. rex, megalodon, and more. Students identify each creature, its role or adaptation, and its closest living relative today. Seven languages, aligned to the Texas science TEKS (19 TAC Ch. 112)."
@@ -809,7 +809,7 @@
     "category": "activities",
     "featured": false,
     "external": false,
-    "href": "relic-rooms/vt/index.html",
+    "href": "/activities/relic-rooms/vt/index.html",
     "tag": "Investigation Activity",
     "title": "Vanished Trades (Relic Room)",
     "desc": "A grades 5-8 social studies and career investigation (Relic Rooms series) about jobs the modern world left behind &mdash; lamplighter, switchboard operator, iceman, human computer, and more. Students identify each trade, what the worker did, and what replaced the job. Seven languages, aligned to the Texas TEKS (19 TAC Ch. 113 + Ch. 127)."
@@ -818,7 +818,7 @@
     "category": "activities",
     "featured": false,
     "external": false,
-    "href": "relic-rooms/tg/index.html",
+    "href": "/activities/relic-rooms/tg/index.html",
     "tag": "Investigation Activity",
     "title": "The Transportation Graveyard (Relic Room)",
     "desc": "A grades 3-6 social studies investigation (Relic Rooms series) about old ways of getting around &mdash; penny-farthing, steam locomotive, zeppelin, stagecoach, ocean liner, Concorde, and more. Students identify each vehicle, what it was used for, and what replaced it. Seven languages, aligned to the Texas social studies TEKS (19 TAC Ch. 113)."
@@ -827,7 +827,7 @@
     "category": "activities",
     "featured": false,
     "external": false,
-    "href": "relic-rooms/dc/index.html",
+    "href": "/activities/relic-rooms/dc/index.html",
     "tag": "Investigation Activity",
     "title": "Dead Communications (Relic Room)",
     "desc": "A grades 4-8 technology investigation (Relic Rooms series) about old ways people sent messages &mdash; telegraph, telegram, carrier pigeon, pneumatic tube, party line, pay phone, fax, pager, and answering machine. Students identify each tool, what it was used for, and the modern equivalent. Seven languages, aligned to the Texas Technology Applications TEKS (19 TAC Ch. 126)."
@@ -836,7 +836,7 @@
     "category": "activities",
     "featured": false,
     "external": false,
-    "href": "relic-rooms/mm/index.html",
+    "href": "/activities/relic-rooms/mm/index.html",
     "tag": "Investigation Activity",
     "title": "Mystery Minerals (Relic Room)",
     "desc": "A grades 5-8 science investigation (Relic Rooms series) about minerals &mdash; quartz, halite, graphite, talc, magnetite, gold, diamond, calcite, and hematite. Students identify each specimen, a key property (hardness, streak, magnetism, reaction to acid), and how people use it. Seven languages, aligned to the Texas science TEKS (19 TAC Ch. 112)."
@@ -845,7 +845,7 @@
     "category": "activities",
     "featured": false,
     "external": false,
-    "href": "relic-rooms/clouds/index.html",
+    "href": "/activities/relic-rooms/clouds/index.html",
     "tag": "Investigation Activity",
     "title": "Cloud Detective (Relic Room)",
     "desc": "A grades 3-5 science investigation (Relic Rooms series) about clouds &mdash; cumulus, cumulonimbus, stratus, cirrus, nimbostratus, and more. Students identify each cloud, describe what it is like, and predict the weather it signals. Seven languages, aligned to the Texas science TEKS (19 TAC Ch. 112)."
@@ -854,7 +854,7 @@
     "category": "activities",
     "featured": false,
     "external": false,
-    "href": "relic-rooms/hoi/index.html",
+    "href": "/activities/relic-rooms/hoi/index.html",
     "tag": "Investigation Activity",
     "title": "Hall of Inventions (Relic Room)",
     "desc": "A grades 4-8 investigation (Relic Rooms series) about world-changing inventions &mdash; the printing press, light bulb, telephone, steam engine, vaccine, wheel, compass, airplane, and transistor. Students identify each, the problem it solved, and what it made possible. Seven languages, aligned to the Texas TEKS (19 TAC Ch. 113 + Ch. 126)."
@@ -863,7 +863,7 @@
     "category": "activities",
     "featured": false,
     "external": false,
-    "href": "relic-rooms/et/index.html",
+    "href": "/activities/relic-rooms/et/index.html",
     "tag": "Investigation Activity",
     "title": "Endangered Today (Relic Room)",
     "desc": "A grades 6-8 technology and economics investigation (Relic Rooms series) about everyday things fading now &mdash; cursive, cash, car keys, landlines, paper maps, newspapers, DVDs, checks, and passwords. Students identify each, how it is used today, and what is likely to replace it. Seven languages, aligned to the Texas Technology Applications TEKS (19 TAC Ch. 126)."
@@ -872,7 +872,7 @@
     "category": "activities",
     "featured": false,
     "external": false,
-    "href": "relic-rooms/tvc/index.html",
+    "href": "/activities/relic-rooms/tvc/index.html",
     "tag": "Investigation Activity",
     "title": "The Vanished Classroom",
     "desc": "A standalone investigation activity (grades 4-8) about instructional practices from the 1800s that classrooms no longer use. Students examine nine teaching relics &mdash; slate, hornbook, recitation, the dunce cap, and more &mdash; and uncover each one's purpose, limitation, and modern replacement. Seven languages, with a score and printable reflection. Part of the Relic Rooms series."
@@ -881,7 +881,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "activities/clear/correlation.html",
+    "href": "/activities/ctobs/clear/correlation.html",
     "tag": "Alignment",
     "title": "Breakouts Correlation Guide",
     "desc": "A multilingual correlation guide mapping the Critical Thinking Breakouts to standards and thinking skills."
@@ -890,7 +890,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "activities/clear/answer-key.html",
+    "href": "/activities/ctobs/clear/answer-key.html",
     "tag": "Facilitator",
     "title": "Breakouts Answer Key",
     "desc": "The facilitator answer key and recording sheet for running the Critical Thinking Breakouts activities."
@@ -899,7 +899,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "activities/july4/index.html",
+    "href": "/activities/ctobs/july4/index.html",
     "tag": "Holiday Breakouts",
     "title": "Fourth of July Critical Thinking Breakouts",
     "desc": "Twelve self-contained U.S. history escape activities across three grade bands (3-5, 6-8, 9-12). Students open clues, weigh evidence, and crack four locks each &mdash; building history knowledge and critical-thinking habits. No logins, no data collected."
@@ -908,7 +908,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "activities/july4/correlation.html",
+    "href": "/activities/ctobs/july4/correlation.html",
     "tag": "Alignment",
     "title": "Fourth of July Breakouts Correlation Guide",
     "desc": "A standards correlation guide mapping the twelve Fourth of July breakouts by grade band to Texas Essential Knowledge and Skills, Common Core literacy standards, and the CLEAR thinking process."
@@ -917,7 +917,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "activities/july5th/index.html",
+    "href": "/activities/ctobs/july5th/index.html",
     "tag": "Holiday Breakouts",
     "title": "July 5 &amp; Black Freedom Holidays Breakouts",
     "desc": "Twelve self-contained critical thinking breakouts across three grade bands (3-5, 6-8, 9-12) exploring the freedom days the calendar often overlooks &mdash; Frederick Douglass&rsquo;s July 5 address, Juneteenth, Pinkster, Watch Night, and more. Students open clues, weigh evidence, and crack four locks each. No logins, no data collected."
@@ -926,7 +926,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "activities/july5th/correlation.html",
+    "href": "/activities/ctobs/july5th/correlation.html",
     "tag": "Alignment",
     "title": "Black Freedom Holidays Breakouts Correlation Guide",
     "desc": "A standards correlation guide mapping the twelve July 5 &amp; Black Freedom Holidays breakouts by grade band to Texas Essential Knowledge and Skills, Common Core literacy standards, and the CLEAR thinking process."
@@ -935,7 +935,7 @@
     "category": "breakouts",
     "featured": true,
     "external": false,
-    "href": "activities/index.html",
+    "href": "/activities/ctobs/index.html",
     "tag": "Activities Hub",
     "title": "TCEA Activities Hub",
     "desc": "A single searchable home for classroom activities in seven languages. Its flagship is the Critical Thinking Online Breakouts (CTOBs) &mdash; self-contained, browser-based reasoning escapes across six suites (CLEAR, Fourth of July, July 5 &amp; Black Freedom Holidays, Bible as Literature, Science, and Idioms) &mdash; alongside Problem-Solving Teaching units, Relic Rooms, Digital Math Tools, and the Map Puzzle generator. Search by name, topic, or grade; no logins, no data collected."
@@ -944,7 +944,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "activities/bible/index.html",
+    "href": "/activities/ctobs/bible/index.html",
     "tag": "Breakout Library",
     "title": "Bible as Literature Breakouts",
     "desc": "Thirty-one critical-thinking breakouts on the Texas-adopted Bible stories, studied academically &mdash; as literature and history, never devotionally. Covers every K&ndash;12 required-list Bible item (creation, Noah, David &amp; Goliath, the Psalms, the Prodigal Son, Job, 1 Corinthians 13, and more) across four grade bands, in seven languages."
@@ -953,7 +953,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "activities/bible/correlation.html",
+    "href": "/activities/ctobs/bible/correlation.html",
     "tag": "Alignment",
     "title": "Bible as Literature Breakouts Correlation Guide",
     "desc": "A TEKS correlation guide mapping each Bible as Literature breakout to the ELAR strands, the CLEAR reasoning focus, and the high-effect-size instructional strategy engineered into its locks."
@@ -962,7 +962,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "activities/science/index.html",
+    "href": "/activities/ctobs/science/index.html",
     "tag": "Breakout Library",
     "title": "Science Critical Thinking Breakouts (Grades K&ndash;8)",
     "desc": "Critical Thinking Online Breakouts across the Texas science TEKS, Grades K&ndash;8 &mdash; from pushes and pulls to conservation of mass. Each grade has a featured breakout, a concept set, a hands-on STEM engineering design challenge, and a student word bank, in seven languages."
@@ -971,7 +971,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "activities/science/correlation.html",
+    "href": "/activities/ctobs/science/correlation.html",
     "tag": "Alignment",
     "title": "Science Breakouts Correlation Guide",
     "desc": "A standards correlation guide mapping the Science Critical Thinking Breakouts by grade to the Texas science TEKS and the reasoning moves engineered into each lock."
@@ -980,7 +980,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "activities/idioms/index.html",
+    "href": "/activities/ctobs/idioms/index.html",
     "tag": "Breakout Library",
     "title": "Idioms &amp; Sayings for Multilingual Learners",
     "desc": "A multilingual idioms &amp; sayings suite for grades 3–12 — decode English idioms with your home language as a resource (ESL) and compare sayings across languages. 12 breakouts fully translated into seven languages (including French &amp; Latin units for world-language classrooms), a 66-idiom illustrated spotlight, a three-game Idiom Arcade, printable card decks, and teacher UDL/ELPS/lesson-plan supports. Aligned to the Texas ELPS (idiomatic expressions) and WIDA; no logins, no data collected."
@@ -989,7 +989,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "activities/idioms/index.html#arcade",
+    "href": "/activities/ctobs/idioms/index.html#arcade",
     "tag": "Games",
     "title": "Idiom Arcade — 3 Idiom Games",
     "desc": "Three fast, free, self-contained arcade games that teach English idioms: Match Blitz (timed idiom–meaning matching), Meaning Meteors (a catch-the-meaning canvas arcade), and Trap Escape (a literal-vs-figurative reflex game). Playable by touch, mouse, or keyboard; runs entirely in the browser with no logins and no data collected."
@@ -998,7 +998,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "activities/idioms/correlation.html",
+    "href": "/activities/ctobs/idioms/correlation.html",
     "tag": "Alignment",
     "title": "Idioms &amp; Sayings Standards Alignment (ELPS / TEKS)",
     "desc": "How the Idioms &amp; Sayings suite aligns to the Texas ELPS (19 TAC §74.4), the ELAR TEKS, and the LOTE TEKS for Bilingual/ESL and multilingual classrooms — with a K–12 public-school appropriateness statement and links to the Texas EL program frameworks."

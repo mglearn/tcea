@@ -6,131 +6,19 @@
     <atom:link href="https://mglearn.github.io/tcea/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated HTML tools, dashboards, prompt libraries, and classroom resources from TCEA.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Jul 2026 20:52:18 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2026 22:16:51 GMT</lastBuildDate>
     <image>
       <url>https://mglearn.github.io/tcea/favicon.svg</url>
       <title>TCEA Vibe-Coded Solutions — Updates</title>
       <link>https://mglearn.github.io/tcea/</link>
     </image>
     <item>
-      <title>🕵️ Idioms &amp; Sayings Standards Alignment (ELPS / TEKS)</title>
-      <link>https://mglearn.github.io/tcea/activities/idioms/correlation.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/activities/idioms/correlation.html</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Wed, 29 Jul 2026 20:52:18 GMT</pubDate>
-      <description>How the Idioms &amp; Sayings suite aligns to the Texas ELPS (19 TAC §74.4), the ELAR TEKS, and the LOTE TEKS for Bilingual/ESL and multilingual classrooms — with a K–12 public-school appropriateness statement and links to the Texas EL program frameworks.</description>
-    </item>
-    <item>
-      <title>🕵️ Idiom Arcade — 3 Idiom Games</title>
-      <link>https://mglearn.github.io/tcea/activities/idioms/index.html#arcade</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/activities/idioms/index.html#arcade</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Wed, 29 Jul 2026 20:52:18 GMT</pubDate>
-      <description>Three fast, free, self-contained arcade games that teach English idioms: Match Blitz (timed idiom–meaning matching), Meaning Meteors (a catch-the-meaning canvas arcade), and Trap Escape (a literal-vs-figurative reflex game). Playable by touch, mouse, or keyboard; runs entirely in the browser with no logins and no data collected.</description>
-    </item>
-    <item>
-      <title>🕵️ Idioms &amp; Sayings for Multilingual Learners</title>
-      <link>https://mglearn.github.io/tcea/activities/idioms/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/activities/idioms/index.html</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Wed, 29 Jul 2026 20:52:18 GMT</pubDate>
-      <description>A multilingual idioms &amp; sayings suite for grades 3–12 — decode English idioms with your home language as a resource (ESL) and compare sayings across languages. 12 breakouts fully translated into seven languages (including French &amp; Latin units for world-language classrooms), a 66-idiom illustrated spotlight, a three-game Idiom Arcade, printable card decks, and teacher UDL/ELPS/lesson-plan supports. Aligned to the Texas ELPS (idiomatic expressions) and WIDA; no logins, no data collected.</description>
-    </item>
-    <item>
-      <title>🕵️ Science Breakouts Correlation Guide</title>
-      <link>https://mglearn.github.io/tcea/activities/science/correlation.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/activities/science/correlation.html</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Wed, 29 Jul 2026 20:52:18 GMT</pubDate>
-      <description>A standards correlation guide mapping the Science Critical Thinking Breakouts by grade to the Texas science TEKS and the reasoning moves engineered into each lock.</description>
-    </item>
-    <item>
-      <title>🕵️ Science Critical Thinking Breakouts (Grades K–8)</title>
-      <link>https://mglearn.github.io/tcea/activities/science/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/activities/science/index.html</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Wed, 29 Jul 2026 20:52:18 GMT</pubDate>
-      <description>Critical Thinking Online Breakouts across the Texas science TEKS, Grades K–8 — from pushes and pulls to conservation of mass. Each grade has a featured breakout, a concept set, a hands-on STEM engineering design challenge, and a student word bank, in seven languages.</description>
-    </item>
-    <item>
-      <title>🕵️ Bible as Literature Breakouts Correlation Guide</title>
-      <link>https://mglearn.github.io/tcea/activities/bible/correlation.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/activities/bible/correlation.html</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Wed, 29 Jul 2026 20:52:18 GMT</pubDate>
-      <description>A TEKS correlation guide mapping each Bible as Literature breakout to the ELAR strands, the CLEAR reasoning focus, and the high-effect-size instructional strategy engineered into its locks.</description>
-    </item>
-    <item>
-      <title>🕵️ Bible as Literature Breakouts</title>
-      <link>https://mglearn.github.io/tcea/activities/bible/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/activities/bible/index.html</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Wed, 29 Jul 2026 20:52:18 GMT</pubDate>
-      <description>Thirty-one critical-thinking breakouts on the Texas-adopted Bible stories, studied academically — as literature and history, never devotionally. Covers every K–12 required-list Bible item (creation, Noah, David &amp; Goliath, the Psalms, the Prodigal Son, Job, 1 Corinthians 13, and more) across four grade bands, in seven languages.</description>
-    </item>
-    <item>
-      <title>🕵️ Critical Thinking Online Breakouts — Full Library</title>
-      <link>https://mglearn.github.io/tcea/activities/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/activities/index.html</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Wed, 29 Jul 2026 20:52:18 GMT</pubDate>
-      <description>A single searchable library of every TCEA Critical Thinking Online Breakout (CTOB) — 193 self-contained, browser-based reasoning escapes across five suites (CLEAR, Fourth of July, July 5 &amp; Black Freedom Holidays, Bible as Literature, and Science) in seven languages. Search by name, topic, or grade; no logins, no data collected.</description>
-    </item>
-    <item>
-      <title>🕵️ Black Freedom Holidays Breakouts Correlation Guide</title>
-      <link>https://mglearn.github.io/tcea/activities/july5th/correlation.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/activities/july5th/correlation.html</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Wed, 29 Jul 2026 20:52:18 GMT</pubDate>
-      <description>A standards correlation guide mapping the twelve July 5 &amp; Black Freedom Holidays breakouts by grade band to Texas Essential Knowledge and Skills, Common Core literacy standards, and the CLEAR thinking process.</description>
-    </item>
-    <item>
-      <title>🕵️ July 5 &amp; Black Freedom Holidays Breakouts</title>
-      <link>https://mglearn.github.io/tcea/activities/july5th/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/activities/july5th/index.html</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Wed, 29 Jul 2026 20:52:18 GMT</pubDate>
-      <description>Twelve self-contained critical thinking breakouts across three grade bands (3-5, 6-8, 9-12) exploring the freedom days the calendar often overlooks — Frederick Douglass s July 5 address, Juneteenth, Pinkster, Watch Night, and more. Students open clues, weigh evidence, and crack four locks each. No logins, no data collected.</description>
-    </item>
-    <item>
-      <title>🕵️ Fourth of July Breakouts Correlation Guide</title>
-      <link>https://mglearn.github.io/tcea/activities/july4/correlation.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/activities/july4/correlation.html</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Wed, 29 Jul 2026 20:52:18 GMT</pubDate>
-      <description>A standards correlation guide mapping the twelve Fourth of July breakouts by grade band to Texas Essential Knowledge and Skills, Common Core literacy standards, and the CLEAR thinking process.</description>
-    </item>
-    <item>
-      <title>🕵️ Fourth of July Critical Thinking Breakouts</title>
-      <link>https://mglearn.github.io/tcea/activities/july4/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/activities/july4/index.html</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Wed, 29 Jul 2026 20:52:18 GMT</pubDate>
-      <description>Twelve self-contained U.S. history escape activities across three grade bands (3-5, 6-8, 9-12). Students open clues, weigh evidence, and crack four locks each — building history knowledge and critical-thinking habits. No logins, no data collected.</description>
-    </item>
-    <item>
-      <title>🕵️ Breakouts Answer Key</title>
-      <link>https://mglearn.github.io/tcea/activities/clear/answer-key.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/activities/clear/answer-key.html</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Wed, 29 Jul 2026 20:52:18 GMT</pubDate>
-      <description>The facilitator answer key and recording sheet for running the Critical Thinking Breakouts activities.</description>
-    </item>
-    <item>
-      <title>🕵️ Breakouts Correlation Guide</title>
-      <link>https://mglearn.github.io/tcea/activities/clear/correlation.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/activities/clear/correlation.html</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Wed, 29 Jul 2026 20:52:18 GMT</pubDate>
-      <description>A multilingual correlation guide mapping the Critical Thinking Breakouts to standards and thinking skills.</description>
-    </item>
-    <item>
-      <title>🕵️ Critical Thinking Breakouts</title>
-      <link>https://mglearn.github.io/tcea/activities/clear/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/activities/clear/index.html</guid>
-      <category>Critical Thinking Breakouts</category>
-      <pubDate>Wed, 29 Jul 2026 20:52:18 GMT</pubDate>
-      <description>Grade-band breakout activities (3-5, 6-8, 9-12) across ELA, science, and social studies that teach evidence-based reasoning, available in seven languages.</description>
+      <title>📘 The ACE Framework</title>
+      <link>https://mglearn.github.io/tcea/ace/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/ace/index.html</guid>
+      <category>Instructional Strategy Guides</category>
+      <pubDate>Wed, 29 Jul 2026 21:48:55 GMT</pubDate>
+      <description>A seven-language teaching companion for the Relic Rooms series. ACE — Articulate, Connect, Extend — is a simple thinking routine that moves students from spotting clues to explaining and testing a conclusion. Includes the three moves, a worked example, and a classroom-ready ACE card; every Relic Room now embeds a worked ACE example on its directions screen.</description>
     </item>
     <item>
       <title>⭐ Codex Project Organizer</title>
@@ -261,76 +149,188 @@
       <description>A slide-by-slide vendor comparison of teacher observation and coaching platforms, separating formal evaluation workflow tools from coaching, reflection, and teacher-preparation products.</description>
     </item>
     <item>
-      <title>🎲 Relic Rooms</title>
-      <link>https://mglearn.github.io/tcea/relic-rooms/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/relic-rooms/index.html</guid>
-      <category>Games, Activities, and Specialty Builds</category>
-      <pubDate>Sat, 25 Jul 2026 18:41:11 GMT</pubDate>
-      <description>A series of self-contained, seven-language investigation activities: students examine nine illustrated mystery exhibits in three steps — identify it, understand its purpose, and connect it to what came next. Aligned to the Texas Essential Knowledge and Skills across science, social studies, technology applications, and career. Starts with The Vanished Classroom.</description>
+      <title>🤖 Build Your Handbook: Claude vs. ChatGPT</title>
+      <link>https://mglearn.github.io/tcea/byh/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/byh/index.html</guid>
+      <category>AI Prompt Libraries and Adoption</category>
+      <pubDate>Fri, 24 Jul 2026 16:27:54 GMT</pubDate>
+      <description>One staff-handbook PDF, rebuilt as an accessible web page by two AI assistants — Claude and ChatGPT. Open each version side by side and compare the layout, navigation, and reading experience against the original source PDF.</description>
     </item>
     <item>
-      <title>📘 The ACE Framework</title>
-      <link>https://mglearn.github.io/tcea/ace/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/ace/index.html</guid>
+      <title>📊 Digital Capacity Matrix for the SPR Pathfinders</title>
+      <link>https://mglearn.github.io/tcea/spr/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/spr/index.html</guid>
+      <category>Dashboards and Decision Tools</category>
+      <pubDate>Fri, 10 Jul 2026 19:53:19 GMT</pubDate>
+      <description>A self-assessment matrix across eight capacity areas — choose the statement that best fits where you are today and get a summary with next steps.</description>
+    </item>
+    <item>
+      <title>⭐ Vibe Coding a Free ShareSpace</title>
+      <link>https://mglearn.github.io/tcea/sharespace/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/sharespace/index.html</guid>
+      <category>Featured Vibe-Coded Solutions</category>
+      <pubDate>Wed, 08 Jul 2026 00:43:00 GMT</pubDate>
+      <description>A slide-style walkthrough for building a free Padlet-style sharing space with a downloadable demo solution.</description>
+    </item>
+    <item>
+      <title>🧰 Classroom Coin Flipper</title>
+      <link>https://mglearn.github.io/tcea/tools/coinflipping/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/tools/coinflipping/index.html</guid>
+      <category>Classroom Tools and Utilities</category>
+      <pubDate>Wed, 08 Jul 2026 00:43:00 GMT</pubDate>
+      <description>A coin flipping utility with themes and classroom-friendly controls.</description>
+    </item>
+    <item>
+      <title>🧰 Color Pop Magic</title>
+      <link>https://mglearn.github.io/tcea/tools/colorpop/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/tools/colorpop/index.html</guid>
+      <category>Classroom Tools and Utilities</category>
+      <pubDate>Wed, 08 Jul 2026 00:43:00 GMT</pubDate>
+      <description>A scratch-canvas drawing tool for revealing hidden backgrounds with a custom cover color and pen.</description>
+    </item>
+    <item>
+      <title>🎲 Apps by OneScreen</title>
+      <link>https://mglearn.github.io/tcea/other/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/other/index.html</guid>
+      <category>Games, Activities, and Specialty Builds</category>
+      <pubDate>Wed, 08 Jul 2026 00:43:00 GMT</pubDate>
+      <description>A showcase of purpose-built classroom apps for educators tired of AI tools that miss the mark.</description>
+    </item>
+    <item>
+      <title>🖥️ AI as Your Instructional Design Partner</title>
+      <link>https://mglearn.github.io/tcea/webdecks/aidesign/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/webdecks/aidesign/index.html</guid>
+      <category>Presentations and WebDecks</category>
+      <pubDate>Wed, 08 Jul 2026 00:43:00 GMT</pubDate>
+      <description>A web-based slide deck on using AI as a partner in instructional design.</description>
+    </item>
+    <item>
+      <title>🤖 Generative AI Adoption Checklist</title>
+      <link>https://mglearn.github.io/tcea/ai-adoption-checklist/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/ai-adoption-checklist/index.html</guid>
+      <category>AI Prompt Libraries and Adoption</category>
+      <pubDate>Wed, 08 Jul 2026 00:26:23 GMT</pubDate>
+      <description>A step-by-step institutional checklist for thoughtful generative AI adoption.</description>
+    </item>
+    <item>
+      <title>🤖 Generative AI Adoption Checklist Folder Version</title>
+      <link>https://mglearn.github.io/tcea/checklist/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/checklist/index.html</guid>
+      <category>AI Prompt Libraries and Adoption</category>
+      <pubDate>Wed, 08 Jul 2026 00:26:23 GMT</pubDate>
+      <description>A packaged folder version of the adoption checklist for distribution or embedding.</description>
+    </item>
+    <item>
+      <title>📊 Assessment System RFP Scoring Tool</title>
+      <link>https://mglearn.github.io/tcea/blog/dats/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/blog/dats/index.html</guid>
+      <category>Dashboards and Decision Tools</category>
+      <pubDate>Wed, 01 Jul 2026 15:41:19 GMT</pubDate>
+      <description>A weighted rubric for comparing district assessment systems, with non-negotiable gate checks and a side-by-side vendor comparison you can export to CSV.</description>
+    </item>
+    <item>
+      <title>🕵️ The CLEAR Crew — Detective Thinking Game</title>
+      <link>https://mglearn.github.io/tcea/clear/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/clear/index.html</guid>
+      <category>Critical Thinking Breakouts</category>
+      <pubDate>Mon, 29 Jun 2026 16:07:24 GMT</pubDate>
+      <description>Crack the case one clue at a time with the CLEAR thinking process — a critical-thinking checklist for young detectives.</description>
+    </item>
+    <item>
+      <title>📊 School District App Intake Form</title>
+      <link>https://mglearn.github.io/tcea/vibe_app_intake_package/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/vibe_app_intake_package/index.html</guid>
+      <category>Dashboards and Decision Tools</category>
+      <pubDate>Fri, 26 Jun 2026 14:17:14 GMT</pubDate>
+      <description>A teacher and staff app intake form for submitting apps for district review, with an optional Google Sheets backend for collecting requests.</description>
+    </item>
+    <item>
+      <title>🤖 LibVibes Prompt Library</title>
+      <link>https://mglearn.github.io/tcea/vcl/libvibes.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/vcl/libvibes.html</guid>
+      <category>AI Prompt Libraries and Adoption</category>
+      <pubDate>Mon, 22 Jun 2026 13:40:41 GMT</pubDate>
+      <description>Nineteen library-focused vibe-coding starter prompts, each with a VIBES game plan and its own linkable page, all nineteen built and playable.</description>
+    </item>
+    <item>
+      <title>⭐ TCEA Tools Menu</title>
+      <link>https://mglearn.github.io/tcea/tools/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/tools/index.html</guid>
+      <category>Featured Vibe-Coded Solutions</category>
+      <pubDate>Sat, 20 Jun 2026 20:16:40 GMT</pubDate>
+      <description>The launch menu for classroom utilities including spinners, dice, word search, drawing, puzzles, and fortune tools.</description>
+    </item>
+    <item>
+      <title>🧰 Classroom Shape Spinner</title>
+      <link>https://mglearn.github.io/tcea/tools/shapespinner/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/tools/shapespinner/index.html</guid>
+      <category>Classroom Tools and Utilities</category>
+      <pubDate>Sat, 20 Jun 2026 20:03:34 GMT</pubDate>
+      <description>A shape spinner for math, discussion, selection, and quick classroom activities.</description>
+    </item>
+    <item>
+      <title>🎲 Vibe Coding Projects for Librarians</title>
+      <link>https://mglearn.github.io/tcea/vcll/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/vcll/index.html</guid>
+      <category>Games, Activities, and Specialty Builds</category>
+      <pubDate>Sat, 20 Jun 2026 17:49:04 GMT</pubDate>
+      <description>The session companion site with library use cases, starter prompts, and downloadable tools for vibe-coding free alternatives to Padlet, Slido, and FigJam.</description>
+    </item>
+    <item>
+      <title>⭐ Vibe-Coding for Librarians</title>
+      <link>https://mglearn.github.io/tcea/vcl/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/vcl/index.html</guid>
+      <category>Featured Vibe-Coded Solutions</category>
+      <pubDate>Sat, 20 Jun 2026 03:30:40 GMT</pubDate>
+      <description>A companion website with librarian-focused tools, use cases, prompts, and downloadable vibe-coding resources.</description>
+    </item>
+    <item>
+      <title>🤖 AI Essentials Prompt Library of 100</title>
+      <link>https://mglearn.github.io/tcea/ai-essentials-prompt-library/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/ai-essentials-prompt-library/index.html</guid>
+      <category>AI Prompt Libraries and Adoption</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>A searchable set of educator prompts for AI Essentials training and classroom support.</description>
+    </item>
+    <item>
+      <title>🤖 AI Adoption Roadmap</title>
+      <link>https://mglearn.github.io/tcea/ai-adoption-roadmap/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/ai-adoption-roadmap/index.html</guid>
+      <category>AI Prompt Libraries and Adoption</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>An interactive roadmap for district and campus AI adoption stages, policies, and implementation moves.</description>
+    </item>
+    <item>
+      <title>🤖 AI Adoption Roadmap - Extended</title>
+      <link>https://mglearn.github.io/tcea/ai-adoption-roadmap/long.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/ai-adoption-roadmap/long.html</guid>
+      <category>AI Prompt Libraries and Adoption</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>The longer version of the AI adoption roadmap with expanded guidance and phase detail.</description>
+    </item>
+    <item>
+      <title>📘 Top Instructional Strategies</title>
+      <link>https://mglearn.github.io/tcea/topspreso/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/topspreso/index.html</guid>
       <category>Instructional Strategy Guides</category>
-      <pubDate>Sat, 25 Jul 2026 18:41:11 GMT</pubDate>
-      <description>A seven-language teaching companion for the Relic Rooms series. ACE — Articulate, Connect, Extend — is a simple thinking routine that moves students from spotting clues to explaining and testing a conclusion. Includes the three moves, a worked example, and a classroom-ready ACE card; every Relic Room now embeds a worked ACE example on its directions screen.</description>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>A presentation-style guide to instructional strategies worth embracing for stronger learning outcomes.</description>
     </item>
     <item>
-      <title>🎲 Extinct Creatures (Relic Room)</title>
-      <link>https://mglearn.github.io/tcea/relic-rooms/ec/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/relic-rooms/ec/index.html</guid>
-      <category>Games, Activities, and Specialty Builds</category>
-      <pubDate>Sat, 25 Jul 2026 18:41:11 GMT</pubDate>
-      <description>A grades 3-7 science investigation (Relic Rooms series) about nine extinct animals — dodo, woolly mammoth, T. rex, megalodon, and more. Students identify each creature, its role or adaptation, and its closest living relative today. Seven languages, aligned to the Texas science TEKS (19 TAC Ch. 112).</description>
+      <title>📊 TCEA Registration Dashboard</title>
+      <link>https://mglearn.github.io/tcea/dashboard/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/dashboard/index.html</guid>
+      <category>Dashboards and Decision Tools</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>A course registration and revenue dashboard for tracking professional development activity.</description>
     </item>
     <item>
-      <title>🎲 Vanished Trades (Relic Room)</title>
-      <link>https://mglearn.github.io/tcea/relic-rooms/vt/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/relic-rooms/vt/index.html</guid>
-      <category>Games, Activities, and Specialty Builds</category>
-      <pubDate>Sat, 25 Jul 2026 18:41:11 GMT</pubDate>
-      <description>A grades 5-8 social studies and career investigation (Relic Rooms series) about jobs the modern world left behind — lamplighter, switchboard operator, iceman, human computer, and more. Students identify each trade, what the worker did, and what replaced the job. Seven languages, aligned to the Texas TEKS (19 TAC Ch. 113 + Ch. 127).</description>
-    </item>
-    <item>
-      <title>🎲 The Transportation Graveyard (Relic Room)</title>
-      <link>https://mglearn.github.io/tcea/relic-rooms/tg/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/relic-rooms/tg/index.html</guid>
-      <category>Games, Activities, and Specialty Builds</category>
-      <pubDate>Sat, 25 Jul 2026 18:41:11 GMT</pubDate>
-      <description>A grades 3-6 social studies investigation (Relic Rooms series) about old ways of getting around — penny-farthing, steam locomotive, zeppelin, stagecoach, ocean liner, Concorde, and more. Students identify each vehicle, what it was used for, and what replaced it. Seven languages, aligned to the Texas social studies TEKS (19 TAC Ch. 113).</description>
-    </item>
-    <item>
-      <title>🎲 Dead Communications (Relic Room)</title>
-      <link>https://mglearn.github.io/tcea/relic-rooms/dc/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/relic-rooms/dc/index.html</guid>
-      <category>Games, Activities, and Specialty Builds</category>
-      <pubDate>Sat, 25 Jul 2026 18:41:11 GMT</pubDate>
-      <description>A grades 4-8 technology investigation (Relic Rooms series) about old ways people sent messages — telegraph, telegram, carrier pigeon, pneumatic tube, party line, pay phone, fax, pager, and answering machine. Students identify each tool, what it was used for, and the modern equivalent. Seven languages, aligned to the Texas Technology Applications TEKS (19 TAC Ch. 126).</description>
-    </item>
-    <item>
-      <title>🎲 Mystery Minerals (Relic Room)</title>
-      <link>https://mglearn.github.io/tcea/relic-rooms/mm/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/relic-rooms/mm/index.html</guid>
-      <category>Games, Activities, and Specialty Builds</category>
-      <pubDate>Sat, 25 Jul 2026 18:41:11 GMT</pubDate>
-      <description>A grades 5-8 science investigation (Relic Rooms series) about minerals — quartz, halite, graphite, talc, magnetite, gold, diamond, calcite, and hematite. Students identify each specimen, a key property (hardness, streak, magnetism, reaction to acid), and how people use it. Seven languages, aligned to the Texas science TEKS (19 TAC Ch. 112).</description>
-    </item>
-    <item>
-      <title>🎲 Cloud Detective (Relic Room)</title>
-      <link>https://mglearn.github.io/tcea/relic-rooms/clouds/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/relic-rooms/clouds/index.html</guid>
-      <category>Games, Activities, and Specialty Builds</category>
-      <pubDate>Sat, 25 Jul 2026 18:41:11 GMT</pubDate>
-      <description>A grades 3-5 science investigation (Relic Rooms series) about clouds — cumulus, cumulonimbus, stratus, cirrus, nimbostratus, and more. Students identify each cloud, describe what it is like, and predict the weather it signals. Seven languages, aligned to the Texas science TEKS (19 TAC Ch. 112).</description>
-    </item>
-    <item>
-      <title>🎲 Hall of Inventions (Relic Room)</title>
-      <link>https://mglearn.github.io/tcea/relic-rooms/hoi/index.html</link>
-      <guid isPermaLink="true">https://mglearn.github.io/tcea/relic-rooms/hoi/index.html</guid>
-      <category>Games, Activities, and Specialty Builds</category>
-      <pubDate>Sat, 25 Jul 2026 18:41:11 GMT</pubDate>
-      <description>A grades 4-8 investigation (Relic Rooms series) about world-changing inventions — the printing press, light bulb, telephone, steam engine, vaccine, wheel, compass, airplane, and transistor. Students identify each, the problem it solved, and what it made possible. Seven languages, aligned to the Texas TEKS (19 TAC Ch. 113 + Ch. 126).</description>
+      <title>📊 Buyback Technology Vendor Assessment Tool</title>
+      <link>https://mglearn.github.io/tcea/buyback/index.html</link>
+      <guid isPermaLink="true">https://mglearn.github.io/tcea/buyback/index.html</guid>
+      <category>Dashboards and Decision Tools</category>
+      <pubDate>Fri, 19 Jun 2026 22:49:01 GMT</pubDate>
+      <description>A structured tool for evaluating buyback technology vendors against district priorities.</description>
     </item>
   </channel>
 </rss>
