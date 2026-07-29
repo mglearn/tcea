@@ -1,9 +1,0 @@
-{
-  "example": {
-    "common": { "crumb": "‹ Example hub", "footer": "Example CTOB · Runs in your browser — no logins, no data collected." },
-    "udl": { "eyebrow": "UDL Supports · Example CTOB", "lead": "Practical ways to open the example Critical Thinking Online Breakout to every learner, organized by the three principles of the CAST Universal Design for Learning Guidelines (version 3.0). The breakout already builds in many of these supports across all seven languages." },
-    "elps": { "eyebrow": "ELPS Supports · Example CTOB", "lead": "How to use the example breakout with emergent bilingual students, aligned to the Texas English Language Proficiency Standards across listening, speaking, reading, and writing." },
-    "guide": { "eyebrow": "Lesson-Plan Guide · Example CTOB", "lead": "A ready structure for building a lesson around the example Critical Thinking Online Breakout, following a standard Texas lesson-plan format. A worked example appears at the end.",
-      "ex.name": "Round and Round: The Water Cycle", "ex.bigidea": "Water moves continuously through evaporation, condensation, precipitation, and collection in a repeating cycle.", "ex.eq": "How does water move from the ocean, into the sky, and back again?", "ex.obj": "Students will sequence the steps of the water cycle and explain what drives each step, using evidence.", "ex.vocab": "evaporation, condensation, precipitation, collection, water vapor" }
-  }
-}

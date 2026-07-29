@@ -8,21 +8,39 @@
 <style>body{font-family:system-ui,-apple-system,sans-serif;max-width:560px;margin:64px auto;padding:0 22px;color:#1c2436;line-height:1.6}a{color:#2f6fe0}h1{font-size:1.3rem}</style>
 <script>
 /* Auto-forward for published deep links. GitHub Pages serves this 404.html for any
-   unresolved path, so old links still redirect (no per-file stubs).
-     - CLEAR breakouts moved  /clear/breakouts/*  ->  /breakouts/clear/*
-     - Problem-Solving Teaching moved  /breakouts/pst/*  ->  /pst/* */
+   unresolved path, so old links keep working after the move to standalone sites.
+   Five activity areas moved OUT of /tcea/ into the Activities Hub (and gtky into its
+   own site). Same github.io origin, so root-relative targets work.
+     /tcea/activities/*        -> /activities/ctobs/*   (CTOB library)
+     /tcea/pst/*               -> /activities/pst/*
+     /tcea/relic-rooms/*       -> /activities/relic-rooms/*
+     /tcea/digitalmathtools/*  -> /activities/digitalmathtools/*
+     /tcea/gtky/*              -> /gtky/*
+   Legacy chains kept:
+     /tcea/clear/breakouts/*   -> /activities/ctobs/clear/*
+     /tcea/breakouts/pst/*     -> /activities/pst/*
+     /tcea/breakouts/*         -> /activities/ctobs/* */
 (function () {
-  var p = location.pathname, s = location.search, h = location.hash;
-  var m = p.match(/\/clear\/breakouts(\/.*)?$/);
-  if (m) { location.replace(p.slice(0, m.index) + '/breakouts/clear' + (m[1] || '/') + s + h); return; }
-  var q = p.match(/^(.*?)\/breakouts\/pst(\/.*)?$/);
-  if (q) { location.replace(q[1] + '/pst' + (q[2] || '/') + s + h); return; }
+  var p = location.pathname, s = location.search, h = location.hash, m;
+  function go(t) { location.replace(t + s + h); }
+  if ((m = p.match(/\/clear\/breakouts(\/.*)?$/)))     return go('/activities/ctobs/clear' + (m[1] || '/'));
+  if ((m = p.match(/\/breakouts\/pst(\/.*)?$/)))        return go('/activities/pst' + (m[1] || '/'));
+  if ((m = p.match(/\/breakouts(\/.*)?$/)))             return go('/activities/ctobs' + (m[1] || '/'));
+  if ((m = p.match(/\/activities(\/.*)?$/)))            return go('/activities/ctobs' + (m[1] || '/'));
+  if ((m = p.match(/\/pst(\/.*)?$/)))                   return go('/activities/pst' + (m[1] || '/'));
+  if ((m = p.match(/\/relic-rooms(\/.*)?$/)))           return go('/activities/relic-rooms' + (m[1] || '/'));
+  if ((m = p.match(/\/digitalmathtools(\/.*)?$/)))      return go('/activities/digitalmathtools' + (m[1] || '/'));
+  if ((m = p.match(/\/gtky(\/.*)?$/)))                  return go('/gtky' + (m[1] || '/'));
 })();
 </script>
 </head>
 <body>
-<h1>This page may have moved</h1>
-<p>We couldn’t find that page. If you followed an older link (a CLEAR breakout, or a Problem-Solving Teaching page that has moved to <a href="/tcea/pst/">/pst</a>), you’re being redirected automatically.</p>
-<p><a href="/tcea/breakouts/">TCEA Critical Thinking Breakouts</a> &middot; <a href="/tcea/">TCEA home</a></p>
+<h1>This page has moved</h1>
+<p>Several TCEA activity collections now live at their own sites. If you followed an
+older link you’re being redirected automatically. You can also jump to the
+<a href="/activities/">TCEA Activities Hub</a> (breakouts, problem-solving units, relic
+rooms, digital citizenship, AI literacy, and math tools) or the
+<a href="/gtky/">Getting to Know You</a> worksheets.</p>
+<p><a href="/activities/">Activities Hub</a> &middot; <a href="/tcea/">TCEA project home</a></p>
 </body>
 </html>

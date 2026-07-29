@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flip the Script: Better Campus Meetings</title>
+  <meta name="description" content="Six interactive flashcards to help principals and assistant principals create more engaging campus leadership meetings with Gen AI.">
+  <style>
+    :root {
+      --navy: #0A3476;
+      --navy-dark: #062651;
+      --gold: #FCB040;
+      --gold-light: #FFF2D5;
+      --teal: #117C8A;
+      --paper: #F5F8FC;
+      --white: #FFFFFF;
+      --text: #172033;
+      --muted: #566177;
+      --shadow: 0 14px 34px rgba(10, 52, 118, 0.14);
+      --radius: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(252, 176, 64, 0.18), transparent 30%),
+        linear-gradient(180deg, #EEF4FC 0%, var(--paper) 100%);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 56px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 26px;
+      background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+      color: var(--white);
+      padding: 42px clamp(24px, 5vw, 58px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      top: -100px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(252, 176, 64, 0.2);
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--gold);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 780px;
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+    }
+
+    .intro {
+      max-width: 760px;
+      margin: 18px 0 0;
+      color: #E7EEF9;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+    }
+
+    .hint {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 22px;
+      padding: 9px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--white);
+      font-size: 0.92rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .flashcard {
+      position: relative;
+      min-height: 320px;
+      padding: 0;
+      border: 0;
+      border-radius: var(--radius);
+      background: transparent;
+      cursor: pointer;
+      perspective: 1200px;
+      text-align: left;
+      font: inherit;
+    }
+
+    .flashcard:focus-visible {
+      outline: 4px solid var(--gold);
+      outline-offset: 5px;
+    }
+
+    .card-inner {
+      position: absolute;
+      inset: 0;
+      transform-style: preserve-3d;
+      transition: transform 0.65s cubic-bezier(.2, .7, .2, 1);
+    }
+
+    .flashcard[aria-pressed="true"] .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 30px;
+      border-radius: var(--radius);
+      backface-visibility: hidden;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .card-front {
+      border: 2px solid rgba(10, 52, 118, 0.12);
+      background: var(--white);
+    }
+
+    .card-front::after {
+      content: "?";
+      position: absolute;
+      right: 22px;
+      bottom: -42px;
+      color: rgba(10, 52, 118, 0.07);
+      font-size: 11rem;
+      font-weight: 800;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .card-back {
+      transform: rotateY(180deg);
+      background: linear-gradient(145deg, var(--navy-dark), var(--navy));
+      color: var(--white);
+    }
+
+    .card-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--navy-dark);
+      font-weight: 800;
+    }
+
+    .question {
+      position: relative;
+      z-index: 1;
+      margin: 26px 0 20px;
+      color: var(--navy-dark);
+      font-size: clamp(1.35rem, 2.3vw, 1.8rem);
+      line-height: 1.2;
+    }
+
+    .answer-label {
+      margin: 0 0 14px;
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .answer {
+      margin: 0;
+      color: #F6F9FF;
+      font-size: clamp(1.03rem, 1.7vw, 1.17rem);
+      line-height: 1.62;
+    }
+
+    .flip-cue {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--teal);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .card-back .flip-cue {
+      color: var(--gold);
+    }
+
+    .footer {
+      margin-top: 30px;
+      padding: 20px 8px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .footer strong {
+      color: var(--navy);
+    }
+
+    @media (max-width: 780px) {
+      .page {
+        width: min(100% - 20px, 680px);
+        padding-top: 18px;
+      }
+
+      .hero {
+        padding: 32px 24px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .flashcard {
+        min-height: 340px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .card-inner {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">Principal and Assistant Principal Toolkit</p>
+      <h1 id="page-title">Flip the Script on Better Campus Meetings</h1>
+      <p class="intro">
+        Explore six quick questions about using Gen AI to plan focused, engaging, and action-oriented leadership meetings.
+      </p>
+      <div class="hint" aria-hidden="true">↻ Select a card to reveal the answer</div>
+    </section>
+
+    <section class="grid" aria-label="Campus meeting flashcards">
+      <button class="flashcard" type="button" aria-pressed="false" aria-label="How can principals make staff meetings more engaging? Select to reveal the answer.">
+        <span class="card-inner">
+          <span class="card-face card-front">
+            <span class="card-number">1</span>
+            <span class="question">How can principals make staff meetings more engaging?</span>
+            <span class="flip-cue">↻ Reveal the answer</span>
+          </span>
+          <span class="card-face card-back" aria-hidden="true">
+            <span>
+              <span class="answer-label">The response</span>
+              <span class="answer">Give the meeting one clear purpose, reduce announcement time, use a structured discussion method, and end with a recorded decision or assigned action. Engagement comes from meaningful participation, not from adding entertainment to an unfocused agenda.</span>
+            </span>
+            <span class="flip-cue">↻ Return to the question</span>
+          </span>
+        </span>
+      </button>
+
+      <button class="flashcard" type="button" aria-pressed="false" aria-label="How can assistant principals use Gen AI for meetings? Select to reveal the answer.">
+        <span class="card-inner">
+          <span class="card-face card-front">
+            <span class="card-number">2</span>
+            <span class="question">How can assistant principals use Gen AI for meetings?</span>
+            <span class="flip-cue">↻ Reveal the answer</span>
+          </span>
+          <span class="card-face card-back" aria-hidden="true">
+            <span>
+              <span class="answer-label">The response</span>
+              <span class="answer">Assistant principals can use Gen AI to reorganize agendas, create discussion scenarios, prepare data questions, rehearse difficult conversations, summarize sanitized notes, and create action logs. A campus leader should review every output before using or sharing it.</span>
+            </span>
+            <span class="flip-cue">↻ Return to the question</span>
+          </span>
+        </span>
+      </button>
+
+      <button class="flashcard" type="button" aria-pressed="false" aria-label="Which Gen AI tools can create meeting activities? Select to reveal the answer.">
+        <span class="card-inner">
+          <span class="card-face card-front">
+            <span class="card-number">3</span>
+            <span class="question">Which Gen AI tools can create meeting activities?</span>
+            <span class="flip-cue">↻ Reveal the answer</span>
+          </span>
+          <span class="card-face card-back" aria-hidden="true">
+            <span>
+              <span class="answer-label">The response</span>
+              <span class="answer">ChatGPT, Claude, Gemini, and BoodleBox can generate agendas, scenarios, protocols, discussion questions, and summaries. The quality of the result usually depends more on the context and instructions in the prompt than on the particular tool selected.</span>
+            </span>
+            <span class="flip-cue">↻ Return to the question</span>
+          </span>
+        </span>
+      </button>
+
+      <button class="flashcard" type="button" aria-pressed="false" aria-label="Can a principal upload campus data to a Gen AI tool? Select to reveal the answer.">
+        <span class="card-inner">
+          <span class="card-face card-front">
+            <span class="card-number">4</span>
+            <span class="question">Can a principal upload campus data to a Gen AI tool?</span>
+            <span class="flip-cue">↻ Reveal the answer</span>
+          </span>
+          <span class="card-face card-back" aria-hidden="true">
+            <span>
+              <span class="answer-label">The response</span>
+              <span class="answer">Do not upload personally identifiable student information, confidential personnel records, evaluation notes, health information, or protected discipline details. Follow district policy and use anonymized, aggregated, or fictionalized information.</span>
+            </span>
+            <span class="flip-cue">↻ Return to the question</span>
+          </span>
+        </span>
+      </button>
+
+      <button class="flashcard" type="button" aria-pressed="false" aria-label="Can Gen AI make school leadership decisions? Select to reveal the answer.">
+        <span class="card-inner">
+          <span class="card-face card-front">
+            <span class="card-number">5</span>
+            <span class="question">Can Gen AI make school leadership decisions?</span>
+            <span class="flip-cue">↻ Reveal the answer</span>
+          </span>
+          <span class="card-face card-back" aria-hidden="true">
+            <span>
+              <span class="answer-label">The response</span>
+              <span class="answer">Gen AI can organize information, generate questions, identify assumptions, and simulate viewpoints. Principals and leadership teams remain responsible for interpreting evidence, considering campus context, consulting affected people, and making the decision.</span>
+            </span>
+            <span class="flip-cue">↻ Return to the question</span>
+          </span>
+        </span>
+      </button>
+
+      <button class="flashcard" type="button" aria-pressed="false" aria-label="What should every campus leadership meeting produce? Select to reveal the answer.">
+        <span class="card-inner">
+          <span class="card-face card-front">
+            <span class="card-number">6</span>
+            <span class="question">What should every campus leadership meeting produce?</span>
+            <span class="flip-cue">↻ Reveal the answer</span>
+          </span>
+          <span class="card-face card-back" aria-hidden="true">
+            <span>
+              <span class="answer-label">The response</span>
+              <span class="answer">The meeting should produce a clear decision, an assigned action, or a documented question that requires more evidence. Each action needs an owner, a deadline, and a follow-up date so the work continues after everyone leaves the room.</span>
+            </span>
+            <span class="flip-cue">↻ Return to the question</span>
+          </span>
+        </span>
+      </button>
+    </section>
+
+    <footer class="footer">
+      <strong>Campus Leadership Meeting Flashcards</strong><br>
+      No accounts, data collection, or external libraries.
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      "use strict";
+
+      const cards = document.querySelectorAll(".flashcard");
+
+      cards.forEach(function (card) {
+        card.addEventListener("click", function () {
+          const isFlipped = card.getAttribute("aria-pressed") === "true";
+          const front = card.querySelector(".card-front");
+          const back = card.querySelector(".card-back");
+
+          card.setAttribute("aria-pressed", String(!isFlipped));
+          card.setAttribute(
+            "aria-label",
+            !isFlipped
+              ? "Answer shown. Select to return to the question."
+              : front.querySelector(".question").textContent + " Select to reveal the answer."
+          );
+
+          front.setAttribute("aria-hidden", String(!isFlipped));
+          back.setAttribute("aria-hidden", String(isFlipped));
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

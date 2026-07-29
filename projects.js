@@ -773,7 +773,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "breakouts/clear/index.html",
+    "href": "activities/clear/index.html",
     "tag": "Breakout Library",
     "title": "Critical Thinking Breakouts",
     "desc": "Grade-band breakout activities (3-5, 6-8, 9-12) across ELA, science, and social studies that teach evidence-based reasoning, available in seven languages."
@@ -881,7 +881,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "breakouts/clear/correlation.html",
+    "href": "activities/clear/correlation.html",
     "tag": "Alignment",
     "title": "Breakouts Correlation Guide",
     "desc": "A multilingual correlation guide mapping the Critical Thinking Breakouts to standards and thinking skills."
@@ -890,7 +890,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "breakouts/clear/answer-key.html",
+    "href": "activities/clear/answer-key.html",
     "tag": "Facilitator",
     "title": "Breakouts Answer Key",
     "desc": "The facilitator answer key and recording sheet for running the Critical Thinking Breakouts activities."
@@ -899,7 +899,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "breakouts/july4/index.html",
+    "href": "activities/july4/index.html",
     "tag": "Holiday Breakouts",
     "title": "Fourth of July Critical Thinking Breakouts",
     "desc": "Twelve self-contained U.S. history escape activities across three grade bands (3-5, 6-8, 9-12). Students open clues, weigh evidence, and crack four locks each &mdash; building history knowledge and critical-thinking habits. No logins, no data collected."
@@ -908,7 +908,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "breakouts/july4/correlation.html",
+    "href": "activities/july4/correlation.html",
     "tag": "Alignment",
     "title": "Fourth of July Breakouts Correlation Guide",
     "desc": "A standards correlation guide mapping the twelve Fourth of July breakouts by grade band to Texas Essential Knowledge and Skills, Common Core literacy standards, and the CLEAR thinking process."
@@ -917,7 +917,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "breakouts/july5th/index.html",
+    "href": "activities/july5th/index.html",
     "tag": "Holiday Breakouts",
     "title": "July 5 &amp; Black Freedom Holidays Breakouts",
     "desc": "Twelve self-contained critical thinking breakouts across three grade bands (3-5, 6-8, 9-12) exploring the freedom days the calendar often overlooks &mdash; Frederick Douglass&rsquo;s July 5 address, Juneteenth, Pinkster, Watch Night, and more. Students open clues, weigh evidence, and crack four locks each. No logins, no data collected."
@@ -926,7 +926,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "breakouts/july5th/correlation.html",
+    "href": "activities/july5th/correlation.html",
     "tag": "Alignment",
     "title": "Black Freedom Holidays Breakouts Correlation Guide",
     "desc": "A standards correlation guide mapping the twelve July 5 &amp; Black Freedom Holidays breakouts by grade band to Texas Essential Knowledge and Skills, Common Core literacy standards, and the CLEAR thinking process."
@@ -935,16 +935,16 @@
     "category": "breakouts",
     "featured": true,
     "external": false,
-    "href": "breakouts/index.html",
-    "tag": "Breakout Library",
-    "title": "Critical Thinking Online Breakouts &mdash; Full Library",
-    "desc": "A single searchable library of every TCEA Critical Thinking Online Breakout (CTOB) &mdash; 193 self-contained, browser-based reasoning escapes across five suites (CLEAR, Fourth of July, July 5 &amp; Black Freedom Holidays, Bible as Literature, and Science) in seven languages. Search by name, topic, or grade; no logins, no data collected."
+    "href": "activities/index.html",
+    "tag": "Activities Hub",
+    "title": "TCEA Activities Hub",
+    "desc": "A single searchable home for classroom activities in seven languages. Its flagship is the Critical Thinking Online Breakouts (CTOBs) &mdash; self-contained, browser-based reasoning escapes across six suites (CLEAR, Fourth of July, July 5 &amp; Black Freedom Holidays, Bible as Literature, Science, and Idioms) &mdash; alongside Problem-Solving Teaching units, Relic Rooms, Digital Math Tools, and the Map Puzzle generator. Search by name, topic, or grade; no logins, no data collected."
   },
   {
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "breakouts/bible/index.html",
+    "href": "activities/bible/index.html",
     "tag": "Breakout Library",
     "title": "Bible as Literature Breakouts",
     "desc": "Thirty-one critical-thinking breakouts on the Texas-adopted Bible stories, studied academically &mdash; as literature and history, never devotionally. Covers every K&ndash;12 required-list Bible item (creation, Noah, David &amp; Goliath, the Psalms, the Prodigal Son, Job, 1 Corinthians 13, and more) across four grade bands, in seven languages."
@@ -953,7 +953,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "breakouts/bible/correlation.html",
+    "href": "activities/bible/correlation.html",
     "tag": "Alignment",
     "title": "Bible as Literature Breakouts Correlation Guide",
     "desc": "A TEKS correlation guide mapping each Bible as Literature breakout to the ELAR strands, the CLEAR reasoning focus, and the high-effect-size instructional strategy engineered into its locks."
@@ -962,7 +962,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "breakouts/science/index.html",
+    "href": "activities/science/index.html",
     "tag": "Breakout Library",
     "title": "Science Critical Thinking Breakouts (Grades K&ndash;8)",
     "desc": "Critical Thinking Online Breakouts across the Texas science TEKS, Grades K&ndash;8 &mdash; from pushes and pulls to conservation of mass. Each grade has a featured breakout, a concept set, a hands-on STEM engineering design challenge, and a student word bank, in seven languages."
@@ -971,7 +971,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "breakouts/science/correlation.html",
+    "href": "activities/science/correlation.html",
     "tag": "Alignment",
     "title": "Science Breakouts Correlation Guide",
     "desc": "A standards correlation guide mapping the Science Critical Thinking Breakouts by grade to the Texas science TEKS and the reasoning moves engineered into each lock."
@@ -980,7 +980,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "breakouts/idioms/index.html",
+    "href": "activities/idioms/index.html",
     "tag": "Breakout Library",
     "title": "Idioms &amp; Sayings for Multilingual Learners",
     "desc": "A multilingual idioms &amp; sayings suite for grades 3–12 — decode English idioms with your home language as a resource (ESL) and compare sayings across languages. 12 breakouts fully translated into seven languages (including French &amp; Latin units for world-language classrooms), a 66-idiom illustrated spotlight, a three-game Idiom Arcade, printable card decks, and teacher UDL/ELPS/lesson-plan supports. Aligned to the Texas ELPS (idiomatic expressions) and WIDA; no logins, no data collected."
@@ -989,7 +989,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "breakouts/idioms/index.html#arcade",
+    "href": "activities/idioms/index.html#arcade",
     "tag": "Games",
     "title": "Idiom Arcade — 3 Idiom Games",
     "desc": "Three fast, free, self-contained arcade games that teach English idioms: Match Blitz (timed idiom–meaning matching), Meaning Meteors (a catch-the-meaning canvas arcade), and Trap Escape (a literal-vs-figurative reflex game). Playable by touch, mouse, or keyboard; runs entirely in the browser with no logins and no data collected."
@@ -998,7 +998,7 @@
     "category": "breakouts",
     "featured": false,
     "external": false,
-    "href": "breakouts/idioms/correlation.html",
+    "href": "activities/idioms/correlation.html",
     "tag": "Alignment",
     "title": "Idioms &amp; Sayings Standards Alignment (ELPS / TEKS)",
     "desc": "How the Idioms &amp; Sayings suite aligns to the Texas ELPS (19 TAC §74.4), the ELAR TEKS, and the LOTE TEKS for Bilingual/ESL and multilingual classrooms — with a K–12 public-school appropriateness statement and links to the Texas EL program frameworks."
