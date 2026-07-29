@@ -79,6 +79,37 @@ a { color: var(--brand); }
 .hero-nav a:hover { transform: translateY(-1px); }
 .hero-nav a:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 
+/* --- Sub-page header (research.html) --- */
+.subhero {
+  background:
+    radial-gradient(1100px 300px at 85% -20%, rgba(232, 100, 28, 0.10), transparent 60%),
+    linear-gradient(180deg, #eaf2fb 0%, var(--paper) 100%);
+  padding: clamp(1.4rem, 4vw, 2.6rem) 1.25rem clamp(1rem, 3vw, 1.6rem);
+}
+.subhero-inner { max-width: var(--maxw); margin: 0 auto; }
+.back-link {
+  display: inline-block; margin-bottom: .8rem; font-weight: 800; text-decoration: none;
+  color: var(--brand-dark); padding: .4rem .9rem; border-radius: 999px;
+  border: 1.5px solid var(--brand); background: #fff;
+}
+.back-link:hover { transform: translateY(-1px); }
+.back-link:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.subhero h1 {
+  margin: 0; color: var(--brand-dark); letter-spacing: -0.01em;
+  font-size: clamp(1.5rem, 3.6vw, 2.4rem); line-height: 1.1; max-width: 24ch;
+}
+
+/* Call-to-action links between the two pages */
+.research-cta { margin: 2.4rem 0 0; text-align: center; }
+.research-cta a, .back-cta a {
+  display: inline-block; font-weight: 800; text-decoration: none;
+  color: #fff; background: var(--brand); border: 1.5px solid var(--brand);
+  padding: .7rem 1.3rem; border-radius: 999px;
+}
+.research-cta a:hover, .back-cta a:hover { background: var(--brand-dark); transform: translateY(-1px); }
+.research-cta a:focus-visible, .back-cta a:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.back-cta { margin-top: 2.2rem; }
+
 /* --- Layout --- */
 main { max-width: var(--maxw); margin: 0 auto; padding: clamp(1.5rem, 4vw, 2.8rem) 1.25rem 4rem; }
 section { scroll-margin-top: 80px; }

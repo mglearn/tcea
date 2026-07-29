@@ -70,6 +70,7 @@
 
       'research.sources.h': 'Sources',
       'research.sources.note': 'Sawyer, Braz, and Babcock (2009) is a higher-education study; findings are applied here to K–12 with that in mind. Yeager and Duckworth (2014) is cited as referenced within Fleming (2020).',
+      'research.cta': 'Read the research behind these worksheets →',
       'footer.license': 'Worksheets © Miguel Guhlin, licensed CC BY-SA. Site for TCEA.',
       'footer.built': 'Interest inventories for Grades K–12 · English · Español · Tiếng Việt',
     },
@@ -137,6 +138,7 @@
 
       'research.sources.h': 'Fuentes',
       'research.sources.note': 'Sawyer, Braz y Babcock (2009) es un estudio de educación superior; aquí sus hallazgos se aplican a K–12 teniéndolo en cuenta. Yeager y Duckworth (2014) se cita según lo referido en Fleming (2020).',
+      'research.cta': 'Lee la investigación detrás de estas hojas →',
       'footer.license': 'Hojas © Miguel Guhlin, con licencia CC BY-SA. Sitio para TCEA.',
       'footer.built': 'Inventarios de intereses para Grados K–12 · English · Español · Tiếng Việt',
     },
@@ -204,6 +206,7 @@
 
       'research.sources.h': 'Nguồn',
       'research.sources.note': 'Sawyer, Braz và Babcock (2009) là nghiên cứu bậc đại học; các phát hiện được áp dụng cho K–12 với lưu ý đó. Yeager và Duckworth (2014) được dẫn theo Fleming (2020).',
+      'research.cta': 'Đọc nghiên cứu đằng sau các phiếu này →',
       'footer.license': 'Phiếu © Miguel Guhlin, giấy phép CC BY-SA. Trang cho TCEA.',
       'footer.built': 'Phiếu khảo sát sở thích cho Lớp K–12 · English · Español · Tiếng Việt',
     },
