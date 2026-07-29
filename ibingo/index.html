@@ -189,7 +189,7 @@ Hallucination
     <div class="row">
       <div>
         <label for="title">Game title (optional)</label>
-        <input type="text" id="title" placeholder="AI Terminology Bingo">
+        <input type="text" id="title" aria-label="Bingo title" placeholder="AI Terminology Bingo">
       </div>
     </div>
     <div class="check">
@@ -205,14 +205,14 @@ Hallucination
     <div class="share-box" id="shareBox">
       <label>1. Share this link with students</label>
       <div class="share-row">
-        <input type="text" id="shareUrl" readonly>
+        <input type="text" id="shareUrl" aria-label="1. Share this link with students" readonly>
         <button class="btn-primary" onclick="copyLink('shareUrl',this)">Copy</button>
       </div>
       <div class="hint">Every student who opens the link gets the <strong>same terms</strong> but a <strong>different randomized card</strong>. No accounts, no server — the game lives inside the link.</div>
 
       <label style="margin-top:18px">2. Embed in Google Sites (Insert → Embed → Embed code)</label>
       <div class="share-row">
-        <input type="text" id="hostUrl" placeholder="Where you uploaded this file, e.g. https://yoursite.github.io/bingo-maker.html">
+        <input aria-label="2. Embed in Google Sites (Insert → Embed → Embed code)" type="text" id="hostUrl" placeholder="Where you uploaded this file, e.g. https://yoursite.github.io/bingo-maker.html">
       </div>
       <div class="hint" style="margin-bottom:8px">Paste the address where <strong>this HTML file is hosted</strong> (GitHub Pages, your school server, etc.), then copy the embed code below. Google Sites runs it in a sandboxed iframe, so JavaScript stays intact.</div>
       <div class="share-row">

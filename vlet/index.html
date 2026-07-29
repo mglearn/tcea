@@ -624,12 +624,12 @@ footer strong{color:#fff;}
     </div>
 
     <div class="tabs">
-      <div class="tab active" onclick="showTab('aldo',this)">ALDO</div>
-      <div class="tab" onclick="showTab('eiir',this)">EIIR Coaching</div>
-      <div class="tab" onclick="showTab('rise',this)">RISE Goals</div>
-      <div class="tab" onclick="showTab('learns',this)">LEARNS Cycle</div>
-      <div class="tab" onclick="showTab('floater',this)">FLOATER</div>
-      <div class="tab" onclick="showTab('sift',this)">SIFT</div>
+      <div tabindex="0" role="button" class="tab active" onclick="showTab('aldo',this)">ALDO</div>
+      <div tabindex="0" role="button" class="tab" onclick="showTab('eiir',this)">EIIR Coaching</div>
+      <div tabindex="0" role="button" class="tab" onclick="showTab('rise',this)">RISE Goals</div>
+      <div tabindex="0" role="button" class="tab" onclick="showTab('learns',this)">LEARNS Cycle</div>
+      <div tabindex="0" role="button" class="tab" onclick="showTab('floater',this)">FLOATER</div>
+      <div tabindex="0" role="button" class="tab" onclick="showTab('sift',this)">SIFT</div>
     </div>
 
     <div id="tab-aldo" class="tab-panel active">
@@ -852,5 +852,14 @@ function showTab(id, el) {
 <nav class="mg-bottom-nav" aria-label="Back navigation" style="text-align:center;padding:1.25rem 1.5rem;background:#071F4A;border-top:3px solid #FCB040;font-family:system-ui,-apple-system,sans-serif;">
   <a href="../index.html" style="color:#FDD17A;text-decoration:none;font-weight:700;font-size:0.85rem;margin:0 0.7rem;">← TCEA</a>
 </nav>
+
+<!-- a11y-keyboard-shim -->
+<script>
+document.addEventListener("keydown",function(e){
+  if(e.key!=="Enter"&&e.key!==" ")return;
+  var el=e.target.closest&&e.target.closest("[onclick][tabindex]");
+  if(el){e.preventDefault();el.click();}
+});
+</script>
 </body>
 </html>

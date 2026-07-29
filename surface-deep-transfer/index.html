@@ -88,10 +88,10 @@ body { font-family: var(--font-sans); font-size: 15px; line-height: 1.5; color: 
     <p>The <strong>surface → deep → transfer</strong> progression (Visible Learning) that underpins <strong>Problem-Solving Teaching (PST)</strong> — see the <a href="../pst/index.html">PST units</a> and <a href="../pst/dashboard.html">strategy dashboard</a>. Strategies tagged <span class="pst-badge">PST</span> are the ones the PST units use. Click any strategy for a definition, a classroom example, and a link to its Visible Learning MetaX page.</p>
   </div>
   <div class="progression-bar" id="progBar">
-    <div class="prog-seg s-on surface" onclick="switchTab('surface')">Uni-structural</div>
-    <div class="prog-seg s-on surface" onclick="switchTab('surface')">Multi-structural</div>
-    <div class="prog-seg" onclick="switchTab('deep')">Relational</div>
-    <div class="prog-seg" onclick="switchTab('transfer')">Extended abstract</div>
+    <div tabindex="0" role="button" class="prog-seg s-on surface" onclick="switchTab('surface')">Uni-structural</div>
+    <div tabindex="0" role="button" class="prog-seg s-on surface" onclick="switchTab('surface')">Multi-structural</div>
+    <div tabindex="0" role="button" class="prog-seg" onclick="switchTab('deep')">Relational</div>
+    <div tabindex="0" role="button" class="prog-seg" onclick="switchTab('transfer')">Extended abstract</div>
   </div>
 
   <div class="phase-tabs">
@@ -107,7 +107,7 @@ body { font-family: var(--font-sans); font-size: 15px; line-height: 1.5; color: 
         <p>Mastering basic facts, vocabulary, and separate skills. Focus on the foundational "what."</p>
       </div>
       
-      <div class="solo-row" onclick="toggleSolo(this)">
+      <div tabindex="0" role="button" class="solo-row" onclick="toggleSolo(this)">
         <strong>SOLO Levels: Uni-structural & Multi-structural (Click to view)</strong>
         <div class="solo-details">
           <strong>Uni-structural:</strong> Focus on one relevant part of the task (e.g., naming one step in a process).<br>
@@ -116,7 +116,7 @@ body { font-family: var(--font-sans); font-size: 15px; line-height: 1.5; color: 
       </div>
 
       <div class="strategy-grid">
-        <div class="strategy-chip" onclick="toggleExample(this)">
+        <div tabindex="0" role="button" class="strategy-chip" onclick="toggleExample(this)">
           <span class="chip-name">Jigsaw Method (Surface) <span class="pst-badge">PST</span></span>
           <span class="chip-effect es-surface">d = 0.92</span>
           <div class="content-box">
@@ -125,7 +125,7 @@ body { font-family: var(--font-sans); font-size: 15px; line-height: 1.5; color: 
             <br><br><a href="https://www.visiblelearningmetax.com/influences/view/jigsaw_method" target="_blank" rel="noopener noreferrer" style="color:#4f3a8c;font-weight:600;">↗ Visible Learning MetaX</a>
           </div>
         </div>
-        <div class="strategy-chip" onclick="toggleExample(this)">
+        <div tabindex="0" role="button" class="strategy-chip" onclick="toggleExample(this)">
           <span class="chip-name">Outlining and Organizing</span>
           <span class="chip-effect es-surface">d = 0.84</span>
           <div class="content-box">
@@ -134,7 +134,7 @@ body { font-family: var(--font-sans); font-size: 15px; line-height: 1.5; color: 
             <br><br><a href="https://www.visiblelearningmetax.com/influences/view/outlining_&amp;_organizing" target="_blank" rel="noopener noreferrer" style="color:#4f3a8c;font-weight:600;">↗ Visible Learning MetaX</a>
           </div>
         </div>
-        <div class="strategy-chip" onclick="toggleExample(this)">
+        <div tabindex="0" role="button" class="strategy-chip" onclick="toggleExample(this)">
           <span class="chip-name">Repeated Reading</span>
           <span class="chip-effect es-surface">d = 0.80</span>
           <div class="content-box">
@@ -143,7 +143,7 @@ body { font-family: var(--font-sans); font-size: 15px; line-height: 1.5; color: 
             <br><br><a href="https://www.visiblelearningmetax.com/influences/view/repeated_reading_programs" target="_blank" rel="noopener noreferrer" style="color:#4f3a8c;font-weight:600;">↗ Visible Learning MetaX</a>
           </div>
         </div>
-        <div class="strategy-chip" onclick="toggleExample(this)">
+        <div tabindex="0" role="button" class="strategy-chip" onclick="toggleExample(this)">
           <span class="chip-name">Vocabulary Programs</span>
           <span class="chip-effect es-surface">d = 0.65</span>
           <div class="content-box">
@@ -152,7 +152,7 @@ body { font-family: var(--font-sans); font-size: 15px; line-height: 1.5; color: 
             <br><br><a href="https://www.visiblelearningmetax.com/influences/view/vocabulary_programs" target="_blank" rel="noopener noreferrer" style="color:#4f3a8c;font-weight:600;">↗ Visible Learning MetaX</a>
           </div>
         </div>
-        <div class="strategy-chip" onclick="toggleExample(this)">
+        <div tabindex="0" role="button" class="strategy-chip" onclick="toggleExample(this)">
           <span class="chip-name">Spaced Practice</span>
           <span class="chip-effect es-surface">d = 0.62</span>
           <div class="content-box">
@@ -161,7 +161,7 @@ body { font-family: var(--font-sans); font-size: 15px; line-height: 1.5; color: 
             <br><br><a href="https://www.visiblelearningmetax.com/influences/view/spaced_vs._mass_practice" target="_blank" rel="noopener noreferrer" style="color:#4f3a8c;font-weight:600;">↗ Visible Learning MetaX</a>
           </div>
         </div>
-        <div class="strategy-chip" onclick="toggleExample(this)">
+        <div tabindex="0" role="button" class="strategy-chip" onclick="toggleExample(this)">
           <span class="chip-name">Retrieval Practice</span>
           <span class="chip-effect es-surface">d = 0.49</span>
           <div class="content-box">
@@ -170,7 +170,7 @@ body { font-family: var(--font-sans); font-size: 15px; line-height: 1.5; color: 
             <br><br><a href="https://www.visiblelearningmetax.com/influences/view/retrieval_practice" target="_blank" rel="noopener noreferrer" style="color:#4f3a8c;font-weight:600;">↗ Visible Learning MetaX</a>
           </div>
         </div>
-        <div class="strategy-chip" onclick="toggleExample(this)">
+        <div tabindex="0" role="button" class="strategy-chip" onclick="toggleExample(this)">
           <span class="chip-name">Direct Instruction <span class="pst-badge">PST</span></span>
           <span class="chip-effect es-surface">d = 0.56</span>
           <div class="content-box">
@@ -191,7 +191,7 @@ body { font-family: var(--font-sans); font-size: 15px; line-height: 1.5; color: 
         <p>Connecting ideas, identifying patterns, and understanding the "why" through interaction.</p>
       </div>
 
-      <div class="solo-row" onclick="toggleSolo(this)">
+      <div tabindex="0" role="button" class="solo-row" onclick="toggleSolo(this)">
         <strong>SOLO Level: Relational (Click to view)</strong>
         <div class="solo-details">
           <strong>Relational:</strong> Integrating several parts into a coherent whole. Understanding relationships between concepts and the big picture.
@@ -199,7 +199,7 @@ body { font-family: var(--font-sans); font-size: 15px; line-height: 1.5; color: 
       </div>
 
       <div class="strategy-grid">
-        <div class="strategy-chip" onclick="toggleExample(this)">
+        <div tabindex="0" role="button" class="strategy-chip" onclick="toggleExample(this)">
           <span class="chip-name">Micro-Teaching</span>
           <span class="chip-effect es-deep">d = 0.99</span>
           <div class="content-box">
@@ -208,7 +208,7 @@ body { font-family: var(--font-sans); font-size: 15px; line-height: 1.5; color: 
             <br><br><a href="https://www.visiblelearningmetax.com/influences/view/micro-teaching~video_review_of_lessons" target="_blank" rel="noopener noreferrer" style="color:#4f3a8c;font-weight:600;">↗ Visible Learning MetaX</a>
           </div>
         </div>
-        <div class="strategy-chip" onclick="toggleExample(this)">
+        <div tabindex="0" role="button" class="strategy-chip" onclick="toggleExample(this)">
           <span class="chip-name">Jigsaw Method (Deep) <span class="pst-badge">PST</span></span>
           <span class="chip-effect es-deep">d = 0.92</span>
           <div class="content-box">
@@ -217,7 +217,7 @@ body { font-family: var(--font-sans); font-size: 15px; line-height: 1.5; color: 
             <br><br><a href="https://www.visiblelearningmetax.com/influences/view/jigsaw_method" target="_blank" rel="noopener noreferrer" style="color:#4f3a8c;font-weight:600;">↗ Visible Learning MetaX</a>
           </div>
         </div>
-        <div class="strategy-chip" onclick="toggleExample(this)">
+        <div tabindex="0" role="button" class="strategy-chip" onclick="toggleExample(this)">
           <span class="chip-name">Constructivist Teaching</span>
           <span class="chip-effect es-deep">d = 0.90</span>
           <div class="content-box">
@@ -226,7 +226,7 @@ body { font-family: var(--font-sans); font-size: 15px; line-height: 1.5; color: 
             <br><br><a href="https://www.visiblelearningmetax.com/influences/view/constructivist_teaching" target="_blank" rel="noopener noreferrer" style="color:#4f3a8c;font-weight:600;">↗ Visible Learning MetaX</a>
           </div>
         </div>
-        <div class="strategy-chip" onclick="toggleExample(this)">
+        <div tabindex="0" role="button" class="strategy-chip" onclick="toggleExample(this)">
           <span class="chip-name">Feedback (Timing)</span>
           <span class="chip-effect es-deep">d = 0.89</span>
           <div class="content-box">
@@ -235,7 +235,7 @@ body { font-family: var(--font-sans); font-size: 15px; line-height: 1.5; color: 
             <br><br><a href="https://www.visiblelearningmetax.com/influences/view/feedback_(timing)" target="_blank" rel="noopener noreferrer" style="color:#4f3a8c;font-weight:600;">↗ Visible Learning MetaX</a>
           </div>
         </div>
-        <div class="strategy-chip" onclick="toggleExample(this)">
+        <div tabindex="0" role="button" class="strategy-chip" onclick="toggleExample(this)">
           <span class="chip-name">Argumentation <span class="pst-badge">PST</span></span>
           <span class="chip-effect es-deep">d = 0.86</span>
           <div class="content-box">
@@ -244,7 +244,7 @@ body { font-family: var(--font-sans); font-size: 15px; line-height: 1.5; color: 
             <br><br><a href="https://www.visiblelearningmetax.com/influences/view/argumentation" target="_blank" rel="noopener noreferrer" style="color:#4f3a8c;font-weight:600;">↗ Visible Learning MetaX</a>
           </div>
         </div>
-        <div class="strategy-chip" onclick="toggleExample(this)">
+        <div tabindex="0" role="button" class="strategy-chip" onclick="toggleExample(this)">
           <span class="chip-name">Reciprocal Teaching</span>
           <span class="chip-effect es-deep">d = 0.74</span>
           <div class="content-box">
@@ -253,7 +253,7 @@ body { font-family: var(--font-sans); font-size: 15px; line-height: 1.5; color: 
             <br><br><a href="https://www.visiblelearningmetax.com/influences/view/reciprocal_teaching" target="_blank" rel="noopener noreferrer" style="color:#4f3a8c;font-weight:600;">↗ Visible Learning MetaX</a>
           </div>
         </div>
-        <div class="strategy-chip" onclick="toggleExample(this)">
+        <div tabindex="0" role="button" class="strategy-chip" onclick="toggleExample(this)">
           <span class="chip-name">Concept Mapping <span class="pst-badge">PST</span></span>
           <span class="chip-effect es-deep">d = 0.64</span>
           <div class="content-box">
@@ -262,7 +262,7 @@ body { font-family: var(--font-sans); font-size: 15px; line-height: 1.5; color: 
             <br><br><a href="https://www.visiblelearningmetax.com/influences/view/concept_mapping" target="_blank" rel="noopener noreferrer" style="color:#4f3a8c;font-weight:600;">↗ Visible Learning MetaX</a>
           </div>
         </div>
-        <div class="strategy-chip" onclick="toggleExample(this)">
+        <div tabindex="0" role="button" class="strategy-chip" onclick="toggleExample(this)">
           <span class="chip-name">Elaboration &amp; Organization <span class="pst-badge">PST</span></span>
           <span class="chip-effect es-deep">d = 0.72</span>
           <div class="content-box">
@@ -283,7 +283,7 @@ body { font-family: var(--font-sans); font-size: 15px; line-height: 1.5; color: 
         <p>Applying knowledge to novel situations and generalizing concepts across domains.</p>
       </div>
 
-      <div class="solo-row" onclick="toggleSolo(this)">
+      <div tabindex="0" role="button" class="solo-row" onclick="toggleSolo(this)">
         <strong>SOLO Level: Extended Abstract (Click to view)</strong>
         <div class="solo-details">
           <strong>Extended Abstract:</strong> Generalizing to a higher level of abstraction. Creating hypotheses or connecting the learning to a new field.
@@ -291,7 +291,7 @@ body { font-family: var(--font-sans); font-size: 15px; line-height: 1.5; color: 
       </div>
 
       <div class="strategy-grid">
-        <div class="strategy-chip" onclick="toggleExample(this)">
+        <div tabindex="0" role="button" class="strategy-chip" onclick="toggleExample(this)">
           <span class="chip-name">Self-Reported Grades</span>
           <span class="chip-effect es-transfer">d = 0.96</span>
           <div class="content-box">
@@ -300,7 +300,7 @@ body { font-family: var(--font-sans); font-size: 15px; line-height: 1.5; color: 
             <br><br><a href="https://www.visiblelearningmetax.com/influences/view/self-reported_grades" target="_blank" rel="noopener noreferrer" style="color:#4f3a8c;font-weight:600;">↗ Visible Learning MetaX</a>
           </div>
         </div>
-        <div class="strategy-chip" onclick="toggleExample(this)">
+        <div tabindex="0" role="button" class="strategy-chip" onclick="toggleExample(this)">
           <span class="chip-name">Mathematics Problem Solving</span>
           <span class="chip-effect es-transfer">d = 0.88</span>
           <div class="content-box">
@@ -309,7 +309,7 @@ body { font-family: var(--font-sans); font-size: 15px; line-height: 1.5; color: 
             <br><br><a href="https://www.visiblelearningmetax.com/influences/view/mathematics_problem_solving" target="_blank" rel="noopener noreferrer" style="color:#4f3a8c;font-weight:600;">↗ Visible Learning MetaX</a>
           </div>
         </div>
-        <div class="strategy-chip" onclick="toggleExample(this)">
+        <div tabindex="0" role="button" class="strategy-chip" onclick="toggleExample(this)">
           <span class="chip-name">Virtual Reality (Science)</span>
           <span class="chip-effect es-transfer">d = 0.80</span>
           <div class="content-box">
@@ -318,7 +318,7 @@ body { font-family: var(--font-sans); font-size: 15px; line-height: 1.5; color: 
             <br><br><a href="https://www.visiblelearningmetax.com/Influences" target="_blank" rel="noopener noreferrer" style="color:#4f3a8c;font-weight:600;">↗ Visible Learning MetaX (influence index)</a>
           </div>
         </div>
-        <div class="strategy-chip" onclick="toggleExample(this)">
+        <div tabindex="0" role="button" class="strategy-chip" onclick="toggleExample(this)">
           <span class="chip-name">Transfer Strategies <span class="pst-badge">PST</span></span>
           <span class="chip-effect es-transfer">d = 0.75</span>
           <div class="content-box">
@@ -327,7 +327,7 @@ body { font-family: var(--font-sans); font-size: 15px; line-height: 1.5; color: 
             <br><br><a href="https://www.visiblelearningmetax.com/influences/view/transfer_strategies" target="_blank" rel="noopener noreferrer" style="color:#4f3a8c;font-weight:600;">↗ Visible Learning MetaX</a>
           </div>
         </div>
-        <div class="strategy-chip" onclick="toggleExample(this)">
+        <div tabindex="0" role="button" class="strategy-chip" onclick="toggleExample(this)">
           <span class="chip-name">Problem-Solving Teaching <span class="pst-badge">PST</span></span>
           <span class="chip-effect es-transfer">d = 0.61</span>
           <div class="content-box">
@@ -336,7 +336,7 @@ body { font-family: var(--font-sans); font-size: 15px; line-height: 1.5; color: 
             <br><br><a href="https://www.visiblelearningmetax.com/influences/view/problem-solving_teaching" target="_blank" rel="noopener noreferrer" style="color:#4f3a8c;font-weight:600;">↗ Visible Learning MetaX</a>
           </div>
         </div>
-        <div class="strategy-chip" onclick="toggleExample(this)">
+        <div tabindex="0" role="button" class="strategy-chip" onclick="toggleExample(this)">
           <span class="chip-name">Problem-Based Learning <span class="pst-badge">PST</span></span>
           <span class="chip-effect es-transfer">d = 0.53</span>
           <div class="content-box">
@@ -346,7 +346,7 @@ body { font-family: var(--font-sans); font-size: 15px; line-height: 1.5; color: 
           </div>
         </div>
 
-        <div class="strategy-chip" onclick="toggleExample(this)">
+        <div tabindex="0" role="button" class="strategy-chip" onclick="toggleExample(this)">
           <span class="chip-name">Evaluation &amp; Reflection <span class="pst-badge">PST</span></span>
           <span class="chip-effect es-transfer">d = 0.75</span>
           <div class="content-box">
@@ -384,5 +384,14 @@ function toggleExample(el) { el.classList.toggle('open'); }
 <nav class="mg-bottom-nav" aria-label="Back navigation" style="text-align:center;padding:1.25rem 1.5rem;background:#071F4A;border-top:3px solid #FCB040;font-family:system-ui,-apple-system,sans-serif;">
   <a href="../index.html" style="color:#FDD17A;text-decoration:none;font-weight:700;font-size:0.85rem;margin:0 0.7rem;">← TCEA</a>
 </nav>
+
+<!-- a11y-keyboard-shim -->
+<script>
+document.addEventListener("keydown",function(e){
+  if(e.key!=="Enter"&&e.key!==" ")return;
+  var el=e.target.closest&&e.target.closest("[onclick][tabindex]");
+  if(el){e.preventDefault();el.click();}
+});
+</script>
 </body>
 </html>

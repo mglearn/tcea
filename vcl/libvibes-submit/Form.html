@@ -3,6 +3,7 @@
 <head>
 <base target="_top">
 <meta charset="UTF-8">
+<title>Share your LibVibe</title>
 <style>
   :root{--navy:#0A3476;--navy-dark:#071F4A;--gold:#FCB040;--gold-light:#FDD17A;--teal:#0E6B8A;
         --off-white:#F7F8FC;--text:#1A1A2E;--muted:#5A6680;--border:#E2E7F5;--ok:#1f9d63;--err:#c2493f;}
@@ -44,19 +45,19 @@
     <div class="row">
       <div>
         <label>Your name <span class="req">*</span></label>
-        <input id="name" required maxlength="120">
+        <input id="name" aria-label="Your name *" required maxlength="120">
       </div>
       <div>
         <label>Email <span class="hint">(optional, for credit/follow-up)</span></label>
-        <input id="email" type="email" maxlength="160">
+        <input aria-label="Email (optional, for credit/follow-up)" id="email" type="email" maxlength="160">
       </div>
     </div>
 
     <label>School / library <span class="hint">(optional)</span></label>
-    <input id="school" maxlength="160">
+    <input id="school" aria-label="School / library (optional)" maxlength="160">
 
     <label>Solution title <span class="req">*</span></label>
-    <input id="title" required maxlength="120" placeholder="e.g. Genrefication Sorting Game">
+    <input aria-label="Solution title *" id="title" required maxlength="120" placeholder="e.g. Genrefication Sorting Game">
 
     <div class="row">
       <div>
@@ -88,7 +89,7 @@
     </div>
 
     <label>One-line description <span class="req">*</span></label>
-    <input id="description" required maxlength="200" placeholder="What does it do, in one sentence?">
+    <input aria-label="One-line description *" id="description" required maxlength="200" placeholder="What does it do, in one sentence?">
 
     <label>The starter prompt <span class="req">*</span> <span class="hint">— the prompt you pasted into the AI</span></label>
     <textarea id="prompt" class="code" required></textarea>
@@ -97,7 +98,7 @@
     <textarea id="solutionHtml" class="code" placeholder="Paste your complete index.html here (one self-contained file)…"></textarea>
 
     <label>…or a link to your solution <span class="hint">(GitHub Pages, etc.)</span></label>
-    <input id="solutionLink" type="url" placeholder="https://…">
+    <input aria-label="…or a link to your solution (GitHub Pages, etc.)" id="solutionLink" type="url" placeholder="https://…">
 
     <label class="agree">
       <input id="agree" type="checkbox">

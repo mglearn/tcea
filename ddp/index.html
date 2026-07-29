@@ -541,12 +541,12 @@ const patterns = [
     desc: 'A card that flips on hover or click to reveal detail on the back. Good for a headline number with an explanation behind it.',
     best: 'Anywhere. CSS transforms only. Survives WordPress Custom HTML, Google Sites, and GitHub Pages with no changes.',
     sources: [['paste','Paste a short list of label / detail pairs'],['open','Any small fact set you already have']],
-    demo: `<div class="flip" onclick="this.classList.toggle('flipped')">
+    demo: `<div tabindex="0" role="button" class="flip" onclick="this.classList.toggle('flipped')">
       <div class="flip-inner">
         <div class="flip-face flip-front"><div class="ff-num">73%</div><div>Tap to flip</div></div>
         <div class="flip-face flip-back">73% of staff completed the AI training in Q2</div>
       </div></div>
-      <div class="flip" onclick="this.classList.toggle('flipped')"><div class="flip-inner">
+      <div tabindex="0" role="button" class="flip" onclick="this.classList.toggle('flipped')"><div class="flip-inner">
         <div class="flip-face flip-front"><div class="ff-num">12</div><div>Tap to flip</div></div>
         <div class="flip-face flip-back">12 campuses now have a coaching cycle in place</div>
       </div></div>`,
@@ -797,7 +797,7 @@ Data (date, event):
     best: 'GitHub Pages and iframe embeds. State tracking needs JavaScript. Avoid localStorage if the destination is a sandboxed iframe.',
     sources: [['paste','Paste term and definition pairs'],['open','Vocabulary, key concepts, quiz prep']],
     demo: `<div style="text-align:center">
-      <div class="flip" id="fcDemo" onclick="this.classList.toggle('flipped')" style="margin:0 auto">
+      <div tabindex="0" role="button" class="flip" id="fcDemo" onclick="this.classList.toggle('flipped')" style="margin:0 auto">
         <div class="flip-inner">
           <div class="flip-face flip-front"><div style="font-weight:700">Effect size</div><div style="font-size:0.74rem;margin-top:6px">Tap to flip</div></div>
           <div class="flip-face flip-back">A measure of the impact of an influence on achievement</div>
@@ -1293,6 +1293,15 @@ document.querySelectorAll('.nav-tab').forEach(tab => {
   if (tier === 'easy' || tier === 'medium' || tier === 'charts') {
     tab.insertAdjacentHTML('beforeend', ` <span class="nav-count">${tierCount(tier)}</span>`);
   }
+});
+</script>
+
+<!-- a11y-keyboard-shim -->
+<script>
+document.addEventListener("keydown",function(e){
+  if(e.key!=="Enter"&&e.key!==" ")return;
+  var el=e.target.closest&&e.target.closest("[onclick][tabindex]");
+  if(el){e.preventDefault();el.click();}
 });
 </script>
 </body>

@@ -557,7 +557,7 @@ function renderCards() {
     const isOpen = !!openCards[idx];
     const badges = s.phase.map((p,i) => `<span class="badge ${s.phaseClass[i]}">${p}</span>`).join('');
     card.innerHTML = `
-      <div class="strategy-header${isOpen?' open':''}" onclick="toggleCard(${idx})">
+      <div tabindex="0" role="button" class="strategy-header${isOpen?' open':''}" onclick="toggleCard(${idx})">
         <div class="strategy-num">${s.num}</div>
         <div class="strategy-meta">
           <div class="strategy-name">${s.name}</div>
@@ -673,5 +673,14 @@ renderCards();
 <nav class="mg-bottom-nav" aria-label="Back navigation" style="text-align:center;padding:1.25rem 1.5rem;background:#071F4A;border-top:3px solid #FCB040;font-family:system-ui,-apple-system,sans-serif;">
   <a href="../index.html" style="color:#FDD17A;text-decoration:none;font-weight:700;font-size:0.85rem;margin:0 0.7rem;">← TCEA</a>
 </nav>
+
+<!-- a11y-keyboard-shim -->
+<script>
+document.addEventListener("keydown",function(e){
+  if(e.key!=="Enter"&&e.key!==" ")return;
+  var el=e.target.closest&&e.target.closest("[onclick][tabindex]");
+  if(el){e.preventDefault();el.click();}
+});
+</script>
 </body>
 </html>

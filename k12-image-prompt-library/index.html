@@ -424,7 +424,7 @@ footer strong { color: var(--gold); }
   <div class="search-inner">
     <div class="search-box">
       <svg class="search-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-      <input type="text" id="search-input" placeholder="Search prompts… e.g. rubric, science, feedback" autocomplete="off">
+      <input aria-label="Search prompts e.g. rubric, science, feedback" type="text" id="search-input" placeholder="Search prompts… e.g. rubric, science, feedback" autocomplete="off">
     </div>
     <button class="search-clear" onclick="clearSearch()">Clear</button>
   </div>
@@ -451,7 +451,7 @@ footer strong { color: var(--gold); }
 
   <!-- Rubrics -->
   <div class="category" id="cat-rubrics">
-    <div class="category-header" onclick="toggleCat('cat-rubrics')">
+    <div tabindex="0" role="button" class="category-header" onclick="toggleCat('cat-rubrics')">
       <div class="category-icon">📋</div>
       <h2 class="category-title">Rubrics &amp; Rubric Banks</h2>
       <span class="category-pill">8 prompts</span>
@@ -504,7 +504,7 @@ footer strong { color: var(--gold); }
 
   <!-- Quiz Questions -->
   <div class="category" id="cat-quiz">
-    <div class="category-header" onclick="toggleCat('cat-quiz')">
+    <div tabindex="0" role="button" class="category-header" onclick="toggleCat('cat-quiz')">
       <div class="category-icon">🔬</div>
       <h2 class="category-title">Quiz Questions &amp; Diagrams</h2>
       <span class="category-pill">8 prompts</span>
@@ -557,7 +557,7 @@ footer strong { color: var(--gold); }
 
   <!-- Slide Decks -->
   <div class="category" id="cat-slides">
-    <div class="category-header" onclick="toggleCat('cat-slides')">
+    <div tabindex="0" role="button" class="category-header" onclick="toggleCat('cat-slides')">
       <div class="category-icon">🖥️</div>
       <h2 class="category-title">Slide Outlines &amp; Decks</h2>
       <span class="category-pill">10 prompts</span>
@@ -620,7 +620,7 @@ footer strong { color: var(--gold); }
 
   <!-- Feedback -->
   <div class="category" id="cat-feedback">
-    <div class="category-header" onclick="toggleCat('cat-feedback')">
+    <div tabindex="0" role="button" class="category-header" onclick="toggleCat('cat-feedback')">
       <div class="category-icon">⭐</div>
       <h2 class="category-title">Feedback &amp; Grading Stamps</h2>
       <span class="category-pill">6 prompts</span>
@@ -663,7 +663,7 @@ footer strong { color: var(--gold); }
 
   <!-- Lesson Packs & Choice Boards -->
   <div class="category" id="cat-lessons">
-    <div class="category-header" onclick="toggleCat('cat-lessons')">
+    <div tabindex="0" role="button" class="category-header" onclick="toggleCat('cat-lessons')">
       <div class="category-icon">📦</div>
       <h2 class="category-title">Lesson Packs &amp; Choice Boards</h2>
       <span class="category-pill">7 prompts</span>
@@ -717,7 +717,7 @@ footer strong { color: var(--gold); }
 
   <!-- Prompt Library / AI Projects -->
   <div class="category" id="cat-prompts">
-    <div class="category-header" onclick="toggleCat('cat-prompts')">
+    <div tabindex="0" role="button" class="category-header" onclick="toggleCat('cat-prompts')">
       <div class="category-icon">🤖</div>
       <h2 class="category-title">Prompt Library &amp; AI Projects</h2>
       <span class="category-pill">8 prompts</span>
@@ -770,7 +770,7 @@ footer strong { color: var(--gold); }
 
   <!-- AI Policy -->
   <div class="category" id="cat-policy">
-    <div class="category-header" onclick="toggleCat('cat-policy')">
+    <div tabindex="0" role="button" class="category-header" onclick="toggleCat('cat-policy')">
       <div class="category-icon">🛡️</div>
       <h2 class="category-title">AI Policy &amp; Academic Integrity</h2>
       <span class="category-pill">5 prompts</span>
@@ -808,7 +808,7 @@ footer strong { color: var(--gold); }
 
   <!-- Reading & Research -->
   <div class="category" id="cat-reading">
-    <div class="category-header" onclick="toggleCat('cat-reading')">
+    <div tabindex="0" role="button" class="category-header" onclick="toggleCat('cat-reading')">
       <div class="category-icon">📖</div>
       <h2 class="category-title">Reading, Research &amp; Literacy</h2>
       <span class="category-pill">5 prompts</span>
@@ -852,7 +852,7 @@ footer strong { color: var(--gold); }
 
   <!-- Parent Emails -->
   <div class="category" id="cat-emails">
-    <div class="category-header" onclick="toggleCat('cat-emails')">
+    <div tabindex="0" role="button" class="category-header" onclick="toggleCat('cat-emails')">
       <div class="category-icon">✉️</div>
       <h2 class="category-title">Parent &amp; Family Communication</h2>
       <span class="category-pill">6 prompts</span>
@@ -895,7 +895,7 @@ footer strong { color: var(--gold); }
 
   <!-- Sub Plans -->
   <div class="category" id="cat-sub">
-    <div class="category-header" onclick="toggleCat('cat-sub')">
+    <div tabindex="0" role="button" class="category-header" onclick="toggleCat('cat-sub')">
       <div class="category-icon">📁</div>
       <h2 class="category-title">Substitute Plans</h2>
       <span class="category-pill">4 prompts</span>
@@ -928,7 +928,7 @@ footer strong { color: var(--gold); }
 
   <!-- IEP Summaries -->
   <div class="category" id="cat-iep">
-    <div class="category-header" onclick="toggleCat('cat-iep')">
+    <div tabindex="0" role="button" class="category-header" onclick="toggleCat('cat-iep')">
       <div class="category-icon">🤝</div>
       <h2 class="category-title">IEP &amp; Special Education Summaries</h2>
       <span class="category-pill">4 prompts</span>
@@ -961,7 +961,7 @@ footer strong { color: var(--gold); }
 
   <!-- Administrative -->
   <div class="category" id="cat-admin">
-    <div class="category-header" onclick="toggleCat('cat-admin')">
+    <div tabindex="0" role="button" class="category-header" onclick="toggleCat('cat-admin')">
       <div class="category-icon">🏢</div>
       <h2 class="category-title">Administrative &amp; Campus Operations</h2>
       <span class="category-pill">5 prompts</span>
@@ -1107,5 +1107,14 @@ function showToast() {
 <nav class="mg-bottom-nav" aria-label="Back navigation" style="text-align:center;padding:1.25rem 1.5rem;background:#071F4A;border-top:3px solid #FCB040;font-family:system-ui,-apple-system,sans-serif;">
   <a href="../index.html" style="color:#FDD17A;text-decoration:none;font-weight:700;font-size:0.85rem;margin:0 0.7rem;">← TCEA</a>
 </nav>
+
+<!-- a11y-keyboard-shim -->
+<script>
+document.addEventListener("keydown",function(e){
+  if(e.key!=="Enter"&&e.key!==" ")return;
+  var el=e.target.closest&&e.target.closest("[onclick][tabindex]");
+  if(el){e.preventDefault();el.click();}
+});
+</script>
 </body>
 </html>

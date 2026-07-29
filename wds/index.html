@@ -843,7 +843,7 @@
   <div style="margin-top:2.5rem;">
     <div class="section-label">// team advancement die</div>
     <div class="dice-section" style="margin-top:1rem;">
-      <div class="dice-display" id="diceEmoji" onclick="rollDie()" title="Click to roll">🎲</div>
+      <div tabindex="0" role="button" class="dice-display" id="diceEmoji" onclick="rollDie()" title="Click to roll">🎲</div>
       <div>
         <div style="font-family:'Share Tech Mono',monospace;font-size:0.7rem;color:var(--text-dim);letter-spacing:0.1em;margin-bottom:0.35rem;">RESULT</div>
         <div class="dice-result" id="diceResult">—</div>
@@ -1044,7 +1044,7 @@
 </div>
 
 <!-- MODAL -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeModalOnOverlay(event)">
+<div tabindex="0" role="button" class="modal-overlay" id="modalOverlay" onclick="closeModalOnOverlay(event)">
   <div class="modal" id="modal">
     <div class="modal-header">
       <div>
@@ -1571,7 +1571,7 @@ function renderLibrary(filter='all') {
   const grid = document.getElementById('scenariosGrid');
   const items = filter === 'all' ? SCENARIOS : SCENARIOS.filter(s => s.type === filter);
   grid.innerHTML = items.map(s => `
-    <div class="scenario-card" onclick="openScenario(${s.id})" data-type="${s.type}">
+    <div tabindex="0" role="button" class="scenario-card" onclick="openScenario(${s.id})" data-type="${s.type}">
       <div class="sc-top">
         <span class="sc-num">SCENARIO ${String(s.id).padStart(2,'0')}</span>
         <span class="scenario-tag ${tagClass(s.type)}">${tagLabel(s.type)}</span>
@@ -1787,5 +1787,14 @@ renderLibrary();
 <nav class="mg-bottom-nav" aria-label="Back navigation" style="text-align:center;padding:1.25rem 1.5rem;background:#071F4A;border-top:3px solid #FCB040;font-family:system-ui,-apple-system,sans-serif;">
   <a href="../index.html" style="color:#FDD17A;text-decoration:none;font-weight:700;font-size:0.85rem;margin:0 0.7rem;">← TCEA</a>
 </nav>
+
+<!-- a11y-keyboard-shim -->
+<script>
+document.addEventListener("keydown",function(e){
+  if(e.key!=="Enter"&&e.key!==" ")return;
+  var el=e.target.closest&&e.target.closest("[onclick][tabindex]");
+  if(el){e.preventDefault();el.click();}
+});
+</script>
 </body>
 </html>

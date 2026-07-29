@@ -196,7 +196,7 @@
     <h2>Effect sizes (Visible Learning MetaX, Feb 2025)</h2>
     <p class="muted">Hattie's zone of desired effects starts at <b>d = 0.40</b>. Tagged <span class="tag high">≥ 0.80 considerably accelerate</span> <span class="tag mid">0.40–0.79 accelerate</span> <span class="tag low">&lt; 0.40 lower yield</span>.</p>
     <div class="filter-row">
-      <input type="search" id="fx-search" placeholder="Search strategy name…">
+      <input aria-label="Search strategy name" type="search" id="fx-search" placeholder="Search strategy name…">
       <label class="inline"><input type="checkbox" class="fx-phase" value="Surface Learning" checked> Surface</label>
       <label class="inline"><input type="checkbox" class="fx-phase" value="Deep Learning" checked> Deep</label>
       <label class="inline"><input type="checkbox" class="fx-phase" value="Transfer Learning" checked> Transfer</label>
@@ -222,7 +222,7 @@
     <h2>FLOATER — evaluate a scientific / empirical claim</h2>
     <p class="muted">Use when a colleague, vendor, or article makes a claim about "what works" in education. Score each letter 1 (poor) to 5 (strong). The recommendation updates automatically.</p>
     <label>Claim being evaluated</label>
-    <input type="text" id="floater-claim" style="width:100%" placeholder="e.g. Program X raises reading scores by 30%.">
+    <input aria-label="Claim being evaluated" type="text" id="floater-claim" style="width:100%" placeholder="e.g. Program X raises reading scores by 30%.">
     <table>
       <thead><tr><th>Letter</th><th>Criterion</th><th>What the source says</th><th>Score (1–5)</th></tr></thead>
       <tbody id="floater-body"></tbody>
@@ -239,7 +239,7 @@
     <h2>Orwell Test — evaluate news / media / opinion</h2>
     <p class="muted">If any criterion fails, be skeptical. Two or three failures signal likely propaganda.</p>
     <label>Item being evaluated</label>
-    <input type="text" id="orwell-claim" style="width:100%" placeholder="e.g. News article claiming phonics-only instruction is best.">
+    <input aria-label="Item being evaluated" type="text" id="orwell-claim" style="width:100%" placeholder="e.g. News article claiming phonics-only instruction is best.">
     <table>
       <thead><tr><th>Criterion</th><th>Question</th><th>Your assessment</th><th>Pass?</th></tr></thead>
       <tbody id="orwell-body"></tbody>
@@ -256,7 +256,7 @@
     <h2>CRITIC — six-step credibility evaluation</h2>
     <p class="muted">Best when the claimant has an incentive or agenda (vendor, think tank, advocacy group).</p>
     <label>Claim being evaluated</label>
-    <input type="text" id="critic-claim" style="width:100%" placeholder="e.g. Vendor says their adaptive platform improves outcomes by 2 grade levels.">
+    <input aria-label="Claim being evaluated" type="text" id="critic-claim" style="width:100%" placeholder="e.g. Vendor says their adaptive platform improves outcomes by 2 grade levels.">
     <table>
       <thead><tr><th>Step</th><th>Prompt</th><th>Your notes</th><th>Score (1–5)</th></tr></thead>
       <tbody id="critic-body"></tbody>
@@ -273,7 +273,7 @@
     <h2>SIFT — rapid check on online content</h2>
     <p class="muted">Use for social posts, blog headlines, viral screenshots. Under two minutes per pass.</p>
     <label>Item being checked</label>
-    <input type="text" id="sift-claim" style="width:100%" placeholder="e.g. Viral tweet claiming a new study proves AI tutors beat human teachers.">
+    <input aria-label="Item being checked" type="text" id="sift-claim" style="width:100%" placeholder="e.g. Viral tweet claiming a new study proves AI tutors beat human teachers.">
     <ol class="steps" id="sift-steps">
       <li><b>Stop.</b> Pause before sharing or trusting. <label><input type="checkbox" class="sift-cb" data-k="stop"> Done</label>
         <textarea class="sift-t" data-k="stop" placeholder="First reaction / why you paused."></textarea></li>
@@ -299,7 +299,7 @@
     <textarea id="pl-goal" placeholder="What learning outcome or teaching shift are you working toward?"></textarea>
 
     <label>Learners (grade, subject, special populations)</label>
-    <input type="text" id="pl-learners" style="width:100%" placeholder="e.g. 9th-grade Biology, 40% EL students, mixed prior knowledge.">
+    <input aria-label="Learners (grade, subject, special populations)" type="text" id="pl-learners" style="width:100%" placeholder="e.g. 9th-grade Biology, 40% EL students, mixed prior knowledge.">
 
     <label>Selected strategies (effect sizes auto-lookup)</label>
     <select id="pl-strategy"></select>
