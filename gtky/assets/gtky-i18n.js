@@ -22,7 +22,7 @@
       'filter.reset': 'Reset filters',
       'gallery.count': '{n} worksheet(s) in {lang}',
       'gallery.empty': 'No worksheets in {lang} for this selection yet. Try another language or clear the filters.',
-      'gallery.langNote': 'Showing worksheets in {lang}. Use the language switcher to change both the page and the worksheets shown.',
+      'gallery.langNote': 'Showing worksheets in {lang}. Use the language switcher to change both the page and the worksheets shown. Each worksheet downloads as a PNG or a two-page PDF — page 1 in color, page 2 in black-and-white for easy printing.',
 
       'card.open': 'Open full size',
       'card.download': 'Download',
@@ -89,7 +89,7 @@
       'filter.reset': 'Restablecer filtros',
       'gallery.count': '{n} hoja(s) en {lang}',
       'gallery.empty': 'Aún no hay hojas en {lang} para esta selección. Prueba otro idioma o borra los filtros.',
-      'gallery.langNote': 'Mostrando hojas en {lang}. Usa el selector de idioma para cambiar tanto la página como las hojas que se muestran.',
+      'gallery.langNote': 'Mostrando hojas en {lang}. Usa el selector de idioma para cambiar tanto la página como las hojas que se muestran. Cada hoja se descarga como PNG o como PDF de dos páginas: la página 1 a color y la página 2 en blanco y negro para imprimir fácilmente.',
 
       'card.open': 'Abrir en tamaño completo',
       'card.download': 'Descargar',
@@ -156,7 +156,7 @@
       'filter.reset': 'Đặt lại bộ lọc',
       'gallery.count': '{n} phiếu bằng {lang}',
       'gallery.empty': 'Chưa có phiếu bằng {lang} cho lựa chọn này. Hãy thử ngôn ngữ khác hoặc xóa bộ lọc.',
-      'gallery.langNote': 'Đang hiển thị phiếu bằng {lang}. Dùng nút chuyển ngôn ngữ để đổi cả trang và các phiếu được hiển thị.',
+      'gallery.langNote': 'Đang hiển thị phiếu bằng {lang}. Dùng nút chuyển ngôn ngữ để đổi cả trang và các phiếu được hiển thị. Mỗi phiếu tải xuống dưới dạng PNG hoặc PDF hai trang — trang 1 màu, trang 2 đen trắng để in dễ dàng.',
 
       'card.open': 'Mở kích thước đầy đủ',
       'card.download': 'Tải xuống',
