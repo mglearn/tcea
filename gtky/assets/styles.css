@@ -10,7 +10,8 @@
   --line: #e7ddcd;
   --brand: #0b5fa5;      /* TCEA-ish blue */
   --brand-dark: #073b66;
-  --accent: #e8641c;     /* warm orange from the worksheets */
+  --accent: #e8641c;     /* warm orange from the worksheets (fills/borders) */
+  --accent-ink: #a3400a; /* darker orange for TEXT — meets WCAG AA on light bg */
   --accent-soft: #fde8d8;
   --focus: #ffb020;
   --radius: 16px;
@@ -117,7 +118,7 @@ a { color: var(--brand); }
   background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
   box-shadow: var(--shadow-sm); padding: clamp(1.1rem, 3vw, 1.8rem); margin-bottom: 1.4rem;
 }
-.teks-subject h3 { margin: 0 0 .3rem; color: var(--brand-dark); font-size: 1.3rem; }
+.teks-subject h2 { margin: 0 0 .3rem; color: var(--brand-dark); font-size: 1.3rem; }
 .teks-subject .lbl { font-weight: 800; color: var(--ink-soft); font-size: .82rem; text-transform: uppercase; letter-spacing: .04em; }
 .teks-chapter { margin: .2rem 0 .7rem; font-size: .92rem; }
 .teks-strands { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; margin: .4rem 0 .8rem; }
@@ -135,7 +136,7 @@ a { color: var(--brand); }
 .teks-table td { padding: .6rem; border-bottom: 1px solid var(--line); vertical-align: top; }
 .teks-table tr:last-child td { border-bottom: 0; }
 .teks-grade { white-space: nowrap; width: 1%; }
-.teks-grade .band-tag { font-size: .74rem; font-weight: 700; color: var(--accent); }
+.teks-grade .band-tag { font-size: .74rem; font-weight: 700; color: var(--accent-ink); }
 
 /* Call-to-action links between the two pages */
 .research-cta { margin: 2.4rem 0 0; text-align: center; }
@@ -208,7 +209,7 @@ section { scroll-margin-top: 80px; }
 .card-variant {
   font-size: .68rem; font-weight: 800; vertical-align: middle;
   padding: .05rem .35rem; border-radius: 999px;
-  background: var(--accent-soft); color: var(--accent); text-transform: uppercase;
+  background: var(--accent-soft); color: var(--accent-ink); text-transform: uppercase;
 }
 .card-dls { display: flex; flex-wrap: wrap; gap: .4rem; }
 .card-dl {
@@ -228,7 +229,7 @@ section { scroll-margin-top: 80px; }
   background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-sm);
 }
 .research h2 { color: var(--brand-dark); margin-top: 0; }
-.research h3 { color: var(--accent); margin: 1.8rem 0 .4rem; font-size: 1.15rem; }
+.research h3 { color: var(--accent-ink); margin: 1.8rem 0 .4rem; font-size: 1.15rem; }
 .research p { max-width: 74ch; color: var(--ink); }
 .research ul { max-width: 74ch; padding-left: 1.2rem; }
 .research li { margin: .5rem 0; }

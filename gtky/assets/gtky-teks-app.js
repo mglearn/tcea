@@ -82,7 +82,7 @@
       var meta = T.subjects[subj] || {};
       var section = document.createElement('section'); section.className = 'teks-subject';
 
-      var h = document.createElement('h3'); h.textContent = t('subject.' + subj); section.appendChild(h);
+      var h = document.createElement('h2'); h.textContent = t('subject.' + subj); section.appendChild(h);
 
       var chapter = document.createElement('p'); chapter.className = 'teks-chapter';
       chapter.innerHTML = '<span class="lbl">' + t('teks.chapterLabel') + ':</span> ';
