@@ -22,4 +22,5 @@ function openPresenter(){const w=window.open(location.href+'?audience=1#'+(i+1),
 function renderPresenter(){const p=document.getElementById('presenter'); if(!p)return; const elapsed=Math.floor((Date.now()-start)/1000); const m=String(Math.floor(elapsed/60)).padStart(2,'0'), s=String(elapsed%60).padStart(2,'0'); p.innerHTML=`<div class="timer">${m}:${s}</div><h1 style="font-size:3rem">${SLIDES[i].title}</h1><div class="presenter-grid"><section class="mini"><h2>Current</h2>${SLIDES[i].html}</section><section class="mini"><h2>Notes</h2><p>${SLIDES[i].notes}</p><h2>Next</h2><p>${SLIDES[i+1]?.title||'End'}</p></section></div>`}
 setInterval(()=>{if(presenter)renderPresenter()},1000);
 const startHash=parseInt(location.hash.slice(1),10); if(startHash) i=Math.max(0,Math.min(SLIDES.length-1,startHash-1)); render();
-</script></body></html>
+</script><script src="/tcea/licensing-footer.js" defer></script>
+</body></html>

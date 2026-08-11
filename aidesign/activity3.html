@@ -45,4 +45,5 @@ function verdict(){const vals=Object.values(state.a3.scores).filter(Boolean);if(
 function updateVerdict(){let v=verdict();let t=document.getElementById('verdict-text'),p=document.getElementById('verdict-pill');if(t)t.textContent=v.label;if(p)p.textContent=v.v||'—';}
 function resetLocal(){if(confirm('Clear locally saved activity responses on this device?')){localStorage.removeItem(STORAGE_KEY);location.reload();}}
 load();document.addEventListener('DOMContentLoaded',()=>{bind();renderPrompt();renderAudit();});
-</script></body></html>
+</script><script src="/tcea/licensing-footer.js" defer></script>
+</body></html>

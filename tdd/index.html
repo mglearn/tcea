@@ -45,4 +45,5 @@ function render(){ const term=q.value.trim().toLowerCase(); const rows=DATA.filt
 [q,cat,src,acc].forEach(el=>el.addEventListener('input',render));
 document.querySelector('#countAll').textContent=DATA.length;document.querySelector('#countOfficial').textContent=DATA.filter(x=>x.source==='Official source').length;document.querySelector('#countPartner').textContent=DATA.filter(x=>x.source==='Current verification partner').length;render();
 </script>
+<script src="/tcea/licensing-footer.js" defer></script>
 </body></html>

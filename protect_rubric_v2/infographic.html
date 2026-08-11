@@ -3,4 +3,5 @@ async function initInfo(){renderNav('infographic.html'); const rubric=await load
 async function downloadPng(){const el=document.getElementById('infographic'); const canvas=await html2canvas(el,{scale:2,backgroundColor:'#ffffff'}); canvas.toBlob(b=>downloadFile('protect-results-infographic.png', b),'image/png');}
 async function downloadInfoPdf(){const el=document.getElementById('infographic'); const canvas=await html2canvas(el,{scale:2,backgroundColor:'#ffffff'}); const img=canvas.toDataURL('image/png'); const {jsPDF}=window.jspdf; const pdf=new jsPDF({orientation:'landscape',unit:'pt',format:'letter'}); const w=pdf.internal.pageSize.getWidth(); const h=pdf.internal.pageSize.getHeight(); const ratio=Math.min(w/canvas.width,h/canvas.height); const iw=canvas.width*ratio, ih=canvas.height*ratio; pdf.addImage(img,'PNG',(w-iw)/2,(h-ih)/2,iw,ih); pdf.save('protect-results-infographic.pdf');}
 initInfo();
-</script></body></html>
+</script><script src="/tcea/licensing-footer.js" defer></script>
+</body></html>

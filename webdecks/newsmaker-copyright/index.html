@@ -72,5 +72,6 @@ try{let chan=new BroadcastChannel('newsletter-webdeck');chan.onmessage=e=>{if(e.
 setInterval(()=>{let s=Math.floor((Date.now()-startTime)/1000),m=Math.floor(s/60);document.getElementById('timer').textContent=`${String(m).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`},1000);
 let start=parseInt(location.hash.slice(1),10);if(start)idx=Math.max(0,Math.min(SLIDES.length-1,start-1));render();
 </script>
+<script src="/tcea/licensing-footer.js" defer></script>
 </body>
 </html>

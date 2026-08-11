@@ -53,4 +53,5 @@ let sx=0,sy=0;document.addEventListener('touchstart',e=>{sx=e.changedTouches[0].
 window.addEventListener('hashchange',()=>{const n=parseInt(location.hash.replace('#',''),10); if(n) go(n-1,false)});
 if(bc) bc.onmessage=(e)=>{if(e.data?.type==='go' && e.data.idx!==idx) go(e.data.idx,false);};
 renderSlides(); const initial=parseInt(location.hash.replace('#',''),10); go(initial?initial-1:0,false);
-</script></body></html>
+</script><script src="/tcea/licensing-footer.js" defer></script>
+</body></html>

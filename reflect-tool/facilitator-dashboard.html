@@ -142,5 +142,6 @@ document.getElementById('downloadBtn').addEventListener('click',()=>download(`re
 document.getElementById('copyBtn').addEventListener('click',async()=>{await navigator.clipboard.writeText(buildMarkdown(latestRows));document.getElementById('status').textContent='Markdown copied';});
 load();setInterval(load,POLL_SECONDS*1000);
 </script>
+<script src="/tcea/licensing-footer.js" defer></script>
 </body>
 </html>

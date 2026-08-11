@@ -120,5 +120,6 @@ return `# Codex Modular Vibe-Coding Brief\n\n> Build this project using a modula
     document.querySelectorAll('.template').forEach(card=>card.addEventListener('click',()=>{const t=templates[card.dataset.template];Object.entries(t).forEach(([k,v])=>{if(k!=='modules'&&$(k))$(k).value=v});$('noAccounts').checked=true;$('browserOnly').checked=true;$('studentData').checked=card.dataset.template==='dashboard'||card.dataset.template==='aiWorkflow';$('noPaid').checked=true;fillModules(t.modules||commonModules);document.querySelector('nav button[data-view="organizer"]').click();showToast('Template loaded')}));
     fillModules(commonModules.slice(0,3)); update();
   </script>
+<script src="/tcea/licensing-footer.js" defer></script>
 </body>
 </html>
