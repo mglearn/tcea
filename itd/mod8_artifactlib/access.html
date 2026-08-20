@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ardent ISD | Module 8 Artifact Library Access</title>
+<style>
+  :root{--navy:#0A3476;--navy-dark:#071F4A;--gold:#FCB040;--text:#1A1A2E;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:Inter,"DM Sans",Arial,sans-serif;color:var(--text);
+    min-height:100vh;background:linear-gradient(135deg,var(--navy-dark),var(--navy));
+    display:flex;align-items:center;justify-content:center;padding:24px;}
+  .login-card{width:min(460px,100%);background:#fff;border-radius:16px;padding:34px;
+    box-shadow:0 18px 50px rgba(0,0,0,.26);border-top:7px solid var(--gold);}
+  .eyebrow{text-transform:uppercase;letter-spacing:.14em;color:var(--gold);
+    font-size:.82rem;font-weight:800;margin-bottom:10px;}
+  h1{font-family:Georgia,serif;color:var(--navy-dark);font-size:2.1rem;margin:0 0 .3em;line-height:1.12;}
+  p{color:#5A6680;margin:0 0 14px;}
+  input{width:100%;padding:13px 14px;border:1px solid #aeb8ca;border-radius:8px;
+    font-size:1rem;margin:8px 0 12px;}
+  button{width:100%;padding:13px 14px;background:var(--gold);color:var(--navy-dark);
+    font-weight:900;border:0;border-radius:8px;cursor:pointer;font-size:1rem;}
+  .error{color:#8b1d1d;min-height:1.4em;margin-top:6px;}
+</style></head>
+<body>
+<main class="login-card">
+  <div class="eyebrow">Ardent ISD · Module 8</div>
+  <h1>Project Management &amp; Change Leadership Artifact Library</h1>
+  <p>Enter the access password to view the library.</p>
+  <form id="loginForm">
+    <label for="pw"><strong>Password</strong></label>
+    <input id="pw" name="pw" type="password" autocomplete="current-password" required autofocus>
+    <button type="submit">Enter Library</button>
+    <div id="error" class="error" role="alert"></div>
+  </form>
+</main>
+<script>
+const EXPECTED_HASH="cb5e87e62f4a975bd91ff2d5008633052126fecbd5aacb32f87ee8fee241ecbf";
+async function digest(value){
+ const bytes=new TextEncoder().encode(value);
+ const buffer=await crypto.subtle.digest("SHA-256",bytes);
+ return Array.from(new Uint8Array(buffer)).map(b=>b.toString(16).padStart(2,"0")).join("");
+}
+document.getElementById("loginForm").addEventListener("submit", async (e)=>{
+ e.preventDefault();
+ const h=await digest(document.getElementById("pw").value);
+ if(h===EXPECTED_HASH){
+   sessionStorage.setItem("ardent_mod8_access","granted");
+   location.href="index.html";
+ } else {
+   document.getElementById("error").textContent="Incorrect password.";
+ }
+});
+</script></body></html>

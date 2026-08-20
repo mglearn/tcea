@@ -1,0 +1,100 @@
+{
+  "1": {
+    "title": "District Technology Project Charter",
+    "scenario": "Staff MFA and Identity Security Rollout",
+    "html": "docs/01-project-charter.html",
+    "markdown": "markdown/01-project-charter.md",
+    "pdf": "pdf/01-project-charter.pdf"
+  },
+  "2": {
+    "title": "Technology Initiative Executive Summary",
+    "scenario": "Student Device Refresh",
+    "html": "docs/02-executive-summary.html",
+    "markdown": "markdown/02-executive-summary.md",
+    "pdf": "pdf/02-executive-summary.pdf"
+  },
+  "3": {
+    "title": "Stakeholder Analysis and Engagement Matrix",
+    "scenario": "Staff MFA and Identity Security Rollout",
+    "html": "docs/03-stakeholder-matrix.html",
+    "markdown": "markdown/03-stakeholder-matrix.md",
+    "pdf": "pdf/03-stakeholder-matrix.pdf"
+  },
+  "4": {
+    "title": "Project Roles and RACI Matrix",
+    "scenario": "Staff MFA and Identity Security Rollout",
+    "html": "docs/04-raci-matrix.html",
+    "markdown": "markdown/04-raci-matrix.md",
+    "pdf": "pdf/04-raci-matrix.pdf"
+  },
+  "5": {
+    "title": "Project Work Plan, Milestones, and Dependency Tracker",
+    "scenario": "Student Device Refresh",
+    "html": "docs/05-work-plan.html",
+    "markdown": "markdown/05-work-plan.md",
+    "pdf": "pdf/05-work-plan.pdf"
+  },
+  "6": {
+    "title": "Project Risk Register and Mitigation Plan",
+    "scenario": "Staff MFA and Identity Security Rollout",
+    "html": "docs/06-risk-register.html",
+    "markdown": "markdown/06-risk-register.md",
+    "pdf": "pdf/06-risk-register.pdf"
+  },
+  "7": {
+    "title": "Project Communication Plan",
+    "scenario": "Staff MFA and Identity Security Rollout",
+    "html": "docs/07-communication-plan.html",
+    "markdown": "markdown/07-communication-plan.md",
+    "pdf": "pdf/07-communication-plan.pdf"
+  },
+  "8": {
+    "title": "Project Status Report and Executive Dashboard",
+    "scenario": "Student Device Refresh",
+    "html": "docs/08-status-dashboard.html",
+    "markdown": "markdown/08-status-dashboard.md",
+    "pdf": "pdf/08-status-dashboard.pdf"
+  },
+  "9": {
+    "title": "Project Issue, Decision, and Change Log",
+    "scenario": "Help Desk Workflow Redesign",
+    "html": "docs/09-change-log.html",
+    "markdown": "markdown/09-change-log.md",
+    "pdf": "pdf/09-change-log.pdf"
+  },
+  "10": {
+    "title": "Change Readiness and ADKAR Assessment",
+    "scenario": "Staff MFA and Identity Security Rollout",
+    "html": "docs/10-adkar-assessment.html",
+    "markdown": "markdown/10-adkar-assessment.md",
+    "pdf": "pdf/10-adkar-assessment.pdf"
+  },
+  "11": {
+    "title": "Organizational Change Leadership Plan - Kotter 8-Step Model",
+    "scenario": "Staff MFA and Identity Security Rollout",
+    "html": "docs/11-kotter-plan.html",
+    "markdown": "markdown/11-kotter-plan.md",
+    "pdf": "pdf/11-kotter-plan.pdf"
+  },
+  "12": {
+    "title": "Project Closeout and Lessons-Learned Report",
+    "scenario": "Help Desk Workflow Redesign",
+    "html": "docs/12-closeout-report.html",
+    "markdown": "markdown/12-closeout-report.md",
+    "pdf": "pdf/12-closeout-report.pdf"
+  },
+  "13": {
+    "title": "Adoption, Training, and Support Plan",
+    "scenario": "Staff MFA and Identity Security Rollout",
+    "html": "docs/13-adoption-support-plan.html",
+    "markdown": "markdown/13-adoption-support-plan.md",
+    "pdf": "pdf/13-adoption-support-plan.pdf"
+  },
+  "14": {
+    "title": "Technology De-implementation Decision and Transition Plan",
+    "scenario": "Software Portfolio Reduction",
+    "html": "docs/14-deimplementation-plan.html",
+    "markdown": "markdown/14-deimplementation-plan.md",
+    "pdf": "pdf/14-deimplementation-plan.pdf"
+  }
+}
