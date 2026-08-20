@@ -1,0 +1,244 @@
+{
+  "files": [
+    {
+      "path": "mod4artifactlib/.print-01-annual-infrastructure-health-assessment.html",
+      "size": 12198
+    },
+    {
+      "path": "mod4artifactlib/.print-02-infrastructure-recommendation-executive-brief.html",
+      "size": 10942
+    },
+    {
+      "path": "mod4artifactlib/.print-03-vendor-proposal-comparison-matrix.html",
+      "size": 11211
+    },
+    {
+      "path": "mod4artifactlib/.print-04-five-year-equipment-replacement-plan.html",
+      "size": 10768
+    },
+    {
+      "path": "mod4artifactlib/.print-05-device-equity-lifecycle-report.html",
+      "size": 10355
+    },
+    {
+      "path": "mod4artifactlib/.print-06-help-desk-service-level-agreement.html",
+      "size": 10397
+    },
+    {
+      "path": "mod4artifactlib/.print-07-monthly-help-desk-performance-report.html",
+      "size": 10267
+    },
+    {
+      "path": "mod4artifactlib/.print-08-critical-systems-recovery-priority-matrix.html",
+      "size": 10484
+    },
+    {
+      "path": "mod4artifactlib/.print-09-disaster-recovery-tabletop-summary.html",
+      "size": 10440
+    },
+    {
+      "path": "mod4artifactlib/.print-10-enterprise-platform-evaluation-rubric.html",
+      "size": 10440
+    },
+    {
+      "path": "mod4artifactlib/.print-11-content-filtering-governance-brief.html",
+      "size": 10330
+    },
+    {
+      "path": "mod4artifactlib/.print-12-infrastructure-leadership-dashboard.html",
+      "size": 10664
+    },
+    {
+      "path": "mod4artifactlib/about.html",
+      "size": 2228
+    },
+    {
+      "path": "mod4artifactlib/access.html",
+      "size": 1443
+    },
+    {
+      "path": "mod4artifactlib/assets/auth.js",
+      "size": 658
+    },
+    {
+      "path": "mod4artifactlib/assets/style.css",
+      "size": 5646
+    },
+    {
+      "path": "mod4artifactlib/docs/01-annual-infrastructure-health-assessment.html",
+      "size": 7443
+    },
+    {
+      "path": "mod4artifactlib/docs/01-annual-infrastructure-health-assessment.md",
+      "size": 5042
+    },
+    {
+      "path": "mod4artifactlib/docs/02-infrastructure-recommendation-executive-brief.html",
+      "size": 6199
+    },
+    {
+      "path": "mod4artifactlib/docs/02-infrastructure-recommendation-executive-brief.md",
+      "size": 4034
+    },
+    {
+      "path": "mod4artifactlib/docs/03-vendor-proposal-comparison-matrix.html",
+      "size": 6444
+    },
+    {
+      "path": "mod4artifactlib/docs/03-vendor-proposal-comparison-matrix.md",
+      "size": 4079
+    },
+    {
+      "path": "mod4artifactlib/docs/04-five-year-equipment-replacement-plan.html",
+      "size": 6007
+    },
+    {
+      "path": "mod4artifactlib/docs/04-five-year-equipment-replacement-plan.md",
+      "size": 3796
+    },
+    {
+      "path": "mod4artifactlib/docs/05-device-equity-lifecycle-report.html",
+      "size": 5582
+    },
+    {
+      "path": "mod4artifactlib/docs/05-device-equity-lifecycle-report.md",
+      "size": 3317
+    },
+    {
+      "path": "mod4artifactlib/docs/06-help-desk-service-level-agreement.html",
+      "size": 5630
+    },
+    {
+      "path": "mod4artifactlib/docs/06-help-desk-service-level-agreement.md",
+      "size": 3535
+    },
+    {
+      "path": "mod4artifactlib/docs/07-monthly-help-desk-performance-report.html",
+      "size": 5506
+    },
+    {
+      "path": "mod4artifactlib/docs/07-monthly-help-desk-performance-report.md",
+      "size": 3151
+    },
+    {
+      "path": "mod4artifactlib/docs/08-critical-systems-recovery-priority-matrix.html",
+      "size": 5733
+    },
+    {
+      "path": "mod4artifactlib/docs/08-critical-systems-recovery-priority-matrix.md",
+      "size": 3515
+    },
+    {
+      "path": "mod4artifactlib/docs/09-disaster-recovery-tabletop-summary.html",
+      "size": 5675
+    },
+    {
+      "path": "mod4artifactlib/docs/09-disaster-recovery-tabletop-summary.md",
+      "size": 3589
+    },
+    {
+      "path": "mod4artifactlib/docs/10-enterprise-platform-evaluation-rubric.html",
+      "size": 5681
+    },
+    {
+      "path": "mod4artifactlib/docs/10-enterprise-platform-evaluation-rubric.md",
+      "size": 3400
+    },
+    {
+      "path": "mod4artifactlib/docs/11-content-filtering-governance-brief.html",
+      "size": 5565
+    },
+    {
+      "path": "mod4artifactlib/docs/11-content-filtering-governance-brief.md",
+      "size": 3494
+    },
+    {
+      "path": "mod4artifactlib/docs/12-infrastructure-leadership-dashboard.html",
+      "size": 5901
+    },
+    {
+      "path": "mod4artifactlib/docs/12-infrastructure-leadership-dashboard.md",
+      "size": 3513
+    },
+    {
+      "path": "mod4artifactlib/index.html",
+      "size": 7619
+    },
+    {
+      "path": "mod4artifactlib/pdf/01-annual-infrastructure-health-assessment.pdf",
+      "size": 8326
+    },
+    {
+      "path": "mod4artifactlib/pdf/02-infrastructure-recommendation-executive-brief.pdf",
+      "size": 7051
+    },
+    {
+      "path": "mod4artifactlib/pdf/03-vendor-proposal-comparison-matrix.pdf",
+      "size": 7272
+    },
+    {
+      "path": "mod4artifactlib/pdf/04-five-year-equipment-replacement-plan.pdf",
+      "size": 7036
+    },
+    {
+      "path": "mod4artifactlib/pdf/05-device-equity-lifecycle-report.pdf",
+      "size": 6823
+    },
+    {
+      "path": "mod4artifactlib/pdf/06-help-desk-service-level-agreement.pdf",
+      "size": 6680
+    },
+    {
+      "path": "mod4artifactlib/pdf/07-monthly-help-desk-performance-report.pdf",
+      "size": 6786
+    },
+    {
+      "path": "mod4artifactlib/pdf/08-critical-systems-recovery-priority-matrix.pdf",
+      "size": 6755
+    },
+    {
+      "path": "mod4artifactlib/pdf/09-disaster-recovery-tabletop-summary.pdf",
+      "size": 6712
+    },
+    {
+      "path": "mod4artifactlib/pdf/10-enterprise-platform-evaluation-rubric.pdf",
+      "size": 7051
+    },
+    {
+      "path": "mod4artifactlib/pdf/11-content-filtering-governance-brief.pdf",
+      "size": 6409
+    },
+    {
+      "path": "mod4artifactlib/pdf/12-infrastructure-leadership-dashboard.pdf",
+      "size": 6870
+    },
+    {
+      "path": "mod4artifactlib/README.md",
+      "size": 712
+    },
+    {
+      "path": "mod4artifactlib/site-manifest.json",
+      "size": 3068
+    },
+    {
+      "path": "mod6/encryption-resources.html",
+      "size": 26979
+    },
+    {
+      "path": "mod6/secure-cloud-resources.html",
+      "size": 24497
+    },
+    {
+      "path": "mod6/wds/index.html",
+      "size": 134025
+    },
+    {
+      "path": "mod6/wds/LICENSE",
+      "size": 7048
+    },
+    {
+      "path": "mod6/wds/README.md",
+      "size": 2006
+    }
+  ]
+}

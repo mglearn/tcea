@@ -1,0 +1,77 @@
+:root {
+  --navy:#0A3476; --navy-dark:#071F4A; --gold:#FCB040; --white:#FFFFFF;
+  --offwhite:#F7F8FC; --text:#1A1A2E; --muted:#5A6680; --pale-navy:#D0D8F0;
+  --gold-pale:#FEF0D0; --silver:#E6E9EF;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0; font-family:Inter, "DM Sans", Arial, sans-serif; color:var(--text);
+  background:var(--offwhite); line-height:1.58;
+}
+a { color:var(--navy); }
+h1,h2,h3 { font-family:Georgia, "DM Serif Display", serif; line-height:1.12; }
+.eyebrow {
+  text-transform:uppercase; letter-spacing:.14em; color:var(--gold);
+  font-size:.82rem; font-weight:800; margin-bottom:10px;
+}
+
+/* ---- Login gate (matches mod4artifactlib) ---- */
+.login-page {
+  min-height:100vh; background:linear-gradient(135deg,var(--navy-dark),var(--navy));
+  display:flex; align-items:center; justify-content:center; padding:24px;
+}
+.login-card {
+  width:min(460px,100%); background:white; border-radius:16px; padding:34px;
+  box-shadow:0 18px 50px rgba(0,0,0,.26); border-top:7px solid var(--gold);
+}
+.login-card h1 { color:var(--navy-dark); font-size:2.2rem; margin-top:0; }
+.login-card input {
+  width:100%; padding:13px 14px; border:1px solid #aeb8ca; border-radius:8px;
+  font-size:1rem; margin:8px 0 12px;
+}
+.login-card button {
+  width:100%; padding:13px 14px; background:var(--gold); color:var(--navy-dark);
+  font-weight:900; border:0; border-radius:8px; cursor:pointer;
+}
+.error { color:#8b1d1d; min-height:1.4em; }
+
+/* ---- Listing page ---- */
+.site-header {
+  background:linear-gradient(135deg,var(--navy-dark),var(--navy));
+  color:white; border-bottom:5px solid var(--gold);
+}
+.header-inner {
+  max-width:1040px; margin:0 auto; padding:34px 28px 30px;
+  display:flex; gap:20px; align-items:flex-end; justify-content:space-between; flex-wrap:wrap;
+}
+.header-inner h1 { color:white; font-size:2.2rem; margin:.1em 0 0; }
+.header-inner p { margin:6px 0 0; color:#e7ecf8; }
+.lockbtn {
+  color:white; text-decoration:none; font-weight:800; font-size:.85rem;
+  border:1px solid rgba(255,255,255,.5); border-radius:8px; padding:8px 12px; white-space:nowrap;
+}
+.container { max-width:1040px; margin:0 auto; padding:34px 28px 70px; }
+.filetree { list-style:none; margin:0; padding:0; }
+.filetree ul { list-style:none; margin:0 0 0 22px; padding:0; border-left:2px solid var(--silver); }
+.filetree li { margin:2px 0; }
+.folder {
+  font-weight:800; color:var(--navy-dark); padding:7px 4px;
+  display:flex; align-items:center; gap:8px;
+}
+.folder::before { content:"\1F4C1"; }
+.filetree a {
+  display:inline-flex; align-items:center; gap:8px; text-decoration:none;
+  padding:6px 8px; border-radius:7px; color:var(--navy);
+}
+.filetree a::before { content:"\1F4C4"; }
+.filetree a:hover { background:var(--gold-pale); }
+.fsize { color:var(--muted); font-weight:400; font-size:.8rem; margin-left:6px; }
+.empty, .loaderr { color:var(--muted); background:white; border:1px solid #dfe4ee;
+  border-radius:12px; padding:22px; }
+.footer {
+  background:var(--navy-dark); color:#dfe6f5; padding:24px; text-align:center; font-size:.85rem;
+}
+@media(max-width:680px) {
+  .header-inner { flex-direction:column; align-items:flex-start; }
+}
