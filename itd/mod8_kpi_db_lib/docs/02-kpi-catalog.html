@@ -1,0 +1,712 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>K-12 Technology KPI Catalog | Module 8 KPI Studio</title><style>
+:root{--navy:#0A3476;--navy-dark:#071f4a;--gold:#FCB040;--white:#fff;--off:#f7f8fc;--text:#1a1a2e;--muted:#5a6680;--pale:#D0D8F0;--goldp:#FEF0D0;--line:#d8deeb;--green:#19754a;--amber:#9b6410;--red:#a52a2a;--blue:#2f64b5}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--off);color:var(--text);font-family:"DM Sans",Arial,sans-serif;line-height:1.5}
+a{color:var(--navy)} a:hover{text-decoration-thickness:2px}.sitebar{background:var(--navy-dark);color:white;padding:18px 28px;border-bottom:5px solid var(--gold)}
+.sitebar .inner{max-width:1180px;margin:auto;display:flex;gap:20px;align-items:center;justify-content:space-between}.brand{font-weight:800;letter-spacing:.02em}.brand span{color:var(--gold)}
+.sitebar a{color:white;text-decoration:none}.wrap{max-width:1180px;margin:28px auto;padding:0 20px}.hero{background:var(--navy-dark);color:white;padding:52px 42px;border-radius:18px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-80px;top:-90px;width:300px;height:300px;border:42px solid rgba(252,176,64,.22);border-radius:50%}.hero h1{font-family:Georgia,"Times New Roman",serif;font-size:44px;line-height:1.02;margin:0 0 12px;max-width:880px}.hero .gold{color:var(--gold);font-style:italic}.hero p{max-width:820px;font-size:18px;color:#e6ebf8}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:18px;margin-top:26px}.card{background:white;border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:0 4px 16px rgba(7,31,74,.06);display:flex;flex-direction:column}.badge{display:inline-block;width:max-content;max-width:100%;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--navy);background:var(--goldp);padding:5px 8px;border-radius:999px}.card h2{font-family:Georgia,"Times New Roman",serif;color:var(--navy);font-size:23px;line-height:1.15;margin:12px 0 8px}.card p{color:var(--muted);margin:0 0 16px}.actions{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap}.btn{display:inline-block;background:var(--gold);color:var(--navy-dark);text-decoration:none;font-weight:800;padding:8px 12px;border-radius:8px;border:0}.btn.alt{background:var(--pale)}
+.section-title{font-family:Georgia,"Times New Roman",serif;color:var(--navy);font-size:31px;margin-top:42px;border-left:7px solid var(--gold);padding-left:14px}.note{background:var(--goldp);border-left:5px solid var(--gold);padding:15px 18px;border-radius:8px;margin:18px 0}.footer{max-width:1180px;margin:40px auto 0;padding:24px 20px 40px;color:var(--muted);font-size:13px}
+.quicklinks{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}.quicklinks a{background:white;border:1px solid var(--line);padding:9px 12px;border-radius:9px;text-decoration:none;font-weight:700}
+/* document pages */
+.doc-shell{max-width:980px;margin:30px auto;background:white;border:1px solid var(--line);box-shadow:0 6px 28px rgba(7,31,74,.08)}.doc-head{background:var(--navy-dark);color:white;padding:34px 42px;border-bottom:8px solid var(--gold)}.doc-head .eyebrow{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}.doc-head h1{font-family:Georgia,"Times New Roman",serif;font-size:34px;line-height:1.1;margin:8px 0}.doc-head p{margin:0;color:#e5eaf7}.doc-toolbar{padding:12px 42px;background:var(--off);border-bottom:1px solid var(--line);display:flex;gap:10px;flex-wrap:wrap}.doc-body{padding:34px 42px 46px}.doc-body h1,.doc-body h2,.doc-body h3{font-family:Georgia,"Times New Roman",serif;color:var(--navy)}.doc-body h1{font-size:28px}.doc-body h2{font-size:23px;margin-top:30px;border-left:5px solid var(--gold);padding-left:10px}.doc-body h3{font-size:18px;margin-top:22px}.doc-body table{width:100%;border-collapse:collapse;margin:14px 0 22px;font-size:13px}.doc-body th{background:var(--navy);color:white;text-align:left;padding:8px;vertical-align:top}.doc-body td{border:1px solid var(--line);padding:8px;vertical-align:top}.doc-body tr:nth-child(even) td{background:#fafbfe}.doc-body blockquote{margin:18px 0;padding:12px 16px;background:var(--goldp);border-left:5px solid var(--gold)}.doc-body code{background:#eef1f8;padding:2px 5px;border-radius:4px}.doc-body pre{white-space:pre-wrap;background:#0e1830;color:#f6f8ff;padding:16px;border-radius:10px;overflow-wrap:anywhere;font-size:12px;line-height:1.45}.doc-body pre code{background:none;padding:0}.doc-body input[type=checkbox]{transform:scale(1.05);margin-right:6px}.status-green{color:var(--green);font-weight:800}.status-amber{color:var(--amber);font-weight:800}.status-red{color:var(--red);font-weight:800}.doc-foot{padding:14px 42px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+.kpi-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:18px 0}.kpi-box{border:1px solid var(--line);border-top:5px solid var(--gold);border-radius:10px;padding:13px;background:#fff}.kpi-box strong{display:block;color:var(--navy);font-size:24px}.kpi-box span{font-size:12px;color:var(--muted)}
+@media(max-width:700px){.hero{padding:36px 24px}.hero h1{font-size:34px}.doc-head,.doc-body,.doc-toolbar,.doc-foot{padding-left:22px;padding-right:22px}.doc-body{overflow-x:auto}.sitebar .inner{align-items:flex-start;flex-direction:column}}
+@media print{body{background:white}.sitebar,.doc-toolbar,.footer{display:none!important}.doc-shell{border:0;box-shadow:none;max-width:none;margin:0}.doc-head{padding:24px 28px}.doc-body{padding:24px 28px}.doc-foot{padding:10px 28px}.doc-body h2{break-after:avoid-page}.doc-body table{break-inside:auto}.doc-body tr{break-inside:avoid}.doc-body pre{background:#f2f4f9;color:#111;border:1px solid #d5dbea}.doc-body a{color:inherit;text-decoration:none}@page{size:Letter;margin:.45in}}
+</style></head><body>
+<div class="sitebar"><div class="inner"><div class="brand">TCEA <span>Module 8</span> KPI & Dashboard Studio</div><a href="../index.html">Back to library</a></div></div>
+<main class="doc-shell"><header class="doc-head"><div class="eyebrow">Ardent ISD - KPI & Dashboard artifact</div><h1>K-12 Technology KPI Catalog</h1><p>60+ CTO-Ready Measures by Leadership Domain</p></header>
+<nav class="doc-toolbar"><a class="btn" href="../pdf/02-kpi-catalog.pdf">PDF</a><a class="btn alt" href="../markdown/02-kpi-catalog.md">Markdown</a><a class="btn alt" href="javascript:window.print()">Print</a></nav>
+<article class="doc-body"><h1>K-12 Technology KPI Catalog</h1>
+<p>Use this catalog as a starting point, not as a requirement to track everything. A good executive dashboard normally contains a small number of measures that answer current leadership questions.</p>
+<blockquote>
+<p><strong>GenAI data guardrail:</strong> Use fictional, public, aggregated, or properly sanitized information with public generative AI tools. Do not enter student records, staff records, personally identifiable information, credentials, sensitive cybersecurity details, legal records, confidential procurement material, vendor-confidential information, or sensitive district project information unless your district has explicitly approved the tool and data use.</p>
+<h2>Project Management</h2>
+</blockquote>
+<table>
+<thead>
+<tr>
+  <th>KPI</th>
+  <th>What It Measures</th>
+  <th>Example Formula</th>
+  <th>Direction</th>
+  <th>Cadence</th>
+  <th>Typical Audience</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Milestones completed on time</td>
+  <td>% of due milestones completed by planned date</td>
+  <td>On-time due milestones / all due milestones x 100</td>
+  <td>Higher</td>
+  <td>Biweekly</td>
+  <td>Project sponsor / cabinet</td>
+</tr>
+<tr>
+  <td>Schedule variance</td>
+  <td>Difference between planned and actual milestone timing</td>
+  <td>Actual days - planned days</td>
+  <td>Toward 0</td>
+  <td>Biweekly</td>
+  <td>Project lead</td>
+</tr>
+<tr>
+  <td>Budget variance</td>
+  <td>Difference between approved/forecast spending and actual/committed spending</td>
+  <td>Actual or committed - planned</td>
+  <td>Toward 0</td>
+  <td>Monthly</td>
+  <td>CTO / CFO</td>
+</tr>
+<tr>
+  <td>Open high risks</td>
+  <td>Unresolved risks rated high for probability and impact</td>
+  <td>Count</td>
+  <td>Lower</td>
+  <td>Weekly</td>
+  <td>Project sponsor</td>
+</tr>
+<tr>
+  <td>Scope changes approved</td>
+  <td>Approved additions/removals that change baseline scope</td>
+  <td>Count and estimated impact</td>
+  <td>Context</td>
+  <td>Monthly</td>
+  <td>Project sponsor</td>
+</tr>
+<tr>
+  <td>Decisions overdue</td>
+  <td>Leadership decisions past the date needed to protect schedule</td>
+  <td>Count</td>
+  <td>Lower</td>
+  <td>Weekly</td>
+  <td>Cabinet / sponsor</td>
+</tr>
+<tr>
+  <td>Benefits realized</td>
+  <td>% of defined benefits meeting agreed evidence criteria</td>
+  <td>Benefits achieved / benefits due x 100</td>
+  <td>Higher</td>
+  <td>Quarterly</td>
+  <td>Sponsor / cabinet</td>
+</tr>
+<tr>
+  <td>Stakeholder confidence pulse</td>
+  <td>Favorable response to a short project confidence question</td>
+  <td>Favorable responses / all responses x 100</td>
+  <td>Higher</td>
+  <td>Monthly</td>
+  <td>Project lead</td>
+</tr>
+</tbody>
+</table>
+<h2>Infrastructure and Reliability</h2>
+<table>
+<thead>
+<tr>
+  <th>KPI</th>
+  <th>What It Measures</th>
+  <th>Example Formula</th>
+  <th>Direction</th>
+  <th>Cadence</th>
+  <th>Typical Audience</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Core network availability</td>
+  <td>% of scheduled instructional time core network services are available</td>
+  <td>Available minutes / scheduled minutes x 100</td>
+  <td>Higher</td>
+  <td>Monthly</td>
+  <td>CTO / cabinet</td>
+</tr>
+<tr>
+  <td>Internet edge availability</td>
+  <td>% of scheduled time internet service is available</td>
+  <td>Available minutes / scheduled minutes x 100</td>
+  <td>Higher</td>
+  <td>Monthly</td>
+  <td>CTO / cabinet</td>
+</tr>
+<tr>
+  <td>Critical application availability</td>
+  <td>% of scheduled time selected district services are usable</td>
+  <td>Available minutes / scheduled minutes x 100</td>
+  <td>Higher</td>
+  <td>Monthly</td>
+  <td>IT leadership</td>
+</tr>
+<tr>
+  <td>Wireless service-impact incidents</td>
+  <td>Incidents causing meaningful classroom wireless interruption</td>
+  <td>Count</td>
+  <td>Lower</td>
+  <td>Monthly</td>
+  <td>Infrastructure team</td>
+</tr>
+<tr>
+  <td>Capacity threshold exceptions</td>
+  <td>Sites/services exceeding locally defined utilization threshold</td>
+  <td>Count of exceptions</td>
+  <td>Lower</td>
+  <td>Monthly</td>
+  <td>Infrastructure team</td>
+</tr>
+<tr>
+  <td>Backup recovery tests passed</td>
+  <td>% of scheduled restore tests completed successfully</td>
+  <td>Successful tests / planned tests x 100</td>
+  <td>Higher</td>
+  <td>Quarterly</td>
+  <td>CTO / risk team</td>
+</tr>
+<tr>
+  <td>UPS lifecycle compliance</td>
+  <td>% of identified UPS batteries within district replacement standard</td>
+  <td>Compliant units / tracked units x 100</td>
+  <td>Higher</td>
+  <td>Quarterly</td>
+  <td>Infrastructure / budget</td>
+</tr>
+<tr>
+  <td>Infrastructure projects on lifecycle plan</td>
+  <td>% of major assets mapped to replacement year and funding path</td>
+  <td>Assets with plan / assets in scope x 100</td>
+  <td>Higher</td>
+  <td>Quarterly</td>
+  <td>CTO / CFO</td>
+</tr>
+</tbody>
+</table>
+<h2>Help Desk and Service</h2>
+<table>
+<thead>
+<tr>
+  <th>KPI</th>
+  <th>What It Measures</th>
+  <th>Example Formula</th>
+  <th>Direction</th>
+  <th>Cadence</th>
+  <th>Typical Audience</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Median first response</td>
+  <td>Median business time from ticket creation to first meaningful response</td>
+  <td>Median elapsed business time</td>
+  <td>Lower</td>
+  <td>Weekly</td>
+  <td>Help Desk lead</td>
+</tr>
+<tr>
+  <td>Median resolution time</td>
+  <td>Median business time from ticket creation to resolution</td>
+  <td>Median elapsed business time</td>
+  <td>Lower</td>
+  <td>Weekly</td>
+  <td>Help Desk lead</td>
+</tr>
+<tr>
+  <td>Tickets resolved within SLA</td>
+  <td>% of tickets resolved within priority-based service target</td>
+  <td>SLA-compliant tickets / eligible tickets x 100</td>
+  <td>Higher</td>
+  <td>Weekly</td>
+  <td>CTO / principals</td>
+</tr>
+<tr>
+  <td>Backlog aging</td>
+  <td>% of open tickets older than locally defined threshold</td>
+  <td>Aged open tickets / all open tickets x 100</td>
+  <td>Lower</td>
+  <td>Weekly</td>
+  <td>Help Desk lead</td>
+</tr>
+<tr>
+  <td>First-contact resolution</td>
+  <td>% of eligible tickets resolved without escalation or repeat contact</td>
+  <td>First-contact resolutions / eligible tickets x 100</td>
+  <td>Higher</td>
+  <td>Monthly</td>
+  <td>Support team</td>
+</tr>
+<tr>
+  <td>Repeat incident rate</td>
+  <td>% of resolved tickets reopened or repeated for same issue within window</td>
+  <td>Repeat incidents / resolved tickets x 100</td>
+  <td>Lower</td>
+  <td>Monthly</td>
+  <td>Support team</td>
+</tr>
+<tr>
+  <td>Customer satisfaction</td>
+  <td>Favorable support survey responses</td>
+  <td>Favorable / responses x 100</td>
+  <td>Higher</td>
+  <td>Monthly</td>
+  <td>CTO / principals</td>
+</tr>
+<tr>
+  <td>Instructional-impact ticket share</td>
+  <td>% of tickets classified as directly interrupting teaching/learning</td>
+  <td>Instructional-impact / all tickets x 100</td>
+  <td>Context</td>
+  <td>Monthly</td>
+  <td>CTO / curriculum</td>
+</tr>
+</tbody>
+</table>
+<h2>Devices and Asset Management</h2>
+<table>
+<thead>
+<tr>
+  <th>KPI</th>
+  <th>What It Measures</th>
+  <th>Example Formula</th>
+  <th>Direction</th>
+  <th>Cadence</th>
+  <th>Typical Audience</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Device readiness</td>
+  <td>% of assigned instructional devices ready for intended use</td>
+  <td>Ready devices / assigned devices x 100</td>
+  <td>Higher</td>
+  <td>Monthly</td>
+  <td>CTO / principals</td>
+</tr>
+<tr>
+  <td>Inventory accuracy</td>
+  <td>% of sampled assets matching inventory records</td>
+  <td>Matching assets / sampled assets x 100</td>
+  <td>Higher</td>
+  <td>Quarterly</td>
+  <td>CTO / finance</td>
+</tr>
+<tr>
+  <td>Devices beyond lifecycle</td>
+  <td>% of active devices older than district replacement standard</td>
+  <td>Over-age devices / active devices x 100</td>
+  <td>Lower</td>
+  <td>Quarterly</td>
+  <td>CTO / CFO</td>
+</tr>
+<tr>
+  <td>Warranty coverage</td>
+  <td>% of active devices still covered by intended warranty/support plan</td>
+  <td>Covered devices / in-scope devices x 100</td>
+  <td>Context</td>
+  <td>Quarterly</td>
+  <td>Operations</td>
+</tr>
+<tr>
+  <td>Repair turnaround</td>
+  <td>Median business time from repair intake to return-to-service</td>
+  <td>Median elapsed business time</td>
+  <td>Lower</td>
+  <td>Monthly</td>
+  <td>Operations</td>
+</tr>
+<tr>
+  <td>Loaner availability</td>
+  <td>% of campuses meeting district loaner reserve standard</td>
+  <td>Campuses meeting standard / campuses x 100</td>
+  <td>Higher</td>
+  <td>Monthly</td>
+  <td>Operations / principals</td>
+</tr>
+<tr>
+  <td>Deployment milestone completion</td>
+  <td>% of planned deployment quantity completed by date</td>
+  <td>Completed / planned x 100</td>
+  <td>Higher</td>
+  <td>Weekly during rollout</td>
+  <td>Project sponsor</td>
+</tr>
+<tr>
+  <td>Asset disposition closure</td>
+  <td>% of retired assets documented through approved disposal process</td>
+  <td>Closed dispositions / retired assets x 100</td>
+  <td>Higher</td>
+  <td>Quarterly</td>
+  <td>CTO / finance</td>
+</tr>
+</tbody>
+</table>
+<h2>Cybersecurity and Privacy</h2>
+<table>
+<thead>
+<tr>
+  <th>KPI</th>
+  <th>What It Measures</th>
+  <th>Example Formula</th>
+  <th>Direction</th>
+  <th>Cadence</th>
+  <th>Typical Audience</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>MFA coverage</td>
+  <td>% of eligible accounts protected by district-required MFA</td>
+  <td>MFA-enabled eligible accounts / eligible accounts x 100</td>
+  <td>Higher</td>
+  <td>Monthly</td>
+  <td>CTO / cabinet</td>
+</tr>
+<tr>
+  <td>Required awareness training completion</td>
+  <td>% of assigned staff completing required security training by deadline</td>
+  <td>Completed / assigned x 100</td>
+  <td>Higher</td>
+  <td>Monthly</td>
+  <td>Cybersecurity lead</td>
+</tr>
+<tr>
+  <td>Critical vulnerability remediation within standard</td>
+  <td>% of tracked critical findings remediated within district timeline</td>
+  <td>Remediated on time / due findings x 100</td>
+  <td>Higher</td>
+  <td>Monthly</td>
+  <td>Security leadership</td>
+</tr>
+<tr>
+  <td>Privileged account review completion</td>
+  <td>% of scheduled privileged-access reviews completed</td>
+  <td>Completed reviews / planned reviews x 100</td>
+  <td>Higher</td>
+  <td>Quarterly</td>
+  <td>CTO / security</td>
+</tr>
+<tr>
+  <td>Vendor reviews completed before approval</td>
+  <td>% of in-scope tools receiving required privacy/security review before use</td>
+  <td>Reviewed before approval / in-scope approvals x 100</td>
+  <td>Higher</td>
+  <td>Monthly</td>
+  <td>Privacy / procurement</td>
+</tr>
+<tr>
+  <td>Backup restore assurance</td>
+  <td>% of required recovery tests passing documented acceptance criteria</td>
+  <td>Passing tests / tests performed x 100</td>
+  <td>Higher</td>
+  <td>Quarterly</td>
+  <td>CTO / risk team</td>
+</tr>
+<tr>
+  <td>Incident response exercise completion</td>
+  <td>% of planned exercises completed with after-action review</td>
+  <td>Completed exercises / planned exercises x 100</td>
+  <td>Higher</td>
+  <td>Quarterly</td>
+  <td>CTO / cabinet</td>
+</tr>
+<tr>
+  <td>Security exceptions overdue</td>
+  <td>Approved temporary exceptions past review/expiration date</td>
+  <td>Count</td>
+  <td>Lower</td>
+  <td>Monthly</td>
+  <td>CTO / risk team</td>
+</tr>
+</tbody>
+</table>
+<h2>Budget, Procurement, and Vendors</h2>
+<table>
+<thead>
+<tr>
+  <th>KPI</th>
+  <th>What It Measures</th>
+  <th>Example Formula</th>
+  <th>Direction</th>
+  <th>Cadence</th>
+  <th>Typical Audience</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Budget utilization</td>
+  <td>% of annual technology budget spent or committed relative to time/plan</td>
+  <td>Spent + committed / approved budget x 100</td>
+  <td>Target range</td>
+  <td>Monthly</td>
+  <td>CTO / CFO</td>
+</tr>
+<tr>
+  <td>Forecast variance</td>
+  <td>Difference between year-end forecast and approved budget</td>
+  <td>Forecast - approved</td>
+  <td>Toward 0</td>
+  <td>Monthly</td>
+  <td>CTO / CFO</td>
+</tr>
+<tr>
+  <td>Renewals reviewed before deadline</td>
+  <td>% of renewals receiving value/privacy/security review before decision date</td>
+  <td>Reviewed on time / due renewals x 100</td>
+  <td>Higher</td>
+  <td>Monthly</td>
+  <td>CTO / procurement</td>
+</tr>
+<tr>
+  <td>Unused license rate</td>
+  <td>% of paid licenses not meeting local activity threshold</td>
+  <td>Inactive paid licenses / paid licenses x 100</td>
+  <td>Lower</td>
+  <td>Quarterly</td>
+  <td>CTO / business office</td>
+</tr>
+<tr>
+  <td>Procurement cycle time</td>
+  <td>Median time from complete request to award/PO for defined purchase types</td>
+  <td>Median elapsed business days</td>
+  <td>Lower</td>
+  <td>Quarterly</td>
+  <td>CTO / procurement</td>
+</tr>
+<tr>
+  <td>Lifecycle plan funded</td>
+  <td>% of forecast replacement need covered by identified funding</td>
+  <td>Funded replacement amount / planned replacement need x 100</td>
+  <td>Higher</td>
+  <td>Annual/quarterly</td>
+  <td>CTO / CFO</td>
+</tr>
+</tbody>
+</table>
+<h2>Change Adoption and Professional Learning</h2>
+<table>
+<thead>
+<tr>
+  <th>KPI</th>
+  <th>What It Measures</th>
+  <th>Example Formula</th>
+  <th>Direction</th>
+  <th>Cadence</th>
+  <th>Typical Audience</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Awareness confirmation</td>
+  <td>% of affected users indicating they understand why the change is occurring</td>
+  <td>Favorable pulse / responses x 100</td>
+  <td>Higher</td>
+  <td>At launch</td>
+  <td>Project/change lead</td>
+</tr>
+<tr>
+  <td>Required training completion</td>
+  <td>% of affected users completing required learning before milestone</td>
+  <td>Completed / assigned x 100</td>
+  <td>Higher</td>
+  <td>Weekly during rollout</td>
+  <td>PD/change lead</td>
+</tr>
+<tr>
+  <td>Activation rate</td>
+  <td>% of intended users completing first required setup/action</td>
+  <td>Activated / intended users x 100</td>
+  <td>Higher</td>
+  <td>Weekly</td>
+  <td>Project lead</td>
+</tr>
+<tr>
+  <td>Meaningful active use</td>
+  <td>% of intended users meeting a defined use threshold</td>
+  <td>Users meeting threshold / intended users x 100</td>
+  <td>Higher</td>
+  <td>Monthly</td>
+  <td>Project sponsor</td>
+</tr>
+<tr>
+  <td>Proficiency check</td>
+  <td>% of sampled users completing critical workflow without assistance</td>
+  <td>Successful / sampled x 100</td>
+  <td>Higher</td>
+  <td>Post-training</td>
+  <td>Change lead</td>
+</tr>
+<tr>
+  <td>Post-launch support demand</td>
+  <td>Support requests per 100 affected users</td>
+  <td>Support contacts / affected users x 100</td>
+  <td>Lower after stabilization</td>
+  <td>Weekly</td>
+  <td>Support/change lead</td>
+</tr>
+<tr>
+  <td>Champion coverage</td>
+  <td>% of campuses/departments with an active local champion</td>
+  <td>Units with champion / units in scope x 100</td>
+  <td>Higher</td>
+  <td>Monthly</td>
+  <td>Change lead</td>
+</tr>
+<tr>
+  <td>Sustained adoption</td>
+  <td>% of intended users still meeting use expectation after defined reinforcement period</td>
+  <td>Sustained users / intended users x 100</td>
+  <td>Higher</td>
+  <td>60/90 days</td>
+  <td>Sponsor</td>
+</tr>
+</tbody>
+</table>
+<h2>Software, Cloud, and Data Services</h2>
+<table>
+<thead>
+<tr>
+  <th>KPI</th>
+  <th>What It Measures</th>
+  <th>Example Formula</th>
+  <th>Direction</th>
+  <th>Cadence</th>
+  <th>Typical Audience</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>SSO coverage</td>
+  <td>% of approved high-use applications integrated with district SSO where appropriate</td>
+  <td>SSO-integrated / in-scope apps x 100</td>
+  <td>Higher</td>
+  <td>Quarterly</td>
+  <td>Identity lead</td>
+</tr>
+<tr>
+  <td>Automated account provisioning</td>
+  <td>% of in-scope account lifecycle events handled automatically</td>
+  <td>Automated events / in-scope events x 100</td>
+  <td>Higher</td>
+  <td>Monthly</td>
+  <td>Identity/SIS</td>
+</tr>
+<tr>
+  <td>Data integration success</td>
+  <td>% of scheduled critical data jobs completing within acceptance window</td>
+  <td>Successful jobs / planned jobs x 100</td>
+  <td>Higher</td>
+  <td>Weekly</td>
+  <td>Data systems</td>
+</tr>
+<tr>
+  <td>Approved application inventory completeness</td>
+  <td>% of known applications represented in governance inventory</td>
+  <td>Documented apps / known apps x 100</td>
+  <td>Higher</td>
+  <td>Quarterly</td>
+  <td>CTO / privacy</td>
+</tr>
+<tr>
+  <td>Platform adoption</td>
+  <td>% of intended users meeting locally defined meaningful-use threshold</td>
+  <td>Active users / intended users x 100</td>
+  <td>Higher</td>
+  <td>Monthly</td>
+  <td>CTO / curriculum</td>
+</tr>
+<tr>
+  <td>De-implementation savings realized</td>
+  <td>% of approved savings from retired tools/services actually removed from spend</td>
+  <td>Realized savings / approved savings x 100</td>
+  <td>Higher</td>
+  <td>Quarterly</td>
+  <td>CTO / CFO</td>
+</tr>
+</tbody>
+</table>
+<h2>Communication and Customer Experience</h2>
+<table>
+<thead>
+<tr>
+  <th>KPI</th>
+  <th>What It Measures</th>
+  <th>Example Formula</th>
+  <th>Direction</th>
+  <th>Cadence</th>
+  <th>Typical Audience</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Status update cadence met</td>
+  <td>% of planned project/service updates published on schedule</td>
+  <td>Updates on time / updates planned x 100</td>
+  <td>Higher</td>
+  <td>Monthly</td>
+  <td>Project/communications lead</td>
+</tr>
+<tr>
+  <td>Stakeholder message reach</td>
+  <td>% of intended audience receiving/opening a required communication where measurable</td>
+  <td>Reached / intended x 100</td>
+  <td>Higher</td>
+  <td>Per campaign</td>
+  <td>Communications</td>
+</tr>
+<tr>
+  <td>FAQ deflection</td>
+  <td>% of common inquiries resolved through published self-service resource</td>
+  <td>Self-service resolutions / related contacts x 100</td>
+  <td>Higher</td>
+  <td>Monthly</td>
+  <td>Support/communications</td>
+</tr>
+<tr>
+  <td>Principal confidence</td>
+  <td>Favorable principal response to technology service pulse</td>
+  <td>Favorable / responses x 100</td>
+  <td>Higher</td>
+  <td>Quarterly</td>
+  <td>CTO</td>
+</tr>
+<tr>
+  <td>Service transparency</td>
+  <td>% of high-impact incidents/projects with current public/internal status update as required</td>
+  <td>Current updates / in-scope items x 100</td>
+  <td>Higher</td>
+  <td>Monthly</td>
+  <td>CTO / communications</td>
+</tr>
+<tr>
+  <td>Board actionability rating</td>
+  <td>Internal review of whether dashboard items clearly identify status, trend, and action/decision</td>
+  <td>Items meeting standard / items reported x 100</td>
+  <td>Higher</td>
+  <td>Per board cycle</td>
+  <td>CTO / superintendent</td>
+</tr>
+</tbody>
+</table>
+<h2>How to Use the Catalog</h2>
+<ol>
+<li>Start with the decision or leadership question.</li>
+<li>Select the smallest set of KPIs that answers it.</li>
+<li>Define the formula and data source locally.</li>
+<li>Establish a baseline before setting an ambitious target.</li>
+<li>Name an owner for the measure and an owner for the response.</li>
+<li>Decide what action is triggered when the KPI is off target.</li>
+<li>Review whether the KPI is still useful after the project or service stabilizes.</li>
+</ol>
+<h2>Source and Alignment Notes</h2>
+<p>This sample library is designed as a companion to <strong>Module 8: Project Management and Change Leadership</strong> in the TCEA Technology/IT Director Certification. It extends the module's emphasis on desired outcomes, progress reporting, KPIs, dashboards, communication, change adoption, and responsible generative AI use.</p>
+<p>Useful reference points:</p>
+<ul>
+<li><a href="https://blog.tcea.org/make-data-displays-without-writing-code/">Make Data Displays Without Writing Code</a> - TCEA TechNotes article on GenAI-assisted data displays, dashboard workflows, Google Sheets, GitHub Pages, and embedding.</li>
+<li><a href="https://blog.tcea.org/kpi-dashboards-built-with-gen-ai/">KPI Dashboards Built with Gen AI</a> - TCEA TechNotes article demonstrating a browser-based dashboard paired with an editable Markdown data file.</li>
+<li><a href="https://blog.tcea.org/metrics-and-kpis-made-easy/">Metrics and KPIs Made Easy</a> - TCEA TechNotes introduction to actionable KPI scorecards for technology leaders.</li>
+<li><a href="https://mglearn.github.io/tcea/kpi-dashboard/k12-kpi-dashboard-generator.html">K-12 KPI Dashboard Generator</a> - browser-based KPI planning and dashboard starter.</li>
+<li><a href="https://mguhlin.github.io/creations/tcea/Dashboard_SchoolKPIs/index.html">District KPI Dashboard Example</a> - example of a scoreboard-style district dashboard.</li>
+<li><a href="https://mglearn.github.io/tcea/ddp/index.html">Data Display Patterns Field Guide</a> - examples, prompts, and hosting considerations for lightweight visual displays.</li>
+</ul>
+<blockquote>
+<p><strong>Data note:</strong> Every Ardent ISD number in this library is illustrative sample data. Replace it with locally verified data before operational use.</p>
+</blockquote>
+</article><footer class="doc-foot">TCEA Technology/IT Director Certification - Module 8 companion resource - sample artifact for adaptation.</footer></main><div class="footer">Ardent ISD KPI & Dashboard Studio</div></body></html>

@@ -1,0 +1,200 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Publishing and Embedding Guide | Module 8 KPI Studio</title><style>
+:root{--navy:#0A3476;--navy-dark:#071f4a;--gold:#FCB040;--white:#fff;--off:#f7f8fc;--text:#1a1a2e;--muted:#5a6680;--pale:#D0D8F0;--goldp:#FEF0D0;--line:#d8deeb;--green:#19754a;--amber:#9b6410;--red:#a52a2a;--blue:#2f64b5}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--off);color:var(--text);font-family:"DM Sans",Arial,sans-serif;line-height:1.5}
+a{color:var(--navy)} a:hover{text-decoration-thickness:2px}.sitebar{background:var(--navy-dark);color:white;padding:18px 28px;border-bottom:5px solid var(--gold)}
+.sitebar .inner{max-width:1180px;margin:auto;display:flex;gap:20px;align-items:center;justify-content:space-between}.brand{font-weight:800;letter-spacing:.02em}.brand span{color:var(--gold)}
+.sitebar a{color:white;text-decoration:none}.wrap{max-width:1180px;margin:28px auto;padding:0 20px}.hero{background:var(--navy-dark);color:white;padding:52px 42px;border-radius:18px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-80px;top:-90px;width:300px;height:300px;border:42px solid rgba(252,176,64,.22);border-radius:50%}.hero h1{font-family:Georgia,"Times New Roman",serif;font-size:44px;line-height:1.02;margin:0 0 12px;max-width:880px}.hero .gold{color:var(--gold);font-style:italic}.hero p{max-width:820px;font-size:18px;color:#e6ebf8}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:18px;margin-top:26px}.card{background:white;border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:0 4px 16px rgba(7,31,74,.06);display:flex;flex-direction:column}.badge{display:inline-block;width:max-content;max-width:100%;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--navy);background:var(--goldp);padding:5px 8px;border-radius:999px}.card h2{font-family:Georgia,"Times New Roman",serif;color:var(--navy);font-size:23px;line-height:1.15;margin:12px 0 8px}.card p{color:var(--muted);margin:0 0 16px}.actions{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap}.btn{display:inline-block;background:var(--gold);color:var(--navy-dark);text-decoration:none;font-weight:800;padding:8px 12px;border-radius:8px;border:0}.btn.alt{background:var(--pale)}
+.section-title{font-family:Georgia,"Times New Roman",serif;color:var(--navy);font-size:31px;margin-top:42px;border-left:7px solid var(--gold);padding-left:14px}.note{background:var(--goldp);border-left:5px solid var(--gold);padding:15px 18px;border-radius:8px;margin:18px 0}.footer{max-width:1180px;margin:40px auto 0;padding:24px 20px 40px;color:var(--muted);font-size:13px}
+.quicklinks{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}.quicklinks a{background:white;border:1px solid var(--line);padding:9px 12px;border-radius:9px;text-decoration:none;font-weight:700}
+/* document pages */
+.doc-shell{max-width:980px;margin:30px auto;background:white;border:1px solid var(--line);box-shadow:0 6px 28px rgba(7,31,74,.08)}.doc-head{background:var(--navy-dark);color:white;padding:34px 42px;border-bottom:8px solid var(--gold)}.doc-head .eyebrow{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}.doc-head h1{font-family:Georgia,"Times New Roman",serif;font-size:34px;line-height:1.1;margin:8px 0}.doc-head p{margin:0;color:#e5eaf7}.doc-toolbar{padding:12px 42px;background:var(--off);border-bottom:1px solid var(--line);display:flex;gap:10px;flex-wrap:wrap}.doc-body{padding:34px 42px 46px}.doc-body h1,.doc-body h2,.doc-body h3{font-family:Georgia,"Times New Roman",serif;color:var(--navy)}.doc-body h1{font-size:28px}.doc-body h2{font-size:23px;margin-top:30px;border-left:5px solid var(--gold);padding-left:10px}.doc-body h3{font-size:18px;margin-top:22px}.doc-body table{width:100%;border-collapse:collapse;margin:14px 0 22px;font-size:13px}.doc-body th{background:var(--navy);color:white;text-align:left;padding:8px;vertical-align:top}.doc-body td{border:1px solid var(--line);padding:8px;vertical-align:top}.doc-body tr:nth-child(even) td{background:#fafbfe}.doc-body blockquote{margin:18px 0;padding:12px 16px;background:var(--goldp);border-left:5px solid var(--gold)}.doc-body code{background:#eef1f8;padding:2px 5px;border-radius:4px}.doc-body pre{white-space:pre-wrap;background:#0e1830;color:#f6f8ff;padding:16px;border-radius:10px;overflow-wrap:anywhere;font-size:12px;line-height:1.45}.doc-body pre code{background:none;padding:0}.doc-body input[type=checkbox]{transform:scale(1.05);margin-right:6px}.status-green{color:var(--green);font-weight:800}.status-amber{color:var(--amber);font-weight:800}.status-red{color:var(--red);font-weight:800}.doc-foot{padding:14px 42px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+.kpi-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:18px 0}.kpi-box{border:1px solid var(--line);border-top:5px solid var(--gold);border-radius:10px;padding:13px;background:#fff}.kpi-box strong{display:block;color:var(--navy);font-size:24px}.kpi-box span{font-size:12px;color:var(--muted)}
+@media(max-width:700px){.hero{padding:36px 24px}.hero h1{font-size:34px}.doc-head,.doc-body,.doc-toolbar,.doc-foot{padding-left:22px;padding-right:22px}.doc-body{overflow-x:auto}.sitebar .inner{align-items:flex-start;flex-direction:column}}
+@media print{body{background:white}.sitebar,.doc-toolbar,.footer{display:none!important}.doc-shell{border:0;box-shadow:none;max-width:none;margin:0}.doc-head{padding:24px 28px}.doc-body{padding:24px 28px}.doc-foot{padding:10px 28px}.doc-body h2{break-after:avoid-page}.doc-body table{break-inside:auto}.doc-body tr{break-inside:avoid}.doc-body pre{background:#f2f4f9;color:#111;border:1px solid #d5dbea}.doc-body a{color:inherit;text-decoration:none}@page{size:Letter;margin:.45in}}
+</style></head><body>
+<div class="sitebar"><div class="inner"><div class="brand">TCEA <span>Module 8</span> KPI & Dashboard Studio</div><a href="../index.html">Back to library</a></div></div>
+<main class="doc-shell"><header class="doc-head"><div class="eyebrow">Ardent ISD - KPI & Dashboard artifact</div><h1>Publishing and Embedding Guide</h1><p>GitHub Pages, Iframes, CMS Constraints, and Update Ownership</p></header>
+<nav class="doc-toolbar"><a class="btn" href="../pdf/13-publishing-embedding-guide.pdf">PDF</a><a class="btn alt" href="../markdown/13-publishing-embedding-guide.md">Markdown</a><a class="btn alt" href="javascript:window.print()">Print</a></nav>
+<article class="doc-body"><h1>Publishing and Embedding Guide</h1>
+<p>A dashboard is not finished when the HTML works on your laptop. It needs an approved home, an update owner, and a clear decision about who is allowed to see the data.</p>
+<blockquote>
+<p><strong>GenAI data guardrail:</strong> Use fictional, public, aggregated, or properly sanitized information with public generative AI tools. Do not enter student records, staff records, personally identifiable information, credentials, sensitive cybersecurity details, legal records, confidential procurement material, vendor-confidential information, or sensitive district project information unless your district has explicitly approved the tool and data use.</p>
+</blockquote>
+<h2>Hosting Options</h2>
+<table>
+<thead>
+<tr>
+  <th>Option</th>
+  <th>Best Use</th>
+  <th>Strengths</th>
+  <th>Watch For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>GitHub Pages</td>
+  <td>Public/sample dashboards and approved static sites</td>
+  <td>Free/static hosting, works well with HTML/CSS/JS</td>
+  <td>Repository and data become public unless access is otherwise controlled</td>
+</tr>
+<tr>
+  <td>District web server</td>
+  <td>Internal or public district-controlled hosting</td>
+  <td>Local governance and familiar URL</td>
+  <td>Requires IT support/maintenance</td>
+</tr>
+<tr>
+  <td>Google Sites iframe</td>
+  <td>Embed an externally hosted display</td>
+  <td>Easy placement on a Site</td>
+  <td>Sandboxed behavior; local storage and some browser features may be constrained</td>
+</tr>
+<tr>
+  <td>WordPress iframe</td>
+  <td>Embed externally hosted JS dashboard</td>
+  <td>Avoids editors stripping JavaScript</td>
+  <td>Set adequate height; confirm responsive behavior</td>
+</tr>
+<tr>
+  <td>LMS page iframe</td>
+  <td>Course/training demonstrations</td>
+  <td>Keeps learning resource inside course</td>
+  <td>LMS security policies may restrict embeds</td>
+</tr>
+</tbody>
+</table>
+<h2>GitHub Pages Folder Pattern</h2>
+<pre><code class="language-text">my-kpi-dashboard/
+  index.html
+  data.md
+  README.md
+</code></pre>
+<p>For a library with several dashboards:</p>
+<pre><code class="language-text">kpi-library/
+  index.html
+  dashboards/
+    technology-operations/
+      index.html
+      data.md
+    help-desk/
+      index.html
+      data.md
+</code></pre>
+<h2>Generic iframe</h2>
+<pre><code class="language-html">&lt;iframe
+  src=&quot;https://YOUR-ORG.github.io/YOUR-REPO/dashboards/technology-operations/&quot;
+  width=&quot;100%&quot;
+  height=&quot;760&quot;
+  style=&quot;border:0;display:block;&quot;
+  loading=&quot;lazy&quot;
+  title=&quot;Technology Operations KPI Dashboard&quot;&gt;
+&lt;/iframe&gt;
+</code></pre>
+<p>Use a descriptive title. Set an explicit height that fits the display or use an approved responsive embed technique.</p>
+<h2>Why External Hosting Helps with JavaScript</h2>
+<p>Some content-management systems preserve HTML/CSS but remove JavaScript when content is saved. A reliable pattern is to host the working dashboard on GitHub Pages or another approved web host, then embed the page with an iframe.</p>
+<h2>Publication Decision Matrix</h2>
+<table>
+<thead>
+<tr>
+  <th>Data Type</th>
+  <th>Public Dashboard</th>
+  <th>Internal Leadership Dashboard</th>
+  <th>Restricted Operational View</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Aggregate project progress</td>
+  <td>Often appropriate after review</td>
+  <td>Yes</td>
+  <td>Yes</td>
+</tr>
+<tr>
+  <td>Help desk SLA percentages</td>
+  <td>Often appropriate after review</td>
+  <td>Yes</td>
+  <td>Yes</td>
+</tr>
+<tr>
+  <td>Student-level records</td>
+  <td>No</td>
+  <td>Only in approved systems</td>
+  <td>Restricted</td>
+</tr>
+<tr>
+  <td>Staff-level performance/personnel data</td>
+  <td>No</td>
+  <td>Needs HR/legal governance</td>
+  <td>Restricted</td>
+</tr>
+<tr>
+  <td>Vulnerability details</td>
+  <td>No</td>
+  <td>Usually restricted</td>
+  <td>Restricted security workflow</td>
+</tr>
+<tr>
+  <td>Incident specifics before communications approval</td>
+  <td>No</td>
+  <td>Limited need-to-know</td>
+  <td>Restricted</td>
+</tr>
+<tr>
+  <td>Vendor-confidential pricing/terms</td>
+  <td>No</td>
+  <td>Limited approved audience</td>
+  <td>Restricted</td>
+</tr>
+<tr>
+  <td>Publicly approved budget totals</td>
+  <td>Often</td>
+  <td>Yes</td>
+  <td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2>Version and Update Practices</h2>
+<ul>
+<li>Display the reporting period and last-updated date.</li>
+<li>Keep KPI definitions under version control.</li>
+<li>Assign one person/team to update the data source.</li>
+<li>Keep a simple change log for formula/target changes.</li>
+<li>Test links after every structural change.</li>
+<li>Keep a known-good prior version for rollback.</li>
+<li>Do not let a public dashboard become the first place leaders learn about a sensitive incident.</li>
+</ul>
+<h2>GenAI Prompt: Prepare an Embed</h2>
+<pre><code class="language-text">I have an approved public dashboard at:
+[URL]
+
+Create an accessible iframe embed for:
+[Google Sites / WordPress / LMS / generic web page]
+
+Requirements:
+- 100% width;
+- reasonable explicit height;
+- no border;
+- lazy loading;
+- descriptive title;
+- mobile-friendly guidance.
+
+Do not add tracking scripts or external services.
+</code></pre>
+<h2>Source and Alignment Notes</h2>
+<p>This sample library is designed as a companion to <strong>Module 8: Project Management and Change Leadership</strong> in the TCEA Technology/IT Director Certification. It extends the module's emphasis on desired outcomes, progress reporting, KPIs, dashboards, communication, change adoption, and responsible generative AI use.</p>
+<p>Useful reference points:</p>
+<ul>
+<li><a href="https://blog.tcea.org/make-data-displays-without-writing-code/">Make Data Displays Without Writing Code</a> - TCEA TechNotes article on GenAI-assisted data displays, dashboard workflows, Google Sheets, GitHub Pages, and embedding.</li>
+<li><a href="https://blog.tcea.org/kpi-dashboards-built-with-gen-ai/">KPI Dashboards Built with Gen AI</a> - TCEA TechNotes article demonstrating a browser-based dashboard paired with an editable Markdown data file.</li>
+<li><a href="https://blog.tcea.org/metrics-and-kpis-made-easy/">Metrics and KPIs Made Easy</a> - TCEA TechNotes introduction to actionable KPI scorecards for technology leaders.</li>
+<li><a href="https://mglearn.github.io/tcea/kpi-dashboard/k12-kpi-dashboard-generator.html">K-12 KPI Dashboard Generator</a> - browser-based KPI planning and dashboard starter.</li>
+<li><a href="https://mguhlin.github.io/creations/tcea/Dashboard_SchoolKPIs/index.html">District KPI Dashboard Example</a> - example of a scoreboard-style district dashboard.</li>
+<li><a href="https://mglearn.github.io/tcea/ddp/index.html">Data Display Patterns Field Guide</a> - examples, prompts, and hosting considerations for lightweight visual displays.</li>
+</ul>
+<blockquote>
+<p><strong>Data note:</strong> Every Ardent ISD number in this library is illustrative sample data. Replace it with locally verified data before operational use.</p>
+</blockquote>
+</article><footer class="doc-foot">TCEA Technology/IT Director Certification - Module 8 companion resource - sample artifact for adaptation.</footer></main><div class="footer">Ardent ISD KPI & Dashboard Studio</div></body></html>

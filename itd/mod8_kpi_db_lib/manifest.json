@@ -1,0 +1,100 @@
+{
+  "1": {
+    "title": "KPI Quick Start for Technology Leaders",
+    "scenario": "From Activity Counts to Actionable Scorecards",
+    "html": "docs/01-kpi-quick-start.html",
+    "markdown": "markdown/01-kpi-quick-start.md",
+    "pdf": "pdf/01-kpi-quick-start.pdf"
+  },
+  "2": {
+    "title": "K-12 Technology KPI Catalog",
+    "scenario": "60+ CTO-Ready Measures by Leadership Domain",
+    "html": "docs/02-kpi-catalog.html",
+    "markdown": "markdown/02-kpi-catalog.md",
+    "pdf": "pdf/02-kpi-catalog.pdf"
+  },
+  "3": {
+    "title": "KPI Selection Canvas",
+    "scenario": "Choose Measures That Drive Decisions",
+    "html": "docs/03-kpi-selection-canvas.html",
+    "markdown": "markdown/03-kpi-selection-canvas.md",
+    "pdf": "pdf/03-kpi-selection-canvas.pdf"
+  },
+  "4": {
+    "title": "KPI Definition Dictionary",
+    "scenario": "One Meaning, One Formula, One Owner",
+    "html": "docs/04-kpi-definition-dictionary.html",
+    "markdown": "markdown/04-kpi-definition-dictionary.md",
+    "pdf": "pdf/04-kpi-definition-dictionary.pdf"
+  },
+  "5": {
+    "title": "Project Portfolio KPI Scorecard",
+    "scenario": "Six Major Technology Initiatives at a Glance",
+    "html": "docs/05-project-portfolio-scorecard.html",
+    "markdown": "markdown/05-project-portfolio-scorecard.md",
+    "pdf": "pdf/05-project-portfolio-scorecard.pdf"
+  },
+  "6": {
+    "title": "Technology Operations KPI Scorecard",
+    "scenario": "Reliability, Support, Devices, and Service Quality",
+    "html": "docs/06-technology-operations-scorecard.html",
+    "markdown": "markdown/06-technology-operations-scorecard.md",
+    "pdf": "pdf/06-technology-operations-scorecard.pdf"
+  },
+  "7": {
+    "title": "Change Adoption KPI Scorecard",
+    "scenario": "Measure Whether the Change Actually Stuck",
+    "html": "docs/07-change-adoption-scorecard.html",
+    "markdown": "markdown/07-change-adoption-scorecard.md",
+    "pdf": "pdf/07-change-adoption-scorecard.pdf"
+  },
+  "8": {
+    "title": "Data Display Pattern Gallery",
+    "scenario": "Choose the Shape That Matches the Question",
+    "html": "docs/08-data-display-patterns.html",
+    "markdown": "markdown/08-data-display-patterns.md",
+    "pdf": "pdf/08-data-display-patterns.pdf"
+  },
+  "9": {
+    "title": "GenAI Prompt Studio for KPIs and Dashboards",
+    "scenario": "Copy-Ready Prompts with Human Review Built In",
+    "html": "docs/09-genai-prompt-studio.html",
+    "markdown": "markdown/09-genai-prompt-studio.md",
+    "pdf": "pdf/09-genai-prompt-studio.pdf"
+  },
+  "10": {
+    "title": "Build a Dashboard with GenAI - Step-by-Step Lab",
+    "scenario": "From Leadership Question to GitHub Pages",
+    "html": "docs/10-dashboard-build-lab.html",
+    "markdown": "markdown/10-dashboard-build-lab.md",
+    "pdf": "pdf/10-dashboard-build-lab.pdf"
+  },
+  "11": {
+    "title": "Dashboard Example Gallery",
+    "scenario": "Seven Ardent ISD Use Cases",
+    "html": "docs/11-dashboard-example-gallery.html",
+    "markdown": "markdown/11-dashboard-example-gallery.md",
+    "pdf": "pdf/11-dashboard-example-gallery.pdf"
+  },
+  "12": {
+    "title": "Google Sheets to Dashboard Automation Lab",
+    "scenario": "Reduce Manual Updates Without Losing Governance",
+    "html": "docs/12-sheets-automation-lab.html",
+    "markdown": "markdown/12-sheets-automation-lab.md",
+    "pdf": "pdf/12-sheets-automation-lab.pdf"
+  },
+  "13": {
+    "title": "Publishing and Embedding Guide",
+    "scenario": "GitHub Pages, Iframes, CMS Constraints, and Update Ownership",
+    "html": "docs/13-publishing-embedding-guide.html",
+    "markdown": "markdown/13-publishing-embedding-guide.md",
+    "pdf": "pdf/13-publishing-embedding-guide.pdf"
+  },
+  "14": {
+    "title": "Dashboard QA, Privacy, and Publication Checklist",
+    "scenario": "Verify Before Leaders Rely on It",
+    "html": "docs/14-dashboard-qa-checklist.html",
+    "markdown": "markdown/14-dashboard-qa-checklist.md",
+    "pdf": "pdf/14-dashboard-qa-checklist.pdf"
+  }
+}
