@@ -41,7 +41,7 @@ h1,h2,h3 { font-family:Georgia, "DM Serif Display", serif; line-height:1.12; }
   background:
     linear-gradient(90deg, rgba(7,31,74,.94) 0%, rgba(7,31,74,.80) 34%,
       rgba(7,31,74,.34) 62%, rgba(7,31,74,.58) 100%),
-    #071F4A url("hero-banner.png") center/cover no-repeat;
+    #071F4A url("hero-banner.png") center top/cover no-repeat;
   color:white; border-bottom:5px solid var(--gold);
 }
 .header-inner {
