@@ -19,6 +19,14 @@ if (sessionStorage.getItem("tcea_itd_access") !== "granted") {
 
 <main class="container">
 
+  <section class="dashboard" id="dashboard" hidden>
+    <div class="stat stat-total">
+      <span class="stat-num" id="statTotal">—</span>
+      <span class="stat-label">Templates &amp; Documents</span>
+    </div>
+    <div class="stat-breakdown" id="statBreakdown"></div>
+  </section>
+
   <section class="module">
     <h2>Module 4</h2>
     <p class="mod-sub">Technology Operations and Infrastructure</p>
@@ -70,5 +78,20 @@ document.getElementById("lock").addEventListener("click", (e)=>{
   sessionStorage.removeItem("tcea_itd_access");
   location.replace("access.html");
 });
+
+// Dashboard: available templates/documents (html/md/pdf of one item count as 1).
+fetch("stats.json",{cache:"no-store"})
+  .then(r=>r.ok?r.json():Promise.reject(r.status))
+  .then(s=>{
+    if(!s || typeof s.total!=="number") return;
+    document.getElementById("statTotal").textContent = s.total;
+    const bd = document.getElementById("statBreakdown");
+    const mods = Object.keys(s.byModule||{}).sort((a,b)=>(+a)-(+b));
+    bd.innerHTML = mods.map(m=>
+      '<div class="stat stat-mini"><span class="stat-num">'+s.byModule[m]+
+      '</span><span class="stat-label">Module '+m+'</span></div>').join("");
+    document.getElementById("dashboard").hidden = false;
+  })
+  .catch(()=>{ /* dashboard stays hidden if stats are unavailable */ });
 </script>
 </body></html>
