@@ -69,6 +69,8 @@ h1,h2,h3 { font-family:Georgia, "DM Serif Display", serif; line-height:1.12; }
 .resources a:hover { text-decoration:underline; }
 .resources p { margin:5px 0 0; color:var(--muted); font-size:.95rem; }
 .resources .lockicon { color:var(--muted); font-weight:600; font-size:.8rem; margin-left:6px; }
+.resources li.soon { background:var(--offwhite); border-style:dashed; box-shadow:none; }
+.resources li.soon p { margin:0; color:var(--muted); font-style:italic; }
 .footer {
   background:var(--navy-dark); color:#dfe6f5; padding:24px; text-align:center; font-size:.85rem;
 }
