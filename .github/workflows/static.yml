@@ -40,8 +40,6 @@ jobs:
           node-version: '22'
       - name: Build RSS feed (feed.xml + updates.json)
         run: node build-feed.js
-      - name: Build ITD manifest (itd/manifest.json)
-        run: node build-itd.js
       - name: Setup Pages
         uses: actions/configure-pages@v5
       # Strip paths listed in .pagesignore from this throwaway checkout so they

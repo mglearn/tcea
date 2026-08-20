@@ -52,23 +52,23 @@ h1,h2,h3 { font-family:Georgia, "DM Serif Display", serif; line-height:1.12; }
   border:1px solid rgba(255,255,255,.5); border-radius:8px; padding:8px 12px; white-space:nowrap;
 }
 .container { max-width:1040px; margin:0 auto; padding:34px 28px 70px; }
-.filetree { list-style:none; margin:0; padding:0; }
-.filetree ul { list-style:none; margin:0 0 0 22px; padding:0; border-left:2px solid var(--silver); }
-.filetree li { margin:2px 0; }
-.folder {
-  font-weight:800; color:var(--navy-dark); padding:7px 4px;
-  display:flex; align-items:center; gap:8px;
+.module { margin:0 0 34px; }
+.module > h2 {
+  color:var(--navy); font-size:1.6rem; margin:0 0 4px;
+  border-left:6px solid var(--gold); padding-left:12px;
 }
-.folder::before { content:"\1F4C1"; }
-.filetree a {
-  display:inline-flex; align-items:center; gap:8px; text-decoration:none;
-  padding:6px 8px; border-radius:7px; color:var(--navy);
+.module > .mod-sub { color:var(--muted); margin:0 0 16px 18px; font-size:.95rem; }
+.resources { list-style:none; margin:0; padding:0; display:grid; gap:14px; }
+.resources li {
+  background:white; border:1px solid #dfe4ee; border-radius:12px; padding:16px 18px;
+  box-shadow:0 4px 16px rgba(7,31,74,.05);
 }
-.filetree a::before { content:"\1F4C4"; }
-.filetree a:hover { background:var(--gold-pale); }
-.fsize { color:var(--muted); font-weight:400; font-size:.8rem; margin-left:6px; }
-.empty, .loaderr { color:var(--muted); background:white; border:1px solid #dfe4ee;
-  border-radius:12px; padding:22px; }
+.resources a {
+  font-weight:800; font-size:1.08rem; text-decoration:none; color:var(--navy);
+}
+.resources a:hover { text-decoration:underline; }
+.resources p { margin:5px 0 0; color:var(--muted); font-size:.95rem; }
+.resources .lockicon { color:var(--muted); font-weight:600; font-size:.8rem; margin-left:6px; }
 .footer {
   background:var(--navy-dark); color:#dfe6f5; padding:24px; text-align:center; font-size:.85rem;
 }

@@ -12,14 +12,45 @@ if (sessionStorage.getItem("tcea_itd_access") !== "granted") {
   <div>
     <div class="eyebrow">TCEA</div>
     <h1>ITD Resources</h1>
-    <p>Everything currently published under this library.</p>
+    <p>Resources organized by module.</p>
   </div>
   <a href="#" class="lockbtn" id="lock">Lock</a>
 </div></header>
 
 <main class="container">
-  <ul class="filetree" id="tree"></ul>
-  <p id="status" class="empty" hidden></p>
+
+  <section class="module">
+    <h2>Module 4</h2>
+    <p class="mod-sub">Infrastructure Leadership</p>
+    <ul class="resources">
+      <li>
+        <a href="mod4artifactlib/index.html">Infrastructure Leadership Portfolio<span class="lockicon">🔒 password-protected</span></a>
+        <p>Twelve ready-to-use IT leadership artifacts — infrastructure health assessments, executive briefs, vendor comparison matrices, five-year equipment replacement plans, help-desk SLAs, and disaster-recovery templates.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="module">
+    <h2>Module 6</h2>
+    <p class="mod-sub">Cybersecurity &amp; Data Protection</p>
+    <ul class="resources">
+      <li>
+        <a href="mod6/encryption-resources.html">Encrypt Your Data</a>
+        <p>A practical hub for encrypting sensitive data, protecting files, making backups, using encrypted email, and securely deleting data.</p>
+      </li>
+      <li>
+        <a href="mod6/secure-cloud-resources.html">Secure the Cloud</a>
+        <p>Cybersecurity resources for scanning, monitoring, and backing up cloud services, building staff awareness, and encrypting files before cloud storage.</p>
+      </li>
+      <li>
+        <a href="mod6/wds/index.html">When Disaster Strikes: Cyber Edition</a>
+        <p>A browser-based tabletop exercise game for K-12 technology leaders, with cyber incident-response scenarios aligned to NIST CSF 2.0 and CISA.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Add more modules by copying a <section class="module"> block, e.g. Module 8. -->
+
 </main>
 <footer class="footer">TCEA · ITD Resources</footer>
 
@@ -29,72 +60,5 @@ document.getElementById("lock").addEventListener("click", (e)=>{
   sessionStorage.removeItem("tcea_itd_access");
   location.replace("access.html");
 });
-
-function fmtSize(n){
-  if(n==null) return "";
-  if(n<1024) return n+" B";
-  if(n<1048576) return (n/1024).toFixed(1)+" KB";
-  return (n/1048576).toFixed(1)+" MB";
-}
-
-// Build a nested tree object from flat "a/b/c.html" paths.
-function buildTree(files){
-  const root={dirs:{},files:[]};
-  for(const f of files){
-    const parts=f.path.split("/");
-    let node=root;
-    for(let i=0;i<parts.length-1;i++){
-      node.dirs[parts[i]] = node.dirs[parts[i]] || {dirs:{},files:[]};
-      node=node.dirs[parts[i]];
-    }
-    node.files.push({name:parts[parts.length-1], path:f.path, size:f.size});
-  }
-  return root;
-}
-
-function renderNode(node){
-  const ul=document.createElement("ul");
-  // folders first, alphabetical
-  for(const name of Object.keys(node.dirs).sort((a,b)=>a.localeCompare(b))){
-    const li=document.createElement("li");
-    const label=document.createElement("div");
-    label.className="folder";
-    label.textContent=name;
-    li.appendChild(label);
-    li.appendChild(renderNode(node.dirs[name]));
-    ul.appendChild(li);
-  }
-  for(const f of node.files.sort((a,b)=>a.name.localeCompare(b.name))){
-    const li=document.createElement("li");
-    const a=document.createElement("a");
-    a.href=f.path;
-    a.textContent=f.name;
-    const s=document.createElement("span");
-    s.className="fsize"; s.textContent=fmtSize(f.size);
-    a.appendChild(s);
-    li.appendChild(a);
-    ul.appendChild(li);
-  }
-  return ul;
-}
-
-fetch("manifest.json",{cache:"no-store"})
-  .then(r=>{ if(!r.ok) throw new Error(r.status); return r.json(); })
-  .then(data=>{
-    const files=(data&&data.files)||[];
-    if(!files.length){
-      const s=document.getElementById("status");
-      s.hidden=false; s.textContent="No resources published yet.";
-      return;
-    }
-    const tree=buildTree(files);
-    document.getElementById("tree").replaceWith(Object.assign(
-      renderNode(tree), {className:"filetree", id:"tree"}));
-  })
-  .catch(err=>{
-    const s=document.getElementById("status");
-    s.hidden=false; s.className="loaderr";
-    s.textContent="Could not load the resource list ("+err.message+").";
-  });
 </script>
 </body></html>
