@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ardent ISD | Infrastructure Portfolio Access</title><link rel="stylesheet" href="assets/style.css"></head>
+<body class="login-page">
+<main class="login-card">
+  <div class="eyebrow">Ardent ISD</div>
+  <h1>Infrastructure Leadership Portfolio</h1>
+  <p>Enter the access password to view the portfolio.</p>
+  <form id="loginForm">
+    <label for="pw"><strong>Password</strong></label>
+    <input id="pw" name="pw" type="password" autocomplete="current-password" required autofocus>
+    <button type="submit">Enter Portfolio</button>
+    <div id="error" class="error" role="alert"></div>
+  </form>
+</main>
+<script>
+const EXPECTED_HASH="cb5e87e62f4a975bd91ff2d5008633052126fecbd5aacb32f87ee8fee241ecbf";
+async function digest(value) {
+ const bytes=new TextEncoder().encode(value);
+ const buffer=await crypto.subtle.digest("SHA-256",bytes);
+ return Array.from(new Uint8Array(buffer)).map(b=>b.toString(16).padStart(2,"0")).join("");
+}
+document.getElementById("loginForm").addEventListener("submit", async (e)=>{
+ e.preventDefault();
+ const h=await digest(document.getElementById("pw").value);
+ if(h===EXPECTED_HASH) {
+   sessionStorage.setItem("ardent_access","granted");
+   location.href="index.html";
+ } else {
+   document.getElementById("error").textContent="Incorrect password.";
+ }
+});
+</script></body></html>

@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Critical Systems Recovery Priority Matrix | Ardent ISD</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>if(sessionStorage.getItem("ardent_access")!=="granted") location.replace("../access.html");</script>
+</head><body>
+<header class="site-header"><div class="header-inner">
+<div class="brand">ARDENT ISD <span>|</span> TECHNOLOGY SERVICES</div>
+<nav class="nav"><a href="../index.html">Portfolio</a><a href="../about.html">About</a><a href="../access.html" onclick="sessionStorage.removeItem('ardent_access')">Sign Out</a></nav>
+</div></header>
+<div class="doc-tools"><a class="btn secondary" href="../index.html">← Portfolio</a>
+<div class="button-row"><a class="btn secondary" href="08-critical-systems-recovery-priority-matrix.md" download>Markdown</a><a class="btn primary" href="../pdf/08-critical-systems-recovery-priority-matrix.pdf" download>PDF</a></div></div>
+<main class="doc-shell"><article class="doc">
+<section class="doc-title"><div class="eyebrow">Ardent ISD Infrastructure Leadership Portfolio</div>
+<h1>Critical Systems Recovery Priority Matrix</h1><div class="subtitle">Leadership view of service priority and dependencies</div></section>
+<section class="doc-body"><p><strong>Ardent ISD | Business Continuity Planning</strong></p>
+<h2>Purpose</h2>
+<p>This matrix gives district leaders a common view of which systems are most critical to restore and what they depend on. Specific technical recovery procedures, credentials, configurations, and sensitive security details belong in restricted operational documentation.</p>
+<table><thead><tr><th>Service / Function</th><th>Priority</th><th>Business Impact if Unavailable</th><th>Key Dependencies</th><th>Business Owner</th></tr></thead><tbody>
+<tr><td>Identity / SSO</td><td>1</td><td>Users cannot access multiple district systems</td><td>Directory services, internet/WAN, MFA, DNS</td><td>Technology</td></tr>
+<tr><td>Internet / WAN</td><td>1</td><td>Instruction, cloud applications, communications, and many operations disrupted</td><td>ISP circuits, routing, switching, power</td><td>Technology</td></tr>
+<tr><td>Finance / Payroll</td><td>1</td><td>Payroll and financial operations may be delayed</td><td>Identity, servers/cloud service, banking interfaces</td><td>Finance</td></tr>
+<tr><td>Student Information System</td><td>1</td><td>Attendance, enrollment, grades, scheduling, records access disrupted</td><td>Identity, internet/WAN, vendor service</td><td>Student Services</td></tr>
+<tr><td>VoIP / Core communications</td><td>1</td><td>Internal/external calling and operational coordination affected</td><td>Network, power, carrier/SIP services</td><td>Operations</td></tr>
+<tr><td>Transportation systems</td><td>2</td><td>Routing, dispatch, and family communication degraded</td><td>Internet/WAN, vendor platform, identity</td><td>Transportation</td></tr>
+<tr><td>Learning Management System</td><td>2</td><td>Instructional continuity reduced</td><td>Internet, identity, vendor platform</td><td>Curriculum</td></tr>
+<tr><td>MDM</td><td>2</td><td>Device management and deployment functions impaired</td><td>Internet, identity, vendor platform</td><td>Technology</td></tr>
+<tr><td>Content filtering</td><td>2</td><td>Internet access governance/safety controls affected</td><td>Internet, DNS/network path, vendor service</td><td>Technology</td></tr>
+<tr><td>Document management</td><td>3</td><td>Administrative workflows slowed</td><td>Identity, storage/vendor platform</td><td>Business Services</td></tr>
+</tbody></table>
+<h2>Recovery Planning Questions</h2>
+<ul>
+<li>What is the acceptable duration of outage for each service?</li>
+<li>What data loss, if any, is acceptable?</li>
+<li>Which dependencies can create a hidden single point of failure?</li>
+<li>Who has authority to declare a continuity event and change priorities?</li>
+<li>How will staff communicate if normal email, VoIP, or district systems are unavailable?</li>
+<li>When were backups and restoration procedures last tested?</li>
+</ul>
+<h2>Leadership Action</h2>
+<p>The CTO should validate this matrix annually with business owners. Changes in vendors, cloud services, identity systems, network architecture, or district processes may change dependencies and recovery order.</p>
+<h2>Reference Points</h2>
+<ul>
+<li><a href="https://www.cosn.org/edtech-topic/it-management/" target="_blank" rel="noopener">CoSN IT Management Resources</a> - K-12 technology operations and leadership resources.</li>
+<li><a href="https://www.usac.org/e-rate/" target="_blank" rel="noopener">USAC E-Rate Program</a> - Federal E-Rate program information for schools and libraries.</li>
+<li><a href="https://www.setda.org/priorities/equity-of-access/broadband-imperative/broadband-imperative-iii/infrastructure-for-the-future/" target="_blank" rel="noopener">SETDA Infrastructure for the Future</a> - Guidance for future-ready broadband and infrastructure planning.</li>
+<li><a href="https://futureready.org/future-ready-frameworks/" target="_blank" rel="noopener">Future Ready Schools Frameworks</a> - Systems-oriented planning connecting infrastructure, learning, leadership, budget, and equity.</li>
+</ul>
+<div class="callout"><strong>Leadership use:</strong> This document is designed to support district-level review, discussion, and decision-making. Technical validation, procurement review, legal review, or compliance review should be completed by the appropriate district specialists when applicable.</div></section>
+</article></main>
+<footer class="footer">Ardent ISD Technology Services • Infrastructure Leadership Portfolio</footer>
+</body></html>

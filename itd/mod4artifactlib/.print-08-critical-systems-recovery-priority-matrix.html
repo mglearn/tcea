@@ -1,0 +1,173 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Critical Systems Recovery Priority Matrix</title><style>
+:root {
+  --navy:#0A3476; --navy-dark:#071F4A; --gold:#FCB040; --white:#FFFFFF;
+  --offwhite:#F7F8FC; --text:#1A1A2E; --muted:#5A6680; --pale-navy:#D0D8F0;
+  --gold-pale:#FEF0D0; --silver:#E6E9EF;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0; font-family:Inter, "DM Sans", Arial, sans-serif; color:var(--text);
+  background:var(--offwhite); line-height:1.58;
+}
+a { color:var(--navy); }
+.site-header {
+  background:var(--navy-dark); color:white; border-bottom:5px solid var(--gold);
+}
+.header-inner {
+  max-width:1180px; margin:0 auto; padding:20px 28px;
+  display:flex; gap:24px; align-items:center; justify-content:space-between;
+}
+.brand { font-weight:800; letter-spacing:.02em; }
+.brand span { color:var(--gold); }
+.nav a {
+  color:white; text-decoration:none; font-weight:700; margin-left:20px; font-size:.94rem;
+}
+.hero {
+  background:linear-gradient(135deg,var(--navy-dark),var(--navy));
+  color:white; padding:72px 28px 66px;
+}
+.hero-inner { max-width:1180px; margin:auto; }
+.eyebrow {
+  text-transform:uppercase; letter-spacing:.14em; color:var(--gold);
+  font-size:.82rem; font-weight:800; margin-bottom:10px;
+}
+h1,h2,h3 { font-family:Georgia, "DM Serif Display", serif; line-height:1.12; }
+h1 { font-size:clamp(2.4rem,5vw,4.4rem); margin:.1em 0 .22em; max-width:900px; }
+.hero p { font-size:1.18rem; max-width:790px; color:#f2f5ff; }
+.container { max-width:1180px; margin:0 auto; padding:42px 28px 70px; }
+.card-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(295px,1fr)); gap:20px;
+}
+.card {
+  background:white; border:1px solid #dfe4ee; border-radius:14px; padding:24px;
+  box-shadow:0 6px 22px rgba(7,31,74,.06); display:flex; flex-direction:column;
+}
+.card .num {
+  display:inline-flex; width:40px; height:40px; border-radius:50%; align-items:center;
+  justify-content:center; background:var(--gold); color:var(--navy-dark); font-weight:900;
+  margin-bottom:14px;
+}
+.card h2 { color:var(--navy); font-size:1.36rem; margin:0 0 8px; }
+.card p { color:var(--muted); margin:0 0 18px; flex:1; }
+.button-row { display:flex; flex-wrap:wrap; gap:10px; }
+.btn {
+  display:inline-block; border-radius:8px; padding:10px 14px; text-decoration:none;
+  font-weight:800; font-size:.9rem; border:1px solid var(--navy);
+}
+.btn.primary { background:var(--gold); color:var(--navy-dark); border-color:var(--gold); }
+.btn.secondary { background:white; color:var(--navy); }
+.doc-shell {
+  max-width:1040px; margin:34px auto 70px; padding:0 24px;
+}
+.doc {
+  background:white; border:1px solid #dfe4ee; border-radius:14px; overflow:hidden;
+  box-shadow:0 8px 28px rgba(7,31,74,.08);
+}
+.doc-title {
+  background:var(--navy-dark); color:white; padding:36px 42px 32px; border-bottom:5px solid var(--gold);
+}
+.doc-title h1 { font-size:2.55rem; margin:0 0 8px; }
+.doc-title .subtitle { color:#e7ecf8; }
+.doc-body { padding:36px 42px 50px; }
+.doc-body h2 {
+  color:var(--navy); font-size:1.55rem; margin-top:2rem;
+  border-left:6px solid var(--gold); padding-left:12px;
+}
+.doc-body h3 { color:var(--navy-dark); font-size:1.16rem; margin-top:1.5rem; }
+.doc-body table { width:100%; border-collapse:collapse; margin:16px 0 24px; font-size:.94rem; }
+.doc-body th { background:var(--navy); color:white; text-align:left; }
+.doc-body th,.doc-body td { padding:11px 12px; border:1px solid #d9deea; vertical-align:top; }
+.doc-body tr:nth-child(even) td { background:#f8f9fc; }
+.callout {
+  background:var(--gold-pale); border-left:6px solid var(--gold); padding:16px 18px;
+  margin:18px 0; border-radius:0 8px 8px 0;
+}
+.kpi { display:grid; grid-template-columns:160px 1fr 90px; gap:12px; align-items:center; margin:9px 0; }
+.kpi-bar { background:#e8ebf2; height:14px; border-radius:10px; overflow:hidden; }
+.kpi-fill { background:var(--navy); height:100%; }
+.tag {
+  display:inline-block; background:var(--pale-navy); color:var(--navy-dark);
+  padding:4px 9px; border-radius:999px; font-weight:800; font-size:.78rem; margin:2px 4px 2px 0;
+}
+.doc-tools {
+  max-width:1040px; margin:24px auto 0; padding:0 24px;
+  display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+}
+.footer {
+  background:var(--navy-dark); color:#dfe6f5; padding:28px; text-align:center; font-size:.9rem;
+}
+.login-page {
+  min-height:100vh; background:linear-gradient(135deg,var(--navy-dark),var(--navy));
+  display:flex; align-items:center; justify-content:center; padding:24px;
+}
+.login-card {
+  width:min(460px,100%); background:white; border-radius:16px; padding:34px;
+  box-shadow:0 18px 50px rgba(0,0,0,.26); border-top:7px solid var(--gold);
+}
+.login-card h1 { color:var(--navy-dark); font-size:2.2rem; margin-top:0; }
+.login-card input {
+  width:100%; padding:13px 14px; border:1px solid #aeb8ca; border-radius:8px;
+  font-size:1rem; margin:8px 0 12px;
+}
+.login-card button {
+  width:100%; padding:13px 14px; background:var(--gold); color:var(--navy-dark);
+  font-weight:900; border:0; border-radius:8px; cursor:pointer;
+}
+.error { color:#8b1d1d; min-height:1.4em; }
+@media(max-width:680px) {
+  .header-inner { flex-direction:column; align-items:flex-start; }
+  .nav a { margin:0 16px 0 0; }
+  .doc-title,.doc-body { padding-left:24px; padding-right:24px; }
+  .kpi { grid-template-columns:1fr; }
+}
+@media print {
+  .site-header,.doc-tools,.footer { display:none !important; }
+  body { background:white; }
+  .doc-shell { margin:0; padding:0; max-width:none; }
+  .doc { box-shadow:none; border:0; border-radius:0; }
+  .doc-title { padding:28px 34px; }
+  .doc-body { padding:28px 34px; }
+  a { text-decoration:none; color:inherit; }
+  h2,h3,.callout,table { break-inside:avoid; }
+  @page { size:Letter; margin:.55in; }
+}
+
+body{background:white} .doc-shell{margin:0;padding:0;max-width:none} .doc{border:0;box-shadow:none} </style></head><body><main class="doc-shell"><article class="doc">
+<section class="doc-title"><div class="eyebrow">Ardent ISD Infrastructure Leadership Portfolio</div>
+<h1>Critical Systems Recovery Priority Matrix</h1><div class="subtitle">Leadership view of service priority and dependencies</div></section>
+<section class="doc-body"><p><strong>Ardent ISD | Business Continuity Planning</strong></p>
+<h2>Purpose</h2>
+<p>This matrix gives district leaders a common view of which systems are most critical to restore and what they depend on. Specific technical recovery procedures, credentials, configurations, and sensitive security details belong in restricted operational documentation.</p>
+<table><thead><tr><th>Service / Function</th><th>Priority</th><th>Business Impact if Unavailable</th><th>Key Dependencies</th><th>Business Owner</th></tr></thead><tbody>
+<tr><td>Identity / SSO</td><td>1</td><td>Users cannot access multiple district systems</td><td>Directory services, internet/WAN, MFA, DNS</td><td>Technology</td></tr>
+<tr><td>Internet / WAN</td><td>1</td><td>Instruction, cloud applications, communications, and many operations disrupted</td><td>ISP circuits, routing, switching, power</td><td>Technology</td></tr>
+<tr><td>Finance / Payroll</td><td>1</td><td>Payroll and financial operations may be delayed</td><td>Identity, servers/cloud service, banking interfaces</td><td>Finance</td></tr>
+<tr><td>Student Information System</td><td>1</td><td>Attendance, enrollment, grades, scheduling, records access disrupted</td><td>Identity, internet/WAN, vendor service</td><td>Student Services</td></tr>
+<tr><td>VoIP / Core communications</td><td>1</td><td>Internal/external calling and operational coordination affected</td><td>Network, power, carrier/SIP services</td><td>Operations</td></tr>
+<tr><td>Transportation systems</td><td>2</td><td>Routing, dispatch, and family communication degraded</td><td>Internet/WAN, vendor platform, identity</td><td>Transportation</td></tr>
+<tr><td>Learning Management System</td><td>2</td><td>Instructional continuity reduced</td><td>Internet, identity, vendor platform</td><td>Curriculum</td></tr>
+<tr><td>MDM</td><td>2</td><td>Device management and deployment functions impaired</td><td>Internet, identity, vendor platform</td><td>Technology</td></tr>
+<tr><td>Content filtering</td><td>2</td><td>Internet access governance/safety controls affected</td><td>Internet, DNS/network path, vendor service</td><td>Technology</td></tr>
+<tr><td>Document management</td><td>3</td><td>Administrative workflows slowed</td><td>Identity, storage/vendor platform</td><td>Business Services</td></tr>
+</tbody></table>
+<h2>Recovery Planning Questions</h2>
+<ul>
+<li>What is the acceptable duration of outage for each service?</li>
+<li>What data loss, if any, is acceptable?</li>
+<li>Which dependencies can create a hidden single point of failure?</li>
+<li>Who has authority to declare a continuity event and change priorities?</li>
+<li>How will staff communicate if normal email, VoIP, or district systems are unavailable?</li>
+<li>When were backups and restoration procedures last tested?</li>
+</ul>
+<h2>Leadership Action</h2>
+<p>The CTO should validate this matrix annually with business owners. Changes in vendors, cloud services, identity systems, network architecture, or district processes may change dependencies and recovery order.</p>
+<h2>Reference Points</h2>
+<ul>
+<li><a href="https://www.cosn.org/edtech-topic/it-management/" target="_blank" rel="noopener">CoSN IT Management Resources</a> - K-12 technology operations and leadership resources.</li>
+<li><a href="https://www.usac.org/e-rate/" target="_blank" rel="noopener">USAC E-Rate Program</a> - Federal E-Rate program information for schools and libraries.</li>
+<li><a href="https://www.setda.org/priorities/equity-of-access/broadband-imperative/broadband-imperative-iii/infrastructure-for-the-future/" target="_blank" rel="noopener">SETDA Infrastructure for the Future</a> - Guidance for future-ready broadband and infrastructure planning.</li>
+<li><a href="https://futureready.org/future-ready-frameworks/" target="_blank" rel="noopener">Future Ready Schools Frameworks</a> - Systems-oriented planning connecting infrastructure, learning, leadership, budget, and equity.</li>
+</ul>
+<div class="callout"><strong>Leadership use:</strong> This document is designed to support district-level review, discussion, and decision-making. Technical validation, procurement review, legal review, or compliance review should be completed by the appropriate district specialists when applicable.</div></section>
+</article></main></body></html>

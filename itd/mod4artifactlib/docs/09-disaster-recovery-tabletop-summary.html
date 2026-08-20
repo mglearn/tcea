@@ -1,0 +1,59 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Disaster Recovery Tabletop Summary | Ardent ISD</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>if(sessionStorage.getItem("ardent_access")!=="granted") location.replace("../access.html");</script>
+</head><body>
+<header class="site-header"><div class="header-inner">
+<div class="brand">ARDENT ISD <span>|</span> TECHNOLOGY SERVICES</div>
+<nav class="nav"><a href="../index.html">Portfolio</a><a href="../about.html">About</a><a href="../access.html" onclick="sessionStorage.removeItem('ardent_access')">Sign Out</a></nav>
+</div></header>
+<div class="doc-tools"><a class="btn secondary" href="../index.html">← Portfolio</a>
+<div class="button-row"><a class="btn secondary" href="09-disaster-recovery-tabletop-summary.md" download>Markdown</a><a class="btn primary" href="../pdf/09-disaster-recovery-tabletop-summary.pdf" download>PDF</a></div></div>
+<main class="doc-shell"><article class="doc">
+<section class="doc-title"><div class="eyebrow">Ardent ISD Infrastructure Leadership Portfolio</div>
+<h1>Disaster Recovery Tabletop Summary</h1><div class="subtitle">Scenario findings, decisions, and corrective actions</div></section>
+<section class="doc-body"><p><strong>Ardent ISD | Exercise Date: October 9, 2026</strong></p>
+<h2>Scenario</h2>
+<p>A severe overnight storm causes an extended utility failure at the district administration site. The primary server room loses cooling after generator-supported systems remain online longer than expected. Several on-premises services become unavailable, while cloud services remain reachable from locations with internet access.</p>
+<h2>Exercise Objectives</h2>
+<ul>
+<li>Test leadership understanding of system dependencies.</li>
+<li>Clarify decision authority and communications.</li>
+<li>Identify gaps in recovery priorities and alternate work methods.</li>
+<li>Verify that backup and restoration responsibilities are assigned.</li>
+</ul>
+<h2>Findings</h2>
+<table><thead><tr><th>Finding</th><th>Risk</th><th>Corrective Action</th><th>Owner</th><th>Due</th></tr></thead><tbody>
+<tr><td>Cooling dependency was not visible in the recovery matrix</td><td>Servers may remain powered while environmental conditions become unsafe</td><td>Add facilities/environmental dependencies and shutdown thresholds to continuity documentation</td><td>Technology + Facilities</td><td>Nov. 15</td></tr>
+<tr><td>Alternate communications were not consistently known</td><td>Leaders may lose coordination during a local communications outage</td><td>Publish executive continuity contact protocol outside normal email</td><td>Communications + Cabinet</td><td>Nov. 30</td></tr>
+<tr><td>Two business owners disagreed on recovery priority</td><td>Restoration sequence may be contested during an actual outage</td><td>Cabinet to approve critical-system priority matrix annually</td><td>Superintendent&#x27;s Cabinet</td><td>Dec. 15</td></tr>
+<tr><td>Restore-test evidence was stored in multiple locations</td><td>Leadership cannot quickly confirm recovery readiness</td><td>Create a central restricted index of latest restore tests</td><td>Systems Manager</td><td>Nov. 30</td></tr>
+<tr><td>Vendor escalation contacts were current for most, not all, critical services</td><td>Delay in external support</td><td>Add quarterly vendor contact validation to operations checklist</td><td>IT Operations</td><td>Quarterly</td></tr>
+</tbody></table>
+<h2>What Worked</h2>
+<ul>
+<li>Staff quickly identified which cloud services remained usable.</li>
+<li>Technology and facilities teams coordinated operational thresholds effectively.</li>
+<li>The district&#x27;s secondary internet path supported core administrative access.</li>
+<li>Participants understood that business continuity decisions extend beyond the technology department.</li>
+</ul>
+<h2>Leadership Decisions</h2>
+<ol>
+<li>Add environmental systems to the critical dependency map.</li>
+<li>Approve one districtwide recovery priority matrix with business-owner signoff.</li>
+<li>Conduct at least one restore-validation review each semester.</li>
+<li>Maintain a restricted, offline-accessible continuity contact list.</li>
+<li>Repeat the exercise with a different scenario next year.</li>
+</ol>
+<h2>Reference Points</h2>
+<ul>
+<li><a href="https://www.cosn.org/edtech-topic/it-management/" target="_blank" rel="noopener">CoSN IT Management Resources</a> - K-12 technology operations and leadership resources.</li>
+<li><a href="https://www.usac.org/e-rate/" target="_blank" rel="noopener">USAC E-Rate Program</a> - Federal E-Rate program information for schools and libraries.</li>
+<li><a href="https://www.setda.org/priorities/equity-of-access/broadband-imperative/broadband-imperative-iii/infrastructure-for-the-future/" target="_blank" rel="noopener">SETDA Infrastructure for the Future</a> - Guidance for future-ready broadband and infrastructure planning.</li>
+<li><a href="https://futureready.org/future-ready-frameworks/" target="_blank" rel="noopener">Future Ready Schools Frameworks</a> - Systems-oriented planning connecting infrastructure, learning, leadership, budget, and equity.</li>
+</ul>
+<div class="callout"><strong>Leadership use:</strong> This document is designed to support district-level review, discussion, and decision-making. Technical validation, procurement review, legal review, or compliance review should be completed by the appropriate district specialists when applicable.</div></section>
+</article></main>
+<footer class="footer">Ardent ISD Technology Services • Infrastructure Leadership Portfolio</footer>
+</body></html>
