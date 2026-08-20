@@ -1,0 +1,263 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vendor Security and Student Data Privacy Review Packet | Ardent ISD</title><link rel="stylesheet" href="../assets/style.css"></head><body>
+<div class="sitebar"><div class="wrap"><div class="brand">Ardent ISD<small>Cybersecurity & Data Privacy Artifact Library</small></div><nav><a href="../index.html">Library Home</a><a href="../sources.html">Sources</a></nav></div></div>
+<main class="wrap"><section class="dochead"><div class="kicker">Artifact 10 · Module 6</div><h1>Vendor Security and Student Data Privacy Review Packet</h1><p>Pre-procurement risk review for K-12 software, cloud, AI-enabled tools, and service providers</p><div class="docmeta"><div class="meta"><b>Owner</b>Technology + Procurement + Privacy + Legal</div><div class="meta"><b>District</b>Ardent ISD</div><div class="meta"><b>Review Cycle</b>Annual + after major incident</div><div class="meta"><b>Policy Cross-Reference</b><span class="tag">CQB</span><span class="tag">FL</span><span class="tag">procurement procedures</span></div></div></section><blockquote>
+<p><strong>Training Sample - Customize Before Use.</strong> This document is an instructional artifact for Ardent ISD. It should be aligned to current board policy, administrative procedures, cyber-insurance requirements, records-retention requirements, and advice of district legal counsel before operational use. Legal and reporting requirements can change.</p>
+</blockquote>
+<h2>Purpose</h2>
+<p>Ardent ISD uses this packet before a product is approved to receive district student, employee, authentication, financial, or operational data. The packet is modeled on the leadership intent of CoSN's K-12CVAT: vendor review should be a <strong>repeatable procurement risk process</strong>, not an afterthought after implementation.</p>
+<h2>Part 1 - Intake</h2>
+<table>
+<thead>
+<tr>
+  <th>Question</th>
+  <th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Product/service</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Requesting campus/department</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Instructional/operational purpose</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Intended users</td>
+  <td>☐ Students ☐ Staff ☐ Parents ☐ Public</td>
+</tr>
+<tr>
+  <td>Student age range</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Data owner/steward</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Contract term / renewal date</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Cost / funding source</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Integrations requested</td>
+  <td>☐ SSO ☐ SIS ☐ LMS ☐ Rostering ☐ API ☐ Other</td>
+</tr>
+<tr>
+  <td>AI-enabled functionality</td>
+  <td>☐ No ☐ Yes - describe</td>
+</tr>
+</tbody>
+</table>
+<h2>Part 2 - Data Map</h2>
+<h3>What will the vendor receive or create?</h3>
+<ul class="checklist">
+<li>Student name/contact information</li>
+<li>District student identifier</li>
+<li>Grades/assessment data</li>
+<li>Special education/disability information</li>
+<li>Health/medical information</li>
+<li>Discipline/behavior information</li>
+<li>Student work, messages, audio, images, or video</li>
+<li>Search/activity telemetry or device identifiers</li>
+<li>Geolocation</li>
+<li>Employee personnel information</li>
+<li>SSN/government ID/financial information</li>
+<li>District credentials, tokens, directory/group information</li>
+<li>Security logs/configuration data</li>
+<li>No personally identifiable/protected data</li>
+</ul>
+
+<p><strong>Data minimization question:</strong> What fields can be removed while still meeting the educational/business purpose? ______________________________________</p>
+<h2>Part 3 - Privacy and Legal Review</h2>
+<table>
+<thead>
+<tr>
+  <th>Topic</th>
+  <th>Required vendor answer / reviewer test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>FERPA</td>
+  <td>What education-record PII is received? Under what exception/consent model? Is the provider under district control regarding use/maintenance when relying on the school-official exception?</td>
+</tr>
+<tr>
+  <td>Texas Student Privacy Act (TEC Chapter 32)</td>
+  <td>Is the product an operator of a school-purpose online service? Does it maintain reasonable security? How are covered information, disclosure, third parties, deletion, and school-purpose limitations handled?</td>
+</tr>
+<tr>
+  <td>COPPA</td>
+  <td>If children under 13 use the service, does vendor rely on school consent? Is data used solely for the school's educational purpose and not a separate commercial purpose?</td>
+</tr>
+<tr>
+  <td>Parent transparency</td>
+  <td>What privacy notice can the district provide families? Is data collection understandable?</td>
+</tr>
+<tr>
+  <td>Data ownership/control</td>
+  <td>Does Ardent retain ownership/control of district data? Can vendor assert rights inconsistent with district purpose?</td>
+</tr>
+<tr>
+  <td>Sale/advertising</td>
+  <td>Is student data sold, used for targeted advertising, or used to build unrelated commercial profiles?</td>
+</tr>
+<tr>
+  <td>Model/AI training</td>
+  <td>Is district/student data used to train shared/general models? Can that use be disabled contractually and technically?</td>
+</tr>
+<tr>
+  <td>Deletion</td>
+  <td>Can Ardent request deletion at contract end and verify completion? Texas law includes deletion requirements for covered information in defined circumstances.</td>
+</tr>
+</tbody>
+</table>
+<h2>Part 4 - Cybersecurity Review</h2>
+<h3>Baseline Security Questions</h3>
+<ol>
+<li>Does the vendor maintain a documented security program and named security owner?</li>
+<li>Does the vendor support MFA for administrative/privileged accounts?</li>
+<li>Is data encrypted in transit and at rest? What happens to encryption keys?</li>
+<li>How are privileged support accounts approved, logged, and reviewed?</li>
+<li>Are production and development/test data separated?</li>
+<li>How frequently are vulnerabilities identified and remediated?</li>
+<li>Does the vendor conduct independent security assessments (e.g., SOC 2 or equivalent) and provide appropriate evidence under NDA?</li>
+<li>How are subprocessors identified and controlled?</li>
+<li>What are backup, disaster recovery, RTO, and RPO commitments?</li>
+<li>What log/audit evidence will be available to Ardent after an incident?</li>
+<li>What is the vendor's incident-notification commitment to Ardent (hours, not “without undue delay” alone)?</li>
+<li>How does the vendor support data export, return, deletion, and account termination?</li>
+</ol>
+<h2>Part 5 - Incident and Contract Requirements</h2>
+<p>Ardent ISD prefers contract/DPA language that addresses:</p>
+<ul>
+<li>prompt security-incident notice with a defined time period;</li>
+<li>facts required in each update: discovery time, affected systems/data, record count, containment, known access/exfiltration, subprocessors, law enforcement;</li>
+<li>cooperation with Ardent's legal/regulatory reporting obligations;</li>
+<li>preservation and provision of relevant logs/evidence;</li>
+<li>notification approval/coordination when district data is involved;</li>
+<li>data return/deletion and written certification at termination;</li>
+<li>limits on secondary use, sale, advertising, and non-school-purpose use;</li>
+<li>subprocessor obligations no weaker than the primary agreement;</li>
+<li>cyber insurance where appropriate to risk;</li>
+<li>breach costs/indemnity subject to district counsel and procurement rules;</li>
+<li>right to suspend integration/access during an active incident.</li>
+</ul>
+<h2>Part 6 - AI-Enabled Tool Questions</h2>
+<p>If the product includes generative AI, machine learning, automated recommendations, transcription, summarization, or other AI features:</p>
+<ol>
+<li>Exactly what prompts, files, chats, student work, telemetry, and metadata are retained?</li>
+<li>Are inputs/outputs used to train shared or future models?</li>
+<li>Can training/secondary use be contractually and technically disabled?</li>
+<li>Are prompts/outputs visible to vendor human reviewers?</li>
+<li>How long are prompts/outputs retained, and can Ardent delete them?</li>
+<li>What safeguards address minors, harmful content, bias, hallucinations, and inappropriate automated decisions?</li>
+<li>Can Ardent disable AI features independently from the core service?</li>
+<li>Are subprocessors/model providers disclosed?</li>
+<li>What incident-notification obligations apply to the AI provider/subprocessor?</li>
+</ol>
+<div class="danger"><strong>Ardent AI security guardrail:</strong> Do not upload real student data, employee data, credentials, security configurations, incident reports, vulnerability findings, or vendor-confidential agreements into a public generative AI service for the purpose of completing this review.</div>
+
+<h2>Part 7 - Reviewer Scorecard</h2>
+<table>
+<thead>
+<tr>
+  <th>Domain</th>
+  <th>Low risk / acceptable</th>
+  <th>Needs mitigation</th>
+  <th>Escalate/reject</th>
+  <th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Data sensitivity/minimization</td>
+  <td>☐</td>
+  <td>☐</td>
+  <td>☐</td>
+  <td></td>
+</tr>
+<tr>
+  <td>FERPA/Texas privacy</td>
+  <td>☐</td>
+  <td>☐</td>
+  <td>☐</td>
+  <td></td>
+</tr>
+<tr>
+  <td>COPPA/child privacy</td>
+  <td>☐</td>
+  <td>☐</td>
+  <td>☐</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Security controls</td>
+  <td>☐</td>
+  <td>☐</td>
+  <td>☐</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Incident response</td>
+  <td>☐</td>
+  <td>☐</td>
+  <td>☐</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Subprocessors/data location</td>
+  <td>☐</td>
+  <td>☐</td>
+  <td>☐</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Deletion/exit</td>
+  <td>☐</td>
+  <td>☐</td>
+  <td>☐</td>
+  <td></td>
+</tr>
+<tr>
+  <td>AI/model use</td>
+  <td>☐</td>
+  <td>☐</td>
+  <td>☐</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Contract terms</td>
+  <td>☐</td>
+  <td>☐</td>
+  <td>☐</td>
+  <td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Decision:</strong> ☐ Approve ☐ Approve with conditions ☐ Pilot with limited data ☐ Escalate to Legal/Security ☐ Reject</p>
+<p><strong>Conditions / compensating controls:</strong> ______________________________________________________</p>
+<p><strong>Re-review date:</strong> __________________</p>
+<h2>Sample Mini-Review - SummitLearn Assessment Platform</h2>
+<p><strong>Purpose:</strong> formative assessment and teacher feedback; grades 6-8.<br />
+<strong>Requested data:</strong> student name, district ID, class/teacher, responses, scores.<br />
+<strong>Initial finding:</strong> Vendor supports SSO and encryption, but its standard terms allow broad service-improvement use and provide only “commercially reasonable” incident notice with no time commitment.<br />
+<strong>Ardent decision:</strong> <strong>Approve with conditions</strong> - execute district DPA; limit data fields; prohibit use for targeted advertising/general model training; require incident notice within contractually defined hours; require annual subprocessor list; verify deletion workflow before production launch.</p>
+<h2>References</h2>
+<ul>
+<li><a href="https://www.cosn.org/tools-and-resources/resource/k-12cvat/">CoSN - K-12 Community Vendor Assessment Tool (K-12CVAT)</a></li>
+<li><a href="https://studentprivacy.ed.gov/resources/protecting-student-privacy-while-using-online-educational-services-model-terms-service">U.S. Department of Education - Model Terms of Service for Online Educational Services</a></li>
+<li><a href="https://studentprivacy.ed.gov/data-security-k-12-and-higher-education">U.S. Department of Education - Data Security: K-12 and Higher Education</a></li>
+<li><a href="https://statutes.capitol.texas.gov/Docs/ED/pdf/ED.32.pdf">Texas Education Code Chapter 32 - Student Information Protection</a></li>
+<li><a href="https://www.ftc.gov/business-guidance/resources/complying-coppa-frequently-asked-questions">Federal Trade Commission - COPPA FAQ: COPPA and Schools</a></li>
+<li><a href="https://www.tasb.org/resources/esource/school-cybersecurity-texas-requirements">TASB - School Cybersecurity: Texas Requirements</a></li>
+</ul>
+
+<footer>Ardent ISD · Module 6 Cybersecurity and Data Privacy · Training sample reviewed against current public Texas sources in August 2026.</footer></main></body></html>

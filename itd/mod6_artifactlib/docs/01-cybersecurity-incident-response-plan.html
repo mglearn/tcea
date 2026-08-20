@@ -1,0 +1,217 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cybersecurity Incident Response Plan | Ardent ISD</title><link rel="stylesheet" href="../assets/style.css"></head><body>
+<div class="sitebar"><div class="wrap"><div class="brand">Ardent ISD<small>Cybersecurity & Data Privacy Artifact Library</small></div><nav><a href="../index.html">Library Home</a><a href="../sources.html">Sources</a></nav></div></div>
+<main class="wrap"><section class="dochead"><div class="kicker">Artifact 1 · Module 6</div><h1>Cybersecurity Incident Response Plan</h1><p>Leadership, technical response, communications, legal, insurance, and recovery responsibilities</p><div class="docmeta"><div class="meta"><b>Owner</b>Chief Technology Officer / Cybersecurity Coordinator</div><div class="meta"><b>District</b>Ardent ISD</div><div class="meta"><b>Review Cycle</b>Annual + after major incident</div><div class="meta"><b>Policy Cross-Reference</b><span class="tag">CQB</span><span class="tag">FL</span><span class="tag">records-retention procedures</span></div></div></section><blockquote>
+<p><strong>Training Sample - Customize Before Use.</strong> This document is an instructional artifact for Ardent ISD. It should be aligned to current board policy, administrative procedures, cyber-insurance requirements, records-retention requirements, and advice of district legal counsel before operational use. Legal and reporting requirements can change.</p>
+</blockquote>
+<h2>1. Purpose</h2>
+<p>Ardent ISD uses this plan to coordinate a disciplined response to cybersecurity incidents that could disrupt district operations, compromise student or employee information, or damage public trust. The plan is intentionally cross-functional. Cybersecurity incidents are not handled by Technology Services alone.</p>
+<p>The district's response objectives are to:</p>
+<ol>
+<li>protect students, staff, and district operations;</li>
+<li>contain the incident without destroying evidence;</li>
+<li>preserve reliable facts for technical, legal, insurance, and law-enforcement review;</li>
+<li>meet applicable reporting and notification obligations;</li>
+<li>restore critical services in a controlled order; and</li>
+<li>document lessons learned and reduce recurrence.</li>
+</ol>
+<h2>2. Governance and Authority</h2>
+<p>The Superintendent designates the <strong>Chief Technology Officer as Ardent ISD's Cybersecurity Coordinator</strong>. The coordinator activates this plan when an event may meet the district's incident threshold. Texas Education Code §11.175 requires a district cybersecurity policy, a designated cybersecurity coordinator, and reporting/parent notice in specified student-information incidents. Texas reporting also intersects with Texas Cyber Command requirements and Texas Business &amp; Commerce Code Chapter 521. Legal counsel determines the district's legal obligations in a specific event.</p>
+<h3>Core Incident Leadership Team</h3>
+<table>
+<thead>
+<tr>
+  <th>Role</th>
+  <th>Primary responsibility during incident</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Superintendent - Dr. Elena Ramirez</td>
+  <td>Executive authority; board coordination; continuity decisions</td>
+</tr>
+<tr>
+  <td>CTO / Cybersecurity Coordinator - Morgan Lee</td>
+  <td>Incident lead; technical coordination; state cyber reporting liaison</td>
+</tr>
+<tr>
+  <td>District General Counsel</td>
+  <td>Privilege strategy; legal analysis; notification obligations; law-enforcement coordination</td>
+</tr>
+<tr>
+  <td>Chief Communications Officer - Avery Brooks</td>
+  <td>Internal/external communications; family/media messaging; rumor control</td>
+</tr>
+<tr>
+  <td>CFO / Risk Management - Priya Shah</td>
+  <td>Cyber-insurance notice; financial controls; emergency procurement</td>
+</tr>
+<tr>
+  <td>Chief HR Officer - Cameron Ortiz</td>
+  <td>Employee impact; workforce communication; identity protection coordination</td>
+</tr>
+<tr>
+  <td>Student Services / Privacy Lead</td>
+  <td>Student-record impact; family support; FERPA/Texas student privacy coordination</td>
+</tr>
+<tr>
+  <td>Records Management Officer</td>
+  <td>Legal hold, records preservation, public-information coordination</td>
+</tr>
+<tr>
+  <td>External IR / Forensics</td>
+  <td>Evidence collection, scoping, containment and recovery support as authorized</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Backups and contact information are maintained in a protected offline contact sheet.</strong> At least two members of the incident team shall have access when district systems are unavailable.</p>
+<h2>3. Incident Severity Levels</h2>
+<table>
+<thead>
+<tr>
+  <th>Level</th>
+  <th>Description</th>
+  <th>Typical examples</th>
+  <th>Activation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1 - Event</td>
+  <td>Suspicious activity with no confirmed compromise or material disruption</td>
+  <td>blocked phishing attempt; malware quarantined on one device</td>
+  <td>Technology Services handles; document as needed</td>
+</tr>
+<tr>
+  <td>2 - Limited Incident</td>
+  <td>Confirmed compromise with contained scope and limited operational/data impact</td>
+  <td>compromised user account; lost encrypted device; small unauthorized disclosure</td>
+  <td>CTO activates limited team; counsel notified when protected data may be involved</td>
+</tr>
+<tr>
+  <td>3 - Major Incident</td>
+  <td>Significant compromise, protected-data exposure, multi-system impact, or material service disruption</td>
+  <td>ransomware in one business system; admin-account takeover; vendor breach affecting district data</td>
+  <td>Full incident team; insurer and external IR considered immediately</td>
+</tr>
+<tr>
+  <td>4 - Crisis</td>
+  <td>Districtwide or safety/continuity impact; widespread data exposure; active extortion</td>
+  <td>enterprise ransomware; SIS/ERP outage during critical operations; large exfiltration</td>
+  <td>Superintendent-led crisis structure; full continuity and communications plan</td>
+</tr>
+</tbody>
+</table>
+<p>Severity may increase or decrease as evidence changes.</p>
+<h2>4. Activation and First Actions</h2>
+<p>When a suspected incident is reported:</p>
+<ol>
+<li><strong>Open an incident record</strong> using Artifact 3, <em>Cyber Incident Intake and Triage Form</em>.</li>
+<li><strong>Validate and scope</strong> before declaring facts. Preserve logs, messages, alerts, and relevant system state.</li>
+<li><strong>Contain without destroying evidence.</strong> Isolate affected accounts, devices, or segments as appropriate; avoid wiping or reimaging until the incident lead/forensics team authorizes it.</li>
+<li><strong>Protect backups and privileged access.</strong> Confirm backup isolation and review administrative-account activity.</li>
+<li><strong>Notify the incident leadership team</strong> based on severity.</li>
+<li><strong>Contact cyber insurer/breach counsel</strong> according to policy before retaining outside vendors when coverage terms require it.</li>
+<li><strong>Start the legal/reporting clock log</strong> using Artifact 4. Document <em>discovery</em>, <em>determination</em>, <em>eradication</em>, <em>closure</em>, and <em>recovery</em> dates separately.</li>
+<li><strong>Establish a source of truth.</strong> Technical facts go to the incident lead; public-facing facts go through Communications and legal review.</li>
+</ol>
+<div class="danger"><strong>Do not:</strong> wipe affected systems, destroy logs, negotiate with an extortion actor, promise that “no data was accessed,” or send public notices before facts and legal obligations have been reviewed.</div>
+
+<h2>5. Response Lifecycle</h2>
+<h3>A. Detect and Analyze</h3>
+<ul>
+<li>Confirm whether the alert is an event, incident, or suspected breach.</li>
+<li>Identify affected systems, identities, data sets, campuses, vendors, and business processes.</li>
+<li>Determine earliest known malicious activity and likely initial access.</li>
+<li>Determine whether privileged accounts, backups, student records, employee records, financial systems, safety systems, or communications platforms are affected.</li>
+<li>Create an evidence register with source, collector, date/time, and storage location.</li>
+<li>Use NIST CSF 2.0 as a shared vocabulary: <strong>Govern, Identify, Protect, Detect, Respond, Recover</strong>.</li>
+</ul>
+<h3>B. Contain</h3>
+<p>Containment decisions should balance stopping harm against preserving evidence and maintaining school operations. Examples include disabling compromised accounts, revoking sessions/tokens, blocking indicators, isolating devices or VLANs, limiting vendor connectivity, and temporarily disabling high-risk integrations.</p>
+<h3>C. Eradicate</h3>
+<p>Remove malicious persistence, reset credentials in a controlled sequence, patch exploited vulnerabilities, rotate keys/tokens, remove unauthorized applications, and validate that attacker access has been removed.</p>
+<h3>D. Recover</h3>
+<p>Prioritize recovery based on learning and operational impact:</p>
+<ol>
+<li>identity, authentication, DNS, core network and security controls;</li>
+<li>safety, communications, payroll/finance and student information systems;</li>
+<li>instructional platforms and campus services;</li>
+<li>lower-priority services.</li>
+</ol>
+<p>Restored systems should be monitored for recurrence. Backups must be tested before restoration and scanned/validated before being trusted.</p>
+<h3>E. Close and Improve</h3>
+<p>Closure requires technical recovery <strong>and</strong> leadership closure. The team documents:</p>
+<ul>
+<li>what happened and what remains uncertain;</li>
+<li>what data/systems were affected;</li>
+<li>all notifications and reports made;</li>
+<li>recovery milestones and residual risk;</li>
+<li>costs and insurance activity;</li>
+<li>control failures and corrective actions;</li>
+<li>policy/procedure changes;</li>
+<li>lessons for the next tabletop exercise.</li>
+</ul>
+<p>Update Artifact 11, <em>Cybersecurity Risk Register and Improvement Plan</em>.</p>
+<h2>6. Reporting and Notification</h2>
+<p>Use Artifact 4 for the operational decision flow. As of this library's August 2026 review:</p>
+<ul>
+<li>Texas Cyber Command states that the same statutory incident-reporting deadlines apply to school districts and charter schools: reporting within <strong>48 hours of discovery</strong> when the incident is reportable, with reporting within 24 hours strongly encouraged, and a follow-up analysis by the <strong>10th business day after eradication, closure, and recovery</strong>.</li>
+<li>Texas Education Code §11.175 requires district reporting as soon as practicable for specified cyberattacks/cybersecurity incidents constituting a breach of system security and requires parental notice when the reportable incident involves a student's information.</li>
+<li>Texas Business &amp; Commerce Code §521.053 can require notice to affected individuals without unreasonable delay and generally no later than the <strong>60th day after the district determines that the breach occurred</strong>; if at least <strong>250 Texas residents</strong> are involved, electronic notice to the Texas Attorney General is required as soon as practicable and no later than the <strong>30th day after determination</strong>.</li>
+</ul>
+<p><strong>District General Counsel validates which statutes, contracts, insurance provisions, and federal privacy rules apply to the facts of each incident.</strong></p>
+<h2>7. Communications Rules</h2>
+<ul>
+<li>Communications owns public messaging; Technology Services provides verified technical facts.</li>
+<li>Use an initial holding statement when facts are incomplete.</li>
+<li>State what is known, what is being investigated, what stakeholders need to do, and when the next update will occur.</li>
+<li>Do not speculate about threat actor identity, ransom amount, data exfiltration, or root cause.</li>
+<li>Use Artifact 8, <em>Cyber Incident Communications Packet</em>.</li>
+</ul>
+<h2>8. Vendor Incidents</h2>
+<p>When a vendor reports an incident:</p>
+<ul>
+<li>obtain incident number, discovery date/time, data types, affected records, attack window, controls involved, containment status, and expected update cadence;</li>
+<li>preserve the vendor's notification and contract/DPA;</li>
+<li>determine whether the vendor is the data owner or merely maintains district data for purposes of Texas notice obligations;</li>
+<li>review contractual notification timelines and cooperation requirements;</li>
+<li>consider disabling integrations or credentials until risk is understood;</li>
+<li>do not assume the vendor's statement resolves Ardent ISD's independent legal duties.</li>
+</ul>
+<h2>9. Exercises and Maintenance</h2>
+<p>Ardent ISD will conduct at least one cross-functional tabletop exercise annually and after major changes to identity, backup, SIS/ERP, network, or incident-response vendors. The plan is reviewed annually and after every Level 3 or Level 4 incident.</p>
+<p>Suggested exercise evidence:</p>
+<ul>
+<li>24/48-hour checklist completion;</li>
+<li>contact-tree test;</li>
+<li>sample TXCC/OAG decision matrix;</li>
+<li>draft board/family communication;</li>
+<li>restore test from protected backup;</li>
+<li>after-action report with assigned remediation owners.</li>
+</ul>
+<h2>Related Artifacts</h2>
+<ul>
+<li>Artifact 2 - First 24/48 Hours Cyber Incident Checklist</li>
+<li>Artifact 3 - Cyber Incident Intake and Triage Form</li>
+<li>Artifact 4 - Texas Cyber Incident Reporting and Breach Notification Decision Matrix</li>
+<li>Artifact 7 - Cyber Incident Executive Brief</li>
+<li>Artifact 8 - Cyber Incident Communications Packet</li>
+<li>Artifact 9 - Cybersecurity Incident Quick Runbooks</li>
+<li>Artifact 11 - Cybersecurity Risk Register and Improvement Plan</li>
+</ul>
+<h2>Authority and Reference Notes</h2>
+<ul>
+<li><a href="https://statutes.capitol.texas.gov/Docs/ED/pdf/ED.11.pdf">Texas Education Code § 11.175 - School Cybersecurity</a></li>
+<li><a href="https://statutes.capitol.texas.gov/Docs/GV/pdf/GV.2063.pdf">Texas Government Code Chapter 2063 - Texas Cyber Command (see § 2063.302)</a></li>
+<li><a href="https://statutes.capitol.texas.gov/Docs/BC/pdf/BC.521.pdf">Texas Business &amp; Commerce Code Chapter 521 - Identity Theft Enforcement and Protection Act</a></li>
+<li><a href="https://www.txcc.texas.gov/report-an-incident">Texas Cyber Command - Report a Cybersecurity Incident</a></li>
+<li><a href="https://www.tasb.org/resources/esource/school-cybersecurity-texas-requirements">TASB - School Cybersecurity: Texas Requirements</a></li>
+<li><a href="https://www.tasb.org/resources/esource/school-cybersecurity-security-breach-notification-and-response">TASB - School Cybersecurity: Security Breach Notification and Response</a></li>
+<li><a href="https://www.nist.gov/cyberframework">NIST Cybersecurity Framework 2.0</a></li>
+<li><a href="https://www.cisa.gov/resources-tools/resources/report-protecting-our-future">CISA - Protecting Our Future: Cybersecurity for K-12</a></li>
+<li><a href="https://www.cisa.gov/stopransomware/ransomware-guide">CISA - #StopRansomware Guide</a></li>
+<li><a href="https://studentprivacy.ed.gov/resources/data-breach-response-checklist">U.S. Department of Education - Data Breach Response Checklist</a></li>
+<li><a href="https://www.k12six.org/essentials-series">K12 SIX - Cybersecurity Essentials Series and Incident Response Runbook</a></li>
+</ul>
+
+<footer>Ardent ISD · Module 6 Cybersecurity and Data Privacy · Training sample reviewed against current public Texas sources in August 2026.</footer></main></body></html>

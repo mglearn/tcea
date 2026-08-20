@@ -1,0 +1,226 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sensitive Data Classification, Handling, and Encryption Standard | Ardent ISD</title><link rel="stylesheet" href="../assets/style.css"></head><body>
+<div class="sitebar"><div class="wrap"><div class="brand">Ardent ISD<small>Cybersecurity & Data Privacy Artifact Library</small></div><nav><a href="../index.html">Library Home</a><a href="../sources.html">Sources</a></nav></div></div>
+<main class="wrap"><section class="dochead"><div class="kicker">Artifact 12 · Module 6</div><h1>Sensitive Data Classification, Handling, and Encryption Standard</h1><p>Practical district standard for storing, sharing, transmitting, and disposing of sensitive information</p><div class="docmeta"><div class="meta"><b>Owner</b>CTO + Records Management + Privacy + HR</div><div class="meta"><b>District</b>Ardent ISD</div><div class="meta"><b>Review Cycle</b>Annual + after major incident</div><div class="meta"><b>Policy Cross-Reference</b><span class="tag">CQB</span><span class="tag">FL</span><span class="tag">records-retention schedule</span><span class="tag">acceptable use</span></div></div></section><blockquote>
+<p><strong>Training Sample - Customize Before Use.</strong> This document is an instructional artifact for Ardent ISD. It should be aligned to current board policy, administrative procedures, cyber-insurance requirements, records-retention requirements, and advice of district legal counsel before operational use. Legal and reporting requirements can change.</p>
+</blockquote>
+<h2>1. Purpose</h2>
+<p>Ardent ISD classifies information so employees can answer a practical question: <strong>How carefully must I handle this data?</strong> The standard applies to paper and digital information and supplements records-retention, student-records, cybersecurity, and acceptable-use procedures.</p>
+<h2>2. Classification Levels</h2>
+<table>
+<thead>
+<tr>
+  <th>Level</th>
+  <th>Description</th>
+  <th>Examples</th>
+  <th>Default handling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Public</td>
+  <td>Approved for public release</td>
+  <td>board agendas; published calendar; public website content</td>
+  <td>Normal public systems</td>
+</tr>
+<tr>
+  <td>Internal</td>
+  <td>Routine district information not intended for unrestricted public release</td>
+  <td>internal procedures; staff directories; draft operational documents</td>
+  <td>District-approved systems; authenticated access where practical</td>
+</tr>
+<tr>
+  <td>Confidential</td>
+  <td>Information protected by law, policy, contract, or legitimate privacy need</td>
+  <td>student education records; employee personnel records; nonpublic student work; contracts with confidential terms</td>
+  <td>Access by job need; approved district storage; encrypted transmission; controlled sharing</td>
+</tr>
+<tr>
+  <td>Restricted / Highly Sensitive</td>
+  <td>Information whose unauthorized disclosure could create severe identity, safety, legal, or cybersecurity risk</td>
+  <td>SSNs; government ID numbers; financial account credentials; sensitive health records; authentication secrets; API keys; vulnerability reports; certain security logs/configurations</td>
+  <td>Strong access controls; encryption; no ordinary email attachments unless protected; strict export limits; enhanced logging; approved transfer methods</td>
+</tr>
+</tbody>
+</table>
+<p>Classification does <strong>not</strong> determine records-retention duration. Retention is governed separately by the district's records schedule and legal holds.</p>
+<h2>3. Handling Matrix</h2>
+<table>
+<thead>
+<tr>
+  <th>Action</th>
+  <th>Public</th>
+  <th>Internal</th>
+  <th>Confidential</th>
+  <th>Restricted</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Store on district-managed cloud</td>
+  <td>Yes</td>
+  <td>Yes</td>
+  <td>Yes, approved location</td>
+  <td>Yes, approved restricted location</td>
+</tr>
+<tr>
+  <td>Store on personal cloud/account</td>
+  <td>No need; prefer district</td>
+  <td>No</td>
+  <td><strong>No</strong></td>
+  <td><strong>No</strong></td>
+</tr>
+<tr>
+  <td>Email inside district</td>
+  <td>Yes</td>
+  <td>Yes</td>
+  <td>Minimize attachments; approved sharing preferred</td>
+  <td>Only using approved protected method</td>
+</tr>
+<tr>
+  <td>External email</td>
+  <td>Yes</td>
+  <td>With business need</td>
+  <td>Verify recipient; use protected link/encryption</td>
+  <td>Approved encrypted transfer only</td>
+</tr>
+<tr>
+  <td>Portable USB/storage</td>
+  <td>Avoid</td>
+  <td>Approved if managed</td>
+  <td>Encrypted only</td>
+  <td>Encrypted + explicit business need/approval</td>
+</tr>
+<tr>
+  <td>Local laptop storage</td>
+  <td>Yes</td>
+  <td>Managed device</td>
+  <td>Managed + full-disk encryption</td>
+  <td>Minimize; managed + encrypted + access controlled</td>
+</tr>
+<tr>
+  <td>Public generative AI tool</td>
+  <td>Public information only</td>
+  <td>Only if approved and nonsensitive</td>
+  <td><strong>No</strong></td>
+  <td><strong>No</strong></td>
+</tr>
+<tr>
+  <td>Print</td>
+  <td>Yes</td>
+  <td>Business need</td>
+  <td>Retrieve immediately; secure disposal</td>
+  <td>Avoid; if required, controlled custody/shredding</td>
+</tr>
+</tbody>
+</table>
+<h2>4. Encryption Requirements</h2>
+<p>Ardent ISD requires encryption appropriate to the data and risk. Examples include:</p>
+<ul>
+<li>full-disk encryption on district-managed laptops that may store Confidential/Restricted information;</li>
+<li>TLS/HTTPS or other approved encryption for data transmitted across untrusted networks;</li>
+<li>encryption for portable storage that contains Confidential/Restricted data;</li>
+<li>approved secure file-transfer methods instead of ordinary email for Restricted data;</li>
+<li>centralized key management for enterprise systems where feasible.</li>
+</ul>
+<h3>Texas Legal Note on Encryption</h3>
+<p>Texas Business &amp; Commerce Code §521.002 defines some name-plus-identifier combinations as “sensitive personal information” only when those items are <strong>not encrypted</strong>. However, §521.053's breach definition includes encrypted data if the unauthorized person also has the key needed to decrypt it. Encryption is an important safeguard, but it is not a substitute for incident analysis and legal review.</p>
+<h2>5. Access Control</h2>
+<ul>
+<li>Access is based on job need and least privilege.</li>
+<li>Shared accounts are prohibited unless specifically approved for a technical requirement and compensating controls are documented.</li>
+<li>Privileged accounts are separate from normal day-to-day accounts.</li>
+<li>Access is removed promptly when staff change roles or leave the district.</li>
+<li>Vendor access is time-bounded and reviewed for critical systems.</li>
+</ul>
+<h2>6. Sharing and Data Minimization</h2>
+<p>Before sharing Confidential or Restricted information, ask:</p>
+<ol>
+<li>Does the recipient need this information for an authorized district purpose?</li>
+<li>Can the same purpose be met with fewer fields or de-identified data?</li>
+<li>Is the recipient identity verified?</li>
+<li>Is the transfer method approved for this classification?</li>
+<li>Is there a contract/DPA or data-sharing agreement when required?</li>
+<li>Is there a retention/deletion expectation for the recipient?</li>
+</ol>
+<h2>7. Student Data and Online Services</h2>
+<p>Texas Education Code Chapter 32 includes protections for “covered information” handled by operators of school-purpose online services and requires reasonable security procedures/practices. FERPA also governs PII from education records. Teachers and staff should not independently create student accounts in unapproved services that collect student PII.</p>
+<p>Use Artifact 10 before a new vendor receives protected district data.</p>
+<h2>8. Generative AI and Sensitive Data</h2>
+<p>Employees may use district-approved generative AI tools only within the approved data-handling conditions for that tool. Unless a specific district-approved service and agreement permits it, do <strong>not</strong> enter:</p>
+<ul>
+<li>student PII/education records;</li>
+<li>employee PII/personnel information;</li>
+<li>SSNs, financial information, health information;</li>
+<li>passwords, MFA codes, API keys, tokens;</li>
+<li>network diagrams, firewall rules, IP ranges, vulnerability findings;</li>
+<li>incident reports, forensic logs, or cyber-insurance/legal documents;</li>
+<li>vendor-confidential agreements or nonpublic procurement material.</li>
+</ul>
+<p>AI-generated cybersecurity or legal advice is a draft for human review, not an authority.</p>
+<h2>9. Lost Data / Misdelivery / Suspected Disclosure</h2>
+<p>Report immediately when:</p>
+<ul>
+<li>a message/file was sent to the wrong person;</li>
+<li>a sharing link was made public;</li>
+<li>a device or USB drive is lost;</li>
+<li>a personal account was used to store district data;</li>
+<li>a vendor reports an incident;</li>
+<li>protected information was entered into an unapproved AI or web service.</li>
+</ul>
+<p>Do not attempt to conceal or quietly “fix” the event without reporting it. Fast reporting can reduce harm.</p>
+<h2>10. Secure Disposal</h2>
+<ul>
+<li>Follow the district records-retention schedule and legal holds.</li>
+<li>When destruction is authorized, use district-approved secure deletion or physical destruction appropriate to the media.</li>
+<li>Do not donate, recycle, sell, or transfer devices containing district data until sanitization is verified.</li>
+<li>Maintain records of destruction where required.</li>
+</ul>
+<h2>11. Quick Examples</h2>
+<table>
+<thead>
+<tr>
+  <th>Scenario</th>
+  <th>Classification / action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Published school lunch menu</td>
+  <td>Public</td>
+</tr>
+<tr>
+  <td>Internal help-desk procedure</td>
+  <td>Internal</td>
+</tr>
+<tr>
+  <td>Student grade export</td>
+  <td>Confidential - district-approved storage and sharing only</td>
+</tr>
+<tr>
+  <td>HR spreadsheet with employee SSNs</td>
+  <td>Restricted - minimize export; encrypted controlled transfer; delete when authorized</td>
+</tr>
+<tr>
+  <td>Firewall vulnerability report</td>
+  <td>Restricted - security-sensitive; limited distribution</td>
+</tr>
+<tr>
+  <td>Student names pasted into a public AI chatbot to write parent messages</td>
+  <td>Prohibited - protected student data must not be entered into unapproved public AI tools</td>
+</tr>
+<tr>
+  <td>Lost laptop with full-disk encryption</td>
+  <td>Report immediately; document encryption status/key protection; incident team determines obligations</td>
+</tr>
+</tbody>
+</table>
+<h2>References</h2>
+<ul>
+<li><a href="https://statutes.capitol.texas.gov/Docs/BC/pdf/BC.521.pdf">Texas Business &amp; Commerce Code Chapter 521 - Identity Theft Enforcement and Protection Act</a></li>
+<li><a href="https://statutes.capitol.texas.gov/Docs/ED/pdf/ED.32.pdf">Texas Education Code Chapter 32 - Student Information Protection</a></li>
+<li><a href="https://studentprivacy.ed.gov/data-security-k-12-and-higher-education">U.S. Department of Education - Data Security: K-12 and Higher Education</a></li>
+<li><a href="https://studentprivacy.ed.gov/resources/protecting-student-privacy-while-using-online-educational-services-model-terms-service">U.S. Department of Education - Model Terms of Service for Online Educational Services</a></li>
+<li><a href="https://www.tasb.org/resources/esource/school-cybersecurity-texas-requirements">TASB - School Cybersecurity: Texas Requirements</a></li>
+</ul>
+
+<footer>Ardent ISD · Module 6 Cybersecurity and Data Privacy · Training sample reviewed against current public Texas sources in August 2026.</footer></main></body></html>

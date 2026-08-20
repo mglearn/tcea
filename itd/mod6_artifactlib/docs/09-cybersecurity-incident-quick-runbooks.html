@@ -1,0 +1,113 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cybersecurity Incident Quick Runbooks | Ardent ISD</title><link rel="stylesheet" href="../assets/style.css"></head><body>
+<div class="sitebar"><div class="wrap"><div class="brand">Ardent ISD<small>Cybersecurity & Data Privacy Artifact Library</small></div><nav><a href="../index.html">Library Home</a><a href="../sources.html">Sources</a></nav></div></div>
+<main class="wrap"><section class="dochead"><div class="kicker">Artifact 9 · Module 6</div><h1>Cybersecurity Incident Quick Runbooks</h1><p>Seven scenario-specific response cards for common K-12 incidents</p><div class="docmeta"><div class="meta"><b>Owner</b>Technology Services / Incident Response Team</div><div class="meta"><b>District</b>Ardent ISD</div><div class="meta"><b>Review Cycle</b>Annual + after major incident</div><div class="meta"><b>Policy Cross-Reference</b><span class="tag">Incident Response Plan</span></div></div></section><blockquote>
+<p><strong>Training Sample - Customize Before Use.</strong> This document is an instructional artifact for Ardent ISD. It should be aligned to current board policy, administrative procedures, cyber-insurance requirements, records-retention requirements, and advice of district legal counsel before operational use. Legal and reporting requirements can change.</p>
+</blockquote>
+<blockquote>
+<p>These runbooks support the Incident Response Plan; they do not replace it. When protected data, significant disruption, extortion, fraud, or public notice may be involved, escalate to counsel and district leadership immediately.</p>
+</blockquote>
+<h2>Runbook 1 - Ransomware / Data Extortion</h2>
+<p><strong>Recognize:</strong> files encrypted/renamed; ransom note; security tool detects ransomware; attacker threatens data leak.</p>
+<p><strong>First actions:</strong></p>
+<ol>
+<li>isolate impacted systems immediately; if widespread, consider network-level isolation;</li>
+<li>preserve ransom note, alerts, logs, memory/disk evidence when feasible;</li>
+<li>disable compromised accounts/tokens and protect privileged identities;</li>
+<li>protect backups - do not connect backup repositories unnecessarily;</li>
+<li>activate Level 3/4 incident team, insurer/breach counsel, external IR;</li>
+<li>use Artifact 4 for TXCC and other reporting decisions;</li>
+<li>establish continuity plan for critical systems;</li>
+<li>do not negotiate or pay without superintendent, legal, insurer, and law-enforcement coordination.</li>
+</ol>
+<p><strong>Recovery gate:</strong> root cause addressed, credentials rotated, malicious persistence removed, backup validated, restored system monitored.</p>
+<h2>Runbook 2 - Business Email Compromise / Phishing With Account Takeover</h2>
+<p><strong>Recognize:</strong> impossible travel; mailbox rules/forwarding; unusual OAuth app; repeated MFA prompts; sent-mail phishing; invoice/payment changes.</p>
+<p><strong>First actions:</strong></p>
+<ul>
+<li>disable or restrict the account;</li>
+<li>revoke sessions/tokens and unauthorized app consent;</li>
+<li>reset credentials from a trusted device;</li>
+<li>review mailbox rules, delegated access, login history, sent/deleted messages;</li>
+<li>determine whether student/employee data was exposed through email/cloud drives;</li>
+<li>contact Finance immediately if payment/banking instructions were involved;</li>
+<li>identify recipients of malicious messages and contain spread.</li>
+</ul>
+<h2>Runbook 3 - Compromised Administrator / Privileged Account</h2>
+<p><strong>Recognize:</strong> privileged sign-in from unusual source; new admin creation; security settings disabled; mass password resets; new tokens/keys.</p>
+<p><strong>First actions:</strong></p>
+<ul>
+<li>use a separate trusted admin account to contain the compromised identity;</li>
+<li>revoke sessions, tokens, keys, and app consents;</li>
+<li>identify every system where the credential has administrative rights;</li>
+<li>review configuration changes and newly created accounts;</li>
+<li>protect backups and identity infrastructure;</li>
+<li>consider resetting related privileged credentials using a controlled sequence;</li>
+<li>escalate to Level 3 because the blast radius may be large even when visible impact is small.</li>
+</ul>
+<h2>Runbook 4 - Lost or Stolen Device / Portable Media</h2>
+<p><strong>Recognize:</strong> district laptop, phone, USB drive, portable drive, or other media missing.</p>
+<p><strong>First actions:</strong></p>
+<ul>
+<li>record device/asset identifier, user, location, time last seen;</li>
+<li>determine encryption status and whether encryption key/credentials may also be compromised;</li>
+<li>remote-lock/wipe <strong>only when consistent with evidence needs and district procedure</strong>;</li>
+<li>disable tokens/certificates/sessions where appropriate;</li>
+<li>identify locally stored student/employee information;</li>
+<li>document whether the device was managed and encrypted;</li>
+<li>use Artifact 4 if protected information may have been acquired.</li>
+</ul>
+<div class="callout"><strong>Encryption matters, but document it.</strong> Record the encryption method, management status, key protection, and evidence that encryption was active at the time of loss. Do not simply write “encrypted” with no support.</div>
+
+<h2>Runbook 5 - Unauthorized Data Disclosure</h2>
+<p><strong>Examples:</strong> file shared publicly; spreadsheet emailed to wrong recipient; student records attached to wrong message; report link indexed publicly.</p>
+<p><strong>First actions:</strong></p>
+<ul>
+<li>remove/restrict access immediately without destroying audit history;</li>
+<li>preserve sharing logs, recipient list, access history, and original file;</li>
+<li>ask unintended recipient to preserve/delete only through counsel-approved process;</li>
+<li>identify exact records and data categories;</li>
+<li>determine whether data was merely sent, actually accessed, downloaded, or further shared;</li>
+<li>evaluate Education Code §11.175, FERPA, Chapter 521, contracts, and parent/affected-person notice.</li>
+</ul>
+<h2>Runbook 6 - Third-Party Vendor Breach</h2>
+<p><strong>First actions:</strong></p>
+<ul>
+<li>get written vendor incident notice and incident ID;</li>
+<li>ask: discovery time, compromise window, data types, record count, access/exfiltration evidence, containment, root cause, subprocessors, law enforcement, notification plan;</li>
+<li>preserve contract, DPA, security assessment, and vendor answers;</li>
+<li>rotate/revoke district credentials, API keys, SSO tokens, and integrations as risk warrants;</li>
+<li>determine whether Ardent must make independent notices/reports;</li>
+<li>require remediation evidence before restoring privileged vendor access;</li>
+<li>update vendor risk record in Artifact 10.</li>
+</ul>
+<h2>Runbook 7 - DDoS / Service Disruption</h2>
+<p><strong>Recognize:</strong> high-volume traffic, service unavailable, provider alert, repeated connection exhaustion.</p>
+<p><strong>First actions:</strong></p>
+<ul>
+<li>verify whether outage is malicious versus provider/system failure;</li>
+<li>contact ISP/cloud/DDoS protection provider;</li>
+<li>preserve traffic/monitoring evidence;</li>
+<li>prioritize safety/communications/assessment/instruction continuity;</li>
+<li>use alternate communications if district internet is unavailable;</li>
+<li>determine whether attacker gained access or merely disrupted service;</li>
+<li>assess TXCC reporting with the incident team if reportable criteria are met.</li>
+</ul>
+<h2>Common Closeout Questions</h2>
+<ol>
+<li>What was the initial access vector?</li>
+<li>What control should have prevented or limited the incident?</li>
+<li>What detected it, and how long did detection take?</li>
+<li>What data and business processes were actually affected?</li>
+<li>Which decisions were delayed because roles, contacts, or facts were unclear?</li>
+<li>Were backups, admin accounts, and vendor access appropriately protected?</li>
+<li>What must change in policy, process, architecture, training, or vendor terms?</li>
+</ol>
+<h2>References</h2>
+<ul>
+<li><a href="https://www.cisa.gov/stopransomware/ransomware-guide">CISA - #StopRansomware Guide</a></li>
+<li><a href="https://www.k12six.org/essentials-series">K12 SIX - Cybersecurity Essentials Series and Incident Response Runbook</a></li>
+<li><a href="https://www.txcc.texas.gov/report-an-incident">Texas Cyber Command - Report a Cybersecurity Incident</a></li>
+<li><a href="https://studentprivacy.ed.gov/resources/data-breach-response-checklist">U.S. Department of Education - Data Breach Response Checklist</a></li>
+</ul>
+
+<footer>Ardent ISD · Module 6 Cybersecurity and Data Privacy · Training sample reviewed against current public Texas sources in August 2026.</footer></main></body></html>

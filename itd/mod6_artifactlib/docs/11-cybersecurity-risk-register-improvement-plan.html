@@ -1,0 +1,277 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cybersecurity Risk Register and Improvement Plan | Ardent ISD</title><link rel="stylesheet" href="../assets/style.css"></head><body>
+<div class="sitebar"><div class="wrap"><div class="brand">Ardent ISD<small>Cybersecurity & Data Privacy Artifact Library</small></div><nav><a href="../index.html">Library Home</a><a href="../sources.html">Sources</a></nav></div></div>
+<main class="wrap"><section class="dochead"><div class="kicker">Artifact 11 · Module 6</div><h1>Cybersecurity Risk Register and Improvement Plan</h1><p>Prioritized leadership view of cyber risk aligned to NIST CSF 2.0</p><div class="docmeta"><div class="meta"><b>Owner</b>CTO / Cybersecurity Governance Committee</div><div class="meta"><b>District</b>Ardent ISD</div><div class="meta"><b>Review Cycle</b>Annual + after major incident</div><div class="meta"><b>Policy Cross-Reference</b><span class="tag">CQB</span><span class="tag">strategic technology plan</span><span class="tag">budget</span></div></div></section><blockquote>
+<p><strong>Training Sample - Customize Before Use.</strong> This document is an instructional artifact for Ardent ISD. It should be aligned to current board policy, administrative procedures, cyber-insurance requirements, records-retention requirements, and advice of district legal counsel before operational use. Legal and reporting requirements can change.</p>
+</blockquote>
+<h2>How Ardent ISD Uses This Register</h2>
+<p>The purpose is not to list every technical weakness. It is to identify <strong>material district risks</strong>, assign ownership, prioritize limited resources, and make progress visible to cabinet and the board. The register uses the NIST CSF 2.0 functions - <strong>Govern, Identify, Protect, Detect, Respond, Recover</strong> - as a common language.</p>
+<h3>Scoring</h3>
+<ul>
+<li>Likelihood: 1 Rare - 5 Likely</li>
+<li>Impact: 1 Low - 5 Severe</li>
+<li>Inherent risk = Likelihood × Impact</li>
+<li>Residual risk = risk remaining after current safeguards</li>
+</ul>
+<p>Risk scores support judgment; they do not replace it.</p>
+<h2>Sample 2026 Ardent ISD Register</h2>
+<table>
+<thead>
+<tr>
+  <th>ID</th>
+  <th>NIST</th>
+  <th>Risk statement</th>
+  <th style="text-align:right">L</th>
+  <th style="text-align:right">I</th>
+  <th style="text-align:right">Inherent</th>
+  <th>Existing safeguards</th>
+  <th style="text-align:right">Residual</th>
+  <th>Priority action</th>
+  <th>Owner</th>
+  <th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>R-01</td>
+  <td>Protect</td>
+  <td>Privileged account compromise could enable broad access across SSO, cloud, and infrastructure</td>
+  <td style="text-align:right">4</td>
+  <td style="text-align:right">5</td>
+  <td style="text-align:right">20</td>
+  <td>MFA; separate admin IDs</td>
+  <td style="text-align:right">12</td>
+  <td>phishing-resistant MFA for Tier 0 admins; quarterly access review</td>
+  <td>CTO</td>
+  <td>Q2</td>
+</tr>
+<tr>
+  <td>R-02</td>
+  <td>Recover</td>
+  <td>Backups may not restore critical systems within required time during ransomware</td>
+  <td style="text-align:right">3</td>
+  <td style="text-align:right">5</td>
+  <td style="text-align:right">15</td>
+  <td>daily backups; offsite copy</td>
+  <td style="text-align:right">10</td>
+  <td>quarterly restore test for SIS, ERP, identity; immutable copy</td>
+  <td>Infrastructure</td>
+  <td>Q2</td>
+</tr>
+<tr>
+  <td>R-03</td>
+  <td>Govern</td>
+  <td>Vendor security/privacy review is inconsistent across campus purchases</td>
+  <td style="text-align:right">4</td>
+  <td style="text-align:right">4</td>
+  <td style="text-align:right">16</td>
+  <td>procurement review for major contracts</td>
+  <td style="text-align:right">12</td>
+  <td>require Artifact 10 for all tools receiving protected data</td>
+  <td>Procurement + Privacy</td>
+  <td>Q1</td>
+</tr>
+<tr>
+  <td>R-04</td>
+  <td>Identify</td>
+  <td>District lacks complete inventory of SaaS applications and data owners</td>
+  <td style="text-align:right">4</td>
+  <td style="text-align:right">4</td>
+  <td style="text-align:right">16</td>
+  <td>SSO app list; finance vendor list</td>
+  <td style="text-align:right">12</td>
+  <td>build reconciled SaaS/data inventory</td>
+  <td>CTO + Finance</td>
+  <td>Q2</td>
+</tr>
+<tr>
+  <td>R-05</td>
+  <td>Detect</td>
+  <td>Cloud account compromise may persist too long before detection</td>
+  <td style="text-align:right">3</td>
+  <td style="text-align:right">5</td>
+  <td style="text-align:right">15</td>
+  <td>native alerts; endpoint tools</td>
+  <td style="text-align:right">9</td>
+  <td>centralize identity/cloud logs; tune high-risk alerts</td>
+  <td>Security</td>
+  <td>Q3</td>
+</tr>
+<tr>
+  <td>R-06</td>
+  <td>Protect</td>
+  <td>Legacy service accounts have excessive privileges and non-expiring secrets</td>
+  <td style="text-align:right">4</td>
+  <td style="text-align:right">4</td>
+  <td style="text-align:right">16</td>
+  <td>partial password vaulting</td>
+  <td style="text-align:right">12</td>
+  <td>inventory/rotate; managed identities where feasible</td>
+  <td>Systems</td>
+  <td>Q3</td>
+</tr>
+<tr>
+  <td>R-07</td>
+  <td>Respond</td>
+  <td>Incident leadership may lose contact if SSO/email/VoIP fail together</td>
+  <td style="text-align:right">3</td>
+  <td style="text-align:right">4</td>
+  <td style="text-align:right">12</td>
+  <td>staff cell directory</td>
+  <td style="text-align:right">8</td>
+  <td>offline contact tree + quarterly test</td>
+  <td>CTO + Communications</td>
+  <td>Q1</td>
+</tr>
+<tr>
+  <td>R-08</td>
+  <td>Recover</td>
+  <td>Recovery order is not agreed across instructional/business leaders</td>
+  <td style="text-align:right">3</td>
+  <td style="text-align:right">4</td>
+  <td style="text-align:right">12</td>
+  <td>DR plan</td>
+  <td style="text-align:right">9</td>
+  <td>cabinet-approved service criticality/RTO map</td>
+  <td>CTO + CFO</td>
+  <td>Q2</td>
+</tr>
+<tr>
+  <td>R-09</td>
+  <td>Protect</td>
+  <td>Portable exports containing employee SPI could be stored unencrypted</td>
+  <td style="text-align:right">3</td>
+  <td style="text-align:right">5</td>
+  <td style="text-align:right">15</td>
+  <td>endpoint encryption; policy</td>
+  <td style="text-align:right">8</td>
+  <td>block unmanaged USB; encrypted transfer workflow; DLP pilot</td>
+  <td>HR + IT</td>
+  <td>Q2</td>
+</tr>
+<tr>
+  <td>R-10</td>
+  <td>Govern</td>
+  <td>Staff may place protected data into unapproved generative AI tools</td>
+  <td style="text-align:right">4</td>
+  <td style="text-align:right">4</td>
+  <td style="text-align:right">16</td>
+  <td>acceptable use guidance</td>
+  <td style="text-align:right">12</td>
+  <td>approved AI list; data handling training; technical controls</td>
+  <td>CTO + Curriculum</td>
+  <td>Q1</td>
+</tr>
+<tr>
+  <td>R-11</td>
+  <td>Respond</td>
+  <td>Vendor breach notices may arrive without enough details to meet district clocks</td>
+  <td style="text-align:right">3</td>
+  <td style="text-align:right">4</td>
+  <td style="text-align:right">12</td>
+  <td>standard contract clause</td>
+  <td style="text-align:right">8</td>
+  <td>strengthen DPA incident clause; vendor contact register</td>
+  <td>Legal + Procurement</td>
+  <td>Q2</td>
+</tr>
+<tr>
+  <td>R-12</td>
+  <td>Protect</td>
+  <td>MFA fatigue/social engineering could bypass traditional push-based MFA</td>
+  <td style="text-align:right">4</td>
+  <td style="text-align:right">4</td>
+  <td style="text-align:right">16</td>
+  <td>MFA required</td>
+  <td style="text-align:right">10</td>
+  <td>number matching/stronger factors; targeted training</td>
+  <td>Security</td>
+  <td>Q2</td>
+</tr>
+</tbody>
+</table>
+<h2>Improvement Plan: Top Five Priorities</h2>
+<h3>Priority 1 - Privileged Identity Protection</h3>
+<p><strong>Outcome:</strong> Tier 0/critical administrators use stronger MFA; access reviewed quarterly.<br />
+<strong>Evidence:</strong> access-review log, authentication policy, reduction in standing admin access.<br />
+<strong>Budget:</strong> $18,000 estimated implementation/keys/training.<br />
+<strong>Tradeoff:</strong> additional administrative friction for a small number of high-risk accounts.</p>
+<h3>Priority 2 - Tested Recovery</h3>
+<p><strong>Outcome:</strong> Ardent can demonstrate recovery of identity, SIS, ERP, and critical file services from protected backups.<br />
+<strong>Evidence:</strong> quarterly restore test with actual measured RTO/RPO and gaps.<br />
+<strong>Board message:</strong> “We do not call a backup successful until we have restored from it.”</p>
+<h3>Priority 3 - Vendor Governance</h3>
+<p><strong>Outcome:</strong> Any tool receiving protected district data completes the Vendor Security &amp; Privacy Review Packet before procurement/renewal.<br />
+<strong>Evidence:</strong> approval register, renewal dates, data owners, completed reviews, rejected/conditioned vendors.</p>
+<h3>Priority 4 - SaaS / Data Inventory</h3>
+<p><strong>Outcome:</strong> District can answer “Which vendors hold student or employee data, who owns the relationship, and when does the contract end?”<br />
+<strong>Evidence:</strong> reconciled inventory across SSO, finance, procurement, curriculum, and campus purchasing.</p>
+<h3>Priority 5 - Incident Communications Resilience</h3>
+<p><strong>Outcome:</strong> Incident team can coordinate even when district SSO/email/VoIP is unavailable.<br />
+<strong>Evidence:</strong> offline contact sheet, alternate conference method, tabletop test results.</p>
+<h2>Quarterly Cyber Governance Dashboard</h2>
+<table>
+<thead>
+<tr>
+  <th>Indicator</th>
+  <th style="text-align:right">Target</th>
+  <th style="text-align:right">Current sample</th>
+  <th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Critical systems with tested restore in last 90 days</td>
+  <td style="text-align:right">100%</td>
+  <td style="text-align:right">75%</td>
+  <td>Needs work</td>
+</tr>
+<tr>
+  <td>Tier 0 admins using strongest approved MFA</td>
+  <td style="text-align:right">100%</td>
+  <td style="text-align:right">62%</td>
+  <td>Needs work</td>
+</tr>
+<tr>
+  <td>Tier 1 vendors with current risk review</td>
+  <td style="text-align:right">100%</td>
+  <td style="text-align:right">68%</td>
+  <td>Needs work</td>
+</tr>
+<tr>
+  <td>Staff cybersecurity training completion</td>
+  <td style="text-align:right">100%</td>
+  <td style="text-align:right">97%</td>
+  <td>Watch</td>
+</tr>
+<tr>
+  <td>High-risk findings past target date</td>
+  <td style="text-align:right">0</td>
+  <td style="text-align:right">3</td>
+  <td>Needs work</td>
+</tr>
+<tr>
+  <td>Incident tabletop exercises completed this year</td>
+  <td style="text-align:right">1+</td>
+  <td style="text-align:right">1</td>
+  <td>On track</td>
+</tr>
+</tbody>
+</table>
+<h2>Governance Review Questions</h2>
+<ol>
+<li>Which residual risks are above the district's tolerance?</li>
+<li>Which risks need superintendent/board awareness because mitigation requires funding or policy change?</li>
+<li>Which risks are being accepted, by whom, and until when?</li>
+<li>What evidence shows that a control works, rather than merely exists?</li>
+<li>What new risks came from vendor changes, AI adoption, staffing, or infrastructure changes?</li>
+</ol>
+<h2>References</h2>
+<ul>
+<li><a href="https://www.nist.gov/cyberframework">NIST Cybersecurity Framework 2.0</a></li>
+<li><a href="https://www.cisa.gov/resources-tools/resources/report-protecting-our-future">CISA - Protecting Our Future: Cybersecurity for K-12</a></li>
+<li><a href="https://www.k12six.org/essentials-series">K12 SIX - Cybersecurity Essentials Series and Incident Response Runbook</a></li>
+<li><a href="https://www.cosn.org/tools-and-resources/resource/k-12cvat/">CoSN - K-12 Community Vendor Assessment Tool (K-12CVAT)</a></li>
+<li><a href="https://www.tasb.org/resources/esource/school-cybersecurity-texas-requirements">TASB - School Cybersecurity: Texas Requirements</a></li>
+</ul>
+
+<footer>Ardent ISD · Module 6 Cybersecurity and Data Privacy · Training sample reviewed against current public Texas sources in August 2026.</footer></main></body></html>

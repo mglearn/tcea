@@ -1,0 +1,111 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cyber Incident Executive Brief for Superintendent and Board | Ardent ISD</title><link rel="stylesheet" href="../assets/style.css"></head><body>
+<div class="sitebar"><div class="wrap"><div class="brand">Ardent ISD<small>Cybersecurity & Data Privacy Artifact Library</small></div><nav><a href="../index.html">Library Home</a><a href="../sources.html">Sources</a></nav></div></div>
+<main class="wrap"><section class="dochead"><div class="kicker">Artifact 7 · Module 6</div><h1>Cyber Incident Executive Brief for Superintendent and Board</h1><p>One- to two-page leadership status brief that separates facts, risk, decisions, and next steps</p><div class="docmeta"><div class="meta"><b>Owner</b>CTO / Cybersecurity Coordinator</div><div class="meta"><b>District</b>Ardent ISD</div><div class="meta"><b>Review Cycle</b>Annual + after major incident</div><div class="meta"><b>Policy Cross-Reference</b><span class="tag">CQB</span><span class="tag">Incident Response Plan</span></div></div></section><blockquote>
+<p><strong>Training Sample - Customize Before Use.</strong> This document is an instructional artifact for Ardent ISD. It should be aligned to current board policy, administrative procedures, cyber-insurance requirements, records-retention requirements, and advice of district legal counsel before operational use. Legal and reporting requirements can change.</p>
+</blockquote>
+<h2>Executive Brief - AISD-IR-2026-004</h2>
+<p><strong>Prepared:</strong> March 4, 2026, 3:00 PM<br />
+<strong>Classification:</strong> Confidential incident working document - distribution limited to incident leadership team, superintendent, and counsel<br />
+<strong>Next scheduled update:</strong> March 5, 2026, 10:00 AM</p>
+<h3>Situation in One Sentence</h3>
+<p>Ardent ISD is investigating unauthorized use of a third-party vendor support account that accessed the Student Success Portal; the access has been contained, 3,240 student records may have been viewed, and no district passwords, Social Security numbers, financial data, or student health records are stored in the affected portal.</p>
+<h2>What We Know</h2>
+<ul>
+<li>Vendor alerted Ardent ISD on <strong>March 3 at 7:42 AM</strong>.</li>
+<li>Unauthorized account activity occurred between <strong>February 27 and March 2</strong>.</li>
+<li>Affected application: Student Success Portal, hosted by a third party.</li>
+<li>Potentially affected records: <strong>3,240 students</strong>.</li>
+<li>Data present: names, district student IDs, campuses, grade levels, guardian emails, limited program-participation flags.</li>
+<li>Vendor support account has been disabled; district integrations have been restricted during review.</li>
+<li>No evidence of malware or ransomware inside Ardent ISD's network has been identified as of this update.</li>
+</ul>
+<h2>What We Do Not Yet Know</h2>
+<ul>
+<li>Whether every accessible student record was actually viewed.</li>
+<li>Whether any information was copied outside the vendor platform.</li>
+<li>The exact method used to compromise the vendor support account.</li>
+<li>Whether other customers of the vendor were affected.</li>
+</ul>
+<h2>Actions Completed</h2>
+<table>
+<thead>
+<tr>
+  <th>Action</th>
+  <th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Incident response plan activated</td>
+  <td>Complete</td>
+</tr>
+<tr>
+  <td>Vendor support access disabled</td>
+  <td>Complete</td>
+</tr>
+<tr>
+  <td>Relevant logs preserved</td>
+  <td>Complete</td>
+</tr>
+<tr>
+  <td>Legal counsel engaged</td>
+  <td>Complete</td>
+</tr>
+<tr>
+  <td>Cyber insurer notified</td>
+  <td>Complete</td>
+</tr>
+<tr>
+  <td>TXCC report submitted</td>
+  <td>Complete - within 24 hours in this sample</td>
+</tr>
+<tr>
+  <td>Parent notice draft prepared</td>
+  <td>In legal review</td>
+</tr>
+<tr>
+  <td>Broader vendor access-control review</td>
+  <td>Started</td>
+</tr>
+</tbody>
+</table>
+<h2>Legal / Notification Status</h2>
+<p><strong>Education Code §11.175:</strong> Counsel's current sample determination is that the incident is reportable because protected/confidential student information may have been viewed by an unauthorized person; parent notice will be provided.</p>
+<p><strong>Texas Cyber Command:</strong> Initial incident report submitted. Follow-up cause analysis will be tracked after eradication, closure, and recovery.</p>
+<p><strong>Texas Business &amp; Commerce Code Chapter 521:</strong> Based on currently identified data types, counsel's sample analysis is that the Chapter 521 sensitive-personal-information breach notice/OAG threshold is not triggered. This will be reevaluated if data scope changes.</p>
+<h2>Operational Impact</h2>
+<ul>
+<li>Instruction: no interruption.</li>
+<li>SIS/gradebook: no interruption.</li>
+<li>Family portal: unaffected.</li>
+<li>Student Success Portal: temporarily restricted for vendor support functions; staff read-only access continues.</li>
+<li>Technology workload: elevated; two staff reassigned to incident support.</li>
+</ul>
+<h2>Decisions Needed From Superintendent/Cabinet</h2>
+<ol>
+<li>Approve parent notification and FAQ once counsel confirms final content.</li>
+<li>Authorize temporary suspension of vendor support integrations until remediation evidence is received.</li>
+<li>Approve external review of privileged third-party access across Tier 1 systems.</li>
+<li>Confirm board update method: confidential briefing through counsel plus public summary if/when parent notice is released.</li>
+</ol>
+<h2>Board-Level Message</h2>
+<blockquote>
+<p>The district has contained unauthorized third-party access to a student-support platform. The investigation is active. Student learning systems remain operational. We are following state reporting requirements, working with counsel and cybersecurity partners, and will notify affected families with verified information.</p>
+</blockquote>
+<h2>Next 24 Hours</h2>
+<ul>
+<li>validate vendor forensic timeline;</li>
+<li>finalize affected-student list;</li>
+<li>complete parent notice and FAQ;</li>
+<li>evaluate vendor privileged access across SIS, ERP, SSO, and learning systems;</li>
+<li>establish remediation requirements before full vendor access is restored.</li>
+</ul>
+<h2>References</h2>
+<ul>
+<li><a href="https://statutes.capitol.texas.gov/Docs/ED/pdf/ED.11.pdf">Texas Education Code § 11.175 - School Cybersecurity</a></li>
+<li><a href="https://www.txcc.texas.gov/report-an-incident">Texas Cyber Command - Report a Cybersecurity Incident</a></li>
+<li><a href="https://www.tasb.org/resources/esource/school-cybersecurity-security-breach-notification-and-response">TASB - School Cybersecurity: Security Breach Notification and Response</a></li>
+<li><a href="https://studentprivacy.ed.gov/resources/data-breach-response-checklist">U.S. Department of Education - Data Breach Response Checklist</a></li>
+</ul>
+
+<footer>Ardent ISD · Module 6 Cybersecurity and Data Privacy · Training sample reviewed against current public Texas sources in August 2026.</footer></main></body></html>
