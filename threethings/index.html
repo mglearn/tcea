@@ -138,6 +138,9 @@ body { overflow: hidden; }
 #notesPanel.open { transform: translateY(0); }
 #notesPanel .np-head { color: var(--gold); text-transform: uppercase; letter-spacing: .16em; font-size: 14px; font-weight: 900; margin-bottom: 14px; }
 #notesPanel .np-slide { color: #C6D7F2; letter-spacing: 0; text-transform: none; margin-left: 12px; }
+#notesPanel .np-head { display: flex; align-items: center; }
+#notesPanel .np-head .np-close { margin-left: auto; cursor: pointer; background: transparent; border: 1px solid rgba(255,255,255,.3); color: #fff; width: 26px; height: 26px; border-radius: 7px; font-size: 20px; line-height: 1; display: flex; align-items: center; justify-content: center; letter-spacing: 0; padding: 0; font-weight: 400; }
+#notesPanel .np-head .np-close:hover { background: rgba(255,255,255,.14); border-color: var(--gold); }
 #notesPanel .np-body { max-width: 96ch; font-size: 22px; line-height: 1.55; }
 #notesPanel .np-body p { margin-bottom: 12px; }
 #help { position: fixed; inset: 0; background: rgba(6,19,36,.94); display: none; align-items: center; justify-content: center; z-index: 100; }
@@ -156,6 +159,8 @@ body.presenter-mode .deck, body.presenter-mode #controls, body.presenter-mode #p
 .pv-brand { color: var(--gold); font-family: var(--font-display); font-size: 24px; }
 .pv-btn { background: rgba(255,255,255,.08); color: white; border: 1px solid rgba(255,255,255,.24); border-radius: 8px; padding: 7px 12px; font-size: 16px; cursor: pointer; }
 .pv-count, .pv-clock { font-family: var(--font-mono); color: #C6D7F2; }
+.pv-close { margin-left: 6px; }
+.pv-close:hover { background: #E0566B; color: #fff; border-color: #E0566B; }
 .pv-timer { margin-left: auto; font-family: var(--font-mono); font-size: 30px; color: white; cursor: pointer; }
 .pv-main { flex: 1; display: grid; grid-template-columns: 1.45fr .95fr; gap: 22px; padding: 22px; min-height: 0; }
 .pv-frame { background: #030914; border: 1px solid rgba(255,255,255,.18); border-radius: 12px; overflow: hidden; position: relative; }
@@ -456,6 +461,10 @@ Keep the reading level appropriate for [grade].</div></div>
   var notesPanel = el('div', { id: 'notesPanel' });
   var npHead = el('div', { class: 'np-head' });
   npHead.innerHTML = 'Speaker Notes <span class="np-slide"></span>';
+  var npClose = el('button', { class: 'np-close', title: 'Close notes (S or Esc)', 'aria-label': 'Close notes' });
+  npClose.innerHTML = '×';
+  npClose.addEventListener('click', function (ev) { ev.stopPropagation(); notesPanel.classList.remove('open'); });
+  npHead.appendChild(npClose);
   var npBody = el('div', { class: 'np-body' });
   notesPanel.appendChild(npHead);
   notesPanel.appendChild(npBody);
@@ -534,6 +543,7 @@ Keep the reading level appropriate for [grade].</div></div>
 
   document.addEventListener('keydown', function (e) {
     if (help.classList.contains('open')) { help.classList.remove('open'); return; }
+    if (e.key === 'Escape' && notesPanel.classList.contains('open')) { notesPanel.classList.remove('open'); return; }
     switch (e.key) {
       case 'ArrowRight': case ' ': case 'PageDown': next(); e.preventDefault(); break;
       case 'ArrowLeft': case 'PageUp': prev(); e.preventDefault(); break;
@@ -581,7 +591,7 @@ Keep the reading level appropriate for [grade].</div></div>
     wrap.innerHTML = '<div class="pv-top"><span class="pv-brand">✦ Presenter</span>' +
       '<button class="pv-btn" id="pvPrev">‹ Previous</button><button class="pv-btn" id="pvNext">Next ›</button>' +
       '<span class="pv-count" id="pvCount">1 / ' + TOTAL + '</span>' +
-      '<span class="pv-timer" id="pvTimer">00:00</span><button class="pv-btn" id="pvReset">Reset timer</button><span class="pv-clock" id="pvClock">--:--</span></div>' +
+      '<span class="pv-timer" id="pvTimer">00:00</span><button class="pv-btn" id="pvReset">Reset timer</button><span class="pv-clock" id="pvClock">--:--</span><button class="pv-btn pv-close" id="pvClose" title="Close presenter window (Esc)">✕ Close</button></div>' +
       '<div class="pv-main"><div><div class="pv-label">Current slide</div><div class="pv-frame" id="pvCurrent"></div></div>' +
       '<div class="pv-right"><div><div class="pv-label">Next up</div><div class="pv-frame" id="pvNextFrame"></div></div>' +
       '<div style="min-height:0;"><div class="pv-label">Speaker notes</div><div class="pv-notes"><div class="pv-notes-body" id="pvNotes"></div></div></div></div></div>';
@@ -635,12 +645,14 @@ Keep the reading level appropriate for [grade].</div></div>
     document.getElementById('pvPrev').onclick = function () { goto(pIdx - 1); };
     document.getElementById('pvNext').onclick = function () { goto(pIdx + 1); };
     document.getElementById('pvReset').onclick = resetTimer;
+    var pvCloseBtn = document.getElementById('pvClose'); if (pvCloseBtn) pvCloseBtn.onclick = function () { window.close(); };
     document.addEventListener('keydown', function (e) {
       switch (e.key) {
         case 'ArrowRight': case ' ': case 'PageDown': goto(pIdx + 1); e.preventDefault(); break;
         case 'ArrowLeft': case 'PageUp': goto(pIdx - 1); e.preventDefault(); break;
         case 'Home': goto(0); break;
         case 'End': goto(TOTAL - 1); break;
+        case 'Escape': window.close(); break;
         case 't': case 'T': resetTimer(); break;
       }
     });
