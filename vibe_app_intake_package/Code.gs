@@ -112,7 +112,7 @@ function doPost(e) {
     const sheet = getOrCreateSheet_(ss, CONFIG.RESPONSES_SHEET_NAME, RESPONSE_HEADERS);
     const submissionId = makeSubmissionId_();
     const rowObject = normalizePayload_(payload, submissionId);
-    const row = RESPONSE_HEADERS.map(header => rowObject[header] || '');
+    const row = RESPONSE_HEADERS.map(header => sheetSafe_(rowObject[header] || ''));
     sheet.appendRow(row);
 
     logReview_(ss, submissionId, 'System', 'Submitted', 'New intake submitted');
@@ -202,6 +202,11 @@ function normalizePayload_(p, submissionId) {
     'Reviewer Decision Notes': '',
     'Raw JSON': JSON.stringify(safe)
   };
+}
+
+// Prevent spreadsheet formula injection: text starting with = + - @ is stored as literal text.
+function sheetSafe_(value) {
+  return (typeof value === 'string' && /^[=+\-@]/.test(value)) ? "'" + value : value;
 }
 
 function defaultStatus_(risk, studentData) {

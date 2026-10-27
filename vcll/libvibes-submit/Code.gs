@@ -92,7 +92,7 @@ function submitLibVibe(p) {
     new Date(), 'Pending', p.name || '', p.email || '', p.school || '',
     String(p.title).trim(), p.grade || '', p.category || '',
     p.description || '', p.prompt || '', p.solutionLink || '', fileUrl, ''
-  ]);
+  ].map(sheetSafe_));
 
   if (NOTIFY_EMAIL) {
     try {
@@ -109,6 +109,11 @@ function submitLibVibe(p) {
 }
 
 // ===================== helpers =====================
+// Prevent spreadsheet formula injection: text starting with = + - @ is stored as literal text.
+function sheetSafe_(value) {
+  return (typeof value === 'string' && /^[=+\-@]/.test(value)) ? "'" + value : value;
+}
+
 function getSheet_() {
   var ss = SHEET_ID ? SpreadsheetApp.openById(SHEET_ID) : bootstrapSpreadsheet_();
   var sh = ss.getSheetByName(SHEET_NAME);

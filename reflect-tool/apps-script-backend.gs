@@ -30,7 +30,7 @@ function doPost(e) {
       row.displayName,
       row.note,
       row.userAgent
-    ]);
+    ].map(sheetSafe_));
     updateMarkdownFile_(row.sessionId);
     return json_({ ok: true });
   } catch (err) {
@@ -73,6 +73,11 @@ function normalize_(p) {
     note: clean(p.note, 400),
     userAgent: clean(p.userAgent, 140)
   };
+}
+
+// Prevent spreadsheet formula injection: text starting with = + - @ is stored as literal text.
+function sheetSafe_(value) {
+  return (typeof value === 'string' && /^[=+\-@]/.test(value)) ? "'" + value : value;
 }
 
 function getSheet_() {

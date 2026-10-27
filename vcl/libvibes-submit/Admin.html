@@ -69,7 +69,7 @@
 
 <script>
   var PW='', DATA=[], FILTER='Pending';
-  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
   function load(){
     PW=document.getElementById('pw').value;
     var b=document.getElementById('loginBtn'); b.disabled=true; b.textContent='Loading…';
@@ -94,7 +94,7 @@
     document.getElementById('list').innerHTML = rows.map(function(r){
       var st=r.status||'Pending';
       var sol = r.file ? '<a href="'+r.file+'" target="_blank" rel="noopener">Open saved HTML ↗</a>' : '';
-      var lnk = r.link ? '<a href="'+esc(r.link)+'" target="_blank" rel="noopener">Submitted link ↗</a>' : '';
+      var lnk = /^https?:\/\//i.test(String(r.link||'')) ? '<a href="'+esc(r.link)+'" target="_blank" rel="noopener">Submitted link ↗</a>' : '';
       return '<div class="sub" data-st="'+st+'">'
         + '<div class="sub-top"><h3>'+esc(r.title)+'</h3><span class="pill '+st+'">'+st+'</span></div>'
         + '<div class="meta">'+esc(r.name)+(r.email?' &lt;'+esc(r.email)+'&gt;':'')+(r.school?' · '+esc(r.school):'')

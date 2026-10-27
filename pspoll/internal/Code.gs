@@ -130,6 +130,11 @@ function getSheet_() {
   return sh;
 }
 
+// Prevent spreadsheet formula injection: text starting with = + - @ is stored as literal text.
+function sheetSafe_(value) {
+  return (typeof value === 'string' && /^[=+\-@]/.test(value)) ? "'" + value : value;
+}
+
 function json_(obj) {
   return ContentService
     .createTextOutput(JSON.stringify(obj))
@@ -150,7 +155,7 @@ function doPost(e) {
 
     for (var i = 0; i < FIELDS.length; i++) {
       var v = data[FIELDS[i]];
-      row.push(v === undefined || v === null ? '' : String(v).slice(0, 500));
+      row.push(v === undefined || v === null ? '' : sheetSafe_(String(v).slice(0, 500)));
     }
 
     sh.appendRow(row);
