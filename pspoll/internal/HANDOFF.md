@@ -89,7 +89,7 @@ So the poll no longer measures price sensitivity at all. `payer` still tells you
 
 **Privacy floor.** Cross tabs suppress any group under `MIN_CELL`, currently five. Free text runs through `scrub()` which strips email addresses, phone numbers, and URLs before rendering. Neither is optional. If you add breakdowns, route them through `crosstab()` so suppression applies automatically.
 
-**Password.** Whatever you set `REPORT_KEY` to in `Code.gs` (ships as `CHANGE-ME`), checked server side in `doGet`, not in the browser. The client sends it as a query parameter and Apps Script refuses to return data without it. This stops casual snooping and nothing more. Do not present it as stronger than that.
+**Password.** Whatever you set as the `REPORT_KEY` Script Property (no default; results stay locked until it is set), checked server side in `doGet`, not in the browser. The client sends it as a query parameter and Apps Script refuses to return data without it. This stops casual snooping and nothing more. Do not present it as stronger than that.
 
 ---
 
@@ -121,7 +121,7 @@ To withhold something else later, add one line to `.pagesignore`. No workflow ed
 
 **Be clear about what this does and does not do.** It hides files from the website. It does not hide them from GitHub. This repository is public, so anything in `pspoll/internal/` is still readable by anyone who browses github.com/mglearn/tcea or fetches a raw URL. Never put a real secret there. The only ways to get actual privacy are to make the repository private or to keep the files out of it entirely.
 
-That is why `REPORT_KEY` ships as `CHANGE-ME` and the real password lives only in the Apps Script editor.
+That is why `Code.gs` ships with no password and the real `REPORT_KEY` lives only in Script Properties.
 
 ---
 

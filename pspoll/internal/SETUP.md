@@ -105,11 +105,13 @@ Now share the poll link.
 
 ## The report password
 
-Set your own password before you deploy. It lives in exactly one place, near the top of `Code.gs`, shipped as a placeholder so the real value never lands in the repo.
+Set your own password before you deploy. It lives in exactly one place, a Script Property, so the real value never lands in the repo. In the Apps Script editor open Project Settings > Script Properties and add:
 
-```js
-var REPORT_KEY = 'CHANGE-ME';
 ```
+REPORT_KEY = your-own-password
+```
+
+Until it is set, the report page stays locked.
 
 The report page sends that password to Apps Script, and Apps Script returns nothing without it. Viewing the page source gets an attacker no data, which is better than a browser side check.
 
@@ -154,7 +156,7 @@ To withhold another folder later, add one line to `.pagesignore`. You do not nee
 
 **Now the part that matters.** This hides files from the website. It does not hide them from GitHub. The repository is public, so anyone can still read everything in `pspoll/internal/` by browsing github.com/mglearn/tcea or by fetching a raw file URL. Search engines can index those pages too.
 
-So treat the internal folder as tidiness, not security. Never put a real password, key, or anything confidential in it. That is exactly why `REPORT_KEY` in `Code.gs` reads `CHANGE-ME` and the real password lives only in the Apps Script editor, which nobody but you can open.
+So treat the internal folder as tidiness, not security. Never put a real password, key, or anything confidential in it. That is exactly why `Code.gs` holds no password: the real `REPORT_KEY` lives only in the Script Properties of your Apps Script project, which nobody but you can open.
 
 If you need these files genuinely private while still getting them on clone, you have two real options. Make the repository private, which on some plans turns GitHub Pages off, so check before you switch. Or move the internal files into a separate private repository and clone it alongside this one.
 

@@ -18,7 +18,8 @@ var SHEET_NAME = 'Submissions';
 var DRIVE_FOLDER_NAME = 'LibVibes Submissions'; // Drive folder for pasted solution HTML
 var NOTIFY_EMAIL = '';                          // optional: get an email per submission
 var MAX_HTML_BYTES = 900000;                    // reject pasted files larger than ~900 KB
-var ADMIN_PASSWORD = 'change-me';               // password for the review page  ?page=admin
+var ADMIN_PASSWORD = '';                        // review page (?page=admin) stays locked until set;
+                                                // prefer a Script Property named ADMIN_PASSWORD
 // =================================================
 
 /**
@@ -36,16 +37,18 @@ function setup() {
 
 function doGet(e) {
   var admin = e && e.parameter && e.parameter.page === 'admin';
-  return HtmlService.createTemplateFromFile(admin ? 'Admin' : 'Form')
+  var out = HtmlService.createTemplateFromFile(admin ? 'Admin' : 'Form')
     .evaluate()
     .setTitle(admin ? 'LibVibes — Review submissions' : 'Share your LibVibe · TCEA')
-    .addMetaTag('viewport', 'width=device-width, initial-scale=1')
-    .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+    .addMetaTag('viewport', 'width=device-width, initial-scale=1');
+  // Only the form may be embedded in another site; the review page may not (clickjacking).
+  return admin ? out : out.setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
 }
 
 // ===================== admin review =====================
 function checkPw_(pw) {
   var set = PropertiesService.getScriptProperties().getProperty('ADMIN_PASSWORD') || ADMIN_PASSWORD;
+  if (!set) throw new Error('Review page is locked: set the ADMIN_PASSWORD Script Property first.');
   if (!pw || String(pw) !== String(set)) throw new Error('Wrong password.');
 }
 

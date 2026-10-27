@@ -184,7 +184,7 @@
   <div class="section-divider"></div>
   <p class="section-lead">The form asks for a title, a one-line description, your starter prompt, and your solution &mdash; either pasted as a single self-contained HTML file or linked. No account needed.</p>
   <div class="qa-wrap" style="align-items:flex-start">
-    <a class="qa-btn qa-btn-gold" id="submitBtn" href="https://script.google.com/macros/s/AKfycby59sSPF1K7H4zHbFphRjpf8VbsIObEBKmHXG0SrLCrwVW_p4s92hxRziUJs3xd4I-gyg/exec" target="_blank" rel="noopener" style="font-size:1.05rem;padding:.9rem 1.6rem">Open the submission form ↗</a>
+    <a class="qa-btn qa-btn-gold" id="submitBtn" href="__FORM_URL__" target="_blank" rel="noopener" style="font-size:1.05rem;padding:.9rem 1.6rem">Open the submission form ↗</a>
     <p style="font-size:.85rem;color:var(--text-muted);margin-top:.6rem">By submitting, you agree to the LibVibes Community <a href="libvibes-legal.html">Privacy &amp; Terms</a> &mdash; you keep ownership, nothing publishes without review, and you can ask us to remove it anytime.</p>
   </div>
 </section>
@@ -216,7 +216,6 @@
     <a href="https://mguhlin.org">mguhlin.org</a>
   </p>
   <p style="margin-top:1rem;opacity:.6;font-size:.75rem">LibVibes · Companion resource for "Vibe Your Way to Free" · TCEA 2026</p>
-  <p style="margin-top:.5rem"><a href="https://script.google.com/macros/s/AKfycby59sSPF1K7H4zHbFphRjpf8VbsIObEBKmHXG0SrLCrwVW_p4s92hxRziUJs3xd4I-gyg/exec?page=admin&authuser=mguhlin@tcea.org" target="_blank" rel="noopener" style="font-size:.78rem;opacity:.6">🔒 Review submissions (admin)</a></p>
 </footer>
 
 <!-- MAINTAINER: replace __FORM_URL__ above with your deployed Apps Script /exec URL (see libvibes-submit/SETUP.md). -->
@@ -227,7 +226,7 @@
     var b=document.getElementById('submitBtn');
     if(b && (b.getAttribute('href')||'').indexOf('__FORM_URL__')!==-1){
       b.removeAttribute('href'); b.style.opacity='.6'; b.style.cursor='not-allowed';
-      b.textContent='Submission form coming soon';
+      b.textContent='Submissions are closed';
     }
   })();
 </script>

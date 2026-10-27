@@ -25,7 +25,9 @@
 
 var SHEET_TITLE = 'Pedagogy Showcase Poll Responses';
 var TAB_NAME    = 'Responses';
-var REPORT_KEY  = 'CHANGE-ME';
+// The report password lives in a Script Property named REPORT_KEY (Project Settings >
+// Script Properties), never in this file. results.html stays locked until it is set.
+var REPORT_KEY  = PropertiesService.getScriptProperties().getProperty('REPORT_KEY') || '';
 
 // Column order. These ids must match the question ids in index.html.
 // Changing this list shifts every column, so run clearResponses or start a
@@ -55,7 +57,7 @@ function setup() {
   var sh = getSheet_();
   var url = sh.getParent().getUrl();
   Logger.log('Spreadsheet ready: ' + url);
-  Logger.log('Report password: ' + REPORT_KEY);
+  Logger.log(REPORT_KEY ? 'Report password is set.' : 'Set a Script Property named REPORT_KEY to unlock results.html.');
   Logger.log('Next, deploy as a web app and paste the /exec URL into both HTML files.');
   return url;
 }
@@ -171,7 +173,7 @@ function doPost(e) {
 /** Serves the response set to results.html, password required. */
 function doGet(e) {
   var key = (e && e.parameter) ? e.parameter.key : '';
-  if (key !== REPORT_KEY) {
+  if (!REPORT_KEY || key !== REPORT_KEY) {
     return json_({ ok: false, error: 'bad key' });
   }
 

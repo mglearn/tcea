@@ -153,6 +153,12 @@ footer a{color:var(--gold-light)}
     </div>
   </div>
 
+  <div id="closed" style="display:none;text-align:center;padding:3rem 1rem">
+    <h2 style="font-family:'DM Serif Display',serif;font-size:2rem;color:var(--navy);font-weight:400">This poll has closed</h2>
+    <p style="color:var(--text-muted);margin-top:.8rem">Thank you to everyone who shared their answers. We are no longer collecting responses.</p>
+    <p style="margin-top:1.2rem"><a href="https://tcea.org" style="color:var(--navy);font-weight:600">Return to TCEA</a></p>
+  </div>
+
   <div id="thanks">
     <h2>Thank you</h2>
     <p>Your answers are in. We use them to pick the final session lineup and the date for the Pedagogy Showcase.</p>
@@ -168,7 +174,14 @@ footer a{color:var(--gold-light)}
 /* ============================================================
    1. SET THIS to your Apps Script Web App URL after deploying.
    ============================================================ */
-const ENDPOINT = "https://script.google.com/macros/s/AKfycbwbkd4ClxIpcjZizaI90iEnH8IyEC5BI4O6UIlNpfYZlcW5rMymUTk3dLxfLdQI2ddFOA/exec";
+// Poll closed October 2026. To run your own copy, paste your /exec URL here (see internal/SETUP.md).
+const ENDPOINT = "";
+
+/* With no ENDPOINT, show the closed notice instead of the form. */
+if (!ENDPOINT) {
+  document.getElementById("form-area").style.display = "none";
+  document.getElementById("closed").style.display = "block";
+}
 
 /* ============================================================
    2. Questions. Edit freely. Keep each id short and unique,

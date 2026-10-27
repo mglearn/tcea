@@ -200,7 +200,16 @@ footer{background:var(--navy);color:var(--pale-navy);padding:1.3rem 0;font-size:
 
 <script>
 /* Set this to the same Apps Script Web App URL used by the poll page. */
-const ENDPOINT = "https://script.google.com/macros/s/AKfycbwbkd4ClxIpcjZizaI90iEnH8IyEC5BI4O6UIlNpfYZlcW5rMymUTk3dLxfLdQI2ddFOA/exec";
+// Poll closed October 2026. To run your own copy, paste your /exec URL here (see internal/SETUP.md).
+const ENDPOINT = "";
+
+/* With no ENDPOINT, the report is offline: say so instead of asking for a password. */
+if (!ENDPOINT) {
+  document.querySelector("#gate h2").textContent = "Poll closed";
+  document.querySelector("#gate p").textContent = "This poll has closed and its results are no longer online.";
+  document.getElementById("pw").style.display = "none";
+  document.getElementById("go").style.display = "none";
+}
 
 /* Minimum group size before a breakdown is shown. */
 const MIN_CELL = 5;
