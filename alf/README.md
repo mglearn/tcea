@@ -12,7 +12,7 @@ This project is a **thought experiment and practical prototype** based on Paul R
 
 **Maintainer:** Miguel Guhlin  
 **Email:** mguhlin@gmail.com  
-**Website:** [mguhlin.org](https://mguhlin.org)
+**Contact:** [mguhlin@tcea.org](mailto:mguhlin@tcea.org) · [blog.tcea.org](https://blog.tcea.org)
 
 ## Project Status
 
@@ -218,7 +218,7 @@ ACE is used here as a simple reflection structure:
 
 Source:
 
-- [Miguel Guhlin: AI and Learning / ACE reference](https://mguhlin.org/2026/05/13/kpft-radio-guest-ai-and-learning/)
+- [Miguel Guhlin: AI and Learning / ACE reference](https://blog.tcea.org)
 
 Use in these tools:
 
@@ -523,7 +523,7 @@ The following sources informed the framework, scenario tools, standards referenc
 ### Instructional Frameworks
 
 - Hook, Pam. “SOLO Taxonomy.” [https://pamhook.com/solo-taxonomy/](https://pamhook.com/solo-taxonomy/)
-- Guhlin, Miguel. “ACE Framework as discussed via KPFT Radio Guest: AI and Learning.” [https://mguhlin.org/2026/05/13/kpft-radio-guest-ai-and-learning/](https://mguhlin.org/2026/05/13/kpft-radio-guest-ai-and-learning/)
+- Guhlin, Miguel. “ACE Framework as discussed via KPFT Radio Guest: AI and Learning.” [https://blog.tcea.org](https://blog.tcea.org)
 - Visible Learning MetaX. “Influences.” [https://www.visiblelearningmetax.com/Influences](https://www.visiblelearningmetax.com/Influences)
 
 ### Standards

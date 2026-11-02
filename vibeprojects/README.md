@@ -85,7 +85,6 @@ This resource was created by **Miguel Guhlin**, Director of Professional Develop
 
 This page was **vibe-coded** — meaning AI tools were used to generate the initial draft, which was then evaluated, revised, and shaped by a human expert. That's the whole point.
 
-- 🌐 Personal site: [mguhlin.org](https://mguhlin.org)
 - 📝 TCEA blog: [blog.tcea.org](https://blog.tcea.org)
 - ✉️ Email: [mguhlin@tcea.org](mailto:mguhlin@tcea.org?Subject=Vibe-coded%20Examples)
 

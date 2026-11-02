@@ -4,7 +4,7 @@ A standalone, browser-based tabletop exercise game for K-12 technology leaders. 
 
 ## What It Is
 
-An interactive adaptation of the original [*When Disaster Strikes*](https://blog.tcea.org/when-disaster-strikes-part-3/) game by [Miguel Guhlin (@mguhlin)](https://mguhlin.org), extended with cybersecurity and incident response scenarios aligned to **NIST CSF 2.0** and **CISA** guidance.
+An interactive adaptation of the original [*When Disaster Strikes*](https://blog.tcea.org/when-disaster-strikes-part-3/) game by [Miguel Guhlin (@mguhlin)](https://blog.tcea.org), extended with cybersecurity and incident response scenarios aligned to **NIST CSF 2.0** and **CISA** guidance.
 
 Designed for CTOs, Directors of Technology, campus administrators, and IT staff in K-12 school districts.
 
