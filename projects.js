@@ -124,6 +124,15 @@
   {
     "category": "featured",
     "featured": true,
+    "external": false,
+    "href": "vibes/index.html",
+    "tag": "Interactive Project Coach",
+    "title": "VIBES Studio",
+    "desc": "Plan a classroom tool through Vision, Instruct, Build, Evaluate, and Ship. Create chatbot prompts, review testing checks, and download a project plan or editable draft. Runs in your browser with no sign-in."
+  },
+  {
+    "category": "featured",
+    "featured": true,
     "external": true,
     "href": "https://blog.tcea.org/vibe-coded-solutions/",
     "tag": "TechNotes",

@@ -8,6 +8,7 @@ Most solutions are standalone HTML files that can be opened directly in a browse
 
 | Solution | File | Purpose |
 | --- | --- | --- |
+| VIBES Studio | [vibes/index.html](vibes/index.html) | Interactive project coach for Vision, Instruct, Build, Evaluate, and Ship, with prompts and downloadable plans and drafts. |
 | Vibe-Coding in the Classroom | [vibeprojects/index.html](vibeprojects/index.html) | Classroom project ideas for vibe-coding activities. |
 | Vibe Coding a Free ShareSpace | [sharespace/index.html](sharespace/index.html) | Slide-style walkthrough for building a free sharing space solution. |
 | TCEA Tools Menu | [tools10/index.html](tools10/index.html) | Launch page for the Tools10 classroom utility collection. |
