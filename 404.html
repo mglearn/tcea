@@ -18,12 +18,14 @@
      /tcea/gtky/*              -> /gtky/*
    Legacy chains kept:
      /tcea/clear/breakouts/*   -> /activities/ctobs/clear/*
+     /tcea/clear/*             -> /activities/ctobs/clear-crew/*  (CLEAR Crew game)
      /tcea/breakouts/pst/*     -> /activities/pst/*
      /tcea/breakouts/*         -> /activities/ctobs/* */
 (function () {
   var p = location.pathname, s = location.search, h = location.hash, m;
   function go(t) { location.replace(t + s + h); }
   if ((m = p.match(/\/clear\/breakouts(\/.*)?$/)))     return go('/activities/ctobs/clear' + (m[1] || '/'));
+  if ((m = p.match(/\/clear(\/.*)?$/)))                 return go('/activities/ctobs/clear-crew' + (m[1] || '/'));
   if ((m = p.match(/\/breakouts\/pst(\/.*)?$/)))        return go('/activities/pst' + (m[1] || '/'));
   if ((m = p.match(/\/breakouts(\/.*)?$/)))             return go('/activities/ctobs' + (m[1] || '/'));
   if ((m = p.match(/\/activities(\/.*)?$/)))            return go('/activities/ctobs' + (m[1] || '/'));

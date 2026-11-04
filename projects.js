@@ -773,7 +773,7 @@
     "category": "breakouts",
     "featured": true,
     "external": false,
-    "href": "clear/index.html",
+    "href": "/activities/ctobs/clear-crew/index.html",
     "tag": "Thinking Game",
     "title": "The CLEAR Crew &mdash; Detective Thinking Game",
     "desc": "Crack the case one clue at a time with the CLEAR thinking process &mdash; a critical-thinking checklist for young detectives."
