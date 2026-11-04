@@ -149,7 +149,6 @@
       'El proceso de conciencia y transformación de Anzaldúa que va del trabajo interior a los actos públicos.',
       'Una forma de conocer que surge al mirar desde dos o más perspectivas culturales a la vez.',
       'Una de las herramientas de ejemplo situadas en la infraestructura intermedia del ensayo.',
-      'Una herramienta gratuita en el navegador citada como ejemplo de infraestructura nepantla.',
       'Critical Thinking Online Breakouts, una herramienta práctica del espacio intermedio.',
       'La idea de que las herramientas permanecen abiertas a comentarios y adaptación porque el espacio cambia.'
     ],
@@ -169,7 +168,6 @@
       'Quá trình nhận thức và chuyển hóa của Anzaldúa, từ nội tâm đến hành động công khai.',
       'Cách biết đến từ việc nhìn đồng thời qua hai hay nhiều góc nhìn văn hóa.',
       'Một ví dụ công cụ nằm trong cơ sở hạ tầng ở giữa của bài viết.',
-      'Công cụ trình duyệt miễn phí được nêu như ví dụ về hạ tầng nepantla.',
       'Critical Thinking Online Breakouts, một công cụ thực tế trong không gian ở giữa.',
       'Ý tưởng rằng công cụ luôn mở cho phản hồi và thích nghi vì không gian luôn thay đổi.'
     ],
@@ -189,7 +187,6 @@
       'عملية أنزالدوا للوعي والتحول من العمل الداخلي إلى الأفعال العامة.',
       'طريقة معرفة تنشأ من الرؤية من منظورين ثقافيين أو أكثر في الوقت نفسه.',
       'مثال لأداة موضوعة داخل البنية التحتية البينية في النص.',
-      'أداة صفية مجانية في المتصفح ذُكرت مثالاً على بنية نيبانتلا.',
       'ألغاز التفكير النقدي عبر الإنترنت، أداة عملية في الفضاء البيني.',
       'فكرة بقاء الأدوات مفتوحة للتغذية الراجعة والتكيف لأن الفضاء يتغير.'
     ],
@@ -209,7 +206,6 @@
       'अनज़ाल्दुआ की जागरूकता और परिवर्तन की प्रक्रिया, भीतर के काम से सार्वजनिक कर्म तक।',
       'दो या अधिक सांस्कृतिक दृष्टियों से एक साथ देखने से उपजा जानने का तरीका।',
       'लेख की बीच वाली आधारभूत संरचना में रखा गया एक उपकरण उदाहरण।',
-      'मुफ़्त ब्राउज़र कक्षा उपकरण, जिसे नेपांतला आधारभूत संरचना का उदाहरण कहा गया।',
       'Critical Thinking Online Breakouts, बीच के स्थान का व्यावहारिक उपकरण।',
       'यह विचार कि बदलते स्थान के कारण उपकरण प्रतिक्रिया और अनुकूलन के लिए खुले रहें।'
     ],
@@ -229,7 +225,6 @@
       'انزالدوا کا آگہی اور تبدیلی کا عمل، اندرونی کام سے عوامی عمل تک۔',
       'دو یا زیادہ ثقافتی زاویوں سے بیک وقت دیکھنے سے پیدا ہونے والا علم۔',
       'مضمون کے درمیانی بنیادی ڈھانچے میں ایک اوزار کی مثال۔',
-      'مفت براؤزر جماعتی اوزار جسے نیپانتلا ڈھانچے کی مثال کہا گیا۔',
       'Critical Thinking Online Breakouts، درمیانی جگہ کا عملی اوزار۔',
       'یہ خیال کہ بدلتی جگہ کی وجہ سے اوزار رائے اور موافقت کے لیے کھلے رہیں۔'
     ],
@@ -249,7 +244,6 @@
       '安萨尔杜亚从内在工作走向公共行动的觉知与转化过程。',
       '同时从两种或更多文化视角观察而形成的认知方式。',
       '文章所述中间基础设施中的一个工具示例。',
-      '被列为 nepantla 基础设施实例的免费浏览器课堂工具。',
       'Critical Thinking Online Breakouts，中间空间中的实用工具。',
       '由于空间不断变化，工具应持续接受反馈并适应变化的观念。'
     ]

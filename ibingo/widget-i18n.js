@@ -1,7 +1,7 @@
-/* DrawSplatTM Widget i18n — opt-in translation for standalone widgets and games.
+/* Widget i18n — opt-in translation for standalone widgets and games.
    ---------------------------------------------------------------------------
    Six languages, shared language preference with the whiteboard (via
-   localStorage `drawsplat.language`), and a small <select> picker that any
+   localStorage `webbingomaker.language`), and a small <select> picker that any
    widget can drop in.
 
    HOW TO ADOPT IN A WIDGET (or game)
@@ -56,7 +56,7 @@
    LANGUAGE RESOLUTION ORDER
    ---------------------------------------------------------------------------
    ?lang=es URL query (one-shot share links)
-     -> localStorage `drawsplat.language` (shared with the whiteboard so a
+     -> localStorage `webbingomaker.language` (shared with the whiteboard so a
         teacher who picks Spanish in the whiteboard sees Spanish widgets too)
      -> navigator.language / navigator.languages[0]
      -> English
@@ -70,7 +70,7 @@
 (function () {
   'use strict';
 
-  const STORAGE_KEY = 'drawsplat.language';
+  const STORAGE_KEY = 'webbingomaker.language';
 
   // The whiteboard treats `uh` as LTR Hindi (Devanagari) with bilingual
   // Urdu/Hindi labels in key UI text — see assets/js/locales.js. Mirroring
